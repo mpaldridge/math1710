@@ -618,7 +618,7 @@ Since we don't have the exact data, it's not possible to exactly calculate the m
 
 For our journey-time data, our approximation of the mean would be
 \[ \bar x = \frac{1}{100} \big(4\times 2.5 + 8 \times 7.5 + \cdots + 2\times90) = 24.4 . \]
-More generally, if \(m_i\) is the midpoint of bin \(i\) and \(f_i\) its frequency, then we can calculate the binned-mean and binned-variance by
+More generally, if \(m_i\) is the midpoint of bin \(i\) and \(f_i\) its frequency, then we can calculate the binned mean and binned variance by
 \begin{align*}
   \bar x &= \frac{1}{n} \sum_j f_j m_j \\
   s^2_x  &= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)
@@ -820,7 +820,7 @@ De Morgan, etc.
 Recall that, in this mathematics course, a probability will be a real number that satisfies certain properties, which we call axioms.
 
 \begin{definition}
-\protect\hypertarget{def:def-axioms}{}\label{def:def-axioms}
+\protect\hypertarget{def:axioms}{}\label{def:axioms}
 
 Let \(\Omega\) be a sample space. A \textbf{probability measure} on \(\Omega\) is a function \(\mathbb P\) that assigns to each event \(A \subset \Omega\) a real number \(\mathbb P(A)\), called the \textbf{probability} of \(A\), and that satisfies the following three axioms:
 
@@ -895,7 +895,7 @@ The dice rolling is a particular case of the ``classical probability'' of equall
 \hypertarget{prob-properties}{%
 \section{Properties of probability}\label{prob-properties}}
 
-The axioms of Definition @ref\{def:axioms\} only gave us some of the properties that we would like a probability measure to have. Out task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we're not allowed to make claims that ``seem likely to be true'' or ``are common sense'' -- we can only use the three axioms and nothing else.
+The axioms of Definition \ref{def:axioms} only gave us some of the properties that we would like a probability measure to have. Our task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we're not allowed to make claims that ``seem likely to be true'' or ``are common sense'' -- we can only use the three axioms and nothing else.
 
 \begin{theorem}
 \protect\hypertarget{thm:unlabeled-div-12}{}\label{thm:unlabeled-div-12}
@@ -973,7 +973,7 @@ PICTURE
 
 First note that we have
 \[ A \cup B = A \cup (B \cap A^\mathsf{c}) , \]
-where the union on the right is of the disjoint events \(A\) an \(B \cap A^\mathsf{c}\). Therefore we can use Axiom 3 to get
+where the union on the right is of the disjoint events \(A\) and \(B \cap A^\mathsf{c}\). Therefore we can use Axiom 3 to get
 \begin{equation}
 \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B \cap A^\mathsf{c}) .    \label{eq:union1}
 \end{equation}

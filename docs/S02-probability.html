@@ -381,7 +381,7 @@ A \cup B &amp;= \{2,4,5,6\} .
 <h2><span class="header-section-number">2.4</span> Probability axioms</h2>
 <p>Recall that, in this mathematics course, a probability will be a real number that satisfies certain properties, which we call axioms.</p>
 <div class="definition">
-<p><span id="def:def-axioms" class="definition"><strong>Definition 2.2  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a sample space. A <strong>probability measure</strong> on <span class="math inline">\(\Omega\)</span> is a function <span class="math inline">\(\mathbb P\)</span> that assigns to each event <span class="math inline">\(A \subset \Omega\)</span> a real number <span class="math inline">\(\mathbb P(A)\)</span>, called the <strong>probability</strong> of <span class="math inline">\(A\)</span>, and that satisfies the following three axioms:</p>
+<p><span id="def:axioms" class="definition"><strong>Definition 2.2  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a sample space. A <strong>probability measure</strong> on <span class="math inline">\(\Omega\)</span> is a function <span class="math inline">\(\mathbb P\)</span> that assigns to each event <span class="math inline">\(A \subset \Omega\)</span> a real number <span class="math inline">\(\mathbb P(A)\)</span>, called the <strong>probability</strong> of <span class="math inline">\(A\)</span>, and that satisfies the following three axioms:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\mathbb P(A) \geq 1\)</span> for all events <span class="math inline">\(A \subset \Omega\)</span>;</li>
 <li><span class="math inline">\(\mathbb P(\Omega) = 1\)</span>;</li>
@@ -422,7 +422,7 @@ where <span class="math inline">\(|A|\)</span> is the number of sample outcomes 
 </div>
 <div id="prob-properties" class="section level2" number="2.5">
 <h2><span class="header-section-number">2.5</span> Properties of probability</h2>
-<p>The axioms of Definition @ref{def:axioms} only gave us some of the properties that we would like a probability measure to have. Out task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we’re not allowed to make claims that “seem likely to be true” or “are common sense” – we can only use the three axioms and nothing else.</p>
+<p>The axioms of Definition <a href="S02-probability.html#def:axioms">2.2</a> only gave us some of the properties that we would like a probability measure to have. Our task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we’re not allowed to make claims that “seem likely to be true” or “are common sense” – we can only use the three axioms and nothing else.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 2.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a sample space with a probability measure <span class="math inline">\(\mathbb P\)</span>. Then we have the following:</p>
 <ol style="list-style-type: decimal">
@@ -465,7 +465,7 @@ and we are done.</p>
 <div class="proof">
 <p><span id="unlabeled-div-17" class="proof"><em>Proof</em>. </span>First note that we have
 <span class="math display">\[ A \cup B = A \cup (B \cap A^\mathsf{c}) , \]</span>
-where the union on the right is of the disjoint events <span class="math inline">\(A\)</span> an <span class="math inline">\(B \cap A^\mathsf{c}\)</span>. Therefore we can use Axiom 3 to get
+where the union on the right is of the disjoint events <span class="math inline">\(A\)</span> and <span class="math inline">\(B \cap A^\mathsf{c}\)</span>. Therefore we can use Axiom 3 to get
 <span class="math display" id="eq:union1">\[\begin{equation}
 \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B \cap A^\mathsf{c}) .    \tag{2.1}
 \end{equation}\]</span></p>
