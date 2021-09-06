@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 1 Exploratory data analysis | MATH1710 Probability and Statistics 1</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics 1 at the University of Leeds, 2021–2022" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 1 Exploratory data analysis | MATH1710 Probability and Statistics 1" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://mpaldridge.github.io/math1710/" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics 1 at the University of Leeds, 2021–2022" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 1 Exploratory data analysis | MATH1710 Probability and Statistics 1" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics 1 at the University of Leeds, 2021–2022" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="about.html"/>
+<link rel="next" href="P1.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Home</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About this module</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Module organisation</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#content"><i class="fa fa-check"></i>Module content</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#notes"><i class="fa fa-check"></i>Notes and videos</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Office hours</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#discussion"><i class="fa fa-check"></i>Discussion board</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH2750</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="S01-eda.html"><a href="S01-eda.html"><i class="fa fa-check"></i><b>1</b> Exploratory data analysis</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="S01-eda.html"><a href="S01-eda.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="S01-eda.html"><a href="S01-eda.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="S01-eda.html"><a href="S01-eda.html#summary-stat"><i class="fa fa-check"></i><b>1.3</b> Summary statistics and boxplots</a></li>
+<li class="chapter" data-level="1.4" data-path="S01-eda.html"><a href="S01-eda.html#binned"><i class="fa fa-check"></i><b>1.4</b> Binned data and histograms</a></li>
+<li class="chapter" data-level="1.5" data-path="S01-eda.html"><a href="S01-eda.html#multiple"><i class="fa fa-check"></i><b>1.5</b> Multiple measurements and scatterplots</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="2" data-path="S02-probability.html"><a href="S02-probability.html"><i class="fa fa-check"></i><b>2</b> Probability spaces</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="S02-probability.html"><a href="S02-probability.html#what-is-prob"><i class="fa fa-check"></i><b>2.1</b> What is probability?</a></li>
+<li class="chapter" data-level="2.2" data-path="S02-probability.html"><a href="S02-probability.html#sample-events"><i class="fa fa-check"></i><b>2.2</b> Sample space and events</a></li>
+<li class="chapter" data-level="2.3" data-path="S02-probability.html"><a href="S02-probability.html#set-theory"><i class="fa fa-check"></i><b>2.3</b> Basic set theory</a></li>
+<li class="chapter" data-level="2.4" data-path="S02-probability.html"><a href="S02-probability.html#axioms"><i class="fa fa-check"></i><b>2.4</b> Probability axioms</a></li>
+<li class="chapter" data-level="2.5" data-path="S02-probability.html"><a href="S02-probability.html#prob-properties"><i class="fa fa-check"></i><b>2.5</b> Properties of probability</a></li>
+<li class="chapter" data-level="2.6" data-path="S02-probability.html"><a href="S02-probability.html#addition"><i class="fa fa-check"></i><b>2.6</b> Addition rules for unions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="S03-classical.html"><a href="S03-classical.html"><i class="fa fa-check"></i><b>3</b> Classical probability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="S03-classical.html"><a href="S03-classical.html#classical-intro"><i class="fa fa-check"></i><b>3.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="3.2" data-path="S03-classical.html"><a href="S03-classical.html#multiplication"><i class="fa fa-check"></i><b>3.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="3.3" data-path="S03-classical.html"><a href="S03-classical.html#sampling"><i class="fa fa-check"></i><b>3.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="3.4" data-path="S03-classical.html"><a href="S03-classical.html#combinations"><i class="fa fa-check"></i><b>3.4</b> Sampling without replacement and without labelling</a></li>
+<li class="chapter" data-level="3.5" data-path="S03-classical.html"><a href="S03-classical.html#birthday"><i class="fa fa-check"></i><b>3.5</b> Birthday problem</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
+<li class="chapter" data-level="4" data-path="S04-independence.html"><a href="S04-independence.html"><i class="fa fa-check"></i><b>4</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="S04-independence.html"><a href="S04-independence.html#independent-events"><i class="fa fa-check"></i><b>4.1</b> Independent events</a></li>
+<li class="chapter" data-level="4.2" data-path="S04-independence.html"><a href="S04-independence.html#conditional"><i class="fa fa-check"></i><b>4.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="4.3" data-path="S04-independence.html"><a href="S04-independence.html#chain-rule"><i class="fa fa-check"></i><b>4.3</b> Chain rule</a></li>
+<li class="chapter" data-level="4.4" data-path="S04-independence.html"><a href="S04-independence.html#total-prob"><i class="fa fa-check"></i><b>4.4</b> Law of total probability</a></li>
+<li class="chapter" data-level="4.5" data-path="S04-independence.html"><a href="S04-independence.html#bayes"><i class="fa fa-check"></i><b>4.5</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="4.6" data-path="S04-independence.html"><a href="S04-independence.html#screening"><i class="fa fa-check"></i><b>4.6</b> Health screening</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html"><i class="fa fa-check"></i><b>5</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#rv"><i class="fa fa-check"></i><b>5.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="5.2" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>5.2</b> Probability mass functions</a></li>
+<li class="chapter" data-level="5.3" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#expectation"><i class="fa fa-check"></i><b>5.3</b> Expectation</a></li>
+<li class="chapter" data-level="5.4" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#functions"><i class="fa fa-check"></i><b>5.4</b> Functions of random variables</a></li>
+<li class="chapter" data-level="5.5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#variance"><i class="fa fa-check"></i><b>5.5</b> Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
+<li class="chapter" data-level="6" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html"><i class="fa fa-check"></i><b>6</b> Discrete distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#binomial"><i class="fa fa-check"></i><b>6.1</b> Binomial distributions</a></li>
+<li class="chapter" data-level="6.2" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#geometric"><i class="fa fa-check"></i><b>6.2</b> Geometric distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson"><i class="fa fa-check"></i><b>6.3</b> Poisson distribution</a></li>
+<li class="chapter" data-level="6.4" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson-approx"><i class="fa fa-check"></i><b>6.4</b> Poisson approximation to the binomial</a></li>
+<li class="chapter" data-level="6.5" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#models"><i class="fa fa-check"></i><b>6.5</b> Distributions as models for data</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html"><i class="fa fa-check"></i><b>7</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#bayes-rv"><i class="fa fa-check"></i><b>7.3</b> Bayes’ theorem for random variables</a></li>
+<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation and variance of sums and products</a></li>
+<li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.5</b> Law of large numbers</a></li>
+<li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.6</b> Covariance and correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
+<li class="chapter" data-level="8" data-path="S08-continuous.html"><a href="S08-continuous.html"><i class="fa fa-check"></i><b>8</b> Continuous random variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>8.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="8.2" data-path="S08-continuous.html"><a href="S08-continuous.html#pdf"><i class="fa fa-check"></i><b>8.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="8.3" data-path="S08-continuous.html"><a href="S08-continuous.html#uniform"><i class="fa fa-check"></i><b>8.3</b> Uniform distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="S08-continuous.html"><a href="S08-continuous.html#exponential"><i class="fa fa-check"></i><b>8.4</b> Exponential distribution</a></li>
+<li class="chapter" data-level="8.5" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-multiple"><i class="fa fa-check"></i><b>8.5</b> Multiple continuous random variables</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="S09-normal.html"><a href="S09-normal.html"><i class="fa fa-check"></i><b>9</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#definition-and-properties-of-the-normal-distribution-normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition and properties of the normal distribution #{normal-definition}</a></li>
+<li class="chapter" data-level="9.2" data-path="S09-normal.html"><a href="S09-normal.html#normal-r"><i class="fa fa-check"></i><b>9.2</b> Calculations using R</a></li>
+<li class="chapter" data-level="9.3" data-path="S09-normal.html"><a href="S09-normal.html#normal-tables"><i class="fa fa-check"></i><b>9.3</b> Calculations using statistical tables</a></li>
+<li class="chapter" data-level="9.4" data-path="S09-normal.html"><a href="S09-normal.html#clt"><i class="fa fa-check"></i><b>9.4</b> Central limit theorem</a></li>
+<li class="chapter" data-level="9.5" data-path="S09-normal.html"><a href="S09-normal.html#normal-approx"><i class="fa fa-check"></i><b>9.5</b> Approximations with the normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="S10-bayesian.html"><a href="S10-bayesian.html"><i class="fa fa-check"></i><b>10</b> Bayesian statistics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="S10-bayesian.html"><a href="S10-bayesian.html#example-fake-coin-fakecoin"><i class="fa fa-check"></i><b>10.1</b> Example: fake coin {#fake=coin}</a></li>
+<li class="chapter" data-level="10.2" data-path="S10-bayesian.html"><a href="S10-bayesian.html#bayesian-framework"><i class="fa fa-check"></i><b>10.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="10.3" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta"><i class="fa fa-check"></i><b>10.3</b> Beta distribution</a></li>
+<li class="chapter" data-level="10.4" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta-binomial"><i class="fa fa-check"></i><b>10.4</b> Beta–binomial model</a></li>
+<li class="chapter" data-level="10.5" data-path="S10-bayesian.html"><a href="S10-bayesian.html#normal-normal"><i class="fa fa-check"></i><b>10.5</b> Normal–normal model</a></li>
+<li class="chapter" data-level="10.6" data-path="S10-bayesian.html"><a href="S10-bayesian.html#modern-bayes"><i class="fa fa-check"></i><b>10.6</b> Modern Bayesian statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
+<li class="chapter" data-level="11" data-path="S11-summary.html"><a href="S11-summary.html"><i class="fa fa-check"></i><b>11</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics 1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="S01-eda" class="section level1" number="1">
+<h1><span class="header-section-number">Section 1</span> Exploratory data analysis</h1>
+<div id="what-is-eda" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> What is EDA?</h2>
+<p><strong>Statistics</strong> is about studying data. <strong>Exploratory data analysis</strong> (or <strong>EDA</strong>, for short) is the part of statistics concerned with taking a “first look” at some data. Later, towards the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics 2 (for those who take it) you will see many ways of testing hypotheses for data. But here we’re just interested in first impressions and brief summaries.</p>
+<p>In this section, we will concentrate on two aspects of EDA:</p>
+<ul>
+<li><strong>Summary statistics:</strong> That is, calculating numbers that briefly summarise the data. A summary statistic might tell us what “central” or “typical” values of the data are, how spread out the data is, or about the relationship between two different variables.</li>
+<li><strong>Data visualisation:</strong> Drawing a picture based on the data is an another way to show the shape (centrality and spread) of data, or the relationship between different variables.</li>
+</ul>
+<p>Even before calculating summary statistics or drawing a plot, however, there are other questions it is important to ask about the data:</p>
+<ul>
+<li><em>What is the data?</em></li>
+<li><em>How was the data collected?</em></li>
+<li><em>Are there outliers?</em> “Outliers” are datapoints that seem to be very different from the other datapoints – for example, are much larger or much smaller than the others. Outliers should be investigated to seek the reason for them – perhaps this is a genuine-but-unusual datapoint, or perhaps there was a measurement or recording error? Once the reason for an outlier is understood, it then <em>might</em> be appropriate to exclude it from analysis (for example, the incorrectly recorded measurement). It’s usually bad practice to exclude an outlier before understanding what caused it.</li>
+</ul>
+</div>
+<div id="what-is-R" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> What is R?</h2>
+<p><strong>R</strong> is a programming language that is particularly good at working with probability and statistics. A convenient way to use the language R is through the program <strong>RStudio</strong>. An important part of this module is learning to use R, by completing weekly worksheets – you can read more in <a href="R.html#R">the R section of these notes</a>.</p>
+<p>R can easily and quickly perform all the calculations and draw all the plots in this section of notes on exploratory data analysis. In this text, we’ll show the relevant R code. Code will appear like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="S01-eda.html#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="S01-eda.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code></pre></div>
+<pre><code>## [1] 5.428571</code></pre>
+<p>Here, the code in the first shaded box is the R commands that are typed into
+RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudio “console”. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign <code>##</code>. The <code>[1]</code> can be ignored (this is just R’s way of saying that the answer is one-dimensional – like a number or a vector, rather than two-dimensional, like a matrix or a list of vectors). Plots produced by R are displayed here as pictures.</p>
+<p>Most importantly for now, <em>you are not expected to understand the R code in this section yet</em>. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand all the R code in this section.</p>
+</div>
+<div id="summary-stat" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Summary statistics and boxplots</h2>
+<p>Suppose we have collected some data on a certain variable. We will assume here that we have <span class="math inline">\(n\)</span> datapoints, each of which is a single real number. We can write this data as a vector
+<span class="math display">\[ \mathbf x = (x_1, x_2, \dots, x_n) . \]</span></p>
+<p>A <strong>statistic</strong> is a calculation from the data <span class="math inline">\(\mathbf x\)</span>, which is (usually) also a real number. In this section we will look at two types of “summary statistics”, which are statistics that we feel will give us useful information about the data.</p>
+<p>We’ll look here at two types of summary statistic:</p>
+<ul>
+<li><strong>Measures of centrality</strong>, which tell us where the “middle” of the data is.</li>
+<li><strong>Measure of spread</strong>, which tell us how far the data typically spreads out from that centre.</li>
+</ul>
+<p>Some measures of centrality are the following.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  </strong></span>Consider some real-valued data <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span>.</p>
+<ul>
+<li>The <strong>mode</strong> is the most common value of <span class="math inline">\(x_i\)</span>. (If there are multiple joint-most common values, they are all modes.)</li>
+<li>Suppose the data is ordered as <span class="math inline">\(x_1 \leq x_2 \leq \cdots \leq x_n\)</span>. Then the <strong>median</strong> is the central value in the ordered list. If <span class="math inline">\(n\)</span> is odd, this is <span class="math inline">\(x_{(n+1)/2}\)</span>; if <span class="math inline">\(n\)</span> is even, we normally take halfway between the two central points, <span class="math inline">\(\frac12(x_{n/2}+x_{(n+1)/2})\)</span>.</li>
+<li>The <strong>mean</strong> <span class="math inline">\(\bar x\)</span> is
+<span class="math display">\[ \bar x = \frac{1}{n}(x_2 + x_2 + \cdots x_n) = \frac1n \sum_{i=1}^n x_i . \]</span></li>
+</ul>
+</div>
+<p>(In that last expression, we’ve made use of <a href="https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf">Sigma notation</a> to write down the sum.)</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 1.1  </strong></span>EXAMPLE</p>
+</div>
+<p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the data <span class="math inline">\(\alpha\)</span> of the way along the list. So the median is the <span class="math inline">\(\frac12\)</span>-quantile <span class="math inline">\(q(\frac12)\)</span>, the minimum is the <span class="math inline">\(0\)</span>-quantile <span class="math inline">\(q(0)\)</span>, and the maximum. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>seven</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
+<p>Two other common terms: <span class="math inline">\(q(\frac34)\)</span> is called the <strong>upper quartile</strong> (note “quartile”, not “quantile”, here), and <span class="math inline">\(q(\frac14)\)</span> is called the <strong>lower quartile</strong>.</p>
+<p>Some measures of spread are:</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  </strong></span>The <strong>number of distinct observations</strong> is precisely that: the number of datapoints you have after removing any repeats.</p>
+<p>The <strong>interquartile range</strong> is the difference between the upper and lower quartiles <span class="math inline">\(\text{IQR} = q(\frac34) - q(\frac14)\)</span>.</p>
+<p>The <strong>sample variance</strong> is
+<span class="math display">\[  s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]</span>
+where <span class="math inline">\(\bar x\)</span> is the sample mean from before. The <strong>standard deviation</strong> is the square-root of the sample variance.</p>
+</div>
+<p>The formula we’ve given for sample variance is sometimes called the “definitional formula”, as it’s the formula used to <em>define</em> the sample variance. We can rearrange that formula as follows:
+<span class="math display">\[\begin{align*}
+  s^2_x &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 \\
+      &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i^2 - 2x_i\bar x + \bar x^2) \\
+      &amp;= \frac{1}{n-1}\left(\sum_{i=1}^nx_i^2 - \sum_{i=1}^n 2x_i\bar x + \sum_{i=1}^n\bar x^2 \right) \\
+      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 - 2\bar x \sum_{i=1}^n x_i + \bar x^2 \sum_{i=1}^n 1 \right) \\
+      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 - 2n\bar x^2 + n\bar x^2 \right) \\
+      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) .
+\end{align*}\]</span>
+Here, the first line is the definitional formula; the second line is from expanding out the bracket; the third line is taking the sum term-by-term; the fourth line takes any constants (things not involving <span class="math inline">\(i\)</span>) outside the sums; the fifth line uses <span class="math inline">\(\sum_{i=1}^n x_i = n\bar x\)</span>, from the definition of the mean, and <span class="math inline">\(\sum_{i=1}^n 1 = 1 + 1 + \cdots 1 = n\)</span>; and the sixth line simplifies the final two terms.</p>
+<p>This has left us with
+<span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
+This is sometimes called the “computational formula”; this is because it’s usually more convenient to calculate the sample variance using this formula rather than the computational formula.</p>
+<p>EXAMPLES</p>
+<p>BOXPLOTS</p>
+</div>
+<div id="binned" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Binned data and histograms</h2>
+<p>Often when collecting data, we don’t collect exact data, but rather collect data clumped into “bins”. For example, suppose a student wished to use a questionnaire to collect data on how long it takes people to reach campus from home; they might not ask “How long does it take?”, but rather give a choice of tick boxes: “0–5 minutes”, “5–10 minutes”, and so on.</p>
+<p>Consider the following data, from <span class="math inline">\(n = 100\)</span> students:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">Frequency</th>
+<th align="center">Relative frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0–5 minutes</td>
+<td align="center">4</td>
+<td align="center">0.04</td>
+</tr>
+<tr class="even">
+<td align="center">5–10 minutes</td>
+<td align="center">8</td>
+<td align="center">0.08</td>
+</tr>
+<tr class="odd">
+<td align="center">10–15 minutes</td>
+<td align="center">21</td>
+<td align="center">0.21</td>
+</tr>
+<tr class="even">
+<td align="center">15–30 minutes</td>
+<td align="center">42</td>
+<td align="center">0.42</td>
+</tr>
+<tr class="odd">
+<td align="center">30–45 minutes</td>
+<td align="center">15</td>
+<td align="center">0.15</td>
+</tr>
+<tr class="even">
+<td align="center">45–60 minutes</td>
+<td align="center">8</td>
+<td align="center">0.08</td>
+</tr>
+<tr class="odd">
+<td align="center">60–120 minutes</td>
+<td align="center">2</td>
+<td align="center">0.02</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Total</strong></td>
+<td align="center">100</td>
+<td align="center">1</td>
+</tr>
+</tbody>
+</table>
+<p>Here the <strong>frequency</strong> <span class="math inline">\(f_j\)</span> of bin <span class="math inline">\(j\)</span> is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The <strong>relative frequency</strong> of bin <span class="math inline">\(j\)</span> is <span class="math inline">\(f_j/n\)</span>; that is, the proportion of the observations in that bin.</p>
+<p>What is the median journey length? Well, we don’t know exactly, but <span class="math inline">\(0.04 + 0.08 + 0.21\)</span> is less than <span class="math inline">\(0.5\)</span>, but <span class="math inline">\(0.04 + 0.08 + 0.21 + 0.42\)</span> is greater than <span class="math inline">\(0.5\)</span>. So we know that the median student is in the “10–15 minute” bin, and we can say that the median journey length is between 10 and 15 minutes.</p>
+<p>What about the mode? The bin with the most observations in it is the “15–30 minute” bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the <strong>frequency density</strong>: the relative frequency divided by the size of the bin.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Time</th>
+<th align="center">Frequency</th>
+<th align="center">Relative frequency</th>
+<th align="center">Frequency density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">0–5 minutes</td>
+<td align="center">4</td>
+<td align="center">0.04</td>
+<td align="center">0.008</td>
+</tr>
+<tr class="even">
+<td align="center">5–10 minutes</td>
+<td align="center">8</td>
+<td align="center">0.08</td>
+<td align="center">0.016</td>
+</tr>
+<tr class="odd">
+<td align="center">10–15 minutes</td>
+<td align="center">21</td>
+<td align="center">0.21</td>
+<td align="center">0.042</td>
+</tr>
+<tr class="even">
+<td align="center">15–30 minutes</td>
+<td align="center">42</td>
+<td align="center">0.42</td>
+<td align="center">0.028</td>
+</tr>
+<tr class="odd">
+<td align="center">30–45 minutes</td>
+<td align="center">15</td>
+<td align="center">0.15</td>
+<td align="center">0.010</td>
+</tr>
+<tr class="even">
+<td align="center">45–60 minutes</td>
+<td align="center">8</td>
+<td align="center">0.08</td>
+<td align="center">0.005</td>
+</tr>
+<tr class="odd">
+<td align="center">60–120 minutes</td>
+<td align="center">2</td>
+<td align="center">0.02</td>
+<td align="center">0.0003</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Total</strong></td>
+<td align="center">100</td>
+<td align="center">1</td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>In the first row, for example, the relative frequency is 0.04 and the size of the bin is 5 minutes, so the frequency density is <span class="math inline">\(0.04/5 = 0.008\)</span>. So the modal bin – the bin with the highest frequency <em>density</em> – is in fact the “10–15 minutes” bin.</p>
+<p>Since we don’t have the exact data, it’s not possible to exactly calculate the mean and variance. However, we can often get a good estimate by assuming that each observation was in fact right in the centre of its bin. So, for example, we can assume that all 4 observations in the “0–5 minutes” bin were journeys of exactly 2.5 minutes. Of course, this isn’t true (or is highly unlikely to be true), but we can often get a good approximation this way.</p>
+<p>For our journey-time data, our approximation of the mean would be
+<span class="math display">\[ \bar x = \frac{1}{100} \big(4\times 2.5 + 8 \times 7.5 + \cdots + 2\times90) = 24.4 . \]</span>
+More generally, if <span class="math inline">\(m_i\)</span> is the midpoint of bin <span class="math inline">\(i\)</span> and <span class="math inline">\(f_i\)</span> its frequency, then we can calculate the binned-mean and binned-variance by
+<span class="math display">\[\begin{align*}
+  \bar x &amp;= \frac{1}{n} \sum_j f_j m_j \\
+  s^2_x  &amp;= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)
+\end{align*}\]</span></p>
+<p>Data in bins can be illustrated with a <strong>histogram</strong>. A histogram has the measurement on the x-axis, with one bar across the width of each bin, with bars drawn up to the height of the corresponding frequency density. Note that this means that the area of the bar is exactly the relative frequency of the corresponding bin. (If all the bins are the same width, frequency density is directly proportional to frequency and to relative frequency, so it can be clearer use one of those as the y-axis instead.)</p>
+<p>Here is a histogram for our journey-time data:</p>
+<p>PICTURE</p>
+<p>Often we draw histograms because the data was collected in bins. But even when we have exact data, we might choose to divide it into bins for the purposes of drawing a histogram. In this case we have to decide where to put the “breaks” between the bins. Too many breaks too close together, and the small number of observations in each bin will give “noisy” results (see left); too few breaks too far apart, and the histogram will lose detail (see right).</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="S01-eda.html#cb3-1" aria-hidden="true" tabindex="-1"></a>hist_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">2</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">12</span>, <span class="dv">3</span>))  <span class="co"># Some fake data</span></span>
+<span id="cb3-2"><a href="S01-eda.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">20</span>)</span></code></pre></div>
+<p><img src="math1710_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="S01-eda.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">4</span>)</span></code></pre></div>
+<p><img src="math1710_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+</div>
+<div id="multiple" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Multiple measurements and scatterplots</h2>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="about.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="P1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf", "math1710.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+# Independence and conditional probability  {#S04-independence}
+
+## Independent events  {#independent-events}
+
+## Conditional probability  {#conditional}
+
+## Chain rule  {#chain-rule}
+
+## Law of total probability  {#total-prob}
+
+## Bayes' theorem  {#bayes}
+
+## Health screening  {#screening}

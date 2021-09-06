@@ -1,0 +1,153 @@
+---
+title:  "R Worksheet 2: Vectors"
+author: "R Training Material"
+date:   "School of Mathematics, University of Leeds"
+output: html_document
+---
+
+So far, our objects in R have just been single numbers. However, we can do much more with R when our objects are **vectors** of many numbers. In this worksheet, we will find out how to enters vector into R, and look at operations we can perform with these vectors.
+
+## Entering vectors into R
+
+We can enter a vector by using the **`c()`** function. (The letter `c` stands for "combine" -- or maybe "concatenate".) So to enter the vector $(1, 3, 4, 4, 2, 4, 1)$ as an object -- let's call it "`my_vector`" -- we enter
+
+```{r}
+my_vector <-  c(1, 3, 4, 4, 2, 4, 1)
+```
+
+and we can view it with
+
+```{r}
+my_vector
+```
+
+> **Exercise 3.1.** A student collects data for one week on the number of sandwiches sold by the Dolche Vita cafe. On Monday 27 sandwiches were sold, on Tuesday 29 sandwiches were sold, on Wednesday 30 sandwiches were sold, on Thursday 29 sandwiches were sold, and on Friday 18 sandwiches were sold. Enter this data into R as a vector, and call it `sandwiches`. View your vector, and check you have entered the data in correctly.
+
+We quite often want a consecutive string of numbers, like $(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)$. R has a shortcut to allow us to enter this quickly using using colon operator **`:`**. For example, to get the consecutive integers from 1 to 10 using the `:` operator, we enter
+
+```{r}
+1:10
+```
+
+> **Exercise 3.2.** As efficiently as you can, enter the following vectors into R:\
+> **(a)** $(10, 11, 12, \dots, 29, 30)$,\
+> **(b)** $(100, 99, 98, \dots, 87, 86)$.\
+> **(c)** By using `:` together with the combine function `c()`, enter $(1, 2, 3, 4, 5, 24, 25, 26, 27, 28)$.
+
+## Accessing entries of vectors
+
+We can deal with a vector such as `my_vector` as a whole, but sometimes we just want to deal with an individual entry within the vector. We do that using square brackets **`[ ]`**.
+
+So, for example, the fifth entry of `my_vector` is
+
+```{r}
+my_vector[5]
+```
+
+while the first three entries are
+
+```{r}
+my_vector[1:3]
+```
+
+Notice that in the second example, we put a vector `1:3 = c(1, 2, 3)` into the square brackets to pull out multiple entries.
+
+We can also assign values to entries using the same notation. So to change the second entry of `my_vector` to a 5, we enter
+
+```{r}
+my_vector[2] <- 5
+```
+
+and we can check this second entry has indeed changed by reading the vector:
+
+```{r}
+my_vector
+```
+
+> **Exercise 3.3.** The student from Example 3.1 discovers an extra sandwich that was sold on Monday. Increase the first entry of the `sandwiches` by 1. (Try to do it without looking at what the first entry was previously.)
+
+## Operations with vectors
+
+Standard arithmetic operations like `+`, `-`, `*`, `/`, `^`, and so on, can also be used with vectors. They work entry-by-entry. Let's demonstrate with two vectors of the same length:
+
+```{r}
+vector_1 <- c(3, 3, 4, 4, 5)
+vector_2 <- 1:5
+```
+
+Then
+
+```{r}
+vector_1 + vector_2
+```
+
+outputs a vector whose first entry is the first entry of `my_vector` plus the first entry of `new_vector`, whose second entry is the second entry of `my_vector` plus the second entry of `new_vector`, and so on.
+
+Note that
+
+```{r}
+vector_1 * vector_2
+```
+
+gives the vector of entry-by-entry multiplications, not the scalar dot-product $\mathbf{x} \cdot \mathbf{y} = \sum_i x_i y_i$. If you want the dot-product, you can use the `sum()` function from the next section:
+
+```{r}
+sum(vector_1 * vector_2)
+```
+
+> **Exercise 3.4.** The number of baguettes sold in the cafe each day was $(8, 9, 8, 7, 5)$. The student decides to count these as sandwiches, so wants to add these numbers to the `sandwiches` data from Exercise 3.3. Add these new values to the previous data.
+
+What happens if we try to use one of these operations between a vector and a single number, like this?
+
+```{r}
+vector_1 + 2
+vector_2 * 3
+```
+
+You should notice that R has added 2 to each entry of `vector_1`, and multiplied every entry of `vector_2` by 3. That is because R has "recycled" the number enough times to match the length of the vector.
+
+You should be very careful when applying an operator between vectors of different lengths. R will "recycle" the shorter vector by repeating it until it matches the length of the longer vector. If the shorter vector doesn't fit into the longer vector a whole number of times, R will also give a warning message after the answer. This often gives behaviour you don't expect (or don't want)!
+
+> **Exercise 3.5.** Predict what each of the following five commands will produce. Then run the code in R to see if you were right. If you were wrong, explain what R has done.
+
+```{r, eval = FALSE}
+c(1, 3, 5) + c(2, 2, 3)
+1:5 * c(0, 0, 1, 1, 2)
+c(2, 2, 3, 3)^c(1, 2, 2, 1)
+1:8 / 1:4
+1:7 + c(1, 2)
+```
+
+## Functions of vectors
+
+There are a number of useful functions that operate on vectors, including:
+
+-   **`sum()`** gives the sum of all the numbers in the vector.
+-   **`mean()`** gives the sample mean of the numbers in the vector.
+-   **`length()`** gives us the length of the vector; that is, how many numbers were in the vector.
+-   **`min()`** and **`max()`** give the minimum (smallest) and maximum (largest) entries of the vector, respectively.
+-   The are a number of useful statistical functions, like **`median()`** (median) **`sd()`** (standard deviation), **`var()`** (sample variance), **`IQR()`** (interquartile range).
+
+So to find the sum of our vector `my_vector`, we enter
+
+```{r}
+sum(my_vector)
+```
+
+If we think we're likely to use this sum many times in the future, we should save it as an R object itself:
+
+```{r}
+my_total <- mean(my_vector)
+```
+
+> **Exercise 3.6.** Using your `sandwiches` data from Exercise 3.4, find the mean and median number of sandwiches sold in a day.
+
+In the last worksheet, we saw functions like `log()`, `exp()`, `round()`, and `signif()` that work on a single number. If you apply these functions to a vector, R applies the function to each entry of the vector one at a time. So, for example,
+
+```{r}
+exp(my_vector)
+```
+
+outputs a vector whose first element is the exponential of the first element of `my_vector`, whose second element is the exponential of the second element of `my_vector`, and so on.
+
+> **Exercise 3.7.** Get R to output the square roots of the integers from 1 to 20, all rounded to 2 decimal places.

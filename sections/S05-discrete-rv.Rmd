@@ -1,0 +1,12 @@
+# Discrete random variables  {#S05-discrete-rv}
+
+## What is a random variable?  {#rv}
+
+## Probability mass functions  {#pmf}
+
+## Expectation  {#expectation}
+
+## Functions of random variables  {#functions}
+
+## Variance  {#variance}
+

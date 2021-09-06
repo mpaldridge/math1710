@@ -1,0 +1,16 @@
+# Multiple random variables  {#S07-multi-rv}
+
+## Joint distributions  {#joint}
+
+## Independence of random variables  {#independence-rv}
+
+## Bayes’ theorem for random variables  {#bayes-rv}
+
+## Expectation and variance of sums and products  {#sum-product}
+
+## Law of large numbers  {#lln}
+
+## Covariance and correlation  {#covariance}
+
+
+

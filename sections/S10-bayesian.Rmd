@@ -1,0 +1,16 @@
+# Bayesian statistics  {#S10-bayesian}
+
+## Example: fake coin  {#fake=coin}
+
+## Bayesian framework  {#bayesian-framework}
+
+## Beta distribution  {#beta}
+
+## Beta--binomial model  {#beta-binomial}
+
+## Normal--normal model  {#normal-normal}
+
+## Modern Bayesian statistics  {#modern-bayes}
+
+
+

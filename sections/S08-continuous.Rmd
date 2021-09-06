@@ -1,0 +1,14 @@
+# Continuous random variables  {#S08-continuous}
+
+## What is a continuous random variable?  {#continuous-rv}
+
+## Probability density functions  {#pdf}
+
+## Uniform distribution  {#uniform}
+
+## Exponential distribution  {#exponential}
+
+## Multiple continuous random variables  {#continuous-multiple}
+
+
+

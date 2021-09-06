@@ -1,0 +1,51 @@
+# Classical probability  {#S03-classical}
+
+## Probability with equally likely outcomes {#classical-intro}
+
+**Classical probability** is the name we give to probability where there are a finite number of equally likely outcomes.
+
+Classical probability was the first type of probability to be formally studied -- partly because it is the simplest, and partly because it was useful for working out how to win at gambling. Tossing fair coins, rolling dice, and dealing cards are all common gambling situations that can be studied using classical probability -- in a deck of cards, for example, there are 52 cards that are equally likely to be drawn. Among the first works to seriously study classical probability are "Book on Games of Chance" by [Girolamo Cardano](https://mathshistory.st-andrews.ac.uk/Biographies/Cardan/) (written in 1564, but not published until 1663), and a series of letters letters between [Blaise Pascal](https://mathshistory.st-andrews.ac.uk/Biographies/Pascal/) and [Pierre de Fermat](https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/) (1654).
+
+::: {.definition}
+Let $\Omega$ be a finite sample space. Then the **classical probability measure** on $\Omega$ is given by
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} . \]
+:::
+
+So to work out a classical probability, we need to be able to count how many outcomes are in $A$ and count how many outcomes are in $\Omega$. In this section, we'll see a number of situations where we can do this.
+
+PROOF SOMEWHERE
+
+EASY EXAMPLE
+
+
+
+
+
+
+## Multiplication principle  {#multiplication}
+
+In classical probability, to find the probability of an event $A$, we need to count the number of outcomes in $A$ and the total number of possible outcomes in $\Omega$. This can be easy when we're just looking at one choice -- like the XXXXX YYYYY above. Now we're going to look at what happens if there are a number of choices one after another -- like tossing multiple coins, rolling more than one dice, or dealing a hand of cards.
+
+Here, an important principle is the **multiplication principle**. This says that if you have $n$ choices followed by $m$ choices, than all together you have $n \times m$ total choices. You can see this by imagining the choices in a $n \times m$ grid, with the $n$ columns representing the first choice and $m$ rows representing the second choice. For example, suppose you go to a burger restaurant where there are 3 choices of burger (beefburger, chicken burger, veggie burger) and 2 choices of sides (fries, salad), then altogether there are $3 \times 2 = 6$ choices of meal.
+
+TABLE
+
+More generally, if you have $m$ stages of choosing, with $n_1$ choices in the first stage, then $n_2$ choices in the second stage, all the way to $n_m$ choices in the final stage, you have $n_1 \times n_2 \times \cdots \times n_m$ total choices altogether.
+
+::: {.example}
+*Five fair coins are tossed. What is the probability they all show the same face?*
+
+Here, the sample $\Omega$ is the set of all sequence of 5 coin outcomes. How many sample outcomes are in $\Omega$. Well, the first coin can be heads or tails (2 choices); the second coin can be heads or tails (2 choices) and so on, until the fifth and final coin. So, by the multiplication principle, $|\Omega| = 2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32$.
+
+The event we're interested in is $A = \{\text{HHHHH}, \text{TTTTT}\}$, the event that the faces are all the same -- either all heads or all tails. This clearly has $|A| = 2$ outcomes.
+
+So the probability all five coins show the same face is
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{2}{32} = \frac{1}{16} . \]
+:::
+
+
+## Sampling with and without replacement  {#sampling}
+
+## Sampling without replacement and without labelling  {#combinations}
+
+## Birthday problem  {#birthday}

@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Section 2 Probability spaces | MATH1710 Probability and Statistics 1</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics 1 at the University of Leeds, 2021–2022" />
+  <meta name="generator" content="bookdown 0.21 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Section 2 Probability spaces | MATH1710 Probability and Statistics 1" />
+  <meta property="og:type" content="book" />
+  <meta property="og:url" content="https://mpaldridge.github.io/math1710/" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics 1 at the University of Leeds, 2021–2022" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Section 2 Probability spaces | MATH1710 Probability and Statistics 1" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics 1 at the University of Leeds, 2021–2022" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="P1.html"/>
+<link rel="next" href="S03-classical.html"/>
+<script src="libs/header-attrs-2.7/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Home</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About this module</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Module organisation</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#content"><i class="fa fa-check"></i>Module content</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#notes"><i class="fa fa-check"></i>Notes and videos</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Office hours</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#discussion"><i class="fa fa-check"></i>Discussion board</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH2750</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="S01-eda.html"><a href="S01-eda.html"><i class="fa fa-check"></i><b>1</b> Exploratory data analysis</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="S01-eda.html"><a href="S01-eda.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="S01-eda.html"><a href="S01-eda.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="S01-eda.html"><a href="S01-eda.html#summary-stat"><i class="fa fa-check"></i><b>1.3</b> Summary statistics and boxplots</a></li>
+<li class="chapter" data-level="1.4" data-path="S01-eda.html"><a href="S01-eda.html#binned"><i class="fa fa-check"></i><b>1.4</b> Binned data and histograms</a></li>
+<li class="chapter" data-level="1.5" data-path="S01-eda.html"><a href="S01-eda.html#multiple"><i class="fa fa-check"></i><b>1.5</b> Multiple measurements and scatterplots</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="2" data-path="S02-probability.html"><a href="S02-probability.html"><i class="fa fa-check"></i><b>2</b> Probability spaces</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="S02-probability.html"><a href="S02-probability.html#what-is-prob"><i class="fa fa-check"></i><b>2.1</b> What is probability?</a></li>
+<li class="chapter" data-level="2.2" data-path="S02-probability.html"><a href="S02-probability.html#sample-events"><i class="fa fa-check"></i><b>2.2</b> Sample space and events</a></li>
+<li class="chapter" data-level="2.3" data-path="S02-probability.html"><a href="S02-probability.html#set-theory"><i class="fa fa-check"></i><b>2.3</b> Basic set theory</a></li>
+<li class="chapter" data-level="2.4" data-path="S02-probability.html"><a href="S02-probability.html#axioms"><i class="fa fa-check"></i><b>2.4</b> Probability axioms</a></li>
+<li class="chapter" data-level="2.5" data-path="S02-probability.html"><a href="S02-probability.html#prob-properties"><i class="fa fa-check"></i><b>2.5</b> Properties of probability</a></li>
+<li class="chapter" data-level="2.6" data-path="S02-probability.html"><a href="S02-probability.html#addition"><i class="fa fa-check"></i><b>2.6</b> Addition rules for unions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="S03-classical.html"><a href="S03-classical.html"><i class="fa fa-check"></i><b>3</b> Classical probability</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="S03-classical.html"><a href="S03-classical.html#classical-intro"><i class="fa fa-check"></i><b>3.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="3.2" data-path="S03-classical.html"><a href="S03-classical.html#multiplication"><i class="fa fa-check"></i><b>3.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="3.3" data-path="S03-classical.html"><a href="S03-classical.html#sampling"><i class="fa fa-check"></i><b>3.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="3.4" data-path="S03-classical.html"><a href="S03-classical.html#combinations"><i class="fa fa-check"></i><b>3.4</b> Sampling without replacement and without labelling</a></li>
+<li class="chapter" data-level="3.5" data-path="S03-classical.html"><a href="S03-classical.html#birthday"><i class="fa fa-check"></i><b>3.5</b> Birthday problem</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
+<li class="chapter" data-level="4" data-path="S04-independence.html"><a href="S04-independence.html"><i class="fa fa-check"></i><b>4</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="S04-independence.html"><a href="S04-independence.html#independent-events"><i class="fa fa-check"></i><b>4.1</b> Independent events</a></li>
+<li class="chapter" data-level="4.2" data-path="S04-independence.html"><a href="S04-independence.html#conditional"><i class="fa fa-check"></i><b>4.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="4.3" data-path="S04-independence.html"><a href="S04-independence.html#chain-rule"><i class="fa fa-check"></i><b>4.3</b> Chain rule</a></li>
+<li class="chapter" data-level="4.4" data-path="S04-independence.html"><a href="S04-independence.html#total-prob"><i class="fa fa-check"></i><b>4.4</b> Law of total probability</a></li>
+<li class="chapter" data-level="4.5" data-path="S04-independence.html"><a href="S04-independence.html#bayes"><i class="fa fa-check"></i><b>4.5</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="4.6" data-path="S04-independence.html"><a href="S04-independence.html#screening"><i class="fa fa-check"></i><b>4.6</b> Health screening</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html"><i class="fa fa-check"></i><b>5</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#rv"><i class="fa fa-check"></i><b>5.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="5.2" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>5.2</b> Probability mass functions</a></li>
+<li class="chapter" data-level="5.3" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#expectation"><i class="fa fa-check"></i><b>5.3</b> Expectation</a></li>
+<li class="chapter" data-level="5.4" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#functions"><i class="fa fa-check"></i><b>5.4</b> Functions of random variables</a></li>
+<li class="chapter" data-level="5.5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#variance"><i class="fa fa-check"></i><b>5.5</b> Variance</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
+<li class="chapter" data-level="6" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html"><i class="fa fa-check"></i><b>6</b> Discrete distributions</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#binomial"><i class="fa fa-check"></i><b>6.1</b> Binomial distributions</a></li>
+<li class="chapter" data-level="6.2" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#geometric"><i class="fa fa-check"></i><b>6.2</b> Geometric distribution</a></li>
+<li class="chapter" data-level="6.3" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson"><i class="fa fa-check"></i><b>6.3</b> Poisson distribution</a></li>
+<li class="chapter" data-level="6.4" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson-approx"><i class="fa fa-check"></i><b>6.4</b> Poisson approximation to the binomial</a></li>
+<li class="chapter" data-level="6.5" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#models"><i class="fa fa-check"></i><b>6.5</b> Distributions as models for data</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html"><i class="fa fa-check"></i><b>7</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#bayes-rv"><i class="fa fa-check"></i><b>7.3</b> Bayes’ theorem for random variables</a></li>
+<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation and variance of sums and products</a></li>
+<li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.5</b> Law of large numbers</a></li>
+<li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.6</b> Covariance and correlation</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
+<li class="chapter" data-level="8" data-path="S08-continuous.html"><a href="S08-continuous.html"><i class="fa fa-check"></i><b>8</b> Continuous random variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>8.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="8.2" data-path="S08-continuous.html"><a href="S08-continuous.html#pdf"><i class="fa fa-check"></i><b>8.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="8.3" data-path="S08-continuous.html"><a href="S08-continuous.html#uniform"><i class="fa fa-check"></i><b>8.3</b> Uniform distribution</a></li>
+<li class="chapter" data-level="8.4" data-path="S08-continuous.html"><a href="S08-continuous.html#exponential"><i class="fa fa-check"></i><b>8.4</b> Exponential distribution</a></li>
+<li class="chapter" data-level="8.5" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-multiple"><i class="fa fa-check"></i><b>8.5</b> Multiple continuous random variables</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="S09-normal.html"><a href="S09-normal.html"><i class="fa fa-check"></i><b>9</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#definition-and-properties-of-the-normal-distribution-normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition and properties of the normal distribution #{normal-definition}</a></li>
+<li class="chapter" data-level="9.2" data-path="S09-normal.html"><a href="S09-normal.html#normal-r"><i class="fa fa-check"></i><b>9.2</b> Calculations using R</a></li>
+<li class="chapter" data-level="9.3" data-path="S09-normal.html"><a href="S09-normal.html#normal-tables"><i class="fa fa-check"></i><b>9.3</b> Calculations using statistical tables</a></li>
+<li class="chapter" data-level="9.4" data-path="S09-normal.html"><a href="S09-normal.html#clt"><i class="fa fa-check"></i><b>9.4</b> Central limit theorem</a></li>
+<li class="chapter" data-level="9.5" data-path="S09-normal.html"><a href="S09-normal.html#normal-approx"><i class="fa fa-check"></i><b>9.5</b> Approximations with the normal distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="S10-bayesian.html"><a href="S10-bayesian.html"><i class="fa fa-check"></i><b>10</b> Bayesian statistics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="S10-bayesian.html"><a href="S10-bayesian.html#example-fake-coin-fakecoin"><i class="fa fa-check"></i><b>10.1</b> Example: fake coin {#fake=coin}</a></li>
+<li class="chapter" data-level="10.2" data-path="S10-bayesian.html"><a href="S10-bayesian.html#bayesian-framework"><i class="fa fa-check"></i><b>10.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="10.3" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta"><i class="fa fa-check"></i><b>10.3</b> Beta distribution</a></li>
+<li class="chapter" data-level="10.4" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta-binomial"><i class="fa fa-check"></i><b>10.4</b> Beta–binomial model</a></li>
+<li class="chapter" data-level="10.5" data-path="S10-bayesian.html"><a href="S10-bayesian.html#normal-normal"><i class="fa fa-check"></i><b>10.5</b> Normal–normal model</a></li>
+<li class="chapter" data-level="10.6" data-path="S10-bayesian.html"><a href="S10-bayesian.html#modern-bayes"><i class="fa fa-check"></i><b>10.6</b> Modern Bayesian statistics</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
+<li class="chapter" data-level="11" data-path="S11-summary.html"><a href="S11-summary.html"><i class="fa fa-check"></i><b>11</b> Summary</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics 1</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="S02-probability" class="section level1" number="2">
+<h1><span class="header-section-number">Section 2</span> Probability spaces</h1>
+<div id="what-is-prob" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> What is probability?</h2>
+<p>Probability thoery is the study of randomness. Probability, as an area of mathematics, is a fascinating subject in its own right. However, probability is particularly important due to its usefulness in applications – especially in statistics (that is, the study of data), in finance, and in actuarial science (the study of insurance). Probability is well suited to modelling situations that involve randomness, uncertainty, or unpredictability. If we you want to predict the time of the next solar eclipse, a deterministic (that is, non-random) model based on physical laws will tell you when the sun, the moon, and the earth will be in the correct positions; but if you want to predict the weather tomorrow, or the price of a share of Apple stock next month, or the results of an election next year, you will need a probabilistic model that takes into account the uncertainty in the outcome. A probabilistic model could tell you the most likely outcome, or a range of the most likely outcomes.</p>
+<p>So what do we mean when we talk about the “probability” of an event occurring? You might say that the probability of an event is a measure of “how likely” it is to occur, or what the “chance” of it occurring is.</p>
+<p>More concretely, here are some interpretations of probability:</p>
+<ul>
+<li><strong>Subjective</strong> (or <strong>Bayesian</strong>) <strong>probability:</strong> The probability of an event is the way someone expresses their degree of belief that the event will occur, given their own thoughts and the evidence they have seen. Their belief is measured on a scale from 0 to 1, from probabilities near 0 meaning they believe the event is very unlikely to occur to probabilities near 1 meaning they believe the event is very likely to occur.
+<ul>
+<li>This interpretation is philosophically sound, but a bit vague to be the basis for a mathematics module.</li>
+</ul></li>
+<li><strong>Classical</strong> (or <strong>enumerative</strong>) <strong>probability:</strong> Suppose there are a finite number of equally likely outcomes. Then the probability of an event is the proportion of those outcomes that correspond to the event occurring. So when we say that a randomly dealt card has a probability <span class="math inline">\(\frac{1}{13}\)</span> of being an ace, this is because there are 52 cards of which 4 are aces, so the proportion of favourable outcomes is <span class="math inline">\(\frac{4}{52} = \frac{1}{13}\)</span>.
+<ul>
+<li>This interpretation is good for simple procedures like flipping a fair coin, rolling a dice, or dealing cards, where the “finite number of equally likely outcomes” assumption holds. But we want to be able to study more complicated situations, where some outcomes are more likely than others, or where infinitely many different outcomes are possible.</li>
+</ul></li>
+<li><strong>Frequentist probability:</strong> In a repeated experiment, the probability of an event is its long-run frequency. That is, if we repeat an experiment a very large number of times, the probability of the event is (approximately) the proportion of the experiments in which the event occurs. So when we say a biased coin has probability 0.9 of landing heads, we mean that were we toss it 1000 times, we would expect to see very close to <span class="math inline">\(0.9 \times 1000 = 900\)</span> heads.
+<ul>
+<li>This …</li>
+</ul></li>
+<li><strong>Mathematical probability:</strong> We have a function that assigns to each event a number between 0 and 1, called its probability, and that function has to obey certain mathematical rules, called “axioms”.</li>
+</ul>
+<p>It will not surprise you to learn that, in this mathematics course, we will take the “mathematical probability” approach. However, we will also learn useful things about the other approaches: we will see that classical probability is one special case of mathematical probability; we will see a result called the “law of large numbers” that says that the long-run frequency does indeed get closer and closer to the mathematical probability; and a result called “Bayes’ theorem” will advise a subjectivist on how to update her subjective beliefs when she sees new evidence.</p>
+</div>
+<div id="sample-events" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Sample space and events</h2>
+<p>Taking the “mathematical probability” approach, we will want to give a formal mathematical definition of the <em>probability</em> of an event. But even before that, we need to give a formal mathematical definition of an <em>event</em> itself. Our setup will be this:</p>
+<ul>
+<li>There is a set called the <strong>sample space</strong>, normally given the letter <span class="math inline">\(\Omega\)</span> (upper-case Omega), which is the set of all possible outcomes.</li>
+<li>An element of the sample space <span class="math inline">\(\Omega\)</span> is a <strong>sample outcome</strong>, sometimes given the letter <span class="math inline">\(\omega\)</span> (lower-case omega), represents one of the possible outcomes.</li>
+<li>An <strong>event</strong> is a set of sample outcomes; that is, a subset of the sample space <span class="math inline">\(\Omega\)</span>. Events are often given letters like <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span>.</li>
+</ul>
+<p>This will be easier to understand with some concrete examples.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 2.1  </strong></span>Suppose we toss a coin, and record whether it lands heads or tails. Then our sample space is <span class="math inline">\(\Omega = \{\mathrm H, \mathrm T\}\)</span>, where the sample outcome H denotes heads and the sample outcome T denotes tails. The event that the coin lands heads is <span class="math inline">\(\{\mathrm H\}\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 2.2  </strong></span>Suppose we roll a dice, and record the number rolled. Then our sample space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>, where the sample outcome 1 corresponds to rolling a one, and so on. The event “we roll an even number” is <span class="math inline">\(\{2,4,6\}\)</span>; the event “we roll at least a five” is <span class="math inline">\(\{5,6\}\)</span>.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 2.3  </strong></span>integers</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 2.4  </strong></span>Suppose we want a computer to pick a random number between 0 and 1. We could take the sample space <span class="math inline">\(\Omega\)</span> to be the interval <span class="math inline">\([0, 1]\)</span> of all real numbers between 0 and 1. The event “the number is bigger than <span class="math inline">\(\frac12\)</span>” is the sub-interval <span class="math inline">\((\frac12, 1]\)</span> of all real numbers greater than <span class="math inline">\(\frac12\)</span> but no bigger than 1; the event “the first digit is a 7” is the sub-interval <span class="math inline">\([0.7, 0.8)\)</span>; the event “the random number is exactly <span class="math inline">\(1/\sqrt{2}\)</span>” is <span class="math inline">\(\{1/\sqrt{2}\}\)</span>.</p>
+</div>
+<p>In the first two examples, the sample space <span class="math inline">\(\Omega\)</span> was finite. In third example, the sample space was infinite but “countably infinite”, in that it could be counted using the discrete values of the positive integers; in the fourth example, the sample space was infinite but “uncountably infinite”, in that it had a sliding scale or “continuum” of gradually varying measurements.</p>
+<p>For any sample space <span class="math inline">\(\Omega\)</span>, there are two special events that always exist. There’s <span class="math inline">\(\Omega\)</span> itself, the event containing all of the sample outcomes, which represents “something happens”. There’s also the empty set <span class="math inline">\(\varnothing\)</span>, which contains none of the sample outcomes, which represents “nothing happens”. Common sense suggests that <span class="math inline">\(\Omega\)</span> should have probability 1, because <em>something</em> is bound to happen – this will later be one of our probability “axioms”. Common sense also suggests that <span class="math inline">\(\varnothing\)</span> should have probability 0, because it can’t be that <em>nothing</em> happens – this will not be one probability axioms, but we’ll show that it follows logically from the axioms we do choose.</p>
+</div>
+<div id="set-theory" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Basic set theory</h2>
+<p>Since we’ve now defined events as being sets – specifically, subsets of the sample space <span class="math inline">\(\Omega\)</span> – it will be useful to mention a little set theory here.</p>
+<p><em>set theory notation</em></p>
+<p>First, there are ways we can build new sets (or events) out of old.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-8" class="definition"><strong>Definition 2.1  </strong></span>Consider a sample space <span class="math inline">\(\Omega\)</span>, and let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events in that sample space.</p>
+<div style="display: flex;">
+<div>
+<ul>
+<li><strong>NOT:</strong> The <strong>complement</strong> of <span class="math inline">\(A\)</span>, written <span class="math inline">\(A^\mathsf{c}\)</span> (and said “<span class="math inline">\(A\)</span> complement” or “not <span class="math inline">\(A\)</span>”), is the set of sample points not in <span class="math inline">\(A\)</span>; that is
+<span class="math display">\[ A^\mathsf{c}= \{\omega \in \Omega : \omega \not\in A \} . \]</span>
+This represents the event that <span class="math inline">\(A\)</span> does not occur.</li>
+</ul>
+</div>
+<div>
+<p><img src="math1710_files/figure-html/venn-not-1.png" width="460pt" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div style="display: flex;">
+<div>
+<ul>
+<li><strong>AND:</strong> The <strong>intersection</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, written <span class="math inline">\(A \cap B\)</span> (and said “<span class="math inline">\(A\)</span> intersect <span class="math inline">\(B\)</span>” or “<span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>”) is the set of sample points in both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>; that is,
+<span class="math display">\[ A \cap B = \{\omega \in \Omega : \omega \in A \text{ and } \omega \in B \} . \]</span>
+This represents the event that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur.</li>
+</ul>
+</div>
+<div>
+<p><img src="math1710_files/figure-html/venn-and-1.png" width="545pt" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+<div style="display: flex;">
+<div>
+<ul>
+<li><strong>OR:</strong> The <strong>union</strong> of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>, written <span class="math inline">\(A \cup B\)</span> (and said “<span class="math inline">\(A\)</span> union <span class="math inline">\(B\)</span>” or “<span class="math inline">\(A\)</span> or <span class="math inline">\(B\)</span>”) is the set of sample points in <span class="math inline">\(A\)</span> or in <span class="math inline">\(B\)</span>; that is,
+<span class="math display">\[ A \cup B = \{\omega \in \Omega : \omega \in A \text{ or } \omega \in B \} . \]</span>
+This represents the event that <span class="math inline">\(A\)</span> occurs or <span class="math inline">\(B\)</span> occurs. (In mathematics, “or” includes “both”, so a sample outcome in both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> is in <span class="math inline">\(A\cup B\)</span> too.)</li>
+</ul>
+</div>
+<div>
+<p><img src="math1710_files/figure-html/venn-or-1.png" width="538pt" style="display: block; margin: auto;" /></p>
+</div>
+</div>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-9" class="example"><strong>Example 2.5  </strong></span>Suppose we are rolling a dice, so our sample space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>. Let <span class="math inline">\(A = \{2,4,6\}\)</span> be the event that we roll and even number, and let <span class="math inline">\(B = \{5,6\}\)</span> be the event that we roll at least a 5. Then
+<span class="math display">\[\begin{align*}
+A^\mathsf{c}&amp;= \{1,3,5\} = \{\text{roll an odd number}\} ,\\
+A \cap B &amp;= \{6\} = \{\text{roll a 6}\} ,\\
+A \cup B &amp;= \{2,4,5,6\} .
+\end{align*}\]</span></p>
+</div>
+<p>An important case is when two events <span class="math inline">\(A, B\)</span> cannot happen at the same time; that is, <span class="math inline">\(A \cap B = \varnothing\)</span> (“<span class="math inline">\(A\)</span> intersect <span class="math inline">\(B\)</span> is the empty set”). In this case, we say that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are <strong>disjoint</strong> or <strong>mutually exclusive</strong>. For example, when <span class="math inline">\(\Omega\)</span> is a deck of cards, then <span class="math inline">\(A = \{\text{the card is a spade}\}\)</span> and <span class="math inline">\(B = \{\text{the card is red}\}\)</span> are disjoint, because a card cannot be both a spade (a black suit) and red.</p>
+<p>De Morgan, etc.</p>
+</div>
+<div id="axioms" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Probability axioms</h2>
+<p>Recall that, in this mathematics course, a probability will be a real number that satisfies certain properties, which we call axioms.</p>
+<div class="definition">
+<p><span id="def:def-axioms" class="definition"><strong>Definition 2.2  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a sample space. A <strong>probability measure</strong> on <span class="math inline">\(\Omega\)</span> is a function <span class="math inline">\(\mathbb P\)</span> that assigns to each event <span class="math inline">\(A \subset \Omega\)</span> a real number <span class="math inline">\(\mathbb P(A)\)</span>, called the <strong>probability</strong> of <span class="math inline">\(A\)</span>, and that satisfies the following three axioms:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb P(A) \geq 1\)</span> for all events <span class="math inline">\(A \subset \Omega\)</span>;</li>
+<li><span class="math inline">\(\mathbb P(\Omega) = 1\)</span>;</li>
+<li>if <span class="math inline">\(A_1, A_2, \dots\)</span> is a finite or countably inifinite sequence of disjoint events, then
+<span class="math display">\[ \mathbb P(A_1 \cup A_2 \cup \cdots) = \mathbb P(A_1) + \mathbb P(A_2) + \cdots . \]</span></li>
+</ol>
+<p>The sample space <span class="math inline">\(\Omega\)</span> together with the probability measure <span class="math inline">\(\mathbb P\)</span> are called a <strong>probability space</strong>.</p>
+</div>
+<p>HISTORICAL NOTE.</p>
+<p>EXPLAIN AXIOMS.</p>
+<p>There are other properties that it seems natural that a probability measure should have – for example, that <span class="math inline">\(\mathbb P(A) \leq 1\)</span> for all events <span class="math inline">\(A\)</span>. But we will show shortly that other properties can be proven just by starting from the three axioms.</p>
+<p>But first, let’s see some examples.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 2.6  </strong></span>Suppose we wish to model tossing an biased coin the is heads with probability <span class="math inline">\(p\)</span>, where <span class="math inline">\(0 \leq p \leq 1\)</span>.</p>
+<p>Our probability space is <span class="math inline">\(\Omega = \{\text{H}, \text{T}\}\)</span>. The probability measure is given by
+<span class="math display">\[\begin{align*}
+   \mathbb P(\varnothing) &amp;= 0  &amp;  \mathbb P(\{\text{H}\}) &amp;= p \\
+   \mathbb P(\{\text{T}\}) &amp;= 1 - p  &amp;  \mathbb P(\{\text{H},\text{T}\})  &amp;= 1 .
+\end{align*}\]</span></p>
+<p>Let’s check that the axioms hold:</p>
+<ol style="list-style-type: decimal">
+<li>Since <span class="math inline">\(0 \leq p \leq 1\)</span>, all the probabilites are greater than or equal to 0.</li>
+<li>It is indeed the case that <span class="math inline">\(\mathbb P(\Omega) = \mathbb P(\{\text{H},\text{T}\}) = 1\)</span>.</li>
+<li>The only nontrivial disjoint union to check is <span class="math inline">\(\{\text{H}\} \cup \{\text{T}\} = \{\text{H},\text{T}\}\)</span>. But
+<span class="math display">\[ \mathbb P(\{\text{H}\}) + \mathbb P(\{\text{T}\}) = p + (1 - p) = 1 = \mathbb P(\{\text{H},\text{T}\}) , \]</span>
+as required.</li>
+</ol>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-11" class="example"><strong>Example 2.7  </strong></span>Suppose we wish to model rolling a dice.</p>
+<p>Our sample space is <span class="math inline">\(\{1,2,3,4,5,6\}\)</span>. The probability measure is given by
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{6} , \]</span>
+where <span class="math inline">\(|A|\)</span> is the number of sample outcomes in <span class="math inline">\(A\)</span>.</p>
+<p>So, for example, the probability of rolling an even number is
+<span class="math display">\[ \mathbb P(\{2,4,6\}) = \frac36 = \frac12 . \]</span></p>
+</div>
+<p>The dice rolling is a particular case of the “classical probability” of equally likely outcomes. We’ll look at this more in the next section, next week, and prove that the classical probability measure does indeed satisfy the axioms</p>
+</div>
+<div id="prob-properties" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Properties of probability</h2>
+<p>The axioms of Definition @ref{def:axioms} only gave us some of the properties that we would like a probability measure to have. Out task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we’re not allowed to make claims that “seem likely to be true” or “are common sense” – we can only use the three axioms and nothing else.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 2.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a sample space with a probability measure <span class="math inline">\(\mathbb P\)</span>. Then we have the following:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb P(\varnothing) = 0\)</span>.</li>
+<li><span class="math inline">\(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\)</span> for all events <span class="math inline">\(A \subset \Omega\)</span>.</li>
+<li>For events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(B \subset A\)</span>, we have <span class="math inline">\(\mathbb P(B) \leq \mathbb P(A)\)</span>.</li>
+</ol>
+</div>
+<p>EXPLAIN?</p>
+<div class="proof">
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Statements 1 and 2 are exercise for you on <a href="P2.html#P2">Problem Sheet 2</a>. We’ll do the third statement.</p>
+<p>The key with most of these “prove from the axioms” problems is to think of a way to write the relevant events as part of a <em>disjoint</em> union, then use Axiom 3. Here, since <span class="math inline">\(B\)</span> is a subset of <span class="math inline">\(A\)</span>, it would be useful to write <span class="math inline">\(A\)</span> as a disjoint union of <span class="math inline">\(B\)</span> and "the bit of <span class="math inline">\(A\)</span> that isn’t in <span class="math inline">\(B\)</span>. That is, we have the disjoint union
+<span class="math display">\[ B \cup (A \cap B^\mathsf{c}) = A .\]</span>
+Applying Axiom 3 to this disjoint union gives
+<span class="math display">\[ \mathbb P(B) + \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) . \]</span></p>
+<p>We’re happy to see the first term on the left-hand side and the term on the right-hand side. But what about the awkward <span class="math inline">\(\mathbb P(A \cap B^\mathsf{c})\)</span>? Well, by Axiom 1, we know that <span class="math inline">\(\mathbb P(A \cap B^\mathsf{c}) \geq 0\)</span>, and hence
+<span class="math display">\[ \mathbb P(B) + 0 \leq \mathbb P(A) , \]</span>
+and we are done.</p>
+</div>
+</div>
+<div id="addition" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Addition rules for unions</h2>
+<p>If we have two or more events, we’d like to work out the probability of their union; that is, the probability that at least one of them occurs.</p>
+<p>We already have an addition rule for <em>disjoint</em> unions.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-14" class="theorem"><strong>Theorem 2.2  </strong></span>Let <span class="math inline">\(A, B \subset \Omega\)</span> be two disjoint events. Then
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) . \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-15" class="proof"><em>Proof</em>. </span>In Axiom 3, take the finite sequence <span class="math inline">\(A_1 = A\)</span>, <span class="math inline">\(A_2 = B\)</span>.</p>
+</div>
+<p>But what about if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are not disjoint? Then we have the following.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-16" class="theorem"><strong>Theorem 2.3  </strong></span>Let <span class="math inline">\(A, B \subset \Omega\)</span> be two events. Then
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span></p>
+</div>
+<p>You may have seen this result before. You’ve perhaps justified it by saying something like this: “We can add the two probabilities together, except now we’ve double-counted the overlap, so we have to take the probability of that away.” That’s OK as a way to remember the result – but this is a proper university mathematics course, so we want to prove it formally starting from just the axioms.</p>
+<p>As always, the key is to find a way of writing <span class="math inline">\(A \cup B\)</span> as a <em>disjoint</em> union. Well, if we want <span class="math inline">\(A \cup B = A \cup \{\text{something}\}\)</span> to be a disjoint union, then the “something” will have to be the bit of <span class="math inline">\(B\)</span> that’s not also in <span class="math inline">\(A\)</span>, which is <span class="math inline">\(B \cap A^\mathsf{c}\)</span>.</p>
+<p>PICTURE</p>
+<div class="proof">
+<p><span id="unlabeled-div-17" class="proof"><em>Proof</em>. </span>First note that we have
+<span class="math display">\[ A \cup B = A \cup (B \cap A^\mathsf{c}) , \]</span>
+where the union on the right is of the disjoint events <span class="math inline">\(A\)</span> an <span class="math inline">\(B \cap A^\mathsf{c}\)</span>. Therefore we can use Axiom 3 to get
+<span class="math display" id="eq:union1">\[\begin{equation}
+\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B \cap A^\mathsf{c}) .    \tag{2.1}
+\end{equation}\]</span></p>
+<p>The left-hand side looks good, and the first term on the right-hand side looks good. To deal with the second term on the right-hand side, we need to write it down as part of a disjoint union again. Can we find another one? Yes! We have
+<span class="math display">\[ (B \cap A^\mathsf{c}) \cup (B \cap A) = B .\]</span>
+Since this union is disjoint, we can use Axiom 3 again, to get
+<span class="math display">\[ \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(B \cap A) = \mathbb P(B) . \]</span>
+Rearranging this gives
+<span class="math display" id="eq:union2">\[\begin{equation}
+\mathbb P(B \cap A^\mathsf{c}) = \mathbb P(B) - \mathbb P(B \cap A).  \tag{2.2}
+\end{equation}\]</span></p>
+<p>PICTURE</p>
+<p>Finally, substituting <a href="S02-probability.html#eq:union2">(2.2)</a> into <a href="S02-probability.html#eq:union1">(2.1)</a> gives
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]</span>
+as required.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-18" class="example"><strong>Example 2.8  </strong></span><em>Consider picking a card from a deck at random, with <span class="math inline">\(\mathbb P(A) = |A|/52\)</span>. What’s the probability the card is a spade or an ace?</em></p>
+<p>It is possible to just work this out directly. But let’s use our addition law for unions.</p>
+<p>We have <span class="math inline">\(\mathbb P(\text{spade}) = \frac{13}{52} = \frac{1}{4}\)</span> and <span class="math inline">\(\mathbb P(\text{Ace}) = \frac{4}{52} = \frac{1}{13}\)</span>. So we have
+<span class="math display">\[ \mathbb P(\text{spade or Ace}) = \tfrac14 + \tfrac{1}{13} - \mathbb P(\text{spade and Ace}) . \]</span>
+But <span class="math inline">\(\mathbb P(\text{spade and Ace})\)</span> is the probability of picking the Ace of spades, which is <span class="math inline">\(\frac{1}{52}\)</span>. Therefore
+<span class="math display">\[ \mathbb P(\text{spade or Ace}) = \tfrac14 + \tfrac{1}{13} - \tfrac{1}{52} = \tfrac{16}{52} = \tfrac{4}{13} . \]</span></p>
+</div>
+<p>Similar addition rules can be proven in the same way for unions of more events. For three events, we have
+<span class="math display">\[
+  \mathbb P(A \cup B \cup C) = \mathbb P(A) + \mathbb P(B) + \mathbb P(C) 
+  - \mathbb P(A \cap B) - \mathbb P(A \cap C) - \mathbb P(B \cap C) + \mathbb P(A \cap B \cap C) .
+\]</span>
+Note that we add the probabilities of individual events, then subtract the probabilities of pairs, then add the probability of the triple.</p>
+<p>The <strong>inclusion–exclusion principle</strong> is the general rule:
+<span class="math display">\[\begin{multline*} \mathbb P(A_1 \cup A_2 \cup \cdots \cup A_n)
+  = \sum_i \mathbb P(A_i)
+    - \sum_{i \neq j} \mathbb P(A_i \cap A_j) \\
+    + \sum_{i \neq j \neq k} \mathbb P(A_i \cap A_j \cap A_k)
+    - \cdots
+    + (-1)^{n-1} \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) , \end{multline*}\]</span>
+where we continue by subtracting the probabilities of quadruples, adding the probabilities of five events, etc.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="P1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="S03-classical.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf", "math1710.epub"],
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

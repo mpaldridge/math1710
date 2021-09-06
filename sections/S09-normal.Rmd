@@ -1,0 +1,14 @@
+# Normal distribution  {#S09-normal}
+
+## Definition and properties of the normal distribution  #{normal-definition}
+
+## Calculations using R  {#normal-r}
+
+## Calculations using statistical tables  {#normal-tables}
+
+## Central limit theorem  {#clt}
+
+## Approximations with the normal distribution  {#normal-approx}
+
+
+

@@ -1,0 +1,12 @@
+# Discrete distributions  {#S06-discrete-dist}
+
+## Binomial distributions  {#binomial}
+
+## Geometric distribution  {#geometric}
+
+## Poisson distribution  {#poisson}
+
+## Poisson approximation to the binomial  {#poisson-approx}
+
+## Distributions as models for data  {#models}
+

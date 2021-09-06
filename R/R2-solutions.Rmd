@@ -1,0 +1,131 @@
+---
+title:  "R Worksheet 2: Vectors (Solutions)"
+author: "R Training Material"
+date:   "School of Mathematics, University of Leeds"
+output: html_document
+---
+
+> **Exercise 3.1.** A student collects data for one week on the number of sandwiches sold by the Dolche Vita cafe. On Monday 27 sandwiches were sold, on Tuesday 29 sandwiches were sold, on Wednesday 30 sandwiches were sold, on Thursday 29 sandwiches were sold, and on Friday 18 sandwiches were sold. Enter this data into R as a vector, and call it `sandwiches`. View your vector, and check you have entered the data in correctly.
+
+*Solution.* We can enter this as a vector using the `c()` function.
+
+```{r}
+sandwiches <- c(27, 29, 30, 29, 18)
+sandwiches
+```
+
+> **Exercise 3.2.** As efficiently as you can, enter the following vectors into R:\
+> **(a)** $(10, 11, 12, \dots, 29, 30)$,\
+> **(b)** $(100, 99, 98, \dots, 87, 86)$.\
+> **(c)** By using `:` together with the combine function `c()`, enter $(1, 2, 3, 4, 5, 24, 25, 26, 27, 28)$.
+
+*Solutions.*
+
+**(a)** These are the numbers from 10 to 30, which with the `:` notation is
+
+```{r}
+10:30
+```
+
+**(b)** A bit of experimentation reveals that the `:` notation works "backwards" too. So we can go backwards from 100 to 86 with
+
+```{r}
+100:86
+```
+
+**(c)** We can get 1 to 5 with the `:` notation, and 24 to 28, then stick them together with the `c()` function.
+
+```{r}
+c(1:5, 24:28)
+```
+
+> **Exercise 3.3.** The student from Example 3.1 discovers an extra sandwich that was sold on Monday. Increase the first entry of the `sandwiches` by 1. (Try to do it without looking at what the first entry was previously.)
+
+*Solution.* The first entry is `sandwiches[1]`. We can replace this with a number one greater than it used to be with
+
+```{r}
+sandwiches[1] <- sandwiches[1] + 1
+sandwiches
+```
+
+
+> **Exercise 3.4.** The number of baguettes sold in the cafe each day was $(8, 9, 8, 7, 5)$. The student decides to count these as sandwiches, so wants to add these numbers to the `sandwiches` data from Exercise 3.3. Add these new values to the previous data.
+
+*Solution.* The baguette data is
+
+```{r}
+baguettes <- c(8, 9, 8, 7, 5)
+```
+
+We can update `sandwiches` to include this with
+
+```{r}
+sandwiches <- sandwiches + baguettes
+sandwiches
+```
+
+> **Exercise 3.5.** Predict what each of the following five commands will produce. Then run the code in R to see if you were right. If you were wrong, explain what R has done.
+
+```{r, eval = FALSE}
+c(1, 3, 5) + c(2, 2, 3)
+1:5 * c(0, 0, 1, 1, 2)
+c(2, 2, 3, 3)^c(1, 2, 2, 1)
+1:8 / 1:4
+1:7 + c(1, 2)
+```
+
+*Solutions.*
+
+For the first, the vectors are the same length, and will add entrywise. So the first entry will $1 + 2 = 3$, the second will be $3 + 2 = 5$ and the third will be $5 + 3 = 8$.
+
+```{r}
+c(1, 3, 5) + c(2, 2, 3)
+```
+
+For the second, `1:5` is the numbers from 1 to 5. So both vectors are the same length, and will multiply entrywise. The first entry will be $1 \times 0 = 0$, and so on.
+
+```{r}
+1:5 * c(0, 0, 1, 1, 2)
+```
+
+For the third, the exponentiation will happen componentwise again. So the first entry is $2^1 = 2$, the second is $2^2 = 4$, and so on.
+
+```{r}
+c(2, 2, 3, 3)^c(1, 2, 2, 1)
+```
+
+For the fourth, the second vector will recycle once, so that it doubles in length from 4 to 8, matching the length of the first vector exactly. So we will see
+
+\[ \left( \frac{1}{1}, \frac{2}{2}, \frac{3}{3}, \frac{4}{4},
+     \frac{5}{1}, \frac{6}{2}, \frac{7}{3}, \frac{8}{4} \right)
+     = (1, 1, 1, 1, 5, 3, 2.\overline{3}, 2 ) . \]
+
+```{r}
+1:8 / 1:4
+```
+
+For the fifth, the second vector will recycle "two and a half" times, to match the length 7. So the answer will be
+\[ (1 + 1, 2 + 2, 3 + 1, 4 + 2, 5 + 1, 6 + 2, 7 + 1)
+     = (2, 4, 4, 6, 6, 8, 8) . \]
+However, because the second vector didn't recycle a whole number of times, we also expect R to give a warning too.
+
+```{r}
+1:7 + c(1, 2)
+```
+
+> **Exercise 3.6.** Using your `sandwiches` data from Exercise 3.4, find the mean and median number of sandwiches sold in a day.
+
+*Solution.* Using the `mean()` and `median()` functions, we have
+
+```{r}
+mean(sandwiches)
+median(sandwiches)
+```
+
+> **Exercise 3.7.** Get R to output the square roots of the integers from 1 to 20, all rounded to 2 decimal places.
+
+*Solution.* We can conveniently get the numbers from 1 to 20 with `1:20`. When then want to apply the `sqrt()` function and the `round()` function.
+
+```{r}
+round(sqrt(1:20), digits = 2)
+```
