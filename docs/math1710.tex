@@ -132,6 +132,8 @@
 \newtheorem{example}{Example}[chapter]
 \theoremstyle{definition}
 \newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{definition}
+\newtheorem{hypothesis}{Hypothesis}[chapter]
 \theoremstyle{remark}
 \newtheorem*{remark}{Remark}
 \newtheorem*{solution}{Solution}
@@ -503,7 +505,6 @@ We'll look here at two types of summary statistic:
 Some measures of centrality are the following.
 
 \begin{definition}
-\protect\hypertarget{def:unlabeled-div-1}{}\label{def:unlabeled-div-1}
 
 Consider some real-valued data \(\mathbf x = (x_1, x_2, \dots, x_n)\).
 
@@ -523,10 +524,7 @@ Consider some real-valued data \(\mathbf x = (x_1, x_2, \dots, x_n)\).
 (In that last expression, we've made use of \href{https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf}{Sigma notation} to write down the sum.)
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-2}{}\label{exm:unlabeled-div-2}
-
 EXAMPLE
-
 \end{example}
 
 The median is one example of a ``quantile'' of the data. Suppose our data is increasing order again. For \(0 \leq \alpha \leq 1\), the \textbf{\(\alpha\)-quantile} \(q(\alpha)\) of the data is the data \(\alpha\) of the way along the list. So the median is the \(\frac12\)-quantile \(q(\frac12)\), the minimum is the \(0\)-quantile \(q(0)\), and the maximum. Generally, \(q(\alpha)\) is equal to \(x_{1+\alpha(n-1)}\) when \(1+\alpha(n-1)\) is an integer. (If \(1+\alpha(n-1)\) isn't an integer, there are various conventions of how to choose that we won't go into here. R has \emph{seven} different settings for choosing quantiles! -- we will always just use R's default choice.)
@@ -536,8 +534,6 @@ Two other common terms: \(q(\frac34)\) is called the \textbf{upper quartile} (no
 Some measures of spread are:
 
 \begin{definition}
-\protect\hypertarget{def:unlabeled-div-3}{}\label{def:unlabeled-div-3}
-
 The \textbf{number of distinct observations} is precisely that: the number of datapoints you have after removing any repeats.
 
 The \textbf{interquartile range} is the difference between the upper and lower quartiles \(\text{IQR} = q(\frac34) - q(\frac14)\).
@@ -545,7 +541,6 @@ The \textbf{interquartile range} is the difference between the upper and lower q
 The \textbf{sample variance} is
 \[  s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]
 where \(\bar x\) is the sample mean from before. The \textbf{standard deviation} is the square-root of the sample variance.
-
 \end{definition}
 
 The formula we've given for sample variance is sometimes called the ``definitional formula'', as it's the formula used to \emph{define} the sample variance. We can rearrange that formula as follows:
@@ -656,6 +651,8 @@ Often we draw histograms because the data was collected in bins. But even when w
 \chapter*{Problem Sheet 1}\label{P1}}
 \addcontentsline{toc}{chapter}{Problem Sheet 1}
 
+This is the first problem sheet.
+
 \hypertarget{S02-probability}{%
 \chapter{Probability spaces}\label{S02-probability}}
 
@@ -721,31 +718,19 @@ Taking the ``mathematical probability'' approach, we will want to give a formal 
 This will be easier to understand with some concrete examples.
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-4}{}\label{exm:unlabeled-div-4}
-
 Suppose we toss a coin, and record whether it lands heads or tails. Then our sample space is \(\Omega = \{\mathrm H, \mathrm T\}\), where the sample outcome H denotes heads and the sample outcome T denotes tails. The event that the coin lands heads is \(\{\mathrm H\}\).
-
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-5}{}\label{exm:unlabeled-div-5}
-
 Suppose we roll a dice, and record the number rolled. Then our sample space is \(\Omega = \{1,2,3,4,5,6\}\), where the sample outcome 1 corresponds to rolling a one, and so on. The event ``we roll an even number'' is \(\{2,4,6\}\); the event ``we roll at least a five'' is \(\{5,6\}\).
-
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-6}{}\label{exm:unlabeled-div-6}
-
 integers
-
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-7}{}\label{exm:unlabeled-div-7}
-
 Suppose we want a computer to pick a random number between 0 and 1. We could take the sample space \(\Omega\) to be the interval \([0, 1]\) of all real numbers between 0 and 1. The event ``the number is bigger than \(\frac12\)'' is the sub-interval \((\frac12, 1]\) of all real numbers greater than \(\frac12\) but no bigger than 1; the event ``the first digit is a 7'' is the sub-interval \([0.7, 0.8)\); the event ``the random number is exactly \(1/\sqrt{2}\)'' is \(\{1/\sqrt{2}\}\).
-
 \end{example}
 
 In the first two examples, the sample space \(\Omega\) was finite. In third example, the sample space was infinite but ``countably infinite'', in that it could be counted using the discrete values of the positive integers; in the fourth example, the sample space was infinite but ``uncountably infinite'', in that it had a sliding scale or ``continuum'' of gradually varying measurements.
@@ -762,7 +747,6 @@ Since we've now defined events as being sets -- specifically, subsets of the sam
 First, there are ways we can build new sets (or events) out of old.
 
 \begin{definition}
-\protect\hypertarget{def:unlabeled-div-8}{}\label{def:unlabeled-div-8}
 
 Consider a sample space \(\Omega\), and let \(A\) and \(B\) be events in that sample space.
 
@@ -799,15 +783,12 @@ Consider a sample space \(\Omega\), and let \(A\) and \(B\) be events in that sa
 \end{definition}
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-9}{}\label{exm:unlabeled-div-9}
-
 Suppose we are rolling a dice, so our sample space is \(\Omega = \{1,2,3,4,5,6\}\). Let \(A = \{2,4,6\}\) be the event that we roll and even number, and let \(B = \{5,6\}\) be the event that we roll at least a 5. Then
 \begin{align*}
 A^\mathsf{c}&= \{1,3,5\} = \{\text{roll an odd number}\} ,\\
 A \cap B &= \{6\} = \{\text{roll a 6}\} ,\\
 A \cup B &= \{2,4,5,6\} .
 \end{align*}
-
 \end{example}
 
 An important case is when two events \(A, B\) cannot happen at the same time; that is, \(A \cap B = \varnothing\) (``\(A\) intersect \(B\) is the empty set''). In this case, we say that \(A\) and \(B\) are \textbf{disjoint} or \textbf{mutually exclusive}. For example, when \(\Omega\) is a deck of cards, then \(A = \{\text{the card is a spade}\}\) and \(B = \{\text{the card is red}\}\) are disjoint, because a card cannot be both a spade (a black suit) and red.
@@ -820,9 +801,7 @@ De Morgan, etc.
 Recall that, in this mathematics course, a probability will be a real number that satisfies certain properties, which we call axioms.
 
 \begin{definition}
-\protect\hypertarget{def:axioms}{}\label{def:axioms}
-
-Let \(\Omega\) be a sample space. A \textbf{probability measure} on \(\Omega\) is a function \(\mathbb P\) that assigns to each event \(A \subset \Omega\) a real number \(\mathbb P(A)\), called the \textbf{probability} of \(A\), and that satisfies the following three axioms:
+\protect\hypertarget{def:axioms}{}\label{def:axioms}Let \(\Omega\) be a sample space. A \textbf{probability measure} on \(\Omega\) is a function \(\mathbb P\) that assigns to each event \(A \subset \Omega\) a real number \(\mathbb P(A)\), called the \textbf{probability} of \(A\), and that satisfies the following three axioms:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
@@ -837,7 +816,6 @@ Let \(\Omega\) be a sample space. A \textbf{probability measure} on \(\Omega\) i
 \end{enumerate}
 
 The sample space \(\Omega\) together with the probability measure \(\mathbb P\) are called a \textbf{probability space}.
-
 \end{definition}
 
 HISTORICAL NOTE.
@@ -849,7 +827,6 @@ There are other properties that it seems natural that a probability measure shou
 But first, let's see some examples.
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-10}{}\label{exm:unlabeled-div-10}
 
 Suppose we wish to model tossing an biased coin the is heads with probability \(p\), where \(0 \leq p \leq 1\).
 
@@ -877,8 +854,6 @@ Let's check that the axioms hold:
 \end{example}
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-11}{}\label{exm:unlabeled-div-11}
-
 Suppose we wish to model rolling a dice.
 
 Our sample space is \(\{1,2,3,4,5,6\}\). The probability measure is given by
@@ -887,7 +862,6 @@ where \(|A|\) is the number of sample outcomes in \(A\).
 
 So, for example, the probability of rolling an even number is
 \[ \mathbb P(\{2,4,6\}) = \frac36 = \frac12 . \]
-
 \end{example}
 
 The dice rolling is a particular case of the ``classical probability'' of equally likely outcomes. We'll look at this more in the next section, next week, and prove that the classical probability measure does indeed satisfy the axioms
@@ -898,7 +872,6 @@ The dice rolling is a particular case of the ``classical probability'' of equall
 The axioms of Definition \ref{def:axioms} only gave us some of the properties that we would like a probability measure to have. Our task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we're not allowed to make claims that ``seem likely to be true'' or ``are common sense'' -- we can only use the three axioms and nothing else.
 
 \begin{theorem}
-\protect\hypertarget{thm:unlabeled-div-12}{}\label{thm:unlabeled-div-12}
 
 Let \(\Omega\) be a sample space with a probability measure \(\mathbb P\). Then we have the following:
 
@@ -918,7 +891,6 @@ Let \(\Omega\) be a sample space with a probability measure \(\mathbb P\). Then 
 EXPLAIN?
 
 \begin{proof}
-
 Statements 1 and 2 are exercise for you on \protect\hyperlink{P2}{Problem Sheet 2}. We'll do the third statement.
 
 The key with most of these ``prove from the axioms'' problems is to think of a way to write the relevant events as part of a \emph{disjoint} union, then use Axiom 3. Here, since \(B\) is a subset of \(A\), it would be useful to write \(A\) as a disjoint union of \(B\) and "the bit of \(A\) that isn't in \(B\). That is, we have the disjoint union
@@ -929,7 +901,6 @@ Applying Axiom 3 to this disjoint union gives
 We're happy to see the first term on the left-hand side and the term on the right-hand side. But what about the awkward \(\mathbb P(A \cap B^\mathsf{c})\)? Well, by Axiom 1, we know that \(\mathbb P(A \cap B^\mathsf{c}) \geq 0\), and hence
 \[ \mathbb P(B) + 0 \leq \mathbb P(A) , \]
 and we are done.
-
 \end{proof}
 
 \hypertarget{addition}{%
@@ -940,27 +911,19 @@ If we have two or more events, we'd like to work out the probability of their un
 We already have an addition rule for \emph{disjoint} unions.
 
 \begin{theorem}
-\protect\hypertarget{thm:unlabeled-div-14}{}\label{thm:unlabeled-div-14}
-
 Let \(A, B \subset \Omega\) be two disjoint events. Then
 \[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) . \]
-
 \end{theorem}
 
 \begin{proof}
-
 In Axiom 3, take the finite sequence \(A_1 = A\), \(A_2 = B\).
-
 \end{proof}
 
 But what about if \(A\) and \(B\) are not disjoint? Then we have the following.
 
 \begin{theorem}
-\protect\hypertarget{thm:unlabeled-div-16}{}\label{thm:unlabeled-div-16}
-
 Let \(A, B \subset \Omega\) be two events. Then
 \[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
-
 \end{theorem}
 
 You may have seen this result before. You've perhaps justified it by saying something like this: ``We can add the two probabilities together, except now we've double-counted the overlap, so we have to take the probability of that away.'' That's OK as a way to remember the result -- but this is a proper university mathematics course, so we want to prove it formally starting from just the axioms.
@@ -970,7 +933,6 @@ As always, the key is to find a way of writing \(A \cup B\) as a \emph{disjoint}
 PICTURE
 
 \begin{proof}
-
 First note that we have
 \[ A \cup B = A \cup (B \cap A^\mathsf{c}) , \]
 where the union on the right is of the disjoint events \(A\) and \(B \cap A^\mathsf{c}\). Therefore we can use Axiom 3 to get
@@ -992,12 +954,9 @@ PICTURE
 Finally, substituting \eqref{eq:union2} into \eqref{eq:union1} gives
 \[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
 as required.
-
 \end{proof}
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-18}{}\label{exm:unlabeled-div-18}
-
 \emph{Consider picking a card from a deck at random, with \(\mathbb P(A) = |A|/52\). What's the probability the card is a spade or an ace?}
 
 It is possible to just work this out directly. But let's use our addition law for unions.
@@ -1006,7 +965,6 @@ We have \(\mathbb P(\text{spade}) = \frac{13}{52} = \frac{1}{4}\) and \(\mathbb 
 \[ \mathbb P(\text{spade or Ace}) = \tfrac14 + \tfrac{1}{13} - \mathbb P(\text{spade and Ace}) . \]
 But \(\mathbb P(\text{spade and Ace})\) is the probability of picking the Ace of spades, which is \(\frac{1}{52}\). Therefore
 \[ \mathbb P(\text{spade or Ace}) = \tfrac14 + \tfrac{1}{13} - \tfrac{1}{52} = \tfrac{16}{52} = \tfrac{4}{13} . \]
-
 \end{example}
 
 Similar addition rules can be proven in the same way for unions of more events. For three events, we have
@@ -1036,11 +994,8 @@ where we continue by subtracting the probabilities of quadruples, adding the pro
 Classical probability was the first type of probability to be formally studied -- partly because it is the simplest, and partly because it was useful for working out how to win at gambling. Tossing fair coins, rolling dice, and dealing cards are all common gambling situations that can be studied using classical probability -- in a deck of cards, for example, there are 52 cards that are equally likely to be drawn. Among the first works to seriously study classical probability are ``Book on Games of Chance'' by \href{https://mathshistory.st-andrews.ac.uk/Biographies/Cardan/}{Girolamo Cardano} (written in 1564, but not published until 1663), and a series of letters letters between \href{https://mathshistory.st-andrews.ac.uk/Biographies/Pascal/}{Blaise Pascal} and \href{https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/}{Pierre de Fermat} (1654).
 
 \begin{definition}
-\protect\hypertarget{def:unlabeled-div-19}{}\label{def:unlabeled-div-19}
-
 Let \(\Omega\) be a finite sample space. Then the \textbf{classical probability measure} on \(\Omega\) is given by
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} . \]
-
 \end{definition}
 
 So to work out a classical probability, we need to be able to count how many outcomes are in \(A\) and count how many outcomes are in \(\Omega\). In this section, we'll see a number of situations where we can do this.
@@ -1061,8 +1016,6 @@ TABLE
 More generally, if you have \(m\) stages of choosing, with \(n_1\) choices in the first stage, then \(n_2\) choices in the second stage, all the way to \(n_m\) choices in the final stage, you have \(n_1 \times n_2 \times \cdots \times n_m\) total choices altogether.
 
 \begin{example}
-\protect\hypertarget{exm:unlabeled-div-20}{}\label{exm:unlabeled-div-20}
-
 \emph{Five fair coins are tossed. What is the probability they all show the same face?}
 
 Here, the sample \(\Omega\) is the set of all sequence of 5 coin outcomes. How many sample outcomes are in \(\Omega\). Well, the first coin can be heads or tails (2 choices); the second coin can be heads or tails (2 choices) and so on, until the fifth and final coin. So, by the multiplication principle, \(|\Omega| = 2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32\).
@@ -1071,7 +1024,6 @@ The event we're interested in is \(A = \{\text{HHHHH}, \text{TTTTT}\}\), the eve
 
 So the probability all five coins show the same face is
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{2}{32} = \frac{1}{16} . \]
-
 \end{example}
 
 \hypertarget{sampling}{%
