@@ -136,7 +136,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">MATH1710 notes</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Home</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About this module</a>
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Module organisation</a></li>
@@ -303,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <pre><code>## [1] 5.428571</code></pre>
 <p>Here, the code in the first shaded box is the R commands that are typed into
 RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudio “console”. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign <code>##</code>. The <code>[1]</code> can be ignored (this is just R’s way of saying that the answer is one-dimensional – like a number or a vector, rather than two-dimensional, like a matrix or a list of vectors). Plots produced by R are displayed here as pictures.</p>
-<p>Most importantly for now, <em>you are not expected to understand the R code in this section yet</em>. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand all the R code in this section.</p>
+<p>Most importantly for now, <em>you are not expected to understand the R code in this section yet</em>. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.</p>
 </div>
 <div id="summary-stat" class="section level2" number="1.3">
 <h2><span class="header-section-number">1.3</span> Summary statistics and boxplots</h2>
@@ -352,8 +352,21 @@ Here, the first line is the definitional formula; the second line is from expand
 <p>This has left us with
 <span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
 This is sometimes called the “computational formula”; this is because it’s usually more convenient to calculate the sample variance using this formula rather than the computational formula.</p>
-<p>EXAMPLES</p>
-<p>BOXPLOTS</p>
+<p>The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example,</p>
+<p>A <strong>boxplot</strong> is a useful way to illustrate data. It can be easier to tell the difference between different data sets “by eye” when looking at a boxplot rather than examining raw summary statistics.</p>
+<p>A boxplot is drawn as follows:</p>
+<ul>
+<li>The vertical axis represents the data values.</li>
+<li>Draw a box from the lower quartile <span class="math inline">\(q(\frac14)\)</span> to the median <span class="math inline">\(q(\frac12)\)</span>.</li>
+<li>Draw another box on top of this from the median <span class="math inline">\(q(\frac12)\)</span> to the upper quartile <span class="math inline">\(q(\frac34)\)</span>.</li>
+<li>Decide which datapoints are outliers, and plot these with circles. The R default is that any data point less than <span class="math inline">\(q(\frac14) - 1.5 \text{IQR}\)</span> or bigger than <span class="math inline">\(q(\frac34) + 1.5 \text{IQR}\)</span> is an outlier.</li>
+<li>Out from the two previous boxes, draw “whiskers” to the smallest and largest non-outlier datapoints.</li>
+</ul>
+<p><img src="math1710_files/figure-html/boxplot1-1.png" width="672" /></p>
+<p>Here are two boxplots from the July and September temperature data. What do you conclude about the data from these boxplots?</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="S01-eda.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#boxplot(temp$jul, temp$sep,</span></span>
+<span id="cb3-2"><a href="S01-eda.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#         names = c(&quot;July&quot;, &quot;September&quot;),</span></span>
+<span id="cb3-3"><a href="S01-eda.html#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">#         ylab = &quot;Temperature (degrees C)&quot;)</span></span></code></pre></div>
 </div>
 <div id="binned" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Binned data and histograms</h2>
@@ -486,11 +499,10 @@ More generally, if <span class="math inline">\(m_i\)</span> is the midpoint of b
 <p>Here is a histogram for our journey-time data:</p>
 <p>PICTURE</p>
 <p>Often we draw histograms because the data was collected in bins. But even when we have exact data, we might choose to divide it into bins for the purposes of drawing a histogram. In this case we have to decide where to put the “breaks” between the bins. Too many breaks too close together, and the small number of observations in each bin will give “noisy” results (see left); too few breaks too far apart, and the histogram will lose detail (see right).</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="S01-eda.html#cb3-1" aria-hidden="true" tabindex="-1"></a>hist_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">2</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">12</span>, <span class="dv">3</span>))  <span class="co"># Some fake data</span></span>
-<span id="cb3-2"><a href="S01-eda.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">20</span>)</span></code></pre></div>
-<p><img src="math1710_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="S01-eda.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">4</span>)</span></code></pre></div>
-<p><img src="math1710_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="S01-eda.html#cb4-1" aria-hidden="true" tabindex="-1"></a>hist_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">2</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">12</span>, <span class="dv">3</span>))  <span class="co"># Some fake data</span></span>
+<span id="cb4-2"><a href="S01-eda.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">40</span>, <span class="at">main =</span> <span class="st">&quot;Too many bins&quot;</span>)</span>
+<span id="cb4-3"><a href="S01-eda.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">3</span>, <span class="at">main =</span> <span class="st">&quot;Too few bins&quot;</span>)</span></code></pre></div>
+<p><img src="math1710_files/figure-html/hist-bins-1.png" width="48%" /><img src="math1710_files/figure-html/hist-bins-2.png" width="48%" /></p>
 </div>
 <div id="multiple" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Multiple measurements and scatterplots</h2>

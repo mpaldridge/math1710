@@ -9,6 +9,6 @@ favicon: favicon.ico
 url:    https://mpaldridge.github.io/math1710/
 ---
 
-# Home {.unnumbered}
+# Schedule {.unnumbered}
 
-First page goes here.
+*MATH1710 begins on Monday 20 September.*

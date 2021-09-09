@@ -144,11 +144,11 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{home}{%
-\chapter*{Home}\label{home}}
-\addcontentsline{toc}{chapter}{Home}
+\hypertarget{schedule}{%
+\chapter*{Schedule}\label{schedule}}
+\addcontentsline{toc}{chapter}{Schedule}
 
-First page goes here.
+\emph{MATH1710 begins on Monday 20 September.}
 
 \hypertarget{about}{%
 \chapter*{About this module}\label{about}}
@@ -482,7 +482,7 @@ R can easily and quickly perform all the calculations and draw all the plots in 
 Here, the code in the first shaded box is the R commands that are typed into
 RStudio, which you can type in next to the \texttt{\textgreater{}} arrow in the RStudio ``console''. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign \texttt{\#\#}. The \texttt{{[}1{]}} can be ignored (this is just R's way of saying that the answer is one-dimensional -- like a number or a vector, rather than two-dimensional, like a matrix or a list of vectors). Plots produced by R are displayed here as pictures.
 
-Most importantly for now, \emph{you are not expected to understand the R code in this section yet}. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand all the R code in this section.
+Most importantly for now, \emph{you are not expected to understand the R code in this section yet}. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.
 
 \hypertarget{summary-stat}{%
 \section{Summary statistics and boxplots}\label{summary-stat}}
@@ -558,9 +558,37 @@ This has left us with
 \[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]
 This is sometimes called the ``computational formula''; this is because it's usually more convenient to calculate the sample variance using this formula rather than the computational formula.
 
-EXAMPLES
+The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example,
 
-BOXPLOTS
+A \textbf{boxplot} is a useful way to illustrate data. It can be easier to tell the difference between different data sets ``by eye'' when looking at a boxplot rather than examining raw summary statistics.
+
+A boxplot is drawn as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  The vertical axis represents the data values.
+\item
+  Draw a box from the lower quartile \(q(\frac14)\) to the median \(q(\frac12)\).
+\item
+  Draw another box on top of this from the median \(q(\frac12)\) to the upper quartile \(q(\frac34)\).
+\item
+  Decide which datapoints are outliers, and plot these with circles. The R default is that any data point less than \(q(\frac14) - 1.5 \text{IQR}\) or bigger than \(q(\frac34) + 1.5 \text{IQR}\) is an outlier.
+\item
+  Out from the two previous boxes, draw ``whiskers'' to the smallest and largest non-outlier datapoints.
+\end{itemize}
+
+\includegraphics{math1710_files/figure-latex/boxplot1-1.pdf}
+
+Here are two boxplots from the July and September temperature data. What do you conclude about the data from these boxplots?
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#boxplot(temp$jul, temp$sep,}
+\CommentTok{\#         names = c("July", "September"),}
+\CommentTok{\#         ylab = "Temperature (degrees C)")}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{binned}{%
 \section{Binned data and histograms}\label{binned}}
@@ -630,19 +658,12 @@ Often we draw histograms because the data was collected in bins. But even when w
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{hist\_data }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{2}\NormalTok{), }\FunctionTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{3}\NormalTok{))  }\CommentTok{\# Some fake data}
-\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{20}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{40}\NormalTok{, }\AttributeTok{main =} \StringTok{"Too many bins"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{3}\NormalTok{, }\AttributeTok{main =} \StringTok{"Too few bins"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-2-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{4}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-2-2.pdf}
+\includegraphics[width=0.48\linewidth]{math1710_files/figure-latex/hist-bins-1} \includegraphics[width=0.48\linewidth]{math1710_files/figure-latex/hist-bins-2}
 
 \hypertarget{multiple}{%
 \section{Multiple measurements and scatterplots}\label{multiple}}

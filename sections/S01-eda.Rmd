@@ -30,7 +30,7 @@ mean(data)
 Here, the code in the first shaded box is the R commands that are typed into 
 RStudio, which you can type in next to the `>` arrow in the RStudio "console". The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign `##`. The `[1]` can be ignored (this is just R's way of saying that the answer is one-dimensional -- like a number or a vector, rather than two-dimensional, like a matrix or a list of vectors). Plots produced by R are displayed here as pictures.
 
-Most importantly for now, *you are not expected to understand the R code in this section yet*. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand all the R code in this section.
+Most importantly for now, *you are not expected to understand the R code in this section yet*. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.
 
 
 ## Summary statistics and boxplots  {#summary-stat}
@@ -93,9 +93,36 @@ This has left us with
 \[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]
 This is sometimes called the "computational formula"; this is because it's usually more convenient to calculate the sample variance using this formula rather than the computational formula.
 
-EXAMPLES
+The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example,
 
-BOXPLOTS
+A **boxplot** is a useful way to illustrate data. It can be easier to tell the difference between different data sets "by eye" when looking at a boxplot rather than examining raw summary statistics.
+
+A boxplot is drawn as follows:
+
+* The vertical axis represents the data values.
+* Draw a box from the lower quartile $q(\frac14)$ to the median $q(\frac12)$.
+* Draw another box on top of this from the median $q(\frac12)$ to the upper quartile $q(\frac34)$.
+* Decide which datapoints are outliers, and plot these with circles. The R default is that any data point less than $q(\frac14) - 1.5 \text{IQR}$ or bigger than $q(\frac34) + 1.5 \text{IQR}$ is an outlier.
+* Out from the two previous boxes, draw "whiskers" to the smallest and largest non-outlier datapoints.
+
+```{r boxplot1, cache = TRUE, echo = FALSE}
+set.seed(3)
+x <- c(rnorm(200), rnorm(40, 0.2, 2.2))
+boxplot(x)
+text(1.2, quantile(x, 0.25), "lower quartile", pos = 4)
+text(1.2, quantile(x, 0.5),  "median", pos = 4)
+text(1.2, quantile(x, 0.75), "upper quartile", pos = 4)
+text(1.2, -3.1, "min. non-outlier", pos = 4)
+text(1.2, 2.7, "max. non-outlier", pos = 4)
+```
+
+Here are two boxplots from the July and September temperature data. What do you conclude about the data from these boxplots?
+
+```{r}
+#boxplot(temp$jul, temp$sep,
+#         names = c("July", "September"),
+#         ylab = "Temperature (degrees C)")
+```
 
 
 ## Binned data and histograms  {#binned}
@@ -152,11 +179,14 @@ Here is a histogram for our journey-time data:
 PICTURE
 
 Often we draw histograms because the data was collected in bins. But even when we have exact data, we might choose to divide it into bins for the purposes of drawing a histogram. In this case we have to decide where to put the "breaks" between the bins. Too many breaks too close together, and the small number of observations in each bin will give "noisy" results (see left); too few breaks too far apart, and the histogram will lose detail (see right).
+```{r, echo = FALSE}
+set.seed(4)
+```
 
-```{r}
+```{r hist-bins, cache = TRUE, fig.show="hold", out.width="48%"}
 hist_data <- c(rnorm(30, 8, 2), rnorm(40, 12, 3))  # Some fake data
-hist(hist_data, breaks = 20)
-hist(hist_data, breaks = 4)
+hist(hist_data, breaks = 40, main = "Too many bins")
+hist(hist_data, breaks = 3, main = "Too few bins")
 ```
 
 
