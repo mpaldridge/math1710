@@ -137,10 +137,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About this module</a>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH2750</a>
 <ul>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Module organisation</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#content"><i class="fa fa-check"></i>Module content</a>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH2750</a>
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#notes"><i class="fa fa-check"></i>Notes and videos</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
@@ -362,7 +361,7 @@ This is sometimes called the “computational formula”; this is because it’s
 <li>Decide which datapoints are outliers, and plot these with circles. The R default is that any data point less than <span class="math inline">\(q(\frac14) - 1.5 \text{IQR}\)</span> or bigger than <span class="math inline">\(q(\frac34) + 1.5 \text{IQR}\)</span> is an outlier.</li>
 <li>Out from the two previous boxes, draw “whiskers” to the smallest and largest non-outlier datapoints.</li>
 </ul>
-<p><img src="math1710_files/figure-html/boxplot1-1.png" width="672" /></p>
+<p><img src="math1710_files/figure-html/boxplot1-1.png" width="576" style="display: block; margin: auto;" /></p>
 <p>Here are two boxplots from the July and September temperature data. What do you conclude about the data from these boxplots?</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="S01-eda.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">#boxplot(temp$jul, temp$sep,</span></span>
 <span id="cb3-2"><a href="S01-eda.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co">#         names = c(&quot;July&quot;, &quot;September&quot;),</span></span>
@@ -502,7 +501,7 @@ More generally, if <span class="math inline">\(m_i\)</span> is the midpoint of b
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="S01-eda.html#cb4-1" aria-hidden="true" tabindex="-1"></a>hist_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fu">rnorm</span>(<span class="dv">30</span>, <span class="dv">8</span>, <span class="dv">2</span>), <span class="fu">rnorm</span>(<span class="dv">40</span>, <span class="dv">12</span>, <span class="dv">3</span>))  <span class="co"># Some fake data</span></span>
 <span id="cb4-2"><a href="S01-eda.html#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">40</span>, <span class="at">main =</span> <span class="st">&quot;Too many bins&quot;</span>)</span>
 <span id="cb4-3"><a href="S01-eda.html#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(hist_data, <span class="at">breaks =</span> <span class="dv">3</span>, <span class="at">main =</span> <span class="st">&quot;Too few bins&quot;</span>)</span></code></pre></div>
-<p><img src="math1710_files/figure-html/hist-bins-1.png" width="48%" /><img src="math1710_files/figure-html/hist-bins-2.png" width="48%" /></p>
+<p><img src="math1710_files/figure-html/hist-bins-1.png" width="49%" /><img src="math1710_files/figure-html/hist-bins-2.png" width="49%" /></p>
 </div>
 <div id="multiple" class="section level2" number="1.5">
 <h2><span class="header-section-number">1.5</span> Multiple measurements and scatterplots</h2>

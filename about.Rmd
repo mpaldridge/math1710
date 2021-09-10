@@ -1,6 +1,6 @@
-# About this module  {#about .unnumbered}
+# About MATH2750  {#about .unnumbered}
 
-## Module organisation  {#organisation .unnumbered}
+## Organisation of MATH2750  {#organisation .unnumbered}
 
 This module is **MATH1710 Probability and Statistics I**. A few students will be taking this module as half of **MATH2700 Probability and Statistics for Scientists**.
 
@@ -8,13 +8,10 @@ This module lasts for 11 weeks from 27 September to 10 December. The exam will t
 
 The core teaching team are:
 
-* Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge") -- I am the module leader, the main lecturer, and the author of these notes.
+* Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge") -- I am the module leader, the main lecturer, and the main author of these notes.
 * XXXX YYYY ZZZZ.
 
 The shared email address for the core teaching team is <math1710@leeds.ac.uk>; please use this address, rather than emailing our personal addresses; this will ensure your email is seen as soon as possible.
-
-
-## Module content  {#content .unnumbered}
 
 
 
@@ -34,15 +31,15 @@ We are very keen to hear about errors in the notes mathematical, typographical o
 
 There will be 5 problem sheets. Each problem sheet has a number of short and long questions for you to cover in your own time to help you learn the material, and two assessed questions, which you should submit for marking.  The assessed questions on each problem sheet make up 3% of your mark on this module, for a total of 15%.
 
-| Problem Sheet | Sections covered | Assessed work due |
-|:-------------:|:----------------:|:-----------------:|
+| Problem Sheet | Sections covered | Assessed work due               |
+|:-------------:|:----------------:|:-------------------------------:|
 |       1       |         1        |   Friday  8 October  (week 2)   |
 |       2       |      2 and 3     |   Friday 22 October  (week 4)   |
 |       3       |      4 and 5     |   Friday  5 November (week 6)   |
 |       4       |      6 and 7     |   Friday 19 November (week 8)   |
 |       5       |    8, 9 and 10   |   Friday  3 December (week 10)   |
 
-Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions, and then scan them to PDF using their phone. Please use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- rather than just submitting photographs.
+Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions, and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
 
 
 ### Lectures {.unnumbered #lectures}
@@ -56,16 +53,16 @@ You should check your timetable to see which lecture group you are in.
 
 This will not be a "lecture" in the traditional sense of the term, but will be an opportunity to re-emphasise material you have already learned from notes and videos, to give extra examples, and to answer common student questions, with some degree of interactivity.
 
-I will assume you have completed all the work for the previous week by the time of the lecture, but I will not assume you've started the work for that week itself.
+We will assume you have completed all the work for the previous week by the time of the lecture.
 
 We are very keen to hear about things you'd like to go through in the lectures; please [email us](mailto:math1710@leeds.ac.uk) with your suggestions.
 
 
 ### Tutorials {.unnumbered #tutorials}
 
-Tutorials are small groups of about a dozen students. You have been assigned to one of XXX tutorial groups, with a member of staff. Your tutor group will meet five times, in weeks 2, 4, 6, 8, 10, and most tutorial groups will meet in person on campus. You should check your timetable to see when and where your tutorial group meets.
+Tutorials are small groups of about a dozen students. You have been assigned to one of XXX tutorial groups, each led by a member of staff. Your tutor group will meet five times, in weeks 2, 4, 6, 8, 10. Tutorial groups will meet in person on campus; you should check your timetable to see when and where your tutorial group meets. (For those not yet on campus, due to travel restrictions or health conditions, there will be one online tutorial group for the first few tutorials.)
 
-The main goal of the tutorials will be to go over your answers to the non-assessed questions on the problems sheets. In this smaller group, you will be able to ask detailed questions of your tutorial leader, and have the chance to discuss your solutions to the problem sheet. Your tutorial leader may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutorial leader may be willing to give you a hint on the assessed questions if you've made a first attempt but got stuck.
+The main goal of the tutorials will be to go over your answers to the non-assessed questions on the problems sheets in an interactive session. In this smaller group, you will be able to ask detailed questions of your tutorial leader, and have the chance to discuss your solutions to the problem sheet. Your tutorial leader may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutorial leader may be willing to give you a hint on the assessed questions if you've made a first attempt but got stuck.
 
 My recommended approach to problem sheets and tutorials is the following:
 
@@ -160,7 +157,7 @@ An outline plan of the topics covered is the following. (Remember that one secti
 
 ### Books {.unnumbered #books}
 
-You can do well on this module by reading the notes and watching the videos, attending the lectures and tutorials, and working on the problem sheets and R worksheets, without needing to do any further reading beyond this. However, students can benefit from optional extra background reading or an alternative view on the material, especially in the parts of the modue on probability.
+You can do well on this module by reading the notes and watching the videos, attending the lectures and tutorials, and working on the problem sheets and R worksheets, without needing to do any further reading beyond this. However, students can benefit from optional extra background reading or an alternative view on the material, especially in the parts of the module on probability.
 
 For exploratory data analysis, you can stick to Wikipedia, but if you really want a book, I'd recommend:
 
