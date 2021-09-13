@@ -39,7 +39,7 @@ There will be 5 problem sheets. Each problem sheet has a number of short and lon
 |       4       |      6 and 7     |   Friday 19 November (week 8)   |
 |       5       |    8, 9 and 10   |   Friday  3 December (week 10)   |
 
-Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions, and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
+Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
 
 
 ### Lectures {.unnumbered #lectures}
@@ -82,7 +82,7 @@ You will learn R by working through one R worksheet each week in your own time. 
 
 You can read more about language R, and about the program RStudio that we recommend you use to interact with R, in [the R section of these notes](#R).
 
-To help you if you have problems with R, we have organised optional R troubleshooting sessions, where you can and get help from an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
+To help you if you have problems with R, we have organised optional R troubleshooting sessions, where you can discuss any problems you have with an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
 
 
 ### Office hours {.unnumbered #dropin}
