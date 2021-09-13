@@ -205,7 +205,7 @@ Problem Sheet & Sections covered & Assessed work due \\
 \bottomrule
 \end{longtable}
 
-Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions, and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
+Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
 
 \hypertarget{lectures}{%
 \subsection*{Lectures}\label{lectures}}
@@ -263,7 +263,7 @@ You will learn R by working through one R worksheet each week in your own time. 
 
 You can read more about language R, and about the program RStudio that we recommend you use to interact with R, in \protect\hyperlink{R}{the R section of these notes}.
 
-To help you if you have problems with R, we have organised optional R troubleshooting sessions, where you can and get help from an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as ``practicals''.
+To help you if you have problems with R, we have organised optional R troubleshooting sessions, where you can discuss any problems you have with an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as ``practicals''.
 
 \hypertarget{dropin}{%
 \subsection*{Office hours}\label{dropin}}
@@ -433,7 +433,7 @@ These notes (in the web format) should be accessible by screenreaders. The video
 \hypertarget{what-is-eda}{%
 \section{What is EDA?}\label{what-is-eda}}
 
-\textbf{Statistics} is about studying data. \textbf{Exploratory data analysis} (or \textbf{EDA}, for short) is the part of statistics concerned with taking a ``first look'' at some data. Later, towards the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics 2 (for those who take it) you will see many ways of testing hypotheses for data. But here we're just interested in first impressions and brief summaries.
+\textbf{Statistics} is about studying data. \textbf{Exploratory data analysis} (or \textbf{EDA}, for short) is the part of statistics concerned with taking a ``first look'' at some data. Later, toward the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics 2 (for those who take it) you will see many ways of testing formal hypotheses for data. But here we're just interested in first impressions and brief summaries.
 
 In this section, we will concentrate on two aspects of EDA:
 
@@ -495,7 +495,7 @@ We'll look here at two types of summary statistic:
 \item
   \textbf{Measures of centrality}, which tell us where the ``middle'' of the data is.
 \item
-  \textbf{Measure of spread}, which tell us how far the data typically spreads out from that centre.
+  \textbf{Measures of spread}, which tell us how far the data typically spreads out from that middle.
 \end{itemize}
 
 Some measures of centrality are the following.
@@ -512,7 +512,7 @@ Consider some real-valued data \(\mathbf x = (x_1, x_2, \dots, x_n)\).
   Suppose the data is ordered as \(x_1 \leq x_2 \leq \cdots \leq x_n\). Then the \textbf{median} is the central value in the ordered list. If \(n\) is odd, this is \(x_{(n+1)/2}\); if \(n\) is even, we normally take halfway between the two central points, \(\frac12(x_{n/2}+x_{(n+1)/2})\).
 \item
   The \textbf{mean} \(\bar x\) is
-  \[ \bar x = \frac{1}{n}(x_2 + x_2 + \cdots x_n) = \frac1n \sum_{i=1}^n x_i . \]
+  \[ \bar x = \frac{1}{n}(x_2 + x_2 + \cdots + x_n) = \frac1n \sum_{i=1}^n x_i . \]
 \end{itemize}
 
 \end{definition}
@@ -523,20 +523,20 @@ Consider some real-valued data \(\mathbf x = (x_1, x_2, \dots, x_n)\).
 EXAMPLE
 \end{example}
 
-The median is one example of a ``quantile'' of the data. Suppose our data is increasing order again. For \(0 \leq \alpha \leq 1\), the \textbf{\(\alpha\)-quantile} \(q(\alpha)\) of the data is the data \(\alpha\) of the way along the list. So the median is the \(\frac12\)-quantile \(q(\frac12)\), the minimum is the \(0\)-quantile \(q(0)\), and the maximum. Generally, \(q(\alpha)\) is equal to \(x_{1+\alpha(n-1)}\) when \(1+\alpha(n-1)\) is an integer. (If \(1+\alpha(n-1)\) isn't an integer, there are various conventions of how to choose that we won't go into here. R has \emph{seven} different settings for choosing quantiles! -- we will always just use R's default choice.)
+The median is one example of a ``quantile'' of the data. Suppose our data is increasing order again. For \(0 \leq \alpha \leq 1\), the \textbf{\(\alpha\)-quantile} \(q(\alpha)\) of the data is the datapoint \(\alpha\) of the way along the list. So the median is the \(\frac12\)-quantile \(q(\frac12)\), the minimum is the 0-quantile \(q(0)\), and the maximum is the 1-quantile \(q(1)\). Generally, \(q(\alpha)\) is equal to \(x_{1+\alpha(n-1)}\) when \(1+\alpha(n-1)\) is an integer. (If \(1+\alpha(n-1)\) isn't an integer, there are various conventions of how to choose that we won't go into here. R has \emph{seven} different settings for choosing quantiles! -- we will always just use R's default choice.)
 
-Two other common terms: \(q(\frac34)\) is called the \textbf{upper quartile} (note ``quartile'', not ``quantile'', here), and \(q(\frac14)\) is called the \textbf{lower quartile}.
+Two other common terms: \(q(\frac34)\) is called the \textbf{upper quartile} and \(q(\frac14)\) is called the \textbf{lower quartile} (note ``quartile'' -- as in ``quarter'' -- not ``quantile'', here).
 
 Some measures of spread are:
 
 \begin{definition}
-The \textbf{number of distinct observations} is precisely that: the number of datapoints you have after removing any repeats.
+The \textbf{number of distinct observations} is precisely that: the number of different datapoints you have after removing any repeats.
 
 The \textbf{interquartile range} is the difference between the upper and lower quartiles \(\text{IQR} = q(\frac34) - q(\frac14)\).
 
 The \textbf{sample variance} is
 \[  s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]
-where \(\bar x\) is the sample mean from before. The \textbf{standard deviation} is the square-root of the sample variance.
+where \(\bar x\) is the sample mean from before. The \textbf{standard deviation} \(s_x = \sqrt{s^2_x}\) is the square-root of the sample variance.
 \end{definition}
 
 The formula we've given for sample variance is sometimes called the ``definitional formula'', as it's the formula used to \emph{define} the sample variance. We can rearrange that formula as follows:
@@ -554,7 +554,7 @@ This has left us with
 \[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]
 This is sometimes called the ``computational formula''; this is because it's usually more convenient to calculate the sample variance using this formula rather than the computational formula.
 
-The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example,
+The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example, ???????????????? ???????????/
 
 A \textbf{boxplot} is a useful way to illustrate data. It can be easier to tell the difference between different data sets ``by eye'' when looking at a boxplot rather than examining raw summary statistics.
 
@@ -589,9 +589,9 @@ Here are two boxplots from the July and September temperature data. What do you 
 \hypertarget{binned}{%
 \section{Binned data and histograms}\label{binned}}
 
-Often when collecting data, we don't collect exact data, but rather collect data clumped into ``bins''. For example, suppose a student wished to use a questionnaire to collect data on how long it takes people to reach campus from home; they might not ask ``How long does it take?'', but rather give a choice of tick boxes: ``0--5 minutes'', ``5--10 minutes'', and so on.
+Often when collecting data, we don't collect exact data, but rather collect data clumped into ``bins''. For example, suppose a student wished to use a questionnaire to collect data on how long it takes people to reach campus from home; they might not ask ``Exactly how long does it take?'', but rather give a choice of tick boxes: ``0--5 minutes'', ``5--10 minutes'', and so on.
 
-Consider the following data, from \(n = 100\) students:
+Consider the following binned data, from \(n = 100\) students:
 
 \begin{longtable}[]{@{}ccc@{}}
 \toprule
@@ -611,7 +611,7 @@ Time & Frequency & Relative frequency \\
 
 Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The \textbf{relative frequency} of bin \(j\) is \(f_j/n\); that is, the proportion of the observations in that bin.
 
-What is the median journey length? Well, we don't know exactly, but \(0.04 + 0.08 + 0.21\) is less than \(0.5\), but \(0.04 + 0.08 + 0.21 + 0.42\) is greater than \(0.5\). So we know that the median student is in the ``10--15 minute'' bin, and we can say that the median journey length is between 10 and 15 minutes.
+What is the median journey length? Well, we don't know exactly, but \(0.04 + 0.08 + 0.21\) is less than 0.5, while \(0.04 + 0.08 + 0.21 + 0.42\) is greater than 0.5. So we know that the median student is in the ``10--15 minute'' bin, and we can say that the median journey length is between 10 and 15 minutes.
 
 What about the mode? The bin with the most observations in it is the ``15--30 minute'' bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the \textbf{frequency density}: the relative frequency divided by the size of the bin.
 
@@ -679,7 +679,7 @@ This is the first problem sheet.
 \hypertarget{what-is-prob}{%
 \section{What is probability?}\label{what-is-prob}}
 
-Probability thoery is the study of randomness. Probability, as an area of mathematics, is a fascinating subject in its own right. However, probability is particularly important due to its usefulness in applications -- especially in statistics (that is, the study of data), in finance, and in actuarial science (the study of insurance). Probability is well suited to modelling situations that involve randomness, uncertainty, or unpredictability. If we you want to predict the time of the next solar eclipse, a deterministic (that is, non-random) model based on physical laws will tell you when the sun, the moon, and the earth will be in the correct positions; but if you want to predict the weather tomorrow, or the price of a share of Apple stock next month, or the results of an election next year, you will need a probabilistic model that takes into account the uncertainty in the outcome. A probabilistic model could tell you the most likely outcome, or a range of the most likely outcomes.
+Probability theory is the study of randomness. Probability, as an area of mathematics, is a fascinating subject in its own right. However, probability is particularly important due to its usefulness in applications -- especially in statistics (that is, the study of data), in finance, and in actuarial science (the study of insurance). Probability is well suited to modelling situations that involve randomness, uncertainty, or unpredictability. If we you want to predict the time of the next solar eclipse, a deterministic (that is, non-random) model based on physical laws will tell you when the sun, the moon, and the earth will be in the correct positions; but if you want to predict the weather tomorrow, or the price of a share of Apple stock next month, or the results of an election next year, you will need a probabilistic model that takes into account the uncertainty in the outcome. A probabilistic model could tell you the most likely outcome, or a range of the most likely outcomes.
 
 So what do we mean when we talk about the ``probability'' of an event occurring? You might say that the probability of an event is a measure of ``how likely'' it is to occur, or what the ``chance'' of it occurring is.
 

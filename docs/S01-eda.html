@@ -280,7 +280,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Section 1</span> Exploratory data analysis</h1>
 <div id="what-is-eda" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> What is EDA?</h2>
-<p><strong>Statistics</strong> is about studying data. <strong>Exploratory data analysis</strong> (or <strong>EDA</strong>, for short) is the part of statistics concerned with taking a “first look” at some data. Later, towards the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics 2 (for those who take it) you will see many ways of testing hypotheses for data. But here we’re just interested in first impressions and brief summaries.</p>
+<p><strong>Statistics</strong> is about studying data. <strong>Exploratory data analysis</strong> (or <strong>EDA</strong>, for short) is the part of statistics concerned with taking a “first look” at some data. Later, toward the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics 2 (for those who take it) you will see many ways of testing formal hypotheses for data. But here we’re just interested in first impressions and brief summaries.</p>
 <p>In this section, we will concentrate on two aspects of EDA:</p>
 <ul>
 <li><strong>Summary statistics:</strong> That is, calculating numbers that briefly summarise the data. A summary statistic might tell us what “central” or “typical” values of the data are, how spread out the data is, or about the relationship between two different variables.</li>
@@ -312,7 +312,7 @@ RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudi
 <p>We’ll look here at two types of summary statistic:</p>
 <ul>
 <li><strong>Measures of centrality</strong>, which tell us where the “middle” of the data is.</li>
-<li><strong>Measure of spread</strong>, which tell us how far the data typically spreads out from that centre.</li>
+<li><strong>Measures of spread</strong>, which tell us how far the data typically spreads out from that middle.</li>
 </ul>
 <p>Some measures of centrality are the following.</p>
 <div class="definition">
@@ -321,22 +321,22 @@ RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudi
 <li>The <strong>mode</strong> is the most common value of <span class="math inline">\(x_i\)</span>. (If there are multiple joint-most common values, they are all modes.)</li>
 <li>Suppose the data is ordered as <span class="math inline">\(x_1 \leq x_2 \leq \cdots \leq x_n\)</span>. Then the <strong>median</strong> is the central value in the ordered list. If <span class="math inline">\(n\)</span> is odd, this is <span class="math inline">\(x_{(n+1)/2}\)</span>; if <span class="math inline">\(n\)</span> is even, we normally take halfway between the two central points, <span class="math inline">\(\frac12(x_{n/2}+x_{(n+1)/2})\)</span>.</li>
 <li>The <strong>mean</strong> <span class="math inline">\(\bar x\)</span> is
-<span class="math display">\[ \bar x = \frac{1}{n}(x_2 + x_2 + \cdots x_n) = \frac1n \sum_{i=1}^n x_i . \]</span></li>
+<span class="math display">\[ \bar x = \frac{1}{n}(x_2 + x_2 + \cdots + x_n) = \frac1n \sum_{i=1}^n x_i . \]</span></li>
 </ul>
 </div>
 <p>(In that last expression, we’ve made use of <a href="https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf">Sigma notation</a> to write down the sum.)</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-2" class="example"><strong>Example 1.1  </strong></span>EXAMPLE</p>
 </div>
-<p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the data <span class="math inline">\(\alpha\)</span> of the way along the list. So the median is the <span class="math inline">\(\frac12\)</span>-quantile <span class="math inline">\(q(\frac12)\)</span>, the minimum is the <span class="math inline">\(0\)</span>-quantile <span class="math inline">\(q(0)\)</span>, and the maximum. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>seven</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
-<p>Two other common terms: <span class="math inline">\(q(\frac34)\)</span> is called the <strong>upper quartile</strong> (note “quartile”, not “quantile”, here), and <span class="math inline">\(q(\frac14)\)</span> is called the <strong>lower quartile</strong>.</p>
+<p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the datapoint <span class="math inline">\(\alpha\)</span> of the way along the list. So the median is the <span class="math inline">\(\frac12\)</span>-quantile <span class="math inline">\(q(\frac12)\)</span>, the minimum is the 0-quantile <span class="math inline">\(q(0)\)</span>, and the maximum is the 1-quantile <span class="math inline">\(q(1)\)</span>. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>seven</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
+<p>Two other common terms: <span class="math inline">\(q(\frac34)\)</span> is called the <strong>upper quartile</strong> and <span class="math inline">\(q(\frac14)\)</span> is called the <strong>lower quartile</strong> (note “quartile” – as in “quarter” – not “quantile”, here).</p>
 <p>Some measures of spread are:</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  </strong></span>The <strong>number of distinct observations</strong> is precisely that: the number of datapoints you have after removing any repeats.</p>
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  </strong></span>The <strong>number of distinct observations</strong> is precisely that: the number of different datapoints you have after removing any repeats.</p>
 <p>The <strong>interquartile range</strong> is the difference between the upper and lower quartiles <span class="math inline">\(\text{IQR} = q(\frac34) - q(\frac14)\)</span>.</p>
 <p>The <strong>sample variance</strong> is
 <span class="math display">\[  s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]</span>
-where <span class="math inline">\(\bar x\)</span> is the sample mean from before. The <strong>standard deviation</strong> is the square-root of the sample variance.</p>
+where <span class="math inline">\(\bar x\)</span> is the sample mean from before. The <strong>standard deviation</strong> <span class="math inline">\(s_x = \sqrt{s^2_x}\)</span> is the square-root of the sample variance.</p>
 </div>
 <p>The formula we’ve given for sample variance is sometimes called the “definitional formula”, as it’s the formula used to <em>define</em> the sample variance. We can rearrange that formula as follows:
 <span class="math display">\[\begin{align*}
@@ -351,7 +351,7 @@ Here, the first line is the definitional formula; the second line is from expand
 <p>This has left us with
 <span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
 This is sometimes called the “computational formula”; this is because it’s usually more convenient to calculate the sample variance using this formula rather than the computational formula.</p>
-<p>The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example,</p>
+<p>The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example, ???????????????? ???????????/</p>
 <p>A <strong>boxplot</strong> is a useful way to illustrate data. It can be easier to tell the difference between different data sets “by eye” when looking at a boxplot rather than examining raw summary statistics.</p>
 <p>A boxplot is drawn as follows:</p>
 <ul>
@@ -369,8 +369,8 @@ This is sometimes called the “computational formula”; this is because it’s
 </div>
 <div id="binned" class="section level2" number="1.4">
 <h2><span class="header-section-number">1.4</span> Binned data and histograms</h2>
-<p>Often when collecting data, we don’t collect exact data, but rather collect data clumped into “bins”. For example, suppose a student wished to use a questionnaire to collect data on how long it takes people to reach campus from home; they might not ask “How long does it take?”, but rather give a choice of tick boxes: “0–5 minutes”, “5–10 minutes”, and so on.</p>
-<p>Consider the following data, from <span class="math inline">\(n = 100\)</span> students:</p>
+<p>Often when collecting data, we don’t collect exact data, but rather collect data clumped into “bins”. For example, suppose a student wished to use a questionnaire to collect data on how long it takes people to reach campus from home; they might not ask “Exactly how long does it take?”, but rather give a choice of tick boxes: “0–5 minutes”, “5–10 minutes”, and so on.</p>
+<p>Consider the following binned data, from <span class="math inline">\(n = 100\)</span> students:</p>
 <table>
 <thead>
 <tr class="header">
@@ -423,7 +423,7 @@ This is sometimes called the “computational formula”; this is because it’s
 </tbody>
 </table>
 <p>Here the <strong>frequency</strong> <span class="math inline">\(f_j\)</span> of bin <span class="math inline">\(j\)</span> is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The <strong>relative frequency</strong> of bin <span class="math inline">\(j\)</span> is <span class="math inline">\(f_j/n\)</span>; that is, the proportion of the observations in that bin.</p>
-<p>What is the median journey length? Well, we don’t know exactly, but <span class="math inline">\(0.04 + 0.08 + 0.21\)</span> is less than <span class="math inline">\(0.5\)</span>, but <span class="math inline">\(0.04 + 0.08 + 0.21 + 0.42\)</span> is greater than <span class="math inline">\(0.5\)</span>. So we know that the median student is in the “10–15 minute” bin, and we can say that the median journey length is between 10 and 15 minutes.</p>
+<p>What is the median journey length? Well, we don’t know exactly, but <span class="math inline">\(0.04 + 0.08 + 0.21\)</span> is less than 0.5, while <span class="math inline">\(0.04 + 0.08 + 0.21 + 0.42\)</span> is greater than 0.5. So we know that the median student is in the “10–15 minute” bin, and we can say that the median journey length is between 10 and 15 minutes.</p>
 <p>What about the mode? The bin with the most observations in it is the “15–30 minute” bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the <strong>frequency density</strong>: the relative frequency divided by the size of the bin.</p>
 <table>
 <thead>
