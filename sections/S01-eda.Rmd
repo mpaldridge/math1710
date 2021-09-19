@@ -1,3 +1,5 @@
+# (PART\*) Part I: EDA  {-}
+
 # Exploratory data analysis  {#S01-eda}
 
 ## What is EDA? {#what-is-eda}
@@ -13,7 +15,7 @@ Even before calculating summary statistics or drawing a plot, however, there are
 
 * *What is the data?*
 * *How was the data collected?*
-* *Are there any outliers?* "Outliers" are datapoints that seem to be very different from the other datapoints -- for example, are much larger or much smaller than the others. Outliers should be investigated to seek the reason for them . Perhaps this is a genuine-but-unusual datapoint (which is useful for understand the extremes of the data), or perhaps there is an extraordinary explanation (maybe a measurement or recording error). Once the reason for an outlier is understood, it then *might* be appropriate to exclude it from analysis (for example, the incorrectly recorded measurement). It's usually bad practice to exclude an outlier merely for being an outlier before understanding what caused it.
+* *Are there any outliers?* "Outliers" are datapoints that seem to be very different from the other datapoints -- for example, are much larger or much smaller than the others. Each outlier should be investigated to seek the reason for them. Perhaps it is a genuine-but-unusual datapoint (which is useful for understand the extremes of the data), or perhaps there is an extraordinary explanation (maybe a measurement or recording error, for example) meaning the data is not relevant. Once the reason for an outlier is understood, it then *might* be appropriate to exclude it from analysis (for example, the incorrectly recorded measurement). It's usually bad practice to exclude an outlier merely for being an outlier before understanding what caused it.
 
 
 ## What is R?  {#what-is-R}
@@ -28,7 +30,7 @@ mean(data)
 ```
 
 Here, the code in the first shaded box is the R commands that are typed into 
-RStudio, which you can type in next to the `>` arrow in the RStudio "console". The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign `##`. The `[1]` can be ignored (this is just R's way of saying that the answer is one-dimensional -- like a number or a vector, rather than two-dimensional, like a matrix or a list of vectors). Plots produced by R are displayed here as pictures.
+RStudio, which you can type in next to the `>` arrow in the RStudio "console". The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign `##`. The `[1]` can be ignored (this is just R's way of saying that this is the first part of the answer -- but all the answers here only have one part anyway). Plots produced by R are displayed here as pictures.
 
 Most importantly for now, *you are not expected to understand the R code in this section yet*. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.
 

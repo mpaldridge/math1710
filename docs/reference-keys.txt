@@ -56,10 +56,11 @@ normal-tables
 clt
 normal-approx
 S10-bayesian
-example-fake-coin-fakecoin
+fake-coin
 bayesian-framework
 beta
 beta-binomial
 normal-normal
 modern-bayes
 S11-summary
+drop-in-sessions

@@ -1,6 +1,8 @@
-# Bayesian statistics  {#S10-bayesian}
+# (PART\*) Part III: Bayesian statistics  {-}
 
-## Example: fake coin  {#fake=coin}
+# Introduction to Bayesian statistics  {#S10-bayesian}
+
+## Example: fake coin  {#fake-coin}
 
 ## Bayesian framework  {#bayesian-framework}
 

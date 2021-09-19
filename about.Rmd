@@ -4,11 +4,11 @@
 
 This module is **MATH1710 Probability and Statistics I**. A few students will be taking this module as half of **MATH2700 Probability and Statistics for Scientists**.
 
-This module lasts for 11 weeks from 27 September to 10 December. The exam will take place between 10 and 21 January 2022.
+This module lasts for 11 weeks from 27 September to 10 December 2021. The exam will take place between 10 and 21 January 2022.
 
 The core teaching team are:
 
-* Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge") -- I am the module leader, the main lecturer, and the main author of these notes.
+* Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge"): I am the module leader, the main lecturer, and the main author of these notes.
 * XXXX YYYY ZZZZ.
 
 The shared email address for the core teaching team is <math1710@leeds.ac.uk>; please use this address, rather than emailing our personal addresses; this will ensure your email is seen as soon as possible.
@@ -60,7 +60,7 @@ We are very keen to hear about things you'd like to go through in the lectures; 
 
 ### Tutorials {.unnumbered #tutorials}
 
-Tutorials are small groups of about a dozen students. You have been assigned to one of XXX tutorial groups, each led by a member of staff. Your tutor group will meet five times, in weeks 2, 4, 6, 8, 10. Tutorial groups will meet in person on campus; you should check your timetable to see when and where your tutorial group meets. (For those not yet on campus, due to travel restrictions or health conditions, there will be one online tutorial group for the first few tutorials.)
+Tutorials are small groups of about a dozen students. You have been assigned to one of XXX tutorial groups, each led by a member of staff. Your tutor group will meet five times, in weeks 2, 4, 6, 8, and 10. Tutorial groups will meet in person on campus; you should check your timetable to see when and where your tutorial group meets. (For those not yet on campus, due to travel restrictions or health conditions, there will be one online tutorial group for the first few tutorials.)
 
 The main goal of the tutorials will be to go over your answers to the non-assessed questions on the problems sheets in an interactive session. In this smaller group, you will be able to ask detailed questions of your tutorial leader, and have the chance to discuss your solutions to the problem sheet. Your tutorial leader may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutorial leader may be willing to give you a hint on the assessed questions if you've made a first attempt but got stuck.
 
@@ -82,7 +82,7 @@ You will learn R by working through one R worksheet each week in your own time. 
 
 You can read more about language R, and about the program RStudio that we recommend you use to interact with R, in [the R section of these notes](#R).
 
-To help you if you have problems with R, we have organised optional R troubleshooting sessions, where you can discuss any problems you have with an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
+To help you if you have problems with R, we have organised optional R troubleshooting drop-in sessions, where you can discuss any problems you have with an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
 
 
 ### Office hours {.unnumbered #dropin}
@@ -102,7 +102,7 @@ This is a good place to post questions about material from the module, and -- ev
 It is, of course, up to you how you choose to spend your time on this module. But my recommendations for your weekly work would be something like this:
 
 * **Notes and videos:** 2 hours per week/section
-* **Problem sheet:** 3 hours per week (so 6 hours for most problem sheets) plus 1 extra hour for writing up and submitting assessed questions
+* **Problem sheet:** 3 hours per week (so 6 hours for most problem sheets) plus 1 extra hour for writing up and submitting answers to assessed questions
 * **R worksheet:** 1 hour per week/worksheet, plus 1 extra hour if there are assessed questions
 * **Lecture:** 1 hour per week
 * **Tutorial:** 1 hour every other week
@@ -114,7 +114,7 @@ MATH1710 is a 10 credit module, so should take 100 hours in total. (MATH2700 stu
 
 ### Exam {.unnumbered #exam}
 
-There will be an exam in January, which makes up the remaining 70% of your mark. The exam will consist of 20 short and 2 long questions, and will time-limited to 2 hours. We'll talk more about the exam near the end of the module.
+There will be an exam in January, which makes up the remaining 70% of your mark. The exam will consist of 20 short and 2 long questions, and will be time-limited to 2 hours. We'll talk more about the exam format near the end of the module.
 
 
 ### Who should I ask about...?  {.unnumbered #ask}

@@ -4,46 +4,58 @@
 
 Each week there will be an R worksheet to work through in your own time. We recommend spending about one hour on each worksheet, plus one extra hour for worksheets with assessed questions, for checking through and submitting your solutions.
 
-| Week | Worksheet      |             Topic            | Deadline for assessed work |
-|:----:|-----------------|:----------------------------:|:--------------------------:|
-|   1  |  [[HTML]](R3.html) [[Rmd]](R3.Rmd)  | R basics                     |             ---            |
-|   2  |  *Coming soon*  | Working with vecotrs         |             ---            |
-|   3  |  *Coming soon*  | Importing data into R        |  Monday, Week 4  |
-|   4  |  *Coming soon*  | Plots I: Making plots        |             ---            |
-|   5  |  *Coming soon*  | Plots II: Making plots nicer |       Monday, Week 6       |
-|   6  |  *Coming soon*  | ???                          |             ---            |
-|   7  |  *Coming soon*  | Discrete random variables    |        Monday Week 8       |
-|   8  |  *Coming soon*  | Discrete distributions       |             ---            |
-|   9  |  *Coming soon*  | Normal distribution          |       Monday Week 10       |
-|  10  |  *Coming soon*  | Law of large numbers         |             ---            |
-|  11  |  *Coming soon*  | Summary                      |       First day back       |
+| Week | Worksheet                     | Deadline for assessed work |
+|:----:|-------------------------------|:--------------------------:|
+|   1  |  [R basics](R1.html)          |             ---            |
+|   2  |  Working with vectors         |             ---            |
+|   3  |  Importing data into R        |      Friday 15 October     |
+|   4  |  Plots I: Making plots        |             ---            |
+|   5  |  Plots II: Making plots nicer |      Friday 29 October     |
+|   6  |  RMarkdown (optional)         |             ---            |
+|   7  |  Discrete random variables    |      Friday 12 November    |
+|   8  |  Discrete distributions       |             ---            |
+|   9  |  Normal distribution          |      Friday 26 November    |
+|  10  |  Law of large numbers         |             ---            |
+|  11  |  Summary                      |      Friday 10 December    |
 
 
 ## About R and RStudio  {#about-r .unnumbered}
 
-* **R** is a programming language that is particularly good at working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and will make up at least 15% of your module mark. Many other statistics-related course at the University also require use of R.
-
-* **RStudio** is a program that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is very strongly recommended.
+* **R** is a *programming language* that is particularly good at working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related course at the University also use R.
+* **RStudio** is a *program* that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
 
 R and RStudio are free/open-source software.
 
 
-## How to access R  {#r-access .unnumbered}
+## How to access R and RStudio  {#r-access .unnumbered}
 
 There are a number of ways you can access R and RStudio:
 
-* All **University computers** have R and RStudio already installed.
-* You can **install** R and RStudio on your own computer -- see the instructions below
+* All **University computers** have R and RStudio already installed. [Here is a directory of the University's computer clusters.](https://it.leeds.ac.uk/it/?id=kb_article&sysparm_article=KB0013658)
+* You can **install** R and RStudio on your own computer -- see the instructions below.
 * If you want to use R/RStudio on a non-University device for which you don't have admin/installation rights (Chromebook, iPad, friend's laptop, etc), you could try:
-   * You can use the University's copies of R/RStudio virtually through the [Windows Virtual Desktop](https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014379) or [AppsAnywhere](https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014827) client.      * The [RStudio Cloud](https://rstudio.cloud/) is a cloud-hosted "Google Docs for R" that you can use through your web browser -- you can get 15 hours per month for free (or pay for more).
-   
-To **install R and RStudio** on your own computer:
+   * You can use the University's copies of R/RStudio virtually through the [Windows Virtual Desktop](https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014379) or [AppsAnywhere](https://it.leeds.ac.uk/it?id=kb_article&sysparm_article=KB0014827) client.
+   * The [RStudio Cloud](https://rstudio.cloud/) is a cloud-hosted "Google Docs for R" that you can use through your web browser -- you can get 15 hours per month for free (or pay for more).
 
-1. *First*, install R. Go to the [Comprehensive R Archive Network](https://cran.r-project.org/) and follow the instructions:
-   * Windows: Click [Download R for Windows](https://cran.r-project.org/bin/windows/), then [Install R for the first time](https://cran.r-project.org/bin/windows/base/). The main link at the top should be to download the most recent version of R.
-   * Mac: Click [Download R for macOS](https://cran.r-project.org/bin/macosx/), and then download the relevant PKG file. For pre-November 2020 Intel-based Macbooks, you must use the "Intel 64-bit build"; for post-November 2020 M1-based ("Apple silicon") Macbooks, the "Apple silicon arm64 build" should be faster.
-   * Linux: I'm sure you don't need my help.
-2. *After* R is intalled, *then* install R Studio. Go to [the Download page at RStudio.com](https://www.rstudio.com/products/rstudio/download/#download) and follow the instructions. You want "RStudio Desktop" (not "RStudio Server"), and you want the free version.
+
+## Installing R and RStudio  {#r-install .unnumbered}
+
+Students who have their own computer usually find it most convenient to install R and RStudio on that computer. To do this, it's important that you install R (the programming language) first, and only install RStudio (the program to use R) once R has already been installed.
+
+1. *First*, install **R**. Go to the [Comprehensive R Archive Network](https://cran.r-project.org/) and follow the instructions:
+
+   * Windows: Click ["Download R for Windows"](https://cran.r-project.org/bin/windows/), then ["Install R for the first time"](https://cran.r-project.org/bin/windows/base/). The main link at the top should be to download the most recent version of R.
+   * Mac: Click [Download R for macOS](https://cran.r-project.org/bin/macosx/), and then download the relevant PKG file. (For pre-November 2020 Intel-based Macbooks, you must use the "Intel 64-bit build"; for post-November 2020 M1-based "Apple silicon" Macbooks, the "Apple silicon arm64 build" may be faster.)
+2. *After* R is installed, *then* install **RStudio**. Go to [the Download page at RStudio.com](https://www.rstudio.com/products/rstudio/download/#download) and follow the instructions. You want "RStudio Desktop", and you want the free version.
 
 If you have difficulty installing R, come along to the first computational drop-in session in Week ?? and bring your computer with you (if it's sufficiently portable), and we'll do our best to help.
+
+
+## Drop-in sessions
+
+You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to get frustrated and annoyed when the computer seems to refuse to do what you want it to. This is a normal part of learning.
+
+However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this XXXXXXXx
+
+
 

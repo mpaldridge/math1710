@@ -1,10 +1,10 @@
 --- 
-title: "MATH1710 Probability and Statistics 1"
-author: "Matthew Aldridge"
+title: "MATH1710 Probability and Statistics I"
+author: "[Matthew Aldridge](mailto:math1710@leeds.ac.uk)"
 date: "University of Leeds, 2021--22"
 site: bookdown::bookdown_site
 documentclass: book
-description: "Lecture notes for the course MATH1710 Probability and Statistics 1 at the University of Leeds, 2021--2022"
+description: "Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021--2022"
 favicon: favicon.ico
 url:    https://mpaldridge.github.io/math1710/
 ---

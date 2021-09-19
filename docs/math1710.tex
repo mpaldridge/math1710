@@ -37,7 +37,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={MATH1710 Probability and Statistics 1},
+  pdftitle={MATH1710 Probability and Statistics I},
   pdfauthor={Matthew Aldridge},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
@@ -116,8 +116,8 @@
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
 
-\title{MATH1710 Probability and Statistics 1}
-\author{Matthew Aldridge}
+\title{MATH1710 Probability and Statistics I}
+\author{\href{mailto:math1710@leeds.ac.uk}{Matthew Aldridge}}
 \date{University of Leeds, 2021--22}
 
 \usepackage{amsthm}
@@ -160,14 +160,14 @@
 
 This module is \textbf{MATH1710 Probability and Statistics I}. A few students will be taking this module as half of \textbf{MATH2700 Probability and Statistics for Scientists}.
 
-This module lasts for 11 weeks from 27 September to 10 December. The exam will take place between 10 and 21 January 2022.
+This module lasts for 11 weeks from 27 September to 10 December 2021. The exam will take place between 10 and 21 January 2022.
 
 The core teaching team are:
 
 \begin{itemize}
 \tightlist
 \item
-  Dr Matthew Aldridge (you can call me ``Matt'' or ``Dr Aldridge'') -- I am the module leader, the main lecturer, and the main author of these notes.
+  Dr Matthew Aldridge (you can call me ``Matt'' or ``Dr Aldridge''): I am the module leader, the main lecturer, and the main author of these notes.
 \item
   XXXX YYYY ZZZZ.
 \end{itemize}
@@ -233,7 +233,7 @@ We are very keen to hear about things you'd like to go through in the lectures; 
 \subsection*{Tutorials}\label{tutorials}}
 \addcontentsline{toc}{subsection}{Tutorials}
 
-Tutorials are small groups of about a dozen students. You have been assigned to one of XXX tutorial groups, each led by a member of staff. Your tutor group will meet five times, in weeks 2, 4, 6, 8, 10. Tutorial groups will meet in person on campus; you should check your timetable to see when and where your tutorial group meets. (For those not yet on campus, due to travel restrictions or health conditions, there will be one online tutorial group for the first few tutorials.)
+Tutorials are small groups of about a dozen students. You have been assigned to one of XXX tutorial groups, each led by a member of staff. Your tutor group will meet five times, in weeks 2, 4, 6, 8, and 10. Tutorial groups will meet in person on campus; you should check your timetable to see when and where your tutorial group meets. (For those not yet on campus, due to travel restrictions or health conditions, there will be one online tutorial group for the first few tutorials.)
 
 The main goal of the tutorials will be to go over your answers to the non-assessed questions on the problems sheets in an interactive session. In this smaller group, you will be able to ask detailed questions of your tutorial leader, and have the chance to discuss your solutions to the problem sheet. Your tutorial leader may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutorial leader may be willing to give you a hint on the assessed questions if you've made a first attempt but got stuck.
 
@@ -263,7 +263,7 @@ You will learn R by working through one R worksheet each week in your own time. 
 
 You can read more about language R, and about the program RStudio that we recommend you use to interact with R, in \protect\hyperlink{R}{the R section of these notes}.
 
-To help you if you have problems with R, we have organised optional R troubleshooting sessions, where you can discuss any problems you have with an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as ``practicals''.
+To help you if you have problems with R, we have organised optional R troubleshooting drop-in sessions, where you can discuss any problems you have with an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as ``practicals''.
 
 \hypertarget{dropin}{%
 \subsection*{Office hours}\label{dropin}}
@@ -290,7 +290,7 @@ It is, of course, up to you how you choose to spend your time on this module. Bu
 \item
   \textbf{Notes and videos:} 2 hours per week/section
 \item
-  \textbf{Problem sheet:} 3 hours per week (so 6 hours for most problem sheets) plus 1 extra hour for writing up and submitting assessed questions
+  \textbf{Problem sheet:} 3 hours per week (so 6 hours for most problem sheets) plus 1 extra hour for writing up and submitting answers to assessed questions
 \item
   \textbf{R worksheet:} 1 hour per week/worksheet, plus 1 extra hour if there are assessed questions
 \item
@@ -309,7 +309,7 @@ MATH1710 is a 10 credit module, so should take 100 hours in total. (MATH2700 stu
 \subsection*{Exam}\label{exam}}
 \addcontentsline{toc}{subsection}{Exam}
 
-There will be an exam in January, which makes up the remaining 70\% of your mark. The exam will consist of 20 short and 2 long questions, and will time-limited to 2 hours. We'll talk more about the exam near the end of the module.
+There will be an exam in January, which makes up the remaining 70\% of your mark. The exam will consist of 20 short and 2 long questions, and will be time-limited to 2 hours. We'll talk more about the exam format near the end of the module.
 
 \hypertarget{ask}{%
 \subsection*{Who should I ask about\ldots?}\label{ask}}
@@ -427,6 +427,10 @@ These notes were written by Matthew Aldridge in 2021. Editing help was provided 
 
 These notes (in the web format) should be accessible by screenreaders. The videos have (highly imperfect) automated subtitles. If you accessibility difficulties with these notes, contact \href{mailto:maths1710@leeds.ac.uk}{\nolinkurl{maths1710@leeds.ac.uk}}.
 
+\hypertarget{part-part-i-eda}{%
+\part*{Part I: EDA}\label{part-part-i-eda}}
+\addcontentsline{toc}{part}{Part I: EDA}
+
 \hypertarget{S01-eda}{%
 \chapter{Exploratory data analysis}\label{S01-eda}}
 
@@ -454,7 +458,7 @@ Even before calculating summary statistics or drawing a plot, however, there are
 \item
   \emph{How was the data collected?}
 \item
-  \emph{Are there any outliers?} ``Outliers'' are datapoints that seem to be very different from the other datapoints -- for example, are much larger or much smaller than the others. Outliers should be investigated to seek the reason for them . Perhaps this is a genuine-but-unusual datapoint (which is useful for understand the extremes of the data), or perhaps there is an extraordinary explanation (maybe a measurement or recording error). Once the reason for an outlier is understood, it then \emph{might} be appropriate to exclude it from analysis (for example, the incorrectly recorded measurement). It's usually bad practice to exclude an outlier merely for being an outlier before understanding what caused it.
+  \emph{Are there any outliers?} ``Outliers'' are datapoints that seem to be very different from the other datapoints -- for example, are much larger or much smaller than the others. Each outlier should be investigated to seek the reason for them. Perhaps it is a genuine-but-unusual datapoint (which is useful for understand the extremes of the data), or perhaps there is an extraordinary explanation (maybe a measurement or recording error, for example) meaning the data is not relevant. Once the reason for an outlier is understood, it then \emph{might} be appropriate to exclude it from analysis (for example, the incorrectly recorded measurement). It's usually bad practice to exclude an outlier merely for being an outlier before understanding what caused it.
 \end{itemize}
 
 \hypertarget{what-is-R}{%
@@ -476,7 +480,7 @@ R can easily and quickly perform all the calculations and draw all the plots in 
 \end{verbatim}
 
 Here, the code in the first shaded box is the R commands that are typed into
-RStudio, which you can type in next to the \texttt{\textgreater{}} arrow in the RStudio ``console''. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign \texttt{\#\#}. The \texttt{{[}1{]}} can be ignored (this is just R's way of saying that the answer is one-dimensional -- like a number or a vector, rather than two-dimensional, like a matrix or a list of vectors). Plots produced by R are displayed here as pictures.
+RStudio, which you can type in next to the \texttt{\textgreater{}} arrow in the RStudio ``console''. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign \texttt{\#\#}. The \texttt{{[}1{]}} can be ignored (this is just R's way of saying that this is the first part of the answer -- but all the answers here only have one part anyway). Plots produced by R are displayed here as pictures.
 
 Most importantly for now, \emph{you are not expected to understand the R code in this section yet}. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.
 
@@ -669,6 +673,10 @@ Often we draw histograms because the data was collected in bins. But even when w
 \addcontentsline{toc}{chapter}{Problem Sheet 1}
 
 This is the first problem sheet.
+
+\hypertarget{part-part-ii-probability}{%
+\part*{Part II: Probability}\label{part-part-ii-probability}}
+\addcontentsline{toc}{part}{Part II: Probability}
 
 \hypertarget{S02-probability}{%
 \chapter{Probability spaces}\label{S02-probability}}
@@ -1178,11 +1186,15 @@ So the probability all five coins show the same face is
 \hypertarget{normal-approx}{%
 \section{Approximations with the normal distribution}\label{normal-approx}}
 
-\hypertarget{S10-bayesian}{%
-\chapter{Bayesian statistics}\label{S10-bayesian}}
+\hypertarget{part-part-iii-bayesian-statistics}{%
+\part*{Part III: Bayesian statistics}\label{part-part-iii-bayesian-statistics}}
+\addcontentsline{toc}{part}{Part III: Bayesian statistics}
 
-\hypertarget{example-fake-coin-fakecoin}{%
-\section{Example: fake coin \{\#fake=coin\}}\label{example-fake-coin-fakecoin}}
+\hypertarget{S10-bayesian}{%
+\chapter{Introduction to Bayesian statistics}\label{S10-bayesian}}
+
+\hypertarget{fake-coin}{%
+\section{Example: fake coin}\label{fake-coin}}
 
 \hypertarget{bayesian-framework}{%
 \section{Bayesian framework}\label{bayesian-framework}}
@@ -1198,6 +1210,10 @@ So the probability all five coins show the same face is
 
 \hypertarget{modern-bayes}{%
 \section{Modern Bayesian statistics}\label{modern-bayes}}
+
+\hypertarget{part-other-stuff}{%
+\part*{Other stuff}\label{part-other-stuff}}
+\addcontentsline{toc}{part}{Other stuff}
 
 \hypertarget{P5}{%
 \chapter*{Problem Sheet 5}\label{P5}}
@@ -1216,22 +1232,22 @@ So the probability all five coins show the same face is
 
 Each week there will be an R worksheet to work through in your own time. We recommend spending about one hour on each worksheet, plus one extra hour for worksheets with assessed questions, for checking through and submitting your solutions.
 
-\begin{longtable}[]{@{}clcc@{}}
+\begin{longtable}[]{@{}clc@{}}
 \toprule
-Week & Worksheet & Topic & Deadline for assessed work \\
+Week & Worksheet & Deadline for assessed work \\
 \midrule
 \endhead
-1 & \href{R3.html}{{[}HTML{]}} \href{R3.Rmd}{{[}Rmd{]}} & R basics & --- \\
-2 & \emph{Coming soon} & Working with vecotrs & --- \\
-3 & \emph{Coming soon} & Importing data into R & Monday, Week 4 \\
-4 & \emph{Coming soon} & Plots I: Making plots & --- \\
-5 & \emph{Coming soon} & Plots II: Making plots nicer & Monday, Week 6 \\
-6 & \emph{Coming soon} & ??? & --- \\
-7 & \emph{Coming soon} & Discrete random variables & Monday Week 8 \\
-8 & \emph{Coming soon} & Discrete distributions & --- \\
-9 & \emph{Coming soon} & Normal distribution & Monday Week 10 \\
-10 & \emph{Coming soon} & Law of large numbers & --- \\
-11 & \emph{Coming soon} & Summary & First day back \\
+1 & \href{R1.html}{R basics} & --- \\
+2 & Working with vectors & --- \\
+3 & Importing data into R & Friday 15 October \\
+4 & Plots I: Making plots & --- \\
+5 & Plots II: Making plots nicer & Friday 29 October \\
+6 & RMarkdown (optional) & --- \\
+7 & Discrete random variables & Friday 12 November \\
+8 & Discrete distributions & --- \\
+9 & Normal distribution & Friday 26 November \\
+10 & Law of large numbers & --- \\
+11 & Summary & Friday 10 December \\
 \bottomrule
 \end{longtable}
 
@@ -1240,57 +1256,68 @@ Week & Worksheet & Topic & Deadline for assessed work \\
 \addcontentsline{toc}{section}{About R and RStudio}
 
 \begin{itemize}
+\tightlist
 \item
-  \textbf{R} is a programming language that is particularly good at working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and will make up at least 15\% of your module mark. Many other statistics-related course at the University also require use of R.
+  \textbf{R} is a \emph{programming language} that is particularly good at working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15\% of your module mark. Many other statistics-related course at the University also use R.
 \item
-  \textbf{RStudio} is a program that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is very strongly recommended.
+  \textbf{RStudio} is a \emph{program} that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
 \end{itemize}
 
 R and RStudio are free/open-source software.
 
 \hypertarget{r-access}{%
-\section*{How to access R}\label{r-access}}
-\addcontentsline{toc}{section}{How to access R}
+\section*{How to access R and RStudio}\label{r-access}}
+\addcontentsline{toc}{section}{How to access R and RStudio}
 
 There are a number of ways you can access R and RStudio:
 
 \begin{itemize}
 \tightlist
 \item
-  All \textbf{University computers} have R and RStudio already installed.
+  All \textbf{University computers} have R and RStudio already installed. \href{https://it.leeds.ac.uk/it/?id=kb_article\&sysparm_article=KB0013658}{Here is a directory of the University's computer clusters.}
 \item
-  You can \textbf{install} R and RStudio on your own computer -- see the instructions below
+  You can \textbf{install} R and RStudio on your own computer -- see the instructions below.
 \item
   If you want to use R/RStudio on a non-University device for which you don't have admin/installation rights (Chromebook, iPad, friend's laptop, etc), you could try:
 
   \begin{itemize}
   \tightlist
   \item
-    You can use the University's copies of R/RStudio virtually through the \href{https://it.leeds.ac.uk/it?id=kb_article\&sysparm_article=KB0014379}{Windows Virtual Desktop} or \href{https://it.leeds.ac.uk/it?id=kb_article\&sysparm_article=KB0014827}{AppsAnywhere} client. * The \href{https://rstudio.cloud/}{RStudio Cloud} is a cloud-hosted ``Google Docs for R'' that you can use through your web browser -- you can get 15 hours per month for free (or pay for more).
+    You can use the University's copies of R/RStudio virtually through the \href{https://it.leeds.ac.uk/it?id=kb_article\&sysparm_article=KB0014379}{Windows Virtual Desktop} or \href{https://it.leeds.ac.uk/it?id=kb_article\&sysparm_article=KB0014827}{AppsAnywhere} client.
+  \item
+    The \href{https://rstudio.cloud/}{RStudio Cloud} is a cloud-hosted ``Google Docs for R'' that you can use through your web browser -- you can get 15 hours per month for free (or pay for more).
   \end{itemize}
 \end{itemize}
 
-To \textbf{install R and RStudio} on your own computer:
+\hypertarget{r-install}{%
+\section*{Installing R and RStudio}\label{r-install}}
+\addcontentsline{toc}{section}{Installing R and RStudio}
+
+Students who have their own computer usually find it most convenient to install R and RStudio on that computer. To do this, it's important that you install R (the programming language) first, and only install RStudio (the program to use R) once R has already been installed.
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
-\tightlist
 \item
-  \emph{First}, install R. Go to the \href{https://cran.r-project.org/}{Comprehensive R Archive Network} and follow the instructions:
+  \emph{First}, install \textbf{R}. Go to the \href{https://cran.r-project.org/}{Comprehensive R Archive Network} and follow the instructions:
 
   \begin{itemize}
   \tightlist
   \item
-    Windows: Click \href{https://cran.r-project.org/bin/windows/}{Download R for Windows}, then \href{https://cran.r-project.org/bin/windows/base/}{Install R for the first time}. The main link at the top should be to download the most recent version of R.
+    Windows: Click \href{https://cran.r-project.org/bin/windows/}{``Download R for Windows''}, then \href{https://cran.r-project.org/bin/windows/base/}{``Install R for the first time''}. The main link at the top should be to download the most recent version of R.
   \item
-    Mac: Click \href{https://cran.r-project.org/bin/macosx/}{Download R for macOS}, and then download the relevant PKG file. For pre-November 2020 Intel-based Macbooks, you must use the ``Intel 64-bit build''; for post-November 2020 M1-based (``Apple silicon'') Macbooks, the ``Apple silicon arm64 build'' should be faster.
-  \item
-    Linux: I'm sure you don't need my help.
+    Mac: Click \href{https://cran.r-project.org/bin/macosx/}{Download R for macOS}, and then download the relevant PKG file. (For pre-November 2020 Intel-based Macbooks, you must use the ``Intel 64-bit build''; for post-November 2020 M1-based ``Apple silicon'' Macbooks, the ``Apple silicon arm64 build'' may be faster.)
   \end{itemize}
 \item
-  \emph{After} R is intalled, \emph{then} install R Studio. Go to \href{https://www.rstudio.com/products/rstudio/download/\#download}{the Download page at RStudio.com} and follow the instructions. You want ``RStudio Desktop'' (not ``RStudio Server''), and you want the free version.
+  \emph{After} R is installed, \emph{then} install \textbf{RStudio}. Go to \href{https://www.rstudio.com/products/rstudio/download/\#download}{the Download page at RStudio.com} and follow the instructions. You want ``RStudio Desktop'', and you want the free version.
 \end{enumerate}
 
 If you have difficulty installing R, come along to the first computational drop-in session in Week ?? and bring your computer with you (if it's sufficiently portable), and we'll do our best to help.
+
+\hypertarget{drop-in-sessions}{%
+\section{Drop-in sessions}\label{drop-in-sessions}}
+
+You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to get frustrated and annoyed when the computer seems to refuse to do what you want it to. This is a normal part of learning.
+
+However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this XXXXXXXx
 
 \end{document}
