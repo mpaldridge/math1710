@@ -187,7 +187,7 @@ Often we draw histograms because the data was collected in bins. But even when w
 set.seed(4)
 ```
 
-```{r hist-bins, cache = TRUE, fig.show="hold", out.width="49%", fig.width = 4}
+```{r hist-bins, cache = TRUE, fig.show="hold", out.width="48%", fig.width = 4}
 hist_data <- c(rnorm(30, 8, 2), rnorm(40, 12, 3))  # Some fake data
 hist(hist_data, breaks = 40, main = "Too many bins")
 hist(hist_data, breaks = 3, main = "Too few bins")
