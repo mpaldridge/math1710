@@ -659,7 +659,7 @@ Often we draw histograms because the data was collected in bins. But even when w
 \begin{Highlighting}[]
 \NormalTok{hist\_data }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{2}\NormalTok{), }\FunctionTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{3}\NormalTok{))  }\CommentTok{\# Some fake data}
 \FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{40}\NormalTok{, }\AttributeTok{main =} \StringTok{"Too many bins"}\NormalTok{)}
-\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{3}\NormalTok{, }\AttributeTok{main =} \StringTok{"Too few bins"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{3}\NormalTok{,  }\AttributeTok{main =} \StringTok{"Too few bins"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -667,6 +667,48 @@ Often we draw histograms because the data was collected in bins. But even when w
 
 \hypertarget{multiple}{%
 \section{Multiple measurements and scatterplots}\label{multiple}}
+
+Often, more than one piece of data is collected from each subject, and we wish to compare that data.
+
+For example, we could take \(n\) second-year maths students, and for each student \(i\), collect their mark \(x_i\) in MATH1710 and their mark \(y_i\) in MATH1712. This gives is two ``paired'' datasets, \(\mathbf x = (x_1, x_2, \dots, x_n)\) and \(\mathbf y = (y_1, y_2, \dots, y_n)\). We can calculate sample statistics of draw plots for \(\mathbf x\) and for \(\mathbf y\) individually. But we might also want to see if there is a relationship \emph{between} \(\mathbf x\) and \(\mathbf y\): Do students with high marks in MATH1710 also get high marks in MATH1712?
+
+A good way to visualise the relationship between two variables is to use a \textbf{scatterplot}. In a scatterplot, the \(i\)th data pair \((x_i, y_i)\) is illustrated with a mark (such as a circle or cross) whose x-coordinate has the value \(x_i\) and whose y-coordinate has the value \(y_i\).
+
+In the following scatterplot, we have \(n = 50\) datapoints for the 50 US states; \(x\) is the Republican share of the vote in the 2016 Trump--Clinton presidential election, and \(y\) is the Republican share of the vote in the 2020 Trump--Biden election.
+
+We see that there is a strong relationship between \(\mathbf x\) and \(\mathbf y\), with high values of \(x\) corresponding to high values of \(y\) and vice versa. Further, the points on the scatterplot lie very close to a straight line.
+
+A useful summary statistic here is the \textbf{correlation}
+\[ r_{xy} = \frac{s_{xy}}{s_x s_y} , \]
+where \(s_{xy}\) is the \textbf{sample covariance}
+\[ s_{xy} = \frac{1}{n} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) , \]
+and \(s_x\) and \(s_y\) are the standard deviations.
+
+The correlation \(r_{xy}\) is always between \(-1\) and \(+1\). Values of \(r_{xy}\) near \(+1\) indicate that the scatterpoints are close to a straight line with an upward slope (big \(x\) = big \(y\)); values of \(r_{xy}\) near \(-1\) indicate that the scatterpoints are close to a straight line with a downward slope (big \(x\) = small \(y\)); and values of \(r_{xy}\) near 0 indicate that there is a weak linear relationship between \(x\) and \(y\).
+
+For the elections data, the correlation is
+
+which, as we expected, is very high.
+
+\hypertarget{summary-01}{%
+\section*{Summary}\label{summary-01}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  Exploratory data analysis is about taking a first look at data.
+\item
+  Summary statistics are numbers calculated from data that give us useful information about the data.
+\item
+  Summary statistics that measure the centre of the data include the mode, median, and mean.
+\item
+  Summary statistics that measure the spread of the data include the number of distinct outcomes, the interquartile range, and the sample variance.
+\item
+  A summary statistic that measures the linear relationship between two variables is the correlation.
+\item
+  Boxplots, histograms, and scatterplots are useful ways of visualising data.
+\end{itemize}
 
 \hypertarget{P1}{%
 \chapter*{Problem Sheet 1}\label{P1}}
