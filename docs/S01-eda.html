@@ -170,7 +170,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.5" data-path="S01-eda.html"><a href="S01-eda.html#multiple"><i class="fa fa-check"></i><b>1.5</b> Multiple measurements and scatterplots</a></li>
 <li class="chapter" data-level="" data-path="S01-eda.html"><a href="S01-eda.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
 <li class="part"><span><b>Part II: Probability</b></span></li>
 <li class="chapter" data-level="2" data-path="S02-probability.html"><a href="S02-probability.html"><i class="fa fa-check"></i><b>2</b> Probability spaces</a>
 <ul>
@@ -516,6 +522,17 @@ More generally, if <span class="math inline">\(m_i\)</span> is the midpoint of b
 <p>For example, we could take <span class="math inline">\(n\)</span> second-year maths students, and for each student <span class="math inline">\(i\)</span>, collect their mark <span class="math inline">\(x_i\)</span> in MATH1710 and their mark <span class="math inline">\(y_i\)</span> in MATH1712. This gives is two “paired” datasets, <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span> and <span class="math inline">\(\mathbf y = (y_1, y_2, \dots, y_n)\)</span>. We can calculate sample statistics of draw plots for <span class="math inline">\(\mathbf x\)</span> and for <span class="math inline">\(\mathbf y\)</span> individually. But we might also want to see if there is a relationship <em>between</em> <span class="math inline">\(\mathbf x\)</span> and <span class="math inline">\(\mathbf y\)</span>: Do students with high marks in MATH1710 also get high marks in MATH1712?</p>
 <p>A good way to visualise the relationship between two variables is to use a <strong>scatterplot</strong>. In a scatterplot, the <span class="math inline">\(i\)</span>th data pair <span class="math inline">\((x_i, y_i)\)</span> is illustrated with a mark (such as a circle or cross) whose x-coordinate has the value <span class="math inline">\(x_i\)</span> and whose y-coordinate has the value <span class="math inline">\(y_i\)</span>.</p>
 <p>In the following scatterplot, we have <span class="math inline">\(n = 50\)</span> datapoints for the 50 US states; <span class="math inline">\(x\)</span> is the Republican share of the vote in the 2016 Trump–Clinton presidential election, and <span class="math inline">\(y\)</span> is the Republican share of the vote in the 2020 Trump–Biden election.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="S01-eda.html#cb5-1" aria-hidden="true" tabindex="-1"></a>elections <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://mpaldridge.github.io/math1710/data/elections.csv&quot;</span>)</span>
+<span id="cb5-2"><a href="S01-eda.html#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="S01-eda.html#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(elections<span class="sc">$</span>X2016, elections<span class="sc">$</span>X2020,</span>
+<span id="cb5-4"><a href="S01-eda.html#cb5-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>,</span>
+<span id="cb5-5"><a href="S01-eda.html#cb5-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">&quot;Republican share of the two-party vote, 2016 (%)&quot;</span>,</span>
+<span id="cb5-6"><a href="S01-eda.html#cb5-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">&quot;Republican share of the two-party vote, 2020 (%)&quot;</span>)</span>
+<span id="cb5-7"><a href="S01-eda.html#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="S01-eda.html#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb5-9"><a href="S01-eda.html#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">v =</span> <span class="dv">50</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>)</span>
+<span id="cb5-10"><a href="S01-eda.html#cb5-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="fl">0.195</span>, <span class="fl">0.963</span>, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<p><img src="math1710_files/figure-html/elections-1.png" width="672" /></p>
 <p>We see that there is a strong relationship between <span class="math inline">\(\mathbf x\)</span> and <span class="math inline">\(\mathbf y\)</span>, with high values of <span class="math inline">\(x\)</span> corresponding to high values of <span class="math inline">\(y\)</span> and vice versa. Further, the points on the scatterplot lie very close to a straight line.</p>
 <p>A useful summary statistic here is the <strong>correlation</strong>
 <span class="math display">\[ r_{xy} = \frac{s_{xy}}{s_x s_y} , \]</span>
@@ -524,7 +541,9 @@ where <span class="math inline">\(s_{xy}\)</span> is the <strong>sample covarian
 and <span class="math inline">\(s_x\)</span> and <span class="math inline">\(s_y\)</span> are the standard deviations.</p>
 <p>The correlation <span class="math inline">\(r_{xy}\)</span> is always between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>. Values of <span class="math inline">\(r_{xy}\)</span> near <span class="math inline">\(+1\)</span> indicate that the scatterpoints are close to a straight line with an upward slope (big <span class="math inline">\(x\)</span> = big <span class="math inline">\(y\)</span>); values of <span class="math inline">\(r_{xy}\)</span> near <span class="math inline">\(-1\)</span> indicate that the scatterpoints are close to a straight line with a downward slope (big <span class="math inline">\(x\)</span> = small <span class="math inline">\(y\)</span>); and values of <span class="math inline">\(r_{xy}\)</span> near 0 indicate that there is a weak linear relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <p>For the elections data, the correlation is</p>
-<p>which, as we expected, is very high.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="S01-eda.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor</span>(elections<span class="sc">$</span>X2016, elections<span class="sc">$</span>X2020)</span></code></pre></div>
+<pre><code>## [1] 0.9919659</code></pre>
+<p>which, as we expected, is extremely high.</p>
 </div>
 <div id="summary-01" class="section level2 unnumbered">
 <h2>Summary</h2>

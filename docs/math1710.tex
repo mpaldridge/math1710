@@ -676,6 +676,23 @@ A good way to visualise the relationship between two variables is to use a \text
 
 In the following scatterplot, we have \(n = 50\) datapoints for the 50 US states; \(x\) is the Republican share of the vote in the 2016 Trump--Clinton presidential election, and \(y\) is the Republican share of the vote in the 2020 Trump--Biden election.
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{elections }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"https://mpaldridge.github.io/math1710/data/elections.csv"}\NormalTok{)}
+
+\FunctionTok{plot}\NormalTok{(elections}\SpecialCharTok{$}\NormalTok{X2016, elections}\SpecialCharTok{$}\NormalTok{X2020,}
+     \AttributeTok{col =} \StringTok{"blue"}\NormalTok{,}
+     \AttributeTok{xlab =} \StringTok{"Republican share of the two{-}party vote, 2016 (\%)"}\NormalTok{,}
+     \AttributeTok{ylab =} \StringTok{"Republican share of the two{-}party vote, 2020 (\%)"}\NormalTok{)}
+
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{h =} \DecValTok{50}\NormalTok{, }\AttributeTok{col =} \StringTok{"grey"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\AttributeTok{v =} \DecValTok{50}\NormalTok{, }\AttributeTok{col =} \StringTok{"grey"}\NormalTok{)}
+\FunctionTok{abline}\NormalTok{(}\FloatTok{0.195}\NormalTok{, }\FloatTok{0.963}\NormalTok{, }\AttributeTok{col =} \StringTok{"red"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{math1710_files/figure-latex/elections-1.pdf}
+
 We see that there is a strong relationship between \(\mathbf x\) and \(\mathbf y\), with high values of \(x\) corresponding to high values of \(y\) and vice versa. Further, the points on the scatterplot lie very close to a straight line.
 
 A useful summary statistic here is the \textbf{correlation}
@@ -688,7 +705,17 @@ The correlation \(r_{xy}\) is always between \(-1\) and \(+1\). Values of \(r_{x
 
 For the elections data, the correlation is
 
-which, as we expected, is very high.
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{cor}\NormalTok{(elections}\SpecialCharTok{$}\NormalTok{X2016, elections}\SpecialCharTok{$}\NormalTok{X2020)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9919659
+\end{verbatim}
+
+which, as we expected, is extremely high.
 
 \hypertarget{summary-01}{%
 \section*{Summary}\label{summary-01}}
@@ -714,7 +741,51 @@ which, as we expected, is very high.
 \chapter*{Problem Sheet 1}\label{P1}}
 \addcontentsline{toc}{chapter}{Problem Sheet 1}
 
-This is the first problem sheet.
+This is Problem Sheet 1, which covers material from \protect\hyperlink{S01-eda}{Section 1} of the notes. You should work through all the questions on this problem sheet during week 1, in preparation for your tutorial in week 2. Questions C1 and C2 are assessed questions, and are due in by \textbf{2pm on Friday 8 September}.
+
+\hypertarget{P1-short}{%
+\section*{A: Short questions}\label{P1-short}}
+\addcontentsline{toc}{section}{A: Short questions}
+
+The first XXX questions are \textbf{short questions}, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the notes. Here, your should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.
+
+\hypertarget{P1-long}{%
+\section*{B: Long questions}\label{P1-long}}
+\addcontentsline{toc}{section}{B: Long questions}
+
+The next four questions are \textbf{long questions}, which are intended to be harder. Long questions often require you to think for yourself, not just copy ideas from the notes. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to clearly write good solutions -- are likely to be the main topic for discussion in your tutorial.
+
+\textbf{B1.} For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.
+
+\textbf{(a)} Colours of Skittles in an extra-large tube:
+
+\textbf{(b)} Shirt sizes for a university football team:
+
+\textbf{B2.} A summary statistic is informally said to be ``robust'' if it typically doesn't change much if a small number of outliers are introduced to a large dataset, or ``sensitive'' if it often changes a lot when a small number of outliers are introduced. Comment on the robustness or sensitivity of the following summary statistics: \textbf{(a)} mode; \textbf{(b)} median; \textbf{(c)} mean; \textbf{(d)} number of distinct outcomes; \textbf{(e)} inter-quartile range; and \textbf{(f)} sample variance.
+
+\textbf{B3.} Let \(\mathbf a = (a_1, a_2, \dots a_n)\) and \(\mathbf b = (b_1, b_2, \dots, b_n)\) be two real-valued vectors of the same length. Then the \emph{Cauchy--Schwarz inequality} says that
+\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]
+Use the Cauchy--Schwarz inequality to show that the correlation \(r_{xy}\) satisfies \(-1 \leq r_{xy} \leq 1\).
+
+(\emph{Hint:} Try to prove that \(s_{xy}^2 \leq s_x^2 s_y^2\). How does this help?)
+
+\textbf{B4.} A researcher wishes to study the effect of mental health on academic achievement. The researcher will collect data on the mental health of a cohort of students by asking them to fill in a questionnaire, and will measure academic achievement via the students' scores on their university exams. Discuss some of the ethical issues associated with the collection, storage, and analysis of this data, and with the publication of the results of the analysis. Are there ways to mitigate these issues?
+
+(It's not necessary to write an essay for this question -- a few short bulletpoints will suffice. There may be an opportunity to discuss these issues in more detail in your tutorial.)
+
+\hypertarget{P1-assessed}{%
+\section*{C: Assessed questions}\label{P1-assessed}}
+\addcontentsline{toc}{section}{C: Assessed questions}
+
+The last two questions are \textbf{assessed questions}. This means you will submit your answers, and your answers will be marked. These two questions count for 3\% of your mark for this module.
+
+The deadline for submitting your solutions is \textbf{2pm on Friday 8 September}. Submission will be via Gradescope; submission will open on Monday 3 September. You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) -- please do not just submit photographs. We will discuss Gradescope submission further in the week 2 lectures. Your work will be marked by your tutor and returned on Monday 18 September, when solutions will also be made available.
+
+Question C1 is a ``short question'', where showing brief working is sufficient; Question C2 is a ``long question'' that requires full sentences and very clear explanations.
+
+\hypertarget{P1-short-sols}{%
+\section*{Solutions to short questions}\label{P1-short-sols}}
+\addcontentsline{toc}{section}{Solutions to short questions}
 
 \hypertarget{part-part-ii-probability}{%
 \part*{Part II: Probability}\label{part-part-ii-probability}}

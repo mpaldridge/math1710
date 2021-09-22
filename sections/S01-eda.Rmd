@@ -205,8 +205,17 @@ A good way to visualise the relationship between two variables is to use a **sca
 
 In the following scatterplot, we have $n = 50$ datapoints for the 50 US states; $x$ is the Republican share of the vote in the 2016 Trump--Clinton presidential election, and $y$ is the Republican share of the vote in the 2020 Trump--Biden election.
 
-```{r}
+```{r elections, cache = TRUE}
+elections <- read.csv("https://mpaldridge.github.io/math1710/data/elections.csv")
 
+plot(elections$X2016, elections$X2020,
+     col = "blue",
+     xlab = "Republican share of the two-party vote, 2016 (%)",
+     ylab = "Republican share of the two-party vote, 2020 (%)")
+
+abline(h = 50, col = "grey")
+abline(v = 50, col = "grey")
+abline(0.195, 0.963, col = "red")
 ```
 
 We see that there is a strong relationship between $\mathbf x$ and $\mathbf y$, with high values of $x$ corresponding to high values of $y$ and vice versa. Further, the points on the scatterplot lie very close to a straight line.
@@ -220,10 +229,10 @@ and $s_x$ and $s_y$ are the standard deviations.
 The correlation $r_{xy}$ is always between $-1$ and $+1$. Values of $r_{xy}$ near $+1$ indicate that the scatterpoints are close to a straight line with an upward slope (big $x$ = big $y$); values of $r_{xy}$ near $-1$ indicate that the scatterpoints are close to a straight line with a downward slope (big $x$ = small $y$); and values of $r_{xy}$ near 0 indicate that there is a weak linear relationship between $x$ and $y$.
 
 For the elections data, the correlation is
-```{r}
-
+```{r, cache = TRUE}
+cor(elections$X2016, elections$X2020)
 ```
-which, as we expected, is very high.
+which, as we expected, is extremely high.
 
 ## Summary  {#summary-01 .unnumbered}
 
