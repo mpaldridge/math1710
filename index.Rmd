@@ -11,4 +11,6 @@ url:    https://mpaldridge.github.io/math1710/
 
 # Schedule {.unnumbered}
 
-*MATH1710 begins on Monday 20 September.*
+::: {.mysummary}
+*MATH1710 begins on Monday 27 September.*
+:::

@@ -1,0 +1,24 @@
+---
+title:  "R Worksheet 1: R Basics"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet does not include any assessed questions.*
+
+---
+
+# How to use R and RStudio
+
+This worksheet assumes you or using a computer with the programming language R and the program RStudio installed. This might be:
+
+* a University computer, which all have R and RStudio installed;
+* your own computer on which you have first installed R and then installed RStudio, following [the instructions in the notes](https://mpaldridge.github.io/math1710/R.html#r-install);
+* using the [RStudio Cloud](https://rstudio.cloud/).
+
+Open RStudio. To enter commands, you should type them into the "Console" -- this normally takes up either the left half of the screen, or the bottom-left quarter. When you open RStudio, there will be some information about R in the console, in black writing, then an arrow `>` in blue. You can type commands next to this blue arrow.
+
+> **Exercise 1.1.** Type `2 + 3` into the console next to the arrow, and then press Enter. What happens?
+
+In these worksheets, R commands for you to enter will look like this

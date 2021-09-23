@@ -1,0 +1,10 @@
+:::: {.myq}
+**A1.** Consider the following data sets of the age of elected politicians on a local council.
+
+TABLE
+
+::: {.subq}
+**(a)** Complete the table by filling in the relative frequency and frequency densities.
+::::
+
+

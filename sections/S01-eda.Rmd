@@ -93,11 +93,11 @@ Here, the first line is the definitional formula; the second line is from expand
 
 This has left us with
 \[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]
-This is sometimes called the "computational formula"; this is because it's usually more convenient to calculate the sample variance using this formula rather than the computational formula.
+This is sometimes called the "computational formula"; this is because it's usually more convenient to calculate the sample variance using this formula rather than the definitional formula.
 
 The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example, ???????????????? ???????????/
 
-A **boxplot** is a useful way to illustrate data. It can be easier to tell the difference between different data sets "by eye" when looking at a boxplot rather than examining raw summary statistics.
+A **boxplot** is a useful way to illustrate data. It can be easier to tell the difference between different data sets "by eye" when looking at a boxplot, rather than examining raw summary statistics.
 
 A boxplot is drawn as follows:
 
@@ -169,7 +169,7 @@ Since we don't have the exact data, it's not possible to exactly calculate the m
 
 For our journey-time data, our approximation of the mean would be
 \[ \bar x = \frac{1}{100} \big(4\times 2.5 + 8 \times 7.5 + \cdots + 2\times90) = 24.4 . \]
-More generally, if $m_i$ is the midpoint of bin $i$ and $f_i$ its frequency, then we can calculate the binned mean and binned variance by
+More generally, if $m_j$ is the midpoint of bin $j$ and $f_j$ its frequency, then we can calculate the binned mean and binned variance by
 \begin{align*}
   \bar x &= \frac{1}{n} \sum_j f_j m_j \\
   s^2_x  &= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)

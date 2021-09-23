@@ -1,8 +1,12 @@
 ---
 title:  "R Worksheet 2: Vectors"
-author: "R Training Material"
-date:   "School of Mathematics, University of Leeds"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
 output: html_document
+---
+
+*This R worksheet does not include any assessed questions.*
+
 ---
 
 So far, our objects in R have just been single numbers. However, we can do much more with R when our objects are **vectors** of many numbers. In this worksheet, we will find out how to enters vector into R, and look at operations we can perform with these vectors.

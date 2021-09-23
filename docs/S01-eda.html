@@ -362,9 +362,9 @@ where <span class="math inline">\(\bar x\)</span> is the sample mean from before
 Here, the first line is the definitional formula; the second line is from expanding out the bracket; the third line is taking the sum term-by-term; the fourth line takes any constants (things not involving <span class="math inline">\(i\)</span>) outside the sums; the fifth line uses <span class="math inline">\(\sum_{i=1}^n x_i = n\bar x\)</span>, from the definition of the mean, and <span class="math inline">\(\sum_{i=1}^n 1 = 1 + 1 + \cdots 1 = n\)</span>; and the sixth line simplifies the final two terms.</p>
 <p>This has left us with
 <span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
-This is sometimes called the “computational formula”; this is because it’s usually more convenient to calculate the sample variance using this formula rather than the computational formula.</p>
+This is sometimes called the “computational formula”; this is because it’s usually more convenient to calculate the sample variance using this formula rather than the definitional formula.</p>
 <p>The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example, ???????????????? ???????????/</p>
-<p>A <strong>boxplot</strong> is a useful way to illustrate data. It can be easier to tell the difference between different data sets “by eye” when looking at a boxplot rather than examining raw summary statistics.</p>
+<p>A <strong>boxplot</strong> is a useful way to illustrate data. It can be easier to tell the difference between different data sets “by eye” when looking at a boxplot, rather than examining raw summary statistics.</p>
 <p>A boxplot is drawn as follows:</p>
 <ul>
 <li>The vertical axis represents the data values.</li>
@@ -501,7 +501,7 @@ This is sometimes called the “computational formula”; this is because it’s
 <p>Since we don’t have the exact data, it’s not possible to exactly calculate the mean and variance. However, we can often get a good estimate by assuming that each observation was in fact right in the centre of its bin. So, for example, we can assume that all 4 observations in the “0–5 minutes” bin were journeys of exactly 2.5 minutes. Of course, this isn’t true (or is highly unlikely to be true), but we can often get a good approximation this way.</p>
 <p>For our journey-time data, our approximation of the mean would be
 <span class="math display">\[ \bar x = \frac{1}{100} \big(4\times 2.5 + 8 \times 7.5 + \cdots + 2\times90) = 24.4 . \]</span>
-More generally, if <span class="math inline">\(m_i\)</span> is the midpoint of bin <span class="math inline">\(i\)</span> and <span class="math inline">\(f_i\)</span> its frequency, then we can calculate the binned mean and binned variance by
+More generally, if <span class="math inline">\(m_j\)</span> is the midpoint of bin <span class="math inline">\(j\)</span> and <span class="math inline">\(f_j\)</span> its frequency, then we can calculate the binned mean and binned variance by
 <span class="math display">\[\begin{align*}
   \bar x &amp;= \frac{1}{n} \sum_j f_j m_j \\
   s^2_x  &amp;= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)

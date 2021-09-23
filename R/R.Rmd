@@ -6,7 +6,7 @@ Each week there will be an R worksheet to work through in your own time. We reco
 
 | Week | Worksheet                     | Deadline for assessed work |
 |:----:|-------------------------------|:--------------------------:|
-|   1  |  [R basics](R1.html)          |             ---            |
+|   1  |  R basics          |             ---            |
 |   2  |  Working with vectors         |             ---            |
 |   3  |  Importing data into R        |      Friday 15 October     |
 |   4  |  Plots I: Making plots        |             ---            |

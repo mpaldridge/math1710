@@ -89,7 +89,7 @@ To help you if you have problems with R, we have organised optional **R troubles
 
 If you there is something in the module you wish to discuss in detail with the module core teaching team, the place for the is the optional weekly "office hours", which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to a member of staff; these are particularly useful if there's something on the module that you are stuck on or confused about, but we're happy to discuss any statistics-related issues or questions you have.
 
-There will be two office hours per week: Wednesdays at 1000 and at 1200. (For boring reasons, the 1000 sessions appear on the timetable for MATH2700 students and the 1200 sessions appear on the timetable for MATH1710 students, but I'm happy for anyone to attend either hour.)
+There will be two office hours per week: Wednesdays at 1000 and at 1200. (For boring reasons, the 1000 sessions appear on the timetable for MATH2700 students and the 1200 sessions appear on the timetable for MATH1710 students, but I'm happy for anyone to attend either hour.) The sessions will happen, until further notice, at least, in my office, PRD 9.320 on the the ninth floor of the Physics Research Deck.
 
 
 ### Time management {.unnumbered #time}

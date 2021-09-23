@@ -1,0 +1,17 @@
+:::: {.myq}
+**C1.**
+::::
+
+
+:::: {.myq}
+**C2.**
+
+::: {.subq}
+**(a)** Prove the following computational formula for the sample covariance:
+\[ s_{xy} = \frac{1}{n-1} \left( \sum_{i=1}^n x_iy_i - n\bar x \bar y \right). \]
+:::
+
+::: {.subq}
+**(b)** Suppose that a dataset $\mathbf x = (x_1, x_2, \dots, x_n)$ (with $n \geq 2$) has sample variance $s_x^2 = 0$. Show that all the datapoints are in fact equal.
+:::
+::::

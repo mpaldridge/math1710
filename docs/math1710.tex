@@ -148,7 +148,7 @@
 \chapter*{Schedule}\label{schedule}}
 \addcontentsline{toc}{chapter}{Schedule}
 
-\emph{MATH1710 begins on Monday 20 September.}
+\emph{MATH1710 begins on Monday 27 September.}
 
 \hypertarget{about}{%
 \chapter*{About MATH2750}\label{about}}
@@ -548,11 +548,11 @@ Here, the first line is the definitional formula; the second line is from expand
 
 This has left us with
 \[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]
-This is sometimes called the ``computational formula''; this is because it's usually more convenient to calculate the sample variance using this formula rather than the computational formula.
+This is sometimes called the ``computational formula''; this is because it's usually more convenient to calculate the sample variance using this formula rather than the definitional formula.
 
 The following R code reads in some data which has the daily average temperature in Leeds, divided into months. We can find, for example, ???????????????? ???????????/
 
-A \textbf{boxplot} is a useful way to illustrate data. It can be easier to tell the difference between different data sets ``by eye'' when looking at a boxplot rather than examining raw summary statistics.
+A \textbf{boxplot} is a useful way to illustrate data. It can be easier to tell the difference between different data sets ``by eye'' when looking at a boxplot, rather than examining raw summary statistics.
 
 A boxplot is drawn as follows:
 
@@ -633,7 +633,7 @@ Since we don't have the exact data, it's not possible to exactly calculate the m
 
 For our journey-time data, our approximation of the mean would be
 \[ \bar x = \frac{1}{100} \big(4\times 2.5 + 8 \times 7.5 + \cdots + 2\times90) = 24.4 . \]
-More generally, if \(m_i\) is the midpoint of bin \(i\) and \(f_i\) its frequency, then we can calculate the binned mean and binned variance by
+More generally, if \(m_j\) is the midpoint of bin \(j\) and \(f_j\) its frequency, then we can calculate the binned mean and binned variance by
 \begin{align*}
   \bar x &= \frac{1}{n} \sum_j f_j m_j \\
   s^2_x  &= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)
@@ -741,6 +741,13 @@ This is Problem Sheet 1, which covers material from \protect\hyperlink{S01-eda}{
 
 The first XXX questions are \textbf{short questions}, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the notes. Here, your should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.
 
+:::: \{.myq\}
+\textbf{A1.} Consider the following data sets of the age of elected politicians on a local council.
+
+TABLE
+
+\textbf{(a)} Complete the table by filling in the relative frequency and frequency densities.
+
 \hypertarget{P1-long}{%
 \section*{B: Long questions}\label{P1-long}}
 \addcontentsline{toc}{section}{B: Long questions}
@@ -780,13 +787,22 @@ Use the Cauchy--Schwarz inequality to show that the correlation \(r_{xy}\) satis
 \section*{C: Assessed questions}\label{P1-assessed}}
 \addcontentsline{toc}{section}{C: Assessed questions}
 
-The last two questions are \textbf{assessed questions}. This means you will submit your answers, and your answers will be marked. These two questions count for 3\% of your mark for this module.
+The last two questions are \textbf{assessed questions}. This means you will submit your answers, and your answers will be marked. These two questions count for 3\% of your mark for this module. If you get stuck, your tutor may be willing to give you a hint in your tutorial.
 
 The deadline for submitting your solutions is \textbf{2pm on Friday 8 September}. Submission will be via Gradescope; submission will open on Monday 3 September. You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) -- please do not just submit photographs. We will discuss Gradescope submission further in the week 2 lectures. Your work will be marked by your tutor and returned on Monday 18 September, when solutions will also be made available.
 
-Question C1 is a ``short question'', where showing brief working is sufficient; Question C2 is a ``long question'' that requires full sentences and very clear explanations. If you get stuck, your tutor may be willing to give you a little hint in your tutorial.
+Question C1 is a ``short question'', where brief explanations or working are sufficient; Question C2 is a ``long question'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
 
-You should not collaborate with others on the assessed questions; your answers must represent solely your own work. The University's rules on academic integrity -- and the related punishments for violating them -- apply to your work on the assessed questions.
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
+
+\textbf{C1.}
+
+\textbf{C2.}
+
+\textbf{(a)} Prove the following computational formula for the sample covariance:
+\[ s_{xy} = \frac{1}{n-1} \left( \sum_{i=1}^n x_iy_i - n\bar x \bar y \right). \]
+
+\textbf{(b)} Suppose that a dataset \(\mathbf x = (x_1, x_2, \dots, x_n)\) (with \(n \geq 2\)) has sample variance \(s_x^2 = 0\). Show that all the datapoints are in fact equal.
 
 \hypertarget{P1-short-sols}{%
 \section*{Solutions to short questions}\label{P1-short-sols}}
