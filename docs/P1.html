@@ -147,7 +147,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Office hours</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#discussion"><i class="fa fa-check"></i>Discussion board</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
@@ -292,7 +291,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="P1" class="section level1 unnumbered">
 <h1>Problem Sheet 1</h1>
 <div class="mysummary">
-<p>This is Problem Sheet 1, which covers material from <a href="S01-eda.html#S01-eda">Section 1</a> of the notes. You should work through all the questions on this problem sheet during week 1, in preparation for your tutorial in week 2. Questions C1 and C2 are assessed questions, and are due in by <strong>2pm on Friday 8 September</strong>.</p>
+<p>This is Problem Sheet 1, which covers material from <a href="S01-eda.html#S01-eda">Section 1</a> of the notes. You should work through all the questions on this problem sheet during week 1, in preparation for your tutorial in week 2. Questions C1 and C2 are assessed questions, and are due in by <strong>2pm on Friday 8 September</strong>. I recommend spending about 3 hours on this problem sheet in week 1, plus 1 extra hour in week 2 to neatly write up and submit your answers to the assessed questions.</p>
 </div>
 <div id="P1-short" class="section level2 unnumbered">
 <h2>A: Short questions</h2>
@@ -303,19 +302,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="P1-long" class="section level2 unnumbered">
 <h2>B: Long questions</h2>
 <div class="mysummary">
-<p>The next four questions are <strong>long questions</strong>, which are intended to be harder. Long questions often require you to think for yourself, not just copy ideas from the notes. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions – not only their mathematical content, but also how to clearly write good solutions – are likely to be the main topic for discussion in your tutorial.</p>
+<p>The next four questions are <strong>long questions</strong>, which are intended to be harder. Long questions often require you to think for yourself, not just directly follow ideas from the notes. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions – not only their mathematical content, but also how to clearly write good solutions – are likely to be the main topic for discussion in your tutorial.</p>
 </div>
 <div class="myq">
 <p><strong>B1.</strong> For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.</p>
 <div class="subq">
-<p><strong>(a)</strong> Colours of Skittles in an extra-large tube:</p>
+<p><strong>(a)</strong> Total numbers of Skittles colours in a large packet of six mini-packets:</p>
+<p>(“Skittles” are a small coloured fruit-flavoured candy, if it matters.)</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>Colour</strong></th>
+<th align="center">Red</th>
+<th align="center">Orange</th>
+<th align="center">Yellow</th>
+<th align="center">Green</th>
+<th align="center">Purple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Number of Skittles</strong></td>
+<td align="center">67</td>
+<td align="center">71</td>
+<td align="center">87</td>
+<td align="center">74</td>
+<td align="center">62</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Shirt sizes for a university football team:</p>
 </div>
 </div>
 <div class="myq">
-<p><strong>B2.</strong> A summary statistic is informally said to be “robust” if it typically doesn’t change much if a small number of outliers are introduced to a large dataset, or “sensitive” if it often changes a lot when a small number of outliers are introduced. Comment on the robustness or sensitivity of the following summary statistics: <strong>(a)</strong> mode; <strong>(b)</strong> median; <strong>(c)</strong> mean; <strong>(d)</strong> number of distinct outcomes; <strong>(e)</strong> inter-quartile range; and <strong>(f)</strong> sample variance.</p>
+<p><strong>B2.</strong> A summary statistic is informally said to be “robust” if it typically doesn’t change much if a small number of outliers are introduced to a large dataset, or “sensitive” if it often changes a lot when a small number of outliers are introduced. Briefly discuss the robustness or sensitivity of the following summary statistics: <strong>(a)</strong> mode; <strong>(b)</strong> median; <strong>(c)</strong> mean; <strong>(d)</strong> number of distinct outcomes; <strong>(e)</strong> inter-quartile range; and <strong>(f)</strong> sample variance.</p>
 </div>
 <div class="myq">
 <p><strong>B3.</strong> Let <span class="math inline">\(\mathbf a = (a_1, a_2, \dots a_n)\)</span> and <span class="math inline">\(\mathbf b = (b_1, b_2, \dots, b_n)\)</span> be two real-valued vectors of the same length. Then the <em>Cauchy–Schwarz inequality</em> says that
@@ -333,7 +355,8 @@ Use the Cauchy–Schwarz inequality to show that the correlation <span class="ma
 <div class="mysummary">
 <p>The last two questions are <strong>assessed questions</strong>. This means you will submit your answers, and your answers will be marked. These two questions count for 3% of your mark for this module.</p>
 <p>The deadline for submitting your solutions is <strong>2pm on Friday 8 September</strong>. Submission will be via Gradescope; submission will open on Monday 3 September. You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) – please do not just submit photographs. We will discuss Gradescope submission further in the week 2 lectures. Your work will be marked by your tutor and returned on Monday 18 September, when solutions will also be made available.</p>
-<p>Question C1 is a “short question”, where showing brief working is sufficient; Question C2 is a “long question” that requires full sentences and very clear explanations.</p>
+<p>Question C1 is a “short question”, where showing brief working is sufficient; Question C2 is a “long question” that requires full sentences and very clear explanations. If you get stuck, your tutor may be willing to give you a little hint in your tutorial.</p>
+<p>You should not collaborate with others on the assessed questions; your answers must represent solely your own work. The University’s rules on academic integrity – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 </div>
 <div id="P1-short-sols" class="section level2 unnumbered">

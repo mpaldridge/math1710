@@ -2,7 +2,13 @@
 **B1.** For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.
 
 ::: {.subq}
-**(a)** Colours of Skittles in an extra-large tube:
+**(a)** Total numbers of Skittles colours in a large packet of six mini-packets:
+
+("Skittles" are a small coloured fruit-flavoured candy, if it matters.)
+
+| **Colour**             | Red | Orange | Yellow | Green  | Purple |
+|:----------------------:|:---:|:------:|:------:|:------:|:------:|
+| **Number of Skittles** |  67 |   71   |   87   |   74   |   62   |
 :::
 
 ::: {.subq}

@@ -147,7 +147,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Office hours</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#discussion"><i class="fa fa-check"></i>Discussion board</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
@@ -370,8 +369,8 @@ This is sometimes called the “computational formula”; this is because it’s
 <ul>
 <li>The vertical axis represents the data values.</li>
 <li>Draw a box from the lower quartile <span class="math inline">\(q(\frac14)\)</span> to the median <span class="math inline">\(q(\frac12)\)</span>.</li>
-<li>Draw another box on top of this from the median <span class="math inline">\(q(\frac12)\)</span> to the upper quartile <span class="math inline">\(q(\frac34)\)</span>.</li>
-<li>Decide which datapoints are outliers, and plot these with circles. The R default is that any data point less than <span class="math inline">\(q(\frac14) - 1.5 \text{IQR}\)</span> or bigger than <span class="math inline">\(q(\frac34) + 1.5 \text{IQR}\)</span> is an outlier.</li>
+<li>Draw another box on top of this from the median <span class="math inline">\(q(\frac12)\)</span> to the upper quartile <span class="math inline">\(q(\frac34)\)</span>. Note that size of these two boxes put together is the interquartile range.</li>
+<li>Decide which datapoints are outliers, and plot these with circles. (The R default is that any data point less than <span class="math inline">\(q(\frac14) - 1.5 \times \text{IQR}\)</span> or greater than <span class="math inline">\(q(\frac34) + 1.5 \times \text{IQR}\)</span> is an outlier.)</li>
 <li>Out from the two previous boxes, draw “whiskers” to the smallest and largest non-outlier datapoints.</li>
 </ul>
 <p><img src="math1710_files/figure-html/boxplot1-1.png" width="576" style="display: block; margin: auto;" /></p>

@@ -14,7 +14,7 @@ The first XXX questions are **short questions**, which are intended to be mostly
 ## B: Long questions {#P1-long .unnumbered}
 
 ::: {.mysummary}
-The next four questions are **long questions**, which are intended to be harder. Long questions often require you to think for yourself, not just copy ideas from the notes. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to clearly write good solutions -- are likely to be the main topic for discussion in your tutorial.
+The next four questions are **long questions**, which are intended to be harder. Long questions often require you to think for yourself, not just directly follow ideas from the notes. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to clearly write good solutions -- are likely to be the main topic for discussion in your tutorial.
 :::
 
 ```{r, child = "problems/questions/P1-long.Rmd"}
@@ -27,7 +27,9 @@ The last two questions are **assessed questions**. This means you will submit yo
 
 The deadline for submitting your solutions is **2pm on Friday 8 September**. Submission will be via Gradescope; submission will open on Monday 3 September. You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) -- please do not just submit photographs. We will discuss Gradescope submission further in the week 2 lectures. Your work will be marked by your tutor and returned on Monday 18 September, when solutions will also be made available.
 
-Question C1 is a "short question", where showing brief working is sufficient; Question C2 is a "long question" that requires full sentences and very clear explanations. If you get stuck, your tutor may be willing to give you a little hint in tutorial.
+Question C1 is a "short question", where showing brief working is sufficient; Question C2 is a "long question" that requires full sentences and very clear explanations. If you get stuck, your tutor may be willing to give you a little hint in your tutorial.
+
+You should not collaborate with others on the assessed questions; your answers must represent solely your own work. The University's rules on academic integrity -- and the related punishments for violating them -- apply to your work on the assessed questions.
 :::
 
 ## Solutions to short questions {#P1-short-sols .unnumbered}

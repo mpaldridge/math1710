@@ -103,8 +103,8 @@ A boxplot is drawn as follows:
 
 * The vertical axis represents the data values.
 * Draw a box from the lower quartile $q(\frac14)$ to the median $q(\frac12)$.
-* Draw another box on top of this from the median $q(\frac12)$ to the upper quartile $q(\frac34)$.
-* Decide which datapoints are outliers, and plot these with circles. The R default is that any data point less than $q(\frac14) - 1.5 \text{IQR}$ or bigger than $q(\frac34) + 1.5 \text{IQR}$ is an outlier.
+* Draw another box on top of this from the median $q(\frac12)$ to the upper quartile $q(\frac34)$. Note that size of these two boxes put together is the interquartile range.
+* Decide which datapoints are outliers, and plot these with circles. (The R default is that any data point less than $q(\frac14) - 1.5 \times \text{IQR}$ or greater than $q(\frac34) + 1.5 \times \text{IQR}$ is an outlier.)
 * Out from the two previous boxes, draw "whiskers" to the smallest and largest non-outlier datapoints.
 
 ```{r boxplot1, cache = TRUE, echo = FALSE, fig.width = 6, fig.height = 7, fig.align = "center"}
@@ -114,10 +114,10 @@ boxplot(x, ylim = c(0,12))
 text(1.2, quantile(x, 0.25), "lower quartile", pos = 4)
 text(1.2, quantile(x, 0.5),  "median", pos = 4)
 text(1.2, quantile(x, 0.75), "upper quartile", pos = 4)
-text(1.2, 1.9, "min. non-outlier", pos = 4)
-text(1.2, 7.7, "max. non-outlier", pos = 4)
-text(1.1, 1, "outliers", pos = 4)
-text(1.1, 9, "outliers", pos = 4)
+text(1.12, 1.9, "min. non-outlier", pos = 4)
+text(1.12, 7.7, "max. non-outlier", pos = 4)
+text(1.05, 1, "outliers", pos = 4)
+text(1.05, 9, "outliers", pos = 4)
 ```
 
 Here are two boxplots from the July and September temperature data. What do you conclude about the data from these boxplots?
