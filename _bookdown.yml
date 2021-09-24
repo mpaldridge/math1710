@@ -1,22 +1,22 @@
 rmd_files:
   - index.Rmd
   - about.Rmd
-  - sections/S01-eda.Rmd
-  - problems/P1.Rmd
-  - sections/S02-probability.Rmd
-  - sections/S03-classical.Rmd
-  - problems/P2.Rmd
-  - sections/S04-independence.Rmd
-  - sections/S05-discrete-rv.Rmd
-  - problems/P3.Rmd
-  - sections/S06-discrete-dist.Rmd
-  - sections/S07-multi-rv.Rmd
-  - problems/P4.Rmd
-  - sections/S08-continuous.Rmd
-  - sections/S09-normal.Rmd
-  - sections/S10-bayesian.Rmd
-  - problems/P5.Rmd
-  - sections/S11-summary.Rmd
+#  - sections/S01-eda.Rmd
+#  - problems/P1.Rmd
+#  - sections/S02-probability.Rmd
+#  - sections/S03-classical.Rmd
+#  - problems/P2.Rmd
+#  - sections/S04-independence.Rmd
+#  - sections/S05-discrete-rv.Rmd
+#  - problems/P3.Rmd
+#  - sections/S06-discrete-dist.Rmd
+#  - sections/S07-multi-rv.Rmd
+#  - problems/P4.Rmd
+#  - sections/S08-continuous.Rmd
+#  - sections/S09-normal.Rmd
+#  - sections/S10-bayesian.Rmd
+#  - problems/P5.Rmd
+#  - sections/S11-summary.Rmd
   - R/R.Rmd
 book_filename: "math1710"
 output_dir: "docs"

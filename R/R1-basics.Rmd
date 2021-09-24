@@ -7,7 +7,7 @@ output: html_document
 
 *This R worksheet does not include any assessed questions.*
 
----
+------------------------------------------------------------------------
 
 # How to use R and RStudio
 
@@ -22,3 +22,31 @@ Open RStudio. To enter commands, you should type them into the "Console" -- this
 > **Exercise 1.1.** Type `2 + 3` into the console next to the arrow, and then press Enter. What happens?
 
 In these worksheets, R commands for you to enter will look like this
+
+```{r, eval = FALSE}
+2 + 3
+```
+
+We don't write down the `>` in the worksheets, because you don't have to type the `>` either. But remember that you always type your commands next to the blue arrow.
+
+In these worksheets, the information returned by R will look like this:
+
+```{r, echo = FALSE}
+2 + 3
+```
+
+The double hash-sign `##` will not appear on your screen. (We'll explain later why we use them here.) The `[1] 5` is what you should have seen as R's response in Exercise 1.1. First, the `[1]` just tells you that what follows is the first part of the answer -- since our answer here only has one part, we can ignore this. (It is useful when the answer is a very long vector or a table of values.) Then the `5` is the answer we want.
+
+## Using R as a calculator
+
+The simplest way to use R is to use it to perform simple calculations for us -- like the `2 + 3` we saw earlier. Similarly, R can perform subtraction `-`, multiplication `*`, division `\` and powers `^`. So, for example, we can find $(4 + 5) \times 6$ by entering into the Console:
+
+```{r}
+(4 + 5) * 6
+```
+
+Spaces (with some exceptions) are ignored by R, so `2+3`, `2 + 3` and `2    +3` all work equally well -- you can use whichever you find easiest to read.
+
+> **Exercise 1.2.** Calculate **(a)** $943 +- 242$, **(b)** $29 \times 31$, **(c)** $\displaystyle \frac{19 + 21}{5 \times 3}$, **(d)**
+
+Hello.
