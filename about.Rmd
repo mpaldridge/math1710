@@ -33,11 +33,11 @@ There will be 5 problem sheets. Each problem sheet has a number of short and lon
 
 | Problem Sheet | Sections covered | Assessed work due               |
 |:-------------:|:----------------:|:-------------------------------:|
-|       1       |         1        |   Friday  8 October  (week 2)   |
-|       2       |      2 and 3     |   Friday 22 October  (week 4)   |
-|       3       |      4 and 5     |   Friday  5 November (week 6)   |
-|       4       |      6 and 7     |   Friday 19 November (week 8)   |
-|       5       |    8, 9 and 10   |   Friday  3 December (week 10)   |
+|       1       |         1        |   Friday  8 October  (Week 2)   |
+|       2       |      2 and 3     |   Friday 22 October  (Week 4)   |
+|       3       |      4 and 5     |   Friday  5 November (Week 6)   |
+|       4       |      6 and 7     |   Friday 19 November (Week 8)   |
+|       5       |    8, 9 and 10   |   Friday  3 December (Week 10)   |
 
 Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
 
@@ -60,7 +60,7 @@ We are very keen to hear about things you'd like to go through in the lectures; 
 
 ### Tutorials {.unnumbered #tutorials}
 
-Tutorials are small groups of about a dozen students. You have been assigned to one of 38 tutorial groups, each with a member of staff as the tutor. Your tutorial group will meet five times, in weeks 2, 4, 6, 8, and 10. Tutorial groups will meet in person on campus; you should check your timetable to see when and where your tutorial group meets. (For those not yet on campus, due to travel restrictions or health conditions, there will be an extra online tutorial group for the first few tutorials.)
+Tutorials are small groups of about a dozen students. You have been assigned to one of 38 tutorial groups, each with a member of staff as the tutor. Your tutorial group will meet five times, in Weeks 2, 4, 6, 8, and 10. Tutorial groups will meet in person on campus; you should check your timetable to see when and where your tutorial group meets. (For those not yet on campus, due to travel restrictions or health conditions, there will be an extra online tutorial group for the first few tutorials.)
 
 The main goal of the tutorials will be to go over your answers to the non-assessed questions on the problems sheets in an interactive session. In this smaller group, you will be able to ask detailed questions of your tutor, and have the chance to discuss your answers to the problem sheet. Your tutor may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutor may be willing to give you a hint on the assessed questions if you've made a first attempt but have got stuck.
 
@@ -82,7 +82,7 @@ You will learn R by working through one R worksheet each week in your own time. 
 
 You can read more about the language R, and about the program RStudio that we recommend you use to interact with R, in [the R section of these notes](#R).
 
-To help you if you have problems with R, we have organised optional **R troubleshooting drop-in sessions**, where you can discuss any problems you have with an R expert, in weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
+To help you if you have problems with R, we have organised optional **R troubleshooting drop-in sessions**, where you can discuss any problems you have with an R expert, in Weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
 
 
 ### Office hours {.unnumbered #dropin}
@@ -116,7 +116,7 @@ There will be an exam in January, which makes up the remaining 70% of your mark.
 Remember that the email address for the core module teaching team is <math1710@leeds.ac.uk>. Please don't email our personal addresses; it will take longer for us to reply, and we may miss your email all together.
 
 * *I don't understand something in the notes or on a problem sheet*: Come to office hours, or (if the timing works) ask your tutor in your next tutorial.
-* *I'm having difficulties with R:* In weeks 2 or 3, you should attend the trouble-shooting drop-in session; at other times, come to office hours.
+* *I'm having difficulties with R:* In Weeks 2 or 3, you should attend the R trouble-shooting drop-in session; at other times, come to office hours.
 * *I have an admin question about arrangements for the module:* Come to office hours or [email the core module teaching team](mailto:math1710@leeds.ac.uk).
 * *I have an admin question about arrangements for my tutorial:* Contact your tutor.
 * *I have an admin question about general arrangements for my course as a whole:* [Email the Maths Taught Students Office (Maths.Taught.Students@leeds.ac.uk)](mailto:Maths.Taught.Students@leeds.ac.uk) or speak to your personal academic tutor.

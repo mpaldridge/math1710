@@ -50,14 +50,14 @@ Students who have their own computer usually find it most convenient to install 
    * Mac: Click [Download R for macOS](https://cran.r-project.org/bin/macosx/), and then download the relevant PKG file. (For pre-November 2020 Intel-based Macbooks, you must use the "Intel 64-bit build"; for post-November 2020 M1-based "Apple silicon" Macbooks, the "Apple silicon arm64 build" may be faster.)
 2. *After* R is installed, *then* install **RStudio**. Go to [the Download page at RStudio.com](https://www.rstudio.com/products/rstudio/download/#download) and follow the instructions. You want "RStudio Desktop", and you want the free version.
 
-If you have difficulty installing R, come along to the first computational drop-in session in Week ?? and bring your computer with you (if it's sufficiently portable), and we'll do our best to help.
+If you have difficulty installing R, come along to the first computational drop-in session in Week 2 and bring your computer with you (if it's sufficiently portable), and we'll do our best to help.
 
 
 ## Troubleshooting drop-in sessions  {#troubleshooting .unnumbered}
 
 You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.
 
-However, many students find getting with started with R in the first few weeks particularly frustrating. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional troubleshooting drop-in sessions in weeks 2 and 3. Check your timetable for details -- they are probably listed as "computer practicals".
+However, many students find getting with started with R in the first few weeks particularly frustrating. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details -- they are probably listed as "computer practicals".
 
 
 
