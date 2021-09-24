@@ -1,6 +1,6 @@
-# About MATH2750  {#about .unnumbered}
+# About MATH1710 {#about .unnumbered}
 
-## Organisation of MATH2750  {#organisation .unnumbered}
+## Organisation of MATH1710  {#organisation .unnumbered}
 
 This module is **MATH1710 Probability and Statistics I**. A few students will be taking this module as half of **MATH2700 Probability and Statistics for Scientists**.
 
@@ -127,7 +127,7 @@ Remember that the email address for the core module teaching team is <math1710@l
 
 
 
-## Content of MATH2750 {.unnumbered #about-content}
+## Content of MATH1710 {.unnumbered #about-content}
 
 
 ### Prerequisites {.unnumbered #prereqs}
