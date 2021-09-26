@@ -5,7 +5,7 @@ date: "University of Leeds, 2021--22"
 site: bookdown::bookdown_site
 documentclass: book
 description: "Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021--2022"
-favicon: "favicon.ico"
+favicon: favicon.ico
 url:    'https://mpaldridge.github.io/math1710/'
 ---
 
