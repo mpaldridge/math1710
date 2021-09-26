@@ -1,0 +1,173 @@
+---
+title:  "R Worksheet 1: R Basics"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet does not include any assessed questions. Answers to the exercises will be made available on Monday 4 October. If you have difficulty with this Worksheet, you can get help at your R troubleshooting drop-in in Week 2*
+
+------------------------------------------------------------------------
+
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dvy-VBohTJ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen data-external="1"></iframe>
+</div>
+
+------------------------------------------------------------------------
+
+## How to use R and RStudio
+
+This worksheet assumes you or using a computer with the programming language R and the program RStudio installed. This might be:
+
+* a University computer, which all have R and RStudio installed;
+* your own computer on which you have first installed R and then installed RStudio, following [the instructions in the notes](https://mpaldridge.github.io/math1710/R.html#r-install);
+* using the [RStudio Cloud](https://rstudio.cloud/).
+
+If you have problems installing R and RStudio, I recommend using one of the other methods, then getting installation help at your R troubleshooting drop-in in Week 2.
+
+Open RStudio. To enter commands, you should type them into the "Console" -- this normally takes up either the left half of the screen, or the bottom-left quarter. When you open RStudio, there will be some information about R in the console, in black writing, then an arrow `>` in blue. You can type commands next to this blue arrow.
+
+> **Exercise 1.1.** Type `2 + 3` into the console next to the arrow, and then press Enter. What happens?
+
+In these worksheets, R commands for you to enter will look like this
+
+```{r, eval = FALSE}
+2 + 3
+```
+
+We don't write down the `>` in the worksheets, because you don't have to type the `>` either. But remember that you always type your commands next to the blue arrow.
+
+In these worksheets, the information returned by R will look like this:
+
+```{r, echo = FALSE}
+2 + 3
+```
+
+The double hash-sign `##` will not appear on your screen. (We'll explain later why we use them here.) The `[1] 5` is what you should have seen as R's response in Exercise 1.1. First, the `[1]` just tells you that what follows is the first part of the answer -- since our answer here only has one part, we can ignore this. (It is useful when the answer is a very long vector or a table of values.) Then the `5` is the answer we want.
+
+Whenever you see commands in this worksheet, you are strongly encouraged to try them out yourself.
+
+## Using R as a calculator
+
+The simplest way to use R is to use it to perform simple calculations for us -- like the `2 + 3` we saw earlier.R can perform **addition `+`, subtraction `-`, multiplication `*`, division `\` and powers `^`**. So, for example, we can find $(4 + 5) \times 6$ by entering into the Console:
+
+```{r}
+(4 + 5) * 6
+```
+
+Spaces (with a few exceptions) are ignored by R, so `2+3` and `2 + 3` work equally well -- you can use whichever you find easier to read.
+
+> **Exercise 1.2.** Calculate:\
+**(a)** $943 - 242$,\
+**(b)** $29 \times 31$,\
+**(c)** $2^{8+5}$,\
+**(d)** $\displaystyle \frac{19 + 21}{5 \times 3}$.
+
+
+R also allows you to put linebreaks in any command *that is obviously not yet finished*. So if you enter `2 +` and press Enter, R will know that command is unfinished. The next line will begin with a blue `+`, where you can continue the command. Similar things happen if you have opened a pair of brackets without closing them.
+
+## Functions in R
+
+R has an enormous number of useful functions. Let's take as an example the **square-root** function **`sqrt()`**. To use a function we need the function name, then open brackets, then the thing we want to apply the function to, then close brackets. For example, to find the square-root of 1000, we use
+
+```{r}
+sqrt(1000)
+```
+
+Other similar functions include the exponential `exp()`, the natural logarithm `log()`, and the absolute value `abs()`.
+
+A useful function is **`signif()`**, which rounds a number to a given number of **significant figures**. This function takes two arguments, which should be separated by a comma. The first argument is the number to be rounded, and the second is the number of significant figures to round it to. To give $\sqrt{1000}$ to four significant figures, we can put the `sqrt()` function into the `signif()` function with either of the following:
+
+```{r}
+signif(sqrt(1000), digits = 4)
+signif(sqrt(1000), 4)
+```
+
+Putting `digits =` before the `4` is optional. I find it useful when reading through my code, because it reminds me what the second argument does; but it is extra typing, so you might not want to bother.
+
+A similar function is **`round()`**, which rounds a number to a given number of decimal places. But `round()` can be used either with one argument or with two arguments. The first argument is always the number to be rounded. The optional second argument (with or without `digits =`) is the number of decimal places to round to. If no second argument is given, R will assume you wanted it to be 0; that is, to round to 0 decimal places, or the nearest whole number. So all of these commands do exactly the same thing -- give $\sqrt{1000}$ to the nearest whole number"
+
+```{r}
+round(sqrt(1000), digits = 0)
+round(sqrt(1000), 0)
+round(sqrt(1000))
+```
+
+> **Exercise 1.3.** Use R to find:\
+**(a)** $\frac{1}{7}$ to 4 decimal places;\
+**(b)** $\log(10)$ to 3 significant figures;\
+**(c)** $\sqrt{712 + 34}$ to the nearest integer.
+
+## Objects in R
+
+So far we haven't done anything with R that you couldn't have done with a calculator. The real strength of R is using **objects**. An object allows us to save a number (or anything else) calculated with R, and come back to use it later.
+
+Let's say we'll want to come back to our special number $\sqrt{1000}$ again later. Then instead of writing `sqrt(1000)` every time, we can save it as an R object like this:
+
+```{r}
+special <- sqrt(1000)
+```
+
+This tells us that we're making an object with the name `special`, that we're assigning it a value -- the assignment operator is a less-than sign `<` and a hyphen `-` put together to look like an arrow `<-` pointing towards the object -- and the value we're assigning it is `sqrt(1000)`. (You can also use an equals sign `=` instead of the assignment arrow `<-`; I prefer the `<-`, because it reminds me that this isn't the same as a mathematical equation, and because `=` is used for many other things in R also.)
+
+Names of objects are case-sensitive, so if you want the object `special`, you can't write `SPECIAL` or `Special`. Note that, when doing mathematics, we usually give variables a single letter like $x$ or $y$; but when we're doing programming, we usually find it helpful to use longer descriptive names, like `temperature_data` or `current_total`.
+
+So now R knows we have an object called `special`. To find the value of an object, we simply type the name of that object into the Console an press Enter:
+
+```{r}
+special
+```
+
+> **Exercise 1.4.** Create an object called `john`, and assign it the value 7. Then create an object called `paul` and assign it the value $12^2$. Then get R to tell you the value of `paul` multiplied by the value of `john`.
+
+When assigning objects you can use other objects. So we can create a `very_special` number that is double our `special` number like this:
+
+```{r}
+very_special <- 2 * special
+```
+
+We can also update an object in terms of itself. So to increase our very special number by 10, we can write
+
+```{r}
+very_special <- very_special + 10
+```
+
+This might seem bizarre -- it would be nonsensical to write $x = x + 10$ as mathematical equation! But the key is to remember that `<-` means "assignment"; so this command means "assign the old value of `very_special` plus 10 to the new version of the object `very + special`.
+
+> **Exercise 1.5**. This exercise continues with the objects assigned in Exercise 1.4.\
+**(a)** Assign the value of `paul` mutiplied by `john` to the new value `ringo`.\
+**(b)** Check the value of `ringo`.\
+**(c)** Double the value of `ringo`, keeping it still stored as `ringo`.\
+**(d)** Add 5 to the value of `ringo`.\
+**(e)** Check the new value of `ringo`. (It should be 2021.)
+
+## Saving your work
+
+If you can't complete an R worksheet in a single sitting (and maybe even if you can), you'll want to save your work until later.
+
+The recommended thing to do is to save your commands, so that you can quickly run them again if you need to. You can save your commands in an **R Script**. To open a new R Script in RStudio, click `File -> New File -> R Script` from the main menu. This will open a "notepad" style area, probably in the top-left quarter of your screen. You can write R commands into this area, then click on the `Save` button to save your work. (R Scripts are conventionally save with the suffix `.R`, like `math1710-r1-solutions.R`.)
+
+To run commands from your R Script, you can just copy-and-paste into the console. It can be more convenient, though, to highlight the commands then click `Run` in the top-right corner of the script area.
+
+> **Exercise 1.6.** Write down the commands you used to solve Exercises 1.4 and 1.5 in a new R Script. Save your work with a explanatory filename that will allow you to find it again later.
+
+If you have an R Script that is just a bunch of commands copy-pasted into a file, it might not be clear what they do. For example, which commands were the answer to which exercise? It's therefore helpful to annotate your work with comments, to remind yourself what's what. We normally prefix comments with a hash-sign `#` like this:
+
+```{r, eval = FALSE}
+# R Worksheet 1
+
+# Exercise 1.4
+john <- 7
+paul <- 2^12
+john + paul    # When I ran this, I got the answer 1008
+```
+
+The reason we do this is that R ignores any commands or any writing preceded by a `#`. This means that if you accidentally copy-and-paste the comment along with the command, nothing will go wrong. (This is why R outputs in these worksheets are preceeded by `##`; if you accidentally copy these instead of the input commands, nothing bad will happen!)
+
+> **Exercise 1.7.** Continuing with your R Script from Exercise 1.6, add comments to make it clear which commands are doing what, then re-save your R Script.
+
+------------------------------------------------------------------------
+
+You have now finished R Worksheet 1. If you had difficulty with any of the exercises, remember that there are R troubleshooting drop-in sessions in Week 2, where you can ask for help.
+
+You can now close RStudio. When you close RStudio, R might ask you if you want save unsaved work on your R Script (probably you do!). It may also ask you if you want to save your workspace -- that is, save all the objects you've created while working on the worksheet. It's considered best practice to *not* save the workspace -- it will end up getting cluttered up with all the objects you create, but you've already saved the work you need in your R Script.

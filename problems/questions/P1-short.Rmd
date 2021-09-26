@@ -1,10 +1,35 @@
 :::: {.myq}
-**A1.** Consider the following data sets of the age of elected politicians on a local council.
+**A1.** Consider again the "number of Skittles in each packet" data from Example ?????.
+
+::: {.subq}
+**(a)** Calculate the mean number of Skittles in each packet.
+:::
+::: {.subq}
+**(b)** Calculate the sample variance using the computational formula.
+:::
+::: {.subq}
+**(c)** Calculate the sample variance using the definitional formula.
+:::
+::: {.subq}
+**(d)** Out of (b) and (c), which calculation was easier, and why?
+:::
+::::
+
+:::: {.myq}
+**A2.** Consider the following data sets of the age of elected politicians on a local council.
 
 TABLE
 
 ::: {.subq}
 **(a)** Complete the table by filling in the relative frequency and frequency densities.
+:::
+::: {.subq}
+**(b)** What is the median age bin?
+:::
+::: {.subq}
+**(c)** Calculate (an approximation of) the mean age of the politicians.
+:::
 ::::
+
 
 

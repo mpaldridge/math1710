@@ -5,12 +5,16 @@ date: "University of Leeds, 2021--22"
 site: bookdown::bookdown_site
 documentclass: book
 description: "Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021--2022"
-favicon: favicon.ico
-url:    https://mpaldridge.github.io/math1710/
+favicon: "favicon.ico"
+url:    'https://mpaldridge.github.io/math1710/'
 ---
 
 # Schedule {.unnumbered}
 
 ::: {.mysummary}
-*MATH1710 begins on Monday 27 September.*
+**Week 1** (27 September -- 1 October):
+
+* [**Section 1:** Exploratory data analysis](#S01-eda)
+* [**Problem Sheet 1:**](#P1) all questions -- deadline for assessed questions: Monday 11 October
+* [**R Worksheet 1**](#r-work)
 :::

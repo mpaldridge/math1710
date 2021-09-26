@@ -8,17 +8,17 @@ Each week there will be an R worksheet to work through in your own time. We reco
 
 | Week | Worksheet                     | Deadline for assessed work |
 |:----:|-------------------------------|:--------------------------:|
-|   1  |  R basics          |             ---            |
+|   1  |  [R basics](https://mpaldridge.github.io/R1.html) | --- |
 |   2  |  Working with vectors         |             ---            |
-|   3  |  Importing data into R        |      Friday 15 October     |
+|   3  |  Importing data into R        |      Monday 18 October     |
 |   4  |  Plots I: Making plots        |             ---            |
-|   5  |  Plots II: Making plots nicer |      Friday 29 October     |
+|   5  |  Plots II: Making plots nicer |      Monday 1 November     |
 |   6  |  RMarkdown (optional)         |             ---            |
-|   7  |  Discrete random variables    |      Friday 12 November    |
+|   7  |  Discrete random variables    |      Monday 15 November    |
 |   8  |  Discrete distributions       |             ---            |
-|   9  |  Normal distribution          |      Friday 26 November    |
+|   9  |  Normal distribution          |      Monday 29 November    |
 |  10  |  Law of large numbers         |             ---            |
-|  11  |  Summary                      |      Friday 10 December    |
+|  11  |  Summary                      |      *To be confirmed*    |
 
 
 ## About R and RStudio  {#about-r .unnumbered}

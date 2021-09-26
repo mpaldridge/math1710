@@ -29,15 +29,15 @@ We are very keen to hear about errors in the notes mathematical, typographical o
 
 ### Problem sheets {.unnumbered #problem-sheets}
 
-There will be 5 problem sheets. Each problem sheet has a number of short and long questions for you to cover in your own time to help you learn the material, and two assessed questions, which you should submit for marking.  The assessed questions on each problem sheet make up 3% of your mark on this module, for a total of 15%.
+There will be 5 problem sheets. Each problem sheet has a number of short and long questions for you to cover in your own time to help you learn the material, and two assessed questions, which you should submit for marking.  The assessed questions on each problem sheet make up 3% of your mark on this module, for a total of 15%. Although the deadlines are on Mondays, you are advised to complete and submit the work in the previous week.
 
 | Problem Sheet | Sections covered | Assessed work due               |
 |:-------------:|:----------------:|:-------------------------------:|
-|       1       |         1        |   Friday  8 October  (Week 2)   |
-|       2       |      2 and 3     |   Friday 22 October  (Week 4)   |
-|       3       |      4 and 5     |   Friday  5 November (Week 6)   |
-|       4       |      6 and 7     |   Friday 19 November (Week 8)   |
-|       5       |    8, 9 and 10   |   Friday  3 December (Week 10)   |
+|       1       |         1        |   Monday 11 October  (Week 3)   |
+|       2       |      2 and 3     |   Monday 25 October  (Week 5)   |
+|       3       |      4 and 5     |   Monday  8 November (Week 7)   |
+|       4       |      6 and 7     |   Monday 22 November (Week 9)   |
+|       5       |    8, 9 and 10   |   Monday  6 December (Week 11)   |
 
 Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
 
