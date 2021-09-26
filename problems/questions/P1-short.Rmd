@@ -1,5 +1,6 @@
 :::: {.myq}
-**A1.** Consider again the "number of Skittles in each packet" data from Example ?????.
+**A1.** Consider again the "number of Skittles in each packet" data from Example 1.1.
+\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]
 
 ::: {.subq}
 **(a)** Calculate the mean number of Skittles in each packet.
@@ -11,14 +12,23 @@
 **(c)** Calculate the sample variance using the definitional formula.
 :::
 ::: {.subq}
-**(d)** Out of (b) and (c), which calculation was easier, and why?
+**(d)** Out of (b) and (c), which calculation did you find easier, and why?
 :::
 ::::
 
 :::: {.myq}
 **A2.** Consider the following data sets of the age of elected politicians on a local council.
 
-TABLE
+|   Age (years)    | Frequency | Relative frequency | Frequency density |
+|:---------------:|:---------:|:------------------:|:-----------------:|
+|   18--30   |     1     |            |             |
+|   30--40   |     3     |             |             |
+|   40--45   |     4    |              |            |
+|   45--50   |     5    |             |              |
+|   50--55   |     3    |              |              |
+|   55--60   |     1     |              |               |
+|   60--70   |     3     |              |              |
+|    **Total**    |    20    |          1         |      ---             |
 
 ::: {.subq}
 **(a)** Complete the table by filling in the relative frequency and frequency densities.

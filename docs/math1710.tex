@@ -795,7 +795,8 @@ This is Problem Sheet 1, which covers material from \protect\hyperlink{S01-eda}{
 
 The first two questions are \textbf{short questions}, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the notes. Here, your should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.
 
-\textbf{A1.} Consider again the ``number of Skittles in each packet'' data from Example ?????.
+\textbf{A1.} Consider again the ``number of Skittles in each packet'' data from Example 1.1.
+\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]
 
 \textbf{(a)} Calculate the mean number of Skittles in each packet.
 
@@ -803,11 +804,25 @@ The first two questions are \textbf{short questions}, which are intended to be m
 
 \textbf{(c)} Calculate the sample variance using the definitional formula.
 
-\textbf{(d)} Out of (b) and (c), which calculation was easier, and why?
+\textbf{(d)} Out of (b) and (c), which calculation did you find easier, and why?
 
 \textbf{A2.} Consider the following data sets of the age of elected politicians on a local council.
 
-TABLE
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+Age (years) & Frequency & Relative frequency & Frequency density \\
+\midrule
+\endhead
+18--30 & 1 & & \\
+30--40 & 3 & & \\
+40--45 & 4 & & \\
+45--50 & 5 & & \\
+50--55 & 3 & & \\
+55--60 & 1 & & \\
+60--70 & 3 & & \\
+\textbf{Total} & 20 & 1 & --- \\
+\bottomrule
+\end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and frequency densities.
 
@@ -823,7 +838,7 @@ The next four questions are \textbf{long questions}, which are intended to be ha
 
 \textbf{B1.} For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.
 
-\textbf{(a)} Six packets of Skittles are opened together, and the total number of sweets of each number is:
+\textbf{(a)} Six packets of Skittles are opened together, and the total number of sweets of each colour is:
 
 \begin{longtable}[]{@{}cccccc@{}}
 \toprule
@@ -870,11 +885,22 @@ Question C1 is a ``short question'', where brief explanations or working are suf
 
 You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
 
-\textbf{C1.}
+\textbf{C1.} The monthly average exchange rate for US dollars into British pounds over a 12-month period was:
+\begin{gather*}
+1.306, \ 1.301, \ 1.290, \ 1.266, \ 1.290, \ 1.302,\\
+1.317, \ 1.304, \ 1.284, \ 1.268, \ 1.247, \ 1.215.
+\end{gather*}
+
+\textbf{(a)} Calculate the median for this data.
+
+\textbf{(b)} Calculate the mean for this data.
+
+\textbf{(c)} Calculate the sample variance for this data.
+
+\textbf{(d)} Is the mode an appropriate summary statistic for this data? Why/why not?
 
 \textbf{C2.}
-
-\textbf{(a)} Prove the following computational formula for the sample covariance:
+~\textbf{(a)} Prove the following computational formula for the sample covariance:
 \[ s_{xy} = \frac{1}{n-1} \left( \sum_{i=1}^n x_iy_i - n\bar x \bar y \right). \]
 
 \textbf{(b)} Suppose that a dataset \(\mathbf x = (x_1, x_2, \dots, x_n)\) (with \(n \geq 2\)) has sample variance \(s_x^2 = 0\). Show that all the datapoints are in fact equal.

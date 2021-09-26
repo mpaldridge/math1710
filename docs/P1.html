@@ -216,7 +216,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>The first two questions are <strong>short questions</strong>, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the notes. Here, your should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.</p>
 </div>
 <div class="myq">
-<p><strong>A1.</strong> Consider again the “number of Skittles in each packet” data from Example ?????.</p>
+<p><strong>A1.</strong> Consider again the “number of Skittles in each packet” data from Example 1.1.
+<span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span></p>
 <div class="subq">
 <p><strong>(a)</strong> Calculate the mean number of Skittles in each packet.</p>
 </div>
@@ -227,12 +228,71 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>(c)</strong> Calculate the sample variance using the definitional formula.</p>
 </div>
 <div class="subq">
-<p><strong>(d)</strong> Out of (b) and (c), which calculation was easier, and why?</p>
+<p><strong>(d)</strong> Out of (b) and (c), which calculation did you find easier, and why?</p>
 </div>
 </div>
 <div class="myq">
 <p><strong>A2.</strong> Consider the following data sets of the age of elected politicians on a local council.</p>
-<p>TABLE</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Age (years)</th>
+<th align="center">Frequency</th>
+<th align="center">Relative frequency</th>
+<th align="center">Frequency density</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">18–30</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">30–40</td>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">40–45</td>
+<td align="center">4</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">45–50</td>
+<td align="center">5</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">50–55</td>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center">55–60</td>
+<td align="center">1</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center">60–70</td>
+<td align="center">3</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Total</strong></td>
+<td align="center">20</td>
+<td align="center">1</td>
+<td align="center">—</td>
+</tr>
+</tbody>
+</table>
 <div class="subq">
 <p><strong>(a)</strong> Complete the table by filling in the relative frequency and frequency densities.</p>
 </div>
@@ -252,7 +312,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="myq">
 <p><strong>B1.</strong> For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.</p>
 <div class="subq">
-<p><strong>(a)</strong> Six packets of Skittles are opened together, and the total number of sweets of each number is:</p>
+<p><strong>(a)</strong> Six packets of Skittles are opened together, and the total number of sweets of each colour is:</p>
 <table>
 <thead>
 <tr class="header">
@@ -326,14 +386,28 @@ You should submit your answers as a single PDF file. Most students choose to han
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 <div class="myq">
-<p><strong>C1.</strong></p>
+<p><strong>C1.</strong> The monthly average exchange rate for US dollars into British pounds over a 12-month period was:
+<span class="math display">\[\begin{gather*}
+1.306, \ 1.301, \ 1.290, \ 1.266, \ 1.290, \ 1.302,\\
+1.317, \ 1.304, \ 1.284, \ 1.268, \ 1.247, \ 1.215.
+\end{gather*}\]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> Calculate the median for this data.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Calculate the mean for this data.</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Calculate the sample variance for this data.</p>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Is the mode an appropriate summary statistic for this data? Why/why not?</p>
+</div>
 </div>
 <div class="myq">
-<p><strong>C2.</strong></p>
-<div class="subq">
-<p><strong>(a)</strong> Prove the following computational formula for the sample covariance:
+<p><strong>C2.</strong>
+ <strong>(a)</strong> Prove the following computational formula for the sample covariance:
 <span class="math display">\[ s_{xy} = \frac{1}{n-1} \left( \sum_{i=1}^n x_iy_i - n\bar x \bar y \right). \]</span></p>
-</div>
 <div class="subq">
 <p><strong>(b)</strong> Suppose that a dataset <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span> (with <span class="math inline">\(n \geq 2\)</span>) has sample variance <span class="math inline">\(s_x^2 = 0\)</span>. Show that all the datapoints are in fact equal.</p>
 </div>
