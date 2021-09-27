@@ -17,7 +17,7 @@
 ::::
 
 :::: {.myq}
-**A2.** Consider the following data sets of the age of elected politicians on a local council.
+**A2.** Consider the following data sets of the age of elected politicians on a local council. (The "18--30" consists of people older than and including 18, and younger than but *not* including 30.)
 
 |   Age (years)    | Frequency | Relative frequency | Frequency density |
 |:---------------:|:---------:|:------------------:|:-----------------:|
