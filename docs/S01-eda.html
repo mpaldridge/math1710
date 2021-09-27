@@ -447,7 +447,7 @@ This is sometimes called the “computational formula”; this is because it’s
 More generally, if <span class="math inline">\(m_j\)</span> is the midpoint of bin <span class="math inline">\(j\)</span> and <span class="math inline">\(f_j\)</span> its frequency, then we can calculate the binned mean and binned variance by
 <span class="math display">\[\begin{align*}
   \bar x &amp;= \frac{1}{n} \sum_j f_j m_j \\
-  s^2_x  &amp;= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)
+  s^2_x  &amp;= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)^2
 \end{align*}\]</span></p>
 <p>Data in bins can be illustrated with a <strong>histogram</strong>. A histogram has the measurement on the x-axis, with one bar across the width of each bin, with bars drawn up to the height of the corresponding frequency density. Note that this means that the area of the bar is exactly the relative frequency of the corresponding bin. (If all the bins are the same width, frequency density is directly proportional to frequency and to relative frequency, so it can be clearer use one of those as the y-axis instead.)</p>
 <p>Here is a histogram for our journey-time data:</p>

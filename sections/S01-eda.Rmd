@@ -199,7 +199,7 @@ For our journey-time data, our approximation of the mean would be
 More generally, if $m_j$ is the midpoint of bin $j$ and $f_j$ its frequency, then we can calculate the binned mean and binned variance by
 \begin{align*}
   \bar x &= \frac{1}{n} \sum_j f_j m_j \\
-  s^2_x  &= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)
+  s^2_x  &= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)^2
 \end{align*}
   
 

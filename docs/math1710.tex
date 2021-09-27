@@ -679,7 +679,7 @@ For our journey-time data, our approximation of the mean would be
 More generally, if \(m_j\) is the midpoint of bin \(j\) and \(f_j\) its frequency, then we can calculate the binned mean and binned variance by
 \begin{align*}
   \bar x &= \frac{1}{n} \sum_j f_j m_j \\
-  s^2_x  &= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)
+  s^2_x  &= \frac{1}{n-1} \sum_j f_j (m_j - \bar x)^2
 \end{align*}
 
 Data in bins can be illustrated with a \textbf{histogram}. A histogram has the measurement on the x-axis, with one bar across the width of each bin, with bars drawn up to the height of the corresponding frequency density. Note that this means that the area of the bar is exactly the relative frequency of the corresponding bin. (If all the bins are the same width, frequency density is directly proportional to frequency and to relative frequency, so it can be clearer use one of those as the y-axis instead.)
@@ -980,7 +980,7 @@ There are a number of ways you can access R and RStudio:
   \item
     You can use the University's copies of R/RStudio virtually through the \href{https://it.leeds.ac.uk/it?id=kb_article\&sysparm_article=KB0014379}{Windows Virtual Desktop} or \href{https://it.leeds.ac.uk/it?id=kb_article\&sysparm_article=KB0014827}{AppsAnywhere} client.
   \item
-    The \href{https://rstudio.cloud/}{RStudio Cloud} is a cloud-hosted ``Google Docs for R'' that you can use through your web browser -- you can get 15 hours per month for free (or pay for more).
+    The \href{https://rstudio.cloud/}{RStudio Cloud} is a cloud-hosted ``Google Docs for R'' that you can use through your web browser -- you can get 25 hours per month for free (or pay for more).
   \end{itemize}
 \end{itemize}
 
