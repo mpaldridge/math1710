@@ -85,11 +85,16 @@ You can read more about the language R, and about the program RStudio that we re
 To help you if you have problems with R, we have organised optional **R troubleshooting drop-in sessions**, where you can discuss any problems you have with an R expert, in Weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
 
 
-### Office hours {.unnumbered #dropin}
+### Optional "office hours" drop-in sessions {.unnumbered #dropin}
 
-If you there is something in the module you wish to discuss in detail with the module core teaching team, the place for the is the optional weekly "office hours", which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to a member of staff; these are particularly useful if there's something on the module that you are stuck on or confused about, but we're happy to discuss any statistics-related issues or questions you have.
+If you there is something in the module you wish to discuss privately one-on-one with the module core teaching team, the place for the is the optional weekly "office hours", which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to a member of staff; these are particularly useful if there's something on the module that you are stuck on or confused about, but we're happy to discuss any statistics-related issues or questions you have.
 
-There will be two office hours per week: Wednesdays at 1000 and at 1200. (For boring reasons, the 1000 sessions appear on the timetable for MATH2700 students and the 1200 sessions appear on the timetable for MATH1710 students, but I'm happy for anyone to attend either hour.) The sessions will happen, until further notice, at least, in my office, PRD 9.320 on the the ninth floor of the Physics Research Deck.
+There will be two "office hours" drop-in sessions per week:
+
+* Wednesday at 1000 in [Charles Thackrah SR G.07](https://ses.leeds.ac.uk/rooms?type=room&id=1207583)
+* Wednesday at 1200 in [Emmanuel Centre SR 02](https://students.leeds.ac.uk/rooms?type=room&id=99930)
+
+(For timetabling reasons, the 1000 sessions appear on the timetable for MATH2700 students and the 1200 sessions appear on the timetable for MATH1710 students, but I'm happy for anyone to attend either hour.)
 
 
 ### Time management {.unnumbered #time}
