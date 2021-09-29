@@ -263,7 +263,7 @@ We see that there is a strong relationship between $\mathbf x$ and $\mathbf y$, 
 A useful summary statistic here is the **correlation**
 \[ r_{xy} = \frac{s_{xy}}{s_x s_y} , \]
 where $s_{xy}$ is the **sample covariance**
-\[ s_{xy} = \frac{1}{n} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) , \]
+\[ s_{xy} = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) , \]
 and $s_x$ and $s_y$ are the standard deviations.
 
 The correlation $r_{xy}$ is always between $-1$ and $+1$. Values of $r_{xy}$ near $+1$ indicate that the scatterpoints are close to a straight line with an upward slope (big $x$ = big $y$); values of $r_{xy}$ near $-1$ indicate that the scatterpoints are close to a straight line with a downward slope (big $x$ = small $y$); and values of $r_{xy}$ near 0 indicate that there is a weak linear relationship between $x$ and $y$.
