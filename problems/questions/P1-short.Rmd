@@ -46,7 +46,7 @@ This was in the notes:
 *Solution.*
 The computational formula required fewer presses of the calculator buttons, because $\sum_i x_i^2$ is fewer button-presses than $\sum_i (x_i - \bar x)^2$, where you have to subtract the means before squaring.
 
-On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy to make sure the subtraction cancelled correctly.
+On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in $\bar x$ to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.
 :::
 ::::
 :::::
