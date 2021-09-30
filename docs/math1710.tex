@@ -110,6 +110,10 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+
+\usepackage{titlesec, environ}
+\newif\ifcomm\commtrue
+\NewEnviron{myanswers}{\ifcomm\BODY\fi}
 \ifluatex
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -797,6 +801,8 @@ which, as we expected, is extremely high.
 \chapter*{Problem Sheet 1}\label{P1}}
 \addcontentsline{toc}{chapter}{Problem Sheet 1}
 
+\commfalse
+
 This is Problem Sheet 1, which covers material from \protect\hyperlink{S01-eda}{Section 1} of the notes. You should work through all the questions on this problem sheet during Week 1, in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by \textbf{2pm on Monday 11 October}. I recommend spending about 3 hours on this problem sheet in Week 1, plus 1 extra hour in Week 2 to neatly write up and submit your answers to the assessed questions.
 
 \hypertarget{P1-short}{%
@@ -810,11 +816,47 @@ The first two questions are \textbf{short questions}, which are intended to be m
 
 \textbf{(a)} Calculate the mean number of Skittles in each packet.
 
+\begin{myanswers}
+\emph{Solution.}
+This was in the notes:
+\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.7 .\]
+
+\end{myanswers}
+
 \textbf{(b)} Calculate the sample variance using the computational formula.
+
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+  s_x^2 &= \frac{1}{13 - 1} \left( (59^2 + 59^2 + \cdots + 63^2) - 13 \times 60.6923^2)\right) \\
+        &= \frac{1}{12} (47915 - 47886.2) \\
+        &= 2.40
+\end{align*}
+
+\end{myanswers}
 
 \textbf{(c)} Calculate the sample variance using the definitional formula.
 
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+  s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
+        &= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
+        &= \frac{1}{12} \times 28.77 \\
+        &= 2.40
+\end{align*}
+
+\end{myanswers}
+
 \textbf{(d)} Out of (b) and (c), which calculation did you find easier, and why?
+
+\begin{myanswers}
+\emph{Solution.}
+The computational formula required fewer presses of the calculator buttons, because \(\sum_i x_i^2\) is fewer button-presses than \(\sum_i (x_i - \bar x)^2\), where you have to subtract the means before squaring.
+
+On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy to make sure the subtraction cancelled correctly.
+
+\end{myanswers}
 
 \textbf{A2.} Consider the following data sets of the age of elected politicians on a local council. (The ``18--30'' consists of people older than and including 18, and younger than but \emph{not} including 30.)
 
@@ -836,9 +878,43 @@ Age (years) & Frequency & Relative frequency & Frequency density \\
 
 \textbf{(a)} Complete the table by filling in the relative frequency and frequency densities.
 
+\begin{myanswers}
+
+\emph{Solution.}
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+Age (years) & Frequency & Relative frequency & Frequency density \\
+\midrule
+\endhead
+18--30 & 1 & 0.05 & 0.0041 \\
+30--40 & 3 & 0.15 & 0.015 \\
+40--45 & 4 & 0.2 & 0.04 \\
+45--50 & 5 & 0.25 & 0.05 \\
+50--55 & 3 & 0.15 & 0.03 \\
+55--60 & 1 & 0.05 & 0.01 \\
+60--70 & 3 & 0.15 & 0.015 \\
+\textbf{Total} & 20 & 1 & --- \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
+
 \textbf{(b)} What is the median age bin?
 
+\begin{myanswers}
+\emph{Solution.} The 10th- and 11th-largest observations are both in the 45--50 bin, which is therefore the median bin.
+
+\end{myanswers}
+
 \textbf{(c)} Calculate (an approximation of) the mean age of the politicians.
+
+\begin{myanswers}
+\emph{Solution.}
+Pretending that each person is in the centre of their bin, we have
+\[ \bar x = \frac{1}{20} (24 + 35 + \cdots + 65) = \frac{946.5}{20} = 47.3 . \]
+
+\end{myanswers}
 
 \hypertarget{P1-long}{%
 \section*{B: Long questions}\label{P1-long}}
@@ -859,6 +935,16 @@ The next four questions are \textbf{long questions}, which are intended to be ha
 \bottomrule
 \end{longtable}
 
+\begin{myanswers}
+\emph{Solution.}
+The modal colour is Yellow. The number of distinct outcomes is 5.
+
+It's not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can't be put ``in order'' from smallest to largest.
+
+It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be ``added up'', but this can't be done with colours.
+
+\end{myanswers}
+
 \textbf{(b)} Shirt sizes for a university football squad:
 
 \begin{longtable}[]{@{}cccccc@{}}
@@ -866,9 +952,15 @@ The next four questions are \textbf{long questions}, which are intended to be ha
 \textbf{Colour} & Xtra Small & Small & Medium & Large & Xtra Large \\
 \midrule
 \endhead
-\textbf{Number of Skittles} & 0 & 1 & 6 & 5 & 4 \\
+\textbf{Number of shirts} & 0 & 1 & 6 & 5 & 4 \\
 \bottomrule
 \end{longtable}
+
+\begin{myanswers}
+\emph{Solution.}
+The modal shirt size
+
+\end{myanswers}
 
 \textbf{B2.} A summary statistic is informally said to be ``robust'' if it typically doesn't change much if a small number of outliers are introduced to a large dataset, or ``sensitive'' if it often changes a lot when a small number of outliers are introduced. Briefly discuss the robustness or sensitivity of the following summary statistics: \textbf{(a)} mode; \textbf{(b)} median; \textbf{(c)} mean; \textbf{(d)} number of distinct outcomes; \textbf{(e)} inter-quartile range; and \textbf{(f)} sample variance.
 

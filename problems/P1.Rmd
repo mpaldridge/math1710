@@ -1,5 +1,16 @@
 # Problem Sheet 1  {#P1 .unnumbered}
 
+
+<style>
+.myanswers { 
+display: none !important;
+}
+</style>
+
+
+
+\commfalse
+
 ::: {.mysummary}
 This is Problem Sheet 1, which covers material from [Section 1](#S01-eda) of the notes. You should work through all the questions on this problem sheet during Week 1, in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by **2pm on Monday 11 October**. I recommend spending about 3 hours on this problem sheet in Week 1, plus 1 extra hour in Week 2 to neatly write up and submit your answers to the assessed questions.
 :::
