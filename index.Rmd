@@ -11,10 +11,18 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 # Schedule {.unnumbered}
 
-::: {.mysummary}
+::: {.mysched}
+**Week 2** (4--8 October):
+
+* [**Section 2:** Probability spaces](#S02-probability)
+* [**Problem Sheet 2:**](#P2) this week and next -- deadline for assessed questions: Monday 25 October
+* [**R Worksheet 2:** Vectors](#r-work)
+:::
+
+::: {.oldsched}
 **Week 1** (27 September -- 1 October):
 
 * [**Section 1:** Exploratory data analysis](#S01-eda)
 * [**Problem Sheet 1:**](#P1) all questions -- deadline for assessed questions: Monday 11 October
-* [**R Worksheet 1**](#r-work)
+* [**R Worksheet 1:** R basics](#r-work)
 :::

@@ -50,7 +50,7 @@ In Subsection 1.3 of the notes, we went from the definitional formula for the sa
 
 ::: {.myanswers data-latex=""}
 *Hint.*
-When is the square of something equal to 0. What can you say about the value of a square when it's nonzero? What can you say about a "sum of squares" -- that is, some numbers squared then added together?
+When is the square of something equal to 0? What can you say about the value of a square when it's nonzero? What can you say about a "sum of squares" -- that is, some numbers squared then added together?
 :::
 ::::
 :::::

@@ -1,0 +1,42 @@
+::: {.myq}
+**A1.** Suppose you toss a coin 10 times. What would you suggest for a sample space **(a)** if you care about the result of every coin toss; **(b)** if you only care about the number of heads?
+:::
+
+
+:::: {.myq}
+**A2.** Let $A$, $B$ and $C$  be events in a sample space $\Omega$. Write the following events using only $A$, $B$, $C$ and the complement, intersection, and union operations.
+
+::: {.subq}
+**(a)** $C$ happens but $A$ doesn't.
+:::
+
+::: {.subq}
+**(b)** At least one of $A$, $B$ and $C$ happens.
+:::
+
+::: {.subq}
+**(c)** Exactly one of $B$ or $C$ happens.
+:::
+
+::: {.subq}
+**(d)** Exactly two of $A$, $B$ and $C$ happens.
+:::
+::::
+
+
+:::: {.myq}
+**A3.** Let $\Omega$ be a sample space with a probability measure $\mathbb P$, and let $A, B \subset \Omega$ be events. State, with brief explanations, whether the following statements are true or false:
+
+::: {.subq}
+**(a)** If $\mathbb P(A) \leq \mathbb P(B)$, then $A \subset B$.
+:::
+::: {.subq}
+**(b)** $\mathbb P(A \cap B) + \mathbb (A \cap B^\comp) = \mathbb P(A)$.
+:::
+::: {.subq}
+**(c)** $\mathbb P(A \cup B) \leq \mathbb P(A)$
+:::
+::: {.subq}
+**(d)** If $A$ and $B$ are disjoint, then $\mathbb P((A \cup B)^\comp) = 1 - \mathbb P(A) - \mathbb P(B)$.
+:::
+::::

@@ -1,0 +1,11 @@
+\commtrue
+
+# Solutions to problem sheets {#solutions .unnumbered}
+
+## Problem Sheet 1 {#P1-solutions .unnumbered}
+
+```{r, child = "problems/questions/P1-short.Rmd"}
+```
+
+```{r, child = "problems/questions/P1-long.Rmd"}
+```

@@ -1,2 +1,50 @@
 # Problem Sheet 2  {#P2 .unnumbered}
 
+
+
+<style>
+.myanswers { 
+display: none !important;
+}
+</style>
+
+
+
+\commfalse
+
+
+::: {.mysummary}
+This is Problem Sheet 2. This problem sheet currently covers [Section 2](#S01-eda) of the notes, and will later have questions added that cover Section 3 also. You should work through all the questions currently on this problem sheet during Week 2, in preparation for your tutorial in Week 4. The problem sheet contains one assessed question, with one more to be added later, which are due in by **2pm on Monday 25 October**.
+:::
+
+## A: Short questions {#P2-short .unnumbered}
+
+```{r, child = "problems/questions/P2-short.Rmd"}
+```
+
+## B: Long questions {#P2-long .unnumbered}
+
+```{r, child = "problems/questions/P2-long.Rmd"}
+```
+
+
+## C: Assessed questions {#P2-assessed .unnumbered}
+
+::: {.mysummary}
+The last two questions are **assessed questions**. These two questions count for 3% of your final mark for this module.
+
+The deadline for submitting your solutions is **2pm on Monday 25 October** at the beginning of Week 5, although I strongly recommend completing and submitting your work during Week 4. Submission will be via Gradescope; submission will open on Monday 18 October.
+Your work will be marked by your tutor and returned on Monday 1 November, when solutions will also be made available.
+
+Both questions are "long questions", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on [academic integrity](https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism) -- and the related punishments for violating them -- apply to your work on the assessed questions.
+:::
+
+```{r, child = "problems/questions/P2-assessed.Rmd"}
+```
+
+## Solutions to short questions {#P2-short-sols .unnumbered}
+
+**A1.** (a) $\{0,1,\dots, 10\}$ (b) The set of all $2^{10}$ vectors of length 10 from $\{\text{H}, \text{T}\}$. **A2.** (a) $C \cap A^\comp$ (b) $A \cup B \cup C$ (c) $(B \cup C) \cap (B \cup C)^\comp$ or $(B \cap C^\comp) \cup (B^\comp \cap C)$ (d) $(A \cup B \cup C) \cap (A \cap B \cap C)^\comp$ or other equivalent. **A3.** (a) False (b) True (c) False (d) True
+

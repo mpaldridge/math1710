@@ -3,9 +3,9 @@ rmd_files:
   - about.Rmd
   - sections/S01-eda.Rmd
   - problems/P1.Rmd
-#  - sections/S02-probability.Rmd
+  - sections/S02-probability.Rmd
 #  - sections/S03-classical.Rmd
-#  - problems/P2.Rmd
+  - problems/P2.Rmd
 #  - sections/S04-independence.Rmd
 #  - sections/S05-discrete-rv.Rmd
 #  - problems/P3.Rmd
@@ -18,6 +18,7 @@ rmd_files:
 #  - problems/P5.Rmd
 #  - sections/S11-summary.Rmd
   - R/R.Rmd
+#  - problems/solutions.Rmd
 book_filename: "math1710"
 output_dir: "docs"
 delete_merged_file: true

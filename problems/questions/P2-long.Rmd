@@ -1,0 +1,33 @@
+:::: {.myq}
+**B1** Starting from just the three probability axioms, prove the following statements:
+
+::: {.subq}
+**(a)** $\mathbb P(\varnothing) = 0$.
+:::
+::: {.subq}
+**(b)** $\mathbb P(A^\comp) = 1 - \mathbb P(A)$.
+:::
+::::
+
+
+:::: {.myq}
+**B2.** Suppose we pick a number at random from the set $\{1, 2, \dots, 2021\}$.
+
+::: {.subq}
+**(a)** What is the probability that the number is divisible by 5?
+:::
+
+::: {.subq}
+**(b)** What is the probability the number is divisible by 5 or by 7?
+:::
+::::
+
+:::: {.myq}
+**B3.** Starting with the standard two-event form of the addition rule for unions
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
+prove the following three-event form:
+\[
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
+  - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
+\]
+::::

@@ -51,6 +51,4 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P1-short-sols .unnumbered}
 
-**A1.** (a) 60.7 (b) & (c) 2.40 (d) ---
-
-**A2.** (a) --- (b) 45--50 (c) 47.3
+**A1.** (a) 60.7 (b) & (c) 2.40 (d) --- **A2.** (a) --- (b) 45--50 (c) 47.3

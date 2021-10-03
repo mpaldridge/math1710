@@ -181,6 +181,6 @@ For R, there are many excellent resources online, and Google is your friend for 
 
 ## About these notes  {#about-notes .unnumbered}
 
-These notes were written by Matthew Aldridge in 2021. Editing help was provided by XXX. They are based in part on previous notes by Dr Robert G Aykroyd and Prof Wally Gilks.  Dr Jason Anquandah and Dr Aykroyd advised on the R worksheets. Dr Aykroyd's help and advice on many aspects of the module was particularly valuable.
+These notes were written by Matthew Aldridge in 2021. They are based in part on previous notes by Dr Robert G Aykroyd and Prof Wally Gilks.  Dr Jason Anquandah and Dr Aykroyd advised on the R worksheets. Dr Aykroyd's help and advice on many aspects of the module was particularly valuable.
 
 These notes (in the web format) should be accessible by screenreaders. The videos have (highly imperfect) automated subtitles. If you have accessibility difficulties with these notes, contact <maths1710@leeds.ac.uk>.

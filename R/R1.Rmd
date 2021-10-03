@@ -132,7 +132,7 @@ We can also update an object in terms of itself. So to increase our very special
 very_special <- very_special + 10
 ```
 
-This might seem bizarre -- it would be nonsensical to write $x = x + 10$ as mathematical equation! But the key is to remember that `<-` means "assignment"; so this command means "assign the old value of `very_special` plus 10 to the new version of the object `very + special`.
+This might seem bizarre -- it would be nonsensical to write $x = x + 10$ as mathematical equation! But the key is to remember that `<-` means "assignment"; so this command means "assign the old value of `very_special` plus 10 to the new version of the object `very_special`.
 
 > **Exercise 1.5**. This exercise continues with the objects assigned in Exercise 1.4.\
 **(a)** Assign the value of `paul` mutiplied by `john` to the new value `ringo`.\

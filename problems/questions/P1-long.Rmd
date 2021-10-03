@@ -46,9 +46,9 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 ::: {.myanswers data-latex=""}
 *Solutions.*
 
-**(a)** The mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so the outliers become "joint modes" with everything else; but in this case the mode is not a useful statistic in the first place.)
+**(a)** The mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so the outliers become "joint modes" along with everything else; but in this case the mode is not a useful statistic in the first place.)
 
-**(b)** The introduction of outliers will typically only change the mode a little bit. In particular, the size of the outliers won't make any difference at all (only whether they are "high outlier" or "low outliers"). So the median is robust.
+**(b)** The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the "central mass" of the data. In particular, the size of the outliers won't make any difference at all (only whether they are "high outliers" or "low outliers"). So the median is robust.
 
 **(c)** The mean can change a lot is outliers are introduced. (Think about the mean net worth of people in you tutorial group, and how it would change if Jeff Bezos or Elon Musk joined your tutorial group.) So the mean is sensitive.
 
@@ -58,7 +58,7 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 
 **(f)** The sample variance is sensitive, for the same reason as the mean.
 
-(You might like to think about situations where it's better to use a robust statistics or better to use a sensitive statistic.)
+(You might like to think about situations where it's better to use a robust statistic or better to use a sensitive statistic.)
 :::
 ::::
 
@@ -85,7 +85,7 @@ and comparing them with the Cauchy--Schwarz inequality, it looks like taking $a_
 \[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]
 These are very close to the formulas for $s_{xy}$, $s_x^2$, and $s_y^2$, but are just missing the "$1/(n-1)$"s; what we in fact have is
 \[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]
-Cancelling $(n-1)$^2 from each side, we have $s_{xy}^2 \leq s_x^2 s_y^2$, and we've proved the hint.
+Cancelling $(n-1)^2$ from each side, we have $s_{xy}^2 \leq s_x^2 s_y^2$, and we've proved the hint.
 
 We now want to get from the hint to the desired statement $-1 \leq r_{xy} \leq 1$. (Note that you can attempt this part even without having managed to prove the hint.) Recall the formula for the correlation is
 \[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]

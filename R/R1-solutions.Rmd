@@ -1,0 +1,119 @@
+---
+title:  "R Worksheet 1: R Basics (Solutions)"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*Here are my solutions to [R Worksheet 1](https://mpaldridge.github.io/math1710/R/R1.html). These aren't necessarily the only ways to solve these problems.*
+
+*Remember that you can get R help at the optional R troubleshooting drop-in sessions in Weeks 2 and 3.*
+
+---
+
+> **Exercise 1.1.** Type `2 + 3` into the console next to the arrow, and then press Enter. What happens?
+
+Let's try!
+
+```{r, eval = FALSE}
+2 + 3
+```
+
+We see the answer `[1] 5`. First, the `[1]` just tells us that what follows is the first part of the answer -- since our answer here only has one part, we can ignore this. (It is useful when the answer is a very long vector or a table of values.) Then the `5` is the answer we want.
+
+> **Exercise 1.2.** Calculate:\
+**(a)** $943 - 242$,\
+**(b)** $29 \times 31$,\
+**(c)** $2^{8+5}$,\
+**(d)** $\displaystyle \frac{19 + 21}{5 \times 3}$.
+
+We calculate these as follows:
+
+```{r}
+943 - 242
+29 * 31
+2^(8 + 5)
+(19 + 21) / (5 * 3)
+```
+
+> **Exercise 1.3.** Use R to find:\
+**(a)** $\frac{1}{7}$ to 4 decimal places;\
+**(b)** $\log(10)$ to 3 significant figures;\
+**(c)** $\sqrt{712 + 34}$ to the nearest integer.
+
+We can find these as follows:
+
+```{r}
+round(1 / 7, digits = 4)
+signif(log(10), digits = 3)
+round(sqrt(712 + 34))
+```
+
+> **Exercise 1.4.** Create an object called `john`, and assign it the value 7. Then create an object called `paul` and assign it the value $12^2$. Then get R to tell you the value of `paul` multiplied by the value of `john`.
+
+We do this as follows:
+
+```{r}
+john <- 7
+paul <- 12^2
+paul * john
+```
+
+> **Exercise 1.5**. This exercise continues with the objects assigned in Exercise 1.4.\
+**(a)** Assign the value of `paul` mutiplied by `john` to the new value `ringo`.\
+**(b)** Check the value of `ringo`.\
+**(c)** Double the value of `ringo`, keeping it still stored as `ringo`.\
+**(d)** Add 5 to the value of `ringo`.\
+**(e)** Check the new value of `ringo`. (It should be 2021.)
+
+We do this as follows:
+
+```{r}
+ringo <- paul * john
+ringo
+ringo <- 2* ringo
+ringo <- ringo + 5
+ringo
+```
+
+The answer is indeed 2021, as it should be.
+
+> **Exercise 1.6.** Write down the commands you used to solve Exercises 1.4 and 1.5 in a new R Script. Save your work with a explanatory filename that will allow you to find it again later.
+
+> **Exercise 1.7.** Continuing with your R Script from Exercise 1.6, add comments to make it clear which commands are doing what, then re-save your R Script.
+
+My R Script `R1-solutions.R` looked like this:
+
+```{r, eval = FALSE}
+# MATH1710: R WORKSHEET 1
+# MY SOLUTIONS
+# Last updated: Friday 1 October 2021
+
+# Exercise 1.1
+2 + 3  # Gets answer "[1] 5"
+
+# Exercise 1.2
+943 - 242
+29 * 31
+2^(8 + 5)
+(19 + 21) / (5 * 3)
+
+# Exercise 1.3
+round(1 / 7, digits = 4)
+signif(log(10), digits = 3)
+round(sqrt(712 + 34))
+
+# Exercise 1.4
+john <- 7
+paul <- 12^2
+paul * john
+
+# Exercise 1.5
+ringo <- paul * john
+ringo
+ringo <- 2* ringo
+ringo <- ringo + 5
+ringo  # Answer is 2021, as it should be
+
+# Exercises 1.5 and 1.6 created this R Script.
+```

@@ -86,7 +86,7 @@ The **number of distinct observations** is precisely that: the number of differe
 The **interquartile range** is the difference between the upper and lower quartiles $\text{IQR} = q(\frac34) - q(\frac14)$.
 
 The **sample variance** is
-\[  s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]
+\[  s^2_x = \frac{1}{n-1} \left((x_1 - \bar x)^2 + \cdots + (x_n - \bar x)^2 \right) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]
 where $\bar x$ is the sample mean from before. The **standard deviation** $s_x = \sqrt{s^2_x}$ is the square-root of the sample variance.
 :::
 
