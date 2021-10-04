@@ -46,5 +46,5 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P2-short-sols .unnumbered}
 
-**A1.** (a) $\{0,1,\dots, 10\}$ (b) The set of all $2^{10}$ vectors of length 10 from $\{\text{H}, \text{T}\}$. **A2.** (a) $C \cap A^\comp$ (b) $A \cup B \cup C$ (c) $(B \cup C) \cap (B \cup C)^\comp$ or $(B \cap C^\comp) \cup (B^\comp \cap C)$ (d) $(A \cup B \cup C) \cap (A \cap B \cap C)^\comp$ or other equivalent. **A3.** (a) False (b) True (c) False (d) True
+**A1.** (a) $\{0,1,\dots, 10\}$ (b) The set of all $2^{10}$ vectors of length 10 with entries from $\{\text{H}, \text{T}\}$. **A2.** (a) $C \cap A^\comp$ (b) $A \cup B \cup C$ (c) $(B \cup C) \cap (B \cup C)^\comp$ or $(B \cap C^\comp) \cup (B^\comp \cap C)$ (d) $(A \cap B \cap C^\comp) \cup (A \cap B^\comp \cap C) \cup (A^\comp \cap B \cap C)$ or other equivalent. **A3.** (a) False (b) True (c) False (d) True
 

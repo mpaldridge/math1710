@@ -1,5 +1,5 @@
 ::: {.myq}
-**A1.** Suppose you toss a coin 10 times. What would you suggest for a sample space **(a)** if you care about the result of every coin toss; **(b)** if you only care about the number of heads?
+**A1.** Suppose you toss a coin 10 times. What would you suggest for a sample space **(a)** if you only care about the total number of heads; **(b)** if you care about the result of every coin toss?
 :::
 
 
