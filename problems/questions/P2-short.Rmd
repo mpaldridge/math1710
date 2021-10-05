@@ -31,7 +31,7 @@
 **(a)** If $\mathbb P(A) \leq \mathbb P(B)$, then $A \subset B$.
 :::
 ::: {.subq}
-**(b)** $\mathbb P(A \cap B) + \mathbb (A \cap B^\comp) = \mathbb P(A)$.
+**(b)** $\mathbb P(A \cap B) + \mathbb P(A \cap B^\comp) = \mathbb P(A)$.
 :::
 ::: {.subq}
 **(c)** $\mathbb P(A \cup B) \leq \mathbb P(A)$

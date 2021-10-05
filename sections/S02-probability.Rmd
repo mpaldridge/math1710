@@ -112,7 +112,7 @@ This represents the event that $A$ occurs or $B$ occurs. (In mathematics, "or" i
 :::
 
 ::: {}
-```{tikz venn-not, echo=FALSE, fig.align="center", out.width="550pt"}
+```{tikz venn-not, echo=FALSE, fig.align="center", out.width="550pt", cache = TRUE}
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
 
 \begin{scope} 
@@ -131,7 +131,7 @@ This represents the event that $A$ occurs or $B$ occurs. (In mathematics, "or" i
 \end{tikzpicture}
 ```
 
-```{tikz venn-and, echo=FALSE, fig.align="center", out.width="550pt"}
+```{tikz venn-and, echo=FALSE, fig.align="center", out.width="550pt", cache = TRUE}
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
 \begin{scope} 
 	\clip (4,2) circle (1.5); 
@@ -146,7 +146,7 @@ This represents the event that $A$ occurs or $B$ occurs. (In mathematics, "or" i
 \end{tikzpicture}
 ```
 
-```{tikz venn-or, echo=FALSE, fig.align="center", out.width="550pt"}
+```{tikz venn-or, echo=FALSE, fig.align="center", out.width="550pt", cache = TRUE}
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
 
 \begin{scope} 
@@ -202,7 +202,7 @@ with a Venn diagram. We can build the left-hand side of the law as:
 ::: {style="display: flex;"}
 
 ::: {}
-```{tikz dist1, echo=FALSE, fig.align="center", out.width="100%"}
+```{tikz dist1, echo=FALSE, fig.align="center", out.width="100%", cache = TRUE}
 
 \usetikzlibrary{patterns}
 
@@ -223,7 +223,7 @@ with a Venn diagram. We can build the left-hand side of the law as:
 :::
 
 ::: {}
-```{tikz dist2, echo=FALSE, fig.align="center", out.width="100%"}
+```{tikz dist2, echo=FALSE, fig.align="center", out.width="100%", cache = TRUE}
 \usetikzlibrary{patterns}
 
 \begin{tikzpicture}[line width=0.25pt, scale=0.7]
@@ -249,7 +249,7 @@ with a Venn diagram. We can build the left-hand side of the law as:
 :::
 
 ::: {}
-```{tikz dist3, echo=FALSE, fig.align="center", out.width="100%"}
+```{tikz dist3, echo=FALSE, fig.align="center", out.width="100%", cache = TRUE}
 \usetikzlibrary{patterns}
 
 \begin{tikzpicture}[line width=0.25pt, scale=0.7]
@@ -280,7 +280,7 @@ Then for the right-hand side of the law, we have:
 :::: {style="display: flex;"}
 
 ::: {}
-```{tikz dist4, echo=FALSE, fig.align="center", out.width="100%"}
+```{tikz dist4, echo=FALSE, fig.align="center", out.width="100%", cache = TRUE}
 \usetikzlibrary{patterns}
 
 \begin{tikzpicture}[line width=0.25pt, scale=0.7]
@@ -302,7 +302,7 @@ Then for the right-hand side of the law, we have:
 :::
 
 ::: {}
-```{tikz dist5, echo=FALSE, fig.align="center", out.width="100%"}
+```{tikz dist5, echo=FALSE, fig.align="center", out.width="100%", cache = TRUE}
 \usetikzlibrary{patterns}
 
 \begin{tikzpicture}[line width=0.25pt, scale=0.7]
@@ -324,7 +324,7 @@ Then for the right-hand side of the law, we have:
 :::
 
 ::: {}
-```{tikz dist6, echo=FALSE, fig.align="center", out.width="100%"}
+```{tikz dist6, echo=FALSE, fig.align="center", out.width="100%", cache = TRUE}
 \usetikzlibrary{patterns}
 
 \begin{tikzpicture}[line width=0.25pt, scale=0.7]
@@ -474,7 +474,7 @@ Statements 1 and 2 are exercise for you on [Problem Sheet 2](#P2). We'll start w
 The key with most of these "prove from the axioms" problems is to think of a way to write the relevant events as part of a *disjoint* union, then use Axiom 3. Here, since $B$ is a subset of $A$, it would be useful to write $A$ as a disjoint union of $B$ and "the bit of $A$ that isn't in $B$. That is, we have the disjoint union
 \[ B \cup (A \cap B^\comp) = A .\]
 
-```{tikz subs, echo=FALSE, fig.align="center", out.width="320pt"}
+```{tikz subs, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
 
 \draw[thick] (0,0) rectangle (6,4);
@@ -541,7 +541,7 @@ As always, the key is to find a way of writing $A \cup B$ as a *disjoint* union.
 :::
 
 :::{}
-```{tikz add1, echo=FALSE, fig.align="center", out.width="1000pt"}
+```{tikz add1, echo=FALSE, fig.align="center", out.width="1000pt", cache = TRUE}
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
 
 \fill  [blue!25] (4,2) circle (1.5); 
@@ -569,7 +569,7 @@ where the union on the right is of the disjoint events $A$ and $B \cap A^\comp$.
 The left-hand side looks good, and the first term on the right-hand side looks good. To deal with the second term on the right-hand side, we need to write it down as part of a disjoint union again. Can we find another one? Yes! We can use $B \cap A^\comp$ together with $B \cap A$ to build the whole of $B$. So have a disjoint union
 \[ (B \cap A^\comp) \cup (B \cap A) = B .\]
 
-```{tikz add2, echo=FALSE, fig.align="center", out.width="320pt"}
+```{tikz add2, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
 
 \fill  [blue!25] (4,2) circle (1.5); 
