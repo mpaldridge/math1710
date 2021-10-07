@@ -60,7 +60,7 @@ Some measures of centrality are the following.
 Consider some real-valued data $\mathbf x = (x_1, x_2, \dots, x_n)$.
 
 * The **mode** is the most common value of $x_i$. (If there are multiple joint-most common values, they are all modes.)
-* Suppose the data is ordered as $x_1 \leq x_2 \leq \cdots \leq x_n$. Then the **median** is the central value in the ordered list. If $n$ is odd, this is $x_{(n+1)/2}$; if $n$ is even, we normally take halfway between the two central points, $\frac12(x_{n/2}+x_{(n+1)/2})$.
+* Suppose the data is ordered as $x_1 \leq x_2 \leq \cdots \leq x_n$. Then the **median** is the central value in the ordered list. If $n$ is odd, this is $x_{(n+1)/2}$; if $n$ is even, we normally take halfway between the two central points, $\frac12(x_{n/2}+x_{n/2 + 1})$.
 * The **mean** $\bar x$ is
 \[ \bar x = \frac{1}{n}(x_1 + x_2 + \cdots + x_n) = \frac1n \sum_{i=1}^n x_i . \]
 :::

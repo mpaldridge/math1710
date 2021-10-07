@@ -11,7 +11,7 @@ Let $\Omega$ be a finite sample space. Then the **classical probability measure*
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} . \]
 :::
 
-So to work out a classical probability, we need to be able to count how many outcomes are in $A$ and count how many outcomes are in $\Omega$. In this section, we'll see a number of situations where we can do this.
+So to work out a classical probability, we need to be able to count how many outcomes are in $A$ and count how many outcomes are in $\Omega$. (This is why classical probability is also called "enumerative probability" -- "enumeration" is another word for counting.) In this section, we'll see a number of situations where we can do this.
 
 PROOF SOMEWHERE
 
