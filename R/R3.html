@@ -309,8 +309,7 @@ pre code {
 </blockquote>
 <p>Let us note for later that the names of our <code>temperature</code> data are these:</p>
 <pre class="r"><code>names(temperature)</code></pre>
-<pre><code>##  [1] &quot;year&quot; &quot;jan&quot;  &quot;feb&quot;  &quot;mar&quot;  &quot;apr&quot;  &quot;may&quot;  &quot;jun&quot;  &quot;jul&quot;  &quot;aug&quot;  &quot;sep&quot;  &quot;oct&quot;  &quot;nov&quot; 
-## [13] &quot;dec&quot;</code></pre>
+<pre><code>##  [1] &quot;year&quot; &quot;jan&quot;  &quot;feb&quot;  &quot;mar&quot;  &quot;apr&quot;  &quot;may&quot;  &quot;jun&quot;  &quot;jul&quot;  &quot;aug&quot;  &quot;sep&quot;  &quot;oct&quot;  &quot;nov&quot;  &quot;dec&quot;</code></pre>
 </div>
 <div id="data-frames" class="section level2">
 <h2>Data frames</h2>
@@ -359,6 +358,39 @@ pre code {
 <pre class="r"><code>cor(temperature$jun, temperature$jul)</code></pre>
 <pre><code>## [1] 0.2827105</code></pre>
 <p>and so on. Remember we can use <code>round()</code> and <code>signif()</code> with these to round the answers.</p>
+<blockquote>
+<p><strong>Exercise 3.3.</strong> We continue with the <code>temperature</code> data.<br />
+<strong>(a)</strong> What was the median temperature in September?<br />
+<strong>(b)</strong> What is the sample variance of the first fifty years of February data?<br />
+<strong>(c)</strong> What is the lowest December temperature?<br />
+<strong>(d)</strong> What is the correlation between October and November temperatures, restricted only to the first 100 years of data?</p>
+</blockquote>
+<hr />
+</div>
+<div id="assessed-questions" class="section level2">
+<h2>Assessed questions</h2>
+<p><em>The following assessed questions should be submitted to the Microsoft Form that is linked to in Minerva. The deadline <strong>Monday 18 October at 1400</strong>.</em></p>
+<p><em>This worked will be marked automatically by computer, so make sure you answers are accurate – the computer does not “know what you meant”; only what you enter into the form.</em></p>
+<p><em>So that (most) students get different data to work with, you will work from a data file whose name is based on your student ID number. You student ID number is (usually) a 9-digit number starting <code>201</code>. Your data set is the CSV file at</em></p>
+<pre><code>https://mpaldridge.github.io/math1710/data/R3-xy.csv</code></pre>
+<p><em>where <code>xy</code> is replaced by the last two digits of your student ID number. So if your student ID is <code>201623429</code>, then you should use the file at <code>https://mpaldridge.github.io/math1710/data/R3-29.csv</code>; if your student ID number is <code>201491200</code> then you should use the file <code>https://mpaldridge.github.io/math1710/data/R3-00.csv</code> and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 marks.</em></p>
+<hr />
+<p>Read the data set at <code>https://mpaldridge.github.io/math1710/data/R3-xy.csv</code> into R. Remember that <code>xy</code> should be replaced by the last 2 digits of your student ID number. This data set gives the stock prices of two companies, “Amaflix” and “Netazon” over a number of days.</p>
+<blockquote>
+<p><strong>Assessed Question 1.</strong> How many days of data are in the data set?</p>
+</blockquote>
+<blockquote>
+<p><strong>Assessed Question 2.</strong> What was the mean stock price of Amaflix? Give your answer to two decimal places (as rounded by the R <code>round()</code> function).</p>
+</blockquote>
+<blockquote>
+<p><strong>Assessed Question 3.</strong> What was the variance of stock price of Netazon over the first 25 days of the dataset? Round your answer to three significant figures.</p>
+</blockquote>
+<blockquote>
+<p><strong>Assessed Question 4.</strong> Which company’s data had the greater inter-quartile range?</p>
+</blockquote>
+<blockquote>
+<p><strong>Assessed Question 5.</strong> Would you say that the relationship between the companies’ stock prices is a strong positive relationship, a strong negative relationship, or a weak relationship?</p>
+</blockquote>
 </div>
 
 

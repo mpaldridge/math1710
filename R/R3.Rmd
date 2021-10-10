@@ -141,3 +141,39 @@ cor(temperature$jun, temperature$jul)
 ```
 
 and so on. Remember we can use `round()` and `signif()` with these to round the answers.
+
+> **Exercise 3.3.** We continue with the `temperature` data.\
+**(a)** What was the median temperature in September?\
+**(b)** What is the sample variance of the first fifty years of February data?\
+**(c)** What is the lowest December temperature?\
+**(d)** What is the correlation between October and November temperatures, restricted only to the first 100 years of data?
+
+---
+
+## Assessed questions
+
+*The following assessed questions should be submitted to the Microsoft Form that is linked to in Minerva. The deadline **Monday 18 October at 1400**.*
+
+*This worked will be marked automatically by computer, so make sure you answers are accurate -- the computer does not "know what you meant"; only what you enter into the form.*
+
+*So that (most) students get different data to work with, you will work from a data file whose name is based on your student ID number. You student ID number is (usually) a 9-digit number starting `201`. Your data set is the CSV file at*
+
+```
+https://mpaldridge.github.io/math1710/data/R3-xy.csv
+```
+
+*where `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then you should use the file at `https://mpaldridge.github.io/math1710/data/R3-29.csv`; if your student ID number is `201491200` then you should use the file `https://mpaldridge.github.io/math1710/data/R3-00.csv` and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 marks.*
+
+---
+
+Read the data set at `https://mpaldridge.github.io/math1710/data/R3-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set gives the stock prices of two companies, "Amaflix" and "Netazon" over a number of days.
+
+> **Assessed Question 1.** How many days of data are in the data set?
+
+> **Assessed Question 2.** What was the mean stock price of Amaflix? Give your answer to two decimal places (as rounded by the R `round()` function).
+
+> **Assessed Question 3.** What was the variance of stock price of Netazon over the first 25 days of the dataset? Round your answer to three significant figures.
+
+> **Assessed Question 4.** Which company's data had the greater inter-quartile range?
+
+> **Assessed Question 5.** Would you say that the relationship between the companies' stock prices is a strong positive relationship, a strong negative relationship, or a weak relationship?
