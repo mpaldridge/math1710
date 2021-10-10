@@ -1,0 +1,143 @@
+---
+title:  "R Worksheet 3: Data in R"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet* does *include assessed questions at the bottom. Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 17 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*
+
+------------------------------------------------------------------------
+
+## CSV files
+
+If we are dealing with a very small amount of data, then we can simply type it into one or more vectors in R, using the `c()` function. But if we have a large amount of data, we will want to "read" it into R directly from a file -- that is, we will want R to take the data from an external file and turn it into an R object.
+
+When large amounts of data are transferred, the standard format is a **comma-separated variable** or **CSV** file, which typically have the file suffix `.csv`. A comma-separated variable file looks like this:
+
+```
+year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec
+1884,4.9,3.9,4.9,6.0,9.7,12.6,14.7,15.5,13.0,8.0,4.6,2.9
+1885,1.8,4.1,3.2,6.3,7.5,12.4,14.5,12.2,10.7,6.1,4.6,2.7
+1886,0.8,0.5,2.6,5.9,8.4,11.6,14.2,14.3,12.0,9.8,5.4,0.9
+1887,1.3,3.1,3.0,5.3,8.1,14.1,15.9,13.8,10.4,6.1,3.7,1.8
+1888,2.5,1.1,1.7,5.1,9.2,11.3,12.0,12.6,10.8,7.1,6.3,3.9
+```
+
+Here, the first line of the file represents a row of "headers", telling us what the rest of the data represents. This is data about the average UK temperature in each month of different years. Then each line of the file after the first line corresponds to one data record -- here, one year -- and each piece of data is separated from the next with just a single, and no spaces. Represented in a more common table view, this data would look like this:
+
+| year | jan | feb | mar | apr | may | jun | jul | aug | sep | oct | nov | dec |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| 1884 | 4.9 | 3.9 | 4.9 | 6.0 | 9.7 | 12.6 | 14.7 | 15.5 | 13.0 | 8.0 | 4.6 | 2.9 |
+| 1885 | 1.8 | 4.1 | 3.2 | 6.3 | 7.5 | 12.4 | 14.5 | 12.2 | 10.7 | 6.1 | 4.6 | 2.7 |
+| 1886 | 0.8 | 0.5 | 2.6 | 5.9 | 8.4 | 11.6 | 14.2 | 14.3 | 12.0 | 9.8 | 5.4 | 0.9 |
+| 1887 | 1.3 | 3.1 | 3.0 | 5.3 | 8.1 | 14.1 | 15.9 | 13.8 | 10.4 | 6.1 | 3.7 | 1.8 |
+| 1888 | 2.5 | 1.1 | 1.7 | 5.1 | 9.2 | 11.3 | 12.0 | 12.6 | 10.8 | 7.1 | 6.3 | 3.9 |
+
+There are many advantages to using CSV files to store and send data:
+
+* They can be read by many different programs: you can open them in a text editor (like Notepad), you can open them in a spreadsheet program (like Excel), or you can read them directly into R.
+* Because a CSV file contains just the data and some commas and nothing else, file sizes can be kept small even for very large amounts of data.
+* CSV files contain "just the data", and no unnecessary presentational information like fonts, text size, colours, and so on.
+
+We can read data into R from a CSV file saved "locally" -- that is, saved on the hard drive of the computer you are working on now -- or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: *you never need to save any data files to your computer*. The advantages of reading data in from the internet include:
+
+* Your R code will always work on any (internet-connected) computer, for example if you send your work to a colleague.
+* If the data owner updates their data on the internet, your R code will work automatically with this new updated data.
+
+A disadvantage is that the data owner might remove their data from the internet.
+
+## Reading CSV files into R
+
+We read data from CSV files into R using the **`read.csv()`** function. To read in more of the UK temperature data we mentioned above from the website <https://mpaldridge.github.io/math1710/data/met-office.csv>, we use the R command
+
+```{r}
+temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")
+```
+
+By using `temperature <- `, we have read the data into an R object called `temperature`. Nothing will happen until we interact with this R object in some way. (Note the quotation marks `" "` around the web address in the `read.csv()` command.)
+
+When you've read some data into R, you will want to check it has worked, and find out some basic details about the data. There are various functions that will do this:
+
+* **`head()`** shows the first few rows of the data, so you can inspect a manageable amount of the data. (So to show the top of the data read in as `temperature`, we use `head(temperature)`.)
+* **`names()`** tells us the names of the columns from the header row of the file.
+* **`ncol()`** and **`nrow()`** tell us how many columns and how many rows the data contains.
+
+> **Exercise 3.1.** Copy the command above to read in the Met Office temperature data to an object called `temperature`. How many rows does the data have?
+
+Let us note for later that the names of our `temperature` data are these:
+
+```{r}
+names(temperature)
+```
+
+## Data frames
+
+When R reads in data from a CSV file, it saves it as a type of object known as a **data frame**. Let us look at the top of `temperature`:
+
+```{r}
+head(temperature)
+```
+
+A data frame is a two-dimensional table. The columns have names: the names `"year"`, `"jan"`, `"feb"`, etc, that we saw above. The rows are simply numbered.
+
+We can extract asingle data point using the square brackets `[ ]`, similar to how we extracting single entries of vectors on Worksheet 2. So, the datapoint in row 21 and column "oct" is
+
+```{r}
+temperature[21, "oct"]
+```
+
+The notation here in the square brackets is: first the number of the row, then a comma, then the name of the column in quotation marks. (Don't forget the quotation marks!)
+
+You'll also remember from Worksheet 2 that we can pull out a segment from a column with, for example,
+
+```{r}
+temperature[21:26, "oct"]
+```
+
+If we want a whole row, we can just omit the column identifier -- but remember that we still need the comma!
+
+```{r}
+temperature[21, ]
+```
+
+Similarly, if we want a whole column we can miss out the row identifier -- but still keep the comma! -- with
+
+```{r, eval = FALSE}
+temperature[, "oct"]
+```
+
+(I won't print the whole output here.) However, we want a whole column sufficiently often that there's a shorter and more convenient notation where we just use a **`$`** sign, and don't need to worry about the square brackets, the comma, or the quotation marks.
+
+```{r, eval = FALSE}
+temperature$oct
+```
+
+> **Exercise 3.2** We continue with the `temperature` data.\
+**(a)** What year does the 40th row correspond to?\
+**(b)** What was the temperature in August of that year?\
+**(c)** Output the December temperature for rows 50 to 60.
+
+## Functions with data
+
+Once we extract the rows or columns we need, we can then apply any of the functions we learned about on Worksheet 2, like `mean()`, `median()`, `var()`, `IQR()`, `cor()`, `min()`, `max()` and so on.
+
+So, for example, the mean February temperature is given by
+
+```{r}
+mean(temperature$feb)
+```
+
+the interquartile range of April temperatures in the first 100 rows is given by
+
+```{r}
+IQR(temperature[1:100, "apr"])
+```
+
+the correlation between June and July temperatures is
+
+```{r}
+cor(temperature$jun, temperature$jul)
+```
+
+and so on. Remember we can use `round()` and `signif()` with these to round the answers.

@@ -36,6 +36,8 @@ This time, we can order the data from smallest to largest, even though the data 
 Since $1 + 0.25(16 - 1) = 4.75$ the lower quartile is the 4th or 5th datapoints, which are Medium. Since $1 + 0.75(16-1) = 12.25$, the upper quartile is the 12th or 13th datapoints, which are Xtra Large. So we can certainly say that the inner quartiles range from Medium to Xtra Large. We could probably also say that the interquartile range is 3 shirt sizes (Medium, Large, Xtra Large).
 
 Again, because the data is not numerical, we can't add it up, so can't calculate a mean or sample variance.
+
+**Group feedback:** Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be *ordered*.
 :::
 ::::
 :::::
@@ -59,6 +61,8 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 **(f)** The sample variance is sensitive, for the same reason as the mean.
 
 (You might like to think about situations where it's better to use a robust statistic or better to use a sensitive statistic.)
+
+**Group feedback:** Remember that "robust" and "sensitive" are general descriptions rather than precise mathematical definitions. So it doesn't matter if you disagree with my opinions provided that you give clear and detailed explanations to back up your opinion.
 :::
 ::::
 
@@ -73,7 +77,7 @@ Use the Cauchy--Schwarz inequality to show that the correlation $r_{xy}$ satisfi
 *Solutions.*
 The first thing we want do is get from the Cauchy--Schwarz inequality
 \[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]
-to the hint $s_{xy}^2 \leq s_x^2 s_y^2$. We'll done this by making a clever choice for $(a_i)$ and $(b_i)$ in Cauchy--Schwarz that tells us something useful about $s_{xy}$, $s_x^2$, and $s_y^2$.
+to the hint $s_{xy}^2 \leq s_x^2 s_y^2$. We'll do this by making a clever choice for $(a_i)$ and $(b_i)$ in Cauchy--Schwarz that tells us something useful about $s_{xy}$, $s_x^2$, and $s_y^2$.
 
 Recalling the formulas for $s_{xy}$, $s_x^2$, and $s_y^2$,
 \begin{align*}
@@ -87,13 +91,15 @@ These are very close to the formulas for $s_{xy}$, $s_x^2$, and $s_y^2$, but are
 \[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]
 Cancelling $(n-1)^2$ from each side, we have $s_{xy}^2 \leq s_x^2 s_y^2$, and we've proved the hint.
 
-We now want to get from the hint to the desired statement $-1 \leq r_{xy} \leq 1$. (Note that you can attempt this part even without having managed to prove the hint.) Recall the formula for the correlation is
+We now want to get from the hint to the desired statement $-1 \leq r_{xy} \leq 1$. Recall the formula for the correlation is
 \[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]
 We can make the hint look a bit like this dividing both sides by $s_x^2 s_y^2$, to get
 \[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]
 In fact that's the square of the correlation on the left-hand side, so we've shown that $r_{xy}^2 \leq 1$.
 
 Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; number smalles than -1 become bigger than +1 when squared.) Hence we have shown that $-1 \leq r_{xy} \leq 1$, as required.
+
+**Group feedback:** There are two halves to this question: first get from the Cauchy--Schwarz inequality to the hint, and second get from the hint to the answer $-1 \leq r_{xy} \leq 1$. Many students struggled with the first half -- but you can still try to do the second half. Especially in an exam, look for places where you can get marks for doing part of the question -- and it doesn't need to be the *first* part!
 :::
 ::::
 
@@ -103,7 +109,7 @@ Finally, we note that if a number squared is less than or equal to 1, then the n
 (It's not necessary to write an essay for this question -- a few short bulletpoints will suffice. There may be an opportunity to discuss these issues in more detail in your tutorial.)
 
 ::: {.myanswers data-latex=""}
-*Remarks.* There are no "correct" or "incorrect" answers here, but here are a few things I thought of, which may act as a prompt for your own discussions.
+**Group feedback:** There are no "correct" or "incorrect" answers here, but here are a few things that students in my own tutorials brought up, which may act as a prompt for your own discussions.
 
 * It's important the students/subjects have given their consent for their data to be used this way. It must be "informed consent", where they understand for what purpose the data will be used, how it will be stored, and so on. It must be possible and painless for students to decline to take part.
 * Consideration should be given on how to anonymise the data as much as possible -- it's not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.

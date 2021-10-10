@@ -22,6 +22,8 @@ This was in the notes:
         &= \frac{1}{12} (47915 - 47886.2) \\
         &= 2.40
 \end{align*}
+
+**Group feedback:** With the computational formula, the value $\sum_i x_i^2 - n \bar{x}^2$ is typically a fairly small number given as the difference between two very big numbers $\sum_i x_i^2$ and $n \bar x^2$. This means you have to get the two big numbers very precise, to ensure the cancellation happens correctly; in particular, make sure you use plenty of decimal places of accuracy in $\bar x$.
 :::
 ::::
 
@@ -98,7 +100,7 @@ On the other hand, the expression inside the brackets of the computational formu
 ::: {.myanswers data-latex=""}
 *Solution.*
 Pretending that each person is in the centre of their bin, we have
-\[ \bar x = \frac{1}{20} (24 + 35 + \cdots + 65) = \frac{946.5}{20} = 47.3 . \] 
+\[ \bar x = \frac{1}{20} (1\times24 + 3\times 35 + \cdots + 3 \times 65) = \frac{946.5}{20} = 47.3 . \] 
 :::
 ::::
 :::::

@@ -1,21 +1,44 @@
 # Classical probability  {#S03-classical}
 
+\newcommand{\ff}[2]{{#1}^{\underline{#2}}}
+
 ## Probability with equally likely outcomes {#classical-intro}
 
 **Classical probability** is the name we give to probability where there are a finite number of equally likely outcomes.
 
-Classical probability was the first type of probability to be formally studied -- partly because it is the simplest, and partly because it was useful for working out how to win at gambling. Tossing fair coins, rolling dice, and dealing cards are all common gambling situations that can be studied using classical probability -- in a deck of cards, for example, there are 52 cards that are equally likely to be drawn. Among the first works to seriously study classical probability are "Book on Games of Chance" by [Girolamo Cardano](https://mathshistory.st-andrews.ac.uk/Biographies/Cardan/) (written in 1564, but not published until 1663), and a series of letters letters between [Blaise Pascal](https://mathshistory.st-andrews.ac.uk/Biographies/Pascal/) and [Pierre de Fermat](https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/) (1654).
+Classical probability was the first type of probability to be formally studied -- partly because it is the simplest, and partly because it was useful for working out how to win at gambling. Tossing fair coins, rolling dice, and dealing cards are all common gambling situations that can be studied using classical probability -- in a deck of cards, for example, there are 52 cards that are equally likely to be drawn. Among the first works to seriously study classical probability were "Book on Games of Chance" by [Girolamo Cardano](https://mathshistory.st-andrews.ac.uk/Biographies/Cardan/) (written in 1564, but not published until 1663, one hundred years later), and a famous series of letters letters between [Blaise Pascal](https://mathshistory.st-andrews.ac.uk/Biographies/Pascal/) and [Pierre de Fermat](https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/) in 1654.
 
 ::: {.definition}
 Let $\Omega$ be a finite sample space. Then the **classical probability measure** on $\Omega$ is given by
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} . \]
 :::
 
-So to work out a classical probability, we need to be able to count how many outcomes are in $A$ and count how many outcomes are in $\Omega$. (This is why classical probability is also called "enumerative probability" -- "enumeration" is another word for counting.) In this section, we'll see a number of situations where we can do this.
+So to work out a classical probability $\mathbb P(A)$, crucially we need to be able to count how many outcomes $|A|$ are in the event $A$ and count how many outcomes $|\Omega|$ are in the whole sample space $\Omega$. (This is why classical probability is also called "enumerative probability" -- "enumeration" is another word for counting.) In this section, we'll look at some different ways in which we can count the number of outcomes in common events and sample spaces.
 
-PROOF SOMEWHERE
+There's something we ought to check before going any further!
 
-EASY EXAMPLE
+::: {.theorem}
+Let $\Omega$ be a finite nonempty sample space. Then the classical probability measure on $\Omega$,
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} , \]
+is indeed a probability measure, in that is satisfies the three axioms in Definition XXXXXXXX.
+:::
+
+::: {.proof}
+We'll take the axioms one by one.
+
+1. Since $|\Omega| \geq 1$ and $|A| \geq 0$, it is indeed the case that $\mathbb P(A) = |A|/|\Omega| \geq 0$.
+2. We have ${\displaystyle \mathbb P(\Omega) = \frac{|\Omega|}{|\Omega|} = 1}$, as required.
+3. Since we have a finite sample space, we only need to show Axiom 3 for a sequence of two disjoint events; the argument can be repeated to get any finite number of events. Let $A = \{a_1, a_2, \dots, a_k\}$ and $B = \{b_1, b_2, \dots, b_l\}$ be two disjoint events with $|A| = k$ and $|B| = l$. Note that we can enumerate the elements of the disjoint union $C = A \cup B$ as
+\[ c_1 = a_1, c_2 = a_2, \dots, c_k = a_k, c_{k+1} = b_1, c_{k+2} = b_2, \dots, c_{k+l} = b_l . \]
+Since $A$ and $B$ are disjoint, this list has no repeats, and we see that $|C| = |A \cup B| = k+l$. Hence
+\[ \mathbb P(A \cup B) = \frac{k+l}{|\Omega|} = \frac{k}{|\Omega|} + \frac{l}{|\Omega|} = \mathbb P(A) + \mathbb P(B) , \]
+and Axiom 3 is fulfilled.
+:::
+
+
+
+
+
 
 
 
@@ -24,28 +47,236 @@ EASY EXAMPLE
 
 ## Multiplication principle  {#multiplication}
 
-In classical probability, to find the probability of an event $A$, we need to count the number of outcomes in $A$ and the total number of possible outcomes in $\Omega$. This can be easy when we're just looking at one choice -- like the XXXXX YYYYY above. Now we're going to look at what happens if there are a number of choices one after another -- like tossing multiple coins, rolling more than one dice, or dealing a hand of cards.
+In classical probability, to find the probability of an event $A$, we need to count the number of outcomes in $A$ and the total number of possible outcomes in $\Omega$. This can be easy when we're just looking at one choice -- like the 2 outcomes from tossing a single coin, the 6 outcomes of rolling a single dice, or the 52 outcomes from dealing a single card. Now we're going to look at what happens if there are a number of choices one after another -- like tossing multiple coins, rolling more than one dice, or dealing a hand of cards.
 
-Here, an important principle is the **multiplication principle**. This says that if you have $n$ choices followed by $m$ choices, than all together you have $n \times m$ total choices. You can see this by imagining the choices in a $n \times m$ grid, with the $n$ columns representing the first choice and $m$ rows representing the second choice. For example, suppose you go to a burger restaurant where there are 3 choices of burger (beefburger, chicken burger, veggie burger) and 2 choices of sides (fries, salad), then altogether there are $3 \times 2 = 6$ choices of meal.
+Here, an important principle is the **multiplication principle**. The multiplication principle says that if you have $n$ choices followed by $m$ choices, than all together you have $n \times m$ total choices. You can see this by imagining the choices in a $n \times m$ grid, with the $n$ columns representing the first choice and $m$ rows representing the second choice. For example, suppose you go to a burger restaurant where there are 3 choices of burger (beefburger, chicken burger, veggie burger) and 2 choices of sides (fries, salad), then altogether there are $3 \times 2 = 6$ choices of meal.
 
 TABLE
 
 More generally, if you have $m$ stages of choosing, with $n_1$ choices in the first stage, then $n_2$ choices in the second stage, all the way to $n_m$ choices in the final stage, you have $n_1 \times n_2 \times \cdots \times n_m$ total choices altogether.
 
+<!--
+::: {.example}
+*Two dice are rolled. What is the probability of getting a total score of 8?*
+
+Here, the sample space $\Omega$ is the set of all pairs of dice rolls
+\[ \Omega = \big\{ (1,1), (1, 2), (1, 2), \dots, (6,5), (6,6) \big\} . \]
+Note that all the outcomes are equally likely, so we have a classical probability problem.
+
+Because there are 6 possible values for the first dice and 6 possible values for the second dice, by the multiplication principle we have $|\Omega| = 6 \times 6 = 36$.
+
+Let $A$ be the event we roll a total of 8. We need to find $|A|$, the number of sample outcomes in $A$. We can find this simply by listing them all:
+\[ A = \big\{ (2,6), (3, 5), (4, 4), (5,3), (6,2) \big\} .\]
+We see that $|A| = 5$.
+
+Hence, the probability of getting a total of 8 is
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{5}{36} \approx 0.14 .\]
+:::
+-->
+
 ::: {.example}
 *Five fair coins are tossed. What is the probability they all show the same face?*
 
-Here, the sample $\Omega$ is the set of all sequence of 5 coin outcomes. How many sample outcomes are in $\Omega$. Well, the first coin can be heads or tails (2 choices); the second coin can be heads or tails (2 choices) and so on, until the fifth and final coin. So, by the multiplication principle, $|\Omega| = 2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32$.
+Here, the sample space $\Omega$ is the set of all sequences of 5 coin outcomes. How many sample outcomes are in $\Omega$? Well, the first coin can be heads or tails (2 choices); the second coin can be heads or tails (2 choices) and so on, until the fifth and final coin. So, by the multiplication principle, $|\Omega| = 2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32$.
 
 The event we're interested in is $A = \{\text{HHHHH}, \text{TTTTT}\}$, the event that the faces are all the same -- either all heads or all tails. This clearly has $|A| = 2$ outcomes.
 
 So the probability all five coins show the same face is
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{2}{32} = \frac{1}{16} . \]
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{2}{32} = \frac{1}{16} \approx 0.06. \]
 :::
+
+::: {.example}
+*Five dice are rolled. What is the probability we get at least one 6?*
+
+Here, $\Omega$ is the set of all possible sequences of 5 dice rolls. Clearly $|\Omega| = 6^5 = 7776$.
+
+Also, $A$ is the set of all dice roll sequences with at least one 6. Whenever you see a question with the phrase "at least one" in it, it's very often to look at the complementary event $A^\comp$ instead. We know from the last section that $\mathbb P(A) = 1 - \mathbb P(A^\comp)$, but in "at least one" questions, it's often easier to count $|A^\comp|$ than to count $|A|$.
+
+Here, is $A$ is the set of all dice roll sequences with at least one 6, then $A^\comp$ is the set of dice roll sequence with no 6 at all. This means all five dice must have rolled a 1, 2, 3, 4, or 5. Since each of the five dice rolls has 5 possibilities, this means that $|A^\comp| = 5^5 = 3125$.
+
+Finally, we see that
+\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{|A^\comp|}{|\Omega|} = 1 - \frac{5^5}{6^5} = \frac{4651}{7776} \approx 0.70 .\]
+:::
+
+
 
 
 ## Sampling with and without replacement  {#sampling}
 
-## Sampling without replacement and without labelling  {#combinations}
+::: {.example}
+*A bag contains 15 balls: 10 black balls and 5 white balls. We draw 3 balls out of the bag. What is the probability all 3 balls are black **(a)** if we put each ball back into the bag after it is chosen; **(b)** if we do not put each ball back into the bag after it is chosen.*
+
+Let's start with (a). The number of ways to choose a ball out 15 on three occasions is $|\Omega| = 15^3$. The number of ways to choose a black balls out of 10 on three occasions is $|A| = 10^3$. Hence 
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{10^3}{15^3} =  \frac{1000}{3375} = \frac{8}{27} \approx 0.30. \]
+
+What about (b)? Here we don't put the ball back in the bag once it has been chosen. There are 15 ways to pick the first ball. But then there are only 14 balls left in the bag for the second choice, and only 13 balls for the third choice. So $|\Omega| = 15\times14\times13$. Similarly, there are 10 ways the first ball can be black. But once that black ball is removed, only 9 choices for the second black ball, and only 8 for the third. So $|A| = 10\times9\times8$. So this time we have
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{10\times9\times8}{15\times14\times13} =  \frac{720}{2730} = \frac{24}{91} \approx 0.26, \]
+which is smaller than the answer in part (a).
+:::
+
+This example illustrated the difference between **sampling with replacement** (when the balls were put back into the bag) and **sampling without replacement** (when the balls were not put back). If we want to sample $k$ items from a set of $n$ items, then:
+
+* the number of ways to sample with replacement is
+\[ n^k = n\times n\times\cdots\times n;  \]
+* the number of ways to sample without replacement is
+\[ \ff{n}{k} = n\times(n-1)\times \cdots\times (n-k+1) .\]
+
+Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. (Notice that the subscript is underlined here; other notations include $(n)_k$, $P(n,k)$, or ${}^nP_k$.)
+
+
+
+
+## Ordering  {#ordering}
+
+::: {.example}
+*Suppose a lecturer marks a pile of $n$ exam papers, all of which receive a different mark. What is the probability she ends up marking them in order from lowest scoring first in the pile to highest scoring last in the pile?*
+
+Here, the sample space $\Omega$ is the set of all orderings of the $n$ exam papers by mark, and $A$ is the event that the papers are in order from lowest to highest scoring. It's clear that $|A| = 1$: since the exams scored different marks, there's only one way of putting the exams in the correct lowest-to-highest order. But what's $|\Omega|$?
+
+There are $n$ choices for the first exam paper to be marked. Then, for the second exam paper, there are $n - 1$ choices left, because I'm not going to mark the same paper twice. There are $n-2$ choices for the third exam paper. And so on, until I have marked $n-1$ papers, and there is only 1 choice left for the final paper. So we have
+\[ |\Omega| = \ff nn = n(n-1)(n-2)\cdots3\cdot2\cdot1 = n! \]
+ways to order the exam papers.
+
+Hence, the probability the papers are marked in order is
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{n(n-1)\cdots2\cdot1} = \frac{1}{n!} . \]
+:::
+
+This number
+\[ n! = \ff nn = n(n-1)(n-2)\cdots3\cdot2\cdot1 \]
+is called **$n$ factorial** and denoted $n!$. It is the number of ways that $n$ different objects can be ordered.
+
+It can sometimes be useful to write the falling factorial $\ff nk$ in terms of the factorial, like this:
+\begin{align*}
+\ff nk &= n(n-1)\cdots(n-k+1) \\
+  &= n(n-1)\cdots(n-k+1)\times\frac{(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
+  &= \frac{n(n-1)\cdots(n-k+1)(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
+  &= \frac{n!}{(n-k)!}.
+\end{align*}
+
+::: {.example}
+Suppose you shuffle a pack of cards. The resulting ordering of the deck has $52!$ possibilities. This is an unimaginably huge number -- it's roughly
+\[ 52! \approx 8 \times 10^{67} ; \]
+that is, an 8 followed by 67 zeroes.
+
+In comparison, the universe has existed for about $4 \times 10^{17}$ seconds, and there are about $7 \times 10^{9}$ people alive. If every person on the planet had shuffled a deck of cards one million times a second for the entire lifetime of the universe, they could only expect to have got through
+\[ (4 \times 10^{17}) \times (7 \times 10^{9}) \times 10^6 \approx 3 \times 10^{33} .\]
+This is only the most tiny, microscopic fraction of $52!$. So every time you have ever shuffled a deck of cards, it is essentially certain that you have created an ordering of the deck that has never existed before.
+:::
+
+
+## Sampling without replacement in any order  {#combinations}
+
+::: {.example}
+*In "Lotto", the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?*
+
+Here, $\Omega$ is the set of all possible sets of 6 winning numbers, and $A$ is the set of numbers on your ticket. Clearly $|A| = 1$, but what is $|\Omega|$?
+
+Well, the first number out of the machine has 59 possibilities, the second number has 58 possibilities, and so on, making
+\[ 59 \times 58 \times 57 \times 56 \times 55 \times 54 = \ff{59}{6} . \]
+
+But this isn't the correct answer, because the same set of numbers could be drawn from the machine in any order! The sets of numbers $\{1,2,3,4,5,6\}$ and $\{1,2,3,4,6,5\}$ and $\{6,5,4,3,2,1\}$ are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 numbers, which we know is $6!$. So the number of possible sets of 6 numbers to come out of the machine is actually
+\[ \binom{59}{6} = \frac{\ff{59}{6}}{6!} = \frac{59 \times 58 \times 57 \times 56 \times 55 \times 54}{6\times5\times4\times3\times2\times1} \approx 45 \text{ million} . \]
+
+Thus the probability that your ticket wins the jackpot is
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{\binom{59}{6}} \approx \frac{1}{45 \text{ million}} \approx 0.00000002 . \]
+:::
+
+Here, we have introduced the notation
+\[ \binom{n}{k} = \frac{\ff{n}{k}}{k!} = \frac{n(n-1) \cdots (n-k+1)}{k(k-1)\cdots2\cdot1}  \]
+for the number of ways to choose $k$ objects out of $n$ with replacement *but where the order they were chosen in doesn't matter*. This is called the **binomial coefficient**, although when we say it out loud we normally just say **"$n$ choose $k$"**. (Another notation for the binomial coefficient is ${}^n C_k$.)
+
+It can sometimes be useful to remember that $\ff nk = n!/(n-k)!$ allows us to write the binomial coefficient in terms of the factorial function as
+\[ \binom nk = \frac{\ff nk}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]
+
+
+::: {.example}
+*You are dealt a "hand" of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?*
+
+Here, $\Omega$ is the set of all 13-card hands from the deck, and $A$ is the subset of those that contain the AKQJ of Spades.
+
+Using the binomial coefficient notation, it's clear that
+\[ |\Omega| = \binom{52}{13} = \frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1} . \]
+
+What about $|A|$? If we fix the fact that the hand contains the 4 cards AKQJ of Spades, then it also contains $13-4=9$ cards out of the other $52-4 = 48$ remaining cards in the deck. This makes
+\[ |A| = \binom{48}{9} = \frac{48\times47\times\cdots\times41\times40}{9\times8\times\cdots\times2\times1}\]
+hands.
+
+Thus the probability that the hand contains AKQJ of Spades is
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{\binom{48}{9}}{\binom{52}{13}} . \]
+
+Conveniently, we can simplify the expression quite a lot, because plenty of cancellation will go on. We have
+\begin{align*}
+\mathbb P(A) = \frac{\binom{48}{9}}{\binom{52}{13}}
+  &= \frac{\frac{48\times47\times\cdots\times41\times40}{9\times8\times\cdots\times2\times1}}{\frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1}} \\
+  &= \frac{48\times47\times\cdots\times41\times40}{52\times51\times\cdots\times41\times40} \times \frac{13\times12\times\cdots\times2\times1}{9\times8\times\cdots\times2\times1} \\
+  &= \frac{13\times12\times11\times10}{52\times51\times50\times49} \\
+  &\approx 0.0026 ,
+\end{align*}
+or about 1 in every 380 hands.
+:::
+
+There's one other useful fact about the binomial coefficient we should mention.
+
+::: {.theorem}
+\[ \binom nk = \binom{n}{n-k}. \]
+:::
+
+We'll give two different proofs of this fact.
+
+::: {.proof}
+We can use the formula for the binomial coefficient in terms of the factorial function. This formula gives
+\[ \binom nk = \frac{n!}{k!(n-k)!} \qquad \binom{n}{n-k} = \frac{n!}{(n-k)!k!} . \]
+It's clear from the factorial expression that these two quantities are equal.
+:::
+
+::: {.proof}
+Suppose we have $n$ balls, and we want to paint $k$ of the red and the other $n-k$ blue. How many ways can we do this?
+
+One way is to say there are $\binom nk$ ways to choose the $k$ balls to paint red, then we are forced paint the other $n - k$ blue.
+
+Another way is to say there are $\binom{n}{n-k}$ to choose the $n-k$ balls to paint blue, then we are forced to paint the other $k$ red.
+
+We have "double counted" the same quantity two different ways, so the answer must be the same, so
+\[ \binom nk = \binom{n}{n-k}. \]
+:::
+
+Which proof do you prefer? (I strongly prefer the second proof, because I think it doesn't just *verify* that the theorem is true, but further explains *why* the result is true.)
+
 
 ## Birthday problem  {#birthday}
+
+
+*There are $k = 23$ students in a class. What is the probability that at least two of the students share a birthday?*
+
+This a famous problem, known as the "birthday problem". You may have seen this problem before. But let's try to solve it using the techniques from this section of notes. (We'll assume all days are equally likely for birthdays, and ignore the effect of leap days.)
+
+The sample space $|\Omega|$ is the set of possible birthdays for the $k$ students. Clearly $|\Omega| = 365^k$.
+
+Let $A$ be the even that at least two students share a birthday. Since this is an "at least" event, it seems like it might be a good idea to look instead at the complement event $A^\comp$ instead. If $A$ is the event that there's at least one shared birthday, then $A^\comp$ is the event that there are *no* shared birthdays; that is, $A^\comp$ is the event that all $k$ students have *different* birthdays.
+
+So what is $|A^\comp|$, the number of ways the $k$ students can have different birthdays? Well, the first student can have any of the 365 days for their birthday. For them to have different birthdays, the second student only has 364 days available. Then the third student must avoid the birthday of students 1 and 2, so has 363 available days, and so on. We see that 
+\[ |A^\comp| = 365 \times 364 \times \cdots \times (365 - k + 1) = 365^{\underline{k}} . \]
+
+Hence, the probability at least two students share a birthday is
+\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{365^{\underline{k}}}{365^k} = 1 - \frac{365}{365} \cdot \frac{364}{365} \cdots \frac{365-k+1}{365} . \]
+
+Setting $k = 23$, we can calculate the required answer in R:
+```{r}
+k <- 23
+1 - prod((365:(365 - k + 1)) / 365)
+```
+The probability is 50.7%. So it's more likely than not that at least two students share a birthday.
+
+Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are $\binom{23}{2} = 253$ *pairs* of birthdays, each of which is a potential match, and 253 is quite a big number.
+
+
+## Summary  {#summary-03 .unnumbered}
+
+::: {.mysummary}
+* "Classical probability" describes the situation where there are finitely many equally likely outcomes. The classical probability $\mathbb P(A) = |A|/|\Omega|$ requires us to count how many outcomes there are in events or sample spaces.
+* The multiplication principle says that $n$ choices followed by $m$ choices makes $n \times m$ choices in total.
+* Sampling $k$ objects out of $n$ with replacement gives $n^k$ choices.
+* Sampling $k$ objects out of $n$ without replacement gives $n^{\underline{k}} = n(n-1)\dots(n-k+1)$ choices.
+* Ordering $n$ objects can be done in $n! = n^{\underline{n}} = n(n-1)\dots2\cdot1$ ways.
+* The number of ways to sample $k$ objects out of $n$ when the order doesn't matter is given by the binomial coefficient $\binom nk = \ff{n}{k}/k!$.
+:::
