@@ -40,3 +40,23 @@
 **(d)** If $A$ and $B$ are disjoint, then $\mathbb P((A \cup B)^\comp) = 1 - \mathbb P(A) - \mathbb P(B)$.
 :::
 ::::
+
+:::: {.myq}
+**A4.** What is the value of the following expressions?
+
+::: {.subq}
+**(a)** $6!$
+:::
+
+::: {.subq}
+**(b)** $\ff{8}{4}$
+:::
+
+::: {.subq}
+**(c)** ${\displaystyle \binom{10}{4}}$
+:::
+::::
+
+:::: {.myq}
+**A5.** An urn contains 5 red balls and 7 blue balls. Four balls are drawn from the urn. What is the probability that at least one of the balls is red, if the balls are drawn **(a)** with replacement; **(b)** without replacement?
+::::

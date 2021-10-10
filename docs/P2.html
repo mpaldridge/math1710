@@ -245,7 +245,7 @@ display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>This is Problem Sheet 2. This problem sheet currently covers <a href="S01-eda.html#S01-eda">Section 2</a> of the notes, and will later have questions added that cover Section 3 also. You should work through all the questions currently on this problem sheet during Week 2, in preparation for your tutorial in Week 4. The problem sheet contains one assessed question, with one more to be added later, which are due in by <strong>2pm on Monday 25 October</strong>.</p>
+<p>This is Problem Sheet 2. This problem sheet covers <a href="S02-probability.html#S02-probability">Section 2</a> and <a href="S03-classical.html#S03-classical">Section 3</a> of the notes. You should work through all the questions on this problem sheet during Weeks 2 and 3, in preparation for your tutorial in Week 4. The problem sheet contains two assessed questions, which are due in by <strong>2pm on Monday 25 October</strong>.</p>
 </div>
 <div id="P2-short" class="section level2 unnumbered">
 <h2>A: Short questions</h2>
@@ -282,6 +282,21 @@ display: none !important;
 <p><strong>(d)</strong> If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, then <span class="math inline">\(\mathbb P((A \cup B)^\mathsf{c}) = 1 - \mathbb P(A) - \mathbb P(B)\)</span>.</p>
 </div>
 </div>
+<div class="myq">
+<p><strong>A4.</strong> What is the value of the following expressions?</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(6!\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\({8}^{\underline{4}}\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\({\displaystyle \binom{10}{4}}\)</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> An urn contains 5 red balls and 7 blue balls. Four balls are drawn from the urn. What is the probability that at least one of the balls is red, if the balls are drawn <strong>(a)</strong> with replacement; <strong>(b)</strong> without replacement?</p>
+</div>
 </div>
 <div id="P2-long" class="section level2 unnumbered">
 <h2>B: Long questions</h2>
@@ -304,13 +319,46 @@ display: none !important;
 </div>
 </div>
 <div class="myq">
-<p><strong>B3.</strong> Starting with the standard two-event form of the addition rule for unions
-<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]</span>
-prove the following three-event form:
+<p><strong>B3.</strong> In this question, you will have to use the standard two-event form of the addition rule for unions
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> Using the two-event addition rule, show that
+<span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]</span></p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Using the two-event addition rule and the distributive law, or otherwise, prove the three-event form of the addition rule for unions:
 <span class="math display">\[
   \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
   - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
 \]</span></p>
+</div>
+<p><em>[<strong>Update:</strong> This question has been edited to provide extra hints.]</em></p>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Eight friends are about to sit down at random at a round table. Find the probability that</p>
+<div class="subq">
+<p><strong>(a)</strong> Ashley and Brook sit next to each other, with Chris directly opposite Brook;</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> neither Ashley, Brook nor Chris sit next to each other.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> Suppose your tutorial group contains 12 students – you and 11 others. The tutor wishes to choose 4 members of the group to present their work.</p>
+<div class="subq">
+<p><strong>(a)</strong> How many ways can the tutor choose the presentation group?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> How many ways can the tutor choose the presentation group if you are one of the presenters?</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> How many ways can the tutor choose the presentation group if you are <em>not</em> one of the presenters?</p>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Pascal’s formula says that
+<span class="math display">\[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} . \]</span>
+Prove Pascal’s formula.</p>
+</div>
 </div>
 </div>
 <div id="P2-assessed" class="section level2 unnumbered">
@@ -323,7 +371,7 @@ Your work will be marked by your tutor and returned on Monday 1 November, when s
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 <div class="myq">
-<p><strong>C1</strong> Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events with <span class="math inline">\(\mathbb P(A) = 0.8\)</span> and <span class="math inline">\(\mathbb P(B) = 0.4\)</span>. The following questions concern the value of <span class="math inline">\(\mathbb P(A \cap B)\)</span>, the probability that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur.</p>
+<p><strong>C1.</strong> Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events with <span class="math inline">\(\mathbb P(A) = 0.8\)</span> and <span class="math inline">\(\mathbb P(B) = 0.4\)</span>. The following questions concern the value of <span class="math inline">\(\mathbb P(A \cap B)\)</span>, the probability that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur.</p>
 <div class="subq">
 <p><strong>(a)</strong> Prove the upper bound <span class="math inline">\(\mathbb P(A \cap B) \leq 0.4\)</span>.</p>
 </div>
@@ -334,10 +382,19 @@ Your work will be marked by your tutor and returned on Monday 1 November, when s
 <p><strong>(c)</strong> Give a lower bound for <span class="math inline">\(\mathbb P(A \cap B)\)</span> – that is, prove that <span class="math inline">\(\mathbb P(A \cap B) \geq \text{something}\)</span> – and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can’t formally prove it.)</p>
 </div>
 </div>
+<div class="myq">
+<p><strong>C2.</strong> A “random digit” is a number chosen at random from <span class="math inline">\(\{0, 1, \dots, 9\}\)</span>, each with equal probability. A statistician choses <span class="math inline">\(n\)</span> random digits.</p>
+<div class="subq">
+<p><strong>(a)</strong> For <span class="math inline">\(k = 0, 1, \dots, 9\)</span>, let <span class="math inline">\(A_k\)</span> be the event that all the digits are <span class="math inline">\(k\)</span> or smaller. What is the probability of <span class="math inline">\(A_k\)</span>, as a function of <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span>?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Let <span class="math inline">\(B_k\)</span> be the event that the largest digit chosen is equal to <span class="math inline">\(k\)</span>. What is the probability of <span class="math inline">\(B_k\)</span>? Justify your answer carefully.</p>
+</div>
+</div>
 </div>
 <div id="P2-short-sols" class="section level2 unnumbered">
 <h2>Solutions to short questions</h2>
-<p><strong>A1.</strong> (a) <span class="math inline">\(\{0,1,\dots, 10\}\)</span> (b) The set of all <span class="math inline">\(2^{10}\)</span> vectors of length 10 with entries from <span class="math inline">\(\{\text{H}, \text{T}\}\)</span>. <strong>A2.</strong> (a) <span class="math inline">\(C \cap A^\mathsf{c}\)</span> (b) <span class="math inline">\(A \cup B \cup C\)</span> (c) <span class="math inline">\((B \cup C) \cap (B \cup C)^\mathsf{c}\)</span> or <span class="math inline">\((B \cap C^\mathsf{c}) \cup (B^\mathsf{c}\cap C)\)</span> (d) <span class="math inline">\((A \cap B \cap C^\mathsf{c}) \cup (A \cap B^\mathsf{c}\cap C) \cup (A^\mathsf{c}\cap B \cap C)\)</span> or other equivalent. <strong>A3.</strong> (a) False (b) True (c) False (d) True</p>
+<p><strong>A1.</strong> (a) <span class="math inline">\(\{0,1,\dots, 10\}\)</span> (b) The set of all <span class="math inline">\(2^{10}\)</span> vectors of length 10 with entries from <span class="math inline">\(\{\text{H}, \text{T}\}\)</span>. <strong>A2.</strong> (a) <span class="math inline">\(C \cap A^\mathsf{c}\)</span> (b) <span class="math inline">\(A \cup B \cup C\)</span> (c) <span class="math inline">\((B \cup C) \cap (B \cup C)^\mathsf{c}\)</span> or <span class="math inline">\((B \cap C^\mathsf{c}) \cup (B^\mathsf{c}\cap C)\)</span> (d) <span class="math inline">\((A \cap B \cap C^\mathsf{c}) \cup (A \cap B^\mathsf{c}\cap C) \cup (A^\mathsf{c}\cap B \cap C)\)</span> or other equivalent. <strong>A3.</strong> (a) False (b) True (c) False (d) True <strong>A4.</strong> (a) 720 (b) 1680 (c) 210 <strong>A5.</strong> (a) 0.884 (b) 0.929</p>
 
 </div>
 </div>

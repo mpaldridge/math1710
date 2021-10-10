@@ -1647,6 +1647,8 @@ Let \(\Omega\) be a finite sample space. Then the \textbf{classical probability 
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} . \]
 \end{definition}
 
+So to work out a classical probability \(\mathbb P(A)\), crucially we need to be able to count how many outcomes \(|A|\) are in the event \(A\) and count how many outcomes \(|\Omega|\) are in the whole sample space \(\Omega\). (This is why classical probability is also called ``enumerative probability'' -- ``enumeration'' is another word for counting.) In this section, we'll look at some different ways in which we can count the number of outcomes in common events and sample spaces.
+
 There's something we ought to check before going any further!
 
 \begin{theorem}
@@ -1675,8 +1677,6 @@ We'll take the axioms one by one.
 \end{enumerate}
 
 \end{proof}
-
-So to work out a classical probability \(\mathbb P(A)\), crucially we need to be able to count how many outcomes \(|A|\) are in the event \(A\) and count how many outcomes \(|\Omega|\) are in the whole sample space \(\Omega\). (This is why classical probability is also called ``enumerative probability'' -- ``enumeration'' is another word for counting.) In this section, we'll look at some different ways in which we can count the number of outcomes in common events and sample spaces.
 
 \hypertarget{multiplication}{%
 \section{Multiplication principle}\label{multiplication}}
@@ -1917,7 +1917,7 @@ Some people find it surprising that only 23 students have such a high probabilit
 
 \commfalse
 
-This is Problem Sheet 2. This problem sheet currently covers \protect\hyperlink{S01-eda}{Section 2} of the notes, and will later have questions added that cover Section 3 also. You should work through all the questions currently on this problem sheet during Week 2, in preparation for your tutorial in Week 4. The problem sheet contains one assessed question, with one more to be added later, which are due in by \textbf{2pm on Monday 25 October}.
+This is Problem Sheet 2. This problem sheet covers \protect\hyperlink{S02-probability}{Section 2} and \protect\hyperlink{S03-classical}{Section 3} of the notes. You should work through all the questions on this problem sheet during Weeks 2 and 3, in preparation for your tutorial in Week 4. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 25 October}.
 
 \hypertarget{P2-short}{%
 \section*{A: Short questions}\label{P2-short}}
@@ -1945,6 +1945,16 @@ This is Problem Sheet 2. This problem sheet currently covers \protect\hyperlink{
 
 \textbf{(d)} If \(A\) and \(B\) are disjoint, then \(\mathbb P((A \cup B)^\mathsf{c}) = 1 - \mathbb P(A) - \mathbb P(B)\).
 
+\textbf{A4.} What is the value of the following expressions?
+
+\textbf{(a)} \(6!\)
+
+\textbf{(b)} \({8}^{\underline{4}}\)
+
+\textbf{(c)} \({\displaystyle \binom{10}{4}}\)
+
+\textbf{A5.} An urn contains 5 red balls and 7 blue balls. Four balls are drawn from the urn. What is the probability that at least one of the balls is red, if the balls are drawn \textbf{(a)} with replacement; \textbf{(b)} without replacement?
+
 \hypertarget{P2-long}{%
 \section*{B: Long questions}\label{P2-long}}
 \addcontentsline{toc}{section}{B: Long questions}
@@ -1961,13 +1971,37 @@ This is Problem Sheet 2. This problem sheet currently covers \protect\hyperlink{
 
 \textbf{(b)} What is the probability the number is divisible by 5 or by 7?
 
-\textbf{B3.} Starting with the standard two-event form of the addition rule for unions
-\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
-prove the following three-event form:
+\textbf{B3.} In this question, you will have to use the standard two-event form of the addition rule for unions
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+
+\textbf{(a)} Using the two-event addition rule, show that
+\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
+
+\textbf{(b)} Using the two-event addition rule and the distributive law, or otherwise, prove the three-event form of the addition rule for unions:
 \[
   \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
   - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
 \]
+
+\emph{{[}\textbf{Update:} This question has been edited to provide extra hints.{]}}
+
+\textbf{B4.} Eight friends are about to sit down at random at a round table. Find the probability that
+
+\textbf{(a)} Ashley and Brook sit next to each other, with Chris directly opposite Brook;
+
+\textbf{(b)} neither Ashley, Brook nor Chris sit next to each other.
+
+\textbf{B5.} Suppose your tutorial group contains 12 students -- you and 11 others. The tutor wishes to choose 4 members of the group to present their work.
+
+\textbf{(a)} How many ways can the tutor choose the presentation group?
+
+\textbf{(b)} How many ways can the tutor choose the presentation group if you are one of the presenters?
+
+\textbf{(c)} How many ways can the tutor choose the presentation group if you are \emph{not} one of the presenters?
+
+\textbf{(d)} Pascal's formula says that
+\[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} . \]
+Prove Pascal's formula.
 
 \hypertarget{P2-assessed}{%
 \section*{C: Assessed questions}\label{P2-assessed}}
@@ -1982,7 +2016,7 @@ Both questions are ``long questions'', where the marks are not only for mathemat
 
 You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
 
-\textbf{C1} Let \(A\) and \(B\) be two events with \(\mathbb P(A) = 0.8\) and \(\mathbb P(B) = 0.4\). The following questions concern the value of \(\mathbb P(A \cap B)\), the probability that both \(A\) and \(B\) occur.
+\textbf{C1.} Let \(A\) and \(B\) be two events with \(\mathbb P(A) = 0.8\) and \(\mathbb P(B) = 0.4\). The following questions concern the value of \(\mathbb P(A \cap B)\), the probability that both \(A\) and \(B\) occur.
 
 \textbf{(a)} Prove the upper bound \(\mathbb P(A \cap B) \leq 0.4\).
 
@@ -1990,11 +2024,17 @@ You should not collaborate with others on the assessed questions: your answers m
 
 \textbf{(c)} Give a lower bound for \(\mathbb P(A \cap B)\) -- that is, prove that \(\mathbb P(A \cap B) \geq \text{something}\) -- and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can't formally prove it.)
 
+\textbf{C2.} A ``random digit'' is a number chosen at random from \(\{0, 1, \dots, 9\}\), each with equal probability. A statistician choses \(n\) random digits.
+
+\textbf{(a)} For \(k = 0, 1, \dots, 9\), let \(A_k\) be the event that all the digits are \(k\) or smaller. What is the probability of \(A_k\), as a function of \(k\) and \(n\)?
+
+\textbf{(b)} Let \(B_k\) be the event that the largest digit chosen is equal to \(k\). What is the probability of \(B_k\)? Justify your answer carefully.
+
 \hypertarget{P2-short-sols}{%
 \section*{Solutions to short questions}\label{P2-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
-\textbf{A1.} (a) \(\{0,1,\dots, 10\}\) (b) The set of all \(2^{10}\) vectors of length 10 with entries from \(\{\text{H}, \text{T}\}\). \textbf{A2.} (a) \(C \cap A^\mathsf{c}\) (b) \(A \cup B \cup C\) (c) \((B \cup C) \cap (B \cup C)^\mathsf{c}\) or \((B \cap C^\mathsf{c}) \cup (B^\mathsf{c}\cap C)\) (d) \((A \cap B \cap C^\mathsf{c}) \cup (A \cap B^\mathsf{c}\cap C) \cup (A^\mathsf{c}\cap B \cap C)\) or other equivalent. \textbf{A3.} (a) False (b) True (c) False (d) True
+\textbf{A1.} (a) \(\{0,1,\dots, 10\}\) (b) The set of all \(2^{10}\) vectors of length 10 with entries from \(\{\text{H}, \text{T}\}\). \textbf{A2.} (a) \(C \cap A^\mathsf{c}\) (b) \(A \cup B \cup C\) (c) \((B \cup C) \cap (B \cup C)^\mathsf{c}\) or \((B \cap C^\mathsf{c}) \cup (B^\mathsf{c}\cap C)\) (d) \((A \cap B \cap C^\mathsf{c}) \cup (A \cap B^\mathsf{c}\cap C) \cup (A^\mathsf{c}\cap B \cap C)\) or other equivalent. \textbf{A3.} (a) False (b) True (c) False (d) True \textbf{A4.} (a) 720 (b) 1680 (c) 210 \textbf{A5.} (a) 0.884 (b) 0.929
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
@@ -2105,16 +2145,16 @@ However, many students find getting with started with R in the first few weeks p
 \chapter*{Solutions and group feedback}\label{solutions}}
 \addcontentsline{toc}{chapter}{Solutions and group feedback}
 
-There are many ways you get feedback on this module, both group feedback (feedback that is generally relevant to many people in the class) and individual feedback (feedback based specifically on your own approach to the work).
+There are many ways you get feedback on this module, both group feedback (feedback that is generally relevant to many people) and individual feedback (feedback based specifically on your own approach to the work).
 
 \begin{itemize}
 \tightlist
 \item
-  You will have got both individual and group feedback in your tutorial (the more you speak up in your tutorial, the individual the feedback you get in return).
+  You will have received both individual and group spoken feedback in your tutorial (the more you speak up in your tutorial, the more individualised the feedback you get in return).
 \item
-  These solutions include more group feedback on common issues for the class.
+  These solutions include group written feedback on common issues for the class.
 \item
-  Most importantly, when your work on assessed questions is marked, individual feedback will be given via the Gradescope site, and it is very important that you read that feedback.
+  Most importantly, when your work on assessed questions is marked, individual written feedback will be given via the Gradescope site. It is very important that you read that feedback.
 \item
   Finally, students who would like even more feedback can discuss their work in the ``office hours'' drop-in sessions.
 \end{itemize}

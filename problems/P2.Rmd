@@ -14,7 +14,7 @@ display: none !important;
 
 
 ::: {.mysummary}
-This is Problem Sheet 2. This problem sheet currently covers [Section 2](#S01-eda) of the notes, and will later have questions added that cover Section 3 also. You should work through all the questions currently on this problem sheet during Week 2, in preparation for your tutorial in Week 4. The problem sheet contains one assessed question, with one more to be added later, which are due in by **2pm on Monday 25 October**.
+This is Problem Sheet 2. This problem sheet covers [Section 2](#S02-probability) and [Section 3](#S03-classical) of the notes. You should work through all the questions on this problem sheet during Weeks 2 and 3, in preparation for your tutorial in Week 4. The problem sheet contains two assessed questions, which are due in by **2pm on Monday 25 October**.
 :::
 
 ## A: Short questions {#P2-short .unnumbered}
@@ -46,5 +46,5 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P2-short-sols .unnumbered}
 
-**A1.** (a) $\{0,1,\dots, 10\}$ (b) The set of all $2^{10}$ vectors of length 10 with entries from $\{\text{H}, \text{T}\}$. **A2.** (a) $C \cap A^\comp$ (b) $A \cup B \cup C$ (c) $(B \cup C) \cap (B \cup C)^\comp$ or $(B \cap C^\comp) \cup (B^\comp \cap C)$ (d) $(A \cap B \cap C^\comp) \cup (A \cap B^\comp \cap C) \cup (A^\comp \cap B \cap C)$ or other equivalent. **A3.** (a) False (b) True (c) False (d) True
+**A1.** (a) $\{0,1,\dots, 10\}$ (b) The set of all $2^{10}$ vectors of length 10 with entries from $\{\text{H}, \text{T}\}$. **A2.** (a) $C \cap A^\comp$ (b) $A \cup B \cup C$ (c) $(B \cup C) \cap (B \cup C)^\comp$ or $(B \cap C^\comp) \cup (B^\comp \cap C)$ (d) $(A \cap B \cap C^\comp) \cup (A \cap B^\comp \cap C) \cup (A^\comp \cap B \cap C)$ or other equivalent. **A3.** (a) False (b) True (c) False (d) True **A4.** (a) 720 (b) 1680 (c) 210 **A5.** (a) 0.884 (b) 0.929
 

@@ -23,11 +23,56 @@
 ::::
 
 :::: {.myq}
-**B3.** Starting with the standard two-event form of the addition rule for unions
-\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
-prove the following three-event form:
+**B3.** In this question, you will have to use the standard two-event form of the addition rule for unions
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+
+::: {.subq}
+**(a)** Using the two-event addition rule, show that
+\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
+::: 
+
+::: {.subq}
+**(b)** Using the two-event addition rule and the distributive law, or otherwise, prove the three-event form of the addition rule for unions:
 \[
   \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
   - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
 \]
+:::
+
+*[**Update:** This question has been edited to provide extra hints.]*
+::::
+
+:::: {.myq}
+**B4.** Eight friends are about to sit down at random at a round table. Find the probability that
+
+::: {.subq}
+**(a)** Ashley and Brook sit next to each other, with Chris directly opposite Brook;
+:::
+
+::: {.subq}
+**(b)** neither Ashley, Brook nor Chris sit next to each other.
+:::
+::::
+
+
+:::: {.myq}
+**B5.** Suppose your tutorial group contains 12 students -- you and 11 others. The tutor wishes to choose 4 members of the group to present their work.
+
+::: {.subq}
+**(a)** How many ways can the tutor choose the presentation group?
+:::
+
+::: {.subq}
+**(b)** How many ways can the tutor choose the presentation group if you are one of the presenters?
+:::
+
+::: {.subq}
+**(c)** How many ways can the tutor choose the presentation group if you are *not* one of the presenters?
+:::
+
+::: {.subq}
+**(d)** Pascal's formula says that
+\[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} . \]
+Prove Pascal's formula.
+:::
 ::::

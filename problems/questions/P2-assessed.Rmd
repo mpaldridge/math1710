@@ -1,5 +1,5 @@
 :::: {.myq}
-**C1** Let $A$ and $B$ be two events with $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$. The following questions concern the value of $\mathbb P(A \cap B)$, the probability that both $A$ and $B$ occur.
+**C1.** Let $A$ and $B$ be two events with $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$. The following questions concern the value of $\mathbb P(A \cap B)$, the probability that both $A$ and $B$ occur.
 
 ::: {.subq}
 **(a)** Prove the upper bound $\mathbb P(A \cap B) \leq 0.4$.
@@ -11,5 +11,17 @@
 
 ::: {.subq}
 **(c)** Give a lower bound for $\mathbb P(A \cap B)$ -- that is, prove that $\mathbb P(A \cap B) \geq \text{something}$ -- and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can't formally prove it.)
+:::
+::::
+
+:::: {.myq}
+**C2.** A "random digit" is a number chosen at random from $\{0, 1, \dots, 9\}$, each with equal probability. A statistician choses $n$ random digits.
+
+::: {.subq}
+**(a)** For $k = 0, 1, \dots, 9$, let $A_k$ be the event that all the digits are $k$ or smaller. What is the probability of $A_k$, as a function of $k$ and $n$?
+:::
+
+::: {.subq}
+**(b)** Let $B_k$ be the event that the largest digit chosen is equal to $k$. What is the probability of $B_k$? Justify your answer carefully.
 :::
 ::::

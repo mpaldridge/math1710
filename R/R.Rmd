@@ -10,7 +10,7 @@ Each week there will be an R worksheet to work through in your own time. We reco
 |:----:|-------------------------------|:--------------------------:|
 |   1  |  [**R basics**](https://mpaldridge.github.io/math1710/R1.html) ([Solutions](https://mpaldridge.github.io/math1710/R1-solutions.html)) | --- |
 |   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
-|   3  |  Importing data into R        |      Monday 18 October     |
+|   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
 |   4  |  Plots I: Making plots        |             ---            |
 |   5  |  Plots II: Making plots nicer |      Monday 1 November     |
 |   6  |  RMarkdown (optional)         |             ---            |

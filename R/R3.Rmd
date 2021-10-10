@@ -5,7 +5,7 @@ date:   "University of Leeds, 2021--22"
 output: html_document
 ---
 
-*This R worksheet* does *include assessed questions at the bottom. Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 17 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*
+*This R worksheet* does *include assessed questions at the bottom. Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 18 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*
 
 ------------------------------------------------------------------------
 
