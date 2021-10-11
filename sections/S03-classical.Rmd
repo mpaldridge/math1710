@@ -4,6 +4,12 @@
 
 ## Probability with equally likely outcomes {#classical-intro}
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/EdRPMx4eCXc"></iframe>
+:::
+::::
+
 **Classical probability** is the name we give to probability where there are a finite number of equally likely outcomes.
 
 Classical probability was the first type of probability to be formally studied -- partly because it is the simplest, and partly because it was useful for working out how to win at gambling. Tossing fair coins, rolling dice, and dealing cards are all common gambling situations that can be studied using classical probability -- in a deck of cards, for example, there are 52 cards that are equally likely to be drawn. Among the first works to seriously study classical probability were "Book on Games of Chance" by [Girolamo Cardano](https://mathshistory.st-andrews.ac.uk/Biographies/Cardan/) (written in 1564, but not published until 1663, one hundred years later), and a famous series of letters letters between [Blaise Pascal](https://mathshistory.st-andrews.ac.uk/Biographies/Pascal/) and [Pierre de Fermat](https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/) in 1654.
@@ -20,7 +26,7 @@ There's something we ought to check before going any further!
 ::: {.theorem}
 Let $\Omega$ be a finite nonempty sample space. Then the classical probability measure on $\Omega$,
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} , \]
-is indeed a probability measure, in that is satisfies the three axioms in Definition XXXXXXXX.
+is indeed a probability measure, in that is satisfies the three axioms in Definition \@ref(def:axioms).
 :::
 
 ::: {.proof}
@@ -47,11 +53,20 @@ and Axiom 3 is fulfilled.
 
 ## Multiplication principle  {#multiplication}
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/uvKMmlnr1oU"></iframe>
+:::
+::::
+
 In classical probability, to find the probability of an event $A$, we need to count the number of outcomes in $A$ and the total number of possible outcomes in $\Omega$. This can be easy when we're just looking at one choice -- like the 2 outcomes from tossing a single coin, the 6 outcomes of rolling a single dice, or the 52 outcomes from dealing a single card. Now we're going to look at what happens if there are a number of choices one after another -- like tossing multiple coins, rolling more than one dice, or dealing a hand of cards.
 
 Here, an important principle is the **multiplication principle**. The multiplication principle says that if you have $n$ choices followed by $m$ choices, than all together you have $n \times m$ total choices. You can see this by imagining the choices in a $n \times m$ grid, with the $n$ columns representing the first choice and $m$ rows representing the second choice. For example, suppose you go to a burger restaurant where there are 3 choices of burger (beefburger, chicken burger, veggie burger) and 2 choices of sides (fries, salad), then altogether there are $3 \times 2 = 6$ choices of meal.
 
-TABLE
+|  | Beefburger | Chicken burger | Veggie burger |
+|:-:|:-:|:-:|:-:|
+| **Fries** | 1: Beefburger with fries | 2: Chicken burger with fries | 3: Veggie burger with fries |
+| **Salad** | 4: Beefburger with salad | 5: Chicken burger with salad | 6: Veggie burger with salad |
 
 More generally, if you have $m$ stages of choosing, with $n_1$ choices in the first stage, then $n_2$ choices in the second stage, all the way to $n_m$ choices in the final stage, you have $n_1 \times n_2 \times \cdots \times n_m$ total choices altogether.
 
@@ -103,6 +118,12 @@ Finally, we see that
 
 ## Sampling with and without replacement  {#sampling}
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/EXqEcklxlj8"></iframe>
+:::
+::::
+
 ::: {.example}
 *A bag contains 15 balls: 10 black balls and 5 white balls. We draw 3 balls out of the bag. What is the probability all 3 balls are black **(a)** if we put each ball back into the bag after it is chosen; **(b)** if we do not put each ball back into the bag after it is chosen.*
 
@@ -127,6 +148,12 @@ Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample wi
 
 
 ## Ordering  {#ordering}
+
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/_kxbyjSaF_s"></iframe>
+:::
+::::
 
 ::: {.example}
 *Suppose a lecturer marks a pile of $n$ exam papers, all of which receive a different mark. What is the probability she ends up marking them in order from lowest scoring first in the pile to highest scoring last in the pile?*

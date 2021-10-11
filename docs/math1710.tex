@@ -1654,7 +1654,7 @@ There's something we ought to check before going any further!
 \begin{theorem}
 Let \(\Omega\) be a finite nonempty sample space. Then the classical probability measure on \(\Omega\),
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} , \]
-is indeed a probability measure, in that is satisfies the three axioms in Definition XXXXXXXX.
+is indeed a probability measure, in that is satisfies the three axioms in Definition \ref{def:axioms}.
 \end{theorem}
 
 \begin{proof}
@@ -1685,7 +1685,19 @@ In classical probability, to find the probability of an event \(A\), we need to 
 
 Here, an important principle is the \textbf{multiplication principle}. The multiplication principle says that if you have \(n\) choices followed by \(m\) choices, than all together you have \(n \times m\) total choices. You can see this by imagining the choices in a \(n \times m\) grid, with the \(n\) columns representing the first choice and \(m\) rows representing the second choice. For example, suppose you go to a burger restaurant where there are 3 choices of burger (beefburger, chicken burger, veggie burger) and 2 choices of sides (fries, salad), then altogether there are \(3 \times 2 = 6\) choices of meal.
 
-TABLE
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.25}}@{}}
+\toprule
+& Beefburger & Chicken burger & Veggie burger \\
+\midrule
+\endhead
+\textbf{Fries} & 1: Beefburger with fries & 2: Chicken burger with fries & 3: Veggie burger with fries \\
+\textbf{Salad} & 4: Beefburger with salad & 5: Chicken burger with salad & 6: Veggie burger with salad \\
+\bottomrule
+\end{longtable}
 
 More generally, if you have \(m\) stages of choosing, with \(n_1\) choices in the first stage, then \(n_2\) choices in the second stage, all the way to \(n_m\) choices in the final stage, you have \(n_1 \times n_2 \times \cdots \times n_m\) total choices altogether.
 
@@ -2057,7 +2069,7 @@ Week & Worksheet & Deadline for assessed work \\
 \endhead
 1 & \href{https://mpaldridge.github.io/math1710/R1.html}{\textbf{R basics}} (\href{https://mpaldridge.github.io/math1710/R1-solutions.html}{Solutions}) & --- \\
 2 & \href{https://mpaldridge.github.io/math1710/R2.html}{\textbf{Vectors}} & --- \\
-3 & Importing data into R & Monday 18 October \\
+3 & \href{https://mpaldridge.github.io/math1710/R3.html}{\textbf{Data in R}} & Monday 18 October \\
 4 & Plots I: Making plots & --- \\
 5 & Plots II: Making plots nicer & Monday 1 November \\
 6 & RMarkdown (optional) & --- \\

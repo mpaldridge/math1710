@@ -241,6 +241,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Section 3</span> Classical probability</h1>
 <div id="classical-intro" class="section level2" number="3.1">
 <h2><span class="header-section-number">3.1</span> Probability with equally likely outcomes</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/EdRPMx4eCXc">
+</iframe>
+</div>
+</div>
 <p><strong>Classical probability</strong> is the name we give to probability where there are a finite number of equally likely outcomes.</p>
 <p>Classical probability was the first type of probability to be formally studied – partly because it is the simplest, and partly because it was useful for working out how to win at gambling. Tossing fair coins, rolling dice, and dealing cards are all common gambling situations that can be studied using classical probability – in a deck of cards, for example, there are 52 cards that are equally likely to be drawn. Among the first works to seriously study classical probability were “Book on Games of Chance” by <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Cardan/">Girolamo Cardano</a> (written in 1564, but not published until 1663, one hundred years later), and a famous series of letters letters between <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Pascal/">Blaise Pascal</a> and <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/">Pierre de Fermat</a> in 1654.</p>
 <div class="definition">
@@ -252,7 +258,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="theorem">
 <p><span id="thm:unlabeled-div-20" class="theorem"><strong>Theorem 3.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a finite nonempty sample space. Then the classical probability measure on <span class="math inline">\(\Omega\)</span>,
 <span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} , \]</span>
-is indeed a probability measure, in that is satisfies the three axioms in Definition XXXXXXXX.</p>
+is indeed a probability measure, in that is satisfies the three axioms in Definition <a href="S02-probability.html#def:axioms">2.2</a>.</p>
 </div>
 <div class="proof">
 <p><span id="unlabeled-div-21" class="proof"><em>Proof</em>. </span>We’ll take the axioms one by one.</p>
@@ -269,9 +275,44 @@ and Axiom 3 is fulfilled.</li>
 </div>
 <div id="multiplication" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Multiplication principle</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/uvKMmlnr1oU">
+</iframe>
+</div>
+</div>
 <p>In classical probability, to find the probability of an event <span class="math inline">\(A\)</span>, we need to count the number of outcomes in <span class="math inline">\(A\)</span> and the total number of possible outcomes in <span class="math inline">\(\Omega\)</span>. This can be easy when we’re just looking at one choice – like the 2 outcomes from tossing a single coin, the 6 outcomes of rolling a single dice, or the 52 outcomes from dealing a single card. Now we’re going to look at what happens if there are a number of choices one after another – like tossing multiple coins, rolling more than one dice, or dealing a hand of cards.</p>
 <p>Here, an important principle is the <strong>multiplication principle</strong>. The multiplication principle says that if you have <span class="math inline">\(n\)</span> choices followed by <span class="math inline">\(m\)</span> choices, than all together you have <span class="math inline">\(n \times m\)</span> total choices. You can see this by imagining the choices in a <span class="math inline">\(n \times m\)</span> grid, with the <span class="math inline">\(n\)</span> columns representing the first choice and <span class="math inline">\(m\)</span> rows representing the second choice. For example, suppose you go to a burger restaurant where there are 3 choices of burger (beefburger, chicken burger, veggie burger) and 2 choices of sides (fries, salad), then altogether there are <span class="math inline">\(3 \times 2 = 6\)</span> choices of meal.</p>
-<p>TABLE</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center">Beefburger</th>
+<th align="center">Chicken burger</th>
+<th align="center">Veggie burger</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Fries</strong></td>
+<td align="center">1: Beefburger with fries</td>
+<td align="center">2: Chicken burger with fries</td>
+<td align="center">3: Veggie burger with fries</td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Salad</strong></td>
+<td align="center">4: Beefburger with salad</td>
+<td align="center">5: Chicken burger with salad</td>
+<td align="center">6: Veggie burger with salad</td>
+</tr>
+</tbody>
+</table>
 <p>More generally, if you have <span class="math inline">\(m\)</span> stages of choosing, with <span class="math inline">\(n_1\)</span> choices in the first stage, then <span class="math inline">\(n_2\)</span> choices in the second stage, all the way to <span class="math inline">\(n_m\)</span> choices in the final stage, you have <span class="math inline">\(n_1 \times n_2 \times \cdots \times n_m\)</span> total choices altogether.</p>
 <!--
 ::: {.example}
@@ -309,6 +350,12 @@ Hence, the probability of getting a total of 8 is
 </div>
 <div id="sampling" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Sampling with and without replacement</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/EXqEcklxlj8">
+</iframe>
+</div>
+</div>
 <div class="example">
 <p><span id="exm:unlabeled-div-24" class="example"><strong>Example 3.3  </strong></span><em>A bag contains 15 balls: 10 black balls and 5 white balls. We draw 3 balls out of the bag. What is the probability all 3 balls are black <strong>(a)</strong> if we put each ball back into the bag after it is chosen; <strong>(b)</strong> if we do not put each ball back into the bag after it is chosen.</em></p>
 <p>Let’s start with (a). The number of ways to choose a ball out 15 on three occasions is <span class="math inline">\(|\Omega| = 15^3\)</span>. The number of ways to choose a black balls out of 10 on three occasions is <span class="math inline">\(|A| = 10^3\)</span>. Hence
@@ -328,6 +375,12 @@ which is smaller than the answer in part (a).</p>
 </div>
 <div id="ordering" class="section level2" number="3.4">
 <h2><span class="header-section-number">3.4</span> Ordering</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/_kxbyjSaF_s">
+</iframe>
+</div>
+</div>
 <div class="example">
 <p><span id="exm:unlabeled-div-25" class="example"><strong>Example 3.4  </strong></span><em>Suppose a lecturer marks a pile of <span class="math inline">\(n\)</span> exam papers, all of which receive a different mark. What is the probability she ends up marking them in order from lowest scoring first in the pile to highest scoring last in the pile?</em></p>
 <p>Here, the sample space <span class="math inline">\(\Omega\)</span> is the set of all orderings of the <span class="math inline">\(n\)</span> exam papers by mark, and <span class="math inline">\(A\)</span> is the event that the papers are in order from lowest to highest scoring. It’s clear that <span class="math inline">\(|A| = 1\)</span>: since the exams scored different marks, there’s only one way of putting the exams in the correct lowest-to-highest order. But what’s <span class="math inline">\(|\Omega|\)</span>?</p>
