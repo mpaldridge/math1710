@@ -183,7 +183,7 @@ pre code {
 1886,0.8,0.5,2.6,5.9,8.4,11.6,14.2,14.3,12.0,9.8,5.4,0.9
 1887,1.3,3.1,3.0,5.3,8.1,14.1,15.9,13.8,10.4,6.1,3.7,1.8
 1888,2.5,1.1,1.7,5.1,9.2,11.3,12.0,12.6,10.8,7.1,6.3,3.9</code></pre>
-<p>Here, the first line of the file represents a row of “headers”, telling us what the rest of the data represents. This is data about the average UK temperature in each month of different years. Then each line of the file after the first line corresponds to one data record – here, one year – and each piece of data is separated from the next with just a single, and no spaces. Represented in a more common table view, this data would look like this:</p>
+<p>Here, the first line of the file represents a row of “headers”, telling us what the rest of the data represents. This is data from the UK Met Office about the average UK temperature in each month of different years. Then each line of the file after the first line corresponds to one data record – here, one year – and each piece of data is separated from the next with just a single comma <code>,</code> and no spaces. Represented in a more common table view, this data would look like this:</p>
 <table>
 <thead>
 <tr class="header">
@@ -286,7 +286,7 @@ pre code {
 <li>Because a CSV file contains just the data and some commas and nothing else, file sizes can be kept small even for very large amounts of data.</li>
 <li>CSV files contain “just the data”, and no unnecessary presentational information like fonts, text size, colours, and so on.</li>
 </ul>
-<p>We can read data into R from a CSV file saved “locally” – that is, saved on the hard drive of the computer you are working on now – or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: <em>you never need to save any data files to your computer</em>. The advantages of reading data in from the internet include:</p>
+<p>We can read data into R from a CSV file saved “locally” – that is, saved on the hard drive of the computer you are working on now – or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: <em>you never need to save any CSV data files to your computer</em>. The advantages of reading data in from the internet include:</p>
 <ul>
 <li>Your R code will always work on any (internet-connected) computer, for example if you send your work to a colleague.</li>
 <li>If the data owner updates their data on the internet, your R code will work automatically with this new updated data.</li>
@@ -323,7 +323,7 @@ pre code {
 ## 5 1888 2.5 1.1 1.7 5.1  9.2 11.3 12.0 12.6 10.8 7.1 6.3 3.9
 ## 6 1889 2.7 1.9 3.4 5.7 11.3 14.0 13.5 13.5 11.3 7.5 5.5 2.4</code></pre>
 <p>A data frame is a two-dimensional table. The columns have names: the names <code>&quot;year&quot;</code>, <code>&quot;jan&quot;</code>, <code>&quot;feb&quot;</code>, etc, that we saw above. The rows are simply numbered.</p>
-<p>We can extract asingle data point using the square brackets <code>[ ]</code>, similar to how we extracting single entries of vectors on Worksheet 2. So, the datapoint in row 21 and column “oct” is</p>
+<p>We can extract a single data point using the square brackets <code>[ ]</code>, similar to how we extracted single entries of vectors on Worksheet 2. So, the datapoint in row 21 and column “oct” is</p>
 <pre class="r"><code>temperature[21, &quot;oct&quot;]</code></pre>
 <pre><code>## [1] 8.7</code></pre>
 <p>The notation here in the square brackets is: first the number of the row, then a comma, then the name of the column in quotation marks. (Don’t forget the quotation marks!)</p>
@@ -342,7 +342,8 @@ pre code {
 <p><strong>Exercise 3.2</strong> We continue with the <code>temperature</code> data.<br />
 <strong>(a)</strong> What year does the 40th row correspond to?<br />
 <strong>(b)</strong> What was the temperature in August of that year?<br />
-<strong>(c)</strong> Output the December temperature for rows 50 to 60.</p>
+<strong>(c)</strong> Output the whole list of January temperatures.<br />
+<strong>(d)</strong> Output the December temperature for rows 50 to 60.</p>
 </blockquote>
 </div>
 <div id="functions-with-data" class="section level2">
@@ -369,13 +370,13 @@ pre code {
 </div>
 <div id="assessed-questions" class="section level2">
 <h2>Assessed questions</h2>
-<p><em>The following assessed questions should be submitted to the Microsoft Form that is linked to in Minerva. The deadline <strong>Monday 18 October at 1400</strong>.</em></p>
-<p><em>This worked will be marked automatically by computer, so make sure you answers are accurate – the computer does not “know what you meant”; only what you enter into the form.</em></p>
+<p><em>The following fice assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 3, but the official deadline is <strong>Monday 18 October at 1400</strong>.</em></p>
+<p><em>This worked will be marked automatically by computer, so make sure you answers are accurate – the computer does not “know what you meant”; only what you actually enter into the form.</em></p>
 <p><em>So that (most) students get different data to work with, you will work from a data file whose name is based on your student ID number. You student ID number is (usually) a 9-digit number starting <code>201</code>. Your data set is the CSV file at</em></p>
 <pre><code>https://mpaldridge.github.io/math1710/data/R3-xy.csv</code></pre>
 <p><em>where <code>xy</code> is replaced by the last two digits of your student ID number. So if your student ID is <code>201623429</code>, then you should use the file at <code>https://mpaldridge.github.io/math1710/data/R3-29.csv</code>; if your student ID number is <code>201491200</code> then you should use the file <code>https://mpaldridge.github.io/math1710/data/R3-00.csv</code> and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 marks.</em></p>
 <hr />
-<p>Read the data set at <code>https://mpaldridge.github.io/math1710/data/R3-xy.csv</code> into R. Remember that <code>xy</code> should be replaced by the last 2 digits of your student ID number. This data set gives the stock prices of two companies, “Amaflix” and “Netazon” over a number of days.</p>
+<p><strong>First</strong>, read the data set at <code>https://mpaldridge.github.io/math1710/data/R3-xy.csv</code> into R. Remember that <code>xy</code> should be replaced by the last 2 digits of your student ID number. This data set gives the stock prices of two companies, “Amaflix” and “Netazon” over a number of days.</p>
 <blockquote>
 <p><strong>Assessed Question 1.</strong> How many days of data are in the data set?</p>
 </blockquote>

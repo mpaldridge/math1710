@@ -24,7 +24,7 @@ year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec
 1888,2.5,1.1,1.7,5.1,9.2,11.3,12.0,12.6,10.8,7.1,6.3,3.9
 ```
 
-Here, the first line of the file represents a row of "headers", telling us what the rest of the data represents. This is data about the average UK temperature in each month of different years. Then each line of the file after the first line corresponds to one data record -- here, one year -- and each piece of data is separated from the next with just a single, and no spaces. Represented in a more common table view, this data would look like this:
+Here, the first line of the file represents a row of "headers", telling us what the rest of the data represents. This is data from the UK Met Office about the average UK temperature in each month of different years. Then each line of the file after the first line corresponds to one data record -- here, one year -- and each piece of data is separated from the next with just a single comma `,` and no spaces. Represented in a more common table view, this data would look like this:
 
 | year | jan | feb | mar | apr | may | jun | jul | aug | sep | oct | nov | dec |
 |:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -40,7 +40,7 @@ There are many advantages to using CSV files to store and send data:
 * Because a CSV file contains just the data and some commas and nothing else, file sizes can be kept small even for very large amounts of data.
 * CSV files contain "just the data", and no unnecessary presentational information like fonts, text size, colours, and so on.
 
-We can read data into R from a CSV file saved "locally" -- that is, saved on the hard drive of the computer you are working on now -- or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: *you never need to save any data files to your computer*. The advantages of reading data in from the internet include:
+We can read data into R from a CSV file saved "locally" -- that is, saved on the hard drive of the computer you are working on now -- or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: *you never need to save any CSV data files to your computer*. The advantages of reading data in from the internet include:
 
 * Your R code will always work on any (internet-connected) computer, for example if you send your work to a colleague.
 * If the data owner updates their data on the internet, your R code will work automatically with this new updated data.
@@ -81,7 +81,7 @@ head(temperature)
 
 A data frame is a two-dimensional table. The columns have names: the names `"year"`, `"jan"`, `"feb"`, etc, that we saw above. The rows are simply numbered.
 
-We can extract asingle data point using the square brackets `[ ]`, similar to how we extracting single entries of vectors on Worksheet 2. So, the datapoint in row 21 and column "oct" is
+We can extract a single data point using the square brackets `[ ]`, similar to how we extracted single entries of vectors on Worksheet 2. So, the datapoint in row 21 and column "oct" is
 
 ```{r}
 temperature[21, "oct"]
@@ -116,7 +116,8 @@ temperature$oct
 > **Exercise 3.2** We continue with the `temperature` data.\
 **(a)** What year does the 40th row correspond to?\
 **(b)** What was the temperature in August of that year?\
-**(c)** Output the December temperature for rows 50 to 60.
+**(c)** Output the whole list of January temperatures.\
+**(d)** Output the December temperature for rows 50 to 60.
 
 ## Functions with data
 
@@ -152,9 +153,9 @@ and so on. Remember we can use `round()` and `signif()` with these to round the 
 
 ## Assessed questions
 
-*The following assessed questions should be submitted to the Microsoft Form that is linked to in Minerva. The deadline **Monday 18 October at 1400**.*
+*The following fice assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 3, but the official deadline is **Monday 18 October at 1400**.*
 
-*This worked will be marked automatically by computer, so make sure you answers are accurate -- the computer does not "know what you meant"; only what you enter into the form.*
+*This worked will be marked automatically by computer, so make sure you answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
 *So that (most) students get different data to work with, you will work from a data file whose name is based on your student ID number. You student ID number is (usually) a 9-digit number starting `201`. Your data set is the CSV file at*
 
@@ -166,7 +167,7 @@ https://mpaldridge.github.io/math1710/data/R3-xy.csv
 
 ---
 
-Read the data set at `https://mpaldridge.github.io/math1710/data/R3-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set gives the stock prices of two companies, "Amaflix" and "Netazon" over a number of days.
+**First**, read the data set at `https://mpaldridge.github.io/math1710/data/R3-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set gives the stock prices of two companies, "Amaflix" and "Netazon" over a number of days.
 
 > **Assessed Question 1.** How many days of data are in the data set?
 
