@@ -14,6 +14,14 @@ url:    'https://mpaldridge.github.io/math1710/'
 ::: {.mysched}
 **Week 2** (4--8 October):
 
+* [**Section 3:** Classical probability](#S03-classical)
+* [**Problem Sheet 2:**](#P2) deadline for assessed questions: Monday 25 October
+* [**R Worksheet 3:** Data in R](#r-work) deadline for assessed questions: Monday 18 October
+:::
+
+::: {.oldsched}
+**Week 2** (4--8 October):
+
 * [**Section 2:** Probability spaces](#S02-probability)
 * [**Problem Sheet 2:**](#P2) this week and next -- deadline for assessed questions: Monday 25 October
 * [**R Worksheet 2:** Vectors](#r-work)
