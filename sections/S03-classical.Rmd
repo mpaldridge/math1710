@@ -193,6 +193,14 @@ This is only the most tiny, microscopic fraction of $52!$. So every time you hav
 
 ## Sampling without replacement in any order  {#combinations}
 
+
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/s9MehuyRW6Q"></iframe>
+:::
+::::
+
+
 ::: {.example}
 *In "Lotto", the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?*
 
@@ -272,6 +280,12 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 
 ## Birthday problem  {#birthday}
 
+
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/hNcCvJgKRXA"></iframe>
+:::
+::::
 
 *There are $k = 23$ students in a class. What is the probability that at least two of the students share a birthday?*
 
