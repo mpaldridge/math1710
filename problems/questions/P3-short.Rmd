@@ -26,7 +26,7 @@
 :::: {.myq}
 **A2.** Three events $A, B, C$ are said to be *pairwise independent* if each pair of events are independent -- that is, if $A$ and $B$ are independent, $B$ and $C$ are independent, and $A$ and $C$ are independent. The three events are said to *mutually independent* if they are pairwise independent and also $\mathbb P(A \cap B \cap C) = \mathbb P(A)\,\mathbb P(B)\,\mathbb P(C)$.
 
-Consider rolling two dice independently. Let $A$ be the event that the first role is even, let $B$ be the event that the second dice is even, and let $C$ be the event that the total is even.
+Consider rolling two dice independently. Let $A$ be the event that the first roll is even, let $B$ be the event that the second roll is even, and let $C$ be the event that the total score is even.
 
 ::: {.subq}
 **(a)** Are $A$, $B$, and $C$ pairwise independent?
