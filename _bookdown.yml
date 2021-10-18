@@ -6,7 +6,7 @@ rmd_files:
   - sections/S02-probability.Rmd
   - sections/S03-classical.Rmd
   - problems/P2.Rmd
-  - sections/S04-independence.Rmd
+  - sections/S04-conditional.Rmd
 #  - sections/S05-discrete-rv.Rmd
   - problems/P3.Rmd
 #  - sections/S06-discrete-dist.Rmd

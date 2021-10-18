@@ -18,7 +18,7 @@ sampling
 ordering
 combinations
 birthday
-S04-independence
+S04-conditional
 independent-events
 conditional
 chain-rule
