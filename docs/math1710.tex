@@ -2463,7 +2463,7 @@ Continuing that process, we get a general rule.
 \begin{theorem}[Chain rule]
 \protect\hypertarget{thm:thchain}{}\label{thm:thchain}For events \(A_1, A_2, \dots, A_n\), we have
 \begin{multline*}  \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
-  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_n) .\end{multline*}
+  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .\end{multline*}
 \end{theorem}
 
 Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It's a matter of personal taste which you prefer.)
