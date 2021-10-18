@@ -1,2 +1,53 @@
 # Problem Sheet 3  {#P3 .unnumbered}
 
+
+
+
+<style>
+.myanswers { 
+display: none !important;
+}
+</style>
+
+
+
+\commfalse
+
+
+::: {.mysummary}
+This is Problem Sheet 3. This problem sheet covers [Section 4](#S04-conditional) of the notes and in Week 5 questions will be added on Section 5. You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by **2pm on  Monday 8 November**.
+:::
+
+## A: Short questions {#P3-short .unnumbered}
+
+```{r, child = "problems/questions/P3-short.Rmd"}
+```
+
+## B: Long questions {#P3-long .unnumbered}
+
+```{r, child = "problems/questions/P3-long.Rmd"}
+```
+
+
+## C: Assessed questions {#P3-assessed .unnumbered}
+
+::: {.mysummary}
+The last two questions are **assessed questions** (one available now on Section 4, and one to be added in Week 5 on Section 5). These two questions count for 3% of your final mark for this module.
+
+The deadline for submitting your solutions is **2pm on Monday 8 November** at the beginning of Week 5, although I strongly recommend completing and submitting your work during Week 4. Submission will be via Gradescope; submission will open on Monday 1 November.
+Your work will be marked by your tutor and returned on Monday 15 November, when solutions will also be made available.
+
+Both questions are "long questions", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on [academic integrity](https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism) -- and the related punishments for violating them -- apply to your work on the assessed questions.
+:::
+
+```{r, child = "problems/questions/P3-assessed.Rmd"}
+```
+
+## Solutions to short questions {#P3-short-sols .unnumbered}
+
+**A1.** (c) and (e) are independent. **A2.**  (a) Yes (b) No
+
+
+

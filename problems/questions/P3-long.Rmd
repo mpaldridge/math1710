@@ -1,0 +1,40 @@
+:::: {.myq}
+**B1.** Suppose $A$ and $B$ are a pair of independent events. Show that $A$ and $B^\comp$ are also independent events.
+::::
+
+:::: {.myq}
+**B2.** Chloe cycles to work with probability $0.6$ and takes the bus with probability $0.4$. She has noticed that she is late 20% of the time when she takes the bus. Her boss notices that, on average, Chloe is late one time per week (that is, once every five days).
+
+::: {.subq}
+**(a)** What is the probability that Chloe will be late if she cycles to work?
+:::
+
+::: {.subq}
+**(b)** Chloe is late today, and her boss suspects this is because she took the bus. What is the probability that this guess is correct?
+:::
+::::
+
+:::: {.myq}
+**B3.** Let $\Omega$ be a sample space, let $\mathbb P$ be a probability measure on $\Omega$, and fix an event $B \subset \Omega$ with $\mathbb P(B) > 0$. Show that the conditional probability $\mathbb P( {\cdot} \mid B)$ is also a probability measure on $\Omega$. That is, show that the conditional probability also satisfies the probability axioms:
+
+1. $\mathbb P(A \mid B) \geq 0$ for all events $A \subset \Omega$;
+1. $\mathbb P(\Omega \mid B) = 1$;
+1. For disjoint events $A_1, A_2, \dots$, we have
+\[ \mathbb P(A_1 \cup A_2 \cup \cdots \mid B) = \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots . \]
+::::
+
+:::: {.myq}
+**B4.** Soldiers are asked about their use of illegal drugs, but to protect their privacy and ensure honest answers, a "randomised survey" is used. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:
+
+1. "Say 'Yes.'"
+2. "Say 'No.'"
+3. "Truthfully answer the question 'Have you taken any illegal drugs in the past 12 months?'"
+
+::: {.subq}
+**(a)** 40% of soldiers respond "Yes". What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.
+:::
+
+::: {.subq}
+**(b)** If a soldier responds "Yes", what is the probability that the soldier has taken illegal drugs in the past 12 months.
+:::
+::::

@@ -18,3 +18,10 @@ sampling
 ordering
 combinations
 birthday
+S04-independence
+independent-events
+conditional
+chain-rule
+total-prob
+bayes
+screening

@@ -204,6 +204,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="S04-independence.html"><a href="S04-independence.html"><i class="fa fa-check"></i><b>4</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="S04-independence.html"><a href="S04-independence.html#independent-events"><i class="fa fa-check"></i><b>4.1</b> Independent events</a></li>
+<li class="chapter" data-level="4.2" data-path="S04-independence.html"><a href="S04-independence.html#conditional"><i class="fa fa-check"></i><b>4.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="4.3" data-path="S04-independence.html"><a href="S04-independence.html#chain-rule"><i class="fa fa-check"></i><b>4.3</b> Chain rule</a></li>
+<li class="chapter" data-level="4.4" data-path="S04-independence.html"><a href="S04-independence.html#total-prob"><i class="fa fa-check"></i><b>4.4</b> Law of total probability</a></li>
+<li class="chapter" data-level="4.5" data-path="S04-independence.html"><a href="S04-independence.html#bayes"><i class="fa fa-check"></i><b>4.5</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="4.6" data-path="S04-independence.html"><a href="S04-independence.html#screening"><i class="fa fa-check"></i><b>4.6</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="S04-independence.html"><a href="S04-independence.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -418,7 +435,7 @@ This is only the most tiny, microscopic fraction of <span class="math inline">\(
 </div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 3.6  </strong></span><em>In “Lotto”, the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?</em></p>
+<p><span id="exm:lotto" class="example"><strong>Example 3.6  </strong></span><em>In “Lotto”, the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?</em></p>
 <p>Here, <span class="math inline">\(\Omega\)</span> is the set of all possible sets of 6 winning numbers, and <span class="math inline">\(A\)</span> is the set of numbers on your ticket. Clearly <span class="math inline">\(|A| = 1\)</span>, but what is <span class="math inline">\(|\Omega|\)</span>?</p>
 <p>Well, the first number out of the machine has 59 possibilities, the second number has 58 possibilities, and so on, making
 <span class="math display">\[ 59 \times 58 \times 57 \times 56 \times 55 \times 54 = {59}^{\underline{6}} . \]</span></p>
@@ -433,7 +450,7 @@ for the number of ways to choose <span class="math inline">\(k\)</span> objects 
 <p>It can sometimes be useful to remember that <span class="math inline">\({n}^{\underline{k}} = n!/(n-k)!\)</span> allows us to write the binomial coefficient in terms of the factorial function as
 <span class="math display">\[ \binom nk = \frac{{n}^{\underline{k}}}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-28" class="example"><strong>Example 3.7  </strong></span><em>You are dealt a “hand” of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?</em></p>
+<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 3.7  </strong></span><em>You are dealt a “hand” of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?</em></p>
 <p>Here, <span class="math inline">\(\Omega\)</span> is the set of all 13-card hands from the deck, and <span class="math inline">\(A\)</span> is the subset of those that contain the AKQJ of Spades.</p>
 <p>Using the binomial coefficient notation, it’s clear that
 <span class="math display">\[ |\Omega| = \binom{52}{13} = \frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1} . \]</span></p>
@@ -454,16 +471,16 @@ or about 1 in every 380 hands.</p>
 </div>
 <p>There’s one other useful fact about the binomial coefficient we should mention.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-29" class="theorem"><strong>Theorem 3.2  </strong></span><span class="math display">\[ \binom nk = \binom{n}{n-k}. \]</span></p>
+<p><span id="thm:unlabeled-div-28" class="theorem"><strong>Theorem 3.2  </strong></span><span class="math display">\[ \binom nk = \binom{n}{n-k}. \]</span></p>
 </div>
 <p>We’ll give two different proofs of this fact.</p>
 <div class="proof">
-<p><span id="unlabeled-div-30" class="proof"><em>Proof</em>. </span>We can use the formula for the binomial coefficient in terms of the factorial function. This formula gives
+<p><span id="unlabeled-div-29" class="proof"><em>Proof</em>. </span>We can use the formula for the binomial coefficient in terms of the factorial function. This formula gives
 <span class="math display">\[ \binom nk = \frac{n!}{k!(n-k)!} \qquad \binom{n}{n-k} = \frac{n!}{(n-k)!k!} . \]</span>
 It’s clear from the factorial expression that these two quantities are equal.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-31" class="proof"><em>Proof</em>. </span>Suppose we have <span class="math inline">\(n\)</span> balls, and we want to paint <span class="math inline">\(k\)</span> of the red and the other <span class="math inline">\(n-k\)</span> blue. How many ways can we do this?</p>
+<p><span id="unlabeled-div-30" class="proof"><em>Proof</em>. </span>Suppose we have <span class="math inline">\(n\)</span> balls, and we want to paint <span class="math inline">\(k\)</span> of the red and the other <span class="math inline">\(n-k\)</span> blue. How many ways can we do this?</p>
 <p>One way is to say there are <span class="math inline">\(\binom nk\)</span> ways to choose the <span class="math inline">\(k\)</span> balls to paint red, then we are forced paint the other <span class="math inline">\(n - k\)</span> blue.</p>
 <p>Another way is to say there are <span class="math inline">\(\binom{n}{n-k}\)</span> to choose the <span class="math inline">\(n-k\)</span> balls to paint blue, then we are forced to paint the other <span class="math inline">\(k\)</span> red.</p>
 <p>We have “double counted” the same quantity two different ways, so the answer must be the same, so

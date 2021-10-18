@@ -152,6 +152,18 @@
 \chapter*{Schedule}\label{schedule}}
 \addcontentsline{toc}{chapter}{Schedule}
 
+\textbf{Week 4} (18--22 October):
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{S04}{\textbf{Section 4:} Independence and conditional probability}
+\item
+  \protect\hyperlink{P3}{\textbf{Problem Sheet 3:}} deadline for assessed questions: Monday 8 November
+\item
+  \protect\hyperlink{r-work}{\textbf{R Worksheet 4:} Plots I: making plots}
+\end{itemize}
+
 \textbf{Week 3} (11--15 October):
 
 \begin{itemize}
@@ -206,8 +218,6 @@ The core teaching team are:
 \tightlist
 \item
   Dr Matthew Aldridge (you can call me ``Matt'' or ``Dr Aldridge''): I am the module leader, the main lecturer, and the main author of these notes.
-\item
-  A module assistant TBC.
 \end{itemize}
 
 The shared email address for the core teaching team is \href{mailto:math1710@leeds.ac.uk}{\nolinkurl{math1710@leeds.ac.uk}}; please use this address, rather than emailing our personal addresses; this will ensure your email is seen as soon as possible.
@@ -314,7 +324,7 @@ There will be two ``office hours'' drop-in sessions per week:
 \begin{itemize}
 \tightlist
 \item
-  Wednesday at 1000 in \href{https://ses.leeds.ac.uk/rooms?type=room\&id=1207583}{Charles Thackrah SR G.07}
+  Wednesday at 1000 in PRD 9.320 (Physics Research Deck)
 \item
   Wednesday at 1200 in \href{https://students.leeds.ac.uk/rooms?type=room\&id=99930}{Emmanuel Centre SR 02}
 \end{itemize}
@@ -446,6 +456,8 @@ For the probability section, any book with a title like ``Introduction to Probab
 \item
   D Stirzaker, \emph{Elementary Probability}, 2nd edition, Cambridge University Press, 2003. (The library has \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{online access}.)
 \end{itemize}
+
+I also found lecture notes by \href{https://people.maths.bris.ac.uk/~maotj/teaching.html}{Prof Oliver Johnson} (University of Bristol) and \href{http://www.statslab.cam.ac.uk/~rrw1/prob/index.html}{Prof Richard Weber} (University of Cambridge) to be useful.
 
 On Bayesian statistics, I recommend:
 
@@ -1807,7 +1819,7 @@ This is only the most tiny, microscopic fraction of \(52!\). So every time you h
 \section{Sampling without replacement in any order}\label{combinations}}
 
 \begin{example}
-\emph{In ``Lotto'', the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?}
+\protect\hypertarget{exm:lotto}{}\label{exm:lotto}\emph{In ``Lotto'', the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?}
 
 Here, \(\Omega\) is the set of all possible sets of 6 winning numbers, and \(A\) is the set of numbers on your ticket. Clearly \(|A| = 1\), but what is \(|\Omega|\)?
 
@@ -1949,35 +1961,121 @@ This is Problem Sheet 2. This problem sheet covers \protect\hyperlink{S02-probab
 
 \textbf{A1.} Suppose you toss a coin 10 times. What would you suggest for a sample space \textbf{(a)} if you only care about the total number of heads; \textbf{(b)} if you care about the result of every coin toss?
 
+\begin{myanswers}
+\emph{Solution.}
+
+\textbf{(a)} The number of heads can be any number from 0 to 10, so we should take \(\Omega = \{0,1,2,\dots, 10\}\). (This sample space contains 11 sample outcomes that are not equally likely.)
+
+\textbf{(b)} The vector of coin outcomes will be something like \((\text{H}, \text{H}, \text{T}, \text{T}, \text{H}, \text{T}, \text{T}, \text{T}, \text{H}, \text{T})\). So our sample space \(\Omega\) should be the set of all vectors of length 10 whose entries are either H, T; the notation \(\Omega = \{\text{H}, \text{T}\}^{10}\) is sometimes used for this. (Note that, by the multiplication principle, this sample space contains \(2^{10} = 1024\) sample outcomes that are equally likely.)
+
+\end{myanswers}
+
 \textbf{A2.} Let \(A\), \(B\) and \(C\) be events in a sample space \(\Omega\). Write the following events using only \(A\), \(B\), \(C\) and the complement, intersection, and union operations.
 
 \textbf{(a)} \(C\) happens but \(A\) doesn't.
 
+\begin{myanswers}
+\emph{Solution.} This is ``\(C\) and not \(A\)'': \(C\cap A^{\mathsf{c}}\).
+
+\end{myanswers}
+
 \textbf{(b)} At least one of \(A\), \(B\) and \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} This is simply the union \(A \cup B\cup C\).
+
+\end{myanswers}
 
 \textbf{(c)} Exactly one of \(B\) or \(C\) happens.
 
+\begin{myanswers}
+\emph{Solution.} One way to write this is to split it up as ``\,`\(B\) but not \(C\)' or `\(C\) but not \(B\)'\,'', which is \((B \cap C^{\mathsf{c}}) \cup (B^{\mathsf{c}} \cap C)\).
+
+An alternative is to split it up as ``\,`\(B\) or \(C\)' but not `both \(B\) and \(C\)'\,'', which is \((B \cup C) \cap (B\cap C)^{\mathsf{c}}\).
+
+You can check these are equal by (for example) using De Morgan's law and the distributive law to expand out the second version.
+
+\end{myanswers}
+
 \textbf{(d)} Exactly two of \(A\), \(B\) and \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} I would split this up into ``\(A\) and \(B\) but not \(C\)'', ``\(A\) and \(C\) but not \(B\)'', and ``\(B\) and \(C\) but not \(A\)'' and take the union. This gives
+\[  (A \cap B \cap C^{\mathsf{c}}) \cup (A \cap B^{\mathsf{c}} \cap C) \cup (A^{\mathsf{c}} \cap B \cap C) . \]
+There are other equivalent formulations.
+
+\end{myanswers}
 
 \textbf{A3.} Let \(\Omega\) be a sample space with a probability measure \(\mathbb P\), and let \(A, B \subset \Omega\) be events. State, with brief explanations, whether the following statements are true or false:
 
 \textbf{(a)} If \(\mathbb P(A) \leq \mathbb P(B)\), then \(A \subset B\).
 
-\textbf{(b)} \(\mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A)\).
+\begin{myanswers}
+\emph{Solution.} False. It is true that \emph{if} \(A \subset B\) \emph{then} \(\mathbb P(A) \leq \mathbb P(B)\), but here the implication is the wrong way around.
+
+For a counterexample, consider rolling a dice, and let \(A = \{1\}\) and \(B = \{2,3\}\). Then \(\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)\), but it's not true that \(A \subset B\).
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)\).
+
+\begin{myanswers}
+\emph{Solution.} True. Note that \((A \cap B) \cup (A \cap B^{\mathsf{c}}) = A\) and that the union is disjoint. (Try drawing a Venn diagram, if this isn't obvious.) The result follows from applying Axiom 3.
+
+\end{myanswers}
 
 \textbf{(c)} \(\mathbb P(A \cup B) \leq \mathbb P(A)\)
 
-\textbf{(d)} If \(A\) and \(B\) are disjoint, then \(\mathbb P((A \cup B)^\mathsf{c}) = 1 - \mathbb P(A) - \mathbb P(B)\).
+\begin{myanswers}
+\emph{Solution.} False. On the contrary, \(A \subset A \cup B\), so the inequality should be the other way round. The same \(A\) and \(B\) as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.
+
+\end{myanswers}
+
+\textbf{(d)} If \(A\) and \(B\) are disjoint, then \(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)\).
+
+\begin{myanswers}
+\emph{Solution.} True. From the complement rule, we have \(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)\); then from the addition rule for disjoint unions we have \(\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)\). Putting these together gives the result.
+
+\end{myanswers}
 
 \textbf{A4.} What is the value of the following expressions?
 
 \textbf{(a)} \(6!\)
 
+\begin{myanswers}
+\emph{Solution.}
+\[ 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720. \]
+
+\end{myanswers}
+
 \textbf{(b)} \({8}^{\underline{4}}\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ {8}^{\underline{4}} = 8 \times 7 \times 6 \times 5 = 1680 \]
+
+\end{myanswers}
 
 \textbf{(c)} \({\displaystyle \binom{10}{4}}\)
 
+\begin{myanswers}
+\emph{Solution.}
+\[ \binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4\times 3\times 2\times 1} = 210 \]
+
+\end{myanswers}
+
 \textbf{A5.} An urn contains 5 red balls and 7 blue balls. Four balls are drawn from the urn. What is the probability that at least one of the balls is red, if the balls are drawn \textbf{(a)} with replacement; \textbf{(b)} without replacement?
+
+\begin{myanswers}
+\emph{Solution.} This is an ``at least one'' question, so it will be better to look at the complementary event \(A^\mathsf{c}\) that none of the four balls drawn are red -- that is, that they are all blue.
+
+\textbf{(a)} There are \(|\Omega| = 12^4 = 20736\) ways to draw four balls with replacement. There are \(|A^\mathsf{c}| = 2401\) to draw all blue balls. So
+\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{|A^\mathsf{c}|}{|\Omega|} = 1 - \frac{2041}{20736} = 0.884 . \]
+
+\textbf{(b)} There are \(|\Omega| = {12}^{\underline{4}} = 11880\) ways to draw four balls without replacement. There are \(|A^\mathsf{c}| = {7}^{\underline{4}} = 840\) to draw all blue balls. So
+\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{|A^\mathsf{c}|}{|\Omega|} = 1 - \frac{840}{11880} = 0.929 . \]
+
+\end{myanswers}
 
 \hypertarget{P2-long}{%
 \section*{B: Long questions}\label{P2-long}}
@@ -1987,19 +2085,57 @@ This is Problem Sheet 2. This problem sheet covers \protect\hyperlink{S02-probab
 
 \textbf{(a)} \(\mathbb P(\varnothing) = 0\).
 
+\begin{myanswers}
+\emph{Solution.} As always, we seek a disjoint union, to allow us to use Axiom 3.
+
+Let \(A\) be any event (such as \(A = \varnothing\) or \(A = \Omega\)). Then \(A \cup \varnothing = A\), and the union is disjoint -- since \(\varnothing\) contains no sample points, it certainly can't contain any sample points that are also in \(A\). Then applying Axiom 3, we get \(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\). Subtracting \(\mathbb P(A)\) from both sides gives the result.
+
+\emph{Alternatively}, if you prove part (b) first, you can apply that with \(A = \Omega\). Since \(\Omega^\mathsf{c}= \varnothing\) and Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), the result follows.
+
+\end{myanswers}
+
 \textbf{(b)} \(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\).
+
+\begin{myanswers}
+\emph{Solution.} A very useful and relevant disjoint union is \(A \cup A^\mathsf{c}= \Omega\). Applying Axiom 3 gives us \(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = \mathbb P(\Omega)\). But Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), so \(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = 1\). Rearranging gives the result.
+
+\end{myanswers}
 
 \textbf{B2.} Suppose we pick a number at random from the set \(\{1, 2, \dots, 2021\}\).
 
 \textbf{(a)} What is the probability that the number is divisible by 5?
 
+\begin{myanswers}
+\emph{Solution.} The sample space is \(\Omega = \{1, 2, \dots, 2021\}\), and \(A\) is the set of numbers up to 2021 that are divisible by 5. Clearly \(|\Omega| = 2021\). Further, \(|A|\) is the largest integer no bigger than \(\frac{2021}{5} = 404.2\), which is 404, as this is how many times 5 ``goes into'' 2021. Hence
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2021} = 0.1999 , \]
+just a tiny bit smaller than \(\frac{1}{5}\).
+
+\end{myanswers}
+
 \textbf{(b)} What is the probability the number is divisible by 5 or by 7?
+
+\begin{myanswers}
+\emph{Solution.} With the same \(\Omega\) and \(A\), we now have \(B\) being the numbers up to 2021 divisible by \(7\); so we're looking for \(\mathbb P(A \cup B)\). As before, \(|B|\) is the largest integer no bigger that \(\frac{2021}{7} = 288.7\), which is \(288\). So
+\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \mathbb P(A\cap B) . \]
+Here, \(A \cap B\) is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by \(5 \times 7 = 35\). Then \(|A \cap B|\) is \(\frac{2021}{35} = 57.7\) rounded down. So finally, we have
+\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \frac{57}{2021} = \frac{635}{2021} = 0.314. \]
+
+\end{myanswers}
 
 \textbf{B3.} In this question, you will have to use the standard two-event form of the addition rule for unions
 \[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
 
+\emph{{[}\textbf{Update:} This question has been edited to provide extra hints.{]}}
+
 \textbf{(a)} Using the two-event addition rule, show that
 \[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
+
+\begin{myanswers}
+\emph{Solution.} As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what \(A\) and \(B\) should be. This time, \(A = C\) and \(D \cup E\) will work well, since \(C \cup (D \cup E) = C \cup D \cup E\). (You can call this ``associativity'', is you like.) Making that substitution immediately gives us
+\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]
+as required.
+
+\end{myanswers}
 
 \textbf{(b)} Using the two-event addition rule and the distributive law, or otherwise, prove the three-event form of the addition rule for unions:
 \[
@@ -2007,25 +2143,142 @@ This is Problem Sheet 2. This problem sheet covers \protect\hyperlink{S02-probab
   - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
 \]
 
-\emph{{[}\textbf{Update:} This question has been edited to provide extra hints.{]}}
+\begin{myanswers}
+\emph{Solution.}
+Let's take the three terms on the right of the equation from part (a) separately.
+
+The first term is \(\mathbb P(C)\), which is fine as it is.
+
+The second term is \(\mathbb P(D \cup E)\). This is the probability of the union of two events, so we can use addition rule for the union of two events to get
+\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cup E) . \]
+
+The third term is \(\mathbb P\big(C \cap (D \cup E)\big)\). If we use the distributive law, as suggested in the question, we get \(C \cap (D \cup E) = (C \cap D) \cup (C\cap E)\), so we want to find \(\mathbb P\big((C \cap D) \cup (C\cap E)\big)\). But this is another union of two events again, this time with \(A = C \cap D\) and \(B = C \cap E\). So the addition rule gives
+\[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]
+since \((C \cap D) \cap (C \cap E) = C \cap D \cap E\).
+
+Finally, we put this all together, and get
+\[
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
+  - \mathbb P(C \cap D) - \big(\mathbb P(C \cap E) + \mathbb P(D \cap E) - \mathbb P(C \cap D \cap E)\big) ,
+\]
+which, after taking the minus sign inside the last bracket, is what we wanted.
+
+\end{myanswers}
 
 \textbf{B4.} Eight friends are about to sit down at random at a round table. Find the probability that
 
 \textbf{(a)} Ashley and Brook sit next to each other, with Chris directly opposite Brook;
 
+\begin{myanswers}
+\emph{Solution.}
+Let \(\Omega\) be the number of ways the friends can sit around the table. This is an ordering problem, so \(\Omega = 8!\).
+
+Let \(A\) be the event in the question. What is \(|A|\)? Well,
+
+\begin{itemize}
+\tightlist
+\item
+  Ashley can sit anywhere, so has 8 choices of seat.
+\item
+  Brook can sit either directly to Ashley's left or directly to Ashley's right, so has 2 choices of seat.
+\item
+  Chris must sit directly opposite Brook, so only has 1 choice of seat.
+\item
+  The remaining five friends must fill up the remaining seats, so have 5, 4, 3, 2, and 1 choices respectively.
+\end{itemize}
+
+Hence \(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\). Thus we get
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 2 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
+
+\end{myanswers}
+
 \textbf{(b)} neither Ashley, Brook nor Chris sit next to each other.
+
+\begin{myanswers}
+\emph{Solution.}
+The sample space \(\Omega\) is as before. Let's count the outcomes in \(B\), the event in the question.
+
+\begin{itemize}
+\tightlist
+\item
+  Ashley can sit anywhere, so has 8 choices of seat.
+\item
+  Chris's number of choices will depend on where Brook sits, so we'll have to count their choices together.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If Brook sits next-but-one two Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.
+  \item
+    If Brook does not sit next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.
+  \end{itemize}
+\item
+  The remaining friends have 5, 4, 3, 2, and 1 choices again.
+\end{itemize}
+
+Hence, \(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\). So
+\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]
+
+\emph{Alternatively}, last year a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
+
+Ashley has 5 gaps to choose from, the Brook will have 6, then Chris will have 7, so the total number of ways they can push in is \(|\Omega| = 5 \times 6 \times 7\).
+
+To not sit next to each other, Ashley can push in any of the \(5\) gaps, Brook only has \(6 - 2 = 4\) choices (not in the gap directly to the left or right of Ashley), and Chris only has \(7 - 4 = 3\) choices (not in the gaps directly to the left or right of Ashley not of Brook -- these four gaps are distinct). Hence \(|B| = 5 \times 4 \times 3\), and we have
+\[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]
+
+\end{myanswers}
 
 \textbf{B5.} Suppose your tutorial group contains 12 students -- you and 11 others. The tutor wishes to choose 4 members of the group to present their work.
 
 \textbf{(a)} How many ways can the tutor choose the presentation group?
 
+\begin{myanswers}
+\emph{Solution.}
+The tutor is sampling 4 items from 12, without replacement (the same person can't be picked twice) and where the order doesn't matter. So this is
+\[ \binom{12}{4} = 495 . \]
+
+\end{myanswers}
+
 \textbf{(b)} How many ways can the tutor choose the presentation group if you are one of the presenters?
 
+\begin{myanswers}
+\emph{Solution.}
+Once the tutor has chosen you, she must pick 3 other students to complete the presentation group out of the other 11 students. So this is
+\[ \binom{11}{3} = 165 . \]
+
+\end{myanswers}
+
 \textbf{(c)} How many ways can the tutor choose the presentation group if you are \emph{not} one of the presenters?
+
+\begin{myanswers}
+\emph{Solution.}
+If the tutor doesn't chose you, she must pick all 4 presenters out of the other 11 students. So this is
+\[ \binom{11}{4} = 330 . \]
+
+\end{myanswers}
 
 \textbf{(d)} Pascal's formula says that
 \[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} . \]
 Prove Pascal's formula.
+
+\begin{myanswers}
+\emph{Solution.}
+We'd like a ``double-counting'' argument, where we count the same number in two different ways. Let's follow the breadcrumbs from the first three parts of the question.
+
+Suppose the tutorial group has \(n\) students and there will be \(k\) presenters. How many ways can the presentation group be chosen?
+
+One way is simply to say that this is \(\displaystyle\binom{n}{k}\).
+
+Another way is to separately count the presentation groups that do include you and the presentation groups that don't include you, and add them up. The presentation groups including you require \(k-1\) students from the other \(n -1\), which makes \(\binom{n-1}{k-1}\). The presentation groups not including you require all \(k\) students from the other \(n-1\), which makes \(\binom{n-1}{k}\). In total, the number of presentation groups is
+\[ \binom{n-1}{k-1} + \binom{n-1}{k} . \]
+
+Since we've counted the number of presentation groups in two different ways, these expressions must be equal.
+
+\emph{Alternatively}, you can prove algebraically that
+\[  \frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots2\cdot1} = \frac{(n-1)(n-2)\cdots(n-k+1)}{(k-1)(k-2)\cdots2\cdot1} + \frac{(n-1)(n-2)\cdots(n-k)}{k(k-1)\cdots2\cdot1} \]
+(start by making \(k!\) the common denominator on the right), but I feel that's against the spirit of the question.
+
+\end{myanswers}
 
 \hypertarget{P2-assessed}{%
 \section*{C: Assessed questions}\label{P2-assessed}}
@@ -2044,21 +2297,457 @@ You should not collaborate with others on the assessed questions: your answers m
 
 \textbf{(a)} Prove the upper bound \(\mathbb P(A \cap B) \leq 0.4\).
 
+\begin{myanswers}
+\emph{Hint.}
+Can you find an event \(C\) with \(A \cap B \subset C\) that will allow you to use the result \(\mathbb P(A \cap B) \leq C\)?
+
+\end{myanswers}
+
 \textbf{(b)} Prove that this upper bound can be achieved, by giving an example of a sample space \(\Omega\), a probability measure \(\mathbb P\) and events \(A, B \subset \Omega\) such that \(\mathbb P(A) = 0.8\) and \(\mathbb P(B) = 0.4\), with equality \(\mathbb P(A \cap B) = 0.4\) in the upper bound.
 
+\begin{myanswers}
+\emph{Hint.}
+Try a sample space with five outcomes \(\Omega = \{a,b,c,d,e\}\) and the classical ``equally likely'' probability. How many elements are in \(A\)? How many in \(B\)? How many in the overlap \(A \cap B\)?
+
+\end{myanswers}
+
 \textbf{(c)} Give a lower bound for \(\mathbb P(A \cap B)\) -- that is, prove that \(\mathbb P(A \cap B) \geq \text{something}\) -- and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can't formally prove it.)
+
+\begin{myanswers}
+\emph{Hint.}
+Try the sample space with five-equally likely outcomes again. How small can you make the overlap \(A \cap B\)?
+
+\end{myanswers}
 
 \textbf{C2.} A ``random digit'' is a number chosen at random from \(\{0, 1, \dots, 9\}\), each with equal probability. A statistician choses \(n\) random digits.
 
 \textbf{(a)} For \(k = 0, 1, \dots, 9\), let \(A_k\) be the event that all the digits are \(k\) or smaller. What is the probability of \(A_k\), as a function of \(k\) and \(n\)?
 
+\begin{myanswers}
+\emph{Hint.}
+What's the sample space? Can you explain why \(|\Omega| = 10^n\)? What about \(|A_k\)\textbar?
+
+\end{myanswers}
+
 \textbf{(b)} Let \(B_k\) be the event that the largest digit chosen is equal to \(k\). What is the probability of \(B_k\)? Justify your answer carefully.
+
+\begin{myanswers}
+\emph{Hint.}
+Can you find a relationship linking \(A_{k-1}\), \(A_k\), and \(B_k\)?
+
+\end{myanswers}
 
 \hypertarget{P2-short-sols}{%
 \section*{Solutions to short questions}\label{P2-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
 \textbf{A1.} (a) \(\{0,1,\dots, 10\}\) (b) The set of all \(2^{10}\) vectors of length 10 with entries from \(\{\text{H}, \text{T}\}\). \textbf{A2.} (a) \(C \cap A^\mathsf{c}\) (b) \(A \cup B \cup C\) (c) \((B \cup C) \cap (B \cap C)^\mathsf{c}\) or \((B \cap C^\mathsf{c}) \cup (B^\mathsf{c}\cap C)\) (d) \((A \cap B \cap C^\mathsf{c}) \cup (A \cap B^\mathsf{c}\cap C) \cup (A^\mathsf{c}\cap B \cap C)\) or other equivalent. \textbf{A3.} (a) False (b) True (c) False (d) True \textbf{A4.} (a) 720 (b) 1680 (c) 210 \textbf{A5.} (a) 0.884 (b) 0.929
+
+\hypertarget{S04-independence}{%
+\chapter{Independence and conditional probability}\label{S04-independence}}
+
+\hypertarget{independent-events}{%
+\section{Independent events}\label{independent-events}}
+
+\emph{Suppose 40\% of people have blond hair, and 20\% of people have blue eyes. What proportion of people have both blond hair and blue eyes?}
+
+The answer to this question is: we don't know. The question doesn't give us enough information to tell. However, \emph{if} it were the case that having blond hair didn't effect your chance of having blue eyes, then we could work out the answer. If that were true, we would think that the 20\% of people with blue eyes equally made up both 20\% of the blonds and also 20\% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20\% of the 40\% of people with blond hair, and 20\% of 40\% is \(0.2 \times 0.4 = 0.08\), or 8\%.
+
+To put it in probability language, \emph{if} blond hair and blue eyes were unrelated, then we would expect that
+\[ \mathbb P(\text{blond hair and blue eyes}) = \mathbb P(\text{blond hair}) \times \mathbb P(\text{blue eyes}) . \]
+This is an important property known as ``independence''.
+
+\begin{definition}
+Two events \(A\) and \(B\) are said to be \textbf{independent} if
+\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B) .  \]
+\end{definition}
+
+There are two ways we can use this definition.
+
+\begin{itemize}
+\tightlist
+\item
+  If we know \(\mathbb P(A)\), \(\mathbb P(B)\), and \(\mathbb P(A \cap B)\), then we can find out whether or not \(A\) and \(B\) are independent by checking whether or not \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\).
+\item
+  If we know \(\mathbb P(A)\) and \(\mathbb P(B)\) and we know that \(A\) and \(B\) are independent, then we can find \(\mathbb P(A \cap B)\) by calculating \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\).
+\end{itemize}
+
+In this second case, we might know \(A\) and \(B\) are independent because we are specifically told they are. But we might reason that \(A\) and \(B\) because the related experiments are not physically related -- for example if we roll a dice then toss a coin, we might reason that \(\{\text{roll a 5}\}\) and \(\{\text{the coin lands Heads}\}\) must be independent because the dice roll doesn't effect the coin toss, and use the independence assumption in calculations.
+
+\begin{example}
+\emph{Consider rolling a dice. Let \(A = \{\text{even number}\} = \{2,4,6\}\), and let \(B = \{\text{roll at least 4}\} = \{4,5,6\}\). Are \(A\) and \(B\) independent?}
+
+Clearly we have \(\mathbb P(A) = \frac36 = \frac12\) and \(\mathbb P(B) = \frac 36 = \frac12\). The intersection is \(A \cap B = \{4,6\}\), so \(\mathbb P(A \cap B) = \frac26 = \frac13\). So we see that
+\[ \mathbb P(A\cap B) = \frac13  \qquad \text{and} \qquad  \mathbb P(A)\, \mathbb P(B) = \frac12 \times \frac12 = \frac14 . \]
+So \(\mathbb P(A \cap B) \neq \mathbb P(A)\, \mathbb P(B)\), and the two events are not independent.
+\end{example}
+
+\begin{example}
+\emph{A biased coin has probability \(p\) of landing Heads and probability \(1-p\) of landing Tails. You toss the coin 3 times. Assuming tosses of the coin are independent, calculate the probability of getting exactly 2 Heads.}
+
+There are three ways we could get exactly 2 Heads: HHT, HTH, or THH. For the first of these,
+\[ \mathbb P(\text{HHT}) = \mathbb P(\text{first coin H} \cap \text{second coin H} \cap \text{third coin T}) . \]
+Since tosses of the coin are independent, we therefore have
+\begin{align*}
+\mathbb P(\text{HHT})
+  &= \mathbb P(\text{first coin H}) \times \mathbb P ( \text{second coin H} )\times \mathbb P(\text{third coin T}) \\
+  &=p \times p \times (1-p) \\
+  &= p^2(1-p).
+\end{align*}
+
+Similarly,
+\[ \mathbb P(\text{HTH}) = \mathbb P(\text{THH}) = p^2(1-p) \]
+also.
+
+Finally, because the events are disjoint, we have
+\[ \mathbb P(\text{HHT} \cup\text{HTH} \cup \text{THH}) = \mathbb P(\text{HHT} ) + \mathbb P(\text{HTH}) + \mathbb P(\text{THH}) = 3p^2(1-p) . \]
+\end{example}
+
+\hypertarget{conditional}{%
+\section{Conditional probability}\label{conditional}}
+
+Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+& \textbf{Brown hair} & \textbf{Blond hair} & \textbf{Total} \\
+\midrule
+\endhead
+\textbf{Brown eyes} & 50\% & 30\% & 80\% \\
+\textbf{Blue eyes} & 10\% & 10\% & 20\% \\
+\textbf{Total} & 60\% & 40\% & 100\% \\
+\bottomrule
+\end{longtable}
+
+(It turns out that \(\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08\), so they are not independent.)
+
+We know that 20\% of people have blue eyes. But suppose you already know that someone has blond hair: what then is their probability of have blue eyes \emph{given} that they have blond hair?
+
+Well, the 24\% of blond-haired people is made up of the 10\% of people who also have blue eyes to go along with their blond hair, and the 30\% of people who have brown eyes to go along with their blond hair. So of the 40\% of blond-haired people, three times as many have brown eyes, so only one quarter of that 40\% have blue eyes. If we use a vertical line \(|\) in a probability to mean ``given'' (or ``assuming that'' or ``conditional upon''), then we can write this as
+\[  \mathbb P(\text{blue eyes} \mid \text{blond hair}) = \frac{\mathbb P(\text{blue eyes and blond hair})}{\mathbb P(\text{blond hair})} = \frac{0.1}{0.4} = \frac14. \]
+
+What we've seen here is called a ``conditional probability''.
+
+\begin{definition}
+Let \(A\) and \(B\) be events, with \(\mathbb P(A) > 0\). Then the \textbf{conditional probability of \(B\) given \(A\)} is defined to be
+\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+\end{definition}
+
+The condition \(\mathbb P(A) > 0\) is to ensure we don't have any ``divide by 0'' errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
+
+As with independence, conditional probability can be used in different ways: given any two of \(\mathbb P(A)\), \(\mathbb P(A \cap B)\), and \(\mathbb P(B \mid A)\) you can work out the other one.
+
+Conditional probability ties in with independence in an important way. Suppose \(A\) and \(B\) are independent, so \(\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)\). Then the conditional probability becomes
+\[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]
+so \(\mathbb P(B \mid A) = \mathbb P(B)\). In other words, if \(A\) and \(B\) are independent, then \(A\) happening doesn't affect the probability of \(B\) happening (and vice versa).
+
+So when we have independence, \(\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)\), and the mathematics is quite easy. But conditional probability tells us how things work when we don't have independence.
+
+\hypertarget{chain-rule}{%
+\section{Chain rule}\label{chain-rule}}
+
+We can rewrite the definition of conditional probability like this:
+\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B \mid A). \]
+This can be a useful way to think when \(A\) concerns the first stage of an experiment and \(B\) the second stage. This says that the probability \(A\) happens then \(B\) happens is equal to the probability \(A\) happens multiplied the probability, given that \(A\) has happened, that \(B\) then happens too.
+
+We can extend this to more events. For three events, we have
+\begin{align*}
+\mathbb P(A \cap B \cap C)
+  &= \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) \\
+  &= \mathbb P(A) \, \mathbb P(B \mid A)\, \mathbb P(C \mid A \cap B) ,
+\end{align*}
+which can be useful when we have three stages of an experiment.
+
+Continuing that process, we get a general rule.
+
+\begin{theorem}[Chain rule]
+\protect\hypertarget{thm:thchain}{}\label{thm:thchain}For events \(A_1, A_2, \dots, A_n\), we have
+\begin{multline*}  \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
+  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_n) .\end{multline*}
+\end{theorem}
+
+Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It's a matter of personal taste which you prefer.)
+
+\begin{example}
+\emph{Recall the Lotto problem from Example \ref{exm:lotto}: What is the probability we match 6 balls from 59?}
+
+Let \(A_1, A_2, \dots, A_6\) be the events that the first, second, \ldots, sixth balls out of the machine are on our ticket. Clearly \(\mathbb P(A_1) = \frac{6}{59}\), as we have six numbers the ball could match. Then the conditional probability that the second ball matches given that the first ball matched is \(\mathbb P(A_2 \mid A_1) = \frac{5}{58}\), because there are 58 balls left in the machine and, given that we got the first number right, there are 5 numbers left on our ticket. Similarly, \(\mathbb P(A_3 \mid A_1 \cap A_2) = \frac{4}{57}\), and so on, down to \(\mathbb P(A_6 \mid A_1 \cap \cdots\cap A_5) = \frac{1}{54}\).
+
+So, using the chain rule, we get
+\begin{align*}
+\mathbb P(A_1 \cap A_2 &\cap \cdots \cap A_6) \\
+&= \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_6 \mid A_1 \cap \cdots \cap A_5) \\
+&= \frac{6}{59} \times \frac{5}{58} \times \frac{4}{57} \times \frac{3}{56} \times \frac{2}{55} \times \frac{1}{54} .
+\end{align*}
+
+The answer we got before was
+\[ \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]
+It's easy to see that this is the same answer, and the structure of the answers shows how the old method got the answer ``all at once'', while this new method gets the answer ``one stage at a time''.
+\end{example}
+
+\hypertarget{total-prob}{%
+\section{Law of total probability}\label{total-prob}}
+
+\begin{example}
+\emph{My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?}
+
+If my friend were to tell which dice he picked, then this question would be very easy! If we write \(D_4\), \(D_6\) and \(D_{10}\) to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
+\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]
+What we need is a way to combine the results for different ``sub-cases'' into an over-all answer.
+\end{example}
+
+Luckily, there exists just such a tool for this job! It's called the ``law of total probability'' (also known as the ``partition theorem''). The important point is to make sure that the different sub-cases cover all possibilities, but that only one of them happens at a time.
+
+\begin{definition}
+
+A set of events \(A_1, A_2, \dots, A_n\) are said to be a \textbf{partition} of the sample space \(\Omega\) if
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  they are disjoint, in that \(A_i \cap A_j = \varnothing\) for all \(i \neq j\);
+\item
+  they cover space, in that \(A_1 \cup A_2 \cup \cdots \cup A_n = \Omega\).
+\end{enumerate}
+
+\end{definition}
+
+\begin{theorem}[Law of total probability]
+\protect\hypertarget{thm:thlawtotal}{}\label{thm:thlawtotal}Let \(A_1, A_2, \dots, A_n\) be a partition, and \(B\) another event. Then
+\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
+\end{theorem}
+
+So the law of total probability tells us we can add up the probabilities \(\mathbb P(B \mid A_i)\) for each of the sub-cases provided we weight them by how likely \(\mathbb P(A_i)\) by how likely each sub-case is.
+
+\begin{proof}
+Since the partition of \(A_i\)s cover space, we can split up \(B\) depending on which part of the partition it is in:
+\[  B = (B \cap A_1) \cup (B \cap A_2) \cup \cdots \cup (B \cap A_n) .  \]
+
+\emph{{[}I meant to draw a picture here, but didn't get round to it -- perhaps you'd like to draw your own?{]}}
+
+Since the \(A_i\) are disjoint, the union on the right is disjoint also.
+Therefore we can use Axiom 3 to get
+\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(B \cap A_i) . \]
+But using the definition of conditional probability, each ``summand'' (term inside the sum) is
+\[ \mathbb P(B \cap A_i) = \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
+The result follows.
+\end{proof}
+
+Returning to our dice example, \(D_4, D_6, D_{10}\) is indeed a partition, since these are the only possibilities and we only choose one dice. So the law of total probability tells us that
+\[ \mathbb P(\text{roll 5}) = \mathbb P(D_4) \, \mathbb P(\text{roll 5} \mid D_4) +  \mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6) + \mathbb P(D_{10}) \, \mathbb P(\text{roll 5} \mid D_{10}) . \]
+
+We were told that all the dice were picked with equal probability, so \(\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13\), and we calculated the individual conditional probabilities as
+\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]
+
+Therefore, we have
+\[ \mathbb P(\text{roll 5}) = \tfrac13\times 0 +  \tfrac13\times\tfrac16 +  \tfrac13\times\tfrac1{10} = \tfrac{8}{90} = 0.089. \]
+
+\hypertarget{bayes}{%
+\section{Bayes' theorem}\label{bayes}}
+
+In this subsection, we will discuss an important result called \textbf{Bayes' theorem}.
+Let's first state and prove this result, and do an example, and then afterwards we'll talk about two reasons why Bayes' theorem is so important.
+
+\begin{theorem}[Bayes' theorem]
+\protect\hypertarget{thm:thbayes}{}\label{thm:thbayes}For events \(A\) and \(B\) with \(\mathbb P(A), \mathbb P(B) > 0\), we have
+\[ \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} .  \]
+\end{theorem}
+
+Bayes' theorem is thought to have first appeared in the writings of Rev.~\href{https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/}{Thomas Bayes}, a British church minister and mathematician, shortly after his death, in the 1760s. However, his work was significantly edited by \href{https://mathshistory.st-andrews.ac.uk/Biographies/Price/}{Richard Price}, another minister--mathematician, and many people think that Price deserves a large share of the credit.
+
+\begin{proof}
+From the definition of conditional probability, we can write \(\mathbb P(A \cap B)\) in two different ways: we can write it as
+\[  \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B\mid A) , \]
+but we can also write it as
+\[  \mathbb P(A \cap B) = \mathbb P(B) \, \mathbb P(A\mid B) . \]
+Since these are two different ways of writing the same thing, we can equate them, to get
+\[ \mathbb P(A) \, \mathbb P(B\mid A) = \mathbb P(B) \, \mathbb P(A\mid B) . \]
+Dividing both sides by \(\mathbb P(B)\) gives the result.
+\end{proof}
+
+\begin{example}
+\emph{My friend again secretly picks the 4-sided, 6-sided, or 10-sided dice, each with probability \(\frac13\). He rolls that secret dice, and tells me he rolled a 5. What is the probability he picked the 6-sided dice?}
+
+This is asking us to calculate \(\mathbb P(D_6 \mid \text{roll 5})\). Bayes' theorem tells us that
+\[
+  \mathbb P(D_6 \mid \text{roll 5})
+  = \frac{\mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6)}{\mathbb P(\text{roll 5})} 
+  = \frac{\frac13 \times \frac16}{\frac{8}{90}} 
+  = \tfrac{5}{8} ,
+\]
+since we had calculated \(\mathbb P(\text{roll 5}) = \frac{8}{90}\) in the previous subsection.
+\end{example}
+
+The first way to think about Bayes' theorem is that it tells us how to relate \(\mathbb P(A \mid B)\) and \(\mathbb P(B \mid A)\). Remember that \(\mathbb P(A \mid B)\) and \(\mathbb P(B \mid A)\) are not the same thing! The conditional probability someone is under 40 given they are a Premiership footballer is very high, but the conditional probability someone is a Premiership footballer given they are under 40 is very low.
+
+Bayes' theorem, in this first view, is a useful technical result that helps us switch the order of a conditional probability from \(B\) given \(A\) to \(A\) given \(B\): we have
+\[ \mathbb P(A \mid B) = \frac{\mathbb P(A)}{\mathbb P(B)} \times \mathbb P(B \mid A) .  \]
+
+In the dice example, the probability \(\mathbb P(\text{roll 5} \mid D_6) = \frac16\) was very obvious, but Bayes' theorem allowed us to reverse the conditioning, to find \(\mathbb P(D_6 \mid \text{roll 5}) = \frac58\) instead.
+
+The second way to think about Bayes' rule is that it tells us how to update our beliefs as we acquire more evidence. That is, we might start by believing that the probability some event \(A\) will occur is \(\mathbb P(A)\). But then we find out that \(B\) has occurred, so we want to incorporate that knowledge and update our belief of the probability \(A\) will occur to \(\mathbb P(A \mid B)\), the conditional probability \(A\) will occur given this new evidence \(B\).
+
+Bayes theorem, in this second view, tells us how to update from \(\mathbb P(A)\) to \(\mathbb P(A \mid B)\): we have
+\[ \mathbb P(A \mid B) = \mathbb P(A) \times \frac{\mathbb P(B \mid A)}{\mathbb P(B)} .  \]
+
+In the dice example, we initially believed there was a \(\mathbb P(D_6) = \frac13 = 0.333\) chance our friend had chosen the six-sided dice. But when we heard that our friend had rolled a 5, we updated our belief to now thinking there was now a \(\mathbb P(D_6 \mid \text{roll 5}) =\frac58 = 0.625\) chance it was the 6-sided dice.
+
+This second way of thinking about Bayes' theorem is at the heart of \textbf{Bayesian statistics}. In Bayesian statistics, we start with a ``prior'' belief about a model, then, after collecting some data, we update to a ``posterior'' belief, according to the rules of Bayes' theorem. We will discuss Bayesian statistics much more in Section 10.
+
+Quite often we use Bayes' theorem and the law of total probability together. If we have a partition \(A_1, A_2, \dots, A_n\), perhaps representing some possible hypotheses, and we observe an event \(B\), then Bayes' theorem tells us how likely each hypothesis is given the observation:
+\[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\mathbb P(B)} .  \]
+But this shared denominator \(\mathbb P(B)\) can be expanded using the law of total probability
+\[ \mathbb P(B) = \sum_{j=1}^n \mathbb P(A_j) \,\mathbb P(B \mid A_j) . \]
+Together, we get the following.
+
+\begin{theorem}
+\protect\hypertarget{thm:bayes-total}{}\label{thm:bayes-total}Let \(\{A_1, A_2, \dots, A_n\}\) be a partition of a sample space and let \(B\) be another event. Then, for all \(i=1,2,\dots,n\), we have
+\[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\sum_{j=1}^n \mathbb P(A_j) \, \mathbb P(B \mid A_j)} .  \]
+\end{theorem}
+
+This is essentially what we did with the dice example, although we split it up into two separate parts rather than using this formula directly.
+
+\hypertarget{screening}{%
+\section{Diagnostic testing}\label{screening}}
+
+\emph{Members of the public are tested for a certain disease. About 2\% of the population have the disease. The test is 95\% accurate, in the following sense: if you have the disease, there's a 95\% chance you correctly get a positive test result, while if you don't have the disease, there's a 95\% chance you correctly get a negative test result. Suppose you get a positive test result. What is the probability you have the disease?}
+
+The first thing we have to do is translate the words in the question into probability statements. Let \(D\) be the event you have the disease, so \(D^\mathsf{c}\) is the event you don't have the disease, and let \(+\) be the event you get a positive result. Then the question tells us that
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb P(D) = 0.02\) and \(\mathbb P(D^\mathsf{c}) = 0.98\);
+\item
+  \(\mathbb P({+} \mid D) = 0.95\) and \(\mathbb P({+}\mid D^\mathsf{c}) = 0.05\);
+\item
+  we want to find \(\mathbb P(D \mid {+})\).
+\end{itemize}
+
+Note also that \(D\) (you have the disease) and \(D^\mathsf{c}\) (you don't) make up a partition. Then Theorem \ref{thm:bayes-total} tells us that
+\[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\mathsf{c}) \,\mathbb P({+} \mid D^\mathsf{c})} . \]
+Putting in all the numbers we have, we get
+\[ \mathbb P(D \mid {+}) = \frac{0.02 \times 0.95}{0.02 \times 0.95 + 0.98 \times 0.05} = 0.28 .\]
+
+So if you get a positive result on this 95\%-accurate test, there's still only about a 1 in 4 chance you actually have the disease.
+
+Many people find this result surprising. It sometimes helps to put more concrete numbers on things. Suppose 1000 people get tested. On average, we expect about 20 of them to have the disease, and 980 of to not have the disease. Of the 20 with the disease, on average 19 will correctly test positive, while 1 will test negative. Of the 980 without the disease, an average 931 will correctly test negative, but 49 will wrongly test positive. So of the \(19+49 = 68\) people with positive tests, only 19 of them actually have the disease, which is 28\%.
+
+The key point is that the disease is rare -- only 2\% of people have it. So even though positive test increases the likelihood you have the disease a lot (it's about 14 times more likely), it's not enough to make it a very large probability.
+
+\hypertarget{summary-034}{%
+\section*{Summary}\label{summary-034}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  Two events are independent if \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\).
+\item
+  The conditional probability of \(B\) given \(A\) is \({\displaystyle \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)}}\).
+\item
+  The law of total probability says that if \(A_1, A_2, \dots A_n\) is a partition of the sample space, then
+  \[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
+\item
+  Bayes' theorem says that \({\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }\).
+\end{itemize}
+
+\hypertarget{P3}{%
+\chapter*{Problem Sheet 3}\label{P3}}
+\addcontentsline{toc}{chapter}{Problem Sheet 3}
+
+\commfalse
+
+This is Problem Sheet 3. This problem sheet covers \protect\hyperlink{S04-conditional}{Section 4} of the notes and in Week 5 questions will be added on Section 5. You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 8 November}.
+
+\hypertarget{P3-short}{%
+\section*{A: Short questions}\label{P3-short}}
+\addcontentsline{toc}{section}{A: Short questions}
+
+\textbf{A1.} Consider dealing two cards (without replacement) from a pack of cards. Which of the following pairs of events are independent?
+
+\textbf{(a)} ``The first card is a Heart'' and ``The first card is Red''.
+
+\textbf{(b)} ``The first card is a Heart'' and ``The first card is a Spade''.
+
+\textbf{(c)} ``The first card is a Heart'' and ``The first card is an Ace''.
+
+\textbf{(d)} ``The first card is a Heart'' and ``The second card is a Heart''.
+
+\textbf{(e)} ``The first card is a Heart'' and ``The second card is an Ace''.
+
+\textbf{A2.} Three events \(A, B, C\) are said to be \emph{pairwise independent} if each pair of events are independent -- that is, if \(A\) and \(B\) are independent, \(B\) and \(C\) are independent, and \(A\) and \(C\) are independent. The three events are said to \emph{mutually independent} if they are pairwise independent and also \(\mathbb P(A \cap B \cap C) = \mathbb P(A)\,\mathbb P(B)\,\mathbb P(C)\).
+
+Consider rolling two dice independently. Let \(A\) be the event that the first role is even, let \(B\) be the event that the second dice is even, and let \(C\) be the event that the total is even.
+
+\textbf{(a)} Are \(A\), \(B\), and \(C\) pairwise independent?
+
+\textbf{(b)} Are \(A\), \(B\), and \(C\) mutually independent?
+
+\hypertarget{P3-long}{%
+\section*{B: Long questions}\label{P3-long}}
+\addcontentsline{toc}{section}{B: Long questions}
+
+\textbf{B1.} Suppose \(A\) and \(B\) are a pair of independent events. Show that \(A\) and \(B^\mathsf{c}\) are also independent events.
+
+\textbf{B2.} Chloe cycles to work with probability \(0.6\) and takes the bus with probability \(0.4\). She has noticed that she is late 20\% of the time when she takes the bus. Her boss notices that, on average, Chloe is late one time per week (that is, once every five days).
+
+\textbf{(a)} What is the probability that Chloe will be late if she cycles to work?
+
+\textbf{(b)} Chloe is late today, and her boss suspects this is because she took the bus. What is the probability that this guess is correct?
+
+\textbf{B3.} Let \(\Omega\) be a sample space, let \(\mathbb P\) be a probability measure on \(\Omega\), and fix an event \(B \subset \Omega\) with \(\mathbb P(B) > 0\). Show that the conditional probability \(\mathbb P( {\cdot} \mid B)\) is also a probability measure on \(\Omega\). That is, show that the conditional probability also satisfies the probability axioms:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb P(A \mid B) \geq 0\) for all events \(A \subset \Omega\);
+\item
+  \(\mathbb P(\Omega \mid B) = 1\);
+\item
+  For disjoint events \(A_1, A_2, \dots\), we have
+  \[ \mathbb P(A_1 \cup A_2 \cup \cdots \mid B) = \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots . \]
+\end{enumerate}
+
+\textbf{B4.} Soldiers are asked about their use of illegal drugs, but to protect their privacy and ensure honest answers, a ``randomised survey'' is used. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``Say `Yes.'\,''
+\item
+  ``Say `No.'\,''
+\item
+  ``Truthfully answer the question `Have you taken any illegal drugs in the past 12 months?'\,''
+\end{enumerate}
+
+\textbf{(a)} 40\% of soldiers respond ``Yes''. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.
+
+\textbf{(b)} If a soldier responds ``Yes'', what is the probability that the soldier has taken illegal drugs in the past 12 months.
+
+\hypertarget{P3-assessed}{%
+\section*{C: Assessed questions}\label{P3-assessed}}
+\addcontentsline{toc}{section}{C: Assessed questions}
+
+The last two questions are \textbf{assessed questions} (one available now on Section 4, and one to be added in Week 5 on Section 5). These two questions count for 3\% of your final mark for this module.
+
+The deadline for submitting your solutions is \textbf{2pm on Monday 8 November} at the beginning of Week 5, although I strongly recommend completing and submitting your work during Week 4. Submission will be via Gradescope; submission will open on Monday 1 November.
+Your work will be marked by your tutor and returned on Monday 15 November, when solutions will also be made available.
+
+Both questions are ``long questions'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
+
+\textbf{C1.} A computer spam filter is 98\% effective at sending spam emails to my junk folder, but will also incorrectly send 1\% of legitimate emails to my junk folder. Suppose that 1 in 10 emails are spam. What proportion of emails in my junk folder are actually legitimate emails?
+
+\hypertarget{P3-short-sols}{%
+\section*{Solutions to short questions}\label{P3-short-sols}}
+\addcontentsline{toc}{section}{Solutions to short questions}
+
+\textbf{A1.} (c) and (e) are independent. \textbf{A2.} (a) Yes (b) No
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
@@ -2082,7 +2771,7 @@ Week & Worksheet & Deadline for assessed work \\
 1 & \href{https://mpaldridge.github.io/math1710/R1.html}{\textbf{R basics}} (\href{https://mpaldridge.github.io/math1710/R1-solutions.html}{Solutions}) & --- \\
 2 & \href{https://mpaldridge.github.io/math1710/R2.html}{\textbf{Vectors}} & --- \\
 3 & \href{https://mpaldridge.github.io/math1710/R3.html}{\textbf{Data in R}} & Monday 18 October \\
-4 & Plots I: Making plots & --- \\
+4 & \href{https://mpaldridge.github.io/math1710/R3.html}{Plots I: Making plots} & --- \\
 5 & Plots II: Making plots nicer & Monday 1 November \\
 6 & RMarkdown (optional) & --- \\
 7 & Discrete random variables & Monday 15 November \\

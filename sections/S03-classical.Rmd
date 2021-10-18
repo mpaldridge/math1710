@@ -201,7 +201,7 @@ This is only the most tiny, microscopic fraction of $52!$. So every time you hav
 ::::
 
 
-::: {.example}
+::: {.example #lotto}
 *In "Lotto", the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?*
 
 Here, $\Omega$ is the set of all possible sets of 6 winning numbers, and $A$ is the set of numbers on your ticket. Clearly $|A| = 1$, but what is $|\Omega|$?

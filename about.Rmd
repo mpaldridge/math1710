@@ -9,7 +9,6 @@ This module lasts for 11 weeks from 27 September to 10 December 2021. The exam w
 The core teaching team are:
 
 * Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge"): I am the module leader, the main lecturer, and the main author of these notes.
-* A module assistant TBC.
 
 The shared email address for the core teaching team is <math1710@leeds.ac.uk>; please use this address, rather than emailing our personal addresses; this will ensure your email is seen as soon as possible.
 
@@ -91,7 +90,7 @@ If you there is something in the module you wish to discuss privately one-on-one
 
 There will be two "office hours" drop-in sessions per week:
 
-* Wednesday at 1000 in [Charles Thackrah SR G.07](https://ses.leeds.ac.uk/rooms?type=room&id=1207583)
+* Wednesday at 1000 in PRD 9.320 (Physics Research Deck)
 * Wednesday at 1200 in [Emmanuel Centre SR 02](https://students.leeds.ac.uk/rooms?type=room&id=99930)
 
 (For timetabling reasons, the 1000 sessions appear on the timetable for MATH2700 students and the 1200 sessions appear on the timetable for MATH1710 students, but I'm happy for anyone to attend either hour.)
@@ -169,6 +168,8 @@ For the probability section, any book with a title like "Introduction to Probabi
 * SM Ross, *A First Course in Probability*, 10th edition, Pearson, 2020.
 * RL Scheaffer and LJ Young, *Introduction to Probability and Its Applications*, 3rd edition, Cengage, 2010.
 * D Stirzaker, *Elementary Probability*, 2nd edition, Cambridge University Press, 2003. (The library has [online access](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181).)
+
+I also found lecture notes by [Prof Oliver Johnson](https://people.maths.bris.ac.uk/~maotj/teaching.html) (University of Bristol) and [Prof Richard Weber](http://www.statslab.cam.ac.uk/~rrw1/prob/index.html) (University of Cambridge) to be useful.
 
 On Bayesian statistics, I recommend:
 

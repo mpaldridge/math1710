@@ -1,0 +1,118 @@
+---
+title:  "R Worksheet 4: Plots I: Making plots"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet does not include assessed questions.You should complete this worksheet in Week 4. f you have difficulty with this worksheet, you can get help at the office hours drop-in sessions.*
+
+------------------------------------------------------------------------
+
+In this worksheet, we will look at how to make the three types of data visualisations we studied in Section 1 of the notes:
+
+* boxplots
+* histograms
+* scatterplots
+
+In this worksheet, we will just consider the basics of how to produce the plot. In the next worksheet, R Worksheet 5, we will see ways to improve and alter the plots, by adding axis titles, changing the colours, and so on.
+
+We will use the same Met Office historical temperature data as our example data.
+
+```{r}
+temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")
+```
+
+> **Exercise 4.1.** Read the temperature data into R by copying the command above. Just to check you remember from R Worksheet 3: What was the median August temperature?
+
+## Boxplots
+
+The first type of plot we will look at is the **boxplot**. This is very simple. We simply feed the vector of data we wish to plot into the function **`boxplot()`**. So, for example, a boxplot of the January temperatures can be produced with
+
+```{r}
+boxplot(temperature$jan)
+```
+
+You should find that a picture like the one above appears in the "Plots" tab of RStudio -- this is usually in the bottom-right quadrant of the screen. If the "Plots" tab is too small on your screen, the picture may fail to appear -- your should drag the borders of the "Plots" tab to make it bigger then try again.
+
+Above the picture, you should see the "Export" button. Clicking on this will give you the opportunity to either save your graph our copy it to the clipboard. Saving the plot is useful if you think you might want it again in the future -- although if you are saving all your commands in an R script, as we discussed in Worksheet 1, you can very quickly recreate any plots you need again without having to save each one. Copying the plot to the clipboard can be helpful if you want to include your plot in another document, like a Word document or a Powerpoint presentation.
+
+> **Exercise 4.2.** Draw a boxplot of the August temperature. Save your graph as an image.
+
+Boxplots are mostly helpful to *compare* data, so we often want to draw mutiple boxplots next to each other. In this case, we simple plug all the data vectors into `boxplot()`, separated by commas.
+
+So to compare the temperatures in July, August, and September, we use
+
+```{r}
+boxplot(temperature$jul, temperature$aug, temperature$sep)
+```
+
+What can we learn about the temperature data in those months from this boxplot?
+
+> **Exercise 4.2.** Draw a boxplot comparing the April temperature for the first 68 years in the data set (rows 1 to 68) and the second 68 years in the data (rows 69 to 136). (You may need to look back at R Worksheet 3 to remind yourself how to extract limited rows from a column of a data frame.) Comment briefly on what you learn from the comparison.
+
+In the next worksheet, we will see how to properly label the box plots, label the y-axis, put a title on your boxplot, and other things.
+
+## Histograms
+
+The basic method of how to draw a **histogram** is again pretty simple -- just pass the data vector to the function **`hist()`**.
+
+```{r}
+hist(temperature$dec)
+```
+
+An important extra optional argument is the `freq = ...` argument. You'll notice that the histogram above plots "Frequency" on the y-axis. Setting `freq = TRUE` ensures that this happens -- although since this is the default behaviour (with one exception mentioned below), it's not necessary to do so. Setting `freq = FALSE` instead plots the frequency density, as we discussed in Subsection 1.4 of the notes. Compare the first picture above with this one (and look carefully at the y-axis):
+
+```{r}
+hist(temperature$dec, freq = FALSE)
+```
+
+Another important extra optional arguments is `breaks = ...`. This allows you to specify the bins you create. Your choices here are:
+
+* **Don't use** the `breaks` argument at all: let R choose what it thinks is a sensible number of bins.
+* Set `breaks` equal to a **number**, like `breaks = 5`: this tells R how many bins you want. Note that R won't necessarily choose *exactly* that number of bins -- it will pick a number close to that number of bins that splits up the x-axis nicely. (You may find this behaviour helpful or annoying, according to taste.)
+* Set `breaks` equal to a **vector**, like `breaks = c(-5, 0, 2, 4, 6, 10, 20)`: these are the exact breakpoints between bins that R uses. Note that if the vectors are not equally spaced, then -- very sensibly -- plotting the density (`freq = FALSE`) becomes the default behaviour.
+
+Here's an example of specifying the bins we want to use:
+
+```{r}
+hist(temperature$mar, breaks = c(0, 2, 4, 5, 6, 8, 10))
+```
+
+> **Exercise 4.4.** Plot four histograms of the May temperature with density on the y-axis using (approximately) 3, 6, 10, and 20 bins. Which number of bins do you think is the most appropriate, and why?
+
+## Scatterplots
+
+The command for a scatterplot is simply **`plot()`**. You should provide two arguments: the first argument will be plotted on the x-axis and the second on the y-axis.
+
+So to compare July and August temperatures each year, we can use
+
+```{r}
+plot(temperature$jul, temperature$aug)
+```
+
+There appears to be a weak but noticeable positive relationship here -- we can confirm that by calculating the correlation, as on R Worksheet 3.
+
+```{r}
+cor(temperature$jul, temperature$aug)
+```
+
+> **Exercise 4.5.** Plot a scatterplot for January and August temperature. Do you see a relationship here? Copy your scatterplot to the clipboard and paste it into some other program.
+
+In R Worksheet 5, we will look at some of the many extra optional arguments that `plot()` can take. But we will mention one here.
+
+By default, R plots points (or, rather, small circles) for each pair of datapoints. But sometimes you might prefer to join up points with a line -- this is particularly appropriate if the x-axis represents time, and there is only one y-data-point per time-point. Here, we want the argument `type = ...`. There are many options here, but the three most important are:
+
+* `type = "p"` plots **p**oints, and is the default behaviour.
+* `type = "l"` plots **l**ines.
+* `type = "b"` plots **b**oth points and lines
+
+We can see an example of this here:
+
+```{r}
+plot(temperature$year, temperature$oct, type = "l")
+```
+
+What do you learn from this scatterplot?
+
+> **Exercise 4.6.** Draw a scatterplot for the first 30 years of data with year as the x-axis and February temperature as the y-axis, with points plotted that are also joined up with lines.

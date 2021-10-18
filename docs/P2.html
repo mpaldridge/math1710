@@ -31,7 +31,7 @@
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="S03-classical.html"/>
-<link rel="next" href="R.html"/>
+<link rel="next" href="S04-independence.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -204,6 +204,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="chapter" data-level="4" data-path="S04-independence.html"><a href="S04-independence.html"><i class="fa fa-check"></i><b>4</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="S04-independence.html"><a href="S04-independence.html#independent-events"><i class="fa fa-check"></i><b>4.1</b> Independent events</a></li>
+<li class="chapter" data-level="4.2" data-path="S04-independence.html"><a href="S04-independence.html#conditional"><i class="fa fa-check"></i><b>4.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="4.3" data-path="S04-independence.html"><a href="S04-independence.html#chain-rule"><i class="fa fa-check"></i><b>4.3</b> Chain rule</a></li>
+<li class="chapter" data-level="4.4" data-path="S04-independence.html"><a href="S04-independence.html#total-prob"><i class="fa fa-check"></i><b>4.4</b> Law of total probability</a></li>
+<li class="chapter" data-level="4.5" data-path="S04-independence.html"><a href="S04-independence.html#bayes"><i class="fa fa-check"></i><b>4.5</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="4.6" data-path="S04-independence.html"><a href="S04-independence.html#screening"><i class="fa fa-check"></i><b>4.6</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="S04-independence.html"><a href="S04-independence.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -251,51 +268,106 @@ display: none !important;
 <h2>A: Short questions</h2>
 <div class="myq">
 <p><strong>A1.</strong> Suppose you toss a coin 10 times. What would you suggest for a sample space <strong>(a)</strong> if you only care about the total number of heads; <strong>(b)</strong> if you care about the result of every coin toss?</p>
+<div class="myanswers">
+<p><em>Solution.</em></p>
+<p><strong>(a)</strong> The number of heads can be any number from 0 to 10, so we should take <span class="math inline">\(\Omega = \{0,1,2,\dots, 10\}\)</span>. (This sample space contains 11 sample outcomes that are not equally likely.)</p>
+<p><strong>(b)</strong> The vector of coin outcomes will be something like <span class="math inline">\((\text{H}, \text{H}, \text{T}, \text{T}, \text{H}, \text{T}, \text{T}, \text{T}, \text{H}, \text{T})\)</span>. So our sample space <span class="math inline">\(\Omega\)</span> should be the set of all vectors of length 10 whose entries are either H, T; the notation <span class="math inline">\(\Omega = \{\text{H}, \text{T}\}^{10}\)</span> is sometimes used for this. (Note that, by the multiplication principle, this sample space contains <span class="math inline">\(2^{10} = 1024\)</span> sample outcomes that are equally likely.)</p>
+</div>
 </div>
 <div class="myq">
 <p><strong>A2.</strong> Let <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> be events in a sample space <span class="math inline">\(\Omega\)</span>. Write the following events using only <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> and the complement, intersection, and union operations.</p>
 <div class="subq">
 <p><strong>(a)</strong> <span class="math inline">\(C\)</span> happens but <span class="math inline">\(A\)</span> doesn’t.</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is “<span class="math inline">\(C\)</span> and not <span class="math inline">\(A\)</span>”: <span class="math inline">\(C\cap A^{\mathsf{c}}\)</span>.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> At least one of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is simply the union <span class="math inline">\(A \cup B\cup C\)</span>.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> Exactly one of <span class="math inline">\(B\)</span> or <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> One way to write this is to split it up as “‘<span class="math inline">\(B\)</span> but not <span class="math inline">\(C\)</span>’ or ‘<span class="math inline">\(C\)</span> but not <span class="math inline">\(B\)</span>’”, which is <span class="math inline">\((B \cap C^{\mathsf{c}}) \cup (B^{\mathsf{c}} \cap C)\)</span>.</p>
+<p>An alternative is to split it up as “‘<span class="math inline">\(B\)</span> or <span class="math inline">\(C\)</span>’ but not ‘both <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>’”, which is <span class="math inline">\((B \cup C) \cap (B\cap C)^{\mathsf{c}}\)</span>.</p>
+<p>You can check these are equal by (for example) using De Morgan’s law and the distributive law to expand out the second version.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(d)</strong> Exactly two of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> I would split this up into “<span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> but not <span class="math inline">\(C\)</span>”, “<span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> but not <span class="math inline">\(B\)</span>”, and “<span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> but not <span class="math inline">\(A\)</span>” and take the union. This gives
+<span class="math display">\[  (A \cap B \cap C^{\mathsf{c}}) \cup (A \cap B^{\mathsf{c}} \cap C) \cup (A^{\mathsf{c}} \cap B \cap C) . \]</span>
+There are other equivalent formulations.</p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>A3.</strong> Let <span class="math inline">\(\Omega\)</span> be a sample space with a probability measure <span class="math inline">\(\mathbb P\)</span>, and let <span class="math inline">\(A, B \subset \Omega\)</span> be events. State, with brief explanations, whether the following statements are true or false:</p>
 <div class="subq">
 <p><strong>(a)</strong> If <span class="math inline">\(\mathbb P(A) \leq \mathbb P(B)\)</span>, then <span class="math inline">\(A \subset B\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> False. It is true that <em>if</em> <span class="math inline">\(A \subset B\)</span> <em>then</em> <span class="math inline">\(\mathbb P(A) \leq \mathbb P(B)\)</span>, but here the implication is the wrong way around.</p>
+<p>For a counterexample, consider rolling a dice, and let <span class="math inline">\(A = \{1\}\)</span> and <span class="math inline">\(B = \{2,3\}\)</span>. Then <span class="math inline">\(\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)\)</span>, but it’s not true that <span class="math inline">\(A \subset B\)</span>.</p>
+</div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A)\)</span>.</p>
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> True. Note that <span class="math inline">\((A \cap B) \cup (A \cap B^{\mathsf{c}}) = A\)</span> and that the union is disjoint. (Try drawing a Venn diagram, if this isn’t obvious.) The result follows from applying Axiom 3.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> <span class="math inline">\(\mathbb P(A \cup B) \leq \mathbb P(A)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> False. On the contrary, <span class="math inline">\(A \subset A \cup B\)</span>, so the inequality should be the other way round. The same <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.</p>
+</div>
 </div>
 <div class="subq">
-<p><strong>(d)</strong> If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, then <span class="math inline">\(\mathbb P((A \cup B)^\mathsf{c}) = 1 - \mathbb P(A) - \mathbb P(B)\)</span>.</p>
+<p><strong>(d)</strong> If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, then <span class="math inline">\(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> True. From the complement rule, we have <span class="math inline">\(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)\)</span>; then from the addition rule for disjoint unions we have <span class="math inline">\(\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)\)</span>. Putting these together gives the result.</p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>A4.</strong> What is the value of the following expressions?</p>
 <div class="subq">
 <p><strong>(a)</strong> <span class="math inline">\(6!\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720. \]</span></p>
 </div>
+</div>
+<!--\[\newcommand{\ff}[2]{{#1}^{\underline{#2}}}
+  \newcommand{\comp}{\mathsf{c}} \] -->
 <div class="subq">
 <p><strong>(b)</strong> <span class="math inline">\({8}^{\underline{4}}\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ {8}^{\underline{4}} = 8 \times 7 \times 6 \times 5 = 1680 \]</span></p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> <span class="math inline">\({\displaystyle \binom{10}{4}}\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ \binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4\times 3\times 2\times 1} = 210 \]</span></p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>A5.</strong> An urn contains 5 red balls and 7 blue balls. Four balls are drawn from the urn. What is the probability that at least one of the balls is red, if the balls are drawn <strong>(a)</strong> with replacement; <strong>(b)</strong> without replacement?</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is an “at least one” question, so it will be better to look at the complementary event <span class="math inline">\(A^\mathsf{c}\)</span> that none of the four balls drawn are red – that is, that they are all blue.</p>
+<p><strong>(a)</strong> There are <span class="math inline">\(|\Omega| = 12^4 = 20736\)</span> ways to draw four balls with replacement. There are <span class="math inline">\(|A^\mathsf{c}| = 2401\)</span> to draw all blue balls. So
+<span class="math display">\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{|A^\mathsf{c}|}{|\Omega|} = 1 - \frac{2041}{20736} = 0.884 . \]</span></p>
+<p><strong>(b)</strong> There are <span class="math inline">\(|\Omega| = {12}^{\underline{4}} = 11880\)</span> ways to draw four balls without replacement. There are <span class="math inline">\(|A^\mathsf{c}| = {7}^{\underline{4}} = 840\)</span> to draw all blue balls. So
+<span class="math display">\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{|A^\mathsf{c}|}{|\Omega|} = 1 - \frac{840}{11880} = 0.929 . \]</span></p>
+</div>
 </div>
 </div>
 <div id="P2-long" class="section level2 unnumbered">
@@ -304,26 +376,51 @@ display: none !important;
 <p><strong>B1</strong> Starting from just the three probability axioms, prove the following statements:</p>
 <div class="subq">
 <p><strong>(a)</strong> <span class="math inline">\(\mathbb P(\varnothing) = 0\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> As always, we seek a disjoint union, to allow us to use Axiom 3.</p>
+<p>Let <span class="math inline">\(A\)</span> be any event (such as <span class="math inline">\(A = \varnothing\)</span> or <span class="math inline">\(A = \Omega\)</span>). Then <span class="math inline">\(A \cup \varnothing = A\)</span>, and the union is disjoint – since <span class="math inline">\(\varnothing\)</span> contains no sample points, it certainly can’t contain any sample points that are also in <span class="math inline">\(A\)</span>. Then applying Axiom 3, we get <span class="math inline">\(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\)</span>. Subtracting <span class="math inline">\(\mathbb P(A)\)</span> from both sides gives the result.</p>
+<p><em>Alternatively</em>, if you prove part (b) first, you can apply that with <span class="math inline">\(A = \Omega\)</span>. Since <span class="math inline">\(\Omega^\mathsf{c}= \varnothing\)</span> and Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, the result follows.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> <span class="math inline">\(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> A very useful and relevant disjoint union is <span class="math inline">\(A \cup A^\mathsf{c}= \Omega\)</span>. Applying Axiom 3 gives us <span class="math inline">\(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = \mathbb P(\Omega)\)</span>. But Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, so <span class="math inline">\(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = 1\)</span>. Rearranging gives the result.</p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>B2.</strong> Suppose we pick a number at random from the set <span class="math inline">\(\{1, 2, \dots, 2021\}\)</span>.</p>
 <div class="subq">
 <p><strong>(a)</strong> What is the probability that the number is divisible by 5?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The sample space is <span class="math inline">\(\Omega = \{1, 2, \dots, 2021\}\)</span>, and <span class="math inline">\(A\)</span> is the set of numbers up to 2021 that are divisible by 5. Clearly <span class="math inline">\(|\Omega| = 2021\)</span>. Further, <span class="math inline">\(|A|\)</span> is the largest integer no bigger than <span class="math inline">\(\frac{2021}{5} = 404.2\)</span>, which is 404, as this is how many times 5 “goes into” 2021. Hence
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2021} = 0.1999 , \]</span>
+just a tiny bit smaller than <span class="math inline">\(\frac{1}{5}\)</span>.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> What is the probability the number is divisible by 5 or by 7?</p>
+<div class="myanswers">
+<p><em>Solution.</em> With the same <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(A\)</span>, we now have <span class="math inline">\(B\)</span> being the numbers up to 2021 divisible by <span class="math inline">\(7\)</span>; so we’re looking for <span class="math inline">\(\mathbb P(A \cup B)\)</span>. As before, <span class="math inline">\(|B|\)</span> is the largest integer no bigger that <span class="math inline">\(\frac{2021}{7} = 288.7\)</span>, which is <span class="math inline">\(288\)</span>. So
+<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \mathbb P(A\cap B) . \]</span>
+Here, <span class="math inline">\(A \cap B\)</span> is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by <span class="math inline">\(5 \times 7 = 35\)</span>. Then <span class="math inline">\(|A \cap B|\)</span> is <span class="math inline">\(\frac{2021}{35} = 57.7\)</span> rounded down. So finally, we have
+<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \frac{57}{2021} = \frac{635}{2021} = 0.314. \]</span></p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>B3.</strong> In this question, you will have to use the standard two-event form of the addition rule for unions
 <span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span></p>
+<p><em>[<strong>Update:</strong> This question has been edited to provide extra hints.]</em></p>
 <div class="subq">
 <p><strong>(a)</strong> Using the two-event addition rule, show that
 <span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> As with the Cauchy–Schwarz question from Problem Sheet 1, the key is to make a good choice for what <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> should be. This time, <span class="math inline">\(A = C\)</span> and <span class="math inline">\(D \cup E\)</span> will work well, since <span class="math inline">\(C \cup (D \cup E) = C \cup D \cup E\)</span>. (You can call this “associativity”, is you like.) Making that substitution immediately gives us
+<span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]</span>
+as required.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Using the two-event addition rule and the distributive law, or otherwise, prove the three-event form of the addition rule for unions:
@@ -331,33 +428,107 @@ display: none !important;
   \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
   - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
 \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let’s take the three terms on the right of the equation from part (a) separately.</p>
+<p>The first term is <span class="math inline">\(\mathbb P(C)\)</span>, which is fine as it is.</p>
+<p>The second term is <span class="math inline">\(\mathbb P(D \cup E)\)</span>. This is the probability of the union of two events, so we can use addition rule for the union of two events to get
+<span class="math display">\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cup E) . \]</span></p>
+<p>The third term is <span class="math inline">\(\mathbb P\big(C \cap (D \cup E)\big)\)</span>. If we use the distributive law, as suggested in the question, we get <span class="math inline">\(C \cap (D \cup E) = (C \cap D) \cup (C\cap E)\)</span>, so we want to find <span class="math inline">\(\mathbb P\big((C \cap D) \cup (C\cap E)\big)\)</span>. But this is another union of two events again, this time with <span class="math inline">\(A = C \cap D\)</span> and <span class="math inline">\(B = C \cap E\)</span>. So the addition rule gives
+<span class="math display">\[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]</span>
+since <span class="math inline">\((C \cap D) \cap (C \cap E) = C \cap D \cap E\)</span>.</p>
+<p>Finally, we put this all together, and get
+<span class="math display">\[
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
+  - \mathbb P(C \cap D) - \big(\mathbb P(C \cap E) + \mathbb P(D \cap E) - \mathbb P(C \cap D \cap E)\big) ,
+\]</span>
+which, after taking the minus sign inside the last bracket, is what we wanted.</p>
 </div>
-<p><em>[<strong>Update:</strong> This question has been edited to provide extra hints.]</em></p>
+</div>
 </div>
 <div class="myq">
 <p><strong>B4.</strong> Eight friends are about to sit down at random at a round table. Find the probability that</p>
 <div class="subq">
 <p><strong>(a)</strong> Ashley and Brook sit next to each other, with Chris directly opposite Brook;</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let <span class="math inline">\(\Omega\)</span> be the number of ways the friends can sit around the table. This is an ordering problem, so <span class="math inline">\(\Omega = 8!\)</span>.</p>
+<p>Let <span class="math inline">\(A\)</span> be the event in the question. What is <span class="math inline">\(|A|\)</span>? Well,</p>
+<ul>
+<li>Ashley can sit anywhere, so has 8 choices of seat.</li>
+<li>Brook can sit either directly to Ashley’s left or directly to Ashley’s right, so has 2 choices of seat.</li>
+<li>Chris must sit directly opposite Brook, so only has 1 choice of seat.</li>
+<li>The remaining five friends must fill up the remaining seats, so have 5, 4, 3, 2, and 1 choices respectively.</li>
+</ul>
+<p>Hence <span class="math inline">\(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. Thus we get
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 2 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]</span></p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> neither Ashley, Brook nor Chris sit next to each other.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The sample space <span class="math inline">\(\Omega\)</span> is as before. Let’s count the outcomes in <span class="math inline">\(B\)</span>, the event in the question.</p>
+<ul>
+<li>Ashley can sit anywhere, so has 8 choices of seat.</li>
+<li>Chris’s number of choices will depend on where Brook sits, so we’ll have to count their choices together.
+<ul>
+<li>If Brook sits next-but-one two Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.</li>
+<li>If Brook does not sit next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.</li>
+</ul></li>
+<li>The remaining friends have 5, 4, 3, 2, and 1 choices again.</li>
+</ul>
+<p>Hence, <span class="math inline">\(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. So
+<span class="math display">\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]</span></p>
+<p><em>Alternatively</em>, last year a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.</p>
+<p>Ashley has 5 gaps to choose from, the Brook will have 6, then Chris will have 7, so the total number of ways they can push in is <span class="math inline">\(|\Omega| = 5 \times 6 \times 7\)</span>.</p>
+<p>To not sit next to each other, Ashley can push in any of the <span class="math inline">\(5\)</span> gaps, Brook only has <span class="math inline">\(6 - 2 = 4\)</span> choices (not in the gap directly to the left or right of Ashley), and Chris only has <span class="math inline">\(7 - 4 = 3\)</span> choices (not in the gaps directly to the left or right of Ashley not of Brook – these four gaps are distinct). Hence <span class="math inline">\(|B| = 5 \times 4 \times 3\)</span>, and we have
+<span class="math display">\[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]</span></p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>B5.</strong> Suppose your tutorial group contains 12 students – you and 11 others. The tutor wishes to choose 4 members of the group to present their work.</p>
 <div class="subq">
 <p><strong>(a)</strong> How many ways can the tutor choose the presentation group?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The tutor is sampling 4 items from 12, without replacement (the same person can’t be picked twice) and where the order doesn’t matter. So this is
+<span class="math display">\[ \binom{12}{4} = 495 . \]</span></p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> How many ways can the tutor choose the presentation group if you are one of the presenters?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Once the tutor has chosen you, she must pick 3 other students to complete the presentation group out of the other 11 students. So this is
+<span class="math display">\[ \binom{11}{3} = 165 . \]</span></p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> How many ways can the tutor choose the presentation group if you are <em>not</em> one of the presenters?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+If the tutor doesn’t chose you, she must pick all 4 presenters out of the other 11 students. So this is
+<span class="math display">\[ \binom{11}{4} = 330 . \]</span></p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(d)</strong> Pascal’s formula says that
 <span class="math display">\[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} . \]</span>
 Prove Pascal’s formula.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We’d like a “double-counting” argument, where we count the same number in two different ways. Let’s follow the breadcrumbs from the first three parts of the question.</p>
+<p>Suppose the tutorial group has <span class="math inline">\(n\)</span> students and there will be <span class="math inline">\(k\)</span> presenters. How many ways can the presentation group be chosen?</p>
+<p>One way is simply to say that this is <span class="math inline">\(\displaystyle\binom{n}{k}\)</span>.</p>
+<p>Another way is to separately count the presentation groups that do include you and the presentation groups that don’t include you, and add them up. The presentation groups including you require <span class="math inline">\(k-1\)</span> students from the other <span class="math inline">\(n -1\)</span>, which makes <span class="math inline">\(\binom{n-1}{k-1}\)</span>. The presentation groups not including you require all <span class="math inline">\(k\)</span> students from the other <span class="math inline">\(n-1\)</span>, which makes <span class="math inline">\(\binom{n-1}{k}\)</span>. In total, the number of presentation groups is
+<span class="math display">\[ \binom{n-1}{k-1} + \binom{n-1}{k} . \]</span></p>
+<p>Since we’ve counted the number of presentation groups in two different ways, these expressions must be equal.</p>
+<p><em>Alternatively</em>, you can prove algebraically that
+<span class="math display">\[  \frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots2\cdot1} = \frac{(n-1)(n-2)\cdots(n-k+1)}{(k-1)(k-2)\cdots2\cdot1} + \frac{(n-1)(n-2)\cdots(n-k)}{k(k-1)\cdots2\cdot1} \]</span>
+(start by making <span class="math inline">\(k!\)</span> the common denominator on the right), but I feel that’s against the spirit of the question.</p>
+</div>
 </div>
 </div>
 </div>
@@ -374,21 +545,41 @@ Your work will be marked by your tutor and returned on Monday 1 November, when s
 <p><strong>C1.</strong> Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be two events with <span class="math inline">\(\mathbb P(A) = 0.8\)</span> and <span class="math inline">\(\mathbb P(B) = 0.4\)</span>. The following questions concern the value of <span class="math inline">\(\mathbb P(A \cap B)\)</span>, the probability that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur.</p>
 <div class="subq">
 <p><strong>(a)</strong> Prove the upper bound <span class="math inline">\(\mathbb P(A \cap B) \leq 0.4\)</span>.</p>
+<div class="myanswers">
+<p><em>Hint.</em>
+Can you find an event <span class="math inline">\(C\)</span> with <span class="math inline">\(A \cap B \subset C\)</span> that will allow you to use the result <span class="math inline">\(\mathbb P(A \cap B) \leq C\)</span>?</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Prove that this upper bound can be achieved, by giving an example of a sample space <span class="math inline">\(\Omega\)</span>, a probability measure <span class="math inline">\(\mathbb P\)</span> and events <span class="math inline">\(A, B \subset \Omega\)</span> such that <span class="math inline">\(\mathbb P(A) = 0.8\)</span> and <span class="math inline">\(\mathbb P(B) = 0.4\)</span>, with equality <span class="math inline">\(\mathbb P(A \cap B) = 0.4\)</span> in the upper bound.</p>
+<div class="myanswers">
+<p><em>Hint.</em>
+Try a sample space with five outcomes <span class="math inline">\(\Omega = \{a,b,c,d,e\}\)</span> and the classical “equally likely” probability. How many elements are in <span class="math inline">\(A\)</span>? How many in <span class="math inline">\(B\)</span>? How many in the overlap <span class="math inline">\(A \cap B\)</span>?</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> Give a lower bound for <span class="math inline">\(\mathbb P(A \cap B)\)</span> – that is, prove that <span class="math inline">\(\mathbb P(A \cap B) \geq \text{something}\)</span> – and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can’t formally prove it.)</p>
+<div class="myanswers">
+<p><em>Hint.</em>
+Try the sample space with five-equally likely outcomes again. How small can you make the overlap <span class="math inline">\(A \cap B\)</span>?</p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>C2.</strong> A “random digit” is a number chosen at random from <span class="math inline">\(\{0, 1, \dots, 9\}\)</span>, each with equal probability. A statistician choses <span class="math inline">\(n\)</span> random digits.</p>
 <div class="subq">
 <p><strong>(a)</strong> For <span class="math inline">\(k = 0, 1, \dots, 9\)</span>, let <span class="math inline">\(A_k\)</span> be the event that all the digits are <span class="math inline">\(k\)</span> or smaller. What is the probability of <span class="math inline">\(A_k\)</span>, as a function of <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span>?</p>
+<div class="myanswers">
+<p><em>Hint.</em>
+What’s the sample space? Can you explain why <span class="math inline">\(|\Omega| = 10^n\)</span>? What about <span class="math inline">\(|A_k\)</span>|?</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Let <span class="math inline">\(B_k\)</span> be the event that the largest digit chosen is equal to <span class="math inline">\(k\)</span>. What is the probability of <span class="math inline">\(B_k\)</span>? Justify your answer carefully.</p>
+<div class="myanswers">
+<p><em>Hint.</em>
+Can you find a relationship linking <span class="math inline">\(A_{k-1}\)</span>, <span class="math inline">\(A_k\)</span>, and <span class="math inline">\(B_k\)</span>?</p>
+</div>
 </div>
 </div>
 </div>
@@ -398,16 +589,13 @@ Your work will be marked by your tutor and returned on Monday 1 November, when s
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
 <a href="S03-classical.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="S04-independence.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

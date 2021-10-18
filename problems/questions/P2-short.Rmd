@@ -1,62 +1,141 @@
-::: {.myq}
-**A1.** Suppose you toss a coin 10 times. What would you suggest for a sample space **(a)** if you only care about the total number of heads; **(b)** if you care about the result of every coin toss?
-:::
-
-
 :::: {.myq}
+**A1.** Suppose you toss a coin 10 times. What would you suggest for a sample space **(a)** if you only care about the total number of heads; **(b)** if you care about the result of every coin toss?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+
+**(a)** The number of heads can be any number from 0 to 10, so we should take $\Omega = \{0,1,2,\dots, 10\}$. (This sample space contains 11 sample outcomes that are not equally likely.)
+
+**(b)** The vector of coin outcomes will be something like $(\text{H}, \text{H}, \text{T}, \text{T}, \text{H}, \text{T}, \text{T}, \text{T}, \text{H}, \text{T})$. So our sample space $\Omega$ should be the set of all vectors of length 10 whose entries are either H, T; the notation $\Omega = \{\text{H}, \text{T}\}^{10}$ is sometimes used for this. (Note that, by the multiplication principle, this sample space contains $2^{10} = 1024$ sample outcomes that are equally likely.)
+:::
+::::
+
+
+::::: {.myq}
 **A2.** Let $A$, $B$ and $C$  be events in a sample space $\Omega$. Write the following events using only $A$, $B$, $C$ and the complement, intersection, and union operations.
 
-::: {.subq}
+:::: {.subq}
 **(a)** $C$ happens but $A$ doesn't.
-:::
 
-::: {.subq}
-**(b)** At least one of $A$, $B$ and $C$ happens.
-:::
-
-::: {.subq}
-**(c)** Exactly one of $B$ or $C$ happens.
-:::
-
-::: {.subq}
-**(d)** Exactly two of $A$, $B$ and $C$ happens.
+::: {.myanswers data-latex=""}
+*Solution.* This is "$C$ and not $A$": $C\cap A^{\mathsf{c}}$.
 :::
 ::::
 
+:::: {.subq}
+**(b)** At least one of $A$, $B$ and $C$ happens.
 
-:::: {.myq}
+::: {.myanswers data-latex=""}
+*Solution.* This is simply the union $A \cup B\cup C$.
+:::
+::::
+
+:::: {.subq}
+**(c)** Exactly one of $B$ or $C$ happens.
+
+::: {.myanswers data-latex=""}
+*Solution.* One way to write this is to split it up as "'$B$ but not $C$' or '$C$ but not $B$'", which is $(B \cap C^{\mathsf{c}}) \cup (B^{\mathsf{c}} \cap C)$.
+
+An alternative is to split it up as "'$B$ or $C$' but not 'both $B$ and $C$'", which is $(B \cup C) \cap (B\cap C)^{\mathsf{c}}$.
+
+You can check these are equal by (for example) using De Morgan's law and the distributive law to expand out the second version.
+:::
+::::
+
+:::: {.subq}
+**(d)** Exactly two of $A$, $B$ and $C$ happens.
+
+::: {.myanswers data-latex=""}
+*Solution.* I would split this up into "$A$ and $B$ but not $C$", "$A$ and $C$ but not $B$", and "$B$ and $C$ but not $A$" and take the union. This gives
+\[  (A \cap B \cap C^{\mathsf{c}}) \cup (A \cap B^{\mathsf{c}} \cap C) \cup (A^{\mathsf{c}} \cap B \cap C) . \]
+There are other equivalent formulations.
+:::
+::::
+:::::
+
+
+::::: {.myq}
 **A3.** Let $\Omega$ be a sample space with a probability measure $\mathbb P$, and let $A, B \subset \Omega$ be events. State, with brief explanations, whether the following statements are true or false:
 
-::: {.subq}
+:::: {.subq}
 **(a)** If $\mathbb P(A) \leq \mathbb P(B)$, then $A \subset B$.
-:::
-::: {.subq}
-**(b)** $\mathbb P(A \cap B) + \mathbb P(A \cap B^\comp) = \mathbb P(A)$.
-:::
-::: {.subq}
-**(c)** $\mathbb P(A \cup B) \leq \mathbb P(A)$
-:::
-::: {.subq}
-**(d)** If $A$ and $B$ are disjoint, then $\mathbb P((A \cup B)^\comp) = 1 - \mathbb P(A) - \mathbb P(B)$.
+
+::: {.myanswers data-latex=""}
+*Solution.* False. It is true that *if* $A \subset B$ *then* $\mathbb P(A) \leq \mathbb P(B)$, but here the implication is the wrong way around.
+
+For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,3\}$. Then $\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)$, but it's not true that $A \subset B$.
 :::
 ::::
 
-:::: {.myq}
+:::: {.subq}
+**(b)** $\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)$.
+
+::: {.myanswers data-latex=""}
+*Solution.* True. Note that $(A \cap B) \cup (A \cap B^{\mathsf{c}}) = A$ and that the union is disjoint. (Try drawing a Venn diagram, if this isn't obvious.) The result follows from applying Axiom 3.
+:::
+::::
+
+:::: {.subq}
+**(c)** $\mathbb P(A \cup B) \leq \mathbb P(A)$
+
+::: {.myanswers data-latex=""}
+*Solution.* False. On the contrary, $A \subset A \cup B$, so the inequality should be the other way round. The same $A$ and $B$ as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.
+:::
+::::
+
+:::: {.subq}
+**(d)** If $A$ and $B$ are disjoint, then $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)$.
+
+::: {.myanswers data-latex=""}
+*Solution.* True. From the complement rule, we have $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)$; then from the addition rule for disjoint unions we have $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)$. Putting these together gives the result.
+:::
+::::
+:::::
+
+::::: {.myq}
 **A4.** What is the value of the following expressions?
 
-::: {.subq}
+:::: {.subq}
 **(a)** $6!$
-:::
 
-::: {.subq}
-**(b)** $\ff{8}{4}$
-:::
-
-::: {.subq}
-**(c)** ${\displaystyle \binom{10}{4}}$
+::: {.myanswers data-latex=""}
+*Solution.* 
+\[ 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720. \]
 :::
 ::::
+
+<!--\[\newcommand{\ff}[2]{{#1}^{\underline{#2}}}
+  \newcommand{\comp}{\mathsf{c}} \] -->
+
+:::: {.subq}
+**(b)** $\ff{8}{4}$
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+\[ \ff{8}{4} = 8 \times 7 \times 6 \times 5 = 1680 \]
+:::
+::::
+
+:::: {.subq}
+**(c)** ${\displaystyle \binom{10}{4}}$
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+\[ \binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4\times 3\times 2\times 1} = 210 \]
+:::
+::::
+:::::
 
 :::: {.myq}
 **A5.** An urn contains 5 red balls and 7 blue balls. Four balls are drawn from the urn. What is the probability that at least one of the balls is red, if the balls are drawn **(a)** with replacement; **(b)** without replacement?
+
+::: {.myanswers data-latex=""}
+*Solution.* This is an "at least one" question, so it will be better to look at the complementary event $A^\comp$ that none of the four balls drawn are red -- that is, that they are all blue.
+
+**(a)** There are $|\Omega| = 12^4 = 20736$ ways to draw four balls with replacement. There are $|A^\comp| = 2401$ to draw all blue balls. So
+\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{|A^\comp|}{|\Omega|} = 1 - \frac{2041}{20736} = 0.884 . \]
+
+**(b)** There are $|\Omega| = \ff{12}{4} = 11880$ ways to draw four balls without replacement. There are $|A^\comp| = \ff{7}{4} = 840$ to draw all blue balls. So
+\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{|A^\comp|}{|\Omega|} = 1 - \frac{840}{11880} = 0.929 . \]
+:::
 ::::

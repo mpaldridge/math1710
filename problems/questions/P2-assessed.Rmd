@@ -1,27 +1,52 @@
-:::: {.myq}
+::::: {.myq}
 **C1.** Let $A$ and $B$ be two events with $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$. The following questions concern the value of $\mathbb P(A \cap B)$, the probability that both $A$ and $B$ occur.
 
-::: {.subq}
+:::: {.subq}
 **(a)** Prove the upper bound $\mathbb P(A \cap B) \leq 0.4$.
-:::
 
-::: {.subq}
-**(b)** Prove that this upper bound can be achieved, by giving an example of a sample space $\Omega$, a probability measure $\mathbb P$ and events $A, B \subset \Omega$ such that $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$, with equality  $\mathbb P(A \cap B) = 0.4$ in the upper bound.
-:::
-
-::: {.subq}
-**(c)** Give a lower bound for $\mathbb P(A \cap B)$ -- that is, prove that $\mathbb P(A \cap B) \geq \text{something}$ -- and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can't formally prove it.)
+::: {.myanswers data-latex=""}
+*Hint.*
+Can you find an event $C$ with $A \cap B \subset C$ that will allow you to use the result $\mathbb P(A \cap B) \leq C$?
 :::
 ::::
 
-:::: {.myq}
+:::: {.subq}
+**(b)** Prove that this upper bound can be achieved, by giving an example of a sample space $\Omega$, a probability measure $\mathbb P$ and events $A, B \subset \Omega$ such that $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$, with equality  $\mathbb P(A \cap B) = 0.4$ in the upper bound.
+
+::: {.myanswers data-latex=""}
+*Hint.*
+Try a sample space with five outcomes $\Omega = \{a,b,c,d,e\}$ and the classical "equally likely" probability. How many elements are in $A$? How many in $B$? How many in the overlap $A \cap B$?
+:::
+::::
+
+:::: {.subq}
+**(c)** Give a lower bound for $\mathbb P(A \cap B)$ -- that is, prove that $\mathbb P(A \cap B) \geq \text{something}$ -- and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can't formally prove it.)
+
+::: {.myanswers data-latex=""}
+*Hint.*
+Try the sample space with five-equally likely outcomes again. How small can you make the overlap $A \cap B$?
+:::
+::::
+:::::
+
+::::: {.myq}
 **C2.** A "random digit" is a number chosen at random from $\{0, 1, \dots, 9\}$, each with equal probability. A statistician choses $n$ random digits.
 
-::: {.subq}
+:::: {.subq}
 **(a)** For $k = 0, 1, \dots, 9$, let $A_k$ be the event that all the digits are $k$ or smaller. What is the probability of $A_k$, as a function of $k$ and $n$?
-:::
 
-::: {.subq}
-**(b)** Let $B_k$ be the event that the largest digit chosen is equal to $k$. What is the probability of $B_k$? Justify your answer carefully.
+::: {.myanswers data-latex=""}
+*Hint.*
+What's the sample space? Can you explain why $|\Omega| = 10^n$? What about $|A_k$|?
 :::
 ::::
+
+:::: {.subq}
+**(b)** Let $B_k$ be the event that the largest digit chosen is equal to $k$. What is the probability of $B_k$? Justify your answer carefully.
+
+::: {.myanswers data-latex=""}
+*Hint.*
+Can you find a relationship linking $A_{k-1}$, $A_k$, and $B_k$?
+:::
+::::
+:::::

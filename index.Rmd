@@ -12,6 +12,14 @@ url:    'https://mpaldridge.github.io/math1710/'
 # Schedule {.unnumbered}
 
 ::: {.mysched}
+**Week 4** (18--22 October):
+
+* [**Section 4:** Independence and conditional probability](#S04)
+* [**Problem Sheet 3:**](#P3) deadline for assessed questions: Monday 8 November
+* [**R Worksheet 4:** Plots I: making plots](#r-work)
+:::
+
+::: {.oldsched}
 **Week 3** (11--15 October):
 
 * [**Section 3:** Classical probability](#S03-classical)
