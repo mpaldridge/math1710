@@ -7,7 +7,7 @@
 ::: {.myanswers data-latex=""}
 *Solution.* As always, we seek a disjoint union, to allow us to use Axiom 3.
 
-Let $A$ be any event (such as $A = \varnothing$ or $A = \Omega$). Then $A \cup \varnothing = A$, and the union is disjoint -- since $\varnothing$ contains no sample points, it certainly can't contain any sample points that are also in $A$. Then applying Axiom 3, we get $\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)$. Subtracting $\mathbb P(A)$ from both sides gives the result.
+Let $A$ be any event (such as $A = \varnothing$ or $A = \Omega$, for example). Then $A \cup \varnothing = A$, and the union is disjoint -- since $\varnothing$ contains no sample points, it certainly can't contain any sample points that are also in $A$. Then applying Axiom 3, we get $\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)$. Subtracting $\mathbb P(A)$ from both sides gives the result.
 
 *Alternatively*, if you prove part (b) first, you can apply that with $A = \Omega$. Since $\Omega^\comp = \varnothing$ and Axiom 2 tells us that $\mathbb P(\Omega) = 1$, the result follows.
 :::
@@ -42,6 +42,7 @@ just a tiny bit smaller than $\frac{1}{5}$.
 ::: {.myanswers data-latex=""}
 *Solution.* With the same $\Omega$ and $A$, we now have $B$ being the numbers up to 2021 divisible by $7$; so we're looking for $\mathbb P(A \cup B)$. As before, $|B|$ is the largest integer no bigger that $\frac{2021}{7} = 288.7$, which is $288$. So
 \[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \mathbb P(A\cap B) . \]
+
 Here, $A \cap B$ is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by $5 \times 7 = 35$. Then $|A \cap B|$ is $\frac{2021}{35} = 57.7$ rounded down. So finally, we have
 \[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \frac{57}{2021} = \frac{635}{2021} = 0.314. \]
 :::
@@ -79,18 +80,19 @@ Let's take the three terms on the right of the equation from part (a) separately
 The first term is $\mathbb P(C)$, which is fine as it is.
 
 The second term is $\mathbb P(D \cup E)$. This is the probability of the union of two events, so we can use addition rule for the union of two events to get
-\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cup E) . \]
+\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E) . \]
 
 The third term is $\mathbb P\big(C \cap (D \cup E)\big)$. If we use the distributive law, as suggested in the question, we get $C \cap (D \cup E) = (C \cap D) \cup (C\cap E)$, so we want to find $\mathbb P\big((C \cap D) \cup (C\cap E)\big)$. But this is another union of two events again, this time with $A = C \cap D$ and $B = C \cap E$. So the addition rule gives
 \[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]
 since $(C \cap D) \cap (C \cap E) = C \cap D \cap E$.
 
 Finally, we put this all together, and get
-\[
-  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
-  - \mathbb P(C \cap D) - \big(\mathbb P(C \cap E) + \mathbb P(D \cap E) - \mathbb P(C \cap D \cap E)\big) ,
-\]
-which, after taking the minus sign inside the last bracket, is what we wanted.
+\begin{align*}
+  \mathbb P(C \cup D &\cup E) \\
+  &= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
+  &= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) . 
+\end{align*}
+which is what we wanted.
 :::
 ::::
 
@@ -111,7 +113,7 @@ Let $A$ be the event in the question. What is $|A|$? Well,
 * Ashley can sit anywhere, so has 8 choices of seat.
 * Brook can sit either directly to Ashley's left or directly to Ashley's right, so has 2 choices of seat.
 * Chris must sit directly opposite Brook, so only has 1 choice of seat.
-* The remaining five friends must fill up the remaining seats, so have 5, 4, 3, 2, and 1 choices respectively.
+* The remaining five friends can fill up the remaining seats however they like, so have 5, 4, 3, 2, and 1 choices respectively.
 
 Hence $|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1$. Thus we get
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
@@ -127,8 +129,9 @@ The sample space $\Omega$ is as before. Let's count the outcomes in $B$, the eve
 
 * Ashley can sit anywhere, so has 8 choices of seat.
 * Chris's number of choices will depend on where Brook sits, so we'll have to count their choices together.
+   * Brook cannot sit next to Ashley.
    * If Brook sits next-but-one to Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.
-   * If Brook does not sit next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.
+   * If Brook does sits neither next nor next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.
 * The remaining friends have 5, 4, 3, 2, and 1 choices again.
    
 Hence, $|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1$. So
@@ -136,9 +139,9 @@ Hence, $|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \time
 
 *Alternatively*, last year a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
 
-Ashley has 5 gaps to choose from, the Brook will have 6, then Chris will have 7, so the total number of ways they can push in is $|\Omega| = 5 \times 6 \times 7$.
+Ashley has 5 gaps to choose from, the Brook will have 6 (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is $|\Omega| = 5 \times 6 \times 7$.
 
-To not sit next to each other, Ashley can push in any of the $5$ gaps, Brook only has $6 - 2 = 4$ choices (not in the gap directly to the left or right of Ashley), and Chris only has $7 - 4 = 3$ choices (not in the gaps directly to the left or right of Ashley not of Brook -- these four gaps are distinct). Hence $|B| = 5 \times 4 \times 3$, and we have
+To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has $6 - 2 = 4$ choices (not in the gap directly to the left or right of Ashley), and Chris only has $7 - 4 = 3$ choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook -- these four gaps are distinct). Hence $|B| = 5 \times 4 \times 3$, and we have
 \[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]
 :::
 ::::
@@ -191,14 +194,14 @@ Suppose the tutorial group has $n$ students and there will be $k$ presenters. Ho
 
 One way is simply to say that this is $\displaystyle\binom{n}{k}$.
 
-Another way is to separately count the presentation groups that do include you and the presentation groups that don't include you, and add them up. The presentation groups including you require $k-1$ students from the other $n -1$, which makes $\binom{n-1}{k-1}$. The presentation groups not including you require all $k$ students from the other $n-1$, which makes $\binom{n-1}{k}$. In total, the number of presentation groups is
+Another way is to separately count the presentation groups that do include you and the presentation groups that don't include you, and add them together. The presentation groups including you require another $k-1$ presenters from the other $n -1$ students, which makes $\binom{n-1}{k-1}$. The presentation groups not including you require all $k$ presenters from the other $n-1$, which makes $\binom{n-1}{k}$. In total, the number of presentation groups is
 \[ \binom{n-1}{k-1} + \binom{n-1}{k} . \]
 
 Since we've counted the number of presentation groups in two different ways, these expressions must be equal.
 
 *Alternatively*, you can prove algebraically that
 \[  \frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots2\cdot1} = \frac{(n-1)(n-2)\cdots(n-k+1)}{(k-1)(k-2)\cdots2\cdot1} + \frac{(n-1)(n-2)\cdots(n-k)}{k(k-1)\cdots2\cdot1} \]
-(start by making $k!$ the common denominator on the right), but I feel that's against the spirit of the question.
+(start by making $k!$ the common denominator on the right), but I feel that's not in the spirit of the question.
 :::
 ::::
 :::::

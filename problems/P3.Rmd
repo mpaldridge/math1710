@@ -34,7 +34,7 @@ This is Problem Sheet 3. This problem sheet covers [Section 4](#S04-conditional)
 ::: {.mysummary}
 The last two questions are **assessed questions** (one available now on Section 4, and one to be added in Week 5 on Section 5). These two questions count for 3% of your final mark for this module.
 
-The deadline for submitting your solutions is **2pm on Monday 8 November** at the beginning of Week 5, although I strongly recommend completing and submitting your work during Week 4. Submission will be via Gradescope; submission will open on Monday 1 November.
+The deadline for submitting your solutions is **2pm on Monday 8 November** at the beginning of Week 7, although I strongly recommend completing and submitting your work during Week 6. Submission will be via Gradescope; submission will open on Monday 1 November.
 Your work will be marked by your tutor and returned on Monday 15 November, when solutions will also be made available.
 
 Both questions are "long questions", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 

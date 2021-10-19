@@ -378,7 +378,7 @@ There are other equivalent formulations.</p>
 <p><strong>(a)</strong> <span class="math inline">\(\mathbb P(\varnothing) = 0\)</span>.</p>
 <div class="myanswers">
 <p><em>Solution.</em> As always, we seek a disjoint union, to allow us to use Axiom 3.</p>
-<p>Let <span class="math inline">\(A\)</span> be any event (such as <span class="math inline">\(A = \varnothing\)</span> or <span class="math inline">\(A = \Omega\)</span>). Then <span class="math inline">\(A \cup \varnothing = A\)</span>, and the union is disjoint – since <span class="math inline">\(\varnothing\)</span> contains no sample points, it certainly can’t contain any sample points that are also in <span class="math inline">\(A\)</span>. Then applying Axiom 3, we get <span class="math inline">\(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\)</span>. Subtracting <span class="math inline">\(\mathbb P(A)\)</span> from both sides gives the result.</p>
+<p>Let <span class="math inline">\(A\)</span> be any event (such as <span class="math inline">\(A = \varnothing\)</span> or <span class="math inline">\(A = \Omega\)</span>, for example). Then <span class="math inline">\(A \cup \varnothing = A\)</span>, and the union is disjoint – since <span class="math inline">\(\varnothing\)</span> contains no sample points, it certainly can’t contain any sample points that are also in <span class="math inline">\(A\)</span>. Then applying Axiom 3, we get <span class="math inline">\(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\)</span>. Subtracting <span class="math inline">\(\mathbb P(A)\)</span> from both sides gives the result.</p>
 <p><em>Alternatively</em>, if you prove part (b) first, you can apply that with <span class="math inline">\(A = \Omega\)</span>. Since <span class="math inline">\(\Omega^\mathsf{c}= \varnothing\)</span> and Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, the result follows.</p>
 </div>
 </div>
@@ -403,8 +403,8 @@ just a tiny bit smaller than <span class="math inline">\(\frac{1}{5}\)</span>.</
 <p><strong>(b)</strong> What is the probability the number is divisible by 5 or by 7?</p>
 <div class="myanswers">
 <p><em>Solution.</em> With the same <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(A\)</span>, we now have <span class="math inline">\(B\)</span> being the numbers up to 2021 divisible by <span class="math inline">\(7\)</span>; so we’re looking for <span class="math inline">\(\mathbb P(A \cup B)\)</span>. As before, <span class="math inline">\(|B|\)</span> is the largest integer no bigger that <span class="math inline">\(\frac{2021}{7} = 288.7\)</span>, which is <span class="math inline">\(288\)</span>. So
-<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \mathbb P(A\cap B) . \]</span>
-Here, <span class="math inline">\(A \cap B\)</span> is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by <span class="math inline">\(5 \times 7 = 35\)</span>. Then <span class="math inline">\(|A \cap B|\)</span> is <span class="math inline">\(\frac{2021}{35} = 57.7\)</span> rounded down. So finally, we have
+<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \mathbb P(A\cap B) . \]</span></p>
+<p>Here, <span class="math inline">\(A \cap B\)</span> is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by <span class="math inline">\(5 \times 7 = 35\)</span>. Then <span class="math inline">\(|A \cap B|\)</span> is <span class="math inline">\(\frac{2021}{35} = 57.7\)</span> rounded down. So finally, we have
 <span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \frac{57}{2021} = \frac{635}{2021} = 0.314. \]</span></p>
 </div>
 </div>
@@ -433,16 +433,17 @@ as required.</p>
 Let’s take the three terms on the right of the equation from part (a) separately.</p>
 <p>The first term is <span class="math inline">\(\mathbb P(C)\)</span>, which is fine as it is.</p>
 <p>The second term is <span class="math inline">\(\mathbb P(D \cup E)\)</span>. This is the probability of the union of two events, so we can use addition rule for the union of two events to get
-<span class="math display">\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cup E) . \]</span></p>
+<span class="math display">\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E) . \]</span></p>
 <p>The third term is <span class="math inline">\(\mathbb P\big(C \cap (D \cup E)\big)\)</span>. If we use the distributive law, as suggested in the question, we get <span class="math inline">\(C \cap (D \cup E) = (C \cap D) \cup (C\cap E)\)</span>, so we want to find <span class="math inline">\(\mathbb P\big((C \cap D) \cup (C\cap E)\big)\)</span>. But this is another union of two events again, this time with <span class="math inline">\(A = C \cap D\)</span> and <span class="math inline">\(B = C \cap E\)</span>. So the addition rule gives
 <span class="math display">\[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]</span>
 since <span class="math inline">\((C \cap D) \cap (C \cap E) = C \cap D \cap E\)</span>.</p>
 <p>Finally, we put this all together, and get
-<span class="math display">\[
-  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
-  - \mathbb P(C \cap D) - \big(\mathbb P(C \cap E) + \mathbb P(D \cap E) - \mathbb P(C \cap D \cap E)\big) ,
-\]</span>
-which, after taking the minus sign inside the last bracket, is what we wanted.</p>
+<span class="math display">\[\begin{align*}
+  \mathbb P(C \cup D &amp;\cup E) \\
+  &amp;= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
+  &amp;= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) . 
+\end{align*}\]</span>
+which is what we wanted.</p>
 </div>
 </div>
 </div>
@@ -458,7 +459,7 @@ Let <span class="math inline">\(\Omega\)</span> be the number of ways the friend
 <li>Ashley can sit anywhere, so has 8 choices of seat.</li>
 <li>Brook can sit either directly to Ashley’s left or directly to Ashley’s right, so has 2 choices of seat.</li>
 <li>Chris must sit directly opposite Brook, so only has 1 choice of seat.</li>
-<li>The remaining five friends must fill up the remaining seats, so have 5, 4, 3, 2, and 1 choices respectively.</li>
+<li>The remaining five friends can fill up the remaining seats however they like, so have 5, 4, 3, 2, and 1 choices respectively.</li>
 </ul>
 <p>Hence <span class="math inline">\(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. Thus we get
 <span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]</span></p>
@@ -473,16 +474,17 @@ The sample space <span class="math inline">\(\Omega\)</span> is as before. Let�
 <li>Ashley can sit anywhere, so has 8 choices of seat.</li>
 <li>Chris’s number of choices will depend on where Brook sits, so we’ll have to count their choices together.
 <ul>
+<li>Brook cannot sit next to Ashley.</li>
 <li>If Brook sits next-but-one to Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.</li>
-<li>If Brook does not sit next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.</li>
+<li>If Brook does sits neither next nor next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.</li>
 </ul></li>
 <li>The remaining friends have 5, 4, 3, 2, and 1 choices again.</li>
 </ul>
 <p>Hence, <span class="math inline">\(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. So
 <span class="math display">\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]</span></p>
 <p><em>Alternatively</em>, last year a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.</p>
-<p>Ashley has 5 gaps to choose from, the Brook will have 6, then Chris will have 7, so the total number of ways they can push in is <span class="math inline">\(|\Omega| = 5 \times 6 \times 7\)</span>.</p>
-<p>To not sit next to each other, Ashley can push in any of the <span class="math inline">\(5\)</span> gaps, Brook only has <span class="math inline">\(6 - 2 = 4\)</span> choices (not in the gap directly to the left or right of Ashley), and Chris only has <span class="math inline">\(7 - 4 = 3\)</span> choices (not in the gaps directly to the left or right of Ashley not of Brook – these four gaps are distinct). Hence <span class="math inline">\(|B| = 5 \times 4 \times 3\)</span>, and we have
+<p>Ashley has 5 gaps to choose from, the Brook will have 6 (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is <span class="math inline">\(|\Omega| = 5 \times 6 \times 7\)</span>.</p>
+<p>To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has <span class="math inline">\(6 - 2 = 4\)</span> choices (not in the gap directly to the left or right of Ashley), and Chris only has <span class="math inline">\(7 - 4 = 3\)</span> choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook – these four gaps are distinct). Hence <span class="math inline">\(|B| = 5 \times 4 \times 3\)</span>, and we have
 <span class="math display">\[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]</span></p>
 </div>
 </div>
@@ -522,12 +524,12 @@ Prove Pascal’s formula.</p>
 We’d like a “double-counting” argument, where we count the same number in two different ways. Let’s follow the breadcrumbs from the first three parts of the question.</p>
 <p>Suppose the tutorial group has <span class="math inline">\(n\)</span> students and there will be <span class="math inline">\(k\)</span> presenters. How many ways can the presentation group be chosen?</p>
 <p>One way is simply to say that this is <span class="math inline">\(\displaystyle\binom{n}{k}\)</span>.</p>
-<p>Another way is to separately count the presentation groups that do include you and the presentation groups that don’t include you, and add them up. The presentation groups including you require <span class="math inline">\(k-1\)</span> students from the other <span class="math inline">\(n -1\)</span>, which makes <span class="math inline">\(\binom{n-1}{k-1}\)</span>. The presentation groups not including you require all <span class="math inline">\(k\)</span> students from the other <span class="math inline">\(n-1\)</span>, which makes <span class="math inline">\(\binom{n-1}{k}\)</span>. In total, the number of presentation groups is
+<p>Another way is to separately count the presentation groups that do include you and the presentation groups that don’t include you, and add them together. The presentation groups including you require another <span class="math inline">\(k-1\)</span> presenters from the other <span class="math inline">\(n -1\)</span> students, which makes <span class="math inline">\(\binom{n-1}{k-1}\)</span>. The presentation groups not including you require all <span class="math inline">\(k\)</span> presenters from the other <span class="math inline">\(n-1\)</span>, which makes <span class="math inline">\(\binom{n-1}{k}\)</span>. In total, the number of presentation groups is
 <span class="math display">\[ \binom{n-1}{k-1} + \binom{n-1}{k} . \]</span></p>
 <p>Since we’ve counted the number of presentation groups in two different ways, these expressions must be equal.</p>
 <p><em>Alternatively</em>, you can prove algebraically that
 <span class="math display">\[  \frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots2\cdot1} = \frac{(n-1)(n-2)\cdots(n-k+1)}{(k-1)(k-2)\cdots2\cdot1} + \frac{(n-1)(n-2)\cdots(n-k)}{k(k-1)\cdots2\cdot1} \]</span>
-(start by making <span class="math inline">\(k!\)</span> the common denominator on the right), but I feel that’s against the spirit of the question.</p>
+(start by making <span class="math inline">\(k!\)</span> the common denominator on the right), but I feel that’s not in the spirit of the question.</p>
 </div>
 </div>
 </div>
