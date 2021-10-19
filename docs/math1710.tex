@@ -1819,7 +1819,7 @@ This is only the most tiny, microscopic fraction of \(52!\). So every time you h
 \section{Sampling without replacement in any order}\label{combinations}}
 
 \begin{example}
-\protect\hypertarget{exm:lotto}{}\label{exm:lotto}\emph{In ``Lotto'', the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?}
+\protect\hypertarget{exm:lotto}{}\label{exm:lotto}\emph{In ``Lotto'', the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers match the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?}
 
 Here, \(\Omega\) is the set of all possible sets of 6 winning numbers, and \(A\) is the set of numbers on your ticket. Clearly \(|A| = 1\), but what is \(|\Omega|\)?
 
@@ -2131,7 +2131,7 @@ Here, \(A \cap B\) is the numbers divisible by both 5 and 7, which is precisely 
 \[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
 
 \begin{myanswers}
-\emph{Solution.} As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what \(A\) and \(B\) should be. This time, \(A = C\) and \(D \cup E\) will work well, since \(C \cup (D \cup E) = C \cup D \cup E\). (You can call this ``associativity'', is you like.) Making that substitution immediately gives us
+\emph{Solution.} As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what \(A\) and \(B\) should be. This time, \(A = C\) and \(D \cup E\) will work well, since \(C \cup (D \cup E) = C \cup D \cup E\). (You can call this ``associativity'', if you like.) Making that substitution immediately gives us
 \[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]
 as required.
 
@@ -2188,7 +2188,7 @@ Let \(A\) be the event in the question. What is \(|A|\)? Well,
 \end{itemize}
 
 Hence \(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\). Thus we get
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 2 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
 
 \end{myanswers}
 
@@ -2208,7 +2208,7 @@ The sample space \(\Omega\) is as before. Let's count the outcomes in \(B\), the
   \begin{itemize}
   \tightlist
   \item
-    If Brook sits next-but-one two Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.
+    If Brook sits next-but-one to Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.
   \item
     If Brook does not sit next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.
   \end{itemize}
