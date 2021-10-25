@@ -12,7 +12,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 # Schedule {.unnumbered}
 
 ::: {.oldsched}
-**Week 4** (18--22 October):
+**Week 5** (25--29 October):
 
 * [**Section 5:** Discrete  random variables](#S05-discrete-rv)
 * [**Problem Sheet 3:**](#P3) deadline for assessed questions: Monday 8 November
