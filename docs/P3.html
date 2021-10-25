@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="S04-conditional.html"/>
+<link rel="prev" href="S05-discrete-rv.html"/>
 <link rel="next" href="R.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -214,6 +214,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.6" data-path="S04-conditional.html"><a href="S04-conditional.html#screening"><i class="fa fa-check"></i><b>4.6</b> Diagnostic testing</a></li>
 <li class="chapter" data-level="" data-path="S04-conditional.html"><a href="S04-conditional.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html"><i class="fa fa-check"></i><b>5</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#rv"><i class="fa fa-check"></i><b>5.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="5.2" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>5.2</b> Probability mass functions</a></li>
+<li class="chapter" data-level="5.3" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#expectation"><i class="fa fa-check"></i><b>5.3</b> Expectation</a></li>
+<li class="chapter" data-level="5.4" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#functions"><i class="fa fa-check"></i><b>5.4</b> Functions of random variables</a></li>
+<li class="chapter" data-level="5.5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#variance"><i class="fa fa-check"></i><b>5.5</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#summary-05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
@@ -262,7 +271,7 @@ display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>This is Problem Sheet 3. This problem sheet covers <a href="S04-conditional.html#S04-conditional">Section 4</a> of the notes and in Week 5 questions will be added on Section 5. You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by <strong>2pm on Monday 8 November</strong>.</p>
+<p>This is Problem Sheet 3. This problem sheet covers <a href="S04-conditional.html#S04-conditional">Sections 4</a> and <a href="S05-discrete-rv.html#S05-discrete-rv">5</a>. You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by <strong>2pm on Monday 8 November</strong>.</p>
 </div>
 <div id="P3-short" class="section level2 unnumbered">
 <h2>A: Short questions</h2>
@@ -292,6 +301,71 @@ display: none !important;
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Are <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> mutually independent?</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(-1\)</span></th>
+<th align="center"><span class="math inline">\(0\)</span></th>
+<th align="center"><span class="math inline">\(0.5\)</span></th>
+<th align="center"><span class="math inline">\(1\)</span></th>
+<th align="center"><span class="math inline">\(2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.3\)</span></td>
+<td align="center"><span class="math inline">\(0.3\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Find the expectation and variance of <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(1\)</span></th>
+<th align="center"><span class="math inline">\(2\)</span></th>
+<th align="center"><span class="math inline">\(4\)</span></th>
+<th align="center"><span class="math inline">\(5\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(b\)</span></td>
+<td align="center"><span class="math inline">\(c\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>This random variable has <span class="math inline">\(\mathbb EX = 4.3\)</span> and <span class="math inline">\(\operatorname{Var}(X) = 4.61\)</span>. Find the values of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>.</p>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> The temperature <span class="math inline">\(T_C\)</span> measured in degrees Celsius can be converted to a temperature <span class="math inline">\(T_F\)</span> in degrees Fahrenheit using the formula <span class="math inline">\(T_F = \frac95 T_C + 32\)</span>.</p>
+<p>The average daily maximum temperature in Leeds in July is 19.0 °C with a variance of 10.4 °C<sup>2</sup>.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the average daily maximum temperature in degrees Fahrenheit?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is the variance of the daily maximum temperature in degrees Fahrenheit squared?</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> The average temperature in March is 1.8 °C higher than in February. What is this average difference in degrees Fahrenheit?</p>
 </div>
 </div>
 </div>
@@ -332,11 +406,32 @@ display: none !important;
 <p><strong>(b)</strong> If a soldier responds “Yes”, what is the probability that the soldier has taken illegal drugs in the past 12 months.</p>
 </div>
 </div>
+<div class="myq">
+<p><strong>B5.</strong> Let <span class="math inline">\(X\)</span> be a random variable. Prove that</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\operatorname{Var}(aX) = a^2 \operatorname{Var}(X)\)</span>;</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\operatorname{Var}(X+b) = \operatorname{Var}(X)\)</span>.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B6.</strong> A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If your first Head comes on the <span class="math inline">\(n\)</span>th coin toss, then you win <span class="math inline">\(2^n\)</span> pounds.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the probability that the first Head is seen on the <span class="math inline">\(n\)</span>th toss of the coin?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Show that the expected winnings from playing this game are infinite.</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> The “St Petersburg paradox” refers to the fact that, despite the fact that the expected winnings from this game are infinite, hardly anybody would be prepared to play this game for, say, £100, and certainly not for £1000. Discuss a few possible “resolutions” to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.</p>
+</div>
+</div>
 </div>
 <div id="P3-assessed" class="section level2 unnumbered">
 <h2>C: Assessed questions</h2>
 <div class="mysummary">
-<p>The last two questions are <strong>assessed questions</strong> (one available now on Section 4, and one to be added in Week 5 on Section 5). These two questions count for 3% of your final mark for this module.</p>
+<p>The last two questions are <strong>assessed questions</strong>. These two questions count for 3% of your final mark for this module.</p>
 <p>The deadline for submitting your solutions is <strong>2pm on Monday 8 November</strong> at the beginning of Week 7, although I strongly recommend completing and submitting your work during Week 6. Submission will be via Gradescope; submission will open on Monday 1 November.
 Your work will be marked by your tutor and returned on Monday 15 November, when solutions will also be made available.</p>
 <p>Both questions are “long questions”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
@@ -345,10 +440,24 @@ Your work will be marked by your tutor and returned on Monday 15 November, when 
 <div class="myq">
 <p><strong>C1.</strong> A computer spam filter is 98% effective at sending spam emails to my junk folder, but will also incorrectly send 1% of legitimate emails to my junk folder. Suppose that 1 in 10 emails are spam. What proportion of emails in my junk folder are actually legitimate emails?</p>
 </div>
+<div class="myq">
+<p><strong>C2.</strong> A random variable <span class="math inline">\(X\)</span> is said to follow the <em>discrete uniform distribution</em> on <span class="math inline">\(\{1, 2, \dots, n\}\)</span> if each value <span class="math inline">\(x\)</span> in that set <span class="math inline">\(\{1,2,\dots,n\}\)</span> is equally likely.</p>
+<div class="subq">
+<p><strong>(a)</strong> Show that the expectation of <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb EX = \displaystyle\frac{n+1}{2}\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Find the variance of <span class="math inline">\(X\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Let <span class="math inline">\(Y\)</span> be a discrete uniform distribution on <span class="math inline">\(\{a, a+1, a+2, \dots, b-1, b\}\)</span>, for integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> with <span class="math inline">\(a&lt;b\)</span>. Using parts <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, but without calculating any sums directly, find the expectation and variance of <span class="math inline">\(Y\)</span>.</p>
+</div>
+<p>You may use without proof the standard results
+<span class="math display">\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]</span></p>
+</div>
 </div>
 <div id="P3-short-sols" class="section level2 unnumbered">
 <h2>Solutions to short questions</h2>
-<p><strong>A1.</strong> (c) and (e) are independent. <strong>A2.</strong> (a) Yes (b) No</p>
+<p><strong>A1.</strong> (c) and (e) are independent. <strong>A2.</strong> (a) Yes (b) No <strong>A3.</strong> 0.5 and 0.6 <strong>A4.</strong> <span class="math inline">\(a = 9, b = 0.5, c = 0.1\)</span> <strong>A5</strong> (a) 66.2 °F (b) 33.7 °F<sup>2</sup> (c) 3.2 °F</p>
 
 </div>
 </div>
@@ -360,7 +469,7 @@ Your work will be marked by your tutor and returned on Monday 15 November, when 
           </div>
         </div>
       </div>
-<a href="S04-conditional.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="S05-discrete-rv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

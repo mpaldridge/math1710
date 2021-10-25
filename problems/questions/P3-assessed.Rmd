@@ -1,3 +1,23 @@
 :::: {.myq}
 **C1.** A computer spam filter is 98% effective at sending spam emails to my junk folder, but will also incorrectly send 1% of legitimate emails to my junk folder. Suppose that 1 in 10 emails are spam. What proportion of emails in my junk folder are actually legitimate emails? 
 ::::
+
+
+:::: {.myq}
+**C2.** A random variable $X$ is said to follow the *discrete uniform distribution* on $\{1, 2, \dots, n\}$ if each value $x$ in that set $\{1,2,\dots,n\}$ is equally likely.
+
+::: {.subq}
+**(a)** Show that the expectation of $X$ is $\mathbb EX = \displaystyle\frac{n+1}{2}$.
+:::
+
+::: {.subq}
+**(b)** Find the variance of $X$.
+:::
+
+::: {.subq}
+**(c)** Let $Y$ be a discrete uniform distribution on $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts $a$ and $b$, but without calculating any sums directly, find the expectation and variance of $Y$.
+:::
+
+You may use without proof the standard results
+\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]
+::::

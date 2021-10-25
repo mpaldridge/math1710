@@ -38,3 +38,31 @@
 **(b)** If a soldier responds "Yes", what is the probability that the soldier has taken illegal drugs in the past 12 months.
 :::
 ::::
+
+:::: {.myq}
+**B5.** Let $X$ be a random variable. Prove that
+
+::: {.subq}
+**(a)** $\Var(aX) = a^2 \Var(X)$;
+:::
+
+::: {.subq}
+**(b)** $\Var(X+b) = \Var(X)$.
+:::
+::::
+
+:::: {.myq}
+**B6.** A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If your first Head comes on the $n$th coin toss, then you win $2^n$ pounds.
+
+::: {.subq}
+**(a)** What is the probability that the first Head is seen on the $n$th toss of the coin?
+:::
+
+::: {.subq}
+**(b)** Show that the expected winnings from playing this game are infinite.
+:::
+
+::: {.subq}
+**(c)** The "St Petersburg paradox" refers to the fact that, despite the fact that the expected winnings from this game are infinite, hardly anybody would be prepared to play this game for, say, £100, and certainly not for £1000. Discuss a few possible "resolutions" to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.
+:::
+::::

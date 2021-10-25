@@ -36,3 +36,41 @@ Consider rolling two dice independently. Let $A$ be the event that the first rol
 **(b)** Are $A$, $B$, and $C$ mutually independent?
 :::
 ::::
+
+:::: {.myq}
+**A3.** Consider the random variable $X$ with the following PMF:
+
+| $x$ | $-1$ | $0$ | $0.5$ | $1$ | $2$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| $p(x)$ | $0.1$ | $0.3$ | $0.3$ | $0.2$ | $0.1$ |
+
+Find the expectation and variance of $X$.
+::::
+
+:::: {.myq}
+**A4.** Consider the random variable $X$ with the following PMF:
+
+| $x$ | $1$ | $2$ | $4$ | $5$ | $a$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| $p(x)$ | $0.1$ | $0.2$ | $0.1$ | $b$ | $c$ |
+
+This random variable has $\mathbb EX = 4.3$ and $\Var(X) = 4.61$. Find the values of $a$, $b$ and $c$.
+::::
+
+:::: {.myq}
+**A5.** The temperature $T_C$ measured in degrees Celsius can be converted to a temperature $T_F$ in degrees Fahrenheit using the formula $T_F = \frac95 T_C + 32$.
+
+The average daily maximum temperature in Leeds in July is 19.0 °C with a variance of 10.4 °C^2^.
+
+::: {.subq}
+**(a)** What is the average daily maximum temperature in degrees Fahrenheit?
+:::
+
+::: {.subq}
+**(b)** What is the variance of the daily maximum temperature in degrees Fahrenheit squared?
+:::
+
+::: {.subq}
+**(c)** The average temperature in March is 1.8 °C higher than in February. What is this average difference in degrees Fahrenheit?
+:::
+::::

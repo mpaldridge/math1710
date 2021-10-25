@@ -157,6 +157,18 @@
 \begin{itemize}
 \tightlist
 \item
+  \protect\hyperlink{S05-discrete-rv}{\textbf{Section 5:} Discrete random variables}
+\item
+  \protect\hyperlink{P3}{\textbf{Problem Sheet 3:}} deadline for assessed questions: Monday 8 November
+\item
+  \protect\hyperlink{r-work}{\textbf{R Worksheet 5:} Plots II: Making plots better} deadline for assessed questions: Monday 1 November
+\end{itemize}
+
+\textbf{Week 4} (18--22 October):
+
+\begin{itemize}
+\tightlist
+\item
   \protect\hyperlink{S04-conditional}{\textbf{Section 4:} Independence and conditional probability}
 \item
   \protect\hyperlink{P3}{\textbf{Problem Sheet 3:}} deadline for assessed questions: Monday 8 November
@@ -2657,13 +2669,422 @@ The key point is that the disease is rare -- only 2\% of people have it. So even
   Bayes' theorem says that \({\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }\).
 \end{itemize}
 
+\hypertarget{S05-discrete-rv}{%
+\chapter{Discrete random variables}\label{S05-discrete-rv}}
+
+\hypertarget{rv}{%
+\section{What is a random variable?}\label{rv}}
+
+Let's consider again the case of rolling two dice. We know that the sample space is the set of pairs of numbers between 1 and 6
+\[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\} , \]
+which is equipped with the classical probability measure
+\[ \mathbb P(A) = \frac{|A|}{36} . \]
+
+But if we are rolling the two dice as part of a board game, we might only care about the total score on the two dice, rather than the two individual dice scores. In this case, we could write \(X\) for the score on the first dice plus the score on the second dice -- that is,
+\[ X(\boldsymbol\omega) = \omega_1 + \omega_2 . \]
+
+If we want to know the probability we roll a total of 7, say, then we could write this as \(\mathbb P(A)\) where
+\[ A = \{ \boldsymbol\omega : \omega_1 + \omega_2 = 7\}  \]
+is the set of dice rolls with total 7.
+But it might just be easier to write this as \(\mathbb P(X = 7)\). We might also be interested in other things about the total score \(X\), like what the average total score is.
+
+Here, \(X\) is an example of what we call a \textbf{random variable}. A random variable can be thought of as a numerical summary of an experiment (like the total summarising the two individual dice rolls). But by considering the random variable directly, it often means we don't have to worry so much about exactly what the sample space is, or what probability measure is being used, or which sample outcomes are in a particular event. This often makes our life easier when thinking about probability problems.
+
+Random variables are typically given capital letters from late in the alphabet, like \(X\), \(Y\), \(Z\). Values that those random variables take are often given lower-case letters, like \(x\), \(y\), \(z\).
+
+The formal definition of a random variable is as a function that turns the outcome into this numerical summary.
+
+\begin{definition}
+Let \(\Omega\) be a sample space. Then a \textbf{random variable} is a function \(X\) from \(\Omega\) to the real numbers \(\mathbb R\); that is, to each sample outcome \(\omega\) it assigns a real number \(X(\omega)\).
+
+Expressions like \(\mathbb P(X = x)\) should be understood as representing more formal probability
+\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) . \]
+\end{definition}
+
+This formal definition of a random variable as a function was summarised by my own first-year probability lecturer as ``There's only two things you need to know about the definition of a random variable: first, it's not random; second, it's not a variable.''
+
+However, the way we actually \emph{think} about random variables \emph{is} as random and is as variables. In this more informal way of thinking, a random variable is a variable that can take different values with different probabilities -- just as the total of the two dice can be 2 with probability \(\frac{1}{36}\), or the value 3 with probability \(\frac{2}{36}\), and so on.
+
+\newcommand{\Range}{\operatorname{Range}}
+
+\begin{definition}
+The set of values a random variable \(X\) can take is called its \textbf{range}, \(\operatorname{Range}(X) = \{X(\omega) : \omega \in \Omega \}\).
+\end{definition}
+
+So, for example, the range of the dice sum \(X\) is \(\operatorname{Range}(X) = \{2, 3, \dots, 12\}\).
+
+Random variables that we will consider in this module will be one of two types:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Discrete random variables} have a range that is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers, for example). Discrete random variables can be used as models for ``count data''.
+\item
+  \textbf{Continuous random variables} have a range that is uncountably infinite (like the real numbers, the positive real numbers, or the interval \([0,1]\), for example). Continuous random variables can be used as models for ``measurement data''.
+\end{itemize}
+
+In this section and the next two, we will look at discrete random variables; later in Section 8 and 9 we will look at continuous random variables.
+
+\hypertarget{pmf}{%
+\section{Probability mass functions}\label{pmf}}
+
+We now consider only discrete random variables \(X\), where the range \(\operatorname{Range}(X)\) is a finite or countably infinite set. In this case, Axiom 3 tells us that for any set \(A\), we have
+\[ \mathbb P(X \in A) = \sum_{x \in A} \mathbb P(X = x) . \]
+(Recall that the symbol \(\in\) means ``is an element of'', or just ``is in'' for short.)
+So to fully understand a discrete random variable \(X\), we need only understand the probabilities \(\mathbb P(X = x)\). These are captured by the probability mass function.
+
+\begin{definition}
+For a discrete random variable \(X\), its \textbf{probability mass function} (or \textbf{PMF}) is the function \(p_X\) where
+\[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \operatorname{Range}(X)$.} \]
+(When the random variable is obvious from context, we'll just write \(p(x)\) without the subscript.)
+\end{definition}
+
+The key is that, once we are thinking in terms of a random variable via its PMF, we can (usually) stop worrying to much about what the underlying sample space is and how the random variable acts on that space.
+
+\begin{example}
+Let \(X\) being the sum of two dice rolls. As this is a classical probability problem, the probability \(p(x)\) of rolling a total of \(x\) is \(n(x) / 36\), where \(n(x)\) is the number of ways of rolling a total of \(x\). So, for example, there is only one way \((1,1)\) of rolling a total of 2, so \(p(2) = \frac1{36}\), but there are 5 ways of rolling a 6: \((1,5), (2,4), (3, 3), (4, 2), (5, 1)\); so \(p(5) = \frac5{36}\).
+
+The PMF \(p\) of \(X\) is given by
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}@{}}
+\toprule
+\(x\) & \(2\) & \(3\) & \(4\) & \(5\) & \(6\) & \(7\) \\
+\midrule
+\endhead
+\(p(x)\) & \(\frac{1}{36}\) & \(\frac{2}{36}\) & \(\frac{3}{36}\) & \(\frac{4}{36}\) & \(\frac{5}{36}\) & \(\frac{6}{36}\) \\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}ccccccc@{}}
+\toprule
+\(x\) & \(\cdots\) & \(8\) & \(9\) & \(10\) & \(11\) & \(12\) \\
+\midrule
+\endhead
+\(p(x)\) & \(\cdots\) & \(\frac{5}{36}\) & \(\frac{4}{36}\) & \(\frac{3}{36}\) & \(\frac{2}{36}\) & \(\frac{1}{36}\) \\
+\bottomrule
+\end{longtable}
+
+\includegraphics{math1710_files/figure-latex/dice-pmf-1.pdf}
+\end{example}
+
+\begin{example}
+Consider tossing a biased coin, that is Heads with probability \(p\) and Tails with probability \(1-p\). Let \(X = 1\) if the coin lands Heads, and \(X = 0\) if the coin lands Tails. The PMF \(p_X\) of this random variable is given by
+\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]
+
+We could alternatively think of the same random variable as representing the result of an experiment, where \(X = 1\) represents a success, with probability \(p_X(1) = p\), and \(X = 0\) represents a failure, with probability \(p_X(0) = 1 - p\).
+
+A random variable \(X\) with this PMF is called a \textbf{Bernoulli trial} (or a ``Bernoulli random variable'', or is said to ``follow the Bernoulli distribution'' -- after the seventeenth-century Swiss mathematician \href{https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/}{Jacob Bernoulli}). We use the notation \(X \sim \text{Bern}(p)\) for short.
+\end{example}
+
+Note that since \(p(x) = \mathbb P(X = x)\) is a probability, we must have \(p(x) \geq 0\) for all \(x \in \operatorname{Range}(X)\). Further, we have
+\[ 1 = \mathbb P(\Omega) = \mathbb P\big(X \in \operatorname{Range}(X)\big) = \sum_{x \in \operatorname{Range}(X)} \mathbb P(X = x) = \sum_{x \in \operatorname{Range}(X)} p(x) . \]
+Hence we have the following:
+
+\begin{theorem}
+
+Let \(X\) be a discrete random variable, and let \(p_X\) be its PMF. Then
+
+\begin{itemize}
+\tightlist
+\item
+  \(p_X(x) \geq 0\) for all \(x\);
+\item
+  \({\displaystyle \sum_x p_X(x) = 1}\).
+\end{itemize}
+
+\end{theorem}
+
+Sometimes it is useful to know the probability a random variable \(X\) is less than some value \(x\). This is captured by the \textbf{cumulative distribution function} (or \textbf{CDF}) \(F_X\), where
+\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]
+
+\begin{example}
+Let \(X \sim \text{Bern}(p)\) be a Bernoulli random variable with success probability \(p\). Then its CDF \(F\) is
+\[ F(x) = \begin{cases} 0 & \text{for $x < 0$} \\
+                      1-p & \text{for $0 \leq x < 1$} \\
+                      1   & \text{for $x \geq 1$} . \end{cases} \]
+\end{example}
+
+\begin{example}
+If \(X\) is the sum of two dice rolls, then the CDF \(F\) is given by
+
+\begin{longtable}[]{@{}cccccccc@{}}
+\toprule
+\(x \in {}\) & \((-\infty, 2)\) & \([2,3)\) & \([3,4)\) & \([4,5)\) & \(\cdots\) & \([11,12)\) & \([12, \infty)\) \\
+\midrule
+\endhead
+\(F(x)\) & \(0\) & \(\frac{1}{36}\) & \(\frac{3}{36}\) & \(\frac{5}{36}\) & \(\cdots\) & \(\frac{35}{36}\) & \(1\) \\
+\bottomrule
+\end{longtable}
+
+\includegraphics{math1710_files/figure-latex/dice-cdf-1.pdf}
+
+Note that the CDF is a ``step function'' that starts at 0, then jumps up suddenly at each of the values \(2, 3, \dots, 12\), ending up at 1.
+\end{example}
+
+For any random variable \(X\) with CDF \(F\),
+
+\begin{itemize}
+\tightlist
+\item
+  if \(x\) is smaller than everything in the range of \(X\), then \(F(x) = 0\);
+\item
+  if \(x\) is greater than everything in the range of \(X\), then \(F(x) = 1\);
+\item
+  \(F(x)\) is increasing in \(x\).
+\end{itemize}
+
+\hypertarget{expectation}{%
+\section{Expectation}\label{expectation}}
+
+Often, we will be interested in the ``average'' value of a random variable -- for example, the average total from two dice rolls -- which represents what ``central'' values of the random variable. This average is called the ``expectation''.
+
+\begin{definition}
+Let \(\Omega\) be a finite or countably infinite sample space, \(\mathbb P\) be a probability measure on \(\Omega\), and \(X\) be a discrete random variable on \(\Omega\). Then the \textbf{expectation} (or \textbf{expected value}) of \(X\) is
+\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \mathbb P(\{\omega\}) . \]
+If \(p\) is the PMF of \(X\), then a more convenient formula is
+\[ \mathbb EX = \sum_{x \in \operatorname{Range}(X)} x\,p_X(x) . \]
+\end{definition}
+
+We get the second formula from the first by grouping together all outcomes \(\omega\) that lead to the same value \(x = X(\omega)\) of \(X\).
+
+Note that ``expectation'' is simply the name that mathematicians give to the value \(\mathbb EX = \sum_x x\, p(x)\). We don't necessarily ``expect'' to get the value \(\mathbb EX\) as the outcome in the normal English-language sense of the word ``expect''. (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don't ``expect'' to get the number 3.5 in a single roll of the dice!) We will see later that the the expectation can be interpreted as a sort of ``long-run mean outcome''.
+
+\begin{example}
+\emph{Let \(X \sim \text{Bern}(p)\) be a Bernoulli trial with success probability \(p\). What is the expectation \(\mathbb EX\)?}
+
+Using the second formula in the definition, we have
+\[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]
+\end{example}
+
+\begin{example}
+When \(X\) is the total of two dice rolls, the expectation is
+\begin{align*}
+  \mathbb EX &= \sum_{x \in \operatorname{Range}(X)} x\,p(x)  \\
+    &= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
+    &= \tfrac{252}{36} \\
+    &= 7 .
+\end{align*}
+\end{example}
+
+\hypertarget{functions}{%
+\section{Functions of random variables}\label{functions}}
+
+In previous examples, we looked at \(X\) being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total \(X\), like ``double the total and add 1'' \(Y = 2X + 1\), or ``the total minus 4, all squared'' \(Z = (X-4)^2\). (I'm not sure \emph{why} you'd care about these, but you could study them if you wanted to\ldots)
+
+\begin{example}
+
+Let \(Y = 2X - 1\). Then for each potential outcome \(x\) of \(X\), there is a matching outcome \(y = 2x - 1\) of \(Y\). So we can find the PMF for \(Y\) by keeping the same probabilities as for \(X\), but changing the values \(x\) to the values \(y = 2x -1\).
+
+\begin{longtable}[]{@{}ccccccc@{}}
+\toprule
+\(y\) & \(3\) & \(5\) & \(7\) & \(\cdots\) & \(21\) & \(23\) \\
+\midrule
+\endhead
+\(p_Y(y)\) & \(\frac{1}{36}\) & \(\frac{2}{36}\) & \(\frac{3}{36}\) & \(\cdots\) & \(\frac{2}{36}\) & \(\frac{1}{36}\) \\
+\bottomrule
+\end{longtable}
+
+\end{example}
+
+\begin{example}
+
+What about \(Z = (X - 4)^2\)? This is a bit trickier, because more than one outcome \(x\) can lead to the same outcome \(z = (x - 4)^2\): for example, \((2 - 4)^2 = (6 - 4)^2 = 4\). So, more precisely, we have
+\[ \mathbb P(Z = z) = \mathbb P\big(X \in \{x : (x - 4)^2 = z\}\big) , \]
+or, in terms of PMFs,
+\[   p_Z(z) = \sum_{x : (x - 4)^2 = z} p_X(x) . \]
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.14}}@{}}
+\toprule
+\(z\) & \(0\) & \(1\) & \(4\) & \(\cdots\) & \(49\) & \(64\) \\
+\midrule
+\endhead
+\(p_Z(z)\) & \(\frac{3}{36}\) & \(\frac{2}{36} + \frac{4}{36} = \frac{6}{36}\) & \(\frac{1}{36} + \frac{5}{36} = \frac{6}{36}\) & \(\cdots\) & \(\frac{2}{36}\) & \(\frac{1}{36}\) \\
+\bottomrule
+\end{longtable}
+
+\end{example}
+
+So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
+
+\begin{theorem}[Law of the unconscious statistician]
+\protect\hypertarget{thm:unconscious}{}\label{thm:unconscious}Let \(X\) be a random variable, and let \(Y = g(X)\) be another random variable that is a function of \(X\). Then
+\[  \mathbb EY = \mathbb Eg(X) = \sum_{x} g(x) \, p_X(x) . \]
+\end{theorem}
+
+(The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for \(\mathbb Eg(X)\) if you weren't thinking carefully -- but it turns out it's correct!)
+
+\begin{proof}
+As in the previous example, the idea is to group together \(x\)s that give the same \(y\).
+
+From the definition of expectation, we have
+\[ \mathbb EY = \sum_y y\, p_Y(y) . \]
+Then using
+\[ p_Y(y) = \sum_{x : g(x) = y} p_X(x) , \]
+we get
+\begin{align*}
+  \mathbb EY &= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
+    &= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
+    &= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
+\end{align*}
+since \(y = g(x)\) inside the second sum. But those two sums together are summing over all \(x\), just partitioned by which value of \(y\) they lead to, so can be replaced by a single sum over \(x\). That gives the theorem.
+\end{proof}
+
+There are some functions for which this expression becomes particularly simple.
+
+\begin{theorem}[Linearity of expectation, 1]
+\protect\hypertarget{thm:linearity1}{}\label{thm:linearity1}
+
+Let \(X\) be a random variable. Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb E(aX) = a\mathbb EX\);
+\item
+  \(\mathbb E(X + b) = \mathbb EX + b\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+We use the law of the unconscious statistician.
+
+For part 1, we can take the \(a\) outside the sum, to get
+\[ \mathbb E(aX) = \sum_x ax\, p_X(x) = a\sum_x x\, p_X(x) = a\mathbb EX . \]
+
+For part 2, we have
+\begin{align*}
+  \mathbb E(X+b) &= \sum_x (x + b)\, p_X(x) \\
+    &= \sum_x \big( x\, p_X(x) + b\,p_X(x) \big) \\
+    &= \sum_x x\, p_X(x) + \sum_x b\,p_X(x) \\
+    &= \mathbb E(X) + b \sum_x p_X(x) \\
+    &= \mathbb E(X) + b .
+\end{align*}
+The last line was because PMFs always add up to 1, so \(\sum_x p_X(x) = 1\).
+\end{proof}
+
+So for our ``double the dice total and add 1'' random variable \(Y = 2X - 1\), we have
+\[ \mathbb EY = \mathbb E(2X+1) = 2\mathbb EX + 1 = 2\times 7 + 1 = 15. \]
+
+\hypertarget{variance}{%
+\section{Variance}\label{variance}}
+
+\newcommand{\Var}{\operatorname{Var}}
+
+In the same way as the expectation of a random variable tells us about central typical values of it, the variance of a random variable tells us about the spread of typical values.
+
+\begin{definition}
+Let \(X\) be a random variable with expectation \(\mathbb EX = \mu\). Then the \textbf{variance} of \(X\) is
+\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 . \]
+\end{definition}
+
+(To be clear, the notation there means the expectation of \((X-\mu)^2\); and \emph{not} \(\mathbb E(X - \mu)\) squared, which would be \(0^2 = 0\).)
+
+Note that \((X - \mu)^2\) is a square, so always non-negative, and hence the variance is always non-negative also.
+
+It may not surprise you, if you remember \protect\hyperlink{S01-eda}{Section 1} that to go along with that definitional formula for the variance, we also have a computational formula.
+
+\begin{theorem}
+Let \(X\) be a random variable with expectation \(\mathbb EX = \mu\). Then the variance \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\) can also be calculated as
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]
+\end{theorem}
+
+(Again, \(\mathbb EX^2\) means the expectation of \(X^2\).)
+
+\begin{proof}
+As previously we expand out the brackets, and use linearity of expectation (in the same way we ``brought the sum inside'' previously). We get
+\begin{align*}
+  \operatorname{Var}(X) &= \mathbb E(X - \mu)^2 \\
+    &= \mathbb E(X^2 - 2\mu X + \mu^2) \\
+    &= \mathbb EX^2 - \mathbb E(2\mu X) + \mathbb E \mu^2 \\
+    &= \mathbb EX^2 - 2\mu \,\mathbb EX + \mu^2 .
+\end{align*}
+But we said that \(\mathbb EX\) would be called \(\mu\), so we can substitute in \(\mathbb EX = \mu\), to get
+\[ \operatorname{Var}(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]
+as required.
+\end{proof}
+
+\begin{example}
+Let \(X \sim \text{Bern}(p)\) be a Bernoulli trial, and recall that \(\mathbb EX = p\).
+
+Using the definitional formula, we have
+\begin{align*}
+\operatorname{Var}(X) &= \mathbb E(X-p)^2 \\
+        &= (0 - p)^2 \,p_X(0) + (1-p)^2\, p_X(1) \\
+        &= p^2\times(1-p) + (1-p)^2 \times p \\
+        &= p(1-p)\big(p + (1-p)\big) \\
+        &= p(1-p) .
+\end{align*}
+
+Alternatively, using the computational formula, we have
+\begin{align*}
+\operatorname{Var}(X) &= \mathbb EX^2 - p^2 \\
+        &= \big(0^2\,p_X(0) + 1^2 p_X(1)\big) - p^2 \\
+        &= 0\times(1-p) + 1\times p - p^2 \\
+        &= p - p^2 \\
+        &= p(1-p) .
+\end{align*}
+\end{example}
+
+Finally, a result on what happens to the variance of simple functions of random variables.
+
+\begin{theorem}
+
+Let \(X\) be a random variable. Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\operatorname{Var}(aX) = a^2\operatorname{Var}(X)\);
+\item
+  \(\operatorname{Var}(X + b) = \operatorname{Var}(X)\).
+\end{enumerate}
+
+\end{theorem}
+
+You will prove this on \protect\hyperlink{P3}{the problem sheet}.
+
+\hypertarget{summary-05}{%
+\section*{Summary}\label{summary-05}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  A random variable is a numerical summary of a random experiment.
+\item
+  The probability mass function (PMF) is \(p_X(x) = \mathbb P(X = x)\), and the cumulative distribution function (CDF) is \(F_X(x) = \mathbb P(X \leq x)\).
+\item
+  The expectation is \(\mathbb EX = \sum_x x\, p_X(x)\).
+\item
+  The variance of a random variable with expectation \(\mu\) is \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\).
+\item
+  \(\mathbb E(aX+b) = a\mathbb EX + b\) and \(\operatorname{Var}(aX+b) = a^2\operatorname{Var}(X)\).
+\end{itemize}
+
 \hypertarget{P3}{%
 \chapter*{Problem Sheet 3}\label{P3}}
 \addcontentsline{toc}{chapter}{Problem Sheet 3}
 
 \commfalse
 
-This is Problem Sheet 3. This problem sheet covers \protect\hyperlink{S04-conditional}{Section 4} of the notes and in Week 5 questions will be added on Section 5. You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 8 November}.
+This is Problem Sheet 3. This problem sheet covers \protect\hyperlink{S04-conditional}{Sections 4} and \protect\hyperlink{S05-discrete-rv}{5}. You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 8 November}.
 
 \hypertarget{P3-short}{%
 \section*{A: Short questions}\label{P3-short}}
@@ -2688,6 +3109,42 @@ Consider rolling two dice independently. Let \(A\) be the event that the first r
 \textbf{(a)} Are \(A\), \(B\), and \(C\) pairwise independent?
 
 \textbf{(b)} Are \(A\), \(B\), and \(C\) mutually independent?
+
+\textbf{A3.} Consider the random variable \(X\) with the following PMF:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(x\) & \(-1\) & \(0\) & \(0.5\) & \(1\) & \(2\) \\
+\midrule
+\endhead
+\(p(x)\) & \(0.1\) & \(0.3\) & \(0.3\) & \(0.2\) & \(0.1\) \\
+\bottomrule
+\end{longtable}
+
+Find the expectation and variance of \(X\).
+
+\textbf{A4.} Consider the random variable \(X\) with the following PMF:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(x\) & \(1\) & \(2\) & \(4\) & \(5\) & \(a\) \\
+\midrule
+\endhead
+\(p(x)\) & \(0.1\) & \(0.2\) & \(0.1\) & \(b\) & \(c\) \\
+\bottomrule
+\end{longtable}
+
+This random variable has \(\mathbb EX = 4.3\) and \(\operatorname{Var}(X) = 4.61\). Find the values of \(a\), \(b\) and \(c\).
+
+\textbf{A5.} The temperature \(T_C\) measured in degrees Celsius can be converted to a temperature \(T_F\) in degrees Fahrenheit using the formula \(T_F = \frac95 T_C + 32\).
+
+The average daily maximum temperature in Leeds in July is 19.0~°C with a variance of 10.4~°C\textsuperscript{2}.
+
+\textbf{(a)} What is the average daily maximum temperature in degrees Fahrenheit?
+
+\textbf{(b)} What is the variance of the daily maximum temperature in degrees Fahrenheit squared?
+
+\textbf{(c)} The average temperature in March is 1.8~°C higher than in February. What is this average difference in degrees Fahrenheit?
 
 \hypertarget{P3-long}{%
 \section*{B: Long questions}\label{P3-long}}
@@ -2732,11 +3189,25 @@ Consider rolling two dice independently. Let \(A\) be the event that the first r
 
 \textbf{(b)} If a soldier responds ``Yes'', what is the probability that the soldier has taken illegal drugs in the past 12 months.
 
+\textbf{B5.} Let \(X\) be a random variable. Prove that
+
+\textbf{(a)} \(\operatorname{Var}(aX) = a^2 \operatorname{Var}(X)\);
+
+\textbf{(b)} \(\operatorname{Var}(X+b) = \operatorname{Var}(X)\).
+
+\textbf{B6.} A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If your first Head comes on the \(n\)th coin toss, then you win \(2^n\) pounds.
+
+\textbf{(a)} What is the probability that the first Head is seen on the \(n\)th toss of the coin?
+
+\textbf{(b)} Show that the expected winnings from playing this game are infinite.
+
+\textbf{(c)} The ``St Petersburg paradox'' refers to the fact that, despite the fact that the expected winnings from this game are infinite, hardly anybody would be prepared to play this game for, say, £100, and certainly not for £1000. Discuss a few possible ``resolutions'' to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.
+
 \hypertarget{P3-assessed}{%
 \section*{C: Assessed questions}\label{P3-assessed}}
 \addcontentsline{toc}{section}{C: Assessed questions}
 
-The last two questions are \textbf{assessed questions} (one available now on Section 4, and one to be added in Week 5 on Section 5). These two questions count for 3\% of your final mark for this module.
+The last two questions are \textbf{assessed questions}. These two questions count for 3\% of your final mark for this module.
 
 The deadline for submitting your solutions is \textbf{2pm on Monday 8 November} at the beginning of Week 7, although I strongly recommend completing and submitting your work during Week 6. Submission will be via Gradescope; submission will open on Monday 1 November.
 Your work will be marked by your tutor and returned on Monday 15 November, when solutions will also be made available.
@@ -2747,11 +3218,22 @@ You should not collaborate with others on the assessed questions: your answers m
 
 \textbf{C1.} A computer spam filter is 98\% effective at sending spam emails to my junk folder, but will also incorrectly send 1\% of legitimate emails to my junk folder. Suppose that 1 in 10 emails are spam. What proportion of emails in my junk folder are actually legitimate emails?
 
+\textbf{C2.} A random variable \(X\) is said to follow the \emph{discrete uniform distribution} on \(\{1, 2, \dots, n\}\) if each value \(x\) in that set \(\{1,2,\dots,n\}\) is equally likely.
+
+\textbf{(a)} Show that the expectation of \(X\) is \(\mathbb EX = \displaystyle\frac{n+1}{2}\).
+
+\textbf{(b)} Find the variance of \(X\).
+
+\textbf{(c)} Let \(Y\) be a discrete uniform distribution on \(\{a, a+1, a+2, \dots, b-1, b\}\), for integers \(a\) and \(b\) with \(a<b\). Using parts \(a\) and \(b\), but without calculating any sums directly, find the expectation and variance of \(Y\).
+
+You may use without proof the standard results
+\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]
+
 \hypertarget{P3-short-sols}{%
 \section*{Solutions to short questions}\label{P3-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
-\textbf{A1.} (c) and (e) are independent. \textbf{A2.} (a) Yes (b) No
+\textbf{A1.} (c) and (e) are independent. \textbf{A2.} (a) Yes (b) No \textbf{A3.} 0.5 and 0.6 \textbf{A4.} \(a = 9, b = 0.5, c = 0.1\) \textbf{A5} (a) 66.2~°F (b) 33.7~°F\textsuperscript{2} (c) 3.2~°F
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
@@ -2775,8 +3257,8 @@ Week & Worksheet & Deadline for assessed work \\
 1 & \href{https://mpaldridge.github.io/math1710/R1.html}{\textbf{R basics}} (\href{https://mpaldridge.github.io/math1710/R1-solutions.html}{Solutions}) & --- \\
 2 & \href{https://mpaldridge.github.io/math1710/R2.html}{\textbf{Vectors}} & --- \\
 3 & \href{https://mpaldridge.github.io/math1710/R3.html}{\textbf{Data in R}} & Monday 18 October \\
-4 & \href{https://mpaldridge.github.io/math1710/R4.html}{Plots I: Making plots} & --- \\
-5 & Plots II: Making plots nicer & Monday 1 November \\
+4 & \href{https://mpaldridge.github.io/math1710/R4.html}{\textbf{Plots I:} Making plots} & --- \\
+5 & \href{https://mpaldridge.github.io/math1710/R4.html}{\textbf{Plots II:} Making plots better} & Monday 1 November \\
 6 & RMarkdown (optional) & --- \\
 7 & Discrete random variables & Monday 15 November \\
 8 & Discrete distributions & --- \\

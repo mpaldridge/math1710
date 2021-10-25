@@ -78,7 +78,7 @@ Let us to return to the example of blond hair and blue eyes. Suppose the populat
 
 We know that 20% of people have blue eyes. But suppose you already know that someone has blond hair: what then is their probability of have blue eyes *given* that they have blond hair?
 
-Well, the 24% of blond-haired people is made up of the 10% of people who also have blue eyes to go along with their blond hair, and the 30% of people who have brown eyes to go along with their blond hair. So of the 40% of blond-haired people, three times as many have brown eyes, so only one quarter of that 40% have blue eyes. If we use a vertical line $|$ in a probability  to mean "given" (or "assuming that" or "conditional upon"), then we can write this as
+Well, the 40% of blond-haired people is made up of the 10% of people who also have blue eyes to go along with their blond hair, and the 30% of people who have brown eyes to go along with their blond hair. So of the 40% of blond-haired people, three times as many have brown eyes, so only one quarter of that 40% have blue eyes. If we use a vertical line $|$ in a probability  to mean "given" (or "assuming that" or "conditional upon"), then we can write this as
 \[  \mathbb P(\text{blue eyes} \mid \text{blond hair}) = \frac{\mathbb P(\text{blue eyes and blond hair})}{\mathbb P(\text{blond hair})} = \frac{0.1}{0.4} = \frac14. \]
 
 What we've seen here is called a "conditional probability".
@@ -295,7 +295,7 @@ Many people find this result surprising. It sometimes helps to put more concrete
 
 The key point is that the disease is rare -- only 2% of people have it. So even though positive test increases the likelihood you have the disease a lot (it's about 14 times more likely), it's not enough to make it a very large probability.
 
-## Summary  {#summary-034 .unnumbered}
+## Summary  {#summary-04 .unnumbered}
 
 ::: {.mysummary}
 * Two events are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)$.

@@ -11,6 +11,14 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 # Schedule {.unnumbered}
 
+::: {.oldsched}
+**Week 4** (18--22 October):
+
+* [**Section 5:** Discrete  random variables](#S05-discrete-rv)
+* [**Problem Sheet 3:**](#P3) deadline for assessed questions: Monday 8 November
+* [**R Worksheet 5:** Plots II: Making plots better](#r-work) deadline for assessed questions: Monday 1 November
+:::
+
 ::: {.mysched}
 **Week 4** (18--22 October):
 
@@ -19,7 +27,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 * [**R Worksheet 4:** Plots I: making plots](#r-work)
 :::
 
-::: {.oldsched}
+::: {.mysched}
 **Week 3** (11--15 October):
 
 * [**Section 3:** Classical probability](#S03-classical)
@@ -27,7 +35,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 * [**R Worksheet 3:** Data in R](#r-work) deadline for assessed questions: Monday 18 October
 :::
 
-::: {.oldsched}
+::: {.mysched}
 **Week 2** (4--8 October):
 
 * [**Section 2:** Probability spaces](#S02-probability)
@@ -35,7 +43,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 * [**R Worksheet 2:** Vectors](#r-work)
 :::
 
-::: {.oldsched}
+::: {.mysched}
 **Week 1** (27 September -- 1 October):
 
 * [**Section 1:** Exploratory data analysis](#S01-eda)
