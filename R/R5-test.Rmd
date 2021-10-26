@@ -1,0 +1,134 @@
+---
+title:  "R Worksheet 5: Plots II: Making plots better"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet* does *include assessed questions at the bottom. Only the questions marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 1 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
+
+------------------------------------------------------------------------
+
+On the last R worksheet, we saw the basic commands for plotting data visualisations:
+
+-   `boxplot()` for boxplots,
+-   `hist()` for histograms,
+-   `plot()` for scatterplots.
+
+We also saw some optional arguments these functions could take, to change the appearance of the plot:
+
+-   the `breaks = ...` argument to specify the number or sizes of bins in a histogram;
+-   the `type = ...` argument to draw points, lines, or both in a scatterplot.
+
+In this worksheet, we will see some other optional arguments that can be used to improve the appearance of your plots. Many of these arguments can be applied to any of the three plot types we've studied. The most important arguments are about labelling or titling plots and about setting the limits on axes.
+
+## Labelling and titling
+
+When drawing a plot, it's very important that it's clear what the data represents. To do this, we almost always need to label the x and y axes. It's often helpful to give to give the plot an explanatory title. Axis label are set with the arguments **`xlab = ...`** and **`ylab = ...`** respectively. A title is set with **`main = ...`**. The text to appear in the labels/title must always be put in quotation marks `" "`. Remember that multiple arguments must be separated by commas.
+
+Let's use the Met Office historical temperature data again.
+
+```{r}
+temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")
+```
+
+In the last worksheet, we drew a histogram of December temperatures with the command
+
+```{r}
+hist(temperature$dec, freq = FALSE)
+```
+
+But this picture would be clearer properly labelled and titled.
+
+```{r}
+hist(temperature$dec, freq = FALSE, xlab = "Average temperature (degrees Celsius)", ylab = "Probability density", main = "Historical December temperatures in the UK")
+```
+
+Adding all these extra arguments can make your code difficult to read. Remember that R allows you to use line breaks when it's obvious a command isn't finished -- for example, when a pair of brackets has been opened but not yet closed. You can also add spaces to make your code easier to read. For example, you may find the following format of exactly the same command as above more pleasant.
+
+```{r, eval = FALSE}
+hist(temperature$dec, freq = FALSE,
+  xlab = "Average temperature (degrees Celsius)",
+  ylab = "Probability density",
+  main = "Historical December temperatures in the UK"
+)
+```
+
+> **Exercise 5.1.** Last time, in Exercise 4.5, you drew a scatterplot of January and August temperatures. Do this again, but with explanatory labels on the axes and an explanatory title. (Don't forget to make sure you've read the temperature data in first.)
+
+For boxplots diagrams with multiple boxplots, you will also want to label the individual boxplots. This is done with the **`names = ...`** arguments to `boxplot()`. Here, `names` should be equal to a vector of the names given to the boxplots. Remember that vectors are set with `c()`, and each of the names must be in quotation marks.
+
+Adapting another example from last time, we get
+
+```{r}
+boxplot(temperature$jul, temperature$aug, temperature$sep,
+  xlab  = "Month",
+  names = c("July", "August", "September"),
+  ylab  = "Average temperature (degrees Celsius)",
+  main  = "Historical UK temperatures"
+)
+```
+
+## Axis limits
+
+When you draw a plot, R tries to chosen the upper and lower limits of the x and y axes sensibly, to ensure that all the data fits, and that the numbers sisplayed next to the axes can be nice round numbers. (For histograms, R also ensures the lower limit on the y-axis is 0.) However, sometimes, you may wish to choose the axis limits yourself. The main reason we might to fix the axis limits ourselves, is that in some circumstances, it's appropriate to let one of the axes start at 0, to put changes in the corresponding value in proper context. R, on the other hand, may choose to zoom in on relatively unimportant small changes.
+
+We can choose the axes limits ourselves using the **`xlim = ...`** and **`ylim = ...`** arguments. Here `xlim` or `ylim` should be set to be a vector of length 2, with the first number being the lower limit for the axis and the second number being the upper limit. If you just set one of the axis limits, R will still try to choose the other one sensibly.
+
+For example, if making a scatterplot of February and July temperatures, I may wan to put both month's temperatures on the same scale -- say from -2 to 10 -- to give a fair comparison between them.
+
+```{r}
+plot(temperature$feb, temperature$apr,
+  xlab = "Average February temperature (degrees Celsius)",
+  ylab = "Average April temperature (degrees Celsius)",
+  xlim = c(-2, 10),
+  ylim = c(-2, 10)
+)
+```
+
+> **Exercise 5.2.** Draw a histogram of of August temperature. Make sure the axes of your plot are appropriate and give your plot a title. Draw the histogram with the temperature axis going down to 0 (and an appropriate upper limit). Do you think changing the axis limits was helpful here?
+
+## Other arguments
+
+There are many other optional arguments than can be passed to our plot-drawing functions. You can find out about many of these by reading the relevant help files in R. Try typing `?boxplot`, `hist`, or `plot.default` (or `?par`, for the adventurous) into the console and pressing Enter -- you should see the help files open in the bottom-right quadrant of RStudio.
+
+Some of these arguments include:
+
+-   **`sub = ...`** sets a subheading -- remember the text must be in quotation marks.
+-   **`col = ...`** to set colours. In `boxplot()` this is the shading of the two central boxes; in `hist()` this is the shading of the histogram bars; in `plot()` this is the colour of the points or lines. The argument `col = ...` takes many standard colour names provided they are in quotation marks: try `col = "blue"` or `col = "red"`, for example.
+-   **`lwd = ...`** sets the line width. R's default line width (`lwd = 1`) is sometimes to thin, especially for `plot()` with the `type = "l"` option set. I find `lwd = 2` is sometimes preferable. (In `hist()`, this changes the thickness of the axes, slightly bizarrely.)
+-   In a scatterplot with `plot()`, the argument **`pch = ...`** sets the character used to plot points. The default os `pch = 1`, which is a circle. Try setting `pch` to other numbers to see what happens. If you want to draw a plot with one or both axes on a logarithmic scale (or "log scale), try setting `log = ...` to `log = "x"`, `log = "y"`, or `log = "xy"`.
+
+> **Exercise 5.3.** Draw a plot of your choice based on the Met Office temperature data, but use as many extra wacky options as you can. (Make sure to title and label your plot, of course.)
+
+------------------------------------------------------------------------
+
+## Assessed questions
+
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 5, but the official deadline is **Monday 1 November at 1400**.*
+
+*This worked will be marked automatically by computer, so make sure you answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
+
+*So that (most) students get different data to work with, you will work from a data file whose name is based on your student ID number. You student ID number is (usually) a 9-digit number starting `201`. Your data set is the CSV file at*
+
+    https://mpaldridge.github.io/math1710/data/R5-xy.csv
+
+*where `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then you should use the file at `https://mpaldridge.github.io/math1710/data/R5-29.csv`; if your student ID number is `201491200` then you should use the file `https://mpaldridge.github.io/math1710/data/R5-00.csv` and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 marks.*
+
+------------------------------------------------------------------------
+
+**First**, read the data set at `https://mpaldridge.github.io/math1710/data/R5-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set has nine columns, called `alpha`, `beta`, `gamma`, `delta`, `epsilon`, `zeta`, `eta`, `theta`, and `iota`.
+
+> [**Note:** The datasets are not currently working correctly (morning of Monday 25 October). You can start planning the appropriate commands to use to answer the questions and save those commands in an R script for later, but you can't run them on the actual data yet. I will try to get this sorted very soon, and will update this message when everything is working properly.]{style="color: red;"}
+
+(I couldn't think of a good way to check, via Microsoft Form and automatic marking, that your plots are properly labelled and titled. But remember that it is always good practice to do this!)
+
+> **Assessed Question 1.** Draw a boxplot comparing the `alpha` data and `beta` data. Which data set is generally the larger?
+
+> **Assessed Question 2.** Draw a boxplot comparing the `gamma` data and `delta` data. Which data set is generally the more spread out?
+
+> **Assessed Question 3.** Draw a boxplot comparing the `epsilon` data and `zeta` data. One of the datasets has a very noticable outlier. Which one?
+
+> **Assessed Question 3.** Draw a histogram of the `eta` data, and experiment with different numbers of breaks. How many "peaks" do you think it is accurate to say the histogram has? (Remember that too many breaks may cause too many "random" peaks, while to few breaks may smooth out actual peaks.)
+
+> **Assessed Question 5.** Draw a scatterplot with the `theta` data on the x-axis and the `iota` data on the y-axis. You should find that there is a non-linear relationship between the two data sets. As theta increases, does iota go up then down (like $\cap$, or a sad face), or down then up (like $\cup$ or a happy face)?
