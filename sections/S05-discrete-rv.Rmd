@@ -266,6 +266,14 @@ So for our "double the dice total and add 1" random variable $Y = 2X - 1$, we ha
 
 ## Variance  {#variance}
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/_I4tCExElec"></iframe>
+:::
+::::
+
+
+
 \newcommand{\Var}{\operatorname{Var}}
 
 In the same way as the expectation of a random variable tells us about central typical values of it, the variance of a random variable tells us about the spread of typical values.
@@ -322,6 +330,16 @@ Alternatively, using the computational formula, we have
         &= 0\times(1-p) + 1\times p - p^2 \\
         &= p - p^2 \\
         &= p(1-p) .
+\end{align*}
+:::
+
+::: {.example}
+For the total of two dice, using the computational formula, we have
+\begin{align*}
+\Var(X) &= \mathbb EX^2 - \mu^2 \\
+        &= \left(2^2 \times \frac{1}{36} + 3^2 \times \frac{2}{36} + \cdots + 12^2 \times \frac{1}{36}\right) - 7^2 \\
+        &= \frac{1974}{36} - 49 \\
+        &= \frac{70}{12} \approx 5.8 .
 \end{align*}
 :::
 

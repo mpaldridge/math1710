@@ -589,6 +589,12 @@ The last line was because PMFs always add up to 1, so <span class="math inline">
 </div>
 <div id="variance" class="section level2" number="5.5">
 <h2><span class="header-section-number">5.5</span> Variance</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/_I4tCExElec">
+</iframe>
+</div>
+</div>
 <p>In the same way as the expectation of a random variable tells us about central typical values of it, the variance of a random variable tells us about the spread of typical values.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-56" class="definition"><strong>Definition 5.5  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. Then the <strong>variance</strong> of <span class="math inline">\(X\)</span> is
@@ -633,9 +639,18 @@ as required.</p>
         &amp;= p(1-p) .
 \end{align*}\]</span></p>
 </div>
+<div class="example">
+<p><span id="exm:unlabeled-div-60" class="example"><strong>Example 5.10  </strong></span>For the total of two dice, using the computational formula, we have
+<span class="math display">\[\begin{align*}
+\operatorname{Var}(X) &amp;= \mathbb EX^2 - \mu^2 \\
+        &amp;= \left(2^2 \times \frac{1}{36} + 3^2 \times \frac{2}{36} + \cdots + 12^2 \times \frac{1}{36}\right) - 7^2 \\
+        &amp;= \frac{1974}{36} - 49 \\
+        &amp;= \frac{70}{12} \approx 5.8 .
+\end{align*}\]</span></p>
+</div>
 <p>Finally, a result on what happens to the variance of simple functions of random variables.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-60" class="theorem"><strong>Theorem 5.5  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. Then</p>
+<p><span id="thm:unlabeled-div-61" class="theorem"><strong>Theorem 5.5  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. Then</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\operatorname{Var}(aX) = a^2\operatorname{Var}(X)\)</span>;</li>
 <li><span class="math inline">\(\operatorname{Var}(X + b) = \operatorname{Var}(X)\)</span>.</li>
