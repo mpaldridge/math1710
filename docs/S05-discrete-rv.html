@@ -477,17 +477,17 @@ If <span class="math inline">\(p\)</span> is the PMF of <span class="math inline
 <h2><span class="header-section-number">5.4</span> Functions of random variables</h2>
 <p>In previous examples, we looked at <span class="math inline">\(X\)</span> being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total <span class="math inline">\(X\)</span>, like “double the total and add 1” <span class="math inline">\(Y = 2X + 1\)</span>, or “the total minus 4, all squared” <span class="math inline">\(Z = (X-4)^2\)</span>. (I’m not sure <em>why</em> you’d care about these, but you could study them if you wanted to…)</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 5.7  </strong></span>Let <span class="math inline">\(Y = 2X - 1\)</span>. Then for each potential outcome <span class="math inline">\(x\)</span> of <span class="math inline">\(X\)</span>, there is a matching outcome <span class="math inline">\(y = 2x - 1\)</span> of <span class="math inline">\(Y\)</span>. So we can find the PMF for <span class="math inline">\(Y\)</span> by keeping the same probabilities as for <span class="math inline">\(X\)</span>, but changing the values <span class="math inline">\(x\)</span> to the values <span class="math inline">\(y = 2x -1\)</span>.</p>
+<p><span id="exm:unlabeled-div-52" class="example"><strong>Example 5.7  </strong></span>Let <span class="math inline">\(Y = 2X + 1\)</span>. Then for each potential outcome <span class="math inline">\(x\)</span> of <span class="math inline">\(X\)</span>, there is a matching outcome <span class="math inline">\(y = 2x +1 1\)</span> of <span class="math inline">\(Y\)</span>. So we can find the PMF for <span class="math inline">\(Y\)</span> by keeping the same probabilities as for <span class="math inline">\(X\)</span>, but changing the values <span class="math inline">\(x\)</span> to the values <span class="math inline">\(y = 2x +11\)</span>.</p>
 <table>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(y\)</span></th>
-<th align="center"><span class="math inline">\(3\)</span></th>
 <th align="center"><span class="math inline">\(5\)</span></th>
 <th align="center"><span class="math inline">\(7\)</span></th>
+<th align="center"><span class="math inline">\(9\)</span></th>
 <th align="center"><span class="math inline">\(\cdots\)</span></th>
-<th align="center"><span class="math inline">\(21\)</span></th>
 <th align="center"><span class="math inline">\(23\)</span></th>
+<th align="center"><span class="math inline">\(25\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -584,7 +584,7 @@ since <span class="math inline">\(y = g(x)\)</span> inside the second sum. But t
 \end{align*}\]</span>
 The last line was because PMFs always add up to 1, so <span class="math inline">\(\sum_x p_X(x) = 1\)</span>.</p>
 </div>
-<p>So for our “double the dice total and add 1” random variable <span class="math inline">\(Y = 2X - 1\)</span>, we have
+<p>So for our “double the dice total and add 1” random variable <span class="math inline">\(Y = 2X + 1\)</span>, we have
 <span class="math display">\[ \mathbb EY = \mathbb E(2X+1) = 2\mathbb EX + 1 = 2\times 7 + 1 = 15. \]</span></p>
 </div>
 <div id="variance" class="section level2" number="5.5">
