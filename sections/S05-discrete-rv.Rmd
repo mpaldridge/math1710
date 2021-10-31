@@ -191,7 +191,7 @@ When $X$ is the total of two dice rolls, the expectation is
 In previous examples, we looked at $X$ being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total $X$, like "double the total and add 1" $Y = 2X + 1$, or "the total minus 4, all squared" $Z = (X-4)^2$. (I'm not sure *why* you'd care about these, but you could study them if you wanted to...)
 
 ::: {.example}
-Let $Y = 2X + 1$. Then for each potential outcome $x$ of $X$, there is a matching outcome $y = 2x +1 1$ of $Y$. So we can find the PMF for $Y$ by keeping the same probabilities as for $X$, but changing the values $x$ to the values $y = 2x +11$.
+Let $Y = 2X + 1$. Then for each potential outcome $x$ of $X$, there is a matching outcome $y = 2x +1$ of $Y$. So we can find the PMF for $Y$ by keeping the same probabilities as for $X$, but changing the values $x$ to the values $y = 2x +1$.
 
 | $y$ | $5$ | $7$ | $9$ | $\cdots$ | $23$ | $25$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|

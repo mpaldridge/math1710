@@ -47,7 +47,7 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P3-short-sols .unnumbered}
 
-**A1.** (c) and (e) are independent. **A2.**  (a) Yes (b) No **A3.** 0.5 and 0.6 **A4.** $a = 9, b = 0.5, c = 0.1$ **A5** (a) 66.2 °F (b) 33.7 °F^2^ (c) 3.2 °F
+**A1.** (c) and (e) are independent. **A2.**  (a) Yes (b) No **A3.** 0.45 and 0.5725 *[corrected]* **A4.** $a = 9, b = 0.5, c = 0.1$ **A5** (a) 66.2 °F (b) 33.7 °F^2^ (c) 3.2 °F
 
 
 

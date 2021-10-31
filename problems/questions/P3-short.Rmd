@@ -1,41 +1,111 @@
-:::: {.myq}
+::::: {.myq}
 
 **A1.** Consider dealing two cards (without replacement) from a pack of cards. Which of the following pairs of events are independent?
 
-:::{ .subq}
+::::{ .subq}
 **(a)** "The first card is a Heart" and "The first card is Red".
-:::
 
-:::{ .subq}
-**(b)** "The first card is a Heart" and "The first card is a Spade".
-:::
-
-:::{ .subq}
-**(c)** "The first card is a Heart" and "The first card is an Ace".
-:::
-
-:::{ .subq}
-**(d)** "The first card is a Heart" and "The second card is a Heart".
-:::
-
-:::{ .subq}
-**(e)** "The first card is a Heart" and "The second card is an Ace".
+::: {.myanswers data-latex=""}
+*Solution.* 
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Red}) &= \frac{26}{52} = \frac12 \\
+\mathbb P(\text{first Heart and first Red}) &= \mathbb P(\text{first Heart}) = \frac14 .
+\end{align*}
+So $\mathbb P(\text{first Heart and first Red}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{first Red})$, and the events are not independent.
 :::
 ::::
 
-:::: {.myq}
+::::{ .subq}
+**(b)** "The first card is a Heart" and "The first card is a Spade".
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Spade}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Heart and first Spade}) &= 0 .
+\end{align*}
+So $\mathbb P(\text{first Heart and first Spade}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{first Spade})$, and the events are not independent.
+:::
+::::
+
+::::{ .subq}
+**(c)** "The first card is a Heart" and "The first card is an Ace".
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Ace}) &= \frac{4}{52} = \frac1{13} \\
+\mathbb P(\text{first Heart and first Ace}) &= \mathbb P(\text{first Ace of Hearts}) = \frac1{52} .
+\end{align*}
+So $\mathbb P(\text{first Heart and first Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{first Ace})$, and the events are independent.
+:::
+::::
+
+::::{ .subq}
+**(d)** "The first card is a Heart" and "The second card is a Heart".
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{second Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Heart and second Heart}) &= \frac{13\times 12}{52 \times 51} = \frac{1}{17}
+\end{align*}
+So $\mathbb P(\text{first Heart and second Heart}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{second Heart})$, and the events are not independent.
+:::
+::::
+
+::::{ .subq}
+**(e)** "The first card is a Heart" and "The second card is an Ace".
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{second Ace}) &= \frac{4}{52} = \frac1{13} \\
+\mathbb P(\text{first Heart and second Ace}) &= \frac{12\times4 + 1\times 3}{52\times 51} = \frac{51}{52\times 51} = \frac{1}{52}
+\end{align*}
+So $\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{second Ace})$, and the events are independent.
+:::
+::::
+:::::
+
+::::: {.myq}
 **A2.** Three events $A, B, C$ are said to be *pairwise independent* if each pair of events are independent -- that is, if $A$ and $B$ are independent, $B$ and $C$ are independent, and $A$ and $C$ are independent. The three events are said to *mutually independent* if they are pairwise independent and also $\mathbb P(A \cap B \cap C) = \mathbb P(A)\,\mathbb P(B)\,\mathbb P(C)$.
 
 Consider rolling two dice independently. Let $A$ be the event that the first roll is even, let $B$ be the event that the second roll is even, and let $C$ be the event that the total score is even.
 
-::: {.subq}
+:::: {.subq}
 **(a)** Are $A$, $B$, and $C$ pairwise independent?
-:::
 
-::: {.subq}
-**(b)** Are $A$, $B$, and $C$ mutually independent?
+::: {.myanswers data-latex=""}
+*Solution.* First note that the probability that a dice is even is $\frac{3}{6} = \frac12$, and the probability the total of two dice is also $\frac{18}{36} = \frac12$.
+
+* $A$ and $B$ are independent by assumption.
+* Since the sum of two even numbers is even, while even plus odd equals odd, we have that $A$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(A \cap C) = \mathbb P(A) \times \mathbb P(C) = \frac14$, so $A$ and $C$ are independent.
+* For the same reason, $V$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(B \cap C) = \mathbb P(B) \times \mathbb P(C) = \frac14$, so $B$ and $C$ are independent.
+
+Hence $A$, $B$ and $C$ are pairwise independent.
 :::
 ::::
+
+:::: {.subq}
+**(b)** Are $A$, $B$, and $C$ mutually independent?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+For the same reasons as above, $A \cap B \cap C$ occurs if and only if both dice rolls are even, which happens with probability $\frac12\times\frac12 = \frac14$. Hence, $\mathbb P(A \cap B \cap C) = \frac14$, but $\mathbb P(A)\,\mathbb P(B)\,\mathbb P(C) = \frac12\times\frac12\times\frac12 = \frac18$. So $A$, $B$ and $C$ are not mutually independent.
+:::
+::::
+:::::
 
 :::: {.myq}
 **A3.** Consider the random variable $X$ with the following PMF:
@@ -45,6 +115,19 @@ Consider rolling two dice independently. Let $A$ be the event that the first rol
 | $p(x)$ | $0.1$ | $0.3$ | $0.3$ | $0.2$ | $0.1$ |
 
 Find the expectation and variance of $X$.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+For the expectation,
+\[ \mathbb EX = -1\times0.1 + 0\times0.3 + 0.5\times0.3+1\times0.2+2\times0.1 = 0.45. \]
+
+For the variance, we start with
+\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.3 + 0.5^2\times0.3+1^2\times0.2+2^2\times0.1 = 0.775 . \]
+Then, using the computational formula,
+\[ \Var(X) = \mathbb EX^2 - \mu^2 = 0.775 - 0.45^2 = 0.5725. \]
+
+*[**Note:** The answers at the bottom of the problem sheet for this were wrong.]*
+:::
 ::::
 
 :::: {.myq}
@@ -55,22 +138,77 @@ Find the expectation and variance of $X$.
 | $p(x)$ | $0.1$ | $0.2$ | $0.1$ | $b$ | $c$ |
 
 This random variable has $\mathbb EX = 4.3$ and $\Var(X) = 4.61$. Find the values of $a$, $b$ and $c$.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+First, a PMF must sum to 1, so
+\[ 1 = 0.1 + 0.2 + 0.1 + b + c , \]
+and hence
+\[ b + c = 0.6 . \qquad\qquad (1) \]
+
+Second, the expectation is
+\begin{align*}
+\mathbb EX &= 1\times0.1 + 2 \times 0.2 + 4 \times 0.1 + 5b + ac \\
+           &= 0.9 + 5b + ac \\
+           &= 4.3 .
+\end{align*}
+Hence
+\[ 5b + ac = 3.4 . \qquad\qquad (2) \]
+
+Third, the expectation of $X^2$ is
+\begin{align*}
+\mathbb EX &= 1^2\times0.1 + 2^2 \times 0.2 + 4^2 \times 0.1 + 5^2b + a^2c \\
+           &= 2.5 + 25b + a^2c 
+\end{align*}
+and this must equal $\mathbb EX^2 = \Var(X) + \mu^2 = 4.61 + 3.4^2 = 23.1$. Hence
+\[ 25b + a^2 c = 20.6 \qquad\qquad (3) . \]
+
+Now we just have to solve the three equations. From (1) we get $b = 0.6 - c$, and substituting into (2) and (3) gives
+\begin{align*}
+(a-5)c &= 0.4 \qquad\qquad (4) \\
+(a^2 - 25)c &= 5.6 \qquad\qquad(5)
+\end{align*}
+Noting that $a^2 - 25 = (a+5)(a-5)$ is a difference of two squares, we can divide (5) by (4) to get
+\[ a + 5 = \frac{5.6}{0.4} = 14. \]
+So $a = 9$. Substituting this into (4) gives $c = 0.1$, so $b = 0.6 - 0.1 = 0.5$.
+:::
 ::::
 
-:::: {.myq}
+::::: {.myq}
 **A5.** The temperature $T_C$ measured in degrees Celsius can be converted to a temperature $T_F$ in degrees Fahrenheit using the formula $T_F = \frac95 T_C + 32$.
 
 The average daily maximum temperature in Leeds in July is 19.0 °C with a variance of 10.4 °C^2^.
 
-::: {.subq}
+:::: {.subq}
 **(a)** What is the average daily maximum temperature in degrees Fahrenheit?
-:::
 
-::: {.subq}
-**(b)** What is the variance of the daily maximum temperature in degrees Fahrenheit squared?
-:::
-
-::: {.subq}
-**(c)** The average temperature in March is 1.8 °C higher than in February. What is this average difference in degrees Fahrenheit?
+::: {.myanswers data-latex=""}
+*Solution.*
+By linearity of expectation,
+\[ \mathbb E T_F = \mathbb E\left(\tfrac95T_C + 32\right) = \tfrac95 \mathbb ET_C + 32 . \]
+So the answer is $\frac95 \times 19.0 + 32 = 66.2$ °F.
 :::
 ::::
+
+:::: {.subq}
+**(b)** What is the variance of the daily maximum temperature in degrees Fahrenheit squared?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+For the variance,
+\[ \Var(T_F) = \Var\left(\tfrac95T_C + 32\right) = \left(\tfrac95\right)^2 \Var(T_C) = \tfrac{81}{25}\Var(T_C). \]
+So the answer is $\frac{81}{25} \times 10.4 = 33.7$ °F^2^.
+:::
+::::
+
+:::: {.subq}
+**(c)** The average temperature in March is 1.8 °C higher than in February. What is this average difference in degrees Fahrenheit?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+Note that a *change* in temperature in degrees Celsius of $\delta_C$ takes us from $T_C$ to $T_C + \delta$. This corresponds to a *change* in temperature in degrees Fahrenheit of
+\[ \delta_F = \left(\tfrac95(T_C+\delta) + 32\right) - \left(\tfrac95T_C + 32\right) = \tfrac95\delta_C . \]
+So, by linearity of expectation again, the answer is $\frac95 \times 1.8 = 3.2$ °F.
+:::
+::::
+:::::

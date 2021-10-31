@@ -1,6 +1,6 @@
 # Multiple random variables  {#S07-multi-rv}
 
-## Joint distributions  {#joint}
+## Joint, marginal, and conditional distributions  {#joint}
 
 ## Independence of random variables  {#independence-rv}
 

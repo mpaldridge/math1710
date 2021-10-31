@@ -31,3 +31,9 @@ pmf
 expectation
 functions
 variance
+S06-discrete-dist
+binomial
+geometric
+poisson
+poisson-approx
+models

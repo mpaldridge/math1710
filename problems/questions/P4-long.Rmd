@@ -1,0 +1,32 @@
+:::: {.myq}
+**B1.** Calculate the CDF $F(x) = \mathbb P(X \leq x)$ of the geometric distribution...
+
+::: {.subq}
+**(a)** ...by summing the PMF;
+:::
+
+::: {.subq}
+**(b)** ...by explaining how the "number of trials until success" definition tells us what $1 - F(x)$ must be.
+:::
+
+::: {.subq}
+**(c)** A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?
+:::
+::::
+
+:::: {.myq}
+**B2** Let $X \sim \text{Po}(\lambda)$.
+
+::: {.subq}
+**(a)** Show that $\mathbb EX(X-1) = \lambda^2$. You may use the Taylor series for the exponential,
+\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]
+:::
+
+::: {.subq}
+**(b)** Hence show that $\Var(X) = \lambda$. You may use the fact, proved in the notes, that $\mathbb EX = \lambda$.
+:::
+::::
+
+:::: {.myq}
+**B3.** Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is a roll-over (no jackpot winners), a unique jackpot winner, or when multiple winners share the jackpot. State any modelling assumptions you make.
+::::

@@ -1,0 +1,21 @@
+:::: {.myq}
+**C1.** A collector wants to collect football stickers to fill an album. There are $n$ unique stickers to collect. Each time the collector buys a sticker, it is one of the $n$ stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having "swaps", where he has received the same sticker more than once, so he will likley need to buy more than $n$ stickers in total to fill his album. But how many?
+
+::: {.subq}
+**(a)** Suppose the collector has already got $j$ unique stickers (and some number of swaps). Let $X_j$ be the the number of extra stickers he buys until getting a new unique sticker. Explain why $X_j$ is geometrically distributed, and state the parameter $p = p_j$ of the geometric distribution.
+:::
+
+::: {.subq}
+**(b)** Hence, show that the expected number of stickers the collector must buy to fill his album is
+\[ n \sum_{k=1}^n \frac{1}{k} . \]
+:::
+
+::: {.subq}
+**(c)** The Euro 2020 sticker album required $n = 678$ unique stickers to complete it, and stickers cost 15p each. Using the expression from (b), calculate the amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.
+:::
+
+::: {.subq}
+**(d)** By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately $n \log n$, where $\log$ denotes the natural logarithm to base $\mathrm e$.
+:::
+::::
+
