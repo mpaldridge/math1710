@@ -16,6 +16,8 @@ display: none !important;
 
 ::: {.mysummary}
 This is Problem Sheet 4. This problem sheet covers [Section 6](#S06-discrete-dist), and next week will have questions added on Section 7. You should work through all the questions on this problem sheet so far during Week 6, in preparation for your tutorial in Week 8. The problem sheet contain an assessed question, to which a second will be added next week, and which are due in by **2pm on  Monday 22 November**.
+
+Please also fill in the [mid-semester survey](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUOVVWTlQ3SVZHNjJWQVcwTFU0RDlaOFk0Ni4u) if you haven't done so yet.
 :::
 
 ## A: Short questions {#P4-short .unnumbered}
