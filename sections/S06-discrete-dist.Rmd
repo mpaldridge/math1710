@@ -149,7 +149,7 @@ So
 :::
 ::::
 
-Another important distribution is the Poisson distribution. The Poisson distribution (roughly "*pwa*-song") is typically used to model "the number of times something happens in a set period of time". For example, the number of emails you receive in a day; the number of claims at an insurance company each year; or the number of calls to call centre each day. (Famously, one of the first historical datasets modelled using a Poisson distribution was "the number of Prussian soldiers in different cavalry units kicked to death by their horse between 1875 and 1894"!) We'll explain why the Poisson distribution is a good model for this in the next subsection.
+Another important distribution is the Poisson distribution. The Poisson distribution (roughly "*pwa*-song") is typically used to model "the number of times something happens in a set period of time". For example, the number of emails you receive in a day; the number of claims at an insurance company each year; or the number of calls to call centre in one hour. (Famously, one of the first historical datasets modelled using a Poisson distribution was "the number of Prussian soldiers in different cavalry units kicked to death by their horse between 1875 and 1894".) We'll explain why the Poisson distribution is a good model for this in the next subsection.
 
 ::: {.definition}
 Let $X$ be a discrete random variable with range $\{0,1,2,\dots\}$ and PMF
@@ -173,7 +173,7 @@ The Poisson distribution is named after the French mathematician [Siméon-Denis 
 ::: {.example}
 *An insurance company receives large insurance claims of over £100,000 at a rate of $\lambda = 1.2$ per day, modelled as a Poisson distribution and independent between days. What's the probability that in a week (5 days) they get at least one large claim every day?*
 
-Let $X \sim \text{Po}(\lambda)$ be the number of large claims received in a data. Then the probability there is at least one claim in a day -- which is an "at least one" question, suggesting we look at the complement -- is
+Let $X \sim \text{Po}(\lambda)$ be the number of large claims received in a day. Then the probability there is at least one claim in a day -- which is an "at least one" question, suggesting we look at the complement -- is
 \[ \mathbb P(X \geq 1) = 1 - \mathbb P(X = 0) = 1 - \mathrm e^{-1.2} \frac{1.2^0}{0!} = 1 - \mathrm e^{-1.2} =0.699 .    \]
 
 Since it's assumed that days are independent, the probability there is at least one large claim all 5 days is

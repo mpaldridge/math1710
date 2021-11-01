@@ -6,7 +6,7 @@
 :::
 
 ::: {.subq}
-**(b)** ...by explaining how the "number of trials until success" definition tells us what $1 - F(x)$ must be.
+**(b)** ...by explaining how the "number of trials until success" definition tells us what $1 - F(x) = \mathbb P(X > x)$ must be.
 :::
 
 ::: {.subq}
