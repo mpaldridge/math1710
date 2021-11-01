@@ -293,7 +293,37 @@ display: none !important;
 <div id="P4-short" class="section level2 unnumbered">
 <h2>A: Short questions</h2>
 <div class="myq">
-<p><strong>A1.</strong></p>
+<p><strong>A1.</strong> Let <span class="math inline">\(X \sim \text{Bin}(20, 0.4)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 8)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(8 \leq X \leq 11)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\mathbb EX\)</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A2.</strong> Let <span class="math inline">\(X \sim \text{Geom}(20, 0.2)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 1)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq 2)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\operatorname{Var}(X)\)</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> Let <span class="math inline">\(X \sim \text{Po}(2.5)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 3)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq \mathbb EX)\)</span></p>
+</div>
 </div>
 </div>
 <div id="P4-long" class="section level2 unnumbered">
@@ -311,7 +341,16 @@ display: none !important;
 </div>
 </div>
 <div class="myq">
-<p><strong>B2</strong> Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
+<p><strong>B2.</strong> Let <span class="math inline">\(Y\)</span> be a geometric distribution with parameter <span class="math inline">\(p\)</span> according to the alternative “number of failures <em>before</em> the first success” definition.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the PMF for <span class="math inline">\(Y\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Calculate the expectation and variance of <span class="math inline">\(Y\)</span>. You may use without proof the fact that for a standard “number of trials up to and including the first success” geometric distribution we have <span class="math inline">\(\mathbb EX = 1/p\)</span> and <span class="math inline">\(\operatorname{Var}(X) = (1-p)/p^2\)</span>.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B3</strong> Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
 <div class="subq">
 <p><strong>(a)</strong> Show that <span class="math inline">\(\mathbb EX(X-1) = \lambda^2\)</span>. You may use the Taylor series for the exponential,
 <span class="math display">\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]</span></p>
@@ -321,7 +360,7 @@ display: none !important;
 </div>
 </div>
 <div class="myq">
-<p><strong>B3.</strong> Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is a roll-over (no jackpot winners), a unique jackpot winner, or when multiple winners share the jackpot. State any modelling assumptions you make.</p>
+<p><strong>B4.</strong> Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is <strong>(a)</strong> a roll-over (no jackpot winners), <strong>(b)</strong> a unique jackpot winner, or <strong>(c)</strong> when multiple winners share the jackpot. State any modelling assumptions or approximations you make.</p>
 </div>
 </div>
 <div id="P4-assessed" class="section level2 unnumbered">
@@ -334,7 +373,7 @@ Your work will be marked by your tutor and returned on Monday 29 November, when 
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 <div class="myq">
-<p><strong>C1.</strong> A collector wants to collect football stickers to fill an album. There are <span class="math inline">\(n\)</span> unique stickers to collect. Each time the collector buys a sticker, it is one of the <span class="math inline">\(n\)</span> stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having “swaps”, where he has received the same sticker more than once, so he will likley need to buy more than <span class="math inline">\(n\)</span> stickers in total to fill his album. But how many?</p>
+<p><strong>C1.</strong> A collector wants to collect football stickers to fill an album. There are <span class="math inline">\(n\)</span> unique stickers to collect. Each time the collector buys a sticker, it is one of the <span class="math inline">\(n\)</span> stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having “swaps”, where he has received the same sticker more than once, so he will likely need to buy more than <span class="math inline">\(n\)</span> stickers in total to fill his album. But how many?</p>
 <div class="subq">
 <p><strong>(a)</strong> Suppose the collector has already got <span class="math inline">\(j\)</span> unique stickers (and some number of swaps). Let <span class="math inline">\(X_j\)</span> be the the number of extra stickers he buys until getting a new unique sticker. Explain why <span class="math inline">\(X_j\)</span> is geometrically distributed, and state the parameter <span class="math inline">\(p = p_j\)</span> of the geometric distribution.</p>
 </div>

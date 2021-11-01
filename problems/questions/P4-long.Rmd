@@ -14,8 +14,20 @@
 :::
 ::::
 
+::::: {.myq}
+**B2.** Let $Y$ be a geometric distribution with parameter $p$ according to the alternative "number of failures *before* the first success" definition.
+
+:::: {.subq}
+**(a)** Write down the PMF for $Y$.
+::::
+
+:::: {.subq}
+**(b)** Calculate the expectation and variance of $Y$. You may use without proof the fact that for a standard "number of trials up to and including the first success" geometric distribution we have $\mathbb EX = 1/p$ and $\Var(X) = (1-p)/p^2$.
+::::
+:::::
+
 :::: {.myq}
-**B2** Let $X \sim \text{Po}(\lambda)$.
+**B3** Let $X \sim \text{Po}(\lambda)$.
 
 ::: {.subq}
 **(a)** Show that $\mathbb EX(X-1) = \lambda^2$. You may use the Taylor series for the exponential,
@@ -28,5 +40,5 @@
 ::::
 
 :::: {.myq}
-**B3.** Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is a roll-over (no jackpot winners), a unique jackpot winner, or when multiple winners share the jackpot. State any modelling assumptions you make.
+**B4.** Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is **(a)** a roll-over (no jackpot winners), **(b)** a unique jackpot winner, or **(c)** when multiple winners share the jackpot. State any modelling assumptions or approximations you make.
 ::::

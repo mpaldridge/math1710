@@ -1,3 +1,46 @@
 ::::: {.myq}
-**A1.** 
+**A1.** Let $X \sim \text{Bin}(20, 0.4)$. Calculate
+
+:::: {.subq}
+**(a)** $\mathbb P(X = 8)$
+::::
+
+:::: {.subq}
+**(b)** $\mathbb P(8 \leq X \leq 11)$
+::::
+
+:::: {.subq}
+**(c)** $\mathbb EX$
+::::
 :::::
+
+::::: {.myq}
+**A2.** Let $X \sim \text{Geom}(20, 0.2)$. Calculate
+
+:::: {.subq}
+**(a)** $\mathbb P(X = 1)$
+::::
+
+:::: {.subq}
+**(b)** $\mathbb P(X \geq 2)$
+::::
+
+:::: {.subq}
+**(c)** $\Var(X)$
+::::
+:::::
+
+::::: {.myq}
+**A3.** Let $X \sim \text{Po}(2.5)$. Calculate
+
+:::: {.subq}
+**(a)** $\mathbb P(X = 3)$
+::::
+
+:::: {.subq}
+**(b)** $\mathbb P(X \geq \mathbb EX)$
+::::
+:::::
+
+
+

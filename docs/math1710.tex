@@ -3932,7 +3932,27 @@ This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S06-discre
 \section*{A: Short questions}\label{P4-short}}
 \addcontentsline{toc}{section}{A: Short questions}
 
-\textbf{A1.}
+\textbf{A1.} Let \(X \sim \text{Bin}(20, 0.4)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 8)\)
+
+\textbf{(b)} \(\mathbb P(8 \leq X \leq 11)\)
+
+\textbf{(c)} \(\mathbb EX\)
+
+\textbf{A2.} Let \(X \sim \text{Geom}(20, 0.2)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 1)\)
+
+\textbf{(b)} \(\mathbb P(X \geq 2)\)
+
+\textbf{(c)} \(\operatorname{Var}(X)\)
+
+\textbf{A3.} Let \(X \sim \text{Po}(2.5)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 3)\)
+
+\textbf{(b)} \(\mathbb P(X \geq \mathbb EX)\)
 
 \hypertarget{P4-long}{%
 \section*{B: Long questions}\label{P4-long}}
@@ -3946,14 +3966,20 @@ This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S06-discre
 
 \textbf{(c)} A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?
 
-\textbf{B2} Let \(X \sim \text{Po}(\lambda)\).
+\textbf{B2.} Let \(Y\) be a geometric distribution with parameter \(p\) according to the alternative ``number of failures \emph{before} the first success'' definition.
+
+\textbf{(a)} Write down the PMF for \(Y\).
+
+\textbf{(b)} Calculate the expectation and variance of \(Y\). You may use without proof the fact that for a standard ``number of trials up to and including the first success'' geometric distribution we have \(\mathbb EX = 1/p\) and \(\operatorname{Var}(X) = (1-p)/p^2\).
+
+\textbf{B3} Let \(X \sim \text{Po}(\lambda)\).
 
 \textbf{(a)} Show that \(\mathbb EX(X-1) = \lambda^2\). You may use the Taylor series for the exponential,
 \[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]
 
 \textbf{(b)} Hence show that \(\operatorname{Var}(X) = \lambda\). You may use the fact, proved in the notes, that \(\mathbb EX = \lambda\).
 
-\textbf{B3.} Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is a roll-over (no jackpot winners), a unique jackpot winner, or when multiple winners share the jackpot. State any modelling assumptions you make.
+\textbf{B4.} Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is \textbf{(a)} a roll-over (no jackpot winners), \textbf{(b)} a unique jackpot winner, or \textbf{(c)} when multiple winners share the jackpot. State any modelling assumptions or approximations you make.
 
 \hypertarget{P4-assessed}{%
 \section*{C: Assessed questions}\label{P4-assessed}}
@@ -3968,7 +3994,7 @@ Both questions are ``long questions'', where the marks are not only for mathemat
 
 You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
 
-\textbf{C1.} A collector wants to collect football stickers to fill an album. There are \(n\) unique stickers to collect. Each time the collector buys a sticker, it is one of the \(n\) stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having ``swaps'', where he has received the same sticker more than once, so he will likley need to buy more than \(n\) stickers in total to fill his album. But how many?
+\textbf{C1.} A collector wants to collect football stickers to fill an album. There are \(n\) unique stickers to collect. Each time the collector buys a sticker, it is one of the \(n\) stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having ``swaps'', where he has received the same sticker more than once, so he will likely need to buy more than \(n\) stickers in total to fill his album. But how many?
 
 \textbf{(a)} Suppose the collector has already got \(j\) unique stickers (and some number of swaps). Let \(X_j\) be the the number of extra stickers he buys until getting a new unique sticker. Explain why \(X_j\) is geometrically distributed, and state the parameter \(p = p_j\) of the geometric distribution.
 

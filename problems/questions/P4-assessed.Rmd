@@ -1,5 +1,5 @@
 :::: {.myq}
-**C1.** A collector wants to collect football stickers to fill an album. There are $n$ unique stickers to collect. Each time the collector buys a sticker, it is one of the $n$ stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having "swaps", where he has received the same sticker more than once, so he will likley need to buy more than $n$ stickers in total to fill his album. But how many?
+**C1.** A collector wants to collect football stickers to fill an album. There are $n$ unique stickers to collect. Each time the collector buys a sticker, it is one of the $n$ stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having "swaps", where he has received the same sticker more than once, so he will likely need to buy more than $n$ stickers in total to fill his album. But how many?
 
 ::: {.subq}
 **(a)** Suppose the collector has already got $j$ unique stickers (and some number of swaps). Let $X_j$ be the the number of extra stickers he buys until getting a new unique sticker. Explain why $X_j$ is geometrically distributed, and state the parameter $p = p_j$ of the geometric distribution.
