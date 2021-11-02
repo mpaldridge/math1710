@@ -216,18 +216,27 @@ where we used the Taylor series again.
 
 ## Poisson approximation to the binomial  {#poisson-approx}
 
-Suppose I own a watch shop in Leeds. My watches are very expensive, so I don't need to sell many each day -- in fact, I sell an average of 3.5 watches per day. How should I model the number of watches sold each day as a random variable?
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/5Ma4YIF_r7w"></iframe>
+:::
+::::
 
-One way could be to say this. There are $n$ people living in Leeds or nearby, and, on any given day, each of them will buy a watch from my shop with probability $p$. Thus the total number of watches I sell could be modelled as a binomial distribution $\text{Bin}(n. p)$.
 
-But what should $n$ and $p$ be? To make the average $np = 3.5$, I should take $p = 3.5/n$. But what is $n$? We know $n$ is a very big number, because Leeds is a big city, so let's take a limit as $n \to \infty$. It turns out, that this is a Poisson(3.5) distribution!
+Suppose I own a watch shop in Leeds. My watches are very expensive, so I don't need to sell many each day -- in fact, I sell an average of 4.8 watches per day. How should I model the number of watches sold each day as a random variable?
+
+One way could be to say this. There are $n$ people living in Leeds or nearby, and, on any given day, each of them will independently buy a watch from my shop with probability $p$. Thus the total number of watches I sell could be modelled as a binomial distribution $\text{Bin}(n, p)$.
+
+But what should $n$ and $p$ be? To make the average $\mathbb EX = np = 4.8$, I should take $p = 4.8/n$. But what about $n$? We know $n$ is a very big number, because Leeds is a big city, so let's take a limit as $n \to \infty$. It turns out, that this distribution $\text{Bin}(n, 4.8/n)$ becomes a Poisson(4.8) distribution!
 
 :::  {.theorem #po-bint}
-Fix $\lambda \geq 0$, and let $X_n \sim \text{Bin}(n, \lambda/n)$ for all integers $n \geq \lambda$. Then $X_n \to \text{Po}(\lambda)$ in distribution, by which we mean that if $Y \sim \text{Po}(\lambda)$, then
+Fix $\lambda \geq 0$, and let $X_n \sim \text{Bin}(n, \lambda/n)$ for all integers $n \geq \lambda$. Then $X_n \to \text{Po}(\lambda)$ in distribution as $n \to infty$, by which we mean that if $Y \sim \text{Po}(\lambda)$, then
 \[ p_{X_n}(x) \to p_Y(x) \qquad \text{for all $x \in \{0, 1, \dots \}$}. \]
 :::
 
 A looser way to state the principle of this theorem would be this: *When $n$ is very large and $p$ very small, in such a way that $np$ is a small-ish number, then $\text{Bin}(n,p)$ is well approximated by $\text{Po}(\lambda)$ where $\lambda = np$.*
+
+This is why a Poisson distribution is a good model for the number of occurrences in a set time period. It applies if there lots of things that could happen (large $n$), each one is individually unlikely (small $p$), and on average a few of them will actually happen ($\lambda = np$ small-ish).
 
 ::: {.example}
 *A lecturer teaches a module with $n = 100$, and estimate that each student turns up to office hours drop-in sessions independently with probability $p = 0.035$. What is the probability that **(a)** exactly 5, **(b)** 2 or more students turn up to a drop-in session?*
