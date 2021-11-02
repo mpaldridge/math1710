@@ -449,12 +449,41 @@ where we used the Taylor series again.</p>
 <p><span id="thm:po-bint" class="theorem"><strong>Theorem 6.4  </strong></span>Fix <span class="math inline">\(\lambda \geq 0\)</span>, and let <span class="math inline">\(X_n \sim \text{Bin}(n, \lambda/n)\)</span> for all integers <span class="math inline">\(n \geq \lambda\)</span>. Then <span class="math inline">\(X_n \to \text{Po}(\lambda)\)</span> in distribution, by which we mean that if <span class="math inline">\(Y \sim \text{Po}(\lambda)\)</span>, then
 <span class="math display">\[ p_{X_n}(x) \to p_Y(x) \qquad \text{for all $x \in \{0, 1, \dots \}$}. \]</span></p>
 </div>
-<p>A looser way to state the principle of this theorem would be this: <em>When <span class="math inline">\(n\)</span> is very large and <span class="math inline">\(p\)</span> very small, in such a way that <span class="math inline">\(np\)</span> is a small-ish number, then <span class="math inline">\(\text{Bin}(n,p)\)</span> is well approximated by <span class="math inline">\(\text{Po}(np)\)</span>.</em></p>
+<p>A looser way to state the principle of this theorem would be this: <em>When <span class="math inline">\(n\)</span> is very large and <span class="math inline">\(p\)</span> very small, in such a way that <span class="math inline">\(np\)</span> is a small-ish number, then <span class="math inline">\(\text{Bin}(n,p)\)</span> is well approximated by <span class="math inline">\(\text{Po}(\lambda)\)</span> where <span class="math inline">\(\lambda = np\)</span>.</em></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-73" class="example"><strong>Example 6.4  </strong></span><em>A lecturer teaches a module with <span class="math inline">\(n = 100\)</span>, and estimate that each student turns up to office hours drop-in sessions independently with probability <span class="math inline">\(p = 0.035\)</span>. What is the probability that <strong>(a)</strong> exactly 5, <strong>(b)</strong> 2 or more students turn up to a drop-in session?</em></p>
+<p>If we let <span class="math inline">\(X\)</span> be the number of students that turn up to a drop-in session, then the exact distribution of <span class="math inline">\(X\)</span> is <span class="math inline">\(X \sim \text{Bin}(100, 0.035)\)</span>.</p>
+<p>For part (a), we then have
+<span class="math display">\[ \mathbb P(X = 5) = \binom{100}{5} 0.035^5 (1 - 0.035)^{100-5} = 0.134 .  \]</span></p>
+<p>For part (b), we use the complement rule to get
+<span class="math display">\[\begin{align*}
+\mathbb P(X \geq 2)
+&amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
+&amp;= 1 - \binom{100}{0} 0.035^0 (1 - 0.035)^{100-0} + \binom{100}{1} 0.035^1 (1 - 0.035)^{100 - 1} \\
+&amp;= 1 - (1 - 0.035)^{100} + 100 \times 0.035 (1 - 0.035)^{99} \\
+&amp;= 1 - 0.028 - 0.103 \\
+&amp;= 0.869
+\end{align*}\]</span></p>
+<p>Alternatively, it might be more convenient to approximate <span class="math inline">\(X\)</span> by a Poisson distribution <span class="math inline">\(Y \sim \text{Po}(100 \times 0.035) = \text{Po}(3.5)\)</span>.</p>
+<p>For part (a), this gives
+<span class="math display">\[ \mathbb P(Y = 5) = \mathrm e^{-3.5} \frac{3.5^5}{5!} = 0.132 ,  \]</span>
+which is very close to the exact answer above of <span class="math inline">\(0.134\)</span>.</p>
+<p>For part (b), the approximation gives
+<span class="math display">\[\begin{align*}
+\mathbb P(Y \geq 2)
+&amp;= 1 - \mathbb P(Y = 0) - \mathbb P(Y = 1) \\
+&amp;= 1 - \mathrm e^{-3.5} \frac{3.5^0}{0!} - \mathrm e^{-3.5} \frac{3.5^1}{1!} \\
+&amp;= 1 - \mathrm e^{-3.5} - 3.5 \mathrm e^{-3.5} \\
+&amp;= 1 - 0.030 - 0.106 \\
+&amp;= 0.864
+\end{align*}\]</span>
+which is very close to the exact answer above of <span class="math inline">\(0.869\)</span>.</p>
 <p>The following graph shows how close the <span class="math inline">\(\text{Po}(3.5)\)</span> distribution is to a <span class="math inline">\(\text{Bin}(100, 0.035)\)</span> distribution – not exact, but pretty good.</p>
 <p><img src="math1710_files/figure-html/po-binom-pic-1.png" width="672" /></p>
+</div>
 <p>For completeness, we include a proof of Theorem <a href="S06-discrete-dist.html#thm:po-bint">6.4</a> here, although since it discusses use of limits, it’s not examinable material for this module.</p>
 <div class="proof">
-<p><span id="unlabeled-div-73" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
+<p><span id="unlabeled-div-74" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
 We need to show that, as <span class="math inline">\(n \to \infty\)</span>,
 <span class="math display">\[ \binom nx \left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x}
 \to \mathrm{e}^{-\lambda} \frac{\lambda^x}{x!} . \]</span>

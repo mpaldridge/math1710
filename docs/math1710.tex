@@ -3841,11 +3841,47 @@ But what should \(n\) and \(p\) be? To make the average \(np = 3.5\), I should t
 \[ p_{X_n}(x) \to p_Y(x) \qquad \text{for all $x \in \{0, 1, \dots \}$}. \]
 \end{theorem}
 
-A looser way to state the principle of this theorem would be this: \emph{When \(n\) is very large and \(p\) very small, in such a way that \(np\) is a small-ish number, then \(\text{Bin}(n,p)\) is well approximated by \(\text{Po}(np)\).}
+A looser way to state the principle of this theorem would be this: \emph{When \(n\) is very large and \(p\) very small, in such a way that \(np\) is a small-ish number, then \(\text{Bin}(n,p)\) is well approximated by \(\text{Po}(\lambda)\) where \(\lambda = np\).}
+
+\begin{example}
+\emph{A lecturer teaches a module with \(n = 100\), and estimate that each student turns up to office hours drop-in sessions independently with probability \(p = 0.035\). What is the probability that \textbf{(a)} exactly 5, \textbf{(b)} 2 or more students turn up to a drop-in session?}
+
+If we let \(X\) be the number of students that turn up to a drop-in session, then the exact distribution of \(X\) is \(X \sim \text{Bin}(100, 0.035)\).
+
+For part (a), we then have
+\[ \mathbb P(X = 5) = \binom{100}{5} 0.035^5 (1 - 0.035)^{100-5} = 0.134 .  \]
+
+For part (b), we use the complement rule to get
+\begin{align*}
+\mathbb P(X \geq 2)
+&= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
+&= 1 - \binom{100}{0} 0.035^0 (1 - 0.035)^{100-0} + \binom{100}{1} 0.035^1 (1 - 0.035)^{100 - 1} \\
+&= 1 - (1 - 0.035)^{100} + 100 \times 0.035 (1 - 0.035)^{99} \\
+&= 1 - 0.028 - 0.103 \\
+&= 0.869
+\end{align*}
+
+Alternatively, it might be more convenient to approximate \(X\) by a Poisson distribution \(Y \sim \text{Po}(100 \times 0.035) = \text{Po}(3.5)\).
+
+For part (a), this gives
+\[ \mathbb P(Y = 5) = \mathrm e^{-3.5} \frac{3.5^5}{5!} = 0.132 ,  \]
+which is very close to the exact answer above of \(0.134\).
+
+For part (b), the approximation gives
+\begin{align*}
+\mathbb P(Y \geq 2)
+&= 1 - \mathbb P(Y = 0) - \mathbb P(Y = 1) \\
+&= 1 - \mathrm e^{-3.5} \frac{3.5^0}{0!} - \mathrm e^{-3.5} \frac{3.5^1}{1!} \\
+&= 1 - \mathrm e^{-3.5} - 3.5 \mathrm e^{-3.5} \\
+&= 1 - 0.030 - 0.106 \\
+&= 0.864
+\end{align*}
+which is very close to the exact answer above of \(0.869\).
 
 The following graph shows how close the \(\text{Po}(3.5)\) distribution is to a \(\text{Bin}(100, 0.035)\) distribution -- not exact, but pretty good.
 
 \includegraphics{math1710_files/figure-latex/po-binom-pic-1.pdf}
+\end{example}
 
 For completeness, we include a proof of Theorem \ref{thm:po-bint} here, although since it discusses use of limits, it's not examinable material for this module.
 
