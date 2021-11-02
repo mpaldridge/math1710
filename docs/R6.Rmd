@@ -1,0 +1,199 @@
+---
+title:  "R Worksheet 6: R Markdown (optional)"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet is optional and does not include any assessed work. It's fine just to work through some -- or even none! -- of this worksheet.*
+
+*You can view this worksheet as [an HTML webpage](https://mpaldridge.github.io/math1710/R6.html) or you view [the R Markdown .Rmd file](https://mpaldridge.github.io/math1710/R6.Rmd) that was used to produce it.*
+
+------------------------------------------------------------------------
+
+## What is R Markdown?
+
+In R Worksheet 1, we talked about how to save the commands you use in R as an **R Script** (`.R` file), and how to use comments (preceded by the hash sign `#`) to annotate your work. This is fine as a sort of "rough scratchpad" for your own informal notes, but it is not a professional output to show other people. It also only saves the commands you used, but does not store the outputs R gave or the plots produced by R, so you need to re-run the saved commands to get those back.
+
+The solution to this problem is **R Markdown**. R Markdown is a format that allows you to write a document that includes written text, R input, and R output all together. These R worksheets are written in R Markdown, and the MATH1710 lecture notes were written in R Markdown too (together with an extra package called "Bookdown" that we won't discuss here). R Markdown documents are easiest to write inside the program RStudio that you've been using throughout this module.
+
+For example, in the middle of this smart and professional-looking document, I can get R to calculate the sum of the first 100 numbers:
+
+```{r sum-numbers}
+sum(1:100)
+```
+
+or draw a boxplot of some temperature data
+
+```{r temp-boxplot}
+temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")
+boxplot(temperature$jul, temperature$aug, temperature$sep,
+  xlab  = "Month",
+  names = c("July", "August", "September"),
+  ylab  = "Average temperature (degrees Celsius)",
+  main  = "Historical UK temperatures"
+)
+```
+
+This worksheet -- which, again, is optional -- should help get you started with writing R Markdown documents. You are not required to submit R Markdown documents in any part of MATH1710 -- this is just for fun (and because it might be useful later in your university career).
+
+## A first R Markdown document
+
+> **Exercise 6.1.** Make your first R Markdown document by following the instructions below.
+
+The very first time you want to use R Markdown -- and only the first time -- you will probably need to install the `rmarkdown` package. You can do this with the following command in RStudio:
+
+```{r install, eval = FALSE}
+install.packages("rmarkdown")
+```
+
+This will run a whole bunch of stuff, and you should just let it do its thing (and click "yes" or "agree" whenever asked).
+
+You are now ready to write an R Markdown document. In RStudio, click **File -\> New File -\> R Markdown**. This will prompt you for a title and name -- you can enter whatever you like here; it's easy to change later. It will also ask you for a "default output format": for the moment, you should choose **HTML**.
+
+This will give you an R Markdown document that starts with a section that looks a bit like this:
+
+    ---
+    title: "My Test Document"
+    author: "Matthew Aldridge"
+    date: "28/10/2021"
+    output: html_document
+    ---
+
+The first three lines are basic information that will appear at the top of your document, and the fourth line tells R you will be making a document in HTML (web page) format. You can edit these if you want to.
+
+Before you go any further, you should **Save** your work. R Markdown files are conventionally saved with the suffix `.Rmd`.
+
+Your R Markdown problem came with some default text in it, just to demonstrate what R Markdown can do. So let's make it into a document. You need to press the **Knit** button (with a ball of wool) at the top of the editing window. This should (hopefully) lead R to do some stuff, then produce a preview of the HTML document. If your work was saved as `filename.Rmd`, then this HTML page has been saved in the same folder as `filename.html`.
+
+Congratulations, you have made your first R Markdown document!
+
+## Editing with R Markdown
+
+There are two ways to write the main body of an R Markdown document:
+
+The first is using **Markdown syntax**. Here, you use *special symbols* like `*` in your text to denote how material should be formatted. That sentence was written like this:
+
+    The first is using **Markdown syntax**. Here you use *special symbols* like
+    `*` in your text to denote how the material should be formatted.
+
+The second way is using RStudio's **visual editor**. This requires an up-to-date version of RStudio: at least version 1.4.0, which I'm not sure University computers have yet. (Let me know if you find out.) You can enter the visual editor by clicking on the "pair of compasses that look a bit like a capital `A`" icon in the top-right of the editor window. The visual editor is more like Word: you make material bold or italic by clicking the **B** or *I* buttons, for example.
+
+I mostly use Markdown syntax, because I learned R Markdown before the visual editor existed, and when you get used to it's probably slightly quicker and gives more delicate control than the visual editor. My guess, though, is that most students will prefer the convenience of the visual editor. (The visual editor does also allow you to use most Markdown syntax within it it: try typing `is **this** in bold` and see what happens.)
+
+The basic formatting choices are these:
+
+-   **Bold** uses `**double asterisks**` in Markdown, or the **B** button in the visual editor.
+-   ***Italic*** uses `*single asterisks*` in Markdown, or the ***I*** button in the visual editor.
+-   For **bulletpoints**, start a new paragraph with a dash `-` and a space in Markdown, or the bulletpoints button in the visual editor.
+-   For a **numbered list**, start a new paragraph with `1.` and a space in Markdown (every line can begin `1.` -- even later ones; R Markdown will fixes the correct numbers), or the numbered list button in the visual editor.
+-   **"code-like formatting"** that uses a `fixed width font` but doesn't run, place the text between back-ticks `` `like this `` in Markdown, or us the `</>` button in the visual editor.
+-   For a **block-quote**, start a new paragraph with `>` and a space in Markdown, or the quote-marks **"** button in the visual editor. (I use the block-quote for exercises on the R worksheets.)
+-   For [**hyperlinks**](https://mpaldridge.github.io/math1710/), you want the text in square brackets followed by the link in round brackets, `[like this](https://mpaldridge.github.io/math1710/)` in Markdown, or the chain-link button in the visual editor.
+-   For **headings** in Markdown, start a new paragraph with one to six `#` signs for the different levels of heading. I usually only use `## Level 2 Headings` in my documents, and sometimes `### Level 3` too. In the visual editor, change "Normal" in the left-most menu to the heading level required.
+
+> **Exercise 6.2.** Replace the default text in your R Markdown document with some text where you try out all the different types of formatting. Knit your document to HTML to check it all works properly.
+
+## R code in R Markdown
+
+One of the main benefits of R Markdown is how easily we can insert R commands, the output from R commands, or both directly into your document. Theses sections of R code are known as "chunks".
+
+To insert an R chunk using R Markdown syntax, we start with three `` ` ``s ("back-ticks") then `{r}` (an r in curly brackets) on one line. Then we put in R code. Then we end with three back-ticks again. Altogether, we have something like this:
+
+    ```{r}
+    data <- c(1, 4, 6, 2, 3)
+    mean(data)
+    ```
+
+In the visual editor, we can click on **Insert** -\> **Code chunk** -\> **R**., then start writing our code in the grey box in the line below the `{r}`. The three back-ticks will not appear.
+
+> **Exercise 6.3.** Add an R chunk to your document, with some R code that, like mine above, would normally give an output in R. Knit your document. How does the chunk display?
+
+You should have noticed that your document showed your R commands in one box, and the corresponding R output in another box.
+
+If your R chunk would normally produce a picture, like one of the plots we saw in R worksheets 4 and 5, then your document will show the figure will show that after the code.
+
+> **Exercise 6.4.** Add some R code to your document that will produce a plot -- you might want to try some of your code you used for the exercises on R Worksheets 4 or 5, for example. Knit your code to show it displays properly.
+
+Note that, by default, the final document shows both the R code itself and also the output. Sometimes this isn't what you want. You can pass extra options to your R chunk to control this. Options come after the inside the braces of `{r}` at the top of your chunk. So your chunk might start (after three back-ticks, if you are using Markdown rather than the visual editor) like this:
+
+    {r my-test-chunk, echo = FALSE, eval = TRUE}
+
+The arguments here are:
+
+-   We always start with **open brace** then **r** `{r` (after the three back-ticks, in raw Markdown).
+
+-   The next thing, before any comma, is an optional **name** for the chunk. This is useful when fixing errors, and for giving filenames to picture files produced when making a PDF.
+
+-   Then, after the **comma**, come other optional arguments, in any order:
+
+    -   **`echo = ...`** sets whether or not the code itself appears in your document. The default is `echo = TRUE`.
+    -   **`eval = ...`** sets whether or not actually run the code, so the output appears in your document. The default is `eval = TRUE`.
+    -   There are many other optional arguments we won't go into here.
+
+-   We always end with a **close brace** `}`.
+
+-   On the next line, you can start your R code.
+
+-   End with three back-ticks, if using raw Markdown.
+
+> **Exercise 6.5.** Change some of the options in the R chunks in your documents. Check the output knits to what you would expect it to.
+
+## Maths in R Markdown
+
+You can also write mathematical equations in R Markdown documents, which can help to explain your work. There are two types of equation display:
+
+-   **Inline mathematics** is shown directly in the text, and looks like this: $a^2 + b^2 = c^2$. Fractions, sum, and so on, are squashed up to fit, like this: $\frac{p}{q}$, $\sum_{i=1}^n a_n$.
+-   **Display mathematics** is shown separately on it's own line, and looks like this: $$
+    \Phi(x) = \int_{-\infty}^{x} \exp \left( - \frac{(y - \mu)^2}{2 \sigma^2} \right) dy .
+    $$ Here, the integral and fractional are bigger and easier to read.
+
+Mathematics is included with "LaTeX" notation. LaTeX (usually pronounced "lay-tek", or even "lay-tekh" with a throaty "kh") is a method of typesetting mathematics that is very popular with mathematicians. You may have used LaTeX before.
+
+Inline equations are placed between single dollar signs like this: `$a^2 + b^2 = c^2$`. Displayed equations are placed between double dollar signs, like this:
+
+    $$
+    \Phi(x) = \int_{-\infty}^{x} \exp \left( - \frac{(y - \mu)^2}{2 \sigma^2} \right) dy
+    $$
+
+This isn't the place for a full tutorial on LaTeX notation for equations, but we can mention a few basics:
+
+-   Standard mathematics can just be typed normally, like `y = mx + c`: $y = mx + c$
+-   Fractions are written like `\frac{a}{b}`: $\frac{a}{b}$
+-   Powers are written with the `^` character, like `x^2`: $x^2$
+-   Sums are written like `\sum_{i = 1}^n x_i`: $\sum_{i = 1}^n x_i$
+-   The "double-struck" $\mathbb P$ and $\mathbb E$ that we use for probability and expectation are `\mathbb{P}` and `\mathbb{E}`.
+
+> **Exercise 6.6.** Add some mathematical formulas to your R Markdown document.
+
+> **Exercise 6.7.** Take one of the R Scripts you used to solve the exercises on a previous R Worksheet. Write up your answers neatly as an R Markdown document.
+
+## Making PDF documents in R Markdown
+
+Making documents as HTML pages is good for some things, like displaying on the web. But if you want to print your work on paper, it will look more professional if you produce a PDF file. Also, Gradescope does not accept HTML, so if you ever want to submit homework written in R Markdown, you will need to produce a PDF.
+
+R Markdown produces PDFs using the full LaTeX engine, so you will need to have LaTeX installed on your computer for this to work. If you do not already have LaTeX installed, the easiest way to do this is by installing a version called "tinytex" directly through R. To do this, you will need to run the following two commands:
+
+```{r tinytex, eval = FALSE}
+install.packages("tinytex")
+tinytex::install_tinytex()
+```
+
+R will have a lot of things to do after each of these commands, and you should let R get on with it.
+
+> **Exercise 6.8.** If you don't have LaTeX installed on the computer you are currently using, install tinytex using the commands above.
+
+You will then need to change the top of your document for `html_document` to `pdf_document`. It will now look like this:
+
+    ---
+    title: "My Test Document"
+    author: "Matthew Aldridge"
+    date: "28/10/2021"
+    output: html_document
+    ---
+
+For new documents, you can simply choose "PDF" for the default output format, where you chose HTML before.
+
+You can then knit the document, and a PDF should be produced. (For one-off knitting to PDF, you can leave the header of your document, and simply choose "Knit to PDF" from the drop-down menu by the Knit button.)
+
+> **Exercise 6.9.** Produce a PDF file from your R Markdown document.
