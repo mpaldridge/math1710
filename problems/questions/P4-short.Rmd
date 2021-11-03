@@ -15,7 +15,7 @@
 :::::
 
 ::::: {.myq}
-**A2.** Let $X \sim \text{Geom}(20, 0.2)$. Calculate
+**A2.** Let $X \sim \text{Geom}(0.2)$. Calculate
 
 :::: {.subq}
 **(a)** $\mathbb P(X = 1)$

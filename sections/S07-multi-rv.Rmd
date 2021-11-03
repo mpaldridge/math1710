@@ -1,16 +1,15 @@
 # Multiple random variables  {#S07-multi-rv}
 
-## Joint, marginal, and conditional distributions  {#joint}
+## Joint distributions  {#joint}
 
-## Independence of random variables  {#independence-rv}
+## Independence and conditional distributions   {#independence-rv}
 
 ## Bayes’ theorem for random variables  {#bayes-rv}
 
-## Expectation and variance of sums and products  {#sum-product}
+## Expectation, variance, and covariance {#sum-product}
 
 ## Law of large numbers  {#lln}
 
-## Covariance and correlation  {#covariance}
 
 
 
