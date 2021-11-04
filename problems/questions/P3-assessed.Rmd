@@ -29,7 +29,7 @@
 ::::
 
 :::: {.subq}
-**(c)** Let $Y$ be a discrete uniform distribution on $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts $a$ and $b$, but without calculating any sums directly, find the expectation and variance of $Y$.
+**(c)** Let $Y$ be a discrete uniform distribution on $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of $Y$.
 
 ::: {.myanswers data-latex=""}
 *Hint.* Is there a function that maps a "standard" discrete uniform distribution, with an appriately chosen $n$, into this one?
