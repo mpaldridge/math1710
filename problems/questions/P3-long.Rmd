@@ -146,7 +146,7 @@ First, we recall that $\mathbb E(aX) = a\mathbb EX = a\mu$.
 
 Using the definitional formula, we have
 \begin{multline}
-\Var(aX) = \mathbb E(aX - a\mu)^2 = \mathbb E\big(a(X-\mu)\big)^2 
+\Var(aX) = \mathbb E(aX - a\mu)^2 = \mathbb E\big(a(X-\mu)\big)^2 \\
 = \mathbb E \big(a^2(X-\mu)^2\big) = a^2 \mathbb E(X - \mu)^2 = a^2 \Var(X) ,
 \end{multline}
 where the penultimate equality used the linearity of expectation.
@@ -154,7 +154,7 @@ where the penultimate equality used the linearity of expectation.
 *Alternatively:* Using the computational formula, we have
 
 \begin{multline}
-\Var(aX) = \mathbb E(aX)^2 - (a\mu)^2 = \mathbb E(a^2X^2) - a^2 \mu^2 
+\Var(aX) = \mathbb E(aX)^2 - (a\mu)^2 = \mathbb E(a^2X^2) - a^2 \mu^2 \\
 = a^2 \mathbb EX^2 - a^2\mu^2 = a^2 (\mathbb EX^2 - \mu^2) = a^2 \Var(X) .
 \end{multline}
 :::

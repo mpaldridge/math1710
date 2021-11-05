@@ -3,9 +3,9 @@
 # Solutions {#solutions .unnumbered}
 
 ::: {.mysummary}
-This page has the solutions to all the non-assessed questions on Problem Sheet 1 and 2. Solutions are added the Monday after tutorials on the Problem Sheet have finished.
+This page has the solutions to all the non-assessed questions on Problem Sheet 1 to 3. Solutions are added on Friday afternoon after tutorials on the Problem Sheet have finished.
 
-Solutions to assessed questions are available on Minerva in the "Assessments" tab.
+Solutions to assessed questions are available on Minerva in the "Assessments" tab, from one week after the deadline.
 <!--
 There are many ways you get feedback on this module, both group feedback (feedback that is generally relevant to many people) and individual feedback (feedback based specifically on your own approach to the work).
 
@@ -24,10 +24,20 @@ There are many ways you get feedback on this module, both group feedback (feedba
 ```{r, child = "problems/questions/P1-long.Rmd"}
 ```
 
+
 ## Problem Sheet 2 {#P2-solutions .unnumbered}
 
 ```{r, child = "problems/questions/P2-short.Rmd"}
 ```
 
 ```{r, child = "problems/questions/P2-long.Rmd"}
+```
+
+
+## Problem Sheet 3 {#P3-solutions .unnumbered}
+
+```{r, child = "problems/questions/P3-short.Rmd"}
+```
+
+```{r, child = "problems/questions/P3-long.Rmd"}
 ```
