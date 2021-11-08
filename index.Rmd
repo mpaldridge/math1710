@@ -12,6 +12,14 @@ url:    'https://mpaldridge.github.io/math1710/'
 # Schedule {.unnumbered}
 
 ::: {.oldsched}
+**Week 7** (8--12 November):
+
+* [**Section 7:** Multiple random variables](#S07-multi-rv)
+* [**Problem Sheet 4:**](#P4) deadline for assessed questions: Monday 22 November
+* [**R Worksheet 7:** Discrete distributions](#r-work) deadline for assessed questions: Monday 15 November
+:::
+
+::: {.mysched}
 **Week 6** (1--5 November):
 
 * [**Section 6:** Discrete distributions](#S06-discrete-dist)

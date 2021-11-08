@@ -37,3 +37,10 @@ geometric
 poisson
 poisson-approx
 models
+S07-multi-rv
+joint
+independence-rv
+cond-rv
+sum-product
+covariance
+lln

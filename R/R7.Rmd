@@ -1,0 +1,103 @@
+---
+title:  "R Worksheet 7: Discrete distributions"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*There are assessed questions associated with this worksheet, at the bottom of this worksheet. The deadline for submitting your solutions to these questions is **Monday 15 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
+
+*If you worked through the optional R Worksheet 6, then you might like to save your work as an RMarkdown document, rather than an R Script as you have done before.*
+
+------------------------------------------------------------------------
+
+## The 12 functions
+
+In this worksheet, we will look at working with three famous discrete distributions: the binomial, Poisson, and geometric distributions. (In the next worksheet we will look at arbitrary PMFs.)
+
+There are 12 functions we will be studying:
+
+| Binomial   | Poisson    | Geometric  |
+|:----------:|:----------:|:----------:|
+| `dbinom()` | `dpois()`  | `dgeom()`  |
+| `pbinom()` | `ppois()`  | `pgeom()`  |
+| `qbinom()` | `qpois()`  | `qgeom()`  |
+| `rbinom()` | `rpois()`  | `rgeom()`  |
+
+You'll notice that each function has a one-letter prefix (`d`, `p`, `q`, or `r`) and a longer suffix (`binom`, `pois`, or `geom`). You've probably guessed that the suffixes refer to the **binom**ial, **Pois**son, and **geom**etric distributions. We will give more details about the prefixes later, but for now, let us briefly note:
+
+* **`d`** denotes the **probability mass function** (PMF) $p_X(x) = \mathbb P(X = x)$. (The letter `d` is for "density", although the word "density" only actually applies to continuous random variables.)
+* **`p`** denotes the **cumulative distribution function** (CDF) $F_X(s) = \mathbb P(X \leq x)$. (I'm not sure what the letter `p` stands for -- "probability", I guess?)
+* **`q`** denotes the **quantile function**, which we will talk about later.
+* **`r`** generates **random samples** from the distribution.
+
+## Binomial distribution
+
+Let's start by going through the functions for the binomial distribution.
+
+First **`dbinom()`** gives the PMF of a binomial random variable
+$$ p_X(x) = \binom{n}{x} p^x (1 - p)^{n - x} . $$
+The function takes three arguments:
+
+1. The first argument is $x$, the value at which the PMF should be evaluated.
+2. The second argument is $n$, the number of trials.
+3. The third argument is $p$, the probability of success for each trial.
+
+So for example, if $X \sim \text{Bin}(10, 0.4)$ and you want to calculate $p_X(5) = \mathbb P(X = 5)$, then you can find this as
+
+```{r}
+n <- 10
+p <- 0.4
+dbinom(5, n, p)
+```
+
+or just `dbinom(5, 10, p)`, if you prefer.
+
+You can also put give a vector as the argument for $x$, if you want multiple values of the PMF. For example, to find $p_X(6)$, $p_X(7)$ and $p_X(9)$ together, you can use
+
+```{r}
+dbinom(c(6, 7, 9), n, p)
+```
+
+> **Exercise 7.1** Let $X \sim \text{Bin}(20, 0.6)$.\
+**(a)** Calculate $\mathbb P(X = 13)$.\
+**(b)** By using `dbinom()` together with `sum()`, calculate $\mathbb P(12 \leq X \leq 15)$.
+
+Second, **`pbinom()`** gives the CDF
+$$ F_X(x) = \mathbb P(X \leq x)  = \sum_{y = 0}^x \binom{n}{y} p^y (1 - p)^{n - y} . $$
+The arguments go in the same order $x, n, p$, as before, and $x$ can be a vector.
+
+Suppose $X \sim \text{Bin}(10, 0.4)$ again. Then the probability that $X$ is at most 6 is
+
+```{r}
+pbinom(6, n, p)
+```
+
+In addition, `pbinom()` also has an extra optional argument `lower.tail = ...` which can be set to
+
+* `lower.tail = TRUE` to calculate the CDF as above. This is the default, which means the CDF is calculated if you don't use the `lower.tail` argument at all
+* `lower-tail = FALSE` to instead calculate the upper-tail probability $1 - F(x) = \mathbb P(X > x)$. Note that that is *strictly greater* than $x$, not greater-than-or-equal.
+
+> **Exercise 7.2** Let $X \sim \text{Bin}(20, 0.6)$ again.\
+**(a)** Calculate $\mathbb P(X \leq 12)$.\
+**(b)** Calculate $\mathbb P(X \leq x)$ for all $x$ between 0 and 20, with all answer rounded to 2 decimal places.\
+**(c)** Calculate $\mathbb P(X \geq 16)$. (Careful: that's a greater-than-or-equal sign.)
+
+Third, **`qbinom`** gives the quantile function. That is, for $0 \leq f \leq 1$, the command `qbinom(f, n, p)` gives the value $x$ such that $F(x) = f$, where $F(x) = \mathbb P(X \leq x)$. To put it another way, the quantile function is the inverse of the CDF. The quantile function is not as important as the other functions here, and we will not use it bvery often.
+
+As before, the first argument can be a vector, and the `lower.tail = ...` argument can be optionally used.
+
+> **Exercise 7.3** Let $X \sim \text{Bin}(20, 0.6)$ again. What is the smallest number $x$ such that $X$ is 95% likely to be less than $x$.
+
+Finally, **`rbinom()`** can be used to simultate random outcomes of a binomial random variable. Here, the first argument is the number of samples one wants, then $n$ and $p$, as before. Here, for example, are 20 samples of a $\text{Bin}(10, 0.4)$ random variables:
+
+```{r}
+rbinom(20, n, p)
+```
+
+> **Exercise 7.3** Let $X \sim \text{Bin}(20, 0.6)$ again.\
+**(a)** Generate 1000 random samples from $X$, and store them in a variable called `samples`.\
+**(b)** Draw a histogram of your `samples` data.\
+**(c)** Calcultate the mean of your `samples` data. What would you expect the answer to be (approximately)?
+
+## Poisson distribution

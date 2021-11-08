@@ -42,5 +42,48 @@
 ::::
 :::::
 
+::::: {.myq}
+**A4.** Consider the following joint PMF:
+
+| $p_{X,Y}(x,y)$ | $y = 0$ | $y = 1$ | $y = 2$ | $y = 3$ | $\phantom{p_X(x)}$ |
+|:-:|:-:|:-:|:-:|:-:|:-:|
+| $x=0$ | $2k$ | $2k$ | $k$ | $0$ | |
+| $x=1$ | $k$ | $3k$ | $k$ | $k$ | |
+| $x=2$ | $0$ | $k$ | $k$ | $2k$ | |
+| $\vphantom{p_Y(y)}$ | | | | |
+
+:::: {.subq}
+**(a)** Find the value of $k$ that makes this a joint PMF.
+::::
+
+:::: {.subq}
+**(b)** Find the marginal PMFs of $X$ and $Y$.
+::::
+
+:::: {.subq}
+**(c)** What is the conditional distribution of $Y$ given $X = 1$?
+::::
+
+:::: {.subq}
+**(d)** Are $X$ and $Y$ independent?
+::::
+::::
+
+::::: {.myq}
+**A5.** Let $X$ and $Y$ be Bernoulli$(\frac12)$ random variables.
+
+:::: {.subq}
+**(a)** Write down the table for the joint PMF of $X$ and $Y$ if $X$ and $Y$ are independent.
+::::
+
+:::: {.subq}
+**(b)** Write down a table for a joint PMF of $X$ and $Y$ that is consistent with their marginal distributions but that leads to $X$ and $Y$ having a positive correlation.
+::::
+
+:::: {.subq}
+**(c)** Write down a table for a joint PMF of $X$ and $Y$ that is consistent with their marginal distributions but that leads to $X$ and $Y$ having a negative correlation.
+::::
+:::::
+
 
 

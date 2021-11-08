@@ -152,6 +152,18 @@
 \chapter*{Schedule}\label{schedule}}
 \addcontentsline{toc}{chapter}{Schedule}
 
+\textbf{Week 7} (8--12 November):
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{S07-multi-rv}{\textbf{Section 7:} Multiple random variables}
+\item
+  \protect\hyperlink{P4}{\textbf{Problem Sheet 4:}} deadline for assessed questions: Monday 22 November
+\item
+  \protect\hyperlink{r-work}{\textbf{R Worksheet 7:} Discrete distributions} deadline for assessed questions: Monday 15 November
+\end{itemize}
+
 \textbf{Week 6} (1--5 November):
 
 \begin{itemize}
@@ -3958,6 +3970,408 @@ Distribution & Range & PMF & Expectation & Variance \\
 \bottomrule
 \end{longtable}
 
+\hypertarget{S07-multi-rv}{%
+\chapter{Multiple random variables}\label{S07-multi-rv}}
+
+\hypertarget{joint}{%
+\section{Joint distributions}\label{joint}}
+
+In previous sections, we have looked at single discrete random variables in isolation. In the section, we want to look at how multiple discrete random variables can interact.
+
+Consider tossing a fair coin 3 times. Let \(X\) be the number of Heads in the first two tosses, and let \(Y\) be the number of Heads over all three tosses.
+
+We know that \(X \sim \text{Bin}(2, \frac12)\) and \(Y \sim \text{Bin}(3, \frac12)\), so we can easily write down their probability mass functions:
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule
+\(x\) & \(x = 0\) & \(x = 1\) & \(x = 2\) \\
+\midrule
+\endhead
+\(p_X(x)\) & \(\frac14\) & \(\frac12\) & \(\frac14\) \\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule
+\(y\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) \\
+\midrule
+\endhead
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) \\
+\bottomrule
+\end{longtable}
+
+When we have multiple random variables and we want to emphasise that a PMF refers to only one of them, we often use the phrase \textbf{marginal PMF} or \textbf{marginal distribution}. So the PMFs above are the marginal distributions of \(X\) and \(Y\).
+
+However, we might also want to know how \(X\) and \(Y\) interact. To do this, we will need the \textbf{joint PMF}, given by
+\[ p_{X,Y}(x,y) = \mathbb P(X = x \text{ and } Y = y) . \]
+
+In our case of the coin tosses, we have
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(\phantom{p_X(x)}\) \\
+\midrule
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
+\(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule
+\end{longtable}
+
+For probabilities of events, we had that if some \(A_i\)s form a partition, then
+\[ \mathbb P(B) = \sum_i \mathbb P(B \cap A_i) . \]
+Note that the events \(\{X = x\}\), as \(x\) varies over the range of \(X\), also make up a partition. Therefore, we have
+\[ \mathbb P(Y = y) = \sum_x \mathbb P(X = x \text{ and } Y = y) ; \]
+or, to phrase this in terms of joint and marginal PMFs,
+\[ p_Y(y) = \sum_x p_{X,Y}(x, y) . \]
+In other words, to get the marginal distribution of \(Y\), we need to sum down the columns in the table of the joint distribution.
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(\phantom{p_X(x)}\) \\
+\midrule
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule
+\end{longtable}
+
+In exactly the same way, we have
+\[ p_X(x) = \sum_y p_{X,Y}(x, y) ; \]
+so to get the marginal distribution of \(X\), we need to sum across the rows in the table of the joint distribution.
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(p_X(x)\) \\
+\midrule
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \(\frac14\) \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \(\frac12\) \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \(\frac14\) \\
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule
+\end{longtable}
+
+We can check that these marginal PMFs match those we started with. The term ``marginal'' PMF or distribution is presumably because one ends up writing the values in the ``margins'' of the table.
+
+Note that the joint PMF conforms to the same rules as a normal PMF:
+
+\begin{itemize}
+\tightlist
+\item
+  it is non-negative: \(p_{X,Y}(x,y) \geq 0\);
+\item
+  it sums to 1: \(\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1\).
+\end{itemize}
+
+We may want to look at more than two random variables, \(\mathbf X = (X_1, X_2, \dots, X_n)\). In this case, the joint PMF is
+\[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]
+In the same way, we can find the marginal distribution of one of the variables -- say \(X_1\) -- by summing over all the other variables:
+\[ p_{X_1}(x_1) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x_1, x_2, \dots, x_n) . \]
+
+\hypertarget{independence-rv}{%
+\section{Independence of random variables}\label{independence-rv}}
+
+We said that two events are independent if \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\). We now can give a similar definition for what it means two random variables to be independent.
+
+\begin{definition}
+We say two discrete random variables are \textbf{independent} if, for all \(x\) and \(y\),
+\[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]
+In terms of the joint and marginal PMFs, this is the condition that
+\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]
+
+More generally, a sequence of random variable \(X_1, X_2, \dots\) are independent if
+\[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_{X_i}(x_i) . \]
+\end{definition}
+
+Returning to our case of the dice from before, we see that \(X\) and \(Y\) are not independent, because, for just one counterexample, \(p_{X,Y}(0,0) = \frac18\), while \(p_X(0) = \frac14\) and \(p_Y(0) = \frac18\).
+
+An important scenario in probability theory and statistics is that of \textbf{independent and identically distributed} (or \textbf{IID}) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So \(\mathbf X = (X_1, X_2, \dots, X_n)\) are IID random variables with a common PMF \(p_X\), say, if
+\[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_X(x_i) . \]
+
+\hypertarget{cond-rv}{%
+\section{Conditional distributions}\label{cond-rv}}
+
+For probability with events, we had the conditional probability
+\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+In the same way, for random variables, we have
+\[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]
+It makes sense to call the distribution of this the \textbf{conditional distribution}.
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables with joint PMF \(p_{X,Y}\) and marginal PMFs \(p_X\) and \(p_Y\) respectively. Then the \textbf{condition probability mass function of \(Y\) given \(X\)} \(p_{Y \mid X}\) is given by
+\[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]
+\end{definition}
+
+Let's think again about our coin tossing example. To get the conditional distribution of \(Y\) given \(X = 1\), say, we have
+\[ p_{Y \mid X}(y \mid 1) = \frac{p_{X,Y}(1,y)}{p_X(1)} ;   \]
+so we take the \(x = 1\) row of the joint distribution table and ``renormalise it'' by dividing through by the total of the row, so it adds up to 1. That is,
+\begin{align*}
+  p_{Y \mid X} (0 \mid 1) &= \frac{p_{X,Y}(1, 0)}{p_X(1)} = \frac{0}{\frac12} = 0 , \\
+  p_{Y \mid X} (1 \mid 1) &= \frac{p_{X,Y}(1, 1)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (2 \mid 1) &= \frac{p_{X,Y}(1, 2)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (3 \mid 1) &= \frac{p_{X,Y}(1, 3)}{p_X(1)} = \frac{0}{\frac12} = 0 .
+\end{align*}
+In just the same way, we could get the conditional distribution of \(X\) given \(Y = 2\), say, by taking the \(y = 2\) column of the joint distribution table, and renormalising so that the column sums to 1, That is,
+\begin{align*}
+  p_{X \mid Y} (0 \mid 2) &= \frac{p_{X,Y}(0,2)}{p_Y(2)} = \frac{0}{\frac38} = 0 , \\
+  p_{X \mid Y} (1 \mid 2) &= \frac{p_{X,Y}(1,2)}{p_Y(2)} = \frac{\frac14}{\frac38} = \tfrac23 , \\
+  p_{X \mid Y} (2 \mid 2) &= \frac{p_{X,Y}(2,2)}{p_Y(2)} = \frac{\frac18}{\frac38} = \tfrac13 .
+\end{align*}
+
+Results that we used for conditional probability with events also carry over to random variables. For example, from \textbf{Bayes' theorem} we know that
+\[ \mathbb P(A \mid B) = \frac{ \mathbb P(A) \, \mathbb P(B \mid A)}{\mathbb P(B)} . \]
+In the same way, we have
+\[ \mathbb P(X = x \mid Y = y) = \frac{ \mathbb P(X = x) \, \mathbb P(Y = y \mid X = x)}{\mathbb P(Y = y)} , \]
+which in terms of conditional and marginal PMFs is
+\[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]
+This will be a particularly important formula when we study Bayesian statistics at the end of the module.
+
+\hypertarget{sum-product}{%
+\section{Expectation sums and products}\label{sum-product}}
+
+When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. (In fact, it's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.)
+
+\begin{theorem}
+\protect\hypertarget{thm:linearity2}{}\label{thm:linearity2}
+
+Let \(X\) and \(Y\) be two random variables with joint probability mass function \(p_{X,Y}\). Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb Eg(X,Y) = \displaystyle\sum_{x,y} g(x,y) p_{X,Y}(x,y)\).
+\item
+  \textbf{(Linearity of expectation, 2)} \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\), regardless of whether \(X\) and \(Y\) are independent or not.
+\item
+  If \(X\) and \(Y\) are independent, then \(\mathbb EXY = \mathbb EX \times \mathbb EY\).
+\end{enumerate}
+
+\end{theorem}
+
+If we put the second point here together with the other result of linearity of expectation (Theorem \ref{thm:linearity1}) then we get the general rule
+\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]
+and this holds whether or not \(X\) and \(Y\) are independent.
+
+\begin{proof}
+Part 1 is just the law of the unconscious statistician for the random variable \((X,Y)\), and the same proof holds.
+
+For part 2, we have
+\begin{align*}
+\mathbb E(X + Y) &= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
+  &= \sum_{x,y} x\,p_{X,Y}(x,y) + \sum_{x,y} y\,p_{X,Y}(x,y) \\
+  &= \sum_x x \sum_y p_{X,Y}(x,y) + \sum_y y \sum_x p_{X,Y}(x,y)
+\end{align*}
+But summing a joint PMF over one of the variables gives the marginal PMF; so \(\sum_y p_{X,Y}(x,y) = p_X(x)\) and \(\sum_x p_{X,Y}(x,y) = p_Y(y)\). So this gives
+\begin{align*}
+\mathbb E(X + Y) &= \sum_x x\, p_X(x) + \sum_y y\,p_Y(y) \\
+&= \mathbb EX + \mathbb EY .
+\end{align*}
+
+For part 3, if \(X\) and \(Y\) are independent, then \(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\). Therefore,
+\begin{align*}
+\mathbb EXY &= \sum_{x,y} xy p_{X,Y}(x,y) \\
+  &= \sum_x \sum_y xy p_X(x) p_Y(y) \\
+  &= \sum_x x p_X(x) \sum_y y p_Y(y) \\
+  &= \mathbb EX \times \mathbb EY,
+\end{align*}
+as required.
+\end{proof}
+
+\begin{example}
+\emph{A student is solving five questions on a problem sheet. The time taken for each question to the nearest minute is an identically distributed random variable with expectation \(\mathbb EX_i = \mu\). What is the total expected time to complete the problem sheet?}
+
+By linearity of expectation, this is
+\[ \mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = \mathbb EX_1 + \mathbb EX_2 + \mathbb EX_3 + \mathbb EX_4 + \mathbb EX_5 = 5\mu . \]
+
+\emph{What if the lengths of time are not independent -- for example, if the student is slower at answering all the questions when she is tired?}
+
+It's still the case that \(\mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = 5\mu\), because this result is true whether or not the random variables are independent.
+\end{example}
+
+\hypertarget{covariance}{%
+\section{Covariance}\label{covariance}}
+
+If we are interested at how two random variables vary together, we need to look at the covariance.
+
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables with expectations \(\mu_X\) and \(\mu_Y\) respectively. Then their \textbf{covariance} is
+\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]
+\end{definition}
+
+In the least surprising result of this whole module, we also have a computational fomrula to go along with this definitional formula.
+
+\begin{theorem}
+Let \(X\) and \(Y\) be two random variables with expectations \(\mu_X\) and \(\mu_Y\) respectively. Then their covariance can also be calculated as
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]
+\end{theorem}
+
+\begin{proof}
+Exactly as we've done many times before, we have
+\begin{align*}
+\operatorname{Cov}(X,Y) &= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
+&= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
+&= \mathbb EXY  - \mu_Y \,\mathbb EX - \mu_X \,\mathbb EY + \mu_X \, \mu_Y \\
+&= \mathbb EXY - \mu_X \, \mu_Y - \mu_X \, \mu_Y + \mu_X \, \mu_Y \\
+&= \mathbb EXY - \mu_X \, \mu_Y ,
+\end{align*}
+and we're done.
+\end{proof}
+
+A very important fact is the following.
+
+\begin{theorem}
+If \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X,Y) = 0\).
+\end{theorem}
+
+\begin{proof}
+Recall from Theorem \ref{thm:linearity2} that if \(X\) and \(Y\) are independent, we have \(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\). Then from the computational formula, we have
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]
+and we are done.
+\end{proof}
+
+Here are some more important properties of the covariance.
+
+\begin{theorem}
+
+Let \(X\), \(Y\) and \(Z\) be random variables. Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\);
+\item
+  \(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\)'
+\item
+  \(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\);
+\item
+  \(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X,Y)\);
+\item
+  \(\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y,Z)\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+Part 1 and 2 are immediate from the definition.
+
+Parts 3, 4 and 5 are quite similar. We'll do part 5 here, and you can do parts 3 and 4 on \protect\hyperlink{P4}{Problem Sheet 4}.
+
+For part 5, note that \(\mathbb E(X + Y) = \mu_X + \mu_Y\) by linearity of expectation. Hence
+\begin{align*}
+\operatorname{Cov}(X + Y, Z)
+  &= \mathbb E (X + Y - \mu_X - \mu_Y)(Z - \mu_Z) \\
+  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
+  &= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
+  &= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
+  &= \operatorname{Cov}(X,Z) + \operatorname{Cov}(Y,Z) ,
+\end{align*}
+as required.
+\end{proof}
+
+Now that we know some facts about the covariance, we can calculate the variance of a sum.
+
+\begin{theorem}
+Let \(X\) and \(Y\) be two random variables. Then
+\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]
+
+If \(X\) and \(Y\) are independent, then
+\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]
+\end{theorem}
+
+It's easy to forget the conditions for the following two facts:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\) regardless of whether \(X\) and \(Y\) are independent or not.
+\item
+  \(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\) if \(X\) and \(Y\) are independent.
+\end{itemize}
+
+\begin{proof}
+For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have \(\mathbb E(X + Y) = \mu_X + \mu_Y\). So
+\begin{align*}
+\operatorname{Var}(X + Y) &= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
+  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
+  &= \mathbb E \big( (X - \mu_X)^2 + 2(X - \mu_X)(Y - \mu_Y) + (Y - \mu_Y)^2\big) \\
+  &= \mathbb E(X - \mu_X)^2 + 2 \mathbb E(X - \mu_X)(Y - \mu_Y) + \mathbb E (Y - \mu_Y)^2 \\
+  &= \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) ,
+\end{align*}
+where we used the linearity of expectation.
+
+For the second part, recall that is \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X,Y) = 0\).
+\end{proof}
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables. Then the \textbf{correlation} between \(X\) and \(Y\) is
+\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]
+\end{definition}
+
+\hypertarget{lln}{%
+\section{Law of large numbers}\label{lln}}
+
+Let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables. Let us write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance.
+
+At the beginning of the course, we saw the mean of some values was
+\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]
+that is, what we get if we add them up and divide by \(n\). In the same way, we could calculate the ``mean'' of some random variables by adding them up and dividing by \(n\); that is:
+\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]
+(The subscript \(n\) on ``\(\overline X_n\)'' is just to remind us this is a mean of \(n\) random variables.)
+
+Here, each of the \(X_i\)s is a random variable, so their mean \(\overline X_n\) is another random variable as well. So we can ask questions about the random variable \(\overline X_n\) just the same as we would ask about any other random variable. For example: What is its expectation and variance?
+
+The expectation of \(\bar X_n\) is
+\begin{align*}
+\mathbb E \overline X_n &= \mathbb E \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&=   \frac{1}{n} (\mathbb EX_1 + \mathbb EX_2 + \cdots + \mathbb EX_n)\\
+&= \frac{1}{n} (\mu + \mu + \cdots + \mu)\\
+&= \frac{1}{n} n \mu \\
+&= \mu .
+\end{align*}
+Here we use linearity of expectation to take the \(1/n\) out of the brackets, and then add up the individual expectations.
+
+Since the \(X_i\)s are independent, the variance of \(\overline X_n\) is
+\begin{align*}
+\operatorname{Var}( \overline X_n) &= \operatorname{Var}\left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&= \left(\frac{1}{n}\right)^2 \operatorname{Var}(X_1 + X_2 + \cdots + X_n) \\
+&=   \frac{1}{n^2} (\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \mathbb EX_n)\\
+&= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
+&= \frac{1}{n^2} n \sigma^2 \\
+&= \frac{\sigma^2}{m} .
+\end{align*}
+
+In conclusion we have this:
+
+\begin{theorem}
+Let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance, and
+\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean. Then
+\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]
+\end{theorem}
+
+Now think about what happens to this mean \(\overline X_n\) when \(n\) gets very large. We see that the expectation \(\mathbb E\overline X_n = \mu\) stays the same, but the variance \(\operatorname{Var}(\overline X_n) = \sigma^2/n\) gets smaller and smaller as \(n\) gets bigger. Thus the range of probably values for \(\overline X_n\) well be squeezing tighter and tighter around \(\mu\). Given that, it seems as if (and it can be proven that) we have the ``law of large numbers''.
+
+\begin{theorem}[Law of large numbers]
+\protect\hypertarget{thm:thLLN}{}\label{thm:thLLN}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
+\[ \overline X_n \to \mu \quad \text{in distribution as $n \to \infty$}; \]
+by which we mean that, for any \(\epsilon > 0\),
+\[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
+\end{theorem}
+
+The precise mathematical definition of the convergence is not important here. What is important is the general principle that the expectation represents the ``long-run average'' of independent experiments.
+
+One special case is if we have repeated experiments the succeed with probability \(p\); that is, \(X_n \sim \text{Bern}(p)\). Then the law of large numbers says that the long-run proportion of successes is
+\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
+So the long-run proportion of times an event happens converges to its probability. This goes right back to what we said about ``frequentist probability'' \protect\hyperlink{what-is-prob}{right at the beginning of Section 2}: that one way to understand the probability of an event is as the long-run frequency of its occurrence.
+
 \hypertarget{P4}{%
 \chapter*{Problem Sheet 4}\label{P4}}
 \addcontentsline{toc}{chapter}{Problem Sheet 4}
@@ -3994,6 +4408,36 @@ Please also fill in the \href{https://forms.office.com/Pages/ResponsePage.aspx?i
 
 \textbf{(b)} \(\mathbb P(X \geq \mathbb EX)\)
 
+\textbf{A4.} Consider the following joint PMF:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(\phantom{p_X(x)}\) \\
+\midrule
+\endhead
+\(x=0\) & \(2k\) & \(2k\) & \(k\) & \(0\) & \\
+\(x=1\) & \(k\) & \(3k\) & \(k\) & \(k\) & \\
+\(x=2\) & \(0\) & \(k\) & \(k\) & \(2k\) & \\
+\(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule
+\end{longtable}
+
+\textbf{(a)} Find the value of \(k\) that makes this a joint PMF.
+
+\textbf{(b)} Find the marginal PMFs of \(X\) and \(Y\).
+
+\textbf{(c)} What is the conditional distribution of \(Y\) given \(X = 1\)?
+
+\textbf{(d)} Are \(X\) and \(Y\) independent?
+
+\textbf{A5.} Let \(X\) and \(Y\) be Bernoulli\((\frac12)\) random variables.
+
+\textbf{(a)} Write down the table for the joint PMF of \(X\) and \(Y\) if \(X\) and \(Y\) are independent.
+
+\textbf{(b)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a positive correlation.
+
+\textbf{(c)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a negative correlation.
+
 \hypertarget{P4-long}{%
 \section*{B: Long questions}\label{P4-long}}
 \addcontentsline{toc}{section}{B: Long questions}
@@ -4021,6 +4465,22 @@ Please also fill in the \href{https://forms.office.com/Pages/ResponsePage.aspx?i
 
 \textbf{B4.} Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is \textbf{(a)} a roll-over (no jackpot winners), \textbf{(b)} a unique jackpot winner, or \textbf{(c)} when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.
 
+\textbf{B5.} Let \(X_1, X_2, \dots, X_n\) be IID random variable with common expectation \(\mu\) and common variance \(\sigma^2\), and let \(\overline X = (X_1 + \cdots + X_n)n\) be the mean of these random variables. We will be considering the random variable \(S^2\) given by
+\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
+
+\textbf{(a)} By writing
+\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]
+or otherwise, show that
+\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]
+
+\textbf{(b)} Hence or otherwise, show that
+\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]
+You may use facts about \(\overline X\) from the notes provided you state them clearly. You might also find it useful to recall that if a random variable \(Y\) has expectation \(\mathbb EY = 0\), then \(\mathbb EY^2 = \operatorname{Var}(Y)\).
+
+\textbf{(c)} At the beginning of this course, we defined the sample variance of the values \(x_1, x_2, \dots, x_n\) to be
+\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
+Explain one reason why we might consider it appropriate to use \(1/(n-1)\) as the factor at the beginning of this expression, rather than simply \(1/n\).
+
 \hypertarget{P4-assessed}{%
 \section*{C: Assessed questions}\label{P4-assessed}}
 \addcontentsline{toc}{section}{C: Assessed questions}
@@ -4044,6 +4504,16 @@ You should not collaborate with others on the assessed questions: your answers m
 \textbf{(c)} The Euro 2020 sticker album required \(n = 678\) unique stickers to complete it, and stickers cost 15p each. Using the expression from (b), calculate the amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.
 
 \textbf{(d)} By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately \(n \log n\), where \(\log\) denotes the natural logarithm to base \(\mathrm e\).
+
+\textbf{C2.} Let \(X\) and \(Y\) be random variables, and let \(a\) and \(b\) be constants.
+
+\textbf{(a)} Starting from the definition of covariance, show that \(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\). You may find it helpful to remember that if \(\mathbb EX = \mu_X\), then \(\mathbb EaX = a\mu_X\).
+
+\textbf{(b)} Show that \(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X, Y)\).
+
+Now let \(X, Y, Z\) be \emph{independent} random variables with common variance \(\sigma^2\).
+
+\textbf{(c)} Find the value of \(\operatorname{Corr}(2X - 3Y + 4, 2Y - Z - 1)\). You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.
 
 \hypertarget{P4-short-sols}{%
 \section*{Solutions to short questions}\label{P4-short-sols}}

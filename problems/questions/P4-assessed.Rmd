@@ -19,3 +19,20 @@
 :::
 ::::
 
+::::: {.myq}
+**C2.** Let $X$ and $Y$ be random variables, and let $a$ and $b$ be constants.
+
+:::: {.subq}
+**(a)** Starting from the definition of covariance, show that $\Cov(aX, Y) = a\,\Cov(X,Y)$. You may find it helpful to remember that if $\mathbb EX = \mu_X$, then $\mathbb EaX = a\mu_X$.
+::::
+
+:::: {.subq}
+**(b)** Show that $\Cov(X + b, Y) = \Cov(X, Y)$.
+::::
+
+Now let $X, Y, Z$ be *independent* random variables with common variance $\sigma^2$.
+
+:::: {.subq}
+**(c)** Find the value of $\Corr(2X - 3Y + 4, 2Y - Z - 1)$. You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.
+::::
+:::::

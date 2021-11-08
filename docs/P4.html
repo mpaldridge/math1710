@@ -30,7 +30,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="S06-discrete-dist.html"/>
+<link rel="prev" href="S07-multi-rv.html"/>
 <link rel="next" href="R.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -239,6 +239,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.5" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#models"><i class="fa fa-check"></i><b>6.5</b> Distributions as models for data</a></li>
 <li class="chapter" data-level="" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html"><i class="fa fa-check"></i><b>7</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>7.3</b> Conditional distributions</a></li>
+<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation sums and products</a></li>
+<li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.5</b> Covariance</a></li>
+<li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.6</b> Law of large numbers</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
 <ul>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
@@ -327,6 +336,79 @@ display: none !important;
 <p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq \mathbb EX)\)</span></p>
 </div>
 </div>
+<div class="myq">
+<p><strong>A4.</strong> Consider the following joint PMF:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(\phantom{p_X(x)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(3k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\vphantom{p_Y(y)}\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<div class="subq">
+<p><strong>(a)</strong> Find the value of <span class="math inline">\(k\)</span> that makes this a joint PMF.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Find the marginal PMFs of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> What is the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>?</p>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be Bernoulli<span class="math inline">\((\frac12)\)</span> random variables.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the table for the joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a positive correlation.</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a negative correlation.</p>
+</div>
+</div>
 </div>
 <div id="P4-long" class="section level2 unnumbered">
 <h2>B: Long questions</h2>
@@ -364,6 +446,26 @@ display: none !important;
 <div class="myq">
 <p><strong>B4.</strong> Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is <strong>(a)</strong> a roll-over (no jackpot winners), <strong>(b)</strong> a unique jackpot winner, or <strong>(c)</strong> when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.</p>
 </div>
+<div class="myq">
+<p><strong>B5.</strong> Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID random variable with common expectation <span class="math inline">\(\mu\)</span> and common variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(\overline X = (X_1 + \cdots + X_n)n\)</span> be the mean of these random variables. We will be considering the random variable <span class="math inline">\(S^2\)</span> given by
+<span class="math display">\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> By writing
+<span class="math display">\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]</span>
+or otherwise, show that
+<span class="math display">\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]</span></p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Hence or otherwise, show that
+<span class="math display">\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]</span>
+You may use facts about <span class="math inline">\(\overline X\)</span> from the notes provided you state them clearly. You might also find it useful to recall that if a random variable <span class="math inline">\(Y\)</span> has expectation <span class="math inline">\(\mathbb EY = 0\)</span>, then <span class="math inline">\(\mathbb EY^2 = \operatorname{Var}(Y)\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> At the beginning of this course, we defined the sample variance of the values <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> to be
+<span class="math display">\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]</span>
+Explain one reason why we might consider it appropriate to use <span class="math inline">\(1/(n-1)\)</span> as the factor at the beginning of this expression, rather than simply <span class="math inline">\(1/n\)</span>.</p>
+</div>
+</div>
 </div>
 <div id="P4-assessed" class="section level2 unnumbered">
 <h2>C: Assessed questions</h2>
@@ -390,6 +492,19 @@ Your work will be marked by your tutor and returned on Monday 29 November, when 
 <p><strong>(d)</strong> By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately <span class="math inline">\(n \log n\)</span>, where <span class="math inline">\(\log\)</span> denotes the natural logarithm to base <span class="math inline">\(\mathrm e\)</span>.</p>
 </div>
 </div>
+<div class="myq">
+<p><strong>C2.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables, and let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be constants.</p>
+<div class="subq">
+<p><strong>(a)</strong> Starting from the definition of covariance, show that <span class="math inline">\(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\)</span>. You may find it helpful to remember that if <span class="math inline">\(\mathbb EX = \mu_X\)</span>, then <span class="math inline">\(\mathbb EaX = a\mu_X\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Show that <span class="math inline">\(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X, Y)\)</span>.</p>
+</div>
+<p>Now let <span class="math inline">\(X, Y, Z\)</span> be <em>independent</em> random variables with common variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<div class="subq">
+<p><strong>(c)</strong> Find the value of <span class="math inline">\(\operatorname{Corr}(2X - 3Y + 4, 2Y - Z - 1)\)</span>. You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.</p>
+</div>
+</div>
 </div>
 <div id="P4-short-sols" class="section level2 unnumbered">
 <h2>Solutions to short questions</h2>
@@ -405,7 +520,7 @@ Your work will be marked by your tutor and returned on Monday 29 November, when 
           </div>
         </div>
       </div>
-<a href="S06-discrete-dist.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="S07-multi-rv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

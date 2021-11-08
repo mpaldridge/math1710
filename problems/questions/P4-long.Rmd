@@ -42,3 +42,27 @@
 :::: {.myq}
 **B4.** Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is **(a)** a roll-over (no jackpot winners), **(b)** a unique jackpot winner, or **(c)** when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.
 ::::
+
+::::: {.myq}
+**B5.**  Let $X_1, X_2, \dots, X_n$ be IID random variable with common expectation $\mu$ and common variance $\sigma^2$, and let $\overline X = (X_1 + \cdots + X_n)n$ be the mean of these random variables. We will be considering the random variable $S^2$ given by
+\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
+
+:::: {.subq}
+**(a)** By writing 
+\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]
+or otherwise, show that
+\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]
+::::
+
+:::: {.subq}
+**(b)** Hence or otherwise, show that
+\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]
+You may use facts about $\overline X$ from the notes provided you state them clearly. You might also find it useful to recall that if a random variable $Y$ has expectation $\mathbb EY = 0$, then $\mathbb EY^2 = \Var(Y)$.
+::::
+
+:::: {.subq}
+**(c)** At the beginning of this course, we defined the sample variance of the values $x_1, x_2, \dots, x_n$ to be
+\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
+Explain one reason why we might consider it appropriate to use $1/(n-1)$ as the factor at the beginning of this expression, rather than simply $1/n$.
+::::
+:::::
