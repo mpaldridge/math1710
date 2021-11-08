@@ -18,11 +18,11 @@
 **A2.** Let $X \sim \text{Geom}(0.2)$. Calculate
 
 :::: {.subq}
-**(a)** $\mathbb P(X = 1)$
+**(a)** $\mathbb P(X = 2)$
 ::::
 
 :::: {.subq}
-**(b)** $\mathbb P(X \geq 2)$
+**(b)** $\mathbb P(X \geq 3)$
 ::::
 
 :::: {.subq}
