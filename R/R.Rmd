@@ -13,9 +13,9 @@ Each week there will be an R worksheet to work through in your own time. We reco
 |   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
 |   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html) | --- |
 |   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html) | Monday 1 November |
-|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd format](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
-|   7  |  Discrete random variables    |      Monday 15 November    |
-|   8  |  Discrete distributions       |             ---            |
+|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
+|   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]      |      Monday 15 November    |
+|   8  |  Discrete random variables    |             ---            |
 |   9  |  Normal distribution          |      Monday 29 November    |
 |  10  |  Law of large numbers         |             ---            |
 |  11  |  Summary                      |      *To be confirmed*    |

@@ -59,7 +59,7 @@ You can also put give a vector as the argument for $x$, if you want multiple val
 dbinom(c(6, 7, 9), n, p)
 ```
 
-> **Exercise 7.1** Let $X \sim \text{Bin}(20, 0.6)$.\
+> **Exercise 7.1.** Let $X \sim \text{Bin}(20, 0.6)$.\
 **(a)** Calculate $\mathbb P(X = 13)$.\
 **(b)** By using `dbinom()` together with `sum()`, calculate $\mathbb P(12 \leq X \leq 15)$.
 
@@ -78,7 +78,7 @@ In addition, `pbinom()` also has an extra optional argument `lower.tail = ...` w
 * `lower.tail = TRUE` to calculate the CDF as above. This is the default, which means the CDF is calculated if you don't use the `lower.tail` argument at all
 * `lower-tail = FALSE` to instead calculate the upper-tail probability $1 - F(x) = \mathbb P(X > x)$. Note that that is *strictly greater* than $x$, not greater-than-or-equal.
 
-> **Exercise 7.2** Let $X \sim \text{Bin}(20, 0.6)$ again.\
+> **Exercise 7.2.** Let $X \sim \text{Bin}(20, 0.6)$ again.\
 **(a)** Calculate $\mathbb P(X \leq 12)$.\
 **(b)** Calculate $\mathbb P(X \leq x)$ for all $x$ between 0 and 20, with all answer rounded to 2 decimal places.\
 **(c)** Calculate $\mathbb P(X \geq 16)$. (Careful: that's a greater-than-or-equal sign.)
@@ -87,7 +87,7 @@ Third, **`qbinom`** gives the quantile function. That is, for $0 \leq f \leq 1$,
 
 As before, the first argument can be a vector, and the `lower.tail = ...` argument can be optionally used.
 
-> **Exercise 7.3** Let $X \sim \text{Bin}(20, 0.6)$ again. What is the smallest number $x$ such that $X$ is 95% likely to be less than $x$.
+> **Exercise 7.3.** Let $X \sim \text{Bin}(20, 0.6)$ again. What is the smallest number $x$ such that $X$ is 95% likely to be less than $x$.
 
 Finally, **`rbinom()`** can be used to simultate random outcomes of a binomial random variable. Here, the first argument is the number of samples one wants, then $n$ and $p$, as before. Here, for example, are 20 samples of a $\text{Bin}(10, 0.4)$ random variables:
 
@@ -95,9 +95,70 @@ Finally, **`rbinom()`** can be used to simultate random outcomes of a binomial r
 rbinom(20, n, p)
 ```
 
-> **Exercise 7.3** Let $X \sim \text{Bin}(20, 0.6)$ again.\
+> **Exercise 7.4.** Let $X \sim \text{Bin}(20, 0.6)$ again.\
 **(a)** Generate 1000 random samples from $X$, and store them in a variable called `samples`.\
 **(b)** Draw a histogram of your `samples` data.\
 **(c)** Calcultate the mean of your `samples` data. What would you expect the answer to be (approximately)?
 
 ## Poisson distribution
+
+The functions for the Poisson distribution look very similar to those for the binomial distribution, except that instead of $n$ and $p$, there is just a single rate parameter $\lambda$.
+
+> **Exercise 7.5.** Explain in mathematics what the following four functions have calculated:
+
+```{r}
+lambda <- 3.2
+dpois(2, lambda)
+ppois(4, lambda, lower.tail = FALSE)
+qpois(0.95, lambda)
+var(rpois(10000, lambda))
+```
+
+> **Exercise 7.5.** Let $X \sim \text{Bin}(500, 0.01)$. Calculate:\
+**(a)** $\mathbb P(X = 4)$;\
+**(b)** $\mathbb P(X \geq 7)$.\
+**(c)** Repeat the calculations in parts (a) and (b) using a Poisson approximation to the binomial.
+
+
+## Geometric distribution
+
+The functions for the geometric distribution -- `dgeom()`, `pgeom()`, `qgeom()`, `rgeom()` --  work similarly again, but with one extra annoyance.
+
+You'll recall that in the lecture notes, we defined a geometric distribution with parameter $p$ to be the number of trials up to and including the first success. So if $X \sim \text{Geom}(p)$, then
+$$ p_X(x) = \mathbb{P}(X = x) = (1 - p)^{x - 1} p . $$
+However, R uses an alternative definition, where a geometric distribution $Y$ is the number of failures before the first succcess, so
+$$ p_Y(y) = = \mathbb{P}(Y = y) = (1 - p)^{y} p . $$
+
+So:
+
+* To find the PMF $p_X(x)$ under our definition, you need `dgeom(x - 1, p)`.
+* To find the CDF $F_X(x)$ under our definition, you need `pgeom(x - 1, p)`.
+* To find the quantile function under our definition, you need `qgeom(f, p) + 1`.
+* To sample random numbers under our definition, you need `rgeom(n, p) + 1`
+
+You may find it helpful to create new functions by running the following code block (that you don't need to understand).
+
+```{r}
+dgeomalt <- function(x, prob, log = FALSE) {
+  dgeom(x - 1, prob, log = FALSE)
+}
+
+pgeomalt <- function(q, prob, lower.tail = TRUE, log.p = FALSE) {
+  pgeom(q - 1, prob, lower.tail = TRUE, log.p = FALSE)
+}
+
+qgeomalt <- function(p, prob, lower.tail = TRUE, log.p = FALSE) {
+  qgeom(p, prob, lower.tail = TRUE, log.p = FALSE) + 1
+}
+
+rgeomalt <- function(n, prob) {
+  rgeom(n, prob) + 1
+}
+```
+
+This will temporarily create new functions `dgeomalt()`, `pgeomalt()`, `qgeomalt()`, `rgeomalt()` that work the way we prefer.
+
+> **Exercise 7.6.** Let $X \sim \text{Geom}(0.2)$ under the "number of trials up to and including the first success" definition used in the MATH1710 notes. Calculate:\
+**(a)** $\mathbb P(X = 20)$ to two siginificant figures;\
+**(b)** $\mathbb P(X \geq 10)$.
+**(c)** How many trials are required to give us a 95% chance of seeing a success?
