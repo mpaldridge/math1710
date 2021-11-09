@@ -167,12 +167,12 @@ This will temporarily create new functions `dgeomalt()`, `pgeomalt()`, `qgeomalt
 
 *Any rounding should be performed with the R `round()` or `signif()` functions.*
 
-> **Assessed Question 1.** Let $X_1 \sim \text{Bin}(n ,p)$, where $n = 20 + i$ and $p = (1 + i)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X \geq 5)$? Round your answer to four decimal places.
+> **Assessed Question 1.** Let $X_1 \sim \text{Bin}(n ,p)$, where $n = 20 + i$ and $p = (1 + i)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X_1 \geq 5)$? Round your answer to four decimal places.
 
-> **Assessed Question 2.** Let $X_2 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (5 + i)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X \text{ is even})$? Round your answer to two significant figures.
+> **Assessed Question 2.** Let $X_2 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (5 + i)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X_2 \text{ is even})$? Round your answer to two significant figures.
 
 > **Assessed Question 3.** Let $X_3 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (1 + i)/100$, where $i$ is the final digit of your Student ID number. Let $Y_3$ be the Poisson approximation to $X_3$. What is $\mathbb P(Y_3 \leq 10)$? Round your answer to three significant figures.
 
 > **Assessed Question 4.** Suppose you roll a pair of dice until you get a double-six. What is the smallest number of times must you roll the pair of dice in order to give yourself at least a 95% chance of seeing a double six?
 
-> **Assessed Question 5.** This question does not require you to run any R code. But suppose you did run the command `sd(rpois(n, lambda))` where $\lambda = (1 + i)/2$ and $n$ was set to be an extremely large number. What answer would you expect. Give your answer as a decimal to two decimal places.
+> **Assessed Question 5.** This question does not require you to run any R code. But suppose you did run the command `sd(rpois(n, lambda))` where $\lambda = (1 + i)/2$ and $n$ was set to be an extremely large number. What answer would you expect? Give your answer as a decimal to two decimal places.
