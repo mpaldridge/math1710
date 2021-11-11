@@ -78,6 +78,13 @@ In the same way, we can find the marginal distribution of one of the variables -
 
 ## Independence of random variables {#independence-rv}
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/ZxoVHpnI298"></iframe>
+:::
+::::
+
+
 We said that two events are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb  P(B)$. We now can give a similar definition for what it means two random variables to be independent.
 
 ::: {.definition}
@@ -101,7 +108,7 @@ An important scenario in probability theory and statistics is that of **independ
 Because the $X_i$ are identically distribution, the probability that any one of them is nonzero is
 \[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - \mathrm{e}^{-3} = 0.950 . \]
 Then, because the $X_i$ independent, the probability that they are all nonzero is
-\[ \mathbb P(X_1 \geq 0)^{20} = 0.950^{20} = 0.360. \]
+\[ \mathbb P(X_1 > 0)^{20} = 0.950^{20} = 0.360. \]
 :::
 
 
