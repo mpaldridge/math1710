@@ -114,6 +114,13 @@ Then, because the $X_i$ independent, the probability that they are all nonzero i
 
 ## Conditional distributions  {#cond-rv}
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/U0kNB45K81w"></iframe>
+:::
+::::
+
+
 For probability with events, we had the conditional probability
 \[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
 In the same way, for random variables, we have
