@@ -512,18 +512,18 @@ In the same way, we can find the marginal distribution of one of the variables â
 <span class="math display">\[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]</span>
 In terms of the joint and marginal PMFs, this is the condition that
 <span class="math display">\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]</span></p>
-<p>More generally, a sequence of random variable <span class="math inline">\(X_1, X_2, \dots\)</span> are independent if
-<span class="math display">\[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_{X_i}(x_i) . \]</span></p>
+<p>More generally, a sequence of random variables <span class="math inline">\(\mathbf X = (X_1, X_2, \dots)\)</span> are independent if
+<span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots \times p_{X_n}(x_n). \]</span></p>
 </div>
-<p>Returning to our case of the dice from before, we see that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent, because, for just one counterexample, <span class="math inline">\(p_{X,Y}(0,0) = \frac18\)</span>, while <span class="math inline">\(p_X(0) = \frac14\)</span> and <span class="math inline">\(p_Y(0) = \frac18\)</span>.</p>
-<p>An important scenario in probability theory and statistics is that of <strong>independent and identically distributed</strong> (or <strong>IID</strong>) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So <span class="math inline">\(\mathbf X = (X_1, X_2, \dots, X_n)\)</span> are IID random variables with a common PMF <span class="math inline">\(p_X\)</span>, say, if
-<span class="math display">\[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_X(x_i) . \]</span></p>
+<p>Returning to our case of the dice from before, we see that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent, because, for just one counterexample, <span class="math inline">\(p_{X,Y}(0,0) = \frac18\)</span>, while <span class="math inline">\(p_X(0) = \frac14\)</span> and <span class="math inline">\(p_Y(0) = \frac18\)</span>, so <span class="math inline">\(p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)\)</span>.</p>
+<p>An important scenario in probability theory and statistics is that of <strong>independent and identically distributed</strong> (or <strong>IID</strong>) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So <span class="math inline">\(\mathbf X = (X_1, X_2, \dots )\)</span> are IID random variables with a common PMF <span class="math inline">\(p_X\)</span>, say, if
+<span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_X(X_1) \times p_X(x_2) \times \cdots . \]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 7.1  </strong></span><em>Let <span class="math inline">\(X_1, X_2, \dots, X_{10}\)</span> be IID random variables following a Poisson distribution with rate <span class="math inline">\(\lambda = 3\)</span>. What is the probability that all the <span class="math inline">\(X_i\)</span> are nonzero?</em></p>
+<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 7.1  </strong></span><em>Let <span class="math inline">\(X_1, X_2, \dots, X_{20}\)</span> be IID random variables following a Poisson distribution with rate <span class="math inline">\(\lambda = 3\)</span>. What is the probability that all 20 of the the <span class="math inline">\(X_i\)</span> are nonzero?</em></p>
 <p>Because the <span class="math inline">\(X_i\)</span> are identically distribution, the probability that any one of them is nonzero is
-<span class="math display">\[ \mathbb P(X_1 \geq 0) = 1 - \mathbb P(X_1 = 0) = 1 - \mathrm{e}^{-3} = 0.950 . \]</span>
+<span class="math display">\[ \mathbb P(X_1 &gt; 0) = 1 - \mathbb P(X_1 = 0) = 1 - \mathrm{e}^{-3} = 0.950 . \]</span>
 Then, because the <span class="math inline">\(X_i\)</span> independent, the probability that they are all nonzero is
-<span class="math display">\[ \mathbb P(X_1 \geq 0)^20 = 0.950^20 = 0.360. \]</span></p>
+<span class="math display">\[ \mathbb P(X_1 \geq 0)^{20} = 0.950^{20} = 0.360. \]</span></p>
 </div>
 </div>
 <div id="cond-rv" class="section level2" number="7.3">

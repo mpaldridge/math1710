@@ -4083,22 +4083,22 @@ We say two discrete random variables are \textbf{independent} if, for all \(x\) 
 In terms of the joint and marginal PMFs, this is the condition that
 \[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]
 
-More generally, a sequence of random variable \(X_1, X_2, \dots\) are independent if
-\[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_{X_i}(x_i) . \]
+More generally, a sequence of random variables \(\mathbf X = (X_1, X_2, \dots)\) are independent if
+\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots \times p_{X_n}(x_n). \]
 \end{definition}
 
-Returning to our case of the dice from before, we see that \(X\) and \(Y\) are not independent, because, for just one counterexample, \(p_{X,Y}(0,0) = \frac18\), while \(p_X(0) = \frac14\) and \(p_Y(0) = \frac18\).
+Returning to our case of the dice from before, we see that \(X\) and \(Y\) are not independent, because, for just one counterexample, \(p_{X,Y}(0,0) = \frac18\), while \(p_X(0) = \frac14\) and \(p_Y(0) = \frac18\), so \(p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)\).
 
-An important scenario in probability theory and statistics is that of \textbf{independent and identically distributed} (or \textbf{IID}) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So \(\mathbf X = (X_1, X_2, \dots, X_n)\) are IID random variables with a common PMF \(p_X\), say, if
-\[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_X(x_i) . \]
+An important scenario in probability theory and statistics is that of \textbf{independent and identically distributed} (or \textbf{IID}) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So \(\mathbf X = (X_1, X_2, \dots )\) are IID random variables with a common PMF \(p_X\), say, if
+\[ p_{\mathbf X}(\mathbf x) = p_X(X_1) \times p_X(x_2) \times \cdots . \]
 
 \begin{example}
-\emph{Let \(X_1, X_2, \dots, X_{10}\) be IID random variables following a Poisson distribution with rate \(\lambda = 3\). What is the probability that all the \(X_i\) are nonzero?}
+\emph{Let \(X_1, X_2, \dots, X_{20}\) be IID random variables following a Poisson distribution with rate \(\lambda = 3\). What is the probability that all 20 of the the \(X_i\) are nonzero?}
 
 Because the \(X_i\) are identically distribution, the probability that any one of them is nonzero is
-\[ \mathbb P(X_1 \geq 0) = 1 - \mathbb P(X_1 = 0) = 1 - \mathrm{e}^{-3} = 0.950 . \]
+\[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - \mathrm{e}^{-3} = 0.950 . \]
 Then, because the \(X_i\) independent, the probability that they are all nonzero is
-\[ \mathbb P(X_1 \geq 0)^20 = 0.950^20 = 0.360. \]
+\[ \mathbb P(X_1 \geq 0)^{20} = 0.950^{20} = 0.360. \]
 \end{example}
 
 \hypertarget{cond-rv}{%
