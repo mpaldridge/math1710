@@ -95,6 +95,15 @@ Returning to our case of the dice from before, we see that $X$ and $Y$ are not i
 An important scenario in probability theory and statistics is that of **independent and identically distributed** (or **IID**) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So $\mathbf X = (X_1, X_2, \dots, X_n)$ are IID random variables with a common PMF $p_X$, say, if
 \[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_X(x_i) . \]
 
+::: {.example}
+*Let $X_1, X_2, \dots, X_10$ be IID random variables following a Poisson distribution with rate $\lambda = 3$. What is the probability that all the $X_i$ are nonzero?*
+
+Because the $X_i$ are identically distribution, the probability that any one of them is nonzero is
+\[ \mathbb P(X_1 \geq 0) = 1 - \mathbb P(X_1 = 0) = 1 - \mathrm{e}^{-3} = 0.950 . \]
+Then, because the $X_i$ independent, the probability that they are all nonzero is
+\[ \mathbb P(X_1 \geq 0)^20 = 0.950^20 = 0.360. \]
+:::
+
 
 ## Conditional distributions  {#cond-rv}
 
@@ -132,6 +141,13 @@ In the same way, we have
 which in terms of conditional and marginal PMFs is
 \[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]
 This will be a particularly important formula when we study Bayesian statistics at the end of the module.
+
+We can check Bayes' theorem with $x = 1$ and $y = 2$, for example. 
+The right-hand side of Bayes' theorem is
+\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{23} .   \]
+The left-hand side of Bayes' theorem is
+\[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]
+which is equal, as it should be, to the right-hand side.
 
 
 ## Expectation sums and products {#sum-product}
@@ -200,7 +216,7 @@ Let $X$ and $Y$ be two random variables with expectations $\mu_X$ and $\mu_Y$ re
 \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]
 :::
 
-In the least surprising result of this whole module, we also have a computational fomrula to go along with this definitional formula.
+In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.
 
 ::: {.theorem}
 Let $X$ and $Y$ be two random variables with expectations $\mu_X$ and $\mu_Y$ respectively. Then their covariance can also be calculated as
@@ -298,7 +314,9 @@ Let $X$ and $Y$ be two random variables. Then the **correlation** between $X$ an
 \[ \Corr(X,Y) = \frac{\Cov(X,Y)} {\sqrt{\Var(X)\,\Var(Y)}} . \]
 :::
 
-<!-- PROPERTIES -->
+As with the sample correlation $r_{xy}$ from Section 1, the correlation is a number between $-1$ and $+1$, where values near $+1$ mean that large values of $X$ and large values of $Y$ are likely to occur together, while values near $-1$ mean that large values of $X$ and small values of $Y$ are likely to occur together.
+
+Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it follows that if $X$ and $Y$ are idnependent, then $\Corr(X,Y) = 0$ also.
 
 <!-- EXAMPLE? -->
 

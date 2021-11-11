@@ -518,6 +518,13 @@ In terms of the joint and marginal PMFs, this is the condition that
 <p>Returning to our case of the dice from before, we see that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent, because, for just one counterexample, <span class="math inline">\(p_{X,Y}(0,0) = \frac18\)</span>, while <span class="math inline">\(p_X(0) = \frac14\)</span> and <span class="math inline">\(p_Y(0) = \frac18\)</span>.</p>
 <p>An important scenario in probability theory and statistics is that of <strong>independent and identically distributed</strong> (or <strong>IID</strong>) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So <span class="math inline">\(\mathbf X = (X_1, X_2, \dots, X_n)\)</span> are IID random variables with a common PMF <span class="math inline">\(p_X\)</span>, say, if
 <span class="math display">\[ p_{\mathbf X}(\mathbf x) = \prod_{i=1}^n p_X(x_i) . \]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-76" class="example"><strong>Example 7.1  </strong></span><em>Let <span class="math inline">\(X_1, X_2, \dots, X_10\)</span> be IID random variables following a Poisson distribution with rate <span class="math inline">\(\lambda = 3\)</span>. What is the probability that all the <span class="math inline">\(X_i\)</span> are nonzero?</em></p>
+<p>Because the <span class="math inline">\(X_i\)</span> are identically distribution, the probability that any one of them is nonzero is
+<span class="math display">\[ \mathbb P(X_1 \geq 0) = 1 - \mathbb P(X_1 = 0) = 1 - \mathrm{e}^{-3} = 0.950 . \]</span>
+Then, because the <span class="math inline">\(X_i\)</span> independent, the probability that they are all nonzero is
+<span class="math display">\[ \mathbb P(X_1 \geq 0)^20 = 0.950^20 = 0.360. \]</span></p>
+</div>
 </div>
 <div id="cond-rv" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Conditional distributions</h2>
@@ -527,7 +534,7 @@ In the same way, for random variables, we have
 <span class="math display">\[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]</span>
 It makes sense to call the distribution of this the <strong>conditional distribution</strong>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint PMF <span class="math inline">\(p_{X,Y}\)</span> and marginal PMFs <span class="math inline">\(p_X\)</span> and <span class="math inline">\(p_Y\)</span> respectively. Then the <strong>condition probability mass function of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span></strong> <span class="math inline">\(p_{Y \mid X}\)</span> is given by
+<p><span id="def:unlabeled-div-77" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint PMF <span class="math inline">\(p_{X,Y}\)</span> and marginal PMFs <span class="math inline">\(p_X\)</span> and <span class="math inline">\(p_Y\)</span> respectively. Then the <strong>condition probability mass function of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span></strong> <span class="math inline">\(p_{Y \mid X}\)</span> is given by
 <span class="math display">\[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]</span></p>
 </div>
 <p>Let’s think again about our coin tossing example. To get the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>, say, we have
@@ -552,6 +559,12 @@ In the same way, we have
 which in terms of conditional and marginal PMFs is
 <span class="math display">\[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]</span>
 This will be a particularly important formula when we study Bayesian statistics at the end of the module.</p>
+<p>We can check Bayes’ theorem with <span class="math inline">\(x = 1\)</span> and <span class="math inline">\(y = 2\)</span>, for example.
+The right-hand side of Bayes’ theorem is
+<span class="math display">\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{23} .   \]</span>
+The left-hand side of Bayes’ theorem is
+<span class="math display">\[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]</span>
+which is equal, as it should be, to the right-hand side.</p>
 </div>
 <div id="sum-product" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> Expectation sums and products</h2>
@@ -568,7 +581,7 @@ This will be a particularly important formula when we study Bayesian statistics 
 <span class="math display">\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]</span>
 and this holds whether or not <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
 <div class="proof">
-<p><span id="unlabeled-div-77" class="proof"><em>Proof</em>. </span>Part 1 is just the law of the unconscious statistician for the random variable <span class="math inline">\((X,Y)\)</span>, and the same proof holds.</p>
+<p><span id="unlabeled-div-78" class="proof"><em>Proof</em>. </span>Part 1 is just the law of the unconscious statistician for the random variable <span class="math inline">\((X,Y)\)</span>, and the same proof holds.</p>
 <p>For part 2, we have
 <span class="math display">\[\begin{align*}
 \mathbb E(X + Y) &amp;= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
@@ -590,7 +603,7 @@ But summing a joint PMF over one of the variables gives the marginal PMF; so <sp
 as required.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 7.1  </strong></span><em>A student is solving five questions on a problem sheet. The time taken for each question to the nearest minute is an identically distributed random variable with expectation <span class="math inline">\(\mathbb EX_i = \mu\)</span>. What is the total expected time to complete the problem sheet?</em></p>
+<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 7.2  </strong></span><em>A student is solving five questions on a problem sheet. The time taken for each question to the nearest minute is an identically distributed random variable with expectation <span class="math inline">\(\mathbb EX_i = \mu\)</span>. What is the total expected time to complete the problem sheet?</em></p>
 <p>By linearity of expectation, this is
 <span class="math display">\[ \mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = \mathbb EX_1 + \mathbb EX_2 + \mathbb EX_3 + \mathbb EX_4 + \mathbb EX_5 = 5\mu . \]</span></p>
 <p><em>What if the lengths of time are not independent – for example, if the student is slower at answering all the questions when she is tired?</em></p>
@@ -601,16 +614,16 @@ as required.</p>
 <h2><span class="header-section-number">7.5</span> Covariance</h2>
 <p>If we are interested at how two random variables vary together, we need to look at the covariance.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-79" class="definition"><strong>Definition 7.3  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
+<p><span id="def:unlabeled-div-80" class="definition"><strong>Definition 7.3  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]</span></p>
 </div>
-<p>In the least surprising result of this whole module, we also have a computational fomrula to go along with this definitional formula.</p>
+<p>In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-80" class="theorem"><strong>Theorem 7.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
+<p><span id="thm:unlabeled-div-81" class="theorem"><strong>Theorem 7.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-81" class="proof"><em>Proof</em>. </span>Exactly as we’ve done many times before, we have
+<p><span id="unlabeled-div-82" class="proof"><em>Proof</em>. </span>Exactly as we’ve done many times before, we have
 <span class="math display">\[\begin{align*}
 \operatorname{Cov}(X,Y) &amp;= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
 &amp;= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
@@ -623,16 +636,16 @@ and we’re done.</p>
 <!-- EXAMPLE -->
 <p>A very important fact is the following.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-82" class="theorem"><strong>Theorem 7.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
+<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 7.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-83" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="S07-multi-rv.html#thm:linearity2">7.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
+<p><span id="unlabeled-div-84" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="S07-multi-rv.html#thm:linearity2">7.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]</span>
 and we are done.</p>
 </div>
 <p>Here are some more important properties of the covariance.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-84" class="theorem"><strong>Theorem 7.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 7.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\)</span>;</li>
 <li><span class="math inline">\(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\)</span>’</li>
@@ -642,7 +655,7 @@ and we are done.</p>
 </ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-85" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
+<p><span id="unlabeled-div-86" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
 <p>Parts 3, 4 and 5 are quite similar. We’ll do part 5 here, and you can do parts 3 and 4 on <a href="P4.html#P4">Problem Sheet 4</a>.</p>
 <p>For part 5, note that <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span> by linearity of expectation. Hence
 <span class="math display">\[\begin{align*}
@@ -657,7 +670,7 @@ as required.</p>
 </div>
 <p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-86" class="theorem"><strong>Theorem 7.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
+<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 7.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]</span></p>
 <p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]</span></p>
@@ -668,7 +681,7 @@ as required.</p>
 <li><span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</li>
 </ul>
 <div class="proof">
-<p><span id="unlabeled-div-87" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
+<p><span id="unlabeled-div-88" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
 <span class="math display">\[\begin{align*}
 \operatorname{Var}(X + Y) &amp;= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
   &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
@@ -681,10 +694,11 @@ where we used the linearity of expectation.</p>
 </div>
 <!-- CORRELATION -->
 <div class="definition">
-<p><span id="def:unlabeled-div-88" class="definition"><strong>Definition 7.4  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
+<p><span id="def:unlabeled-div-89" class="definition"><strong>Definition 7.4  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
 <span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]</span></p>
 </div>
-<!-- PROPERTIES -->
+<p>As with the sample correlation <span class="math inline">\(r_{xy}\)</span> from Section 1, the correlation is a number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>, where values near <span class="math inline">\(+1\)</span> mean that large values of <span class="math inline">\(X\)</span> and large values of <span class="math inline">\(Y\)</span> are likely to occur together, while values near <span class="math inline">\(-1\)</span> mean that large values of <span class="math inline">\(X\)</span> and small values of <span class="math inline">\(Y\)</span> are likely to occur together.</p>
+<p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are idnependent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
 <!-- EXAMPLE? -->
 </div>
 <div id="lln" class="section level2" number="7.6">
@@ -716,7 +730,7 @@ Here we use linearity of expectation to take the <span class="math inline">\(1/n
 \end{align*}\]</span></p>
 <p>In conclusion we have this:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-89" class="theorem"><strong>Theorem 7.6  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and
+<p><span id="thm:unlabeled-div-90" class="theorem"><strong>Theorem 7.6  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and
 <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean. Then
 <span class="math display">\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]</span></p>
 </div>
