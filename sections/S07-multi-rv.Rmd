@@ -249,13 +249,26 @@ Exactly as we've done many times before, we have
 and we're done.
 :::
 
-<!-- EXAMPLE -->
+::: {.example}
+We continue with our coin-tossing example. We know that $X \sim \text{Bin}(2, \frac12)$ so $\mu_X = 1$ and  $Y \sim \text{Bin}(3, \frac12)$ so $\mu_Y = 1.5$. We then need $\mathbb EXY$, which is
+\begin{align*}
+\mathbb EXY &= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
+  &= 0\times 0\,p_{X,Y}(0,0) + 0 \times 1 \, p_{X,Y}(0,1) + \cdots + 2\times 3 \,p_{X,Y}(2,3) \\
+  &= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
+  &= 2.
+\end{align*}
+Hence the covariance is
+\[ \Cov (X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]
+:::
+
 
 A very important fact is the following.
 
 ::: {.theorem}
 If $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
 :::
+
+To use the ["contrapositive"](https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive), in our example, $\Cov(X,Y) \neq 0$, which means that $X$ and $Y$ are not independent (confirming what we already knew).
 
 ::: {.proof}
 Recall from Theorem \@ref(thm:linearity2) that if $X$ and $Y$ are independent, we have $\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y$. Then from the computational formula, we have
@@ -292,6 +305,12 @@ For part 5, note that $\mathbb E(X + Y) = \mu_X + \mu_Y$ by linearity of expecta
 as required.
 :::
 
+We could calculate the covariance in our coin-tossing example a different way, by noting that $Y = X + Z$, where $Z \sim \text{Bern}(\frac12)$ represents the third coin toss and is independent of $X$. Then we have
+\begin{multline*}
+\Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) = \Var(X) + 0 \\
+= 2 \times \frac12 \times \big(1 - \frac12\big) = \frac12, \end{multline*}
+matching our previous calculation. In the above calculation, we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent, and we knew the variance of $X$ because $X \sim \text{Bin}(2, \frac12)$.
+
 Now that we know some facts about the covariance, we can calculate the variance of a sum.
 
 ::: {.theorem}
@@ -321,7 +340,7 @@ where we used the linearity of expectation.
 For the second part, recall that is $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
 :::
 
-<!-- CORRELATION -->
+It can sometimes be useful to "normalise" the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.
 
 ::: {.definition}
 Let $X$ and $Y$ be two random variables. Then the **correlation** between $X$ and $Y$ is
@@ -330,9 +349,11 @@ Let $X$ and $Y$ be two random variables. Then the **correlation** between $X$ an
 
 As with the sample correlation $r_{xy}$ from Section 1, the correlation is a number between $-1$ and $+1$, where values near $+1$ mean that large values of $X$ and large values of $Y$ are likely to occur together, while values near $-1$ mean that large values of $X$ and small values of $Y$ are likely to occur together.
 
-Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it follows that if $X$ and $Y$ are idnependent, then $\Corr(X,Y) = 0$ also.
+Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it follows that if $X$ and $Y$ are independent, then $\Corr(X,Y) = 0$ also.
 
-<!-- EXAMPLE? -->
+::: {.example}
+For the coin-tossing again, we have
+\[ \Corr(X,Y) = \frac{\Cov(X,Y)} {\sqrt{\Var(X)\,\Var(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]
 
 
 ## Law of large numbers  {#lln}

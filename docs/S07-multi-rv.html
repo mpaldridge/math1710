@@ -645,19 +645,30 @@ as required.</p>
 \end{align*}\]</span>
 and we’re done.</p>
 </div>
-<!-- EXAMPLE -->
+<div class="example">
+<p><span id="exm:unlabeled-div-83" class="example"><strong>Example 7.3  </strong></span>We continue with our coin-tossing example. We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span> so <span class="math inline">\(\mu_X = 1\)</span> and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span> so <span class="math inline">\(\mu_Y = 1.5\)</span>. We then need <span class="math inline">\(\mathbb EXY\)</span>, which is
+<span class="math display">\[\begin{align*}
+\mathbb EXY &amp;= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
+  &amp;= 0\times 0\,p_{X,Y}(0,0) + 0 \times 1 \, p_{X,Y}(0,1) + \cdots + 2\times 3 \,p_{X,Y}(2,3) \\
+  &amp;= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
+  &amp;= 2.
+\end{align*}\]</span>
+Hence the covariance is
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]</span></p>
+</div>
 <p>A very important fact is the following.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 7.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
+<p><span id="thm:unlabeled-div-84" class="theorem"><strong>Theorem 7.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
 </div>
+<p>To use the <a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive">“contrapositive”</a>, in our example, <span class="math inline">\(\operatorname{Cov}(X,Y) \neq 0\)</span>, which means that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent (confirming what we already knew).</p>
 <div class="proof">
-<p><span id="unlabeled-div-84" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="S07-multi-rv.html#thm:linearity2">7.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
+<p><span id="unlabeled-div-85" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="S07-multi-rv.html#thm:linearity2">7.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]</span>
 and we are done.</p>
 </div>
 <p>Here are some more important properties of the covariance.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 7.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
+<p><span id="thm:unlabeled-div-86" class="theorem"><strong>Theorem 7.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\)</span>;</li>
 <li><span class="math inline">\(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\)</span>’</li>
@@ -667,7 +678,7 @@ and we are done.</p>
 </ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-86" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
+<p><span id="unlabeled-div-87" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
 <p>Parts 3, 4 and 5 are quite similar. We’ll do part 5 here, and you can do parts 3 and 4 on <a href="P4.html#P4">Problem Sheet 4</a>.</p>
 <p>For part 5, note that <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span> by linearity of expectation. Hence
 <span class="math display">\[\begin{align*}
@@ -680,9 +691,14 @@ and we are done.</p>
 \end{align*}\]</span>
 as required.</p>
 </div>
+<p>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
+<span class="math display">\[\begin{multline*}
+\operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) = \operatorname{Var}(X) + 0 \\
+= 2 \times \frac12 \times \big(1 - \frac12\big) = \frac12, \end{multline*}\]</span>
+matching our previous calculation. In the above calculation, we used <span class="math inline">\(\operatorname{Cov}(X, Z) = 0\)</span> since <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> are independent, and we knew the variance of <span class="math inline">\(X\)</span> because <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>.</p>
 <p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 7.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
+<p><span id="thm:unlabeled-div-88" class="theorem"><strong>Theorem 7.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]</span></p>
 <p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]</span></p>
@@ -693,7 +709,7 @@ as required.</p>
 <li><span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</li>
 </ul>
 <div class="proof">
-<p><span id="unlabeled-div-88" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
+<p><span id="unlabeled-div-89" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
 <span class="math display">\[\begin{align*}
 \operatorname{Var}(X + Y) &amp;= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
   &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
@@ -704,14 +720,16 @@ as required.</p>
 where we used the linearity of expectation.</p>
 <p>For the second part, recall that is <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
 </div>
-<!-- CORRELATION -->
+<p>It can sometimes be useful to “normalise” the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-89" class="definition"><strong>Definition 7.4  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
+<p><span id="def:unlabeled-div-90" class="definition"><strong>Definition 7.4  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
 <span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]</span></p>
 </div>
 <p>As with the sample correlation <span class="math inline">\(r_{xy}\)</span> from Section 1, the correlation is a number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>, where values near <span class="math inline">\(+1\)</span> mean that large values of <span class="math inline">\(X\)</span> and large values of <span class="math inline">\(Y\)</span> are likely to occur together, while values near <span class="math inline">\(-1\)</span> mean that large values of <span class="math inline">\(X\)</span> and small values of <span class="math inline">\(Y\)</span> are likely to occur together.</p>
-<p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are idnependent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
-<!-- EXAMPLE? -->
+<p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
+<p>::: {.example}
+For the coin-tossing again, we have
+<span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]</span></p>
 </div>
 <div id="lln" class="section level2" number="7.6">
 <h2><span class="header-section-number">7.6</span> Law of large numbers</h2>
@@ -742,7 +760,7 @@ Here we use linearity of expectation to take the <span class="math inline">\(1/n
 \end{align*}\]</span></p>
 <p>In conclusion we have this:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-90" class="theorem"><strong>Theorem 7.6  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and
+<p><span id="thm:unlabeled-div-91" class="theorem"><strong>Theorem 7.6  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and
 <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean. Then
 <span class="math display">\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]</span></p>
 </div>
