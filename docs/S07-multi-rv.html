@@ -693,8 +693,8 @@ as required.</p>
 </div>
 <p>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
 <span class="math display">\[\begin{multline*}
-\operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) = \operatorname{Var}(X) + 0 \\
-= 2 \times \frac12 \times \big(1 - \frac12\big) = \frac12, \end{multline*}\]</span>
+\operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) \\
+= \operatorname{Var}(X) + 0 = 2 \times \frac12 \times \big(1 - \frac12\big) = \frac12, \end{multline*}\]</span>
 matching our previous calculation. In the above calculation, we used <span class="math inline">\(\operatorname{Cov}(X, Z) = 0\)</span> since <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> are independent, and we knew the variance of <span class="math inline">\(X\)</span> because <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>.</p>
 <p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
 <div class="theorem">
@@ -753,10 +753,10 @@ Here we use linearity of expectation to take the <span class="math inline">\(1/n
 <span class="math display">\[\begin{align*}
 \operatorname{Var}( \overline X_n) &amp;= \operatorname{Var}\left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
 &amp;= \left(\frac{1}{n}\right)^2 \operatorname{Var}(X_1 + X_2 + \cdots + X_n) \\
-&amp;=   \frac{1}{n^2} (\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \mathbb EX_n)\\
+&amp;=   \frac{1}{n^2} \big(\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \operatorname{Var}(X_n)\big)\\
 &amp;= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
 &amp;= \frac{1}{n^2} n \sigma^2 \\
-&amp;= \frac{\sigma^2}{m} .
+&amp;= \frac{\sigma^2}{n} .
 \end{align*}\]</span></p>
 <p>In conclusion we have this:</p>
 <div class="theorem">
