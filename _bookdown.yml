@@ -12,7 +12,7 @@ rmd_files:
   - sections/S06-discrete-dist.Rmd
   - sections/S07-multi-rv.Rmd
   - problems/P4.Rmd
-#  - sections/S08-continuous.Rmd
+  - sections/S08-continuous.Rmd
 #  - sections/S09-normal.Rmd
 #  - sections/S10-bayesian.Rmd
 #  - problems/P5.Rmd

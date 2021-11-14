@@ -255,6 +255,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="chapter" data-level="8" data-path="S08-continuous.html"><a href="S08-continuous.html"><i class="fa fa-check"></i><b>8</b> Continuous random variables</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>8.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="8.2" data-path="S08-continuous.html"><a href="S08-continuous.html#pdf"><i class="fa fa-check"></i><b>8.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="8.3" data-path="S08-continuous.html"><a href="S08-continuous.html#prop-cont"><i class="fa fa-check"></i><b>8.3</b> Properties of continuous random variables</a></li>
+<li class="chapter" data-level="8.4" data-path="S08-continuous.html"><a href="S08-continuous.html#exponential"><i class="fa fa-check"></i><b>8.4</b> Exponential distribution</a></li>
+<li class="chapter" data-level="8.5" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-multiple"><i class="fa fa-check"></i><b>8.5</b> Multiple continuous random variables</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -694,7 +702,7 @@ as required.</p>
 <p>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
 <span class="math display">\[\begin{multline*}
 \operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) \\
-= \operatorname{Var}(X) + 0 = 2 \times \frac12 \times \big(1 - \frac12\big) = \frac12, \end{multline*}\]</span>
+= \operatorname{Var}(X) + 0 = 2 \times \tfrac12 \times \big(1 - \tfrac12\big) = \tfrac12, \end{multline*}\]</span>
 matching our previous calculation. In the above calculation, we used <span class="math inline">\(\operatorname{Cov}(X, Z) = 0\)</span> since <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> are independent, and we knew the variance of <span class="math inline">\(X\)</span> because <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>.</p>
 <p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
 <div class="theorem">
@@ -727,9 +735,10 @@ where we used the linearity of expectation.</p>
 </div>
 <p>As with the sample correlation <span class="math inline">\(r_{xy}\)</span> from Section 1, the correlation is a number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>, where values near <span class="math inline">\(+1\)</span> mean that large values of <span class="math inline">\(X\)</span> and large values of <span class="math inline">\(Y\)</span> are likely to occur together, while values near <span class="math inline">\(-1\)</span> mean that large values of <span class="math inline">\(X\)</span> and small values of <span class="math inline">\(Y\)</span> are likely to occur together.</p>
 <p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
-<p>::: {.example}
-For the coin-tossing again, we have
+<div class="example">
+<p><span id="exm:unlabeled-div-91" class="example"><strong>Example 7.4  </strong></span>For the coin-tossing again, we have
 <span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]</span></p>
+</div>
 </div>
 <div id="lln" class="section level2" number="7.6">
 <h2><span class="header-section-number">7.6</span> Law of large numbers</h2>
@@ -760,7 +769,7 @@ Here we use linearity of expectation to take the <span class="math inline">\(1/n
 \end{align*}\]</span></p>
 <p>In conclusion we have this:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-91" class="theorem"><strong>Theorem 7.6  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and
+<p><span id="thm:unlabeled-div-92" class="theorem"><strong>Theorem 7.6  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and
 <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean. Then
 <span class="math display">\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]</span></p>
 </div>
@@ -771,10 +780,10 @@ Here we use linearity of expectation to take the <span class="math inline">\(1/n
 by which we mean that, for any <span class="math inline">\(\epsilon &gt; 0\)</span>,
 <span class="math display">\[ \mathbb P\big(|\overline X_n - \mu| &gt; \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]</span></p>
 </div>
-<p>The precise mathematical definition of the convergence is not important here. What is important is the general principle that the expectation represents the “long-run average” of independent experiments.</p>
+<p>The precise mathematical definition of the convergence is not important here. What is important is the general principle that the expectation <span class="math inline">\(\mathbb EX = \mu\)</span> represents the “long-run average” of independent experiments.</p>
 <p>One special case is if we have repeated experiments the succeed with probability <span class="math inline">\(p\)</span>; that is, <span class="math inline">\(X_n \sim \text{Bern}(p)\)</span>. Then the law of large numbers says that the long-run proportion of successes is
 <span class="math display">\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]</span>
-So the long-run proportion of times an event happens converges to its probability. This goes right back to what we said about “frequentist probability” <a href="S02-probability.html#what-is-prob">right at the beginning of Section 2</a>: that one way to understand the probability of an event is as the long-run frequency of its occurrence.</p>
+So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about “frequentist probability” <a href="S02-probability.html#what-is-prob">right at the beginning of Section 2</a>: that one way to understand the probability of an event is as the long-run frequency of its occurrence.</p>
 
 </div>
 </div>

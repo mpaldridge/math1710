@@ -15,9 +15,7 @@ display: none !important;
 
 
 ::: {.mysummary}
-This is Problem Sheet 4. This problem sheet covers [Section 6](#S06-discrete-dist), and next week will have questions added on Section 7. You should work through all the questions on this problem sheet so far during Week 6, in preparation for your tutorial in Week 8. The problem sheet contain an assessed question, to which a second will be added next week, and which are due in by **2pm on  Monday 22 November**.
-
-Please also fill in the [mid-semester survey](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUOVVWTlQ3SVZHNjJWQVcwTFU0RDlaOFk0Ni4u) if you haven't done so yet.
+This is Problem Sheet 4. This problem sheet covers [Section 6](#S06-discrete-dist) and [Section 7](S07-multi-rv). You should work through all the questions on this problem sheet so far during Week 6 and 7, in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by **2pm on  Monday 22 November**.
 :::
 
 ## A: Short questions {#P4-short .unnumbered}
@@ -49,6 +47,6 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P4-short-sols .unnumbered}
 
-**A1.** (a) 0.180 (b) 0.528 (c) 8 **A2.** (a) 0.16 (b) 0.64 (c) 20 **A3.** (a) 0.214 (b) 0.456
+**A1.** (a) 0.180 (b) 0.528 (c) 8 **A2.** (a) 0.16 (b) 0.64 (c) 20 **A3.** (a) 0.214 (b) 0.456 **A4.** (a) $\frac{1}{15}$
 
 

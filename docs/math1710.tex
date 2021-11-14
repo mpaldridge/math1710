@@ -4310,7 +4310,7 @@ as required.
 We could calculate the covariance in our coin-tossing example a different way, by noting that \(Y = X + Z\), where \(Z \sim \text{Bern}(\frac12)\) represents the third coin toss and is independent of \(X\). Then we have
 \begin{multline*}
 \operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) \\
-= \operatorname{Var}(X) + 0 = 2 \times \frac12 \times \big(1 - \frac12\big) = \frac12, \end{multline*}
+= \operatorname{Var}(X) + 0 = 2 \times \tfrac12 \times \big(1 - \tfrac12\big) = \tfrac12, \end{multline*}
 matching our previous calculation. In the above calculation, we used \(\operatorname{Cov}(X, Z) = 0\) since \(X\) and \(Z\) are independent, and we knew the variance of \(X\) because \(X \sim \text{Bin}(2, \frac12)\).
 
 Now that we know some facts about the covariance, we can calculate the variance of a sum.
@@ -4358,9 +4358,10 @@ As with the sample correlation \(r_{xy}\) from Section 1, the correlation is a n
 
 Recall that, if \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X,Y) = 0\). Hence it follows that if \(X\) and \(Y\) are independent, then \(\operatorname{Corr}(X,Y) = 0\) also.
 
-::: \{.example\}
+\begin{example}
 For the coin-tossing again, we have
 \[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]
+\end{example}
 
 \hypertarget{lln}{%
 \section{Law of large numbers}\label{lln}}
@@ -4412,11 +4413,11 @@ by which we mean that, for any \(\epsilon > 0\),
 \[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
 \end{theorem}
 
-The precise mathematical definition of the convergence is not important here. What is important is the general principle that the expectation represents the ``long-run average'' of independent experiments.
+The precise mathematical definition of the convergence is not important here. What is important is the general principle that the expectation \(\mathbb EX = \mu\) represents the ``long-run average'' of independent experiments.
 
 One special case is if we have repeated experiments the succeed with probability \(p\); that is, \(X_n \sim \text{Bern}(p)\). Then the law of large numbers says that the long-run proportion of successes is
 \[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
-So the long-run proportion of times an event happens converges to its probability. This goes right back to what we said about ``frequentist probability'' \protect\hyperlink{what-is-prob}{right at the beginning of Section 2}: that one way to understand the probability of an event is as the long-run frequency of its occurrence.
+So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about ``frequentist probability'' \protect\hyperlink{what-is-prob}{right at the beginning of Section 2}: that one way to understand the probability of an event is as the long-run frequency of its occurrence.
 
 \hypertarget{P4}{%
 \chapter*{Problem Sheet 4}\label{P4}}
@@ -4424,9 +4425,7 @@ So the long-run proportion of times an event happens converges to its probabilit
 
 \commfalse
 
-This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S06-discrete-dist}{Section 6}, and next week will have questions added on Section 7. You should work through all the questions on this problem sheet so far during Week 6, in preparation for your tutorial in Week 8. The problem sheet contain an assessed question, to which a second will be added next week, and which are due in by \textbf{2pm on Monday 22 November}.
-
-Please also fill in the \href{https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUOVVWTlQ3SVZHNjJWQVcwTFU0RDlaOFk0Ni4u}{mid-semester survey} if you haven't done so yet.
+This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S06-discrete-dist}{Section 6} and \href{S07-multi-rv}{Section 7}. You should work through all the questions on this problem sheet so far during Week 6 and 7, in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 22 November}.
 
 \hypertarget{P4-short}{%
 \section*{A: Short questions}\label{P4-short}}
@@ -4436,23 +4435,78 @@ Please also fill in the \href{https://forms.office.com/Pages/ResponsePage.aspx?i
 
 \textbf{(a)} \(\mathbb P(X = 8)\)
 
+\begin{myanswers}
+\emph{Solution.}
+\[ \mathbb P(X = 8) = \binom{20}{8} 0.4^8 \times 0.6^{12} = 0.180 . \]
+
+\end{myanswers}
+
 \textbf{(b)} \(\mathbb P(8 \leq X \leq 11)\)
 
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+\mathbb P(8 \leq X \leq 11) &= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\ 
+&= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
+&= 0.180 + 0.160 + 0.117 + 0.071 \\
+&= 0.528 .
+\end{align*}
+
+\end{myanswers}
+
 \textbf{(c)} \(\mathbb EX\)
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb EX = 20 \times 0.4 = 8\).
+
+\end{myanswers}
 
 \textbf{A2.} Let \(X \sim \text{Geom}(0.2)\). Calculate
 
 \textbf{(a)} \(\mathbb P(X = 2)\)
 
+\begin{myanswers}
+\emph{Solution.} \(\mathbb P(X = 2) = 0.8^1 \times 0.2^1 = 0.16\).
+
+\end{myanswers}
+
 \textbf{(b)} \(\mathbb P(X \geq 3)\)
 
+\begin{myanswers}
+\emph{Solution.} \(\mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.2 - 0.8\times 0.2 = 0.64\).
+
+\end{myanswers}
+
 \textbf{(c)} \(\operatorname{Var}(X)\)
+
+\begin{myanswers}
+\emph{Solution.} \({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\).
+
+\end{myanswers}
 
 \textbf{A3.} Let \(X \sim \text{Po}(2.5)\). Calculate
 
 \textbf{(a)} \(\mathbb P(X = 3)\)
 
+\begin{myanswers}
+\emph{Solution.}
+\(\mathbb P(X = 3) = \mathrm e^{-2.5} \displaystyle\frac{2.5^3}{3!} = 0.214\).
+
+\end{myanswers}
+
 \textbf{(b)} \(\mathbb P(X \geq \mathbb EX)\)
+
+\begin{myanswers}
+\emph{Solution.} First, \(\mathbb EX = 2.5\). So
+\begin{align*}
+\mathbb P(X \geq \mathbb EX) &= \mathbb P(X \geq 2.5) \\
+  &= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) - \mathbb P(X = 2) \\
+  &= 1 - \mathrm e^{-2.5} - 2.5 \mathrm e^{-2.5} - \frac{2.5^2}{2} \mathrm e^{-2.5} \\
+  &= 1 - 0.082 - 0.204 - 0.257 \\
+  &= 0.456.
+\end{align*}
+
+\end{myanswers}
 
 \textbf{A4.} Consider the following joint PMF:
 
@@ -4470,19 +4524,105 @@ Please also fill in the \href{https://forms.office.com/Pages/ResponsePage.aspx?i
 
 \textbf{(a)} Find the value of \(k\) that makes this a joint PMF.
 
+\begin{myanswers}
+\emph{Solution.}
+The total of the joint PMF is
+\[ 2k + 2k + k + k + 3k + k + k + k + k + 2k = 15k \]
+which must be 1, so \(k = \frac{1}{15}\).
+
+\end{myanswers}
+
 \textbf{(b)} Find the marginal PMFs of \(X\) and \(Y\).
+
+\begin{myanswers}
+
+\emph{Solution.}
+By summing across the rows and down the columns, respectively, we get this:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(p_X(x)\) \\
+\midrule
+\endhead
+\(x=0\) & \(\frac{2}{15}\) & \(\frac{2}{15}\) & \(\frac{1}{15}\) & \(0\) & \(\frac{5}{15}\) \\
+\(x=1\) & \(\frac{1}{15}\) & \(\frac{3}{15}\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{6}{15}\) \\
+\(x=2\) & \(0\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{2}{15}\) & \(\frac{4}{15}\) \\
+\(p_Y(y)\) & \(\frac{3}{15}\) & \(\frac{6}{15}\) & \(\frac{3}{15}\) & \(\frac{3}{15}\) & \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
 
 \textbf{(c)} What is the conditional distribution of \(Y\) given \(X = 1\)?
 
+\begin{myanswers}
+\emph{Solution.} We get this by taking the \(x = 1\) row of the table, than normalising it by dividing through by \(p_X(1) = \frac{6}{15}\). This gives
+\[ p_{Y\mid X} (0 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (1 \mid 1) = \frac{3}{6} \qquad p_{Y\mid X} (2 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (3 \mid 1) = \frac{1}{6} . \]
+
+\end{myanswers}
+
 \textbf{(d)} Are \(X\) and \(Y\) independent?
+
+\begin{myanswers}
+\emph{Solution.} No.~For one example, \(p_{X,Y}(0,0) = \frac{2}{15}\), while \(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\), so they are not equal.
+
+\end{myanswers}
 
 \textbf{A5.} Let \(X\) and \(Y\) be Bernoulli\((\frac12)\) random variables.
 
 \textbf{(a)} Write down the table for the joint PMF of \(X\) and \(Y\) if \(X\) and \(Y\) are independent.
 
+\begin{myanswers}
+
+\emph{Solution.}
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) \\
+\midrule
+\endhead
+\(y = 0\) & \(\frac14\) & \(\frac14\) \\
+\(y = 1\) & \(\frac14\) & \(\frac14\) \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
+
 \textbf{(b)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a positive correlation.
 
+\begin{myanswers}
+
+\emph{Solution.} For example
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) \\
+\midrule
+\endhead
+\(y = 0\) & \(\frac12\) & \(0\) \\
+\(y = 1\) & \(0\) & \(\frac12\) \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
+
 \textbf{(c)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a negative correlation.
+
+\begin{myanswers}
+
+\emph{Solution.} For example
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) \\
+\midrule
+\endhead
+\(y = 0\) & \(0\) & \(\frac12\) \\
+\(y = 1\) & \(\frac12\) & \(0\) \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
 
 \hypertarget{P4-long}{%
 \section*{B: Long questions}\label{P4-long}}
@@ -4492,24 +4632,107 @@ Please also fill in the \href{https://forms.office.com/Pages/ResponsePage.aspx?i
 
 \textbf{(a)} \ldots by summing the PMF;
 
+\begin{myanswers}
+\emph{Solution.}
+We have,using the standard formula for the sum of a finite geometric progression,
+\begin{align*}
+F(x) &= \sum_{y = 1}^x p(y) \\
+&= \sum_{y = 1}^x (1-p)^{y-1} p \\
+&= \frac{p\big(1 - (1-p)^x\big)}{1 - (1-p)} \\
+&= \frac{p\big(1 - (1-p)^x\big)}{p} \\
+&= 1 - (1 - p)^x .
+\end{align*}
+
+\end{myanswers}
+
 \textbf{(b)} \ldots by explaining how the ``number of trials until success'' definition tells us what \(1 - F(x) = \mathbb P(X > x)\) must be.
 
+\begin{myanswers}
+\emph{Solution.}
+Note that \(1 - F(x) = \mathbb P(X > x)\) is precisely the probability that the first \(x\) trials are failures, and hence that the first success comes strictly after the \(x\)th trial. The probability that the first \(x\) trials are failures is \((1-p)^x\). So \(F(x) = 1 - (1-p)^x\).
+
+\end{myanswers}
+
 \textbf{(c)} A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?
+
+\begin{myanswers}
+\emph{Solution.}
+Let \(X \sim \text{Geom}(\frac{1}{36})\). Then
+\begin{align*}
+\mathbb P(20 \leq X \leq 40) &= \mathbb P(X \leq 40) - \mathbb P(X \leq 19) \\
+  &= F(40) - F(19) \\
+  &= \bigg(1 - \big(1 - \tfrac{1}{36})^{40}\bigg) - \bigg(1 - \big(1 - \tfrac{1}{36})^{19}\bigg) \\
+  &= 0.676 - 0.414 \\
+  &= 0.261.
+\end{align*}
+
+\end{myanswers}
 
 \textbf{B2.} Let \(Y\) be a geometric distribution with parameter \(p\) according to the alternative ``number of failures \emph{before} the first success'' definition.
 
 \textbf{(a)} Write down the PMF for \(Y\).
 
+\begin{myanswers}
+\emph{Solution.} Having \(Y = y\) requires \(y\) consecutive failures immediately followed by a success. So \(p_Y(y) = (1-p)^y p\).
+
+\end{myanswers}
+
 \textbf{(b)} Calculate the expectation and variance of \(Y\). You may use without proof the fact that for a standard ``number of trials up to and including the first success'' geometric distribution we have \(\mathbb EX = 1/p\) and \(\operatorname{Var}(X) = (1-p)/p^2\).
+
+\begin{myanswers}
+\emph{Solution.} If \(X \sim \text{Geom}(p)\) under the standard definition, then (as we saw in the notes) \(Y\) has the same distribution as \(X -1\). Therefore,
+\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} \]
+and
+\[ \operatorname{Var}(Y) = \operatorname{Var}(X -1) = \operatorname{Var}(X) = \frac{1-p}{p^2} .  \]
+
+\end{myanswers}
 
 \textbf{B3} Let \(X \sim \text{Po}(\lambda)\).
 
 \textbf{(a)} Show that \(\mathbb EX(X-1) = \lambda^2\). You may use the Taylor series for the exponential,
 \[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]
 
+\begin{myanswers}
+\emph{Solution.}
+We follow exactly the method used to calculate \(\mathbb EX\) in the notes. We have
+\begin{align*}
+\mathbb EX(X-1) &= \sum_{x=0}^\infty x(x-1)\, \mathrm e^{-\lambda} \frac{\lambda^x}{x!} \\
+  &= \lambda^2 \mathrm e^{-\lambda} \sum_{x=2}^\infty \frac{\lambda^{x-2}}{(x - 2)!} \\
+  &= \lambda^2 \mathrm e^{-\lambda}\sum_{y=0}^\infty  \frac{\lambda^y}{y!} \\
+  &= \lambda^2 \mathrm e^{-\lambda} \, \mathrm e^{\lambda} \\
+  &= \lambda^2  .
+\end{align*}
+In the second line, we took a \(\lambda^2\) and a \(\mathrm e^{-\lambda}\) outside the brackets; cancelled the \(x\) and \(x-1\) out of the \(x!\); and removed the \(x = 0\) and \(x = 1\) terms from the sum, since they were 0 anyway. In the third line, we re-indexed the sum by setting \(y = x - 2\). In the fourth line, we used the Taylor series for the exponential
+
+\end{myanswers}
+
 \textbf{(b)} Hence show that \(\operatorname{Var}(X) = \lambda\). You may use the fact, proved in the notes, that \(\mathbb EX = \lambda\).
 
+\begin{myanswers}
+\emph{Solution.}
+We know from part (a) that
+\[ \mathbb EX(X-1) = \mathbb E(X^2 - X) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \lambda = \lambda^2 ,\]
+which gives \(\mathbb EX^2 = \lambda^2 + \lambda\). We can then use the computational formula for the variance to get
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda .\]
+
+\end{myanswers}
+
 \textbf{B4.} Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is \textbf{(a)} a roll-over (no jackpot winners), \textbf{(b)} a unique jackpot winner, or \textbf{(c)} when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.
+
+\begin{myanswers}
+\emph{Solution.}
+We assume that each ticket is uniformly randomly chosen from all possible tickets, independent of all other tickets. Then the number of winners is \(X \sim \text{Bin}(15 \text{ million}, 1/(45 \text{ million}))\).
+It will be convenient to use a Poisson approximation with rate
+\[ \lambda = 15 \text{ million} \times \frac{1}{45 \text{ million}} = \tfrac13 .  \]
+
+The probability there is a roll-over is
+\[ \mathbb P(X = 0) \approx \mathrm e^{-1/3} = 0.72 . \]
+The probability there is a unique jackpot winner is
+\[ \mathbb P(X = 1) \approx \tfrac13 \mathrm e^{-1/3} = 0.24 . \]
+The probability there are multiple winners is
+\[ \mathbb P(X \geq 2) = 1 - \mathbb P(X = 0) - \mathbb P(X = 1) = 0.04  . \]
+
+\end{myanswers}
 
 \textbf{B5.} Let \(X_1, X_2, \dots, X_n\) be IID random variable with common expectation \(\mu\) and common variance \(\sigma^2\), and let \(\overline X = (X_1 + \cdots + X_n)n\) be the mean of these random variables. We will be considering the random variable \(S^2\) given by
 \[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
@@ -4519,13 +4742,53 @@ Please also fill in the \href{https://forms.office.com/Pages/ResponsePage.aspx?i
 or otherwise, show that
 \[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]
 
+\begin{myanswers}
+\emph{Solution.}
+Using the suggestion in the question, we have
+\begin{align*}
+S^2 &= \sum_{i=1}^n (X_i - \overline X)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu) - (\overline X - \mu)  \big)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu)^2 - 2(X_i - \mu)(\overline X - \mu) + (\overline X - \mu)^2\big) \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - \sum_{i=1}^n 2(X_i - \mu)(\overline X - \mu) + \sum_{i=1}^n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n X_i - \sum_{i=1}^n \mu\right)(\overline X - \mu)  + (\overline X - \mu)^2 \sum_{i=1}^n 1 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2(n\overline X - n\mu) (\overline X - \mu) + n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
+\end{align*}
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of \(\overline X\) to write \(\sum_{i=1}^n X_i\) as \(n \overline X\).
+
+\end{myanswers}
+
 \textbf{(b)} Hence or otherwise, show that
 \[ \mathbb E S^2 = (n - 1)\sigma^2 . \]
-You may use facts about \(\overline X\) from the notes provided you state them clearly. You might also find it useful to recall that if a random variable \(Y\) has expectation \(\mathbb EY = 0\), then \(\mathbb EY^2 = \operatorname{Var}(Y)\).
+You may use facts about \(\overline X\) from the notes provided you state them clearly. (You may find it helpful to recognise some expectations as definitional formulas for variances, where appropriate.)
+
+\begin{myanswers}
+\emph{Solution.} Starting with the linearity of expectation, we have
+\begin{align*}
+\mathbb ES^2 &= \mathbb E \left( \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2  \right) \\
+  &= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
+\end{align*}
+The last line follows because \(\mathbb EX_i = \mu\) for all \(i\) by assumption, and we showed in the notes that \(\mathbb E \overline X = \mu\) also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that \(\operatorname{Var}(X_i) = \sigma^2\) by assumption, and we showed in the notes that \(\operatorname{Var}(\overline X) = \sigma^2/n\). Hence
+\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]
+as required.
+
+\end{myanswers}
 
 \textbf{(c)} At the beginning of this course, we defined the sample variance of the values \(x_1, x_2, \dots, x_n\) to be
 \[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
 Explain one reason why we might consider it appropriate to use \(1/(n-1)\) as the factor at the beginning of this expression, rather than simply \(1/n\).
+
+\begin{myanswers}
+\emph{Solution.}
+We often model a data set \(x_2, x_2, \dots, x_n\) as being realisations of an IID sequence of random variables \(X_1, X_2, \dots, X_n\). In this case, we are using the summary statistic of the sample variance \(s_x^2\) to ``estimate'' the variance \(\operatorname{Var}(X_1) = \sigma^2\). Using the factor \(1/(n-1)\) ensures that this estimator is correct ``in expectation'', because
+\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]
+This property of being correct in expectation is called being an ``unbiased'' estimator, and its usually considered beneficial for an estimator to be unbiased.
+
+Note that we already know that the sample mean \(\bar x\) is an unbiased estimator for the expectation \(\mathbb EX = \mu\), as we already know that \(\mathbb E\overline X = \mu\).
+
+\end{myanswers}
 
 \hypertarget{P4-assessed}{%
 \section*{C: Assessed questions}\label{P4-assessed}}
@@ -4544,12 +4807,32 @@ You should not collaborate with others on the assessed questions: your answers m
 
 \textbf{(a)} Suppose the collector has already got \(j\) unique stickers (and some number of swaps). Let \(X_j\) be the the number of extra stickers he buys until getting a new unique sticker. Explain why \(X_j\) is geometrically distributed, and state the parameter \(p = p_j\) of the geometric distribution.
 
+\begin{myanswers}
+\emph{Hint.} To get a new sticker you need to ``succeed'' in an experiment, where ``failure'' is ``receiving a sticker you already have a copy of'' and ``success'' is ``receiving a new sticker you haven't already got''. What is the probabiltiy of success?
+
+\end{myanswers}
+
 \textbf{(b)} Hence, show that the expected number of stickers the collector must buy to fill his album is
 \[ n \sum_{k=1}^n \frac{1}{k} . \]
 
+\begin{myanswers}
+\emph{Hint.} Recall the expectation of the geometric distribution, and use linearity of expectaiton.
+
+\end{myanswers}
+
 \textbf{(c)} The Euro 2020 sticker album required \(n = 678\) unique stickers to complete it, and stickers cost 15p each. Using the expression from (b), calculate the amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.
 
+\begin{myanswers}
+\emph{Hint.} In R, \texttt{sum(1\ /\ (1:678))} sum the reciprocals of the integers from 1 to 678.
+
+\end{myanswers}
+
 \textbf{(d)} By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately \(n \log n\), where \(\log\) denotes the natural logarithm to base \(\mathrm e\).
+
+\begin{myanswers}
+\emph{Hint.} A detailed proof is not required -- just informally explain why the sum is approximately the area under the function (ie the integral).
+
+\end{myanswers}
 
 \textbf{C2.} Let \(X\) and \(Y\) be random variables, and let \(a\) and \(b\) be constants.
 
@@ -4557,15 +4840,292 @@ You should not collaborate with others on the assessed questions: your answers m
 
 \textbf{(b)} Show that \(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X, Y)\).
 
+\begin{myanswers}
+\emph{Hint.} You may find it helpful to look back at Theorem 7.4 in the notes.
+
+\end{myanswers}
+
 Now let \(X, Y, Z\) be \emph{independent} random variables with common variance \(\sigma^2\).
 
 \textbf{(c)} Find the value of \(\operatorname{Corr}(2X - 3Y + 4, 2Y - Z - 1)\). You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.
+
+\begin{myanswers}
+\emph{Hint.} Start by calculating the covariance. Try to sort out the \(2X - 3Y + 4\) part first, using the rules above. Once that's done you can then deal with the \(2Y - Z -1\) part with the same rules, because \(\operatorname{Cov}(U, V) = \operatorname{Cov}(V,U)\), so anything you can do to the first term you can also do to the second.
+
+\end{myanswers}
 
 \hypertarget{P4-short-sols}{%
 \section*{Solutions to short questions}\label{P4-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
-\textbf{A1.} (a) 0.180 (b) 0.528 (c) 8 \textbf{A2.} (a) 0.16 (b) 0.64 (c) 20 \textbf{A3.} (a) 0.214 (b) 0.456
+\textbf{A1.} (a) 0.180 (b) 0.528 (c) 8 \textbf{A2.} (a) 0.16 (b) 0.64 (c) 20 \textbf{A3.} (a) 0.214 (b) 0.456 \textbf{A4.} (a) \(\frac{1}{15}\)
+
+\hypertarget{S08-continuous}{%
+\chapter{Continuous random variables}\label{S08-continuous}}
+
+\hypertarget{continuous-rv}{%
+\section{What is a continuous random variable?}\label{continuous-rv}}
+
+In the previous three sections, we have looked at discrete random variables, whose range is a finite (or countably infinite) set of separate discrete values. Discrete random variables can be used as a model for ``count data''.
+
+In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for ``measurement data''. For example:
+
+\begin{itemize}
+\tightlist
+\item
+  The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers \(\mathbb R\), where positive numbers represent credit and negative numbers represent debt.
+\item
+  The amount of time a machine in a factory works for before breaking down could be modelled as a continuous random variable with range the positive real numbers \(\mathbb R_+ = \{x \in \mathbb R : x \geq 0\}\).
+\item
+  The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval \([0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}\).
+\end{itemize}
+
+Imagine firing an arrow at a large target. We could ask ``What's the probability that the arrow exactly hits some point?'' -- but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we'd have to say that the probability is 0. What makes more sense is too take a section of the target -- perhaps a small circle in the middle, called the ``bulls-eye'' -- and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question -- a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.
+
+Similarly, imagine picking a random real number between 0 and 1. We could ask ``What is the probability that the random number is \emph{exactly} \(1/\sqrt{2} = 0.7071068\dots\)?'' But that probability is 0. It makes more sense to take an interval of numbers -- say, \([0.7, 0.8]\), the interval from \(0.7\) to \(0.8\) -- and ask what the probability is of the random number being in that interval.
+
+This is how continuous random variables work. The probability a continuous random variable \(X\) \emph{exactly} hits some value \(x\) is \(\mathbb P(X = x) = 0\). But we \emph{can} find the probability \(\mathbb P(a \leq X \leq b)\) that \(X\) lies in a certain interval and work with that.
+
+\hypertarget{pdf}{%
+\section{Probability density functions}\label{pdf}}
+
+With a continuous random variable, the probability of \emph{exactly} getting any particular outcome \(X = x\) is 0. However, we can express the ``intensity'' of probability \emph{around} \(x\) by \(f_X(x)\), where \(f_X\) is called the probability density function. The implied metaphor here is that for discrete random variables, we have probability ``mass'' \emph{at} the point \(x\), whereas for continuous random variables, we have a ``density'' of probability \emph{around} \(x\).
+
+\begin{definition}
+A random variable \(X\) is called a \textbf{continuous random variable} if the probability of landing in any interval between \(a\) and \(b\), for \(a \leq b\), can be written as
+\[ \mathbb P(a \leq X \leq b) = \int_a^b f_X(x) \, \mathrm{d}x , \]
+for some non-negative function \(f_X\). The function \(f_X\) is called the \textbf{probability density function} (or \textbf{PDF}).
+\end{definition}
+
+In other words, the probability that \(X\) is between \(a\) and \(b\) is the area under the curve of the PDF on that interval.
+
+As with PMFs, when it's obvious what random variable we're dealing with, we omit the subscript \(X\) on the PDF \(f_X\).
+
+\begin{example}
+Let \(X\) be a continuous random variable with PDF
+\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} \]
+and \(f(x) = 0\) otherwise. This represents a random number between 0 and 1, where the intensity of the probability is equal across the whole interval. This is known as a \textbf{continuous uniform distribution}.
+
+\includegraphics{math1710_files/figure-latex/contunif-pdf-1.pdf}
+
+\emph{What is the probability that \(X\) is between 0.5 and 0.8?}
+
+We can calculate this using the definition above. We have
+\begin{align*}
+  \mathbb P(0.5 \leq X \leq 0.8) &= \int_{0.5}^{0.8} f(x) \, \mathrm dx \\
+    &= \int_{0.5}^{0.8} 1 \, \mathrm dx \\
+    &= [x]_{0.5}^{0.8} \\
+    &= 0.8 - 0.5 \\
+    &= 0.3 .
+\end{align*}
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:pdf2}{}\label{exm:pdf2}Let \(Y\) be a continuous random variable with PDF
+\[ f(y) = \begin{cases} y & \text{for $0 \leq y \leq 1$} \\
+2-y & \text{for $1 < y \leq 2$} \end{cases} \]
+and \(f(y) = 0\) otherwise. This represents a continuous value between 0 and 2 where the probability intensity is highest in the middle around 1 and is lower at the edges near 0 and 2.
+
+\includegraphics{math1710_files/figure-latex/second-pdf-1.pdf}
+
+\emph{What is the probability \(X\) is between \(\frac12\) and \(\frac32\)?}
+
+As before, we have
+\[ \mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big) = \int_{\frac12}^{\frac32} f(y) \, \mathrm dy .   \]
+But this time we have to be careful, because \(f(y)\) has different expressions below 1 and above 1. We will split the integral up into two parts based on this, to get
+\begin{align*}
+\mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big) 
+  &= \int_{\frac12}^{1} f(y) \, \mathrm dy + \int_{1}^{\frac32} f(y) \, \mathrm dy \\
+    &= \int_{\frac12}^{1} y \, \mathrm dy + \int_{1}^{\frac32} (2-y) \, \mathrm dy \\
+    &= \left[ \tfrac12 y^2\right]_{\frac12}^1 + \left[ 2y-\tfrac12 y^2\right]_1^{\frac32} \\
+    &= \tfrac12 - \tfrac18 + \big(\tfrac62 - \tfrac98\big) - \big(2 - \tfrac12\big) \\
+    &= \tfrac34 .
+\end{align*}
+\end{example}
+
+\hypertarget{prop-cont}{%
+\section{Properties of continuous random variables}\label{prop-cont}}
+
+The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution -- except you swap the PMF for the PDF and swap sums for integrals.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+Discrete random variables & Continuous random variables \\
+\midrule
+\endhead
+A discrete random variable \(X\) is defined by a \textbf{probability mass function} (PMF) \(p(x)\), which represents the probability of getting exactly \(x\). & A continuous random variable \(X\) is defined by a \textbf{probability density function} (PDF) \(f(x)\), which represents the intensity of probability around \(x\). \\
+The PMF is positive, in that \(p(x) \geq 0\) for all \(x\). & The PDF is positive, in that \(f(x) \geq 0\) for all \(x\). \\
+The PMF sums to 1, in that \( \sum_{x} p(x) = 1. \) & The PDF integrates to 1 in that \( \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\) \\
+The \textbf{cumulative distribution function} (CDF) is \(F(x) = \mathbb P(X \leq x)\), and is given by a sum \( F(x) = \sum_{y \leq x} p(y) .\) & The \textbf{cumulative distribution function} (CDF) is \(F(x) = \mathbb P(X \leq x)\), and is given by an integral \( F(x) = \int_{-\infty}^x f(y) \, \mathrm{d}y .\) \\
+The \textbf{expectation} is the sum \( \mathbb EX = \sum_{x} x\,p(x) . \) & The \textbf{expectation} is the integral \( \mathbb EX = \int_{-\infty}^{\infty} x\,f(x)\,\mathrm dx . \) \\
+The expectation of a function \(g(X)\) of \(X\) is the sum \( \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \) & The expectation of a function \(g(X)\) of \(X\) is the integral \( \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \) \\
+Linearity of expectation says that \( \mathbb E(aX+b) = a\mathbb EX + b .\) & Linearity of expectation says that \( \mathbb E(aX+b) = a\mathbb EX + b .\) \\
+The \textbf{variance} is \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\), which also has the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\). & The \textbf{variance} is \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\), which also has the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\). \\
+\bottomrule
+\end{longtable}
+
+Note, however, one property that doesn't follow through: Because, for a PMF, \(p(x) = \mathbb P(X = x)\) represented a probability, we had \(p(x) \leq 1\) for all \(x\). However, because, for a PDF, \(f(x)\) only represents intensity of probability, there's no contradiction to having \(f(x) > 1\) (although keeping the integral to 1 means that we can't have \(f(x) > 1\) too much). So \(f(x) = 10\) for \(0 <x < 0.1\) and \(f(x) = 0\) otherwise is a perfectly legitimate PDF, for example.
+
+\begin{example}
+Let's return to the case where \(X\) be a continuous uniform distribution, with
+\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} . \]
+Let's go through the properties from the table above.
+
+First, it's clear that \(f(x) \geq 0\) for all \(x\).
+
+Second, the PDF does indeed integrate to 1, because
+\[ \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_0^1 1 \, \mathrm dx = [x]_0^1 = 1 .    \]
+Because this PDF is zero below 0 and above 1, we only had to integrate between 0 and 1, with the rest of the integral over the real line being 0.
+
+Third, the CDF \(F\). It's clear that \(F(x) = \mathbb P(X \leq x) = 0\) for \(x < 0\), and \(F(x) = \mathbb P(X \leq x) = 1\) for \(x > 1\). In between, we have
+\[ F(x) = \int_{-\infty}^x f(y) \,\mathrm dy = \int_0^x 1\, \mathrm dy = [y]_0^x = x .   \]
+So, altogether, the CDF is
+\[  F(x) = \begin{cases} 0 & \text{for } x < 0 \\ x & \text{for }0 \leq x \leq 1 \\ 1 & \text{for }x > 1 . \end{cases} \]
+
+\includegraphics{math1710_files/figure-latex/contunif-cdf-1.pdf}
+
+Fourth, the expectation is
+\[ \mathbb EX = \int_{\infty}^\infty x\,f(x)\,\mathrm dx = \int_0^1 x \, \mathrm dx = \left[\tfrac12 x^2 \right]_0^1 = \tfrac12 - 0 = \tfrac12 .   \]
+
+Finally, to calculate the variance, we have
+\[ \mathbb EX^2 = \int_{\infty}^\infty x^2\,f(x)\,\mathrm dx = \int_0^1 x^2 \, \mathrm dx = \left[\tfrac13 x^3 \right]_0^1 = \tfrac13 - 0 = \tfrac13 .   \]
+So, using the computational formula, we have
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = \tfrac13 - \left(\tfrac12\right)^2 = \tfrac13 - \tfrac14 = \tfrac{1}{12} . \]
+\end{example}
+
+\begin{example}
+Let's also return to the ``triangular'' PDF from Example \ref{exm:pdf2},
+\[ f(y) = \begin{cases} y & \text{for $0 \leq y \leq 1$} \\
+2-y & \text{for $1 < y \leq 2$}. \end{cases} \]
+We'll just do the CDF and the expectation. (You can do the others yourself, if you like.)
+
+For the CDF, it's clear that \(F(y) = 0\) for \(x < 0\) and \(F(y) = 1\) for \(x > 2\). Again, we split the \(0 \leq y \leq 1\) case and the \(1 < y \leq 2\) case. In the first case, for \(0 \leq y \leq 1\), we have
+\begin{align*}
+  F(x) &= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &= \int_0^y z \, \mathrm dz \\
+    &= \left[ \tfrac12 z^2 \right]_0^y \\
+    &= \tfrac 12 y^2 .
+\end{align*}
+In the second case, for \(1 < y \leq 2\), we have
+\begin{align*}
+  F(x) &= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &= \int_0^1 z \, \mathrm dz + \int_1^y (2 - z)\,\mathrm dz \\
+    &= \left[ \tfrac12 z^2 \right]_0^1 + \left[ 2z - \tfrac12 z^2 \right]_1^y \\
+    &= \tfrac 12 - 0 + 2y - \tfrac12 y^2 - 2 + \tfrac12 \\
+    &= 2y - \tfrac12 y^2 - 1  .
+\end{align*}
+Hence, the CDF is
+\[ F(y) = \begin{cases} 0 & \text{for $y < 0$} \\
+            \tfrac12 y^2 & \text{for $0 \leq y \leq 1$} \\
+            2y - \tfrac12 y^2 - 1  & \text{for $1 < y \leq 2$} \\
+            1 & \text{for $y > 1$}. \end{cases} \]
+
+\includegraphics{math1710_files/figure-latex/second-cdf-1.pdf}
+
+For the expectation, we have
+\begin{align*}
+\mathbb EY &= \int_{-\infty}^{\infty} y\, f(y) \, \mathrm dy \\
+  &= \int_0^1 y^2 \mathrm dy + \int_1^2 y(2 - y)\, \mathrm dy \\
+  &= \left[ \tfrac13 y^3 \right]_0^1 + \left[  y^2 - \tfrac13 y^3 \right]_1^2 \\
+  &= \tfrac13 - 0 + 4 - \tfrac83 - 1 + \tfrac13 \\
+  &= 1 .
+\end{align*}
+\end{example}
+
+\hypertarget{exponential}{%
+\section{Exponential distribution}\label{exponential}}
+
+An important continuous distribution is the exponential distribution. The exonential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
+
+\begin{definition}
+A continuous random variable \(X\) is said to have the \textbf{exponential distribution with rate \(\lambda > 0\)} if it has the PDF
+\[ f(x) = \lambda \mathrm{e}^{-\lambda x} \qquad \text{for $x \geq 0$}, \]
+and 0 otherwise. We write \(X \sim \text{Exp}(\lambda)\).
+\end{definition}
+
+\includegraphics{math1710_files/figure-latex/exp-pic-1.pdf}
+
+\begin{example}
+\emph{The length of time a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate \(\lambda = 2\) years\textsuperscript{-1}. What is the probability the lightbulb needs replacing within a year?}
+
+If \(X \sim \text{Exp}(2)\) is the lifetime of the lightbulb, we seek \(\mathbb P(X \leq 1)\). This is
+\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big])_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]
+\end{example}
+
+\begin{theorem}
+
+Suppose \(X \sim \text{Exp}(\lambda)\). Then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f\) is indeed a PDF, in that \(\displaystyle\int_0^\infty f(x)\,\mathrm{d}x = 1\);
+\item
+  the CDF of \(X\) is \(F(x) = 1 - \mathrm{e}^{-\lambda x}\);
+\item
+  the expectation of \(X\) is \(\mathbb EX = \displaystyle\frac{1}{\lambda}\);
+\item
+  the variance of \(X\) is \(\mathbb EX = \displaystyle\frac{1}{\lambda^2}\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+For part 1,
+\[ \int_0^\infty \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x
+     = \big[-\mathrm{e}^{-\lambda x} \big]_0^\infty = -0 -(-1) = 1 . \]
+
+Similarly for part 2,
+\[ F(x) = \int_0^x \lambda \mathrm{e}^{-\lambda y}\,\mathrm{d}y
+     = \big[-\mathrm{e}^{-\lambda y} \big]_0^x = -\mathrm{e}^{-\lambda x} -(-1) = 1 - \mathrm{e}^{-\lambda x}. \]
+
+For part 3, we use integration by parts with \(u = x\) and \(v' = \lambda \mathrm{e}^{-\lambda x}\) to get
+\begin{align*}
+\mathbb EX &= \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \big[x \mathrm{e}^{-\lambda x}\big]_0^\infty - \int_0^\infty \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= 0 - 0 - \left[ \frac{1}{\lambda} \mathrm{e}^{-\lambda x} \right]_0^\infty \\
+  &= -0 - \left(- \frac{1}{\lambda}\right) \\
+  &= \frac{1}{\lambda}
+\end{align*}
+
+For part 4, we use integration by parts with \(u = x^2\) and \(v' = \lambda \mathrm{e}^{-\lambda x}\) and the result from part 3 to get
+\begin{align*}
+\mathbb EX^2 &= \int_0^\infty x^2  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \big[x^2 \mathrm{e}^{-\lambda x}\big]_0^\infty - \int_0^\infty 2x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= 0 - 0 - \frac{2}{\lambda} \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \frac{2}{\lambda} \mathbb EX \\
+  &= \frac{2}{\lambda^2} .
+\end{align*}
+Hence
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]
+\end{proof}
+
+\hypertarget{continuous-multiple}{%
+\section{Multiple continuous random variables}\label{continuous-multiple}}
+
+The theory we set up for two or more discrete random variables also works for two or more continuous random variables.
+
+Now, the intensity of probability for \((X,Y)\) being around \((x,y)\) is given by the \textbf{joint probability density function} \(f_{X,Y}\). In particular for \(a \leq b\) and \(c \leq d\), we have
+\[ \mathbb P(a \leq X \leq b \text{ and } c \leq Y \leq d ) = \int_{x = a}^b \int_{y = c}^d f_{X,Y}(x,y)\, \mathrm dx \,\mathrm dy .\]
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.50}}@{}}
+\toprule
+Discrete random variables & Continuous random variables \\
+\midrule
+\endhead
+We can get the \textbf{marginal PMF} \(p_X\) for \(X\) by summing over \(y\), so \( p_X(x) = \sum_y p_{X,Y}(x,y) . \) & We can get the \textbf{marginal PDF} \(f_X\) for \(X\) by integrating over \(y\), so \( f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy. \) \\
+Two discrete random variables \(X\) and \(Y\) are \textbf{independent} if their PMFs satisfy \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y) \qquad \text{for all $x, y$}.\) & Two continuous random variables \(X\) and \(Y\) are \textbf{independent} if they have PDFs which satisfy \(f_{X,Y}(x,y) = f_X(x)\,f_Y(y) \qquad \text{for all $x, y$}.\) \\
+The \textbf{conditional PMF} for \(Y\) given \(X\) is defined by \( p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} . \) & The \textbf{conditional PDF} for \(Y\) given \(X\) is defined by \( f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)} . \) \\
+\textbf{Bayes' theorem} states that \( p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)} . \) & \textbf{Bayes' theorem} states that \( f_{X \mid Y}(x \mid y) = \frac{f_X(x)\,f_{Y\mid X}(y\mid x)}{f_Y(y)} . \) \\
+The expectation of a function of \(X\) and \(Y\) is given by the sum \( \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y) . \) & The expectation of a function of \(X\) and \(Y\) is given by the integral \( \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy . \) \\
+The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) & The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) \\
+\bottomrule
+\end{longtable}
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}

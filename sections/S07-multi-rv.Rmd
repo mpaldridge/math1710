@@ -308,7 +308,7 @@ as required.
 We could calculate the covariance in our coin-tossing example a different way, by noting that $Y = X + Z$, where $Z \sim \text{Bern}(\frac12)$ represents the third coin toss and is independent of $X$. Then we have
 \begin{multline*}
 \Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) \\
-= \Var(X) + 0 = 2 \times \frac12 \times \big(1 - \frac12\big) = \frac12, \end{multline*}
+= \Var(X) + 0 = 2 \times \tfrac12 \times \big(1 - \tfrac12\big) = \tfrac12, \end{multline*}
 matching our previous calculation. In the above calculation, we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent, and we knew the variance of $X$ because $X \sim \text{Bin}(2, \frac12)$.
 
 Now that we know some facts about the covariance, we can calculate the variance of a sum.
@@ -354,6 +354,7 @@ Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it foll
 ::: {.example}
 For the coin-tossing again, we have
 \[ \Corr(X,Y) = \frac{\Cov(X,Y)} {\sqrt{\Var(X)\,\Var(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]
+:::
 
 
 ## Law of large numbers  {#lln}
@@ -405,8 +406,8 @@ by which we mean that, for any $\epsilon > 0$,
 \[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
 :::
 
-The precise mathematical definition of the convergence is not important here. What is important is the general principle that the expectation represents the "long-run average" of independent experiments.
+The precise mathematical definition of the convergence is not important here. What is important is the general principle that the expectation $\mathbb EX = \mu$ represents the "long-run average" of independent experiments.
 
 One special case is if we have repeated experiments the succeed with probability $p$; that is, $X_n \sim \text{Bern}(p)$. Then the law of large numbers says that the long-run proportion of successes is
 \[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
-So the long-run proportion of times an event happens converges to its probability. This goes right back to what we said about "frequentist probability" [right at the beginning of Section 2](#what-is-prob): that one way to understand the probability of an event is as the long-run frequency of its occurrence. 
+So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about "frequentist probability" [right at the beginning of Section 2](#what-is-prob): that one way to understand the probability of an event is as the long-run frequency of its occurrence. 
