@@ -452,7 +452,7 @@ So, using the computational formula, we have
 <span class="math display">\[ f(y) = \begin{cases} y &amp; \text{for $0 \leq y \leq 1$} \\
 2-y &amp; \text{for $1 &lt; y \leq 2$}. \end{cases} \]</span>
 We’ll just do the CDF and the expectation. (You can do the others yourself, if you like.)</p>
-<p>For the CDF, it’s clear that <span class="math inline">\(F(y) = 0\)</span> for <span class="math inline">\(x &lt; 0\)</span> and <span class="math inline">\(F(y) = 1\)</span> for <span class="math inline">\(x &gt; 2\)</span>. Again, we split the <span class="math inline">\(0 \leq y \leq 1\)</span> case and the <span class="math inline">\(1 &lt; y \leq 2\)</span> case. In the first case, for <span class="math inline">\(0 \leq y \leq 1\)</span>, we have
+<p>For the CDF, it’s clear that <span class="math inline">\(F(y) = 0\)</span> for <span class="math inline">\(y &lt; 0\)</span> and <span class="math inline">\(F(y) = 1\)</span> for <span class="math inline">\(y &gt; 2\)</span>. Again, we split the <span class="math inline">\(0 \leq y \leq 1\)</span> case and the <span class="math inline">\(1 &lt; y \leq 2\)</span> case. In the first case, for <span class="math inline">\(0 \leq y \leq 1\)</span>, we have
 <span class="math display">\[\begin{align*}
   F(x) &amp;= \int_{-\infty}^y f(z) \, \mathrm dz \\
     &amp;= \int_0^y z \, \mathrm dz \\
@@ -471,7 +471,7 @@ Hence, the CDF is
 <span class="math display">\[ F(y) = \begin{cases} 0 &amp; \text{for $y &lt; 0$} \\
             \tfrac12 y^2 &amp; \text{for $0 \leq y \leq 1$} \\
             2y - \tfrac12 y^2 - 1  &amp; \text{for $1 &lt; y \leq 2$} \\
-            1 &amp; \text{for $y &gt; 1$}. \end{cases} \]</span></p>
+            1 &amp; \text{for $y &gt; 2$}. \end{cases} \]</span></p>
 <p><img src="math1710_files/figure-html/second-cdf-1.png" width="672" /></p>
 <p>For the expectation, we have
 <span class="math display">\[\begin{align*}

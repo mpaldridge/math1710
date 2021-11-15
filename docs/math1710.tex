@@ -5001,7 +5001,7 @@ Let's also return to the ``triangular'' PDF from Example \ref{exm:pdf2},
 2-y & \text{for $1 < y \leq 2$}. \end{cases} \]
 We'll just do the CDF and the expectation. (You can do the others yourself, if you like.)
 
-For the CDF, it's clear that \(F(y) = 0\) for \(x < 0\) and \(F(y) = 1\) for \(x > 2\). Again, we split the \(0 \leq y \leq 1\) case and the \(1 < y \leq 2\) case. In the first case, for \(0 \leq y \leq 1\), we have
+For the CDF, it's clear that \(F(y) = 0\) for \(y < 0\) and \(F(y) = 1\) for \(y > 2\). Again, we split the \(0 \leq y \leq 1\) case and the \(1 < y \leq 2\) case. In the first case, for \(0 \leq y \leq 1\), we have
 \begin{align*}
   F(x) &= \int_{-\infty}^y f(z) \, \mathrm dz \\
     &= \int_0^y z \, \mathrm dz \\
@@ -5020,7 +5020,7 @@ Hence, the CDF is
 \[ F(y) = \begin{cases} 0 & \text{for $y < 0$} \\
             \tfrac12 y^2 & \text{for $0 \leq y \leq 1$} \\
             2y - \tfrac12 y^2 - 1  & \text{for $1 < y \leq 2$} \\
-            1 & \text{for $y > 1$}. \end{cases} \]
+            1 & \text{for $y > 2$}. \end{cases} \]
 
 \includegraphics{math1710_files/figure-latex/second-cdf-1.pdf}
 
