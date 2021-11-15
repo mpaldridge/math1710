@@ -1,9 +1,12 @@
 ::::: {.myq}
-**C1.** Consider the pair of random variables $(X,Y)$ with joint PDF
-\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} .\]
+**C1.** Let $X$ be a continuous random variable with PDF
+\[ f(x) = \tfrac92 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]
+and $f(x) = 0$ otherwise.
+(a) Find the cdf, F (x), and hence find the constant c. What is the probability P r(X > 1)?
+(b) Calculate the expectation and variance of X. Next suppose that Y = (X2 − 1)/2. What is the range space of Y and what is its expectation?
 
 :::: {.subq}
-**(a)** 
+**(a)** Calculate the CDF $F$ of $X$, and hence find the constant $c$.
 
 ::: {.myanswers data-latex=""}
 *Hint.* To get a new sticker you need to "succeed" in an experiment, where "failure" is "receiving a sticker you already have a copy of" and "success" is "receiving a new sticker you haven't already got". What is the probabiltiy of success?
@@ -12,7 +15,7 @@
 
 :::: {.subq}
 **(b)** 
-\[ n \sum_{k=1}^n \frac{1}{k} . \]
+What is $\mathbb P(X > 1)$?
 
 ::: {.myanswers data-latex=""}
 *Hint.* Recall the expectation of the geometric distribution, and use linearity of expectaiton.
@@ -20,10 +23,14 @@
 ::::
 
 :::: {.subq}
-**(c)** T
+**(c)** Calculate the expectation and variance of $X$.
 
 ::: {.myanswers data-latex=""}
 *Hint.* In R, `sum(1 / (1:678))` sum the reciprocals of the integers from 1 to 678.
 :::
+::::
+
+:::: {.subq}
+**(d)** Let $Y = \tfrac12 (X^2 - 1)$. What is the expectation of $Y$?
 ::::
 :::::

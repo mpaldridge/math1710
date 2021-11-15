@@ -11,7 +11,7 @@ output: html_document
 
 On the last worksheet, we looked at dealing with famous discrete random variables: the binomial, geometric, and Poisson distributions. In this worksheet, we will look at dealing with arbitrary discrete random variables, as defined by a probability mass function (PMF)
 
-## Setting up a PMF
+## Probability mass function
 
 The key to dealing with a discrete random variable is to set up two things: the range of values the random variable can take, and the PMF itself.
 
@@ -25,7 +25,7 @@ We want to store the $x$ values in one vector, and the $p_X(x)$ values in anothe
 
 ```{r}
 x <- c(0, 0.5, 1, 2, 2.5, 4)
-pmf_x <- x(0.1, 0.2, 0.2, 0.3, 0.1, 0.1)
+pmf_x <- c(0.1, 0.2, 0.2, 0.3, 0.1, 0.1)
 ```
 
 It's good practice to check that the PMF does indeed sum to 1:
@@ -33,3 +33,28 @@ It's good practice to check that the PMF does indeed sum to 1:
 ```{r}
 sum(pmf_x)
 ```
+
+We can find the probability of a given value of $x$ by pulling out the relevant value of the PMF. We are used to using square brackets to pull out the elements of a vector. But more complicate expressions can be put inside the brackets, like this:
+
+* `pmf_x[x == 0.5]` pulls out the value of the PMF that corresponds to $x = 0.5$; that is, of $p_X(0.5)$. (Note the double-equals `==`. Roughly speaking, in R, a single-equals `=` means "is set to be equal to", while a double-equals `==` means "*is* equal to".)
+* `pmf_x[x > 1.5]` pulls out all the values of the PMF that corresponding to $x > 1.5$. It's often helpful to use this together with the `sum()` function, because `sum(pmf_x[x > 1.5])` will give $\mathbb P(X > 1.5)$. (Do you see why?)
+* Relations that can be used this way are
+   * `==`: equals $=$
+   * `>`: greater than $>$
+   * `<`: less than $>$
+   * `>=`: greater than or equal to $\geq$
+   * `<=`: less than or equal to $\leq$
+   * Keen R users may wish to research use of `!=`, `in`, `&`, `|`.
+   
+> **Exercise 8.1.** Let $Y$ be the sum of fair dice rolls. So $Y$ takes the values $(2, 3, \dots, 12)$ with probabilities $\frac{1}{36}(1,2,3,4,5,6,5,4,3,2,1)$.\
+**(a)** Enter this random variable into `y` and `pmf_y`. Do so as efficiently as possible, by taking advantage of the colon notation.\
+**(b)** What is $\mathbb P(Y = 9)$?\
+**(c)** What is $\mathbb P(Y \leq 6)$?
+
+## Plotting a PMF
+
+## Cumulative distribution function
+
+## Expectation
+
+## Sampling from a distribution

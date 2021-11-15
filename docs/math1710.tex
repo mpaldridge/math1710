@@ -5272,7 +5272,7 @@ and \(f(x) = 0\) otherwise.
 
 \textbf{B3.} Consider the pair of random variables \((X,Y)\) with joint PDF
 \[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]
-and \(f_{X,Y}(x,y) = 0\) otherwise.
+and \(f_{X,Y}(x,y) = 0\) otherwise. (In particular, note that the joint PDF is only nonzero when \(x \leq y\).)
 
 \textbf{(a)} Describe the conditional distribution of \(X\) given \(Y = y\), for \(0 \leq y \leq 1\).
 
@@ -5303,10 +5303,13 @@ Both questions are ``long questions'', where the marks are not only for mathemat
 
 You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
 
-\textbf{C1.} Consider the pair of random variables \((X,Y)\) with joint PDF
-\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} .\]
+\textbf{C1.} Let \(X\) be a continuous random variable with PDF
+\[ f(x) = \tfrac92 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]
+and \(f(x) = 0\) otherwise.
+(a) Find the cdf, F (x), and hence find the constant c.~What is the probability P r(X \textgreater{} 1)?
+(b) Calculate the expectation and variance of X. Next suppose that Y = (X2 − 1)/2. What is the range space of Y and what is its expectation?
 
-\textbf{(a)}
+\textbf{(a)} Calculate the CDF \(F\) of \(X\), and hence find the constant \(c\).
 
 \begin{myanswers}
 \emph{Hint.} To get a new sticker you need to ``succeed'' in an experiment, where ``failure'' is ``receiving a sticker you already have a copy of'' and ``success'' is ``receiving a new sticker you haven't already got''. What is the probabiltiy of success?
@@ -5314,25 +5317,27 @@ You should not collaborate with others on the assessed questions: your answers m
 \end{myanswers}
 
 \textbf{(b)}
-\[ n \sum_{k=1}^n \frac{1}{k} . \]
+What is \(\mathbb P(X > 1)\)?
 
 \begin{myanswers}
 \emph{Hint.} Recall the expectation of the geometric distribution, and use linearity of expectaiton.
 
 \end{myanswers}
 
-\textbf{(c)} T
+\textbf{(c)} Calculate the expectation and variance of \(X\).
 
 \begin{myanswers}
 \emph{Hint.} In R, \texttt{sum(1\ /\ (1:678))} sum the reciprocals of the integers from 1 to 678.
 
 \end{myanswers}
 
+\textbf{(d)} Let \(Y = \tfrac12 (X^2 - 1)\). What is the expectation of \(Y\)?
+
 \hypertarget{P5-short-sols}{%
 \section*{Solutions to short questions}\label{P5-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
-\textbf{A1.} (a)
+\textbf{A1.} (b) \(\tfrac{7}{16}\) (c) 1.5 \textbf{A2.} (a) 2 (b) \(\tfrac19\) (c) 2 \textbf{A3.} (a) 2 (b) 0.383
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
@@ -5360,7 +5365,7 @@ Week & Worksheet & Deadline for assessed work \\
 5 & \href{https://mpaldridge.github.io/math1710/R5.html}{\textbf{Plots II:} Making plots better} & Monday 1 November \\
 6 & \href{https://mpaldridge.github.io/math1710/R6.html}{\textbf{RMarkdown} (optional)} {[}\href{https://mpaldridge.github.io/math1710/R6.Rmd}{Rmd}{]} & --- \\
 7 & \href{https://mpaldridge.github.io/math1710/R7.html}{\textbf{Discrete distributions}} {[}\href{https://mpaldridge.github.io/math1710/R7.Rmd}{Rmd}{]} & Monday 15 November \\
-8 & Discrete random variables & --- \\
+8 & \href{https://mpaldridge.github.io/math1710/R8.html}{\textbf{Discrete random variables}} {[}\href{https://mpaldridge.github.io/math1710/R8.Rmd}{Rmd}{]} & --- \\
 9 & Normal distribution & Monday 29 November \\
 10 & Law of large numbers & --- \\
 11 & Summary & \emph{To be confirmed} \\

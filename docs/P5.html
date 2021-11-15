@@ -418,7 +418,7 @@ and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
 <div class="myq">
 <p><strong>B3.</strong> Consider the pair of random variables <span class="math inline">\((X,Y)\)</span> with joint PDF
 <span class="math display">\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]</span>
-and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise.</p>
+and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise. (In particular, note that the joint PDF is only nonzero when <span class="math inline">\(x \leq y\)</span>.)</p>
 <div class="subq">
 <p><strong>(a)</strong> Describe the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span>, for <span class="math inline">\(0 \leq y \leq 1\)</span>.</p>
 </div>
@@ -446,32 +446,38 @@ Your work will be marked by your tutor and returned later, when solutions will a
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 <div class="myq">
-<p><strong>C1.</strong> Consider the pair of random variables <span class="math inline">\((X,Y)\)</span> with joint PDF
-<span class="math display">\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} .\]</span></p>
+<p><strong>C1.</strong> Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
+<span class="math display">\[ f(x) = \tfrac92 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise.
+(a) Find the cdf, F (x), and hence find the constant c. What is the probability P r(X &gt; 1)?
+(b) Calculate the expectation and variance of X. Next suppose that Y = (X2 − 1)/2. What is the range space of Y and what is its expectation?</p>
 <div class="subq">
-<p><strong>(a)</strong></p>
+<p><strong>(a)</strong> Calculate the CDF <span class="math inline">\(F\)</span> of <span class="math inline">\(X\)</span>, and hence find the constant <span class="math inline">\(c\)</span>.</p>
 <div class="myanswers">
 <p><em>Hint.</em> To get a new sticker you need to “succeed” in an experiment, where “failure” is “receiving a sticker you already have a copy of” and “success” is “receiving a new sticker you haven’t already got”. What is the probabiltiy of success?</p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong>
-<span class="math display">\[ n \sum_{k=1}^n \frac{1}{k} . \]</span></p>
+What is <span class="math inline">\(\mathbb P(X &gt; 1)\)</span>?</p>
 <div class="myanswers">
 <p><em>Hint.</em> Recall the expectation of the geometric distribution, and use linearity of expectaiton.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> T</p>
+<p><strong>(c)</strong> Calculate the expectation and variance of <span class="math inline">\(X\)</span>.</p>
 <div class="myanswers">
 <p><em>Hint.</em> In R, <code>sum(1 / (1:678))</code> sum the reciprocals of the integers from 1 to 678.</p>
 </div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Let <span class="math inline">\(Y = \tfrac12 (X^2 - 1)\)</span>. What is the expectation of <span class="math inline">\(Y\)</span>?</p>
 </div>
 </div>
 </div>
 <div id="P5-short-sols" class="section level2 unnumbered">
 <h2>Solutions to short questions</h2>
-<p><strong>A1.</strong> (a)</p>
+<p><strong>A1.</strong> (b) <span class="math inline">\(\tfrac{7}{16}\)</span> (c) 1.5 <strong>A2.</strong> (a) 2 (b) <span class="math inline">\(\tfrac19\)</span> (c) 2 <strong>A3.</strong> (a) 2 (b) 0.383</p>
 
 </div>
 </div>
