@@ -14,8 +14,8 @@ rmd_files:
   - problems/P4.Rmd
   - sections/S08-continuous.Rmd
 #  - sections/S09-normal.Rmd
+  - problems/P5.Rmd
 #  - sections/S10-bayesian.Rmd
-#  - problems/P5.Rmd
 #  - sections/S11-summary.Rmd
   - R/R.Rmd
   - problems/solutions.Rmd

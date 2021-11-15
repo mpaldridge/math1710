@@ -289,4 +289,30 @@ Now, the intensity of probability for $(X,Y)$ being around $(x,y)$ is given by t
 | The expectation of a function of $X$ and $Y$ is given by the sum \[ \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y) . \] | The expectation of a function of $X$ and $Y$ is given by the integral \[ \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy . \] |
 | The **covariance** of $X$ and $Y$ is given by \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \] and has a computational formula \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y . \] | The **covariance** of $X$ and $Y$ is given by \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \] and has a computational formula \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y . \]
 
-<!-- example -->
+::: {.example}
+Consider the pair of continuous random variable $(X,Y)$ with joint PDF
+\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]
+and $f_{X,Y}(x,y) = 0$ otherwise.
+
+We get the marginal distribution for $X$ by integrating over $y$, so
+\[ p_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]
+
+We can find the the conditional PDF for $Y$ given $X = \tfrac14$. It is
+\[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
+    = \frac{\tfrac12\big(1 + \tfrac14 + y\big)}{\tfrac34 + \tfrac12\times\tfrac14 } = \tfrac{5}{7} + \tfrac47 y . \]
+    
+We can calculate the covariance. First, the expectations are
+\[ \mathbb EX = \int_{-\infty}^\infty x\, f_X(x) \,\mathrm dx = \int_0^1 x\big(\tfrac34 + \tfrac12x\big)\, \mathrm dx = \left[\tfrac38 x^2 + \tfrac16 x^3 \right] = \tfrac{13}{24} \]
+and $\mathbb EY = \frac{13}{24}$ also, by symmetry. Second, we have
+\begin{align*}
+\mathbb EXY
+&= \int_{-\infty}^\infty \int_{-\infty}^\infty xy\, f_{X,Y}(x,y) \, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \int_0^1 xy \, \tfrac12(1 + x + y)\, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \left[ \tfrac14 x^2y + \tfrac16 x^3y + \tfrac14 x^2y^2  \right]_{x=0}^1 \, \mathrm dy\\
+&= \int_0^1 \big( \tfrac14 y + \tfrac16 y + \tfrac14 y^2 \big) \, \mathrm dy\\
+&= \left[ \tfrac18 y^2 + \tfrac{1}{12}y^2 + \tfrac{1}{12}y^3  \right]_0^1 \\
+&= \tfrac{7}{24} .
+\end{align*}
+So therefore,
+\[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
+::::

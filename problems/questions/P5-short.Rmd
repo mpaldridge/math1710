@@ -1,0 +1,74 @@
+::::: {.myq}
+**A1.** Consider the continuous random variable $X$ with PDF
+\[ f(x) = \begin{cases} \tfrac12x & \text{for $0 \leq x \leq 1$} \\ 
+                        \tfrac12 & \text{for $1 < x \leq 2$} \\
+                        \tfrac32 - \tfrac12x & \text{for $2 < x \leq 3$} \end{cases} \]
+and $f(x) = 0$ otherwise.
+
+:::: {.subq}
+**(a)** Calculate the CDF for $X$.
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+:::
+::::
+
+:::: {.subq}
+**(b)** What is $\mathbb P(\tfrac32 \leq X \leq \tfrac52)$?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+:::
+::::
+
+:::: {.subq}
+**(c)** Calculate the expectation $\mathbb EX$.
+::::
+:::::
+
+::::: {.myq}
+**A2.** Let $X$ be a continuous random variable with PDF
+\[ f(x) = \frac{k}{x^3} \qquad \text{for $x \geq 1$} \]
+and $f(x) = 0$ otherwise.
+
+:::: {.subq}
+**(a)** What value of $k$ makes this into a true PDF?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+:::
+::::
+
+:::: {.subq}
+**(b)** What is $\mathbb P(X \geq 3)$?
+
+::: {.myanswers data-latex=""}
+*Solution.*  What is $\mathbb P(2 \leq x \leq 4)$?
+:::
+::::
+
+:::: {.subq}
+**(c)** What is the expected value $\mathbb EX$?
+
+::: {.myanswers data-latex=""}
+*Solution.* ${\displaystyle \Var(X) = \frac{1 - 0.2}{0.2^2} = 20}$.
+:::
+::::
+:::::
+
+::::: {.myq}
+**A3.** Let $X \sim \text{Exp}(\frac12)$.
+
+:::: {.subq}
+**(a)** What is $\mathbb EX$?
+::::
+
+:::: {.subq}
+**(b)** What is $\mathbb P(1 \leq X \leq 3)$?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+:::
+::::
+:::::
+

@@ -1,0 +1,35 @@
+---
+title:  "R Worksheet 8: Discrete random variables"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet does not include assessed questions.You should complete this worksheet in Week 8. If you have difficulty with this worksheet, you can get help at the office hours drop-in sessions.*
+
+------------------------------------------------------------------------
+
+On the last worksheet, we looked at dealing with famous discrete random variables: the binomial, geometric, and Poisson distributions. In this worksheet, we will look at dealing with arbitrary discrete random variables, as defined by a probability mass function (PMF)
+
+## Setting up a PMF
+
+The key to dealing with a discrete random variable is to set up two things: the range of values the random variable can take, and the PMF itself.
+
+Consider, for example, the following PMF for a random variable $X$:
+
+|   $x$    |  $0$  | $0.5$ |  $1$  |  $2$  | $2.5$ |  $4$  |
+|:--------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| $p_X(x)$ | $0.1$ | $0.2$ | $0.2$ | $0.3$ | $0.1$ | $0.1$ |
+
+We want to store the $x$ values in one vector, and the $p_X(x)$ values in another vector. We can do that like this:
+
+```{r}
+x <- c(0, 0.5, 1, 2, 2.5, 4)
+pmf_x <- x(0.1, 0.2, 0.2, 0.3, 0.1, 0.1)
+```
+
+It's good practice to check that the PMF does indeed sum to 1:
+
+```{r}
+sum(pmf_x)
+```

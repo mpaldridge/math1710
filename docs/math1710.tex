@@ -4425,7 +4425,7 @@ So the long-run proportion of times an event happens converges to its probabilit
 
 \commfalse
 
-This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S06-discrete-dist}{Section 6} and \href{S07-multi-rv}{Section 7}. You should work through all the questions on this problem sheet so far during Week 6 and 7, in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 22 November}.
+This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S06-discrete-dist}{Section 6} and \href{S07-multi-rv}{Section 7}. You should work through all the questions on this problem sheet during Weeks 6 and 7, in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 22 November}.
 
 \hypertarget{P4-short}{%
 \section*{A: Short questions}\label{P4-short}}
@@ -4858,7 +4858,7 @@ Now let \(X, Y, Z\) be \emph{independent} random variables with common variance 
 \section*{Solutions to short questions}\label{P4-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
-\textbf{A1.} (a) 0.180 (b) 0.528 (c) 8 \textbf{A2.} (a) 0.16 (b) 0.64 (c) 20 \textbf{A3.} (a) 0.214 (b) 0.456 \textbf{A4.} (a) \(\frac{1}{15}\)
+\textbf{A1.} (a) 0.180 (b) 0.528 (c) 8 \textbf{A2.} (a) 0.16 (b) 0.64 (c) 20 \textbf{A3.} (a) 0.214 (b) 0.456 \textbf{A4.} (a) \(\frac{1}{15}\) (d) No
 
 \hypertarget{S08-continuous}{%
 \chapter{Continuous random variables}\label{S08-continuous}}
@@ -5126,6 +5126,213 @@ The expectation of a function of \(X\) and \(Y\) is given by the sum \( \mathbb 
 The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) & The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) \\
 \bottomrule
 \end{longtable}
+
+\begin{example}
+Consider the pair of continuous random variable \((X,Y)\) with joint PDF
+\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]
+and \(f_{X,Y}(x,y) = 0\) otherwise.
+
+We get the marginal distribution for \(X\) by integrating over \(y\), so
+\[ p_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]
+
+We can find the the conditional PDF for \(Y\) given \(X = \tfrac14\). It is
+\[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
+    = \frac{\tfrac12\big(1 + \tfrac14 + y\big)}{\tfrac34 + \tfrac12\times\tfrac14 } = \tfrac{5}{7} + \tfrac47 y . \]
+
+We can calculate the covariance. First, the expectations are
+\[ \mathbb EX = \int_{-\infty}^\infty x\, f_X(x) \,\mathrm dx = \int_0^1 x\big(\tfrac34 + \tfrac12x\big)\, \mathrm dx = \left[\tfrac38 x^2 + \tfrac16 x^3 \right] = \tfrac{13}{24} \]
+and \(\mathbb EY = \frac{13}{24}\) also, by symmetry. Second, we have
+\begin{align*}
+\mathbb EXY
+&= \int_{-\infty}^\infty \int_{-\infty}^\infty xy\, f_{X,Y}(x,y) \, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \int_0^1 xy \, \tfrac12(1 + x + y)\, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \left[ \tfrac14 x^2y + \tfrac16 x^3y + \tfrac14 x^2y^2  \right]_{x=0}^1 \, \mathrm dy\\
+&= \int_0^1 \big( \tfrac14 y + \tfrac16 y + \tfrac14 y^2 \big) \, \mathrm dy\\
+&= \left[ \tfrac18 y^2 + \tfrac{1}{12}y^2 + \tfrac{1}{12}y^3  \right]_0^1 \\
+&= \tfrac{7}{24} .
+\end{align*}
+So therefore,
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
+\end{example}
+
+\hypertarget{P5}{%
+\chapter*{Problem Sheet 5}\label{P5}}
+\addcontentsline{toc}{chapter}{Problem Sheet 5}
+
+\commfalse
+
+This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S08-continuous}{Section 8}, and will later have questions added on Section 9. You should work through all the questions on this problem sheet so far during Week 8, in preparation for your tutorial in Week 10. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 6 December}.
+
+\hypertarget{P5-short}{%
+\section*{A: Short questions}\label{P5-short}}
+\addcontentsline{toc}{section}{A: Short questions}
+
+\textbf{A1.} Consider the continuous random variable \(X\) with PDF
+\[ f(x) = \begin{cases} \tfrac12x & \text{for $0 \leq x \leq 1$} \\ 
+                        \tfrac12 & \text{for $1 < x \leq 2$} \\
+                        \tfrac32 - \tfrac12x & \text{for $2 < x \leq 3$} \end{cases} \]
+and \(f(x) = 0\) otherwise.
+
+\textbf{(a)} Calculate the CDF for \(X\).
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(\tfrac32 \leq X \leq \tfrac52)\)?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\textbf{(c)} Calculate the expectation \(\mathbb EX\).
+
+\textbf{A2.} Let \(X\) be a continuous random variable with PDF
+\[ f(x) = \frac{k}{x^3} \qquad \text{for $x \geq 1$} \]
+and \(f(x) = 0\) otherwise.
+
+\textbf{(a)} What value of \(k\) makes this into a true PDF?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(X \geq 3)\)?
+
+\begin{myanswers}
+\emph{Solution.} What is \(\mathbb P(2 \leq x \leq 4)\)?
+
+\end{myanswers}
+
+\textbf{(c)} What is the expected value \(\mathbb EX\)?
+
+\begin{myanswers}
+\emph{Solution.} \({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\).
+
+\end{myanswers}
+
+\textbf{A3.} Let \(X \sim \text{Exp}(\frac12)\).
+
+\textbf{(a)} What is \(\mathbb EX\)?
+
+\textbf{(b)} What is \(\mathbb P(1 \leq X \leq 3)\)?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\hypertarget{P5-long}{%
+\section*{B: Long questions}\label{P5-long}}
+\addcontentsline{toc}{section}{B: Long questions}
+
+\textbf{B1.}
+\textbf{(a)} Let \(X \sim \text{Exp}(\lambda)\). Show that
+\[ \mathbb P(X > x + y \mid X > y) = \mathbb P(X > x) . \]
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\textbf{(b)} The result proved in part (a) is called the ``memoryless property''. Why do you think it's called that?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\textbf{(c)} When you get to certain bus stop, the average amount of time you have to wait for a bus to arrive is 20 minutes. Specifically, the time until the next bus arrives is modelled as an exponential distribution with expectation \(1/\lambda = 20\) minutes. Suppose you have already been waiting at the bus stop for 15 minutes. What is the expected further amount of time you still have to wait for a bus to arrive?
+
+\textbf{B2.} The main dangerous radioactive material left over after the Chernobyl disaster is Caesium-137. The amount of time it takes a Caesium-137 particle to decay is known to follow an exponential distribution with rate \(\lambda = 0.023\) years\textsuperscript{-1}.
+
+\textbf{(a)} What is the average amount of time it takes a Caesium-137 particle to decay?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\textbf{(b)} The ``half-life'' of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.
+
+\begin{myanswers}
+\emph{Solution.} What is \(\mathbb P(2 \leq x \leq 4)\)?
+
+\end{myanswers}
+
+\textbf{(c)} It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed?
+
+\begin{myanswers}
+\emph{Solution.} \({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\).
+
+\end{myanswers}
+
+\textbf{B3.} Consider the pair of random variables \((X,Y)\) with joint PDF
+\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]
+and \(f_{X,Y}(x,y) = 0\) otherwise.
+
+\textbf{(a)} Describe the conditional distribution of \(X\) given \(Y = y\), for \(0 \leq y \leq 1\).
+
+\textbf{(b)} What is the marginal PDF \(f_X\) of \(X\)?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\textbf{(c)} Are \(X\) and \(Y\) independent?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\end{myanswers}
+
+\hypertarget{P5-assessed}{%
+\section*{C: Assessed questions}\label{P5-assessed}}
+\addcontentsline{toc}{section}{C: Assessed questions}
+
+The last two questions are \textbf{assessed questions}. One question is already available, and the second will be added in Week 9. These two questions count for 3\% of your final mark for this module.
+
+The deadline for submitting your solutions is \textbf{2pm on Monday 6 December} at the beginning of Week 11, although I strongly recommend completing and submitting your work during Week 10. Submission will be via Gradescope; submission will open on Monday 29 November.
+Your work will be marked by your tutor and returned later, when solutions will also be made available.
+
+Both questions are ``long questions'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
+
+\textbf{C1.} Consider the pair of random variables \((X,Y)\) with joint PDF
+\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} .\]
+
+\textbf{(a)}
+
+\begin{myanswers}
+\emph{Hint.} To get a new sticker you need to ``succeed'' in an experiment, where ``failure'' is ``receiving a sticker you already have a copy of'' and ``success'' is ``receiving a new sticker you haven't already got''. What is the probabiltiy of success?
+
+\end{myanswers}
+
+\textbf{(b)}
+\[ n \sum_{k=1}^n \frac{1}{k} . \]
+
+\begin{myanswers}
+\emph{Hint.} Recall the expectation of the geometric distribution, and use linearity of expectaiton.
+
+\end{myanswers}
+
+\textbf{(c)} T
+
+\begin{myanswers}
+\emph{Hint.} In R, \texttt{sum(1\ /\ (1:678))} sum the reciprocals of the integers from 1 to 678.
+
+\end{myanswers}
+
+\hypertarget{P5-short-sols}{%
+\section*{Solutions to short questions}\label{P5-short-sols}}
+\addcontentsline{toc}{section}{Solutions to short questions}
+
+\textbf{A1.} (a)
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}

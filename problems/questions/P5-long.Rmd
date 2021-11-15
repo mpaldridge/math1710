@@ -1,0 +1,76 @@
+::::: {.myq}
+**B1.** 
+**(a)** Let $X \sim \text{Exp}(\lambda)$. Show that
+\[ \mathbb P(X > x + y \mid X > y) = \mathbb P(X > x) . \]
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+:::
+
+:::: {.subq}
+**(b)** The result proved in part (a) is called the "memoryless property". Why do you think it's called that?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+:::
+::::
+
+:::: {.subq}
+**(c)** When you get to certain bus stop, the average amount of time you have to wait for a bus to arrive is 20 minutes. Specifically, the time until the next bus arrives is modelled as an exponential distribution with expectation $1/\lambda = 20$ minutes. Suppose you have already been waiting at the bus stop for 15 minutes. What is the expected further amount of time you still have to wait for a bus to arrive?
+::::
+:::::
+
+::::: {.myq}
+**B2.** The main dangerous radioactive material left over after the Chernobyl disaster is Caesium-137. The amount of time it takes a Caesium-137 particle to decay is known to follow an exponential distribution with rate $\lambda = 0.023$ years^-1^.
+
+:::: {.subq}
+**(a)** What is the average amount of time it takes a Caesium-137 particle to decay?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+:::
+::::
+
+:::: {.subq}
+**(b)** The "half-life" of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.
+
+::: {.myanswers data-latex=""}
+*Solution.*  What is $\mathbb P(2 \leq x \leq 4)$?
+:::
+::::
+
+:::: {.subq}
+**(c)** It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed? 
+
+::: {.myanswers data-latex=""}
+*Solution.* ${\displaystyle \Var(X) = \frac{1 - 0.2}{0.2^2} = 20}$.
+:::
+::::
+:::::
+
+::::: {.myq}
+**B3.** Consider the pair of random variables $(X,Y)$ with joint PDF
+\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]
+and $f_{X,Y}(x,y) = 0$ otherwise.
+
+:::: {.subq}
+**(a)** Describe the conditional distribution of $X$ given $Y = y$, for $0 \leq y \leq 1$.
+::::
+
+:::: {.subq}
+**(b)** What is the marginal PDF $f_X$ of $X$?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+:::
+::::
+
+:::: {.subq}
+**(c)** Are $X$ and $Y$ independent?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+:::
+::::
+:::::
+

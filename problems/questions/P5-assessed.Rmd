@@ -1,0 +1,29 @@
+::::: {.myq}
+**C1.** Consider the pair of random variables $(X,Y)$ with joint PDF
+\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} .\]
+
+:::: {.subq}
+**(a)** 
+
+::: {.myanswers data-latex=""}
+*Hint.* To get a new sticker you need to "succeed" in an experiment, where "failure" is "receiving a sticker you already have a copy of" and "success" is "receiving a new sticker you haven't already got". What is the probabiltiy of success?
+:::
+::::
+
+:::: {.subq}
+**(b)** 
+\[ n \sum_{k=1}^n \frac{1}{k} . \]
+
+::: {.myanswers data-latex=""}
+*Hint.* Recall the expectation of the geometric distribution, and use linearity of expectaiton.
+:::
+::::
+
+:::: {.subq}
+**(c)** T
+
+::: {.myanswers data-latex=""}
+*Hint.* In R, `sum(1 / (1:678))` sum the reciprocals of the integers from 1 to 678.
+:::
+::::
+:::::
