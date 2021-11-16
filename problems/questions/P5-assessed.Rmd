@@ -1,6 +1,6 @@
 ::::: {.myq}
 **C1.** Let $X$ be a continuous random variable with PDF
-\[ f(x) = \tfrac92 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]
+\[ f(x) = \tfrac29 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]
 and $f(x) = 0$ otherwise.
 (a) Find the cdf, F (x), and hence find the constant c. What is the probability P r(X > 1)?
 (b) Calculate the expectation and variance of X. Next suppose that Y = (X2 − 1)/2. What is the range space of Y and what is its expectation?
