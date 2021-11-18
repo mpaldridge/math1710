@@ -141,7 +141,7 @@ Here, the arguments are:
 
 1. The first argument is the set of values to be sampled, which for us is the range of the random variable.
 2. The second argument is the number of samples we wish to take. In the above example, we took 20 samples.
-3. `replace = TRUE` tells us we want to be allowed "repeats" in our sample. If we want IID samples of a random variable, we always want sampling with replacement. (For some sampling-without-replacement probabiltiy problems, it might be approriate to take `replace = FALSE`, which is R's default for the `sample()` function.)
+3. `replace = TRUE` tells us we want to be allowed "repeats" in our sample. If we want IID samples of a random variable, we always want sampling with replacement. (For some sampling-without-replacement probability problems, it might be appropriate to take `replace = FALSE`, which is R's default for the `sample()` function.)
 4. `prob = ...` tells R with what probabilities each value of `x` should be sampled. If this argument is omitted, R takes each value to be equally likely.
 
 > **Exercise 8.5.** Sample 10,000 simulated dice rolls from the random variable $Y$. Calculate the mean of these simulations. Compare your answer with that from Exercise 8.4(a), and explain why you got the answer you did, using results from the module.
