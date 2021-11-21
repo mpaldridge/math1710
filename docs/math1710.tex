@@ -4408,7 +4408,7 @@ Now think about what happens to this mean \(\overline X_n\) when \(n\) gets very
 
 \begin{theorem}[Law of large numbers]
 \protect\hypertarget{thm:thLLN}{}\label{thm:thLLN}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
-\[ \overline X_n \to \mu \quad \text{in distribution as $n \to \infty$}; \]
+\[ \overline X_n \to \mu \quad \text{in probability as $n \to \infty$}; \]
 by which we mean that, for any \(\epsilon > 0\),
 \[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
 \end{theorem}
@@ -5154,6 +5154,225 @@ and \(\mathbb EY = \frac{13}{24}\) also, by symmetry. Second, we have
 So therefore,
 \[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
 \end{example}
+
+\hypertarget{S09-normal}{%
+\chapter{Normal distribution}\label{S09-normal}}
+
+\hypertarget{normal-definition}{%
+\section{Definition aof the normal distribution}\label{normal-definition}}
+
+There's one very important distribution we need to talk about, which is the so-called ``normal'' (or ``Gaussian'') distribution.
+
+\begin{definition}
+If \(X\) is a continuous random variable with PDF
+\[ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right) , \]
+then we say that \(X\) has the \textbf{normal distribution} with expectation \(\mu\) and variance \(\sigma^2 > 0\), and write \(X \sim \mathrm N(\mu,\sigma^2)\).
+\end{definition}
+
+(Many people call \(\mu\) the ``mean'', which is a slight misnomer.)
+
+This PDF is the famous ``bell curve'', where the centre of the bell is at \(x = \mu\) and the width of the bell is controlled by the value of \(\sigma^2\).
+
+\includegraphics{math1710_files/figure-latex/norm-pic-1-1.pdf}
+
+\includegraphics{math1710_files/figure-latex/norm-pic-2-1.pdf}
+
+One important special case is \(\mu = 0\) and \(\sigma^2 = 1\), in which case we say that \(Z \sim \mathrm N(0,1)\) say \(Z\) has the \textbf{standard normal distribution}. We typically write \(\phi\) (lower-case ``phi''), where
+\[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]
+for the PDF of a standard normal distribution. The CDF of a standard normal id usually written as \(\Phi\) (upper-case ``Phi''), where
+\[ \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]
+
+The normal distribution is a very widely used distribution for modelling many things in real life.
+
+\begin{itemize}
+\tightlist
+\item
+  Measurement error with scientific instruments is typically modelled as a normal distribution with expectation \(\mu = 0\). The more precise the instrument, the lower the value of the variance \(\sigma^2\).
+\item
+  According to \href{http://www1.maths.leeds.ac.uk/~voss/2019/MATH1712/index.html}{a poll a few years ago}, the height of MATH1712 students in centimetres can be modelled well by a normal distribution with expectation \(\mu = 172\) and variance \(\sigma^2 = 86\).
+\item
+  In financial models, it is often assumed that the logarithm of the daily change in a stock price follows a normal distribution. In this context, the expectation \(\mu\) is known as the ``drift'' and the standard deviation \(\sigma\) as the ``volatility''. This ``log-normal'' model is the basis of the famous Black--Scholes model of financial markets.
+\end{itemize}
+
+More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.
+
+It's generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.
+
+\hypertarget{normal-properties}{%
+\section{Properties of the normal distribution}\label{normal-properties}}
+
+\begin{theorem}
+\protect\hypertarget{thm:norm-prop}{}\label{thm:norm-prop}Let \(X \sim \mathrm{N}(\mu, \sigma^2)\) be a normally distributed random variable. Then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f_X(x)\) is indeed a PDF, in that \(\displaystyle\int_{-\infty}^\infty f_X(x)\,\mathrm dx = 1\);
+\item
+  \(\mathbb EX = \mu\);
+\item
+  \(\operatorname{Var}(X) = \sigma^2\).
+\end{enumerate}
+
+In particular, if \(Z \sim \mathrm{N}(0, 1)\) is a standard normal distribution, then \(\mathbb EZ = 0\) and \(\operatorname{Var}(Z) = 1\).
+\end{theorem}
+
+We'll give (non-examinable) proofs of these soon. But first we'll note one other thing.
+
+Let \(X \sim \mathrm{N}(\mu, \sigma^2)\), and consider the random variable \(Y = aX + b\). Then we know that
+\begin{align*}
+\mathbb E(aX + b) &= a\mu + b , \\
+\operatorname{Var}(aX + b) &= a^2 \sigma^2 .
+\end{align*}
+In fact, it can be shown that \(aX + b\) is normally distributed too; that is, \(aX + b \sim \mathrm{N}(a\mu + b, a^2 \sigma^2)\). Importantly, if we take \(a = 1/\sigma\) and \(b = -\mu/\sigma\), then we see that
+\[ Z = \frac{X - \mu}{\sigma} \sim \text{N} (0, 1) . \]
+In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as ``standardisation'' and will be useful later.
+
+We can also use standardisation to help us prove Theorem \ref{thm:norm-prop}.
+
+\begin{proof}
+\emph{(Non-examinable)} By using standardisation, it suffices to prove the theorem for a standard normal random variable \(X \sim \mathrm{N}(0,1)\).
+
+For part 1, we need to show that
+\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]
+To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself \(I\), we can instead calculate the square of the integral \(I^2\), which we also need to show is equal to 1. This is
+\begin{align*}
+  I^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx \times \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-y^2/2}\, \mathrm dy\\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-x^2/2}\,\mathrm e^{-y^2/2} \, \mathrm dx\, \mathrm dy \\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-(x^2+y^2)/2}\,\mathrm dx\, \mathrm dy .
+\end{align*}
+The second part of the outrageous trick is notice that the appearance of \(x^2 + y^2\) suggests it might be useful to transfer from cartesian coordinates \((x,y)\) to polar coordinates \((r, \theta)\). Recalling that \(x^2 + y^2 = r^2\) and \(\mathrm dx\, \mathrm dy = r\, \mathrm dr \,\mathrm d\theta\), we have
+\begin{align*}
+  I^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \int_{0}^\infty  \mathrm e^{-r^2/2}\,r\,\mathrm dr\, \mathrm d\theta \\
+    &= \frac{1}{2\pi} \, 2\pi\int_{0}^\infty  r\, \mathrm e^{-r^2/2}\,\mathrm dr \\
+    &= \left[ -\mathrm e^{-r^2/2} \right]_0^\infty \\
+    &= - 0 -(-1) \\
+    &= 1 ,
+\end{align*}
+and we're done.
+
+For part 2, we need to show that \(\mathbb EX = 0\). We have
+\begin{align*}
+\mathbb EX &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-\mathrm e^{-x^2/2}\right]_{-\infty}^\infty \\
+  &= -0 - (-0) \\
+  &= 0 ,
+\end{align*}
+as required.
+
+For part 3, we need to show that \(\mathbb EX^2 = 1\). Using integration by parts with \(u = x\), \(v' = x\,\mathrm e^{-x^2/2}\), we have
+\begin{align*}
+\mathbb EX^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x^2\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-x \mathrm e^{-x^2/2}\right]_{-\infty}^\infty + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx \\
+  &= 0 + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx .
+\end{align*}
+But this integral on the right is just the integral \(I\) of the PDF as above, which we know equals 1, as required.
+\end{proof}
+
+\hypertarget{normal-r}{%
+\section{Calculations using R}\label{normal-r}}
+
+We will try to answer a number of questions about the normal distribution.
+
+\textbf{Question 1.} \emph{A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?}
+
+Let \(X \sim \mathrm{N}(8, 0.04^2)\) denote the width of a random fibre, measured in nanometres. Then this question required us to find
+\[ F(8.15) = \mathbb P(X \leq 8.1) = \frac{1}{\sqrt{2\pi\times 0.04^2}} \int_{-\infty}^{8.1} \exp \left(-\frac{(x - 8)^2}{2\times 0.04^2} \right) \, \mathrm dx . \]
+
+Unfortunately, it is not possible to calculate this integral exactly. However, computers can approximate this integral very accurately and very quickly. In R, this is done with the \texttt{pnorm()} function, which calculates the CDF of a normal distribution. \texttt{pnorm()} typically takes three arguments:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the first argument is the value \(x\) at which we wish to evaluate the CDF;
+\item
+  the second argument is the expectation \(\mu\) of the normal distribution;
+\item
+  the third argument is the standard deviation \(\sigma\) of the normal distribution. (Note that this third argument is the \emph{standard deviation} \(\sigma\) and not the variance \(\sigma^2\). This is an easy mistake to make!)
+\end{enumerate}
+
+So here, the number we want is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{8.1}\NormalTok{, }\DecValTok{8}\NormalTok{, }\FloatTok{0.04}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9937903
+\end{verbatim}
+
+We see that roughly 99.4\% of fibres pass the test.
+
+\textbf{Question 2.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z \leq 1.45)\)?}
+
+This is, of course, asking for
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.45}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9264707
+\end{verbatim}
+
+But in fact, the standard normal distribution CDF \(\Phi\) is so common that R allows you to omit the values of \(\mu\) and \(\sigma\). So you can save yourself a few keystrokes by simply writing
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.45}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9264707
+\end{verbatim}
+
+Question 3: upper tail standard, interpolate
+
+Question 4: In the middle fiberoptic
+
+Question 5: Quantile
+
+\hypertarget{normal-tables}{%
+\section{Calculations using statistical tables}\label{normal-tables}}
+
+Doing normal calculations with R is all very well. But what if you accidentally build a time machine and get transported back to Victorian times. Then how will you perform calculations with the normal distribution?
+
+In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of \(\Phi(x)\), the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{this page of normal distribution tables} that will appear on the final page of your exam.
+
+\hypertarget{clt}{%
+\section{Central limit theorem}\label{clt}}
+
+Recall that, given random variables \(X_1, X_2, \dots\) we can form the mean
+\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) . \]
+Recall further that we saw that if the \(X_i\) are IID random variables with expectation \(\mu\) and variance \(\sigma^2\), then
+\[ \mathbb E\overline X_n = \mu \qquad \operatorname{Var}\big(\overline X_n\big) = \frac{\sigma^2}{n} . \]
+We then saw that the \protect\hyperlink{lln}{law of large numbers} told us that \(\overline X_n \to \mu\) as \(n \to \infty\). Alternatively, we could say that \(\overline X_n - \mu \to 0\).
+
+We might also want to know what the variation of \(\overline X_n - \mu\) is around 0. Obviously, the law of large numbers tells us this variation eventually dies away to 0, but we can ``inflate'' the variation by multiplying by \(\sqrt{n}\) and looking at \(\sqrt{n}(\overline X_n - \mu)\).
+
+In the same way, we can calculate that
+\[ \mathbb E\sqrt{n}\big( \overline X_n - \mu\big) = 0 \qquad \operatorname{Var}\Big(\sqrt{n}\big( \overline X_n - \mu\big)\Big) = \sigma^2. \]
+So whatever distribution \(\sqrt{n}(\overline X_n - \mu)\) has, that distribution must have expectation \(0\) and variance \(\sigma^2\). But in fact, \emph{no matter what distribution the \(X_i\) have}, this ``variation around 0'' \(\sqrt{n}(\overline X_n - \mu)\) always gets closer and closer to the normal distribution!
+
+\begin{theorem}[Central limit theorem]
+\protect\hypertarget{thm:thLLN}{}\label{thm:thLLN}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation, \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance, and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
+\[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]
+by which we mean that, if \(Y \sim \mathrm N(0, \sigma^2)\), then, for all \(a < b\),
+\[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
+\end{theorem}
+
+Another alternative way to write this is to divide both sides by \(\sigma\) to get
+\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
+
+\hypertarget{normal-approx}{%
+\section{Approximations with the normal distribution}\label{normal-approx}}
 
 \hypertarget{P5}{%
 \chapter*{Problem Sheet 5}\label{P5}}
@@ -6470,6 +6689,365 @@ Some other possible explanations include:
 \end{itemize}
 
 You can probably come up with other explanations of your own too.
+
+\end{myanswers}
+
+\hypertarget{P4-solutions}{%
+\section*{Problem Sheet 4}\label{P4-solutions}}
+\addcontentsline{toc}{section}{Problem Sheet 4}
+
+\textbf{A1.} Let \(X \sim \text{Bin}(20, 0.4)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 8)\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ \mathbb P(X = 8) = \binom{20}{8} 0.4^8 \times 0.6^{12} = 0.180 . \]
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(8 \leq X \leq 11)\)
+
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+\mathbb P(8 \leq X \leq 11) &= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\ 
+&= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
+&= 0.180 + 0.160 + 0.117 + 0.071 \\
+&= 0.528 .
+\end{align*}
+
+\end{myanswers}
+
+\textbf{(c)} \(\mathbb EX\)
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb EX = 20 \times 0.4 = 8\).
+
+\end{myanswers}
+
+\textbf{A2.} Let \(X \sim \text{Geom}(0.2)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 2)\)
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb P(X = 2) = 0.8^1 \times 0.2^1 = 0.16\).
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(X \geq 3)\)
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.2 - 0.8\times 0.2 = 0.64\).
+
+\end{myanswers}
+
+\textbf{(c)} \(\operatorname{Var}(X)\)
+
+\begin{myanswers}
+\emph{Solution.} \({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\).
+
+\end{myanswers}
+
+\textbf{A3.} Let \(X \sim \text{Po}(2.5)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 3)\)
+
+\begin{myanswers}
+\emph{Solution.}
+\(\mathbb P(X = 3) = \mathrm e^{-2.5} \displaystyle\frac{2.5^3}{3!} = 0.214\).
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(X \geq \mathbb EX)\)
+
+\begin{myanswers}
+\emph{Solution.} First, \(\mathbb EX = 2.5\). So
+\begin{align*}
+\mathbb P(X \geq \mathbb EX) &= \mathbb P(X \geq 2.5) \\
+  &= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) - \mathbb P(X = 2) \\
+  &= 1 - \mathrm e^{-2.5} - 2.5 \mathrm e^{-2.5} - \frac{2.5^2}{2} \mathrm e^{-2.5} \\
+  &= 1 - 0.082 - 0.204 - 0.257 \\
+  &= 0.456.
+\end{align*}
+
+\end{myanswers}
+
+\textbf{A4.} Consider the following joint PMF:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(\phantom{p_X(x)}\) \\
+\midrule
+\endhead
+\(x=0\) & \(2k\) & \(2k\) & \(k\) & \(0\) & \\
+\(x=1\) & \(k\) & \(3k\) & \(k\) & \(k\) & \\
+\(x=2\) & \(0\) & \(k\) & \(k\) & \(2k\) & \\
+\(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule
+\end{longtable}
+
+\textbf{(a)} Find the value of \(k\) that makes this a joint PMF.
+
+\begin{myanswers}
+\emph{Solution.}
+The total of the joint PMF is
+\[ 2k + 2k + k + k + 3k + k + k + k + k + 2k = 15k \]
+which must be 1, so \(k = \frac{1}{15}\).
+
+\end{myanswers}
+
+\textbf{(b)} Find the marginal PMFs of \(X\) and \(Y\).
+
+\begin{myanswers}
+
+\emph{Solution.}
+By summing across the rows and down the columns, respectively, we get this:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(p_X(x)\) \\
+\midrule
+\endhead
+\(x=0\) & \(\frac{2}{15}\) & \(\frac{2}{15}\) & \(\frac{1}{15}\) & \(0\) & \(\frac{5}{15}\) \\
+\(x=1\) & \(\frac{1}{15}\) & \(\frac{3}{15}\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{6}{15}\) \\
+\(x=2\) & \(0\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{2}{15}\) & \(\frac{4}{15}\) \\
+\(p_Y(y)\) & \(\frac{3}{15}\) & \(\frac{6}{15}\) & \(\frac{3}{15}\) & \(\frac{3}{15}\) & \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
+
+\textbf{(c)} What is the conditional distribution of \(Y\) given \(X = 1\)?
+
+\begin{myanswers}
+\emph{Solution.} We get this by taking the \(x = 1\) row of the table, than normalising it by dividing through by \(p_X(1) = \frac{6}{15}\). This gives
+\[ p_{Y\mid X} (0 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (1 \mid 1) = \frac{3}{6} \qquad p_{Y\mid X} (2 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (3 \mid 1) = \frac{1}{6} . \]
+
+\end{myanswers}
+
+\textbf{(d)} Are \(X\) and \(Y\) independent?
+
+\begin{myanswers}
+\emph{Solution.} No.~For one example, \(p_{X,Y}(0,0) = \frac{2}{15}\), while \(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\), so they are not equal.
+
+\end{myanswers}
+
+\textbf{A5.} Let \(X\) and \(Y\) be Bernoulli\((\frac12)\) random variables.
+
+\textbf{(a)} Write down the table for the joint PMF of \(X\) and \(Y\) if \(X\) and \(Y\) are independent.
+
+\begin{myanswers}
+
+\emph{Solution.}
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) \\
+\midrule
+\endhead
+\(y = 0\) & \(\frac14\) & \(\frac14\) \\
+\(y = 1\) & \(\frac14\) & \(\frac14\) \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
+
+\textbf{(b)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a positive correlation.
+
+\begin{myanswers}
+
+\emph{Solution.} For example
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) \\
+\midrule
+\endhead
+\(y = 0\) & \(\frac12\) & \(0\) \\
+\(y = 1\) & \(0\) & \(\frac12\) \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
+
+\textbf{(c)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a negative correlation.
+
+\begin{myanswers}
+
+\emph{Solution.} For example
+
+\begin{longtable}[]{@{}ccc@{}}
+\toprule
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) \\
+\midrule
+\endhead
+\(y = 0\) & \(0\) & \(\frac12\) \\
+\(y = 1\) & \(\frac12\) & \(0\) \\
+\bottomrule
+\end{longtable}
+
+\end{myanswers}
+
+\textbf{B1.} Calculate the CDF \(F(x) = \mathbb P(X \leq x)\) of the geometric distribution\ldots{}
+
+\textbf{(a)} \ldots by summing the PMF;
+
+\begin{myanswers}
+\emph{Solution.}
+We have,using the standard formula for the sum of a finite geometric progression,
+\begin{align*}
+F(x) &= \sum_{y = 1}^x p(y) \\
+&= \sum_{y = 1}^x (1-p)^{y-1} p \\
+&= \frac{p\big(1 - (1-p)^x\big)}{1 - (1-p)} \\
+&= \frac{p\big(1 - (1-p)^x\big)}{p} \\
+&= 1 - (1 - p)^x .
+\end{align*}
+
+\end{myanswers}
+
+\textbf{(b)} \ldots by explaining how the ``number of trials until success'' definition tells us what \(1 - F(x) = \mathbb P(X > x)\) must be.
+
+\begin{myanswers}
+\emph{Solution.}
+Note that \(1 - F(x) = \mathbb P(X > x)\) is precisely the probability that the first \(x\) trials are failures, and hence that the first success comes strictly after the \(x\)th trial. The probability that the first \(x\) trials are failures is \((1-p)^x\). So \(F(x) = 1 - (1-p)^x\).
+
+\end{myanswers}
+
+\textbf{(c)} A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?
+
+\begin{myanswers}
+\emph{Solution.}
+Let \(X \sim \text{Geom}(\frac{1}{36})\). Then
+\begin{align*}
+\mathbb P(20 \leq X \leq 40) &= \mathbb P(X \leq 40) - \mathbb P(X \leq 19) \\
+  &= F(40) - F(19) \\
+  &= \bigg(1 - \big(1 - \tfrac{1}{36})^{40}\bigg) - \bigg(1 - \big(1 - \tfrac{1}{36})^{19}\bigg) \\
+  &= 0.676 - 0.414 \\
+  &= 0.261.
+\end{align*}
+
+\end{myanswers}
+
+\textbf{B2.} Let \(Y\) be a geometric distribution with parameter \(p\) according to the alternative ``number of failures \emph{before} the first success'' definition.
+
+\textbf{(a)} Write down the PMF for \(Y\).
+
+\begin{myanswers}
+\emph{Solution.} Having \(Y = y\) requires \(y\) consecutive failures immediately followed by a success. So \(p_Y(y) = (1-p)^y p\).
+
+\end{myanswers}
+
+\textbf{(b)} Calculate the expectation and variance of \(Y\). You may use without proof the fact that for a standard ``number of trials up to and including the first success'' geometric distribution we have \(\mathbb EX = 1/p\) and \(\operatorname{Var}(X) = (1-p)/p^2\).
+
+\begin{myanswers}
+\emph{Solution.} If \(X \sim \text{Geom}(p)\) under the standard definition, then (as we saw in the notes) \(Y\) has the same distribution as \(X -1\). Therefore,
+\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} \]
+and
+\[ \operatorname{Var}(Y) = \operatorname{Var}(X -1) = \operatorname{Var}(X) = \frac{1-p}{p^2} .  \]
+
+\end{myanswers}
+
+\textbf{B3} Let \(X \sim \text{Po}(\lambda)\).
+
+\textbf{(a)} Show that \(\mathbb EX(X-1) = \lambda^2\). You may use the Taylor series for the exponential,
+\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]
+
+\begin{myanswers}
+\emph{Solution.}
+We follow exactly the method used to calculate \(\mathbb EX\) in the notes. We have
+\begin{align*}
+\mathbb EX(X-1) &= \sum_{x=0}^\infty x(x-1)\, \mathrm e^{-\lambda} \frac{\lambda^x}{x!} \\
+  &= \lambda^2 \mathrm e^{-\lambda} \sum_{x=2}^\infty \frac{\lambda^{x-2}}{(x - 2)!} \\
+  &= \lambda^2 \mathrm e^{-\lambda}\sum_{y=0}^\infty  \frac{\lambda^y}{y!} \\
+  &= \lambda^2 \mathrm e^{-\lambda} \, \mathrm e^{\lambda} \\
+  &= \lambda^2  .
+\end{align*}
+In the second line, we took a \(\lambda^2\) and a \(\mathrm e^{-\lambda}\) outside the brackets; cancelled the \(x\) and \(x-1\) out of the \(x!\); and removed the \(x = 0\) and \(x = 1\) terms from the sum, since they were 0 anyway. In the third line, we re-indexed the sum by setting \(y = x - 2\). In the fourth line, we used the Taylor series for the exponential
+
+\end{myanswers}
+
+\textbf{(b)} Hence show that \(\operatorname{Var}(X) = \lambda\). You may use the fact, proved in the notes, that \(\mathbb EX = \lambda\).
+
+\begin{myanswers}
+\emph{Solution.}
+We know from part (a) that
+\[ \mathbb EX(X-1) = \mathbb E(X^2 - X) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \lambda = \lambda^2 ,\]
+which gives \(\mathbb EX^2 = \lambda^2 + \lambda\). We can then use the computational formula for the variance to get
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda .\]
+
+\end{myanswers}
+
+\textbf{B4.} Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is \textbf{(a)} a roll-over (no jackpot winners), \textbf{(b)} a unique jackpot winner, or \textbf{(c)} when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.
+
+\begin{myanswers}
+\emph{Solution.}
+We assume that each ticket is uniformly randomly chosen from all possible tickets, independent of all other tickets. Then the number of winners is \(X \sim \text{Bin}(15 \text{ million}, 1/(45 \text{ million}))\).
+It will be convenient to use a Poisson approximation with rate
+\[ \lambda = 15 \text{ million} \times \frac{1}{45 \text{ million}} = \tfrac13 .  \]
+
+The probability there is a roll-over is
+\[ \mathbb P(X = 0) \approx \mathrm e^{-1/3} = 0.72 . \]
+The probability there is a unique jackpot winner is
+\[ \mathbb P(X = 1) \approx \tfrac13 \mathrm e^{-1/3} = 0.24 . \]
+The probability there are multiple winners is
+\[ \mathbb P(X \geq 2) = 1 - \mathbb P(X = 0) - \mathbb P(X = 1) = 0.04  . \]
+
+\end{myanswers}
+
+\textbf{B5.} Let \(X_1, X_2, \dots, X_n\) be IID random variable with common expectation \(\mu\) and common variance \(\sigma^2\), and let \(\overline X = (X_1 + \cdots + X_n)/n\) be the mean of these random variables. We will be considering the random variable \(S^2\) given by
+\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
+
+\textbf{(a)} By writing
+\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]
+or otherwise, show that
+\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]
+
+\begin{myanswers}
+\emph{Solution.}
+Using the suggestion in the question, we have
+\begin{align*}
+S^2 &= \sum_{i=1}^n (X_i - \overline X)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu) - (\overline X - \mu)  \big)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu)^2 - 2(X_i - \mu)(\overline X - \mu) + (\overline X - \mu)^2\big) \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - \sum_{i=1}^n 2(X_i - \mu)(\overline X - \mu) + \sum_{i=1}^n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n X_i - \sum_{i=1}^n \mu\right)(\overline X - \mu)  + (\overline X - \mu)^2 \sum_{i=1}^n 1 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2(n\overline X - n\mu) (\overline X - \mu) + n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
+\end{align*}
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of \(\overline X\) to write \(\sum_{i=1}^n X_i\) as \(n \overline X\).
+
+\end{myanswers}
+
+\textbf{(b)} Hence or otherwise, show that
+\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]
+You may use facts about \(\overline X\) from the notes provided you state them clearly. (You may find it helpful to recognise some expectations as definitional formulas for variances, where appropriate.)
+
+\begin{myanswers}
+\emph{Solution.} Starting with the linearity of expectation, we have
+\begin{align*}
+\mathbb ES^2 &= \mathbb E \left( \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2  \right) \\
+  &= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
+\end{align*}
+The last line follows because \(\mathbb EX_i = \mu\) for all \(i\) by assumption, and we showed in the notes that \(\mathbb E \overline X = \mu\) also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that \(\operatorname{Var}(X_i) = \sigma^2\) by assumption, and we showed in the notes that \(\operatorname{Var}(\overline X) = \sigma^2/n\). Hence
+\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]
+as required.
+
+\end{myanswers}
+
+\textbf{(c)} At the beginning of this course, we defined the sample variance of the values \(x_1, x_2, \dots, x_n\) to be
+\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
+Explain one reason why we might consider it appropriate to use \(1/(n-1)\) as the factor at the beginning of this expression, rather than simply \(1/n\).
+
+\begin{myanswers}
+\emph{Solution.}
+We often model a data set \(x_2, x_2, \dots, x_n\) as being realisations of an IID sequence of random variables \(X_1, X_2, \dots, X_n\). In this case, we are using the summary statistic of the sample variance \(s_x^2\) to ``estimate'' the variance \(\operatorname{Var}(X_1) = \sigma^2\). Using the factor \(1/(n-1)\) ensures that this estimator is correct ``in expectation'', because
+\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]
+This property of being correct in expectation is called being an ``unbiased'' estimator, and its usually considered beneficial for an estimator to be unbiased.
+
+Note that we already know that the sample mean \(\bar x\) is an unbiased estimator for the expectation \(\mathbb EX = \mu\), as we already know that \(\mathbb E\overline X = \mu\).
 
 \end{myanswers}
 

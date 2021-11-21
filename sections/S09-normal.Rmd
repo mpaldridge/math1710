@@ -1,12 +1,195 @@
 # Normal distribution  {#S09-normal}
 
-## Definition and properties of the normal distribution  #{normal-definition}
+## Definition aof the normal distribution  {#normal-definition}
+
+There's one very important distribution we need to talk about, which is the so-called "normal" (or "Gaussian") distribution.
+
+::: {.definition}
+If $X$ is a continuous random variable with PDF
+\[ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right) , \]
+then we say that $X$ has the **normal distribution** with expectation $\mu$ and variance $\sigma^2 > 0$, and write $X \sim \mathrm N(\mu,\sigma^2)$.
+:::
+
+(Many people call $\mu$ the "mean", which is a slight misnomer.)
+
+This PDF is the famous "bell curve", where the centre of the bell is at $x = \mu$ and the width of the bell is controlled by the value of $\sigma^2$.
+
+```{r norm-pic-1, cache = TRUE, echo = FALSE}
+curve(dnorm(x, 3, 1), type = "l", n = 1001, lwd = 2, col = "green", from = -6, to = 6, xlim = c(-5, 5), ylab = "probability density function f(x)")
+curve(dnorm(x, 0, 2), type = "l", n = 1001, lwd = 2, col = "red", from = -6, to = 6, add = TRUE)
+curve(dnorm(x, 0, 1), type = "l", n = 1001, lwd = 2, col = "blue", from = -6, to = 6, add = TRUE)
+legend("topleft", c("N(0, 1)", "N(0, 4)", "N(3, 1)"), col = c("blue", "red", "green"), lwd = 2)
+```
+
+```{r norm-pic-2, cache = TRUE, echo = FALSE}
+curve(dnorm(x, 0, 1), type = "l", n = 1001, lwd = 2, col = "blue", from = -4, to = 4, xlab = "", ylab = "", xlim = c(-3, 3), axes = FALSE)
+axis(1, at = c(-4,0,4), labels = c("",expression(mu),""), lwd = 2)
+arrows(0, 0, 0, 1/sqrt(2*pi), code = 0, lty = 2, col = "red")
+arrows(-1, exp(-1/2)/sqrt(2*pi), 0, exp(-1/2)/sqrt(2*pi), length = 0.15, code = 3, lwd = 2)
+arrows(0, exp(-1/2)/sqrt(2*pi), 1, exp(-1/2)/sqrt(2*pi), length = 0.15, code = 3, lwd = 2)
+text(-0.5, 0.22, expression(sigma^2))
+text( 0.5, 0.22, expression(sigma^2))
+```
+
+One important special case is $\mu = 0$ and $\sigma^2 = 1$, in which case we say that $Z \sim \mathrm N(0,1)$ say $Z$ has the **standard normal distribution**. We typically write $\phi$ (lower-case "phi"), where 
+\[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]
+for the PDF of a standard normal distribution. The CDF of a standard normal id usually written as $\Phi$ (upper-case "Phi"), where
+\[ \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]
+
+The normal distribution is a very widely used distribution for modelling many things in real life.
+
+* Measurement error with scientific instruments is typically modelled as a normal distribution with expectation $\mu = 0$. The more precise the instrument, the lower the value of the variance $\sigma^2$.
+* According to [a poll a few years ago](http://www1.maths.leeds.ac.uk/~voss/2019/MATH1712/index.html), the height of MATH1712 students in centimetres can be modelled well by a normal distribution with expectation $\mu = 172$ and variance $\sigma^2 = 86$.
+* In financial models, it is often assumed that the logarithm of the daily change in a stock price follows a normal distribution. In this context, the expectation $\mu$ is known as the "drift" and the standard deviation $\sigma$ as the "volatility". This "log-normal" model is the basis of the famous Black--Scholes model of financial markets.
+
+More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.
+
+It's generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.
+
+
+
+
+## Properties of the normal distribution {#normal-properties}
+
+::: {.theorem #norm-prop}
+Let $X \sim \mathrm{N}(\mu, \sigma^2)$ be a normally distributed random variable. Then:
+
+1. $f_X(x)$ is indeed a PDF, in that $\displaystyle\int_{-\infty}^\infty f_X(x)\,\mathrm dx = 1$;
+2. $\mathbb EX = \mu$;
+3. $\Var(X) = \sigma^2$.
+
+In particular, if $Z \sim \mathrm{N}(0, 1)$ is a standard normal distribution, then $\mathbb EZ = 0$ and $\Var(Z) = 1$.
+:::
+
+We'll give (non-examinable) proofs of these soon. But first we'll note one other thing.
+
+Let $X \sim \mathrm{N}(\mu, \sigma^2)$, and consider the random variable $Y = aX + b$. Then we know that
+\begin{align*}
+\mathbb E(aX + b) &= a\mu + b , \\
+\Var(aX + b) &= a^2 \sigma^2 .
+\end{align*}
+In fact, it can be shown that $aX + b$ is normally distributed too; that is, $aX + b \sim \mathrm{N}(a\mu + b, a^2 \sigma^2)$. Importantly, if we take $a = 1/\sigma$ and $b = -\mu/\sigma$, then we see that
+\[ Z = \frac{X - \mu}{\sigma} \sim \text{N} (0, 1) . \]
+In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as "standardisation" and will be useful later.
+
+We can also use standardisation to help us prove Theorem \@ref(thm:norm-prop).
+
+::: {.proof}
+*(Non-examinable)* By using standardisation, it suffices to prove the theorem for a standard normal random variable $X \sim \mathrm{N}(0,1)$.
+
+For part 1, we need to show that
+\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]
+To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself $I$, we can instead calculate the square of the integral $I^2$, which we also need to show is equal to 1. This is
+\begin{align*}
+  I^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx \times \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-y^2/2}\, \mathrm dy\\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-x^2/2}\,\mathrm e^{-y^2/2} \, \mathrm dx\, \mathrm dy \\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-(x^2+y^2)/2}\,\mathrm dx\, \mathrm dy .
+\end{align*}
+The second part of the outrageous trick is notice that the appearance of $x^2 + y^2$ suggests it might be useful to transfer from cartesian coordinates $(x,y)$ to polar coordinates $(r, \theta)$. Recalling that $x^2 + y^2 = r^2$ and $\mathrm dx\, \mathrm dy = r\, \mathrm dr \,\mathrm d\theta$, we have
+\begin{align*}
+  I^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \int_{0}^\infty  \mathrm e^{-r^2/2}\,r\,\mathrm dr\, \mathrm d\theta \\
+    &= \frac{1}{2\pi} \, 2\pi\int_{0}^\infty  r\, \mathrm e^{-r^2/2}\,\mathrm dr \\
+    &= \left[ -\mathrm e^{-r^2/2} \right]_0^\infty \\
+    &= - 0 -(-1) \\
+    &= 1 ,
+\end{align*}
+and we're done.
+
+For part 2, we need to show that $\mathbb EX = 0$. We have
+\begin{align*}
+\mathbb EX &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-\mathrm e^{-x^2/2}\right]_{-\infty}^\infty \\
+  &= -0 - (-0) \\
+  &= 0 ,
+\end{align*}
+as required.
+
+For part 3, we need to show that $\mathbb EX^2 = 1$. Using integration by parts with $u = x$, $v' = x\,\mathrm e^{-x^2/2}$, we have
+\begin{align*}
+\mathbb EX^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x^2\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-x \mathrm e^{-x^2/2}\right]_{-\infty}^\infty + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx \\
+  &= 0 + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx .
+\end{align*}
+But this integral on the right is just the integral $I$ of the PDF as above, which we know equals 1, as required.
+:::
 
 ## Calculations using R  {#normal-r}
 
+We will try to answer a number of questions about the normal distribution.
+
+::: {.thpart}
+**Question 1.**  *A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?*
+
+Let $X \sim \mathrm{N}(8, 0.04^2)$ denote the width of a random fibre, measured in nanometres. Then this question required us to find
+\[ F(8.15) = \mathbb P(X \leq 8.1) = \frac{1}{\sqrt{2\pi\times 0.04^2}} \int_{-\infty}^{8.1} \exp \left(-\frac{(x - 8)^2}{2\times 0.04^2} \right) \, \mathrm dx . \]
+
+Unfortunately, it is not possible to calculate this integral exactly. However, computers can approximate this integral very accurately and very quickly. In R, this is done with the `pnorm()` function, which calculates the CDF of a normal distribution. `pnorm()` typically takes three arguments:
+
+1. the first argument is the value $x$ at which we wish to evaluate the CDF;
+1. the second argument is the expectation $\mu$ of the normal distribution;
+1. the third argument is the standard deviation $\sigma$ of the normal distribution. (Note that this third argument is the *standard deviation* $\sigma$ and not the variance $\sigma^2$. This is an easy mistake to make!)
+
+So here, the number we want is 
+
+```{r}
+pnorm(8.1, 8, 0.04)
+```
+
+We see that roughly 99.4% of fibres pass the test.
+:::
+
+::: {.thpart}
+**Question 2.**  *Let $Z \sim \mathrm{N}(0,1)$. What is $\mathbb P(Z \leq 1.45)$?*
+
+This is, of course, asking for
+
+```{r}
+pnorm(1.45, 0, 1)
+```
+
+But in fact, the standard normal distribution CDF $\Phi$ is so common that R allows you to omit the values of $\mu$ and $\sigma$. So you can save yourself a few keystrokes by simply writing
+
+```{r}
+pnorm(1.45)
+```
+:::
+
+
+Question 3: upper tail standard, interpolate
+
+Question 4: In the middle fiberoptic
+
+Question 5: Quantile
+
 ## Calculations using statistical tables  {#normal-tables}
 
+Doing normal calculations with R is all very well. But what if you accidentally build a time machine and get transported back to Victorian times. Then how will you perform calculations with the normal distribution?
+
+In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of $\Phi(x)$, the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is [this page of normal distribution tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) that will appear on the final page of your exam.
+
 ## Central limit theorem  {#clt}
+
+Recall that, given random variables $X_1, X_2, \dots$ we can form the mean
+\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) . \]
+Recall further that we saw that if the $X_i$ are IID random variables with expectation $\mu$ and variance $\sigma^2$, then
+\[ \mathbb E\overline X_n = \mu \qquad \Var \big(\overline X_n\big) = \frac{\sigma^2}{n} . \]
+We then saw that the [law of large numbers](#lln) told us that $\overline X_n \to \mu$ as $n \to \infty$. Alternatively, we could say that $\overline X_n - \mu \to 0$.
+
+We might also want to know what the variation of $\overline X_n - \mu$ is around 0. Obviously, the law of large numbers tells us this variation eventually dies away to 0, but we can "inflate" the variation by multiplying by $\sqrt{n}$ and looking at $\sqrt{n}(\overline X_n - \mu)$.
+
+In the same way, we can calculate that 
+\[ \mathbb E\sqrt{n}\big( \overline X_n - \mu\big) = 0 \qquad \Var\Big(\sqrt{n}\big( \overline X_n - \mu\big)\Big) = \sigma^2. \]
+So whatever distribution $\sqrt{n}(\overline X_n - \mu)$ has, that distribution must have expectation $0$ and variance $\sigma^2$. But in fact, *no matter what distribution the $X_i$ have*, this "variation around 0" $\sqrt{n}(\overline X_n - \mu)$ always gets closer and closer to the normal distribution!
+
+::: {.theorem #thLLN name="Central limit theorem"}
+Let $X_1, X_2, \dots$ be a sequence of IID random variables. Write $\mu = \mathbb EX_1$ for the common expectation, $\sigma^2 = \Var(X_1)$ for the common variance, and $\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i$ for the mean of the first $n$ random variables. Then 
+\[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]
+by which we mean that, if $Y \sim \mathrm N(0, \sigma^2)$, then, for all $a < b$,
+\[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
+:::
+
+Another alternative way to write this is to divide both sides by $\sigma$ to get
+\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
 
 ## Approximations with the normal distribution  {#normal-approx}
 

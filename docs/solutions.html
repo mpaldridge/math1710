@@ -263,6 +263,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.4" data-path="S08-continuous.html"><a href="S08-continuous.html#exponential"><i class="fa fa-check"></i><b>8.4</b> Exponential distribution</a></li>
 <li class="chapter" data-level="8.5" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-multiple"><i class="fa fa-check"></i><b>8.5</b> Multiple continuous random variables</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="S09-normal.html"><a href="S09-normal.html"><i class="fa fa-check"></i><b>9</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition aof the normal distribution</a></li>
+<li class="chapter" data-level="9.2" data-path="S09-normal.html"><a href="S09-normal.html#normal-properties"><i class="fa fa-check"></i><b>9.2</b> Properties of the normal distribution</a></li>
+<li class="chapter" data-level="9.3" data-path="S09-normal.html"><a href="S09-normal.html#normal-r"><i class="fa fa-check"></i><b>9.3</b> Calculations using R</a></li>
+<li class="chapter" data-level="9.4" data-path="S09-normal.html"><a href="S09-normal.html#normal-tables"><i class="fa fa-check"></i><b>9.4</b> Calculations using statistical tables</a></li>
+<li class="chapter" data-level="9.5" data-path="S09-normal.html"><a href="S09-normal.html#clt"><i class="fa fa-check"></i><b>9.5</b> Central limit theorem</a></li>
+<li class="chapter" data-level="9.6" data-path="S09-normal.html"><a href="S09-normal.html#normal-approx"><i class="fa fa-check"></i><b>9.6</b> Approximations with the normal distribution</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
 <ul>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
@@ -284,6 +293,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -1304,6 +1314,442 @@ happiness units, and you might be willing to pay 2 happiness-units-worth of mone
 <li>Normal advice to play games with positive expected winnings only really applies if you can play the game many times (or very similar games). For repeated games, the expected winnings can be interpreted as “the winnings you are likely to get in the long run”. For one-off highly unusual games, this doesn’t hold, so one needs a different criterion to decide whether to play. (If I was allowed to play this game a million times for £100 a round, but didn’t have to settle the money until all one million games had finished, then I would strongly consider playing.)</li>
 </ul>
 <p>You can probably come up with other explanations of your own too.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="P4-solutions" class="section level2 unnumbered">
+<h2>Problem Sheet 4</h2>
+<div class="myq">
+<p><strong>A1.</strong> Let <span class="math inline">\(X \sim \text{Bin}(20, 0.4)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 8)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ \mathbb P(X = 8) = \binom{20}{8} 0.4^8 \times 0.6^{12} = 0.180 . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(8 \leq X \leq 11)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[\begin{align*}
+\mathbb P(8 \leq X \leq 11) &amp;= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\ 
+&amp;= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
+&amp;= 0.180 + 0.160 + 0.117 + 0.071 \\
+&amp;= 0.528 .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\mathbb EX\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb EX = 20 \times 0.4 = 8\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A2.</strong> Let <span class="math inline">\(X \sim \text{Geom}(0.2)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 2)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X = 2) = 0.8^1 \times 0.2^1 = 0.16\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq 3)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.2 - 0.8\times 0.2 = 0.64\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\operatorname{Var}(X)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> Let <span class="math inline">\(X \sim \text{Po}(2.5)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 3)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math inline">\(\mathbb P(X = 3) = \mathrm e^{-2.5} \displaystyle\frac{2.5^3}{3!} = 0.214\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq \mathbb EX)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> First, <span class="math inline">\(\mathbb EX = 2.5\)</span>. So
+<span class="math display">\[\begin{align*}
+\mathbb P(X \geq \mathbb EX) &amp;= \mathbb P(X \geq 2.5) \\
+  &amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) - \mathbb P(X = 2) \\
+  &amp;= 1 - \mathrm e^{-2.5} - 2.5 \mathrm e^{-2.5} - \frac{2.5^2}{2} \mathrm e^{-2.5} \\
+  &amp;= 1 - 0.082 - 0.204 - 0.257 \\
+  &amp;= 0.456.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> Consider the following joint PMF:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(\phantom{p_X(x)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(3k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\vphantom{p_Y(y)}\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<div class="subq">
+<p><strong>(a)</strong> Find the value of <span class="math inline">\(k\)</span> that makes this a joint PMF.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The total of the joint PMF is
+<span class="math display">\[ 2k + 2k + k + k + 3k + k + k + k + k + 2k = 15k \]</span>
+which must be 1, so <span class="math inline">\(k = \frac{1}{15}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Find the marginal PMFs of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By summing across the rows and down the columns, respectively, we get this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(p_X(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{15}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{4}{15}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> What is the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> We get this by taking the <span class="math inline">\(x = 1\)</span> row of the table, than normalising it by dividing through by <span class="math inline">\(p_X(1) = \frac{6}{15}\)</span>. This gives
+<span class="math display">\[ p_{Y\mid X} (0 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (1 \mid 1) = \frac{3}{6} \qquad p_{Y\mid X} (2 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (3 \mid 1) = \frac{1}{6} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
+<div class="myanswers">
+<p><em>Solution.</em> No. For one example, <span class="math inline">\(p_{X,Y}(0,0) = \frac{2}{15}\)</span>, while <span class="math inline">\(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\)</span>, so they are not equal.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be Bernoulli<span class="math inline">\((\frac12)\)</span> random variables.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the table for the joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<div class="myanswers">
+<p><em>Solution.</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a positive correlation.</p>
+<div class="myanswers">
+<p><em>Solution.</em> For example</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a negative correlation.</p>
+<div class="myanswers">
+<p><em>Solution.</em> For example</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B1.</strong> Calculate the CDF <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span> of the geometric distribution…</p>
+<div class="subq">
+<p><strong>(a)</strong> …by summing the PMF;</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have,using the standard formula for the sum of a finite geometric progression,
+<span class="math display">\[\begin{align*}
+F(x) &amp;= \sum_{y = 1}^x p(y) \\
+&amp;= \sum_{y = 1}^x (1-p)^{y-1} p \\
+&amp;= \frac{p\big(1 - (1-p)^x\big)}{1 - (1-p)} \\
+&amp;= \frac{p\big(1 - (1-p)^x\big)}{p} \\
+&amp;= 1 - (1 - p)^x .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> …by explaining how the “number of trials until success” definition tells us what <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> must be.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Note that <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> is precisely the probability that the first <span class="math inline">\(x\)</span> trials are failures, and hence that the first success comes strictly after the <span class="math inline">\(x\)</span>th trial. The probability that the first <span class="math inline">\(x\)</span> trials are failures is <span class="math inline">\((1-p)^x\)</span>. So <span class="math inline">\(F(x) = 1 - (1-p)^x\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let <span class="math inline">\(X \sim \text{Geom}(\frac{1}{36})\)</span>. Then
+<span class="math display">\[\begin{align*}
+\mathbb P(20 \leq X \leq 40) &amp;= \mathbb P(X \leq 40) - \mathbb P(X \leq 19) \\
+  &amp;= F(40) - F(19) \\
+  &amp;= \bigg(1 - \big(1 - \tfrac{1}{36})^{40}\bigg) - \bigg(1 - \big(1 - \tfrac{1}{36})^{19}\bigg) \\
+  &amp;= 0.676 - 0.414 \\
+  &amp;= 0.261.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B2.</strong> Let <span class="math inline">\(Y\)</span> be a geometric distribution with parameter <span class="math inline">\(p\)</span> according to the alternative “number of failures <em>before</em> the first success” definition.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the PMF for <span class="math inline">\(Y\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> Having <span class="math inline">\(Y = y\)</span> requires <span class="math inline">\(y\)</span> consecutive failures immediately followed by a success. So <span class="math inline">\(p_Y(y) = (1-p)^y p\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Calculate the expectation and variance of <span class="math inline">\(Y\)</span>. You may use without proof the fact that for a standard “number of trials up to and including the first success” geometric distribution we have <span class="math inline">\(\mathbb EX = 1/p\)</span> and <span class="math inline">\(\operatorname{Var}(X) = (1-p)/p^2\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> If <span class="math inline">\(X \sim \text{Geom}(p)\)</span> under the standard definition, then (as we saw in the notes) <span class="math inline">\(Y\)</span> has the same distribution as <span class="math inline">\(X -1\)</span>. Therefore,
+<span class="math display">\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} \]</span>
+and
+<span class="math display">\[ \operatorname{Var}(Y) = \operatorname{Var}(X -1) = \operatorname{Var}(X) = \frac{1-p}{p^2} .  \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B3</strong> Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
+<div class="subq">
+<p><strong>(a)</strong> Show that <span class="math inline">\(\mathbb EX(X-1) = \lambda^2\)</span>. You may use the Taylor series for the exponential,
+<span class="math display">\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We follow exactly the method used to calculate <span class="math inline">\(\mathbb EX\)</span> in the notes. We have
+<span class="math display">\[\begin{align*}
+\mathbb EX(X-1) &amp;= \sum_{x=0}^\infty x(x-1)\, \mathrm e^{-\lambda} \frac{\lambda^x}{x!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda} \sum_{x=2}^\infty \frac{\lambda^{x-2}}{(x - 2)!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda}\sum_{y=0}^\infty  \frac{\lambda^y}{y!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda} \, \mathrm e^{\lambda} \\
+  &amp;= \lambda^2  .
+\end{align*}\]</span>
+In the second line, we took a <span class="math inline">\(\lambda^2\)</span> and a <span class="math inline">\(\mathrm e^{-\lambda}\)</span> outside the brackets; cancelled the <span class="math inline">\(x\)</span> and <span class="math inline">\(x-1\)</span> out of the <span class="math inline">\(x!\)</span>; and removed the <span class="math inline">\(x = 0\)</span> and <span class="math inline">\(x = 1\)</span> terms from the sum, since they were 0 anyway. In the third line, we re-indexed the sum by setting <span class="math inline">\(y = x - 2\)</span>. In the fourth line, we used the Taylor series for the exponential</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Hence show that <span class="math inline">\(\operatorname{Var}(X) = \lambda\)</span>. You may use the fact, proved in the notes, that <span class="math inline">\(\mathbb EX = \lambda\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We know from part (a) that
+<span class="math display">\[ \mathbb EX(X-1) = \mathbb E(X^2 - X) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \lambda = \lambda^2 ,\]</span>
+which gives <span class="math inline">\(\mathbb EX^2 = \lambda^2 + \lambda\)</span>. We can then use the computational formula for the variance to get
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda .\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is <strong>(a)</strong> a roll-over (no jackpot winners), <strong>(b)</strong> a unique jackpot winner, or <strong>(c)</strong> when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We assume that each ticket is uniformly randomly chosen from all possible tickets, independent of all other tickets. Then the number of winners is <span class="math inline">\(X \sim \text{Bin}(15 \text{ million}, 1/(45 \text{ million}))\)</span>.
+It will be convenient to use a Poisson approximation with rate
+<span class="math display">\[ \lambda = 15 \text{ million} \times \frac{1}{45 \text{ million}} = \tfrac13 .  \]</span></p>
+<p>The probability there is a roll-over is
+<span class="math display">\[ \mathbb P(X = 0) \approx \mathrm e^{-1/3} = 0.72 . \]</span>
+The probability there is a unique jackpot winner is
+<span class="math display">\[ \mathbb P(X = 1) \approx \tfrac13 \mathrm e^{-1/3} = 0.24 . \]</span>
+The probability there are multiple winners is
+<span class="math display">\[ \mathbb P(X \geq 2) = 1 - \mathbb P(X = 0) - \mathbb P(X = 1) = 0.04  . \]</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID random variable with common expectation <span class="math inline">\(\mu\)</span> and common variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(\overline X = (X_1 + \cdots + X_n)/n\)</span> be the mean of these random variables. We will be considering the random variable <span class="math inline">\(S^2\)</span> given by
+<span class="math display">\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> By writing
+<span class="math display">\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]</span>
+or otherwise, show that
+<span class="math display">\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Using the suggestion in the question, we have
+<span class="math display">\[\begin{align*}
+S^2 &amp;= \sum_{i=1}^n (X_i - \overline X)^2 \\
+  &amp;= \sum_{i=1}^n \big( (X_i - \mu) - (\overline X - \mu)  \big)^2 \\
+  &amp;= \sum_{i=1}^n \big( (X_i - \mu)^2 - 2(X_i - \mu)(\overline X - \mu) + (\overline X - \mu)^2\big) \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - \sum_{i=1}^n 2(X_i - \mu)(\overline X - \mu) + \sum_{i=1}^n (\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n X_i - \sum_{i=1}^n \mu\right)(\overline X - \mu)  + (\overline X - \mu)^2 \sum_{i=1}^n 1 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - 2(n\overline X - n\mu) (\overline X - \mu) + n (\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
+\end{align*}\]</span>
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of <span class="math inline">\(\overline X\)</span> to write <span class="math inline">\(\sum_{i=1}^n X_i\)</span> as <span class="math inline">\(n \overline X\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Hence or otherwise, show that
+<span class="math display">\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]</span>
+You may use facts about <span class="math inline">\(\overline X\)</span> from the notes provided you state them clearly. (You may find it helpful to recognise some expectations as definitional formulas for variances, where appropriate.) <!--You might also find it useful to recall that if a random variable $Y$ has expectation $\mathbb EY = 0$, then $\mathbb EY^2 = \Var(Y)$.--></p>
+<div class="myanswers">
+<p><em>Solution.</em> Starting with the linearity of expectation, we have
+<span class="math display">\[\begin{align*}
+\mathbb ES^2 &amp;= \mathbb E \left( \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2  \right) \\
+  &amp;= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
+\end{align*}\]</span>
+The last line follows because <span class="math inline">\(\mathbb EX_i = \mu\)</span> for all <span class="math inline">\(i\)</span> by assumption, and we showed in the notes that <span class="math inline">\(\mathbb E \overline X = \mu\)</span> also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that <span class="math inline">\(\operatorname{Var}(X_i) = \sigma^2\)</span> by assumption, and we showed in the notes that <span class="math inline">\(\operatorname{Var}(\overline X) = \sigma^2/n\)</span>. Hence
+<span class="math display">\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]</span>
+as required.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> At the beginning of this course, we defined the sample variance of the values <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> to be
+<span class="math display">\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]</span>
+Explain one reason why we might consider it appropriate to use <span class="math inline">\(1/(n-1)\)</span> as the factor at the beginning of this expression, rather than simply <span class="math inline">\(1/n\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We often model a data set <span class="math inline">\(x_2, x_2, \dots, x_n\)</span> as being realisations of an IID sequence of random variables <span class="math inline">\(X_1, X_2, \dots, X_n\)</span>. In this case, we are using the summary statistic of the sample variance <span class="math inline">\(s_x^2\)</span> to “estimate” the variance <span class="math inline">\(\operatorname{Var}(X_1) = \sigma^2\)</span>. Using the factor <span class="math inline">\(1/(n-1)\)</span> ensures that this estimator is correct “in expectation”, because
+<span class="math display">\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]</span>
+This property of being correct in expectation is called being an “unbiased” estimator, and its usually considered beneficial for an estimator to be unbiased.</p>
+<p>Note that we already know that the sample mean <span class="math inline">\(\bar x\)</span> is an unbiased estimator for the expectation <span class="math inline">\(\mathbb EX = \mu\)</span>, as we already know that <span class="math inline">\(\mathbb E\overline X = \mu\)</span>.</p>
 </div>
 </div>
 </div>

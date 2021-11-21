@@ -401,7 +401,7 @@ Now think about what happens to this mean $\overline X_n$ when $n$ gets very lar
 
 ::: {.theorem #thLLN name="Law of large numbers"}
 Let $X_1, X_2, \dots$ be a sequence of IID random variables. Write $\mu = \mathbb EX_1$ for the common expectation and $\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i$ for the mean of the first $n$ random variables. Then 
-\[ \overline X_n \to \mu \quad \text{in distribution as $n \to \infty$}; \]
+\[ \overline X_n \to \mu \quad \text{in probability as $n \to \infty$}; \]
 by which we mean that, for any $\epsilon > 0$, 
 \[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
 :::

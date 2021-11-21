@@ -50,3 +50,10 @@ pdf
 prop-cont
 exponential
 continuous-multiple
+S09-normal
+normal-definition
+normal-properties
+normal-r
+normal-tables
+clt
+normal-approx
