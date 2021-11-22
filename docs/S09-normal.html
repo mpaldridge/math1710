@@ -265,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="S09-normal.html"><a href="S09-normal.html"><i class="fa fa-check"></i><b>9</b> Normal distribution</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition aof the normal distribution</a></li>
+<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition of the normal distribution</a></li>
 <li class="chapter" data-level="9.2" data-path="S09-normal.html"><a href="S09-normal.html#normal-properties"><i class="fa fa-check"></i><b>9.2</b> Properties of the normal distribution</a></li>
 <li class="chapter" data-level="9.3" data-path="S09-normal.html"><a href="S09-normal.html#normal-r"><i class="fa fa-check"></i><b>9.3</b> Calculations using R</a></li>
 <li class="chapter" data-level="9.4" data-path="S09-normal.html"><a href="S09-normal.html#normal-tables"><i class="fa fa-check"></i><b>9.4</b> Calculations using statistical tables</a></li>
@@ -318,7 +318,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="S09-normal" class="section level1" number="9">
 <h1><span class="header-section-number">Section 9</span> Normal distribution</h1>
 <div id="normal-definition" class="section level2" number="9.1">
-<h2><span class="header-section-number">9.1</span> Definition aof the normal distribution</h2>
+<h2><span class="header-section-number">9.1</span> Definition of the normal distribution</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/of84BBnJdgw">
+</iframe>
+</div>
+</div>
 <p>There’s one very important distribution we need to talk about, which is the so-called “normal” (or “Gaussian”) distribution.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-102" class="definition"><strong>Definition 9.1  </strong></span>If <span class="math inline">\(X\)</span> is a continuous random variable with PDF
@@ -326,13 +332,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 then we say that <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2 &gt; 0\)</span>, and write <span class="math inline">\(X \sim \mathrm N(\mu,\sigma^2)\)</span>.</p>
 </div>
 <p>(Many people call <span class="math inline">\(\mu\)</span> the “mean”, which is a slight misnomer.)</p>
-<p>This PDF is the famous “bell curve”, where the centre of the bell is at <span class="math inline">\(x = \mu\)</span> and the width of the bell is controlled by the value of <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>This PDF is the famous “bell curve”, where the centre of the bell is at <span class="math inline">\(x = \mu\)</span> and the width of the bell is controlled by the value of <span class="math inline">\(\sigma^2\)</span>. Note also that the PDF is symmetric about <span class="math inline">\(\mu\)</span>.</p>
 <p><img src="math1710_files/figure-html/norm-pic-1-1.png" width="672" /></p>
 <p><img src="math1710_files/figure-html/norm-pic-2-1.png" width="672" /></p>
-<p>One important special case is <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma^2 = 1\)</span>, in which case we say that <span class="math inline">\(Z \sim \mathrm N(0,1)\)</span> say <span class="math inline">\(Z\)</span> has the <strong>standard normal distribution</strong>. We typically write <span class="math inline">\(\phi\)</span> (lower-case “phi”), where
+<p>One important special case is <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma^2 = 1\)</span>, in which case we say that <span class="math inline">\(Z \sim \mathrm N(0,1)\)</span> has the <strong>standard normal distribution</strong>. We typically write <span class="math inline">\(\phi\)</span> (lower-case “phi”), where
 <span class="math display">\[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]</span>
-for the PDF of a standard normal distribution. The CDF of a standard normal id usually written as <span class="math inline">\(\Phi\)</span> (upper-case “Phi”), where
-<span class="math display">\[ \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]</span></p>
+for the PDF of a standard normal distribution, and write <span class="math inline">\(\Phi\)</span> (upper-case “Phi”), where
+<span class="math display">\[ \Phi(z) = \mathbb P(Z \leq z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]</span>
+for the CDF of a standard normal distribution.</p>
 <p>The normal distribution is a very widely used distribution for modelling many things in real life.</p>
 <ul>
 <li>Measurement error with scientific instruments is typically modelled as a normal distribution with expectation <span class="math inline">\(\mu = 0\)</span>. The more precise the instrument, the lower the value of the variance <span class="math inline">\(\sigma^2\)</span>.</li>
@@ -344,6 +351,12 @@ for the PDF of a standard normal distribution. The CDF of a standard normal id u
 </div>
 <div id="normal-properties" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Properties of the normal distribution</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/4P6Xe1BbMn0">
+</iframe>
+</div>
+</div>
 <div class="theorem">
 <p><span id="thm:norm-prop" class="theorem"><strong>Theorem 9.1  </strong></span>Let <span class="math inline">\(X \sim \mathrm{N}(\mu, \sigma^2)\)</span> be a normally distributed random variable. Then:</p>
 <ol style="list-style-type: decimal">
@@ -432,8 +445,16 @@ But this integral on the right is just the integral <span class="math inline">\(
 </div>
 <div id="normal-tables" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Calculations using statistical tables</h2>
-<p>Doing normal calculations with R is all very well. But what if you accidentally build a time machine and get transported back to Victorian times. Then how will you perform calculations with the normal distribution?</p>
-<p>In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of <span class="math inline">\(\Phi(x)\)</span>, the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">this page of normal distribution tables</a> that will appear on the final page of your exam.</p>
+<p>Doing normal calculations with R is all very well. But what if you accidentally built a time machine and got transported back to Victorian times. Then how would you perform calculations with the normal distribution?</p>
+<p>In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of <span class="math inline">\(\Phi(x)\)</span>, the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">this page of normal distribution tables</a> that will appear on the final page of your exam. (Like the Victorian times, your exam is another place R will not be available but statistical tables will be.)</p>
+<p>I feel I shouldn’t finish with this subsection before addressing the following question some readers may be asking themselves: <em>Now that we have R (and other computing methods), what’s the point learning to answer questions using statistical tables?</em> I might suggest a few possible answers to this question:</p>
+<ol style="list-style-type: decimal">
+<li>Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.</li>
+<li>Someone has to write the computer program, and these people need to be able to do the sorts of conversions we will learn about here. So these are useful skills for mathematician–programmers to learn.</li>
+<li>Being able to standardise normal distributions, approximate other distributions by normal distributions (see Subsection @ref(#normal-approx)), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.</li>
+<li>Yes, you are right, this is a pointless skill for us to teach you.</li>
+</ol>
+<p>I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn’t totally without merit.</p>
 </div>
 <div id="clt" class="section level2" number="9.5">
 <h2><span class="header-section-number">9.5</span> Central limit theorem</h2>
@@ -454,9 +475,37 @@ by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma
 </div>
 <p>Another alternative way to write this is to divide both sides by <span class="math inline">\(\sigma\)</span> to get
 <span class="math display">\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]</span></p>
+<p>The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too – the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.</p>
 </div>
 <div id="normal-approx" class="section level2" number="9.6">
 <h2><span class="header-section-number">9.6</span> Approximations with the normal distribution</h2>
+<p>There are many other distributions that can be well approximated by a normal distribution. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.</p>
+<ul>
+<li>A binomial distribution <span class="math inline">\(X \sim \mathrm{Bin}(n, p)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(np, np(1-p))\)</span> when <span class="math inline">\(n\)</span> is large and <span class="math inline">\(p\)</span> is not too close to 0 or 1. (When <span class="math inline">\(p\)</span> is small, we already know that the Poisson distribution is a good approximation.)</li>
+<li>A Poisson distribution <span class="math inline">\(X \sim \mathrm{Po}(\lambda)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(\lambda, \lambda)\)</span> when <span class="math inline">\(\lambda\)</span> is large.</li>
+<li>A sum <span class="math inline">\(Y = X_1 + \cdots + X_n\)</span> of <span class="math inline">\(n\)</span> IID geometric distributions <span class="math inline">\(X_1, \dots, X_n \sim \mathrm{Geom}(p)\)</span> (sometimes known as a “negative binomial” distribution) is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(n/p, np/(1-p)^2)\)</span> when <span class="math inline">\(p\)</span> is not to close to 1.</li>
+<li>A sum <span class="math inline">\(Y = X_1 + \cdots + X_n\)</span> of <span class="math inline">\(n\)</span> IID exponential distributions <span class="math inline">\(X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)\)</span> (sometimes known as a “Gamma” distribution) is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(n/\lambda, n/\lambda^2)\)</span> when the expectation <span class="math inline">\(1/\lambda\)</span> is not too small.</li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-104" class="example"><strong>Example 9.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
+<p>The true distribution of Heads is <span class="math inline">\(X \sim \mathrm{Bin}(1000, \frac12)\)</span>, and the question wants
+<span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^505 p_X(x) . \]</span>
+We can calculate the exact answer using R:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="S09-normal.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">495</span><span class="sc">:</span><span class="dv">505</span>, <span class="dv">1000</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] 0.2720284</code></pre>
+<p>However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since <span class="math inline">\(\mathbb EX = 1000 \times \frac12 = 500\)</span> and <span class="math inline">\(\operatorname{Var}(X) = 1000 \times \frac12 \times \frac12 = 250\)</span>, we have the normal approximation <span class="math inline">\(X \approx \mathrm N(500, 250)\)</span>. We could then calculate
+<span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]</span>
+We could standardise and use the statistical tables, or just use R:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="S09-normal.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">505</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">495</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<pre><code>## [1] 0.2481704</code></pre>
+<p>This is not too far off the correct answer <span class="math inline">\(0.272\)</span> we calculated exactly, but it does miss by about 9%.</p>
+<p>Note, though, that we approximated the discrete random variable <span class="math inline">\(X\)</span> by a continuous random variable <span class="math inline">\(Y\)</span>. So the next possibility for <span class="math inline">\(X\)</span> above 505 was 506 and below 495 was 494, whereas <span class="math inline">\(Y\)</span> could smoothly vary between the two. So we usually get a more accurate approximation if we use a <strong>continuity correction</strong> and round outwards halfway to the next discrete point. So we should get a better approximation from
+<span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]</span></p>
+<p>Calculating this in R (or with statistical tables) we get</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="S09-normal.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">505.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">494.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<pre><code>## [1] 0.2720476</code></pre>
+<p>Using the continuity correction, we now have an incredibly accurate approximation – it only misses by 0.006%.</p>
+</div>
 
 </div>
 </div>

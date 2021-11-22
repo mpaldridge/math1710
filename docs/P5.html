@@ -265,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="S09-normal.html"><a href="S09-normal.html"><i class="fa fa-check"></i><b>9</b> Normal distribution</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition aof the normal distribution</a></li>
+<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition of the normal distribution</a></li>
 <li class="chapter" data-level="9.2" data-path="S09-normal.html"><a href="S09-normal.html#normal-properties"><i class="fa fa-check"></i><b>9.2</b> Properties of the normal distribution</a></li>
 <li class="chapter" data-level="9.3" data-path="S09-normal.html"><a href="S09-normal.html#normal-r"><i class="fa fa-check"></i><b>9.3</b> Calculations using R</a></li>
 <li class="chapter" data-level="9.4" data-path="S09-normal.html"><a href="S09-normal.html#normal-tables"><i class="fa fa-check"></i><b>9.4</b> Calculations using statistical tables</a></li>
@@ -384,6 +384,27 @@ and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
 </div>
 </div>
 </div>
+<div class="myq">
+<p><strong>A4.</strong> Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. Calculate the following <strong>(a)</strong> using statistical tables; <strong>(b)</strong> using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)</p>
+<div class="subq">
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(Z \leq -1.2)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(-1.2 \leq Z \leq 0.8)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(iii)</strong>* <span class="math inline">\(\mathbb P(Z \leq 0.27)\)</span> (using interpolation for part (a))</p>
+</div>
+</div>
+<div class="myq">
+<p>*<strong>A5.</strong> Let <span class="math inline">\(X \sim \mathrm{Po}(25)\)</span>. Calculate the following <strong>(a)</strong> exactly, using R; <strong>(b)</strong> approximately, using a normal approximation with a continuity correction and statistical tables. (For part (b), you should show enough working to convince a reader that you really did use the tables.)</p>
+<div class="subq">
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(X \leq 27)\)</span></p>
+</div>
+<div class="subq">
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(X \geq 28 \mid X \geq 27)\)</span></p>
+</div>
+</div>
 </div>
 <div id="P5-long" class="section level2 unnumbered">
 <h2>B: Long questions</h2>
@@ -445,6 +466,12 @@ and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise. (In particu
 </div>
 </div>
 </div>
+<div class="myq">
+<p><strong>B4.</strong> Engineers and scientists often use the rule of thumb “Only 5% of data is more than two standard deviations away from the mean.” Carefully justify this rule, using concepts from the module.</p>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?</p>
+</div>
 </div>
 <div id="P5-assessed" class="section level2 unnumbered">
 <h2>C: Assessed questions</h2>
@@ -482,6 +509,18 @@ What is <span class="math inline">\(\mathbb P(X &gt; 1)\)</span>?</p>
 </div>
 <div class="subq">
 <p><strong>(d)</strong> Let <span class="math inline">\(Y = \tfrac12 (X^2 - 1)\)</span>. What is the expectation of <span class="math inline">\(Y\)</span>?</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>C2.</strong> For each of the following, <strong>(a)</strong> calculate the exact value using R; <strong>(b)</strong> get an approximate value using an appropriate approximation and <em>without</em> using R.</p>
+<div class="subq">
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(X \leq 3)\)</span>, where <span class="math inline">\(X \sim \mathrm{Bin}(1000, 0.005)\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(180 \leq Y \leq 210)\)</span>, where <span class="math inline">\(Y \sim \mathrm{Bin}(500, 0.4)\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(iii)</strong> <span class="math inline">\(\mathbb P(Z \geq 398)\)</span>, where <span class="math inline">\(Z \sim \mathrm{Bin}(400, 0.999)\)</span>.</p>
 </div>
 </div>
 </div>

@@ -34,3 +34,20 @@ What is $\mathbb P(X > 1)$?
 **(d)** Let $Y = \tfrac12 (X^2 - 1)$. What is the expectation of $Y$?
 ::::
 :::::
+
+
+::::: {.myq}
+**C2.** For each of the following, **(a)** calculate the exact value using R; **(b)** get an approximate value using an appropriate approximation and *without* using R.
+
+:::: {.subq}
+**(i)** $\mathbb P(X \leq 3)$, where $X \sim \mathrm{Bin}(1000, 0.005)$.
+::::
+
+:::: {.subq}
+**(ii)** $\mathbb P(180 \leq Y \leq 210)$, where $Y \sim \mathrm{Bin}(500, 0.4)$.
+::::
+
+:::: {.subq}
+**(iii)** $\mathbb P(Z \geq 398)$, where $Z \sim \mathrm{Bin}(400, 0.999)$.
+::::
+:::::

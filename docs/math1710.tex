@@ -5159,7 +5159,7 @@ So therefore,
 \chapter{Normal distribution}\label{S09-normal}}
 
 \hypertarget{normal-definition}{%
-\section{Definition aof the normal distribution}\label{normal-definition}}
+\section{Definition of the normal distribution}\label{normal-definition}}
 
 There's one very important distribution we need to talk about, which is the so-called ``normal'' (or ``Gaussian'') distribution.
 
@@ -5171,16 +5171,17 @@ then we say that \(X\) has the \textbf{normal distribution} with expectation \(\
 
 (Many people call \(\mu\) the ``mean'', which is a slight misnomer.)
 
-This PDF is the famous ``bell curve'', where the centre of the bell is at \(x = \mu\) and the width of the bell is controlled by the value of \(\sigma^2\).
+This PDF is the famous ``bell curve'', where the centre of the bell is at \(x = \mu\) and the width of the bell is controlled by the value of \(\sigma^2\). Note also that the PDF is symmetric about \(\mu\).
 
 \includegraphics{math1710_files/figure-latex/norm-pic-1-1.pdf}
 
 \includegraphics{math1710_files/figure-latex/norm-pic-2-1.pdf}
 
-One important special case is \(\mu = 0\) and \(\sigma^2 = 1\), in which case we say that \(Z \sim \mathrm N(0,1)\) say \(Z\) has the \textbf{standard normal distribution}. We typically write \(\phi\) (lower-case ``phi''), where
+One important special case is \(\mu = 0\) and \(\sigma^2 = 1\), in which case we say that \(Z \sim \mathrm N(0,1)\) has the \textbf{standard normal distribution}. We typically write \(\phi\) (lower-case ``phi''), where
 \[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]
-for the PDF of a standard normal distribution. The CDF of a standard normal id usually written as \(\Phi\) (upper-case ``Phi''), where
-\[ \Phi(z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]
+for the PDF of a standard normal distribution, and write \(\Phi\) (upper-case ``Phi''), where
+\[ \Phi(z) = \mathbb P(Z \leq z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]
+for the CDF of a standard normal distribution.
 
 The normal distribution is a very widely used distribution for modelling many things in real life.
 
@@ -5342,9 +5343,26 @@ Question 5: Quantile
 \hypertarget{normal-tables}{%
 \section{Calculations using statistical tables}\label{normal-tables}}
 
-Doing normal calculations with R is all very well. But what if you accidentally build a time machine and get transported back to Victorian times. Then how will you perform calculations with the normal distribution?
+Doing normal calculations with R is all very well. But what if you accidentally built a time machine and got transported back to Victorian times. Then how would you perform calculations with the normal distribution?
 
-In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of \(\Phi(x)\), the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{this page of normal distribution tables} that will appear on the final page of your exam.
+In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of \(\Phi(x)\), the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{this page of normal distribution tables} that will appear on the final page of your exam. (Like the Victorian times, your exam is another place R will not be available but statistical tables will be.)
+
+I feel I shouldn't finish with this subsection before addressing the following question some readers may be asking themselves: \emph{Now that we have R (and other computing methods), what's the point learning to answer questions using statistical tables?} I might suggest a few possible answers to this question:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.
+\item
+  Someone has to write the computer program, and these people need to be able to do the sorts of conversions we will learn about here. So these are useful skills for mathematician--programmers to learn.
+\item
+  Being able to standardise normal distributions, approximate other distributions by normal distributions (see Subsection @ref(\#normal-approx)), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
+\item
+  Yes, you are right, this is a pointless skill for us to teach you.
+\end{enumerate}
+
+I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
 
 \hypertarget{clt}{%
 \section{Central limit theorem}\label{clt}}
@@ -5371,8 +5389,75 @@ by which we mean that, if \(Y \sim \mathrm N(0, \sigma^2)\), then, for all \(a <
 Another alternative way to write this is to divide both sides by \(\sigma\) to get
 \[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
 
+The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
+
 \hypertarget{normal-approx}{%
 \section{Approximations with the normal distribution}\label{normal-approx}}
+
+There are many other distributions that can be well approximated by a normal distribution. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
+
+\begin{itemize}
+\tightlist
+\item
+  A binomial distribution \(X \sim \mathrm{Bin}(n, p)\) is well approximated by a normal distribution \(\mathrm{N}(np, np(1-p))\) when \(n\) is large and \(p\) is not too close to 0 or 1. (When \(p\) is small, we already know that the Poisson distribution is a good approximation.)
+\item
+  A Poisson distribution \(X \sim \mathrm{Po}(\lambda)\) is well approximated by a normal distribution \(\mathrm{N}(\lambda, \lambda)\) when \(\lambda\) is large.
+\item
+  A sum \(Y = X_1 + \cdots + X_n\) of \(n\) IID geometric distributions \(X_1, \dots, X_n \sim \mathrm{Geom}(p)\) (sometimes known as a ``negative binomial'' distribution) is well approximated by a normal distribution \(\mathrm{N}(n/p, np/(1-p)^2)\) when \(p\) is not to close to 1.
+\item
+  A sum \(Y = X_1 + \cdots + X_n\) of \(n\) IID exponential distributions \(X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)\) (sometimes known as a ``Gamma'' distribution) is well approximated by a normal distribution \(\mathrm{N}(n/\lambda, n/\lambda^2)\) when the expectation \(1/\lambda\) is not too small.
+\end{itemize}
+
+\begin{example}
+\emph{Suppose I toss 1000 coins. What's the probability I get between 495 and 505 Heads?}
+
+The true distribution of Heads is \(X \sim \mathrm{Bin}(1000, \frac12)\), and the question wants
+\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^505 p_X(x) . \]
+We can calculate the exact answer using R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{dbinom}\NormalTok{(}\DecValTok{495}\SpecialCharTok{:}\DecValTok{505}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2720284
+\end{verbatim}
+
+However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since \(\mathbb EX = 1000 \times \frac12 = 500\) and \(\operatorname{Var}(X) = 1000 \times \frac12 \times \frac12 = 250\), we have the normal approximation \(X \approx \mathrm N(500, 250)\). We could then calculate
+\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]
+We could standardise and use the statistical tables, or just use R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{505}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{)) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\DecValTok{495}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2481704
+\end{verbatim}
+
+This is not too far off the correct answer \(0.272\) we calculated exactly, but it does miss by about 9\%.
+
+Note, though, that we approximated the discrete random variable \(X\) by a continuous random variable \(Y\). So the next possibility for \(X\) above 505 was 506 and below 495 was 494, whereas \(Y\) could smoothly vary between the two. So we usually get a more accurate approximation if we use a \textbf{continuity correction} and round outwards halfway to the next discrete point. So we should get a better approximation from
+\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]
+
+Calculating this in R (or with statistical tables) we get
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{505.5}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{)) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\FloatTok{494.5}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2720476
+\end{verbatim}
+
+Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006\%.
+\end{example}
 
 \hypertarget{P5}{%
 \chapter*{Problem Sheet 5}\label{P5}}
@@ -5444,6 +5529,20 @@ and \(f(x) = 0\) otherwise.
 
 \end{myanswers}
 
+\textbf{A4.} Let \(Z \sim \mathrm{N}(0,1)\). Calculate the following \textbf{(a)} using statistical tables; \textbf{(b)} using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)
+
+\textbf{(i)} \(\mathbb P(Z \leq -1.2)\)
+
+\textbf{(ii)} \(\mathbb P(-1.2 \leq Z \leq 0.8)\)
+
+\textbf{(iii)}* \(\mathbb P(Z \leq 0.27)\) (using interpolation for part (a))
+
+*\textbf{A5.} Let \(X \sim \mathrm{Po}(25)\). Calculate the following \textbf{(a)} exactly, using R; \textbf{(b)} approximately, using a normal approximation with a continuity correction and statistical tables. (For part (b), you should show enough working to convince a reader that you really did use the tables.)
+
+\textbf{(i)} \(\mathbb P(X \leq 27)\)
+
+\textbf{(ii)} \(\mathbb P(X \geq 28 \mid X \geq 27)\)
+
 \hypertarget{P5-long}{%
 \section*{B: Long questions}\label{P5-long}}
 \addcontentsline{toc}{section}{B: Long questions}
@@ -5509,6 +5608,10 @@ and \(f_{X,Y}(x,y) = 0\) otherwise. (In particular, note that the joint PDF is o
 
 \end{myanswers}
 
+\textbf{B4.} Engineers and scientists often use the rule of thumb ``Only 5\% of data is more than two standard deviations away from the mean.'' Carefully justify this rule, using concepts from the module.
+
+\textbf{B5.} Roughly how many times should I toss a coin for there to be a 95\% chance that between 49\% and 51\% of my coin tosses land Heads?
+
 \hypertarget{P5-assessed}{%
 \section*{C: Assessed questions}\label{P5-assessed}}
 \addcontentsline{toc}{section}{C: Assessed questions}
@@ -5551,6 +5654,14 @@ What is \(\mathbb P(X > 1)\)?
 \end{myanswers}
 
 \textbf{(d)} Let \(Y = \tfrac12 (X^2 - 1)\). What is the expectation of \(Y\)?
+
+\textbf{C2.} For each of the following, \textbf{(a)} calculate the exact value using R; \textbf{(b)} get an approximate value using an appropriate approximation and \emph{without} using R.
+
+\textbf{(i)} \(\mathbb P(X \leq 3)\), where \(X \sim \mathrm{Bin}(1000, 0.005)\).
+
+\textbf{(ii)} \(\mathbb P(180 \leq Y \leq 210)\), where \(Y \sim \mathrm{Bin}(500, 0.4)\).
+
+\textbf{(iii)} \(\mathbb P(Z \geq 398)\), where \(Z \sim \mathrm{Bin}(400, 0.999)\).
 
 \hypertarget{P5-short-sols}{%
 \section*{Solutions to short questions}\label{P5-short-sols}}

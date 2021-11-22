@@ -74,3 +74,10 @@ and $f_{X,Y}(x,y) = 0$ otherwise. (In particular, note that the joint PDF is onl
 ::::
 :::::
 
+::::: {.myq}
+**B4.** Engineers and scientists often use the rule of thumb "Only 5% of data is more than two standard deviations away from the mean." Carefully justify this rule, using concepts from the module.
+:::::
+
+::::: {.myq}
+**B5.** Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?
+:::::

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.20)  21 NOV 2021 13:35
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.20)  22 NOV 2021 01:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1107,74 +1107,74 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 File: math1710_files/figure-latex/norm-pic-2-1.pdf Graphic file (type pdf)
 <use math1710_files/figure-latex/norm-pic-2-1.pdf>
-[130] [131] [132] [133] [134] [135] [136
+[130] [131] [132] [133] [134] [135] [136] [137] [138
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5387.
+(hyperref)                be the same. Added a new anchor on input line 5472.
 
-[137] [138] [139] [140
+[139] [140] [141] [142] [143
 
-] [141] [142]
+] [144]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5571.
+(hyperref)                be the same. Added a new anchor on input line 5682.
 
-[143
+[145
 
-] [144] [145] [146
+] [146] [147] [148
 
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5676.
+(hyperref)                be the same. Added a new anchor on input line 5787.
 
-[147] [148] [149] [150] [151] [152]
-Overfull \hbox (12.12129pt too wide) in paragraph at lines 5932--5932
+[149] [150] [151] [152] [153] [154]
+Overfull \hbox (12.12129pt too wide) in paragraph at lines 6043--6043
 []\TU/lmr/bx/n/10 (b) \TU/lmr/m/n/10 The vector of coin outcomes will be someth
 ing like $[][][] [][] [][] [][] [][] [][] [][] [][] [][] [][]$.
  []
 
-[153] [154] [155]
-Overfull \hbox (47.4038pt too wide) detected at line 6123
+[155] [156] [157]
+Overfull \hbox (47.4038pt too wide) detected at line 6234
 []
  []
 
-[156]
-Overfull \hbox (11.47798pt too wide) detected at line 6188
+[158]
+Overfull \hbox (11.47798pt too wide) detected at line 6299
 [][][][] [] [] [] [] [] [] [] [] [] [][]
  []
 
-[157]
-Overfull \hbox (6.16507pt too wide) detected at line 6240
+[159]
+Overfull \hbox (6.16507pt too wide) detected at line 6351
 [] [] [] [] []
  []
 
-[158] [159]
-Underfull \hbox (badness 1024) in paragraph at lines 6316--6316
+[160] [161]
+Underfull \hbox (badness 1024) in paragraph at lines 6427--6427
 \TU/lmr/m/n/10 So $[][][][] [] [][][][] [][][][]$, and the
  []
 
-[160] [161] [162] [163] [164] [165] [166] [167]
-Overfull \hbox (76.45786pt too wide) detected at line 6720
+[162] [163] [164] [165] [166] [167] [168] [169]
+Overfull \hbox (76.45786pt too wide) detected at line 6831
 []
  []
 
-[168] [169] [170] [171] [172] [173] [174] (./math1710.aux)
+[170] [171] [172] [173] [174] [175] [176] (./math1710.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `math1710.out' has not changed.
-(rerunfilecheck)             Checksum: 2445E84678846C5761BF7408FD9CD8B8;18173.
+(rerunfilecheck)             Checksum: 88798595DA0DBB6DAB2F6A8CD094A02F;18168.
  ) 
 Here is how much of TeX's memory you used:
  18445 strings out of 478274
  342877 string characters out of 5855301
- 829697 words of memory out of 5000000
+ 829691 words of memory out of 5000000
  38650 multiletter control sequences out of 15000+600000
  411430 words of font info for 101 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,15n,121p,929b,520s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on math1710.pdf (174 pages).
+Output written on math1710.pdf (176 pages).
