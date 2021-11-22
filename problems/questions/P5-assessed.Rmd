@@ -2,8 +2,6 @@
 **C1.** Let $X$ be a continuous random variable with PDF
 \[ f(x) = \tfrac29 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]
 and $f(x) = 0$ otherwise.
-(a) Find the cdf, F (x), and hence find the constant c. What is the probability P r(X > 1)?
-(b) Calculate the expectation and variance of X. Next suppose that Y = (X2 − 1)/2. What is the range space of Y and what is its expectation?
 
 :::: {.subq}
 **(a)** Calculate the CDF $F$ of $X$, and hence find the constant $c$.
@@ -37,14 +35,14 @@ What is $\mathbb P(X > 1)$?
 
 
 ::::: {.myq}
-**C2.** For each of the following, **(a)** calculate the exact value using R; **(b)** get an approximate value using an appropriate approximation and *without* using R.
+**C2.** For each of the following, **(a)** calculate the exact value using R; **(b)** get an approximate value using an appropriate approximation and *without* using R. ([Statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) are available.)
 
 :::: {.subq}
 **(i)** $\mathbb P(X \leq 3)$, where $X \sim \mathrm{Bin}(1000, 0.005)$.
 ::::
 
 :::: {.subq}
-**(ii)** $\mathbb P(180 \leq Y \leq 210)$, where $Y \sim \mathrm{Bin}(500, 0.4)$.
+**(ii)** $\mathbb P(190 \leq Y \leq 205)$, where $Y \sim \mathrm{Bin}(500, 0.4)$.
 ::::
 
 :::: {.subq}

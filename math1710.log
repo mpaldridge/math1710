@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.20)  22 NOV 2021 09:38
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.20)  22 NOV 2021 10:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -865,17 +865,17 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 ] [8]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 245.
+(hyperref)                be the same. Added a new anchor on input line 269.
 
 [9
 
 ] [10] [11] [12]
-Underfull \hbox (badness 3525) in paragraph at lines 417--419
+Underfull \hbox (badness 3525) in paragraph at lines 441--443
 []\TU/lmr/m/it/10 I have an admin question about general arrangements for my
  []
 
 
-Underfull \hbox (badness 3930) in paragraph at lines 417--419
+Underfull \hbox (badness 3930) in paragraph at lines 441--443
 \TU/lmr/m/it/10 course as a whole: []\TU/lmr/m/n/10 Email the Maths Taught Stud
 ents Office
  []
@@ -912,7 +912,7 @@ File: math1710_files/figure-latex/elections-1.pdf Graphic file (type pdf)
 [29] [30]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 882.
+(hyperref)                be the same. Added a new anchor on input line 906.
 
 [31
 
@@ -923,7 +923,7 @@ Chapter 2.
 [37
 
 ] [38] [39]
-Underfull \hbox (badness 10000) in paragraph at lines 1324--1325
+Underfull \hbox (badness 10000) in paragraph at lines 1348--1349
 
  []
 
@@ -966,7 +966,7 @@ Chapter 3.
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 1996.
+(hyperref)                be the same. Added a new anchor on input line 2020.
 
 [61] [62] [63] [64
 
@@ -977,23 +977,23 @@ Chapter 4.
 ]
 Chapter 5.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/b/n' will be
-(Font)              scaled to size 10.0pt on input line 2701.
+(Font)              scaled to size 10.0pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/b/n' will be
-(Font)              scaled to size 7.0pt on input line 2701.
+(Font)              scaled to size 7.0pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/b/n' will be
-(Font)              scaled to size 5.0pt on input line 2701.
+(Font)              scaled to size 5.0pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
-(Font)              scaled to size 10.00092pt on input line 2701.
+(Font)              scaled to size 10.00092pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
-(Font)              scaled to size 7.00064pt on input line 2701.
+(Font)              scaled to size 7.00064pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/b/n' will be
-(Font)              scaled to size 5.00046pt on input line 2701.
+(Font)              scaled to size 5.00046pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
-(Font)              scaled to size 9.99893pt on input line 2701.
+(Font)              scaled to size 9.99893pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
-(Font)              scaled to size 6.99925pt on input line 2701.
+(Font)              scaled to size 6.99925pt on input line 2725.
 LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/b/n' will be
-(Font)              scaled to size 4.99947pt on input line 2701.
+(Font)              scaled to size 4.99947pt on input line 2725.
 [75] [76]
 File: math1710_files/figure-latex/dice-pmf-1.pdf Graphic file (type pdf)
 <use math1710_files/figure-latex/dice-pmf-1.pdf>
@@ -1003,7 +1003,7 @@ File: math1710_files/figure-latex/dice-cdf-1.pdf Graphic file (type pdf)
 [78] [79] [80] [81] [82] [83] [84]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 3123.
+(hyperref)                be the same. Added a new anchor on input line 3147.
 
 [85
 
@@ -1021,7 +1021,7 @@ File: math1710_files/figure-latex/geom-pic-1.pdf Graphic file (type pdf)
 File: math1710_files/figure-latex/po-pic-1.pdf Graphic file (type pdf)
 <use math1710_files/figure-latex/po-pic-1.pdf>
 [93] [94] [95] [96]
-Underfull \hbox (badness 1571) in paragraph at lines 3895--3896
+Underfull \hbox (badness 1571) in paragraph at lines 3919--3920
 []\TU/lmr/m/n/10 The following graph shows how close the $[][][][][][]$ distrib
 ution is to a
  []
@@ -1032,12 +1032,12 @@ File: math1710_files/figure-latex/po-binom-pic-1.pdf Graphic file (type pdf)
 Underfull \vbox (badness 3098) has occurred while \output is active []
 
 [97] [98]
-Overfull \hbox (2.9593pt too wide) in alignment at lines 3961--3965
+Overfull \hbox (2.9593pt too wide) in alignment at lines 3985--3989
  [] [] [] [] [] 
  []
 
 
-Overfull \hbox (2.9593pt too wide) in alignment at lines 3965--3971
+Overfull \hbox (2.9593pt too wide) in alignment at lines 3989--3995
  [] [] [] [] [] 
  []
 
@@ -1046,7 +1046,7 @@ Overfull \hbox (2.9593pt too wide) in alignment at lines 3965--3971
 ]
 Chapter 7.
 [101] [102] [103] [104] [105] [106] [107]
-Underfull \hbox (badness 1270) in paragraph at lines 4313--4315
+Underfull \hbox (badness 1270) in paragraph at lines 4337--4339
 \TU/lmr/m/n/10 matching our previous calculation. In the above calculation, we 
 used
  []
@@ -1059,7 +1059,7 @@ Underfull \vbox (badness 1152) has occurred while \output is active []
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 4432.
+(hyperref)                be the same. Added a new anchor on input line 4456.
 
 [113] [114] [115] [116]
 Chapter 8.
@@ -1110,7 +1110,7 @@ File: math1710_files/figure-latex/norm-pic-2-1.pdf Graphic file (type pdf)
 [130] [131] [132] [133] [134] [135] [136] [137] [138]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5507.
+(hyperref)                be the same. Added a new anchor on input line 5531.
 
 [139
 
@@ -1119,7 +1119,7 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 ] [144]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5717.
+(hyperref)                be the same. Added a new anchor on input line 5739.
 
 [145
 
@@ -1128,36 +1128,36 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5822.
+(hyperref)                be the same. Added a new anchor on input line 5844.
 
 [149] [150] [151] [152] [153] [154]
-Overfull \hbox (12.12129pt too wide) in paragraph at lines 6078--6078
+Overfull \hbox (12.12129pt too wide) in paragraph at lines 6100--6100
 []\TU/lmr/bx/n/10 (b) \TU/lmr/m/n/10 The vector of coin outcomes will be someth
 ing like $[][][] [][] [][] [][] [][] [][] [][] [][] [][] [][]$.
  []
 
 [155] [156] [157]
-Overfull \hbox (47.4038pt too wide) detected at line 6269
+Overfull \hbox (47.4038pt too wide) detected at line 6291
 []
  []
 
 [158]
-Overfull \hbox (11.47798pt too wide) detected at line 6334
+Overfull \hbox (11.47798pt too wide) detected at line 6356
 [][][][] [] [] [] [] [] [] [] [] [] [][]
  []
 
 [159]
-Overfull \hbox (6.16507pt too wide) detected at line 6386
+Overfull \hbox (6.16507pt too wide) detected at line 6408
 [] [] [] [] []
  []
 
 [160] [161]
-Underfull \hbox (badness 1024) in paragraph at lines 6462--6462
+Underfull \hbox (badness 1024) in paragraph at lines 6484--6484
 \TU/lmr/m/n/10 So $[][][][] [] [][][][] [][][][]$, and the
  []
 
 [162] [163] [164] [165] [166] [167] [168] [169]
-Overfull \hbox (76.45786pt too wide) detected at line 6866
+Overfull \hbox (76.45786pt too wide) detected at line 6888
 []
  []
 

@@ -12,6 +12,22 @@ url:    'https://mpaldridge.github.io/math1710/'
 # Schedule {.unnumbered}
 
 ::: {.oldsched}
+**Week 9** (22--26 November):
+
+* [**Section 9:** Normal distribution](#S09-normal)
+* [**Problem Sheet 5:**](#P5) deadline for assessed questions: Monday 6 December
+* [**R Worksheet 9:** Normal distribution](#r-work) deadline for assessed questions: Monday 15 November
+:::
+
+::: {.mysched}
+**Week 8** (15--19 November):
+
+* [**Section 8:** Continuous random variables](#S07-continuous)
+* [**Problem Sheet 5:**](#P5) deadline for assessed questions: Monday 6 December
+* [**R Worksheet 8:** Discrete random variables](#r-work) deadline for assessed questions: Monday 15 November
+:::
+
+::: {.mysched}
 **Week 7** (8--12 November):
 
 * [**Section 7:** Multiple random variables](#S07-multi-rv)
