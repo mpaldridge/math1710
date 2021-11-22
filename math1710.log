@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.20)  22 NOV 2021 01:18
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2021.11.20)  22 NOV 2021 09:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1107,19 +1107,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ]
 File: math1710_files/figure-latex/norm-pic-2-1.pdf Graphic file (type pdf)
 <use math1710_files/figure-latex/norm-pic-2-1.pdf>
-[130] [131] [132] [133] [134] [135] [136] [137] [138
-
-]
+[130] [131] [132] [133] [134] [135] [136] [137] [138]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5474.
+(hyperref)                be the same. Added a new anchor on input line 5507.
 
-[139] [140] [141] [142] [143
+[139
+
+] [140] [141] [142] [143
 
 ] [144]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5684.
+(hyperref)                be the same. Added a new anchor on input line 5717.
 
 [145
 
@@ -1128,36 +1128,36 @@ Package hyperref Warning: The anchor of a bookmark and its parent's must not
 ]
 
 Package hyperref Warning: The anchor of a bookmark and its parent's must not
-(hyperref)                be the same. Added a new anchor on input line 5789.
+(hyperref)                be the same. Added a new anchor on input line 5822.
 
 [149] [150] [151] [152] [153] [154]
-Overfull \hbox (12.12129pt too wide) in paragraph at lines 6045--6045
+Overfull \hbox (12.12129pt too wide) in paragraph at lines 6078--6078
 []\TU/lmr/bx/n/10 (b) \TU/lmr/m/n/10 The vector of coin outcomes will be someth
 ing like $[][][] [][] [][] [][] [][] [][] [][] [][] [][] [][]$.
  []
 
 [155] [156] [157]
-Overfull \hbox (47.4038pt too wide) detected at line 6236
+Overfull \hbox (47.4038pt too wide) detected at line 6269
 []
  []
 
 [158]
-Overfull \hbox (11.47798pt too wide) detected at line 6301
+Overfull \hbox (11.47798pt too wide) detected at line 6334
 [][][][] [] [] [] [] [] [] [] [] [] [][]
  []
 
 [159]
-Overfull \hbox (6.16507pt too wide) detected at line 6353
+Overfull \hbox (6.16507pt too wide) detected at line 6386
 [] [] [] [] []
  []
 
 [160] [161]
-Underfull \hbox (badness 1024) in paragraph at lines 6429--6429
+Underfull \hbox (badness 1024) in paragraph at lines 6462--6462
 \TU/lmr/m/n/10 So $[][][][] [] [][][][] [][][][]$, and the
  []
 
 [162] [163] [164] [165] [166] [167] [168] [169]
-Overfull \hbox (76.45786pt too wide) detected at line 6833
+Overfull \hbox (76.45786pt too wide) detected at line 6866
 []
  []
 

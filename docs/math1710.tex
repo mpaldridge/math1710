@@ -5271,6 +5271,13 @@ For part 3, we need to show that \(\mathbb EX^2 = 1\). Using integration by part
 But this integral on the right is just the integral \(I\) of the PDF as above, which we know equals 1, as required.
 \end{proof}
 
+There is one last property of the normal distribution that we won't use directly in this module, but is perhaps worth knowing anyway.
+
+\begin{theorem}
+If \(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\) and \(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\) are independent, then
+\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]
+\end{theorem}
+
 \hypertarget{normal-r}{%
 \section{Calculations using R}\label{normal-r}}
 
@@ -5310,7 +5317,7 @@ We see that roughly 99.4\% of fibres pass the test.
 
 \textbf{Question 2.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z \leq 1.45)\)?}
 
-This is, of course, asking for
+This is asking for \(\Phi(1.45) = \mathbb P(Z \leq 1.45)\). This is:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5322,7 +5329,7 @@ This is, of course, asking for
 ## [1] 0.9264707
 \end{verbatim}
 
-But in fact, the standard normal distribution CDF \(\Phi\) is so common that R allows you to omit the values of \(\mu\) and \(\sigma\). So you can save yourself a few keystrokes by simply writing
+But in fact, the standard normal distribution CDF \(\Phi\) is so common that R allows you to omit the values of \(\mu\) and \(\sigma\) if they are 0 and 1 respectively. So you can save yourself a few keystrokes by simply writing:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -5332,6 +5339,32 @@ But in fact, the standard normal distribution CDF \(\Phi\) is so common that R a
 
 \begin{verbatim}
 ## [1] 0.9264707
+\end{verbatim}
+
+\textbf{Question 3.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z > 0.33)\)?}
+
+This is asking for the upper-tail probability. The direct way to get R to solve this is to use the \texttt{lower.tail\ =\ FALSE} option that we discussed in \protect\hyperlink{r-work}{R Worksheet 7}. That is, we use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.33}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3707
+\end{verbatim}
+
+Alternatively, we could use the fact that \(\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\). Then we could equally well calculate this as
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.33}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3707
 \end{verbatim}
 
 \emph{This subsection isn't finished yet.}

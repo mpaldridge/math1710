@@ -73,7 +73,7 @@ and $f(x) = 0$ otherwise.
 :::::
 
 ::::: {.myq}
-**A4.** Let $Z \sim \mathrm{N}(0,1)$. Calculate the following **(a)** using statistical tables; **(b)** using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)
+**A4.** Let $Z \sim \mathrm{N}(0,1)$. Calculate the following **(a)** using [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf); **(b)** using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)
 
 :::: {.subq}
 **(i)** $\mathbb P(Z \leq -1.2)$
@@ -84,12 +84,12 @@ and $f(x) = 0$ otherwise.
 ::::
 
 :::: {.subq}
-**(iii)*** $\mathbb P(Z \leq 0.27)$ (using interpolation for part (a))
+**(iii)** $\mathbb P(Z \leq 0.27)$ (using interpolation for part (a))
 ::::
 :::::
 
 ::::: {.myq}
-***A5.** Let $X \sim \mathrm{Po}(25)$. Calculate the following **(a)** exactly, using R; **(b)** approximately, using a normal approximation with a continuity correction and statistical tables. (For part (b), you should show enough working to convince a reader that you really did use the tables.)
+**A5.** Let $X \sim \mathrm{Po}(25)$. Calculate the following **(a)** exactly, using R; **(b)** approximately, using a normal approximation with a continuity correction and statistical tables. (For part (b), you should show enough working to convince a reader that you really did use the tables.)
 
 :::: {.subq}
 **(i)** $\mathbb P(X \leq 27)$

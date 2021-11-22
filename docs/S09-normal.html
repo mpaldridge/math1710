@@ -411,6 +411,11 @@ as required.</p>
 \end{align*}\]</span>
 But this integral on the right is just the integral <span class="math inline">\(I\)</span> of the PDF as above, which we know equals 1, as required.</p>
 </div>
+<p>There is one last property of the normal distribution that we won’t use directly in this module, but is perhaps worth knowing anyway.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-104" class="theorem"><strong>Theorem 9.2  </strong></span>If <span class="math inline">\(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\)</span> and <span class="math inline">\(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\)</span> are independent, then
+<span class="math display">\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]</span></p>
+</div>
 </div>
 <div id="normal-r" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> Calculations using R</h2>
@@ -432,15 +437,23 @@ But this integral on the right is just the integral <span class="math inline">\(
 </div>
 <div class="thpart">
 <p><strong>Question 2.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z \leq 1.45)\)</span>?</em></p>
-<p>This is, of course, asking for</p>
+<p>This is asking for <span class="math inline">\(\Phi(1.45) = \mathbb P(Z \leq 1.45)\)</span>. This is:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="S09-normal.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.45</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9264707</code></pre>
-<p>But in fact, the standard normal distribution CDF <span class="math inline">\(\Phi\)</span> is so common that R allows you to omit the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span>. So you can save yourself a few keystrokes by simply writing</p>
+<p>But in fact, the standard normal distribution CDF <span class="math inline">\(\Phi\)</span> is so common that R allows you to omit the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> if they are 0 and 1 respectively. So you can save yourself a few keystrokes by simply writing:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="S09-normal.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.45</span>)</span></code></pre></div>
 <pre><code>## [1] 0.9264707</code></pre>
 </div>
+<div class="thpart">
+<p><strong>Question 3.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z &gt; 0.33)\)</span>?</em></p>
+<p>This is asking for the upper-tail probability. The direct way to get R to solve this is to use the <code>lower.tail = FALSE</code> option that we discussed in <a href="R.html#r-work">R Worksheet 7</a>. That is, we use:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="S09-normal.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">0.33</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.3707</code></pre>
+<p>Alternatively, we could use the fact that <span class="math inline">\(\mathbb P(Z &gt; z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\)</span>. Then we could equally well calculate this as</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="S09-normal.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">0.33</span>)</span></code></pre></div>
+<pre><code>## [1] 0.3707</code></pre>
+</div>
 <!--
-Question 3: upper tail standard, interpolate
 
 Question 4: In the middle fiberoptic
 
@@ -494,22 +507,22 @@ by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma
 <li>A sum <span class="math inline">\(Y = X_1 + \cdots + X_n\)</span> of <span class="math inline">\(n\)</span> IID exponential distributions <span class="math inline">\(X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)\)</span> (sometimes known as a “Gamma” distribution) is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(n/\lambda, n/\lambda^2)\)</span> when the expectation <span class="math inline">\(1/\lambda\)</span> is not too small.</li>
 </ul>
 <div class="example">
-<p><span id="exm:unlabeled-div-104" class="example"><strong>Example 9.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
+<p><span id="exm:unlabeled-div-105" class="example"><strong>Example 9.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
 <p>The true distribution of Heads is <span class="math inline">\(X \sim \mathrm{Bin}(1000, \frac12)\)</span>, and the question wants
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^505 p_X(x) . \]</span>
 We can calculate the exact answer using R:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="S09-normal.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">495</span><span class="sc">:</span><span class="dv">505</span>, <span class="dv">1000</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="S09-normal.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">495</span><span class="sc">:</span><span class="dv">505</span>, <span class="dv">1000</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 0.2720284</code></pre>
 <p>However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since <span class="math inline">\(\mathbb EX = 1000 \times \frac12 = 500\)</span> and <span class="math inline">\(\operatorname{Var}(X) = 1000 \times \frac12 \times \frac12 = 250\)</span>, we have the normal approximation <span class="math inline">\(X \approx \mathrm N(500, 250)\)</span>. We could then calculate
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]</span>
 We could standardise and use the statistical tables, or just use R:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="S09-normal.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">505</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">495</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="S09-normal.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">505</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">495</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
 <pre><code>## [1] 0.2481704</code></pre>
 <p>This is not too far off the correct answer <span class="math inline">\(0.272\)</span> we calculated exactly, but it does miss by about 9%.</p>
 <p>Note, though, that we approximated the discrete random variable <span class="math inline">\(X\)</span> by a continuous random variable <span class="math inline">\(Y\)</span>. So the next possibility for <span class="math inline">\(X\)</span> above 505 was 506 and below 495 was 494, whereas <span class="math inline">\(Y\)</span> could smoothly vary between the two. So we usually get a more accurate approximation if we use a <strong>continuity correction</strong> and round outwards halfway to the next discrete point. So we should get a better approximation from
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]</span></p>
 <p>Calculating this in R (or with statistical tables) we get</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="S09-normal.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">505.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">494.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="S09-normal.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">505.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">494.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
 <pre><code>## [1] 0.2720476</code></pre>
 <p>Using the continuity correction, we now have an incredibly accurate approximation – it only misses by 0.006%.</p>
 </div>

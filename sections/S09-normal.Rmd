@@ -126,6 +126,13 @@ For part 3, we need to show that $\mathbb EX^2 = 1$. Using integration by parts 
 But this integral on the right is just the integral $I$ of the PDF as above, which we know equals 1, as required.
 :::
 
+There is one last property of the normal distribution that we won't use directly in this module, but is perhaps worth knowing anyway.
+
+::: {.theorem}
+If $X \sim \mathrm{N}(\mu_X, \sigma^2_X)$ and $Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)$ are independent, then
+\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]
+:::
+
 ## Calculations using R  {#normal-r}
 
 We will try to answer a number of questions about the normal distribution.
@@ -154,21 +161,36 @@ We see that roughly 99.4% of fibres pass the test.
 ::: {.thpart}
 **Question 2.**  *Let $Z \sim \mathrm{N}(0,1)$. What is $\mathbb P(Z \leq 1.45)$?*
 
-This is, of course, asking for
+This is asking for $\Phi(1.45) = \mathbb P(Z \leq 1.45)$. This is:
 
 ```{r}
 pnorm(1.45, 0, 1)
 ```
 
-But in fact, the standard normal distribution CDF $\Phi$ is so common that R allows you to omit the values of $\mu$ and $\sigma$. So you can save yourself a few keystrokes by simply writing
+But in fact, the standard normal distribution CDF $\Phi$ is so common that R allows you to omit the values of $\mu$ and $\sigma$ if they are 0 and 1 respectively. So you can save yourself a few keystrokes by simply writing:
 
 ```{r}
 pnorm(1.45)
 ```
 :::
 
+::: {.thpart}
+**Question 3.**  *Let $Z \sim \mathrm{N}(0,1)$. What is $\mathbb P(Z > 0.33)$?*
+
+This is asking for the upper-tail probability. The direct way to get R to solve this is to use the `lower.tail = FALSE` option that we discussed in [R Worksheet 7](#r-work). That is, we use:
+
+```{r}
+pnorm(0.33, lower.tail = FALSE)
+```
+
+Alternatively, we could use the fact that $\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)$. Then we could equally well calculate this as
+
+```{r}
+1 - pnorm(0.33)
+```
+:::
+
 <!--
-Question 3: upper tail standard, interpolate
 
 Question 4: In the middle fiberoptic
 
