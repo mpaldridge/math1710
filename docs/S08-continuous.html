@@ -513,7 +513,7 @@ and 0 otherwise. We write <span class="math inline">\(X \sim \text{Exp}(\lambda)
 <li><span class="math inline">\(f\)</span> is indeed a PDF, in that <span class="math inline">\(\displaystyle\int_0^\infty f(x)\,\mathrm{d}x = 1\)</span>;</li>
 <li>the CDF of <span class="math inline">\(X\)</span> is <span class="math inline">\(F(x) = 1 - \mathrm{e}^{-\lambda x}\)</span>;</li>
 <li>the expectation of <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb EX = \displaystyle\frac{1}{\lambda}\)</span>;</li>
-<li>the variance of <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb EX = \displaystyle\frac{1}{\lambda^2}\)</span>.</li>
+<li>the variance of <span class="math inline">\(X\)</span> is <span class="math inline">\(\operatorname{Var}(X) = \displaystyle\frac{1}{\lambda^2}\)</span>.</li>
 </ol>
 </div>
 <div class="proof">
@@ -591,7 +591,7 @@ Hence
 <span class="math display">\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]</span>
 and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise.</p>
 <p>We get the marginal distribution for <span class="math inline">\(X\)</span> by integrating over <span class="math inline">\(y\)</span>, so
-<span class="math display">\[ p_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]</span></p>
+<span class="math display">\[ f_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]</span></p>
 <p>We can find the the conditional PDF for <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = \tfrac14\)</span>. It is
 <span class="math display">\[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
     = \frac{\tfrac12\big(1 + \tfrac14 + y\big)}{\tfrac34 + \tfrac12\times\tfrac14 } = \tfrac{5}{7} + \tfrac47 y . \]</span></p>

@@ -238,7 +238,7 @@ Suppose $X \sim \text{Exp}(\lambda)$. Then:
 1. $f$ is indeed a PDF, in that $\displaystyle\int_0^\infty f(x)\,\mathrm{d}x = 1$;
 2. the CDF of $X$ is $F(x) = 1 - \mathrm{e}^{-\lambda x}$;
 3. the expectation of $X$ is $\mathbb EX = \displaystyle\frac{1}{\lambda}$;
-4. the variance of $X$ is $\mathbb EX = \displaystyle\frac{1}{\lambda^2}$.
+4. the variance of $X$ is $\Var(X) = \displaystyle\frac{1}{\lambda^2}$.
 :::
 
 ::: {.proof}
@@ -295,7 +295,7 @@ Consider the pair of continuous random variable $(X,Y)$ with joint PDF
 and $f_{X,Y}(x,y) = 0$ otherwise.
 
 We get the marginal distribution for $X$ by integrating over $y$, so
-\[ p_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]
+\[ f_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]
 
 We can find the the conditional PDF for $Y$ given $X = \tfrac14$. It is
 \[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
