@@ -47,9 +47,9 @@ https://mpaldridge.github.io/math1710/data/R9-xy.csv
 
 ---
 
-The first three questions are based on a discrete random variable $X$. Read the file at `https://mpaldridge.github.io/math1710/data/R9-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set has two columns, called `x`, `pmf_x`. The column `x` represents the range of a discrete random variable $X$, and the column `pmf_x` represents the values of the PMF $p_X(x) = \mathbb P(X = x)$.
+The first three questions are based on a discrete random variable $X$. Read the file at `https://mpaldridge.github.io/math1710/data/R9-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set has two columns, called `x` and `pmf_x`. The column `x` represents the range of a discrete random variable $X$, and the column `pmf_x` represents the values of the PMF $p_X(x) = \mathbb P(X = x)$.
 
-*[**Note:** Files not available yet, but available shortly. You can still save what commands you plan to use in an RScript for use later. Last updated: Tuesday 23 September, 5pm.]*
+*[**Note:** All files now available. Last updated: Tuesday 23 September, very late.]*
 
 > **Assessed Question 1.** Calculate the variance of $X$. Round your answer to two decimal places, using R's `round()` function.
 
