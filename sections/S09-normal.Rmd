@@ -190,13 +190,42 @@ Alternatively, we could use the fact that $\mathbb P(Z > z) = 1 - \mathbb P(Z \l
 ```
 :::
 
-<!--
+::: {.thpart}
+**Question 4.** *We return to the fiberoptic model $X \sim \mathrm{N}(8, 0.04^2)$ from Question 1. Fibres can be awarded a special "high quality" stamp if their width is between 7.95 and 8.0505 nm. What proportion of these fibres qualify?*
 
-Question 4: In the middle fiberoptic
+This is asking for $\mathbb P(7.95 \leq X \leq 8.05)$. But we can calculate this as
+\[ \mathbb P(7.95 \leq X \leq 8.05) = \mathbb P(X \leq 8.05) - \mathbb P(X < 7.95) = F(8.05) - F(7.95) .\]
+(Formally, this is because
+\[ \{X < 7.95\} \cup \{7.95 \leq X \leq 8.05\} = \{X \leq 8.05\} \]
+is a disjoint union, so we can use Axiom 3.)
 
-Question 5: Quantile-->
+So the proportion of qualifying fibres is
 
-*This subsection isn't finished yet.*
+```{r}
+mu <- 8
+sigma <- 0.04
+pnorm(8.05, mu, sigma) - pnorm(7.95, mu, sigma)
+```
+
+or about 79%.
+:::
+
+
+::: {.thpart}
+**Question 5.** *We stay with the fiberoptic model $X \sim \mathrm{N}(8, 0.04^2)$ from Questions 1 and 4. The manufacturer wants to be able to advertise that 99.9% of their fibres are between lower and upper limits $x$ and $y$. What values of $x$ and $y$ can they promise?*
+
+Is $F$ is the CDF of this distribution, then we are looking for $x$ and $y$ such that $F(x) = 0.0005$ and $F(y) = 0.9995$. That way, $F(y) - F(x) = 0.999$, so we have 99.9% of fibres within that interval and 0.05% outside either side.
+
+You may remember from R Worksheet 7 that the inverse $F^{-1}$ of the CDF is called the **quantile function**. Here, we want $F^{-1}(0.0005)$ and $F^{-1}(0.9995)$. The quantitle function for the normal distribution in R is `qnorm()`. (It also has a `lower.tail = FALSE` option, which is sometimes useful.) So we can use
+
+```{r}
+mu <- 8
+sigma <- 0.04
+c(qnorm(0.0005, mu, sigma), qnorm(0.9995, mu, sigma))
+```
+
+We see that we can guarantee that 99.9% of fibres are between rought 7.87 and 8.13 nm wide.
+:::
 
 ## Calculations using statistical tables  {#normal-tables}
 

@@ -453,12 +453,30 @@ But this integral on the right is just the integral <span class="math inline">\(
 <div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="S09-normal.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">0.33</span>)</span></code></pre></div>
 <pre><code>## [1] 0.3707</code></pre>
 </div>
-<!--
-
-Question 4: In the middle fiberoptic
-
-Question 5: Quantile-->
-<p><em>This subsection isn’t finished yet.</em></p>
+<div class="thpart">
+<p><strong>Question 4.</strong> <em>We return to the fiberoptic model <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> from Question 1. Fibres can be awarded a special “high quality” stamp if their width is between 7.95 and 8.0505 nm. What proportion of these fibres qualify?</em></p>
+<p>This is asking for <span class="math inline">\(\mathbb P(7.95 \leq X \leq 8.05)\)</span>. But we can calculate this as
+<span class="math display">\[ \mathbb P(7.95 \leq X \leq 8.05) = \mathbb P(X \leq 8.05) - \mathbb P(X &lt; 7.95) = F(8.05) - F(7.95) .\]</span>
+(Formally, this is because
+<span class="math display">\[ \{X &lt; 7.95\} \cup \{7.95 \leq X \leq 8.05\} = \{X \leq 8.05\} \]</span>
+is a disjoint union, so we can use Axiom 3.)</p>
+<p>So the proportion of qualifying fibres is</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="S09-normal.html#cb25-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb25-2"><a href="S09-normal.html#cb25-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.04</span></span>
+<span id="cb25-3"><a href="S09-normal.html#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">8.05</span>, mu, sigma) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">7.95</span>, mu, sigma)</span></code></pre></div>
+<pre><code>## [1] 0.7887005</code></pre>
+<p>or about 79%.</p>
+</div>
+<div class="thpart">
+<p><strong>Question 5.</strong> <em>We stay with the fiberoptic model <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> from Questions 1 and 4. The manufacturer wants to be able to advertise that 99.9% of their fibres are between lower and upper limits <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. What values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can they promise?</em></p>
+<p>Is <span class="math inline">\(F\)</span> is the CDF of this distribution, then we are looking for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> such that <span class="math inline">\(F(x) = 0.0005\)</span> and <span class="math inline">\(F(y) = 0.9995\)</span>. That way, <span class="math inline">\(F(y) - F(x) = 0.999\)</span>, so we have 99.9% of fibres within that interval and 0.05% outside either side.</p>
+<p>You may remember from R Worksheet 7 that the inverse <span class="math inline">\(F^{-1}\)</span> of the CDF is called the <strong>quantile function</strong>. Here, we want <span class="math inline">\(F^{-1}(0.0005)\)</span> and <span class="math inline">\(F^{-1}(0.9995)\)</span>. The quantitle function for the normal distribution in R is <code>qnorm()</code>. (It also has a <code>lower.tail = FALSE</code> option, which is sometimes useful.) So we can use</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="S09-normal.html#cb27-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb27-2"><a href="S09-normal.html#cb27-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.04</span></span>
+<span id="cb27-3"><a href="S09-normal.html#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">qnorm</span>(<span class="fl">0.0005</span>, mu, sigma), <span class="fu">qnorm</span>(<span class="fl">0.9995</span>, mu, sigma))</span></code></pre></div>
+<pre><code>## [1] 7.868379 8.131621</code></pre>
+<p>We see that we can guarantee that 99.9% of fibres are between rought 7.87 and 8.13 nm wide.</p>
+</div>
 </div>
 <div id="normal-tables" class="section level2" number="9.4">
 <h2><span class="header-section-number">9.4</span> Calculations using statistical tables</h2>
@@ -511,18 +529,18 @@ by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma
 <p>The true distribution of Heads is <span class="math inline">\(X \sim \mathrm{Bin}(1000, \frac12)\)</span>, and the question wants
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^505 p_X(x) . \]</span>
 We can calculate the exact answer using R:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="S09-normal.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">495</span><span class="sc">:</span><span class="dv">505</span>, <span class="dv">1000</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="S09-normal.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">495</span><span class="sc">:</span><span class="dv">505</span>, <span class="dv">1000</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 0.2720284</code></pre>
 <p>However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since <span class="math inline">\(\mathbb EX = 1000 \times \frac12 = 500\)</span> and <span class="math inline">\(\operatorname{Var}(X) = 1000 \times \frac12 \times \frac12 = 250\)</span>, we have the normal approximation <span class="math inline">\(X \approx \mathrm N(500, 250)\)</span>. We could then calculate
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]</span>
 We could standardise and use the statistical tables, or just use R:</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="S09-normal.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">505</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">495</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="S09-normal.html#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">505</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">495</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
 <pre><code>## [1] 0.2481704</code></pre>
 <p>This is not too far off the correct answer <span class="math inline">\(0.272\)</span> we calculated exactly, but it does miss by about 9%.</p>
 <p>Note, though, that we approximated the discrete random variable <span class="math inline">\(X\)</span> by a continuous random variable <span class="math inline">\(Y\)</span>. So the next possibility for <span class="math inline">\(X\)</span> above 505 was 506 and below 495 was 494, whereas <span class="math inline">\(Y\)</span> could smoothly vary between the two. So we usually get a more accurate approximation if we use a <strong>continuity correction</strong> and round outwards halfway to the next discrete point. So we should get a better approximation from
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]</span></p>
 <p>Calculating this in R (or with statistical tables) we get</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="S09-normal.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">505.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">494.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="S09-normal.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">505.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">494.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
 <pre><code>## [1] 0.2720476</code></pre>
 <p>Using the continuity correction, we now have an incredibly accurate approximation – it only misses by 0.006%.</p>
 </div>
