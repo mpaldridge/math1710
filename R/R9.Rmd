@@ -1,0 +1,69 @@
+---
+title:  "R Worksheet 9: Normal distribution"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2021--22"
+output: html_document
+---
+
+*This R worksheet* does *include assessed questions at the bottom. Only the questions marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 29 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
+
+------------------------------------------------------------------------
+
+
+When dealing with normal distributions in R, we have the following functions:
+
+* `dnorm()` gives the probability density function $f(x)$ of a normal distribution $X \sim \mathrm{N}(\mu, \sigma^2)$. The format is `dnorm(x, mu, sigma)`, where `x` is the point at which the density is evaluated, `mu` is the expectation $\mu$ of the normal distribution, and `sigma` is the standard deviation $\sigma$ of the normal distribution. Note that the third parameter is the standard deviation $\sigma$ -- that is, the square-root $\sigma = \sqrt{\sigma^2}$ of the variance -- not the variance $\sigma^2$ itself: this is the easiest mistake to make when working with the normal distribution in R!
+* `pnorm()` gives the CDF $F(x) = \mathbb P(X \leq x)$ if a normal distribution. The format is `pnorm(x, mu, sigma)` in the same way. There is an optional argument `lower.tail`, which by default is `TRUE`, but when set to `lower.tail = FALSE`, we instead get the upper-tail probability $1 - F(x) = \mathbb P(X > x)$. So a full command for that is `pnorm(x, mu, sigma, lower.tail = FALSE)`.
+* `qnorm()` gives the quantile function $F^{-1}(q)$. That is, `qnorm(q, mu, sigma)` gives the value $x$ such that $F(x) = \mathbb P(X \leq x ) = q$. Similarly, there is a `lower.tail = FALSE` argument that gives the $x$ such that $1 - F(x) = \mathbb P(X > x) = q$.
+* `rnorm()` gives random IID samples from a normal distribution. That is, `rnorm(n, mu, sigma)` gives $n$ such random samples.
+
+In all these functions, if `mu` and `sigma` are omitted, it is assumed you are dealing with a standard normal distribution $\mu = 0, \sigma^2 = \sigma = 1$.
+
+In [Section 9.3 of the notes](https://mpaldridge.github.io/math1710/S09-normal.html#normal-r) we gave many examples of how to perform calculations using the `pnorm()` and `qnorm()` functions. Your main task for this worksheet is to read through and understand that.
+
+> **Exercise 9.1.** What is the value of the standard normal density at 0?
+
+> **Exercise 9.2.** Let $X_2 \sim \mathrm{N}(10, 25)$. What is $\mathbb P(X > 16 \text{ or } X \leq 8)$?
+
+> **Exercise 9.3.** Let $X_3 \sim \mathrm{N} (100, 10^2)$. Give an interval, symmetric around the expectation, such that $X_3$ has a 50:50 chance of landing in that interval.
+
+> **Exercise 9.4.** Let $X_4 \sim \mathrm{N}(42, 17^2)$. Sample 10,000 samples from the distribution $X_4$. Calculate the sample mean and sample variance of your samples.
+
+---
+
+## Assessed questions
+
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 9, but the official deadline is **Monday 29 November at 1400**.*
+
+*This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
+
+*So that (most) students get a different distribution to work with, you will work from a file whose name is based on your student ID number. Your student ID number is (usually) a 9-digit number starting `201`. Your dataset is the CSV file at*
+
+```
+https://mpaldridge.github.io/math1710/data/R9-xy.csv
+```
+
+*where `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then you should use the file at `https://mpaldridge.github.io/math1710/data/R9-29.csv`; if your student ID number is `201491200` then you should use the file `https://mpaldridge.github.io/math1710/data/R9-00.csv` and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 marks.*
+
+---
+
+The first three questions are based on a discrete random variable $X$. Read the file at `https://mpaldridge.github.io/math1710/data/R9-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set has two columns, called `x`, `pmf_x`. The column `x` represents the range of a discrete random variable $X$, and the column `pmf_x` represents the values of the PMF $p_X(x) = \mathbb P(X = x)$.
+
+*[**Note:** Files not available yet, but available shortly. You can still save what commands you plan to use in an RScript for use later. Last updated: Tuesday 23 September, 5pm.]*
+
+> **Assessed Question 1.** Calculate the variance of $X$. Round your answer to two decimal places, using R's `round()` function.
+
+> **Assessed Question 2.** What is $\mathbb P(X \leq 234.5)$? Round your answer to four decimal places
+
+> **Assessed Question 3.** For the purpose of this question, I assume you have read the CSV file into an r object called `X`. Calculate *exactly* the asymptotic value that would be output by the following commands
+```{r, eval = FALSE}
+samples <- sample(X$x, n, replace = TRUE, prob = X$pmf_x)
+mean(log(samples) + 0.1 * samples)
+```
+> in the limit as `n` tends to infinity. Give your answer to four significant figures using R's `signif()` function.
+
+The final two questions are based on the normal distribution $Y \sim \mathrm{N}(100, 1 + i)$, where $i$ is the final *single* digit of your student ID. that is, the normal distribution with expectation $\mu = 100$, and whose variance $\sigma^2$ is equal to the last digit of your student ID plus 1.
+
+> **Assessed Question 4.** What is the conditional probability $\mathbb P(Y > 105 \mid Y > 103)$?
+
+> **Assessed Question 5.** What is the value of the PDF $f_Y(y)$ evaluated where $y$ is the 95th percentile of $Y$; that is, where $y$ is the point below which 95% of the probability lies?
