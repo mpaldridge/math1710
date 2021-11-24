@@ -64,6 +64,6 @@ mean(log(samples) + 0.1 * samples)
 
 The final two questions are based on the normal distribution $Y \sim \mathrm{N}(100, 1 + i)$, where $i$ is the final *single* digit of your student ID. that is, the normal distribution with expectation $\mu = 100$, and whose variance $\sigma^2$ is equal to the last digit of your student ID plus 1.
 
-> **Assessed Question 4.** What is the conditional probability $\mathbb P(Y > 105 \mid Y > 103)$?
+> **Assessed Question 4.** What is the conditional probability $\mathbb P(Y > 105 \mid Y > 103)$? Round your answer to 3 significant figures.
 
-> **Assessed Question 5.** What is the value of the PDF $f_Y(y)$ evaluated where $y$ is the 95th percentile of $Y$; that is, where $y$ is the point below which 95% of the probability lies?
+> **Assessed Question 5.** What is the value of the PDF $f_Y(y)$ evaluated where $y$ is the 95th percentile of $Y$; that is, where $y$ is the point below which 95% of the probability lies? Round your answer to 3 decimal places.
