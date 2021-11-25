@@ -229,7 +229,7 @@ legend("topright", c("Exp(1/2)", "Exp(1/5)"), col = c("blue", "red"), lwd = 2)
 *The length of time a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate $\lambda = 2$ years^-1^. What is the probability the lightbulb needs replacing within a year?*
 
 If $X \sim \text{Exp}(2)$ is the lifetime of the lightbulb, we seek $\mathbb P(X \leq 1)$. This is
-\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big])_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]
+\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]
 :::
 
 ::: {.theorem}

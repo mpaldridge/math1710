@@ -4171,7 +4171,7 @@ The left-hand side of Bayes' theorem is
 which is equal, as it should be, to the right-hand side.
 
 \hypertarget{sum-product}{%
-\section{Expectation sums and products}\label{sum-product}}
+\section{Expectation of sums and products}\label{sum-product}}
 
 When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. (In fact, it's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.)
 
@@ -4442,6 +4442,27 @@ The precise mathematical definition of the convergence is not important here. Wh
 One special case is if we have repeated experiments the succeed with probability \(p\); that is, \(X_n \sim \text{Bern}(p)\). Then the law of large numbers says that the long-run proportion of successes is
 \[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
 So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about ``frequentist probability'' \protect\hyperlink{what-is-prob}{right at the beginning of Section 2}: that one way to understand the probability of an event is as the long-run frequency of its occurrence.
+
+\begin{itemize}
+\tightlist
+\item
+  For two random variables, the joint PMF \(p_{X,Y}\), marginal PMF \(p_X\), and conditional PMF \(p_{Y \mid X}\) are
+  \begin{align*}
+  p_{X,Y}(x,y) &= \mathbb P(X =x \text{ and } Y = y) \\
+  p_X(x) &= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
+  p_{Y \mid X}(y \mid x) &= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)} 
+  \end{align*}
+\item
+  Two random variables are independent if \(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\).
+\item
+  \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)
+\item
+  The covariance is \(\operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y\).
+\item
+  \(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)\); or if \(X\) and \(Y\) are independent, then \(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\).
+\item
+  The law of large numbers says that the mean \(\overline X_n\) tends to the expectation \(\mu\).
+\end{itemize}
 
 \hypertarget{P4}{%
 \chapter*{Problem Sheet 4}\label{P4}}
@@ -5075,7 +5096,7 @@ and 0 otherwise. We write \(X \sim \text{Exp}(\lambda)\).
 \emph{The length of time a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate \(\lambda = 2\) years\textsuperscript{-1}. What is the probability the lightbulb needs replacing within a year?}
 
 If \(X \sim \text{Exp}(2)\) is the lifetime of the lightbulb, we seek \(\mathbb P(X \leq 1)\). This is
-\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big])_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]
+\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]
 \end{example}
 
 \begin{theorem}
@@ -5446,7 +5467,7 @@ We will return to the same questions we answered in the previous subsection, alt
 
 \textbf{Question 2.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z \leq 1.45)\)?}
 
-As we noted before, this is asking for \(\Phi(1.45) = \mathbb P(Z \leq 1.45)\). Consulting the \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables}, we see that the value of \(\Phi(1.45)\) is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that \(\Phi(1.45) = 9.9265\). This is the same value as we got from R (although get fewer decimal places from the table).
+As we noted before, this is asking for \(\Phi(1.45) = \mathbb P(Z \leq 1.45)\). Consulting the \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables}, we see that the value of \(\Phi(1.45)\) is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that \(\Phi(1.45) = 0.9265\). This is the same value as we got from R (although we get fewer decimal places from the table).
 
 \textbf{Question 1.} \emph{A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?}
 
@@ -5485,7 +5506,7 @@ As noted above, this is asking for \(\mathbb P(7.95 \leq X \leq 8.05)\). To allo
 \end{align*}
 We can find \(\Phi(1.25) = 0.8944\) from the table. But the table only gives \(\Phi(x)\) for positive \(x\), so we can't look up \(\Phi(-1.25)\).
 
-Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that \(\mathbb P(X \leq -1.25) = \mathbb P(X > 1.25)\).
+Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that \(\mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25)\).
 
 \includegraphics{math1710_files/figure-latex/phiz-exm-1.pdf}
 Therefore, we have
@@ -5499,7 +5520,7 @@ which is the same thing as we got from R (up to a small rounding error in the fo
 
 Recall that this meant we were looking for the quantiles \(F^{-1}(0.0005)\) and \(F^{-1}(0.9995)\); that is, the values \(x\) and \(y\) such that \(\mathbb P(X \leq x) = 0.0005\) and \(\mathbb P(X \leq x) = 0.9995\). Table 2 of the \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables} does show us some quantiles for a standard normal. How can we use these?
 
-Let's start with the second case. The key here is to ``undo'' the standardisation. That is, if \(Z \sim \mathrm{N}(0,1)\), then \(X = \sigma Z + \mu \sim \mathrm{N}(\mu, sigma^2)\). The table tells us that \(\Phi^{-1}(0.9995) = 3.2905\); that is \(\mathbb P(Z \leq 3.2905) = 0.9995\). Then by ``un-standardising'', we have
+Let's start with the second case. The key here is to ``undo'' the standardisation. That is, if \(Z \sim \mathrm{N}(0,1)\), then \(X = \sigma Z + \mu \sim \mathrm{N}(\mu, \sigma^2)\). The table tells us that \(\Phi^{-1}(0.9995) = 3.2905\); that is, that \(\mathbb P(Z \leq 3.2905) = 0.9995\). Then by ``un-standardising'', we have
 \[ 0.9995 = \mathbb P(Z \leq 3.2905)  = \mathbb P(0.04Z + 8 \leq 0.04\times 3.2905 + 8) = \mathbb P(X \leq 8.1316) . \]
 This the upper quantile we are after is \(8.1316\).
 

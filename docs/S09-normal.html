@@ -244,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
 <li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
 <li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>7.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation sums and products</a></li>
+<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation of sums and products</a></li>
 <li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.5</b> Covariance</a></li>
 <li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.6</b> Law of large numbers</a></li>
 </ul></li>
@@ -485,7 +485,7 @@ is a disjoint union, so we can use Axiom 3.)</p>
 <p>We will return to the same questions we answered in the previous subsection, although in a slightly different order.</p>
 <div class="thpart">
 <p><strong>Question 2.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z \leq 1.45)\)</span>?</em></p>
-<p>As we noted before, this is asking for <span class="math inline">\(\Phi(1.45) = \mathbb P(Z \leq 1.45)\)</span>. Consulting the <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a>, we see that the value of <span class="math inline">\(\Phi(1.45)\)</span> is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that <span class="math inline">\(\Phi(1.45) = 9.9265\)</span>. This is the same value as we got from R (although get fewer decimal places from the table).</p>
+<p>As we noted before, this is asking for <span class="math inline">\(\Phi(1.45) = \mathbb P(Z \leq 1.45)\)</span>. Consulting the <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a>, we see that the value of <span class="math inline">\(\Phi(1.45)\)</span> is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that <span class="math inline">\(\Phi(1.45) = 0.9265\)</span>. This is the same value as we got from R (although we get fewer decimal places from the table).</p>
 </div>
 <div class="thpart">
 <p><strong>Question 1.</strong> <em>A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?</em></p>
@@ -519,7 +519,7 @@ This is off by only 0.01%; a very accurate approximation.</p>
   &amp;= \Phi(1.25) - \Phi(-1.25) .
 \end{align*}\]</span>
 We can find <span class="math inline">\(\Phi(1.25) = 0.8944\)</span> from the table. But the table only gives <span class="math inline">\(\Phi(x)\)</span> for positive <span class="math inline">\(x\)</span>, so we can’t look up <span class="math inline">\(\Phi(-1.25)\)</span>.</p>
-<p>Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that <span class="math inline">\(\mathbb P(X \leq -1.25) = \mathbb P(X &gt; 1.25)\)</span>.</p>
+<p>Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that <span class="math inline">\(\mathbb P(Z \leq -1.25) = \mathbb P(Z &gt; 1.25)\)</span>.</p>
 <p><img src="math1710_files/figure-html/phiz-exm-1.png" width="672" />
 Therefore, we have
 <span class="math display">\[ \Phi(-1.25) = \mathbb P(Z &gt; 1.25) = 1 - \Phi(1.25) = 1 - 0.8944 = 0.1056\]</span></p>
@@ -530,7 +530,7 @@ which is the same thing as we got from R (up to a small rounding error in the fo
 <div class="thpart">
 <p><strong>Question 5.</strong> <em>We stay with the fiberoptic model <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> from Questions 1 and 4. The manufacturer wants to be able to advertise that 99.9% of their fibres are between lower and upper limits <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. What values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can they promise?</em></p>
 <p>Recall that this meant we were looking for the quantiles <span class="math inline">\(F^{-1}(0.0005)\)</span> and <span class="math inline">\(F^{-1}(0.9995)\)</span>; that is, the values <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> such that <span class="math inline">\(\mathbb P(X \leq x) = 0.0005\)</span> and <span class="math inline">\(\mathbb P(X \leq x) = 0.9995\)</span>. Table 2 of the <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a> does show us some quantiles for a standard normal. How can we use these?</p>
-<p>Let’s start with the second case. The key here is to “undo” the standardisation. That is, if <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>, then <span class="math inline">\(X = \sigma Z + \mu \sim \mathrm{N}(\mu, sigma^2)\)</span>. The table tells us that <span class="math inline">\(\Phi^{-1}(0.9995) = 3.2905\)</span>; that is <span class="math inline">\(\mathbb P(Z \leq 3.2905) = 0.9995\)</span>. Then by “un-standardising”, we have
+<p>Let’s start with the second case. The key here is to “undo” the standardisation. That is, if <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>, then <span class="math inline">\(X = \sigma Z + \mu \sim \mathrm{N}(\mu, \sigma^2)\)</span>. The table tells us that <span class="math inline">\(\Phi^{-1}(0.9995) = 3.2905\)</span>; that is, that <span class="math inline">\(\mathbb P(Z \leq 3.2905) = 0.9995\)</span>. Then by “un-standardising”, we have
 <span class="math display">\[ 0.9995 = \mathbb P(Z \leq 3.2905)  = \mathbb P(0.04Z + 8 \leq 0.04\times 3.2905 + 8) = \mathbb P(X \leq 8.1316) . \]</span>
 This the upper quantile we are after is <span class="math inline">\(8.1316\)</span>.</p>
 <p>For the lower quantile, we can use symmetry again. Thus the <span class="math inline">\(0.0005 = 1 - 0.9995\)</span> quantile for <span class="math inline">\(Z\)</span> is minus the previous quantile; that is, <span class="math inline">\(-3.2905\)</span>. Hence the lower quantile we want is

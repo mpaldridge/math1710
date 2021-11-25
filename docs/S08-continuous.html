@@ -244,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
 <li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
 <li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>7.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation sums and products</a></li>
+<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation of sums and products</a></li>
 <li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.5</b> Covariance</a></li>
 <li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.6</b> Law of large numbers</a></li>
 </ul></li>
@@ -505,7 +505,7 @@ and 0 otherwise. We write <span class="math inline">\(X \sim \text{Exp}(\lambda)
 <div class="example">
 <p><span id="exm:unlabeled-div-98" class="example"><strong>Example 8.5  </strong></span><em>The length of time a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate <span class="math inline">\(\lambda = 2\)</span> years<sup>-1</sup>. What is the probability the lightbulb needs replacing within a year?</em></p>
 <p>If <span class="math inline">\(X \sim \text{Exp}(2)\)</span> is the lifetime of the lightbulb, we seek <span class="math inline">\(\mathbb P(X \leq 1)\)</span>. This is
-<span class="math display">\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big])_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]</span></p>
+<span class="math display">\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]</span></p>
 </div>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-99" class="theorem"><strong>Theorem 8.1  </strong></span>Suppose <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Then:</p>

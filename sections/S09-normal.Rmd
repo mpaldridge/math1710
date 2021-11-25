@@ -238,7 +238,7 @@ We will return to the same questions we answered in the previous subsection, alt
 ::: {.thpart}
 **Question 2.**  *Let $Z \sim \mathrm{N}(0,1)$. What is $\mathbb P(Z \leq 1.45)$?*
 
-As we noted before, this is asking for $\Phi(1.45) = \mathbb P(Z \leq 1.45)$. Consulting the [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf), we see that the value of $\Phi(1.45)$ is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that $\Phi(1.45) = 9.9265$. This is the same value as we got from R (although get fewer decimal places from the table).
+As we noted before, this is asking for $\Phi(1.45) = \mathbb P(Z \leq 1.45)$. Consulting the [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf), we see that the value of $\Phi(1.45)$ is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that $\Phi(1.45) = 0.9265$. This is the same value as we got from R (although we get fewer decimal places from the table).
 :::
 
 ::: {.thpart}
@@ -283,10 +283,10 @@ As noted above, this is asking for $\mathbb P(7.95 \leq X \leq 8.05)$. To allow 
 \end{align*}
 We can find $\Phi(1.25) = 0.8944$ from the table. But the table only gives $\Phi(x)$ for positive $x$, so we can't look up $\Phi(-1.25)$.
 
-Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that $\mathbb P(X \leq -1.25) = \mathbb P(X > 1.25)$.
+Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that $\mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25)$.
 
-```{r phiz-exm, echo = FALSE}
-curve(dnorm, from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "x", ylab = expression(Phi(x)))
+```{r phiz-exm, echo = FALSE, cache = TRUE}
+curve(dnorm, from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(Phi(z)))
 
 rng <- seq(-3.5, -1.25, by = 0.1)
 xpol <- c(-3.5, rng, -1.25)
@@ -313,7 +313,7 @@ which is the same thing as we got from R (up to a small rounding error in the fo
 
 Recall that this meant we were looking for the quantiles $F^{-1}(0.0005)$ and $F^{-1}(0.9995)$; that is, the values $x$ and $y$ such that $\mathbb P(X \leq x) = 0.0005$ and $\mathbb P(X \leq x) = 0.9995$. Table 2 of the [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) does show us some quantiles for a standard normal. How can we use these?
 
-Let's start with the second case. The key here is to "undo" the standardisation. That is, if $Z \sim \mathrm{N}(0,1)$, then $X = \sigma Z + \mu \sim \mathrm{N}(\mu, sigma^2)$. The table tells us that $\Phi^{-1}(0.9995) = 3.2905$; that is $\mathbb P(Z \leq 3.2905) = 0.9995$. Then by "un-standardising", we have
+Let's start with the second case. The key here is to "undo" the standardisation. That is, if $Z \sim \mathrm{N}(0,1)$, then $X = \sigma Z + \mu \sim \mathrm{N}(\mu, \sigma^2)$. The table tells us that $\Phi^{-1}(0.9995) = 3.2905$; that is, that $\mathbb P(Z \leq 3.2905) = 0.9995$. Then by "un-standardising", we have
 \[ 0.9995 = \mathbb P(Z \leq 3.2905)  = \mathbb P(0.04Z + 8 \leq 0.04\times 3.2905 + 8) = \mathbb P(X \leq 8.1316) . \]
 This the upper quantile we are after is $8.1316$.
 

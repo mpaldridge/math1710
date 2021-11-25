@@ -244,7 +244,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
 <li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
 <li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>7.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation sums and products</a></li>
+<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation of sums and products</a></li>
 <li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.5</b> Covariance</a></li>
 <li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.6</b> Law of large numbers</a></li>
 </ul></li>
@@ -604,7 +604,13 @@ The left-hand side of Bayes’ theorem is
 which is equal, as it should be, to the right-hand side.</p>
 </div>
 <div id="sum-product" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> Expectation sums and products</h2>
+<h2><span class="header-section-number">7.4</span> Expectation of sums and products</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/BaEbVJZkGGY">
+</iframe>
+</div>
+</div>
 <p>When we have multiple random variables, we might be interested in functions of those multiple random variables – for example their sum or their product. (In fact, it’s often possible to find out about the whole distribution of a sum, product, or function of the variables – see MATH2715 Statistical Methods for more on this – but will just look at their expectations and, later, variances.)</p>
 <div class="theorem">
 <p><span id="thm:linearity2" class="theorem"><strong>Theorem 7.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint probability mass function <span class="math inline">\(p_{X,Y}\)</span>. Then</p>
@@ -649,6 +655,12 @@ as required.</p>
 </div>
 <div id="covariance" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Covariance</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/eXsUrJzcRCE">
+</iframe>
+</div>
+</div>
 <p>If we are interested at how two random variables vary together, we need to look at the covariance.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-80" class="definition"><strong>Definition 7.3  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
@@ -759,6 +771,12 @@ where we used the linearity of expectation.</p>
 </div>
 <div id="lln" class="section level2" number="7.6">
 <h2><span class="header-section-number">7.6</span> Law of large numbers</h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/u4hJv2sDUoc">
+</iframe>
+</div>
+</div>
 <p>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Let us write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance.</p>
 <p>At the beginning of the course, we saw the mean of some values was
 <span class="math display">\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]</span>
@@ -801,6 +819,21 @@ by which we mean that, for any <span class="math inline">\(\epsilon &gt; 0\)</sp
 <p>One special case is if we have repeated experiments the succeed with probability <span class="math inline">\(p\)</span>; that is, <span class="math inline">\(X_n \sim \text{Bern}(p)\)</span>. Then the law of large numbers says that the long-run proportion of successes is
 <span class="math display">\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]</span>
 So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about “frequentist probability” <a href="S02-probability.html#what-is-prob">right at the beginning of Section 2</a>: that one way to understand the probability of an event is as the long-run frequency of its occurrence.</p>
+<div class="mysummary">
+<ul>
+<li>For two random variables, the joint PMF <span class="math inline">\(p_{X,Y}\)</span>, marginal PMF <span class="math inline">\(p_X\)</span>, and conditional PMF <span class="math inline">\(p_{Y \mid X}\)</span> are
+<span class="math display">\[\begin{align*}
+p_{X,Y}(x,y) &amp;= \mathbb P(X =x \text{ and } Y = y) \\
+p_X(x) &amp;= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
+p_{Y \mid X}(y \mid x) &amp;= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)} 
+\end{align*}\]</span></li>
+<li>Two random variables are independent if <span class="math inline">\(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\)</span>.</li>
+<li><span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span></li>
+<li>The covariance is <span class="math inline">\(\operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y\)</span>.</li>
+<li><span class="math inline">\(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)\)</span>; or if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span>.</li>
+<li>The law of large numbers says that the mean <span class="math inline">\(\overline X_n\)</span> tends to the expectation <span class="math inline">\(\mu\)</span>.</li>
+</ul>
+</div>
 
 </div>
 </div>
