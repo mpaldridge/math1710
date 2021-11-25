@@ -579,7 +579,13 @@ by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma
 </div>
 <div id="normal-approx" class="section level2" number="9.6">
 <h2><span class="header-section-number">9.6</span> Approximations with the normal distribution</h2>
-<p>There are many other distributions that can be well approximated by a normal distribution. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.</p>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/OYv464S0fDI">
+</iframe>
+</div>
+</div>
+<p>There are many other distributions <span class="math inline">\(X\)</span> that can be well approximated by a normal distribution where <span class="math inline">\(\mu\)</span> is set to <span class="math inline">\(\mathbb EX\)</span> and <span class="math inline">\(\sigma^2\)</span> is set to <span class="math inline">\(\operatorname{Var}(X)\)</span>. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.</p>
 <ul>
 <li>A binomial distribution <span class="math inline">\(X \sim \mathrm{Bin}(n, p)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(np, np(1-p))\)</span> when <span class="math inline">\(n\)</span> is large and <span class="math inline">\(p\)</span> is not too close to 0 or 1. (When <span class="math inline">\(p\)</span> is small, we already know that the Poisson distribution is a good approximation.)</li>
 <li>A Poisson distribution <span class="math inline">\(X \sim \mathrm{Po}(\lambda)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(\lambda, \lambda)\)</span> when <span class="math inline">\(\lambda\)</span> is large.</li>
@@ -589,7 +595,7 @@ by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma
 <div class="example">
 <p><span id="exm:unlabeled-div-105" class="example"><strong>Example 9.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
 <p>The true distribution of Heads is <span class="math inline">\(X \sim \mathrm{Bin}(1000, \frac12)\)</span>, and the question wants
-<span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^505 p_X(x) . \]</span>
+<span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]</span>
 We can calculate the exact answer using R:</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="S09-normal.html#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">495</span><span class="sc">:</span><span class="dv">505</span>, <span class="dv">1000</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div>
 <pre><code>## [1] 0.2720284</code></pre>
@@ -606,6 +612,7 @@ We could standardise and use the statistical tables, or just use R:</p>
 <pre><code>## [1] 0.2720476</code></pre>
 <p>Using the continuity correction, we now have an incredibly accurate approximation – it only misses by 0.006%.</p>
 </div>
+<p>Using a continuity correction – that is, rounding outwards halfway to the next discrete point – typically makes approximations more accurate whenever you are approximating a discrete random variable by a continuous random variable (such as a normal distribution).</p>
 </div>
 <div id="summary-09" class="section level2 unnumbered">
 <h2>Summary</h2>
@@ -616,7 +623,8 @@ We could standardise and use the statistical tables, or just use R:</p>
 It has expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>.</li>
 <li>The standard normal distibution has <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma^2 = 1\)</span>.</li>
 <li>The CDF of a normal distribution can be calculated in R with the <code>pnorm()</code> function. For the standard normal distribution, <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a> can be used.</li>
-<li>The central limit theorem says that the mean of <span class="math inline">\(n\)</span> IID random variables is approximately normally distributed for large <span class="math inline">\(n\)</span>. Other random variables can also be approximated by the normal distribution.</li>
+<li>The central limit theorem says that the mean of <span class="math inline">\(n\)</span> IID random variables is approximately normally distributed for large <span class="math inline">\(n\)</span>.</li>
+<li>Other random variables can also be approximated by the normal distribution. When approximating a discrete random variable, use a continuity correction.</li>
 </ul>
 </div>
 

@@ -5598,7 +5598,7 @@ The result we have stated, for IID random variables, is the most important case 
 \hypertarget{normal-approx}{%
 \section{Approximations with the normal distribution}\label{normal-approx}}
 
-There are many other distributions that can be well approximated by a normal distribution. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
+There are many other distributions \(X\) that can be well approximated by a normal distribution where \(\mu\) is set to \(\mathbb EX\) and \(\sigma^2\) is set to \(\operatorname{Var}(X)\). Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
 
 \begin{itemize}
 \tightlist
@@ -5616,7 +5616,7 @@ There are many other distributions that can be well approximated by a normal dis
 \emph{Suppose I toss 1000 coins. What's the probability I get between 495 and 505 Heads?}
 
 The true distribution of Heads is \(X \sim \mathrm{Bin}(1000, \frac12)\), and the question wants
-\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^505 p_X(x) . \]
+\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]
 We can calculate the exact answer using R:
 
 \begin{Shaded}
@@ -5663,6 +5663,8 @@ Calculating this in R (or with statistical tables) we get
 Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006\%.
 \end{example}
 
+Using a continuity correction -- that is, rounding outwards halfway to the next discrete point -- typically makes approximations more accurate whenever you are approximating a discrete random variable by a continuous random variable (such as a normal distribution).
+
 \hypertarget{summary-09}{%
 \section*{Summary}\label{summary-09}}
 \addcontentsline{toc}{section}{Summary}
@@ -5678,7 +5680,9 @@ Using the continuity correction, we now have an incredibly accurate approximatio
 \item
   The CDF of a normal distribution can be calculated in R with the \texttt{pnorm()} function. For the standard normal distribution, \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables} can be used.
 \item
-  The central limit theorem says that the mean of \(n\) IID random variables is approximately normally distributed for large \(n\). Other random variables can also be approximated by the normal distribution.
+  The central limit theorem says that the mean of \(n\) IID random variables is approximately normally distributed for large \(n\).
+\item
+  Other random variables can also be approximated by the normal distribution. When approximating a discrete random variable, use a continuity correction.
 \end{itemize}
 
 \hypertarget{P5}{%

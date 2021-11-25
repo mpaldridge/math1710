@@ -369,7 +369,15 @@ The result we have stated, for IID random variables, is the most important case 
 
 ## Approximations with the normal distribution  {#normal-approx}
 
-There are many other distributions that can be well approximated by a normal distribution. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
+
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/OYv464S0fDI"></iframe>
+:::
+::::
+
+
+There are many other distributions $X$ that can be well approximated by a normal distribution where $\mu$ is set to $\mathbb EX$ and $\sigma^2$ is set to $\Var(X)$. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
 
 * A binomial distribution $X \sim \mathrm{Bin}(n, p)$ is well approximated by a normal distribution $\mathrm{N}(np, np(1-p))$ when $n$ is large and $p$ is not too close to 0 or 1. (When $p$ is small, we already know that the Poisson distribution is a good approximation.)
 * A Poisson distribution $X \sim \mathrm{Po}(\lambda)$ is well approximated by a normal distribution $\mathrm{N}(\lambda, \lambda)$ when $\lambda$ is large.
@@ -380,7 +388,7 @@ There are many other distributions that can be well approximated by a normal dis
 *Suppose I toss 1000 coins. What's the probability I get between 495 and 505 Heads?*
 
 The true distribution of Heads is $X \sim \mathrm{Bin}(1000, \frac12)$, and the question wants
-\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^505 p_X(x) . \]
+\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]
 We can calculate the exact answer using R:
 
 ```{r}
@@ -407,6 +415,8 @@ pnorm(505.5, 500, sqrt(250)) - pnorm(494.5, 500, sqrt(250))
 Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006%.
 :::
 
+Using a continuity correction -- that is, rounding outwards halfway to the next discrete point -- typically makes approximations more accurate whenever you are approximating a discrete random variable by a continuous random variable (such as a normal distribution).
+
 ## Summary  {#summary-09 .unnumbered}
 
 ::: {.mysummary}
@@ -415,5 +425,6 @@ Using the continuity correction, we now have an incredibly accurate approximatio
 It has expectation $\mu$ and variance $\sigma^2$.
 * The standard normal distibution has $\mu = 0$ and $\sigma^2 = 1$.
 * The CDF of a normal distribution can be calculated in R with the `pnorm()` function. For the standard normal distribution, [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) can be used.
-* The central limit theorem says that the mean of $n$ IID random variables is approximately normally distributed for large $n$. Other random variables can also be approximated by the normal distribution.
+* The central limit theorem says that the mean of $n$ IID random variables is approximately normally distributed for large $n$.
+* Other random variables can also be approximated by the normal distribution. When approximating a discrete random variable, use a continuity correction.
 :::
