@@ -430,6 +430,8 @@ One special case is if we have repeated experiments the succeed with probability
 \[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
 So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about "frequentist probability" [right at the beginning of Section 2](#what-is-prob): that one way to understand the probability of an event is as the long-run frequency of its occurrence. 
 
+## Summary  {#summary-07 .unnumbered}
+
 ::: {.mysummary}
 * For two random variables, the joint PMF $p_{X,Y}$, marginal PMF $p_X$, and conditional PMF $p_{Y \mid X}$ are
 \begin{align*}
@@ -441,5 +443,5 @@ So the long-run proportion of times an event happens converges to its probabilit
 * $\mathbb E(X + Y) = \mathbb EX + \mathbb EY$
 * The covariance is $\Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y$.
 * $\Var(X + Y) = \Var(X) + 2\Cov(X,Y) + \Var(Y)$; or if $X$ and $Y$ are independent, then $\Var(X + Y) = \Var(X) + \Var(Y)$.
-* The law of large numbers says that the mean $\overline X_n$ tends to the expectation $\mu$.
+* The law of large numbers says that the mean $\overline X_n$ of IID random variables tends to the expectation $\mu$ as $n \to \infty$.
 :::

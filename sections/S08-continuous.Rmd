@@ -209,9 +209,17 @@ For the expectation, we have
 \end{align*}
 :::
 
+
 ## Exponential distribution  {#exponential}
 
-An important continuous distribution is the exponential distribution. The exonential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/t11Rsll3jVI"></iframe>
+:::
+::::
+
+
+An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
 
 ::: {.definition}
 A continuous random variable $X$ is said to have the **exponential distribution with rate $\lambda > 0$** if it has the PDF
@@ -316,3 +324,13 @@ and $\mathbb EY = \frac{13}{24}$ also, by symmetry. Second, we have
 So therefore,
 \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
 ::::
+
+## Summary  {#summary-08 .unnumbered}
+
+::: {.mysummary}
+* A continuous random variable is defined by its probability density function $f$, where
+\[ \mathbb P(a \leq X \leq b) = \int_a^b f(x) \, \mathrm dx . \]
+* Most properties of discrete random variables hold, with the PMF replaced by the PDF, and sums by integrals.
+* The expectation is $\mathbb EX = \displaystyle\int_{-\infty}^\infty x\, f(x) \, \mathrm dx$.
+* The exponential distribution has PDF $f(x) = \lambda \mathrm e^{\lambda x}$, expectation $1/\lambda$, and variance $1/\lambda^2$.
+:::

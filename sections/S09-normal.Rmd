@@ -216,7 +216,7 @@ or about 79%.
 
 Is $F$ is the CDF of this distribution, then we are looking for $x$ and $y$ such that $F(x) = 0.0005$ and $F(y) = 0.9995$. That way, $F(y) - F(x) = 0.999$, so we have 99.9% of fibres within that interval and 0.05% outside either side.
 
-You may remember from R Worksheet 7 that the inverse $F^{-1}$ of the CDF is called the **quantile function**. Here, we want $F^{-1}(0.0005)$ and $F^{-1}(0.9995)$. The quantitle function for the normal distribution in R is `qnorm()`. (It also has a `lower.tail = FALSE` option, which is sometimes useful.) So we can use
+You may remember from R Worksheet 7 that the inverse $F^{-1}$ of the CDF is called the **quantile function**. Here, we want $F^{-1}(0.0005)$ and $F^{-1}(0.9995)$. The quantile function for the normal distribution in R is `qnorm()`. (It also has a `lower.tail = FALSE` option, which is sometimes useful.) So we can use
 
 ```{r}
 mu <- 8
@@ -333,6 +333,13 @@ I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn
 
 ## Central limit theorem  {#clt}
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/yygv7L5hcOg"></iframe>
+:::
+::::
+
+
 Recall that, given random variables $X_1, X_2, \dots$ we can form the mean
 \[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) . \]
 Recall further that we saw that if the $X_i$ are IID random variables with expectation $\mu$ and variance $\sigma^2$, then
@@ -345,17 +352,20 @@ In the same way, we can calculate that
 \[ \mathbb E\sqrt{n}\big( \overline X_n - \mu\big) = 0 \qquad \Var\Big(\sqrt{n}\big( \overline X_n - \mu\big)\Big) = \sigma^2. \]
 So whatever distribution $\sqrt{n}(\overline X_n - \mu)$ has, that distribution must have expectation $0$ and variance $\sigma^2$. But in fact, *no matter what distribution the $X_i$ have*, this "variation around 0" $\sqrt{n}(\overline X_n - \mu)$ always gets closer and closer to the normal distribution!
 
-::: {.theorem #thLLN name="Central limit theorem"}
+::: {.theorem #thCLT name="Central limit theorem"}
 Let $X_1, X_2, \dots$ be a sequence of IID random variables. Write $\mu = \mathbb EX_1$ for the common expectation, $\sigma^2 = \Var(X_1)$ for the common variance, and $\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i$ for the mean of the first $n$ random variables. Then 
 \[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]
 by which we mean that, if $Y \sim \mathrm N(0, \sigma^2)$, then, for all $a < b$,
 \[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
 :::
 
+(A full proof of the central limit theorem is too complicated to include here.)
+
 Another alternative way to write this is to divide both sides by $\sigma$ to get
 \[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
 
 The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
+
 
 ## Approximations with the normal distribution  {#normal-approx}
 
@@ -395,4 +405,15 @@ Calculating this in R (or with statistical tables) we get
 pnorm(505.5, 500, sqrt(250)) - pnorm(494.5, 500, sqrt(250))
 ```
 Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006%.
+:::
+
+## Summary  {#summary-09 .unnumbered}
+
+::: {.mysummary}
+* The normal distribution has PDF
+\[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left(- \frac{(x - \mu)^2}{2\sigma^2} \right) .\]
+It has expectation $\mu$ and variance $\sigma^2$.
+* The standard normal distibution has $\mu = 0$ and $\sigma^2 = 1$.
+* The CDF of a normal distribution can be calculated in R with the `pnorm()` function. For the standard normal distribution, [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) can be used.
+* The central limit theorem says that the mean of $n$ IID random variables is approximately normally distributed for large $n$. Other random variables can also be approximated by the normal distribution.
 :::
