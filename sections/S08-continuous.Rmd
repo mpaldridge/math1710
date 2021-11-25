@@ -332,5 +332,5 @@ So therefore,
 \[ \mathbb P(a \leq X \leq b) = \int_a^b f(x) \, \mathrm dx . \]
 * Most properties of discrete random variables hold, with the PMF replaced by the PDF, and sums by integrals.
 * The expectation is $\mathbb EX = \displaystyle\int_{-\infty}^\infty x\, f(x) \, \mathrm dx$.
-* The exponential distribution has PDF $f(x) = \lambda \mathrm e^{\lambda x}$, expectation $1/\lambda$, and variance $1/\lambda^2$.
+* The exponential distribution has PDF $f(x) = \lambda \mathrm e^{-\lambda x}$, expectation $1/\lambda$, and variance $1/\lambda^2$.
 :::

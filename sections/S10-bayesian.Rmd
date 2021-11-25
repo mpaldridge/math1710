@@ -4,6 +4,19 @@
 
 ## Example: fake coin  {#fake-coin}
 
+Statistics tells us how to draw conclusions from statistics; and **Bayesian statistics** is one particular framework for doing this. The idea of Bayesian statistics is that we use the data to update out beliefs about the underlying process.
+
+We will start by illustrating the main idea with an example.
+
+*A joke shop sells three types of coins: normal fair coins; Heads-biased coins, which land Heads with probability 0.8; and Tails-biased coins, which land Heads with probability 0.2. I pick up a coin and examine it; since it looks mostly like a normal coin, I believe there's 60% chance it's s fair coin, and a 20% chance it's biased either way. I decide to toss the coin four times, to gather some more evidence. The result is: Heads, Heads, Tails, Heads. How should I update my beliefs?*
+
+We know how to do this: we use Bayes' theorem. We have
+\begin{align*}
+\mathbb P(\text{fair} \mid \text{HHTH}) &= \frac{\mathbb P(\text{fair})\, \mathbb P(\text{HHTH}\mid \text{fair})}{\mathbb P(\text{HHTH})} = \frac{0.6 \times 0.5^4}{\mathbb P(\text{HHTH})} = \frac{0.0375}{\mathbb P(\text{HHTH})} \\
+\mathbb P(\text{fair} \mid \text{HHTH}) &= \frac{\mathbb P(\text{fair})\, \mathbb P(\text{HHTH}\mid \text{fair})}{\mathbb P(\text{HHTH})} = \frac{0.6 \times 0.5^4}{\mathbb P(\text{HHTH})} = \frac{0.0375}{\mathbb P(\text{HHTH})} \\
+\mathbb P(\text{fair} \mid \text{HHTH}) &= \frac{\mathbb P(\text{fair})\, \mathbb P(\text{HHTH}\mid \text{fair})}{\mathbb P(\text{HHTH})} = \frac{0.6 \times 0.5^4}{\mathbb P(\text{HHTH})} = \frac{0.0375}{\mathbb P(\text{HHTH})} .
+\end{align*}
+
 ## Bayesian framework  {#bayesian-framework}
 
 ## Beta distribution  {#beta}
