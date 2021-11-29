@@ -1,5 +1,5 @@
 :::: {.myq}
-**1.** A want to use a prior distribution for a parameter $\theta$ whose range is the interval $[0,1]$, whose expectation is $0.4$ and whose standard deviation is $0.2$. Suggest an appropriate distribution.
+**1.** I want to use a prior distribution for a parameter $\theta$ whose range is the interval $[0,1]$, whose expectation is $0.4$ and whose standard deviation is $0.2$. Suggest an appropriate distribution.
 ::::
 
 :::: {.myq}
