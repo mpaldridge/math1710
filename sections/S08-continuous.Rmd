@@ -39,7 +39,7 @@ In other words, the probability that $X$ is between $a$ and $b$ is the area unde
 
 As with PMFs, when it's obvious what random variable we're dealing with, we omit the subscript $X$ on the PDF $f_X$.
 
-::: {.example}
+::: {.example #unifex}
 Let $X$ be a continuous random variable with PDF
 \[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} \]
 and $f(x) = 0$ otherwise. This represents a random number between 0 and 1, where the intensity of the probability is equal across the whole interval. This is known as a **continuous uniform distribution**.

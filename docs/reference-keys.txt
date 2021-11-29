@@ -57,3 +57,10 @@ normal-r
 normal-tables
 clt
 normal-approx
+S10-bayesian
+fake-coin
+bayesian-framework
+beta
+beta-bern
+normal-normal
+modern-bayes

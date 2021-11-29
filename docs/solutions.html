@@ -282,6 +282,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
+<li class="chapter" data-level="10" data-path="S10-bayesian.html"><a href="S10-bayesian.html"><i class="fa fa-check"></i><b>10</b> Introduction to Bayesian statistics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="S10-bayesian.html"><a href="S10-bayesian.html#fake-coin"><i class="fa fa-check"></i><b>10.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="10.2" data-path="S10-bayesian.html"><a href="S10-bayesian.html#bayesian-framework"><i class="fa fa-check"></i><b>10.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="10.3" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta"><i class="fa fa-check"></i><b>10.3</b> Beta distribution</a></li>
+<li class="chapter" data-level="10.4" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta-bern"><i class="fa fa-check"></i><b>10.4</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="10.5" data-path="S10-bayesian.html"><a href="S10-bayesian.html#normal-normal"><i class="fa fa-check"></i><b>10.5</b> Normal–normal model</a></li>
+<li class="chapter" data-level="10.6" data-path="S10-bayesian.html"><a href="S10-bayesian.html#modern-bayes"><i class="fa fa-check"></i><b>10.6</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="S10-bayesian.html"><a href="S10-bayesian.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -297,6 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -1754,6 +1767,277 @@ We often model a data set <span class="math inline">\(x_2, x_2, \dots, x_n\)</sp
 This property of being correct in expectation is called being an “unbiased” estimator, and its usually considered beneficial for an estimator to be unbiased.</p>
 <p>Note that we already know that the sample mean <span class="math inline">\(\bar x\)</span> is an unbiased estimator for the expectation <span class="math inline">\(\mathbb EX = \mu\)</span>, as we already know that <span class="math inline">\(\mathbb E\overline X = \mu\)</span>.</p>
 </div>
+</div>
+</div>
+</div>
+<div id="P5-solutions" class="section level2 unnumbered">
+<h2>Problem Sheet 5</h2>
+<div class="myq">
+<p><strong>A1.</strong> Consider the continuous random variable <span class="math inline">\(X\)</span> with PDF
+<span class="math display">\[ f(x) = \begin{cases} \tfrac12x &amp; \text{for $0 \leq x \leq 1$} \\ 
+                        \tfrac12 &amp; \text{for $1 &lt; x \leq 2$} \\
+                        \tfrac32 - \tfrac12x &amp; \text{for $2 &lt; x \leq 3$} \end{cases} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
+<div class="subq">
+<p><strong>(a)</strong> Calculate the CDF for <span class="math inline">\(X\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> We treat the different cases separately.</p>
+<p>For <span class="math inline">\(x &lt; 0\)</span>, we have <span class="math inline">\(F(x) = 0\)</span>.</p>
+<p>For <span class="math inline">\(0 \leq x \leq 1\)</span>, we have
+<span class="math display">\[ F(x) = \int_0^x \tfrac12 y \, \mathrm dy = \left[\tfrac14y^2\right]_0^x = \tfrac14 x^2 .\]</span>
+In particular, <span class="math inline">\(F(1) = \frac14\)</span>.</p>
+<p>For <span class="math inline">\(1 &lt; x \leq 2\)</span>, we have
+<span class="math display">\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(1) + \int_1^y \tfrac12 \, \mathrm dy = \tfrac14 + \left[ \tfrac 12 y\right]_1^x = \tfrac12 x - \tfrac14 .\]</span>
+In particular, <span class="math inline">\(F(2) = \frac34\)</span>.</p>
+<p>For <span class="math inline">\(2 &lt; x \leq 3\)</span>, we have
+<span class="math display">\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(2) + \int_2^y \left(\tfrac32 - \tfrac12y\right) \, \mathrm dy = \tfrac34 + \left[ \tfrac 32 y - \tfrac14 y^2\right]_2^x = \tfrac32 x - \tfrac14 x^2 - \tfrac 54 .\]</span>
+In particular, <span class="math inline">\(F(3) = 1\)</span>.</p>
+<p>For <span class="math inline">\(x &gt; 3\)</span>, we have <span class="math inline">\(F(x) = 1\)</span>.</p>
+<p>Hence,
+<span class="math display">\[ F(x) = \begin{cases}
+0 &amp; \text{for $x &lt; 0$} \\
+\tfrac14 x^2 &amp; \text{for $0 \leq x \leq 1$} \\
+\tfrac12 x - \tfrac14 &amp; \text{for $1 &lt; x \leq 2$} \\
+\tfrac32 x - \tfrac14 x^2 - \tfrac 54 &amp; \text{for $2 &lt; x \leq 3$} \\
+1 &amp; \text{for $x &gt; 3$.}
+\end{cases}
+\]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is <span class="math inline">\(\mathbb P(\tfrac32 \leq X \leq \tfrac52)\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is
+<span class="math display">\[ F\big(\tfrac52\big) - F\big(\tfrac32\big) = \tfrac{15}{16} - \tfrac12 = \tfrac{5}{16} .\]</span>
+(Here, it was useful to note that <span class="math inline">\(x = \tfrac52\)</span> is in the <span class="math inline">\(2 &lt; x \leq 3\)</span> range and <span class="math inline">\(x = \tfrac32\)</span> is in the <span class="math inline">\(1 &lt; x \leq 2\)</span> range.)</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Calculate the expectation <span class="math inline">\(\mathbb EX\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have
+<span class="math display">\[\begin{align*}
+\mathbb EX &amp;= \int_{-\infty}^{\infty} x\,f(x)\, \mathrm dx \\
+  &amp;= \int_0^1 x\times\tfrac12x\, \mathrm dx + \int_1^2 x \times \tfrac12 \, \mathrm dx + \int_2^3 x \times \left(\tfrac32 - \tfrac12 x\right)\, \mathrm dx \\
+  &amp;= \left[\tfrac16 x^3 \right]_0^1 + \left[\tfrac14 x^2 \right]_1^2 + \left[\tfrac34 x^2 - \tfrac16 x^3 \right]_2^3 \\
+  &amp;= \tfrac16 - 0 + 1 - \tfrac14 + \tfrac94 - \tfrac53 \\
+  &amp;= \tfrac32 .
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A2.</strong> Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
+<span class="math display">\[ f(x) = \frac{k}{x^3} \qquad \text{for $x \geq 1$} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
+<div class="subq">
+<p><strong>(a)</strong> What value of <span class="math inline">\(k\)</span> makes this into a true PDF?</p>
+<div class="myanswers">
+<p><em>Solution.</em> We need the PDF to integrate to 1. So
+<span class="math display">\[ 1 = \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_1^\infty kx^{-3} \, \mathrm dx = \left[-\tfrac 12 kx^{-2}\right]_1^\infty = - 0 + \tfrac12k . \]</span>
+So <span class="math inline">\(k = 2\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is <span class="math inline">\(\mathbb P(X \geq 3)\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is
+<span class="math display">\[ \mathbb P(X \geq 3) = \int_3^\infty 2x^{-3}\,\mathrm dx = \left[-x^{-2}\right]_3^\infty = \tfrac19 .  \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> What is the expected value <span class="math inline">\(\mathbb EX\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is
+<span class="math display">\[ \mathbb EX = \int_1^\infty x\times 2x^{-3} \mathrm dx = \left[2x^{-1}\right]_1^\infty = 2 . \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> Let <span class="math inline">\(X \sim \text{Exp}(\frac12)\)</span>.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is <span class="math inline">\(\mathbb EX\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb EX = \displaystyle\frac{1}{\frac12} = 2\)</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is <span class="math inline">\(\mathbb P(1 \leq X \leq 3)\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> We have
+<span class="math display">\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm e^{-3/2}) - (1 - \mathrm e^{-1/2}) = 0.383 . \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. Calculate the following <strong>(a)</strong> using <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a>; <strong>(b)</strong> using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)</p>
+<div class="subq">
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(Z \leq -1.2)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> Using statistical tables,
+<span class="math display">\[ \Phi(-1.2) = 1 - \Phi(1.20) = 1 - 0.8849 = 0.1151 .\]</span></p>
+<p>Using R: <code>pnorm(-1.2)</code> gives <code>0.1150697</code>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(-1.2 \leq Z \leq 0.8)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> Using statistical tables, and part (i),
+<span class="math display">\[ \Phi(0.80) - \Phi(-1.2) = 0.7781 - 0.1151 = 0.6730 . \]</span></p>
+<p>Using R: <code>pnorm(0.8) - pnorm(-1.2)</code> gives <code>0.6730749</code>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(iii)</strong> <span class="math inline">\(\mathbb P(Z \leq 0.27)\)</span> (using interpolation for part (a))</p>
+<div class="myanswers">
+<p><em>Solution.</em> We can interpolate between <span class="math inline">\(\Phi(0.25) = 0.5987\)</span> and <span class="math inline">\(\Phi(0.30) = 0.6179\)</span>, to get
+<span class="math display">\[ \Phi(0.27) \approx 0.6 \,\Phi(0.25) + 0.4\, \Phi(0.30) = 0.6064 . \]</span></p>
+<p>Using R: <code>pnorm(0.27)</code> gives <code>0.6064199</code>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> Let <span class="math inline">\(X \sim \mathrm{Po}(25)\)</span>. Calculate the following <strong>(a)</strong> exactly, using R; <strong>(b)</strong> approximately, using a normal approximation with a continuity correction and <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a>. (For part (b), you should show enough working to convince a reader that you really did use the tables.)</p>
+<div class="subq">
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(X \leq 27)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Using R: <code>ppois(27, 25)</code> gives <code>0.7001861</code>.</p>
+<p>The approximation is <span class="math inline">\(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\)</span>. With a continuity correction, we have
+<span class="math display">\[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(X \geq 28 \mid X \geq 27)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By the definition of conditional probability, we have
+<span class="math display">\[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]</span>
+since if <span class="math inline">\(X \geq 28\)</span> it’s automatically the case that <span class="math inline">\(X \geq 27\)</span>.</p>
+<p>Using R, and remembering that <code>lower.tail = FALSE</code> gives <span class="math inline">\(\mathbb P(X &gt; x)\)</span> with strict inequality, the answer we want is</p>
+<p><code>ppois(27, 25, lower.tail = FALSE) / ppois(26, 25, lower.tail = FALSE)</code></p>
+<p>which gives <code>0.8089648</code>.</p>
+<p>The approximations are
+<span class="math display">\[\begin{align*}
+\mathbb P(Z \geq 28) &amp;\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
+\mathbb P(Z \geq 27) &amp;\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821
+\end{align*}\]</span>
+Giving the answer <span class="math inline">\(0.3085/0.3821 = 0.807\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B1.</strong>
+<strong>(a)</strong> Let <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Show that
+<span class="math display">\[ \mathbb P(X &gt; x + y \mid X &gt; y) = \mathbb P(X &gt; x) . \]</span></p>
+<div class="subq">
+<div class="myanswers">
+<p><em>Solution.</em><br />
+Using the definition of conditional probability, we have
+<span class="math display">\[\mathbb P(X &gt; x + y \mid X &gt; y) = \frac{\mathbb P(X &gt; x + y \text{ and } X &gt; y) }{\mathbb P(X &gt; y)}= \frac{\mathbb P(X &gt; x + y ) }{\mathbb P(X &gt; y)} , \]</span>
+since is <span class="math inline">\(X &gt; x + y\)</span> then we automatically have <span class="math inline">\(X &gt; y\)</span>.
+Note also that, for an exponential distribution we have
+<span class="math display">\[ \mathbb P(X &gt; x) = 1 - F(x) = 1 - (1 - \mathrm e^{-\lambda x}) = \mathrm e^{-\lambda x} . \]</span>
+So the left-hand side of the statement in the question is
+<span class="math display">\[ \frac{\mathrm{e}^{-\lambda(x + y)}}{\mathrm{e}^{-\lambda y}} = \mathrm e^{-\lambda x - \lambda y + \lambda y} = \mathrm{e}^{-\lambda x} , \]</span>
+which equals the right-hand side, by the above.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> The result proved in part (a) is called the “memoryless property”. Why do you think it’s called that?</p>
+<div class="myanswers">
+<p><em>Solution.</em> Think of <span class="math inline">\(X\)</span> as a waiting time. The result tells us that, given that we’ve already waited <span class="math inline">\(y\)</span> minutes, the probability that we have to wait at least another <span class="math inline">\(x\)</span> minutes is exactly the same as the probability we had to wait at least <span class="math inline">\(x\)</span> minutes starting from the beginning. In other words, <em>no matter when we start timing from</em>, the probability we have to wait more than <span class="math inline">\(x\)</span> minutes remains the same.</p>
+<p>This is called the “memoryless property” because it’s as if the process has no memory of how long we’ve already been waiting for.</p>
+<p>(This property also holds for the geometric distribution. The expected number of rolls of a dice until you get a six is always 6 rolls, no matter how many times you’ve already rolled the dice.)</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> When you get to certain bus stop, the average amount of time you have to wait for a bus to arrive is 20 minutes. Specifically, the time until the next bus arrives is modelled as an exponential distribution with expectation <span class="math inline">\(1/\lambda = 20\)</span> minutes. Suppose you have already been waiting at the bus stop for 15 minutes. What is the expected further amount of time you still have to wait for a bus to arrive?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By the memoryless property, it’s irrelevant how long we’ve been waiting for: the average time until a bus arrives is always <span class="math inline">\(1/\lambda = 20\)</span> minutes.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B2.</strong> The main dangerous radioactive material left over after the Chernobyl disaster is Caesium-137. The amount of time it takes a Caesium-137 particle to decay is known to follow an exponential distribution with rate <span class="math inline">\(\lambda = 0.023\)</span> years<sup>-1</sup>.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the average amount of time it takes a Caesium-137 particle to decay?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The expectation is <span class="math inline">\(1/lambda = 43.5\)</span> years.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> The “half-life” of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.</p>
+<div class="myanswers">
+<p><em>Solution.</em> The half-life is the solution <span class="math inline">\(x\)</span> to
+<span class="math display">\[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]</span>
+So
+<span class="math display">\[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The proportion of Caesium-137 still remaining is
+<span class="math display">\[ \mathbb P(X &gt; 35.6) = \mathrm e^{-0.023*35.6} = 0.441 , \]</span>
+so roughly <span class="math inline">\(24 \times 0.441 = 10.6\)</span> kg of Caesium-137 has still not decayed.</p>
+</div>
+</div>
+</div>
+<p>::::: {.myq}
+<strong>B3.</strong> Consider the pair of random variables <span class="math inline">\((X,Y)\)</span> with joint PDF
+<span class="math display">\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]</span>
+and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise. (In particular, note that the joint PDF is only nonzero when <span class="math inline">\(x \leq y\)</span>.)</p>
+<div class="subq">
+<p><strong>(a)</strong> Describe the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span>, for <span class="math inline">\(0 \leq y \leq 1\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> The conditional distribution is
+<span class="math display">\[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]</span>
+We know that <span class="math inline">\(f_{X,Y}(x,y) = 2\)</span> when <span class="math inline">\(0 \leq x \leq y\)</span> and is <span class="math inline">\(0\)</span> otherwise. So the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span> is continuous uniform on the interval <span class="math inline">\([0, y]\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is the marginal PDF <span class="math inline">\(f_X\)</span> of <span class="math inline">\(X\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> We have
+<span class="math display">\[ f_X(x) = \int_0^1 f_{X,Y}(x,y) \, \mathrm dy = \int_0^x 0 \, \mathrm dy \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
+<div class="myanswers">
+<p><em>Solution.</em> No. In the same way as part (b), the marginal PDF for <span class="math inline">\(Y\)</span> is <span class="math inline">\(f_Y(y) = 2y\)</span>. But it’s clear that <span class="math inline">\(f_{X,Y}(x,y) \neq 2(1 - x) \times 2y\)</span>. Take <span class="math inline">\(x = \frac34\)</span>, <span class="math inline">\(y = \frac14\)</span>, for example: <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span>, since <span class="math inline">\(x &gt; y\)</span>, but the product of the marginals is nonzero.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Engineers and scientists often use the rule of thumb “Only 5% of data is more than two sample standard deviations away from the sample mean.” Carefully justify this rule, using concepts from the module.</p>
+<div class="myanswers">
+<p><em>Solution.</em> By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data – especially that which is affected by the accumulation of numerous small effects – is approximately normally distributed.</p>
+<p>Write <span class="math inline">\(\mu\)</span> for the <em>true</em> expectation and <span class="math inline">\(\sigma^2\)</span> for the <em>true</em> variance of the population distribution <span class="math inline">\(X\)</span>. Then the amount of data that is within two true-standard-deviations of the true-expectation is
+<span class="math display">\[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]</span>
+Using standardisation, this is
+<span class="math display">\[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]</span>
+Using R or statistical tables, this is
+<span class="math display">\[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]</span>
+So only <span class="math inline">\(1 - 0.9545 = 0.0455\)</span>, or approximately 5%, of data is more than two true-standard-deviations away from the true-expectation.</p>
+<p>Finally, the law of large numbers tells us that, provided a large number of datapoints <span class="math inline">\(n\)</span> are collected, the sample mean <span class="math inline">\(\bar x\)</span> and the sample standard deviation <span class="math inline">\(s_x\)</span> will be very close to the true expectation <span class="math inline">\(\mu\)</span> and the true standard deviation <span class="math inline">\(\sigma\)</span> respectively, so we can replace the latter with the former in our calculation.s</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The number of Heads in <span class="math inline">\(n\)</span> coin tosses is <span class="math inline">\(X \sim \mathrm{Bin}(n, \frac12)\)</span>, which is approximately <span class="math inline">\(Y \sim \mathrm{N}(\frac n2, \frac n4)\)</span>. We want to choose <span class="math inline">\(n\)</span> such that
+<span class="math display">\[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]</span></p>
+<p>Standardising, this is
+<span class="math display">\[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]</span>
+Since the normal distribution is symmetric, we want
+<span class="math display">\[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]</span>
+From Table 2 of the statistical tables, or by the R command <code>qnorm(0.975)</code>, this requires
+<span class="math inline">\(0.01\sqrt{n} = 1.960\)</span>, which is <span class="math inline">\(n \approx 9600\)</span>.</p>
+<p>So if we toss 10,000 coins, there’s about a 95% chance we get between 4900 and 5100 Heads.</p>
 </div>
 </div>
 

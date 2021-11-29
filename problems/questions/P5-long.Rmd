@@ -3,20 +3,39 @@
 **(a)** Let $X \sim \text{Exp}(\lambda)$. Show that
 \[ \mathbb P(X > x + y \mid X > y) = \mathbb P(X > x) . \]
 
+:::: {.subq}
 ::: {.myanswers data-latex=""}
-*Solution.* 
+*Solution.*  
+Using the definition of conditional probability, we have
+\[\mathbb P(X > x + y \mid X > y) = \frac{\mathbb P(X > x + y \text{ and } X > y) }{\mathbb P(X > y)}= \frac{\mathbb P(X > x + y ) }{\mathbb P(X > y)} , \]
+since is $X > x + y$ then we automatically have $X > y$.
+Note also that, for an exponential distribution we have
+\[ \mathbb P(X > x) = 1 - F(x) = 1 - (1 - \mathrm e^{-\lambda x}) = \mathrm e^{-\lambda x} . \]
+So the left-hand side of the statement in the question is
+\[ \frac{\mathrm{e}^{-\lambda(x + y)}}{\mathrm{e}^{-\lambda y}} = \mathrm e^{-\lambda x - \lambda y + \lambda y} = \mathrm{e}^{-\lambda x} , \]
+which equals the right-hand side, by the above.
+:::
 :::
 
 :::: {.subq}
 **(b)** The result proved in part (a) is called the "memoryless property". Why do you think it's called that?
 
 ::: {.myanswers data-latex=""}
-*Solution.* 
+*Solution.* Think of $X$ as a waiting time. The result tells us that, given that we've already waited $y$ minutes, the probability that we have to wait at least another $x$ minutes is exactly the same as the probability we had to wait at least $x$ minutes starting from the beginning. In other words, *no matter when we start timing from*, the probability we have to wait more than $x$ minutes remains the same.
+
+This is called the "memoryless property" because it's as if the process has no memory of how long we've already been waiting for.
+
+(This property also holds for the geometric distribution. The expected number of rolls of a dice until you get a six is always 6 rolls, no matter how many times you've already rolled the dice.)
 :::
 ::::
 
 :::: {.subq}
 **(c)** When you get to certain bus stop, the average amount of time you have to wait for a bus to arrive is 20 minutes. Specifically, the time until the next bus arrives is modelled as an exponential distribution with expectation $1/\lambda = 20$ minutes. Suppose you have already been waiting at the bus stop for 15 minutes. What is the expected further amount of time you still have to wait for a bus to arrive?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+By the memoryless property, it's irrelevant how long we've been waiting for: the average time until a bus arrives is always $1/\lambda = 20$ minutes.
+:::
 ::::
 :::::
 
@@ -27,7 +46,7 @@
 **(a)** What is the average amount of time it takes a Caesium-137 particle to decay?
 
 ::: {.myanswers data-latex=""}
-*Solution.* 
+*Solution.* The expectation is $1/lambda = 43.5$ years.
 :::
 ::::
 
@@ -35,7 +54,10 @@
 **(b)** The "half-life" of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.
 
 ::: {.myanswers data-latex=""}
-*Solution.*  What is $\mathbb P(2 \leq x \leq 4)$?
+*Solution.*  The half-life is the solution $x$ to
+\[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]
+So
+\[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]
 :::
 ::::
 
@@ -43,7 +65,9 @@
 **(c)** It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed? 
 
 ::: {.myanswers data-latex=""}
-*Solution.* ${\displaystyle \Var(X) = \frac{1 - 0.2}{0.2^2} = 20}$.
+*Solution.* The proportion of Caesium-137 still remaining is
+\[ \mathbb P(X > 35.6) = \mathrm e^{-0.023*35.6} = 0.441 , \]
+so roughly $24 \times 0.441 = 10.6$ kg of Caesium-137 has still not decayed.
 :::
 ::::
 :::::
@@ -55,13 +79,19 @@ and $f_{X,Y}(x,y) = 0$ otherwise. (In particular, note that the joint PDF is onl
 
 :::: {.subq}
 **(a)** Describe the conditional distribution of $X$ given $Y = y$, for $0 \leq y \leq 1$.
+
+::: {.myanswers data-latex=""}
+*Solution.* The conditional distribution is
+\[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]
+We know that $f_{X,Y}(x,y) = 2$ when $0 \leq x \leq y$ and is $0$ otherwise. So the conditional distribution of $X$ given $Y = y$ is continuous uniform on the interval $[0, y]$. 
 ::::
 
 :::: {.subq}
 **(b)** What is the marginal PDF $f_X$ of $X$?
 
 ::: {.myanswers data-latex=""}
-*Solution.*
+*Solution.* We have
+\[ f_X(x) = \int_0^1 f_{X,Y}(x,y) \, \mathrm dy = \int_0^x 0 \, \mathrm dy \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]
 :::
 ::::
 
@@ -69,15 +99,44 @@ and $f_{X,Y}(x,y) = 0$ otherwise. (In particular, note that the joint PDF is onl
 **(c)** Are $X$ and $Y$ independent?
 
 ::: {.myanswers data-latex=""}
-*Solution.*
+*Solution.* No. In the same way as part (b), the marginal PDF for $Y$ is $f_Y(y) = 2y$. But it's clear that $f_{X,Y}(x,y) \neq 2(1 - x) \times 2y$. Take $x = \frac34$, $y = \frac14$, for example: $f_{X,Y}(x,y) = 0$, since $x > y$, but the product of the marginals is nonzero.
 :::
 ::::
 :::::
 
 ::::: {.myq}
-**B4.** Engineers and scientists often use the rule of thumb "Only 5% of data is more than two standard deviations away from the mean." Carefully justify this rule, using concepts from the module.
+**B4.** Engineers and scientists often use the rule of thumb "Only 5% of data is more than two sample standard deviations away from the sample mean." Carefully justify this rule, using concepts from the module.
+
+::: {.myanswers data-latex=""}
+*Solution.* By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data -- especially that which is affected by the accumulation of numerous small effects -- is approximately normally distributed.
+
+Write $\mu$ for the *true* expectation and $\sigma^2$ for the *true* variance of the population distribution $X$. Then the amount of data that is within two true-standard-deviations of the true-expectation is
+\[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]
+Using standardisation, this is
+\[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]
+Using R or statistical tables, this is
+\[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]
+So only $1 - 0.9545 = 0.0455$, or approximately 5%, of data is more than two true-standard-deviations away from the true-expectation.
+
+Finally, the law of large numbers tells us that, provided a large number of datapoints $n$ are collected, the sample mean $\bar x$ and the sample standard deviation $s_x$ will be very close to the true expectation $\mu$ and the true standard deviation $\sigma$ respectively, so we can replace the latter with the former in our calculation.s
+:::
 :::::
 
 ::::: {.myq}
 **B5.** Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+The number of Heads in $n$ coin tosses is $X \sim \mathrm{Bin}(n, \frac12)$, which is approximately $Y \sim \mathrm{N}(\frac n2, \frac n4)$. We want to choose $n$ such that
+\[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]
+
+Standardising, this is
+\[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]
+Since the normal distribution is symmetric, we want
+\[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]
+From Table 2 of the statistical tables, or by the R command `qnorm(0.975)`, this requires
+$0.01\sqrt{n} = 1.960$, which is $n \approx 9600$.
+
+So if we toss 10,000 coins, there's about a 95% chance we get between 4900 and 5100 Heads.
+:::
 :::::

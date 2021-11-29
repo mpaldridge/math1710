@@ -1,0 +1,40 @@
+:::: {.myq}
+**1.** A want to use a prior distribution for a parameter $\theta$ whose range is the interval $[0,1]$, whose expectation is $0.4$ and whose standard deviation is $0.2$. Suggest an appropriate distribution.
+::::
+
+:::: {.myq}
+**2.** My data is modelled as having a $\text{Bern}(\theta)$ likelihood, and I plan to record 10 IID observations. I choose to use a $\text{Beta}(1,4)$ prior.
+
+::: {.subq}
+**(a)** What is the prior expectation and variance?
+:::
+
+::: {.subq}
+**(b)** Suppose my data records 2 successes and 8 failures. What is the posterior expectation and variance?
+:::
+
+::: {.subq}
+**(c)** Suppose my data records 5 successes and 5 failures. What is the posterior expectation and variance?
+:::
+
+::: {.subq}
+**(d)** Briefly comment on these results.
+:::
+::::
+
+:::: {.myq}
+**3.** **(a)** My data is modelled as a single data point with a $\text{Geom}(\theta)$ likelihood, so
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+
+::: {.subq}
+I use a $\text{Beta}(\alpha,\beta)$ prior for $\theta$. Show that the posterior distribution is $\text{Beta}(\alpha + 1, \beta + x - 1)$.
+:::
+
+::: {.subq}
+**(b)** I instead choose to collect $n$ IID data points, using the same geometric likelihood and Beta prior. Show that the posterior distribution is a Beta distribution, and state the parameters,
+:::
+
+::: {.subq}
+**(c)** Compare your results to that of the Beta--Bernoulli model, and briefly comment.
+:::
+::::

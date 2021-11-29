@@ -1,0 +1,22 @@
+# Problem Sheet 6 {#P6 .unnumbered}
+
+
+
+
+<style>
+.myanswers { 
+display: none !important;
+}
+</style>
+
+
+
+\commfalse
+
+
+::: {.mysummary}
+This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of [Section 10](#S10-bayesian). There is no assessed work on this sheet.
+:::
+
+```{r, child = "problems/questions/P6-qs.Rmd"}
+```

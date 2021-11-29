@@ -9,7 +9,33 @@ and $f(x) = 0$ otherwise.
 **(a)** Calculate the CDF for $X$.
 
 ::: {.myanswers data-latex=""}
-*Solution.* 
+*Solution.* We treat the different cases separately.
+
+For $x < 0$, we have $F(x) = 0$.
+
+For $0 \leq x \leq 1$, we have
+\[ F(x) = \int_0^x \tfrac12 y \, \mathrm dy = \left[\tfrac14y^2\right]_0^x = \tfrac14 x^2 .\]
+In particular, $F(1) = \frac14$.
+
+For $1 < x \leq 2$, we have
+\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(1) + \int_1^y \tfrac12 \, \mathrm dy = \tfrac14 + \left[ \tfrac 12 y\right]_1^x = \tfrac12 x - \tfrac14 .\]
+In particular, $F(2) = \frac34$.
+
+For $2 < x \leq 3$, we have
+\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(2) + \int_2^y \left(\tfrac32 - \tfrac12y\right) \, \mathrm dy = \tfrac34 + \left[ \tfrac 32 y - \tfrac14 y^2\right]_2^x = \tfrac32 x - \tfrac14 x^2 - \tfrac 54 .\]
+In particular, $F(3) = 1$.
+
+For $x > 3$, we have $F(x) = 1$.
+
+Hence,
+\[ F(x) = \begin{cases}
+0 & \text{for $x < 0$} \\
+\tfrac14 x^2 & \text{for $0 \leq x \leq 1$} \\
+\tfrac12 x - \tfrac14 & \text{for $1 < x \leq 2$} \\
+\tfrac32 x - \tfrac14 x^2 - \tfrac 54 & \text{for $2 < x \leq 3$} \\
+1 & \text{for $x > 3$.}
+\end{cases}
+\]
 :::
 ::::
 
@@ -17,12 +43,26 @@ and $f(x) = 0$ otherwise.
 **(b)** What is $\mathbb P(\tfrac32 \leq X \leq \tfrac52)$?
 
 ::: {.myanswers data-latex=""}
-*Solution.* 
+*Solution.* This is
+\[ F\big(\tfrac52\big) - F\big(\tfrac32\big) = \tfrac{15}{16} - \tfrac12 = \tfrac{5}{16} .\]
+(Here, it was useful to note that $x = \tfrac52$ is in the $2 < x \leq 3$ range and $x = \tfrac32$ is in the $1 < x \leq 2$ range.)
 :::
 ::::
 
 :::: {.subq}
 **(c)** Calculate the expectation $\mathbb EX$.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+We have
+\begin{align*}
+\mathbb EX &= \int_{-\infty}^{\infty} x\,f(x)\, \mathrm dx \\
+  &= \int_0^1 x\times\tfrac12x\, \mathrm dx + \int_1^2 x \times \tfrac12 \, \mathrm dx + \int_2^3 x \times \left(\tfrac32 - \tfrac12 x\right)\, \mathrm dx \\
+  &= \left[\tfrac16 x^3 \right]_0^1 + \left[\tfrac14 x^2 \right]_1^2 + \left[\tfrac34 x^2 - \tfrac16 x^3 \right]_2^3 \\
+  &= \tfrac16 - 0 + 1 - \tfrac14 + \tfrac94 - \tfrac53 \\
+  &= \tfrac32 .
+\end{align*}
+:::
 ::::
 :::::
 
@@ -35,7 +75,9 @@ and $f(x) = 0$ otherwise.
 **(a)** What value of $k$ makes this into a true PDF?
 
 ::: {.myanswers data-latex=""}
-*Solution.* 
+*Solution.* We need the PDF to integrate to 1. So
+\[ 1 = \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_1^\infty kx^{-3} \, \mathrm dx = \left[-\tfrac 12 kx^{-2}\right]_1^\infty = - 0 + \tfrac12k . \]
+So $k = 2$.
 :::
 ::::
 
@@ -43,7 +85,8 @@ and $f(x) = 0$ otherwise.
 **(b)** What is $\mathbb P(X \geq 3)$?
 
 ::: {.myanswers data-latex=""}
-*Solution.*  What is $\mathbb P(2 \leq x \leq 4)$?
+*Solution.*  This is
+\[ \mathbb P(X \geq 3) = \int_3^\infty 2x^{-3}\,\mathrm dx = \left[-x^{-2}\right]_3^\infty = \tfrac19 .  \]
 :::
 ::::
 
@@ -51,7 +94,8 @@ and $f(x) = 0$ otherwise.
 **(c)** What is the expected value $\mathbb EX$?
 
 ::: {.myanswers data-latex=""}
-*Solution.* ${\displaystyle \Var(X) = \frac{1 - 0.2}{0.2^2} = 20}$.
+*Solution.* This is
+\[ \mathbb EX = \int_1^\infty x\times 2x^{-3} \mathrm dx = \left[2x^{-1}\right]_1^\infty = 2 . \]
 :::
 ::::
 :::::
@@ -61,13 +105,18 @@ and $f(x) = 0$ otherwise.
 
 :::: {.subq}
 **(a)** What is $\mathbb EX$?
+
+::: {.myanswers data-latex=""}
+*Solution.* $\mathbb EX = \displaystyle\frac{1}{\frac12} = 2$
+:::
 ::::
 
 :::: {.subq}
 **(b)** What is $\mathbb P(1 \leq X \leq 3)$?
 
 ::: {.myanswers data-latex=""}
-*Solution.*
+*Solution.* We have
+\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm e^{-3/2}) - (1 - \mathrm e^{-1/2}) = 0.383 . \]
 :::
 ::::
 :::::
@@ -77,14 +126,35 @@ and $f(x) = 0$ otherwise.
 
 :::: {.subq}
 **(i)** $\mathbb P(Z \leq -1.2)$
+
+::: {.myanswers data-latex=""}
+*Solution.* Using statistical tables,
+\[ \Phi(-1.2) = 1 - \Phi(1.20) = 1 - 0.8849 = 0.1151 .\]
+
+Using R: `pnorm(-1.2)` gives `0.1150697`.
+:::
 ::::
 
 ::::  {.subq}
 **(ii)** $\mathbb P(-1.2 \leq Z \leq 0.8)$
+
+::: {.myanswers data-latex=""}
+*Solution.* Using statistical tables, and part (i),
+\[ \Phi(0.80) - \Phi(-1.2) = 0.7781 - 0.1151 = 0.6730 . \]
+
+Using R: `pnorm(0.8) - pnorm(-1.2)` gives `0.6730749`.
+:::
 ::::
 
 :::: {.subq}
 **(iii)** $\mathbb P(Z \leq 0.27)$ (using interpolation for part (a))
+
+::: {.myanswers data-latex=""}
+*Solution.* We can interpolate between $\Phi(0.25) = 0.5987$ and $\Phi(0.30) = 0.6179$, to get
+\[ \Phi(0.27) \approx 0.6 \,\Phi(0.25) + 0.4\, \Phi(0.30) = 0.6064 . \]
+
+Using R: `pnorm(0.27)` gives `0.6064199`.
+:::
 ::::
 :::::
 
@@ -93,9 +163,37 @@ and $f(x) = 0$ otherwise.
 
 :::: {.subq}
 **(i)** $\mathbb P(X \leq 27)$
+
+::: {.myanswers data-latex=""}
+*Solution.*
+Using R: `ppois(27, 25)` gives `0.7001861`.
+
+The approximation is $X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)$. With a continuity correction, we have
+\[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]
+:::
 ::::
 
 ::::  {.subq}
 **(ii)** $\mathbb P(X \geq 28 \mid X \geq 27)$
+
+::: {.myanswers data-latex=""}
+*Solution.*
+By the definition of conditional probability, we have
+\[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]
+since if $X \geq 28$ it's automatically the case that $X \geq 27$.
+
+Using R, and remembering that `lower.tail = FALSE` gives $\mathbb P(X > x)$ with strict inequality, the answer we want is
+
+`ppois(27, 25, lower.tail = FALSE) / ppois(26, 25, lower.tail = FALSE)`
+
+which gives `0.8089648`.
+
+The approximations are
+\begin{align*}
+\mathbb P(Z \geq 28) &\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
+\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821
+\end{align*}
+Giving the answer $0.3085/0.3821 = 0.807$.
+:::
 ::::
 :::::

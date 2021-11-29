@@ -282,6 +282,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
+<li class="chapter" data-level="10" data-path="S10-bayesian.html"><a href="S10-bayesian.html"><i class="fa fa-check"></i><b>10</b> Introduction to Bayesian statistics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="S10-bayesian.html"><a href="S10-bayesian.html#fake-coin"><i class="fa fa-check"></i><b>10.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="10.2" data-path="S10-bayesian.html"><a href="S10-bayesian.html#bayesian-framework"><i class="fa fa-check"></i><b>10.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="10.3" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta"><i class="fa fa-check"></i><b>10.3</b> Beta distribution</a></li>
+<li class="chapter" data-level="10.4" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta-bern"><i class="fa fa-check"></i><b>10.4</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="10.5" data-path="S10-bayesian.html"><a href="S10-bayesian.html#normal-normal"><i class="fa fa-check"></i><b>10.5</b> Normal–normal model</a></li>
+<li class="chapter" data-level="10.6" data-path="S10-bayesian.html"><a href="S10-bayesian.html#modern-bayes"><i class="fa fa-check"></i><b>10.6</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="S10-bayesian.html"><a href="S10-bayesian.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -297,6 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -330,7 +343,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p>There’s one very important distribution we need to talk about, which is the so-called “normal” (or “Gaussian”) distribution.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-102" class="definition"><strong>Definition 9.1  </strong></span>If <span class="math inline">\(X\)</span> is a continuous random variable with PDF
+<p><span id="def:unlabeled-div-101" class="definition"><strong>Definition 9.1  </strong></span>If <span class="math inline">\(X\)</span> is a continuous random variable with PDF
 <span class="math display">\[ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right) , \]</span>
 then we say that <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2 &gt; 0\)</span>, and write <span class="math inline">\(X \sim \mathrm N(\mu,\sigma^2)\)</span>.</p>
 </div>
@@ -380,7 +393,7 @@ In fact, it can be shown that <span class="math inline">\(aX + b\)</span> is nor
 In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as “standardisation” and will be useful later.</p>
 <p>We can also use standardisation to help us prove Theorem <a href="S09-normal.html#thm:norm-prop">9.1</a>.</p>
 <div class="proof">
-<p><span id="unlabeled-div-103" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> By using standardisation, it suffices to prove the theorem for a standard normal random variable <span class="math inline">\(X \sim \mathrm{N}(0,1)\)</span>.</p>
+<p><span id="unlabeled-div-102" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> By using standardisation, it suffices to prove the theorem for a standard normal random variable <span class="math inline">\(X \sim \mathrm{N}(0,1)\)</span>.</p>
 <p>For part 1, we need to show that
 <span class="math display">\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]</span>
 To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself <span class="math inline">\(I\)</span>, we can instead calculate the square of the integral <span class="math inline">\(I^2\)</span>, which we also need to show is equal to 1. This is
@@ -416,7 +429,7 @@ But this integral on the right is just the integral <span class="math inline">\(
 </div>
 <p>There is one last property of the normal distribution that we won’t use directly in this module, but is perhaps worth knowing anyway.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-104" class="theorem"><strong>Theorem 9.2  </strong></span>If <span class="math inline">\(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\)</span> and <span class="math inline">\(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\)</span> are independent, then
+<p><span id="thm:unlabeled-div-103" class="theorem"><strong>Theorem 9.2  </strong></span>If <span class="math inline">\(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\)</span> and <span class="math inline">\(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\)</span> are independent, then
 <span class="math display">\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]</span></p>
 </div>
 </div>
@@ -593,7 +606,7 @@ by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma
 <li>A sum <span class="math inline">\(Y = X_1 + \cdots + X_n\)</span> of <span class="math inline">\(n\)</span> IID exponential distributions <span class="math inline">\(X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)\)</span> (sometimes known as a “Gamma” distribution) is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(n/\lambda, n/\lambda^2)\)</span> when the expectation <span class="math inline">\(1/\lambda\)</span> is not too small.</li>
 </ul>
 <div class="example">
-<p><span id="exm:unlabeled-div-105" class="example"><strong>Example 9.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
+<p><span id="exm:unlabeled-div-104" class="example"><strong>Example 9.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
 <p>The true distribution of Heads is <span class="math inline">\(X \sim \mathrm{Bin}(1000, \frac12)\)</span>, and the question wants
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]</span>
 We can calculate the exact answer using R:</p>

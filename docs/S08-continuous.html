@@ -282,6 +282,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
+<li class="chapter" data-level="10" data-path="S10-bayesian.html"><a href="S10-bayesian.html"><i class="fa fa-check"></i><b>10</b> Introduction to Bayesian statistics</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="S10-bayesian.html"><a href="S10-bayesian.html#fake-coin"><i class="fa fa-check"></i><b>10.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="10.2" data-path="S10-bayesian.html"><a href="S10-bayesian.html#bayesian-framework"><i class="fa fa-check"></i><b>10.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="10.3" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta"><i class="fa fa-check"></i><b>10.3</b> Beta distribution</a></li>
+<li class="chapter" data-level="10.4" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta-bern"><i class="fa fa-check"></i><b>10.4</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="10.5" data-path="S10-bayesian.html"><a href="S10-bayesian.html#normal-normal"><i class="fa fa-check"></i><b>10.5</b> Normal–normal model</a></li>
+<li class="chapter" data-level="10.6" data-path="S10-bayesian.html"><a href="S10-bayesian.html#modern-bayes"><i class="fa fa-check"></i><b>10.6</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="S10-bayesian.html"><a href="S10-bayesian.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -297,6 +309,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -350,7 +363,7 @@ for some non-negative function <span class="math inline">\(f_X\)</span>. The fun
 <p>In other words, the probability that <span class="math inline">\(X\)</span> is between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the area under the curve of the PDF on that interval.</p>
 <p>As with PMFs, when it’s obvious what random variable we’re dealing with, we omit the subscript <span class="math inline">\(X\)</span> on the PDF <span class="math inline">\(f_X\)</span>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 8.1  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
+<p><span id="exm:unifex" class="example"><strong>Example 8.1  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
 <span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} \]</span>
 and <span class="math inline">\(f(x) = 0\)</span> otherwise. This represents a random number between 0 and 1, where the intensity of the probability is equal across the whole interval. This is known as a <strong>continuous uniform distribution</strong>.</p>
 <p><img src="math1710_files/figure-html/contunif-pdf-1.png" width="672" /></p>
@@ -441,7 +454,7 @@ But this time we have to be careful, because <span class="math inline">\(f(y)\)<
 </table>
 <p>Note, however, one property that doesn’t follow through: Because, for a PMF, <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> represented a probability, we had <span class="math inline">\(p(x) \leq 1\)</span> for all <span class="math inline">\(x\)</span>. However, because, for a PDF, <span class="math inline">\(f(x)\)</span> only represents intensity of probability, there’s no contradiction to having <span class="math inline">\(f(x) &gt; 1\)</span> (although keeping the integral to 1 means that we can’t have <span class="math inline">\(f(x) &gt; 1\)</span> too much). So <span class="math inline">\(f(x) = 10\)</span> for <span class="math inline">\(0 &lt;x &lt; 0.1\)</span> and <span class="math inline">\(f(x) = 0\)</span> otherwise is a perfectly legitimate PDF, for example.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-95" class="example"><strong>Example 8.3  </strong></span>Let’s return to the case where <span class="math inline">\(X\)</span> be a continuous uniform distribution, with
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 8.3  </strong></span>Let’s return to the case where <span class="math inline">\(X\)</span> be a continuous uniform distribution, with
 <span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} . \]</span>
 Let’s go through the properties from the table above.</p>
 <p>First, it’s clear that <span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</p>
@@ -461,7 +474,7 @@ So, using the computational formula, we have
 <span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = \tfrac13 - \left(\tfrac12\right)^2 = \tfrac13 - \tfrac14 = \tfrac{1}{12} . \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-96" class="example"><strong>Example 8.4  </strong></span>Let’s also return to the “triangular” PDF from Example <a href="S08-continuous.html#exm:pdf2">8.2</a>,
+<p><span id="exm:unlabeled-div-95" class="example"><strong>Example 8.4  </strong></span>Let’s also return to the “triangular” PDF from Example <a href="S08-continuous.html#exm:pdf2">8.2</a>,
 <span class="math display">\[ f(y) = \begin{cases} y &amp; \text{for $0 \leq y \leq 1$} \\
 2-y &amp; \text{for $1 &lt; y \leq 2$}. \end{cases} \]</span>
 We’ll just do the CDF and the expectation. (You can do the others yourself, if you like.)</p>
@@ -506,18 +519,18 @@ Hence, the CDF is
 </div>
 <p>An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-97" class="definition"><strong>Definition 8.2  </strong></span>A continuous random variable <span class="math inline">\(X\)</span> is said to have the <strong>exponential distribution with rate <span class="math inline">\(\lambda &gt; 0\)</span></strong> if it has the PDF
+<p><span id="def:unlabeled-div-96" class="definition"><strong>Definition 8.2  </strong></span>A continuous random variable <span class="math inline">\(X\)</span> is said to have the <strong>exponential distribution with rate <span class="math inline">\(\lambda &gt; 0\)</span></strong> if it has the PDF
 <span class="math display">\[ f(x) = \lambda \mathrm{e}^{-\lambda x} \qquad \text{for $x \geq 0$}, \]</span>
 and 0 otherwise. We write <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>.</p>
 </div>
 <p><img src="math1710_files/figure-html/exp-pic-1.png" width="672" /></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-98" class="example"><strong>Example 8.5  </strong></span><em>The length of time a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate <span class="math inline">\(\lambda = 2\)</span> years<sup>-1</sup>. What is the probability the lightbulb needs replacing within a year?</em></p>
+<p><span id="exm:unlabeled-div-97" class="example"><strong>Example 8.5  </strong></span><em>The length of time a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate <span class="math inline">\(\lambda = 2\)</span> years<sup>-1</sup>. What is the probability the lightbulb needs replacing within a year?</em></p>
 <p>If <span class="math inline">\(X \sim \text{Exp}(2)\)</span> is the lifetime of the lightbulb, we seek <span class="math inline">\(\mathbb P(X \leq 1)\)</span>. This is
 <span class="math display">\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-99" class="theorem"><strong>Theorem 8.1  </strong></span>Suppose <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Then:</p>
+<p><span id="thm:unlabeled-div-98" class="theorem"><strong>Theorem 8.1  </strong></span>Suppose <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Then:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(f\)</span> is indeed a PDF, in that <span class="math inline">\(\displaystyle\int_0^\infty f(x)\,\mathrm{d}x = 1\)</span>;</li>
 <li>the CDF of <span class="math inline">\(X\)</span> is <span class="math inline">\(F(x) = 1 - \mathrm{e}^{-\lambda x}\)</span>;</li>
@@ -526,7 +539,7 @@ and 0 otherwise. We write <span class="math inline">\(X \sim \text{Exp}(\lambda)
 </ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-100" class="proof"><em>Proof</em>. </span>For part 1,
+<p><span id="unlabeled-div-99" class="proof"><em>Proof</em>. </span>For part 1,
 <span class="math display">\[ \int_0^\infty \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x
      = \big[-\mathrm{e}^{-\lambda x} \big]_0^\infty = -0 -(-1) = 1 . \]</span></p>
 <p>Similarly for part 2,
@@ -596,7 +609,7 @@ Hence
 </tbody>
 </table>
 <div class="example">
-<p><span id="exm:unlabeled-div-101" class="example"><strong>Example 8.6  </strong></span>Consider the pair of continuous random variable <span class="math inline">\((X,Y)\)</span> with joint PDF
+<p><span id="exm:unlabeled-div-100" class="example"><strong>Example 8.6  </strong></span>Consider the pair of continuous random variable <span class="math inline">\((X,Y)\)</span> with joint PDF
 <span class="math display">\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]</span>
 and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise.</p>
 <p>We get the marginal distribution for <span class="math inline">\(X\)</span> by integrating over <span class="math inline">\(y\)</span>, so
