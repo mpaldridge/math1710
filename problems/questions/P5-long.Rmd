@@ -83,7 +83,8 @@ and $f_{X,Y}(x,y) = 0$ otherwise. (In particular, note that the joint PDF is onl
 ::: {.myanswers data-latex=""}
 *Solution.* The conditional distribution is
 \[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]
-We know that $f_{X,Y}(x,y) = 2$ when $0 \leq x \leq y$ and is $0$ otherwise. So the conditional distribution of $X$ given $Y = y$ is continuous uniform on the interval $[0, y]$. 
+We know that $f_{X,Y}(x,y) = 2$ when $0 \leq x \leq y$ and is $0$ otherwise. So the conditional distribution of $X$ given $Y = y$ is continuous uniform on the interval $[0, y]$.
+:::
 ::::
 
 :::: {.subq}
