@@ -168,7 +168,7 @@ Using R: `pnorm(0.27)` gives `0.6064199`.
 *Solution.*
 Using R: `ppois(27, 25)` gives `0.7001861`.
 
-The approximation is $X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)$. With a continuity correction, we have
+The approximation is $X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)$. With a continuity correction, we expand the interval $(-\infty,27]$ outwards to $(-\infty, 27.5]$, and get
 \[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]
 :::
 ::::
@@ -182,7 +182,7 @@ By the definition of conditional probability, we have
 \[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]
 since if $X \geq 28$ it's automatically the case that $X \geq 27$.
 
-Using R, and remembering that `lower.tail = FALSE` gives $\mathbb P(X > x)$ with strict inequality, the answer we want is
+Using R, we need to remember that `lower.tail = FALSE` gives $\mathbb P(X > x)$ with strict inequality, which for discrete random variables is equivalent to $\mathbb P(X \geq x +1)$. So we actually want
 
 `ppois(27, 25, lower.tail = FALSE) / ppois(26, 25, lower.tail = FALSE)`
 
@@ -191,9 +191,10 @@ which gives `0.8089648`.
 The approximations are
 \begin{align*}
 \mathbb P(Z \geq 28) &\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
-\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821
+\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821 ,
 \end{align*}
-Giving the answer $0.3085/0.3821 = 0.807$.
+where again we used the continuity correct to expand $[28,\infty)$ outwards to $[27.5,\infty)$ and the same for $[27,\infty)$. This
+gives the answer $0.3085/0.3821 = 0.807$.
 :::
 ::::
 :::::

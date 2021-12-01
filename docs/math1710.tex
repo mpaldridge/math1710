@@ -5859,7 +5859,7 @@ Using R: \texttt{pnorm(0.27)} gives \texttt{0.6064199}.
 \emph{Solution.}
 Using R: \texttt{ppois(27,\ 25)} gives \texttt{0.7001861}.
 
-The approximation is \(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\). With a continuity correction, we have
+The approximation is \(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\). With a continuity correction, we expand the interval \((-\infty,27]\) outwards to \((-\infty, 27.5]\), and get
 \[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]
 
 \end{myanswers}
@@ -5872,7 +5872,7 @@ By the definition of conditional probability, we have
 \[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]
 since if \(X \geq 28\) it's automatically the case that \(X \geq 27\).
 
-Using R, and remembering that \texttt{lower.tail\ =\ FALSE} gives \(\mathbb P(X > x)\) with strict inequality, the answer we want is
+Using R, we need to remember that \texttt{lower.tail\ =\ FALSE} gives \(\mathbb P(X > x)\) with strict inequality, which for discrete random variables is equivalent to \(\mathbb P(X \geq x +1)\). So we actually want
 
 \texttt{ppois(27,\ 25,\ lower.tail\ =\ FALSE)\ /\ ppois(26,\ 25,\ lower.tail\ =\ FALSE)}
 
@@ -5881,9 +5881,10 @@ which gives \texttt{0.8089648}.
 The approximations are
 \begin{align*}
 \mathbb P(Z \geq 28) &\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
-\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821
+\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821 ,
 \end{align*}
-Giving the answer \(0.3085/0.3821 = 0.807\).
+where again we used the continuity correct to expand \([28,\infty)\) outwards to \([27.5,\infty)\) and the same for \([27,\infty)\). This
+gives the answer \(0.3085/0.3821 = 0.807\).
 
 \end{myanswers}
 
@@ -5939,7 +5940,7 @@ By the memoryless property, it's irrelevant how long we've been waiting for: the
 \textbf{(b)} The ``half-life'' of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.
 
 \begin{myanswers}
-\emph{Solution.} The half-life is the solution \(x\) to
+\emph{Solution.} The half-life is the median of the distribution; that is, the solution \(x\) to
 \[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]
 So
 \[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]
@@ -5962,24 +5963,35 @@ and \(f_{X,Y}(x,y) = 0\) otherwise. (In particular, note that the joint PDF is o
 \textbf{(a)} Describe the conditional distribution of \(X\) given \(Y = y\), for \(0 \leq y \leq 1\).
 
 \begin{myanswers}
-\emph{Solution.} The conditional distribution is
+\emph{Solution.} Fix \(y\). The conditional distribution is
 \[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]
 We know that \(f_{X,Y}(x,y) = 2\) when \(0 \leq x \leq y\) and is \(0\) otherwise. So the conditional distribution of \(X\) given \(Y = y\) is continuous uniform on the interval \([0, y]\).
+
+If we want to check the denominator \(f_Y(y)\) too, we can check that
+\[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]
+so the conditional PDF is indeed \(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\) for \(0 \leq x \leq y\).
+
+(In the online/video tutorial, I tried to explain this by drawing a graph in the \((x,y)\) plain of where \(f_{X,Y}(x,y)\) is 2 or 0, then drawing a horizontal line across it at \(y\) to demonstrate the conditional distribution. I'm not sure how clear this made things\ldots)
 
 \end{myanswers}
 
 \textbf{(b)} What is the marginal PDF \(f_X\) of \(X\)?
 
 \begin{myanswers}
-\emph{Solution.} We have
-\[ f_X(x) = \int_0^1 f_{X,Y}(x,y) \, \mathrm dy = \int_0^x 0 \, \mathrm dy \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]
+\emph{Solution.} Again the key is that the joint PDF is only nonzero when \(y \geq x\) but \(y \leq 1\). So
+\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]
 
 \end{myanswers}
 
 \textbf{(c)} Are \(X\) and \(Y\) independent?
 
 \begin{myanswers}
-\emph{Solution.} No.~In the same way as part (b), the marginal PDF for \(Y\) is \(f_Y(y) = 2y\). But it's clear that \(f_{X,Y}(x,y) \neq 2(1 - x) \times 2y\). Take \(x = \frac34\), \(y = \frac14\), for example: \(f_{X,Y}(x,y) = 0\), since \(x > y\), but the product of the marginals is nonzero.
+\emph{Solution.} No.~Take, for example, \(x = \frac34\) and \(y = \frac14\). Since \(x > y\), this has joint PDF \(f_{X,Y}(\frac34,\frac14) = 0\). We know the marginal PMFs, though are
+\begin{align*}
+f_X\big(\tfrac34\big) &= 2\big(1 - \tfrac34\big) = \tfrac12 \\
+f_Y\big(\tfrac14\big) &= 2 \times \tfrac14 = \tfrac12 ,
+\end{align*}
+so \(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\). So \(X\) and \(Y\) are not independent.
 
 \end{myanswers}
 
@@ -5988,7 +6000,7 @@ We know that \(f_{X,Y}(x,y) = 2\) when \(0 \leq x \leq y\) and is \(0\) otherwis
 \begin{myanswers}
 \emph{Solution.} By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data -- especially that which is affected by the accumulation of numerous small effects -- is approximately normally distributed.
 
-Write \(\mu\) for the \emph{true} expectation and \(\sigma^2\) for the \emph{true} variance of the population distribution \(X\). Then the amount of data that is within two true-standard-deviations of the true-expectation is
+Write \(\mu\) for the \emph{true} expectation and \(\sigma^2\) for the \emph{true} variance of the population distribution \(X\). Then the proportion of data that is within two true-standard-deviations of the true-expectation will, be the law of large numbers, tends to
 \[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]
 Using standardisation, this is
 \[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]
@@ -5996,7 +6008,7 @@ Using R or statistical tables, this is
 \[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]
 So only \(1 - 0.9545 = 0.0455\), or approximately 5\%, of data is more than two true-standard-deviations away from the true-expectation.
 
-Finally, the law of large numbers tells us that, provided a large number of datapoints \(n\) are collected, the sample mean \(\bar x\) and the sample standard deviation \(s_x\) will be very close to the true expectation \(\mu\) and the true standard deviation \(\sigma\) respectively, so we can replace the latter with the former in our calculation.s
+Finally, the law of large numbers also tells us that, provided a large number of datapoints \(n\) are collected, the sample mean \(\bar x\) and the sample standard deviation \(s_x\) will be very close to the true expectation \(\mu\) and the true standard deviation \(\sigma\) respectively, so we can replace the latter with the former in our calculations.
 
 \end{myanswers}
 
@@ -7977,7 +7989,7 @@ Using R: \texttt{pnorm(0.27)} gives \texttt{0.6064199}.
 \emph{Solution.}
 Using R: \texttt{ppois(27,\ 25)} gives \texttt{0.7001861}.
 
-The approximation is \(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\). With a continuity correction, we have
+The approximation is \(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\). With a continuity correction, we expand the interval \((-\infty,27]\) outwards to \((-\infty, 27.5]\), and get
 \[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]
 
 \end{myanswers}
@@ -7990,7 +8002,7 @@ By the definition of conditional probability, we have
 \[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]
 since if \(X \geq 28\) it's automatically the case that \(X \geq 27\).
 
-Using R, and remembering that \texttt{lower.tail\ =\ FALSE} gives \(\mathbb P(X > x)\) with strict inequality, the answer we want is
+Using R, we need to remember that \texttt{lower.tail\ =\ FALSE} gives \(\mathbb P(X > x)\) with strict inequality, which for discrete random variables is equivalent to \(\mathbb P(X \geq x +1)\). So we actually want
 
 \texttt{ppois(27,\ 25,\ lower.tail\ =\ FALSE)\ /\ ppois(26,\ 25,\ lower.tail\ =\ FALSE)}
 
@@ -7999,9 +8011,10 @@ which gives \texttt{0.8089648}.
 The approximations are
 \begin{align*}
 \mathbb P(Z \geq 28) &\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
-\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821
+\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821 ,
 \end{align*}
-Giving the answer \(0.3085/0.3821 = 0.807\).
+where again we used the continuity correct to expand \([28,\infty)\) outwards to \([27.5,\infty)\) and the same for \([27,\infty)\). This
+gives the answer \(0.3085/0.3821 = 0.807\).
 
 \end{myanswers}
 
@@ -8053,7 +8066,7 @@ By the memoryless property, it's irrelevant how long we've been waiting for: the
 \textbf{(b)} The ``half-life'' of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.
 
 \begin{myanswers}
-\emph{Solution.} The half-life is the solution \(x\) to
+\emph{Solution.} The half-life is the median of the distribution; that is, the solution \(x\) to
 \[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]
 So
 \[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]
@@ -8076,24 +8089,35 @@ and \(f_{X,Y}(x,y) = 0\) otherwise. (In particular, note that the joint PDF is o
 \textbf{(a)} Describe the conditional distribution of \(X\) given \(Y = y\), for \(0 \leq y \leq 1\).
 
 \begin{myanswers}
-\emph{Solution.} The conditional distribution is
+\emph{Solution.} Fix \(y\). The conditional distribution is
 \[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]
 We know that \(f_{X,Y}(x,y) = 2\) when \(0 \leq x \leq y\) and is \(0\) otherwise. So the conditional distribution of \(X\) given \(Y = y\) is continuous uniform on the interval \([0, y]\).
+
+If we want to check the denominator \(f_Y(y)\) too, we can check that
+\[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]
+so the conditional PDF is indeed \(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\) for \(0 \leq x \leq y\).
+
+(In the online/video tutorial, I tried to explain this by drawing a graph in the \((x,y)\) plain of where \(f_{X,Y}(x,y)\) is 2 or 0, then drawing a horizontal line across it at \(y\) to demonstrate the conditional distribution. I'm not sure how clear this made things\ldots)
 
 \end{myanswers}
 
 \textbf{(b)} What is the marginal PDF \(f_X\) of \(X\)?
 
 \begin{myanswers}
-\emph{Solution.} We have
-\[ f_X(x) = \int_0^1 f_{X,Y}(x,y) \, \mathrm dy = \int_0^x 0 \, \mathrm dy \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]
+\emph{Solution.} Again the key is that the joint PDF is only nonzero when \(y \geq x\) but \(y \leq 1\). So
+\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]
 
 \end{myanswers}
 
 \textbf{(c)} Are \(X\) and \(Y\) independent?
 
 \begin{myanswers}
-\emph{Solution.} No.~In the same way as part (b), the marginal PDF for \(Y\) is \(f_Y(y) = 2y\). But it's clear that \(f_{X,Y}(x,y) \neq 2(1 - x) \times 2y\). Take \(x = \frac34\), \(y = \frac14\), for example: \(f_{X,Y}(x,y) = 0\), since \(x > y\), but the product of the marginals is nonzero.
+\emph{Solution.} No.~Take, for example, \(x = \frac34\) and \(y = \frac14\). Since \(x > y\), this has joint PDF \(f_{X,Y}(\frac34,\frac14) = 0\). We know the marginal PMFs, though are
+\begin{align*}
+f_X\big(\tfrac34\big) &= 2\big(1 - \tfrac34\big) = \tfrac12 \\
+f_Y\big(\tfrac14\big) &= 2 \times \tfrac14 = \tfrac12 ,
+\end{align*}
+so \(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\). So \(X\) and \(Y\) are not independent.
 
 \end{myanswers}
 
@@ -8102,7 +8126,7 @@ We know that \(f_{X,Y}(x,y) = 2\) when \(0 \leq x \leq y\) and is \(0\) otherwis
 \begin{myanswers}
 \emph{Solution.} By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data -- especially that which is affected by the accumulation of numerous small effects -- is approximately normally distributed.
 
-Write \(\mu\) for the \emph{true} expectation and \(\sigma^2\) for the \emph{true} variance of the population distribution \(X\). Then the amount of data that is within two true-standard-deviations of the true-expectation is
+Write \(\mu\) for the \emph{true} expectation and \(\sigma^2\) for the \emph{true} variance of the population distribution \(X\). Then the proportion of data that is within two true-standard-deviations of the true-expectation will, be the law of large numbers, tends to
 \[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]
 Using standardisation, this is
 \[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]
@@ -8110,7 +8134,7 @@ Using R or statistical tables, this is
 \[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]
 So only \(1 - 0.9545 = 0.0455\), or approximately 5\%, of data is more than two true-standard-deviations away from the true-expectation.
 
-Finally, the law of large numbers tells us that, provided a large number of datapoints \(n\) are collected, the sample mean \(\bar x\) and the sample standard deviation \(s_x\) will be very close to the true expectation \(\mu\) and the true standard deviation \(\sigma\) respectively, so we can replace the latter with the former in our calculation.s
+Finally, the law of large numbers also tells us that, provided a large number of datapoints \(n\) are collected, the sample mean \(\bar x\) and the sample standard deviation \(s_x\) will be very close to the true expectation \(\mu\) and the true standard deviation \(\sigma\) respectively, so we can replace the latter with the former in our calculations.
 
 \end{myanswers}
 

@@ -1904,7 +1904,7 @@ So <span class="math inline">\(k = 2\)</span>.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 Using R: <code>ppois(27, 25)</code> gives <code>0.7001861</code>.</p>
-<p>The approximation is <span class="math inline">\(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\)</span>. With a continuity correction, we have
+<p>The approximation is <span class="math inline">\(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\)</span>. With a continuity correction, we expand the interval <span class="math inline">\((-\infty,27]\)</span> outwards to <span class="math inline">\((-\infty, 27.5]\)</span>, and get
 <span class="math display">\[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]</span></p>
 </div>
 </div>
@@ -1915,15 +1915,16 @@ Using R: <code>ppois(27, 25)</code> gives <code>0.7001861</code>.</p>
 By the definition of conditional probability, we have
 <span class="math display">\[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]</span>
 since if <span class="math inline">\(X \geq 28\)</span> it’s automatically the case that <span class="math inline">\(X \geq 27\)</span>.</p>
-<p>Using R, and remembering that <code>lower.tail = FALSE</code> gives <span class="math inline">\(\mathbb P(X &gt; x)\)</span> with strict inequality, the answer we want is</p>
+<p>Using R, we need to remember that <code>lower.tail = FALSE</code> gives <span class="math inline">\(\mathbb P(X &gt; x)\)</span> with strict inequality, which for discrete random variables is equivalent to <span class="math inline">\(\mathbb P(X \geq x +1)\)</span>. So we actually want</p>
 <p><code>ppois(27, 25, lower.tail = FALSE) / ppois(26, 25, lower.tail = FALSE)</code></p>
 <p>which gives <code>0.8089648</code>.</p>
 <p>The approximations are
 <span class="math display">\[\begin{align*}
 \mathbb P(Z \geq 28) &amp;\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
-\mathbb P(Z \geq 27) &amp;\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821
+\mathbb P(Z \geq 27) &amp;\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821 ,
 \end{align*}\]</span>
-Giving the answer <span class="math inline">\(0.3085/0.3821 = 0.807\)</span>.</p>
+where again we used the continuity correct to expand <span class="math inline">\([28,\infty)\)</span> outwards to <span class="math inline">\([27.5,\infty)\)</span> and the same for <span class="math inline">\([27,\infty)\)</span>. This
+gives the answer <span class="math inline">\(0.3085/0.3821 = 0.807\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1971,7 +1972,7 @@ By the memoryless property, it’s irrelevant how long we’ve been waiting for:
 <div class="subq">
 <p><strong>(b)</strong> The “half-life” of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.</p>
 <div class="myanswers">
-<p><em>Solution.</em> The half-life is the solution <span class="math inline">\(x\)</span> to
+<p><em>Solution.</em> The half-life is the median of the distribution; that is, the solution <span class="math inline">\(x\)</span> to
 <span class="math display">\[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]</span>
 So
 <span class="math display">\[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]</span></p>
@@ -1993,22 +1994,31 @@ and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise. (In particu
 <div class="subq">
 <p><strong>(a)</strong> Describe the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span>, for <span class="math inline">\(0 \leq y \leq 1\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em> The conditional distribution is
+<p><em>Solution.</em> Fix <span class="math inline">\(y\)</span>. The conditional distribution is
 <span class="math display">\[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]</span>
 We know that <span class="math inline">\(f_{X,Y}(x,y) = 2\)</span> when <span class="math inline">\(0 \leq x \leq y\)</span> and is <span class="math inline">\(0\)</span> otherwise. So the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span> is continuous uniform on the interval <span class="math inline">\([0, y]\)</span>.</p>
+<p>If we want to check the denominator <span class="math inline">\(f_Y(y)\)</span> too, we can check that
+<span class="math display">\[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]</span>
+so the conditional PDF is indeed <span class="math inline">\(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\)</span> for <span class="math inline">\(0 \leq x \leq y\)</span>.</p>
+<p>(In the online/video tutorial, I tried to explain this by drawing a graph in the <span class="math inline">\((x,y)\)</span> plain of where <span class="math inline">\(f_{X,Y}(x,y)\)</span> is 2 or 0, then drawing a horizontal line across it at <span class="math inline">\(y\)</span> to demonstrate the conditional distribution. I’m not sure how clear this made things…)</p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> What is the marginal PDF <span class="math inline">\(f_X\)</span> of <span class="math inline">\(X\)</span>?</p>
 <div class="myanswers">
-<p><em>Solution.</em> We have
-<span class="math display">\[ f_X(x) = \int_0^1 f_{X,Y}(x,y) \, \mathrm dy = \int_0^x 0 \, \mathrm dy \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]</span></p>
+<p><em>Solution.</em> Again the key is that the joint PDF is only nonzero when <span class="math inline">\(y \geq x\)</span> but <span class="math inline">\(y \leq 1\)</span>. So
+<span class="math display">\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]</span></p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
 <div class="myanswers">
-<p><em>Solution.</em> No. In the same way as part (b), the marginal PDF for <span class="math inline">\(Y\)</span> is <span class="math inline">\(f_Y(y) = 2y\)</span>. But it’s clear that <span class="math inline">\(f_{X,Y}(x,y) \neq 2(1 - x) \times 2y\)</span>. Take <span class="math inline">\(x = \frac34\)</span>, <span class="math inline">\(y = \frac14\)</span>, for example: <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span>, since <span class="math inline">\(x &gt; y\)</span>, but the product of the marginals is nonzero.</p>
+<p><em>Solution.</em> No. Take, for example, <span class="math inline">\(x = \frac34\)</span> and <span class="math inline">\(y = \frac14\)</span>. Since <span class="math inline">\(x &gt; y\)</span>, this has joint PDF <span class="math inline">\(f_{X,Y}(\frac34,\frac14) = 0\)</span>. We know the marginal PMFs, though are
+<span class="math display">\[\begin{align*}
+f_X\big(\tfrac34\big) &amp;= 2\big(1 - \tfrac34\big) = \tfrac12 \\
+f_Y\big(\tfrac14\big) &amp;= 2 \times \tfrac14 = \tfrac12 ,
+\end{align*}\]</span>
+so <span class="math inline">\(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\)</span>. So <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent.</p>
 </div>
 </div>
 </div>
@@ -2016,14 +2026,14 @@ We know that <span class="math inline">\(f_{X,Y}(x,y) = 2\)</span> when <span cl
 <p><strong>B4.</strong> Engineers and scientists often use the rule of thumb “Only 5% of data is more than two sample standard deviations away from the sample mean.” Carefully justify this rule, using concepts from the module.</p>
 <div class="myanswers">
 <p><em>Solution.</em> By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data – especially that which is affected by the accumulation of numerous small effects – is approximately normally distributed.</p>
-<p>Write <span class="math inline">\(\mu\)</span> for the <em>true</em> expectation and <span class="math inline">\(\sigma^2\)</span> for the <em>true</em> variance of the population distribution <span class="math inline">\(X\)</span>. Then the amount of data that is within two true-standard-deviations of the true-expectation is
+<p>Write <span class="math inline">\(\mu\)</span> for the <em>true</em> expectation and <span class="math inline">\(\sigma^2\)</span> for the <em>true</em> variance of the population distribution <span class="math inline">\(X\)</span>. Then the proportion of data that is within two true-standard-deviations of the true-expectation will, be the law of large numbers, tends to
 <span class="math display">\[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]</span>
 Using standardisation, this is
 <span class="math display">\[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]</span>
 Using R or statistical tables, this is
 <span class="math display">\[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]</span>
 So only <span class="math inline">\(1 - 0.9545 = 0.0455\)</span>, or approximately 5%, of data is more than two true-standard-deviations away from the true-expectation.</p>
-<p>Finally, the law of large numbers tells us that, provided a large number of datapoints <span class="math inline">\(n\)</span> are collected, the sample mean <span class="math inline">\(\bar x\)</span> and the sample standard deviation <span class="math inline">\(s_x\)</span> will be very close to the true expectation <span class="math inline">\(\mu\)</span> and the true standard deviation <span class="math inline">\(\sigma\)</span> respectively, so we can replace the latter with the former in our calculation.s</p>
+<p>Finally, the law of large numbers also tells us that, provided a large number of datapoints <span class="math inline">\(n\)</span> are collected, the sample mean <span class="math inline">\(\bar x\)</span> and the sample standard deviation <span class="math inline">\(s_x\)</span> will be very close to the true expectation <span class="math inline">\(\mu\)</span> and the true standard deviation <span class="math inline">\(\sigma\)</span> respectively, so we can replace the latter with the former in our calculations.</p>
 </div>
 </div>
 <div class="myq">
