@@ -1,3 +1,5 @@
+# (PART\*) Other stuff  {-}
+
 # The last section {#S11-summary}
 
 ## Summary of the module
