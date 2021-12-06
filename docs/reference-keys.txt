@@ -64,3 +64,7 @@ beta
 beta-bern
 normal-normal
 modern-bayes
+S11-summary
+summary-of-the-module
+about-the-exam
+past-papers

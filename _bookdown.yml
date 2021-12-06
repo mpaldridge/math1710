@@ -17,7 +17,7 @@ rmd_files:
   - problems/P5.Rmd
   - sections/S10-bayesian.Rmd
   - problems/P6.Rmd
-#  - sections/S11-summary.Rmd
+  - sections/S11-summary.Rmd
   - R/R.Rmd
   - problems/solutions.Rmd
 book_filename: "math1710"

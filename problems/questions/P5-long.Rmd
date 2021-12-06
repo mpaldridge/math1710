@@ -46,7 +46,7 @@ By the memoryless property, it's irrelevant how long we've been waiting for: the
 **(a)** What is the average amount of time it takes a Caesium-137 particle to decay?
 
 ::: {.myanswers data-latex=""}
-*Solution.* The expectation is $1/lambda = 43.5$ years.
+*Solution.* The expectation is $1/\lambda = 43.5$ years.
 :::
 ::::
 
@@ -66,7 +66,7 @@ So
 
 ::: {.myanswers data-latex=""}
 *Solution.* The proportion of Caesium-137 still remaining is
-\[ \mathbb P(X > 35.6) = \mathrm e^{-0.023*35.6} = 0.441 , \]
+\[ \mathbb P(X > 35.6) = \mathrm e^{-0.023 \times 35.6} = 0.441 , \]
 so roughly $24 \times 0.441 = 10.6$ kg of Caesium-137 has still not decayed.
 :::
 ::::
