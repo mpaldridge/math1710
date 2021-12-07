@@ -12,10 +12,17 @@ url:    'https://mpaldridge.github.io/math1710/'
 # Schedule {.unnumbered}
 
 ::: {.oldsched}
+**Week 11** (22--26 November):
+
+* [**Section 11:** The last section](#S10-normal)
+* [**R Worksheet 11:** Summary](#r-work) deadline for assessed questions: Wednesday 15 November
+:::
+
+::: {.mysched}
 **Week 10** (29 November -- 3 December):
 
 * [**Section 10:** Introduction to Bayesian statistics](#S10-bayesian)
-* [**Problem Sheet 6:**](#P56) no assessed work
+* [**Problem Sheet 6:**](#P6) no assessed work
 :::
 
 ::: {.mysched}
