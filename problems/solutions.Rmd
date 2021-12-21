@@ -3,7 +3,7 @@
 # Solutions {#solutions .unnumbered}
 
 ::: {.mysummary}
-This page has the solutions to all the non-assessed questions on Problem Sheet 1 to 3. Solutions are added on Friday afternoon after tutorials on the Problem Sheet have finished.
+This page has the solutions to all the non-assessed questions on Problem Sheet 1 to 5. Solutions are added on Friday afternoon after tutorials on the Problem Sheet have finished.
 
 Solutions to assessed questions are available on Minerva in the "Assessments" tab, from one week after the deadline.
 <!--
