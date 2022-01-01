@@ -44,7 +44,7 @@ Hence,
 
 ::: {.myanswers data-latex=""}
 *Solution.* This is
-\[ F\big(\tfrac52\big) - F\big(\tfrac32\big) = \tfrac{15}{16} - \tfrac12 = \tfrac{5}{16} .\]
+\[ F\big(\tfrac52\big) - F\big(\tfrac32\big) = \tfrac{15}{16} - \tfrac12 = \tfrac{7}{16} .\]
 (Here, it was useful to note that $x = \tfrac52$ is in the $2 < x \leq 3$ range and $x = \tfrac32$ is in the $1 < x \leq 2$ range.)
 :::
 ::::

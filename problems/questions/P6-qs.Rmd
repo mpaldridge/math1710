@@ -1,40 +1,111 @@
 :::: {.myq}
 **1.** I want to use a prior distribution for a parameter $\theta$ whose range is the interval $[0,1]$, whose expectation is $0.4$ and whose standard deviation is $0.2$. Suggest an appropriate distribution.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+A $\text{Beta}(\alpha, \beta)$ would be appropriate if we can choose $\alpha$ and $\beta$ to give us the correct expectation and standard deviation.
+
+Thus, we need to find $\alpha$ and $\beta$ that solve
+\begin{align*}
+\frac{\alpha}{\alpha + \beta} &= 0.4 \\
+\frac{0.4 \times (1 - 0.4)}{\alpha + \beta + 1} = 0.2^2 .
+\end{align*}
+From the second equation, we get $\alpha + \beta = 5$. Substituting this into the first equation, we get $\alpha = 2$, which then means we need $\beta = 3$.
+
+Therefore, a $\text{Beta}(2,3)$ distribution would be appropriate.
+:::
 ::::
 
-:::: {.myq}
+::::: {.myq}
 **2.** My data is modelled as having a $\text{Bern}(\theta)$ likelihood, and I plan to record 10 IID observations. I choose to use a $\text{Beta}(1,4)$ prior.
 
-::: {.subq}
+:::: {.subq}
 **(a)** What is the prior expectation and variance?
-:::
 
-::: {.subq}
-**(b)** Suppose my data records 2 successes and 8 failures. What is the posterior expectation and variance?
-:::
-
-::: {.subq}
-**(c)** Suppose my data records 5 successes and 5 failures. What is the posterior expectation and variance?
-:::
-
-::: {.subq}
-**(d)** Briefly comment on these results.
+::: {.myanswers data-latex=""}
+*Solution.* The prior expectation is
+\[ \frac{\alpha}{\alpha + \beta} = \frac{1}{1+4} = 0.2 , \]
+and the prior variance is
+\[ \frac{\mu(1-\mu)}{\alpha + \beta + 1} = \frac{0.2 \times 0.8}{1 + 4 + 1} = 0.027 . \]
 :::
 ::::
 
-:::: {.myq}
+:::: {.subq}
+**(b)** Suppose my data records 2 successes and 8 failures. What is the posterior expectation and variance?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+We know that the posterior distribution is $\text{Beta}(1 + 2, 4 + 8) = \text{Beta}(3, 12)$. This has posterior expectation
+\[ \frac{3}{3 + 12} = 0.2 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.01 .\]
+:::
+::::
+
+:::: {.subq}
+**(c)** Suppose my data records 5 successes and 5 failures. What is the posterior expectation and variance?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+We know that the posterior distribution is $\text{Beta}(1 + 5, 4 + 5) = \text{Beta}(6, 9)$. This has posterior expectation
+\[ \frac{6}{6 + 9} = 0.4 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.015 .\]
+:::
+::::
+
+:::: {.subq}
+**(d)** Briefly comment on these results.
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+In the first example, the data was what we would have expected from the model. Thus the posterior expectation has remained the same as the prior expectation, while the variance has decreased, as we have become more confident about the correctness of our model.
+
+In the second example, the data had more successes that we would have expected from the model. The posterior expectation has moved from the prior expectation $0.2$ towards the mean of the data $0.5$, but not all the way. The variance is bigger the the first example, as we are more unsure, although collecting data has still managed to decrease the variance -- and thus increase the certainty -- of the prior alone.
+:::
+::::
+:::::
+
+::::: {.myq}
 **3.** **(a)** My data is modelled as a single data point with a $\text{Geom}(\theta)$ likelihood, so
 \[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
 
-::: {.subq}
+:::: {.subq}
 I use a $\text{Beta}(\alpha,\beta)$ prior for $\theta$. Show that the posterior distribution is $\text{Beta}(\alpha + 1, \beta + x - 1)$.
-:::
 
-::: {.subq}
-**(b)** I instead choose to collect $n$ IID data points, using the same geometric likelihood and Beta prior. Show that the posterior distribution is a Beta distribution, and state the parameters,
-:::
-
-::: {.subq}
-**(c)** Compare your results to that of the Beta--Bernoulli model, and briefly comment.
+::: {.myanswers data-latex=""}
+*Solution.* 
+The geometric likelihood is
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+The Beta prior is
+\[ \pi(\theta) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} . \]
+Therefore the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{x-1} \theta
+= \theta^{\alpha} (1 - \theta)^{\beta + x - 1 - 1} , \]
+which is the $\text{Beta}(\alpha + 1, \beta + x - 1)$ distribution.
 :::
 ::::
+
+:::: {.subq}
+**(b)** I instead choose to collect $n$ IID data points, using the same geometric likelihood and Beta prior. Show that the posterior distribution is a Beta distribution, and state the parameters.
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+We have the same prior, but not have a product likelihood
+\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n (1 - \theta)^{x_i - 1} \theta = (1 - \theta)^{y - n} \theta^n , \]
+where $y = \sum_{i=1}^n x_i$. Then the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{y-n} \theta^n
+= \theta^{\alpha + n - 1} (1 - \theta)^{\beta + y - n - 1} , \]
+which is the $\text{Beta}(\alpha + n, \beta + y - n)$ distribution.
+:::
+::::
+
+:::: {.subq}
+**(c)** Compare your results to that of the Beta--Bernoulli model, and briefly comment.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+Each geometric experiment has $x_i - 1$ failures (the first $x_i - 1$ trials) and 1 success (the final trial). So in total, over $n$ experiments, we have $\sum_i (x_i - 1) = y - n$ failures and $n$ successes. Thus to get from the prior Beta distribution to the posterior distribution, we have increased $\alpha$ by the number of suvvesses and increased $\beta$ by the number of failures. This is exactly the same way we got from the Beta prior to the Beta posterior when using a Bernoulli likelihood.
+:::
+::::
+:::::

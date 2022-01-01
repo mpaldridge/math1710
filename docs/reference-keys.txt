@@ -68,3 +68,5 @@ S11-summary
 summary-of-the-module
 about-the-exam
 past-papers
+discrete-uniform
+revision
