@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lecture 15 Continuous random variables | MATH1710 Probability and Statistics I</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021–2022" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lecture 15 Continuous random variables | MATH1710 Probability and Statistics I" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021–2022" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lecture 15 Continuous random variables | MATH1710 Probability and Statistics I" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021–2022" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="P4.html"/>
+<link rel="next" href="exponential-distribution-and-multiple-continuous-random-variables.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Probability</b></span></li>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Basic set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="L05-classical-i.html"><a href="L05-classical-i.html"><i class="fa fa-check"></i><b>5</b> Classical probability I</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="L05-classical-i.html"><a href="L05-classical-i.html#classical-intro"><i class="fa fa-check"></i><b>5.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="5.2" data-path="L05-classical-i.html"><a href="L05-classical-i.html#multiplication"><i class="fa fa-check"></i><b>5.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="5.3" data-path="L05-classical-i.html"><a href="L05-classical-i.html#sampling"><i class="fa fa-check"></i><b>5.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="" data-path="L05-classical-i.html"><a href="L05-classical-i.html#summary-L05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
+<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
+<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
+<li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-03"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
+<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
+<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass functions</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
+<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
+<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and Poisson distributions</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
+<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
+<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#models"><i class="fa fa-check"></i><b>12.3</b> Distributions as models for data</a></li>
+<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
+<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
+<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-07"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html"><i class="fa fa-check"></i><b>16</b> Exponential distribution and multiple continuous random variables</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#exponential"><i class="fa fa-check"></i><b>16.1</b> Exponential distribution</a></li>
+<li class="chapter" data-level="16.2" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#continuous-multiple"><i class="fa fa-check"></i><b>16.2</b> Multiple continuous random variables</a></li>
+<li class="chapter" data-level="" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#summary-08"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="L17-normal.html"><a href="L17-normal.html"><i class="fa fa-check"></i><b>17</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="L17-normal.html"><a href="L17-normal.html#normal-definition"><i class="fa fa-check"></i><b>17.1</b> Definition of the normal distribution</a></li>
+<li class="chapter" data-level="17.2" data-path="L17-normal.html"><a href="L17-normal.html#normal-properties"><i class="fa fa-check"></i><b>17.2</b> Properties of the normal distribution</a></li>
+<li class="chapter" data-level="17.3" data-path="L17-normal.html"><a href="L17-normal.html#normal-r"><i class="fa fa-check"></i><b>17.3</b> Calculations using R</a></li>
+<li class="chapter" data-level="17.4" data-path="L17-normal.html"><a href="L17-normal.html#normal-tables"><i class="fa fa-check"></i><b>17.4</b> Calculations using statistical tables</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#mean-rv"><i class="fa fa-check"></i><b>18.1</b> Mean of random variables</a></li>
+<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.2</b> Law of large numbers</a></li>
+<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.3</b> Central limit theorem</a></li>
+<li class="chapter" data-level="18.4" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.4</b> Approximations with the normal distribution</a></li>
+<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
+<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#modern-bayes"><i class="fa fa-check"></i><b>19.3</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> Bayesian models</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
+<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#normal-normal"><i class="fa fa-check"></i><b>20.3</b> Normal–normal model</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
+<li class="part"><span><b>Revision</b></span></li>
+<li class="chapter" data-level="21" data-path="L21-summary.html"><a href="L21-summary.html"><i class="fa fa-check"></i><b>21</b> Summary</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="L21-summary.html"><a href="L21-summary.html#summary-of-the-module"><i class="fa fa-check"></i><b>21.1</b> Summary of the module</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#about-the-exam"><i class="fa fa-check"></i><b>22.1</b> About the exam</a></li>
+<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.2</b> Past papers</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting drop-in sessions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P6-solutions"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="L15-continuous" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Lecture 15</span> Continuous random variables<a href="L15-continuous.html#L15-continuous" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="continuous-rv" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> What is a continuous random variable?<a href="L15-continuous.html#continuous-rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/1Oae0a12P1M">
+</iframe>
+</div>
+</div>
+<p>In the previous three sections, we have looked at discrete random variables, whose range is a finite (or countably infinite) set of separate discrete values. Discrete random variables can be used as a model for “count data”.</p>
+<p>In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for “measurement data”. For example:</p>
+<ul>
+<li>The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers <span class="math inline">\(\mathbb R\)</span>, where positive numbers represent credit and negative numbers represent debt.</li>
+<li>The amount of time a machine in a factory works for before breaking down could be modelled as a continuous random variable with range the positive real numbers <span class="math inline">\(\mathbb R_+ = \{x \in \mathbb R : x \geq 0\}\)</span>.</li>
+<li>The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval <span class="math inline">\([0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}\)</span>.</li>
+</ul>
+<p>Imagine firing an arrow at a large target. We could ask “What’s the probability that the arrow exactly hits some point?” – but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we’d have to say that the probability is 0. What makes more sense is too take a section of the target – perhaps a small circle in the middle, called the “bulls-eye” – and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question – a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.</p>
+<p>Similarly, imagine picking a random real number between 0 and 1. We could ask “What is the probability that the random number is <em>exactly</em> <span class="math inline">\(1/\sqrt{2} = 0.7071068\dots\)</span>?” But that probability is 0. It makes more sense to take an interval of numbers – say, <span class="math inline">\([0.7, 0.8]\)</span>, the interval from <span class="math inline">\(0.7\)</span> to <span class="math inline">\(0.8\)</span> – and ask what the probability is of the random number being in that interval.</p>
+<p>This is how continuous random variables work. The probability a continuous random variable <span class="math inline">\(X\)</span> <em>exactly</em> hits some value <span class="math inline">\(x\)</span> is <span class="math inline">\(\mathbb P(X = x) = 0\)</span>. But we <em>can</em> find the probability <span class="math inline">\(\mathbb P(a \leq X \leq b)\)</span> that <span class="math inline">\(X\)</span> lies in a certain interval and work with that.</p>
+</div>
+<div id="pdf" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Probability density functions<a href="L15-continuous.html#pdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>With a continuous random variable, the probability of <em>exactly</em> getting any particular outcome <span class="math inline">\(X = x\)</span> is 0. However, we can express the “intensity” of probability <em>around</em> <span class="math inline">\(x\)</span> by <span class="math inline">\(f_X(x)\)</span>, where <span class="math inline">\(f_X\)</span> is called the probability density function. The implied metaphor here is that for discrete random variables, we have probability “mass” <em>at</em> the point <span class="math inline">\(x\)</span>, whereas for continuous random variables, we have a “density” of probability <em>around</em> <span class="math inline">\(x\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-92" class="definition"><strong>Definition 15.1  </strong></span>A random variable <span class="math inline">\(X\)</span> is called a <strong>continuous random variable</strong> if the probability of landing in any interval between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, for <span class="math inline">\(a \leq b\)</span>, can be written as
+<span class="math display">\[ \mathbb P(a \leq X \leq b) = \int_a^b f_X(x) \, \mathrm{d}x , \]</span>
+for some non-negative function <span class="math inline">\(f_X\)</span>. The function <span class="math inline">\(f_X\)</span> is called the <strong>probability density function</strong> (or <strong>PDF</strong>).</p>
+</div>
+<p>In other words, the probability that <span class="math inline">\(X\)</span> is between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the area under the curve of the PDF on that interval.</p>
+<p>As with PMFs, when it’s obvious what random variable we’re dealing with, we omit the subscript <span class="math inline">\(X\)</span> on the PDF <span class="math inline">\(f_X\)</span>.</p>
+<div class="example">
+<p><span id="exm:unifex" class="example"><strong>Example 15.1  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
+<span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise. This represents a random number between 0 and 1, where the intensity of the probability is equal across the whole interval. This is known as a <strong>continuous uniform distribution</strong>.</p>
+<p><img src="math1710_files/figure-html/contunif-pdf-1.png" width="672" /></p>
+<p><em>What is the probability that <span class="math inline">\(X\)</span> is between 0.5 and 0.8?</em></p>
+<p>We can calculate this using the definition above. We have
+<span class="math display">\[\begin{align*}
+  \mathbb P(0.5 \leq X \leq 0.8) &amp;= \int_{0.5}^{0.8} f(x) \, \mathrm dx \\
+    &amp;= \int_{0.5}^{0.8} 1 \, \mathrm dx \\
+    &amp;= [x]_{0.5}^{0.8} \\
+    &amp;= 0.8 - 0.5 \\
+    &amp;= 0.3 .
+\end{align*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:pdf2" class="example"><strong>Example 15.2  </strong></span>Let <span class="math inline">\(Y\)</span> be a continuous random variable with PDF
+<span class="math display">\[ f(y) = \begin{cases} y &amp; \text{for $0 \leq y \leq 1$} \\
+2-y &amp; \text{for $1 &lt; y \leq 2$} \end{cases} \]</span>
+and <span class="math inline">\(f(y) = 0\)</span> otherwise. This represents a continuous value between 0 and 2 where the probability intensity is highest in the middle around 1 and is lower at the edges near 0 and 2.</p>
+<p><img src="math1710_files/figure-html/second-pdf-1.png" width="672" /></p>
+<p><em>What is the probability <span class="math inline">\(X\)</span> is between <span class="math inline">\(\frac12\)</span> and <span class="math inline">\(\frac32\)</span>?</em></p>
+<p>As before, we have
+<span class="math display">\[ \mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big) = \int_{\frac12}^{\frac32} f(y) \, \mathrm dy .   \]</span>
+But this time we have to be careful, because <span class="math inline">\(f(y)\)</span> has different expressions below 1 and above 1. We will split the integral up into two parts based on this, to get
+<span class="math display">\[\begin{align*}
+\mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big)
+  &amp;= \int_{\frac12}^{1} f(y) \, \mathrm dy + \int_{1}^{\frac32} f(y) \, \mathrm dy \\
+    &amp;= \int_{\frac12}^{1} y \, \mathrm dy + \int_{1}^{\frac32} (2-y) \, \mathrm dy \\
+    &amp;= \left[ \tfrac12 y^2\right]_{\frac12}^1 + \left[ 2y-\tfrac12 y^2\right]_1^{\frac32} \\
+    &amp;= \tfrac12 - \tfrac18 + \big(\tfrac62 - \tfrac98\big) - \big(2 - \tfrac12\big) \\
+    &amp;= \tfrac34 .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="prop-cont" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Properties of continuous random variables<a href="L15-continuous.html#prop-cont" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/J7CtqG0HErc">
+</iframe>
+</div>
+</div>
+<p>The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution – except you swap the PMF for the PDF and swap sums for integrals.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Discrete random variables</th>
+<th>Continuous random variables</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A discrete random variable <span class="math inline">\(X\)</span> is defined by a <strong>probability mass function</strong> (PMF) <span class="math inline">\(p(x)\)</span>, which represents the probability of getting exactly <span class="math inline">\(x\)</span>.</td>
+<td>A continuous random variable <span class="math inline">\(X\)</span> is defined by a <strong>probability density function</strong> (PDF) <span class="math inline">\(f(x)\)</span>, which represents the intensity of probability around <span class="math inline">\(x\)</span>.</td>
+</tr>
+<tr class="even">
+<td>The PMF is positive, in that <span class="math inline">\(p(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</td>
+<td>The PDF is positive, in that <span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>The PMF sums to 1, in that <span class="math display">\[ \sum_{x} p(x) = 1. \]</span></td>
+<td>The PDF integrates to 1 in that <span class="math display">\[ \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\]</span></td>
+</tr>
+<tr class="even">
+<td>The <strong>cumulative distribution function</strong> (CDF) is <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span>, and is given by a sum <span class="math display">\[ F(x) = \sum_{y \leq x} p(y) .\]</span></td>
+<td>The <strong>cumulative distribution function</strong> (CDF) is <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span>, and is given by an integral <span class="math display">\[ F(x) = \int_{-\infty}^x f(y) \, \mathrm{d}y .\]</span></td>
+</tr>
+<tr class="odd">
+<td>The <strong>expectation</strong> is the sum <span class="math display">\[ \mathbb EX = \sum_{x} x\,p(x) . \]</span></td>
+<td>The <strong>expectation</strong> is the integral <span class="math display">\[ \mathbb EX = \int_{-\infty}^{\infty} x\,f(x)\,\mathrm dx . \]</span></td>
+</tr>
+<tr class="even">
+<td>The expectation of a function <span class="math inline">\(g(X)\)</span> of <span class="math inline">\(X\)</span> is the sum <span class="math display">\[ \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \]</span></td>
+<td>The expectation of a function <span class="math inline">\(g(X)\)</span> of <span class="math inline">\(X\)</span> is the integral <span class="math display">\[ \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \]</span></td>
+</tr>
+<tr class="odd">
+<td>Linearity of expectation says that <span class="math display">\[ \mathbb E(aX+b) = a\mathbb EX + b .\]</span></td>
+<td>Linearity of expectation says that <span class="math display">\[ \mathbb E(aX+b) = a\mathbb EX + b .\]</span></td>
+</tr>
+<tr class="even">
+<td>The <strong>variance</strong> is <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span>, which also has the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span>.</td>
+<td>The <strong>variance</strong> is <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span>, which also has the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p>Note, however, one property that doesn’t follow through: Because, for a PMF, <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> represented a probability, we had <span class="math inline">\(p(x) \leq 1\)</span> for all <span class="math inline">\(x\)</span>. However, because, for a PDF, <span class="math inline">\(f(x)\)</span> only represents intensity of probability, there’s no contradiction to having <span class="math inline">\(f(x) &gt; 1\)</span> (although keeping the integral to 1 means that we can’t have <span class="math inline">\(f(x) &gt; 1\)</span> too much). So <span class="math inline">\(f(x) = 10\)</span> for <span class="math inline">\(0 &lt;x &lt; 0.1\)</span> and <span class="math inline">\(f(x) = 0\)</span> otherwise is a perfectly legitimate PDF, for example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-93" class="example"><strong>Example 15.3  </strong></span>Let’s return to the case where <span class="math inline">\(X\)</span> be a continuous uniform distribution, with
+<span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} . \]</span>
+Let’s go through the properties from the table above.</p>
+<p>First, it’s clear that <span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</p>
+<p>Second, the PDF does indeed integrate to 1, because
+<span class="math display">\[ \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_0^1 1 \, \mathrm dx = [x]_0^1 = 1 .    \]</span>
+Because this PDF is zero below 0 and above 1, we only had to integrate between 0 and 1, with the rest of the integral over the real line being 0.</p>
+<p>Third, the CDF <span class="math inline">\(F\)</span>. It’s clear that <span class="math inline">\(F(x) = \mathbb P(X \leq x) = 0\)</span> for <span class="math inline">\(x &lt; 0\)</span>, and <span class="math inline">\(F(x) = \mathbb P(X \leq x) = 1\)</span> for <span class="math inline">\(x &gt; 1\)</span>. In between, we have
+<span class="math display">\[ F(x) = \int_{-\infty}^x f(y) \,\mathrm dy = \int_0^x 1\, \mathrm dy = [y]_0^x = x .   \]</span>
+So, altogether, the CDF is
+<span class="math display">\[  F(x) = \begin{cases} 0 &amp; \text{for } x &lt; 0 \\ x &amp; \text{for }0 \leq x \leq 1 \\ 1 &amp; \text{for }x &gt; 1 . \end{cases} \]</span></p>
+<p><img src="math1710_files/figure-html/contunif-cdf-1.png" width="672" /></p>
+<p>Fourth, the expectation is
+<span class="math display">\[ \mathbb EX = \int_{\infty}^\infty x\,f(x)\,\mathrm dx = \int_0^1 x \, \mathrm dx = \left[\tfrac12 x^2 \right]_0^1 = \tfrac12 - 0 = \tfrac12 .   \]</span></p>
+<p>Finally, to calculate the variance, we have
+<span class="math display">\[ \mathbb EX^2 = \int_{\infty}^\infty x^2\,f(x)\,\mathrm dx = \int_0^1 x^2 \, \mathrm dx = \left[\tfrac13 x^3 \right]_0^1 = \tfrac13 - 0 = \tfrac13 .   \]</span>
+So, using the computational formula, we have
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = \tfrac13 - \left(\tfrac12\right)^2 = \tfrac13 - \tfrac14 = \tfrac{1}{12} . \]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 15.4  </strong></span>Let’s also return to the “triangular” PDF from Example <a href="L15-continuous.html#exm:pdf2">15.2</a>,
+<span class="math display">\[ f(y) = \begin{cases} y &amp; \text{for $0 \leq y \leq 1$} \\
+2-y &amp; \text{for $1 &lt; y \leq 2$}. \end{cases} \]</span>
+We’ll just do the CDF and the expectation. (You can do the others yourself, if you like.)</p>
+<p>For the CDF, it’s clear that <span class="math inline">\(F(y) = 0\)</span> for <span class="math inline">\(y &lt; 0\)</span> and <span class="math inline">\(F(y) = 1\)</span> for <span class="math inline">\(y &gt; 2\)</span>. Again, we split the <span class="math inline">\(0 \leq y \leq 1\)</span> case and the <span class="math inline">\(1 &lt; y \leq 2\)</span> case. In the first case, for <span class="math inline">\(0 \leq y \leq 1\)</span>, we have
+<span class="math display">\[\begin{align*}
+  F(x) &amp;= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &amp;= \int_0^y z \, \mathrm dz \\
+    &amp;= \left[ \tfrac12 z^2 \right]_0^y \\
+    &amp;= \tfrac 12 y^2 .
+\end{align*}\]</span>
+In the second case, for <span class="math inline">\(1 &lt; y \leq 2\)</span>, we have
+<span class="math display">\[\begin{align*}
+  F(x) &amp;= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &amp;= \int_0^1 z \, \mathrm dz + \int_1^y (2 - z)\,\mathrm dz \\
+    &amp;= \left[ \tfrac12 z^2 \right]_0^1 + \left[ 2z - \tfrac12 z^2 \right]_1^y \\
+    &amp;= \tfrac 12 - 0 + 2y - \tfrac12 y^2 - 2 + \tfrac12 \\
+    &amp;= 2y - \tfrac12 y^2 - 1  .
+\end{align*}\]</span>
+Hence, the CDF is
+<span class="math display">\[ F(y) = \begin{cases} 0 &amp; \text{for $y &lt; 0$} \\
+            \tfrac12 y^2 &amp; \text{for $0 \leq y \leq 1$} \\
+            2y - \tfrac12 y^2 - 1  &amp; \text{for $1 &lt; y \leq 2$} \\
+            1 &amp; \text{for $y &gt; 2$}. \end{cases} \]</span></p>
+<p><img src="math1710_files/figure-html/second-cdf-1.png" width="672" /></p>
+<p>For the expectation, we have
+<span class="math display">\[\begin{align*}
+\mathbb EY &amp;= \int_{-\infty}^{\infty} y\, f(y) \, \mathrm dy \\
+  &amp;= \int_0^1 y^2 \mathrm dy + \int_1^2 y(2 - y)\, \mathrm dy \\
+  &amp;= \left[ \tfrac13 y^3 \right]_0^1 + \left[  y^2 - \tfrac13 y^3 \right]_1^2 \\
+  &amp;= \tfrac13 - 0 + 4 - \tfrac83 - 1 + \tfrac13 \\
+  &amp;= 1 .
+\end{align*}\]</span></p>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="P4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exponential-distribution-and-multiple-continuous-random-variables.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

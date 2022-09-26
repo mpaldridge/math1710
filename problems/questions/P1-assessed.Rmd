@@ -1,7 +1,7 @@
 ::::: {.myq}
 **C1.** The monthly average exchange rate for US dollars into British pounds over a 12-month period was:
 \begin{gather*}
-1.306, \ 1.301, \ 1.290, \ 1.266, \ 1.290, \ 1.302,\\
+1.306, \ 1.301, \ 1.290, \ 1.266, \ 1.268, \ 1.302,\\
 1.317, \ 1.304, \ 1.284, \ 1.268, \ 1.247, \ 1.215.
 \end{gather*}
 
@@ -23,11 +23,11 @@ Have you checked the definitions of these statistics from Subsection 1.3 of the 
 :::
 
 :::: {.subq}
-**(d)** Is the mode an appropriate summary statistic for this data? Why/why not?
+**(d)** Is the mode an appropriate summary statistic for this sort of data? Why/why not?
 
 ::: {.myanswers data-latex=""}
 *Hint.*
-Is there a unique mode for this data? Why not?
+Is there a unique mode for this data? Why/why not? For what sort of data does the "mode" give us useful answers?
 :::
 ::::
 ::::

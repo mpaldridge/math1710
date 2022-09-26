@@ -54,7 +54,7 @@ On the other hand, the expression inside the brackets of the computational formu
 :::::
 
 ::::: {.myq}
-**A2.** Consider the following data sets of the age of elected politicians on a local council. (The "18--30" consists of people older than and including 18, and younger than but *not* including 30.)
+**A2.** Consider the following data sets of the age of elected politicians on a local council. (The "18--30" bin, for example, means from one's 18th birthday to the moment before one's 30th birthday, so lasts 12 years.)
 
 |   Age (years)    | Frequency | Relative frequency | Frequency density |
 |:---------------:|:---------:|:------------------:|:-----------------:|
@@ -95,7 +95,15 @@ On the other hand, the expression inside the brackets of the computational formu
 ::::
 
 :::: {.subq}
-**(c)** Calculate (an approximation of) the mean age of the politicians.
+**(c)** What is the modal age bin?
+
+::: {.myanswers data-latex=""}
+*Solution.* The bin with the largest frequency density is 45--50, which is therefore the modal bin.
+:::
+::::
+
+:::: {.subq}
+**(c)** Calculate (the standard approximation of) the mean age of the politicians.
 
 ::: {.myanswers data-latex=""}
 *Solution.*
@@ -105,5 +113,15 @@ Pretending that each person is in the centre of their bin, we have
 ::::
 :::::
 
+:::: {.myq}
+**3.** Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
+
+```{r two-boxplots}
+set.seed(6)
+x <- rnorm(80, 10, 2)
+y <- 8 + rexp(80,0.4)
+boxplot(x, y, names = c("Dataset 1", "Dataset 2"))
+```
+::::
 
 

@@ -25,7 +25,6 @@ It's not possible to calculate the mean or sample variance, as these require us 
 |:----------------------:|:----------:|:------:|:------:|:------:|:----------:|
 | **Number of shirts**   |  0 |   1   |   6   |   4   |   5   |
 
-*[**Note:** This has been corrected from an earlier version, where the 4 Large and 5 Xtra Large were the wrong way round.]*
 
 ::: {.myanswers data-latex=""}
 *Solution.*
@@ -66,12 +65,17 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 :::
 ::::
 
-:::: {.myq}
+::::: {.myq}
 **B3.** Let $\mathbf a = (a_1, a_2, \dots a_n)$ and $\mathbf b = (b_1, b_2, \dots, b_n)$ be two real-valued vectors of the same length. Then the *Cauchy--Schwarz inequality* says that
 \[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]
-Use the Cauchy--Schwarz inequality to show that the correlation $r_{xy}$ satisfies $-1 \leq r_{xy} \leq 1$.
 
-(*Hint:* Try to prove that $s_{xy}^2 \leq s_x^2 s_y^2$. How does this help?)
+:::: {.subq}
+**(a)** By making a clever choice of $(a_i)$ and $(b_i)$ in the Cauchy--Schwarz inequality, show that $s_{xy}^2 \leq s_x^2 s_y^2$.
+::::
+:::: {.subq}
+**(b)**
+Hence, show that the correlation $r_{xy}$ satisfies $-1 \leq r_{xy} \leq 1$.
+::::
 
 ::: {.myanswers data-latex=""}
 *Solutions.*
@@ -101,7 +105,7 @@ Finally, we note that if a number squared is less than or equal to 1, then the n
 
 **Group feedback:** There are two halves to this question: first get from the Cauchy--Schwarz inequality to the hint, and second get from the hint to the answer $-1 \leq r_{xy} \leq 1$. Many students struggled with the first half -- but you can still try to do the second half. Especially in an exam, look for places where you can get marks for doing part of the question -- and it doesn't need to be the *first* part!
 :::
-::::
+:::::
 
 :::: {.myq}
 **B4.** A researcher wishes to study the effect of mental health on academic achievement. The researcher will collect data on the mental health of a cohort of students by asking them to fill in a questionnaire, and will measure academic achievement via the students' scores on their university exams. Discuss some of the ethical issues associated with the collection, storage, and analysis of this data, and with the publication of the results of the analysis. Are there ways to mitigate these issues?

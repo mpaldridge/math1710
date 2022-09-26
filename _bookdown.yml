@@ -1,28 +1,39 @@
 rmd_files:
   - index.Rmd
   - about.Rmd
-  - sections/S01-eda.Rmd
+  - sections/L01-stats.Rmd
+  - sections/L02-dataviz.Rmd
   - problems/P1.Rmd
-  - sections/S02-probability.Rmd
-  - sections/S03-classical.Rmd
-  - problems/P2.Rmd
-  - sections/S04-conditional.Rmd
-  - sections/S05-discrete-rv.Rmd
-  - problems/P3.Rmd
-  - sections/S06-discrete-dist.Rmd
-  - sections/S07-multi-rv.Rmd
-  - problems/P4.Rmd
-  - sections/S08-continuous.Rmd
-  - sections/S09-normal.Rmd
-  - problems/P5.Rmd
-  - sections/S10-bayesian.Rmd
-  - problems/P6.Rmd
-  - sections/S11-summary.Rmd
+#  - sections/L03-events.Rmd
+#  - sections/L04-probability.Rmd
+#  - sections/L05-classical-i.Rmd
+#  - sections/L06-classical-ii.Rmd
+#  - problems/P2.Rmd
+#  - sections/L07-conditional.Rmd
+#  - sections/L08-two-theorems.Rmd
+#  - sections/L09-discrete-rv.Rmd
+#  - sections/L10-expectation.Rmd
+#  - problems/P3.Rmd
+#  - sections/L11-binomial-geometric.Rmd
+#  - sections/L12-poisson.Rmd
+#  - sections/L13-multi-rv.Rmd
+#  - sections/L14-covariance.Rmd
+#  - problems/P4.Rmd
+#  - sections/L15-continuous.Rmd
+#  - sections/L16-exponential-multi.Rmd
+#  - sections/L17-normal.Rmd
+#  - sections/L18-limit.Rmd
+#  - problems/P5.Rmd
+#  - sections/L19-bayes-idea.Rmd
+#  - sections/L20-bayes-models.Rmd
+#  - problems/P6.Rmd
+#  - sections/L21-summary.Rmd
+#  - sections/L22-exam.Rmd
   - R/R.Rmd
-  - problems/solutions.Rmd
+#  - problems/solutions.Rmd
 book_filename: "math1710"
 output_dir: "docs"
 delete_merged_file: true
 language:
   ui:
-    chapter_name: "Section "
+    chapter_name: "Lecture "

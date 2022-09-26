@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Problem Sheet 6 | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021–2022" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Problem Sheet 6 | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://mpaldridge.github.io/math1710/" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021–2022" />
   
@@ -30,9 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="S10-bayesian.html"/>
-<link rel="next" href="S11-summary.html"/>
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
+<link rel="prev" href="L20-bayes-models.html"/>
+<link rel="next" href="L21-summary.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -141,9 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
 <ul>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#notes"><i class="fa fa-check"></i>Notes and videos</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
@@ -159,15 +157,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
 </ul></li>
-<li class="part"><span><b>Part I: EDA</b></span></li>
-<li class="chapter" data-level="1" data-path="S01-eda.html"><a href="S01-eda.html"><i class="fa fa-check"></i><b>1</b> Exploratory data analysis</a>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="S01-eda.html"><a href="S01-eda.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
-<li class="chapter" data-level="1.2" data-path="S01-eda.html"><a href="S01-eda.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
-<li class="chapter" data-level="1.3" data-path="S01-eda.html"><a href="S01-eda.html#summary-stat"><i class="fa fa-check"></i><b>1.3</b> Summary statistics and boxplots</a></li>
-<li class="chapter" data-level="1.4" data-path="S01-eda.html"><a href="S01-eda.html#binned"><i class="fa fa-check"></i><b>1.4</b> Binned data and histograms</a></li>
-<li class="chapter" data-level="1.5" data-path="S01-eda.html"><a href="S01-eda.html#multiple"><i class="fa fa-check"></i><b>1.5</b> Multiple variables and scatterplots</a></li>
-<li class="chapter" data-level="" data-path="S01-eda.html"><a href="S01-eda.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
 <ul>
@@ -177,25 +181,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
 <li class="part"><span><b>Part II: Probability</b></span></li>
-<li class="chapter" data-level="2" data-path="S02-probability.html"><a href="S02-probability.html"><i class="fa fa-check"></i><b>2</b> Probability spaces</a>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="S02-probability.html"><a href="S02-probability.html#what-is-prob"><i class="fa fa-check"></i><b>2.1</b> What is probability?</a></li>
-<li class="chapter" data-level="2.2" data-path="S02-probability.html"><a href="S02-probability.html#sample-events"><i class="fa fa-check"></i><b>2.2</b> Sample spaces and events</a></li>
-<li class="chapter" data-level="2.3" data-path="S02-probability.html"><a href="S02-probability.html#set-theory"><i class="fa fa-check"></i><b>2.3</b> Basic set theory</a></li>
-<li class="chapter" data-level="2.4" data-path="S02-probability.html"><a href="S02-probability.html#axioms"><i class="fa fa-check"></i><b>2.4</b> Probability axioms</a></li>
-<li class="chapter" data-level="2.5" data-path="S02-probability.html"><a href="S02-probability.html#prob-properties"><i class="fa fa-check"></i><b>2.5</b> Properties of probability</a></li>
-<li class="chapter" data-level="2.6" data-path="S02-probability.html"><a href="S02-probability.html#addition"><i class="fa fa-check"></i><b>2.6</b> Addition rules for unions</a></li>
-<li class="chapter" data-level="" data-path="S02-probability.html"><a href="S02-probability.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Basic set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="S03-classical.html"><a href="S03-classical.html"><i class="fa fa-check"></i><b>3</b> Classical probability</a>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="S03-classical.html"><a href="S03-classical.html#classical-intro"><i class="fa fa-check"></i><b>3.1</b> Probability with equally likely outcomes</a></li>
-<li class="chapter" data-level="3.2" data-path="S03-classical.html"><a href="S03-classical.html#multiplication"><i class="fa fa-check"></i><b>3.2</b> Multiplication principle</a></li>
-<li class="chapter" data-level="3.3" data-path="S03-classical.html"><a href="S03-classical.html#sampling"><i class="fa fa-check"></i><b>3.3</b> Sampling with and without replacement</a></li>
-<li class="chapter" data-level="3.4" data-path="S03-classical.html"><a href="S03-classical.html#ordering"><i class="fa fa-check"></i><b>3.4</b> Ordering</a></li>
-<li class="chapter" data-level="3.5" data-path="S03-classical.html"><a href="S03-classical.html#combinations"><i class="fa fa-check"></i><b>3.5</b> Sampling without replacement in any order</a></li>
-<li class="chapter" data-level="3.6" data-path="S03-classical.html"><a href="S03-classical.html#birthday"><i class="fa fa-check"></i><b>3.6</b> Birthday problem</a></li>
-<li class="chapter" data-level="" data-path="S03-classical.html"><a href="S03-classical.html#summary-03"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="L05-classical-i.html"><a href="L05-classical-i.html"><i class="fa fa-check"></i><b>5</b> Classical probability I</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="L05-classical-i.html"><a href="L05-classical-i.html#classical-intro"><i class="fa fa-check"></i><b>5.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="5.2" data-path="L05-classical-i.html"><a href="L05-classical-i.html#multiplication"><i class="fa fa-check"></i><b>5.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="5.3" data-path="L05-classical-i.html"><a href="L05-classical-i.html#sampling"><i class="fa fa-check"></i><b>5.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="" data-path="L05-classical-i.html"><a href="L05-classical-i.html#summary-L05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
+<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
+<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
+<li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-03"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
 <ul>
@@ -204,24 +216,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="S04-conditional.html"><a href="S04-conditional.html"><i class="fa fa-check"></i><b>4</b> Independence and conditional probability</a>
+<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="S04-conditional.html"><a href="S04-conditional.html#independent-events"><i class="fa fa-check"></i><b>4.1</b> Independent events</a></li>
-<li class="chapter" data-level="4.2" data-path="S04-conditional.html"><a href="S04-conditional.html#conditional"><i class="fa fa-check"></i><b>4.2</b> Conditional probability</a></li>
-<li class="chapter" data-level="4.3" data-path="S04-conditional.html"><a href="S04-conditional.html#chain-rule"><i class="fa fa-check"></i><b>4.3</b> Chain rule</a></li>
-<li class="chapter" data-level="4.4" data-path="S04-conditional.html"><a href="S04-conditional.html#total-prob"><i class="fa fa-check"></i><b>4.4</b> Law of total probability</a></li>
-<li class="chapter" data-level="4.5" data-path="S04-conditional.html"><a href="S04-conditional.html#bayes"><i class="fa fa-check"></i><b>4.5</b> Bayes’ theorem</a></li>
-<li class="chapter" data-level="4.6" data-path="S04-conditional.html"><a href="S04-conditional.html#screening"><i class="fa fa-check"></i><b>4.6</b> Diagnostic testing</a></li>
-<li class="chapter" data-level="" data-path="S04-conditional.html"><a href="S04-conditional.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
+<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html"><i class="fa fa-check"></i><b>5</b> Discrete random variables</a>
+<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#rv"><i class="fa fa-check"></i><b>5.1</b> What is a random variable?</a></li>
-<li class="chapter" data-level="5.2" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>5.2</b> Probability mass functions</a></li>
-<li class="chapter" data-level="5.3" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#expectation"><i class="fa fa-check"></i><b>5.3</b> Expectation</a></li>
-<li class="chapter" data-level="5.4" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#functions"><i class="fa fa-check"></i><b>5.4</b> Functions of random variables</a></li>
-<li class="chapter" data-level="5.5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#variance"><i class="fa fa-check"></i><b>5.5</b> Variance</a></li>
-<li class="chapter" data-level="" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#summary-05"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
+<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass functions</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
+<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
+<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-05"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
@@ -230,24 +248,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html"><i class="fa fa-check"></i><b>6</b> Discrete distributions</a>
+<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and Poisson distributions</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#binomial"><i class="fa fa-check"></i><b>6.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="6.2" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#geometric"><i class="fa fa-check"></i><b>6.2</b> Geometric distribution</a></li>
-<li class="chapter" data-level="6.3" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson"><i class="fa fa-check"></i><b>6.3</b> Poisson distribution</a></li>
-<li class="chapter" data-level="6.4" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson-approx"><i class="fa fa-check"></i><b>6.4</b> Poisson approximation to the binomial</a></li>
-<li class="chapter" data-level="6.5" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#models"><i class="fa fa-check"></i><b>6.5</b> Distributions as models for data</a></li>
-<li class="chapter" data-level="" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html"><i class="fa fa-check"></i><b>7</b> Multiple random variables</a>
+<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
-<li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
-<li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>7.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation of sums and products</a></li>
-<li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.5</b> Covariance</a></li>
-<li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.6</b> Law of large numbers</a></li>
-<li class="chapter" data-level="" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#summary-07"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
+<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
+<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#models"><i class="fa fa-check"></i><b>12.3</b> Distributions as models for data</a></li>
+<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
+<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
+<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-07"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
 <ul>
@@ -256,24 +279,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="S08-continuous.html"><a href="S08-continuous.html"><i class="fa fa-check"></i><b>8</b> Continuous random variables</a>
+<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>8.1</b> What is a continuous random variable?</a></li>
-<li class="chapter" data-level="8.2" data-path="S08-continuous.html"><a href="S08-continuous.html#pdf"><i class="fa fa-check"></i><b>8.2</b> Probability density functions</a></li>
-<li class="chapter" data-level="8.3" data-path="S08-continuous.html"><a href="S08-continuous.html#prop-cont"><i class="fa fa-check"></i><b>8.3</b> Properties of continuous random variables</a></li>
-<li class="chapter" data-level="8.4" data-path="S08-continuous.html"><a href="S08-continuous.html#exponential"><i class="fa fa-check"></i><b>8.4</b> Exponential distribution</a></li>
-<li class="chapter" data-level="8.5" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-multiple"><i class="fa fa-check"></i><b>8.5</b> Multiple continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="S08-continuous.html"><a href="S08-continuous.html#summary-08"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="S09-normal.html"><a href="S09-normal.html"><i class="fa fa-check"></i><b>9</b> Normal distribution</a>
+<li class="chapter" data-level="16" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html"><i class="fa fa-check"></i><b>16</b> Exponential distribution and multiple continuous random variables</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition of the normal distribution</a></li>
-<li class="chapter" data-level="9.2" data-path="S09-normal.html"><a href="S09-normal.html#normal-properties"><i class="fa fa-check"></i><b>9.2</b> Properties of the normal distribution</a></li>
-<li class="chapter" data-level="9.3" data-path="S09-normal.html"><a href="S09-normal.html#normal-r"><i class="fa fa-check"></i><b>9.3</b> Calculations using R</a></li>
-<li class="chapter" data-level="9.4" data-path="S09-normal.html"><a href="S09-normal.html#normal-tables"><i class="fa fa-check"></i><b>9.4</b> Calculations using statistical tables</a></li>
-<li class="chapter" data-level="9.5" data-path="S09-normal.html"><a href="S09-normal.html#clt"><i class="fa fa-check"></i><b>9.5</b> Central limit theorem</a></li>
-<li class="chapter" data-level="9.6" data-path="S09-normal.html"><a href="S09-normal.html#normal-approx"><i class="fa fa-check"></i><b>9.6</b> Approximations with the normal distribution</a></li>
-<li class="chapter" data-level="" data-path="S09-normal.html"><a href="S09-normal.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="16.1" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#exponential"><i class="fa fa-check"></i><b>16.1</b> Exponential distribution</a></li>
+<li class="chapter" data-level="16.2" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#continuous-multiple"><i class="fa fa-check"></i><b>16.2</b> Multiple continuous random variables</a></li>
+<li class="chapter" data-level="" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#summary-08"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="L17-normal.html"><a href="L17-normal.html"><i class="fa fa-check"></i><b>17</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="L17-normal.html"><a href="L17-normal.html#normal-definition"><i class="fa fa-check"></i><b>17.1</b> Definition of the normal distribution</a></li>
+<li class="chapter" data-level="17.2" data-path="L17-normal.html"><a href="L17-normal.html#normal-properties"><i class="fa fa-check"></i><b>17.2</b> Properties of the normal distribution</a></li>
+<li class="chapter" data-level="17.3" data-path="L17-normal.html"><a href="L17-normal.html#normal-r"><i class="fa fa-check"></i><b>17.3</b> Calculations using R</a></li>
+<li class="chapter" data-level="17.4" data-path="L17-normal.html"><a href="L17-normal.html#normal-tables"><i class="fa fa-check"></i><b>17.4</b> Calculations using statistical tables</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#mean-rv"><i class="fa fa-check"></i><b>18.1</b> Mean of random variables</a></li>
+<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.2</b> Law of large numbers</a></li>
+<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.3</b> Central limit theorem</a></li>
+<li class="chapter" data-level="18.4" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.4</b> Approximations with the normal distribution</a></li>
+<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
 <ul>
@@ -283,23 +314,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
-<li class="chapter" data-level="10" data-path="S10-bayesian.html"><a href="S10-bayesian.html"><i class="fa fa-check"></i><b>10</b> Introduction to Bayesian statistics</a>
+<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="S10-bayesian.html"><a href="S10-bayesian.html#fake-coin"><i class="fa fa-check"></i><b>10.1</b> Example: fake coin?</a></li>
-<li class="chapter" data-level="10.2" data-path="S10-bayesian.html"><a href="S10-bayesian.html#bayesian-framework"><i class="fa fa-check"></i><b>10.2</b> Bayesian framework</a></li>
-<li class="chapter" data-level="10.3" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta"><i class="fa fa-check"></i><b>10.3</b> Beta distribution</a></li>
-<li class="chapter" data-level="10.4" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta-bern"><i class="fa fa-check"></i><b>10.4</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="10.5" data-path="S10-bayesian.html"><a href="S10-bayesian.html#normal-normal"><i class="fa fa-check"></i><b>10.5</b> Normal–normal model</a></li>
-<li class="chapter" data-level="10.6" data-path="S10-bayesian.html"><a href="S10-bayesian.html#modern-bayes"><i class="fa fa-check"></i><b>10.6</b> Modern Bayesian statistics</a></li>
-<li class="chapter" data-level="" data-path="S10-bayesian.html"><a href="S10-bayesian.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#modern-bayes"><i class="fa fa-check"></i><b>19.3</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> Bayesian models</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
+<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#normal-normal"><i class="fa fa-check"></i><b>20.3</b> Normal–normal model</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
-<li class="part"><span><b>Other stuff</b></span></li>
-<li class="chapter" data-level="11" data-path="S11-summary.html"><a href="S11-summary.html"><i class="fa fa-check"></i><b>11</b> The last section</a>
+<li class="part"><span><b>Revision</b></span></li>
+<li class="chapter" data-level="21" data-path="L21-summary.html"><a href="L21-summary.html"><i class="fa fa-check"></i><b>21</b> Summary</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="S11-summary.html"><a href="S11-summary.html#summary-of-the-module"><i class="fa fa-check"></i><b>11.1</b> Summary of the module</a></li>
-<li class="chapter" data-level="11.2" data-path="S11-summary.html"><a href="S11-summary.html#about-the-exam"><i class="fa fa-check"></i><b>11.2</b> About the exam</a></li>
-<li class="chapter" data-level="11.3" data-path="S11-summary.html"><a href="S11-summary.html#past-papers"><i class="fa fa-check"></i><b>11.3</b> Past papers</a></li>
+<li class="chapter" data-level="21.1" data-path="L21-summary.html"><a href="L21-summary.html#summary-of-the-module"><i class="fa fa-check"></i><b>21.1</b> Summary of the module</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#about-the-exam"><i class="fa fa-check"></i><b>22.1</b> About the exam</a></li>
+<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.2</b> Past papers</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -338,15 +375,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="P6" class="section level1 unnumbered">
-<h1>Problem Sheet 6</h1>
+<div id="P6" class="section level1 unnumbered hasAnchor">
+<h1>Problem Sheet 6<a href="P6.html#P6" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <style>
 .myanswers { 
 display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of <a href="S10-bayesian.html#S10-bayesian">Section 10</a>. There is no assessed work on this sheet.</p>
+<p>This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of <a href="#S10-bayesian">Section 10</a>. There is no assessed work on this sheet.</p>
 </div>
 <div class="myq">
 <p><strong>1.</strong> I want to use a prior distribution for a parameter <span class="math inline">\(\theta\)</span> whose range is the interval <span class="math inline">\([0,1]\)</span>, whose expectation is <span class="math inline">\(0.4\)</span> and whose standard deviation is <span class="math inline">\(0.2\)</span>. Suggest an appropriate distribution.</p>
@@ -415,7 +452,7 @@ The Beta prior is
 <span class="math display">\[ \pi(\theta) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} . \]</span>
 Therefore the posterior is
 <span class="math display">\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{x-1} \theta
-= \theta^{\alpha} (1 - \theta){\beta + x - 1 - 1} , \]</span>
+= \theta^{\alpha} (1 - \theta)^{\beta + x - 1 - 1} , \]</span>
 which is the <span class="math inline">\(\text{Beta}(\alpha + 1, \beta + x - 1)\)</span> distribution.</p>
 </div>
 </div>
@@ -427,7 +464,7 @@ We have the same prior, but not have a product likelihood
 <span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n (1 - \theta)^{x_i - 1} \theta = (1 - \theta)^{y - n} \theta^n , \]</span>
 where <span class="math inline">\(y = \sum_{i=1}^n x_i\)</span>. Then the posterior is
 <span class="math display">\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{y-n} \theta^n
-= \theta^{\alpha + n - 1} (1 - \theta){\beta + y - n - 1} , \]</span>
+= \theta^{\alpha + n - 1} (1 - \theta)^{\beta + y - n - 1} , \]</span>
 which is the <span class="math inline">\(\text{Beta}(\alpha + n, \beta + y - n)\)</span> distribution.</p>
 </div>
 </div>
@@ -449,8 +486,8 @@ Each geometric experiment has <span class="math inline">\(x_i - 1\)</span> failu
           </div>
         </div>
       </div>
-<a href="S10-bayesian.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="S11-summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L20-bayes-models.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L21-summary.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -482,7 +519,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["math1710.pdf", "math1710.epub"],
+"download": ["math1710.pdf"],
 "search": {
 "engine": "fuse",
 "options": null
@@ -500,7 +537,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');

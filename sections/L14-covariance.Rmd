@@ -1,0 +1,223 @@
+# Expectation and covariance  {#L14-covariance}
+
+## Expectation of sums and products {#sum-product}
+
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/BaEbVJZkGGY"></iframe>
+:::
+::::
+
+When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. (In fact, it's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.)
+
+::: {.theorem #linearity2}
+Let $X$ and $Y$ be two random variables with joint probability mass function $p_{X,Y}$. Then
+
+1. $\mathbb Eg(X,Y) = \displaystyle\sum_{x,y} g(x,y) p_{X,Y}(x,y)$.
+2. **(Linearity of expectation, 2)** $\mathbb E(X + Y) = \mathbb EX + \mathbb EY$, regardless of whether $X$ and $Y$ are independent or not.
+3. If $X$ and $Y$ are independent, then $\mathbb EXY = \mathbb EX \times \mathbb EY$.
+:::
+
+If we put the second point here together with the other result of linearity of expectation (Theorem \@ref(thm:linearity1)) then we get the general rule
+\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]
+and this holds whether or not $X$ and $Y$ are independent.
+
+::: {.proof}
+Part 1 is just the law of the unconscious statistician for the random variable $(X,Y)$, and the same proof holds.
+
+For part 2, we have
+\begin{align*}
+\mathbb E(X + Y) &= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
+  &= \sum_{x,y} x\,p_{X,Y}(x,y) + \sum_{x,y} y\,p_{X,Y}(x,y) \\
+  &= \sum_x x \sum_y p_{X,Y}(x,y) + \sum_y y \sum_x p_{X,Y}(x,y)
+\end{align*}
+But summing a joint PMF over one of the variables gives the marginal PMF; so $\sum_y p_{X,Y}(x,y) = p_X(x)$ and $\sum_x p_{X,Y}(x,y) = p_Y(y)$. So this gives
+\begin{align*}
+\mathbb E(X + Y) &= \sum_x x\, p_X(x) + \sum_y y\,p_Y(y) \\
+&= \mathbb EX + \mathbb EY .
+\end{align*}
+
+For part 3, if $X$ and $Y$ are independent, then $p_{X,Y}(x,y) = p_X(x) \, p_Y(y)$. Therefore,
+\begin{align*}
+\mathbb EXY &= \sum_{x,y} xy p_{X,Y}(x,y) \\
+  &= \sum_x \sum_y xy p_X(x) p_Y(y) \\
+  &= \sum_x x p_X(x) \sum_y y p_Y(y) \\
+  &= \mathbb EX \times \mathbb EY,
+\end{align*}
+as required.
+:::
+
+::: {.example}
+*A student is solving five questions on a problem sheet. The time taken for each question to the nearest minute is an identically distributed random variable with expectation $\mathbb EX_i = \mu$. What is the total expected time to complete the problem sheet?*
+
+By linearity of expectation, this is
+\[ \mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = \mathbb EX_1 + \mathbb EX_2 + \mathbb EX_3 + \mathbb EX_4 + \mathbb EX_5 = 5\mu . \]
+
+*What if the lengths of time are not independent -- for example, if the student is slower at answering all the questions when she is tired?*
+
+It's still the case that $\mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = 5\mu$, because this result is true whether or not the random variables are independent.
+:::
+
+
+
+## Covariance {#covariance}
+
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/eXsUrJzcRCE"></iframe>
+:::
+::::
+
+If we are interested at how two random variables vary together, we need to look at the covariance.
+
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+
+::: {.definition}
+Let $X$ and $Y$ be two random variables with expectations $\mu_X$ and $\mu_Y$ respectively. Then their **covariance** is
+\[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]
+:::
+
+In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.
+
+::: {.theorem}
+Let $X$ and $Y$ be two random variables with expectations $\mu_X$ and $\mu_Y$ respectively. Then their covariance can also be calculated as
+\[ \Cov(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]
+:::
+
+::: {.proof}
+Exactly as we've done many times before, we have
+\begin{align*}
+\Cov(X,Y) &= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
+&= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
+&= \mathbb EXY  - \mu_Y \,\mathbb EX - \mu_X \,\mathbb EY + \mu_X \, \mu_Y \\
+&= \mathbb EXY - \mu_X \, \mu_Y - \mu_X \, \mu_Y + \mu_X \, \mu_Y \\
+&= \mathbb EXY - \mu_X \, \mu_Y ,
+\end{align*}
+and we're done.
+:::
+
+::: {.example}
+We continue with our coin-tossing example. We know that $X \sim \text{Bin}(2, \frac12)$ so $\mu_X = 1$ and  $Y \sim \text{Bin}(3, \frac12)$ so $\mu_Y = 1.5$. We then need $\mathbb EXY$, which is
+\begin{align*}
+\mathbb EXY &= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
+  &= 0\times 0\,p_{X,Y}(0,0) + 0 \times 1 \, p_{X,Y}(0,1) + \cdots + 2\times 3 \,p_{X,Y}(2,3) \\
+  &= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
+  &= 2.
+\end{align*}
+Hence the covariance is
+\[ \Cov (X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]
+:::
+
+
+A very important fact is the following.
+
+::: {.theorem}
+If $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
+:::
+
+To use the ["contrapositive"](https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive), in our example, $\Cov(X,Y) \neq 0$, which means that $X$ and $Y$ are not independent (confirming what we already knew).
+
+::: {.proof}
+Recall from Theorem \@ref(thm:linearity2) that if $X$ and $Y$ are independent, we have $\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y$. Then from the computational formula, we have
+\[ \Cov(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]
+and we are done.
+:::
+
+Here are some more important properties of the covariance.
+
+::: {.theorem}
+Let $X$, $Y$ and $Z$ be random variables. Then
+
+1. $\Cov(X,Y) = \Cov(Y,X)$;
+2. $\Cov(X,X) = \Var(X)$'
+3. $\Cov(aX, Y) = a\,\Cov(X,Y)$;
+4. $\Cov(X + b, Y) = \Cov(X,Y)$;
+5. $\Cov(X + Y, Z) = \Cov(X, Z) + \Cov(Y,Z)$.
+:::
+
+::: {.proof}
+Part 1 and 2 are immediate from the definition.
+
+Parts 3, 4 and 5 are quite similar. We'll do part 5 here, and you can do parts 3 and 4 on [Problem Sheet 4](#P4).
+
+For part 5, note that $\mathbb E(X + Y) = \mu_X + \mu_Y$ by linearity of expectation. Hence
+\begin{align*}
+\Cov(X + Y, Z)
+  &= \mathbb E (X + Y - \mu_X - \mu_Y)(Z - \mu_Z) \\
+  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
+  &= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
+  &= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
+  &= \Cov(X,Z) + \Cov(Y,Z) ,
+\end{align*}
+as required.
+:::
+
+We could calculate the covariance in our coin-tossing example a different way, by noting that $Y = X + Z$, where $Z \sim \text{Bern}(\frac12)$ represents the third coin toss and is independent of $X$. Then we have
+\begin{multline*}
+\Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) \\
+= \Var(X) + 0 = 2 \times \tfrac12 \times \big(1 - \tfrac12\big) = \tfrac12, \end{multline*}
+matching our previous calculation. In the above calculation, we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent, and we knew the variance of $X$ because $X \sim \text{Bin}(2, \frac12)$.
+
+Now that we know some facts about the covariance, we can calculate the variance of a sum.
+
+::: {.theorem}
+Let $X$ and $Y$ be two random variables. Then
+\[ \Var(X + Y) = \Var(X) + 2\Cov(X,Y) + \Var(Y) . \]
+
+If $X$ and $Y$ are independent, then
+\[ \Var(X + Y) = \Var(X) + \Var(Y) . \]
+:::
+
+It's easy to forget the conditions for the following two facts:
+
+* $\mathbb E(X + Y) = \mathbb EX + \mathbb EY$ regardless of whether $X$ and $Y$ are independent or not.
+* $\Var(X+Y) = \Var(X) + \Var(Y)$ if $X$ and $Y$ are independent.
+
+::: {.proof}
+For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have $\mathbb E(X + Y) = \mu_X + \mu_Y$. So
+\begin{align*}
+\Var(X + Y) &= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
+  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
+  &= \mathbb E \big( (X - \mu_X)^2 + 2(X - \mu_X)(Y - \mu_Y) + (Y - \mu_Y)^2\big) \\
+  &= \mathbb E(X - \mu_X)^2 + 2 \mathbb E(X - \mu_X)(Y - \mu_Y) + \mathbb E (Y - \mu_Y)^2 \\
+  &= \Var(X) + 2\Cov(X,Y) + \Var(Y) ,
+\end{align*}
+where we used the linearity of expectation.
+
+For the second part, recall that is $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
+:::
+
+It can sometimes be useful to "normalise" the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.
+
+::: {.definition}
+Let $X$ and $Y$ be two random variables. Then the **correlation** between $X$ and $Y$ is
+\[ \Corr(X,Y) = \frac{\Cov(X,Y)} {\sqrt{\Var(X)\,\Var(Y)}} . \]
+:::
+
+As with the sample correlation $r_{xy}$ from Section 1, the correlation is a number between $-1$ and $+1$, where values near $+1$ mean that large values of $X$ and large values of $Y$ are likely to occur together, while values near $-1$ mean that large values of $X$ and small values of $Y$ are likely to occur together.
+
+Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it follows that if $X$ and $Y$ are independent, then $\Corr(X,Y) = 0$ also.
+
+::: {.example}
+For the coin-tossing again, we have
+\[ \Corr(X,Y) = \frac{\Cov(X,Y)} {\sqrt{\Var(X)\,\Var(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]
+:::
+
+
+
+## Summary  {#summary-07 .unnumbered}
+
+::: {.mysummary}
+* For two random variables, the joint PMF $p_{X,Y}$, marginal PMF $p_X$, and conditional PMF $p_{Y \mid X}$ are
+\begin{align*}
+  p_{X,Y}(x,y) &= \mathbb P(X =x \text{ and } Y = y) \\
+  p_X(x) &= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
+  p_{Y \mid X}(y \mid x) &= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)} 
+\end{align*}
+* Two random variables are independent if $p_{X,Y}(x,y) = p_X(x) \, p_Y(y)$.
+* $\mathbb E(X + Y) = \mathbb EX + \mathbb EY$
+* The covariance is $\Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y$.
+* $\Var(X + Y) = \Var(X) + 2\Cov(X,Y) + \Var(Y)$; or if $X$ and $Y$ are independent, then $\Var(X + Y) = \Var(X) + \Var(Y)$.
+* The law of large numbers says that the mean $\overline X_n$ of IID random variables tends to the expectation $\mu$ as $n \to \infty$.
+:::

@@ -1,0 +1,35 @@
+# (PART\*) Revision  {-}
+
+# Summary {#L21-summary}
+
+## Summary of the module
+
+We've now reached the end of the mathematical portion of MATH1710 Probability and Statistics I. This last section will be about summarising what we've learned, and starting to prepare for the exam.
+
+Here is a summary of what we have learned in the course. You may like to use this list to guide your revision.
+
+* **Exploratory data analysis**: Summary statistics, data visualisation, binned data
+* **Probability**:
+   * Probability with events: Probability spaces, probability axioms, properties of probability including the addition rule for unions, "classical probability" of equally likely events, ways of counting for classical probability, independence, conditional probability, law of total probability, Bayes' theorem
+   * Probability with random variables: Discrete random variables, expectation and variance, binomial distribution, geometric distribution, Poisson distribution, multiple random variables: joint, marginal and conditional distributions, law of large numbers, continuous random variables, exponential distribution, normal distribution, central limit theorem
+* **Bayesian statistics**: Bayesian framework, Beta prior, Beta--Bernoulli model, normal--normal model
+
+We spent 1 week on EDA, 8 weeks on probability, and 1 week on Bayesian statistics. You can expect a similar proportion of your exam on each topic.
+
+The following two tables summarise the discrete and continuous distributions we learned about in the course. In general, you are expected to know this material in the exam without being told; so I *strongly recommend* learning this.
+
+| Distribution | Range | PMF | Expectation | Variance |
+|:----|:-:|:-:|:-:|:-:|
+| **Bernoulli:** $\text{Bern}(p)$ | $\{0,1\}$ | $p(0) = 1- p$, $p(1) = p$ | $p$ | $p(1-p)$ |
+| **Binomial:** $\text{Bin}(n,p)$ | $\{0,1,\dots,n\}$ | $\displaystyle\binom{n}{x} p^x (1-p)^{n-x}$ | $np$ | $np(1-p)$ |
+| **Geometric:** $\text{Geom}(p)$ | $\{1,2,\dots\}$ | $(1-p)^{x-1}p$ | $\displaystyle\frac{1}{p}$ | $\displaystyle\frac{1-p}{p^2}$ |
+| **Poisson:** $\text{Po}(\lambda)$ | $\{0,1,\dots\}$ | $\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}$ | $\lambda$ | $\lambda$ |
+
+| Distribution | Range | PDF | Expectation | Variance |
+|:-----|:-:|:-:|:-:|:-:|
+| **Exponential:** $\text{Exp}(\lambda)$ | $\mathbb R_+$ | $\lambda \mathrm e^{-\lambda x}$ | $\displaystyle\frac{1}{\lambda}$ | $\displaystyle\frac{1}{\lambda^2}$ |
+| **Normal:** $\mathrm N(\mu,\sigma^2)$ | $\mathbb R$ | ${\displaystyle{\small \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right)}}$ | $\mu$ | $\sigma^2$ |
+| **Beta:** $\text{Beta}(\alpha, \beta)$ | $[0,1]$ | $\propto x^{\alpha - 1}(1-x)^{\beta - 1}$ | $\displaystyle\frac{\alpha}{\alpha + \beta}$ | ${\displaystyle{\small \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}}$ |
+
+
+

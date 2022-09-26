@@ -1,4 +1,4 @@
-# Normal distribution  {#S09-normal}
+# Normal distribution  {#L17-normal}
 
 ## Definition of the normal distribution  {#normal-definition}
 
@@ -33,8 +33,8 @@ axis(1, at = c(-4,0,4), labels = c("",expression(mu),""), lwd = 2)
 arrows(0, 0, 0, 1/sqrt(2*pi), code = 0, lty = 2, col = "red")
 arrows(-1, exp(-1/2)/sqrt(2*pi), 0, exp(-1/2)/sqrt(2*pi), length = 0.15, code = 3, lwd = 2)
 arrows(0, exp(-1/2)/sqrt(2*pi), 1, exp(-1/2)/sqrt(2*pi), length = 0.15, code = 3, lwd = 2)
-text(-0.5, 0.22, expression(sigma^2))
-text( 0.5, 0.22, expression(sigma^2))
+text(-0.5, 0.22, expression(sigma))
+text( 0.5, 0.22, expression(sigma))
 ```
 
 One important special case is $\mu = 0$ and $\sigma^2 = 1$, in which case we say that $Z \sim \mathrm N(0,1)$ has the **standard normal distribution**. We typically write $\phi$ (lower-case "phi"), where 
@@ -331,100 +331,3 @@ I feel I shouldn't finish with this subsection before addressing the following q
 
 I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
 
-## Central limit theorem  {#clt}
-
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/yygv7L5hcOg"></iframe>
-:::
-::::
-
-
-Recall that, given random variables $X_1, X_2, \dots$ we can form the mean
-\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) . \]
-Recall further that we saw that if the $X_i$ are IID random variables with expectation $\mu$ and variance $\sigma^2$, then
-\[ \mathbb E\overline X_n = \mu \qquad \Var \big(\overline X_n\big) = \frac{\sigma^2}{n} . \]
-We then saw that the [law of large numbers](#lln) told us that $\overline X_n \to \mu$ as $n \to \infty$. Alternatively, we could say that $\overline X_n - \mu \to 0$.
-
-We might also want to know what the variation of $\overline X_n - \mu$ is around 0. Obviously, the law of large numbers tells us this variation eventually dies away to 0, but we can "inflate" the variation by multiplying by $\sqrt{n}$ and looking at $\sqrt{n}(\overline X_n - \mu)$.
-
-In the same way, we can calculate that 
-\[ \mathbb E\sqrt{n}\big( \overline X_n - \mu\big) = 0 \qquad \Var\Big(\sqrt{n}\big( \overline X_n - \mu\big)\Big) = \sigma^2. \]
-So whatever distribution $\sqrt{n}(\overline X_n - \mu)$ has, that distribution must have expectation $0$ and variance $\sigma^2$. But in fact, *no matter what distribution the $X_i$ have*, this "variation around 0" $\sqrt{n}(\overline X_n - \mu)$ always gets closer and closer to the normal distribution!
-
-::: {.theorem #thCLT name="Central limit theorem"}
-Let $X_1, X_2, \dots$ be a sequence of IID random variables. Write $\mu = \mathbb EX_1$ for the common expectation, $\sigma^2 = \Var(X_1)$ for the common variance, and $\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i$ for the mean of the first $n$ random variables. Then 
-\[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]
-by which we mean that, if $Y \sim \mathrm N(0, \sigma^2)$, then, for all $a < b$,
-\[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
-:::
-
-(A full proof of the central limit theorem is too complicated to include here.)
-
-Another alternative way to write this is to divide both sides by $\sigma$ to get
-\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
-
-The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
-
-
-## Approximations with the normal distribution  {#normal-approx}
-
-
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/OYv464S0fDI"></iframe>
-:::
-::::
-
-
-There are many other distributions $X$ that can be well approximated by a normal distribution where $\mu$ is set to $\mathbb EX$ and $\sigma^2$ is set to $\Var(X)$. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
-
-* A binomial distribution $X \sim \mathrm{Bin}(n, p)$ is well approximated by a normal distribution $\mathrm{N}(np, np(1-p))$ when $n$ is large and $p$ is not too close to 0 or 1. (When $p$ is small, we already know that the Poisson distribution is a good approximation.)
-* A Poisson distribution $X \sim \mathrm{Po}(\lambda)$ is well approximated by a normal distribution $\mathrm{N}(\lambda, \lambda)$ when $\lambda$ is large.
-* A sum $Y = X_1 + \cdots + X_n$ of $n$ IID geometric distributions $X_1, \dots, X_n \sim \mathrm{Geom}(p)$ (sometimes known as a "negative binomial" distribution) is well approximated by a normal distribution $\mathrm{N}(n/p, np/(1-p)^2)$ when $p$ is not to close to 1.
-* A sum $Y = X_1 + \cdots + X_n$ of $n$ IID exponential distributions $X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)$ (sometimes known as a "Gamma" distribution) is well approximated by a normal distribution $\mathrm{N}(n/\lambda, n/\lambda^2)$ when the expectation $1/\lambda$ is not too small.
-
-::: {.example}
-*Suppose I toss 1000 coins. What's the probability I get between 495 and 505 Heads?*
-
-The true distribution of Heads is $X \sim \mathrm{Bin}(1000, \frac12)$, and the question wants
-\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]
-We can calculate the exact answer using R:
-
-```{r}
-sum(dbinom(495:505, 1000, 1/2))
-```
-
-However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since $\mathbb EX = 1000 \times \frac12 = 500$ and $\Var(X) = 1000 \times \frac12 \times \frac12 = 250$, we have the normal approximation $X \approx \mathrm N(500, 250)$. We could then calculate
-\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]
-We could standardise and use the statistical tables, or just use R:
-
-```{r}
-pnorm(505, 500, sqrt(250)) - pnorm(495, 500, sqrt(250))
-```
-
-This is not too far off the correct answer $0.272$ we calculated exactly, but it does miss by about 9%.
-
-Note, though, that we approximated the discrete random variable $X$ by a continuous random variable $Y$. So the next possibility for $X$ above 505 was 506 and below 495 was 494, whereas $Y$ could smoothly vary between the two. So we usually get a more accurate approximation if we use a **continuity correction** and round outwards halfway to the next discrete point. So we should get a better approximation from 
-\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]
-
-Calculating this in R (or with statistical tables) we get
-```{r}
-pnorm(505.5, 500, sqrt(250)) - pnorm(494.5, 500, sqrt(250))
-```
-Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006%.
-:::
-
-Using a continuity correction -- that is, rounding outwards halfway to the next discrete point -- typically makes approximations more accurate whenever you are approximating a discrete random variable by a continuous random variable (such as a normal distribution).
-
-## Summary  {#summary-09 .unnumbered}
-
-::: {.mysummary}
-* The normal distribution has PDF
-\[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left(- \frac{(x - \mu)^2}{2\sigma^2} \right) .\]
-It has expectation $\mu$ and variance $\sigma^2$.
-* The standard normal distibution has $\mu = 0$ and $\sigma^2 = 1$.
-* The CDF of a normal distribution can be calculated in R with the `pnorm()` function. For the standard normal distribution, [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) can be used.
-* The central limit theorem says that the mean of $n$ IID random variables is approximately normally distributed for large $n$.
-* Other random variables can also be approximated by the normal distribution. When approximating a discrete random variable, use a continuity correction.
-:::

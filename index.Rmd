@@ -11,7 +11,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 # Schedule {.unnumbered}
 
-::: {.oldsched}
+<!--::: {.oldsched}
 **Week 11** (22--26 November):
 
 * [**Section 11:** The last section](#S10-normal)
@@ -88,11 +88,13 @@ url:    'https://mpaldridge.github.io/math1710/'
 * [**Problem Sheet 2:**](#P2) deadline for assessed questions: Monday 25 October
 * [**R Worksheet 2:** Vectors](#r-work)
 :::
+-->
 
-::: {.mysched}
-**Week 1** (27 September -- 1 October):
+::: {.oldsched}
+**Week 1** (3--7 October):
 
-* [**Section 1:** Exploratory data analysis](#S01-eda)
-* [**Problem Sheet 1:**](#P1) deadline for assessed questions: Monday 11 October
+* [**Lecture 1:** Summary statistics](#L01-stats) (Monday 3 October)
+* [**Lecture 2:** Data visualisation](#L02-dataviz) (Wednesday 5 October)
+* [**Problem Sheet 1:**](#P1) discussed in tutorials in Week 2; deadline for assessed questions: Monday 17 October
 * [**R Worksheet 1:** R basics](#r-work)
 :::

@@ -1,6 +1,6 @@
 # (PART\*) Part II: Probability  {-}
 
-# Probability spaces  {#S02-probability}
+# Sample spaces and events  {#L03-events}
 
 \renewcommand{\complement}{\mathsf{c}}
 \newcommand{\comp}{\complement}
@@ -30,11 +30,13 @@ It will not surprise you to learn that, in this mathematics course, we will take
 
 ## Sample spaces and events  {#sample-events}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/9tiQ5p1jD-E"></iframe>
 :::
 ::::
+-->
 
 Taking the "mathematical probability" approach, we will want to give a formal mathematical definition of the *probability* of an event. But even before that, we need to give a formal mathematical definition of an *event* itself. Our setup will be this:
 
@@ -75,18 +77,20 @@ For any sample space $\Omega$, there are two special events that always exist. T
 
 ## Basic set theory  {#set-theory}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/ILZ4b3lpklo"></iframe>
 :::
 ::::
+-->
 
 
 Since we've now defined events as being sets -- specifically, subsets of the sample space $\Omega$ -- it will be useful to mention a little set theory here.
 
 First, there are ways we can build new sets (or events) out of old. It's fine to just read the words and look at the pictures for these definitions, but those who want to read the equations too will need to know this:
 
-* $\omega \in A$ means "$\omega$ is in $A$" or "$\omega$ is an element of $A$", while $\omega \not\in A$ means the opposite: $\omega$ is *not* in $A$;
+* $\omega \in A$ means "$\omega$ is in $A$" or "$\omega$ is an element of $A$", while $\omega \not\in A$ means the opposite, that $\omega$ is *not* in $A$;
 * a colon $:$ in the middle of set notation should be read as "such that";
 * so $\{\omega \in \Omega : \text{fact about $\omega$}\}$ should be read as "the set of sample points $\omega$ in the sample space $\Omega$ such that the fact is true".
 
@@ -384,255 +388,10 @@ and the second half to find a column for the right-hand side of the law $A^\comp
 Since the $(A \cap B)^\comp$ column and the $A^\comp \cup B^\comp$ column are the same, these must be the same sets.
   
 
-## Probability axioms  {#axioms}
-
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/AN_NGs_Z-qw"></iframe>
-:::
-::::
-
-
-Recall that, in this mathematics course, a probability will be a real number that satisfies certain properties, which we call axioms.
-
-::: {.definition #axioms}
-Let $\Omega$ be a sample space. A **probability measure** on $\Omega$ is a function $\mathbb P$ that assigns to each event $A \subset \Omega$ a real number $\mathbb P(A)$, called the **probability** of $A$, and that satisfies the following three axioms:
-
-1. $\mathbb P(A) \geq 0$ for all events $A \subset \Omega$;
-1. $\mathbb P(\Omega) = 1$;
-1. if $A_1, A_2, \dots$ is a finite or infinite sequence of disjoint events, then
-\[ \mathbb P(A_1 \cup A_2 \cup \cdots) = \mathbb P(A_1) + \mathbb P(A_2) + \cdots . \]
-
-The sample space $\Omega$ together with the probability measure $\mathbb P$ are called a **probability space**.
-:::
-
-Axiom 1 says that all probabilities are non-negative numbers. Axiom 2 says the probability that *something* happens is 1. Axiom 3 says that *for disjoint events* the probability that one of them happens is the sum of the individual probabilities. (Those who like their mathematical statements super-precise should note that an infinite sequence in Axiom 3 must "countable"; that is, indexed by the natural numbers $1, 2, 3. \dots$.)
-
-These axioms of probability (and our later results that follow from them) were first written down by the Russian mathematician [Andrey Nikolaevich Kolmogorov](https://mathshistory.st-andrews.ac.uk/Biographies/Kolmogorov/) in 1933. This marked the point from when probability theory could now be considered a proper branch of mathematics -- just as legitimate as geometry or number theory -- and not just a past-time that can be useful to help gamblers calculate their odds. I always find it surprising that the axioms of probability are less than 90 years old!
-
-There are other properties that it seems natural that a probability measure should have aside from the axioms -- for example, that $\mathbb P(A) \leq 1$ for all events $A$. But we will show shortly that other properties can be proven just by starting from the three axioms.
-
-But first, let's see some examples.
-
-::: {.example}
-Suppose we wish to model tossing an biased coin the is heads with probability $p$, where $0 \leq p \leq 1$.
-
-Our probability space is $\Omega = \{\text{H}, \text{T}\}$. The probability measure is given by
-\begin{align*}
-   \mathbb P(\varnothing) &= 0  &  \mathbb P(\{\text{H}\}) &= p \\
-   \mathbb P(\{\text{T}\}) &= 1 - p  &  \mathbb P(\{\text{H},\text{T}\})  &= 1 .
-\end{align*}
-
-Let's check that the axioms hold:
-
-1. Since $0 \leq p \leq 1$, all the probabilites are greater than or equal to 0.
-1. It is indeed the case that $\mathbb P(\Omega) = \mathbb P(\{\text{H},\text{T}\}) = 1$.
-1. The only nontrivial disjoint union to check is $\{\text{H}\} \cup \{\text{T}\} = \{\text{H},\text{T}\}$. But
-\[ \mathbb P(\{\text{H}\}) + \mathbb P(\{\text{T}\}) = p + (1 - p) = 1 = \mathbb P(\{\text{H},\text{T}\}) , \]
-as required.
-:::
-
-::: {.example}
-Suppose we wish to model rolling a dice.
-
-Our sample space is $\{1,2,3,4,5,6\}$. The probability measure is given by
-\[ \mathbb P(A) = \frac{|A|}{6} , \]
-where $|A|$ is the number of sample outcomes in $A$.
-
-So, for example, the probability of rolling an even number is 
-\[ \mathbb P(\{2,4,6\}) = \frac36 = \frac12 . \]
-:::
-
-The dice rolling is a particular case of the "classical probability" of equally likely outcomes. We'll look at this more in the next section, next week, and prove that the classical probability measure does indeed satisfy the axioms
-
-
-## Properties of probability {#prob-properties}
-
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/4KmSgdX88u8"></iframe>
-:::
-::::
-
-
-The axioms of Definition \@ref(def:axioms) only gave us some of the properties that we would like a probability measure to have. Our task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we're not allowed to make claims that "seem likely to be true" or "are common sense" -- we can only use the three axioms together with logical deductions and nothing else.
-
-::: {.theorem}
-Let $\Omega$ be a sample space with a probability measure $\mathbb P$. Then we have the following:
-
-1. $\mathbb P(\varnothing) = 0$.
-1. $\mathbb P(A^\comp) = 1 - \mathbb P(A)$ for all events $A \subset \Omega$.
-1. For events $A$ and $B$ with $B \subset A$, we have $\mathbb P(B) \leq \mathbb P(A)$.
-1. $0 \leq \mathbb P(A) \leq 1$ for all events $A \subset \Omega$.
-:::
-
-Importantly, the third result here tells us how to deal with complements or "not" events: the probability of $A$ *not* happening is 1 minus the probability it does happen. This is often very useful.
-
-::: {.proof}
-Statements 1 and 2 are exercise for you on [Problem Sheet 2](#P2). We'll start with the third statement.
-
-The key with most of these "prove from the axioms" problems is to think of a way to write the relevant events as part of a *disjoint* union, then use Axiom 3. Here, since $B$ is a subset of $A$, it would be useful to write $A$ as a disjoint union of $B$ and "the bit of $A$ that isn't in $B$. That is, we have the disjoint union
-\[ B \cup (A \cap B^\comp) = A .\]
-
-```{tikz subs, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
-\begin{tikzpicture}[line width=0.25pt, scale=0.8]
-
-\draw[thick] (0,0) rectangle (6,4);
-\draw (6.3,3.8) node {$\Omega$};
-
-\fill  [green!25] (3,2) circle (1.5); 
-\fill  [orange!25] (3.5,1.5) circle (0.5); 
-
-\draw (3.5,1.5) circle (0.5); \draw (3.5,1.5) node {$B$};
-\draw (3,2) circle (1.5); \draw (2.7,2.5) node {$A$};
-\end{tikzpicture}
-```
-
-Applying Axiom 3 to this disjoint union gives
-\[ \mathbb P(B) + \mathbb P(A \cap B^\comp) = \mathbb P(A) . \]
-
-We're happy to see the first term on the left-hand side and the term on the right-hand side. But what about the awkward $\mathbb P(A \cap B^\comp)$? Well, by Axiom 1, we know that $\mathbb P(A \cap B^\comp) \geq 0$, and hence
-\[ \mathbb P(B) + 0 \leq \mathbb P(A) , \]
-and we are done with the third statement.
-
-For the fourth statement, we have $\mathbb P(A) \geq 0$ directly from Axiom 1, so only need to show that $\mathbb P(A) \leq 1$. We can do this using the third statement of this theorem. For any event $A \subset \Omega$, the third statement tells us that $\mathbb P(A) \leq \mathbb P(\Omega)$. But Axiom 2 tells us that $\mathbb P(\Omega) = 1$, so we are done.
-:::
-
-
-## Addition rules for unions  {#addition}
-
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/SdDc7AT-Sa8"></iframe>
-:::
-::::
-
-
-If we have two or more events, we'd like to work out the probability of their union; that is, the probability that at least one of them occurs.
-
-We already have an addition rule for *disjoint* unions.
-
-::: {.theorem}
-Let $A, B \subset \Omega$ be two disjoint events. Then
-\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) . \]
-:::
-
-::: {.proof}
-In Axiom 3, take the finite sequence $A_1 = A$, $A_2 = B$.
-:::
-
-But what about if $A$ and $B$ are not disjoint? Then we have the following.
-
-::: {.theorem}
-Let $A, B \subset \Omega$ be two events. Then
-\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
-:::
-
-You may have seen this result before. You've perhaps justified it by saying something like this: "We can add the two probabilities together, except now we've double-counted the overlap, so we have to take the probability of that away." Maybe you drew a Venn diagram. That's OK as a way to remember the result -- but this is a proper university mathematics course, so we have to carefully *prove* it starting from just the axioms and nothing else.
-
-:::: {style="display: flex;"}
-
-::: {}
-As always, the key is to find a way of writing $A \cup B$ as a *disjoint* union. (In general, $A \cup B$ can be a non-disjoint union that has an overlap.) Well, if we want $A \cup B = A \cup \{\text{something}\}$ to be a *disjoint* union, then the "something" will have to be the bit of $B$ that's not also in $A$, which is $B \cap A^\comp$.
-:::
-
-:::{}
-\ 
-:::
-
-:::{}
-```{tikz add1, echo=FALSE, fig.align="center", out.width="1000pt", cache = TRUE}
-\begin{tikzpicture}[line width=0.25pt, scale=0.8]
-
-\fill  [blue!25] (4,2) circle (1.5); 
-\fill  [red!25] (2,2) circle (1.5); 
-
-
-\draw[thick] (0,0) rectangle (6,4);
-\draw (6.3,3.8) node {$\Omega$};
-\draw (2,2) circle (1.5); \draw (1.6,2.0) node {A};
-\draw (4,2) circle (1.5); \draw (4.4,2.0) node {B};
-\end{tikzpicture}
-```
-:::
-::::
-
-::::: {.proof}
-First note, following the discussion above, that we have
-\[ A \cup B = A \cup (B \cap A^\comp) , \]
-where the union on the right is of the disjoint events $A$ and $B \cap A^\comp$. Therefore we can use Axiom 3 to get
-\begin{equation}
-\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B \cap A^\comp) .    (\#eq:union1)
-\end{equation}
-
-
-The left-hand side looks good, and the first term on the right-hand side looks good. To deal with the second term on the right-hand side, we need to write it down as part of a disjoint union again. Can we find another one? Yes! We can use $B \cap A^\comp$ together with $B \cap A$ to build the whole of $B$. So have a disjoint union
-\[ (B \cap A^\comp) \cup (B \cap A) = B .\]
-
-```{tikz add2, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
-\begin{tikzpicture}[line width=0.25pt, scale=0.8]
-
-\fill  [blue!25] (4,2) circle (1.5); 
-
-\begin{scope} 
-	\clip (2,2) circle (1.5);
-	\fill  [green!25] (4,2) circle (1.5); 
-\end{scope}
-
-
-\draw[thick] (0,0) rectangle (6,4);
-\draw (6.3,3.8) node {$\Omega$};
-\draw (2,2) circle (1.5); \draw (1.6,2.0) node {A};
-\draw (4,2) circle (1.5); \draw (4.4,2.0) node {B};
-\end{tikzpicture}
-```
-
-Since this union is disjoint, we can use Axiom 3 again, to get
-\[ \mathbb P(B \cap A^\comp) + \mathbb P(B \cap A) = \mathbb P(B) . \]
-Rearranging this gives
-\begin{equation}
-\mathbb P(B \cap A^\comp) = \mathbb P(B) - \mathbb P(B \cap A).  (\#eq:union2)
-\end{equation}
-
-
-Finally, substituting \@ref(eq:union2) into \@ref(eq:union1) gives
-\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
-as required.
-:::::
-
-::: {.example}
-*Consider picking a card from a deck at random, with $\mathbb P(A) = |A|/52$. What's the probability the card is a spade or an ace?*
-
-It is possible to just to work this out directly. But let's use our addition law for unions.
-
-We have $\mathbb P(\text{spade}) = \frac{13}{52}$ and $\mathbb P(\text{ace}) = \frac{4}{52}$. So we have
-\[ \mathbb P(\text{spade or ace}) = \tfrac{13}{52} + \tfrac{4}{52} - \mathbb P(\text{spade and ace}) . \]
-But $\mathbb P(\text{spade and ace})$ is the probability of picking the ace of spades, which is $\frac{1}{52}$. Therefore
-\[ \mathbb P(\text{spade or ace}) = \tfrac{13}{52} + \tfrac{4}{52}  - \tfrac{1}{52} = \tfrac{16}{52} = \tfrac{4}{13} . \]
-:::
-
-Similar addition rules can be proven in the same way for unions of more events. For three events, we have
-\[
-  \mathbb P(A \cup B \cup C) = \mathbb P(A) + \mathbb P(B) + \mathbb P(C) 
-  - \mathbb P(A \cap B) - \mathbb P(A \cap C) - \mathbb P(B \cap C) + \mathbb P(A \cap B \cap C) .
-\]
-Note that we add the probabilities of individual events, then subtract the probabilities of pairs, then add the probability of the triple.
-
-The **inclusion--exclusion principle** is the general rule:
-\begin{multline*} \mathbb P(A_1 \cup A_2 \cup \cdots \cup A_n)
-  = \sum_i \mathbb P(A_i)
-    - \sum_{i \neq j} \mathbb P(A_i \cap A_j) \\
-    + \sum_{i \neq j \neq k} \mathbb P(A_i \cap A_j \cap A_k)
-    - \cdots
-    + (-1)^{n-1} \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) , \end{multline*}
-where we continue by subtracting the probabilities of quadruples, adding the probabilities of five events, etc.
-
-
-## Summary  {#summary-02 .unnumbered}
+## Summary  {#summary-L03 .unnumbered}
 
 ::: {.mysummary}
-* A sample space $\Omega$ is a set representing all possible sample outcomes. An event is a subset of $\Omega$.
+* A sample space $\Omega$ is a set representing all possible sample outcomes.
+* An event is a subset of $\Omega$.
 * For events $A$ and $B$, we also have the complement "not $A$" $A^\comp$, the intersection "$A$ and $B$" $A \cap B$, and the union "$A$ or $B$" $A \cup B$.
-* The axioms of probability are (1) $\mathbb P(A) \geq 0$; (2) $\mathbb P(\Omega) = 1$; and (3) that for disjoint events $A_1, A_2, \dots$, we have $\mathbb P(A_1 \cup A_2 \cup \cdots) = \mathbb P(A_1) + \mathbb P(A_2) + \cdots$.
-* Other properties can be proven from these axioms, like the complement rule $\mathbb P(A^\comp) = 1 - \mathbb P(A)$, and the addition rule for unions $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B)$.
 :::

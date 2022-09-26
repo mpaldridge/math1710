@@ -6,11 +6,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Solutions | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021–2022" />
-  <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Solutions | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
-  <meta property="og:url" content="https://mpaldridge.github.io/math1710/" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021–2022" />
   
@@ -32,7 +31,6 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="R.html"/>
 
-<script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -50,8 +48,9 @@
 
 
 
-<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
-<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
 <style type="text/css">
@@ -141,9 +140,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
 <ul>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#notes"><i class="fa fa-check"></i>Notes and videos</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
@@ -159,15 +157,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
 </ul></li>
-<li class="part"><span><b>Part I: EDA</b></span></li>
-<li class="chapter" data-level="1" data-path="S01-eda.html"><a href="S01-eda.html"><i class="fa fa-check"></i><b>1</b> Exploratory data analysis</a>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="S01-eda.html"><a href="S01-eda.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
-<li class="chapter" data-level="1.2" data-path="S01-eda.html"><a href="S01-eda.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
-<li class="chapter" data-level="1.3" data-path="S01-eda.html"><a href="S01-eda.html#summary-stat"><i class="fa fa-check"></i><b>1.3</b> Summary statistics and boxplots</a></li>
-<li class="chapter" data-level="1.4" data-path="S01-eda.html"><a href="S01-eda.html#binned"><i class="fa fa-check"></i><b>1.4</b> Binned data and histograms</a></li>
-<li class="chapter" data-level="1.5" data-path="S01-eda.html"><a href="S01-eda.html#multiple"><i class="fa fa-check"></i><b>1.5</b> Multiple variables and scatterplots</a></li>
-<li class="chapter" data-level="" data-path="S01-eda.html"><a href="S01-eda.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
 <ul>
@@ -177,25 +181,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
 <li class="part"><span><b>Part II: Probability</b></span></li>
-<li class="chapter" data-level="2" data-path="S02-probability.html"><a href="S02-probability.html"><i class="fa fa-check"></i><b>2</b> Probability spaces</a>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="S02-probability.html"><a href="S02-probability.html#what-is-prob"><i class="fa fa-check"></i><b>2.1</b> What is probability?</a></li>
-<li class="chapter" data-level="2.2" data-path="S02-probability.html"><a href="S02-probability.html#sample-events"><i class="fa fa-check"></i><b>2.2</b> Sample spaces and events</a></li>
-<li class="chapter" data-level="2.3" data-path="S02-probability.html"><a href="S02-probability.html#set-theory"><i class="fa fa-check"></i><b>2.3</b> Basic set theory</a></li>
-<li class="chapter" data-level="2.4" data-path="S02-probability.html"><a href="S02-probability.html#axioms"><i class="fa fa-check"></i><b>2.4</b> Probability axioms</a></li>
-<li class="chapter" data-level="2.5" data-path="S02-probability.html"><a href="S02-probability.html#prob-properties"><i class="fa fa-check"></i><b>2.5</b> Properties of probability</a></li>
-<li class="chapter" data-level="2.6" data-path="S02-probability.html"><a href="S02-probability.html#addition"><i class="fa fa-check"></i><b>2.6</b> Addition rules for unions</a></li>
-<li class="chapter" data-level="" data-path="S02-probability.html"><a href="S02-probability.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Basic set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="S03-classical.html"><a href="S03-classical.html"><i class="fa fa-check"></i><b>3</b> Classical probability</a>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="S03-classical.html"><a href="S03-classical.html#classical-intro"><i class="fa fa-check"></i><b>3.1</b> Probability with equally likely outcomes</a></li>
-<li class="chapter" data-level="3.2" data-path="S03-classical.html"><a href="S03-classical.html#multiplication"><i class="fa fa-check"></i><b>3.2</b> Multiplication principle</a></li>
-<li class="chapter" data-level="3.3" data-path="S03-classical.html"><a href="S03-classical.html#sampling"><i class="fa fa-check"></i><b>3.3</b> Sampling with and without replacement</a></li>
-<li class="chapter" data-level="3.4" data-path="S03-classical.html"><a href="S03-classical.html#ordering"><i class="fa fa-check"></i><b>3.4</b> Ordering</a></li>
-<li class="chapter" data-level="3.5" data-path="S03-classical.html"><a href="S03-classical.html#combinations"><i class="fa fa-check"></i><b>3.5</b> Sampling without replacement in any order</a></li>
-<li class="chapter" data-level="3.6" data-path="S03-classical.html"><a href="S03-classical.html#birthday"><i class="fa fa-check"></i><b>3.6</b> Birthday problem</a></li>
-<li class="chapter" data-level="" data-path="S03-classical.html"><a href="S03-classical.html#summary-03"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="L05-classical-i.html"><a href="L05-classical-i.html"><i class="fa fa-check"></i><b>5</b> Classical probability I</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="L05-classical-i.html"><a href="L05-classical-i.html#classical-intro"><i class="fa fa-check"></i><b>5.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="5.2" data-path="L05-classical-i.html"><a href="L05-classical-i.html#multiplication"><i class="fa fa-check"></i><b>5.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="5.3" data-path="L05-classical-i.html"><a href="L05-classical-i.html#sampling"><i class="fa fa-check"></i><b>5.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="" data-path="L05-classical-i.html"><a href="L05-classical-i.html#summary-L05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
+<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
+<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
+<li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-03"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
 <ul>
@@ -204,24 +216,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="S04-conditional.html"><a href="S04-conditional.html"><i class="fa fa-check"></i><b>4</b> Independence and conditional probability</a>
+<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="S04-conditional.html"><a href="S04-conditional.html#independent-events"><i class="fa fa-check"></i><b>4.1</b> Independent events</a></li>
-<li class="chapter" data-level="4.2" data-path="S04-conditional.html"><a href="S04-conditional.html#conditional"><i class="fa fa-check"></i><b>4.2</b> Conditional probability</a></li>
-<li class="chapter" data-level="4.3" data-path="S04-conditional.html"><a href="S04-conditional.html#chain-rule"><i class="fa fa-check"></i><b>4.3</b> Chain rule</a></li>
-<li class="chapter" data-level="4.4" data-path="S04-conditional.html"><a href="S04-conditional.html#total-prob"><i class="fa fa-check"></i><b>4.4</b> Law of total probability</a></li>
-<li class="chapter" data-level="4.5" data-path="S04-conditional.html"><a href="S04-conditional.html#bayes"><i class="fa fa-check"></i><b>4.5</b> Bayes’ theorem</a></li>
-<li class="chapter" data-level="4.6" data-path="S04-conditional.html"><a href="S04-conditional.html#screening"><i class="fa fa-check"></i><b>4.6</b> Diagnostic testing</a></li>
-<li class="chapter" data-level="" data-path="S04-conditional.html"><a href="S04-conditional.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
+<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html"><i class="fa fa-check"></i><b>5</b> Discrete random variables</a>
+<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#rv"><i class="fa fa-check"></i><b>5.1</b> What is a random variable?</a></li>
-<li class="chapter" data-level="5.2" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>5.2</b> Probability mass functions</a></li>
-<li class="chapter" data-level="5.3" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#expectation"><i class="fa fa-check"></i><b>5.3</b> Expectation</a></li>
-<li class="chapter" data-level="5.4" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#functions"><i class="fa fa-check"></i><b>5.4</b> Functions of random variables</a></li>
-<li class="chapter" data-level="5.5" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#variance"><i class="fa fa-check"></i><b>5.5</b> Variance</a></li>
-<li class="chapter" data-level="" data-path="S05-discrete-rv.html"><a href="S05-discrete-rv.html#summary-05"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
+<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass functions</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
+<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
+<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-05"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
@@ -230,24 +248,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html"><i class="fa fa-check"></i><b>6</b> Discrete distributions</a>
+<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and Poisson distributions</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#binomial"><i class="fa fa-check"></i><b>6.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="6.2" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#geometric"><i class="fa fa-check"></i><b>6.2</b> Geometric distribution</a></li>
-<li class="chapter" data-level="6.3" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson"><i class="fa fa-check"></i><b>6.3</b> Poisson distribution</a></li>
-<li class="chapter" data-level="6.4" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#poisson-approx"><i class="fa fa-check"></i><b>6.4</b> Poisson approximation to the binomial</a></li>
-<li class="chapter" data-level="6.5" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#models"><i class="fa fa-check"></i><b>6.5</b> Distributions as models for data</a></li>
-<li class="chapter" data-level="" data-path="S06-discrete-dist.html"><a href="S06-discrete-dist.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html"><i class="fa fa-check"></i><b>7</b> Multiple random variables</a>
+<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#joint"><i class="fa fa-check"></i><b>7.1</b> Joint distributions</a></li>
-<li class="chapter" data-level="7.2" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>7.2</b> Independence of random variables</a></li>
-<li class="chapter" data-level="7.3" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>7.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="7.4" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#sum-product"><i class="fa fa-check"></i><b>7.4</b> Expectation of sums and products</a></li>
-<li class="chapter" data-level="7.5" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#covariance"><i class="fa fa-check"></i><b>7.5</b> Covariance</a></li>
-<li class="chapter" data-level="7.6" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#lln"><i class="fa fa-check"></i><b>7.6</b> Law of large numbers</a></li>
-<li class="chapter" data-level="" data-path="S07-multi-rv.html"><a href="S07-multi-rv.html#summary-07"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
+<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
+<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#models"><i class="fa fa-check"></i><b>12.3</b> Distributions as models for data</a></li>
+<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
+<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
+<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-07"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
 <ul>
@@ -256,24 +279,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="S08-continuous.html"><a href="S08-continuous.html"><i class="fa fa-check"></i><b>8</b> Continuous random variables</a>
+<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>8.1</b> What is a continuous random variable?</a></li>
-<li class="chapter" data-level="8.2" data-path="S08-continuous.html"><a href="S08-continuous.html#pdf"><i class="fa fa-check"></i><b>8.2</b> Probability density functions</a></li>
-<li class="chapter" data-level="8.3" data-path="S08-continuous.html"><a href="S08-continuous.html#prop-cont"><i class="fa fa-check"></i><b>8.3</b> Properties of continuous random variables</a></li>
-<li class="chapter" data-level="8.4" data-path="S08-continuous.html"><a href="S08-continuous.html#exponential"><i class="fa fa-check"></i><b>8.4</b> Exponential distribution</a></li>
-<li class="chapter" data-level="8.5" data-path="S08-continuous.html"><a href="S08-continuous.html#continuous-multiple"><i class="fa fa-check"></i><b>8.5</b> Multiple continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="S08-continuous.html"><a href="S08-continuous.html#summary-08"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="S09-normal.html"><a href="S09-normal.html"><i class="fa fa-check"></i><b>9</b> Normal distribution</a>
+<li class="chapter" data-level="16" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html"><i class="fa fa-check"></i><b>16</b> Exponential distribution and multiple continuous random variables</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="S09-normal.html"><a href="S09-normal.html#normal-definition"><i class="fa fa-check"></i><b>9.1</b> Definition of the normal distribution</a></li>
-<li class="chapter" data-level="9.2" data-path="S09-normal.html"><a href="S09-normal.html#normal-properties"><i class="fa fa-check"></i><b>9.2</b> Properties of the normal distribution</a></li>
-<li class="chapter" data-level="9.3" data-path="S09-normal.html"><a href="S09-normal.html#normal-r"><i class="fa fa-check"></i><b>9.3</b> Calculations using R</a></li>
-<li class="chapter" data-level="9.4" data-path="S09-normal.html"><a href="S09-normal.html#normal-tables"><i class="fa fa-check"></i><b>9.4</b> Calculations using statistical tables</a></li>
-<li class="chapter" data-level="9.5" data-path="S09-normal.html"><a href="S09-normal.html#clt"><i class="fa fa-check"></i><b>9.5</b> Central limit theorem</a></li>
-<li class="chapter" data-level="9.6" data-path="S09-normal.html"><a href="S09-normal.html#normal-approx"><i class="fa fa-check"></i><b>9.6</b> Approximations with the normal distribution</a></li>
-<li class="chapter" data-level="" data-path="S09-normal.html"><a href="S09-normal.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="16.1" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#exponential"><i class="fa fa-check"></i><b>16.1</b> Exponential distribution</a></li>
+<li class="chapter" data-level="16.2" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#continuous-multiple"><i class="fa fa-check"></i><b>16.2</b> Multiple continuous random variables</a></li>
+<li class="chapter" data-level="" data-path="exponential-distribution-and-multiple-continuous-random-variables.html"><a href="exponential-distribution-and-multiple-continuous-random-variables.html#summary-08"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="L17-normal.html"><a href="L17-normal.html"><i class="fa fa-check"></i><b>17</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="L17-normal.html"><a href="L17-normal.html#normal-definition"><i class="fa fa-check"></i><b>17.1</b> Definition of the normal distribution</a></li>
+<li class="chapter" data-level="17.2" data-path="L17-normal.html"><a href="L17-normal.html#normal-properties"><i class="fa fa-check"></i><b>17.2</b> Properties of the normal distribution</a></li>
+<li class="chapter" data-level="17.3" data-path="L17-normal.html"><a href="L17-normal.html#normal-r"><i class="fa fa-check"></i><b>17.3</b> Calculations using R</a></li>
+<li class="chapter" data-level="17.4" data-path="L17-normal.html"><a href="L17-normal.html#normal-tables"><i class="fa fa-check"></i><b>17.4</b> Calculations using statistical tables</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#mean-rv"><i class="fa fa-check"></i><b>18.1</b> Mean of random variables</a></li>
+<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.2</b> Law of large numbers</a></li>
+<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.3</b> Central limit theorem</a></li>
+<li class="chapter" data-level="18.4" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.4</b> Approximations with the normal distribution</a></li>
+<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
 <ul>
@@ -283,23 +314,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
 <li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
-<li class="chapter" data-level="10" data-path="S10-bayesian.html"><a href="S10-bayesian.html"><i class="fa fa-check"></i><b>10</b> Introduction to Bayesian statistics</a>
+<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="S10-bayesian.html"><a href="S10-bayesian.html#fake-coin"><i class="fa fa-check"></i><b>10.1</b> Example: fake coin?</a></li>
-<li class="chapter" data-level="10.2" data-path="S10-bayesian.html"><a href="S10-bayesian.html#bayesian-framework"><i class="fa fa-check"></i><b>10.2</b> Bayesian framework</a></li>
-<li class="chapter" data-level="10.3" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta"><i class="fa fa-check"></i><b>10.3</b> Beta distribution</a></li>
-<li class="chapter" data-level="10.4" data-path="S10-bayesian.html"><a href="S10-bayesian.html#beta-bern"><i class="fa fa-check"></i><b>10.4</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="10.5" data-path="S10-bayesian.html"><a href="S10-bayesian.html#normal-normal"><i class="fa fa-check"></i><b>10.5</b> Normal–normal model</a></li>
-<li class="chapter" data-level="10.6" data-path="S10-bayesian.html"><a href="S10-bayesian.html#modern-bayes"><i class="fa fa-check"></i><b>10.6</b> Modern Bayesian statistics</a></li>
-<li class="chapter" data-level="" data-path="S10-bayesian.html"><a href="S10-bayesian.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#modern-bayes"><i class="fa fa-check"></i><b>19.3</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> Bayesian models</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
+<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#normal-normal"><i class="fa fa-check"></i><b>20.3</b> Normal–normal model</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
-<li class="part"><span><b>Other stuff</b></span></li>
-<li class="chapter" data-level="11" data-path="S11-summary.html"><a href="S11-summary.html"><i class="fa fa-check"></i><b>11</b> The last section</a>
+<li class="part"><span><b>Revision</b></span></li>
+<li class="chapter" data-level="21" data-path="L21-summary.html"><a href="L21-summary.html"><i class="fa fa-check"></i><b>21</b> Summary</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="S11-summary.html"><a href="S11-summary.html#summary-of-the-module"><i class="fa fa-check"></i><b>11.1</b> Summary of the module</a></li>
-<li class="chapter" data-level="11.2" data-path="S11-summary.html"><a href="S11-summary.html#about-the-exam"><i class="fa fa-check"></i><b>11.2</b> About the exam</a></li>
-<li class="chapter" data-level="11.3" data-path="S11-summary.html"><a href="S11-summary.html#past-papers"><i class="fa fa-check"></i><b>11.3</b> Past papers</a></li>
+<li class="chapter" data-level="21.1" data-path="L21-summary.html"><a href="L21-summary.html#summary-of-the-module"><i class="fa fa-check"></i><b>21.1</b> Summary of the module</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#about-the-exam"><i class="fa fa-check"></i><b>22.1</b> About the exam</a></li>
+<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.2</b> Past papers</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -338,8 +375,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="solutions" class="section level1 unnumbered">
-<h1>Solutions</h1>
+<div id="solutions" class="section level1 unnumbered hasAnchor">
+<h1>Solutions<a href="solutions.html#solutions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="mysummary">
 <p>This page has the solutions to all the non-assessed questions on Problem Sheet 1 to 5. Solutions are added on Friday afternoon after tutorials on the Problem Sheet have finished.</p>
 <p>Solutions to assessed questions are available on Minerva in the “Assessments” tab, from one week after the deadline.
@@ -352,8 +389,8 @@ There are many ways you get feedback on this module, both group feedback (feedba
 * Finally, students who would like even more feedback can discuss their work in the "office hours" drop-in sessions.
 --></p>
 </div>
-<div id="P1-solutions" class="section level2 unnumbered">
-<h2>Problem Sheet 1</h2>
+<div id="P1-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 1<a href="solutions.html#P1-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
 <p><strong>A1.</strong> Consider again the “number of Skittles in each packet” data from Example 1.1.
 <span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span></p>
@@ -399,8 +436,14 @@ The computational formula required fewer presses of the calculator buttons, beca
 </div>
 </div>
 <div class="myq">
-<p><strong>A2.</strong> Consider the following data sets of the age of elected politicians on a local council. (The “18–30” consists of people older than and including 18, and younger than but <em>not</em> including 30.)</p>
+<p><strong>A2.</strong> Consider the following data sets of the age of elected politicians on a local council. (The “18–30” bin, for example, means from one’s 18th birthday to the moment before one’s 30th birthday, so lasts 12 years.)</p>
 <table>
+<colgroup>
+<col width="25%" />
+<col width="16%" />
+<col width="29%" />
+<col width="28%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Age (years)</th>
@@ -465,6 +508,12 @@ The computational formula required fewer presses of the calculator buttons, beca
 <div class="myanswers">
 <p><em>Solution.</em></p>
 <table>
+<colgroup>
+<col width="25%" />
+<col width="16%" />
+<col width="29%" />
+<col width="28%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center">Age (years)</th>
@@ -533,7 +582,13 @@ The computational formula required fewer presses of the calculator buttons, beca
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> Calculate (an approximation of) the mean age of the politicians.</p>
+<p><strong>(c)</strong> What is the modal age bin?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The bin with the largest frequency density is 45–50, which is therefore the modal bin.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Calculate (the standard approximation of) the mean age of the politicians.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 Pretending that each person is in the centre of their bin, we have
@@ -576,7 +631,15 @@ The modal colour is Yellow. The number of distinct outcomes is 5.</p>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Shirt sizes for a university football squad:</p>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="33%" />
+<col width="16%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center"><strong>Colour</strong></th>
@@ -598,7 +661,6 @@ The modal colour is Yellow. The number of distinct outcomes is 5.</p>
 </tr>
 </tbody>
 </table>
-<p><em>[<strong>Note:</strong> This has been corrected from an earlier version, where the 4 Large and 5 Xtra Large were the wrong way round.]</em></p>
 <div class="myanswers">
 <p><em>Solution.</em>
 The modal shirt size is medium. The number of distinct outcomes is 4 (we don’t quite “Xtra Small”, which was not observed in the data).</p>
@@ -625,8 +687,14 @@ The modal shirt size is medium. The number of distinct outcomes is 4 (we don’t
 </div>
 <div class="myq">
 <p><strong>B3.</strong> Let <span class="math inline">\(\mathbf a = (a_1, a_2, \dots a_n)\)</span> and <span class="math inline">\(\mathbf b = (b_1, b_2, \dots, b_n)\)</span> be two real-valued vectors of the same length. Then the <em>Cauchy–Schwarz inequality</em> says that
-<span class="math display">\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]</span>
-Use the Cauchy–Schwarz inequality to show that the correlation <span class="math inline">\(r_{xy}\)</span> satisfies <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>.</p>
+<span class="math display">\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> By making a clever choice of <span class="math inline">\((a_i)\)</span> and <span class="math inline">\((b_i)\)</span> in the Cauchy–Schwarz inequality, show that <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong>
+Hence, show that the correlation <span class="math inline">\(r_{xy}\)</span> satisfies <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>.</p>
+</div>
 <p>(<em>Hint:</em> Try to prove that <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>. How does this help?)</p>
 <div class="myanswers">
 <p><em>Solutions.</em>
@@ -669,8 +737,8 @@ In fact that’s the square of the correlation on the left-hand side, so we’ve
 </div>
 </div>
 </div>
-<div id="P2-solutions" class="section level2 unnumbered">
-<h2>Problem Sheet 2</h2>
+<div id="P2-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 2<a href="solutions.html#P2-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
 <p><strong>A1.</strong> Suppose you toss a coin 10 times. What would you suggest for a sample space <strong>(a)</strong> if you only care about the total number of heads; <strong>(b)</strong> if you care about the result of every coin toss?</p>
 <div class="myanswers">
@@ -826,7 +894,7 @@ as required.</p>
 <div class="subq">
 <p><strong>(b)</strong> Using the two-event addition rule and the distributive law, or otherwise, prove the three-event form of the addition rule for unions:
 <span class="math display">\[
-  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E)
   - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
 \]</span></p>
 <div class="myanswers">
@@ -842,7 +910,7 @@ since <span class="math inline">\((C \cap D) \cap (C \cap E) = C \cap D \cap E\)
 <span class="math display">\[\begin{align*}
   \mathbb P(C \cup D &amp;\cup E) \\
   &amp;= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
-  &amp;= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) . 
+  &amp;= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
 \end{align*}\]</span>
 which is what we wanted.</p>
 </div>
@@ -935,8 +1003,8 @@ We’d like a “double-counting” argument, where we count the same number in 
 </div>
 </div>
 </div>
-<div id="P3-solutions" class="section level2 unnumbered">
-<h2>Problem Sheet 3</h2>
+<div id="P3-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 3<a href="solutions.html#P3-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
 <p><strong>A1.</strong> Consider dealing two cards (without replacement) from a pack of cards. Which of the following pairs of events are independent?</p>
 <div class="subq">
@@ -1106,7 +1174,7 @@ Hence
 <p>Third, the expectation of <span class="math inline">\(X^2\)</span> is
 <span class="math display">\[\begin{align*}
 \mathbb EX &amp;= 1^2\times0.1 + 2^2 \times 0.2 + 4^2 \times 0.1 + 5^2b + a^2c \\
-           &amp;= 2.5 + 25b + a^2c 
+           &amp;= 2.5 + 25b + a^2c
 \end{align*}\]</span>
 and this must equal <span class="math inline">\(\mathbb EX^2 = \operatorname{Var}(X) + \mu^2 = 4.61 + 3.4^2 = 23.1\)</span>. Hence
 <span class="math display">\[ 25b + a^2 c = 20.6 \qquad\qquad (3) . \]</span></p>
@@ -1233,7 +1301,7 @@ and the unions remain disjoint. Hence, we have
 &amp;= \frac{\mathbb P\big((A_1 \cap B) \cup (A_2 \cap B) \cup \dots\big)}{\mathbb P(B)} \\
 &amp;= \frac{\mathbb P(A_1 \cap B) + \mathbb P(A_2 \cap B) + \cdots}{\mathbb P(B)} \\
 &amp;= \frac{\mathbb P(A_1 \cap B)}{\mathbb P(B)} + \frac{\mathbb P(A_2 \cap B)}{\mathbb P(B)} + \cdots \\
-&amp;= \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots, 
+&amp;= \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots,
 \end{align*}\]</span>
 where, in the fourth line we used Axiom 3 for the probability measure <span class="math inline">\(\mathbb P(B)\)</span>. This proves Axiom 3, and we are done.</p>
 </div>
@@ -1251,7 +1319,7 @@ where, in the fourth line we used Axiom 3 for the probability measure <span clas
 <p><em>Solution.</em>
 Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span> and make up a partition. Let <span class="math inline">\(Y\)</span> be the event that the soldier answers yes. We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span> and <span class="math inline">\(\mathbb P(Y \mid C_3) = \mathbb P(D)\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
 <p>The law of total probability tells us that
-<span class="math display">\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 
+<span class="math display">\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) +
 \mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]</span>
 With the information we have, we get
 <span class="math display">\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, p = \tfrac13 + \tfrac13 \,p . \]</span>
@@ -1341,8 +1409,8 @@ happiness units, and you might be willing to pay 2 happiness-units-worth of mone
 </div>
 </div>
 </div>
-<div id="P4-solutions" class="section level2 unnumbered">
-<h2>Problem Sheet 4</h2>
+<div id="P4-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 4<a href="solutions.html#P4-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
 <p><strong>A1.</strong> Let <span class="math inline">\(X \sim \text{Bin}(20, 0.4)\)</span>. Calculate</p>
 <div class="subq">
@@ -1357,7 +1425,7 @@ happiness units, and you might be willing to pay 2 happiness-units-worth of mone
 <div class="myanswers">
 <p><em>Solution.</em>
 <span class="math display">\[\begin{align*}
-\mathbb P(8 \leq X \leq 11) &amp;= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\ 
+\mathbb P(8 \leq X \leq 11) &amp;= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\
 &amp;= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
 &amp;= 0.180 + 0.160 + 0.117 + 0.071 \\
 &amp;= 0.528 .
@@ -1417,7 +1485,15 @@ happiness units, and you might be willing to pay 2 happiness-units-worth of mone
 </div>
 <div class="myq">
 <p><strong>A4.</strong> Consider the following joint PMF:</p>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
@@ -1477,7 +1553,15 @@ which must be 1, so <span class="math inline">\(k = \frac{1}{15}\)</span>.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 By summing across the rows and down the columns, respectively, we get this:</p>
-<table>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
@@ -1777,11 +1861,11 @@ This property of being correct in expectation is called being an “unbiased” 
 </div>
 </div>
 </div>
-<div id="P5-solutions" class="section level2 unnumbered">
-<h2>Problem Sheet 5</h2>
+<div id="P5-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 5<a href="solutions.html#P5-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
 <p><strong>A1.</strong> Consider the continuous random variable <span class="math inline">\(X\)</span> with PDF
-<span class="math display">\[ f(x) = \begin{cases} \tfrac12x &amp; \text{for $0 \leq x \leq 1$} \\ 
+<span class="math display">\[ f(x) = \begin{cases} \tfrac12x &amp; \text{for $0 \leq x \leq 1$} \\
                         \tfrac12 &amp; \text{for $1 &lt; x \leq 2$} \\
                         \tfrac32 - \tfrac12x &amp; \text{for $2 &lt; x \leq 3$} \end{cases} \]</span>
 and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
@@ -2059,8 +2143,8 @@ From Table 2 of the statistical tables, or by the R command <code>qnorm(0.975)</
 </div>
 </div>
 </div>
-<div id="P6-solutions" class="section level2 unnumbered">
-<h2>Problem Sheet 6</h2>
+<div id="P6-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 6<a href="solutions.html#P6-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
 <p><strong>1.</strong> I want to use a prior distribution for a parameter <span class="math inline">\(\theta\)</span> whose range is the interval <span class="math inline">\([0,1]\)</span>, whose expectation is <span class="math inline">\(0.4\)</span> and whose standard deviation is <span class="math inline">\(0.2\)</span>. Suggest an appropriate distribution.</p>
 <div class="myanswers">
@@ -2128,7 +2212,7 @@ The Beta prior is
 <span class="math display">\[ \pi(\theta) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} . \]</span>
 Therefore the posterior is
 <span class="math display">\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{x-1} \theta
-= \theta^{\alpha} (1 - \theta){\beta + x - 1 - 1} , \]</span>
+= \theta^{\alpha} (1 - \theta)^{\beta + x - 1 - 1} , \]</span>
 which is the <span class="math inline">\(\text{Beta}(\alpha + 1, \beta + x - 1)\)</span> distribution.</p>
 </div>
 </div>
@@ -2140,7 +2224,7 @@ We have the same prior, but not have a product likelihood
 <span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n (1 - \theta)^{x_i - 1} \theta = (1 - \theta)^{y - n} \theta^n , \]</span>
 where <span class="math inline">\(y = \sum_{i=1}^n x_i\)</span>. Then the posterior is
 <span class="math display">\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{y-n} \theta^n
-= \theta^{\alpha + n - 1} (1 - \theta){\beta + y - n - 1} , \]</span>
+= \theta^{\alpha + n - 1} (1 - \theta)^{\beta + y - n - 1} , \]</span>
 which is the <span class="math inline">\(\text{Beta}(\alpha + n, \beta + y - n)\)</span> distribution.</p>
 </div>
 </div>
@@ -2193,7 +2277,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["math1710.pdf", "math1710.epub"],
+"download": ["math1710.pdf"],
 "search": {
 "engine": "fuse",
 "options": null
@@ -2211,7 +2295,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "true";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
         src = src.replace(/^https?:/, '');
