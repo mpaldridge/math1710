@@ -185,8 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -300,41 +299,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="about-r" class="section level2 unnumbered hasAnchor">
 <h2>About R and RStudio<a href="R.html#about-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ul>
-<li><strong>R</strong> is a <em>programming language</em> that is particularly good at working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.</li>
+<li><strong>R</strong> is a <em>programming language</em> that is particularly useful for working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.</li>
 <li><strong>RStudio</strong> is a <em>program</em> that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.</li>
 </ul>
 <p>R and RStudio are free/open-source software.</p>
 </div>
 <div id="r-access" class="section level2 unnumbered hasAnchor">
 <h2>How to access R and RStudio<a href="R.html#r-access" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are a number of ways you can access R and RStudio:</p>
-<ul>
-<li>All <strong>University computers</strong> have R and RStudio already installed. <a href="https://it.leeds.ac.uk/it/?id=kb_article&amp;sysparm_article=KB0013658">Here is a directory of the University’s computer clusters.</a></li>
-<li>You can <strong>install</strong> R and RStudio on your own computer – see the instructions below.</li>
-<li>If you want to use R/RStudio on a non-University device for which you don’t have admin/installation rights (Chromebook, iPad, friend’s laptop, etc), you could try:
-<ul>
-<li>You can use the University’s copies of R/RStudio virtually through the <a href="https://it.leeds.ac.uk/it?id=kb_article&amp;sysparm_article=KB0014379">Windows Virtual Desktop (Academic)</a> or <a href="https://it.leeds.ac.uk/it?id=kb_article&amp;sysparm_article=KB0014827">AppsAnywhere</a> client.</li>
-<li>The <a href="https://rstudio.cloud/">RStudio Cloud</a> is a cloud-hosted “Google Docs for R” that you can use through your web browser – you can get 25 hours per month for free, which should be plenty for this module.</li>
-</ul></li>
-</ul>
-</div>
-<div id="r-install" class="section level2 unnumbered hasAnchor">
-<h2>Installing R and RStudio<a href="R.html#r-install" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Students who have their own computer usually find it most convenient to install R and RStudio on that computer. To do this, it’s important that you install R (the programming language) first, and only install RStudio (the program to use R) once R has already been installed.</p>
+<p>There are a few ways you can access R and RStudio.</p>
+<p>First, you can <strong>install R and RStudio on your own computer</strong>. Students who have their own computer (with administration and installation rights) usually find this the most convenient way use R.</p>
+<p>When you install R and RStudio, it’s important that you install R (the programming language) first, and only install RStudio (the program to use R) after R has already been installed. This ensures that RStudio can “find” R on your computer.</p>
 <ol style="list-style-type: decimal">
-<li><p><em>First</em>, install <strong>R</strong>. Go to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network</a> and follow the instructions:</p>
+<li><p><em>First</em>, install R. Go to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a> and follow the instructions:</p>
 <ul>
 <li>Windows: Click <a href="https://cran.r-project.org/bin/windows/">“Download R for Windows”</a>, then <a href="https://cran.r-project.org/bin/windows/base/">“Install R for the first time”</a>. The main link at the top should be to download the most recent version of R.</li>
-<li>Mac: Click <a href="https://cran.r-project.org/bin/macosx/">Download R for macOS</a>, and then download the relevant PKG file. (For – typically older – Intel-based Macbooks, you must use the “Intel 64-bit build”; for post-November 2020 M1 or M2-based “Apple silicon” Macbooks, the “Apple silicon arm64 build” may be slightly faster.)</li>
+<li>Mac: Click <a href="https://cran.r-project.org/bin/macosx/">Download R for macOS</a>, and then download the relevant PKG file. (For typically older Intel-based Macbooks, you must use the “Intel 64-bit build”; for post-November 2020 M1 or M2-based “Apple silicon” Macbooks, the “Apple silicon arm64 build” may be slightly faster.)</li>
 </ul></li>
-<li><p><em>After</em> R is installed, <em>then</em> install <strong>RStudio</strong>. Go to <a href="https://www.rstudio.com/products/rstudio/download/#download">the Download page at RStudio.com</a> and follow the instructions. You want “RStudio Desktop”, and you want the free version.</p></li>
+<li><p><em>After</em> R is installed, <em>then</em> install RStudio. Go to <a href="https://www.rstudio.com/products/rstudio/download/#download">the Download page at RStudio.com</a> and follow the instructions. You want “RStudio Desktop”, and you want the free version.</p></li>
 </ol>
-<p>If you have difficulty installing R, come along to the first computational drop-in session in Week 2 and bring your computer with you (if it’s sufficiently portable), and we’ll do our best to help.</p>
+<p>If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it’s sufficiently portable), and we’ll do our best to help.</p>
+<p>Second, you can <strong>use R and RStudio on University computers</strong>. All University computers have access to R and RStudio, via the AppsAnywhere service. Again, you should first install R (which, at the time of writing, is confusingly included under the name “CRAN”) via AppsAnywhere, and then install RStudio via AppsAnywhere.</p>
+<p>The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.</p>
+<p>Third, you can <strong>use the <a href="https://rstudio.cloud/">RStudio Cloud</a></strong>. The RStudio Cloud is a cloud-hosted “Google Docs for R” that you can use through your web browser – you can get 25 hours per month for free, which should be plenty for this module, or pay for more.</p>
+<p>If you have access to a computer on which you can’t install software, such as some Chromebooks or tablet computers, or if you’re borrowing a friend’s laptop, the RStudio Cloud can be a convenient solution.</p>
 </div>
 <div id="troubleshooting" class="section level2 unnumbered hasAnchor">
-<h2>Troubleshooting drop-in sessions<a href="R.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>R troubleshooting drop-in sessions<a href="R.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.</p>
-<p>However, many students find getting with started with R in the first few weeks particularly frustrating. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details – they are probably listed as “computer practicals”.</p>
+<p>However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional R troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details – they are probably listed as “computer practicals”.</p>
 
 </div>
 </div>

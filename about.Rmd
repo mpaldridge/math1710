@@ -2,11 +2,11 @@
 
 ## Organisation of MATH1710  {#organisation .unnumbered}
 
-This module is **MATH1710 Probability and Statistics I**. A few students may be taking this module as half of **MATH2700 Probability and Statistics for Scientists**.
+This module is **MATH1710 Probability and Statistics I**. (It is possible to take this module as half of **MATH2700 Probability and Statistics for Scientists**, but I am not aware that any students are enrolled on MATH2700 this year -- please [let me know](mailto:m.aldridge@leeds.ac.uk) if you are.)
 
 This module lasts for 11 weeks from 3 October to 16 December 2022. The exam will take place between 16 and 27 January 2023.
 
-The module leader, the main lecturer, and the main author of these notes is Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge").
+The module leader, the lecturer, and the main author of these notes is Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge", pronounced "*old*-ridge").
 
 
 
@@ -14,8 +14,8 @@ The module leader, the main lecturer, and the main author of these notes is Dr M
 
 The main way you will learn new material for this module is by attending lectures. There are two lectures per week. Because this is a very large class, you are split into two groups for lectures:
 
-* Group 1: Mondays at 1200 and Tuesdays at 1600
-* Group 2: Mondays at 1500 and Tuesdays at 1500
+* Group 1: Mondays at 1200 and Wednesdays at 1600
+* Group 2: Mondays at 1500 and Wednesdays at 1500
 
 All lectures are in [Roger Stevens LT 20](https://students.leeds.ac.uk/rooms?type=room&id=100044). Check your timetable to see which group you are in.
 
@@ -23,7 +23,7 @@ I recommend taking your own notes during the lecture. This website will keep bri
 
 You are probably reading the web version of the notes. If you want a PDF copy (to read offline or to print out), it can be downloaded via the top ribbon of the page. (Warning: I have not made as much effort to make the PDF as neat and tidy as I have the web version, and there may be formatting errors.) I am very keen to hear about errors in the notes, mathematical, typographical or otherwise. Please [email me](mailto:m.aldridge@leeds.ac.uk) if think you may have found any.
 
-Attendance at lectures is compulsory.
+*Attendance at lectures is compulsory.*
 
 
 ### Problem sheets {.unnumbered #problem-sheets}
@@ -40,7 +40,7 @@ There will be 5 problem sheets. Each problem sheet has a number of short and lon
 
 An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available; Lectures 21 and 22 are revision lectures with no new material.
 
-Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
+Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions on paper and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
 
 
 
@@ -59,14 +59,14 @@ My recommended approach to problem sheets and tutorials is the following:
 
 Your tutor will also be the marker of your answers to the assessed questions on the problem sheets.
 
-Attendance at tutorials is compulsory.
+*Attendance at tutorials is compulsory.*
 
 
 ### R worksheets {.unnumbered #r-worksheets}
 
 R is a programming language that is particularly good at working with probability and statistics. Learning to use R is an important part of this module, and is used in many other modules in the University, particularly in MATH1712 Probability and Statistics II. R is used by statisticians throughout academia and increasingly in industry too. Learning to program is a valuable skill for all students, and learning to use R is particularly valuable for students interested in statistics and related topics like actuarial science.
 
-You will learn R by working through one R worksheet each week in your own time. Worksheets 3, 5, 7, 9 and 11 will also contain a couple of questions for assessment, which will be due by 2pm Monday the following week (except the last one). Each of these is worth 3% of your mark for a total of 15%. You will submit your answers through a Microsoft Form (details to follow later). I recommend spending one hour per week on the week's R worksheet, plus one extra hour if there are assessed questions that week.
+You will learn R by working through one R worksheet each week in your own time. Worksheets 3, 5, 7, 9 and 11 will also contain a few questions for assessment, which will be due by 2pm Monday the following week (except the last one). Each of these is worth 3% of your mark for a total of 15%. You will submit your answers through a Microsoft Form (details to follow later). I recommend spending one hour per week on the week's R worksheet, plus one extra hour if there are assessed questions that week.
 
 | Week | Worksheet                     | Deadline for assessed work |
 |:----:|-------------------------------|:--------------------------:|
@@ -86,20 +86,21 @@ You can read more about the language R, and about the program RStudio that we re
 
 To help you if you have problems with R, we have organised **optional R troubleshooting drop-in sessions**, where you can discuss any problems you have with an R expert, in Weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
 
-Attendance at R troubleshooting drop-in sessions is optional.
+*Attendance at R troubleshooting drop-in sessions is optional.*
 
 
 ### Optional "office hours" drop-in sessions {.unnumbered #dropin}
 
 If you there is something in the module you wish to discuss privately one-on-one with the module leader, the place for the is the optional weekly "office hours", which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to a member of staff; these are particularly useful if there's something on the module that you are stuck on or confused about, but I'm happy to discuss any statistics-related issues or questions you have.
 
-I currently plan one optional "office hours" drop-in session per week, which may be shown on your timetable:
+I currently plan two optional "office hours" drop-in session per week:
 
+* Thursdays from 1400 to 1500 in [Roger Stevens LT 7](https://students.leeds.ac.uk/rooms?type=room&id=100031)
 * Thursdays from 1600 to 1700 in [Roger Stevens LT 17](https://students.leeds.ac.uk/rooms?type=room&id=100041)
 
-(If the optional "office hours" drop-in session is very popular, I will try to arrange a second weekly session. If it is not very popular, I will move it to my actual office, which is quite small.)
+Although only the second of these appears on your timetable, you are equally welcome at either. Depending on attendance levels, I may change arrangements as term continues. If neither time is possible, you may [email me](mailto:m.aldridge@leeds.ac.uk) to book a time to talk to me.
 
-Attendance at "office hours" drop-in sessions is optional.
+*Attendance at "office hours" drop-in sessions is optional.* You should prioritise mandatory sessions (like lectures or tutorials, such as for LUBS1940 Economics for Management) over this optional session.
 
 
 ### Time management {.unnumbered #time}
@@ -113,7 +114,7 @@ It is, of course, up to you how you choose to spend your time on this module. Bu
 * **Revision:** 15 hours total at the end of the module.
 * **Exam:** 2 hours.
 
-That makes 100 hours in total. (MATH1710 is a 10 credit module, so is supposed to represent 100 hours work. MATH2700 students are expected to be able to use their greater experience to get through the material in just 75 hours, so should scale these recommendations accordingly.)
+That makes 100 hours in total. (MATH1710 is a 10-credit module, so is supposed to represent 100 hours work. MATH2700 students are expected to be able to use their greater experience to get through the material in just 75 hours, so should scale these recommendations accordingly.)
 
 
 ### Exam {.unnumbered #exam}
@@ -189,6 +190,6 @@ For R, there are many excellent resources online.
 
 ## About these notes  {#about-notes .unnumbered}
 
-These notes were written by Matthew Aldridge in 2021, and were edited and updated in 2022. They are based in part on previous notes by Dr Robert G Aykroyd and Prof Wally Gilks.  Dr Jason Anquandah and Dr Aykroyd advised on the R worksheets. Dr Aykroyd's help and advice on many aspects of the module was particularly valuable.
+These notes were written by Matthew Aldridge in 2021, and were edited and updated in 2022. They are based in part on previous notes by Dr Robert G Aykroyd and Prof Wally Gilks.  Dr Jason Susanna Anquandah and Dr Aykroyd advised on the R worksheets. Dr Aykroyd's help and advice on many aspects of the module was particularly valuable.
 
 These notes (in the web format) should be accessible by screenreaders. If you have accessibility difficulties with these notes, [contact me](mailto:m.aldridge@leeds.ac.uk).

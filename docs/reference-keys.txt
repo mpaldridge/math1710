@@ -1,0 +1,9 @@
+L01-stats
+what-is-eda
+what-is-R
+stat-central
+stat-spread
+L02-dataviz
+boxplots
+histograms
+scatterplots

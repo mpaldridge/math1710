@@ -185,8 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -223,219 +222,74 @@ display: none !important;
 <div class="mysummary">
 <p>The first two questions are <strong>short questions</strong>, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the notes. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.</p>
 </div>
-<div class="myq">
-<p><strong>A1.</strong> Consider again the “number of Skittles in each packet” data from Example 1.1.
-<span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span></p>
-<div class="subq">
-<p><strong>(a)</strong> Calculate the mean number of Skittles in each packet.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-This was in the notes:
-<span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.7 .\]</span></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> Calculate the sample variance using the computational formula.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-<span class="math display">\[\begin{align*}
-  s_x^2 &amp;= \frac{1}{13 - 1} \left( (59^2 + 59^2 + \cdots + 63^2) - 13 \times 60.6923^2)\right) \\
-        &amp;= \frac{1}{12} (47915 - 47886.2) \\
-        &amp;= 2.40
-\end{align*}\]</span></p>
-<p><strong>Group feedback:</strong> With the computational formula, the value <span class="math inline">\(\sum_i x_i^2 - n \bar{x}^2\)</span> is typically a fairly small number given as the difference between two very big numbers <span class="math inline">\(\sum_i x_i^2\)</span> and <span class="math inline">\(n \bar x^2\)</span>. This means you have to get the two big numbers very precise, to ensure the cancellation happens correctly; in particular, make sure you use plenty of decimal places of accuracy in <span class="math inline">\(\bar x\)</span>.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> Calculate the sample variance using the definitional formula.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-<span class="math display">\[\begin{align*}
-  s_x^2 &amp;= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
-        &amp;= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
-        &amp;= \frac{1}{12} \times 28.77 \\
-        &amp;= 2.40
-\end{align*}\]</span></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(d)</strong> Out of (b) and (c), which calculation did you find easier, and why?</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-The computational formula required fewer presses of the calculator buttons, because <span class="math inline">\(\sum_i x_i^2\)</span> is fewer button-presses than <span class="math inline">\(\sum_i (x_i - \bar x)^2\)</span>, where you have to subtract the means before squaring.</p>
-<p>On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in <span class="math inline">\(\bar x\)</span> to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.</p>
-</div>
-</div>
-</div>
-<div class="myq">
-<p><strong>A2.</strong> Consider the following data sets of the age of elected politicians on a local council. (The “18–30” bin, for example, means from one’s 18th birthday to the moment before one’s 30th birthday, so lasts 12 years.)</p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="16%" />
-<col width="29%" />
-<col width="28%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Age (years)</th>
-<th align="center">Frequency</th>
-<th align="center">Relative frequency</th>
-<th align="center">Frequency density</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">18–30</td>
-<td align="center">1</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">30–40</td>
-<td align="center">3</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">40–45</td>
-<td align="center">4</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">45–50</td>
-<td align="center">5</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">50–55</td>
-<td align="center">3</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">55–60</td>
-<td align="center">1</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">60–70</td>
-<td align="center">3</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"><strong>Total</strong></td>
-<td align="center">20</td>
-<td align="center">1</td>
-<td align="center">—</td>
-</tr>
-</tbody>
-</table>
-<div class="subq">
-<p><strong>(a)</strong> Complete the table by filling in the relative frequency and frequency densities.</p>
-<div class="myanswers">
-<p><em>Solution.</em></p>
-<table>
-<colgroup>
-<col width="25%" />
-<col width="16%" />
-<col width="29%" />
-<col width="28%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Age (years)</th>
-<th align="center">Frequency</th>
-<th align="center">Relative frequency</th>
-<th align="center">Frequency density</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">18–30</td>
-<td align="center">1</td>
-<td align="center">0.05</td>
-<td align="center">0.0041</td>
-</tr>
-<tr class="even">
-<td align="center">30–40</td>
-<td align="center">3</td>
-<td align="center">0.15</td>
-<td align="center">0.015</td>
-</tr>
-<tr class="odd">
-<td align="center">40–45</td>
-<td align="center">4</td>
-<td align="center">0.2</td>
-<td align="center">0.04</td>
-</tr>
-<tr class="even">
-<td align="center">45–50</td>
-<td align="center">5</td>
-<td align="center">0.25</td>
-<td align="center">0.05</td>
-</tr>
-<tr class="odd">
-<td align="center">50–55</td>
-<td align="center">3</td>
-<td align="center">0.15</td>
-<td align="center">0.03</td>
-</tr>
-<tr class="even">
-<td align="center">55–60</td>
-<td align="center">1</td>
-<td align="center">0.05</td>
-<td align="center">0.01</td>
-</tr>
-<tr class="odd">
-<td align="center">60–70</td>
-<td align="center">3</td>
-<td align="center">0.15</td>
-<td align="center">0.015</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>Total</strong></td>
-<td align="center">20</td>
-<td align="center">1</td>
-<td align="center">—</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> What is the median age bin?</p>
-<div class="myanswers">
-<p><em>Solution.</em> The 10th- and 11th-largest observations are both in the 45–50 bin, which is therefore the median bin.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> What is the modal age bin?</p>
-<div class="myanswers">
-<p><em>Solution.</em> The bin with the largest frequency density is 45–50, which is therefore the modal bin.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> Calculate (the standard approximation of) the mean age of the politicians.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-Pretending that each person is in the centre of their bin, we have
-<span class="math display">\[ \bar x = \frac{1}{20} (1\times24 + 3\times 35 + \cdots + 3 \times 65) = \frac{946.5}{20} = 47.3 . \]</span></p>
-</div>
-</div>
-</div>
-<div class="myq">
-<p><strong>3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="P1.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">6</span>)</span>
-<span id="cb13-2"><a href="P1.html#cb13-2" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">80</span>, <span class="dv">10</span>, <span class="dv">2</span>)</span>
-<span id="cb13-3"><a href="P1.html#cb13-3" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> <span class="dv">8</span> <span class="sc">+</span> <span class="fu">rexp</span>(<span class="dv">80</span>,<span class="fl">0.4</span>)</span>
-<span id="cb13-4"><a href="P1.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(x, y, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">&quot;Dataset 1&quot;</span>, <span class="st">&quot;Dataset 2&quot;</span>))</span></code></pre></div>
-<p><img src="math1710_files/figure-html/two-boxplots-1.png" width="672" /></p>
-</div>
+<p>::::: {.myq} <strong>A1.</strong> Consider again the “number of Skittles in each packet” data
+from Example 1.1. <span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \
+62, \ 63, \ 63 .\]</span>
+:::: {.subq} <strong>(a)</strong> Calculate the mean number of Skittles in each packet.
+::: {.myanswers data-latex=““} <em>Solution.</em> This was in the notes: <span class="math display">\[ \bar x =
+\frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.7 .\]</span> ::: ::::
+:::: {.subq} <strong>(b)</strong> Calculate the sample variance using the computational
+formula.
+::: {.myanswers data-latex=”“} <em>Solution.</em> <span class="math display">\[\begin{align*} s_x^2 &amp;= \frac{1}{13 -
+1} \left( (59^2 + 59^2 + \cdots + 63^2) - 13 \times 60.6923^2)\right) \\ &amp;=
+\frac{1}{12} (47915 - 47886.2) \\ &amp;= 2.40 \end{align*}\]</span>
+<strong>Group feedback:</strong> With the computational formula, the value <span class="math inline">\(\sum_i x_i^2 - n \bar{x}^2\)</span> is typically a fairly small number given as the difference between
+two very big numbers <span class="math inline">\(\sum_i x_i^2\)</span> and <span class="math inline">\(n \bar x^2\)</span>. This means you have to get
+the two big numbers very precise, to ensure the cancellation happens correctly;
+in particular, make sure you use plenty of decimal places of accuracy in <span class="math inline">\(\bar x\)</span>. ::: ::::
+:::: {.subq} <strong>(c)</strong> Calculate the sample variance using the definitional
+formula.
+::: {.myanswers data-latex=”“} <em>Solution.</em> <span class="math display">\[\begin{align*} s_x^2 &amp;= \frac{1}{13 -
+1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\ &amp;=
+\frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\ &amp;= \frac{1}{12} \times 28.77 \\ &amp;=
+2.40 \end{align*}\]</span> ::: ::::
+:::: {.subq} <strong>(d)</strong> Out of (b) and (c), which calculation did you find easier,
+and why?
+::: {.myanswers data-latex=”“} <em>Solution.</em> The computational formula required
+fewer presses of the calculator buttons, because <span class="math inline">\(\sum_i x_i^2\)</span> is fewer
+button-presses than <span class="math inline">\(\sum_i (x_i - \bar x)^2\)</span>, where you have to subtract the
+means before squaring.
+On the other hand, the expression inside the brackets of the computational
+formula is a fairly small number given as the difference of two very large
+numbers, so it was necessary to use lots of decimal places of accuracy in <span class="math inline">\(\bar x\)</span> to make sure the second large number was accurate and therefore that the
+subtraction cancelled correctly. ::: :::: :::::
+::::: {.myq} <strong>A2.</strong> Consider the following data sets of the age of elected
+politicians on a local council. (The”18–30” bin, for example, means from one’s
+18th birthday to the moment before one’s 30th birthday, so lasts 12 years.)
+| Age (years) | Frequency | Relative frequency | Frequency density |
+|:—————:|:———:|:——————:|:—————–:| |
+18–30 | 1 | | | | 30–40 | 3 |
+| | | 40–45 | 4 | | | | 45–50
+| 5 | | | | 50–55 | 3 |
+| | | 55–60 | 1 | | | |
+60–70 | 3 | | | | <strong>Total</strong> | 20
+| 1 | — |
+:::: {.subq} <strong>(a)</strong> Complete the table by filling in the relative frequency and
+frequency densities.
+::: {.myanswers data-latex=““} <em>Solution.</em>
+| Age (years) | Frequency | Relative frequency | Frequency density |
+|:—————:|:———:|:——————:|:—————–:| |
+18–30 | 1 | 0.05 | 0.0041 | | 30–40 | 3
+| 0.15 | 0.015 | | 40–45 | 4 | 0.2 |
+0.04 | | 45–50 | 5 | 0.25 | 0.05 | | 50–55 |
+3 | 0.15 | 0.03 | | 55–60 | 1 | 0.05 |
+0.01 | | 60–70 | 3 | 0.15 | 0.015 | |
+<strong>Total</strong> | 20 | 1 | — |
+::: :::: :::: {.subq} <strong>(b)</strong> What is the median age bin?
+::: {.myanswers data-latex=”“} <em>Solution.</em> The 10th- and 11th-largest
+observations are both in the 45–50 bin, which is therefore the median bin. :::
+::::
+:::: {.subq} <strong>(c)</strong> What is the modal age bin?
+::: {.myanswers data-latex=”“} <em>Solution.</em> The bin with the largest frequency
+density is 45–50, which is therefore the modal bin. ::: ::::
+:::: {.subq} <strong>(c)</strong> Calculate (the standard approximation of) the mean age of
+the politicians.
+::: {.myanswers data-latex=”“} <em>Solution.</em> Pretending that each person is in the
+centre of their bin, we have <span class="math display">\[ \bar x = \frac{1}{20} (1\times24 + 3\times 35 +
+\cdots + 3 \times 65) = \frac{946.5}{20} = 47.3 . \]</span> ::: :::: :::::
+:::: {.myq} <strong>3.</strong> Consider the two datasets illustrated by the boxplots below.
+Write down some differences between the two datasets.
+<code>{r two-boxplots} set.seed(6) x &lt;- rnorm(80, 10, 2) y &lt;- 8 + rexp(80,0.4) boxplot(x, y, names = c("Dataset 1", "Dataset 2"))</code> ::::</p>
 </div>
 <div id="P1-long" class="section level2 unnumbered hasAnchor">
 <h2>B: Long questions<a href="P1.html#P1-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>

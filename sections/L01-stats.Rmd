@@ -76,13 +76,24 @@ The mode is 59, because there were 4 packets containing 59 sweets; more than any
 \[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) = \frac{789}{13} = 60.7 .\]
 :::
 
-The median is one example of a "quantile" of the data. Suppose our data is increasing order again. For $0 \leq \alpha \leq 1$, the **$\alpha$-quantile** $q(\alpha)$ of the data is the datapoint $\alpha$ of the way along the list. Generally, $q(\alpha)$ is equal to $x_{1+\alpha(n-1)}$ when $1+\alpha(n-1)$ is an integer. (If $1+\alpha(n-1)$ isn't an integer, there are various conventions of how to choose that we won't go into here. R has *seven* different settings for choosing quantiles! -- we will always just use R's default choice.)
+The median is one example of a "quantile" of the data. Suppose our data is increasing order again. For $0 \leq \alpha \leq 1$, the **$\alpha$-quantile** $q(\alpha)$ of the data is the datapoint $\alpha$ of the way along the list. Generally, $q(\alpha)$ is equal to $x_{1+\alpha(n-1)}$ when $1+\alpha(n-1)$ is an integer. (If $1+\alpha(n-1)$ isn't an integer, there are various conventions of how to choose that we won't go into here. R has *nine* different settings for choosing quantiles! -- we will always just use R's default choice.)
 
 * The **median** is the $\frac12$-quantile $q(\frac12)$, which is $q(\frac12) = x_7 = 60$ for this data.
 * The **minimum** is the 0-quantile $q(0)$, which is $q(0) = x_1 = 59$ for this data.
 * The **maximum** is the 1-quantile $q(1)$, which is $q(1) = x_{13} = 63$ for this data
 * The **lower quartile** (that's "quartile", as in "quarter" -- not "quantile") is the $\frac14$-quantile $q(\frac14)$, which is $q(\frac14) = x_4 = 59$ for this data.
 * The **upper quartile** is the $\frac34$-quantile $q(\frac34)$, which is $q(\frac34) = x_{10} = 62$ for this data.
+
+The following R code reads in some data which has the daily average temperature in Leeds in 2020, divided into months. We can find, for example, the mean October temperature or the lower quartile of the July temperature.
+
+```{r}
+temperature <- read.csv("https://mpaldridge.github.io/math1710/data/temperature.csv")
+jul <- temperature[temperature$month == "jul", ]
+oct <- temperature[temperature$month == "oct", ]
+
+mean(oct$temp)
+quantile(jul$temp, probs = 1 / 4)
+```
 
 
 
@@ -115,14 +126,10 @@ This has left us with
 \[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]
 This is sometimes called the "computational formula"; this is because it usually takes fewer presses of calculator buttons to compute the sample variance with this formula rather than the definitional formula. (But make sure you keep enough decimal points in $\bar x^2$.)
 
-The following R code reads in some data which has the daily average temperature in Leeds in 2020, divided into months. We can find, for example, the mean October temperature or the inter-quartile range of the July temperature.
+Going back to our weather data in R, we can find the sample variance of the October weather or the interquartile range of the July weather.
 
 ```{r}
-temperature <- read.csv("https://mpaldridge.github.io/math1710/data/temperature.csv")
-jul <- temperature[temperature$month == "jul", ]
-oct <- temperature[temperature$month == "oct", ]
-
-mean(oct$temp)
+var(oct$temp)
 IQR(jul$temp)
 ```
 

@@ -185,8 +185,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>Troubleshooting drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -271,7 +270,7 @@ RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudi
 The mode is 59, because there were 4 packets containing 59 sweets; more than any other number. Since there are <span class="math inline">\(n = 13\)</span> packets, the middle packet is number <span class="math inline">\(i = 7\)</span>, so the median is <span class="math inline">\(x_7 = 60\)</span>. The mean is
 <span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) = \frac{789}{13} = 60.7 .\]</span></p>
 </div>
-<p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the datapoint <span class="math inline">\(\alpha\)</span> of the way along the list. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>seven</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
+<p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the datapoint <span class="math inline">\(\alpha\)</span> of the way along the list. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>nine</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
 <ul>
 <li>The <strong>median</strong> is the <span class="math inline">\(\frac12\)</span>-quantile <span class="math inline">\(q(\frac12)\)</span>, which is <span class="math inline">\(q(\frac12) = x_7 = 60\)</span> for this data.</li>
 <li>The <strong>minimum</strong> is the 0-quantile <span class="math inline">\(q(0)\)</span>, which is <span class="math inline">\(q(0) = x_1 = 59\)</span> for this data.</li>
@@ -279,6 +278,16 @@ The mode is 59, because there were 4 packets containing 59 sweets; more than any
 <li>The <strong>lower quartile</strong> (that’s “quartile”, as in “quarter” – not “quantile”) is the <span class="math inline">\(\frac14\)</span>-quantile <span class="math inline">\(q(\frac14)\)</span>, which is <span class="math inline">\(q(\frac14) = x_4 = 59\)</span> for this data.</li>
 <li>The <strong>upper quartile</strong> is the <span class="math inline">\(\frac34\)</span>-quantile <span class="math inline">\(q(\frac34)\)</span>, which is <span class="math inline">\(q(\frac34) = x_{10} = 62\)</span> for this data.</li>
 </ul>
+<p>The following R code reads in some data which has the daily average temperature in Leeds in 2020, divided into months. We can find, for example, the mean October temperature or the lower quartile of the July temperature.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="L01-stats.html#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://mpaldridge.github.io/math1710/data/temperature.csv&quot;</span>)</span>
+<span id="cb3-2"><a href="L01-stats.html#cb3-2" aria-hidden="true" tabindex="-1"></a>jul <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;jul&quot;</span>, ]</span>
+<span id="cb3-3"><a href="L01-stats.html#cb3-3" aria-hidden="true" tabindex="-1"></a>oct <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;oct&quot;</span>, ]</span>
+<span id="cb3-4"><a href="L01-stats.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="L01-stats.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
+<pre><code>## [1] 11.93548</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="L01-stats.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(jul<span class="sc">$</span>temp, <span class="at">probs =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## 25% 
+##  15</code></pre>
 </div>
 <div id="stat-spread" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> Statistics of spread<a href="L01-stats.html#stat-spread" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -303,14 +312,10 @@ Here, the first line is the definitional formula; the second line is from expand
 <p>This has left us with
 <span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
 This is sometimes called the “computational formula”; this is because it usually takes fewer presses of calculator buttons to compute the sample variance with this formula rather than the definitional formula. (But make sure you keep enough decimal points in <span class="math inline">\(\bar x^2\)</span>.)</p>
-<p>The following R code reads in some data which has the daily average temperature in Leeds in 2020, divided into months. We can find, for example, the mean October temperature or the inter-quartile range of the July temperature.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="L01-stats.html#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://mpaldridge.github.io/math1710/data/temperature.csv&quot;</span>)</span>
-<span id="cb3-2"><a href="L01-stats.html#cb3-2" aria-hidden="true" tabindex="-1"></a>jul <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;jul&quot;</span>, ]</span>
-<span id="cb3-3"><a href="L01-stats.html#cb3-3" aria-hidden="true" tabindex="-1"></a>oct <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;oct&quot;</span>, ]</span>
-<span id="cb3-4"><a href="L01-stats.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="L01-stats.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
-<pre><code>## [1] 11.93548</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="L01-stats.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(jul<span class="sc">$</span>temp)</span></code></pre></div>
+<p>Going back to our weather data in R, we can find the sample variance of the October weather or the interquartile range of the July weather.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="L01-stats.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
+<pre><code>## [1] 2.862366</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="L01-stats.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(jul<span class="sc">$</span>temp)</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
 </div>
 <div id="summary-01" class="section level2 unnumbered hasAnchor">

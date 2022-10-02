@@ -63,8 +63,8 @@ paul * john
 **(a)** Assign the value of `paul` mutiplied by `john` to the new value `ringo`.\
 **(b)** Check the value of `ringo`.\
 **(c)** Double the value of `ringo`, keeping it still stored as `ringo`.\
-**(d)** Add 5 to the value of `ringo`.\
-**(e)** Check the new value of `ringo`. (It should be 2021.)
+**(d)** Add 6 to the value of `ringo`.\
+**(e)** Check the new value of `ringo`. (It should be 2022.)
 
 We do this as follows:
 
@@ -72,11 +72,11 @@ We do this as follows:
 ringo <- paul * john
 ringo
 ringo <- 2* ringo
-ringo <- ringo + 5
+ringo <- ringo + 6
 ringo
 ```
 
-The answer is indeed 2021, as it should be.
+The answer is indeed 2022, as it should be.
 
 > **Exercise 1.6.** Write down the commands you used to solve Exercises 1.4 and 1.5 in a new R Script. Save your work with a explanatory filename that will allow you to find it again later.
 
@@ -87,10 +87,10 @@ My R Script `R1-solutions.R` looked like this:
 ```{r, eval = FALSE}
 # MATH1710: R WORKSHEET 1
 # MY SOLUTIONS
-# Last updated: Friday 1 October 2021
+# Last updated: Friday 30 September 2022
 
 # Exercise 1.1
-2 + 3  # Gets answer "[1] 5"
+2 + 3  # Gets output "[1] 5", meaning the answer is 5
 
 # Exercise 1.2
 943 - 242
@@ -112,8 +112,9 @@ paul * john
 ringo <- paul * john
 ringo
 ringo <- 2* ringo
-ringo <- ringo + 5
-ringo  # Answer is 2021, as it should be
+ringo <- ringo + 6
+ringo  # Answer is 2022, as it should be
 
-# Exercises 1.5 and 1.6 created this R Script.
+# Exercise 1.5 created this R Script
+# Exercise 1.6 added comments to this R Script
 ```
