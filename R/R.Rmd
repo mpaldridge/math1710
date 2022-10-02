@@ -59,7 +59,7 @@ Second, you can **use R and RStudio on University computers**. All University co
 
 The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.
 
-Third, you can **use the [RStudio Cloud](https://rstudio.cloud/)**. The RStudio Cloud is a cloud-hosted "Google Docs for R" that you can use through your web browser -- you can get 25 hours per month for free, which should be plenty for this module, or pay for more.
+Third, you can **use the [RStudio Cloud](https://rstudio.cloud/)**. The RStudio Cloud is a cloud-hosted "Google Docs for R" that you can use through your web browser, without having to install anything. You can get 25 hours per month for free, which should be plenty for this module, or pay for more.
 
 If you have access to a computer on which you can't install software, such as some Chromebooks or tablet computers, or if you're borrowing a friend's laptop, the RStudio Cloud can be a convenient solution. 
 
