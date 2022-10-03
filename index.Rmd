@@ -1,10 +1,10 @@
 --- 
 title: "MATH1710 Probability and Statistics I"
-author: "[Matthew Aldridge](mailto:math1710@leeds.ac.uk)"
-date: "University of Leeds, 2021--22"
+author: "[Matthew Aldridge](https://mpaldridge.github.io/math1710)"
+date: "University of Leeds, 2022--23"
 site: bookdown::bookdown_site
 documentclass: book
-description: "Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2021--2022"
+description: "Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022--2023"
 favicon: favicon.ico
 url:    'https://mpaldridge.github.io/math1710/'
 ---
@@ -95,6 +95,6 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 * [**Lecture 1:** Summary statistics](#L01-stats) (Monday 3 October)
 * [**Lecture 2:** Data visualisation](#L02-dataviz) (Wednesday 5 October)
-* [**Problem Sheet 1:**](#P1) discussed in tutorials in Week 2; deadline for assessed questions: Monday 17 October
-* [**R Worksheet 1:** R basics](#r-work)
+* [**Problem Sheet 1:**](#P1) Work through the short and long questions in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
+* [**R Worksheet 1:** R basics](#r-work) to be completed this week.
 :::
