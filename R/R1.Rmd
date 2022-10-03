@@ -21,7 +21,7 @@ output: html_document
 
 This worksheet assumes you or using a computer with the programming language R and the program RStudio installed. This might be:
 
-* your own computer on which you have first installed R and then installed RStudio, following [the instructions in the notes](https://mpaldridge.github.io/math1710/R.html;
+* your own computer on which you have first installed R and then installed RStudio, following [the instructions in the notes](https://mpaldridge.github.io/math1710/R.html);
 * a University computer, with R (aka "CRAN") then RStudio installed via AppsAnywhere;
 * using the [RStudio Cloud](https://rstudio.cloud/).
 
@@ -29,7 +29,7 @@ If you have problems installing R and RStudio, I recommend using one of the othe
 
 Open RStudio. To enter commands, you should type them into the "Console" -- this normally takes up either the left half of the screen, or the bottom-left quarter. When you open RStudio, there will be some information about R in the console, in black writing, then an arrow `>` in blue. You can type commands next to this blue arrow.
 
-> **Exercise 1.1.** Type `2 + 3` into the console next to the arrow, and then press Enter. What happens?
+> **Exercise 1.1.** Type `2 + 3` into the Console next to the arrow, and then press Enter. What happens?
 
 In these worksheets, R commands for you to enter will look like this
 
@@ -152,7 +152,7 @@ If you can't complete an R worksheet in a single sitting (and maybe even if you 
 
 The recommended thing to do is to save your commands, so that you can quickly run them again if you need to. You can save your commands in an **R Script**. To open a new R Script in RStudio, click `File -> New File -> R Script` from the main menu. This will open a "notepad" style area, probably in the top-left quarter of your screen. You can write R commands into this area, then click on the `Save` button to save your work. (R Scripts are conventionally save with the suffix `.R`, like `math1710-r1-solutions.R`.)
 
-To run commands from your R Script, you can just copy-and-paste into the console. It can be more convenient, though, to highlight the commands then click `Run` in the top-right corner of the script area.
+To run commands from your R Script, you can just copy-and-paste into the Console. It can be more convenient, though, to highlight the commands then click `Run` in the top-right corner of the script area.
 
 Saving the *commands* you used is better than just writing down your answers. This way, you can quickly change your old commands, if you notice any small mistakes later. Later, when we work with data, you can also use the same old saved commands on new data.
 
