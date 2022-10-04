@@ -881,13 +881,15 @@ which, as we expected, is extremely high.
 
 \commfalse
 
-This is Problem Sheet 1, which covers material from Lectures \protect\hyperlink{L01-stats}{1} and \protect\hyperlink{L02-dataviz}{2} of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by \textbf{2pm on Monday 17 October}. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour in Week 2 to neatly write up and submit your answers to the assessed questions.
+You can \href{P1-sheet.pdf}{download this problem sheet as a PDF file}
+
+This is Problem Sheet 1, which covers material from Lectures \protect\hyperlink{L01-stats}{1} and \protect\hyperlink{L02-dataviz}{2} of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by \textbf{2pm on Monday 17 October}. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.
 
 \hypertarget{P1-short}{%
 \section*{A: Short questions}\label{P1-short}}
 \addcontentsline{toc}{section}{A: Short questions}
 
-The first two questions are \textbf{short questions}, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the notes. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.
+The first three questions are \textbf{short questions}, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the lectures. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.
 
 \textbf{A1.} Consider again the ``number of Skittles in each packet'' data from Example 1.1.
 \[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]
@@ -934,6 +936,8 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 
 \emph{Solution.} The computational formula required fewer presses of the calculator buttons, because \(\sum_i x_i^2\) is fewer button-presses than \(\sum_i (x_i - \bar x)^2\), where you have to subtract the means before squaring.
 
 On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in \(\bar x\) to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.
+
+\textbf{Group feedback:} Many answer for (d) are fine provided you give a justification.
 
 \end{myanswers}
 
@@ -1019,7 +1023,7 @@ Frequency density
 
 \end{myanswers}
 
-\textbf{(c)} Calculate (the standard approximation of) the mean age of the politicians.
+\textbf{(d)} Calculate (the standard approximation of) the mean age of the politicians.
 
 \begin{myanswers}
 \emph{Solution.} Pretending that each person is in the centre of their bin, we have
@@ -1030,6 +1034,24 @@ Frequency density
 \textbf{3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
 \includegraphics{math1710_files/figure-latex/two-boxplots-1.pdf}
+
+\begin{myanswers}
+\emph{Solution.} Some answers could be:
+
+\begin{itemize}
+\tightlist
+\item
+  The median and inter-quartile range of Dataset 2 appear to be very slightly larger than those in Dataset 1, although the differences are very small and might not be important in real life.
+\item
+  Dataset 2 has a few outliers; Dataset 1 has none.
+\item
+  While Dataset 1 is fairly ``balanced'' either side of the median, Dataset 2 shows what statisticians call a ``positive skew'': the data above the median is much more spread out than the data below the median.
+\end{itemize}
+
+\textbf{Group feedback:}
+You can probably think of other answers.
+
+\end{myanswers}
 
 \hypertarget{P1-long}{%
 \section*{B: Long questions}\label{P1-long}}
@@ -1131,15 +1153,8 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 
 \textbf{(a)} By making a clever choice of \((a_i)\) and \((b_i)\) in the Cauchy--Schwarz inequality, show that \(s_{xy}^2 \leq s_x^2 s_y^2\).
 
-\textbf{(b)}
-Hence, show that the correlation \(r_{xy}\) satisfies \(-1 \leq r_{xy} \leq 1\).
-
 \begin{myanswers}
 \emph{Solutions.}
-The first thing we want do is get from the Cauchy--Schwarz inequality
-\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]
-to the hint \(s_{xy}^2 \leq s_x^2 s_y^2\). We'll do this by making a clever choice for \((a_i)\) and \((b_i)\) in Cauchy--Schwarz that tells us something useful about \(s_{xy}\), \(s_x^2\), and \(s_y^2\).
-
 Recalling the formulas for \(s_{xy}\), \(s_x^2\), and \(s_y^2\),
 \begin{align*}
 s_{xy} &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,\\
@@ -1148,19 +1163,27 @@ s_{y}^2 &= \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2 ,
 \end{align*}
 and comparing them with the Cauchy--Schwarz inequality, it looks like taking \(a_i = x_i - \bar x\) and \(b_i = y_i - \bar y\) might be useful. Making the substitution, we get
 \[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]
+
 These are very close to the formulas for \(s_{xy}\), \(s_x^2\), and \(s_y^2\), but are just missing the ``\(1/(n-1)\)''s; what we in fact have is
 \[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]
-Cancelling \((n-1)^2\) from each side, we have \(s_{xy}^2 \leq s_x^2 s_y^2\), and we've proved the hint.
+Cancelling \((n-1)^2\) from each side, we have \(s_{xy}^2 \leq s_x^2 s_y^2\).
 
-We now want to get from the hint to the desired statement \(-1 \leq r_{xy} \leq 1\). Recall the formula for the correlation is
+\end{myanswers}
+
+\textbf{(b)}
+Hence, show that the correlation \(r_{xy}\) satisfies \(-1 \leq r_{xy} \leq 1\).
+
+\begin{myanswers}
+\emph{Solutions.}
+Recall the formula for the correlation is
 \[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]
-We can make the hint look a bit like this dividing both sides by \(s_x^2 s_y^2\), to get
+We can make part (a) look a bit like this dividing both sides by \(s_x^2 s_y^2\), to get
 \[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]
 In fact that's the square of the correlation on the left-hand side, so we've shown that \(r_{xy}^2 \leq 1\).
 
 Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; number smalles than -1 become bigger than +1 when squared.) Hence we have shown that \(-1 \leq r_{xy} \leq 1\), as required.
 
-\textbf{Group feedback:} There are two halves to this question: first get from the Cauchy--Schwarz inequality to the hint, and second get from the hint to the answer \(-1 \leq r_{xy} \leq 1\). Many students struggled with the first half -- but you can still try to do the second half. Especially in an exam, look for places where you can get marks for doing part of the question -- and it doesn't need to be the \emph{first} part!
+\textbf{Group feedback:} Remember that you can still attempt part (b) even if you got stuck on part (a).
 
 \end{myanswers}
 
@@ -1195,7 +1218,7 @@ You can probably think of many other things.
 
 The last two questions are \textbf{assessed questions}. This means you will submit your answers, and your answers will be marked by your tutor. These two questions count for 3\% of your final mark for this module. If you get stuck, your tutor may be willing to give you a small hint in your tutorial.
 
-The deadline for submitting your solutions is \textbf{2pm on Monday 11 October} at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva.
+The deadline for submitting your solutions is \textbf{2pm on Monday 17 October} at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva.
 You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) -- please do not just submit photographs. Your work will be marked by your tutor and returned on Monday 18 September, when solutions will also be made available.
 
 Question C1 is a ``short question'', where brief explanations or working are sufficient; Question C2 is a ``long question'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
@@ -1234,7 +1257,7 @@ Is there a unique mode for this data? Why/why not? For what sort of data does th
 
 \begin{myanswers}
 \emph{Hint.}
-In Subsection 1.3 of the notes, we went from the definitional formula for the sample \emph{variance} to a computational formula. Can you follow a similar argument here?
+In Subsection 1.4 of the notes, we went from the definitional formula for the sample \emph{variance} to a computational formula. Can you follow a similar argument here?
 
 \end{myanswers}
 
@@ -1250,7 +1273,7 @@ When is the square of something equal to 0? What can you say about the value of 
 \section*{Solutions to short questions}\label{P1-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
-\textbf{A1.} (a) 60.7, (b) 2.40, (c) 2.40, (d) ---. \textbf{A2.} (a) ---, (b) 45--50, (c) 45--50, (c) 47.3.
+\textbf{A1.} (a) 60.7, (b) 2.40, (c) 2.40, (d) ---. \textbf{A2.} (a) ---, (b) 45--50, (c) 45--50, (c) 47.3. \textbf{A3.} ---
 
 \hypertarget{R}{%
 \chapter*{R Worksheets}\label{R}}

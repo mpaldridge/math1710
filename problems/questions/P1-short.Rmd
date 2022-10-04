@@ -48,6 +48,8 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 
 *Solution.* The computational formula required fewer presses of the calculator buttons, because $\sum_i x_i^2$ is fewer button-presses than $\sum_i (x_i - \bar x)^2$, where you have to subtract the means before squaring.
 
 On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in $\bar x$ to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.
+
+**Group feedback:** Many answer for (d) are fine provided you give a justification.
 :::
 ::::
 :::::
@@ -105,7 +107,7 @@ frequency densities.
 ::::
 
 :::: {.subq}
-**(c)** Calculate (the standard approximation of) the mean age of the politicians.
+**(d)** Calculate (the standard approximation of) the mean age of the politicians.
 
 ::: {.myanswers data-latex=""}
 *Solution.* Pretending that each person is in the centre of their bin, we have
@@ -117,10 +119,21 @@ frequency densities.
 :::: {.myq}
 **3.** Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-```{r two-boxplots, echo = FALSE}
+```{r two-boxplots, echo = FALSE, fig.width=5}
 set.seed(6)
 x <- rnorm(80, 10, 2)
 y <- 8 + rexp(80,0.4)
 boxplot(x, y, names = c("Dataset 1", "Dataset 2"))
 ```
+
+::: {.myanswers data-latex=""}
+*Solution.* Some answers could be:
+
+* The median and inter-quartile range of Dataset 2 appear to be very slightly larger than those in Dataset 1, although the differences are very small and might not be important in real life.
+* Dataset 2 has a few outliers; Dataset 1 has none.
+* While Dataset 1 is fairly "balanced" either side of the median, Dataset 2 shows what statisticians call a "positive skew": the data above the median is much more spread out than the data below the median.
+
+**Group feedback:**
+You can probably think of other answers.
+:::
 ::::

@@ -72,17 +72,9 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 :::: {.subq}
 **(a)** By making a clever choice of $(a_i)$ and $(b_i)$ in the Cauchy--Schwarz inequality, show that $s_{xy}^2 \leq s_x^2 s_y^2$.
 ::::
-:::: {.subq}
-**(b)**
-Hence, show that the correlation $r_{xy}$ satisfies $-1 \leq r_{xy} \leq 1$.
-::::
 
 ::: {.myanswers data-latex=""}
 *Solutions.*
-The first thing we want do is get from the Cauchy--Schwarz inequality
-\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]
-to the hint $s_{xy}^2 \leq s_x^2 s_y^2$. We'll do this by making a clever choice for $(a_i)$ and $(b_i)$ in Cauchy--Schwarz that tells us something useful about $s_{xy}$, $s_x^2$, and $s_y^2$.
-
 Recalling the formulas for $s_{xy}$, $s_x^2$, and $s_y^2$,
 \begin{align*}
 s_{xy} &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,\\
@@ -91,19 +83,28 @@ s_{y}^2 &= \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2 ,
 \end{align*}
 and comparing them with the Cauchy--Schwarz inequality, it looks like taking $a_i = x_i - \bar x$ and $b_i = y_i - \bar y$ might be useful. Making the substitution, we get
 \[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]
+
 These are very close to the formulas for $s_{xy}$, $s_x^2$, and $s_y^2$, but are just missing the "$1/(n-1)$"s; what we in fact have is
 \[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]
-Cancelling $(n-1)^2$ from each side, we have $s_{xy}^2 \leq s_x^2 s_y^2$, and we've proved the hint.
+Cancelling $(n-1)^2$ from each side, we have $s_{xy}^2 \leq s_x^2 s_y^2$.
+:::
 
-We now want to get from the hint to the desired statement $-1 \leq r_{xy} \leq 1$. Recall the formula for the correlation is
+:::: {.subq}
+**(b)**
+Hence, show that the correlation $r_{xy}$ satisfies $-1 \leq r_{xy} \leq 1$.
+::::
+
+::: {.myanswers data-latex=""}
+*Solutions.*
+Recall the formula for the correlation is
 \[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]
-We can make the hint look a bit like this dividing both sides by $s_x^2 s_y^2$, to get
+We can make part (a) look a bit like this dividing both sides by $s_x^2 s_y^2$, to get
 \[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]
 In fact that's the square of the correlation on the left-hand side, so we've shown that $r_{xy}^2 \leq 1$.
 
 Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; number smalles than -1 become bigger than +1 when squared.) Hence we have shown that $-1 \leq r_{xy} \leq 1$, as required.
 
-**Group feedback:** There are two halves to this question: first get from the Cauchy--Schwarz inequality to the hint, and second get from the hint to the answer $-1 \leq r_{xy} \leq 1$. Many students struggled with the first half -- but you can still try to do the second half. Especially in an exam, look for places where you can get marks for doing part of the question -- and it doesn't need to be the *first* part!
+**Group feedback:** Remember that you can still attempt part (b) even if you got stuck on part (a).
 :::
 :::::
 

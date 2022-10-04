@@ -215,12 +215,15 @@ display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>This is Problem Sheet 1, which covers material from Lectures <a href="L01-stats.html#L01-stats">1</a> and <a href="L02-dataviz.html#L02-dataviz">2</a> of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by <strong>2pm on Monday 17 October</strong>. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour in Week 2 to neatly write up and submit your answers to the assessed questions.</p>
+<p>You can <a href="P1-sheet.pdf">download this problem sheet as a PDF file</a></p>
+</div>
+<div class="mysummary">
+<p>This is Problem Sheet 1, which covers material from Lectures <a href="L01-stats.html#L01-stats">1</a> and <a href="L02-dataviz.html#L02-dataviz">2</a> of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by <strong>2pm on Monday 17 October</strong>. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.</p>
 </div>
 <div id="P1-short" class="section level2 unnumbered hasAnchor">
 <h2>A: Short questions<a href="P1.html#P1-short" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
-<p>The first two questions are <strong>short questions</strong>, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the notes. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.</p>
+<p>The first three questions are <strong>short questions</strong>, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the lectures. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.</p>
 </div>
 <div class="myq">
 <p><strong>A1.</strong> Consider again the “number of Skittles in each packet” data from Example 1.1.
@@ -262,6 +265,7 @@ s_x^2 &amp;= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (6
 <div class="myanswers">
 <p><em>Solution.</em> The computational formula required fewer presses of the calculator buttons, because <span class="math inline">\(\sum_i x_i^2\)</span> is fewer button-presses than <span class="math inline">\(\sum_i (x_i - \bar x)^2\)</span>, where you have to subtract the means before squaring.</p>
 <p>On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in <span class="math inline">\(\bar x\)</span> to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.</p>
+<p><strong>Group feedback:</strong> Many answer for (d) are fine provided you give a justification.</p>
 </div>
 </div>
 </div>
@@ -420,7 +424,7 @@ frequency densities.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> Calculate (the standard approximation of) the mean age of the politicians.</p>
+<p><strong>(d)</strong> Calculate (the standard approximation of) the mean age of the politicians.</p>
 <div class="myanswers">
 <p><em>Solution.</em> Pretending that each person is in the centre of their bin, we have
 <span class="math display">\[ \bar x = \frac{1}{20} (1\times24 + 3\times 35 + \cdots + 3 \times 65) = \frac{946.5}{20} = 47.3 . \]</span></p>
@@ -429,7 +433,17 @@ frequency densities.</p>
 </div>
 <div class="myq">
 <p><strong>3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<p><img src="math1710_files/figure-html/two-boxplots-1.png" width="672" /></p>
+<p><img src="math1710_files/figure-html/two-boxplots-1.png" width="480" /></p>
+<div class="myanswers">
+<p><em>Solution.</em> Some answers could be:</p>
+<ul>
+<li>The median and inter-quartile range of Dataset 2 appear to be very slightly larger than those in Dataset 1, although the differences are very small and might not be important in real life.</li>
+<li>Dataset 2 has a few outliers; Dataset 1 has none.</li>
+<li>While Dataset 1 is fairly “balanced” either side of the median, Dataset 2 shows what statisticians call a “positive skew”: the data above the median is much more spread out than the data below the median.</li>
+</ul>
+<p><strong>Group feedback:</strong>
+You can probably think of other answers.</p>
+</div>
 </div>
 </div>
 <div id="P1-long" class="section level2 unnumbered hasAnchor">
@@ -532,33 +546,33 @@ The modal shirt size is medium. The number of distinct outcomes is 4 (we don’t
 <div class="subq">
 <p><strong>(a)</strong> By making a clever choice of <span class="math inline">\((a_i)\)</span> and <span class="math inline">\((b_i)\)</span> in the Cauchy–Schwarz inequality, show that <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>.</p>
 </div>
-<div class="subq">
-<p><strong>(b)</strong>
-Hence, show that the correlation <span class="math inline">\(r_{xy}\)</span> satisfies <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>.</p>
-</div>
 <div class="myanswers">
 <p><em>Solutions.</em>
-The first thing we want do is get from the Cauchy–Schwarz inequality
-<span class="math display">\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]</span>
-to the hint <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>. We’ll do this by making a clever choice for <span class="math inline">\((a_i)\)</span> and <span class="math inline">\((b_i)\)</span> in Cauchy–Schwarz that tells us something useful about <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>.</p>
-<p>Recalling the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>,
+Recalling the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>,
 <span class="math display">\[\begin{align*}
 s_{xy} &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,\\
 s_{x}^2 &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 ,\\
 s_{y}^2 &amp;= \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2 ,
 \end{align*}\]</span>
 and comparing them with the Cauchy–Schwarz inequality, it looks like taking <span class="math inline">\(a_i = x_i - \bar x\)</span> and <span class="math inline">\(b_i = y_i - \bar y\)</span> might be useful. Making the substitution, we get
-<span class="math display">\[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]</span>
-These are very close to the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>, but are just missing the “<span class="math inline">\(1/(n-1)\)</span>”s; what we in fact have is
+<span class="math display">\[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]</span></p>
+<p>These are very close to the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>, but are just missing the “<span class="math inline">\(1/(n-1)\)</span>”s; what we in fact have is
 <span class="math display">\[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]</span>
-Cancelling <span class="math inline">\((n-1)^2\)</span> from each side, we have <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>, and we’ve proved the hint.</p>
-<p>We now want to get from the hint to the desired statement <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>. Recall the formula for the correlation is
+Cancelling <span class="math inline">\((n-1)^2\)</span> from each side, we have <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong>
+Hence, show that the correlation <span class="math inline">\(r_{xy}\)</span> satisfies <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>.</p>
+</div>
+<div class="myanswers">
+<p><em>Solutions.</em>
+Recall the formula for the correlation is
 <span class="math display">\[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]</span>
-We can make the hint look a bit like this dividing both sides by <span class="math inline">\(s_x^2 s_y^2\)</span>, to get
+We can make part (a) look a bit like this dividing both sides by <span class="math inline">\(s_x^2 s_y^2\)</span>, to get
 <span class="math display">\[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]</span>
 In fact that’s the square of the correlation on the left-hand side, so we’ve shown that <span class="math inline">\(r_{xy}^2 \leq 1\)</span>.</p>
 <p>Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; number smalles than -1 become bigger than +1 when squared.) Hence we have shown that <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>, as required.</p>
-<p><strong>Group feedback:</strong> There are two halves to this question: first get from the Cauchy–Schwarz inequality to the hint, and second get from the hint to the answer <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>. Many students struggled with the first half – but you can still try to do the second half. Especially in an exam, look for places where you can get marks for doing part of the question – and it doesn’t need to be the <em>first</em> part!</p>
+<p><strong>Group feedback:</strong> Remember that you can still attempt part (b) even if you got stuck on part (a).</p>
 </div>
 </div>
 <div class="myq">
@@ -581,7 +595,7 @@ In fact that’s the square of the correlation on the left-hand side, so we’ve
 <h2>C: Assessed questions<a href="P1.html#P1-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
 <p>The last two questions are <strong>assessed questions</strong>. This means you will submit your answers, and your answers will be marked by your tutor. These two questions count for 3% of your final mark for this module. If you get stuck, your tutor may be willing to give you a small hint in your tutorial.</p>
-<p>The deadline for submitting your solutions is <strong>2pm on Monday 11 October</strong> at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva.
+<p>The deadline for submitting your solutions is <strong>2pm on Monday 17 October</strong> at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva.
 You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) – please do not just submit photographs. Your work will be marked by your tutor and returned on Monday 18 September, when solutions will also be made available.</p>
 <p>Question C1 is a “short question”, where brief explanations or working are sufficient; Question C2 is a “long question”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
@@ -620,7 +634,7 @@ Is there a unique mode for this data? Why/why not? For what sort of data does th
 <div class="subq">
 <div class="myanswers">
 <p><em>Hint.</em>
-In Subsection 1.3 of the notes, we went from the definitional formula for the sample <em>variance</em> to a computational formula. Can you follow a similar argument here?</p>
+In Subsection 1.4 of the notes, we went from the definitional formula for the sample <em>variance</em> to a computational formula. Can you follow a similar argument here?</p>
 </div>
 </div>
 <div class="subq">
@@ -634,7 +648,7 @@ When is the square of something equal to 0? What can you say about the value of 
 </div>
 <div id="P1-short-sols" class="section level2 unnumbered hasAnchor">
 <h2>Solutions to short questions<a href="P1.html#P1-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>A1.</strong> (a) 60.7, (b) 2.40, (c) 2.40, (d) —. <strong>A2.</strong> (a) —, (b) 45–50, (c) 45–50, (c) 47.3.</p>
+<p><strong>A1.</strong> (a) 60.7, (b) 2.40, (c) 2.40, (d) —. <strong>A2.</strong> (a) —, (b) 45–50, (c) 45–50, (c) 47.3. <strong>A3.</strong> —</p>
 
 </div>
 </div>
