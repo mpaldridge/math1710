@@ -711,7 +711,8 @@ When we have multiple datasets, drawing boxplots next to each other can help us 
 \begin{Highlighting}[]
 \FunctionTok{boxplot}\NormalTok{(jul}\SpecialCharTok{$}\NormalTok{temp, oct}\SpecialCharTok{$}\NormalTok{temp,}
         \AttributeTok{names =} \FunctionTok{c}\NormalTok{(}\StringTok{"July"}\NormalTok{, }\StringTok{"October"}\NormalTok{),}
-        \AttributeTok{ylab =} \StringTok{"Daily maximum temperature (degrees C) in Leeds"}\NormalTok{)}
+        \AttributeTok{ylab =} \StringTok{"Daily maximum temperature (degrees C) in Leeds"}
+\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -776,8 +777,8 @@ Here is a histogram for our journey-time data:
 \NormalTok{bins }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{10}\NormalTok{, }\DecValTok{15}\NormalTok{, }\DecValTok{30}\NormalTok{, }\DecValTok{45}\NormalTok{, }\DecValTok{60}\NormalTok{, }\DecValTok{120}\NormalTok{)}
 
 \FunctionTok{hist}\NormalTok{(journeys}\SpecialCharTok{$}\NormalTok{midpoint, }\AttributeTok{breaks =}\NormalTok{ bins,}
-     \AttributeTok{xlab =} \StringTok{"Journey length (min)"}\NormalTok{,}
-     \AttributeTok{main =} \StringTok{""}\NormalTok{)}
+     \AttributeTok{xlab =} \StringTok{"Journey length (min)"}\NormalTok{, }\AttributeTok{ylab =} \StringTok{"frequency density"}\NormalTok{, }\AttributeTok{main =} \StringTok{""}
+\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -787,9 +788,11 @@ Often we draw histograms because the data was collected in bins in the first pla
 
 \begin{Shaded}
 \begin{Highlighting}[]
+\FunctionTok{set.seed}\NormalTok{(}\DecValTok{2172}\NormalTok{)}
 \NormalTok{hist\_data }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FunctionTok{rnorm}\NormalTok{(}\DecValTok{30}\NormalTok{, }\DecValTok{8}\NormalTok{, }\DecValTok{2}\NormalTok{), }\FunctionTok{rnorm}\NormalTok{(}\DecValTok{40}\NormalTok{, }\DecValTok{12}\NormalTok{, }\DecValTok{3}\NormalTok{))  }\CommentTok{\# Some fake data}
+
 \FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{40}\NormalTok{, }\AttributeTok{main =} \StringTok{"Too many bins"}\NormalTok{)}
-\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{3}\NormalTok{,  }\AttributeTok{main =} \StringTok{"Too few bins"}\NormalTok{)}
+\FunctionTok{hist}\NormalTok{(hist\_data, }\AttributeTok{breaks =} \DecValTok{2}\NormalTok{,  }\AttributeTok{main =} \StringTok{"Too few bins"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 

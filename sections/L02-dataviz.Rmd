@@ -32,7 +32,8 @@ When we have multiple datasets, drawing boxplots next to each other can help us 
 ```{r boxplot-temp, cache = TRUE, fig.width = 5, fig.align = "center"}
 boxplot(jul$temp, oct$temp,
         names = c("July", "October"),
-        ylab = "Daily maximum temperature (degrees C) in Leeds")
+        ylab = "Daily maximum temperature (degrees C) in Leeds"
+)
 ```
 
 (And yes, I [did check the outlier](https://www.metoffice.gov.uk/binaries/content/assets/metofficegovuk/pdf/weather/learn-about/uk-past-events/interesting/2020/2020_05_july_temperature.pdf) to make sure it was a genuine datapoint.)
@@ -91,8 +92,8 @@ journeys <- read.csv("https://mpaldridge.github.io/math1710/data/journeys.csv")
 bins <- c(0, 5, 10, 15, 30, 45, 60, 120)
 
 hist(journeys$midpoint, breaks = bins,
-     xlab = "Journey length (min)",
-     main = "")
+     xlab = "Journey length (min)", ylab = "frequency density", main = ""
+)
 ```
 
 Often we draw histograms because the data was collected in bins in the first place. But even when we have exact data, we might *choose* to divide it into bins for the purposes of drawing a histogram. In this case we have to decide where to put the "breaks" between the bins. Too many breaks too close together, and the small number of observations in each bin will give "noisy" results (see left); too few breaks too far apart, and the wide bins will mean we lose detail (see right).
@@ -101,9 +102,11 @@ set.seed(4)
 ```
 
 ```{r hist-bins, cache = TRUE, fig.show="hold", out.width="48%", fig.width = 4}
+set.seed(2172)
 hist_data <- c(rnorm(30, 8, 2), rnorm(40, 12, 3))  # Some fake data
+
 hist(hist_data, breaks = 40, main = "Too many bins")
-hist(hist_data, breaks = 3,  main = "Too few bins")
+hist(hist_data, breaks = 2,  main = "Too few bins")
 ```
 
 We can also calculate some summary statistics even when we have binned data. We mentioned the mode earlier, where the modal bin is the bin of highest frequency density.
