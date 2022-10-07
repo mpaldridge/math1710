@@ -222,7 +222,7 @@ as required.
 :::::
 
 ::: {.example}
-*Consider picking a card from a deck at random, with $\mathbb P(A) = |A|/52$. What's the probability the card is a spade or an ace?*
+*Consider picking a card from a [deck](https://en.wikipedia.org/wiki/Standard_52-card_deck) at random, with $\mathbb P(A) = |A|/52$. What's the probability the card is a spade or an ace?*
 
 It is possible to just to work this out directly. But let's use our addition law for unions.
 
@@ -232,6 +232,7 @@ But $\mathbb P(\text{spade and ace})$ is the probability of picking the ace of s
 \[ \mathbb P(\text{spade or ace}) = \tfrac{13}{52} + \tfrac{4}{52}  - \tfrac{1}{52} = \tfrac{16}{52} = \tfrac{4}{13} . \]
 :::
 
+<!--
 Similar addition rules can be proven in the same way for unions of more events. For three events, we have
 \[
   \mathbb P(A \cup B \cup C) = \mathbb P(A) + \mathbb P(B) + \mathbb P(C) 
@@ -247,7 +248,7 @@ The **inclusion--exclusion principle** is the general rule:
     - \cdots
     + (-1)^{n-1} \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) , \end{multline*}
 where we continue by subtracting the probabilities of quadruples, adding the probabilities of five events, etc.
-
+-->
 
 ## Summary  {#summary-L04 .unnumbered}
 

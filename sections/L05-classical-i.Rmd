@@ -1,7 +1,5 @@
 # Classical probability I  {#L05-classical-i}
 
-\newcommand{\ff}[2]{{#1}^{\underline{#2}}}
-
 ## Probability with equally likely outcomes {#classical-intro}
 
 :::: {.videowrap}

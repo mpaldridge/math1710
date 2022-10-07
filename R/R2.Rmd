@@ -5,13 +5,13 @@ date:   "University of Leeds, 2021--22"
 output: html_document
 ---
 
-*This R worksheet does not include any assessed questions. If you have difficulty with this Worksheet, you can get help at your optional R troubleshooting drop-in in Weeks 2 or 3.*
+*This R worksheet does* not *include any assessed questions. If you have difficulty with this Worksheet, you can get help at your optional R troubleshooting drop-in in Weeks 2 or 3.*
 
 *Remember to open a new R Script (or add to your last R Script) to save your work.*
 
 ------------------------------------------------------------------------
 
-So far, our objects in R have just been single numbers. However, we can do much more with R when our objects are **vectors** of many numbers. In this worksheet, we will find out how to enters vector into R, and look at operations we can perform with these vectors.
+So far, our objects in R have just been single numbers. However, we can do much more with R when our objects are **vectors** of many numbers. For example, we can represent a dataset as a vector. In this worksheet, we will find out how to enters vector into R, and look at operations we can perform with these vectors.
 
 ## Entering vectors into R
 
@@ -87,7 +87,7 @@ Then
 vector_1 + vector_2
 ```
 
-outputs a vector whose first entry is the first entry of `my_vector` plus the first entry of `new_vector`, whose second entry is the second entry of `my_vector` plus the second entry of `new_vector`, and so on.
+outputs a new vector. The first entry of the new vector is the first entry of `my_vector`, 3, plus the first entry of `new_vector`, 1, making 4. Then the second entry of the new vector is the second entry of `my_vector`, 3, plus the second  entry of `new_vector`, 2, making 5. And so on.
 
 Note that
 
@@ -112,7 +112,7 @@ vector_2 * 3
 
 You should notice that R has added 2 to each entry of `vector_1`, and multiplied every entry of `vector_2` by 3. That is because R has "recycled" the number enough times to match the length of the vector.
 
-You should be very careful when applying an operator between vectors of different lengths. R will "recycle" the shorter vector by repeating it until it matches the length of the longer vector. If the shorter vector doesn't fit into the longer vector a whole number of times, R will also give a warning message after the answer. This often gives behaviour you don't expect (or don't want)!
+You should be very careful when applying an operation between vectors of different lengths. R will "recycle" the shorter vector by repeating it until it matches the length of the longer vector. If the shorter vector doesn't fit into the longer vector a whole number of times, R will also give a warning message after the answer. This often gives behaviour you don't expect (or don't want)!
 
 > **Exercise 2.5.** Predict what each of the following five commands will produce. Then run the code in R to see if you were right. If you were wrong, explain what R has done.
 
@@ -143,7 +143,7 @@ sum(my_vector)
 If we think we're likely to use this sum many times in the future, we should save it as an R object itself:
 
 ```{r}
-my_total <- mean(my_vector)
+my_total <- sum(my_vector)
 ```
 
 > **Exercise 2.6.** Using your `sandwiches` data from Exercise 3.4, find the mean and median number of sandwiches sold in a day.

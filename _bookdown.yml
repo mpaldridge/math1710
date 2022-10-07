@@ -4,8 +4,8 @@ rmd_files:
   - sections/L01-stats.Rmd
   - sections/L02-dataviz.Rmd
   - problems/P1.Rmd
-#  - sections/L03-events.Rmd
-#  - sections/L04-probability.Rmd
+  - sections/L03-events.Rmd
+  - sections/L04-probability.Rmd
 #  - sections/L05-classical-i.Rmd
 #  - sections/L06-classical-ii.Rmd
 #  - problems/P2.Rmd
