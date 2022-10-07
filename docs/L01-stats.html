@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lecture 1 Summary statistics | MATH1710 Probability and Statistics I</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lecture 1 Summary statistics | MATH1710 Probability and Statistics I" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lecture 1 Summary statistics | MATH1710 Probability and Statistics I" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="about.html"/>
+<link rel="next" href="L02-dataviz.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Probability</b></span></li>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="L01-stats" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Lecture 1</span> Summary statistics<a href="L01-stats.html#L01-stats" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="what-is-eda" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> What is EDA?<a href="L01-stats.html#what-is-eda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Statistics</strong> is the study of data. <strong>Exploratory data analysis</strong> (or <strong>EDA</strong>, for short) is the part of statistics concerned with taking a “first look” at some data. Later, toward the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics II (for those who take it) you will see many other statistical techniques – in particular, ways of testing formal hypotheses for data. But here we’re just interested in first impressions and brief summaries.</p>
+<p>In this section, we will concentrate on two aspects of EDA:</p>
+<ul>
+<li><strong>Summary statistics:</strong> That is, calculating numbers that briefly summarise the data. A summary statistic might tell us what “central” or “typical” values of the data are, how spread out the data is, or about the relationship between two different variables.</li>
+<li><strong>Data visualisation:</strong> Drawing a picture based on the data is an another way to show the shape (centrality and spread) of data, or the relationship between different variables.</li>
+</ul>
+<p>Even before calculating summary statistics or drawing a plot, however, there are other questions it is important to ask about the data:</p>
+<ul>
+<li><em>What is the data?</em> What variables have been measured? How were they measured? How many datapoints are there? What is the possible range of responses?</li>
+<li><em>How was the data collected?</em> Was data collected on the whole population or just a smaller sample? If a sample: How was that sample chosen? Is that sample representative of the population?</li>
+<li><em>Are there any outliers?</em> “Outliers” are datapoints that seem to be very different from the other datapoints – for example, are much larger or much smaller than the others. Each outlier should be investigated to seek the reason for it. Perhaps it is a genuine-but-unusual datapoint (which is useful for understanding the extremes of the data), or perhaps there is an extraordinary explanation (a measurement or recording error, for example) meaning the data is not relevant. Once the reason for an outlier is understood, it then <em>might</em> be appropriate to exclude it from analysis (for example, the incorrectly recorded measurement). It’s usually bad practice to exclude an outlier merely for being an outlier before understanding what caused it.</li>
+<li><em>Ethical questions:</em> Was the data collected ethically and, where necessary, with the informed consent of the subjects? Has it been stored properly? Are their privacy issues with the collection and storage of the data? What ethical issues should be considered before publishing (or not publishing) results of the analysis? Should the data be kept confidential, or should it be openly shared with other researchers for the betterment of science?</li>
+</ul>
+</div>
+<div id="what-is-R" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> What is R?<a href="L01-stats.html#what-is-R" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>R</strong> is a programming language that is particularly good at working with probability and statistics. A convenient way to use the language R is through the program <strong>RStudio</strong>. An important part of this module is learning to use R, by completing weekly worksheets – you can read more in <a href="R.html#R">the R section of these notes</a>.</p>
+<p>R can easily and quickly perform all the calculations and draw all the plots in this section of notes on exploratory data analysis. In this text, we’ll show the relevant R code. Code will appear like this:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="L01-stats.html#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="L01-stats.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code></pre></div>
+<pre><code>## [1] 5.428571</code></pre>
+<p>Here, the code in the first shaded box is the R commands that are typed into
+RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudio “console”. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign <code>##</code>. The <code>[1]</code> can be ignored (this is just R’s way of saying that this is the first part of the answer – but the answer here only has one part anyway). Plots produced by R are displayed in these notes as pictures.</p>
+<p>Most importantly for now, <em>you are not expected to understand the R code in this section yet</em>. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.</p>
+</div>
+<div id="stat-central" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Statistics of centrality<a href="L01-stats.html#stat-central" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/_OaCRCFZXoY"></iframe>
+:::
+::::
+-->
+<p>Suppose we have collected some data on a certain variable. We will assume here that we have <span class="math inline">\(n\)</span> datapoints, each of which is a single real number. We can write this data as a vector
+<span class="math display">\[ \mathbf x = (x_1, x_2, \dots, x_n) . \]</span></p>
+<p>A <strong>statistic</strong> is a calculation from the data <span class="math inline">\(\mathbf x\)</span>, which is (usually) also a real number. In this section we will look at two types of “summary statistics”, which are statistics that we feel will give us useful information about the data.</p>
+<p>We’ll look here at two types of summary statistic:</p>
+<ul>
+<li><strong>Statistics of centrality</strong>, which tell us where the “middle” of the data is.</li>
+<li><strong>Statistics of spread</strong>, which tell us how far the data typically spreads out from that middle.</li>
+</ul>
+<p>Some measures of centrality are the following.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  </strong></span>Consider some real-valued data <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span>.</p>
+<ul>
+<li>The <strong>mode</strong> is the most common value of <span class="math inline">\(x_i\)</span>. (If there are multiple joint-most common values, they are all modes.)</li>
+<li>Suppose the data is ordered as <span class="math inline">\(x_1 \leq x_2 \leq \cdots \leq x_n\)</span>. Then the <strong>median</strong> is the central value in the ordered list. If <span class="math inline">\(n\)</span> is odd, this is <span class="math inline">\(x_{(n+1)/2}\)</span>; if <span class="math inline">\(n\)</span> is even, we normally take halfway between the two central points, <span class="math inline">\(\frac12(x_{n/2}+x_{n/2 + 1})\)</span>.</li>
+<li>The <strong>mean</strong> <span class="math inline">\(\bar x\)</span> is
+<span class="math display">\[ \bar x = \frac{1}{n}(x_1 + x_2 + \cdots + x_n) = \frac1n \sum_{i=1}^n x_i . \]</span></li>
+</ul>
+</div>
+<p>(In that last expression, we’ve made use of <a href="https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf">Sigma notation</a> to write down the sum.)</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 1.1  </strong></span>Some packets of Skittles (a small fruit-flavoured sweet) were opened, and the number of Skittles in each packet counted. There were 13 packets, and the number of sweets (sorted from smallest to largest) were:
+<span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span>
+The mode is 59, because there were 4 packets containing 59 sweets; more than any other number. Since there are <span class="math inline">\(n = 13\)</span> packets, the middle packet is number <span class="math inline">\(i = 7\)</span>, so the median is <span class="math inline">\(x_7 = 60\)</span>. The mean is
+<span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) = \frac{789}{13} = 60.7 .\]</span></p>
+</div>
+<p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the datapoint <span class="math inline">\(\alpha\)</span> of the way along the list. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>nine</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
+<ul>
+<li>The <strong>median</strong> is the <span class="math inline">\(\frac12\)</span>-quantile <span class="math inline">\(q(\frac12)\)</span>, which is <span class="math inline">\(q(\frac12) = x_7 = 60\)</span> for this data.</li>
+<li>The <strong>minimum</strong> is the 0-quantile <span class="math inline">\(q(0)\)</span>, which is <span class="math inline">\(q(0) = x_1 = 59\)</span> for this data.</li>
+<li>The <strong>maximum</strong> is the 1-quantile <span class="math inline">\(q(1)\)</span>, which is <span class="math inline">\(q(1) = x_{13} = 63\)</span> for this data</li>
+<li>The <strong>lower quartile</strong> (that’s “quartile”, as in “quarter” – not “quantile”) is the <span class="math inline">\(\frac14\)</span>-quantile <span class="math inline">\(q(\frac14)\)</span>, which is <span class="math inline">\(q(\frac14) = x_4 = 59\)</span> for this data.</li>
+<li>The <strong>upper quartile</strong> is the <span class="math inline">\(\frac34\)</span>-quantile <span class="math inline">\(q(\frac34)\)</span>, which is <span class="math inline">\(q(\frac34) = x_{10} = 62\)</span> for this data.</li>
+</ul>
+<p>The following R code reads in some data which has the daily average temperature in Leeds in 2020, divided into months. We can find, for example, the mean October temperature or the lower quartile of the July temperature.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="L01-stats.html#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://mpaldridge.github.io/math1710/data/temperature.csv&quot;</span>)</span>
+<span id="cb3-2"><a href="L01-stats.html#cb3-2" aria-hidden="true" tabindex="-1"></a>jul <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;jul&quot;</span>, ]</span>
+<span id="cb3-3"><a href="L01-stats.html#cb3-3" aria-hidden="true" tabindex="-1"></a>oct <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;oct&quot;</span>, ]</span>
+<span id="cb3-4"><a href="L01-stats.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="L01-stats.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
+<pre><code>## [1] 11.93548</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="L01-stats.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(jul<span class="sc">$</span>temp, <span class="at">probs =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">4</span>)</span></code></pre></div>
+<pre><code>## 25% 
+##  15</code></pre>
+</div>
+<div id="stat-spread" class="section level2 hasAnchor" number="1.4">
+<h2><span class="header-section-number">1.4</span> Statistics of spread<a href="L01-stats.html#stat-spread" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Some measures of spread are:</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  </strong></span>The <strong>number of distinct observations</strong> is precisely that: the number of different datapoints we have after removing any repeats.</p>
+<p>The <strong>interquartile range</strong> is the difference between the upper and lower quartiles <span class="math inline">\(\text{IQR} = q(\frac34) - q(\frac14)\)</span>.</p>
+<p>The <strong>sample variance</strong> is
+<span class="math display">\[  s^2_x = \frac{1}{n-1} \left((x_1 - \bar x)^2 + \cdots + (x_n - \bar x)^2 \right) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]</span>
+where <span class="math inline">\(\bar x\)</span> is the sample mean from before. The <strong>standard deviation</strong> <span class="math inline">\(s_x = \sqrt{s^2_x}\)</span> is the square-root of the sample variance.</p>
+</div>
+<p>The formula we’ve given for sample variance is sometimes called the “definitional formula”, as it’s the formula used to <em>define</em> the sample variance. We can rearrange that formula as follows:
+<span class="math display">\[\begin{align*}
+  s^2_x &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 \\
+      &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i^2 - 2x_i\bar x + \bar x^2) \\
+      &amp;= \frac{1}{n-1}\left(\sum_{i=1}^nx_i^2 - \sum_{i=1}^n 2x_i\bar x + \sum_{i=1}^n\bar x^2 \right) \\
+      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 - 2\bar x \sum_{i=1}^n x_i + \bar x^2 \sum_{i=1}^n 1 \right) \\
+      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 - 2n\bar x^2 + n\bar x^2 \right) \\
+      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) .
+\end{align*}\]</span>
+Here, the first line is the definitional formula; the second line is from expanding out the bracket; the third line is taking the sum term-by-term; the fourth line takes any constants (things not involving <span class="math inline">\(i\)</span>) outside the sums; the fifth line uses <span class="math inline">\(\sum_{i=1}^n x_i = n\bar x\)</span>, from the definition of the mean, and <span class="math inline">\(\sum_{i=1}^n 1 = 1 + 1 + \cdots 1 = n\)</span>; and the sixth line simplifies the final two terms.</p>
+<p>This has left us with
+<span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
+This is sometimes called the “computational formula”; this is because it usually takes fewer presses of calculator buttons to compute the sample variance with this formula rather than the definitional formula. (But make sure you keep enough decimal points in <span class="math inline">\(\bar x^2\)</span>.)</p>
+<p>Going back to our weather data in R, we can find the sample variance of the October weather or the interquartile range of the July weather.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="L01-stats.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
+<pre><code>## [1] 2.862366</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="L01-stats.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(jul<span class="sc">$</span>temp)</span></code></pre></div>
+<pre><code>## [1] 3</code></pre>
+</div>
+<div id="summary-01" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L01-stats.html#summary-01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li>Exploratory data analysis is about taking a first look at data.</li>
+<li>Summary statistics are numbers calculated from data that give us useful information about the data.</li>
+<li>Summary statistics that measure the centre of the data include the mode, median, and mean.</li>
+<li>Summary statistics that measure the spread of the data include the number of distinct outcomes, the interquartile range, and the sample variance.</li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="about.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L02-dataviz.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

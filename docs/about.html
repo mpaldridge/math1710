@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>About MATH1710 | MATH1710 Probability and Statistics I</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="About MATH1710 | MATH1710 Probability and Statistics I" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="About MATH1710 | MATH1710 Probability and Statistics I" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="index.html"/>
+<link rel="next" href="L01-stats.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Probability</b></span></li>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="about" class="section level1 unnumbered hasAnchor">
+<h1>About MATH1710<a href="about.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="organisation" class="section level2 unnumbered hasAnchor">
+<h2>Organisation of MATH1710<a href="about.html#organisation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>This module is <strong>MATH1710 Probability and Statistics I</strong>. (It is possible to take this module as half of <strong>MATH2700 Probability and Statistics for Scientists</strong>, but I am not aware that any students are enrolled on MATH2700 this year – please <a href="mailto:m.aldridge@leeds.ac.uk">let me know</a> if you are.)</p>
+<p>This module lasts for 11 weeks from 3 October to 16 December 2022. The exam will take place between 16 and 27 January 2023.</p>
+<p>The module leader, the lecturer, and the main author of these notes is Dr Matthew Aldridge (you can call me “Matt” or “Dr Aldridge”, pronounced “<em>old</em>-ridge”).</p>
+<div id="lectures" class="section level3 unnumbered hasAnchor">
+<h3>Lectures<a href="about.html#lectures" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The main way you will learn new material for this module is by attending lectures. There are two lectures per week. Because this is a very large class, you are split into two groups for lectures:</p>
+<ul>
+<li>Group 1: Mondays at 1200 and Wednesdays at 1600</li>
+<li>Group 2: Mondays at 1500 and Wednesdays at 1500</li>
+</ul>
+<p>All lectures are in <a href="https://students.leeds.ac.uk/rooms?type=room&amp;id=100044">Roger Stevens LT 20</a>. Check your timetable to see which group you are in.</p>
+<p>I recommend taking your own notes during the lecture. This website will keep brief notes from the lectures, summarising the main definitions and theorems, but will not reflect all the details I say and write during the lectures. Lectures will go through material quite quickly and the material may be quite difficult, so it’s likely you’ll want to spend time reading through your notes after the lecture.</p>
+<p>You are probably reading the web version of the notes. If you want a PDF copy (to read offline or to print out), it can be downloaded via the top ribbon of the page. (Warning: I have not made as much effort to make the PDF as neat and tidy as I have the web version, and there may be formatting errors.) I am very keen to hear about errors in the notes, mathematical, typographical or otherwise. Please <a href="mailto:m.aldridge@leeds.ac.uk">email me</a> if think you may have found any.</p>
+<p><em>Attendance at lectures is compulsory.</em></p>
+</div>
+<div id="problem-sheets" class="section level3 unnumbered hasAnchor">
+<h3>Problem sheets<a href="about.html#problem-sheets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There will be 5 problem sheets. Each problem sheet has a number of short and long questions for you to cover in your own time to help you learn the material, and two assessed questions, which you should submit for marking. The assessed questions on each problem sheet make up 3% of your mark on this module, for a total of 15%. Deadlines are 2pm on Mondays, although I’d personally recommend completing and submitting the work in the previous week.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center">Problem Sheet</th>
+<th align="center">Lectures covered</th>
+<th align="center">Deadline for assessed work</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td align="center">1 and 2</td>
+<td align="center">Monday 17 October (Week 3)</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td align="center">3–6</td>
+<td align="center">Monday 31 October (Week 5)</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td align="center">7–10</td>
+<td align="center">Monday 14 November (Week 7)</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td align="center">11–14</td>
+<td align="center">Monday 28 November (Week 9)</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td align="center">15–18</td>
+<td align="center">Monday 12 December (Week 11)</td>
+</tr>
+</tbody>
+</table>
+<p>An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available; Lectures 21 and 22 are revision lectures with no new material.</p>
+<p>Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions on paper and then scan them to PDF using their phone; you should use a proper scanning app – we recommend Microsoft Office Lens or Adobe Scan – and not just submit photographs.</p>
+</div>
+<div id="tutorials" class="section level3 unnumbered hasAnchor">
+<h3>Tutorials<a href="about.html#tutorials" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Tutorials are small groups of about a dozen students. You have been assigned to one of 38 tutorial groups, each with a member of staff as the tutor. Your tutorial group will meet five times, in Weeks 2, 4, 6, 8, and 10; you should check your timetable to see when and where your tutorial group meets.</p>
+<p>The main goal of the tutorials will be to go over your answers to the non-assessed questions on the problems sheets in an interactive session. In this smaller group, you will be able to ask detailed questions of your tutor, and have the chance to discuss your answers to the problem sheet. Your tutor may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutor may be willing to give you a hint on the assessed questions if you’ve made a first attempt but have got stuck. Because of the much smaller groups, the tutorials are the most valuable type of teaching on the module; you should make sure you attend, and you should be well prepared to ensure you make the most of the opportunity.</p>
+<p>My recommended approach to problem sheets and tutorials is the following:</p>
+<ul>
+<li>Work through the problem sheet before the tutorial, spending plenty of time on it, and making multiple efforts at questions you get stuck on. I recommend spending <em>at least 4 hours per problem sheet</em>. This is a long time, but you shouldn’t expect to be able to answer the hardest questions on a problem sheet with making multiple attempts. You don’t have to wait until all lectures in a section are complete until starting to work on some of the questions – this is particularly important for students with Monday tutorials. Collaboration is encouraged when working through the non-assessed problems, but I recommend writing up your work on your own; answers to assessed questions must be solely your own work.</li>
+<li>Take advantage of the small group setting of the tutorial to ask for help or clarification on questions you weren’t able to complete.</li>
+<li>After the tutorial, attempt again the questions you were previously stuck on.</li>
+<li>If you’re still unable to complete a question after this second round of attempts, <em>then</em> consult the solutions.</li>
+</ul>
+<p>Your tutor will also be the marker of your answers to the assessed questions on the problem sheets.</p>
+<p><em>Attendance at tutorials is compulsory.</em></p>
+</div>
+<div id="r-worksheets" class="section level3 unnumbered hasAnchor">
+<h3>R worksheets<a href="about.html#r-worksheets" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>R is a programming language that is particularly good at working with probability and statistics. Learning to use R is an important part of this module, and is used in many other modules in the University, particularly in MATH1712 Probability and Statistics II. R is used by statisticians throughout academia and increasingly in industry too. Learning to program is a valuable skill for all students, and learning to use R is particularly valuable for students interested in statistics and related topics like actuarial science.</p>
+<p>You will learn R by working through one R worksheet each week in your own time. Worksheets 3, 5, 7, 9 and 11 will also contain a few questions for assessment, which will be due by 2pm Monday the following week (except the last one). Each of these is worth 3% of your mark for a total of 15%. You will submit your answers through a Microsoft Form (details to follow later). I recommend spending one hour per week on the week’s R worksheet, plus one extra hour if there are assessed questions that week.</p>
+<table>
+<colgroup>
+<col width="9%" />
+<col width="47%" />
+<col width="43%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Week</th>
+<th>Worksheet</th>
+<th align="center">Deadline for assessed work</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center">1</td>
+<td>R basics</td>
+<td align="center">—</td>
+</tr>
+<tr class="even">
+<td align="center">2</td>
+<td>Vectors</td>
+<td align="center">—</td>
+</tr>
+<tr class="odd">
+<td align="center">3</td>
+<td>Data in R</td>
+<td align="center">Monday 24 October (Week 4)</td>
+</tr>
+<tr class="even">
+<td align="center">4</td>
+<td>Plots I: Making plots</td>
+<td align="center">—</td>
+</tr>
+<tr class="odd">
+<td align="center">5</td>
+<td>Plots II: Making plots better</td>
+<td align="center">Monday 7 November (Week 6)</td>
+</tr>
+<tr class="even">
+<td align="center">6</td>
+<td>RMarkdown (optional)</td>
+<td align="center">—</td>
+</tr>
+<tr class="odd">
+<td align="center">7</td>
+<td>Discrete distributions</td>
+<td align="center">Monday 21 November (Week 8)</td>
+</tr>
+<tr class="even">
+<td align="center">8</td>
+<td>Discrete random variables</td>
+<td align="center">—</td>
+</tr>
+<tr class="odd">
+<td align="center">9</td>
+<td>Normal distribution</td>
+<td align="center">Monday 5 December (Week 10)</td>
+</tr>
+<tr class="even">
+<td align="center">10</td>
+<td>Law of large numbers</td>
+<td align="center">—</td>
+</tr>
+<tr class="odd">
+<td align="center">11</td>
+<td>Recap</td>
+<td align="center">Thursday 15 December (Week 11)</td>
+</tr>
+</tbody>
+</table>
+<p>You can read more about the language R, and about the program RStudio that we recommend you use to interact with R, in <a href="R.html#R">the R section of these notes</a>.</p>
+<p>To help you if you have problems with R, we have organised <strong>optional R troubleshooting drop-in sessions</strong>, where you can discuss any problems you have with an R expert, in Weeks 2 and 3. Check your timetable for details – these will be listed on your timetable as “practicals”.</p>
+<p><em>Attendance at R troubleshooting drop-in sessions is optional.</em></p>
+</div>
+<div id="dropin" class="section level3 unnumbered hasAnchor">
+<h3>Optional “office hours” drop-in sessions<a href="about.html#dropin" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>If you there is something in the module you wish to discuss privately one-on-one with the module leader, the place for the is the optional weekly “office hours”, which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to a member of staff; these are particularly useful if there’s something on the module that you are stuck on or confused about, but I’m happy to discuss any statistics-related issues or questions you have.</p>
+<p>I currently plan two optional “office hours” drop-in session per week:</p>
+<ul>
+<li>Thursdays from 1400 to 1500 in <a href="https://students.leeds.ac.uk/rooms?type=room&amp;id=100031">Roger Stevens LT 7</a></li>
+<li>Thursdays from 1600 to 1700 in <a href="https://students.leeds.ac.uk/rooms?type=room&amp;id=100041">Roger Stevens LT 17</a></li>
+</ul>
+<p>Although only the second of these appears on your timetable, you are equally welcome at either. Depending on attendance levels, I may change arrangements as term continues. If neither time is possible, you may <a href="mailto:m.aldridge@leeds.ac.uk">email me</a> to book a time to talk to me.</p>
+<p><em>Attendance at “office hours” drop-in sessions is optional.</em> You should prioritise mandatory sessions (like lectures or tutorials, such as for LUBS1940 Economics for Management) over this optional session.</p>
+</div>
+<div id="time" class="section level3 unnumbered hasAnchor">
+<h3>Time management<a href="about.html#time" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It is, of course, up to you how you choose to spend your time on this module. But my recommendations for your work would be something like this:</p>
+<ul>
+<li><strong>Lectures:</strong> 2 hours per week, plus 1 hour per week reading through notes.</li>
+<li><strong>Problem sheets:</strong> 4 hours per problem sheet, plus 1 extra hour for writing up and submitting answers to assessed questions.</li>
+<li><strong>R worksheets:</strong> 1 hour per week, plus 1 extra hour if there are assessed questions.</li>
+<li><strong>Tutorials:</strong> 1 hour every other week.</li>
+<li><strong>Revision:</strong> 15 hours total at the end of the module.</li>
+<li><strong>Exam:</strong> 2 hours.</li>
+</ul>
+<p>That makes 100 hours in total. (MATH1710 is a 10-credit module, so is supposed to represent 100 hours work. MATH2700 students are expected to be able to use their greater experience to get through the material in just 75 hours, so should scale these recommendations accordingly.)</p>
+</div>
+<div id="exam" class="section level3 unnumbered hasAnchor">
+<h3>Exam<a href="about.html#exam" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There will be an exam in January, which makes up the remaining 70% of your mark. The exam will consist of 20 short and 2 long questions, and will be time-limited to 2 hours. We’ll talk more about the exam format near the end of the module.</p>
+</div>
+<div id="ask" class="section level3 unnumbered hasAnchor">
+<h3>Who should I ask about…?<a href="about.html#ask" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are over 420 students on this module. If each student emails me once a week, and if each email takes me 10 minutes to read and respond, that will take more than 14 hours of my time every day. Generally, it’s much better to come to speak to me at the “office hours” drop-in session or, if it will be very quick, before or after a lecture.</p>
+<ul>
+<li><em>I don’t understand something in the notes or on a problem sheet</em>: Come to office hours, or ask your tutor in your next tutorial.</li>
+<li><em>I’m having difficulties with R:</em> In Weeks 2 or 3, you should attend an R trouble-shooting drop-in session; at other times, come to office hours.</li>
+<li><em>I have an admin question about arrangements for the module:</em> Come to office hours or talk to me before/after lectures.</li>
+<li><em>I have an admin question about arrangements for my tutorial:</em> Contact your tutor.</li>
+<li><em>I have an admin question about general arrangements for my programme as a whole:</em> <a href="https://students.leeds.ac.uk/askingforhelp">Contact the Student Information Service</a> or speak to your personal academic tutor.</li>
+<li><em>I have a question about the marking of my assessed work on the problem sheets:</em> First, check your feedback on Gradescope; if you still have questions, contact your tutor.</li>
+<li><em>I have a question about the marking of my assessed work on the R worksheets:</em> You can <a href="mailto:m.aldridge@leeds.ac.uk">email me</a> about this.</li>
+<li><em>Due to truly exceptional and unforeseeable personal circumstances I require an extension on or exemption from assessed work:</em> You can apply by <a href="https://students.leeds.ac.uk/info/10111/assessment/860/mitigating_circumstances">filling in the mitigating circumstances form at this link</a>. Neither I nor your tutor can unilaterally offer an extension or exemption, so please don’t ask. (Only exemptions, not extensions, are available for R worksheets.)</li>
+</ul>
+</div>
+</div>
+<div id="about-content" class="section level2 unnumbered hasAnchor">
+<h2>Content of MATH1710<a href="about.html#about-content" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="prereqs" class="section level3 unnumbered hasAnchor">
+<h3>Prerequisites<a href="about.html#prereqs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The formal prerequisite for MATH1710 is “Grade B in A-level Mathematics or equivalent”. I’ll assume you have some basic school-level maths knowledge, but I won’t assume you’ve studied probability or statistics in detail before (although I recognise that many of you will have). If you have studied probability and/or statistics at A-level (or post-16 equivalent) level, you’ll recognise some of the material in this module; however you should find that we go deeper in some areas, and that we treat the material through with a greater deal of mathematical formality and rigour. “Rigour” here means precisely stating our assumptions, and carefully <em>proving</em> how other statements follow from those assumptions.</p>
+</div>
+<div id="syllabus" class="section level3 unnumbered hasAnchor">
+<h3>Syllabus<a href="about.html#syllabus" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The module has three parts: a short first part on “exploratory data analysis”, a long middle part on probability theory, and a short final part on a statistical framework called “Bayesian statistics”. There’s also the weekly R worksheets, which you could count as a fourth part running in parallel, but which will connect with the other parts too.</p>
+<p>An outline plan of the topics covered is the following.</p>
+<ul>
+<li><strong>Exploratory data analysis</strong> [2 lectures]: Summary statistics, data visualisation</li>
+<li><strong>Probability</strong> [16 lectures]:
+<ul>
+<li>Probability with events: Probability spaces, probability axioms, examples and properties of probability, “classical probability” of equally likely events, independence, conditional probability, Bayes’ theorem [6 lectures]</li>
+<li>Probability with random variables: Discrete random variables, expectation and variance, binomial distribution, geometric distribution, Poisson distribution, multiple random variables, law of large numbers, continuous random variables, exponential distribution, normal distribution, central limit theorem [10 lectures]</li>
+</ul></li>
+<li><strong>Bayesian statistics</strong> [2 lectures]: Bayesian framework, Beta prior, normal–normal model</li>
+<li>Summary and revision [2 lectures]</li>
+</ul>
+<p>You’ll notice that this module is heavier on the “Probability” than the “Statistics” of its title. MATH1712 Probability and Statistics II, on the other hand, which many students on this module will take next semester, is almost entirely “Statistics”.</p>
+</div>
+<div id="books" class="section level3 unnumbered hasAnchor">
+<h3>Books<a href="about.html#books" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You can do well on this module by reading the notes and watching the videos, attending the lectures and tutorials, and working on the problem sheets and R worksheets, without needing to do any further reading beyond this. However, students can benefit from optional extra background reading or an alternative view on the material, especially in the parts of the module on probability. These books are also a good place to look if you want extra exercises and problems for revision.</p>
+<p>For exploratory data analysis, you can stick to Wikipedia, but if you really want a book, I’d recommend:</p>
+<ul>
+<li>GM Clarke and D Cooke, <em>A Basic Course in Statistics</em>, 5th edition, Edward Arnold, 2004.</li>
+</ul>
+<p>For the probability section, any book with a title like “Introduction to Probability” would do. Some of my favourites are:</p>
+<ul>
+<li>JK Blitzstein and J Hwang, <em>Introduction to Probability</em>, 2nd edition, CRC Press, 2019.</li>
+<li>G Grimmett and D Welsh, <em>Probability: An Introduction</em>, 2nd edition, Oxford University Press, 2014. (The library has <a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181">online access</a>.)</li>
+<li>SM Ross, <em>A First Course in Probability</em>, 10th edition, Pearson, 2020.</li>
+<li>RL Scheaffer and LJ Young, <em>Introduction to Probability and Its Applications</em>, 3rd edition, Cengage, 2010.</li>
+<li>D Stirzaker, <em>Elementary Probability</em>, 2nd edition, Cambridge University Press, 2003. (The library has <a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181">online access</a>.)</li>
+</ul>
+<p>I also found lecture notes by <a href="https://people.maths.bris.ac.uk/~maotj/teaching.html">Prof Oliver Johnson</a> (University of Bristol) and <a href="http://www.statslab.cam.ac.uk/~rrw1/prob/index.html">Prof Richard Weber</a> (University of Cambridge) to be useful.</p>
+<p>On Bayesian statistics, we will only taste a brief introduction, but if you want a book, I recommend:</p>
+<ul>
+<li>JV Stone, <em>Bayes’ Rule: A Tutorial Introduction to Bayesian Analysis</em>, Sebtel Press, 2013.</li>
+</ul>
+<p>For R, there are many excellent resources online.</p>
+<p>(For all these books I’ve listed the newest editions, but older editions are usually fine too.)</p>
+</div>
+</div>
+<div id="about-notes" class="section level2 unnumbered hasAnchor">
+<h2>About these notes<a href="about.html#about-notes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>These notes were written by Matthew Aldridge in 2021, and were edited and updated in 2022. They are based in part on previous notes by Dr Robert G Aykroyd and Prof Wally Gilks. Dr Jason Susanna Anquandah and Dr Aykroyd advised on the R worksheets. Dr Aykroyd’s help and advice on many aspects of the module was particularly valuable.</p>
+<p>These notes (in the web format) should be accessible by screenreaders. If you have accessibility difficulties with these notes, <a href="mailto:m.aldridge@leeds.ac.uk">contact me</a>.</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L01-stats.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
