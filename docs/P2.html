@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Problem Sheet 2 | MATH1710 Probability and Statistics I</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Problem Sheet 2 | MATH1710 Probability and Statistics I" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Problem Sheet 2 | MATH1710 Probability and Statistics I" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="L04-probability.html"/>
+<link rel="next" href="R.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Probability</b></span></li>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Other stuff</b></span></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="P2" class="section level1 unnumbered hasAnchor">
+<h1>Problem Sheet 2<a href="P2.html#P2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<style>
+.myanswers { 
+display: none !important;
+}
+</style>
+<div class="mysummary">
+<p>You can <a href="P2-sheet.pdf">download this problem sheet as a PDF file</a></p>
+</div>
+<div class="mysummary">
+<p>This is Problem Sheet 2. This problem sheet covers material from Lectures 3 to 6. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 4. The problem sheet contains two assessed questions, which are due in by <strong>2pm on Monday 31 October</strong>.</p>
+</div>
+<div id="P2-short" class="section level2 unnumbered hasAnchor">
+<h2>A: Short questions<a href="P2.html#P2-short" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="myq">
+<p><strong>A1.</strong> Suppose you toss a coin 4 times.</p>
+<div class="subq">
+<p><strong>(a)</strong> What would you suggest for a sample space <span class="math inline">\(\Omega\)</span> <strong>(i)</strong> if you only care about the total number of heads; <strong>(ii)</strong> if you care about the result of each coin toss?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> For each of the cases in part (a), what is <span class="math inline">\(|\Omega|\)</span>?</p>
+</div>
+<div class="myanswers">
+<p><em>Solution.</em></p>
+<p><strong>(i)</strong> We can take <span class="math inline">\(\Omega = \{0,1,2,3,4\}\)</span>, with <span class="math inline">\(|\Omega| = 5\)</span>.</p>
+<p><strong>(ii)</strong> Here, <span class="math inline">\(\Omega = \{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}\)</span> should be the set of all sequences of four “H”s or “T”s. So here, <span class="math inline">\(|\Omega| = 2^4 = 16\)</span>.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A2.</strong> Let <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> be events in a sample space <span class="math inline">\(\Omega\)</span>. Write the following events using only <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> and the complement, intersection, and union operations.</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(C\)</span> happens but <span class="math inline">\(A\)</span> doesn’t.</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is “<span class="math inline">\(C\)</span> and not <span class="math inline">\(A\)</span>”: <span class="math inline">\(C\cap A^{\mathsf{c}}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> At least one of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is simply the union <span class="math inline">\(A \cup B\cup C\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Exactly one of <span class="math inline">\(B\)</span> or <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> One way to write this is to split it up as “‘<span class="math inline">\(B\)</span> but not <span class="math inline">\(C\)</span>’ or ‘<span class="math inline">\(C\)</span> but not <span class="math inline">\(B\)</span>’”, which is <span class="math inline">\((B \cap C^{\mathsf{c}}) \cup (B^{\mathsf{c}} \cap C)\)</span>.</p>
+<p>An alternative is to split it up as “‘<span class="math inline">\(B\)</span> or <span class="math inline">\(C\)</span>’ but not ‘both <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>’”, which is <span class="math inline">\((B \cup C) \cap (B\cap C)^{\mathsf{c}}\)</span>.</p>
+<p>You can check these are equal by (for example) using De Morgan’s law and the distributive law to expand out the second version.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Exactly two of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> I would split this up into “<span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> but not <span class="math inline">\(C\)</span>”, “<span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> but not <span class="math inline">\(B\)</span>”, and “<span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> but not <span class="math inline">\(A\)</span>” and take the union. This gives
+<span class="math display">\[  (A \cap B \cap C^{\mathsf{c}}) \cup (A \cap B^{\mathsf{c}} \cap C) \cup (A^{\mathsf{c}} \cap B \cap C) . \]</span>
+There are other equivalent formulations.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> What is the value of the following expressions?</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(6!\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720. \]</span></p>
+</div>
+</div>
+<!--\[\newcommand{\ff}[2]{{#1}^{\underline{#2}}}
+  \newcommand{\comp}{\mathsf{c}} \] -->
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(8^4\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ 8^4 = 8 \times 8 \times 8 \times 8 = 4096 \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\({8}^{\underline{4}}\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ {8}^{\underline{4}} = 8 \times 7 \times 6 \times 5 = 1680 \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> <span class="math inline">\({\displaystyle \binom{10}{4}}\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ \binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4\times 3\times 2\times 1} = 210 \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> An urn contains 4 red balls and 6 blue balls. Two balls are drawn from the urn. What is the probability that both balls are red, if the balls are drawn <strong>(a)</strong> with replacement; <strong>(b)</strong> without replacement?</p>
+<div class="myanswers">
+<p><em>Solution.</em></p>
+<p><strong>(a)</strong> There are <span class="math inline">\(|\Omega| = 10^2 = 100\)</span> ways to draw two balls with replacement. There are <span class="math inline">\(|A| = 4^2\)</span> to draw two blue balls. So
+<span class="math inline">\(\mathbb P(A) = \frac{16}{100} = 0.16\)</span>.</p>
+<p><strong>(b)</strong> There are <span class="math inline">\(|\Omega| = {10}^{\underline{2}} = 10 \times 9 = 90\)</span> ways to draw two balls without replacement. There are <span class="math inline">\(|A| = {4}^{\underline{2}} = 4 \times 3 = 12\)</span> to draw two blue balls. So
+<span class="math inline">\(\mathbb P(A) = \frac{12}{90} = \frac{2}{14} = 0.133\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="P2-long" class="section level2 unnumbered hasAnchor">
+<h2>B: Long questions<a href="P2.html#P2-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="myq">
+<p><strong>B1</strong> Starting from just the three probability axioms, prove the following statements:</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(\varnothing) = 0\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> As always, we seek a disjoint union, to allow us to use Axiom 3.</p>
+<p>Let <span class="math inline">\(A\)</span> be any event (such as <span class="math inline">\(A = \varnothing\)</span> or <span class="math inline">\(A = \Omega\)</span>, for example). Then <span class="math inline">\(A \cup \varnothing = A\)</span>, and the union is disjoint – since <span class="math inline">\(\varnothing\)</span> contains no sample points, it certainly can’t contain any sample points that are also in <span class="math inline">\(A\)</span>. Then applying Axiom 3, we get <span class="math inline">\(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\)</span>. Subtracting <span class="math inline">\(\mathbb P(A)\)</span> from both sides gives the result.</p>
+<p><em>Alternatively</em>, if you prove part (b) first, you can apply that with <span class="math inline">\(A = \Omega\)</span>. Since <span class="math inline">\(\Omega^\mathsf{c}= \varnothing\)</span> and Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, the result follows.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> A very useful and relevant disjoint union is <span class="math inline">\(A \cup A^\mathsf{c}= \Omega\)</span>. Applying Axiom 3 gives us <span class="math inline">\(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = \mathbb P(\Omega)\)</span>. But Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, so <span class="math inline">\(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = 1\)</span>. Rearranging gives the result.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B2.</strong> In this question, you will have to use the standard two-event form of the addition rule for unions
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> Using the two-event addition rule, show that
+<span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> As with the Cauchy–Schwarz question from Problem Sheet 1, the key is to make a good choice for what <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> should be. This time, <span class="math inline">\(A = C\)</span> and <span class="math inline">\(D \cup E\)</span> will work well, since <span class="math inline">\(C \cup (D \cup E) = C \cup D \cup E\)</span>. (You can call this “associativity”, if you like.) Making that substitution immediately gives us
+<span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]</span>
+as required.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Using your result from part (a), the two-event addition rule, the distributive law, and the two-event addition rule again, prove the three-event form of the addition rule for unions:
+<span class="math display">\[
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E)
+  - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
+\]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let’s take the three terms on the right of the equation from part (a) separately.</p>
+<p>The first term is <span class="math inline">\(\mathbb P(C)\)</span>, which is fine as it is.</p>
+<p>The second term is <span class="math inline">\(\mathbb P(D \cup E)\)</span>. This is the probability of the union of two events, so we can use addition rule for the union of two events to get
+<span class="math display">\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E) . \]</span></p>
+<p>The third term is <span class="math inline">\(\mathbb P\big(C \cap (D \cup E)\big)\)</span>. If we use the distributive law, as suggested in the question, we get <span class="math inline">\(C \cap (D \cup E) = (C \cap D) \cup (C\cap E)\)</span>, so we want to find <span class="math inline">\(\mathbb P\big((C \cap D) \cup (C\cap E)\big)\)</span>. But this is another union of two events again, this time with <span class="math inline">\(A = C \cap D\)</span> and <span class="math inline">\(B = C \cap E\)</span>. So the two-event addition rule gives
+<span class="math display">\[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]</span>
+since <span class="math inline">\((C \cap D) \cap (C \cap E) = C \cap D \cap E\)</span>.</p>
+<p>Finally, we put this all together, and get
+<span class="math display">\[\begin{align*}
+  \mathbb P(C &amp;\cup D \cup E) \\
+  &amp;= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
+  &amp;= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
+\end{align*}\]</span>
+which is what we wanted.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B3.</strong> Suppose we pick a number at random from the set <span class="math inline">\(\{1, 2, \dots, 2022\}\)</span>.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the probability that the number is divisible by 5?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The sample space is <span class="math inline">\(\Omega = \{1, 2, \dots, 2022\}\)</span>, and <span class="math inline">\(A\)</span> is the set of numbers up to 2022 that are divisible by 5. Clearly <span class="math inline">\(|\Omega| = 2022\)</span>. Further, <span class="math inline">\(|A|\)</span> is the largest integer no bigger than <span class="math inline">\(\frac{2022}{5} = 404.2\)</span>, which is 404, as this is how many times 5 “goes into” 2022. Hence
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]</span>
+just a tiny bit smaller than <span class="math inline">\(\frac{1}{5}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is the probability the number is divisible by 5 or by 7?</p>
+<div class="myanswers">
+<p><em>Solution.</em> With the same <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(A\)</span>, now let <span class="math inline">\(B\)</span> be the numbers up to 2022 divisible by <span class="math inline">\(7\)</span>; so we’re looking for <span class="math inline">\(\mathbb P(A \cup B)\)</span>. As before, <span class="math inline">\(|B|\)</span> is the largest integer no bigger that <span class="math inline">\(\frac{2022}{7} = 288.9\)</span>, which is <span class="math inline">\(288\)</span>. So
+<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \mathbb P(A\cap B) . \]</span></p>
+<p>Here, <span class="math inline">\(A \cap B\)</span> is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by <span class="math inline">\(5 \times 7 = 35\)</span>. Then <span class="math inline">\(|A \cap B|\)</span> is <span class="math inline">\(\frac{2022}{35} = 57.8\)</span> rounded down. So finally, we have
+<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Eight friends are about to sit down at random at a round table. Find the probability that</p>
+<div class="subq">
+<p><strong>(a)</strong> Ashley and Brook sit next to each other, with Chris directly opposite Brook;</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let <span class="math inline">\(\Omega\)</span> be the number of ways the friends can sit around the table. This is an ordering problem, so <span class="math inline">\(\Omega = 8!\)</span>.</p>
+<p>Let <span class="math inline">\(A\)</span> be the event in the question. What is <span class="math inline">\(|A|\)</span>? Well,</p>
+<ul>
+<li>Ashley can sit anywhere, so has 8 choices of seat.</li>
+<li>Brook can sit either directly to Ashley’s left or directly to Ashley’s right, so has 2 choices of seat.</li>
+<li>Chris must sit directly opposite Brook, so only has 1 choice of seat.</li>
+<li>The remaining five friends can fill up the remaining seats however they like, so have 5, 4, 3, 2, and 1 choices respectively.</li>
+</ul>
+<p>Hence <span class="math inline">\(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. Thus we get
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> neither Ashley, Brook nor Chris sit next to each other.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The sample space <span class="math inline">\(\Omega\)</span> is as before. Let’s count the outcomes in <span class="math inline">\(B\)</span>, the event in the question.</p>
+<ul>
+<li>Ashley can sit anywhere, so has 8 choices of seat.</li>
+<li>Chris’s number of choices will depend on where Brook sits, so we’ll have to count their choices together.
+<ul>
+<li>Brook cannot sit next to Ashley.</li>
+<li>If Brook sits next-but-one to Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.</li>
+<li>If Brook does sits neither next nor next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.</li>
+</ul></li>
+<li>The remaining friends have 5, 4, 3, 2, and 1 choices again.</li>
+</ul>
+<p>Hence, <span class="math inline">\(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. So
+<span class="math display">\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]</span></p>
+<p><em>Alternatively</em>, in a previous tutorial, a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.</p>
+<p>Ashley has 5 gaps to choose from, then Brook will have 6 gaps (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is <span class="math inline">\(|\Omega| = 5 \times 6 \times 7\)</span>.</p>
+<p>To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has <span class="math inline">\(6 - 2 = 4\)</span> choices (not in the gap directly to the left or right of Ashley), and Chris only has <span class="math inline">\(7 - 4 = 3\)</span> choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook – these four gaps are distinct assuming Brook was not next to Ashley). Hence <span class="math inline">\(|B| = 5 \times 4 \times 3\)</span>, and we have
+<span class="math display">\[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> A “random digit” is a number chosen at random from <span class="math inline">\(\{0, 1, \dots, 9\}\)</span>, each with equal probability. A statistician chooses <span class="math inline">\(n\)</span> random digits (with replacement).</p>
+<div class="subq">
+<p><strong>(a)</strong> For <span class="math inline">\(k = 0, 1, \dots, 9\)</span>, let <span class="math inline">\(A_k\)</span> be the event that all the digits are <span class="math inline">\(k\)</span> or smaller. What is the probability of <span class="math inline">\(A_k\)</span>, as a function of <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span>?</p>
+<div class="myanswers">
+<p><em>Hint.</em>
+What’s the sample space? Can you explain why <span class="math inline">\(|\Omega| = 10^n\)</span>? What about <span class="math inline">\(|A_k\)</span>|?</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Let <span class="math inline">\(B_k\)</span> be the event that the largest digit chosen is equal to <span class="math inline">\(k\)</span>. By finding a relationship between <span class="math inline">\(B_k\)</span>, <span class="math inline">\(A_{k-1}\)</span> and <span class="math inline">\(A_k\)</span>, or otherwise, show that
+<span class="math display">\[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]</span></p>
+<div class="myanswers">
+<p><em>Hint.</em>
+Can you find a relationship linking <span class="math inline">\(A_{k-1}\)</span>, <span class="math inline">\(A_k\)</span>, and <span class="math inline">\(B_k\)</span>?</p>
+</div>
+</div>
+</div>
+<!--
+::::: {.myq}
+**B5.** Suppose your tutorial group contains 12 students -- you and 11 others. The tutor wishes to choose 4 members of the group to present their work.
+
+:::: {.subq}
+**(a)** How many ways can the tutor choose the presentation group?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+The tutor is sampling 4 items from 12, without replacement (the same person can't be picked twice) and where the order doesn't matter. So this is
+\[ \binom{12}{4} = 495 . \]
+:::
+::::
+
+:::: {.subq}
+**(b)** How many ways can the tutor choose the presentation group if you are one of the presenters?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+Once the tutor has chosen you, she must pick 3 other students to complete the presentation group out of the other 11 students. So this is
+\[ \binom{11}{3} = 165 . \]
+:::
+::::
+
+:::: {.subq}
+**(c)** How many ways can the tutor choose the presentation group if you are *not* one of the presenters?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+If the tutor doesn't chose you, she must pick all 4 presenters out of the other 11 students. So this is
+\[ \binom{11}{4} = 330 . \]
+:::
+::::
+
+:::: {.subq}
+**(d)** Pascal's formula says that
+\[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} . \]
+Prove Pascal's formula.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+We'd like a "double-counting" argument, where we count the same number in two different ways. Let's follow the breadcrumbs from the first three parts of the question.
+
+Suppose the tutorial group has $n$ students and there will be $k$ presenters. How many ways can the presentation group be chosen?
+
+One way is simply to say that this is $\displaystyle\binom{n}{k}$.
+
+Another way is to separately count the presentation groups that do include you and the presentation groups that don't include you, and add them together. The presentation groups including you require another $k-1$ presenters from the other $n -1$ students, which makes $\binom{n-1}{k-1}$. The presentation groups not including you require all $k$ presenters from the other $n-1$, which makes $\binom{n-1}{k}$. In total, the number of presentation groups is
+\[ \binom{n-1}{k-1} + \binom{n-1}{k} . \]
+
+Since we've counted the number of presentation groups in two different ways, these expressions must be equal.
+
+*Alternatively*, you can prove algebraically that
+\[  \frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots2\cdot1} = \frac{(n-1)(n-2)\cdots(n-k+1)}{(k-1)(k-2)\cdots2\cdot1} + \frac{(n-1)(n-2)\cdots(n-k)}{k(k-1)\cdots2\cdot1} \]
+(start by making $k!$ the common denominator on the right), but I feel that's not in the spirit of the question.
+:::
+::::
+:::::
+-->
+</div>
+<div id="P2-assessed" class="section level2 unnumbered hasAnchor">
+<h2>C: Assessed questions<a href="P2.html#P2-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<p>The last two questions are <strong>assessed questions</strong>. These two questions count for 3% of your final mark for this module.</p>
+<p>The deadline for submitting your solutions is <strong>2pm on Monday 31 October</strong> at the beginning of Week 5. Submission is via Gradescope.
+Your work will be marked by your tutor and returned on Monday 7 November, when solutions will also be made available.</p>
+<p>Both questions are “long questions”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
+<p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
+</div>
+<!--
+::::: {.myq}
+**C1.** Let $A$ and $B$ be two events with $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$. The following questions concern the value of $\mathbb P(A \cap B)$, the probability that both $A$ and $B$ occur.
+
+:::: {.subq}
+**(a)** Prove the upper bound $\mathbb P(A \cap B) \leq 0.4$.
+
+::: {.myanswers data-latex=""}
+*Hint.*
+Can you find an event $C$ with $A \cap B \subset C$ that will allow you to use the result $\mathbb P(A \cap B) \leq C$?
+:::
+::::
+
+:::: {.subq}
+**(b)** Prove that this upper bound can be achieved, by giving an example of a sample space $\Omega$, a probability measure $\mathbb P$ and events $A, B \subset \Omega$ such that $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$, with equality  $\mathbb P(A \cap B) = 0.4$ in the upper bound.
+
+::: {.myanswers data-latex=""}
+*Hint.*
+Try a sample space with five outcomes $\Omega = \{a,b,c,d,e\}$ and the classical "equally likely" probability. How many elements are in $A$? How many in $B$? How many in the overlap $A \cap B$?
+:::
+::::
+
+:::: {.subq}
+**(c)** Give a lower bound for $\mathbb P(A \cap B)$ -- that is, prove that $\mathbb P(A \cap B) \geq \text{something}$ -- and show that this lower bound can be achieved. (Try to work out the correct bound, even if you can't formally prove it.)
+
+::: {.myanswers data-latex=""}
+*Hint.*
+Try the sample space with five-equally likely outcomes again. How small can you make the overlap $A \cap B$?
+:::
+::::
+:::::
+-->
+<div class="myq">
+<p><strong>C1.</strong> Let <span class="math inline">\(\Omega\)</span> be a sample space with a probability measure <span class="math inline">\(\mathbb P\)</span>, and let <span class="math inline">\(A, B \subset \Omega\)</span> be events. For each of the following statements, state whether the statement is true or false (that is, always true or sometimes false). If it is true, briefly justify the statement; if it is false, give a counterexample.</p>
+<div class="subq">
+<p><strong>(a)</strong> If <span class="math inline">\(\mathbb P(A) \leq \mathbb P(B)\)</span>, then <span class="math inline">\(A \subset B\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> False. It is true that <em>if</em> <span class="math inline">\(A \subset B\)</span> <em>then</em> <span class="math inline">\(\mathbb P(A) \leq \mathbb P(B)\)</span>, but here the implication is the wrong way around.</p>
+<p>For a counterexample, consider rolling a dice, and let <span class="math inline">\(A = \{1\}\)</span> and <span class="math inline">\(B = \{2,3\}\)</span>. Then <span class="math inline">\(\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)\)</span>, but it’s not true that <span class="math inline">\(A \subset B\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> True. Note that <span class="math inline">\((A \cap B) \cup (A \cap B^{\mathsf{c}}) = A\)</span> and that the union is disjoint. (Try drawing a Venn diagram, if this isn’t obvious.) The result follows from applying Axiom 3.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\mathbb P(A \cup B) \leq \mathbb P(A)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> False. The same <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, then <span class="math inline">\(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> True. From the complement rule, we have <span class="math inline">\(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)\)</span>; then from the addition rule for disjoint unions we have <span class="math inline">\(\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)\)</span>. Putting these together gives the result.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>C2.</strong> An urn contains 15 balls: 4 red balls, 5 blue balls, and 6 green balls.</p>
+<div class="subq">
+<p><strong>(a)</strong> If three balls are drawn <em>with</em> replacement, what is the probability that all three balls are the <em>same</em> colour?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> If three balls are drawn <em>without</em> replacement, what is the probability that all three balls are <em>different</em> colours?</p>
+</div>
+</div>
+</div>
+<div id="P2-short-sols" class="section level2 unnumbered hasAnchor">
+<h2>Solutions to short questions<a href="P2.html#P2-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>A1.</strong> (a) (i) <span class="math inline">\(\{0,1,\dots, 4\}\)</span> (ii) <span class="math inline">\(\{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}\)</span> (b) (i) 5 (ii) 16.<br />
+<strong>A2.</strong> (a) <span class="math inline">\(C \cap A^\mathsf{c}\)</span> (b) <span class="math inline">\(A \cup B \cup C\)</span> (c) <span class="math inline">\((B \cup C) \cap (B \cap C)^\mathsf{c}\)</span> or <span class="math inline">\((B \cap C^\mathsf{c}) \cup (B^\mathsf{c}\cap C)\)</span><br />
+(d) <span class="math inline">\((A \cap B \cap C^\mathsf{c}) \cup (A \cap B^\mathsf{c}\cap C) \cup (A^\mathsf{c}\cap B \cap C)\)</span> or other equivalent<br />
+<strong>A3.</strong> (a) 720 (b) 4092 (c) 1680 (d) 210<br />
+<strong>A4.</strong> (a) 0.16 (b) 0.133</p>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="L04-probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

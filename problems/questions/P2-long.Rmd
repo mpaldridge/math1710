@@ -1,3 +1,6 @@
+
+
+
 ::::: {.myq}
 **B1** Starting from just the three probability axioms, prove the following statements:
 
@@ -22,35 +25,8 @@ Let $A$ be any event (such as $A = \varnothing$ or $A = \Omega$, for example). T
 ::::
 :::::
 
-
 ::::: {.myq}
-**B2.** Suppose we pick a number at random from the set $\{1, 2, \dots, 2021\}$.
-
-:::: {.subq}
-**(a)** What is the probability that the number is divisible by 5?
-
-::: {.myanswers data-latex=""}
-*Solution.* The sample space is $\Omega = \{1, 2, \dots, 2021\}$, and $A$ is the set of numbers up to 2021 that are divisible by 5. Clearly $|\Omega| = 2021$. Further, $|A|$ is the largest integer no bigger than $\frac{2021}{5} = 404.2$, which is 404, as this is how many times 5 "goes into" 2021.  Hence
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2021} = 0.1999 , \]
-just a tiny bit smaller than $\frac{1}{5}$.
-:::
-::::
-
-:::: {.subq}
-**(b)** What is the probability the number is divisible by 5 or by 7?
-
-::: {.myanswers data-latex=""}
-*Solution.* With the same $\Omega$ and $A$, we now have $B$ being the numbers up to 2021 divisible by $7$; so we're looking for $\mathbb P(A \cup B)$. As before, $|B|$ is the largest integer no bigger that $\frac{2021}{7} = 288.7$, which is $288$. So
-\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \mathbb P(A\cap B) . \]
-
-Here, $A \cap B$ is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by $5 \times 7 = 35$. Then $|A \cap B|$ is $\frac{2021}{35} = 57.7$ rounded down. So finally, we have
-\[ \mathbb P(A \cup B) = \frac{404}{2021} + \frac{288}{2021} - \frac{57}{2021} = \frac{635}{2021} = 0.314. \]
-:::
-::::
-:::::
-
-::::: {.myq}
-**B3.** In this question, you will have to use the standard two-event form of the addition rule for unions
+**B2.** In this question, you will have to use the standard two-event form of the addition rule for unions
 \[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
 
 
@@ -66,7 +42,7 @@ as required.
 :::: 
 
 :::: {.subq}
-**(b)** Using the two-event addition rule and the distributive law, or otherwise, prove the three-event form of the addition rule for unions:
+**(b)** Using your result from part (a), the two-event addition rule, the distributive law, and the two-event addition rule again, prove the three-event form of the addition rule for unions:
 \[
   \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
   - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
@@ -81,21 +57,49 @@ The first term is $\mathbb P(C)$, which is fine as it is.
 The second term is $\mathbb P(D \cup E)$. This is the probability of the union of two events, so we can use addition rule for the union of two events to get
 \[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E) . \]
 
-The third term is $\mathbb P\big(C \cap (D \cup E)\big)$. If we use the distributive law, as suggested in the question, we get $C \cap (D \cup E) = (C \cap D) \cup (C\cap E)$, so we want to find $\mathbb P\big((C \cap D) \cup (C\cap E)\big)$. But this is another union of two events again, this time with $A = C \cap D$ and $B = C \cap E$. So the addition rule gives
+The third term is $\mathbb P\big(C \cap (D \cup E)\big)$. If we use the distributive law, as suggested in the question, we get $C \cap (D \cup E) = (C \cap D) \cup (C\cap E)$, so we want to find $\mathbb P\big((C \cap D) \cup (C\cap E)\big)$. But this is another union of two events again, this time with $A = C \cap D$ and $B = C \cap E$. So the two-event addition rule gives
 \[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]
 since $(C \cap D) \cap (C \cap E) = C \cap D \cap E$.
 
 Finally, we put this all together, and get
 \begin{align*}
-  \mathbb P(C \cup D &\cup E) \\
+  \mathbb P(C &\cup D \cup E) \\
   &= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
   &= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) . 
 \end{align*}
 which is what we wanted.
 :::
 ::::
-
 :::::
+
+
+::::: {.myq}
+**B3.** Suppose we pick a number at random from the set $\{1, 2, \dots, 2022\}$.
+
+:::: {.subq}
+**(a)** What is the probability that the number is divisible by 5?
+
+::: {.myanswers data-latex=""}
+*Solution.* The sample space is $\Omega = \{1, 2, \dots, 2022\}$, and $A$ is the set of numbers up to 2022 that are divisible by 5. Clearly $|\Omega| = 2022$. Further, $|A|$ is the largest integer no bigger than $\frac{2022}{5} = 404.2$, which is 404, as this is how many times 5 "goes into" 2022.  Hence
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]
+just a tiny bit smaller than $\frac{1}{5}$.
+:::
+::::
+
+:::: {.subq}
+**(b)** What is the probability the number is divisible by 5 or by 7?
+
+::: {.myanswers data-latex=""}
+*Solution.* With the same $\Omega$ and $A$, now let $B$ be the numbers up to 2022 divisible by $7$; so we're looking for $\mathbb P(A \cup B)$. As before, $|B|$ is the largest integer no bigger that $\frac{2022}{7} = 288.9$, which is $288$. So
+\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \mathbb P(A\cap B) . \]
+
+Here, $A \cap B$ is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by $5 \times 7 = 35$. Then $|A \cap B|$ is $\frac{2022}{35} = 57.8$ rounded down. So finally, we have
+\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]
+:::
+::::
+:::::
+
+
 
 ::::: {.myq}
 **B4.** Eight friends are about to sit down at random at a round table. Find the probability that
@@ -136,17 +140,42 @@ The sample space $\Omega$ is as before. Let's count the outcomes in $B$, the eve
 Hence, $|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1$. So
 \[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]
 
-*Alternatively*, last year a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
+*Alternatively*, in a previous tutorial, a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
 
-Ashley has 5 gaps to choose from, the Brook will have 6 (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is $|\Omega| = 5 \times 6 \times 7$.
+Ashley has 5 gaps to choose from, then Brook will have 6 gaps (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is $|\Omega| = 5 \times 6 \times 7$.
 
-To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has $6 - 2 = 4$ choices (not in the gap directly to the left or right of Ashley), and Chris only has $7 - 4 = 3$ choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook -- these four gaps are distinct). Hence $|B| = 5 \times 4 \times 3$, and we have
+To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has $6 - 2 = 4$ choices (not in the gap directly to the left or right of Ashley), and Chris only has $7 - 4 = 3$ choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook -- these four gaps are distinct assuming Brook was not next to Ashley). Hence $|B| = 5 \times 4 \times 3$, and we have
 \[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]
 :::
 ::::
 :::::
 
 
+::::: {.myq}
+**B5.** A "random digit" is a number chosen at random from $\{0, 1, \dots, 9\}$, each with equal probability. A statistician chooses $n$ random digits (with replacement).
+
+:::: {.subq}
+**(a)** For $k = 0, 1, \dots, 9$, let $A_k$ be the event that all the digits are $k$ or smaller. What is the probability of $A_k$, as a function of $k$ and $n$?
+
+::: {.myanswers data-latex=""}
+*Hint.*
+What's the sample space? Can you explain why $|\Omega| = 10^n$? What about $|A_k$|?
+:::
+::::
+
+:::: {.subq}
+**(b)** Let $B_k$ be the event that the largest digit chosen is equal to $k$. By finding a relationship between $B_k$, $A_{k-1}$ and $A_k$, or otherwise, show that
+\[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]
+
+::: {.myanswers data-latex=""}
+*Hint.*
+Can you find a relationship linking $A_{k-1}$, $A_k$, and $B_k$?
+:::
+::::
+:::::
+
+
+<!--
 ::::: {.myq}
 **B5.** Suppose your tutorial group contains 12 students -- you and 11 others. The tutor wishes to choose 4 members of the group to present their work.
 
@@ -204,3 +233,4 @@ Since we've counted the number of presentation groups in two different ways, the
 :::
 ::::
 :::::
+-->

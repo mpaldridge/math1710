@@ -1,14 +1,22 @@
-:::: {.myq}
-**A1.** Suppose you toss a coin 10 times. What would you suggest for a sample space **(a)** if you only care about the total number of heads; **(b)** if you care about the result of every coin toss?
+::::: {.myq}
+**A1.** Suppose you toss a coin 4 times. 
+
+:::: {.subq}
+**(a)** What would you suggest for a sample space $\Omega$ **(i)** if you only care about the total number of heads; **(ii)** if you care about the result of each coin toss?
+::::
+
+:::: {.subq}
+**(b)** For each of the cases in part (a), what is $|\Omega|$?
+::::
 
 ::: {.myanswers data-latex=""}
 *Solution.*
 
-**(a)** The number of heads can be any number from 0 to 10, so we should take $\Omega = \{0,1,2,\dots, 10\}$. (This sample space contains 11 sample outcomes that are not equally likely.)
+**(i)** We can take $\Omega = \{0,1,2,3,4\}$, with $|\Omega| = 5$.
 
-**(b)** The vector of coin outcomes will be something like $(\text{H}, \text{H}, \text{T}, \text{T}, \text{H}, \text{T}, \text{T}, \text{T}, \text{H}, \text{T})$. So our sample space $\Omega$ should be the set of all vectors of length 10 whose entries are either H, T; the notation $\Omega = \{\text{H}, \text{T}\}^{10}$ is sometimes used for this. (Note that, by the multiplication principle, this sample space contains $2^{10} = 1024$ sample outcomes that are equally likely.)
+**(ii)** Here, $\Omega = \{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}$ should be the set of all sequences of four "H"s or "T"s. So here, $|\Omega| = 2^4 = 16$.
 :::
-::::
+:::::
 
 
 ::::: {.myq}
@@ -54,46 +62,10 @@ There are other equivalent formulations.
 :::::
 
 
-::::: {.myq}
-**A3.** Let $\Omega$ be a sample space with a probability measure $\mathbb P$, and let $A, B \subset \Omega$ be events. State, with brief explanations, whether the following statements are true or false:
 
-:::: {.subq}
-**(a)** If $\mathbb P(A) \leq \mathbb P(B)$, then $A \subset B$.
-
-::: {.myanswers data-latex=""}
-*Solution.* False. It is true that *if* $A \subset B$ *then* $\mathbb P(A) \leq \mathbb P(B)$, but here the implication is the wrong way around.
-
-For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,3\}$. Then $\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)$, but it's not true that $A \subset B$.
-:::
-::::
-
-:::: {.subq}
-**(b)** $\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)$.
-
-::: {.myanswers data-latex=""}
-*Solution.* True. Note that $(A \cap B) \cup (A \cap B^{\mathsf{c}}) = A$ and that the union is disjoint. (Try drawing a Venn diagram, if this isn't obvious.) The result follows from applying Axiom 3.
-:::
-::::
-
-:::: {.subq}
-**(c)** $\mathbb P(A \cup B) \leq \mathbb P(A)$
-
-::: {.myanswers data-latex=""}
-*Solution.* False. On the contrary, $A \subset A \cup B$, so the inequality should be the other way round. The same $A$ and $B$ as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.
-:::
-::::
-
-:::: {.subq}
-**(d)** If $A$ and $B$ are disjoint, then $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)$.
-
-::: {.myanswers data-latex=""}
-*Solution.* True. From the complement rule, we have $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)$; then from the addition rule for disjoint unions we have $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)$. Putting these together gives the result.
-:::
-::::
-:::::
 
 ::::: {.myq}
-**A4.** What is the value of the following expressions?
+**A3.** What is the value of the following expressions?
 
 :::: {.subq}
 **(a)** $6!$
@@ -108,7 +80,16 @@ For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,
   \newcommand{\comp}{\mathsf{c}} \] -->
 
 :::: {.subq}
-**(b)** $\ff{8}{4}$
+**(b)** $8^4$
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+\[ 8^4 = 8 \times 8 \times 8 \times 8 = 4096 \]
+:::
+::::
+
+:::: {.subq}
+**(c)** $\ff{8}{4}$
 
 ::: {.myanswers data-latex=""}
 *Solution.* 
@@ -117,7 +98,7 @@ For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,
 ::::
 
 :::: {.subq}
-**(c)** ${\displaystyle \binom{10}{4}}$
+**(d)** ${\displaystyle \binom{10}{4}}$
 
 ::: {.myanswers data-latex=""}
 *Solution.* 
@@ -127,15 +108,15 @@ For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,
 :::::
 
 :::: {.myq}
-**A5.** An urn contains 5 red balls and 7 blue balls. Four balls are drawn from the urn. What is the probability that at least one of the balls is red, if the balls are drawn **(a)** with replacement; **(b)** without replacement?
+**A4.** An urn contains 4 red balls and 6 blue balls. Two balls are drawn from the urn. What is the probability that both balls are red, if the balls are drawn **(a)** with replacement; **(b)** without replacement?
 
 ::: {.myanswers data-latex=""}
-*Solution.* This is an "at least one" question, so it will be better to look at the complementary event $A^\comp$ that none of the four balls drawn are red -- that is, that they are all blue.
+*Solution.*
 
-**(a)** There are $|\Omega| = 12^4 = 20736$ ways to draw four balls with replacement. There are $|A^\comp| = 2401$ to draw all blue balls. So
-\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{|A^\comp|}{|\Omega|} = 1 - \frac{2041}{20736} = 0.884 . \]
+**(a)** There are $|\Omega| = 10^2 = 100$ ways to draw two balls with replacement. There are $|A| = 4^2$ to draw two blue balls. So
+$\mathbb P(A) = \frac{16}{100} = 0.16$.
 
-**(b)** There are $|\Omega| = \ff{12}{4} = 11880$ ways to draw four balls without replacement. There are $|A^\comp| = \ff{7}{4} = 840$ to draw all blue balls. So
-\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{|A^\comp|}{|\Omega|} = 1 - \frac{840}{11880} = 0.929 . \]
+**(b)** There are $|\Omega| = \ff{10}{2} = 10 \times 9 = 90$ ways to draw two balls without replacement. There are $|A| = \ff{4}{2} = 4 \times 3 = 12$ to draw two blue balls. So
+$\mathbb P(A) = \frac{12}{90} = \frac{2}{14} = 0.133$.
 :::
 ::::

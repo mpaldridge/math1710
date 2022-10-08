@@ -1,3 +1,4 @@
+<!--
 ::::: {.myq}
 **C1.** Let $A$ and $B$ be two events with $\mathbb P(A) = 0.8$ and $\mathbb P(B) = 0.4$. The following questions concern the value of $\mathbb P(A \cap B)$, the probability that both $A$ and $B$ occur.
 
@@ -28,25 +29,57 @@ Try the sample space with five-equally likely outcomes again. How small can you 
 :::
 ::::
 :::::
+-->
 
 ::::: {.myq}
-**C2.** A "random digit" is a number chosen at random from $\{0, 1, \dots, 9\}$, each with equal probability. A statistician choses $n$ random digits.
+**C1.** Let $\Omega$ be a sample space with a probability measure $\mathbb P$, and let $A, B \subset \Omega$ be events. For each of the following statements, state whether the statement is true or false (that is, always true or sometimes false). If it is true, briefly justify the statement; if it is false, give a counterexample.
 
 :::: {.subq}
-**(a)** For $k = 0, 1, \dots, 9$, let $A_k$ be the event that all the digits are $k$ or smaller. What is the probability of $A_k$, as a function of $k$ and $n$?
+**(a)** If $\mathbb P(A) \leq \mathbb P(B)$, then $A \subset B$.
 
 ::: {.myanswers data-latex=""}
-*Hint.*
-What's the sample space? Can you explain why $|\Omega| = 10^n$? What about $|A_k$|?
+*Solution.* False. It is true that *if* $A \subset B$ *then* $\mathbb P(A) \leq \mathbb P(B)$, but here the implication is the wrong way around.
+
+For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,3\}$. Then $\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)$, but it's not true that $A \subset B$.
 :::
 ::::
 
 :::: {.subq}
-**(b)** Let $B_k$ be the event that the largest digit chosen is equal to $k$. What is the probability of $B_k$? Justify your answer carefully.
+**(b)** $\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)$.
 
 ::: {.myanswers data-latex=""}
-*Hint.*
-Can you find a relationship linking $A_{k-1}$, $A_k$, and $B_k$?
+*Solution.* True. Note that $(A \cap B) \cup (A \cap B^{\mathsf{c}}) = A$ and that the union is disjoint. (Try drawing a Venn diagram, if this isn't obvious.) The result follows from applying Axiom 3.
+:::
+::::
+
+:::: {.subq}
+**(c)** $\mathbb P(A \cup B) \leq \mathbb P(A)$
+
+::: {.myanswers data-latex=""}
+*Solution.* False. The same $A$ and $B$ as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.
+:::
+::::
+
+:::: {.subq}
+**(d)** If $A$ and $B$ are disjoint, then $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)$.
+
+::: {.myanswers data-latex=""}
+*Solution.* True. From the complement rule, we have $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)$; then from the addition rule for disjoint unions we have $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)$. Putting these together gives the result.
 :::
 ::::
 :::::
+
+
+::::: {.myq}
+**C2.** An urn contains 15 balls: 4 red balls, 5 blue balls, and 6 green balls.
+
+:::: {.subq}
+**(a)** If three balls are drawn *with* replacement, what is the probability that all three balls are the *same* colour?
+::::
+
+:::: {.subq}
+**(b)** If three balls are drawn *without* replacement, what is the probability that all three balls are *different* colours?
+::::
+:::::
+
+
