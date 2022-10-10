@@ -181,24 +181,27 @@ A \cup B &= \{2,4,5,6\} .
 
 An important case is when two events $A, B$ cannot happen at the same time; that is, $A \cap B = \varnothing$ ("$A$ intersect $B$ is the empty set"). In this case, we say that $A$ and $B$ are **disjoint** or **mutually exclusive**. For example, when $\Omega$ is [a deck of cards](https://en.wikipedia.org/wiki/Standard_52-card_deck), then $A = \{\text{the card is a spade}\}$ and $B = \{\text{the card is red}\}$ are disjoint, because a card cannot be both a spade (a black suit) and red.
 
-There are a few rules about combining the complement, intersection and union operations. <!--This are mostly "common sense", and you probably don't need to remember them. But if you do need to prove them, you can do so either by sketching the relevant diagram, or using a "truth table" -- we give some details on those below after we've stated the rules.-->
+You might think that if two events are disjoint, then it would be reasonable to find the probability of their union -- that is, the probability that one (and, by necessity, only one) of them happens -- you can just add the two separate probabilities together. This will be another of our "axioms" of probability.
+
+There are a few rules about ways you can combe the complement, intersection and union operations. <!--This are mostly "common sense", and you probably don't need to remember them. But if you do need to prove them, you can do so either by sketching the relevant diagram, or using a "truth table" -- we give some details on those below after we've stated the rules.-->
 
 * The **double complement law** tells us that not-not-$A$ is the same as $A$:
 \[ (A^\comp)^\comp = A .\]
 This says that if it's not "not-raining", then it's raining!
-* The **distributive laws** tells us we can "mutiply out of the brackets brackets" with sets:
+* The **distributive laws** tells us we can "multiply out of the brackets" with sets:
 \begin{align*}
   A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) ,\\
   A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) .
 \end{align*}
+The first says that if you are eating a burger with fries or salad, then you're eating a burger with fries or eating a burger with salad. The second is a bit less intuitive, I find, but it's clear that if $A$ is true then the first of each of the terms on the right is true, while if both $B$ and $C$ are true then the second of each of the terms on the right is true.
 * **De Morgan's laws** tell us how complements interact with intersection/unions:
 \begin{align*}
   (A \cap B)^\comp &= A^\comp \cup B^\comp \\
   (A \cup B)^\comp &= A^\comp \cap B^\comp
 \end{align*}
-The first of these says that if it's not a Monday in October, then either it's not Monday or it's not October (or both). The second says that if a maths lecture is not "useful or fun", then it's not useful and it's not fun.
+The first of these says that if it's not a Monday in October, then either it's not Monday or it's not October (or both). The second says that if a maths lecture is not "useful or fun", then it's not useful and it's not fun. ([Augustus De Morgan](https://mathshistory.st-andrews.ac.uk/Biographies/De_Morgan/) was a British mathematician of the 19th century who did important work in logic.)
 
-If you ever do need to prove one of these statements (or a similar one), one way is to use a Venn diagram.
+For this module, these mostly count as "common sense" -- but if you ever do need to prove one of these statements (or a similar one), one way is to use a Venn diagram.
 
 Let's prove the second distributive law,
 \[   A \cup (B \cap C) = (A \cup B) \cap (A \cup C) , \]

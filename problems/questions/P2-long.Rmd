@@ -2,7 +2,7 @@
 
 
 ::::: {.myq}
-**B1** Starting from just the three probability axioms, prove the following statements:
+**B1.** Starting from just the three probability axioms, prove the following statements:
 
 :::: {.subq}
 **(a)** $\mathbb P(\varnothing) = 0$.

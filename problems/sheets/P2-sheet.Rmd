@@ -1,0 +1,62 @@
+---
+title: "Problem Sheet 2"
+author: "MATH1710 Probability and Statistics I"
+date: "University of Leeds, 2022-23"
+output: pdf_document
+header-includes:
+  - \usepackage{mdframed}
+  - \newenvironment{mysummary}{\itshape}{}
+  - \usepackage{titling}
+  - \setlength{\droptitle}{-7em}
+  - \usepackage{comment}
+  - \excludecomment{myanswers}
+  - \renewcommand{\complement}{\mathsf{c}}
+  - \newcommand{\comp}{\complement}
+  - \newcommand{\ff}[2]{{#1}^{\underline{#2}}}
+---
+
+
+
+
+
+
+::: {.mysummary data-latex=""}
+This is Problem Sheet 2. This problem sheet covers material from Lectures 3 to 6. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 4. The problem sheet contains two assessed questions, which are due in by **2pm on Monday 31 October**.
+:::
+
+## A: Short questions {.unnumbered}
+
+```{r, child = "../questions/P2-short.Rmd"}
+```
+
+## B: Long questions {.unnumbered}
+
+```{r, child = "../questions/P2-long.Rmd"}
+```
+
+## C: Assessed questions {.unnumbered}
+
+::: {.mysummary data-latex=""}
+The last two questions are **assessed questions**. These two questions count for 3% of your final mark for this module.
+
+The deadline for submitting your solutions is **2pm on Monday 31 October** at the beginning of Week 5. Submission is via Gradescope.
+Your work will be marked by your tutor and returned on Monday 7 November, when solutions will also be made available.
+
+Both questions are "long questions", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on [academic integrity](https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism) -- and the related punishments for violating them -- apply to your work on the assessed questions.
+:::
+
+```{r, child = "../questions/P2-assessed.Rmd"}
+```
+
+<!--
+## Solutions to short questions {#P2-short-sols .unnumbered}
+
+**A1.** (a) (i) $\{0,1,\dots, 4\}$ (ii) $\{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}$ (b) (i) 5 (ii) 16.  
+**A2.** (a) $C \cap A^\comp$ (b) $A \cup B \cup C$ (c) $(B \cup C) \cap (B \cap C)^\comp$ or $(B \cap C^\comp) \cup (B^\comp \cap C)$  
+(d) $(A \cap B \cap C^\comp) \cup (A \cap B^\comp \cap C) \cup (A^\comp \cap B \cap C)$ or other equivalent  
+**A3.** (a) 720 (b) 4092 (c) 1680 (d) 210  
+**A4.** (a) 0.16 (b) 0.133
+
+-->
