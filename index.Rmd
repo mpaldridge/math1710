@@ -91,6 +91,17 @@ url:    'https://mpaldridge.github.io/math1710/'
 -->
 
 ::: {.oldsched}
+**Week 2** (10--14 October):
+
+* [**Lecture 3:** Sample spaces and events](#L03-events) (Monday 10 October)
+* [**Lecture 4:** Probability](#L04-probability) (Wednesday 12 October)
+* **Tutorial:** to discuss Problem Sheet 1; check your timetable for details.
+* [**Problem Sheet 1:**](#P1) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 17 October.
+* [**R Worksheet 2:** Vectors](#r-work) to be completed this week.
+:::
+
+
+::: {.mysched}
 **Week 1** (3--7 October):
 
 * [**Lecture 1:** Summary statistics](#L01-stats) (Monday 3 October)
