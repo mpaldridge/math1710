@@ -1455,7 +1455,7 @@ An important case is when two events \(A, B\) cannot happen at the same time; th
 
 You might think that if two events are disjoint, then it would be reasonable to find the probability of their union -- that is, the probability that one (and, by necessity, only one) of them happens -- you can just add the two separate probabilities together. This will be another of our ``axioms'' of probability.
 
-There are a few rules about ways you can combe the complement, intersection and union operations.
+There are a few rules about ways you can combine the complement, intersection and union operations. These are ways of building new events from old.
 
 \begin{itemize}
 \tightlist
@@ -1628,24 +1628,28 @@ Let \(\Omega\) be a sample space with a probability measure \(\mathbb P\). Then 
 
 \end{theorem}
 
-Importantly, the third result here tells us how to deal with complements or ``not'' events: the probability of \(A\) \emph{not} happening is 1 minus the probability it does happen. This is often very useful.
+Importantly, the second result here tells us how to deal with complements or ``not'' events: the probability of \(A\) \emph{not} happening is 1 minus the probability it does happen. This is often very useful.
 
 \begin{proof}
-Statements 1 and 2 are exercises for you on \protect\hyperlink{P2}{Problem Sheet 2}. We'll start with the third statement.
+The key with most of these ``prove from the axioms'' problems is to think of a way to write the relevant events as part of a \emph{disjoint} union, then use Axiom 3. Statements 1 and 2 are exercises for you on \protect\hyperlink{P2}{Problem Sheet 2}. We'll start with the third statement.
 
-The key with most of these ``prove from the axioms'' problems is to think of a way to write the relevant events as part of a \emph{disjoint} union, then use Axiom 3. Here, since \(B\) is a subset of \(A\), it would be useful to write \(A\) as a disjoint union of \(B\) and ``the bit of \(A\) that isn't in \(B\). That is, we have the disjoint union
-\[ B \cup (A \cap B^\mathsf{c}) = A .\]
+Here, since \(B\) is a subset of \(A\), meaning that \(B\) is entirely inside \(A\).
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/subs0-1} \end{center}
+
+It would be useful to write \(A\) as a \emph{disjoint} union of \(\color{orange}B\) and {``the bit of \(A\) that isn't in \(B\)''}. That is, we have the disjoint union
+\[ A = \color{orange}B \cup (\color{purple}{A \cap B^\mathsf{c}}) .\]
 
 \begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/subs-1} \end{center}
 
 Applying Axiom 3 to this disjoint union gives
-\[ \mathbb P(B) + \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) . \]
+\[ \mathbb P(A) =  \mathbb P(B) + \mathbb P(A \cap B^\mathsf{c}) . \]
 
-We're happy to see the first term on the left-hand side and the term on the right-hand side. But what about the awkward \(\mathbb P(A \cap B^\mathsf{c})\)? Well, by Axiom 1, we know that \(\mathbb P(A \cap B^\mathsf{c}) \geq 0\), and hence
-\[ \mathbb P(B) + 0 \leq \mathbb P(A) , \]
+We're happy to see the term on the left-hand side and the first term on the right-hand side. But what about the awkward \(\mathbb P(A \cap B^\mathsf{c})\)? Well, by Axiom 1, we know that the probability of any event is greater than or equal to 0, so in particular. \(\mathbb P(A \cap B^\mathsf{c}) \geq 0\). Hence
+\[ \mathbb P(A)  \geq \mathbb P(B) + 0 = \mathbb P(B) , \]
 and we are done with the third statement.
 
-For the fourth statement, we have \(\mathbb P(A) \geq 0\) directly from Axiom 1, so only need to show that \(\mathbb P(A) \leq 1\). We can do this using the third statement of this theorem. For any event \(A\) we have \(A \subset \Omega\), so the third statement tells us that \(\mathbb P(A) \leq \mathbb P(\Omega)\). But Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), so we are done.
+For the fourth statement, we have \(\mathbb P(A) \geq 0\) directly from Axiom 1, so only need to show that \(\mathbb P(A) \leq 1\). We can do this using the third statement of this theorem. For any event \(A\) we have \(A \subset \Omega\), so the third statement tells us that \(\mathbb P(A) \leq \mathbb P(\Omega)\). But Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), so \(\mathbb P(A) \leq 1\) and we are done.
 \end{proof}
 
 \hypertarget{addition}{%
@@ -1673,34 +1677,39 @@ Let \(A, B \subset \Omega\) be two events. Then
 
 You may have seen this result before. You've perhaps justified it by saying something like this: ``We can add the two probabilities together, except now we've double-counted the overlap, so we have to take the probability of that away.'' Maybe you drew a Venn diagram. That's OK as a way to remember the result -- but this is a proper university mathematics course, so we have to carefully \emph{prove} it starting from just the axioms and nothing else.
 
-As always, the key is to find a way of writing \(A \cup B\) as a \emph{disjoint} union. (In general, \(A \cup B\) can be a non-disjoint union that has an overlap.) Well, if we want \(A \cup B = A \cup \{\text{something}\}\) to be a \emph{disjoint} union, then the ``something'' will have to be the bit of \(B\) that's not also in \(A\), which is \(B \cap A^\mathsf{c}\).
-
-~
-
-\begin{center}\includegraphics[width=1000pt]{math1710_files/figure-latex/add1-1} \end{center}
+\emph{(The following proof has been updated to match how I taught it in Wednesday's lecture.)}
 
 \begin{proof}
-First note, following the discussion above, that we have
-\[ A \cup B = A \cup (B \cap A^\mathsf{c}) , \]
-where the union on the right is of the disjoint events \(A\) and \(B \cap A^\mathsf{c}\). Therefore we can use Axiom 3 to get
-\begin{equation}
-\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B \cap A^\mathsf{c}) .    \label{eq:union1}
-\end{equation}
+The problem here is that \(A\) and \(B\) are not (in general) disjoint, so we can't apply Axiom 3.
 
-The left-hand side looks good, and the first term on the right-hand side looks good. To deal with the second term on the right-hand side, we need to write it down as part of a disjoint union again. Can we find another one? Yes! We can use \(B \cap A^\mathsf{c}\) together with \(B \cap A\) to build the whole of \(B\). So have a disjoint union
-\[ (B \cap A^\mathsf{c}) \cup (B \cap A) = B .\]
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/add3-1} \end{center}
 
-\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/add2-1} \end{center}
+Instead, let's split this up into the three disjoint bits: {``\(A\) but not \(B\)''} \(\color{red}{A \cap B^\mathsf{c}}\), {``\(B\) but not \(A\)''} \(\color{blue}{B \cap A^\mathsf{c}}\), and {``both''} \(\color{green}{A \cap B}\).
 
-Since this union is disjoint, we can use Axiom 3 again, to get
-\[ \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(B \cap A) = \mathbb P(B) . \]
-Rearranging this gives
-\begin{equation}
-\mathbb P(B \cap A^\mathsf{c}) = \mathbb P(B) - \mathbb P(B \cap A).  \label{eq:union2}
-\end{equation}
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/add4-1} \end{center}
 
-Finally, substituting \eqref{eq:union2} into \eqref{eq:union1} gives
-\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
+Now we can write \(A\), \(B\) and \(A \cup B\) in terms of these disjoint bits.
+\begin{align}
+A &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+B &= (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+A \cup B &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}),
+\end{align}
+with all the unions on the right-hand side being disjoint. Applying Axiom 3 to them all gives
+\begin{align}
+\mathbb P(A) &= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(A \cap B) \label{eq:un1}  \\
+\mathbb P(B) &= \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B)  \label{eq:un2} \\
+\mathbb P(A \cup B) &= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B) . \label{eq:un3}
+\end{align}
+Here, \eqref{eq:un3} is looking good, but we need to get rid of the awkward \(\mathbb P(A \cap B^\mathsf{c})\) and \(\mathbb P(B \cap A^\mathsf{c})\) terms. We can do that be rearranging \eqref{eq:un1} and \eqref{eq:un2} to get
+\begin{align}
+\mathbb P(A \cap B^\mathsf{c}) &= \mathbb P(A) - \mathbb P(A \cap B) \\
+\mathbb P(B \cap A^\mathsf{c}) &= \mathbb P(B) - \mathbb P(A \cap B) .
+\end{align}
+Substituting these into \eqref{eq:un3} gives
+\begin{align}
+\mathbb P(A \cup B) &= \mathbb P(A) - \mathbb P(A \cap B) + \mathbb P(B) - \mathbb P(A \cap B) + \mathbb P(A \cap B) \\
+  &= \mathbb P(A)+ \mathbb P(B) - \mathbb P(A \cap B) ,
+\end{align}
 as required.
 \end{proof}
 

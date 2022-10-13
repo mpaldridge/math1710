@@ -301,18 +301,20 @@ where <span class="math inline">\(|A|\)</span> is the number of sample outcomes 
 <li><span class="math inline">\(0 \leq \mathbb P(A) \leq 1\)</span> for all events <span class="math inline">\(A \subset \Omega\)</span>.</li>
 </ol>
 </div>
-<p>Importantly, the third result here tells us how to deal with complements or “not” events: the probability of <span class="math inline">\(A\)</span> <em>not</em> happening is 1 minus the probability it does happen. This is often very useful.</p>
+<p>Importantly, the second result here tells us how to deal with complements or “not” events: the probability of <span class="math inline">\(A\)</span> <em>not</em> happening is 1 minus the probability it does happen. This is often very useful.</p>
 <div class="proof">
-<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>Statements 1 and 2 are exercises for you on <a href="P2.html#P2">Problem Sheet 2</a>. We’ll start with the third statement.</p>
-<p>The key with most of these “prove from the axioms” problems is to think of a way to write the relevant events as part of a <em>disjoint</em> union, then use Axiom 3. Here, since <span class="math inline">\(B\)</span> is a subset of <span class="math inline">\(A\)</span>, it would be useful to write <span class="math inline">\(A\)</span> as a disjoint union of <span class="math inline">\(B\)</span> and “the bit of <span class="math inline">\(A\)</span> that isn’t in <span class="math inline">\(B\)</span>. That is, we have the disjoint union
-<span class="math display">\[ B \cup (A \cap B^\mathsf{c}) = A .\]</span></p>
+<p><span id="unlabeled-div-13" class="proof"><em>Proof</em>. </span>The key with most of these “prove from the axioms” problems is to think of a way to write the relevant events as part of a <em>disjoint</em> union, then use Axiom 3. Statements 1 and 2 are exercises for you on <a href="P2.html#P2">Problem Sheet 2</a>. We’ll start with the third statement.</p>
+<p>Here, since <span class="math inline">\(B\)</span> is a subset of <span class="math inline">\(A\)</span>, meaning that <span class="math inline">\(B\)</span> is entirely inside <span class="math inline">\(A\)</span>.</p>
+<p><img src="math1710_files/figure-html/subs0-1.png" width="320pt" style="display: block; margin: auto;" /></p>
+<p>It would be useful to write <span class="math inline">\(A\)</span> as a <em>disjoint</em> union of <span class="math inline">\(\color{orange}B\)</span> and <span style="color: purple;">“the bit of <span class="math inline">\(A\)</span> that isn’t in <span class="math inline">\(B\)</span>”</span>. That is, we have the disjoint union
+<span class="math display">\[ A = \color{orange}B \cup (\color{purple}{A \cap B^\mathsf{c}}) .\]</span></p>
 <p><img src="math1710_files/figure-html/subs-1.png" width="320pt" style="display: block; margin: auto;" /></p>
 <p>Applying Axiom 3 to this disjoint union gives
-<span class="math display">\[ \mathbb P(B) + \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) . \]</span></p>
-<p>We’re happy to see the first term on the left-hand side and the term on the right-hand side. But what about the awkward <span class="math inline">\(\mathbb P(A \cap B^\mathsf{c})\)</span>? Well, by Axiom 1, we know that <span class="math inline">\(\mathbb P(A \cap B^\mathsf{c}) \geq 0\)</span>, and hence
-<span class="math display">\[ \mathbb P(B) + 0 \leq \mathbb P(A) , \]</span>
+<span class="math display">\[ \mathbb P(A) =  \mathbb P(B) + \mathbb P(A \cap B^\mathsf{c}) . \]</span></p>
+<p>We’re happy to see the term on the left-hand side and the first term on the right-hand side. But what about the awkward <span class="math inline">\(\mathbb P(A \cap B^\mathsf{c})\)</span>? Well, by Axiom 1, we know that the probability of any event is greater than or equal to 0, so in particular. <span class="math inline">\(\mathbb P(A \cap B^\mathsf{c}) \geq 0\)</span>. Hence
+<span class="math display">\[ \mathbb P(A)  \geq \mathbb P(B) + 0 = \mathbb P(B) , \]</span>
 and we are done with the third statement.</p>
-<p>For the fourth statement, we have <span class="math inline">\(\mathbb P(A) \geq 0\)</span> directly from Axiom 1, so only need to show that <span class="math inline">\(\mathbb P(A) \leq 1\)</span>. We can do this using the third statement of this theorem. For any event <span class="math inline">\(A\)</span> we have <span class="math inline">\(A \subset \Omega\)</span>, so the third statement tells us that <span class="math inline">\(\mathbb P(A) \leq \mathbb P(\Omega)\)</span>. But Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, so we are done.</p>
+<p>For the fourth statement, we have <span class="math inline">\(\mathbb P(A) \geq 0\)</span> directly from Axiom 1, so only need to show that <span class="math inline">\(\mathbb P(A) \leq 1\)</span>. We can do this using the third statement of this theorem. For any event <span class="math inline">\(A\)</span> we have <span class="math inline">\(A \subset \Omega\)</span>, so the third statement tells us that <span class="math inline">\(\mathbb P(A) \leq \mathbb P(\Omega)\)</span>. But Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, so <span class="math inline">\(\mathbb P(A) \leq 1\)</span> and we are done.</p>
 </div>
 </div>
 <div id="addition" class="section level2 hasAnchor" number="4.3">
@@ -339,37 +341,79 @@ and we are done with the third statement.</p>
 <span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span></p>
 </div>
 <p>You may have seen this result before. You’ve perhaps justified it by saying something like this: “We can add the two probabilities together, except now we’ve double-counted the overlap, so we have to take the probability of that away.” Maybe you drew a Venn diagram. That’s OK as a way to remember the result – but this is a proper university mathematics course, so we have to carefully <em>prove</em> it starting from just the axioms and nothing else.</p>
-<div style="display: flex;">
-<div>
-<p>As always, the key is to find a way of writing <span class="math inline">\(A \cup B\)</span> as a <em>disjoint</em> union. (In general, <span class="math inline">\(A \cup B\)</span> can be a non-disjoint union that has an overlap.) Well, if we want <span class="math inline">\(A \cup B = A \cup \{\text{something}\}\)</span> to be a <em>disjoint</em> union, then the “something” will have to be the bit of <span class="math inline">\(B\)</span> that’s not also in <span class="math inline">\(A\)</span>, which is <span class="math inline">\(B \cap A^\mathsf{c}\)</span>.</p>
-</div>
-<div>
-<p> </p>
-</div>
-<div>
-<p><img src="math1710_files/figure-html/add1-1.png" width="1000pt" style="display: block; margin: auto;" /></p>
-</div>
-</div>
+<p><em>(The following proof has been updated to match how I taught it in Wednesday’s lecture.)</em></p>
 <div class="proof">
-<p><span id="unlabeled-div-17" class="proof"><em>Proof</em>. </span>First note, following the discussion above, that we have
-<span class="math display">\[ A \cup B = A \cup (B \cap A^\mathsf{c}) , \]</span>
-where the union on the right is of the disjoint events <span class="math inline">\(A\)</span> and <span class="math inline">\(B \cap A^\mathsf{c}\)</span>. Therefore we can use Axiom 3 to get
-<span class="math display" id="eq:union1">\[\begin{equation}
-\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B \cap A^\mathsf{c}) .    \tag{4.1}
-\end{equation}\]</span></p>
-<p>The left-hand side looks good, and the first term on the right-hand side looks good. To deal with the second term on the right-hand side, we need to write it down as part of a disjoint union again. Can we find another one? Yes! We can use <span class="math inline">\(B \cap A^\mathsf{c}\)</span> together with <span class="math inline">\(B \cap A\)</span> to build the whole of <span class="math inline">\(B\)</span>. So have a disjoint union
-<span class="math display">\[ (B \cap A^\mathsf{c}) \cup (B \cap A) = B .\]</span></p>
-<p><img src="math1710_files/figure-html/add2-1.png" width="320pt" style="display: block; margin: auto;" /></p>
-<p>Since this union is disjoint, we can use Axiom 3 again, to get
-<span class="math display">\[ \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(B \cap A) = \mathbb P(B) . \]</span>
-Rearranging this gives
-<span class="math display" id="eq:union2">\[\begin{equation}
-\mathbb P(B \cap A^\mathsf{c}) = \mathbb P(B) - \mathbb P(B \cap A).  \tag{4.2}
-\end{equation}\]</span></p>
-<p>Finally, substituting <a href="L04-probability.html#eq:union2">(4.2)</a> into <a href="L04-probability.html#eq:union1">(4.1)</a> gives
-<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]</span>
+<p><span id="unlabeled-div-17" class="proof"><em>Proof</em>. </span>The problem here is that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are not (in general) disjoint, so we can’t apply Axiom 3.</p>
+<p><img src="math1710_files/figure-html/add3-1.png" width="320pt" style="display: block; margin: auto;" /></p>
+<p>Instead, let’s split this up into the three disjoint bits: <span style="color: red;">“<span class="math inline">\(A\)</span> but not <span class="math inline">\(B\)</span>”</span> <span class="math inline">\(\color{red}{A \cap B^\mathsf{c}}\)</span>, <span style="color: blue;">“<span class="math inline">\(B\)</span> but not <span class="math inline">\(A\)</span>”</span> <span class="math inline">\(\color{blue}{B \cap A^\mathsf{c}}\)</span>, and <span style="color: green;">“both”</span> <span class="math inline">\(\color{green}{A \cap B}\)</span>.</p>
+<p><img src="math1710_files/figure-html/add4-1.png" width="320pt" style="display: block; margin: auto;" /></p>
+<p>Now we can write <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(A \cup B\)</span> in terms of these disjoint bits.
+<span class="math display">\[\begin{align}
+A &amp;= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+B &amp;= (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+A \cup B &amp;= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}),
+\end{align}\]</span>
+with all the unions on the right-hand side being disjoint. Applying Axiom 3 to them all gives
+<span class="math display" id="eq:un3" id="eq:un2" id="eq:un1">\[\begin{align}
+\mathbb P(A) &amp;= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(A \cap B) \tag{4.1}  \\
+\mathbb P(B) &amp;= \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B)  \tag{4.2} \\
+\mathbb P(A \cup B) &amp;= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B) . \tag{4.3}
+\end{align}\]</span>
+Here, <a href="L04-probability.html#eq:un3">(4.3)</a> is looking good, but we need to get rid of the awkward <span class="math inline">\(\mathbb P(A \cap B^\mathsf{c})\)</span> and <span class="math inline">\(\mathbb P(B \cap A^\mathsf{c})\)</span> terms. We can do that be rearranging <a href="L04-probability.html#eq:un1">(4.1)</a> and <a href="L04-probability.html#eq:un2">(4.2)</a> to get
+<span class="math display">\[\begin{align}
+\mathbb P(A \cap B^\mathsf{c}) &amp;= \mathbb P(A) - \mathbb P(A \cap B) \\
+\mathbb P(B \cap A^\mathsf{c}) &amp;= \mathbb P(B) - \mathbb P(A \cap B) .
+\end{align}\]</span>
+Substituting these into <a href="L04-probability.html#eq:un3">(4.3)</a> gives
+<span class="math display">\[\begin{align}
+\mathbb P(A \cup B) &amp;= \mathbb P(A) - \mathbb P(A \cap B) + \mathbb P(B) - \mathbb P(A \cap B) + \mathbb P(A \cap B) \\
+  &amp;= \mathbb P(A)+ \mathbb P(B) - \mathbb P(A \cap B) ,
+\end{align}\]</span>
 as required.</p>
 </div>
+<!--
+:::: {style="display: flex;"}
+
+::: {}
+As always, the key is to find a way of writing $A \cup B$ as a *disjoint* union. (In general, $A \cup B$ can be a non-disjoint union that has an overlap.) Well, if we want $A \cup B = A \cup \{\text{something}\}$ to be a *disjoint* union, then the "something" will have to be the bit of $B$ that's not also in $A$, which is $B \cap A^\comp$.
+:::
+
+:::{}
+\ 
+:::
+
+:::{}
+<img src="math1710_files/figure-html/add1-1.png" width="1000pt" style="display: block; margin: auto;" />
+:::
+::::
+
+::::: {.proof}
+First note, following the discussion above, that we have
+\[ A \cup B = A \cup (B \cap A^\comp) , \]
+where the union on the right is of the disjoint events $A$ and $B \cap A^\comp$. Therefore we can use Axiom 3 to get
+\begin{equation}
+\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B \cap A^\comp) .    (\#eq:union1)
+\end{equation}
+
+
+The left-hand side looks good, and the first term on the right-hand side looks good. To deal with the second term on the right-hand side, we need to write it down as part of a disjoint union again. Can we find another one? Yes! We can use $B \cap A^\comp$ together with $B \cap A$ to build the whole of $B$. So have a disjoint union
+\[ (B \cap A^\comp) \cup (B \cap A) = B .\]
+
+<img src="math1710_files/figure-html/add2-1.png" width="320pt" style="display: block; margin: auto;" />
+
+Since this union is disjoint, we can use Axiom 3 again, to get
+\[ \mathbb P(B \cap A^\comp) + \mathbb P(B \cap A) = \mathbb P(B) . \]
+Rearranging this gives
+\begin{equation}
+\mathbb P(B \cap A^\comp) = \mathbb P(B) - \mathbb P(B \cap A).  (\#eq:union2)
+\end{equation}
+
+
+Finally, substituting \@ref(eq:union2) into \@ref(eq:union1) gives
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
+as required.
+:::::
+-->
 <div class="example">
 <p><span id="exm:unlabeled-div-18" class="example"><strong>Example 4.3  </strong></span><em>Consider picking a card from a <a href="https://en.wikipedia.org/wiki/Standard_52-card_deck">deck</a> at random, with <span class="math inline">\(\mathbb P(A) = |A|/52\)</span>. What’s the probability the card is a spade or an ace?</em></p>
 <p>It is possible to just to work this out directly. But let’s use our addition law for unions.</p>

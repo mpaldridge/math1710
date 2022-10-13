@@ -86,13 +86,26 @@ Let $\Omega$ be a sample space with a probability measure $\mathbb P$. Then we h
 1. $0 \leq \mathbb P(A) \leq 1$ for all events $A \subset \Omega$.
 :::
 
-Importantly, the third result here tells us how to deal with complements or "not" events: the probability of $A$ *not* happening is 1 minus the probability it does happen. This is often very useful.
+Importantly, the second result here tells us how to deal with complements or "not" events: the probability of $A$ *not* happening is 1 minus the probability it does happen. This is often very useful.
 
 ::: {.proof}
-Statements 1 and 2 are exercises for you on [Problem Sheet 2](#P2). We'll start with the third statement.
+The key with most of these "prove from the axioms" problems is to think of a way to write the relevant events as part of a *disjoint* union, then use Axiom 3. Statements 1 and 2 are exercises for you on [Problem Sheet 2](#P2). We'll start with the third statement.
 
-The key with most of these "prove from the axioms" problems is to think of a way to write the relevant events as part of a *disjoint* union, then use Axiom 3. Here, since $B$ is a subset of $A$, it would be useful to write $A$ as a disjoint union of $B$ and "the bit of $A$ that isn't in $B$. That is, we have the disjoint union
-\[ B \cup (A \cap B^\comp) = A .\]
+Here, since $B$ is a subset of $A$, meaning that $B$ is entirely inside $A$. 
+
+```{tikz subs0, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
+\begin{tikzpicture}[line width=0.25pt, scale=0.8]
+
+\draw[thick] (0,0) rectangle (6,4);
+\draw (6.3,3.8) node {$\Omega$};
+
+\draw (3.5,1.5) circle (0.5); \draw (3.5,1.5) node {$B$};
+\draw (3,2) circle (1.5); \draw (2.7,2.5) node {$A$};
+\end{tikzpicture}
+```
+
+It would be useful to write $A$ as a *disjoint* union of $\color{orange}B$ and <span style="color: purple;">"the bit of $A$ that isn't in $B$"</span>. That is, we have the disjoint union
+\[ A = \color{orange}B \cup (\color{purple}{A \cap B^\comp}) .\]
 
 ```{tikz subs, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
@@ -100,7 +113,7 @@ The key with most of these "prove from the axioms" problems is to think of a way
 \draw[thick] (0,0) rectangle (6,4);
 \draw (6.3,3.8) node {$\Omega$};
 
-\fill  [green!25] (3,2) circle (1.5); 
+\fill  [purple!25] (3,2) circle (1.5); 
 \fill  [orange!25] (3.5,1.5) circle (0.5); 
 
 \draw (3.5,1.5) circle (0.5); \draw (3.5,1.5) node {$B$};
@@ -109,13 +122,13 @@ The key with most of these "prove from the axioms" problems is to think of a way
 ```
 
 Applying Axiom 3 to this disjoint union gives
-\[ \mathbb P(B) + \mathbb P(A \cap B^\comp) = \mathbb P(A) . \]
+\[ \mathbb P(A) =  \mathbb P(B) + \mathbb P(A \cap B^\comp) . \]
 
-We're happy to see the first term on the left-hand side and the term on the right-hand side. But what about the awkward $\mathbb P(A \cap B^\comp)$? Well, by Axiom 1, we know that $\mathbb P(A \cap B^\comp) \geq 0$, and hence
-\[ \mathbb P(B) + 0 \leq \mathbb P(A) , \]
+We're happy to see the term on the left-hand side and the first term on the right-hand side. But what about the awkward $\mathbb P(A \cap B^\comp)$? Well, by Axiom 1, we know that the probability of any event is greater than or equal to 0, so in particular. $\mathbb P(A \cap B^\comp) \geq 0$. Hence
+\[ \mathbb P(A)  \geq \mathbb P(B) + 0 = \mathbb P(B) , \]
 and we are done with the third statement.
 
-For the fourth statement, we have $\mathbb P(A) \geq 0$ directly from Axiom 1, so only need to show that $\mathbb P(A) \leq 1$. We can do this using the third statement of this theorem. For any event $A$ we have $A \subset \Omega$, so the third statement tells us that $\mathbb P(A) \leq \mathbb P(\Omega)$. But Axiom 2 tells us that $\mathbb P(\Omega) = 1$, so we are done.
+For the fourth statement, we have $\mathbb P(A) \geq 0$ directly from Axiom 1, so only need to show that $\mathbb P(A) \leq 1$. We can do this using the third statement of this theorem. For any event $A$ we have $A \subset \Omega$, so the third statement tells us that $\mathbb P(A) \leq \mathbb P(\Omega)$. But Axiom 2 tells us that $\mathbb P(\Omega) = 1$, so $\mathbb P(A) \leq 1$ and we are done.
 :::
 
 
@@ -151,6 +164,69 @@ Let $A, B \subset \Omega$ be two events. Then
 
 You may have seen this result before. You've perhaps justified it by saying something like this: "We can add the two probabilities together, except now we've double-counted the overlap, so we have to take the probability of that away." Maybe you drew a Venn diagram. That's OK as a way to remember the result -- but this is a proper university mathematics course, so we have to carefully *prove* it starting from just the axioms and nothing else.
 
+*(The following proof has been updated to match how I taught it in Wednesday's lecture.)*
+
+::: {.proof}
+The problem here is that $A$ and $B$ are not (in general) disjoint, so we can't apply Axiom 3.
+
+```{tikz add3, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
+\begin{tikzpicture}[line width=0.25pt, scale=0.8]
+
+
+\draw[thick] (0,0) rectangle (6,4);
+\draw (6.3,3.8) node {$\Omega$};
+\draw (2,2) circle (1.5); \draw (1.6,2.0) node {$A$};
+\draw (4,2) circle (1.5); \draw (4.4,2.0) node {$B$};
+\end{tikzpicture}
+```
+
+Instead, let's split this up into the three disjoint bits: <span style="color: red;">"$A$ but not $B$"</span> $\color{red}{A \cap B^\comp}$, <span style="color: blue;">"$B$ but not $A$"</span> $\color{blue}{B \cap A^\comp}$, and <span style="color: green;">"both"</span> $\color{green}{A \cap B}$.
+
+```{tikz add4, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
+\begin{tikzpicture}[line width=0.25pt, scale=0.8]
+
+\fill  [red!25] (2,2) circle (1.5);
+\fill  [blue!25] (4,2) circle (1.5); 
+
+\begin{scope} 
+	\clip (2,2) circle (1.5);
+	\fill  [green!25] (4,2) circle (1.5); 
+\end{scope}
+
+
+\draw[thick] (0,0) rectangle (6,4);
+\draw (6.3,3.8) node {$\Omega$};
+\draw (2,2) circle (1.5); \draw (1.6,2.0) node {$A$};
+\draw (4,2) circle (1.5); \draw (4.4,2.0) node {$B$};
+\end{tikzpicture}
+```
+
+Now we can write $A$, $B$ and $A \cup B$ in terms of these disjoint bits.
+\begin{align}
+A &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+B &= (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+A \cup B &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}),
+\end{align}
+with all the unions on the right-hand side being disjoint. Applying Axiom 3 to them all gives
+\begin{align}
+\mathbb P(A) &= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(A \cap B) (\#eq:un1)  \\
+\mathbb P(B) &= \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B)  (\#eq:un2) \\
+\mathbb P(A \cup B) &= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B) . (\#eq:un3)
+\end{align}
+Here, \@ref(eq:un3) is looking good, but we need to get rid of the awkward $\mathbb P(A \cap B^\mathsf{c})$ and $\mathbb P(B \cap A^\mathsf{c})$ terms. We can do that be rearranging \@ref(eq:un1) and \@ref(eq:un2) to get
+\begin{align}
+\mathbb P(A \cap B^\mathsf{c}) &= \mathbb P(A) - \mathbb P(A \cap B) \\
+\mathbb P(B \cap A^\mathsf{c}) &= \mathbb P(B) - \mathbb P(A \cap B) .
+\end{align}
+Substituting these into \@ref(eq:un3) gives
+\begin{align}
+\mathbb P(A \cup B) &= \mathbb P(A) - \mathbb P(A \cap B) + \mathbb P(B) - \mathbb P(A \cap B) + \mathbb P(A \cap B) \\
+  &= \mathbb P(A)+ \mathbb P(B) - \mathbb P(A \cap B) ,
+\end{align}
+as required.
+:::
+
+<!--
 :::: {style="display: flex;"}
 
 ::: {}
@@ -220,6 +296,7 @@ Finally, substituting \@ref(eq:union2) into \@ref(eq:union1) gives
 \[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) , \]
 as required.
 :::::
+-->
 
 ::: {.example}
 *Consider picking a card from a [deck](https://en.wikipedia.org/wiki/Standard_52-card_deck) at random, with $\mathbb P(A) = |A|/52$. What's the probability the card is a spade or an ace?*
