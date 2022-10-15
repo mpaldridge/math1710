@@ -1,11 +1,11 @@
 ---
 title:  "R Worksheet 3: Data in R"
 author: "MATH1710 Probability and Statistcs I"
-date:   "University of Leeds, 2021--22"
+date:   "University of Leeds, 2022--23"
 output: html_document
 ---
 
-*This R worksheet* does *include assessed questions at the bottom. Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 18 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*
+*This R worksheet* does *include assessed questions at the end. Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 24 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*
 
 ------------------------------------------------------------------------
 
@@ -40,7 +40,7 @@ There are many advantages to using CSV files to store and send data:
 * Because a CSV file contains just the data and some commas and nothing else, file sizes can be kept small even for very large amounts of data.
 * CSV files contain "just the data", and no unnecessary presentational information like fonts, text size, colours, and so on.
 
-We can read data into R from a CSV file saved "locally" -- that is, saved on the hard drive of the computer you are working on now -- or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: *you never need to save any CSV data files to your computer*. The advantages of reading data in from the internet include:
+We can read data into R from a CSV file saved "locally" -- that is, saved on the hard drive of the computer you are working on now -- or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: for this module, you never need to save any CSV data files to your computer. The advantages of reading data in from the internet include:
 
 * Your R code will always work on any (internet-connected) computer, for example if you send your work to a colleague.
 * If the data owner updates their data on the internet, your R code will work automatically with this new updated data.
@@ -57,7 +57,9 @@ temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.c
 
 By using `temperature <- `, we have read the data into an R object called `temperature`. Nothing will happen until we interact with this R object in some way. (Note the quotation marks `" "` around the web address in the `read.csv()` command.)
 
-When you've read some data into R, you will want to check it has worked, and find out some basic details about the data. There are various functions that will do this:
+*Remember:* to read data from a CSV file you must use the `read.csv()` -- just typing a web address straight into R will not do anything (except return an error).
+
+Once we've read some data into R, we will want to check it has worked, and find out some basic details about the data. There are various functions that will do this:
 
 * **`head()`** shows the first few rows of the data, so you can inspect a manageable amount of the data. (So to show the top of the data read in as `temperature`, we use `head(temperature)`.)
 * **`names()`** tells us the names of the columns from the header row of the file.
@@ -89,7 +91,7 @@ temperature[21, "oct"]
 
 The notation here in the square brackets is: first the number of the row, then a comma, then the name of the column in quotation marks. (Don't forget the quotation marks!)
 
-You'll also remember from Worksheet 2 that we can pull out a segment from a column with, for example,
+You'll also remember from R Worksheet 2 that we can pull out a segment from a column with, for example,
 
 ```{r}
 temperature[21:26, "oct"]
@@ -153,7 +155,9 @@ and so on. Remember we can use `round()` and `signif()` with these to round the 
 
 ## Assessed questions
 
-*The following fice assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 3, but the official deadline is **Monday 18 October at 1400**.*
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 3, but the official deadline is **Monday 24 October at 1400**.*
+
+*You should submit your work by typing your answers into [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u). You may need to be logged into your University account.*
 
 *This worked will be marked automatically by computer, so make sure you answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -163,7 +167,9 @@ and so on. Remember we can use `round()` and `signif()` with these to round the 
 https://mpaldridge.github.io/math1710/data/R3-xy.csv
 ```
 
-*where `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then you should use the file at `https://mpaldridge.github.io/math1710/data/R3-29.csv`; if your student ID number is `201491200` then you should use the file `https://mpaldridge.github.io/math1710/data/R3-00.csv` and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 marks.*
+*where `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then you should use the file at `https://mpaldridge.github.io/math1710/data/R3-29.csv`; if your student ID number is `201491200` then you should use the file `https://mpaldridge.github.io/math1710/data/R3-00.csv` and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 total marks.*
+
+*If asked to round your answer, you should give your answer as produced by R's `round()` or `signif()` functions.*
 
 ---
 
@@ -171,10 +177,14 @@ https://mpaldridge.github.io/math1710/data/R3-xy.csv
 
 > **Assessed Question 1.** How many days of data are in the data set?
 
-> **Assessed Question 2.** What was the mean stock price of Amaflix? Give your answer to two decimal places (as rounded by the R `round()` function).
+> **Assessed Question 2.** What was the mean stock price of Amaflix? Give your answer to two decimal places.
 
 > **Assessed Question 3.** What was the variance of stock price of Netazon over the first 25 days of the dataset? Round your answer to three significant figures.
 
 > **Assessed Question 4.** Which company's data had the greater inter-quartile range?
 
 > **Assessed Question 5.** Would you say that the relationship between the companies' stock prices is a strong positive relationship, a strong negative relationship, or a weak relationship?
+
+---
+
+*Remember to submit your answers into  [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u) before 1400 on Monday 24 October.*
