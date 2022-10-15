@@ -30,6 +30,6 @@ for(i in 0:99) {
   if (i < 10) filename <- paste("~/Documents/GitHub/math1710/docs/data/R3-0", i, ".csv", sep = "")
   else        filename <- paste("~/Documents/GitHub/math1710/docs/data/R3-",  i, ".csv", sep = "")
   
-  write.csv(data, filename)
+  write.csv(data, filename, row.names = FALSE)
 }
 
