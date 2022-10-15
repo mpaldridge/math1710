@@ -2,11 +2,13 @@
 
 ## Probability with equally likely outcomes {#classical-intro}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/EdRPMx4eCXc"></iframe>
 :::
 ::::
+-->
 
 **Classical probability** is the name we give to probability where there are a finite number of equally likely outcomes.
 
@@ -18,6 +20,13 @@ Let $\Omega$ be a finite sample space. Then the **classical probability measure*
 :::
 
 So to work out a classical probability $\mathbb P(A)$, crucially we need to be able to count how many outcomes $|A|$ are in the event $A$ and count how many outcomes $|\Omega|$ are in the whole sample space $\Omega$. (This is why classical probability is also called "enumerative probability" -- "enumeration" is another word for counting.) In this lecture and the next, we'll look at some different ways in which we can count the number of outcomes in common events and sample spaces.
+
+::: {.example}
+*We roll a dice. What is the probability we get at least 5?*
+
+The sample space is $\Omega = \{1,2,3,4,5,6\}$, with $|\Omega| = 6$. The event that we roll at least 5 is $A = \{5,6\}$, with $|A| = 2$. Hence
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{2}{6} = \frac{1}{3} . \]
+:::
 
 There's something we ought to check before going any further!
 
@@ -96,17 +105,17 @@ So the probability all five coins show the same face is
 :::
 
 ::: {.example}
-*Five dice are rolled. What is the probability we get at least one 6?*
+*Four dice are rolled. What is the probability we get at least one 6?*
 
-Here, $\Omega$ is the set of all possible sequences of 5 dice rolls. Clearly $|\Omega| = 6^5 = 7776$.
+Here, $\Omega$ is the set of all possible sequences of four dice rolls. Clearly $|\Omega| = 6^4 = 1296$.
 
-Also, $A$ is the set of all dice roll sequences with at least one 6. Whenever you see a question with the phrase "at least one" in it, it's very often to look at the complementary event $A^\comp$ instead. We know from the last section that $\mathbb P(A) = 1 - \mathbb P(A^\comp)$, but in "at least one" questions, it's often easier to count $|A^\comp|$ than to count $|A|$.
+The event $A$ is the set of all dice roll sequences with at least one 6. Whenever you see a question with the phrase "at least one" in it, it's very often to look at the complementary event $A^\comp$ instead. We know from the last section that $\mathbb P(A) = 1 - \mathbb P(A^\comp)$, but in "at least one" questions, it's often easier to count $|A^\comp|$ than to count $|A|$.
 
-Here, is $A$ is the set of all dice roll sequences with at least one 6, then $A^\comp$ is the set of dice roll sequence with no 6 at all. This means all five dice must have rolled a 1, 2, 3, 4, or 5. Since each of the five dice rolls has 5 possibilities, this means that $|A^\comp| = 5^5 = 3125$.
+Here, since $A$ is the set of all dice roll sequences with at least one 6, then $A^\comp$ is the set of dice roll sequence without any 6s at all. This means all four dice must have rolled a 1, 2, 3, 4 or 5. Since each of the four dice rolls has five possibilities, this means that $|A^\comp| = 5^4 = 625$.
 
-Finally, we see that
-\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{|A^\comp|}{|\Omega|} = 1 - \frac{5^5}{6^5} = \frac{4651}{7776} \approx 0.598 .\]
-So there's about a 60% chance we get at least one 6.
+Putting this together, we see that
+\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{|A^\comp|}{|\Omega|} = 1 - \frac{625}{1296} = \frac{671}{1296} \approx 0.518 .\]
+So there's about a 52% chance we get at least one 6.
 :::
 
 
@@ -114,11 +123,13 @@ So there's about a 60% chance we get at least one 6.
 
 ## Sampling with and without replacement  {#sampling}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/EXqEcklxlj8"></iframe>
 :::
 ::::
+-->
 
 ::: {.example}
 *A bag contains 15 balls: 10 black balls and 5 white balls. We draw 3 balls out of the bag. What is the probability all 3 balls are black **(a)** if we put each ball back into the bag after it is chosen; **(b)** if we do not put each ball back into the bag after it is chosen.*
@@ -138,7 +149,7 @@ This example illustrated the difference between **sampling with replacement** (w
 * the number of ways to sample without replacement is
 \[ \ff{n}{k} = n\times(n-1)\times \cdots\times (n-k+1) .\]
 
-Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. This is still $k$ numbers multiplied together, but decreasing by 1 each time down from $n$. (Notice that the subscript is underlined in the falling factorial; other notations include $(n)_k$, $P(n,k)$, or ${}^nP_k$.)
+Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. This is still $k$ numbers multiplied together, but decreasing by 1 each time down from $n$. (Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes $(n)_k$, $P(n,k)$, or ${}^nP_k$.)
 
 
 ## Summary  {#summary-L05 .unnumbered}

@@ -49,9 +49,9 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 
 **(a)** The mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so the outliers become "joint modes" along with everything else; but in this case the mode is not a useful statistic in the first place.)
 
-**(b)** The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the "central mass" of the data. In particular, the size of the outliers won't make any difference at all (only whether they are "high outliers" or "low outliers"). So the median is robust.
+**(b)** The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the "central mass" of the data. In particular, the *size* of the outliers won't make any difference at all (only whether they are "high outliers" above the median or "low outliers" below the median). So the median is robust.
 
-**(c)** The mean can change a lot is outliers are introduced. (Think about the mean net worth of people in you tutorial group, and how it would change if Jeff Bezos or Elon Musk joined your tutorial group.) So the mean is sensitive.
+**(c)** The mean can change a lot if outliers are introduced, especially if the outlier is enormously far our from the data. So the mean is sensitive.
 
 **(d)** The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced, so is robust.
 
@@ -61,7 +61,9 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 
 (You might like to think about situations where it's better to use a robust statistic or better to use a sensitive statistic.)
 
-**Group feedback:** Remember that "robust" and "sensitive" are general descriptions rather than precise mathematical definitions. So it doesn't matter if you disagree with my opinions provided that you give clear and detailed explanations to back up your opinion.
+**Group feedback:** I find it helpful to suppose I was studying the net worth of people in my tutorial group, and calculating summary statistics. How would those statistics changed change if Elon Musk (founder of Tesla, net worth roughly $200 billion) joined my tutorial group?
+
+Remember that "robust" and "sensitive" are general descriptions rather than precise mathematical definitions. So it doesn't matter if you disagree with my opinions provided that you give clear and detailed explanations to back up your opinion.
 :::
 ::::
 
@@ -104,7 +106,9 @@ In fact that's the square of the correlation on the left-hand side, so we've sho
 
 Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; number smalles than -1 become bigger than +1 when squared.) Hence we have shown that $-1 \leq r_{xy} \leq 1$, as required.
 
-**Group feedback:** Remember that you can still attempt part (b) even if you got stuck on part (a).
+**Group feedback:** In part (b) there's a temptation to "square-root both sides of the inequality". But you have to be very careful when you do this -- make sure you are properly accounting for the positive and negative square roots on both side (if necessary), and where that does or doesn't require reversing the inequality. I recommend leaving the square-root operation until the last possible moment of the proof or, perhaps even better, reasoning through words as I did above. 
+
+Remember that you can still attempt part (b) even if you got stuck on part (a).
 :::
 :::::
 
@@ -116,7 +120,7 @@ Finally, we note that if a number squared is less than or equal to 1, then the n
 ::: {.myanswers data-latex=""}
 **Group feedback:** There are no "correct" or "incorrect" answers here, but here are a few things that students in my own tutorials brought up, which may act as a prompt for your own discussions.
 
-* It's important the students/subjects have given their consent for their data to be used this way. It must be "informed consent", where they understand for what purpose the data will be used, how it will be stored, and so on. It must be possible and painless for students to decline to take part.
+* It's important the students/subjects have given their consent for their data to be used this way. It must be "informed consent", where they understand for what purpose the data will be used, how it will be stored, and so on. It must be easy and painless for students to decline to take part.
 * Consideration should be given on how to anonymise the data as much as possible -- it's not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.
 * Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could "leak" that way. Perhaps imprecise data, such as classes rather than exact marks, might help while only slightly reducing the usefulness of the data?
 * On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of "open science" suggest that the data should be kept -- and even publically made available -- for other researchers to check the work. There are competing ethical considerations here.

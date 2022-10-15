@@ -11,6 +11,8 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 # Schedule {.unnumbered}
 
+\newcommand{\Var}{\operatorname{Var}}
+
 <!--::: {.oldsched}
 **Week 11** (22--26 November):
 

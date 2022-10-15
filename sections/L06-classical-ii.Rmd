@@ -22,7 +22,7 @@ We continue looking at the classical probability $\mathbb P(A) = |A|/|\Omega|$, 
 
 Here, the sample space $\Omega$ is the set of all orderings of the $n$ exam papers by mark, and $A$ is the event that the papers are in order from lowest to highest scoring. It's clear that $|A| = 1$: since the exams scored different marks, there's only one way of putting the exams in the correct lowest-to-highest order. But what's $|\Omega|$?
 
-There are $n$ choices for the first exam paper to be marked. Then, for the second exam paper, there are $n - 1$ choices left, because I'm not going to mark the same paper twice. There are $n-2$ choices for the third exam paper. And so on, until I have marked $n-1$ papers, and there is only 1 choice left for the final paper. So we have
+There are $n$ choices for the first exam paper to be marked. Then, for the second exam paper, there are $n - 1$ choices left, because the lecturer is not going to mark the same paper twice. There are $n-2$ choices for the third exam paper. And so on, until she has marked $n-1$ papers, and there is only 1 choice left for the final paper. So we have
 \[ |\Omega| = \ff nn = n(n-1)(n-2)\cdots3\cdot2\cdot1 = n! \]
 ways to order the exam papers.
 
@@ -34,23 +34,28 @@ This number
 \[ n! = \ff nn = n(n-1)(n-2)\cdots3\cdot2\cdot1 \]
 is called **$n$ factorial** and denoted $n!$. It is the number of ways that $n$ different objects can be ordered.
 
+The factorial $n!$ gets very large very quickly. **Stirling's formula** gives the approximation
+$n! \approx \sqrt{2\pi n} \, \mathrm{e}^{-n} \, n^n$.
+
+::: {.example}
+Suppose you shuffle a pack of cards. The resulting ordering of the deck has $52!$ possibilities. This is an unimaginably huge number -- the exact value to 3 significant figures is
+\[ 52! = 8.07 \times 10^{67} , \]
+while Stirling's formula gives the approximation
+\[ 52! \approx \sqrt{2\pi \times 52} \times \mathrm{e}^{-52} \times 52^{52} = 8.05 \times 10^{67} . \]
+This is an 8 followed by 67 zeroes.
+
+If every person on the planet had shuffled a deck of cards one million times a second for the entire lifetime of the universe, they could only expect to have got through about $10^{33}$ shuffles.
+This is only the most tiny, microscopic fraction of $52!$. So every time you have ever shuffled a deck of cards, it is essentially certain that you have created an ordering of the deck that has never existed before.
+:::
+
 It can sometimes be useful to write the falling factorial $\ff nk$ in terms of the factorial, like this:
 \begin{align*}
 \ff nk &= n(n-1)\cdots(n-k+1) \\
   &= n(n-1)\cdots(n-k+1)\times\frac{(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
   &= \frac{n(n-1)\cdots(n-k+1)(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
-  &= \frac{n!}{(n-k)!}.
+  &= \frac{n!}{(n-k)!},
 \end{align*}
-
-::: {.example}
-Suppose you shuffle a pack of cards. The resulting ordering of the deck has $52!$ possibilities. This is an unimaginably huge number -- it's roughly
-\[ 52! \approx 8 \times 10^{67} ; \]
-that is, an 8 followed by 67 zeroes.
-
-In comparison, the universe has existed for about $4 \times 10^{17}$ seconds, and there are about $7 \times 10^{9}$ people alive. If every person on the planet had shuffled a deck of cards one million times a second for the entire lifetime of the universe, they could only expect to have got through
-\[ (4 \times 10^{17}) \times (7 \times 10^{9}) \times 10^6 \approx 3 \times 10^{33} .\]
-This is only the most tiny, microscopic fraction of $52!$. So every time you have ever shuffled a deck of cards, it is essentially certain that you have created an ordering of the deck that has never existed before.
-:::
+where the numbers from $n-k$ down to 1 cancel out.
 
 
 ## Sampling without replacement in any order  {#combinations}
@@ -65,14 +70,14 @@ This is only the most tiny, microscopic fraction of $52!$. So every time you hav
 
 
 ::: {.example #lotto}
-*In "Lotto", the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers match the 6 numbers chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?*
+*In the Lotto, the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers match the 6 numbers on the balls chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?*
 
 Here, $\Omega$ is the set of all possible sets of 6 winning numbers, and $A$ is the set of numbers on your ticket. Clearly $|A| = 1$, but what is $|\Omega|$?
 
-Well, the first number out of the machine has 59 possibilities, the second number has 58 possibilities, and so on, making
+Well, the first ball out of the machine has 59 possibilities, the second ball has 58 possibilities, and so on, making
 \[ 59 \times 58 \times 57 \times 56 \times 55 \times 54 = \ff{59}{6} . \]
 
-But this isn't the correct answer, because the same set of numbers could be drawn from the machine in any order! The sets of numbers $\{1,2,3,4,5,6\}$ and $\{1,2,3,4,6,5\}$ and $\{6,5,4,3,2,1\}$ are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 numbers, which we know is $6!$. So the number of possible sets of 6 numbers to come out of the machine is actually
+But this isn't the correct answer, because the same set of balls could be drawn from the machine in any order! The sets of balls $\{1,2,3,4,5,6\}$ and $\{1,2,3,4,6,5\}$ and $\{6,5,4,3,2,1\}$ are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 balls, which we know is $6!$. So the number of possible sets of 6 balls to come out of the machine is actually
 \[ \binom{59}{6} = \frac{\ff{59}{6}}{6!} = \frac{59 \times 58 \times 57 \times 56 \times 55 \times 54}{6\times5\times4\times3\times2\times1} \approx 45 \text{ million} . \]
 
 Thus the probability that your ticket wins the jackpot is
@@ -81,7 +86,7 @@ Thus the probability that your ticket wins the jackpot is
 
 Here, we have introduced the notation
 \[ \binom{n}{k} = \frac{\ff{n}{k}}{k!} = \frac{n(n-1) \cdots (n-k+1)}{k(k-1)\cdots2\cdot1}  \]
-for the number of ways to choose $k$ objects out of $n$ without replacement *and where the order they were chosen in doesn't matter*. This is called the **binomial coefficient**, although when we say it out loud we normally just say **"$n$ choose $k$"**. (Another notation for the binomial coefficient is ${}^n C_k$.)
+for the number of ways to choose $k$ objects out of $n$ without replacement *and where the order they were chosen in doesn't matter*. This is called the **binomial coefficient**, although when we say it out loud we normally just say "$n$ choose $k$". (Another notation for the binomial coefficient is ${}^n C_k$.)
 
 It can sometimes be useful to remember that $\ff nk = n!/(n-k)!$ allows us to write the binomial coefficient in terms of the factorial function as
 \[ \binom nk = \frac{\ff nk}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]
@@ -102,7 +107,7 @@ hands.
 Thus the probability that the hand contains AKQJ of Spades is
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{\binom{48}{9}}{\binom{52}{13}} . \]
 
-Conveniently, we can simplify the expression quite a lot, because plenty of cancellation will go on. We have
+Conveniently, we can simplify the expression quite a lot, because plenty of cancellation will occur. We have
 \begin{align*}
 \mathbb P(A) = \frac{\binom{48}{9}}{\binom{52}{13}}
   &= \frac{\frac{48\times47\times\cdots\times41\times40}{9\times8\times\cdots\times2\times1}}{\frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1}} \\
@@ -113,6 +118,7 @@ Conveniently, we can simplify the expression quite a lot, because plenty of canc
 or about 1 in every 380 hands.
 :::
 
+<!--
 There's one other useful fact about the binomial coefficient we should mention.
 
 ::: {.theorem}
@@ -139,7 +145,7 @@ We have "double counted" the same quantity two different ways, so the answer mus
 :::
 
 Which proof do you prefer? (I strongly prefer the second proof, because I think it doesn't just *verify* that the theorem is true, but further explains *why* the result is true.)
-
+-->
 
 ## Birthday problem  {#birthday}
 
@@ -153,7 +159,7 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 
 *There are $k = 23$ students in a class. What is the probability that at least two of the students share a birthday?*
 
-This a famous problem, known as the "birthday problem". You may have seen this problem before. But let's try to solve it using the techniques from this section of notes. (We'll assume all days are equally likely for birthdays, and ignore the effect of leap days.)
+This a famous problem, known as the "birthday problem". You may have seen this problem before. But let's try to solve it using the techniques from this section of notes. (We'll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)
 
 The sample space $|\Omega|$ is the set of possible birthdays for the $k$ students. Clearly $|\Omega| = 365^k$.
 
@@ -172,16 +178,12 @@ k <- 23
 ```
 The probability is 50.7%. So it's more likely than not that at least two students share a birthday.
 
-Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are $\binom{23}{2} = 253$ *pairs* of birthdays, and each of those 253 pairs is a potential match -- and 253 is quite a big number.
+Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are $\binom{23}{2} = 253$ *pairs* of birthdays, and each of those 253 pairs is a potential match.
 
 
-## Summary  {#summary-03 .unnumbered}
+## Summary  {#summary-L06 .unnumbered}
 
 ::: {.mysummary}
-* "Classical probability" describes the situation where there are finitely many equally likely outcomes. The classical probability $\mathbb P(A) = |A|/|\Omega|$ requires us to count how many outcomes there are in events or sample spaces.
-* The multiplication principle says that $n$ choices followed by $m$ choices makes $n \times m$ choices in total.
-* Sampling $k$ objects out of $n$ with replacement gives $n^k$ choices.
-* Sampling $k$ objects out of $n$ without replacement gives $n^{\underline{k}} = n(n-1)\dots(n-k+1)$ choices.
 * Ordering $n$ objects can be done in $n! = n^{\underline{n}} = n(n-1)\dots2\cdot1$ ways.
 * The number of ways to sample $k$ objects out of $n$ when the order doesn't matter is given by the binomial coefficient $\binom nk = \ff{n}{k}/k!$.
 :::

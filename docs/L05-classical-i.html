@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Worksheets | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 5 Classical probability I | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 5 Classical probability I | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 5 Classical probability I | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="P2.html"/>
-<link rel="next" href="solutions.html"/>
+<link rel="prev" href="L04-probability.html"/>
+<link rel="next" href="L06-classical-ii.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -248,126 +248,161 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="R" class="section level1 unnumbered hasAnchor">
-<h1>R Worksheets<a href="R.html#R" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r-work" class="section level2 unnumbered hasAnchor">
-<h2>R worksheets<a href="R.html#r-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each week there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for worksheets with assessed questions, for checking and submitting your solutions.</p>
+<div id="L05-classical-i" class="section level1 hasAnchor" number="5">
+<h1><span class="header-section-number">Lecture 5</span> Classical probability I<a href="L05-classical-i.html#L05-classical-i" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="classical-intro" class="section level2 hasAnchor" number="5.1">
+<h2><span class="header-section-number">5.1</span> Probability with equally likely outcomes<a href="L05-classical-i.html#classical-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/EdRPMx4eCXc"></iframe>
+:::
+::::
+-->
+<p><strong>Classical probability</strong> is the name we give to probability where there are a finite number of equally likely outcomes.</p>
+<p>Classical probability was the first type of probability to be formally studied – partly because it is the simplest, and partly because it was useful for working out how to win at gambling. Tossing fair coins, rolling dice, and dealing cards are all common gambling situations that can be studied using classical probability – in a deck of cards, for example, there are 52 cards that are equally likely to be drawn. Among the first works to seriously study classical probability were “Book on Games of Chance” by <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Cardan/">Girolamo Cardano</a> (written in 1564, but not published until 1663, one hundred years later), and a famous series of letters letters between <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Pascal/">Blaise Pascal</a> and <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Fermat/">Pierre de Fermat</a> in 1654.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-19" class="definition"><strong>Definition 5.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a finite sample space. Then the <strong>classical probability measure</strong> on <span class="math inline">\(\Omega\)</span> is given by
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} . \]</span></p>
+</div>
+<p>So to work out a classical probability <span class="math inline">\(\mathbb P(A)\)</span>, crucially we need to be able to count how many outcomes <span class="math inline">\(|A|\)</span> are in the event <span class="math inline">\(A\)</span> and count how many outcomes <span class="math inline">\(|\Omega|\)</span> are in the whole sample space <span class="math inline">\(\Omega\)</span>. (This is why classical probability is also called “enumerative probability” – “enumeration” is another word for counting.) In this lecture and the next, we’ll look at some different ways in which we can count the number of outcomes in common events and sample spaces.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 5.1  </strong></span><em>We roll a dice. What is the probability we get at least 5?</em></p>
+<p>The sample space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>, with <span class="math inline">\(|\Omega| = 6\)</span>. The event that we roll at least 5 is <span class="math inline">\(A = \{5,6\}\)</span>, with <span class="math inline">\(|A| = 2\)</span>. Hence
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{2}{6} = \frac{1}{3} . \]</span></p>
+</div>
+<p>There’s something we ought to check before going any further!</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-21" class="theorem"><strong>Theorem 5.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a finite nonempty sample space. Then the classical probability measure on <span class="math inline">\(\Omega\)</span>,
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} , \]</span>
+is indeed a probability measure, in that it satisfies the three axioms in Definition <a href="L04-probability.html#def:axioms">4.1</a>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-22" class="proof"><em>Proof</em>. </span>We’ll take the axioms one by one.</p>
+<ol style="list-style-type: decimal">
+<li>Since <span class="math inline">\(|\Omega| \geq 1\)</span> and <span class="math inline">\(|A| \geq 0\)</span>, it is indeed the case that <span class="math inline">\(\mathbb P(A) = |A|/|\Omega| \geq 0\)</span>.</li>
+<li>We have <span class="math inline">\({\displaystyle \mathbb P(\Omega) = \frac{|\Omega|}{|\Omega|} = 1}\)</span>, as required.</li>
+<li>Since we have a finite sample space, we only need to show Axiom 3 for a sequence of two disjoint events; the argument can be repeated to get any finite number of events. Let <span class="math inline">\(A = \{a_1, a_2, \dots, a_k\}\)</span> and <span class="math inline">\(B = \{b_1, b_2, \dots, b_l\}\)</span> be two disjoint events with <span class="math inline">\(|A| = k\)</span> and <span class="math inline">\(|B| = l\)</span>. Note that we can enumerate the elements of the disjoint union <span class="math inline">\(C = A \cup B\)</span> as
+<span class="math display">\[ c_1 = a_1, c_2 = a_2, \dots, c_k = a_k, c_{k+1} = b_1, c_{k+2} = b_2, \dots, c_{k+l} = b_l . \]</span>
+Since <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, this list has no repeats, and we see that <span class="math inline">\(|C| = |A \cup B| = k+l\)</span>. Hence
+<span class="math display">\[ \mathbb P(A \cup B) = \frac{k+l}{|\Omega|} = \frac{k}{|\Omega|} + \frac{l}{|\Omega|} = \mathbb P(A) + \mathbb P(B) , \]</span>
+and Axiom 3 is fulfilled.</li>
+</ol>
+</div>
+</div>
+<div id="multiplication" class="section level2 hasAnchor" number="5.2">
+<h2><span class="header-section-number">5.2</span> Multiplication principle<a href="L05-classical-i.html#multiplication" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/uvKMmlnr1oU"></iframe>
+:::
+::::
+-->
+<p>In classical probability, to find the probability of an event <span class="math inline">\(A\)</span>, we need to count the number of outcomes in <span class="math inline">\(A\)</span> and the total number of possible outcomes in <span class="math inline">\(\Omega\)</span>. This can be easy when we’re just looking at one choice – like the 2 outcomes from tossing a single coin, the 6 outcomes of rolling a single dice, or the 52 outcomes from dealing a single card. Now we’re going to look at what happens if there are a number of choices one after another – like tossing multiple coins, rolling more than one dice, or dealing a hand of cards.</p>
+<p>Here, an important principle is the <strong>multiplication principle</strong>. The multiplication principle says that if you have <span class="math inline">\(n\)</span> choices followed by <span class="math inline">\(m\)</span> choices, than all together you have <span class="math inline">\(n \times m\)</span> total choices. You can see this by imagining the choices in a <span class="math inline">\(n \times m\)</span> grid, with the <span class="math inline">\(n\)</span> columns representing the first choice and <span class="math inline">\(m\)</span> rows representing the second choice. For example, suppose you go to a burger restaurant where there are 3 choices of burger (beefburger, chicken burger, veggie burger) and 2 choices of sides (fries, salad), then altogether there are <span class="math inline">\(3 \times 2 = 6\)</span> choices of meal.</p>
 <table>
 <colgroup>
-<col width="9%" />
-<col width="47%" />
-<col width="43%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="center">Week</th>
-<th>Worksheet</th>
-<th align="center">Deadline for assessed work</th>
+<th align="center"></th>
+<th align="center">Beefburger</th>
+<th align="center">Chicken burger</th>
+<th align="center">Veggie burger</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">1</td>
-<td><a href="https://mpaldridge.github.io/math1710/R1.html"><strong>R basics</strong></a> (<a href="https://mpaldridge.github.io/math1710/R1-solutions.html">Solutions</a>)</td>
-<td align="center">—</td>
+<td align="center"><strong>Fries</strong></td>
+<td align="center">1: Beefburger with fries</td>
+<td align="center">2: Chicken burger with fries</td>
+<td align="center">3: Veggie burger with fries</td>
 </tr>
 <tr class="even">
-<td align="center">2</td>
-<td><a href="https://mpaldridge.github.io/math1710/R2.html"><strong>Vectors</strong></a></td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td>Data in R</td>
-<td align="center">Monday 24 October (Week 4)</td>
-</tr>
-<tr class="even">
-<td align="center">4</td>
-<td>Plots I: Making plots</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td>Plots II: Making plots better</td>
-<td align="center">Monday 7 November (Week 6)</td>
-</tr>
-<tr class="even">
-<td align="center">6</td>
-<td>RMarkdown (optional)</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">7</td>
-<td>Discrete distributions</td>
-<td align="center">Monday 21 November (Week 8)</td>
-</tr>
-<tr class="even">
-<td align="center">8</td>
-<td>Discrete random variables</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">9</td>
-<td>Normal distribution</td>
-<td align="center">Monday 5 December (Week 10)</td>
-</tr>
-<tr class="even">
-<td align="center">10</td>
-<td>Law of large numbers</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">11</td>
-<td>Recap</td>
-<td align="center">Thursday 15 December (Week 11)</td>
+<td align="center"><strong>Salad</strong></td>
+<td align="center">4: Beefburger with salad</td>
+<td align="center">5: Chicken burger with salad</td>
+<td align="center">6: Veggie burger with salad</td>
 </tr>
 </tbody>
 </table>
+<p>More generally, if you have <span class="math inline">\(m\)</span> stages of choosing, with <span class="math inline">\(n_1\)</span> choices in the first stage, then <span class="math inline">\(n_2\)</span> choices in the second stage, all the way to <span class="math inline">\(n_m\)</span> choices in the final stage, you have <span class="math inline">\(n_1 \times n_2 \times \cdots \times n_m\)</span> total choices altogether.</p>
 <!--
-|   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
-|   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
-|   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html) | --- |
-|   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html) | Monday 1 November |
-|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
-|   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]      |      Monday 15 November    |
-|   8  |  [**Discrete random variables**](https://mpaldridge.github.io/math1710/R8.html) [[Rmd](https://mpaldridge.github.io/math1710/R8.Rmd)] | --- |
-|   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) | Monday 29 November |
-|  10  |  ~~Law of large numbers~~     |             ---           |
-|  11  |   [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 16 December |
+::: {.example}
+*Two dice are rolled. What is the probability of getting a total score of 8?*
+
+Here, the sample space $\Omega$ is the set of all pairs of dice rolls
+\[ \Omega = \big\{ (1,1), (1, 2), (1, 2), \dots, (6,5), (6,6) \big\} . \]
+Note that all the outcomes are equally likely, so we have a classical probability problem.
+
+Because there are 6 possible values for the first dice and 6 possible values for the second dice, by the multiplication principle we have $|\Omega| = 6 \times 6 = 36$.
+
+Let $A$ be the event we roll a total of 8. We need to find $|A|$, the number of sample outcomes in $A$. We can find this simply by listing them all:
+\[ A = \big\{ (2,6), (3, 5), (4, 4), (5,3), (6,2) \big\} .\]
+We see that $|A| = 5$.
+
+Hence, the probability of getting a total of 8 is
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{5}{36} \approx 0.14 .\]
+:::
 -->
+<div class="example">
+<p><span id="exm:unlabeled-div-23" class="example"><strong>Example 5.2  </strong></span><em>Five fair coins are tossed. What is the probability they all show the same face?</em></p>
+<p>Here, the sample space <span class="math inline">\(\Omega\)</span> is the set of all sequences of 5 coin outcomes. How many sample outcomes are in <span class="math inline">\(\Omega\)</span>? Well, the first coin can be heads or tails (2 choices); the second coin can be heads or tails (2 choices) and so on, until the fifth and final coin. So, by the multiplication principle, <span class="math inline">\(|\Omega| = 2 \times 2 \times 2 \times 2 \times 2 = 2^5 = 32\)</span>.</p>
+<p>The event we’re interested in is <span class="math inline">\(A = \{\text{HHHHH}, \text{TTTTT}\}\)</span>, the event that the faces are all the same – either all heads or all tails. This clearly has <span class="math inline">\(|A| = 2\)</span> outcomes.</p>
+<p>So the probability all five coins show the same face is
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{2}{32} = \frac{1}{16} \approx 0.06. \]</span></p>
 </div>
-<div id="about-r" class="section level2 unnumbered hasAnchor">
-<h2>About R and RStudio<a href="R.html#about-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="example">
+<p><span id="exm:unlabeled-div-24" class="example"><strong>Example 5.3  </strong></span><em>Four dice are rolled. What is the probability we get at least one 6?</em></p>
+<p>Here, <span class="math inline">\(\Omega\)</span> is the set of all possible sequences of four dice rolls. Clearly <span class="math inline">\(|\Omega| = 6^4 = 1296\)</span>.</p>
+<p>The event <span class="math inline">\(A\)</span> is the set of all dice roll sequences with at least one 6. Whenever you see a question with the phrase “at least one” in it, it’s very often to look at the complementary event <span class="math inline">\(A^\mathsf{c}\)</span> instead. We know from the last section that <span class="math inline">\(\mathbb P(A) = 1 - \mathbb P(A^\mathsf{c})\)</span>, but in “at least one” questions, it’s often easier to count <span class="math inline">\(|A^\mathsf{c}|\)</span> than to count <span class="math inline">\(|A|\)</span>.</p>
+<p>Here, since <span class="math inline">\(A\)</span> is the set of all dice roll sequences with at least one 6, then <span class="math inline">\(A^\mathsf{c}\)</span> is the set of dice roll sequence without any 6s at all. This means all four dice must have rolled a 1, 2, 3, 4 or 5. Since each of the four dice rolls has five possibilities, this means that <span class="math inline">\(|A^\mathsf{c}| = 5^4 = 625\)</span>.</p>
+<p>Putting this together, we see that
+<span class="math display">\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{|A^\mathsf{c}|}{|\Omega|} = 1 - \frac{625}{1296} = \frac{671}{1296} \approx 0.518 .\]</span>
+So there’s about a 52% chance we get at least one 6.</p>
+</div>
+</div>
+<div id="sampling" class="section level2 hasAnchor" number="5.3">
+<h2><span class="header-section-number">5.3</span> Sampling with and without replacement<a href="L05-classical-i.html#sampling" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/EXqEcklxlj8"></iframe>
+:::
+::::
+-->
+<div class="example">
+<p><span id="exm:unlabeled-div-25" class="example"><strong>Example 5.4  </strong></span><em>A bag contains 15 balls: 10 black balls and 5 white balls. We draw 3 balls out of the bag. What is the probability all 3 balls are black <strong>(a)</strong> if we put each ball back into the bag after it is chosen; <strong>(b)</strong> if we do not put each ball back into the bag after it is chosen.</em></p>
+<p>Let’s start with (a). The number of ways to choose a ball out 15 on three occasions is <span class="math inline">\(|\Omega| = 15^3\)</span>. The number of ways to choose a black ball out of 10 on three occasions is <span class="math inline">\(|A| = 10^3\)</span>. Hence
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{10^3}{15^3} =  \frac{1000}{3375} = \frac{8}{27} \approx 0.30. \]</span></p>
+<p>What about (b)? Here we don’t put the ball back in the bag once it has been chosen. There are 15 ways to pick the first ball. But then there are only 14 balls left in the bag for the second choice, and only 13 balls for the third choice. So <span class="math inline">\(|\Omega| = 15\times14\times13\)</span>. Similarly, there are 10 ways the first ball can be black. But once that black ball is removed, only 9 choices for the second black ball, and only 8 for the third. So <span class="math inline">\(|A| = 10\times9\times8\)</span>. So this time we have
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{10\times9\times8}{15\times14\times13} =  \frac{720}{2730} = \frac{24}{91} \approx 0.26, \]</span>
+which is smaller than the answer in part (a).</p>
+</div>
+<p>This example illustrated the difference between <strong>sampling with replacement</strong> (when the balls were put back into the bag) and <strong>sampling without replacement</strong> (when the balls were not put back). If we want to sample <span class="math inline">\(k\)</span> items from a set of <span class="math inline">\(n\)</span> items, then:</p>
 <ul>
-<li><strong>R</strong> is a <em>programming language</em> that is particularly useful for working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.</li>
-<li><strong>RStudio</strong> is a <em>program</em> that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.</li>
+<li>the number of ways to sample with replacement is
+<span class="math display">\[ n^k = n\times n\times\cdots\times n;  \]</span></li>
+<li>the number of ways to sample without replacement is
+<span class="math display">\[ {n}^{\underline{k}} = n\times(n-1)\times \cdots\times (n-k+1) .\]</span></li>
 </ul>
-<p>R and RStudio are free/open-source software.</p>
+<p>Here, we’ve defined the notation <span class="math inline">\({n}^{\underline{k}}\)</span> for the number of ways to sample without replacement; this is called the <strong>falling factorial</strong> or <strong>permutation number</strong>. This is still <span class="math inline">\(k\)</span> numbers multiplied together, but decreasing by 1 each time down from <span class="math inline">\(n\)</span>. (Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes <span class="math inline">\((n)_k\)</span>, <span class="math inline">\(P(n,k)\)</span>, or <span class="math inline">\({}^nP_k\)</span>.)</p>
 </div>
-<div id="r-access" class="section level2 unnumbered hasAnchor">
-<h2>How to access R and RStudio<a href="R.html#r-access" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are a few ways you can access R and RStudio.</p>
-<p>First, you can <strong>install R and RStudio on your own computer</strong>. Students who have their own computer (with administration and installation rights) usually find this the most convenient way use R.</p>
-<p>When you install R and RStudio, it’s important that you install R (the programming language) first, and only install RStudio (the program to use R) after R has already been installed. This ensures that RStudio can “find” R on your computer.</p>
-<ol style="list-style-type: decimal">
-<li><p><em>First</em>, install R. Go to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a> and follow the instructions:</p>
+<div id="summary-L05" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L05-classical-i.html#summary-L05" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
 <ul>
-<li>Windows: Click <a href="https://cran.r-project.org/bin/windows/">“Download R for Windows”</a>, then <a href="https://cran.r-project.org/bin/windows/base/">“Install R for the first time”</a>. The main link at the top should be to download the most recent version of R.</li>
-<li>Mac: Click <a href="https://cran.r-project.org/bin/macosx/">Download R for macOS</a>, and then download the relevant PKG file. (For typically older Intel-based Macbooks, you must use the “Intel 64-bit build”; for post-November 2020 M1 or M2-based “Apple silicon” Macbooks, the “Apple silicon arm64 build” may be slightly faster.)</li>
-</ul></li>
-<li><p><em>After</em> R is installed, <em>then</em> install RStudio. Go to <a href="https://www.rstudio.com/products/rstudio/download/#download">the Download page at RStudio.com</a> and follow the instructions. You want “RStudio Desktop”, and you want the free version.</p></li>
-</ol>
-<p>If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it’s sufficiently portable), and we’ll do our best to help.</p>
-<p>Second, you can <strong>use R and RStudio on University computers</strong>. All University computers have access to R and RStudio, via the AppsAnywhere service. Again, you should first install R (which, at the time of writing, is confusingly included under the name “CRAN R”) via AppsAnywhere, and then install RStudio via AppsAnywhere.</p>
-<p>The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.</p>
-<p>Third, you can <strong>use the <a href="https://rstudio.cloud/">RStudio Cloud</a></strong>. The RStudio Cloud is a cloud-hosted “Google Docs for R” that you can use through your web browser, without having to install anything. You can get 25 hours per month for free, which should be plenty for this module, or pay for more.</p>
-<p>If you have access to a computer on which you can’t install software, such as some Chromebooks or tablet computers, or if you’re borrowing a friend’s laptop, the RStudio Cloud can be a convenient solution.</p>
+<li>“Classical probability” describes the situation where there are finitely many equally likely outcomes. The classical probability <span class="math inline">\(\mathbb P(A) = |A|/|\Omega|\)</span> requires us to count how many outcomes there are in events or sample spaces.</li>
+<li>The multiplication principle says that <span class="math inline">\(n\)</span> choices followed by <span class="math inline">\(m\)</span> choices makes <span class="math inline">\(n \times m\)</span> choices in total.</li>
+<li>Sampling <span class="math inline">\(k\)</span> objects out of <span class="math inline">\(n\)</span> with replacement gives <span class="math inline">\(n^k\)</span> choices.</li>
+<li>Sampling <span class="math inline">\(k\)</span> objects out of <span class="math inline">\(n\)</span> without replacement gives <span class="math inline">\(n^{\underline{k}} = n(n-1)\dots(n-k+1)\)</span> choices.</li>
+</ul>
 </div>
-<div id="troubleshooting" class="section level2 unnumbered hasAnchor">
-<h2>R troubleshooting drop-in sessions<a href="R.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.</p>
-<p>However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional R troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details – they are probably listed as “computer practicals”.</p>
 
 </div>
 </div>
@@ -376,8 +411,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="P2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L04-probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L06-classical-ii.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

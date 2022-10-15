@@ -76,8 +76,6 @@ There are other equivalent formulations.
 :::
 ::::
 
-<!--\[\newcommand{\ff}[2]{{#1}^{\underline{#2}}}
-  \newcommand{\comp}{\mathsf{c}} \] -->
 
 :::: {.subq}
 **(b)** $8^4$

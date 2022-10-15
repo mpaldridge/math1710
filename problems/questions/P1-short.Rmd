@@ -117,9 +117,9 @@ frequency densities.
 :::::
 
 :::: {.myq}
-**3.** Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
+**A3.** Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-```{r two-boxplots, echo = FALSE, fig.width=5}
+```{r, echo = FALSE, fig.width=5}
 set.seed(6)
 x <- rnorm(80, 10, 2)
 y <- 8 + rexp(80,0.4)
