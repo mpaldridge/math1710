@@ -118,6 +118,12 @@ p {
   text-indent: 20px;
 }
 
+p.author, p.date {
+  padding-top: 0 !important;
+  margin-top: -10px !important;
+  text-indent: 0;
+}
+
 ul, ol {
   margin-top: -10px !important;
   margin-bottom: 20px !important;
@@ -152,6 +158,15 @@ h1 + p, h2 + p, h3 + p, h4 + p, .mysummary + p, .mysched + p, .oldsched + p {
 
 .book .book-body .page-wrapper .page-inner section.normal h1 {
     font-size:1.85em
+}
+
+.book .book-body .page-wrapper .page-inner section.normal h1.title {
+    font-size:2.4em;
+    margin-bottom: 18px !important;
+}
+
+p.author, p.date {
+    font-size: 1.15em;
 }
 
 .book .book-body .page-wrapper .page-inner section.normal h2 {
@@ -280,3 +295,27 @@ ul.summary ul li {
 .book.color-theme-2 .book-summary ul.summary li a:hover {
   font-weight: normal;
 }
+
+
+
+.book .book-header h1
+  {
+    margin:0;
+    font-size:18px;
+    font-weight:400;
+    text-align:center;
+    line-height:50px;
+    opacity:1;
+    padding-left:200px;
+    padding-right:200px;
+  }
+  
+.book .book-header
+  {
+    overflow:visible;
+    height:50px;
+    padding:0 8px;
+    z-index:2;
+    font-size:.85em;
+    color:#ccc;
+    background:0 0}
