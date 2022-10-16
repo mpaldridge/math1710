@@ -57,7 +57,7 @@ When you install R and RStudio, it's important that you install R (the programmi
 
 If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it's sufficiently portable), and we'll do our best to help.
 
-Second, you can **use R and RStudio on University computers**. All University computers have access to R and RStudio, via the AppsAnywhere service. Again, you should first install R (which, at the time of writing, is confusingly included under the name "CRAN R") via AppsAnywhere, and then install RStudio via AppsAnywhere.
+Second, you can **use R and RStudio on University computers**. All University computers have access to R and RStudio, via the AppsAnywhere service. *First*, launch R via AppsAnywhere (at the time of writing, it's confusingly named "Cran R 4.2.0 x64"). You can then close the program that opens. *Then* launch RStudio ("Rstudio 2022"), also via AppsAnywhere.
 
 The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.
 
@@ -65,6 +65,7 @@ Third, you can **use the [RStudio Cloud](https://rstudio.cloud/)**. The RStudio 
 
 If you have access to a computer on which you can't install software, such as some Chromebooks or tablet computers, or if you're borrowing a friend's laptop, the RStudio Cloud can be a convenient solution. 
 
+*Update:* If you have an Intel-based Chromebook, then we have had success installing R and RStudio using [these instructions](https://levente.littvay.hu/chromebook/).
 
 
 
