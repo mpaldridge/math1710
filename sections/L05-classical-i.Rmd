@@ -149,7 +149,7 @@ This example illustrated the difference between **sampling with replacement** (w
 * the number of ways to sample without replacement is
 \[ \ff{n}{k} = n\times(n-1)\times \cdots\times (n-k+1) .\]
 
-Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. This is still $k$ numbers multiplied together, but decreasing by 1 each time down from $n$. (Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes $(n)_k$, $P(n,k)$, or ${}^nP_k$.)
+Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. This is still $k$ numbers multiplied together, but decreasing by 1 each time down from $n$. The final number in the product is the number of choices in the $k$th an final round: this is the original $n$ items minus the $k-1$ items sampled in the previous $k-1$ rounds; so the final number is $n - (k-1) = n - k + 1$, not $n - k$. A notation point: Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes $(n)_k$, $P(n,k)$, or ${}^nP_k$.
 
 
 ## Summary  {#summary-L05 .unnumbered}

@@ -154,7 +154,7 @@
 
 \newcommand{\Var}{\operatorname{Var}}
 
-\textbf{Week 3} (18--22 October):
+\textbf{Week 3} (17--21 October):
 
 \begin{itemize}
 \tightlist
@@ -1890,7 +1890,7 @@ This example illustrated the difference between \textbf{sampling with replacemen
   \[ {n}^{\underline{k}} = n\times(n-1)\times \cdots\times (n-k+1) .\]
 \end{itemize}
 
-Here, we've defined the notation \({n}^{\underline{k}}\) for the number of ways to sample without replacement; this is called the \textbf{falling factorial} or \textbf{permutation number}. This is still \(k\) numbers multiplied together, but decreasing by 1 each time down from \(n\). (Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes \((n)_k\), \(P(n,k)\), or \({}^nP_k\).)
+Here, we've defined the notation \({n}^{\underline{k}}\) for the number of ways to sample without replacement; this is called the \textbf{falling factorial} or \textbf{permutation number}. This is still \(k\) numbers multiplied together, but decreasing by 1 each time down from \(n\). The final number in the product is the number of choices in the \(k\)th an final round: this is the original \(n\) items minus the \(k-1\) items sampled in the previous \(k-1\) rounds; so the final number is \(n - (k-1) = n - k + 1\), not \(n - k\). A notation point: Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes \((n)_k\), \(P(n,k)\), or \({}^nP_k\).
 
 \hypertarget{summary-L05}{%
 \section*{Summary}\label{summary-L05}}
@@ -1953,18 +1953,18 @@ while Stirling's formula gives the approximation
 \[ 52! \approx \sqrt{2\pi \times 52} \times \mathrm{e}^{-52} \times 52^{52} = 8.05 \times 10^{67} . \]
 This is an 8 followed by 67 zeroes.
 
-If every person on the planet had shuffled a deck of cards one million times a second for the entire lifetime of the universe, they could only expect to have got through about \(10^{33}\) shuffles.
+If every person on the planet (very roughly \(10^{10}\)) had shuffled a deck of cards one million (\(10^6\)) times a second for the entire lifetime of the universe (roughly \(10^{17}\) seconds), they could only expect to have got through about \(10^{33}\) shuffles.
 This is only the most tiny, microscopic fraction of \(52!\). So every time you have ever shuffled a deck of cards, it is essentially certain that you have created an ordering of the deck that has never existed before.
 \end{example}
 
-It can sometimes be useful to write the falling factorial \({n}^{\underline{k}}\) in terms of the factorial, like this:
+If we take the ratio of a bigger factorial \(n!\) over a smaller factorial \(j!\), we get lot of cancellation,
 \begin{align*}
-{n}^{\underline{k}} &= n(n-1)\cdots(n-k+1) \\
-  &= n(n-1)\cdots(n-k+1)\times\frac{(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
-  &= \frac{n(n-1)\cdots(n-k+1)(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
-  &= \frac{n!}{(n-k)!},
+\frac{n!}{j!} &= \frac{n(n-1) \cdots(j+1)j(j-1) \cdots 1}{j(j-1) \cdots 1} \\
+  &= n(n-1) \cdots (j+1) ,
 \end{align*}
-where the numbers from \(n-k\) down to 1 cancel out.
+because the last part of the product in the numerator cancels with the whole of the denominator. Replacing \(j\) with \(n-k\), this gives
+\[ \frac{n!}{(n-k)!} = n(n-1) \cdots (n - k + 1) = {n}^{\underline{k}} . \]
+This gives a way of writing the falling factorial as the ratio of two (normal) factorials, which can sometimes be useful.
 
 \hypertarget{combinations}{%
 \section{Sampling without replacement in any order}\label{combinations}}
@@ -1981,7 +1981,7 @@ But this isn't the correct answer, because the same set of balls could be drawn 
 \[ \binom{59}{6} = \frac{{59}^{\underline{6}}}{6!} = \frac{59 \times 58 \times 57 \times 56 \times 55 \times 54}{6\times5\times4\times3\times2\times1} \approx 45 \text{ million} . \]
 
 Thus the probability that your ticket wins the jackpot is
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{\binom{59}{6}} \approx \frac{1}{45 \text{ million}} \approx 0.00000002 . \]
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{\binom{59}{6}} \approx \frac{1}{45 \text{ million}} \approx 0.000\,000\,02 . \]
 \end{example}
 
 Here, we have introduced the notation
@@ -2022,11 +2022,11 @@ or about 1 in every 380 hands.
 
 \emph{There are \(k = 23\) students in a class. What is the probability that at least two of the students share a birthday?}
 
-This a famous problem, known as the ``birthday problem''. You may have seen this problem before. But let's try to solve it using the techniques from this section of notes. (We'll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)
+This a famous problem, known as the ``birthday problem''. You may have seen this problem before -- but let's try to solve it using the techniques from this section of notes. If you haven't seen it before, you might like to guess what you think the answer might be. (We'll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)
 
-The sample space \(|\Omega|\) is the set of possible birthdays for the \(k\) students. Clearly \(|\Omega| = 365^k\).
+The sample space \(\Omega\) is the set of possible birthdays for the \(k\) students. Clearly \(|\Omega| = 365^k\).
 
-Let \(A\) be the even that at least two students share a birthday. Since this is an ``at least'' event, it seems like it might be a good idea to look instead at the complement event \(A^\mathsf{c}\) instead. If \(A\) is the event that there's at least one shared birthday, then \(A^\mathsf{c}\) is the event that there are \emph{no} shared birthdays; that is, \(A^\mathsf{c}\) is the event that all \(k\) students have \emph{different} birthdays.
+Let \(A\) be the even that at least two students share a birthday. Since this is an ``at least'' event, it seems like it might be a good idea to look instead at the complementary event \(A^\mathsf{c}\). If \(A\) is the event that there's at least one shared birthday, then \(A^\mathsf{c}\) is the event that there are \emph{no} shared birthdays; that is, \(A^\mathsf{c}\) is the event that all \(k\) students have \emph{different} birthdays.
 
 So what is \(|A^\mathsf{c}|\), the number of ways the \(k\) students can have different birthdays? Well, the first student can have any of the 365 days for their birthday. For them to have different birthdays, the second student only has 364 days available. Then the third student must avoid the birthday of students 1 and 2, so has 363 available days, and so on. We see that
 \[ |A^\mathsf{c}| = 365 \times 364 \times \cdots \times (365 - k + 1) = 365^{\underline{k}} . \]
@@ -2500,7 +2500,7 @@ Third, you can \textbf{use the \href{https://rstudio.cloud/}{RStudio Cloud}}. Th
 
 If you have access to a computer on which you can't install software, such as some Chromebooks or tablet computers, or if you're borrowing a friend's laptop, the RStudio Cloud can be a convenient solution.
 
-\emph{Update:} If you have an Intel-based Chromebook, then we have had success installing R and RStudio using \href{https://levente.littvay.hu/chromebook/}{these instructions}.
+\emph{Update:} If you have an Intel-based Chromebook, then we have had success installing R and RStudio using \href{https://levente.littvay.hu/chromebook/}{these (rather complicated) instructions}, although you may still find it more convenient just to use the RStudio Cloud.
 
 \hypertarget{troubleshooting}{%
 \section*{R troubleshooting drop-in sessions}\label{troubleshooting}}

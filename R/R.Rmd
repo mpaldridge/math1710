@@ -65,7 +65,7 @@ Third, you can **use the [RStudio Cloud](https://rstudio.cloud/)**. The RStudio 
 
 If you have access to a computer on which you can't install software, such as some Chromebooks or tablet computers, or if you're borrowing a friend's laptop, the RStudio Cloud can be a convenient solution. 
 
-*Update:* If you have an Intel-based Chromebook, then we have had success installing R and RStudio using [these instructions](https://levente.littvay.hu/chromebook/).
+*Update:* If you have an Intel-based Chromebook, then we have had success installing R and RStudio using [these (rather complicated) instructions](https://levente.littvay.hu/chromebook/), although you may still find it more convenient just to use the RStudio Cloud.
 
 
 

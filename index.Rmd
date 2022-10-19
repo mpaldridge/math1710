@@ -93,7 +93,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 -->
 
 ::: {.oldsched}
-**Week 3** (18--22 October):
+**Week 3** (17--21 October):
 
 * [**Lecture 5:** Classical probability I](#L05-classical-i) (Monday 17 October)
 * [**Lecture 6:** Classical probability II](#L05-classical-ii) (Wednesday 19 October)

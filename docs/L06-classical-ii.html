@@ -285,17 +285,27 @@ is called <strong><span class="math inline">\(n\)</span> factorial</strong> and 
 while Stirling’s formula gives the approximation
 <span class="math display">\[ 52! \approx \sqrt{2\pi \times 52} \times \mathrm{e}^{-52} \times 52^{52} = 8.05 \times 10^{67} . \]</span>
 This is an 8 followed by 67 zeroes.</p>
-<p>If every person on the planet had shuffled a deck of cards one million times a second for the entire lifetime of the universe, they could only expect to have got through about <span class="math inline">\(10^{33}\)</span> shuffles.
+<p>If every person on the planet (very roughly <span class="math inline">\(10^{10}\)</span>) had shuffled a deck of cards one million (<span class="math inline">\(10^6\)</span>) times a second for the entire lifetime of the universe (roughly <span class="math inline">\(10^{17}\)</span> seconds), they could only expect to have got through about <span class="math inline">\(10^{33}\)</span> shuffles.
 This is only the most tiny, microscopic fraction of <span class="math inline">\(52!\)</span>. So every time you have ever shuffled a deck of cards, it is essentially certain that you have created an ordering of the deck that has never existed before.</p>
 </div>
-<p>It can sometimes be useful to write the falling factorial <span class="math inline">\({n}^{\underline{k}}\)</span> in terms of the factorial, like this:
+<p>If we take the ratio of a bigger factorial <span class="math inline">\(n!\)</span> over a smaller factorial <span class="math inline">\(j!\)</span>, we get lot of cancellation,
 <span class="math display">\[\begin{align*}
-{n}^{\underline{k}} &amp;= n(n-1)\cdots(n-k+1) \\
-  &amp;= n(n-1)\cdots(n-k+1)\times\frac{(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
-  &amp;= \frac{n(n-1)\cdots(n-k+1)(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
-  &amp;= \frac{n!}{(n-k)!},
+\frac{n!}{j!} &amp;= \frac{n(n-1) \cdots(j+1)j(j-1) \cdots 1}{j(j-1) \cdots 1} \\
+  &amp;= n(n-1) \cdots (j+1) ,
 \end{align*}\]</span>
-where the numbers from <span class="math inline">\(n-k\)</span> down to 1 cancel out.</p>
+because the last part of the product in the numerator cancels with the whole of the denominator. Replacing <span class="math inline">\(j\)</span> with <span class="math inline">\(n-k\)</span>, this gives
+<span class="math display">\[ \frac{n!}{(n-k)!} = n(n-1) \cdots (n - k + 1) = {n}^{\underline{k}} . \]</span>
+This gives a way of writing the falling factorial as the ratio of two (normal) factorials, which can sometimes be useful.</p>
+<!--
+It can sometimes be useful to write the falling factorial $\ff nk$ in terms of the factorial, like this:
+\begin{align*}
+\ff nk &= n(n-1)\cdots(n-k+1) \\
+  &= n(n-1)\cdots(n-k+1)\times\frac{(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
+  &= \frac{n(n-1)\cdots(n-k+1)(n-k)(n-k-1)\cdots2\cdot1}{(n-k)(n-k-1)\cdots2\cdot1} \\
+  &= \frac{n!}{(n-k)!},
+\end{align*}
+where the numbers from $n-k$ down to 1 cancel out.
+-->
 </div>
 <div id="combinations" class="section level2 hasAnchor" number="6.2">
 <h2><span class="header-section-number">6.2</span> Sampling without replacement in any order<a href="L06-classical-ii.html#combinations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -314,7 +324,7 @@ where the numbers from <span class="math inline">\(n-k\)</span> down to 1 cancel
 <p>But this isn’t the correct answer, because the same set of balls could be drawn from the machine in any order! The sets of balls <span class="math inline">\(\{1,2,3,4,5,6\}\)</span> and <span class="math inline">\(\{1,2,3,4,6,5\}\)</span> and <span class="math inline">\(\{6,5,4,3,2,1\}\)</span> are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 balls, which we know is <span class="math inline">\(6!\)</span>. So the number of possible sets of 6 balls to come out of the machine is actually
 <span class="math display">\[ \binom{59}{6} = \frac{{59}^{\underline{6}}}{6!} = \frac{59 \times 58 \times 57 \times 56 \times 55 \times 54}{6\times5\times4\times3\times2\times1} \approx 45 \text{ million} . \]</span></p>
 <p>Thus the probability that your ticket wins the jackpot is
-<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{\binom{59}{6}} \approx \frac{1}{45 \text{ million}} \approx 0.00000002 . \]</span></p>
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{\binom{59}{6}} \approx \frac{1}{45 \text{ million}} \approx 0.000\,000\,02 . \]</span></p>
 </div>
 <p>Here, we have introduced the notation
 <span class="math display">\[ \binom{n}{k} = \frac{{n}^{\underline{k}}}{k!} = \frac{n(n-1) \cdots (n-k+1)}{k(k-1)\cdots2\cdot1}  \]</span>
@@ -380,9 +390,9 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 ::::
 -->
 <p><em>There are <span class="math inline">\(k = 23\)</span> students in a class. What is the probability that at least two of the students share a birthday?</em></p>
-<p>This a famous problem, known as the “birthday problem”. You may have seen this problem before. But let’s try to solve it using the techniques from this section of notes. (We’ll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)</p>
-<p>The sample space <span class="math inline">\(|\Omega|\)</span> is the set of possible birthdays for the <span class="math inline">\(k\)</span> students. Clearly <span class="math inline">\(|\Omega| = 365^k\)</span>.</p>
-<p>Let <span class="math inline">\(A\)</span> be the even that at least two students share a birthday. Since this is an “at least” event, it seems like it might be a good idea to look instead at the complement event <span class="math inline">\(A^\mathsf{c}\)</span> instead. If <span class="math inline">\(A\)</span> is the event that there’s at least one shared birthday, then <span class="math inline">\(A^\mathsf{c}\)</span> is the event that there are <em>no</em> shared birthdays; that is, <span class="math inline">\(A^\mathsf{c}\)</span> is the event that all <span class="math inline">\(k\)</span> students have <em>different</em> birthdays.</p>
+<p>This a famous problem, known as the “birthday problem”. You may have seen this problem before – but let’s try to solve it using the techniques from this section of notes. If you haven’t seen it before, you might like to guess what you think the answer might be. (We’ll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)</p>
+<p>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible birthdays for the <span class="math inline">\(k\)</span> students. Clearly <span class="math inline">\(|\Omega| = 365^k\)</span>.</p>
+<p>Let <span class="math inline">\(A\)</span> be the even that at least two students share a birthday. Since this is an “at least” event, it seems like it might be a good idea to look instead at the complementary event <span class="math inline">\(A^\mathsf{c}\)</span>. If <span class="math inline">\(A\)</span> is the event that there’s at least one shared birthday, then <span class="math inline">\(A^\mathsf{c}\)</span> is the event that there are <em>no</em> shared birthdays; that is, <span class="math inline">\(A^\mathsf{c}\)</span> is the event that all <span class="math inline">\(k\)</span> students have <em>different</em> birthdays.</p>
 <p>So what is <span class="math inline">\(|A^\mathsf{c}|\)</span>, the number of ways the <span class="math inline">\(k\)</span> students can have different birthdays? Well, the first student can have any of the 365 days for their birthday. For them to have different birthdays, the second student only has 364 days available. Then the third student must avoid the birthday of students 1 and 2, so has 363 available days, and so on. We see that
 <span class="math display">\[ |A^\mathsf{c}| = 365 \times 364 \times \cdots \times (365 - k + 1) = 365^{\underline{k}} . \]</span></p>
 <p>Hence, the probability at least two students share a birthday is
