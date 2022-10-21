@@ -400,7 +400,7 @@ since <span class="math inline">\((C \cap D) \cap (C \cap E) = C \cap D \cap E\)
 <span class="math display">\[\begin{align*}
   \mathbb P(C &amp;\cup D \cup E) \\
   &amp;= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
-  &amp;= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
+  &amp;= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) ,
 \end{align*}\]</span>
 which is what we wanted.</p>
 </div>
@@ -432,7 +432,7 @@ just a tiny bit smaller than <span class="math inline">\(\frac{1}{5}\)</span>.</
 <p><strong>(a)</strong> Ashley and Brook sit next to each other, with Chris directly opposite Brook;</p>
 <div class="myanswers">
 <p><em>Solution.</em>
-Let <span class="math inline">\(\Omega\)</span> be the number of ways the friends can sit around the table. This is an ordering problem, so <span class="math inline">\(\Omega = 8!\)</span>.</p>
+Let <span class="math inline">\(\Omega\)</span> be the sample space of ways the friends can sit around the table. This is an ordering problem, so <span class="math inline">\(|\Omega| = 8!\)</span>.</p>
 <p>Let <span class="math inline">\(A\)</span> be the event in the question. What is <span class="math inline">\(|A|\)</span>? Well,</p>
 <ul>
 <li>Ashley can sit anywhere, so has 8 choices of seat.</li>
@@ -454,8 +454,8 @@ The sample space <span class="math inline">\(\Omega\)</span> is as before. Let�
 <li>Chris’s number of choices will depend on where Brook sits, so we’ll have to count their choices together.
 <ul>
 <li>Brook cannot sit next to Ashley.</li>
-<li>If Brook sits next-but-one to Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.</li>
-<li>If Brook does sits neither next nor next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.</li>
+<li>If Brook sits next-but-one to Ashley – of which there are 2 choices – then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side, leaving <span class="math inline">\(6-3=3\)</span> choices.</li>
+<li>If Brook sits neither next nor next-but-one to Ashley – of which there are 3 choices – then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook, leaving <span class="math inline">\(6-4=2\)</span> choices.</li>
 </ul></li>
 <li>The remaining friends have 5, 4, 3, 2, and 1 choices again.</li>
 </ul>
@@ -473,16 +473,26 @@ The sample space <span class="math inline">\(\Omega\)</span> is as before. Let�
 <div class="subq">
 <p><strong>(a)</strong> For <span class="math inline">\(k = 0, 1, \dots, 9\)</span>, let <span class="math inline">\(A_k\)</span> be the event that all the digits are <span class="math inline">\(k\)</span> or smaller. What is the probability of <span class="math inline">\(A_k\)</span>, as a function of <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span>?</p>
 <div class="myanswers">
-<p><em>Hint.</em>
-What’s the sample space? Can you explain why <span class="math inline">\(|\Omega| = 10^n\)</span>? What about <span class="math inline">\(|A_k\)</span>|?</p>
+<p><em>Solution.</em>
+The sample space is <span class="math inline">\(\Omega = \{0,1,\dots,9\}^n\)</span>, the set of length-<span class="math inline">\(n\)</span> sequences of digits between <span class="math inline">\(0\)</span> and <span class="math inline">\(9\)</span>. The number of these is <span class="math inline">\(|\Omega| = 10^n\)</span>.</p>
+<p>The event <span class="math inline">\(A_k\)</span> is <span class="math inline">\(\{0,1,\dots,k\}^n\)</span>, the set of length-<span class="math inline">\(n\)</span> sequences of digits that are between <span class="math inline">\(0\)</span> and <span class="math inline">\(k\)</span>. The number of these is <span class="math inline">\(|A_k| = (k+1)^n\)</span>. (Note that it’s <span class="math inline">\(k+1\)</span> because we’re allowing 0 as well.)</p>
+<p>Hence, the probability is
+<span class="math display">\[ \mathbb P(A_k) = \frac{|A_k|}{|\Omega|} = \frac{(k+1)^n}{10^n} . \]</span></p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Let <span class="math inline">\(B_k\)</span> be the event that the largest digit chosen is equal to <span class="math inline">\(k\)</span>. By finding a relationship between <span class="math inline">\(B_k\)</span>, <span class="math inline">\(A_{k-1}\)</span> and <span class="math inline">\(A_k\)</span>, or otherwise, show that
 <span class="math display">\[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]</span></p>
 <div class="myanswers">
-<p><em>Hint.</em>
-Can you find a relationship linking <span class="math inline">\(A_{k-1}\)</span>, <span class="math inline">\(A_k\)</span>, and <span class="math inline">\(B_k\)</span>?</p>
+<p><em>Solution.</em>
+Consider the event <span class="math inline">\(A_k\)</span> that all the digits are at most <span class="math inline">\(k\)</span>. Within <span class="math inline">\(A_k\)</span>, <em>either</em> one of the digits is <span class="math inline">\(k\)</span>, in which case we are in <span class="math inline">\(B_k\)</span>, <em>or</em> none of the digits are <span class="math inline">\(k\)</span>, in which case they are all at most <span class="math inline">\(k-1\)</span>, and we are in <span class="math inline">\(A_{k-1}\)</span>, <em>but not both</em>. Hence we have a disjoint union
+<span class="math display">\[ A_k = B_k \cup A_{k-1} . \]</span>
+Applying Axiom 3 gives
+<span class="math display">\[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]</span>
+Rearranging this gives
+<span class="math display">\[ \mathbb P(B_k) = \mathbb P(A_k) - \mathbb P(A_{k-1}) . \]</span>
+Substituting in the answer from part (a) gives
+<span class="math display">\[\mathbb P(B_k) = \frac{(k+1)^n}{10^n} - \frac{(k-1+1)^n}{10^n} = \frac{(k+1)^n - k^n}{10^n} . \]</span></p>
 </div>
 </div>
 </div>
@@ -592,26 +602,33 @@ Try the sample space with five-equally likely outcomes again. How small can you 
 <div class="subq">
 <p><strong>(a)</strong> If <span class="math inline">\(\mathbb P(A) \leq \mathbb P(B)\)</span>, then <span class="math inline">\(A \subset B\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em> False. It is true that <em>if</em> <span class="math inline">\(A \subset B\)</span> <em>then</em> <span class="math inline">\(\mathbb P(A) \leq \mathbb P(B)\)</span>, but here the implication is the wrong way around.</p>
-<p>For a counterexample, consider rolling a dice, and let <span class="math inline">\(A = \{1\}\)</span> and <span class="math inline">\(B = \{2,3\}\)</span>. Then <span class="math inline">\(\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)\)</span>, but it’s not true that <span class="math inline">\(A \subset B\)</span>.</p>
+<p><em>Hint.</em> Try to find a counterexample. Make sure you’re paying attention to the direction of implication (the other direction is true).
+<!--
+*Solution.* False. It is true that *if* $A \subset B$ *then* $\mathbb P(A) \leq \mathbb P(B)$, but here the implication is the wrong way around.
+
+For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,3\}$. Then $\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)$, but it's not true that $A \subset B$.--></p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> <span class="math inline">\(\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em> True. Note that <span class="math inline">\((A \cap B) \cup (A \cap B^{\mathsf{c}}) = A\)</span> and that the union is disjoint. (Try drawing a Venn diagram, if this isn’t obvious.) The result follows from applying Axiom 3.</p>
+<p><em>Hint.</em> Is there a relevant disjoint union here?
+<!--
+*Solution.* True. Note that $(A \cap B) \cup (A \cap B^{\mathsf{c}}) = A$ and that the union is disjoint. (Try drawing a Venn diagram, if this isn't obvious.) The result follows from applying Axiom 3.--></p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> <span class="math inline">\(\mathbb P(A \cup B) \leq \mathbb P(A)\)</span></p>
 <div class="myanswers">
-<p><em>Solution.</em> False. The same <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.</p>
+<p><em>Hint.</em> You’d expect the inequality to be the other way round – so it should be possible to find a counterexample. <!--
+*Solution.* False. The same $A$ and $B$ as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection. --></p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(d)</strong> If <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are disjoint, then <span class="math inline">\(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em> True. From the complement rule, we have <span class="math inline">\(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)\)</span>; then from the addition rule for disjoint unions we have <span class="math inline">\(\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)\)</span>. Putting these together gives the result.</p>
+<p><em>Hint.</em> Can you use the complement rule to start off with? <!--
+*Solution.* True. From the complement rule, we have $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)$; then from the addition rule for disjoint unions we have $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)$. Putting these together gives the result.--></p>
 </div>
 </div>
 </div>
@@ -619,9 +636,16 @@ Try the sample space with five-equally likely outcomes again. How small can you 
 <p><strong>C2.</strong> An urn contains 15 balls: 4 red balls, 5 blue balls, and 6 green balls.</p>
 <div class="subq">
 <p><strong>(a)</strong> If three balls are drawn <em>with</em> replacement, what is the probability that all three balls are the <em>same</em> colour?</p>
+<div class="myanswers">
+<p><em>Hint.</em> If <span class="math inline">\(A\)</span> is the event all three balls are the same colour, then we have a disjoint union <span class="math inline">\(A = A_{\text{red}} \cup A_{\text{blue}} \cup A_{\text{green}}\)</span>, where <span class="math inline">\(A_{\text{red}}\)</span> is the event all three balls are red, and so on.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> If three balls are drawn <em>without</em> replacement, what is the probability that all three balls are <em>different</em> colours?</p>
+<div class="myanswers">
+<p><em>Hint.</em> One way to do this is to look at the ordered collection of balls, and look at all <span class="math inline">\(3!\)</span> possible orderings red-blue-green, red-green-blue, etc.</p>
+<p>Another way is to look at the unordered collection, so the denominator is <span class="math inline">\(\binom{15}{3}\)</span>.</p>
+</div>
 </div>
 </div>
 </div>

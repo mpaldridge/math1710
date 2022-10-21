@@ -65,7 +65,7 @@ Finally, we put this all together, and get
 \begin{align*}
   \mathbb P(C &\cup D \cup E) \\
   &= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
-  &= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) . 
+  &= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) , 
 \end{align*}
 which is what we wanted.
 :::
@@ -109,7 +109,7 @@ Here, $A \cap B$ is the numbers divisible by both 5 and 7, which is precisely th
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-Let $\Omega$ be the number of ways the friends can sit around the table. This is an ordering problem, so $\Omega = 8!$.
+Let $\Omega$ be the sample space of ways the friends can sit around the table. This is an ordering problem, so $|\Omega| = 8!$.
 
 Let $A$ be the event in the question. What is $|A|$? Well,
 
@@ -133,8 +133,8 @@ The sample space $\Omega$ is as before. Let's count the outcomes in $B$, the eve
 * Ashley can sit anywhere, so has 8 choices of seat.
 * Chris's number of choices will depend on where Brook sits, so we'll have to count their choices together.
    * Brook cannot sit next to Ashley.
-   * If Brook sits next-but-one to Ashley, of which there are 2 choices, then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side.
-   * If Brook does sits neither next nor next-but-one to Ashley, of which there are 3 choices, then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook.
+   * If Brook sits next-but-one to Ashley -- of which there are 2 choices -- then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side, leaving $6-3=3$ choices.
+   * If Brook sits neither next nor next-but-one to Ashley -- of which there are 3 choices -- then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook, leaving $6-4=2$ choices.
 * The remaining friends have 5, 4, 3, 2, and 1 choices again.
    
 Hence, $|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1$. So
@@ -158,8 +158,13 @@ To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only 
 **(a)** For $k = 0, 1, \dots, 9$, let $A_k$ be the event that all the digits are $k$ or smaller. What is the probability of $A_k$, as a function of $k$ and $n$?
 
 ::: {.myanswers data-latex=""}
-*Hint.*
-What's the sample space? Can you explain why $|\Omega| = 10^n$? What about $|A_k$|?
+*Solution.*
+The sample space is $\Omega = \{0,1,\dots,9\}^n$, the set of length-$n$ sequences of digits between $0$ and $9$. The number of these is $|\Omega| = 10^n$.
+
+The event $A_k$ is $\{0,1,\dots,k\}^n$, the set of length-$n$ sequences of digits that are between $0$ and $k$. The number of these is $|A_k| = (k+1)^n$. (Note that it's $k+1$ because we're allowing 0 as well.)
+
+Hence, the probability is
+\[ \mathbb P(A_k) = \frac{|A_k|}{|\Omega|} = \frac{(k+1)^n}{10^n} . \]
 :::
 ::::
 
@@ -168,8 +173,15 @@ What's the sample space? Can you explain why $|\Omega| = 10^n$? What about $|A_k
 \[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]
 
 ::: {.myanswers data-latex=""}
-*Hint.*
-Can you find a relationship linking $A_{k-1}$, $A_k$, and $B_k$?
+*Solution.*
+Consider the event $A_k$ that all the digits are at most $k$. Within $A_k$, *either* one of the digits is $k$, in which case we are in $B_k$, *or* none of the digits are $k$, in which case they are all at most $k-1$, and we are in $A_{k-1}$, *but not both*. Hence we have a disjoint union
+\[ A_k = B_k \cup A_{k-1} . \]
+Applying Axiom 3 gives
+\[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]
+Rearranging this gives
+\[ \mathbb P(B_k) = \mathbb P(A_k) - \mathbb P(A_{k-1}) . \]
+Substituting in the answer from part (a) gives
+\[\mathbb P(B_k) = \frac{(k+1)^n}{10^n} - \frac{(k-1+1)^n}{10^n} = \frac{(k+1)^n - k^n}{10^n} . \]
 :::
 ::::
 :::::

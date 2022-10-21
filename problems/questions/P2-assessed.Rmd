@@ -38,9 +38,11 @@ Try the sample space with five-equally likely outcomes again. How small can you 
 **(a)** If $\mathbb P(A) \leq \mathbb P(B)$, then $A \subset B$.
 
 ::: {.myanswers data-latex=""}
+*Hint.* Try to find a counterexample. Make sure you're paying attention to the direction of implication (the other direction is true).
+<!--
 *Solution.* False. It is true that *if* $A \subset B$ *then* $\mathbb P(A) \leq \mathbb P(B)$, but here the implication is the wrong way around.
 
-For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,3\}$. Then $\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)$, but it's not true that $A \subset B$.
+For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,3\}$. Then $\mathbb P(A) = \frac16 \leq \frac26 = \mathbb P(B)$, but it's not true that $A \subset B$.-->
 :::
 ::::
 
@@ -48,7 +50,9 @@ For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,
 **(b)** $\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)$.
 
 ::: {.myanswers data-latex=""}
-*Solution.* True. Note that $(A \cap B) \cup (A \cap B^{\mathsf{c}}) = A$ and that the union is disjoint. (Try drawing a Venn diagram, if this isn't obvious.) The result follows from applying Axiom 3.
+*Hint.* Is there a relevant disjoint union here?
+<!--
+*Solution.* True. Note that $(A \cap B) \cup (A \cap B^{\mathsf{c}}) = A$ and that the union is disjoint. (Try drawing a Venn diagram, if this isn't obvious.) The result follows from applying Axiom 3.-->
 :::
 ::::
 
@@ -56,7 +60,8 @@ For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,
 **(c)** $\mathbb P(A \cup B) \leq \mathbb P(A)$
 
 ::: {.myanswers data-latex=""}
-*Solution.* False. The same $A$ and $B$ as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection.
+*Hint.* You'd expect the inequality to be the other way round -- so it should be possible to find a counterexample. <!--
+*Solution.* False. The same $A$ and $B$ as in part (a) gives a concrete counterexample. The statement would be true with a reversed inequality, or with the union replaced by an intersection. -->
 :::
 ::::
 
@@ -64,7 +69,8 @@ For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,
 **(d)** If $A$ and $B$ are disjoint, then $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)$.
 
 ::: {.myanswers data-latex=""}
-*Solution.* True. From the complement rule, we have $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)$; then from the addition rule for disjoint unions we have $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)$. Putting these together gives the result.
+*Hint.* Can you use the complement rule to start off with? <!--
+*Solution.* True. From the complement rule, we have $\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A \cup B)$; then from the addition rule for disjoint unions we have $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B)$. Putting these together gives the result.-->
 :::
 ::::
 :::::
@@ -75,10 +81,20 @@ For a counterexample, consider rolling a dice, and let $A = \{1\}$ and $B = \{2,
 
 :::: {.subq}
 **(a)** If three balls are drawn *with* replacement, what is the probability that all three balls are the *same* colour?
+
+::: {.myanswers data-latex=""}
+*Hint.* If $A$ is the event all three balls are the same colour, then we have a disjoint union $A = A_{\text{red}} \cup A_{\text{blue}} \cup A_{\text{green}}$, where $A_{\text{red}}$ is the event all three balls are red, and so on.
+:::
 ::::
 
 :::: {.subq}
 **(b)** If three balls are drawn *without* replacement, what is the probability that all three balls are *different* colours?
+
+::: {.myanswers data-latex=""}
+*Hint.* One way to do this is to look at the ordered collection of balls, and look at all $3!$ possible orderings red-blue-green, red-green-blue, etc.
+
+Another way is to look at the unordered collection, so the denominator is $\binom{15}{3}$.
+:::
 ::::
 :::::
 

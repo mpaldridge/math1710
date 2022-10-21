@@ -97,7 +97,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 * [**Lecture 5:** Classical probability I](#L05-classical-i) (Monday 17 October)
 * [**Lecture 6:** Classical probability II](#L05-classical-ii) (Wednesday 19 October)
-* [**Problem Sheet 1:**](#P1) Work through the short and long questions in preparation for your tutorial in Week 4. Deadline for assessed questions: Monday 31 October.
+* [**Problem Sheet 2:**](#P2) Work through the short and long questions in preparation for your tutorial in Week 4. Deadline for assessed questions: Monday 31 October.
 * [**R Worksheet 3:** Data in R](#r-work) to be completed this week. Deadline for assessed questions: Monday 24 October.
 :::
 
