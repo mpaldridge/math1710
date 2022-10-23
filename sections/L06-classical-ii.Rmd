@@ -167,6 +167,7 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 ::::
 -->
 
+::: {.example}
 *There are $k = 23$ students in a class. What is the probability that at least two of the students share a birthday?*
 
 This a famous problem, known as the "birthday problem". You may have seen this problem before -- but let's try to solve it using the techniques from this section of notes. If you haven't seen it before, you might like to guess what you think the answer might be. (We'll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)
@@ -187,6 +188,7 @@ k <- 23
 1 - prod((365:(365 - k + 1)) / 365)
 ```
 The probability is 50.7%. So it's more likely than not that at least two students share a birthday.
+:::
 
 Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are $\binom{23}{2} = 253$ *pairs* of birthdays, and each of those 253 pairs is a potential match.
 

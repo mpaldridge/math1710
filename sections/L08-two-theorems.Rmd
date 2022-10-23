@@ -1,14 +1,18 @@
 # Two theorems on conditional probability {#L08-two-theorems}
 
+Last time we met the conditional probability $\mathbb P(B \mid A)$ of one event $B$ given another event $A$. In this lecture we will be looking two very useful theorems about conditional probability, called the **law of total probability** and **Bayes' theorem** -- and they're particularly powerful when used together.
+
 ## Law of total probability  {#total-prob}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/zBfFOYkfoss"></iframe>
 :::
 ::::
+-->
 
-::: {.example}
+::: {.example #dice-total}
 *My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?*
 
 If my friend were to tell which dice he picked, then this question would be very easy! If we write $D_4$, $D_6$ and $D_{10}$ to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
@@ -46,26 +50,29 @@ But using the definition of conditional probability, each "summand" (term inside
 The result follows.
 :::
 
-Returning to our dice example, $D_4, D_6, D_{10}$ is indeed a partition, since these are the only possibilities and we only choose one dice. So the law of total probability tells us that
+::: {.thpart}
+**Example \@ref(exm:dice-total) continued.** Returning to our dice example, we see that $\{D_4, D_6, D_{10}\}$ is indeed a partition, since my friend must choose exactly one of the three dice.. So the law of total probability tells us that
 \[ \mathbb P(\text{roll 5}) = \mathbb P(D_4) \, \mathbb P(\text{roll 5} \mid D_4) +  \mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6) + \mathbb P(D_{10}) \, \mathbb P(\text{roll 5} \mid D_{10}) . \]
 
-We were told that all the dice were picked with equal probability, so $\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13$, and we calculated the individual conditional probabilities as
+We were told that all the dice were picked with equal probability, so $\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13$, and we've already  calculated the individual conditional probabilities as
 \[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]
-
 Therefore, we have
 \[ \mathbb P(\text{roll 5}) = \tfrac13\times 0 +  \tfrac13\times\tfrac16 +  \tfrac13\times\tfrac1{10} = \tfrac{8}{90} = 0.089. \]
+:::
 
 
 ## Bayes' theorem  {#bayes}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/uLSewGUPH1g"></iframe>
 :::
 ::::
+-->
 
 
-In this subsection, we will discuss an important result called **Bayes' theorem**. 
+In this section, we will discuss an important result called **Bayes' theorem**. 
 Let's first state and prove this result, and do an example, and then afterwards we'll talk about two reasons why Bayes' theorem is so important.
 
 ::: {.theorem #thbayes name="Bayes' theorem"}
@@ -73,7 +80,7 @@ For events $A$ and $B$ with $\mathbb P(A), \mathbb P(B) > 0$, we have
 \[ \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} .  \]
 :::
 
-Bayes' theorem is thought to have first appeared in the writings of Rev. [Thomas Bayes](https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/), a British church minister and mathematician, shortly after his death, in the 1760s. However, his work was significantly edited by [Richard Price](https://mathshistory.st-andrews.ac.uk/Biographies/Price/), another minister--mathematician, and many people think that Price deserves a large share of the credit.
+Bayes' theorem is thought to have first appeared in the writings of Rev. [Thomas Bayes](https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/), a British church minister and mathematician, shortly after his death, in the 1760s. (Bayes' work was significantly edited by [Richard Price](https://mathshistory.st-andrews.ac.uk/Biographies/Price/), another minister--mathematician, and many historians think that Price deserves a large share of the credit.)
 
 ::: {.proof}
 From the definition of conditional probability, we can write $\mathbb P(A \cap B)$ in two different ways: we can write it as
@@ -105,48 +112,51 @@ Bayes' theorem, in this first view, is a useful technical result that helps us s
 
 In the dice example, the probability $\mathbb P(\text{roll 5} \mid D_6) = \frac16$ was very obvious, but Bayes' theorem allowed us to reverse the conditioning, to find $\mathbb P(D_6 \mid \text{roll 5}) = \frac58$ instead.
 
-The second way to think about Bayes' rule is that it tells us how to update our beliefs as we acquire more evidence. That is, we might start by believing that the probability some event $A$ will occur is $\mathbb P(A)$. But then we find out that $B$ has occurred, so we want to incorporate that knowledge and update our belief of the probability $A$ will occur to $\mathbb P(A \mid B)$, the conditional probability $A$ will occur given this new evidence $B$.
+The second way to think about Bayes' theorem is that it tells us how to update our beliefs as we acquire more evidence. That is, we might start by believing that the probability some event $A$ will occur is $\mathbb P(A)$. But then we find out that $B$ has occurred, so we want to incorporate this knowledge and update our belief of the probability $A$ will occur to $\mathbb P(A \mid B)$, the conditional probability $A$ will occur given this new evidence $B$.
 
 Bayes theorem, in this second view, tells us how to update from $\mathbb P(A)$ to $\mathbb P(A \mid B)$: we have
 \[ \mathbb P(A \mid B) = \mathbb P(A) \times \frac{\mathbb P(B \mid A)}{\mathbb P(B)} .  \]
 
 In the dice example, we initially believed there was a $\mathbb P(D_6) = \frac13 = 0.333$ chance our friend had chosen the six-sided dice. But when we heard that our friend had rolled a 5, we updated our belief to now thinking there was now a $\mathbb P(D_6 \mid \text{roll 5}) =\frac58 = 0.625$ chance it was the 6-sided dice.
 
-This second way of thinking about Bayes' theorem is at the heart of **Bayesian statistics**. In Bayesian statistics, we start with a "prior" belief about a model, then, after collecting some data, we update to a "posterior" belief, according to the rules of Bayes' theorem. We will discuss Bayesian statistics much more in Section 10.
+This second way of thinking about Bayes' theorem is at the heart of **Bayesian statistics**. In Bayesian statistics, we start with a "prior" belief about a model, then, after collecting some data, we update, using Bayes' theorem, to a "posterior" belief about the model. We will discuss Bayesian statistics much more in Week 10.
 
 
 
 
-Quite often we use Bayes' theorem and the law of total probability together. If we have a partition $A_1, A_2, \dots, A_n$, perhaps representing some possible hypotheses, and we observe an event $B$, then Bayes' theorem tells us how likely each hypothesis is given the observation:
+Quite often we use Bayes' theorem and the law of total probability together. If we have a partition $A_1, A_2, \dots, A_n$, perhaps representing some possible hypotheses, and we observe some evidence $B$, then Bayes' theorem tells us how likely each hypothesis is given the evidence:
 \[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\mathbb P(B)} .  \]
 But this shared denominator $\mathbb P(B)$ can be expanded using the law of total probability
 \[ \mathbb P(B) = \sum_{j=1}^n \mathbb P(A_j) \,\mathbb P(B \mid A_j) . \]
-Together, we get the following.
+Putting these together, we get the following.
 
 ::: {.theorem #bayes-total}
 Let $\{A_1, A_2, \dots, A_n\}$ be a partition of a sample space and let $B$ be another event. Then, for all $i=1,2,\dots,n$, we have
 \[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\sum_{j=1}^n \mathbb P(A_j) \, \mathbb P(B \mid A_j)} .  \]
 :::
 
-This is essentially what we did with the dice example, although we split it up into two separate parts rather than using this formula directly.
+This is essentially what we did with the dice example -- although we split up the calculation into two separate parts rather than using this formula directly.
 
 
 ## Diagnostic testing  {#screening}
 
-*Members of the public are tested for a certain disease. About 2% of the population have the disease. The test is 95% accurate, in the following sense: if you have the disease, there's a 95% chance you correctly get a positive test result, while if you don't have the disease, there's a 95% chance you correctly get a negative test result. Suppose you get a positive test result. What is the probability you have the disease?*
+::: {.example}
+*Members of the public are tested for a certain rare disease. About 2% of the population have the disease. The test is 95% accurate, in the following sense: if you have the disease, there's a 95% chance you correctly get a positive test result; while if you don't have the disease, there's a 95% chance you correctly get a negative test result. Suppose you get a positive test result. What is the probability you have the disease?*
 
 The first thing we have to do is translate the words in the question into probability statements. Let $D$ be the event you have the disease, so $D^\comp$ is the event you don't have the disease, and let $+$ be the event you get a positive result. Then the question tells us that
 
 * $\mathbb P(D) = 0.02$ and $\mathbb P(D^\comp) = 0.98$;
-* $\mathbb P({+} \mid D) = 0.95$ and $\mathbb P({+}\mid D^\comp) = 0.05$;
+* $\mathbb P({+} \mid D) = 0.95$;
+* $\mathbb P({+}\mid D^\comp) = 0.05$;
 * we want to find $\mathbb P(D \mid {+})$.
 
-Note also that $D$ (you have the disease) and $D^\comp$ (you don't) make up a partition. Then Theorem \@ref(thm:bayes-total) tells us that
+Importantly, $D$ (you have the disease) and $D^\comp$ (you don't) make up a partition. So Theorem \@ref(thm:bayes-total) tells us that
 \[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\comp) \,\mathbb P({+} \mid D^\comp)} . \]
 Putting in all the numbers we have, we get
 \[ \mathbb P(D \mid {+}) = \frac{0.02 \times 0.95}{0.02 \times 0.95 + 0.98 \times 0.05} = 0.28 .\]
 
 So if you get a positive result on this 95%-accurate test, there's still only about a 1 in 4 chance you actually have the disease.
+:::
 
 Many people find this result surprising. It sometimes helps to put more concrete numbers on things. Suppose 1000 people get tested. On average, we expect about 20 of them to have the disease, and 980 of to not have the disease. Of the 20 with the disease, on average 19 will correctly test positive, while 1 will test negative. Of the 980 without the disease, an average 931 will correctly test negative, but 49 will wrongly test positive. So of the $19+49 = 68$ people with positive tests, only 19 of them actually have the disease, which is 28%.
 

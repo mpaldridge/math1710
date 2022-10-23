@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 7 Independence and conditional probability | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 7 Independence and conditional probability | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 7 Independence and conditional probability | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
-
+<link rel="prev" href="P2.html"/>
+<link rel="next" href="L08-two-theorems.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -261,19 +261,155 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="L07-conditional" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Lecture 7</span> Independence and conditional probability<a href="L07-conditional.html#L07-conditional" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="independent-events" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Independent events<a href="L07-conditional.html#independent-events" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/9lhF4WEoJxk"></iframe>
+:::
+::::
+-->
+<p><em>Suppose 40% of people have blond hair, and 20% of people have blue eyes. What proportion of people have both blond hair and blue eyes?</em></p>
+<p>The answer to this question is: we don’t know. The question doesn’t give us enough information to tell. However, <em>if</em> it were the case that having blond hair didn’t effect your chance of having blue eyes, then we could work out the answer. If that were true, we would think that the 20% of people with blue eyes would equally make up both 20% of the blonds and also 20% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20% of the 40% of people with blond hair; and 20% of 40% is <span class="math inline">\(0.2 \times 0.4 = 0.08\)</span>, or 8%.</p>
+<p>To put it in probability language, <em>if</em> blond hair and blue eyes were unrelated, then we would expect that
+<span class="math display">\[ \mathbb P(\text{blond hair and blue eyes}) = \mathbb P(\text{blond hair}) \times \mathbb P(\text{blue eyes}) . \]</span>
+This is an important property known as “independence”.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 7.1  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are said to be <strong>independent</strong> if
+<span class="math display">\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B) .  \]</span></p>
+</div>
+<p>There are two ways we can use this definition.</p>
+<ul>
+<li>If we know <span class="math inline">\(\mathbb P(A)\)</span>, <span class="math inline">\(\mathbb P(B)\)</span>, and <span class="math inline">\(\mathbb P(A \cap B)\)</span>, then we can find out whether or not <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent by checking whether or not <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\)</span>.</li>
+<li>If we know <span class="math inline">\(\mathbb P(A)\)</span> and <span class="math inline">\(\mathbb P(B)\)</span> and we know that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then we can find <span class="math inline">\(\mathbb P(A \cap B)\)</span> by calculating <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\)</span>.</li>
+</ul>
+<p>In this second case, we might know <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent because we are specifically told they are in a question. But alternatively we might reason that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> must be independent because the related experiments are not physically related. For example if we roll a dice then toss a coin, we might reason that <span class="math inline">\(\{\text{roll a 5}\}\)</span> and <span class="math inline">\(\{\text{the coin lands Heads}\}\)</span> must be independent because the dice roll doesn’t effect the coin toss – we could then use the independence assumption in calculations.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-31" class="example"><strong>Example 7.1  </strong></span><em>Consider rolling a dice. Let <span class="math inline">\(A = \{\text{even number}\} = \{2,4,6\}\)</span>, and let <span class="math inline">\(B = \{\text{roll at least 4}\} = \{4,5,6\}\)</span>. Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</em></p>
+<p>Clearly we have <span class="math inline">\(\mathbb P(A) = \frac36 = \frac12\)</span> and <span class="math inline">\(\mathbb P(B) = \frac 36 = \frac12\)</span>. The intersection is <span class="math inline">\(A \cap B = \{4,6\}\)</span>, so <span class="math inline">\(\mathbb P(A \cap B) = \frac26 = \frac13\)</span>. So we see that
+<span class="math display">\[ \mathbb P(A\cap B) = \frac13  \qquad \text{and} \qquad  \mathbb P(A)\, \mathbb P(B) = \frac12 \times \frac12 = \frac14 . \]</span>
+So <span class="math inline">\(\mathbb P(A \cap B) \neq \mathbb P(A)\, \mathbb P(B)\)</span>, and the two events are not independent.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-32" class="example"><strong>Example 7.2  </strong></span><em>A biased coin has probability <span class="math inline">\(p\)</span> of landing Heads and probability <span class="math inline">\(1-p\)</span> of landing Tails. You toss the coin 3 times. Assuming tosses of the coin are independent, calculate the probability of getting exactly 2 Heads.</em></p>
+<p>There are three ways we could get exactly 2 Heads: HHT, HTH, or THH. For the first of these,
+<span class="math display">\[ \mathbb P(\text{HHT}) = \mathbb P(\text{first coin H} \cap \text{second coin H} \cap \text{third coin T}) . \]</span>
+Since tosses of the coin are independent, we therefore have
+<span class="math display">\[\begin{align*}
+\mathbb P(\text{HHT})
+  &amp;= \mathbb P(\text{first coin H}) \times \mathbb P ( \text{second coin H} )\times \mathbb P(\text{third coin T}) \\
+  &amp;=p \times p \times (1-p) \\
+  &amp;= p^2(1-p).
+\end{align*}\]</span></p>
+<p>Similarly,
+<span class="math display">\[ \mathbb P(\text{HTH}) = \mathbb P(\text{THH}) = p^2(1-p) \]</span>
+also.</p>
+<p>Finally, because the events are disjoint, we have
+<span class="math display">\[ \mathbb P(\text{HHT} \cup\text{HTH} \cup \text{THH}) = \mathbb P(\text{HHT} ) + \mathbb P(\text{HTH}) + \mathbb P(\text{THH}) = 3p^2(1-p) . \]</span></p>
+</div>
+</div>
+<div id="conditional" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Conditional probability<a href="L07-conditional.html#conditional" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/x3wISv0RWic"></iframe>
+:::
+::::
+-->
+<p>Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"></th>
+<th align="center"><strong>Brown hair</strong></th>
+<th align="center"><strong>Blond hair</strong></th>
+<th align="center"><strong>Total</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Brown eyes</strong></td>
+<td align="center">50%</td>
+<td align="center">30%</td>
+<td align="center"><strong>80%</strong></td>
+</tr>
+<tr class="even">
+<td align="center"><strong>Blue eyes</strong></td>
+<td align="center">10%</td>
+<td align="center">10%</td>
+<td align="center"><strong>20%</strong></td>
+</tr>
+<tr class="odd">
+<td align="center"><strong>Total</strong></td>
+<td align="center"><strong>60%</strong></td>
+<td align="center"><strong>40%</strong></td>
+<td align="center"><strong>100%</strong></td>
+</tr>
+</tbody>
+</table>
+<p>It turns out that <span class="math inline">\(\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08\)</span>, so having blond hair and having blue eyes are not in fact independent.</p>
+<p>We know from this table that 20% of people have blue eyes. But suppose you already know that someone has blond hair: what <em>then</em> is the probability they have blue eyes <em>given</em> that they have blond hair?</p>
+<p>Well, the 40% of blond-haired people is made up of the 10% of people who also have blue eyes along with their blond hair, and the 30% of people who have brown eyes along with their blond hair. So of the 40% of blond-haired people, only one quarter of that 40% – which makes 10% – have blue eyes. If we use a vertical line <span class="math inline">\(|\)</span> in a probability to mean “given” (or “assuming that” or “conditional upon”), then we can write this as
+<span class="math display">\[  \mathbb P(\text{blue eyes} \mid \text{blond hair}) = \frac{\mathbb P(\text{blue eyes and blond hair})}{\mathbb P(\text{blond hair})} = \frac{0.1}{0.4} = \frac14. \]</span></p>
+<p>What we’ve seen here is called a “conditional probability”.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events, with <span class="math inline">\(\mathbb P(A) &gt; 0\)</span>. Then the <strong>conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span></strong> is defined to be
+<span class="math display">\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span></p>
+</div>
+<p>The condition <span class="math inline">\(\mathbb P(A) &gt; 0\)</span> is to ensure we don’t have any “divide by 0” errors. (I normally won’t bother saying this explicitly – any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)</p>
+<p>Conditional probability ties in with independence in an important way. Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, so <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)\)</span>. Then the conditional probability becomes
+<span class="math display">\[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]</span>
+so <span class="math inline">\(\mathbb P(B \mid A) = \mathbb P(B)\)</span>. In other words, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math inline">\(A\)</span> happening doesn’t affect the probability of <span class="math inline">\(B\)</span> happening (and vice versa).</p>
+<p>So when we have independence, <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)\)</span>, and the mathematics is quite easy. But conditional probability tells us how things work when we don’t have independence.</p>
+</div>
+<div id="chain-rule" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Chain rule<a href="L07-conditional.html#chain-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One way to use the definition of conditional probability is that if we know <span class="math inline">\(\mathbb P(A \cap B)\)</span> and <span class="math inline">\(\mathbb P(A)\)</span>, then we can calculate the conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> as
+<span class="math display">\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span>
+A second way to use the definition is that if we know <span class="math inline">\(\mathbb P(A)\)</span> and <span class="math inline">\(\mathbb P(B \mid A)\)</span>, then we can calculate the event that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur as
+<span class="math display">\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B \mid A). \]</span>
+This can be a useful tool when <span class="math inline">\(A\)</span> concerns the first stage of an experiment and <span class="math inline">\(B\)</span> the second stage. This says that the probability <span class="math inline">\(A\)</span> happens then <span class="math inline">\(B\)</span> happens is equal to the probability <span class="math inline">\(A\)</span> happens multiplied the conditional probability, given that <span class="math inline">\(A\)</span> has already happened, that <span class="math inline">\(B\)</span> then happens too.</p>
+<p>We can extend this to more events. For three events, we have
+<span class="math display">\[\begin{align*}
+\mathbb P(A \cap B \cap C)
+  &amp;= \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) \\
+  &amp;= \mathbb P(A) \, \mathbb P(B \mid A)\, \mathbb P(C \mid A \cap B) ,
+\end{align*}\]</span>
+which can be useful when we have three stages of an experiment.</p>
+<p>Continuing that process, we get a general rule.</p>
+<div class="theorem">
+<p><span id="thm:thchain" class="theorem"><strong>Theorem 7.1  (Chain rule) </strong></span>For events <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>, we have
+<span class="math display">\[\begin{multline*}  \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
+  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .\end{multline*}\]</span></p>
+</div>
+<p>Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It’s a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-34" class="example"><strong>Example 7.3  </strong></span><em>Recall the Lotto problem from Example <a href="L06-classical-ii.html#exm:lotto">6.3</a>: What is the probability we match 6 balls from 59?</em></p>
+<p>Let <span class="math inline">\(A_1, A_2, \dots, A_6\)</span> be the events that the first, second, …, sixth balls out of the machine are on our ticket. Clearly <span class="math inline">\(\mathbb P(A_1) = \frac{6}{59}\)</span>, as we have six numbers on our ticket that the first ball could match. The conditional probability that the second ball matches given that the first ball matched is <span class="math inline">\(\mathbb P(A_2 \mid A_1) = \frac{5}{58}\)</span>, because there are 58 balls left in the machine and, given that we got the first number right, there are 5 numbers left on our ticket. Similarly, <span class="math inline">\(\mathbb P(A_3 \mid A_1 \cap A_2) = \frac{4}{57}\)</span>, and so on, until <span class="math inline">\(\mathbb P(A_6 \mid A_1 \cap \cdots\cap A_5) = \frac{1}{54}\)</span>.</p>
+<p>So, using the chain rule, we get
+<span class="math display">\[\begin{align*}
+\mathbb P(A_1 \cap A_2 &amp;\cap \cdots \cap A_6) \\
+&amp;= \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_6 \mid A_1 \cap \cdots \cap A_5) \\
+&amp;= \frac{6}{59} \times \frac{5}{58} \times \frac{4}{57} \times \frac{3}{56} \times \frac{2}{55} \times \frac{1}{54} .
+\end{align*}\]</span></p>
+<p>The answer we got before was
+<span class="math display">\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]</span>
+It’s easy to see that this is the same answer. The structure of the answers shows how our precious classical probability method got the answer “all at once”, while this new method gets the answer “one step at a time”.</p>
+</div>
+
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="P2.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L08-two-theorems.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -216,6 +216,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
+<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
+<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -389,7 +402,8 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 :::
 ::::
 -->
-<p><em>There are <span class="math inline">\(k = 23\)</span> students in a class. What is the probability that at least two of the students share a birthday?</em></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 6.5  </strong></span><em>There are <span class="math inline">\(k = 23\)</span> students in a class. What is the probability that at least two of the students share a birthday?</em></p>
 <p>This a famous problem, known as the “birthday problem”. You may have seen this problem before – but let’s try to solve it using the techniques from this section of notes. If you haven’t seen it before, you might like to guess what you think the answer might be. (We’ll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)</p>
 <p>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible birthdays for the <span class="math inline">\(k\)</span> students. Clearly <span class="math inline">\(|\Omega| = 365^k\)</span>.</p>
 <p>Let <span class="math inline">\(A\)</span> be the even that at least two students share a birthday. Since this is an “at least” event, it seems like it might be a good idea to look instead at the complementary event <span class="math inline">\(A^\mathsf{c}\)</span>. If <span class="math inline">\(A\)</span> is the event that there’s at least one shared birthday, then <span class="math inline">\(A^\mathsf{c}\)</span> is the event that there are <em>no</em> shared birthdays; that is, <span class="math inline">\(A^\mathsf{c}\)</span> is the event that all <span class="math inline">\(k\)</span> students have <em>different</em> birthdays.</p>
@@ -402,6 +416,7 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 <span id="cb17-2"><a href="L06-classical-ii.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>((<span class="dv">365</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">-</span> k <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">365</span>)</span></code></pre></div>
 <pre><code>## [1] 0.5072972</code></pre>
 <p>The probability is 50.7%. So it’s more likely than not that at least two students share a birthday.</p>
+</div>
 <p>Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are <span class="math inline">\(\binom{23}{2} = 253\)</span> <em>pairs</em> of birthdays, and each of those 253 pairs is a potential match.</p>
 </div>
 <div id="summary-L06" class="section level2 unnumbered hasAnchor">

@@ -11,7 +11,7 @@ Each week there will be an R worksheet to work through in your own time. I recom
 |   1  |  [**R basics**](https://mpaldridge.github.io/math1710/R1.html) ([Solutions](https://mpaldridge.github.io/math1710/R1-solutions.html)) | --- |
 |   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
 |   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html)  | Monday 24 October (Week 4) |
-|   4  |  Plots I: Making plots  | --- |
+|   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html)   | --- |
 |   5  |  Plots II: Making plots better  | Monday 7 November (Week 6) |
 |   6  |  RMarkdown (optional) | --- |
 |   7  |  Discrete distributions   |      Monday 21 November (Week 8)   |
@@ -57,7 +57,7 @@ When you install R and RStudio, it's important that you install R (the programmi
 
 If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it's sufficiently portable), and we'll do our best to help.
 
-Second, you can **use R and RStudio on University computers**. All University computers have access to R and RStudio, via the AppsAnywhere service. *First*, launch R via AppsAnywhere (at the time of writing, it's confusingly named "Cran R 4.2.0 x64"). You can then close the program that opens. *Then* launch RStudio ("Rstudio 2022"), also via AppsAnywhere.
+Second, you can **use R and RStudio on University computers**. All University computers have access to R and RStudio, via the AppsAnywhere service. *First*, launch R via AppsAnywhere (at the time of writing, it's confusingly named "Cran R 4.2.0 x64"). You can then close the program that opens. *Then* launch RStudio ("Rstudio 2022"), also via AppsAnywhere. (You can decline any updates that are suggested.)
 
 The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.
 

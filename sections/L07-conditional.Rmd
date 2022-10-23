@@ -2,15 +2,17 @@
 
 ## Independent events  {#independent-events}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/9lhF4WEoJxk"></iframe>
 :::
 ::::
+-->
 
 *Suppose 40% of people have blond hair, and 20% of people have blue eyes. What proportion of people have both blond hair and blue eyes?*
 
-The answer to this question is: we don't know. The question doesn't give us enough information to tell. However, *if* it were the case that having blond hair didn't effect your chance of having blue eyes, then we could work out the answer. If that were true, we would think that the 20% of people with blue eyes equally made up both 20% of the blonds and also 20% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20% of the 40% of people with blond hair, and 20% of 40% is $0.2 \times 0.4 = 0.08$, or 8%.
+The answer to this question is: we don't know. The question doesn't give us enough information to tell. However, *if* it were the case that having blond hair didn't effect your chance of having blue eyes, then we could work out the answer. If that were true, we would think that the 20% of people with blue eyes would equally make up both 20% of the blonds and also 20% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20% of the 40% of people with blond hair; and 20% of 40% is $0.2 \times 0.4 = 0.08$, or 8%.
 
 To put it in probability language, *if* blond hair and blue eyes were unrelated, then we would expect that
   \[ \mathbb P(\text{blond hair and blue eyes}) = \mathbb P(\text{blond hair}) \times \mathbb P(\text{blue eyes}) . \]
@@ -26,7 +28,7 @@ There are two ways we can use this definition.
 * If we know $\mathbb P(A)$, $\mathbb P(B)$, and $\mathbb P(A \cap B)$, then we can find out whether or not $A$ and $B$ are independent by checking whether or not $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)$.
 * If we know $\mathbb P(A)$ and $\mathbb P(B)$ and we know that $A$ and $B$ are independent, then we can find $\mathbb P(A \cap B)$ by calculating $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)$.
 
-In this second case, we might know $A$ and $B$ are independent because we are specifically told they are. But we might reason that $A$ and $B$ because the related experiments are not physically related -- for example if we roll a dice then toss a coin, we might reason that $\{\text{roll a 5}\}$ and $\{\text{the coin lands Heads}\}$ must be independent because the dice roll doesn't effect the coin toss, and use the independence assumption in calculations.
+In this second case, we might know $A$ and $B$ are independent because we are specifically told they are in a question. But alternatively we might reason that $A$ and $B$ must be independent because the related experiments are not physically related. For example if we roll a dice then toss a coin, we might reason that $\{\text{roll a 5}\}$ and $\{\text{the coin lands Heads}\}$ must be independent because the dice roll doesn't effect the coin toss -- we could then use the independence assumption in calculations.
 
 ::: {.example}
 *Consider rolling a dice. Let $A = \{\text{even number}\} = \{2,4,6\}$, and let $B = \{\text{roll at least 4}\} = \{4,5,6\}$. Are $A$ and $B$ independent?*
@@ -60,25 +62,27 @@ Finally, because the events are disjoint, we have
 
 ## Conditional probability  {#conditional}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/x3wISv0RWic"></iframe>
 :::
 ::::
+-->
 
 Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:
 
 | | **Brown hair** | **Blond hair** | **Total** |
 |:--------------:|:---:|:---:|:----:|
-| **Brown eyes** | 50% | 30% |  80% |
-| **Blue eyes**  | 10% | 10% |  20% |
-| **Total**      | 60% | 40% | 100% |
+| **Brown eyes** | 50% | 30% |  **80%** |
+| **Blue eyes**  | 10% | 10% |  **20%** |
+| **Total**      | **60%** | **40%** | **100%** |
 
-(It turns out that $\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08$, so they are not independent.)
+It turns out that $\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08$, so having blond hair and having blue eyes are not in fact independent.
 
-We know that 20% of people have blue eyes. But suppose you already know that someone has blond hair: what then is their probability of have blue eyes *given* that they have blond hair?
+We know from this table that 20% of people have blue eyes. But suppose you already know that someone has blond hair: what *then* is the probability they have blue eyes *given* that they have blond hair?
 
-Well, the 40% of blond-haired people is made up of the 10% of people who also have blue eyes to go along with their blond hair, and the 30% of people who have brown eyes to go along with their blond hair. So of the 40% of blond-haired people, three times as many have brown eyes, so only one quarter of that 40% have blue eyes. If we use a vertical line $|$ in a probability  to mean "given" (or "assuming that" or "conditional upon"), then we can write this as
+Well, the 40% of blond-haired people is made up of the 10% of people who also have blue eyes along with their blond hair, and the 30% of people who have brown eyes along with their blond hair. So of the 40% of blond-haired people, only one quarter of that 40% -- which makes 10% -- have blue eyes. If we use a vertical line $|$ in a probability  to mean "given" (or "assuming that" or "conditional upon"), then we can write this as
 \[  \mathbb P(\text{blue eyes} \mid \text{blond hair}) = \frac{\mathbb P(\text{blue eyes and blond hair})}{\mathbb P(\text{blond hair})} = \frac{0.1}{0.4} = \frac14. \]
 
 What we've seen here is called a "conditional probability".
@@ -90,8 +94,6 @@ Let $A$ and $B$ be events, with $\mathbb P(A) > 0$. Then the **conditional proba
 
 The condition $\mathbb P(A) > 0$ is to ensure we don't have any "divide by 0" errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
 
-As with independence, conditional probability can be used in different ways: given any two of $\mathbb P(A)$, $\mathbb P(A \cap B)$, and $\mathbb P(B \mid A)$ you can work out the other one.
-
 Conditional probability ties in with independence in an important way. Suppose $A$ and $B$ are independent, so $\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)$. Then the conditional probability becomes
 \[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]
 so $\mathbb P(B \mid A) = \mathbb P(B)$. In other words, if $A$ and $B$ are independent, then $A$ happening doesn't affect the probability of $B$ happening (and vice versa).
@@ -101,10 +103,11 @@ So when we have independence, $\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)$
 
 ## Chain rule  {#chain-rule}
 
-
-We can rewrite the definition of conditional probability like this:
+One way to use the definition of conditional probability is that if we know $\mathbb P(A \cap B)$ and $\mathbb P(A)$, then we can calculate the conditional probability of $B$ given $A$ as
+\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+A second way to use the definition is that if we know $\mathbb P(A)$ and $\mathbb P(B \mid A)$, then we can calculate the event that both $A$ and $B$ occur as
 \[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B \mid A). \]
-This can be a useful way to think when $A$ concerns the first stage of an experiment and $B$ the second stage. This says that the probability $A$ happens then $B$ happens is equal to the probability $A$ happens multiplied the probability, given that $A$ has happened, that $B$ then happens too.
+This can be a useful tool when $A$ concerns the first stage of an experiment and $B$ the second stage. This says that the probability $A$ happens then $B$ happens is equal to the probability $A$ happens multiplied the conditional probability, given that $A$ has already happened, that $B$ then happens too.
 
 We can extend this to more events. For three events, we have
 \begin{align*}
@@ -122,12 +125,12 @@ For events $A_1, A_2, \dots, A_n$, we have
   = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .\end{multline*}
 :::
 
-Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It's a matter of personal taste which you prefer.)
+Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It's a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)
 
 ::: {.example}
 *Recall the Lotto problem from Example \@ref(exm:lotto): What is the probability we match 6 balls from 59?*
 
-Let $A_1, A_2, \dots, A_6$ be the events that the first, second, ..., sixth balls out of the machine are on our ticket. Clearly $\mathbb P(A_1) = \frac{6}{59}$, as we have six numbers the ball could match. Then the conditional probability that the second ball matches given that the first ball matched is $\mathbb P(A_2 \mid A_1) = \frac{5}{58}$, because there are 58 balls left in the machine and, given that we got the first number right, there are 5 numbers left on our ticket. Similarly, $\mathbb P(A_3 \mid A_1 \cap A_2) = \frac{4}{57}$, and so on, down to $\mathbb P(A_6 \mid A_1 \cap \cdots\cap A_5) = \frac{1}{54}$.
+Let $A_1, A_2, \dots, A_6$ be the events that the first, second, ..., sixth balls out of the machine are on our ticket. Clearly $\mathbb P(A_1) = \frac{6}{59}$, as we have six numbers on our ticket that the first ball could match. The conditional probability that the second ball matches given that the first ball matched is $\mathbb P(A_2 \mid A_1) = \frac{5}{58}$, because there are 58 balls left in the machine and, given that we got the first number right, there are 5 numbers left on our ticket. Similarly, $\mathbb P(A_3 \mid A_1 \cap A_2) = \frac{4}{57}$, and so on, until $\mathbb P(A_6 \mid A_1 \cap \cdots\cap A_5) = \frac{1}{54}$.
 
 So, using the chain rule, we get
 \begin{align*}
@@ -137,8 +140,8 @@ So, using the chain rule, we get
 \end{align*}
 
 The answer we got before was
-\[ \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]
-It's easy to see that this is the same answer, and the structure of the answers shows how the old method got the answer "all at once", while this new method gets the answer "one stage at a time".
+\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]
+It's easy to see that this is the same answer. The structure of the answers shows how our precious classical probability method got the answer "all at once", while this new method gets the answer "one step at a time".
 :::
 
 
