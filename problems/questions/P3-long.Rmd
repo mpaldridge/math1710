@@ -1,14 +1,14 @@
 :::: {.myq}
-**B1.** Suppose $A$ and $B$ are a pair of independent events. Show that $A$ and $B^\comp$ are also independent events.
+**B1.** Suppose $A$ and $B$ are independent events. Show that $A$ and $B^\comp$ are also independent events.
 
 ::: {.myanswers data-latex=""}
 *Solution.* 
 We need to show that
-\[ \mathbb P(A \cap B^\comp) = \mathbb P(A) \, \mathbb P(B^\comp) . \qquad (*) \]
+\[ \mathbb P(A \cap B^\comp) = \mathbb P(A) \, \mathbb P(B^\comp) . \tag{*} \]
 
 Note that
 \[ A = (A \cap B) \cup (A \cap B^\comp) , \]
-and the union is disjoint, so by Axiom 2,
+and the union is disjoint, so by Axiom 3,
 \[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\comp) . \]
 Hence, the left-hand side of $(*)$ is
 \begin{align*}
@@ -21,12 +21,15 @@ where, in the second line, we used the fact that $A$ and $B$ are independent.
 
 The right-hand side of $(*)$ is
 \[\mathbb P(A) \, \mathbb P(B^\comp) = \mathbb P(A) \big(1 - \mathbb P(B)\big) , \]
-where we've used the complement rule $\mathbb P(B^\comp) = 1- \mathbb P(B)$. Hence, we've shown the left- and right-hand sides of $(*)$ are equal, and we are done.
+where we've used the complement rule $\mathbb P(B^\comp) = 1- \mathbb P(B)$.
+
+Hence, we've shown the left- and right-hand sides of $(*)$ are equal, and we are done.
 :::
 ::::
 
+<!--
 ::::: {.myq}
-**B2.** Chloe cycles to work with probability $0.6$ and takes the bus with probability $0.4$. She has noticed that she is late 20% of the time when she takes the bus. Her boss notices that, on average, Chloe is late one time per week (that is, once every five days).
+**B2.** Chloe cycles to work with probability $0.6$ and takes the bus with probability $0.4$. She has noticed that she is late 25% of the time when she takes the bus. Her boss notices that, on average, Chloe is late once per week (that is, one day in every five days).
 
 :::: {.subq}
 **(a)** What is the probability that Chloe will be late if she cycles to work?
@@ -61,10 +64,30 @@ This is asking for $\mathbb P(B \mid L)$. We know $\mathbb P(L \mid B) = 0.2$, a
 \end{align*}
 :::
 ::::
+:::::
+-->
 
-*[**Note:** Because $0.2 = \frac15$, both types of transport are equally (un)reliable, making this a kind of boring question, which I didn't notice when copying the question from last year's problem sheet. This is a note to remind myself to change the numbers next year.]*
+::::: {.myq}
+**B2.** You are dealt a hand of 13 cards from a 52-card deck. Let $E_\mathrm{A}, E_\mathrm{K}, E_\mathrm{Q}, E_\mathrm{J}$ respectively be the events that your hand contains the Ace, King, Queen and Jack of Spades.
+
+:::: {.subq}
+**(a)** What is $\mathbb P(E_\mathrm{A})$, the probability that your hand contains the Ace of Spades?
+::::
+
+:::: {.subq}
+**(b)** Explain why $\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}$.
 :::::
 
+:::: {.subq}
+**(c)** Using the chain rule, calculate the probability that your hand contains all four of the Ace, King, Queen and Jack of Spades.
+::::
+
+:::: {.subq}
+**(d)** Check that your answer agrees with the answer we found by classical probability methods in [Example 6.4](L06-classical-ii.html#exm:akqj) in Lecture 6. Which method do you prefer?
+::::
+:::::
+
+<!--
 :::: {.myq}
 **B3.** Let $\Omega$ be a sample space, let $\mathbb P$ be a probability measure on $\Omega$, and fix an event $B \subset \Omega$ with $\mathbb P(B) > 0$. Show that the conditional probability $\mathbb P( {\cdot} \mid B)$ is also a probability measure on $\Omega$. That is, show that the conditional probability also satisfies the probability axioms:
 
@@ -97,16 +120,22 @@ and the unions remain disjoint. Hence, we have
 where, in the fourth line we used Axiom 3 for the probability measure $\mathbb P(B)$. This proves Axiom 3, and we are done.
 :::
 ::::
+-->
 
 ::::: {.myq}
-**B4.** Soldiers are asked about their use of illegal drugs, but to protect their privacy and ensure honest answers, a "randomised survey" is used. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:
+**B3.** Soldiers are asked about their use of illegal drugs, using a so-called "randomised survey". Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:
 
 1. "Say 'Yes.'"
 2. "Say 'No.'"
 3. "Truthfully answer the question 'Have you taken any illegal drugs in the past 12 months?'"
 
+
 :::: {.subq}
-**(a)** 40% of soldiers respond "Yes". What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.
+**(a)** What are some advantages or disadvantages of performing the experiment this way?
+::::
+
+:::: {.subq}
+**(b)** Suppose that 40% of soldiers respond "Yes". What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.
 
 ::: {.myanswers data-latex=""}
 *Solution.*
@@ -122,7 +151,7 @@ Solving this gives $p = \frac15 = 20\%$.
 ::::
 
 :::: {.subq}
-**(b)** If a soldier responds "Yes", what is the probability that the soldier has taken illegal drugs in the past 12 months.
+**(c)** If a soldier responds "Yes", what is the probability that the soldier has taken illegal drugs in the past 12 months.
 
 ::: {.myanswers data-latex=""}
 *Solution.*
@@ -135,48 +164,35 @@ From the question we know that $\mathbb P(Y) = 0.4$. From part (a) we know that 
 :::::
 
 ::::: {.myq}
-**B5.** Let $X$ be a random variable. Prove that
+**B4.** A random variable $X_n$ is said to follow the *discrete uniform distribution* on $\{1, 2, \dots, n\}$ if each of the $n$ values in that set $\{1,2,\dots,n\}$ is equally likely.
 
 :::: {.subq}
-**(a)** $\Var(aX) = a^2 \Var(X)$;
+**(a)** Show that the expectation of $X_n$ is $\mathbb EX_n = \displaystyle\frac{n+1}{2}$.
+::::
+
+:::: {.subq}
+**(b)** Find the variance of $X_n$.
 
 ::: {.myanswers data-latex=""}
-*Solution.*
-First, we recall that $\mathbb E(aX) = a\mathbb EX = a\mu$.
-
-Using the definitional formula, we have
-\begin{multline}
-\Var(aX) = \mathbb E(aX - a\mu)^2 = \mathbb E\big(a(X-\mu)\big)^2 \\
-= \mathbb E \big(a^2(X-\mu)^2\big) = a^2 \mathbb E(X - \mu)^2 = a^2 \Var(X) ,
-\end{multline}
-where the penultimate equality used the linearity of expectation.
-
-*Alternatively:* Using the computational formula, we have
-
-\begin{multline}
-\Var(aX) = \mathbb E(aX)^2 - (a\mu)^2 = \mathbb E(a^2X^2) - a^2 \mu^2 \\
-= a^2 \mathbb EX^2 - a^2\mu^2 = a^2 (\mathbb EX^2 - \mu^2) = a^2 \Var(X) .
-\end{multline}
+*Hint.* I recommend using the computational formula. Can you find $\mathbb EX_n^2$.
 :::
 ::::
 
 :::: {.subq}
-**(b)** $\Var(X+b) = \Var(X)$.
+**(c)** Let $Y$ be a discrete uniform distribution on $a+b-1$ values $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of $Y$.
 
 ::: {.myanswers data-latex=""}
-*Solution.*
-First recall that $\mathbb E(X + b) = \mathbb EX + b = \mu + b$.
-
-Using the definitional formula, we have
-\[ \Var(X + b) = \mathbb E\big((X + b) - (\mu + b)\big)^2 = \mathbb E(X - \mu)^2 = \Var(X) . \]
-
-(Using the computational formula is possible, but more hassle.)
+*Hint.* Is there a function that maps a "standard" discrete uniform distribution, with an appriately chosen $n$, into this one?
 :::
 ::::
+
+You may use without proof the standard results
+\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]
 :::::
 
+
 ::::: {.myq}
-**B6.** A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If your first Head comes on the $n$th coin toss, then you win $2^n$ pounds.
+**B5.** A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If the first Head comes up on the $n$th coin toss, then you win $2^n$ pounds.
 
 :::: {.subq}
 **(a)** What is the probability that the first Head is seen on the $n$th toss of the coin?
@@ -198,7 +214,7 @@ The expected winnings are
 ::::
 
 :::: {.subq}
-**(c)** The "St Petersburg paradox" refers to the fact that, despite the fact that the expected winnings from this game are infinite, hardly anybody would be prepared to play this game for, say, £100, and certainly not for £1000. Discuss a few possible "resolutions" to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.
+**(c)** The "St Petersburg paradox" refers to the observation that, despite the expected winnings from this game being infinite, few people would be prepared to play this game for, say, £100, and almost no one for £1000. Discuss a few possible "resolutions" to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.
 
 ::: {.myanswers data-latex=""}
 *Discussion.*

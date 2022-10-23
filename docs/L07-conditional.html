@@ -230,6 +230,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
 <li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -279,7 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span class="math display">\[ \mathbb P(\text{blond hair and blue eyes}) = \mathbb P(\text{blond hair}) \times \mathbb P(\text{blue eyes}) . \]</span>
 This is an important property known as “independence”.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 7.1  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are said to be <strong>independent</strong> if
+<p><span id="def:unlabeled-div-29" class="definition"><strong>Definition 7.1  </strong></span>Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are said to be <strong>independent</strong> if
 <span class="math display">\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B) .  \]</span></p>
 </div>
 <p>There are two ways we can use this definition.</p>
@@ -289,13 +296,13 @@ This is an important property known as “independence”.</p>
 </ul>
 <p>In this second case, we might know <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent because we are specifically told they are in a question. But alternatively we might reason that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> must be independent because the related experiments are not physically related. For example if we roll a dice then toss a coin, we might reason that <span class="math inline">\(\{\text{roll a 5}\}\)</span> and <span class="math inline">\(\{\text{the coin lands Heads}\}\)</span> must be independent because the dice roll doesn’t effect the coin toss – we could then use the independence assumption in calculations.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-31" class="example"><strong>Example 7.1  </strong></span><em>Consider rolling a dice. Let <span class="math inline">\(A = \{\text{even number}\} = \{2,4,6\}\)</span>, and let <span class="math inline">\(B = \{\text{roll at least 4}\} = \{4,5,6\}\)</span>. Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</em></p>
+<p><span id="exm:unlabeled-div-30" class="example"><strong>Example 7.1  </strong></span><em>Consider rolling a dice. Let <span class="math inline">\(A = \{\text{even number}\} = \{2,4,6\}\)</span>, and let <span class="math inline">\(B = \{\text{roll at least 4}\} = \{4,5,6\}\)</span>. Are <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> independent?</em></p>
 <p>Clearly we have <span class="math inline">\(\mathbb P(A) = \frac36 = \frac12\)</span> and <span class="math inline">\(\mathbb P(B) = \frac 36 = \frac12\)</span>. The intersection is <span class="math inline">\(A \cap B = \{4,6\}\)</span>, so <span class="math inline">\(\mathbb P(A \cap B) = \frac26 = \frac13\)</span>. So we see that
 <span class="math display">\[ \mathbb P(A\cap B) = \frac13  \qquad \text{and} \qquad  \mathbb P(A)\, \mathbb P(B) = \frac12 \times \frac12 = \frac14 . \]</span>
 So <span class="math inline">\(\mathbb P(A \cap B) \neq \mathbb P(A)\, \mathbb P(B)\)</span>, and the two events are not independent.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-32" class="example"><strong>Example 7.2  </strong></span><em>A biased coin has probability <span class="math inline">\(p\)</span> of landing Heads and probability <span class="math inline">\(1-p\)</span> of landing Tails. You toss the coin 3 times. Assuming tosses of the coin are independent, calculate the probability of getting exactly 2 Heads.</em></p>
+<p><span id="exm:unlabeled-div-31" class="example"><strong>Example 7.2  </strong></span><em>A biased coin has probability <span class="math inline">\(p\)</span> of landing Heads and probability <span class="math inline">\(1-p\)</span> of landing Tails. You toss the coin 3 times. Assuming tosses of the coin are independent, calculate the probability of getting exactly 2 Heads.</em></p>
 <p>There are three ways we could get exactly 2 Heads: HHT, HTH, or THH. For the first of these,
 <span class="math display">\[ \mathbb P(\text{HHT}) = \mathbb P(\text{first coin H} \cap \text{second coin H} \cap \text{third coin T}) . \]</span>
 Since tosses of the coin are independent, we therefore have
@@ -358,7 +365,7 @@ also.</p>
 <span class="math display">\[  \mathbb P(\text{blue eyes} \mid \text{blond hair}) = \frac{\mathbb P(\text{blue eyes and blond hair})}{\mathbb P(\text{blond hair})} = \frac{0.1}{0.4} = \frac14. \]</span></p>
 <p>What we’ve seen here is called a “conditional probability”.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events, with <span class="math inline">\(\mathbb P(A) &gt; 0\)</span>. Then the <strong>conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span></strong> is defined to be
+<p><span id="def:unlabeled-div-32" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events, with <span class="math inline">\(\mathbb P(A) &gt; 0\)</span>. Then the <strong>conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span></strong> is defined to be
 <span class="math display">\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span></p>
 </div>
 <p>The condition <span class="math inline">\(\mathbb P(A) &gt; 0\)</span> is just to ensure we don’t have any “divide by 0” errors. (I normally won’t bother saying this explicitly – any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)</p>
@@ -389,7 +396,7 @@ which can be useful when we have three stages of an experiment.</p>
 </div>
 <p>Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It’s a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-34" class="example"><strong>Example 7.3  </strong></span><em>Recall the Lotto problem from Example <a href="L06-classical-ii.html#exm:lotto">6.3</a>: What is the probability we match 6 balls from 59?</em></p>
+<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 7.3  </strong></span><em>Recall the Lotto problem from Example <a href="L06-classical-ii.html#exm:lotto">6.3</a>: What is the probability we match 6 balls from 59?</em></p>
 <p>Let <span class="math inline">\(A_1, A_2, \dots, A_6\)</span> be the events that the first, second, …, sixth balls out of the machine are on our ticket. Clearly <span class="math inline">\(\mathbb P(A_1) = \frac{6}{59}\)</span>, as we have six numbers on our ticket that the first ball could match. The conditional probability that the second ball matches given that the first ball matched is <span class="math inline">\(\mathbb P(A_2 \mid A_1) = \frac{5}{58}\)</span>, because there are 58 balls left in the machine and, given that we got the first number right, there are 5 numbers left on our ticket. Similarly, <span class="math inline">\(\mathbb P(A_3 \mid A_1 \cap A_2) = \frac{4}{57}\)</span>, and so on, until <span class="math inline">\(\mathbb P(A_6 \mid A_1 \cap \cdots\cap A_5) = \frac{1}{54}\)</span>.</p>
 <p>So, using the chain rule, we get
 <span class="math display">\[\begin{align*}
@@ -411,7 +418,7 @@ It’s easy to see that this is the same answer. The structure of the answers sh
 <li>The chain rule is
 <span class="math display">\[\begin{multline*}
 \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
-= \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .
+= \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap \cdots \cap  A_{n-1}) .
 \end{multline*}\]</span></li>
 </ul>
 </div>

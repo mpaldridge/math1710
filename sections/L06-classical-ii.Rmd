@@ -102,7 +102,7 @@ It can sometimes be useful to remember that $\ff nk = n!/(n-k)!$ allows us to wr
 \[ \binom nk = \frac{\ff nk}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]
 
 
-::: {.example}
+::: {.example #akqj}
 *You are dealt a "hand" of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?*
 
 Here, $\Omega$ is the set of all 13-card hands from the deck, and $A$ is the subset of those that contain the AKQJ of Spades.

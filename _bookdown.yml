@@ -13,7 +13,7 @@ rmd_files:
   - sections/L08-two-theorems.Rmd
 #  - sections/L09-discrete-rv.Rmd
 #  - sections/L10-expectation.Rmd
-#  - problems/P3.Rmd
+  - problems/P3.Rmd
 #  - sections/L11-binomial-geometric.Rmd
 #  - sections/L12-poisson.Rmd
 #  - sections/L13-multi-rv.Rmd

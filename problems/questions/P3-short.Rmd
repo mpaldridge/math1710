@@ -79,12 +79,10 @@ So $\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})
 :::::
 
 ::::: {.myq}
-**A2.** Three events $A, B, C$ are said to be *pairwise independent* if each pair of events are independent -- that is, if $A$ and $B$ are independent, $B$ and $C$ are independent, and $A$ and $C$ are independent. The three events are said to *mutually independent* if they are pairwise independent and also $\mathbb P(A \cap B \cap C) = \mathbb P(A)\,\mathbb P(B)\,\mathbb P(C)$.
-
-Consider rolling two dice independently. Let $A$ be the event that the first roll is even, let $B$ be the event that the second roll is even, and let $C$ be the event that the total score is even.
+**A2.** Consider rolling two dice. Let $A$ be the event that the first roll is even, let $B$ be the event that the second roll is even, and let $C$ be the event that the total score is even. You may assume the dice rolls are independent; so, in particular, events $A$ and $B$ are independent.
 
 :::: {.subq}
-**(a)** Are $A$, $B$, and $C$ pairwise independent?
+**(a)** Are $A$ and $C$ independent?
 
 ::: {.myanswers data-latex=""}
 *Solution.* First note that the probability that a dice is even is $\frac{3}{6} = \frac12$, and the probability the total of two dice is also $\frac{18}{36} = \frac12$.
@@ -98,7 +96,21 @@ Hence $A$, $B$ and $C$ are pairwise independent.
 ::::
 
 :::: {.subq}
-**(b)** Are $A$, $B$, and $C$ mutually independent?
+**(b)** Are $B$ and $C$ independent?
+
+::: {.myanswers data-latex=""}
+*Solution.* First note that the probability that a dice is even is $\frac{3}{6} = \frac12$, and the probability the total of two dice is also $\frac{18}{36} = \frac12$.
+
+* $A$ and $B$ are independent by assumption.
+* Since the sum of two even numbers is even, while even plus odd equals odd, we have that $A$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(A \cap C) = \mathbb P(A) \times \mathbb P(C) = \frac14$, so $A$ and $C$ are independent.
+* For the same reason, $V$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(B \cap C) = \mathbb P(B) \times \mathbb P(C) = \frac14$, so $B$ and $C$ are independent.
+
+Hence $A$, $B$ and $C$ are pairwise independent.
+:::
+::::
+
+:::: {.subq}
+**(b)** Is it true that $\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)$?
 
 ::: {.myanswers data-latex=""}
 *Solution.*
@@ -135,9 +147,9 @@ Then, using the computational formula,
 
 | $x$ | $1$ | $2$ | $4$ | $5$ | $a$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|
-| $p(x)$ | $0.1$ | $0.2$ | $0.1$ | $b$ | $c$ |
+| $p(x)$ | $0.1$ | $0.2$ | $0.1$ | $b$ | $0.1$ |
 
-This random variable has $\mathbb EX = 4.3$ and $\Var(X) = 4.61$. Find the values of $a$, $b$ and $c$.
+This random variable has $\mathbb EX = 4.3$. Find the values of $a$ and $b$.
 
 ::: {.myanswers data-latex=""}
 *Solution.*
@@ -175,9 +187,9 @@ So $a = 9$. Substituting this into (4) gives $c = 0.1$, so $b = 0.6 - 0.1 = 0.5$
 ::::
 
 ::::: {.myq}
-**A5.** The temperature $T_C$ measured in degrees Celsius can be converted to a temperature $T_F$ in degrees Fahrenheit using the formula $T_F = \frac95 T_C + 32$.
+**A5.** A temperature $T_C$ measured in degrees Celsius can be converted to a temperature $T_F$ in degrees Fahrenheit using the formula $T_F = \frac95 T_C + 32$.
 
-The average daily maximum temperature in Leeds in July is 19.0 °C with a variance of 10.4 °C^2^.
+The average daily maximum temperature in Leeds in July is 19.0 °C. The variance of the daily maximum temperature measured in degrees Celsius is 10.4.
 
 :::: {.subq}
 **(a)** What is the average daily maximum temperature in degrees Fahrenheit?
@@ -191,24 +203,13 @@ So the answer is $\frac95 \times 19.0 + 32 = 66.2$ °F.
 ::::
 
 :::: {.subq}
-**(b)** What is the variance of the daily maximum temperature in degrees Fahrenheit squared?
+**(b)** What is the variance of the daily maximum temperature when measured in degrees Fahrenheit?
 
 ::: {.myanswers data-latex=""}
 *Solution.*
 For the variance,
 \[ \Var(T_F) = \Var\left(\tfrac95T_C + 32\right) = \left(\tfrac95\right)^2 \Var(T_C) = \tfrac{81}{25}\Var(T_C). \]
 So the answer is $\frac{81}{25} \times 10.4 = 33.7$ °F^2^.
-:::
-::::
-
-:::: {.subq}
-**(c)** The average temperature in March is 1.8 °C higher than in February. What is this average difference in degrees Fahrenheit?
-
-::: {.myanswers data-latex=""}
-*Solution.*
-Note that a *change* in temperature in degrees Celsius of $\delta_C$ takes us from $T_C$ to $T_C + \delta$. This corresponds to a *change* in temperature in degrees Fahrenheit of
-\[ \delta_F = \left(\tfrac95(T_C+\delta) + 32\right) - \left(\tfrac95T_C + 32\right) = \tfrac95\delta_C . \]
-So, by linearity of expectation again, the answer is $\frac95 \times 1.8 = 3.2$ °F.
 :::
 ::::
 :::::

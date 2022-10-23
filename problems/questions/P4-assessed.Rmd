@@ -35,6 +35,7 @@
 ::::
 :::::
 
+
 ::::: {.myq}
 **C2.** Let $X$ and $Y$ be random variables, and let $a$ and $b$ be constants.
 

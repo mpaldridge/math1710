@@ -15,7 +15,11 @@ display: none !important;
 
 
 ::: {.mysummary}
-This is Problem Sheet 3. This problem sheet covers [Sections 4](#S04-conditional) and [5](#S05-discrete-rv). You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by **2pm on  Monday 8 November**.
+You can [download this problem sheet as a PDF file](P3-sheet.pdf)
+:::
+
+::: {.mysummary}
+This is Problem Sheet 3. This problem sheet covers material from Lectures 7 to 10. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by **Monday 14 November**.
 :::
 
 ## A: Short questions {#P3-short .unnumbered}
@@ -34,8 +38,8 @@ This is Problem Sheet 3. This problem sheet covers [Sections 4](#S04-conditional
 ::: {.mysummary}
 The last two questions are **assessed questions**. These two questions count for 3% of your final mark for this module.
 
-The deadline for submitting your solutions is **2pm on Monday 8 November** at the beginning of Week 7, although I strongly recommend completing and submitting your work during Week 6. Submission will be via Gradescope; submission will open on Monday 1 November.
-Your work will be marked by your tutor and returned on Monday 15 November, when solutions will also be made available.
+The deadline for submitting your solutions is **2pm on Monday 14 November** at the beginning of Week 7. Submission is via Gradescope.
+Your work will be marked by your tutor and returned on Monday 21 November, when solutions will also be made available.
 
 Both questions are "long questions", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 
 
@@ -47,7 +51,11 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P3-short-sols .unnumbered}
 
-**A1.** (c) and (e) are independent. **A2.**  (a) Yes (b) No **A3.** 0.45 and 0.5725 *[corrected]* **A4.** $a = 9, b = 0.5, c = 0.1$ **A5** (a) 66.2 °F (b) 33.7 °F^2^ (c) 3.2 °F
+**A1.** (c) and (e) are independent.  
+**A2.**  (a) Yes (b) Yes (c) No  
+**A3.** 0.45 and 0.5725  
+**A4.** $a = 9, b = 0.5$  
+**A5** (a) 66.2 °F (b) 33.7 °F^2^
 
 
 

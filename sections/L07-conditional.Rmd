@@ -153,6 +153,6 @@ It's easy to see that this is the same answer. The structure of the answers show
 * The chain rule is
 \begin{multline*}
 \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
-  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) . 
+  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap \cdots \cap  A_{n-1}) . 
 \end{multline*}
 :::

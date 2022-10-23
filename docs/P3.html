@@ -221,13 +221,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
 <li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
 <li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+<li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
 <li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
 <li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
-<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
@@ -276,7 +277,10 @@ display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>This is Problem Sheet 3. This problem sheet covers <a href="#S04-conditional">Sections 4</a> and <a href="#S05-discrete-rv">5</a>. You should work through all the questions on this problem sheet during Weeks 4 and 5, in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by <strong>2pm on Monday 8 November</strong>.</p>
+<p>You can <a href="P3-sheet.pdf">download this problem sheet as a PDF file</a></p>
+</div>
+<div class="mysummary">
+<p>This is Problem Sheet 3. This problem sheet covers material from Lectures 7 to 10. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by <strong>Monday 14 November</strong>.</p>
 </div>
 <div id="P3-short" class="section level2 unnumbered hasAnchor">
 <h2>A: Short questions<a href="P3.html#P3-short" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -349,10 +353,9 @@ So <span class="math inline">\(\mathbb P(\text{first Heart and second Ace}) = \m
 </div>
 </div>
 <div class="myq">
-<p><strong>A2.</strong> Three events <span class="math inline">\(A, B, C\)</span> are said to be <em>pairwise independent</em> if each pair of events are independent – that is, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are independent, and <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> are independent. The three events are said to <em>mutually independent</em> if they are pairwise independent and also <span class="math inline">\(\mathbb P(A \cap B \cap C) = \mathbb P(A)\,\mathbb P(B)\,\mathbb P(C)\)</span>.</p>
-<p>Consider rolling two dice independently. Let <span class="math inline">\(A\)</span> be the event that the first roll is even, let <span class="math inline">\(B\)</span> be the event that the second roll is even, and let <span class="math inline">\(C\)</span> be the event that the total score is even.</p>
+<p><strong>A2.</strong> Consider rolling two dice. Let <span class="math inline">\(A\)</span> be the event that the first roll is even, let <span class="math inline">\(B\)</span> be the event that the second roll is even, and let <span class="math inline">\(C\)</span> be the event that the total score is even. You may assume the dice rolls are independent; so, in particular, events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.</p>
 <div class="subq">
-<p><strong>(a)</strong> Are <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> pairwise independent?</p>
+<p><strong>(a)</strong> Are <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> independent?</p>
 <div class="myanswers">
 <p><em>Solution.</em> First note that the probability that a dice is even is <span class="math inline">\(\frac{3}{6} = \frac12\)</span>, and the probability the total of two dice is also <span class="math inline">\(\frac{18}{36} = \frac12\)</span>.</p>
 <ul>
@@ -364,7 +367,19 @@ So <span class="math inline">\(\mathbb P(\text{first Heart and second Ace}) = \m
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Are <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, and <span class="math inline">\(C\)</span> mutually independent?</p>
+<p><strong>(b)</strong> Are <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> independent?</p>
+<div class="myanswers">
+<p><em>Solution.</em> First note that the probability that a dice is even is <span class="math inline">\(\frac{3}{6} = \frac12\)</span>, and the probability the total of two dice is also <span class="math inline">\(\frac{18}{36} = \frac12\)</span>.</p>
+<ul>
+<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent by assumption.</li>
+<li>Since the sum of two even numbers is even, while even plus odd equals odd, we have that <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> occur if and only if both dice are even, which has probability <span class="math inline">\(\frac12 \times \frac12 = \frac14\)</span>. Hence <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \times \mathbb P(C) = \frac14\)</span>, so <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> are independent.</li>
+<li>For the same reason, <span class="math inline">\(V\)</span> and <span class="math inline">\(C\)</span> occur if and only if both dice are even, which has probability <span class="math inline">\(\frac12 \times \frac12 = \frac14\)</span>. Hence <span class="math inline">\(\mathbb P(B \cap C) = \mathbb P(B) \times \mathbb P(C) = \frac14\)</span>, so <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are independent.</li>
+</ul>
+<p>Hence <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are pairwise independent.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Is it true that <span class="math inline">\(\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)\)</span>?</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 For the same reasons as above, <span class="math inline">\(A \cap B \cap C\)</span> occurs if and only if both dice rolls are even, which happens with probability <span class="math inline">\(\frac12\times\frac12 = \frac14\)</span>. Hence, <span class="math inline">\(\mathbb P(A \cap B \cap C) = \frac14\)</span>, but <span class="math inline">\(\mathbb P(A)\,\mathbb P(B)\,\mathbb P(C) = \frac12\times\frac12\times\frac12 = \frac18\)</span>. So <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are not mutually independent.</p>
@@ -427,11 +442,11 @@ Then, using the computational formula,
 <td align="center"><span class="math inline">\(0.2\)</span></td>
 <td align="center"><span class="math inline">\(0.1\)</span></td>
 <td align="center"><span class="math inline">\(b\)</span></td>
-<td align="center"><span class="math inline">\(c\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
 </tr>
 </tbody>
 </table>
-<p>This random variable has <span class="math inline">\(\mathbb EX = 4.3\)</span> and <span class="math inline">\(\operatorname{Var}(X) = 4.61\)</span>. Find the values of <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span> and <span class="math inline">\(c\)</span>.</p>
+<p>This random variable has <span class="math inline">\(\mathbb EX = 4.3\)</span>. Find the values of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 First, a PMF must sum to 1, so
@@ -464,8 +479,8 @@ So <span class="math inline">\(a = 9\)</span>. Substituting this into (4) gives 
 </div>
 </div>
 <div class="myq">
-<p><strong>A5.</strong> The temperature <span class="math inline">\(T_C\)</span> measured in degrees Celsius can be converted to a temperature <span class="math inline">\(T_F\)</span> in degrees Fahrenheit using the formula <span class="math inline">\(T_F = \frac95 T_C + 32\)</span>.</p>
-<p>The average daily maximum temperature in Leeds in July is 19.0 °C with a variance of 10.4 °C<sup>2</sup>.</p>
+<p><strong>A5.</strong> A temperature <span class="math inline">\(T_C\)</span> measured in degrees Celsius can be converted to a temperature <span class="math inline">\(T_F\)</span> in degrees Fahrenheit using the formula <span class="math inline">\(T_F = \frac95 T_C + 32\)</span>.</p>
+<p>The average daily maximum temperature in Leeds in July is 19.0 °C. The variance of the daily maximum temperature measured in degrees Celsius is 10.4.</p>
 <div class="subq">
 <p><strong>(a)</strong> What is the average daily maximum temperature in degrees Fahrenheit?</p>
 <div class="myanswers">
@@ -476,7 +491,7 @@ So the answer is <span class="math inline">\(\frac95 \times 19.0 + 32 = 66.2\)</
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> What is the variance of the daily maximum temperature in degrees Fahrenheit squared?</p>
+<p><strong>(b)</strong> What is the variance of the daily maximum temperature when measured in degrees Fahrenheit?</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 For the variance,
@@ -484,28 +499,19 @@ For the variance,
 So the answer is <span class="math inline">\(\frac{81}{25} \times 10.4 = 33.7\)</span> °F<sup>2</sup>.</p>
 </div>
 </div>
-<div class="subq">
-<p><strong>(c)</strong> The average temperature in March is 1.8 °C higher than in February. What is this average difference in degrees Fahrenheit?</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-Note that a <em>change</em> in temperature in degrees Celsius of <span class="math inline">\(\delta_C\)</span> takes us from <span class="math inline">\(T_C\)</span> to <span class="math inline">\(T_C + \delta\)</span>. This corresponds to a <em>change</em> in temperature in degrees Fahrenheit of
-<span class="math display">\[ \delta_F = \left(\tfrac95(T_C+\delta) + 32\right) - \left(\tfrac95T_C + 32\right) = \tfrac95\delta_C . \]</span>
-So, by linearity of expectation again, the answer is <span class="math inline">\(\frac95 \times 1.8 = 3.2\)</span> °F.</p>
-</div>
-</div>
 </div>
 </div>
 <div id="P3-long" class="section level2 unnumbered hasAnchor">
 <h2>B: Long questions<a href="P3.html#P3-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
-<p><strong>B1.</strong> Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are a pair of independent events. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are also independent events.</p>
+<p><strong>B1.</strong> Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are also independent events.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 We need to show that
-<span class="math display">\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \qquad (*) \]</span></p>
+<span class="math display">\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{*} \]</span></p>
 <p>Note that
 <span class="math display">\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) , \]</span>
-and the union is disjoint, so by Axiom 2,
+and the union is disjoint, so by Axiom 3,
 <span class="math display">\[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) . \]</span>
 Hence, the left-hand side of <span class="math inline">\((*)\)</span> is
 <span class="math display">\[\begin{align*}
@@ -517,82 +523,110 @@ Hence, the left-hand side of <span class="math inline">\((*)\)</span> is
 where, in the second line, we used the fact that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.</p>
 <p>The right-hand side of <span class="math inline">\((*)\)</span> is
 <span class="math display">\[\mathbb P(A) \, \mathbb P(B^\mathsf{c}) = \mathbb P(A) \big(1 - \mathbb P(B)\big) , \]</span>
-where we’ve used the complement rule <span class="math inline">\(\mathbb P(B^\mathsf{c}) = 1- \mathbb P(B)\)</span>. Hence, we’ve shown the left- and right-hand sides of <span class="math inline">\((*)\)</span> are equal, and we are done.</p>
+where we’ve used the complement rule <span class="math inline">\(\mathbb P(B^\mathsf{c}) = 1- \mathbb P(B)\)</span>.</p>
+<p>Hence, we’ve shown the left- and right-hand sides of <span class="math inline">\((*)\)</span> are equal, and we are done.</p>
 </div>
 </div>
-<div class="myq">
-<p><strong>B2.</strong> Chloe cycles to work with probability <span class="math inline">\(0.6\)</span> and takes the bus with probability <span class="math inline">\(0.4\)</span>. She has noticed that she is late 20% of the time when she takes the bus. Her boss notices that, on average, Chloe is late one time per week (that is, once every five days).</p>
-<div class="subq">
-<p><strong>(a)</strong> What is the probability that Chloe will be late if she cycles to work?</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-Let <span class="math inline">\(C\)</span> be the event that Chloe cycles to work and <span class="math inline">\(B\)</span> the event that Chloe takes the bus. Let <span class="math inline">\(L\)</span> be the event that Chloe is late.</p>
-<ul>
-<li>We are told that <span class="math inline">\(\mathbb P(C) = 0.6\)</span> and <span class="math inline">\(\mathbb P(B) = 0.4\)</span>. In particular, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> make up a partition.</li>
-<li>We are told that <span class="math inline">\(\mathbb P(L \mid B) = 0.2\)</span>.</li>
-<li>We are told that <span class="math inline">\(\mathbb P(L) = \frac15 = 0.2\)</span>.</li>
-<li>We want to find out <span class="math inline">\(\mathbb P(L \mid C)\)</span>.</li>
-</ul>
-<p>The law of total probability tells us that
-<span class="math display">\[  \mathbb P(L) = \mathbb P(C)\,\mathbb P(L \mid C) + \mathbb P(B) \, \mathbb P(L \mid B) . \]</span>
+<!--
+::::: {.myq}
+**B2.** Chloe cycles to work with probability $0.6$ and takes the bus with probability $0.4$. She has noticed that she is late 25% of the time when she takes the bus. Her boss notices that, on average, Chloe is late once per week (that is, one day in every five days).
+
+:::: {.subq}
+**(a)** What is the probability that Chloe will be late if she cycles to work?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+Let $C$ be the event that Chloe cycles to work and $B$ the event that Chloe takes the bus. Let $L$ be the event that Chloe is late.
+
+* We are told that $\mathbb P(C) = 0.6$ and $\mathbb P(B) = 0.4$. In particular, $B$ and $C$ make up a partition.
+* We are told that $\mathbb P(L \mid B) = 0.2$.
+* We are told that $\mathbb P(L) = \frac15 = 0.2$.
+* We want to find out $\mathbb P(L  \mid C)$.
+
+The law of total probability tells us that
+\[  \mathbb P(L) = \mathbb P(C)\,\mathbb P(L \mid C) + \mathbb P(B) \, \mathbb P(L \mid B) . \]
 Putting in everything we know, we get
-<span class="math display">\[ 0.2 = 0.6 \,\mathbb P(L \mid C) + 0.4 \times 0.2 , \]</span>
-which rearranges to <span class="math inline">\(\mathbb P(L \mid C) = 0.2\)</span>.</p>
-</div>
+\[ 0.2 = 0.6 \,\mathbb P(L \mid C) + 0.4 \times 0.2 , \]
+which rearranges to $\mathbb P(L \mid C) = 0.2$.
+:::
+::::
+
+:::: {.subq}
+**(b)** Chloe is late today, and her boss suspects this is because she took the bus. What is the probability that this guess is correct?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+This is asking for $\mathbb P(B \mid L)$. We know $\mathbb P(L \mid B) = 0.2$, and want to switch the order of conditioning, so this is a job for Bayes' theorem! We have
+\begin{align*}
+\mathbb P(B \mid L) &= \frac{\mathbb P(B) \, \mathbb (L \mid B)}{\mathbb P(L)} \\
+  &= \frac{0.4 \times 0.2}{0.2} \\
+  &= 0.4 .
+\end{align*}
+:::
+::::
+:::::
+-->
+<div class="myq">
+<p><strong>B2.</strong> You are dealt a hand of 13 cards from a 52-card deck. Let <span class="math inline">\(E_\mathrm{A}, E_\mathrm{K}, E_\mathrm{Q}, E_\mathrm{J}\)</span> respectively be the events that your hand contains the Ace, King, Queen and Jack of Spades.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is <span class="math inline">\(\mathbb P(E_\mathrm{A})\)</span>, the probability that your hand contains the Ace of Spades?</p>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Chloe is late today, and her boss suspects this is because she took the bus. What is the probability that this guess is correct?</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-This is asking for <span class="math inline">\(\mathbb P(B \mid L)\)</span>. We know <span class="math inline">\(\mathbb P(L \mid B) = 0.2\)</span>, and want to switch the order of conditioning, so this is a job for Bayes’ theorem! We have
-<span class="math display">\[\begin{align*}
-\mathbb P(B \mid L) &amp;= \frac{\mathbb P(B) \, \mathbb (L \mid B)}{\mathbb P(L)} \\
-  &amp;= \frac{0.4 \times 0.2}{0.2} \\
-  &amp;= 0.4 .
-\end{align*}\]</span></p>
+<p><strong>(b)</strong> Explain why <span class="math inline">\(\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Using the chain rule, calculate the probability that your hand contains all four of the Ace, King, Queen and Jack of Spades.</p>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Check that your answer agrees with the answer we found by classical probability methods in <a href="L06-classical-ii.html#exm:akqj">Example 6.4</a> in Lecture 6. Which method do you prefer?</p>
 </div>
 </div>
-<p><em>[<strong>Note:</strong> Because <span class="math inline">\(0.2 = \frac15\)</span>, both types of transport are equally (un)reliable, making this a kind of boring question, which I didn’t notice when copying the question from last year’s problem sheet. This is a note to remind myself to change the numbers next year.]</em></p>
-</div>
-<div class="myq">
-<p><strong>B3.</strong> Let <span class="math inline">\(\Omega\)</span> be a sample space, let <span class="math inline">\(\mathbb P\)</span> be a probability measure on <span class="math inline">\(\Omega\)</span>, and fix an event <span class="math inline">\(B \subset \Omega\)</span> with <span class="math inline">\(\mathbb P(B) &gt; 0\)</span>. Show that the conditional probability <span class="math inline">\(\mathbb P( {\cdot} \mid B)\)</span> is also a probability measure on <span class="math inline">\(\Omega\)</span>. That is, show that the conditional probability also satisfies the probability axioms:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathbb P(A \mid B) \geq 0\)</span> for all events <span class="math inline">\(A \subset \Omega\)</span>;</li>
-<li><span class="math inline">\(\mathbb P(\Omega \mid B) = 1\)</span>;</li>
-<li>For disjoint events <span class="math inline">\(A_1, A_2, \dots\)</span>, we have
-<span class="math display">\[ \mathbb P(A_1 \cup A_2 \cup \cdots \mid B) = \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots . \]</span></li>
-</ol>
-<div class="myanswers">
-<p><em>Solution.</em>
+<!--
+:::: {.myq}
+**B3.** Let $\Omega$ be a sample space, let $\mathbb P$ be a probability measure on $\Omega$, and fix an event $B \subset \Omega$ with $\mathbb P(B) > 0$. Show that the conditional probability $\mathbb P( {\cdot} \mid B)$ is also a probability measure on $\Omega$. That is, show that the conditional probability also satisfies the probability axioms:
+
+1. $\mathbb P(A \mid B) \geq 0$ for all events $A \subset \Omega$;
+1. $\mathbb P(\Omega \mid B) = 1$;
+1. For disjoint events $A_1, A_2, \dots$, we have
+\[ \mathbb P(A_1 \cup A_2 \cup \cdots \mid B) = \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots . \]
+
+::: {.myanswers data-latex=""}
+*Solution.*
 For Axiom 1, we have
-<span class="math display">\[ \mathbb P(A \mid B) = \frac{\mathbb P(A \cap B)}{\mathbb P(B)} . \]</span>
-The numerator is non-negative, by Axiom 1 for the probability measure <span class="math inline">\(\mathbb P\)</span>, and the denominator is strictly positive, by assumption. Hence, the fraction is non-negative, as required.</p>
-<p>For Axiom 2, note that, since <span class="math inline">\(B \subset \Omega\)</span>, we have <span class="math inline">\(\Omega \cap B = B\)</span>. Hence
-<span class="math display">\[ \mathbb P(\Omega \mid B) = \frac{\mathbb P(\Omega \cap B)}{\mathbb P(B)} = \frac{\mathbb P(B)}{\mathbb P(B)} = 1 , \]</span>
-as required.</p>
-<p>For Axiom 3, note that the dsitributive law tells us that
-<span class="math display">\[ (A1 \cup A_2 \cup \cdots) \cap B = (A_1 \cap B) \cup (A_2 \cap B) \cup \cdots , \]</span>
+\[ \mathbb P(A \mid B) = \frac{\mathbb P(A \cap B)}{\mathbb P(B)} . \]
+The numerator is non-negative, by Axiom 1 for the probability measure $\mathbb P$, and the denominator is strictly positive, by assumption. Hence, the fraction is non-negative, as required.
+
+For Axiom 2, note that, since $B \subset \Omega$, we have $\Omega \cap B = B$. Hence
+\[ \mathbb P(\Omega \mid B) = \frac{\mathbb P(\Omega \cap B)}{\mathbb P(B)} = \frac{\mathbb P(B)}{\mathbb P(B)} = 1 , \]
+as required.
+
+For Axiom 3, note that the dsitributive law tells us that
+\[ (A1 \cup A_2 \cup \cdots) \cap B = (A_1 \cap B) \cup (A_2 \cap B) \cup \cdots , \]
 and the unions remain disjoint. Hence, we have
-<span class="math display">\[\begin{align*}
-\mathbb P(A_1 &amp;\cup A_2 \cup \cdots \mid B) \\
-&amp;= \frac{\mathbb P\big((A_1 \cup A_2 \cup \cdots) \cap B\big)}{\mathbb P(B)} \\
-&amp;= \frac{\mathbb P\big((A_1 \cap B) \cup (A_2 \cap B) \cup \dots\big)}{\mathbb P(B)} \\
-&amp;= \frac{\mathbb P(A_1 \cap B) + \mathbb P(A_2 \cap B) + \cdots}{\mathbb P(B)} \\
-&amp;= \frac{\mathbb P(A_1 \cap B)}{\mathbb P(B)} + \frac{\mathbb P(A_2 \cap B)}{\mathbb P(B)} + \cdots \\
-&amp;= \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots,
-\end{align*}\]</span>
-where, in the fourth line we used Axiom 3 for the probability measure <span class="math inline">\(\mathbb P(B)\)</span>. This proves Axiom 3, and we are done.</p>
-</div>
-</div>
+\begin{align*}
+\mathbb P(A_1 &\cup A_2 \cup \cdots \mid B) \\
+&= \frac{\mathbb P\big((A_1 \cup A_2 \cup \cdots) \cap B\big)}{\mathbb P(B)} \\
+&= \frac{\mathbb P\big((A_1 \cap B) \cup (A_2 \cap B) \cup \dots\big)}{\mathbb P(B)} \\
+&= \frac{\mathbb P(A_1 \cap B) + \mathbb P(A_2 \cap B) + \cdots}{\mathbb P(B)} \\
+&= \frac{\mathbb P(A_1 \cap B)}{\mathbb P(B)} + \frac{\mathbb P(A_2 \cap B)}{\mathbb P(B)} + \cdots \\
+&= \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots, 
+\end{align*}
+where, in the fourth line we used Axiom 3 for the probability measure $\mathbb P(B)$. This proves Axiom 3, and we are done.
+:::
+::::
+-->
 <div class="myq">
-<p><strong>B4.</strong> Soldiers are asked about their use of illegal drugs, but to protect their privacy and ensure honest answers, a “randomised survey” is used. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:</p>
+<p><strong>B3.</strong> Soldiers are asked about their use of illegal drugs, using a so-called “randomised survey”. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:</p>
 <ol style="list-style-type: decimal">
 <li>“Say ‘Yes.’”</li>
 <li>“Say ‘No.’”</li>
 <li>“Truthfully answer the question ‘Have you taken any illegal drugs in the past 12 months?’”</li>
 </ol>
 <div class="subq">
-<p><strong>(a)</strong> 40% of soldiers respond “Yes”. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.</p>
+<p><strong>(a)</strong> What are some advantages or disadvantages of performing the experiment this way?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Suppose that 40% of soldiers respond “Yes”. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span> and make up a partition. Let <span class="math inline">\(Y\)</span> be the event that the soldier answers yes. We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span> and <span class="math inline">\(\mathbb P(Y \mid C_3) = \mathbb P(D)\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
@@ -605,7 +639,7 @@ Solving this gives <span class="math inline">\(p = \frac15 = 20\%\)</span>.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> If a soldier responds “Yes”, what is the probability that the soldier has taken illegal drugs in the past 12 months.</p>
+<p><strong>(c)</strong> If a soldier responds “Yes”, what is the probability that the soldier has taken illegal drugs in the past 12 months.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
 This is asking for <span class="math inline">\(\mathbb P(D \mid Y)\)</span>. Another one for Bayes theorem:
@@ -616,38 +650,27 @@ From the question we know that <span class="math inline">\(\mathbb P(Y) = 0.4\)<
 </div>
 </div>
 <div class="myq">
-<p><strong>B5.</strong> Let <span class="math inline">\(X\)</span> be a random variable. Prove that</p>
+<p><strong>B4.</strong> A random variable <span class="math inline">\(X_n\)</span> is said to follow the <em>discrete uniform distribution</em> on <span class="math inline">\(\{1, 2, \dots, n\}\)</span> if each of the <span class="math inline">\(n\)</span> values in that set <span class="math inline">\(\{1,2,\dots,n\}\)</span> is equally likely.</p>
 <div class="subq">
-<p><strong>(a)</strong> <span class="math inline">\(\operatorname{Var}(aX) = a^2 \operatorname{Var}(X)\)</span>;</p>
+<p><strong>(a)</strong> Show that the expectation of <span class="math inline">\(X_n\)</span> is <span class="math inline">\(\mathbb EX_n = \displaystyle\frac{n+1}{2}\)</span>.</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Find the variance of <span class="math inline">\(X_n\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-First, we recall that <span class="math inline">\(\mathbb E(aX) = a\mathbb EX = a\mu\)</span>.</p>
-<p>Using the definitional formula, we have
-<span class="math display">\[\begin{multline}
-\operatorname{Var}(aX) = \mathbb E(aX - a\mu)^2 = \mathbb E\big(a(X-\mu)\big)^2 \\
-= \mathbb E \big(a^2(X-\mu)^2\big) = a^2 \mathbb E(X - \mu)^2 = a^2 \operatorname{Var}(X) ,
-\end{multline}\]</span>
-where the penultimate equality used the linearity of expectation.</p>
-<p><em>Alternatively:</em> Using the computational formula, we have</p>
-<p><span class="math display">\[\begin{multline}
-\operatorname{Var}(aX) = \mathbb E(aX)^2 - (a\mu)^2 = \mathbb E(a^2X^2) - a^2 \mu^2 \\
-= a^2 \mathbb EX^2 - a^2\mu^2 = a^2 (\mathbb EX^2 - \mu^2) = a^2 \operatorname{Var}(X) .
-\end{multline}\]</span></p>
+<p><em>Hint.</em> I recommend using the computational formula. Can you find <span class="math inline">\(\mathbb EX_n^2\)</span>.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> <span class="math inline">\(\operatorname{Var}(X+b) = \operatorname{Var}(X)\)</span>.</p>
+<p><strong>(c)</strong> Let <span class="math inline">\(Y\)</span> be a discrete uniform distribution on <span class="math inline">\(a+b-1\)</span> values <span class="math inline">\(\{a, a+1, a+2, \dots, b-1, b\}\)</span>, for integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> with <span class="math inline">\(a&lt;b\)</span>. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of <span class="math inline">\(Y\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-First recall that <span class="math inline">\(\mathbb E(X + b) = \mathbb EX + b = \mu + b\)</span>.</p>
-<p>Using the definitional formula, we have
-<span class="math display">\[ \operatorname{Var}(X + b) = \mathbb E\big((X + b) - (\mu + b)\big)^2 = \mathbb E(X - \mu)^2 = \operatorname{Var}(X) . \]</span></p>
-<p>(Using the computational formula is possible, but more hassle.)</p>
+<p><em>Hint.</em> Is there a function that maps a “standard” discrete uniform distribution, with an appriately chosen <span class="math inline">\(n\)</span>, into this one?</p>
 </div>
 </div>
+<p>You may use without proof the standard results
+<span class="math display">\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]</span></p>
 </div>
 <div class="myq">
-<p><strong>B6.</strong> A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If your first Head comes on the <span class="math inline">\(n\)</span>th coin toss, then you win <span class="math inline">\(2^n\)</span> pounds.</p>
+<p><strong>B5.</strong> A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If the first Head comes up on the <span class="math inline">\(n\)</span>th coin toss, then you win <span class="math inline">\(2^n\)</span> pounds.</p>
 <div class="subq">
 <p><strong>(a)</strong> What is the probability that the first Head is seen on the <span class="math inline">\(n\)</span>th toss of the coin?</p>
 <div class="myanswers">
@@ -664,7 +687,7 @@ The expected winnings are
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> The “St Petersburg paradox” refers to the fact that, despite the fact that the expected winnings from this game are infinite, hardly anybody would be prepared to play this game for, say, £100, and certainly not for £1000. Discuss a few possible “resolutions” to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.</p>
+<p><strong>(c)</strong> The “St Petersburg paradox” refers to the observation that, despite the expected winnings from this game being infinite, few people would be prepared to play this game for, say, £100, and almost no one for £1000. Discuss a few possible “resolutions” to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.</p>
 <div class="myanswers">
 <p><em>Discussion.</em>
 One possibility is:</p>
@@ -691,13 +714,13 @@ happiness units, and you might be willing to pay 2 happiness-units-worth of mone
 <h2>C: Assessed questions<a href="P3.html#P3-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
 <p>The last two questions are <strong>assessed questions</strong>. These two questions count for 3% of your final mark for this module.</p>
-<p>The deadline for submitting your solutions is <strong>2pm on Monday 8 November</strong> at the beginning of Week 7, although I strongly recommend completing and submitting your work during Week 6. Submission will be via Gradescope; submission will open on Monday 1 November.
-Your work will be marked by your tutor and returned on Monday 15 November, when solutions will also be made available.</p>
+<p>The deadline for submitting your solutions is <strong>2pm on Monday 14 November</strong> at the beginning of Week 7. Submission is via Gradescope.
+Your work will be marked by your tutor and returned on Monday 21 November, when solutions will also be made available.</p>
 <p>Both questions are “long questions”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 <div class="myq">
-<p><strong>C1.</strong> A computer spam filter is 98% effective at sending spam emails to my junk folder, but will also incorrectly send 1% of legitimate emails to my junk folder. Suppose that 1 in 10 emails are spam. What proportion of emails in my junk folder are actually legitimate emails?</p>
+<p><strong>C1.</strong> A computer spam filter is 98% effective at sending spam emails to my junk folder, but will also incorrectly send 1% of legitimate emails to my junk folder. Suppose that 1 in 10 emails are spam. What proportion of emails in my junk folder are actually legitimate emails? Explain your solution fully.</p>
 <div class="myanswers">
 <p><em>Hints.</em> Some general advice:</p>
 <ul>
@@ -710,29 +733,47 @@ Your work will be marked by your tutor and returned on Monday 15 November, when 
 </div>
 </div>
 <div class="myq">
-<p><strong>C2.</strong> A random variable <span class="math inline">\(X\)</span> is said to follow the <em>discrete uniform distribution</em> on <span class="math inline">\(\{1, 2, \dots, n\}\)</span> if each value <span class="math inline">\(x\)</span> in that set <span class="math inline">\(\{1,2,\dots,n\}\)</span> is equally likely.</p>
+<p><strong>C2.</strong> Let <span class="math inline">\(X\)</span> be a random variable.</p>
 <div class="subq">
-<p><strong>(a)</strong> Show that the expectation of <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb EX = \displaystyle\frac{n+1}{2}\)</span>.</p>
+<p><strong>(a)</strong> Let <span class="math inline">\(Y = aX\)</span> be another random variable. What is <span class="math inline">\(\mathbb EY\)</span>, in terms of <span class="math inline">\(\mu = \mathbb EX\)</span>?</p>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Find the variance of <span class="math inline">\(X\)</span>.</p>
+<p><strong>(b)</strong> Using part (a), show that <span class="math inline">\(\operatorname{Var}(aX) = a^2 \operatorname{Var}(X)\)</span>.</p>
 <div class="myanswers">
-<p><em>Hint.</em> I recommend using the computational formula. Can you find <span class="math inline">\(\mathbb EX^2\)</span>.</p>
+<p><em>Solution.</em>
+First, we recall that <span class="math inline">\(\mathbb E(aX) = a\mathbb EX = a\mu\)</span>.</p>
+<p>Using the definitional formula, we have
+<span class="math display">\[\begin{multline}
+\operatorname{Var}(aX) = \mathbb E(aX - a\mu)^2 = \mathbb E\big(a(X-\mu)\big)^2 \\
+= \mathbb E \big(a^2(X-\mu)^2\big) = a^2 \mathbb E(X - \mu)^2 = a^2 \operatorname{Var}(X) ,
+\end{multline}\]</span>
+where the penultimate equality used the linearity of expectation.</p>
+<p><em>Alternatively:</em> Using the computational formula, we have</p>
+<p><span class="math display">\[\begin{multline}
+\operatorname{Var}(aX) = \mathbb E(aX)^2 - (a\mu)^2 = \mathbb E(a^2X^2) - a^2 \mu^2 \\
+= a^2 \mathbb EX^2 - a^2\mu^2 = a^2 (\mathbb EX^2 - \mu^2) = a^2 \operatorname{Var}(X) .
+\end{multline}\]</span></p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> Let <span class="math inline">\(Y\)</span> be a discrete uniform distribution on <span class="math inline">\(\{a, a+1, a+2, \dots, b-1, b\}\)</span>, for integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> with <span class="math inline">\(a&lt;b\)</span>. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of <span class="math inline">\(Y\)</span>.</p>
+<p><strong>(c)</strong> Prove that <span class="math inline">\(\operatorname{Var}(X+b) = \operatorname{Var}(X)\)</span>.</p>
 <div class="myanswers">
-<p><em>Hint.</em> Is there a function that maps a “standard” discrete uniform distribution, with an appriately chosen <span class="math inline">\(n\)</span>, into this one?</p>
+<p><em>Solution.</em>
+First recall that <span class="math inline">\(\mathbb E(X + b) = \mathbb EX + b = \mu + b\)</span>.</p>
+<p>Using the definitional formula, we have
+<span class="math display">\[ \operatorname{Var}(X + b) = \mathbb E\big((X + b) - (\mu + b)\big)^2 = \mathbb E(X - \mu)^2 = \operatorname{Var}(X) . \]</span></p>
+<p>(Using the computational formula is possible, but more hassle.)</p>
 </div>
 </div>
-<p>You may use without proof the standard results
-<span class="math display">\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]</span></p>
 </div>
 </div>
 <div id="P3-short-sols" class="section level2 unnumbered hasAnchor">
 <h2>Solutions to short questions<a href="P3.html#P3-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>A1.</strong> (c) and (e) are independent. <strong>A2.</strong> (a) Yes (b) No <strong>A3.</strong> 0.45 and 0.5725 <em>[corrected]</em> <strong>A4.</strong> <span class="math inline">\(a = 9, b = 0.5, c = 0.1\)</span> <strong>A5</strong> (a) 66.2 °F (b) 33.7 °F<sup>2</sup> (c) 3.2 °F</p>
+<p><strong>A1.</strong> (c) and (e) are independent.<br />
+<strong>A2.</strong> (a) Yes (b) Yes (c) No<br />
+<strong>A3.</strong> 0.45 and 0.5725<br />
+<strong>A4.</strong> <span class="math inline">\(a = 9, b = 0.5\)</span><br />
+<strong>A5</strong> (a) 66.2 °F (b) 33.7 °F<sup>2</sup></p>
 
 </div>
 </div>

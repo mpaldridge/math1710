@@ -230,6 +230,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
 <li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -346,7 +353,7 @@ for the number of ways to choose <span class="math inline">\(k\)</span> objects 
 <p>It can sometimes be useful to remember that <span class="math inline">\({n}^{\underline{k}} = n!/(n-k)!\)</span> allows us to write the binomial coefficient in terms of the factorial function as
 <span class="math display">\[ \binom nk = \frac{{n}^{\underline{k}}}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-28" class="example"><strong>Example 6.4  </strong></span><em>You are dealt a “hand” of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?</em></p>
+<p><span id="exm:akqj" class="example"><strong>Example 6.4  </strong></span><em>You are dealt a “hand” of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?</em></p>
 <p>Here, <span class="math inline">\(\Omega\)</span> is the set of all 13-card hands from the deck, and <span class="math inline">\(A\)</span> is the subset of those that contain the AKQJ of Spades.</p>
 <p>Using the binomial coefficient notation, it’s clear that
 <span class="math display">\[ |\Omega| = \binom{52}{13} = \frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1} . \]</span></p>
@@ -404,7 +411,7 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 ::::
 -->
 <div class="example">
-<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 6.5  </strong></span><em>There are <span class="math inline">\(k = 23\)</span> students in a class. What is the probability that at least two of the students share a birthday?</em></p>
+<p><span id="exm:unlabeled-div-28" class="example"><strong>Example 6.5  </strong></span><em>There are <span class="math inline">\(k = 23\)</span> students in a class. What is the probability that at least two of the students share a birthday?</em></p>
 <p>This a famous problem, known as the “birthday problem”. You may have seen this problem before – but let’s try to solve it using the techniques from this section of notes. If you haven’t seen it before, you might like to guess what you think the answer might be. (We’ll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)</p>
 <p>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible birthdays for the <span class="math inline">\(k\)</span> students. Clearly <span class="math inline">\(|\Omega| = 365^k\)</span>.</p>
 <p>Let <span class="math inline">\(A\)</span> be the even that at least two students share a birthday. Since this is an “at least” event, it seems like it might be a good idea to look instead at the complementary event <span class="math inline">\(A^\mathsf{c}\)</span>. If <span class="math inline">\(A\)</span> is the event that there’s at least one shared birthday, then <span class="math inline">\(A^\mathsf{c}\)</span> is the event that there are <em>no</em> shared birthdays; that is, <span class="math inline">\(A^\mathsf{c}\)</span> is the event that all <span class="math inline">\(k\)</span> students have <em>different</em> birthdays.</p>
