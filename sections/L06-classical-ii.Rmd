@@ -196,6 +196,6 @@ Some people find it surprising that only 23 students have such a high probabilit
 ## Summary  {#summary-L06 .unnumbered}
 
 ::: {.mysummary}
-* Ordering $n$ objects can be done in $n! = n^{\underline{n}} = n(n-1)\dots2\cdot1$ ways.
+* Ordering $n$ objects can be done in $n! = n^{\underline{n}} = n(n-1)\cdots2\cdot1$ ways.
 * The number of ways to sample $k$ objects out of $n$ when the order doesn't matter is given by the binomial coefficient $\binom nk = \ff{n}{k}/k!$.
 :::

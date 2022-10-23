@@ -158,6 +158,6 @@ Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample wi
 * "Classical probability" describes the situation where there are finitely many equally likely outcomes. The classical probability $\mathbb P(A) = |A|/|\Omega|$ requires us to count how many outcomes there are in events or sample spaces.
 * The multiplication principle says that $n$ choices followed by $m$ choices makes $n \times m$ choices in total.
 * Sampling $k$ objects out of $n$ with replacement gives $n^k$ choices.
-* Sampling $k$ objects out of $n$ without replacement gives $n^{\underline{k}} = n(n-1)\dots(n-k+1)$ choices.
+* Sampling $k$ objects out of $n$ without replacement gives $n^{\underline{k}} = n(n-1)\cdots(n-k+1)$ choices.
 :::
 

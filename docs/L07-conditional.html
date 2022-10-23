@@ -221,13 +221,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
 <li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
 <li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+<li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
 <li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
 <li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
-<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
@@ -360,7 +361,7 @@ also.</p>
 <p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 7.2  </strong></span>Let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events, with <span class="math inline">\(\mathbb P(A) &gt; 0\)</span>. Then the <strong>conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span></strong> is defined to be
 <span class="math display">\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span></p>
 </div>
-<p>The condition <span class="math inline">\(\mathbb P(A) &gt; 0\)</span> is to ensure we don’t have any “divide by 0” errors. (I normally won’t bother saying this explicitly – any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)</p>
+<p>The condition <span class="math inline">\(\mathbb P(A) &gt; 0\)</span> is just to ensure we don’t have any “divide by 0” errors. (I normally won’t bother saying this explicitly – any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)</p>
 <p>Conditional probability ties in with independence in an important way. Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, so <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)\)</span>. Then the conditional probability becomes
 <span class="math display">\[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]</span>
 so <span class="math inline">\(\mathbb P(B \mid A) = \mathbb P(B)\)</span>. In other words, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math inline">\(A\)</span> happening doesn’t affect the probability of <span class="math inline">\(B\)</span> happening (and vice versa).</p>
@@ -398,7 +399,21 @@ which can be useful when we have three stages of an experiment.</p>
 \end{align*}\]</span></p>
 <p>The answer we got before was
 <span class="math display">\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]</span>
-It’s easy to see that this is the same answer. The structure of the answers shows how our precious classical probability method got the answer “all at once”, while this new method gets the answer “one step at a time”.</p>
+It’s easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer “all at once”, while this new chain rule method gets the answer “one step at a time”.</p>
+</div>
+</div>
+<div id="summary-L07" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L07-conditional.html#summary-L07" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li>Two events are independent if <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\)</span>.</li>
+<li>The conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> is <span class="math inline">\({\displaystyle \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)}}\)</span>.</li>
+<li>The chain rule is
+<span class="math display">\[\begin{multline*}
+\mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
+= \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .
+\end{multline*}\]</span></li>
+</ul>
 </div>
 
 </div>

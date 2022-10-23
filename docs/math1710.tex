@@ -1921,7 +1921,7 @@ Here, we've defined the notation \({n}^{\underline{k}}\) for the number of ways 
 \item
   Sampling \(k\) objects out of \(n\) with replacement gives \(n^k\) choices.
 \item
-  Sampling \(k\) objects out of \(n\) without replacement gives \(n^{\underline{k}} = n(n-1)\dots(n-k+1)\) choices.
+  Sampling \(k\) objects out of \(n\) without replacement gives \(n^{\underline{k}} = n(n-1)\cdots(n-k+1)\) choices.
 \end{itemize}
 
 \hypertarget{L06-classical-ii}{%
@@ -2076,7 +2076,7 @@ Some people find it surprising that only 23 students have such a high probabilit
 \begin{itemize}
 \tightlist
 \item
-  Ordering \(n\) objects can be done in \(n! = n^{\underline{n}} = n(n-1)\dots2\cdot1\) ways.
+  Ordering \(n\) objects can be done in \(n! = n^{\underline{n}} = n(n-1)\cdots2\cdot1\) ways.
 \item
   The number of ways to sample \(k\) objects out of \(n\) when the order doesn't matter is given by the binomial coefficient \(\binom nk = {n}^{\underline{k}}/k!\).
 \end{itemize}
@@ -2540,7 +2540,7 @@ Let \(A\) and \(B\) be events, with \(\mathbb P(A) > 0\). Then the \textbf{condi
 \[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
 \end{definition}
 
-The condition \(\mathbb P(A) > 0\) is to ensure we don't have any ``divide by 0'' errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
+The condition \(\mathbb P(A) > 0\) is just to ensure we don't have any ``divide by 0'' errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
 
 Conditional probability ties in with independence in an important way. Suppose \(A\) and \(B\) are independent, so \(\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)\). Then the conditional probability becomes
 \[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]
@@ -2589,8 +2589,26 @@ So, using the chain rule, we get
 
 The answer we got before was
 \[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]
-It's easy to see that this is the same answer. The structure of the answers shows how our precious classical probability method got the answer ``all at once'', while this new method gets the answer ``one step at a time''.
+It's easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer ``all at once'', while this new chain rule method gets the answer ``one step at a time''.
 \end{example}
+
+\hypertarget{summary-L07}{%
+\section*{Summary}\label{summary-L07}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  Two events are independent if \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\).
+\item
+  The conditional probability of \(B\) given \(A\) is \({\displaystyle \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)}}\).
+\item
+  The chain rule is
+  \begin{multline*}
+  \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
+  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) . 
+  \end{multline*}
+\end{itemize}
 
 \hypertarget{L08-two-theorems}{%
 \chapter{Two theorems on conditional probability}\label{L08-two-theorems}}
@@ -2751,18 +2769,14 @@ Many people find this result surprising. It sometimes helps to put more concrete
 
 The key point is that the disease is rare -- only 2\% of people have it. So even though positive test increases the likelihood you have the disease a lot (it's about 14 times more likely), it's not enough to make it a very large probability.
 
-\hypertarget{summary-034}{%
-\section*{Summary}\label{summary-034}}
+\hypertarget{summary-L08}{%
+\section*{Summary}\label{summary-L08}}
 \addcontentsline{toc}{section}{Summary}
 
 \begin{itemize}
 \tightlist
 \item
-  Two events are independent if \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\).
-\item
-  The conditional probability of \(B\) given \(A\) is \({\displaystyle \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)}}\).
-\item
-  The law of total probability says that if \(A_1, A_2, \dots A_n\) is a partition of the sample space, then
+  The law of total probability says that if \(A_1, A_2, \dots A_n\) is a partition of the sample space (that is, exactly one of them occurs), then
   \[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
 \item
   Bayes' theorem says that \({\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }\).

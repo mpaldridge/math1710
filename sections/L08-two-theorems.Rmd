@@ -162,12 +162,10 @@ Many people find this result surprising. It sometimes helps to put more concrete
 
 The key point is that the disease is rare -- only 2% of people have it. So even though positive test increases the likelihood you have the disease a lot (it's about 14 times more likely), it's not enough to make it a very large probability.
 
-## Summary  {#summary-034 .unnumbered}
+## Summary  {#summary-L08 .unnumbered}
 
 ::: {.mysummary}
-* Two events are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)$.
-* The conditional probability of $B$ given $A$ is ${\displaystyle \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)}}$.
-* The law of total probability says that if $A_1, A_2, \dots A_n$ is a partition of the sample space, then
+* The law of total probability says that if $A_1, A_2, \dots A_n$ is a partition of the sample space (that is, exactly one of them occurs), then
 \[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
 * Bayes' theorem says that ${\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }$.
 :::

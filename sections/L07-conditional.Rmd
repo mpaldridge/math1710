@@ -92,7 +92,7 @@ Let $A$ and $B$ be events, with $\mathbb P(A) > 0$. Then the **conditional proba
 \[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
 :::
 
-The condition $\mathbb P(A) > 0$ is to ensure we don't have any "divide by 0" errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
+The condition $\mathbb P(A) > 0$ is just to ensure we don't have any "divide by 0" errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
 
 Conditional probability ties in with independence in an important way. Suppose $A$ and $B$ are independent, so $\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)$. Then the conditional probability becomes
 \[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]
@@ -141,8 +141,18 @@ So, using the chain rule, we get
 
 The answer we got before was
 \[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]
-It's easy to see that this is the same answer. The structure of the answers shows how our precious classical probability method got the answer "all at once", while this new method gets the answer "one step at a time".
+It's easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer "all at once", while this new chain rule method gets the answer "one step at a time".
 :::
 
 
+## Summary  {#summary-L07 .unnumbered}
 
+::: {.mysummary}
+* Two events are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)$.
+* The conditional probability of $B$ given $A$ is ${\displaystyle \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)}}$.
+* The chain rule is
+\begin{multline*}
+\mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
+  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) . 
+\end{multline*}
+:::

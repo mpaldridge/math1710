@@ -221,13 +221,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
 <li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
 <li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+<li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
 <ul>
 <li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
 <li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
 <li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
-<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-034"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
@@ -388,13 +389,11 @@ Putting in all the numbers we have, we get
 <p>Many people find this result surprising. It sometimes helps to put more concrete numbers on things. Suppose 1000 people get tested. On average, we expect about 20 of them to have the disease, and 980 of to not have the disease. Of the 20 with the disease, on average 19 will correctly test positive, while 1 will test negative. Of the 980 without the disease, an average 931 will correctly test negative, but 49 will wrongly test positive. So of the <span class="math inline">\(19+49 = 68\)</span> people with positive tests, only 19 of them actually have the disease, which is 28%.</p>
 <p>The key point is that the disease is rare – only 2% of people have it. So even though positive test increases the likelihood you have the disease a lot (it’s about 14 times more likely), it’s not enough to make it a very large probability.</p>
 </div>
-<div id="summary-034" class="section level2 unnumbered hasAnchor">
-<h2>Summary<a href="L08-two-theorems.html#summary-034" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="summary-L08" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L08-two-theorems.html#summary-L08" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
 <ul>
-<li>Two events are independent if <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\)</span>.</li>
-<li>The conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> is <span class="math inline">\({\displaystyle \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)}}\)</span>.</li>
-<li>The law of total probability says that if <span class="math inline">\(A_1, A_2, \dots A_n\)</span> is a partition of the sample space, then
+<li>The law of total probability says that if <span class="math inline">\(A_1, A_2, \dots A_n\)</span> is a partition of the sample space (that is, exactly one of them occurs), then
 <span class="math display">\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]</span></li>
 <li>Bayes’ theorem says that <span class="math inline">\({\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }\)</span>.</li>
 </ul>
