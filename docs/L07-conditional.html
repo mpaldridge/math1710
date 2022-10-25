@@ -281,7 +281,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ::::
 -->
 <p><em>Suppose 40% of people have blond hair, and 20% of people have blue eyes. What proportion of people have both blond hair and blue eyes?</em></p>
-<p>The answer to this question is: we don’t know. The question doesn’t give us enough information to tell. However, <em>if</em> it were the case that having blond hair didn’t effect your chance of having blue eyes, then we could work out the answer. If that were true, we would think that the 20% of people with blue eyes would equally make up both 20% of the blonds and also 20% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20% of the 40% of people with blond hair; and 20% of 40% is <span class="math inline">\(0.2 \times 0.4 = 0.08\)</span>, or 8%.</p>
+<p>The answer to this question is: we don’t know. The question doesn’t give us enough information to tell. However, <em>if</em> it were the case that having blond hair didn’t effect your chance of having blue eyes, <em>then</em> we could work out the answer. If that were true, we would think that the 20% of people with blue eyes would equally make up both 20% of the blonds and also 20% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20% of the 40% of people with blond hair; and 20% of 40% is <span class="math inline">\(0.2 \times 0.4 = 0.08\)</span>, or 8%.</p>
 <p>To put it in probability language, <em>if</em> blond hair and blue eyes were unrelated, then we would expect that
 <span class="math display">\[ \mathbb P(\text{blond hair and blue eyes}) = \mathbb P(\text{blond hair}) \times \mathbb P(\text{blue eyes}) . \]</span>
 This is an important property known as “independence”.</p>
@@ -373,14 +373,25 @@ also.</p>
 <span class="math display">\[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]</span>
 so <span class="math inline">\(\mathbb P(B \mid A) = \mathbb P(B)\)</span>. In other words, if <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, then <span class="math inline">\(A\)</span> happening doesn’t affect the probability of <span class="math inline">\(B\)</span> happening (and vice versa).</p>
 <p>So when we have independence, <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)\)</span>, and the mathematics is quite easy. But conditional probability tells us how things work when we don’t have independence.</p>
+<p>Like with independence, we can use the definition of conditional probability in two ways. The first way is that if we know <span class="math inline">\(\mathbb P(A \cap B)\)</span> and <span class="math inline">\(\mathbb P(A)\)</span>, then we can calculate the conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> as
+<span class="math display">\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 7.3  </strong></span><em>With the dice roll again, what’s the probability of rolling at least 4 given that you roll an even number?</em></p>
+<p>We previously calculated
+<span class="math display">\[\begin{gather*}
+\mathbb P(\text{even and at least 4}) = \mathbb P(A \cap B) = \tfrac{1}{3} \\
+\mathbb P(\text{even number}) = \mathbb P(A) = \tfrac{1}{2} .
+\end{gather*}\]</span>
+Hence
+<span class="math display">\[ \mathbb P(\text{even} \mid \text{at least 4}) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} = \frac{\frac13}{\frac12} = \tfrac23 . \]</span></p>
+<p>This is intuitively correct: of the three possibilities of rolling at least 4, <span class="math inline">\(\{4,5,6\}\)</span>, two of those three are even, so the probability is <span class="math inline">\(\frac23\)</span>.</p>
+</div>
 </div>
 <div id="chain-rule" class="section level2 hasAnchor" number="7.3">
 <h2><span class="header-section-number">7.3</span> Chain rule<a href="L07-conditional.html#chain-rule" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>One way to use the definition of conditional probability is that if we know <span class="math inline">\(\mathbb P(A \cap B)\)</span> and <span class="math inline">\(\mathbb P(A)\)</span>, then we can calculate the conditional probability of <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> as
-<span class="math display">\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span>
-A second way to use the definition is that if we know <span class="math inline">\(\mathbb P(A)\)</span> and <span class="math inline">\(\mathbb P(B \mid A)\)</span>, then we can calculate the event that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur as
+<p>The second way to use the definition of conditional probability is that if we know <span class="math inline">\(\mathbb P(A)\)</span> and <span class="math inline">\(\mathbb P(B \mid A)\)</span>, then we can calculate the event that both <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> occur as
 <span class="math display">\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B \mid A). \]</span>
-This can be a useful tool when <span class="math inline">\(A\)</span> concerns the first stage of an experiment and <span class="math inline">\(B\)</span> the second stage. This says that the probability <span class="math inline">\(A\)</span> happens then <span class="math inline">\(B\)</span> happens is equal to the probability <span class="math inline">\(A\)</span> happens multiplied the conditional probability, given that <span class="math inline">\(A\)</span> has already happened, that <span class="math inline">\(B\)</span> then happens too.</p>
+This can be a particularly useful tool when <span class="math inline">\(A\)</span> concerns the first stage of an experiment and <span class="math inline">\(B\)</span> the second stage. This says that the probability <span class="math inline">\(A\)</span> happens then <span class="math inline">\(B\)</span> happens is equal to the probability <span class="math inline">\(A\)</span> happens multiplied the conditional probability, given that <span class="math inline">\(A\)</span> has already happened, that <span class="math inline">\(B\)</span> then happens too.</p>
 <p>We can extend this to more events. For three events, we have
 <span class="math display">\[\begin{align*}
 \mathbb P(A \cap B \cap C)
@@ -394,9 +405,10 @@ which can be useful when we have three stages of an experiment.</p>
 <span class="math display">\[\begin{multline*}  \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
   = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .\end{multline*}\]</span></p>
 </div>
-<p>Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It’s a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)</p>
+<p>At each step, we need to calculate the probability of that step given all the previous steps being successful. We then multiply them all together.</p>
+<p>Often questions that can be solved using the classical probability counting methods from Section 3 also be solved “step by step” using the chain rule. (It’s a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-33" class="example"><strong>Example 7.3  </strong></span><em>Recall the Lotto problem from Example <a href="L06-classical-ii.html#exm:lotto">6.3</a>: What is the probability we match 6 balls from 59?</em></p>
+<p><span id="exm:unlabeled-div-34" class="example"><strong>Example 7.4  </strong></span><em>Recall the Lotto problem from Example <a href="L06-classical-ii.html#exm:lotto">6.3</a>: What is the probability we match 6 balls from 59?</em></p>
 <p>Let <span class="math inline">\(A_1, A_2, \dots, A_6\)</span> be the events that the first, second, …, sixth balls out of the machine are on our ticket. Clearly <span class="math inline">\(\mathbb P(A_1) = \frac{6}{59}\)</span>, as we have six numbers on our ticket that the first ball could match. The conditional probability that the second ball matches given that the first ball matched is <span class="math inline">\(\mathbb P(A_2 \mid A_1) = \frac{5}{58}\)</span>, because there are 58 balls left in the machine and, given that we got the first number right, there are 5 numbers left on our ticket. Similarly, <span class="math inline">\(\mathbb P(A_3 \mid A_1 \cap A_2) = \frac{4}{57}\)</span>, and so on, until <span class="math inline">\(\mathbb P(A_6 \mid A_1 \cap \cdots\cap A_5) = \frac{1}{54}\)</span>.</p>
 <p>So, using the chain rule, we get
 <span class="math display">\[\begin{align*}
@@ -405,7 +417,7 @@ which can be useful when we have three stages of an experiment.</p>
 &amp;= \frac{6}{59} \times \frac{5}{58} \times \frac{4}{57} \times \frac{3}{56} \times \frac{2}{55} \times \frac{1}{54} .
 \end{align*}\]</span></p>
 <p>The answer we got before was
-<span class="math display">\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]</span>
+<span class="math display">\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} = \frac{1}{45 \text{ million}} . \]</span>
 It’s easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer “all at once”, while this new chain rule method gets the answer “one step at a time”.</p>
 </div>
 </div>

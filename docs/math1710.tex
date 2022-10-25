@@ -2458,7 +2458,7 @@ Another way is to look at the unordered collection, so the denominator is \(\bin
 
 \emph{Suppose 40\% of people have blond hair, and 20\% of people have blue eyes. What proportion of people have both blond hair and blue eyes?}
 
-The answer to this question is: we don't know. The question doesn't give us enough information to tell. However, \emph{if} it were the case that having blond hair didn't effect your chance of having blue eyes, then we could work out the answer. If that were true, we would think that the 20\% of people with blue eyes would equally make up both 20\% of the blonds and also 20\% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20\% of the 40\% of people with blond hair; and 20\% of 40\% is \(0.2 \times 0.4 = 0.08\), or 8\%.
+The answer to this question is: we don't know. The question doesn't give us enough information to tell. However, \emph{if} it were the case that having blond hair didn't effect your chance of having blue eyes, \emph{then} we could work out the answer. If that were true, we would think that the 20\% of people with blue eyes would equally make up both 20\% of the blonds and also 20\% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20\% of the 40\% of people with blond hair; and 20\% of 40\% is \(0.2 \times 0.4 = 0.08\), or 8\%.
 
 To put it in probability language, \emph{if} blond hair and blue eyes were unrelated, then we would expect that
 \[ \mathbb P(\text{blond hair and blue eyes}) = \mathbb P(\text{blond hair}) \times \mathbb P(\text{blue eyes}) . \]
@@ -2548,14 +2548,29 @@ so \(\mathbb P(B \mid A) = \mathbb P(B)\). In other words, if \(A\) and \(B\) ar
 
 So when we have independence, \(\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)\), and the mathematics is quite easy. But conditional probability tells us how things work when we don't have independence.
 
+Like with independence, we can use the definition of conditional probability in two ways. The first way is that if we know \(\mathbb P(A \cap B)\) and \(\mathbb P(A)\), then we can calculate the conditional probability of \(B\) given \(A\) as
+\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+
+\begin{example}
+\emph{With the dice roll again, what's the probability of rolling at least 4 given that you roll an even number?}
+
+We previously calculated
+\begin{gather*}
+\mathbb P(\text{even and at least 4}) = \mathbb P(A \cap B) = \tfrac{1}{3} \\
+\mathbb P(\text{even number}) = \mathbb P(A) = \tfrac{1}{2} .
+\end{gather*}
+Hence
+\[ \mathbb P(\text{even} \mid \text{at least 4}) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} = \frac{\frac13}{\frac12} = \tfrac23 . \]
+
+This is intuitively correct: of the three possibilities of rolling at least 4, \(\{4,5,6\}\), two of those three are even, so the probability is \(\frac23\).
+\end{example}
+
 \hypertarget{chain-rule}{%
 \section{Chain rule}\label{chain-rule}}
 
-One way to use the definition of conditional probability is that if we know \(\mathbb P(A \cap B)\) and \(\mathbb P(A)\), then we can calculate the conditional probability of \(B\) given \(A\) as
-\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
-A second way to use the definition is that if we know \(\mathbb P(A)\) and \(\mathbb P(B \mid A)\), then we can calculate the event that both \(A\) and \(B\) occur as
+The second way to use the definition of conditional probability is that if we know \(\mathbb P(A)\) and \(\mathbb P(B \mid A)\), then we can calculate the event that both \(A\) and \(B\) occur as
 \[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B \mid A). \]
-This can be a useful tool when \(A\) concerns the first stage of an experiment and \(B\) the second stage. This says that the probability \(A\) happens then \(B\) happens is equal to the probability \(A\) happens multiplied the conditional probability, given that \(A\) has already happened, that \(B\) then happens too.
+This can be a particularly useful tool when \(A\) concerns the first stage of an experiment and \(B\) the second stage. This says that the probability \(A\) happens then \(B\) happens is equal to the probability \(A\) happens multiplied the conditional probability, given that \(A\) has already happened, that \(B\) then happens too.
 
 We can extend this to more events. For three events, we have
 \begin{align*}
@@ -2573,7 +2588,9 @@ Continuing that process, we get a general rule.
   = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .\end{multline*}
 \end{theorem}
 
-Often questions that can be solved using the classical probability counting methods from Section 3 also be solved in stages using the chain rule. (It's a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)
+At each step, we need to calculate the probability of that step given all the previous steps being successful. We then multiply them all together.
+
+Often questions that can be solved using the classical probability counting methods from Section 3 also be solved ``step by step'' using the chain rule. (It's a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)
 
 \begin{example}
 \emph{Recall the Lotto problem from Example \ref{exm:lotto}: What is the probability we match 6 balls from 59?}
@@ -2588,7 +2605,7 @@ So, using the chain rule, we get
 \end{align*}
 
 The answer we got before was
-\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} . \]
+\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} = \frac{1}{45 \text{ million}} . \]
 It's easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer ``all at once'', while this new chain rule method gets the answer ``one step at a time''.
 \end{example}
 
@@ -2622,7 +2639,7 @@ Last time we met the conditional probability \(\mathbb P(B \mid A)\) of one even
 \protect\hypertarget{exm:dice-total}{}\label{exm:dice-total}\emph{My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?}
 
 If my friend were to tell which dice he picked, then this question would be very easy! If we write \(D_4\), \(D_6\) and \(D_{10}\) to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
-\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]
+\[ \mathbb P(\text{roll 5} \mid D_4) = 0 \qquad \mathbb P(\text{roll 5} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 5} \mid D_{10}) = \tfrac{1}{10} .  \]
 What we need is a way to combine the results for different ``sub-cases'' into an over-all answer.
 \end{example}
 
@@ -2664,7 +2681,7 @@ But using the definition of conditional probability, each ``summand'' (term insi
 The result follows.
 \end{proof}
 
-\textbf{Example \ref{exm:dice-total} continued.} Returning to our dice example, we see that \(\{D_4, D_6, D_{10}\}\) is indeed a partition, since my friend must choose exactly one of the three dice.. So the law of total probability tells us that
+\textbf{Example \ref{exm:dice-total} continued.} Returning to our dice example, we see that \(\{D_4, D_6, D_{10}\}\) is indeed a partition, since my friend must choose exactly one of the three dice. So the law of total probability tells us that
 \[ \mathbb P(\text{roll 5}) = \mathbb P(D_4) \, \mathbb P(\text{roll 5} \mid D_4) +  \mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6) + \mathbb P(D_{10}) \, \mathbb P(\text{roll 5} \mid D_{10}) . \]
 
 We were told that all the dice were picked with equal probability, so \(\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13\), and we've already calculated the individual conditional probabilities as

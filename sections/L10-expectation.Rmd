@@ -2,25 +2,28 @@
 
 ## Expectation  {#expectation}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/l9Pizg01Zbg"></iframe>
 :::
 ::::
+-->
 
 
-Often, we will be interested in the "average" value of a random variable -- for example, the average total from two dice rolls -- which represents what "central" values of the random variable. This average is called the "expectation".
+Often, we will be interested in the "average" value of a random variable -- for example, the average total from two dice rolls -- which represents what the "central" value of the random variable is. This average is called the "expectation".
 
 ::: {.definition}
 Let $\Omega$ be a finite or countably infinite sample space, $\mathbb P$ be a probability measure on $\Omega$, and $X$ be a discrete random variable on $\Omega$. Then the **expectation** (or **expected value**) of $X$ is
 \[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \mathbb P(\{\omega\}) . \]
+
 If $p$ is the PMF of $X$, then a more convenient formula is
 \[ \mathbb EX = \sum_{x \in \Range(X)} x\,p_X(x) . \]
 :::
 
-We get the second formula from the first by grouping together all outcomes $\omega$ that lead to the same value $x = X(\omega)$ of $X$.
+We get the second formula from the first by grouping together all outcomes $\omega$ that lead to the same value $x = X(\omega)$ of $X$. It's this second formula we actually use when calculating expectations.
 
-Note that "expectation" is simply the name that mathematicians give to the value $\mathbb EX = \sum_x x\, p(x)$. We don't necessarily "expect" to get the value $\mathbb EX$ as the outcome in the normal English-language sense of the word "expect". (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don't "expect" to get the number 3.5 in a single roll of the dice!) We will see later that the the expectation can be interpreted as a sort of "long-run mean outcome".
+Note that "expectation" is simply the name that mathematicians give to the value $\mathbb EX = \sum_x x\, p(x)$. We don't necessarily "expect" to get the value $\mathbb EX$ as the outcome in the normal English-language sense of the word "expect". (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don't "expect" to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of "long-run mean outcome".
 
 ::: {.example}
 *Let $X \sim \text{Bern}(p)$ be a Bernoulli trial with success probability $p$. What is the expectation $\mathbb EX$?*
@@ -30,6 +33,8 @@ Using the second formula in the definition, we have
 :::
 
 ::: {.example}
+*What is the expected value of the sum of two dice rolls?*
+
 When $X$ is the total of two dice rolls, the expectation is
 \begin{align*}
   \mathbb EX &= \sum_{x \in \Range(X)} x\,p(x)  \\
@@ -44,6 +49,7 @@ When $X$ is the total of two dice rolls, the expectation is
 
 In previous examples, we looked at $X$ being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total $X$, like "double the total and add 1" $Y = 2X + 1$, or "the total minus 4, all squared" $Z = (X-4)^2$. (I'm not sure *why* you'd care about these, but you could study them if you wanted to...)
 
+<!--
 ::: {.example}
 Let $Y = 2X + 1$. Then for each potential outcome $x$ of $X$, there is a matching outcome $y = 2x +1$ of $Y$. So we can find the PMF for $Y$ by keeping the same probabilities as for $X$, but changing the values $x$ to the values $y = 2x +1$.
 
@@ -62,8 +68,14 @@ or, in terms of PMFs,
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|
 | $p_Z(z)$ | $\frac{3}{36}$ | $\frac{2}{36} + \frac{4}{36} = \frac{6}{36}$ | $\frac{1}{36} + \frac{5}{36} = \frac{6}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
 :::
+-->
 
+It is possible, although sometimes rather tricky, to work out the whole PMF of these new random variables that are functions of $X$ -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables, which is easier.
+
+<!--
 So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
+-->
+
 
 ::: {.theorem #unconscious name="Law of the unconscious statistician"}
 Let $X$ be a random variable, and let $Y = g(X)$ be another random variable that is a function of $X$. Then
@@ -73,7 +85,7 @@ Let $X$ be a random variable, and let $Y = g(X)$ be another random variable that
 (The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for $\mathbb Eg(X)$ if you weren't thinking carefully -- but it turns out it's correct!)
 
 ::: {.proof}
-As in the previous example, the idea is to group together $x$s that give the same $y$.
+*(Non-examinable)* As in the previous example, the idea is to group together $x$s that give the same $y$.
 
 From the definition of expectation, we have
 \[ \mathbb EY = \sum_y y\, p_Y(y) . \]
@@ -120,30 +132,30 @@ So for our "double the dice total and add 1" random variable $Y = 2X + 1$, we ha
 
 ## Variance  {#variance}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/_I4tCExElec"></iframe>
 :::
 ::::
+-->
 
 
 
-\newcommand{\Var}{\operatorname{Var}}
+<!-- \newcommand{\Var}{\operatorname{Var}} -->
 
-In the same way as the expectation of a random variable tells us about central typical values of it, the variance of a random variable tells us about the spread of typical values.
+In the same way as the expectation of a random variable tells us about central values of it, the "variance" of a random variable tells us about the spread of typical values.
 
 ::: {.definition}
 Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the **variance** of $X$ is
 \[ \Var(X) = \mathbb E(X - \mu)^2 . \]
 :::
 
-(To be clear, the notation there means the expectation of $(X-\mu)^2$; and *not* $\mathbb E(X - \mu)$ squared, which would be $0^2 = 0$.)
+(To be clear, the notation there means the expectation of $(X-\mu)^2$; and *not* $\mathbb E(X - \mu)$ then squared, which would be $0^2 = 0$.)
 
-Note that $(X - \mu)^2$ is a square, so always non-negative, and hence the variance is always non-negative also.
+Note that $(X - \mu)^2 \geq 0$ is a square, so always non-negative, and hence the variance $\Var(X) \geq 0$ is always non-negative also.
 
-It may not surprise you, if you remember [Section 1](#S01-eda) that to go along with that definitional formula for the variance, we also have a computational formula.
-
-
+It may not surprise you, if you remember [Lecture 1](#L01-stats) that to go along with that definitional formula for the variance, we also have a computational formula.
 
 ::: {.theorem}
 Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the variance $\Var(X) = \mathbb E(X - \mu)^2$ can also be calculated as
@@ -252,12 +264,10 @@ Hence,
 You are not expected to know or memorise these for an exam.)
 -->
 
-## Summary  {#summary-05 .unnumbered}
+## Summary  {#summary-L10 .unnumbered}
 
 ::: {.mysummary}
-* A random variable is a numerical summary of a random experiment.
-* The probability mass function (PMF) is $p_X(x) = \mathbb P(X = x)$, and the cumulative distribution function (CDF) is $F_X(x) = \mathbb P(X  \leq x)$.
-* The expectation is $\mathbb EX = \sum_x x\, p_X(x)$.
-* The variance of a random variable with expectation $\mu$ is $\Var(X) = \mathbb E(X - \mu)^2$.
+* The expectation of a random variable $X$ is $\mathbb EX = \sum_x x\, p_X(x)$.
+* The variance of a random variable $X$ with expectation $\mu$ is $\Var(X) = \mathbb E(X - \mu)^2$.
 * $\mathbb E(aX+b) = a\mathbb EX + b$ and $\Var(aX+b) = a^2\Var(X)$.
 :::

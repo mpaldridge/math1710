@@ -16,7 +16,7 @@ Last time we met the conditional probability $\mathbb P(B \mid A)$ of one event 
 *My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?*
 
 If my friend were to tell which dice he picked, then this question would be very easy! If we write $D_4$, $D_6$ and $D_{10}$ to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
-\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]
+\[ \mathbb P(\text{roll 5} \mid D_4) = 0 \qquad \mathbb P(\text{roll 5} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 5} \mid D_{10}) = \tfrac{1}{10} .  \]
 What we need is a way to combine the results for different "sub-cases" into an over-all answer.
 :::
 
@@ -51,7 +51,7 @@ The result follows.
 :::
 
 ::: {.thpart}
-**Example \@ref(exm:dice-total) continued.** Returning to our dice example, we see that $\{D_4, D_6, D_{10}\}$ is indeed a partition, since my friend must choose exactly one of the three dice.. So the law of total probability tells us that
+**Example \@ref(exm:dice-total) continued.** Returning to our dice example, we see that $\{D_4, D_6, D_{10}\}$ is indeed a partition, since my friend must choose exactly one of the three dice. So the law of total probability tells us that
 \[ \mathbb P(\text{roll 5}) = \mathbb P(D_4) \, \mathbb P(\text{roll 5} \mid D_4) +  \mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6) + \mathbb P(D_{10}) \, \mathbb P(\text{roll 5} \mid D_{10}) . \]
 
 We were told that all the dice were picked with equal probability, so $\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13$, and we've already  calculated the individual conditional probabilities as

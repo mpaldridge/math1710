@@ -284,12 +284,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="example">
 <p><span id="exm:dice-total" class="example"><strong>Example 8.1  </strong></span><em>My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?</em></p>
 <p>If my friend were to tell which dice he picked, then this question would be very easy! If we write <span class="math inline">\(D_4\)</span>, <span class="math inline">\(D_6\)</span> and <span class="math inline">\(D_{10}\)</span> to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
-<span class="math display">\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]</span>
+<span class="math display">\[ \mathbb P(\text{roll 5} \mid D_4) = 0 \qquad \mathbb P(\text{roll 5} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 5} \mid D_{10}) = \tfrac{1}{10} .  \]</span>
 What we need is a way to combine the results for different “sub-cases” into an over-all answer.</p>
 </div>
 <p>Luckily, there exists just such a tool for this job! It’s called the “law of total probability” (also known as the “partition theorem”). The important point is to make sure that the different sub-cases cover all possibilities, but that only one of them happens at a time.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-34" class="definition"><strong>Definition 8.1  </strong></span>A set of events <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> are said to be a <strong>partition</strong> of the sample space <span class="math inline">\(\Omega\)</span> if</p>
+<p><span id="def:unlabeled-div-35" class="definition"><strong>Definition 8.1  </strong></span>A set of events <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> are said to be a <strong>partition</strong> of the sample space <span class="math inline">\(\Omega\)</span> if</p>
 <ol style="list-style-type: decimal">
 <li>they are disjoint, in that <span class="math inline">\(A_i \cap A_j = \varnothing\)</span> for all <span class="math inline">\(i \neq j\)</span>;</li>
 <li>they cover space, in that <span class="math inline">\(A_1 \cup A_2 \cup \cdots \cup A_n = \Omega\)</span>.</li>
@@ -301,7 +301,7 @@ What we need is a way to combine the results for different “sub-cases” into 
 </div>
 <p>So the law of total probability tells us we can add up the probabilities <span class="math inline">\(\mathbb P(B \mid A_i)\)</span> for each of the sub-cases provided we weight them by how likely <span class="math inline">\(\mathbb P(A_i)\)</span> by how likely each sub-case is.</p>
 <div class="proof">
-<p><span id="unlabeled-div-35" class="proof"><em>Proof</em>. </span>Since the partition of <span class="math inline">\(A_i\)</span>s cover space, we can split up <span class="math inline">\(B\)</span> depending on which part of the partition it is in:
+<p><span id="unlabeled-div-36" class="proof"><em>Proof</em>. </span>Since the partition of <span class="math inline">\(A_i\)</span>s cover space, we can split up <span class="math inline">\(B\)</span> depending on which part of the partition it is in:
 <span class="math display">\[  B = (B \cap A_1) \cup (B \cap A_2) \cup \cdots \cup (B \cap A_n) .  \]</span></p>
 <p><em>[I meant to draw a picture here, but didn’t get round to it – perhaps you’d like to draw your own?]</em></p>
 <p>Since the <span class="math inline">\(A_i\)</span> are disjoint, the union on the right is disjoint also.
@@ -312,7 +312,7 @@ But using the definition of conditional probability, each “summand” (term in
 The result follows.</p>
 </div>
 <div class="thpart">
-<p><strong>Example <a href="L08-two-theorems.html#exm:dice-total">8.1</a> continued.</strong> Returning to our dice example, we see that <span class="math inline">\(\{D_4, D_6, D_{10}\}\)</span> is indeed a partition, since my friend must choose exactly one of the three dice.. So the law of total probability tells us that
+<p><strong>Example <a href="L08-two-theorems.html#exm:dice-total">8.1</a> continued.</strong> Returning to our dice example, we see that <span class="math inline">\(\{D_4, D_6, D_{10}\}\)</span> is indeed a partition, since my friend must choose exactly one of the three dice. So the law of total probability tells us that
 <span class="math display">\[ \mathbb P(\text{roll 5}) = \mathbb P(D_4) \, \mathbb P(\text{roll 5} \mid D_4) +  \mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6) + \mathbb P(D_{10}) \, \mathbb P(\text{roll 5} \mid D_{10}) . \]</span></p>
 <p>We were told that all the dice were picked with equal probability, so <span class="math inline">\(\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13\)</span>, and we’ve already calculated the individual conditional probabilities as
 <span class="math display">\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]</span>
@@ -337,7 +337,7 @@ Let’s first state and prove this result, and do an example, and then afterward
 </div>
 <p>Bayes’ theorem is thought to have first appeared in the writings of Rev. <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/">Thomas Bayes</a>, a British church minister and mathematician, shortly after his death, in the 1760s. (Bayes’ work was significantly edited by <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Price/">Richard Price</a>, another minister–mathematician, and many historians think that Price deserves a large share of the credit.)</p>
 <div class="proof">
-<p><span id="unlabeled-div-36" class="proof"><em>Proof</em>. </span>From the definition of conditional probability, we can write <span class="math inline">\(\mathbb P(A \cap B)\)</span> in two different ways: we can write it as
+<p><span id="unlabeled-div-37" class="proof"><em>Proof</em>. </span>From the definition of conditional probability, we can write <span class="math inline">\(\mathbb P(A \cap B)\)</span> in two different ways: we can write it as
 <span class="math display">\[  \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B\mid A) , \]</span>
 but we can also write it as
 <span class="math display">\[  \mathbb P(A \cap B) = \mathbb P(B) \, \mathbb P(A\mid B) . \]</span>
@@ -346,7 +346,7 @@ Since these are two different ways of writing the same thing, we can equate them
 Dividing both sides by <span class="math inline">\(\mathbb P(B)\)</span> gives the result.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-37" class="example"><strong>Example 8.2  </strong></span><em>My friend again secretly picks the 4-sided, 6-sided, or 10-sided dice, each with probability <span class="math inline">\(\frac13\)</span>. He rolls that secret dice, and tells me he rolled a 5. What is the probability he picked the 6-sided dice?</em></p>
+<p><span id="exm:unlabeled-div-38" class="example"><strong>Example 8.2  </strong></span><em>My friend again secretly picks the 4-sided, 6-sided, or 10-sided dice, each with probability <span class="math inline">\(\frac13\)</span>. He rolls that secret dice, and tells me he rolled a 5. What is the probability he picked the 6-sided dice?</em></p>
 <p>This is asking us to calculate <span class="math inline">\(\mathbb P(D_6 \mid \text{roll 5})\)</span>. Bayes’ theorem tells us that
 <span class="math display">\[
   \mathbb P(D_6 \mid \text{roll 5})
@@ -379,7 +379,7 @@ Putting these together, we get the following.</p>
 <div id="screening" class="section level2 hasAnchor" number="8.3">
 <h2><span class="header-section-number">8.3</span> Diagnostic testing<a href="L08-two-theorems.html#screening" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="example">
-<p><span id="exm:unlabeled-div-38" class="example"><strong>Example 8.3  </strong></span><em>Members of the public are tested for a certain rare disease. About 2% of the population have the disease. The test is 95% accurate, in the following sense: if you have the disease, there’s a 95% chance you correctly get a positive test result; while if you don’t have the disease, there’s a 95% chance you correctly get a negative test result. Suppose you get a positive test result. What is the probability you have the disease?</em></p>
+<p><span id="exm:unlabeled-div-39" class="example"><strong>Example 8.3  </strong></span><em>Members of the public are tested for a certain rare disease. About 2% of the population have the disease. The test is 95% accurate, in the following sense: if you have the disease, there’s a 95% chance you correctly get a positive test result; while if you don’t have the disease, there’s a 95% chance you correctly get a negative test result. Suppose you get a positive test result. What is the probability you have the disease?</em></p>
 <p>The first thing we have to do is translate the words in the question into probability statements. Let <span class="math inline">\(D\)</span> be the event you have the disease, so <span class="math inline">\(D^\mathsf{c}\)</span> is the event you don’t have the disease, and let <span class="math inline">\(+\)</span> be the event you get a positive result. Then the question tells us that</p>
 <ul>
 <li><span class="math inline">\(\mathbb P(D) = 0.02\)</span> and <span class="math inline">\(\mathbb P(D^\mathsf{c}) = 0.98\)</span>;</li>
