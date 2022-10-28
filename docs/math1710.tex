@@ -1084,7 +1084,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-18-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-20-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -2185,11 +2185,11 @@ There are other equivalent formulations.
 \begin{myanswers}
 \emph{Solution.}
 
-\textbf{(a)} There are \(|\Omega| = 10^2 = 100\) ways to draw two balls with replacement. There are \(|A| = 4^2\) to draw two blue balls. So
+\textbf{(a)} There are \(|\Omega| = 10^2 = 100\) ways to draw two balls with replacement. There are \(|A| = 4^2=16\) ways to draw two blue balls. So
 \(\mathbb P(A) = \frac{16}{100} = 0.16\).
 
 \textbf{(b)} There are \(|\Omega| = {10}^{\underline{2}} = 10 \times 9 = 90\) ways to draw two balls without replacement. There are \(|A| = {4}^{\underline{2}} = 4 \times 3 = 12\) to draw two blue balls. So
-\(\mathbb P(A) = \frac{12}{90} = \frac{2}{14} = 0.133\).
+\(\mathbb P(A) = \frac{12}{90} = \frac{2}{15} = 0.133\).
 
 \end{myanswers}
 
@@ -2202,11 +2202,11 @@ There are other equivalent formulations.
 \textbf{(a)} \(\mathbb P(\varnothing) = 0\).
 
 \begin{myanswers}
-\emph{Solution.} As always, we seek a disjoint union, to allow us to use Axiom 3.
+\emph{Solution.} Let \(A\) be any event (such as \(A = \varnothing\) or \(A = \Omega\), for example). Then \(A \cup \varnothing = A\), and the union is disjoint -- since \(\varnothing\) contains no sample points, it certainly can't contain any sample points that are also in \(A\). Then applying Axiom 3, we get \(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\). Subtracting \(\mathbb P(A)\) from both sides gives the result.
 
-Let \(A\) be any event (such as \(A = \varnothing\) or \(A = \Omega\), for example). Then \(A \cup \varnothing = A\), and the union is disjoint -- since \(\varnothing\) contains no sample points, it certainly can't contain any sample points that are also in \(A\). Then applying Axiom 3, we get \(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\). Subtracting \(\mathbb P(A)\) from both sides gives the result.
+\emph{Alternatively}, if you prove part (b) first, you can apply that with \(A = \varnothing\). Since \(\varnothing^\mathsf{c}= \Omega\) and Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), the result follows.
 
-\emph{Alternatively}, if you prove part (b) first, you can apply that with \(A = \Omega\). Since \(\Omega^\mathsf{c}= \varnothing\) and Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), the result follows.
+\textbf{Group feedback:} With this, and most ``prove from the axioms'' questions, the key is to find a relevant disjoint union, which then allows us to use Axiom 3. So if we can find \(C = A \cup B\) as a disjoint union (hopefully containing some events relevant to the question at hand), Axiom 3 allows us to write \(\mathbb P(C) = \mathbb P(A) + \mathbb P(B)\).
 
 \end{myanswers}
 
@@ -2224,7 +2224,7 @@ Let \(A\) be any event (such as \(A = \varnothing\) or \(A = \Omega\), for examp
 \[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
 
 \begin{myanswers}
-\emph{Solution.} As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what \(A\) and \(B\) should be. This time, \(A = C\) and \(D \cup E\) will work well, since \(C \cup (D \cup E) = C \cup D \cup E\). (You can call this ``associativity'', if you like.) Making that substitution immediately gives us
+\emph{Solution.} As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what \(A\) and \(B\) should be. This time, \(A = C\) and \(B = D \cup E\) will work well, since \(C \cup (D \cup E) = C \cup D \cup E\). (You can call this ``associativity'', if you like.) Making that substitution immediately gives us
 \[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]
 as required.
 
@@ -2264,19 +2264,42 @@ which is what we wanted.
 \textbf{(a)} What is the probability that the number is divisible by 5?
 
 \begin{myanswers}
-\emph{Solution.} The sample space is \(\Omega = \{1, 2, \dots, 2022\}\), and \(A\) is the set of numbers up to 2022 that are divisible by 5. Clearly \(|\Omega| = 2022\). Further, \(|A|\) is the largest integer no bigger than \(\frac{2022}{5} = 404.2\), which is 404, as this is how many times 5 ``goes into'' 2022. Hence
+
+\emph{Solution.} The sample space is \(\Omega = \{1, 2, \dots, 2022\}\). Clearly \(|\Omega| = 2022\). Further, the event in question is \(A = \{5, 10, \dots, 2020\}\) of numbers up to 2022 that are divisible by 5. Thus \(|A|\) is the largest integer no bigger than \(\frac{2022}{5} = 404.4\), which is 404, as this is how many times 5 ``goes into'' 2022. Hence
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]
 just a tiny bit smaller than \(\frac{1}{5}\).
+
+\textbf{Group feedback:} With these ``classical probability'' questions, the steps should always be:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  State clearly what the sample space \(\Omega\) is.
+\item
+  Count how many outcomes \(|\Omega|\) are in the sample space.
+\item
+  State clearly what the event \(A\) is.
+\item
+  Count how many outcomes \(|A|\) are in the event.
+\item
+  The desired probability is then \(\mathbb P(A) = |A|/|\Omega|\).
+\end{enumerate}
 
 \end{myanswers}
 
 \textbf{(b)} What is the probability the number is divisible by 5 or by 7?
 
 \begin{myanswers}
-\emph{Solution.} With the same \(\Omega\) and \(A\), now let \(B\) be the numbers up to 2022 divisible by \(7\); so we're looking for \(\mathbb P(A \cup B)\). As before, \(|B|\) is the largest integer no bigger that \(\frac{2022}{7} = 288.9\), which is \(288\). So
-\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \mathbb P(A\cap B) . \]
+\emph{Solution.} With the same \(\Omega\) and \(A\), now let \(B\) be the numbers up to 2022 divisible by \(7\); so we're looking for \(\mathbb P(A \cup B)\). By the addition rule for unions, this is
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+We already know \(\mathbb P(A) = \frac{404}{2022}\), so need to find out \(\mathbb P(B)\) and \(\mathbb P(A \cap B)\).
 
-Here, \(A \cap B\) is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by \(5 \times 7 = 35\). Then \(|A \cap B|\) is \(\frac{2022}{35} = 57.8\) rounded down. So finally, we have
+As before, \(|B|\) is the largest integer no bigger that \(\frac{2022}{7} = 288.9\), which is \(288\). So
+So \(\mathbb P(B) = \frac{288}{2022}\).
+Now, \(A \cap B\) is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by \(5 \times 7 = 35\). Then \(|A \cap B|\) is \(\frac{2022}{35} = 57.8\) rounded down, so \(\mathbb P(A \cap B) = \frac{57}{2022}\).
+
+So finally, we have
 \[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]
 
 \end{myanswers}
@@ -2306,6 +2329,9 @@ Let \(A\) be the event in the question. What is \(|A|\)? Well,
 Hence \(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\). Thus we get
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
 
+\textbf{Group feedback:} As we have discussed recently, often ``classical probability'' problems can be solved by the step-by-step ``chain rule'' method. Can you use a chain rule argument to find the same answer as
+\[ \mathbb P(A) = 1 \times \frac27 \times \frac16 \times 1 \times 1 \times 1 \times 1 \times 1 = \frac{1}{21} ? \]
+
 \end{myanswers}
 
 \textbf{(b)} neither Ashley, Brook nor Chris sit next to each other.
@@ -2319,7 +2345,7 @@ The sample space \(\Omega\) is as before. Let's count the outcomes in \(B\), the
 \item
   Ashley can sit anywhere, so has 8 choices of seat.
 \item
-  Chris's number of choices will depend on where Brook sits, so we'll have to count their choices together.
+  Chris's number of choices will depend on where Brook sits, so we'll have to count Brook's and Chris's choices together:
 
   \begin{itemize}
   \tightlist
@@ -2352,7 +2378,7 @@ To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only 
 
 \begin{myanswers}
 \emph{Solution.}
-The sample space is \(\Omega = \{0,1,\dots,9\}^n\), the set of length-\(n\) sequences of digits between \(0\) and \(9\). The number of these is \(|\Omega| = 10^n\).
+The sample space is \(\Omega = \{0,1,\dots,9\}^n\), the set of length-\(n\) sequences of digits between \(0\) and \(9\). The number of these is \(|\Omega| = 10^n\), as there are 10 choices for each of the \(n\) digits.
 
 The event \(A_k\) is \(\{0,1,\dots,k\}^n\), the set of length-\(n\) sequences of digits that are between \(0\) and \(k\). The number of these is \(|A_k| = (k+1)^n\). (Note that it's \(k+1\) because we're allowing 0 as well.)
 
@@ -2366,7 +2392,7 @@ Hence, the probability is
 
 \begin{myanswers}
 \emph{Solution.}
-Consider the event \(A_k\) that all the digits are at most \(k\). Within \(A_k\), \emph{either} one of the digits is \(k\), in which case we are in \(B_k\), \emph{or} none of the digits are \(k\), in which case they are all at most \(k-1\), and we are in \(A_{k-1}\), \emph{but not both}. Hence we have a disjoint union
+Consider the event \(A_k\) that all the digits are at most \(k\). Within \(A_k\), \emph{either} one or more of the digits is \(k\), in which case that is the largest digit we are in \(B_k\); \emph{or} none of the digits are \(k\), in which case they are all at most \(k-1\), and we are in \(A_{k-1}\), \emph{but not both}. Hence we have a disjoint union
 \[ A_k = B_k \cup A_{k-1} . \]
 Applying Axiom 3 gives
 \[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]
@@ -2797,6 +2823,255 @@ The key point is that the disease is rare -- only 2\% of people have it. So even
   \[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
 \item
   Bayes' theorem says that \({\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }\).
+\end{itemize}
+
+\hypertarget{L09-discrete-rv}{%
+\chapter{Discrete random variables}\label{L09-discrete-rv}}
+
+\hypertarget{rv}{%
+\section{What is a random variable?}\label{rv}}
+
+Let's consider again the case of rolling two dice. We know that the sample space is the set of pairs of numbers between 1 and 6.
+But if we are rolling the two dice as part of a board game, we might only care about the \emph{total} score on the two dice, and the actual the two individual dice scores might be irrelevant. Let us wrote write \(X\) for the total score. This \(X\) is a sort of ``numerical summary'' of the experiment. Probabilists call such a numerical summary a \textbf{random variable}.
+
+One we've defined this random variable \(X\), it can be easier to work with \(X\) than with sample spaces and events. For example, if we want to know the probability that our two dice rolls add up to 5, it's more convenient to write
+\[ \mathbb P(X = 5) \]
+rather than
+\[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]
+The probability that \(X = 5\) is \(\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}\). We might also be interested in other things about the total score \(X\), like what the average total score over many pairs if dice rolls is.
+
+The good news is that, once we have properly set up out random variable \(X\), we can often then choose to ignore things like the sample space, the probability measure, and individual events.
+
+Random variables are typically given capital letters from late in the alphabet, like \(X\), \(Y\), \(Z\). Values that those random variables take are often given the lower-case equivalent, like \(x\), \(y\), \(z\).
+
+This idea of a random variable as a numerical summary of an experiment is how we \emph{think} about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We'll discuss that now (but if you find the next three paragraphs difficult to follow, you won't miss much if you skip them).
+
+In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
+\[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]
+of pairs \(\boldsymbol\omega = (\omega_1, \omega_2)\) of numbers from 1 to 6, where \(\omega_1\) represents the first dice roll and \(\omega_2\) the second dice roll.
+The random variable \(X\) is the score on the first dice plus the score on the second dice -- that is,
+\[ X(\boldsymbol\omega) = \omega_1 + \omega_2 . \]
+In other words, \(X\) is a \emph{function} which takes in a sample outcome \(\boldsymbol\omega \in \Omega\) and outputs a real number \(X = X(\boldsymbol\omega) = \omega_1 + \omega_2\).
+
+\begin{definition}
+Let \(\Omega\) be a sample space. Then a \textbf{random variable} is a function \(X\) from \(\Omega\) to the real numbers \(\mathbb R\); that is, to each sample outcome \(\omega\) it assigns a real number \(X(\omega)\).
+
+Expressions like \(\mathbb P(X = x)\) or \(\mathbb P(X \in A)\) should be understood as representing more formal probabilities
+\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) \quad \text{or} \quad \mathbb P \big( \{\omega : X(\omega) \in A \}\big)  . \]
+\end{definition}
+
+It's useful to have a notation for the values a random variable can take.
+
+\newcommand{\Range}{\operatorname{Range}}
+
+\begin{definition}
+The set of values a random variable \(X\) can take is called its \textbf{range}, \(\operatorname{Range}(X) = \{X(\omega) : \omega \in \Omega \}\).
+\end{definition}
+
+So, for example, the range of the dice total \(X\) is \(\operatorname{Range}(X) = \{2, 3, \dots, 12\}\), because those are the possible outcome from the sum of two dice rolls.
+
+Random variables that we will consider in this module will be one of two types:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Discrete random variables} have a range that is a collection of discrete separate counts, so \(\operatorname{Range}(X)\) is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for ``count data''.
+\item
+  \textbf{Continuous random variables} have a range that is a continuum of slowly varying measurements, so \(\operatorname{Range}(X)\) is uncountably infinite (like the real numbers, the positive real numbers, or the interval \([0,1]\)). Continuous random variables can be used as models for ``measurement data''.
+\end{itemize}
+
+For this week and the two weeks after, we will look at discrete random variables; later in Lecturer 15 to 17 we will look at continuous random variables.
+
+\hypertarget{pmf}{%
+\section{Probability mass function}\label{pmf}}
+
+We now consider only discrete random variables \(X\), where the range \(\operatorname{Range}(X)\) is finite or countably infinite. To fully understand a discrete random variable \(X\), we need only understand the probabilities \(p(x) = \mathbb P(X = x)\). These are captured by the probability mass function.
+
+\begin{definition}
+For a discrete random variable \(X\), its \textbf{probability mass function} (or \textbf{PMF}) is the function \(p_X\) where
+\[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \operatorname{Range}(X)$.} \]
+(When the random variable \(X\) is obvious from context, we'll just write \(p(x)\) without the subscript.)
+\end{definition}
+
+Once we have the PMF, then Axiom 3 tells us that for any set \(A\), we have
+\[ \mathbb P(X \in A) = \sum_{x \in A} \mathbb P(X = x) = \sum_{x \in A} p(x) . \]
+(Recall that the symbol \(\in\) means ``is an element of'', or just ``is in'' for short.) So the probability that \(X\) is in some set \(A\) can be found by simply adding up \(p(x)\) for all the values \(x\) in \(A\). Thus the PMF \(p(x)\) is the only thing we need to know.
+
+\begin{example}
+Consider tossing a biased coin, that is Heads with probability \(p\) and Tails with probability \(1-p\). Let \(X = 1\) if the coin lands Heads, and \(X = 0\) if the coin lands Tails. The PMF \(p_X\) of this random variable is given by
+\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]
+
+We could alternatively think of the same random variable \(X\) as representing the result of an experiment, where \(X = 1\) represents a success, with probability \(p_X(1) = p\), and \(X = 0\) represents a failure, with probability \(p_X(0) = 1 - p\).
+
+A random variable \(X\) with this PMF is called a \textbf{Bernoulli trial} (or a ``Bernoulli random variable'', or is said to ``follow the Bernoulli distribution'' -- after the seventeenth-century Swiss mathematician \href{https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/}{Jacob Bernoulli}). We use the notation \(X \sim \text{Bern}(p)\) for short.
+\end{example}
+
+\begin{example}
+Let \(X\) being the sum of two dice rolls. As this is a classical probability problem, the probability \(p(x)\) of rolling a total of \(x\) is \(n(x) / 36\), where \(n(x)\) is the number of ways of rolling a total of \(x\). So, for example, there is only one way \((1,1)\) of rolling a total of 2, so \(p(2) = \frac1{36}\), but there are 5 ways of rolling a 6: \((1,5), (2,4), (3, 3), (4, 2), (5, 1)\); so \(p(5) = \frac5{36}\).
+
+The PMF \(p\) of \(X\) is given by
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(x\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(4\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(5\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(6\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(7\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(p(x)\) & \(\frac{1}{36}\) & \(\frac{2}{36}\) & \(\frac{3}{36}\) & \(\frac{4}{36}\) & \(\frac{5}{36}\) & \(\frac{6}{36}\) \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(x\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\cdots\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(8\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(9\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(10\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(11\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(12\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(p(x)\) & \(\cdots\) & \(\frac{5}{36}\) & \(\frac{4}{36}\) & \(\frac{3}{36}\) & \(\frac{2}{36}\) & \(\frac{1}{36}\) \\
+\bottomrule()
+\end{longtable}
+
+\includegraphics{math1710_files/figure-latex/dice-pmf-1.pdf}
+\end{example}
+
+Note that since \(p(x) = \mathbb P(X = x)\) is a probability, it must be greater than or equal to 0. Further, if we add up \(p(x)\) we get
+\[ \sum_{x} p(x) =  \sum_{x \in \operatorname{Range}(X)} \mathbb P(X = x) = \mathbb P\big(X \in \operatorname{Range}(X)\big)  =  \mathbb P(\Omega) = 1 . \]
+Hence we have the following:
+
+\begin{theorem}
+
+Let \(X\) be a discrete random variable, and let \(p_X\) be its PMF. Then
+
+\begin{itemize}
+\tightlist
+\item
+  \(p_X(x) \geq 0\) for all \(x \in \operatorname{Range}(X)\);
+\item
+  \({\displaystyle \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1}\).
+\end{itemize}
+
+\end{theorem}
+
+\hypertarget{cdf}{%
+\section{Cumulative distribution function}\label{cdf}}
+
+Sometimes it is useful to know the probability a random variable \(X\) is less or equal to than some value \(x\). This is captured by the \textbf{cumulative distribution function} (or \textbf{CDF}) \(F_X\), where
+\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]
+
+\begin{example}
+Let \(X \sim \text{Bern}(p)\) be a Bernoulli random variable with success probability \(p\). It's impossible for the outcome to be less that 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability \(p(0) = 1-p\); and it is certain to at most 1. So its CDF \(F\) is
+\[ F(x) = \begin{cases} 0 & \text{for $x < 0$} \\
+                      1-p & \text{for $0 \leq x < 1$} \\
+                      1   & \text{for $x \geq 1$} . \end{cases} \]
+\end{example}
+
+\begin{example}
+If \(X\) is the sum of two dice rolls, then the CDF \(F\) is given by adding up the PMF. So, for example, if \(2 \leq x < 3\), we have \(F(x) = p(2) = \frac{1}{36}\); if \(3 \leq x < 4\) we have \(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}\), and so. This gives
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
+  >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(x \in {}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\((-\infty, 2)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([2,3)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([3,4)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([4,5)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\cdots\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([11,12)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([12, \infty)\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(F(x)\) & \(0\) & \(\frac{1}{36}\) & \(\frac{3}{36}\) & \(\frac{5}{36}\) & \(\cdots\) & \(\frac{35}{36}\) & \(1\) \\
+\bottomrule()
+\end{longtable}
+
+\includegraphics{math1710_files/figure-latex/dice-cdf-1.pdf}
+
+Note that the CDF is a ``step function'' that starts at 0, then jumps up suddenly at each of the values \(2, 3, \dots, 12\), finally ending up at 1.
+\end{example}
+
+For any random variable \(X\) with CDF \(F\),
+
+\begin{itemize}
+\tightlist
+\item
+  if \(x\) is smaller than everything in the \(\operatorname{Range}(X)\), then \(F(x) = 0\), because \(X\) cannot be that small;
+\item
+  if \(x\) is greater than everything in the \(\operatorname{Range}(X)\), then \(F(x) = 1\), because \(X\) cannot be any bigger than that;
+\item
+  \(F(x)\) is increasing in \(x\), because the probability you are less than \(x\) gets bigger as \(x\) gets bigger.
+\end{itemize}
+
+\hypertarget{summary-L09}{%
+\section*{Summary}\label{summary-L09}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  A random variable is a numerical summary of a random experiment.
+\item
+  The probability mass function (PMF) is \(p_X(x) = \mathbb P(X = x)\).
+\item
+  The cumulative distribution function (CDF) is \(F_X(x) = \mathbb P(X \leq x)\).
+\item
+  A Bernoulli random variable is 0 with probability \(1-p\) and 1 with probability \(p\).
 \end{itemize}
 
 \hypertarget{P3}{%
@@ -3545,7 +3820,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-19-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-21-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -3719,6 +3994,314 @@ Remember that you can still attempt part (b) even if you got stuck on part (a).
 \end{itemize}
 
 You can probably think of many other things.
+
+\end{myanswers}
+
+\hypertarget{P2-solutions}{%
+\section*{Problem Sheet 2}\label{P2-solutions}}
+\addcontentsline{toc}{section}{Problem Sheet 2}
+
+\textbf{A1.} Suppose you toss a coin 4 times.
+
+\textbf{(a)} What would you suggest for a sample space \(\Omega\) \textbf{(i)} if you only care about the total number of heads; \textbf{(ii)} if you care about the result of each coin toss?
+
+\textbf{(b)} For each of the cases in part (a), what is \(|\Omega|\)?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\textbf{(i)} We can take \(\Omega = \{0,1,2,3,4\}\), with \(|\Omega| = 5\).
+
+\textbf{(ii)} Here, \(\Omega = \{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}\) should be the set of all sequences of four ``H''s or ``T''s. So here, \(|\Omega| = 2^4 = 16\).
+
+\end{myanswers}
+
+\textbf{A2.} Let \(A\), \(B\) and \(C\) be events in a sample space \(\Omega\). Write the following events using only \(A\), \(B\), \(C\) and the complement, intersection, and union operations.
+
+\textbf{(a)} \(C\) happens but \(A\) doesn't.
+
+\begin{myanswers}
+\emph{Solution.} This is ``\(C\) and not \(A\)'': \(C\cap A^{\mathsf{c}}\).
+
+\end{myanswers}
+
+\textbf{(b)} At least one of \(A\), \(B\) and \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} This is simply the union \(A \cup B\cup C\).
+
+\end{myanswers}
+
+\textbf{(c)} Exactly one of \(B\) or \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} One way to write this is to split it up as ``\,`\(B\) but not \(C\)' or `\(C\) but not \(B\)'\,'', which is \((B \cap C^{\mathsf{c}}) \cup (B^{\mathsf{c}} \cap C)\).
+
+An alternative is to split it up as ``\,`\(B\) or \(C\)' but not `both \(B\) and \(C\)'\,'', which is \((B \cup C) \cap (B\cap C)^{\mathsf{c}}\).
+
+You can check these are equal by (for example) using De Morgan's law and the distributive law to expand out the second version.
+
+\end{myanswers}
+
+\textbf{(d)} Exactly two of \(A\), \(B\) and \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} I would split this up into ``\(A\) and \(B\) but not \(C\)'', ``\(A\) and \(C\) but not \(B\)'', and ``\(B\) and \(C\) but not \(A\)'' and take the union. This gives
+\[  (A \cap B \cap C^{\mathsf{c}}) \cup (A \cap B^{\mathsf{c}} \cap C) \cup (A^{\mathsf{c}} \cap B \cap C) . \]
+There are other equivalent formulations.
+
+\end{myanswers}
+
+\textbf{A3.} What is the value of the following expressions?
+
+\textbf{(a)} \(6!\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720. \]
+
+\end{myanswers}
+
+\textbf{(b)} \(8^4\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ 8^4 = 8 \times 8 \times 8 \times 8 = 4096 \]
+
+\end{myanswers}
+
+\textbf{(c)} \({8}^{\underline{4}}\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ {8}^{\underline{4}} = 8 \times 7 \times 6 \times 5 = 1680 \]
+
+\end{myanswers}
+
+\textbf{(d)} \({\displaystyle \binom{10}{4}}\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ \binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4\times 3\times 2\times 1} = 210 \]
+
+\end{myanswers}
+
+\textbf{A4.} An urn contains 4 red balls and 6 blue balls. Two balls are drawn from the urn. What is the probability that both balls are red, if the balls are drawn \textbf{(a)} with replacement; \textbf{(b)} without replacement?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\textbf{(a)} There are \(|\Omega| = 10^2 = 100\) ways to draw two balls with replacement. There are \(|A| = 4^2=16\) ways to draw two blue balls. So
+\(\mathbb P(A) = \frac{16}{100} = 0.16\).
+
+\textbf{(b)} There are \(|\Omega| = {10}^{\underline{2}} = 10 \times 9 = 90\) ways to draw two balls without replacement. There are \(|A| = {4}^{\underline{2}} = 4 \times 3 = 12\) to draw two blue balls. So
+\(\mathbb P(A) = \frac{12}{90} = \frac{2}{15} = 0.133\).
+
+\end{myanswers}
+
+\textbf{B1.} Starting from just the three probability axioms, prove the following statements:
+
+\textbf{(a)} \(\mathbb P(\varnothing) = 0\).
+
+\begin{myanswers}
+\emph{Solution.} Let \(A\) be any event (such as \(A = \varnothing\) or \(A = \Omega\), for example). Then \(A \cup \varnothing = A\), and the union is disjoint -- since \(\varnothing\) contains no sample points, it certainly can't contain any sample points that are also in \(A\). Then applying Axiom 3, we get \(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\). Subtracting \(\mathbb P(A)\) from both sides gives the result.
+
+\emph{Alternatively}, if you prove part (b) first, you can apply that with \(A = \varnothing\). Since \(\varnothing^\mathsf{c}= \Omega\) and Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), the result follows.
+
+\textbf{Group feedback:} With this, and most ``prove from the axioms'' questions, the key is to find a relevant disjoint union, which then allows us to use Axiom 3. So if we can find \(C = A \cup B\) as a disjoint union (hopefully containing some events relevant to the question at hand), Axiom 3 allows us to write \(\mathbb P(C) = \mathbb P(A) + \mathbb P(B)\).
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\).
+
+\begin{myanswers}
+\emph{Solution.} A very useful and relevant disjoint union is \(A \cup A^\mathsf{c}= \Omega\). Applying Axiom 3 gives us \(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = \mathbb P(\Omega)\). But Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), so \(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = 1\). Rearranging gives the result.
+
+\end{myanswers}
+
+\textbf{B2.} In this question, you will have to use the standard two-event form of the addition rule for unions
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+
+\textbf{(a)} Using the two-event addition rule, show that
+\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
+
+\begin{myanswers}
+\emph{Solution.} As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what \(A\) and \(B\) should be. This time, \(A = C\) and \(B = D \cup E\) will work well, since \(C \cup (D \cup E) = C \cup D \cup E\). (You can call this ``associativity'', if you like.) Making that substitution immediately gives us
+\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]
+as required.
+
+\end{myanswers}
+
+\textbf{(b)} Using your result from part (a), the two-event addition rule, the distributive law, and the two-event addition rule again, prove the three-event form of the addition rule for unions:
+\[
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
+  - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
+\]
+
+\begin{myanswers}
+\emph{Solution.}
+Let's take the three terms on the right of the equation from part (a) separately.
+
+The first term is \(\mathbb P(C)\), which is fine as it is.
+
+The second term is \(\mathbb P(D \cup E)\). This is the probability of the union of two events, so we can use addition rule for the union of two events to get
+\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E) . \]
+
+The third term is \(\mathbb P\big(C \cap (D \cup E)\big)\). If we use the distributive law, as suggested in the question, we get \(C \cap (D \cup E) = (C \cap D) \cup (C\cap E)\), so we want to find \(\mathbb P\big((C \cap D) \cup (C\cap E)\big)\). But this is another union of two events again, this time with \(A = C \cap D\) and \(B = C \cap E\). So the two-event addition rule gives
+\[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]
+since \((C \cap D) \cap (C \cap E) = C \cap D \cap E\).
+
+Finally, we put this all together, and get
+\begin{align*}
+  \mathbb P(C &\cup D \cup E) \\
+  &= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
+  &= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) , 
+\end{align*}
+which is what we wanted.
+
+\end{myanswers}
+
+\textbf{B3.} Suppose we pick a number at random from the set \(\{1, 2, \dots, 2022\}\).
+
+\textbf{(a)} What is the probability that the number is divisible by 5?
+
+\begin{myanswers}
+
+\emph{Solution.} The sample space is \(\Omega = \{1, 2, \dots, 2022\}\). Clearly \(|\Omega| = 2022\). Further, the event in question is \(A = \{5, 10, \dots, 2020\}\) of numbers up to 2022 that are divisible by 5. Thus \(|A|\) is the largest integer no bigger than \(\frac{2022}{5} = 404.4\), which is 404, as this is how many times 5 ``goes into'' 2022. Hence
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]
+just a tiny bit smaller than \(\frac{1}{5}\).
+
+\textbf{Group feedback:} With these ``classical probability'' questions, the steps should always be:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  State clearly what the sample space \(\Omega\) is.
+\item
+  Count how many outcomes \(|\Omega|\) are in the sample space.
+\item
+  State clearly what the event \(A\) is.
+\item
+  Count how many outcomes \(|A|\) are in the event.
+\item
+  The desired probability is then \(\mathbb P(A) = |A|/|\Omega|\).
+\end{enumerate}
+
+\end{myanswers}
+
+\textbf{(b)} What is the probability the number is divisible by 5 or by 7?
+
+\begin{myanswers}
+\emph{Solution.} With the same \(\Omega\) and \(A\), now let \(B\) be the numbers up to 2022 divisible by \(7\); so we're looking for \(\mathbb P(A \cup B)\). By the addition rule for unions, this is
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+We already know \(\mathbb P(A) = \frac{404}{2022}\), so need to find out \(\mathbb P(B)\) and \(\mathbb P(A \cap B)\).
+
+As before, \(|B|\) is the largest integer no bigger that \(\frac{2022}{7} = 288.9\), which is \(288\). So
+So \(\mathbb P(B) = \frac{288}{2022}\).
+Now, \(A \cap B\) is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by \(5 \times 7 = 35\). Then \(|A \cap B|\) is \(\frac{2022}{35} = 57.8\) rounded down, so \(\mathbb P(A \cap B) = \frac{57}{2022}\).
+
+So finally, we have
+\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]
+
+\end{myanswers}
+
+\textbf{B4.} Eight friends are about to sit down at random at a round table. Find the probability that
+
+\textbf{(a)} Ashley and Brook sit next to each other, with Chris directly opposite Brook;
+
+\begin{myanswers}
+\emph{Solution.}
+Let \(\Omega\) be the sample space of ways the friends can sit around the table. This is an ordering problem, so \(|\Omega| = 8!\).
+
+Let \(A\) be the event in the question. What is \(|A|\)? Well,
+
+\begin{itemize}
+\tightlist
+\item
+  Ashley can sit anywhere, so has 8 choices of seat.
+\item
+  Brook can sit either directly to Ashley's left or directly to Ashley's right, so has 2 choices of seat.
+\item
+  Chris must sit directly opposite Brook, so only has 1 choice of seat.
+\item
+  The remaining five friends can fill up the remaining seats however they like, so have 5, 4, 3, 2, and 1 choices respectively.
+\end{itemize}
+
+Hence \(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\). Thus we get
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
+
+\textbf{Group feedback:} As we have discussed recently, often ``classical probability'' problems can be solved by the step-by-step ``chain rule'' method. Can you use a chain rule argument to find the same answer as
+\[ \mathbb P(A) = 1 \times \frac27 \times \frac16 \times 1 \times 1 \times 1 \times 1 \times 1 = \frac{1}{21} ? \]
+
+\end{myanswers}
+
+\textbf{(b)} neither Ashley, Brook nor Chris sit next to each other.
+
+\begin{myanswers}
+\emph{Solution.}
+The sample space \(\Omega\) is as before. Let's count the outcomes in \(B\), the event in the question.
+
+\begin{itemize}
+\tightlist
+\item
+  Ashley can sit anywhere, so has 8 choices of seat.
+\item
+  Chris's number of choices will depend on where Brook sits, so we'll have to count Brook's and Chris's choices together:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Brook cannot sit next to Ashley.
+  \item
+    If Brook sits next-but-one to Ashley -- of which there are 2 choices -- then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side, leaving \(6-3=3\) choices.
+  \item
+    If Brook sits neither next nor next-but-one to Ashley -- of which there are 3 choices -- then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook, leaving \(6-4=2\) choices.
+  \end{itemize}
+\item
+  The remaining friends have 5, 4, 3, 2, and 1 choices again.
+\end{itemize}
+
+Hence, \(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\). So
+\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]
+
+\emph{Alternatively}, in a previous tutorial, a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
+
+Ashley has 5 gaps to choose from, then Brook will have 6 gaps (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is \(|\Omega| = 5 \times 6 \times 7\).
+
+To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has \(6 - 2 = 4\) choices (not in the gap directly to the left or right of Ashley), and Chris only has \(7 - 4 = 3\) choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook -- these four gaps are distinct assuming Brook was not next to Ashley). Hence \(|B| = 5 \times 4 \times 3\), and we have
+\[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]
+
+\end{myanswers}
+
+\textbf{B5.} A ``random digit'' is a number chosen at random from \(\{0, 1, \dots, 9\}\), each with equal probability. A statistician chooses \(n\) random digits (with replacement).
+
+\textbf{(a)} For \(k = 0, 1, \dots, 9\), let \(A_k\) be the event that all the digits are \(k\) or smaller. What is the probability of \(A_k\), as a function of \(k\) and \(n\)?
+
+\begin{myanswers}
+\emph{Solution.}
+The sample space is \(\Omega = \{0,1,\dots,9\}^n\), the set of length-\(n\) sequences of digits between \(0\) and \(9\). The number of these is \(|\Omega| = 10^n\), as there are 10 choices for each of the \(n\) digits.
+
+The event \(A_k\) is \(\{0,1,\dots,k\}^n\), the set of length-\(n\) sequences of digits that are between \(0\) and \(k\). The number of these is \(|A_k| = (k+1)^n\). (Note that it's \(k+1\) because we're allowing 0 as well.)
+
+Hence, the probability is
+\[ \mathbb P(A_k) = \frac{|A_k|}{|\Omega|} = \frac{(k+1)^n}{10^n} . \]
+
+\end{myanswers}
+
+\textbf{(b)} Let \(B_k\) be the event that the largest digit chosen is equal to \(k\). By finding a relationship between \(B_k\), \(A_{k-1}\) and \(A_k\), or otherwise, show that
+\[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]
+
+\begin{myanswers}
+\emph{Solution.}
+Consider the event \(A_k\) that all the digits are at most \(k\). Within \(A_k\), \emph{either} one or more of the digits is \(k\), in which case that is the largest digit we are in \(B_k\); \emph{or} none of the digits are \(k\), in which case they are all at most \(k-1\), and we are in \(A_{k-1}\), \emph{but not both}. Hence we have a disjoint union
+\[ A_k = B_k \cup A_{k-1} . \]
+Applying Axiom 3 gives
+\[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]
+Rearranging this gives
+\[ \mathbb P(B_k) = \mathbb P(A_k) - \mathbb P(A_{k-1}) . \]
+Substituting in the answer from part (a) gives
+\[\mathbb P(B_k) = \frac{(k+1)^n}{10^n} - \frac{(k-1+1)^n}{10^n} = \frac{(k+1)^n - k^n}{10^n} . \]
 
 \end{myanswers}
 

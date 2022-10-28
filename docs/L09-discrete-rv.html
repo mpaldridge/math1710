@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lecture 9 Discrete random variables | MATH1710 Probability and Statistics I</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lecture 9 Discrete random variables | MATH1710 Probability and Statistics I" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lecture 9 Discrete random variables | MATH1710 Probability and Statistics I" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="L08-two-theorems.html"/>
+<link rel="next" href="P3.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Probability</b></span></li>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="L05-classical-i.html"><a href="L05-classical-i.html"><i class="fa fa-check"></i><b>5</b> Classical probability I</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="L05-classical-i.html"><a href="L05-classical-i.html#classical-intro"><i class="fa fa-check"></i><b>5.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="5.2" data-path="L05-classical-i.html"><a href="L05-classical-i.html#multiplication"><i class="fa fa-check"></i><b>5.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="5.3" data-path="L05-classical-i.html"><a href="L05-classical-i.html#sampling"><i class="fa fa-check"></i><b>5.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="" data-path="L05-classical-i.html"><a href="L05-classical-i.html#summary-L05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
+<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
+<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
+<li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-L06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
+<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+<li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
+<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
+<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
+<li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Other stuff</b></span></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="L09-discrete-rv" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">Lecture 9</span> Discrete random variables<a href="L09-discrete-rv.html#L09-discrete-rv" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="rv" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> What is a random variable?<a href="L09-discrete-rv.html#rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s consider again the case of rolling two dice. We know that the sample space is the set of pairs of numbers between 1 and 6.
+But if we are rolling the two dice as part of a board game, we might only care about the <em>total</em> score on the two dice, and the actual the two individual dice scores might be irrelevant. Let us wrote write <span class="math inline">\(X\)</span> for the total score. This <span class="math inline">\(X\)</span> is a sort of “numerical summary” of the experiment. Probabilists call such a numerical summary a <strong>random variable</strong>.</p>
+<p>One we’ve defined this random variable <span class="math inline">\(X\)</span>, it can be easier to work with <span class="math inline">\(X\)</span> than with sample spaces and events. For example, if we want to know the probability that our two dice rolls add up to 5, it’s more convenient to write
+<span class="math display">\[ \mathbb P(X = 5) \]</span>
+rather than
+<span class="math display">\[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]</span>
+The probability that <span class="math inline">\(X = 5\)</span> is <span class="math inline">\(\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}\)</span>. We might also be interested in other things about the total score <span class="math inline">\(X\)</span>, like what the average total score over many pairs if dice rolls is.</p>
+<p>The good news is that, once we have properly set up out random variable <span class="math inline">\(X\)</span>, we can often then choose to ignore things like the sample space, the probability measure, and individual events.</p>
+<p>Random variables are typically given capital letters from late in the alphabet, like <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>. Values that those random variables take are often given the lower-case equivalent, like <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>.</p>
+<p>This idea of a random variable as a numerical summary of an experiment is how we <em>think</em> about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We’ll discuss that now (but if you find the next three paragraphs difficult to follow, you won’t miss much if you skip them).</p>
+<p>In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
+<span class="math display">\[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]</span>
+of pairs <span class="math inline">\(\boldsymbol\omega = (\omega_1, \omega_2)\)</span> of numbers from 1 to 6, where <span class="math inline">\(\omega_1\)</span> represents the first dice roll and <span class="math inline">\(\omega_2\)</span> the second dice roll.
+The random variable <span class="math inline">\(X\)</span> is the score on the first dice plus the score on the second dice – that is,
+<span class="math display">\[ X(\boldsymbol\omega) = \omega_1 + \omega_2 . \]</span>
+In other words, <span class="math inline">\(X\)</span> is a <em>function</em> which takes in a sample outcome <span class="math inline">\(\boldsymbol\omega \in \Omega\)</span> and outputs a real number <span class="math inline">\(X = X(\boldsymbol\omega) = \omega_1 + \omega_2\)</span>.</p>
+<!--
+Here, $X$ is an example of what we call a **random variable**. A random variable can be thought of as a numerical summary of an experiment (like the total summarising the two individual dice rolls). But by considering the random variable directly, it often means we don't have to worry so much about exactly what the sample space is, or what probability measure is being used, or which sample outcomes are in a particular event. This often makes our life easier when thinking about probability problems.
+
+
+
+The formal definition of a random variable is as a function that turns the outcome into this numerical summary.
+-->
+<div class="definition">
+<p><span id="def:unlabeled-div-40" class="definition"><strong>Definition 9.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a sample space. Then a <strong>random variable</strong> is a function <span class="math inline">\(X\)</span> from <span class="math inline">\(\Omega\)</span> to the real numbers <span class="math inline">\(\mathbb R\)</span>; that is, to each sample outcome <span class="math inline">\(\omega\)</span> it assigns a real number <span class="math inline">\(X(\omega)\)</span>.</p>
+<p>Expressions like <span class="math inline">\(\mathbb P(X = x)\)</span> or <span class="math inline">\(\mathbb P(X \in A)\)</span> should be understood as representing more formal probabilities
+<span class="math display">\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) \quad \text{or} \quad \mathbb P \big( \{\omega : X(\omega) \in A \}\big)  . \]</span></p>
+</div>
+<!--
+This formal definition of a random variable as a function was summarised by my own first-year probability lecturer as "There's only two things you need to know about the definition of a random variable: first, it's not random; second, it's not a variable."
+
+However, the way we actually *think* about random variables *is* as random and is as variables. In this more informal way of thinking, a random variable is a variable that can take different values with different probabilities -- just as the total of the two dice can be 2 with probability $\frac{1}{36}$, or the value 3 with probability $\frac{2}{36}$, and so on.
+-->
+<p>It’s useful to have a notation for the values a random variable can take.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 9.2  </strong></span>The set of values a random variable <span class="math inline">\(X\)</span> can take is called its <strong>range</strong>, <span class="math inline">\(\operatorname{Range}(X) = \{X(\omega) : \omega \in \Omega \}\)</span>.</p>
+</div>
+<p>So, for example, the range of the dice total <span class="math inline">\(X\)</span> is <span class="math inline">\(\operatorname{Range}(X) = \{2, 3, \dots, 12\}\)</span>, because those are the possible outcome from the sum of two dice rolls.</p>
+<p>Random variables that we will consider in this module will be one of two types:</p>
+<ul>
+<li><strong>Discrete random variables</strong> have a range that is a collection of discrete separate counts, so <span class="math inline">\(\operatorname{Range}(X)\)</span> is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for “count data”.</li>
+<li><strong>Continuous random variables</strong> have a range that is a continuum of slowly varying measurements, so <span class="math inline">\(\operatorname{Range}(X)\)</span> is uncountably infinite (like the real numbers, the positive real numbers, or the interval <span class="math inline">\([0,1]\)</span>). Continuous random variables can be used as models for “measurement data”.</li>
+</ul>
+<p>For this week and the two weeks after, we will look at discrete random variables; later in Lecturer 15 to 17 we will look at continuous random variables.</p>
+</div>
+<div id="pmf" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Probability mass function<a href="L09-discrete-rv.html#pmf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/ZYYTNk7F4KI"></iframe>
+:::
+::::
+-->
+<p>We now consider only discrete random variables <span class="math inline">\(X\)</span>, where the range <span class="math inline">\(\operatorname{Range}(X)\)</span> is finite or countably infinite. To fully understand a discrete random variable <span class="math inline">\(X\)</span>, we need only understand the probabilities <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span>. These are captured by the probability mass function.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-42" class="definition"><strong>Definition 9.3  </strong></span>For a discrete random variable <span class="math inline">\(X\)</span>, its <strong>probability mass function</strong> (or <strong>PMF</strong>) is the function <span class="math inline">\(p_X\)</span> where
+<span class="math display">\[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \operatorname{Range}(X)$.} \]</span>
+(When the random variable <span class="math inline">\(X\)</span> is obvious from context, we’ll just write <span class="math inline">\(p(x)\)</span> without the subscript.)</p>
+</div>
+<p>Once we have the PMF, then Axiom 3 tells us that for any set <span class="math inline">\(A\)</span>, we have
+<span class="math display">\[ \mathbb P(X \in A) = \sum_{x \in A} \mathbb P(X = x) = \sum_{x \in A} p(x) . \]</span>
+(Recall that the symbol <span class="math inline">\(\in\)</span> means “is an element of”, or just “is in” for short.) So the probability that <span class="math inline">\(X\)</span> is in some set <span class="math inline">\(A\)</span> can be found by simply adding up <span class="math inline">\(p(x)\)</span> for all the values <span class="math inline">\(x\)</span> in <span class="math inline">\(A\)</span>. Thus the PMF <span class="math inline">\(p(x)\)</span> is the only thing we need to know.</p>
+<!--
+The key idea about random variables is that, once we are thinking in terms of a random variable via its PMF, we can (usually) stop worrying to much about what the underlying sample space is and how the random variable acts on that space.
+-->
+<div class="example">
+<p><span id="exm:unlabeled-div-43" class="example"><strong>Example 9.1  </strong></span>Consider tossing a biased coin, that is Heads with probability <span class="math inline">\(p\)</span> and Tails with probability <span class="math inline">\(1-p\)</span>. Let <span class="math inline">\(X = 1\)</span> if the coin lands Heads, and <span class="math inline">\(X = 0\)</span> if the coin lands Tails. The PMF <span class="math inline">\(p_X\)</span> of this random variable is given by
+<span class="math display">\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]</span></p>
+<p>We could alternatively think of the same random variable <span class="math inline">\(X\)</span> as representing the result of an experiment, where <span class="math inline">\(X = 1\)</span> represents a success, with probability <span class="math inline">\(p_X(1) = p\)</span>, and <span class="math inline">\(X = 0\)</span> represents a failure, with probability <span class="math inline">\(p_X(0) = 1 - p\)</span>.</p>
+<p>A random variable <span class="math inline">\(X\)</span> with this PMF is called a <strong>Bernoulli trial</strong> (or a “Bernoulli random variable”, or is said to “follow the Bernoulli distribution” – after the seventeenth-century Swiss mathematician <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/">Jacob Bernoulli</a>). We use the notation <span class="math inline">\(X \sim \text{Bern}(p)\)</span> for short.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 9.2  </strong></span>Let <span class="math inline">\(X\)</span> being the sum of two dice rolls. As this is a classical probability problem, the probability <span class="math inline">\(p(x)\)</span> of rolling a total of <span class="math inline">\(x\)</span> is <span class="math inline">\(n(x) / 36\)</span>, where <span class="math inline">\(n(x)\)</span> is the number of ways of rolling a total of <span class="math inline">\(x\)</span>. So, for example, there is only one way <span class="math inline">\((1,1)\)</span> of rolling a total of 2, so <span class="math inline">\(p(2) = \frac1{36}\)</span>, but there are 5 ways of rolling a 6: <span class="math inline">\((1,5), (2,4), (3, 3), (4, 2), (5, 1)\)</span>; so <span class="math inline">\(p(5) = \frac5{36}\)</span>.</p>
+<p>The PMF <span class="math inline">\(p\)</span> of <span class="math inline">\(X\)</span> is given by</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(2\)</span></th>
+<th align="center"><span class="math inline">\(3\)</span></th>
+<th align="center"><span class="math inline">\(4\)</span></th>
+<th align="center"><span class="math inline">\(5\)</span></th>
+<th align="center"><span class="math inline">\(6\)</span></th>
+<th align="center"><span class="math inline">\(7\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{4}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(8\)</span></th>
+<th align="center"><span class="math inline">\(9\)</span></th>
+<th align="center"><span class="math inline">\(10\)</span></th>
+<th align="center"><span class="math inline">\(11\)</span></th>
+<th align="center"><span class="math inline">\(12\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{4}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="math1710_files/figure-html/dice-pmf-1.png" width="672" /></p>
+</div>
+<p>Note that since <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> is a probability, it must be greater than or equal to 0. Further, if we add up <span class="math inline">\(p(x)\)</span> we get
+<span class="math display">\[ \sum_{x} p(x) =  \sum_{x \in \operatorname{Range}(X)} \mathbb P(X = x) = \mathbb P\big(X \in \operatorname{Range}(X)\big)  =  \mathbb P(\Omega) = 1 . \]</span>
+Hence we have the following:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-45" class="theorem"><strong>Theorem 9.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable, and let <span class="math inline">\(p_X\)</span> be its PMF. Then</p>
+<ul>
+<li><span class="math inline">\(p_X(x) \geq 0\)</span> for all <span class="math inline">\(x \in \operatorname{Range}(X)\)</span>;</li>
+<li><span class="math inline">\({\displaystyle \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1}\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="cdf" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Cumulative distribution function<a href="L09-discrete-rv.html#cdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sometimes it is useful to know the probability a random variable <span class="math inline">\(X\)</span> is less or equal to than some value <span class="math inline">\(x\)</span>. This is captured by the <strong>cumulative distribution function</strong> (or <strong>CDF</strong>) <span class="math inline">\(F_X\)</span>, where
+<span class="math display">\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 9.3  </strong></span>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli random variable with success probability <span class="math inline">\(p\)</span>. It’s impossible for the outcome to be less that 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability <span class="math inline">\(p(0) = 1-p\)</span>; and it is certain to at most 1. So its CDF <span class="math inline">\(F\)</span> is
+<span class="math display">\[ F(x) = \begin{cases} 0 &amp; \text{for $x &lt; 0$} \\
+                      1-p &amp; \text{for $0 \leq x &lt; 1$} \\
+                      1   &amp; \text{for $x \geq 1$} . \end{cases} \]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 9.4  </strong></span>If <span class="math inline">\(X\)</span> is the sum of two dice rolls, then the CDF <span class="math inline">\(F\)</span> is given by adding up the PMF. So, for example, if <span class="math inline">\(2 \leq x &lt; 3\)</span>, we have <span class="math inline">\(F(x) = p(2) = \frac{1}{36}\)</span>; if <span class="math inline">\(3 \leq x &lt; 4\)</span> we have <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}\)</span>, and so. This gives</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x \in {}\)</span></th>
+<th align="center"><span class="math inline">\((-\infty, 2)\)</span></th>
+<th align="center"><span class="math inline">\([2,3)\)</span></th>
+<th align="center"><span class="math inline">\([3,4)\)</span></th>
+<th align="center"><span class="math inline">\([4,5)\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\([11,12)\)</span></th>
+<th align="center"><span class="math inline">\([12, \infty)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F(x)\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{35}{36}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="math1710_files/figure-html/dice-cdf-1.png" width="672" /></p>
+<p>Note that the CDF is a “step function” that starts at 0, then jumps up suddenly at each of the values <span class="math inline">\(2, 3, \dots, 12\)</span>, finally ending up at 1.</p>
+</div>
+<p>For any random variable <span class="math inline">\(X\)</span> with CDF <span class="math inline">\(F\)</span>,</p>
+<ul>
+<li>if <span class="math inline">\(x\)</span> is smaller than everything in the <span class="math inline">\(\operatorname{Range}(X)\)</span>, then <span class="math inline">\(F(x) = 0\)</span>, because <span class="math inline">\(X\)</span> cannot be that small;</li>
+<li>if <span class="math inline">\(x\)</span> is greater than everything in the <span class="math inline">\(\operatorname{Range}(X)\)</span>, then <span class="math inline">\(F(x) = 1\)</span>, because <span class="math inline">\(X\)</span> cannot be any bigger than that;</li>
+<li><span class="math inline">\(F(x)\)</span> is increasing in <span class="math inline">\(x\)</span>, because the probability you are less than <span class="math inline">\(x\)</span> gets bigger as <span class="math inline">\(x\)</span> gets bigger.</li>
+</ul>
+</div>
+<div id="summary-L09" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L09-discrete-rv.html#summary-L09" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li>A random variable is a numerical summary of a random experiment.</li>
+<li>The probability mass function (PMF) is <span class="math inline">\(p_X(x) = \mathbb P(X = x)\)</span>.</li>
+<li>The cumulative distribution function (CDF) is <span class="math inline">\(F_X(x) = \mathbb P(X \leq x)\)</span>.</li>
+<li>A Bernoulli random variable is 0 with probability <span class="math inline">\(1-p\)</span> and 1 with probability <span class="math inline">\(p\)</span>.</li>
+</ul>
+</div>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="L08-two-theorems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="P3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

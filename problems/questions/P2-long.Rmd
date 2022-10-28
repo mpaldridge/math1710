@@ -8,11 +8,11 @@
 **(a)** $\mathbb P(\varnothing) = 0$.
 
 ::: {.myanswers data-latex=""}
-*Solution.* As always, we seek a disjoint union, to allow us to use Axiom 3.
+*Solution.* Let $A$ be any event (such as $A = \varnothing$ or $A = \Omega$, for example). Then $A \cup \varnothing = A$, and the union is disjoint -- since $\varnothing$ contains no sample points, it certainly can't contain any sample points that are also in $A$. Then applying Axiom 3, we get $\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)$. Subtracting $\mathbb P(A)$ from both sides gives the result.
 
-Let $A$ be any event (such as $A = \varnothing$ or $A = \Omega$, for example). Then $A \cup \varnothing = A$, and the union is disjoint -- since $\varnothing$ contains no sample points, it certainly can't contain any sample points that are also in $A$. Then applying Axiom 3, we get $\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)$. Subtracting $\mathbb P(A)$ from both sides gives the result.
+*Alternatively*, if you prove part (b) first, you can apply that with $A = \varnothing$. Since $\varnothing^\comp = \Omega$ and Axiom 2 tells us that $\mathbb P(\Omega) = 1$, the result follows.
 
-*Alternatively*, if you prove part (b) first, you can apply that with $A = \Omega$. Since $\Omega^\comp = \varnothing$ and Axiom 2 tells us that $\mathbb P(\Omega) = 1$, the result follows.
+**Group feedback:** With this, and most "prove from the axioms" questions, the key is to find a relevant disjoint union, which then allows us to use Axiom 3. So if we can find $C = A \cup B$ as a disjoint union (hopefully containing some events relevant to the question at hand), Axiom 3 allows us to write $\mathbb P(C) = \mathbb P(A) + \mathbb P(B)$.
 :::
 ::::
 
@@ -35,7 +35,7 @@ Let $A$ be any event (such as $A = \varnothing$ or $A = \Omega$, for example). T
 \[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
 
 ::: {.myanswers data-latex=""}
-*Solution.* As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what $A$ and $B$ should be. This time, $A = C$ and $D \cup E$ will work well, since $C \cup (D \cup E) = C \cup D \cup E$. (You can call this "associativity", if you like.) Making that substitution immediately gives us
+*Solution.* As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what $A$ and $B$ should be. This time, $A = C$ and $B = D \cup E$ will work well, since $C \cup (D \cup E) = C \cup D \cup E$. (You can call this "associativity", if you like.) Making that substitution immediately gives us
 \[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]
 as required.
 :::
@@ -80,9 +80,17 @@ which is what we wanted.
 **(a)** What is the probability that the number is divisible by 5?
 
 ::: {.myanswers data-latex=""}
-*Solution.* The sample space is $\Omega = \{1, 2, \dots, 2022\}$, and $A$ is the set of numbers up to 2022 that are divisible by 5. Clearly $|\Omega| = 2022$. Further, $|A|$ is the largest integer no bigger than $\frac{2022}{5} = 404.2$, which is 404, as this is how many times 5 "goes into" 2022.  Hence
+*Solution.* The sample space is $\Omega = \{1, 2, \dots, 2022\}$. Clearly $|\Omega| = 2022$. Further, the event in question is $A = \{5, 10, \dots, 2020\}$ of numbers up to 2022 that are divisible by 5. Thus $|A|$ is the largest integer no bigger than $\frac{2022}{5} = 404.4$, which is 404, as this is how many times 5 "goes into" 2022.  Hence
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]
 just a tiny bit smaller than $\frac{1}{5}$.
+
+**Group feedback:** With these "classical probability" questions, the steps should always be:
+
+1. State clearly what the sample space $\Omega$ is.
+2. Count how many outcomes $|\Omega|$ are in the sample space.
+3. State clearly what the event $A$ is.
+4. Count how many outcomes $|A|$ are in the event.
+5. The desired probability is then $\mathbb P(A) = |A|/|\Omega|$.
 :::
 ::::
 
@@ -90,10 +98,15 @@ just a tiny bit smaller than $\frac{1}{5}$.
 **(b)** What is the probability the number is divisible by 5 or by 7?
 
 ::: {.myanswers data-latex=""}
-*Solution.* With the same $\Omega$ and $A$, now let $B$ be the numbers up to 2022 divisible by $7$; so we're looking for $\mathbb P(A \cup B)$. As before, $|B|$ is the largest integer no bigger that $\frac{2022}{7} = 288.9$, which is $288$. So
-\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \mathbb P(A\cap B) . \]
+*Solution.* With the same $\Omega$ and $A$, now let $B$ be the numbers up to 2022 divisible by $7$; so we're looking for $\mathbb P(A \cup B)$. By the addition rule for unions, this is
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+We already know $\mathbb P(A) = \frac{404}{2022}$, so need to find out $\mathbb P(B)$ and $\mathbb P(A \cap B)$.
 
-Here, $A \cap B$ is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by $5 \times 7 = 35$. Then $|A \cap B|$ is $\frac{2022}{35} = 57.8$ rounded down. So finally, we have
+As before, $|B|$ is the largest integer no bigger that $\frac{2022}{7} = 288.9$, which is $288$. So
+So $\mathbb P(B) = \frac{288}{2022}$.
+Now, $A \cap B$ is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by $5 \times 7 = 35$. Then $|A \cap B|$ is $\frac{2022}{35} = 57.8$ rounded down, so $\mathbb P(A \cap B) = \frac{57}{2022}$.
+
+So finally, we have
 \[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]
 :::
 ::::
@@ -120,6 +133,9 @@ Let $A$ be the event in the question. What is $|A|$? Well,
 
 Hence $|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1$. Thus we get
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
+
+**Group feedback:** As we have discussed recently, often "classical probability" problems can be solved by the step-by-step "chain rule" method. Can you use a chain rule argument to find the same answer as
+\[ \mathbb P(A) = 1 \times \frac27 \times \frac16 \times 1 \times 1 \times 1 \times 1 \times 1 = \frac{1}{21} ? \]
 :::
 ::::
 
@@ -131,7 +147,7 @@ Hence $|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1$. 
 The sample space $\Omega$ is as before. Let's count the outcomes in $B$, the event in the question.
 
 * Ashley can sit anywhere, so has 8 choices of seat.
-* Chris's number of choices will depend on where Brook sits, so we'll have to count their choices together.
+* Chris's number of choices will depend on where Brook sits, so we'll have to count Brook's and Chris's choices together:
    * Brook cannot sit next to Ashley.
    * If Brook sits next-but-one to Ashley -- of which there are 2 choices -- then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side, leaving $6-3=3$ choices.
    * If Brook sits neither next nor next-but-one to Ashley -- of which there are 3 choices -- then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook, leaving $6-4=2$ choices.
@@ -159,7 +175,7 @@ To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only 
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-The sample space is $\Omega = \{0,1,\dots,9\}^n$, the set of length-$n$ sequences of digits between $0$ and $9$. The number of these is $|\Omega| = 10^n$.
+The sample space is $\Omega = \{0,1,\dots,9\}^n$, the set of length-$n$ sequences of digits between $0$ and $9$. The number of these is $|\Omega| = 10^n$, as there are 10 choices for each of the $n$ digits.
 
 The event $A_k$ is $\{0,1,\dots,k\}^n$, the set of length-$n$ sequences of digits that are between $0$ and $k$. The number of these is $|A_k| = (k+1)^n$. (Note that it's $k+1$ because we're allowing 0 as well.)
 
@@ -174,7 +190,7 @@ Hence, the probability is
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-Consider the event $A_k$ that all the digits are at most $k$. Within $A_k$, *either* one of the digits is $k$, in which case we are in $B_k$, *or* none of the digits are $k$, in which case they are all at most $k-1$, and we are in $A_{k-1}$, *but not both*. Hence we have a disjoint union
+Consider the event $A_k$ that all the digits are at most $k$. Within $A_k$, *either* one or more of the digits is $k$, in which case that is the largest digit we are in $B_k$; *or* none of the digits are $k$, in which case they are all at most $k-1$, and we are in $A_{k-1}$, *but not both*. Hence we have a disjoint union
 \[ A_k = B_k \cup A_{k-1} . \]
 Applying Axiom 3 gives
 \[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]

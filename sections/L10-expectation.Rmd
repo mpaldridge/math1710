@@ -11,31 +11,31 @@
 -->
 
 
-Often, we will be interested in the "average" value of a random variable -- for example, the average total from two dice rolls -- which represents what the "central" value of the random variable is. This average is called the "expectation".
+Often, we will be interested in the "average" value of a random variable -- for example, the "average" total from two dice rolls -- which represents what the "central" value of the random variable is. This average is called the "expectation".
 
 ::: {.definition}
 Let $\Omega$ be a finite or countably infinite sample space, $\mathbb P$ be a probability measure on $\Omega$, and $X$ be a discrete random variable on $\Omega$. Then the **expectation** (or **expected value**) of $X$ is
-\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \mathbb P(\{\omega\}) . \]
+\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]
 
 If $p$ is the PMF of $X$, then a more convenient formula is
 \[ \mathbb EX = \sum_{x \in \Range(X)} x\,p_X(x) . \]
 :::
 
-We get the second formula from the first by grouping together all outcomes $\omega$ that lead to the same value $x = X(\omega)$ of $X$. It's this second formula we actually use when calculating expectations.
+We get the second formula from the first by grouping together all outcomes $\omega$ that lead to the same value $x = X(\omega)$ of $X$. It's only this second formula we actually use when calculating expectations.
 
 Note that "expectation" is simply the name that mathematicians give to the value $\mathbb EX = \sum_x x\, p(x)$. We don't necessarily "expect" to get the value $\mathbb EX$ as the outcome in the normal English-language sense of the word "expect". (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don't "expect" to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of "long-run mean outcome".
 
 ::: {.example}
 *Let $X \sim \text{Bern}(p)$ be a Bernoulli trial with success probability $p$. What is the expectation $\mathbb EX$?*
 
-Using the second formula in the definition, we have
+We know that the PMF is $p(0) = 1- p$ and $p(1) = p$. So, using the second formula in the definition, we have
 \[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]
 :::
 
 ::: {.example}
 *What is the expected value of the sum of two dice rolls?*
 
-When $X$ is the total of two dice rolls, the expectation is
+When $X$ is the total of two dice rolls, we found the PMF of $X$ last time. The expectation is
 \begin{align*}
   \mathbb EX &= \sum_{x \in \Range(X)} x\,p(x)  \\
     &= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
@@ -70,7 +70,7 @@ or, in terms of PMFs,
 :::
 -->
 
-It is possible, although sometimes rather tricky, to work out the whole PMF of these new random variables that are functions of $X$ -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables, which is easier.
+It is possible, although sometimes rather tricky, to work out the whole PMF of these new random variables that are functions of $X$ -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.
 
 <!--
 So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
@@ -78,26 +78,26 @@ So if we wanted to find the expectation of a function of a random variable, we c
 
 
 ::: {.theorem #unconscious name="Law of the unconscious statistician"}
-Let $X$ be a random variable, and let $Y = g(X)$ be another random variable that is a function of $X$. Then
-\[  \mathbb EY = \mathbb Eg(X) = \sum_{x} g(x) \, p_X(x) . \]
+Let $X$ be a random variable, and let $Y = g(X)$ be another random variable that is a function $g$  of $X$. Then
+\[  \mathbb EY = \mathbb E\,g(X) = \sum_{x} g(x) \, p_X(x) . \]
 :::
 
 (The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for $\mathbb Eg(X)$ if you weren't thinking carefully -- but it turns out it's correct!)
 
 ::: {.proof}
-*(Non-examinable)* As in the previous example, the idea is to group together $x$s that give the same $y$.
+*(Non-examinable)* <!--As in the previous example, the idea is to group together $x$s that give the same $y$.-->
+The PMF of $y$ can be given in terms of the PMF of $x$ -- we just need to add up all the $x$s that lead to the same $y$. That is,
+\[ p_Y(y) = \sum_{x\, :\, g(x) = y} p_X(x) . \]
+(Remember that the colon $:$ here means "such that", so this is a sum over all the $x$ such that $g(x) = y$.)
 
-From the definition of expectation, we have
-\[ \mathbb EY = \sum_y y\, p_Y(y) . \]
-Then using
-\[ p_Y(y) = \sum_{x : g(x) = y} p_X(x) , \]
-we get
+Using this, and from the definition of expectation, we have
 \begin{align*}
-  \mathbb EY &= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
+  \mathbb EY &= \sum_y y \, p_Y(y) \\
+    &= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
     &= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
     &= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
 \end{align*}
-since $y = g(x)$ inside the second sum. But those two sums together are summing over all $x$, just partitioned by which value of $y$ they lead to, so can be replaced by a single sum over $x$. That gives the theorem.
+since $y = g(x)$ inside the second sum. But those two sums together are summing over all $x$, just partitioned by which value of $y$ they lead to, so they can be replaced by just a single sum over $x$. That gives the theorem.
 :::
 
 There are some functions for which this expression becomes particularly simple.

@@ -22,3 +22,11 @@ There are many ways you get feedback on this module, both group feedback (feedba
 
 ```{r, child = "problems/questions/P1-long.Rmd"}
 ```
+
+## Problem Sheet 2 {#P2-solutions .unnumbered}
+
+```{r, child = "problems/questions/P2-short.Rmd"}
+```
+
+```{r, child = "problems/questions/P2-long.Rmd"}
+```

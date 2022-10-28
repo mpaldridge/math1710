@@ -111,10 +111,10 @@ There are other equivalent formulations.
 ::: {.myanswers data-latex=""}
 *Solution.*
 
-**(a)** There are $|\Omega| = 10^2 = 100$ ways to draw two balls with replacement. There are $|A| = 4^2$ to draw two blue balls. So
+**(a)** There are $|\Omega| = 10^2 = 100$ ways to draw two balls with replacement. There are $|A| = 4^2=16$ ways to draw two blue balls. So
 $\mathbb P(A) = \frac{16}{100} = 0.16$.
 
 **(b)** There are $|\Omega| = \ff{10}{2} = 10 \times 9 = 90$ ways to draw two balls without replacement. There are $|A| = \ff{4}{2} = 4 \times 3 = 12$ to draw two blue balls. So
-$\mathbb P(A) = \frac{12}{90} = \frac{2}{14} = 0.133$.
+$\mathbb P(A) = \frac{12}{90} = \frac{2}{15} = 0.133$.
 :::
 ::::

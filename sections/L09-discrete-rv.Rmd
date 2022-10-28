@@ -3,24 +3,23 @@
 ## What is a random variable?  {#rv}
 
 Let's consider again the case of rolling two dice. We know that the sample space is the set of pairs of numbers between 1 and 6.
-
-But if we are rolling the two dice as part of a board game, we might only care about the total score on the two dice, rather than the two individual dice scores. We could instead write $X$ for the total score. This $X$ is a sort of "numerical summary" of the experiment. Probabilists call such a numerical summary a **random variable**.
+But if we are rolling the two dice as part of a board game, we might only care about the *total* score on the two dice, and the actual the two individual dice scores might be irrelevant. Let us wrote write $X$ for the total score. This $X$ is a sort of "numerical summary" of the experiment. Probabilists call such a numerical summary a **random variable**.
 
 One we've defined this random variable $X$, it can be easier to work with $X$ than with sample spaces and events. For example, if we want to know the probability that our two dice rolls add up to 5, it's more convenient to write
 \[ \mathbb P(X = 5) \]
 rather than
 \[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]
-The probability that $X = 5$ is $\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}$. 
+The probability that $X = 5$ is $\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}$. We might also be interested in other things about the total score $X$, like what the average total score over many pairs if dice rolls is.
 
 The good news is that, once we have properly set up out random variable $X$, we can often then choose to ignore things like the sample space, the probability measure, and individual events.
-We might also be interested in other things about the total score $X$, like what the average total score is.
 
 Random variables are typically given capital letters from late in the alphabet, like $X$, $Y$, $Z$. Values that those random variables take are often given the lower-case equivalent, like $x$, $y$, $z$.
 
-This idea of a random variable as a numerical summary of an experiment is how we *think* about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is a mathematical object. We'll discuss that now (but if you find the next three paragraphs difficult to follow, you won't miss much if you skip them).
+This idea of a random variable as a numerical summary of an experiment is how we *think* about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We'll discuss that now (but if you find the next three paragraphs difficult to follow, you won't miss much if you skip them).
 
 In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
-  \[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\} . \]
+  \[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]
+of pairs $\boldsymbol\omega = (\omega_1, \omega_2)$ of numbers from 1 to 6, where $\omega_1$ represents the first dice roll and $\omega_2$ the second dice roll.
 The random variable $X$ is the score on the first dice plus the score on the second dice -- that is,
 \[ X(\boldsymbol\omega) = \omega_1 + \omega_2 . \]
 In other words, $X$ is a *function* which takes in a sample outcome $\boldsymbol\omega \in \Omega$ and outputs a real number $X = X(\boldsymbol\omega) = \omega_1 + \omega_2$.
@@ -36,8 +35,8 @@ The formal definition of a random variable is as a function that turns the outco
 ::: {.definition}
 Let $\Omega$ be a sample space. Then a **random variable** is a function $X$ from $\Omega$ to the real numbers $\mathbb R$; that is, to each sample outcome $\omega$ it assigns a real number $X(\omega)$.
 
-Expressions like $\mathbb P(X = x)$ should be understood as representing more formal probability
-\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) . \]
+Expressions like $\mathbb P(X = x)$ or $\mathbb P(X \in A)$ should be understood as representing more formal probabilities
+\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) \quad \text{or} \quad \mathbb P \big( \{\omega : X(\omega) \in A \}\big)  . \]
 :::
 
 <!--
@@ -45,6 +44,8 @@ This formal definition of a random variable as a function was summarised by my o
 
 However, the way we actually *think* about random variables *is* as random and is as variables. In this more informal way of thinking, a random variable is a variable that can take different values with different probabilities -- just as the total of the two dice can be 2 with probability $\frac{1}{36}$, or the value 3 with probability $\frac{2}{36}$, and so on.
 -->
+
+It's useful to have a notation for the values a random variable can take.
 
 \newcommand{\Range}{\operatorname{Range}}
 
@@ -56,13 +57,13 @@ So, for example, the range of the dice total $X$ is $\Range(X) = \{2, 3, \dots, 
 
 Random variables that we will consider in this module will be one of two types:
 
-* **Discrete random variables** have a range that is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers, for example). Discrete random variables can be used as models for "count data".
-* **Continuous random variables** have a range that is uncountably infinite (like the real numbers, the positive real numbers, or the interval $[0,1]$, for example). Continuous random variables can be used as models for "measurement data".
+* **Discrete random variables** have a range that is a collection of discrete separate counts, so $\Range(X)$ is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for "count data".
+* **Continuous random variables** have a range that is a continuum of slowly varying measurements, so $\Range(X)$ is uncountably infinite (like the real numbers, the positive real numbers, or the interval $[0,1]$). Continuous random variables can be used as models for "measurement data".
 
 For this week and the two weeks after, we will look at discrete random variables; later in Lecturer 15 to 17 we will look at continuous random variables.
 
 
-## Probability mass functions  {#pmf}
+## Probability mass function  {#pmf}
 
 <!--
 :::: {.videowrap}
@@ -72,21 +73,30 @@ For this week and the two weeks after, we will look at discrete random variables
 ::::
 -->
 
-We now consider only discrete random variables $X$, where the range $\Range(X)$ is a finite or countably infinite set. To fully understand a discrete random variable $X$, we need only understand the probabilities $p(x) = \mathbb P(X = x)$. These are captured by the probability mass function.
+We now consider only discrete random variables $X$, where the range $\Range(X)$ is finite or countably infinite. To fully understand a discrete random variable $X$, we need only understand the probabilities $p(x) = \mathbb P(X = x)$. These are captured by the probability mass function.
 
 ::: {.definition}
 For a discrete random variable $X$, its **probability mass function** (or **PMF**) is the function $p_X$ where 
 \[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \Range(X)$.} \]
-(When the random variable is obvious from context, we'll just write $p(x)$ without the subscript.)
+(When the random variable $X$ is obvious from context, we'll just write $p(x)$ without the subscript.)
 :::
 
 Once we have the PMF, then Axiom 3 tells us that for any set $A$, we have
 \[ \mathbb P(X \in A) = \sum_{x \in A} \mathbb P(X = x) = \sum_{x \in A} p(x) . \]
-(Recall that the symbol $\in$ means "is an element of", or just "is in" for short.) So we find the probability that $X$ is in some set $A$ by adding up $p(x)$ for all the values $x$ in $A$. Thus the PMF $p(x)$ is the only thing we need to know.
+(Recall that the symbol $\in$ means "is an element of", or just "is in" for short.) So the probability that $X$ is in some set $A$ can be found by simply adding up $p(x)$ for all the values $x$ in $A$. Thus the PMF $p(x)$ is the only thing we need to know.
 
 <!--
 The key idea about random variables is that, once we are thinking in terms of a random variable via its PMF, we can (usually) stop worrying to much about what the underlying sample space is and how the random variable acts on that space.
 -->
+
+::: {.example}
+Consider tossing a biased coin, that is Heads with probability $p$ and Tails with probability $1-p$. Let $X = 1$ if the coin lands Heads, and $X = 0$ if the coin lands Tails. The PMF $p_X$ of this random variable is given by
+\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]
+
+We could alternatively think of the same random variable $X$ as representing the result of an experiment, where $X = 1$ represents a success, with probability $p_X(1) = p$, and $X = 0$ represents a failure, with probability $p_X(0) = 1 - p$.
+
+A random variable $X$ with this PMF is called a **Bernoulli trial** (or a "Bernoulli random variable", or is said to "follow the Bernoulli distribution" -- after the seventeenth-century Swiss mathematician [Jacob Bernoulli](https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/)). We use the notation $X \sim \text{Bern}(p)$ for short.
+:::
 
 ::: {.example}
 Let $X$ being the sum of two dice rolls. As this is a classical probability problem, the probability $p(x)$ of rolling a total of $x$ is $n(x) / 36$, where $n(x)$ is the number of ways of rolling a total of $x$. So, for example, there is only one way $(1,1)$ of rolling a total of 2, so $p(2) = \frac1{36}$, but there are 5 ways of rolling a 6: $(1,5), (2,4), (3, 3), (4, 2), (5, 1)$; so $p(5) = \frac5{36}$.
@@ -105,18 +115,11 @@ The PMF $p$ of $X$ is given by
 x <- 2:12
 prob <- c(1:6, 5:1)/36
 
-plot(x, prob, type = "h", xlab = "dice total, x", ylab = "probability mass function, p(x)", xlim = c(0, 15), ylim = c(0,0.2), col = "blue", lwd=2)
+plot(x, prob, type = "h", xlab = "dice total, x", ylab = "probability mass function, p(x)", xlim = c(0, 15), ylim = c(0,0.2), col = "blue", lwd=3)
 ```
 :::
 
-::: {.example}
-Consider tossing a biased coin, that is Heads with probability $p$ and Tails with probability $1-p$. Let $X = 1$ if the coin lands Heads, and $X = 0$ if the coin lands Tails. The PMF $p_X$ of this random variable is given by
-\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]
 
-We could alternatively think of the same random variable $X$ as representing the result of an experiment, where $X = 1$ represents a success, with probability $p_X(1) = p$, and $X = 0$ represents a failure, with probability $p_X(0) = 1 - p$.
-
-A random variable $X$ with this PMF is called a **Bernoulli trial** (or a "Bernoulli random variable", or is said to "follow the Bernoulli distribution" -- after the seventeenth-century Swiss mathematician [Jacob Bernoulli](https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/)). We use the notation $X \sim \text{Bern}(p)$ for short.
-:::
 
 Note that since $p(x) = \mathbb P(X = x)$ is a probability, it must be greater than or equal to 0. Further, if we add up $p(x)$ we get
 \[ \sum_{x} p(x) =  \sum_{x \in \Range(X)} \mathbb P(X = x) = \mathbb P\big(X \in \Range(X)\big)  =  \mathbb P(\Omega) = 1 . \]
@@ -129,18 +132,20 @@ Let $X$ be a discrete random variable, and let $p_X$ be its PMF. Then
 * ${\displaystyle \sum_{x \in \Range(X)} p_X(x) = 1}$.
 :::
 
+## Cumulative distribution function {#cdf}
+
 Sometimes it is useful to know the probability a random variable $X$ is less or equal to than some value $x$. This is captured by the **cumulative distribution function** (or **CDF**) $F_X$, where
 \[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]
 
 ::: {.example}
-Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. Then its CDF $F$ is
+Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. It's impossible for the outcome to be less that 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability $p(0) = 1-p$; and it is certain to at most 1. So its CDF $F$ is
 \[ F(x) = \begin{cases} 0 & \text{for $x < 0$} \\
                       1-p & \text{for $0 \leq x < 1$} \\
                       1   & \text{for $x \geq 1$} . \end{cases} \]
 :::
 
 ::: {.example}
-If $X$ is the sum of two dice rolls, then the CDF $F$ is given by adding up the PMF, which gives
+If $X$ is the sum of two dice rolls, then the CDF $F$ is given by adding up the PMF. So, for example, if $2 \leq x < 3$, we have $F(x) = p(2) = \frac{1}{36}$; if $3 \leq x < 4$ we have $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}$, and so. This gives
 
 | $x \in {}$ | $(-\infty, 2)$ | $[2,3)$ | $[3,4)$ | $[4,5)$ | $\cdots$ | $[11,12)$ | $[12, \infty)$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
@@ -151,7 +156,9 @@ x <- 2:12
 prob <- c(1:6, 5:1)/36
 cdf <- cumsum(prob)
 
-plot(c(-1,x, 16), c(0, cdf, 1), type = "s", xlab = "x", ylab = "cumulative distribution function, F(x)", xlim = c(0, 15), ylim = c(0,1), col = "blue")
+plot(c(-1,x, 16), c(0, cdf, 1), type = "n", xlab = "x", ylab = "cumulative distribution function, F(x)", xlim = c(0, 15), ylim = c(0,1), col = "blue", lwd = 2)
+abline(h = 1, col = "grey", lty = 2)
+points(c(-1,x, 16), c(0, cdf, 1), type = "s", col = "blue", lwd = 2)
 ```
 
 Note that the CDF is a "step function" that starts at 0, then jumps up suddenly at each of the values $2, 3, \dots, 12$, finally ending up at 1.
@@ -159,8 +166,8 @@ Note that the CDF is a "step function" that starts at 0, then jumps up suddenly 
 
 For any random variable $X$ with CDF $F$,
 
-* if $x$ is smaller than everything in the range of $X$, then $F(x) = 0$, because $X$ cannot be that small;
-* if $x$ is greater than everything in the range of $X$, then $F(x) = 1$, because $X$ cannot be any bigger than that;
+* if $x$ is smaller than everything in the $\Range(X)$, then $F(x) = 0$, because $X$ cannot be that small;
+* if $x$ is greater than everything in the $\Range(X)$, then $F(x) = 1$, because $X$ cannot be any bigger than that;
 * $F(x)$ is increasing in $x$, because the probability you are less than $x$ gets bigger as $x$ gets bigger.
 
 

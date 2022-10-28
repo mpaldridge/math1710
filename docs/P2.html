@@ -230,6 +230,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
 <li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
+<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
+<li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
@@ -248,6 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -364,10 +372,10 @@ There are other equivalent formulations.</p>
 <p><strong>A4.</strong> An urn contains 4 red balls and 6 blue balls. Two balls are drawn from the urn. What is the probability that both balls are red, if the balls are drawn <strong>(a)</strong> with replacement; <strong>(b)</strong> without replacement?</p>
 <div class="myanswers">
 <p><em>Solution.</em></p>
-<p><strong>(a)</strong> There are <span class="math inline">\(|\Omega| = 10^2 = 100\)</span> ways to draw two balls with replacement. There are <span class="math inline">\(|A| = 4^2\)</span> to draw two blue balls. So
+<p><strong>(a)</strong> There are <span class="math inline">\(|\Omega| = 10^2 = 100\)</span> ways to draw two balls with replacement. There are <span class="math inline">\(|A| = 4^2=16\)</span> ways to draw two blue balls. So
 <span class="math inline">\(\mathbb P(A) = \frac{16}{100} = 0.16\)</span>.</p>
 <p><strong>(b)</strong> There are <span class="math inline">\(|\Omega| = {10}^{\underline{2}} = 10 \times 9 = 90\)</span> ways to draw two balls without replacement. There are <span class="math inline">\(|A| = {4}^{\underline{2}} = 4 \times 3 = 12\)</span> to draw two blue balls. So
-<span class="math inline">\(\mathbb P(A) = \frac{12}{90} = \frac{2}{14} = 0.133\)</span>.</p>
+<span class="math inline">\(\mathbb P(A) = \frac{12}{90} = \frac{2}{15} = 0.133\)</span>.</p>
 </div>
 </div>
 </div>
@@ -378,9 +386,9 @@ There are other equivalent formulations.</p>
 <div class="subq">
 <p><strong>(a)</strong> <span class="math inline">\(\mathbb P(\varnothing) = 0\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em> As always, we seek a disjoint union, to allow us to use Axiom 3.</p>
-<p>Let <span class="math inline">\(A\)</span> be any event (such as <span class="math inline">\(A = \varnothing\)</span> or <span class="math inline">\(A = \Omega\)</span>, for example). Then <span class="math inline">\(A \cup \varnothing = A\)</span>, and the union is disjoint – since <span class="math inline">\(\varnothing\)</span> contains no sample points, it certainly can’t contain any sample points that are also in <span class="math inline">\(A\)</span>. Then applying Axiom 3, we get <span class="math inline">\(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\)</span>. Subtracting <span class="math inline">\(\mathbb P(A)\)</span> from both sides gives the result.</p>
-<p><em>Alternatively</em>, if you prove part (b) first, you can apply that with <span class="math inline">\(A = \Omega\)</span>. Since <span class="math inline">\(\Omega^\mathsf{c}= \varnothing\)</span> and Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, the result follows.</p>
+<p><em>Solution.</em> Let <span class="math inline">\(A\)</span> be any event (such as <span class="math inline">\(A = \varnothing\)</span> or <span class="math inline">\(A = \Omega\)</span>, for example). Then <span class="math inline">\(A \cup \varnothing = A\)</span>, and the union is disjoint – since <span class="math inline">\(\varnothing\)</span> contains no sample points, it certainly can’t contain any sample points that are also in <span class="math inline">\(A\)</span>. Then applying Axiom 3, we get <span class="math inline">\(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\)</span>. Subtracting <span class="math inline">\(\mathbb P(A)\)</span> from both sides gives the result.</p>
+<p><em>Alternatively</em>, if you prove part (b) first, you can apply that with <span class="math inline">\(A = \varnothing\)</span>. Since <span class="math inline">\(\varnothing^\mathsf{c}= \Omega\)</span> and Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, the result follows.</p>
+<p><strong>Group feedback:</strong> With this, and most “prove from the axioms” questions, the key is to find a relevant disjoint union, which then allows us to use Axiom 3. So if we can find <span class="math inline">\(C = A \cup B\)</span> as a disjoint union (hopefully containing some events relevant to the question at hand), Axiom 3 allows us to write <span class="math inline">\(\mathbb P(C) = \mathbb P(A) + \mathbb P(B)\)</span>.</p>
 </div>
 </div>
 <div class="subq">
@@ -397,7 +405,7 @@ There are other equivalent formulations.</p>
 <p><strong>(a)</strong> Using the two-event addition rule, show that
 <span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]</span></p>
 <div class="myanswers">
-<p><em>Solution.</em> As with the Cauchy–Schwarz question from Problem Sheet 1, the key is to make a good choice for what <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> should be. This time, <span class="math inline">\(A = C\)</span> and <span class="math inline">\(D \cup E\)</span> will work well, since <span class="math inline">\(C \cup (D \cup E) = C \cup D \cup E\)</span>. (You can call this “associativity”, if you like.) Making that substitution immediately gives us
+<p><em>Solution.</em> As with the Cauchy–Schwarz question from Problem Sheet 1, the key is to make a good choice for what <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> should be. This time, <span class="math inline">\(A = C\)</span> and <span class="math inline">\(B = D \cup E\)</span> will work well, since <span class="math inline">\(C \cup (D \cup E) = C \cup D \cup E\)</span>. (You can call this “associativity”, if you like.) Making that substitution immediately gives us
 <span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]</span>
 as required.</p>
 </div>
@@ -432,17 +440,29 @@ which is what we wanted.</p>
 <div class="subq">
 <p><strong>(a)</strong> What is the probability that the number is divisible by 5?</p>
 <div class="myanswers">
-<p><em>Solution.</em> The sample space is <span class="math inline">\(\Omega = \{1, 2, \dots, 2022\}\)</span>, and <span class="math inline">\(A\)</span> is the set of numbers up to 2022 that are divisible by 5. Clearly <span class="math inline">\(|\Omega| = 2022\)</span>. Further, <span class="math inline">\(|A|\)</span> is the largest integer no bigger than <span class="math inline">\(\frac{2022}{5} = 404.2\)</span>, which is 404, as this is how many times 5 “goes into” 2022. Hence
+<p><em>Solution.</em> The sample space is <span class="math inline">\(\Omega = \{1, 2, \dots, 2022\}\)</span>. Clearly <span class="math inline">\(|\Omega| = 2022\)</span>. Further, the event in question is <span class="math inline">\(A = \{5, 10, \dots, 2020\}\)</span> of numbers up to 2022 that are divisible by 5. Thus <span class="math inline">\(|A|\)</span> is the largest integer no bigger than <span class="math inline">\(\frac{2022}{5} = 404.4\)</span>, which is 404, as this is how many times 5 “goes into” 2022. Hence
 <span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]</span>
 just a tiny bit smaller than <span class="math inline">\(\frac{1}{5}\)</span>.</p>
+<p><strong>Group feedback:</strong> With these “classical probability” questions, the steps should always be:</p>
+<ol style="list-style-type: decimal">
+<li>State clearly what the sample space <span class="math inline">\(\Omega\)</span> is.</li>
+<li>Count how many outcomes <span class="math inline">\(|\Omega|\)</span> are in the sample space.</li>
+<li>State clearly what the event <span class="math inline">\(A\)</span> is.</li>
+<li>Count how many outcomes <span class="math inline">\(|A|\)</span> are in the event.</li>
+<li>The desired probability is then <span class="math inline">\(\mathbb P(A) = |A|/|\Omega|\)</span>.</li>
+</ol>
 </div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> What is the probability the number is divisible by 5 or by 7?</p>
 <div class="myanswers">
-<p><em>Solution.</em> With the same <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(A\)</span>, now let <span class="math inline">\(B\)</span> be the numbers up to 2022 divisible by <span class="math inline">\(7\)</span>; so we’re looking for <span class="math inline">\(\mathbb P(A \cup B)\)</span>. As before, <span class="math inline">\(|B|\)</span> is the largest integer no bigger that <span class="math inline">\(\frac{2022}{7} = 288.9\)</span>, which is <span class="math inline">\(288\)</span>. So
-<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \mathbb P(A\cap B) . \]</span></p>
-<p>Here, <span class="math inline">\(A \cap B\)</span> is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by <span class="math inline">\(5 \times 7 = 35\)</span>. Then <span class="math inline">\(|A \cap B|\)</span> is <span class="math inline">\(\frac{2022}{35} = 57.8\)</span> rounded down. So finally, we have
+<p><em>Solution.</em> With the same <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(A\)</span>, now let <span class="math inline">\(B\)</span> be the numbers up to 2022 divisible by <span class="math inline">\(7\)</span>; so we’re looking for <span class="math inline">\(\mathbb P(A \cup B)\)</span>. By the addition rule for unions, this is
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span>
+We already know <span class="math inline">\(\mathbb P(A) = \frac{404}{2022}\)</span>, so need to find out <span class="math inline">\(\mathbb P(B)\)</span> and <span class="math inline">\(\mathbb P(A \cap B)\)</span>.</p>
+<p>As before, <span class="math inline">\(|B|\)</span> is the largest integer no bigger that <span class="math inline">\(\frac{2022}{7} = 288.9\)</span>, which is <span class="math inline">\(288\)</span>. So
+So <span class="math inline">\(\mathbb P(B) = \frac{288}{2022}\)</span>.
+Now, <span class="math inline">\(A \cap B\)</span> is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by <span class="math inline">\(5 \times 7 = 35\)</span>. Then <span class="math inline">\(|A \cap B|\)</span> is <span class="math inline">\(\frac{2022}{35} = 57.8\)</span> rounded down, so <span class="math inline">\(\mathbb P(A \cap B) = \frac{57}{2022}\)</span>.</p>
+<p>So finally, we have
 <span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]</span></p>
 </div>
 </div>
@@ -463,6 +483,8 @@ Let <span class="math inline">\(\Omega\)</span> be the sample space of ways the 
 </ul>
 <p>Hence <span class="math inline">\(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. Thus we get
 <span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]</span></p>
+<p><strong>Group feedback:</strong> As we have discussed recently, often “classical probability” problems can be solved by the step-by-step “chain rule” method. Can you use a chain rule argument to find the same answer as
+<span class="math display">\[ \mathbb P(A) = 1 \times \frac27 \times \frac16 \times 1 \times 1 \times 1 \times 1 \times 1 = \frac{1}{21} ? \]</span></p>
 </div>
 </div>
 <div class="subq">
@@ -472,7 +494,7 @@ Let <span class="math inline">\(\Omega\)</span> be the sample space of ways the 
 The sample space <span class="math inline">\(\Omega\)</span> is as before. Let’s count the outcomes in <span class="math inline">\(B\)</span>, the event in the question.</p>
 <ul>
 <li>Ashley can sit anywhere, so has 8 choices of seat.</li>
-<li>Chris’s number of choices will depend on where Brook sits, so we’ll have to count their choices together.
+<li>Chris’s number of choices will depend on where Brook sits, so we’ll have to count Brook’s and Chris’s choices together:
 <ul>
 <li>Brook cannot sit next to Ashley.</li>
 <li>If Brook sits next-but-one to Ashley – of which there are 2 choices – then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side, leaving <span class="math inline">\(6-3=3\)</span> choices.</li>
@@ -495,7 +517,7 @@ The sample space <span class="math inline">\(\Omega\)</span> is as before. Let�
 <p><strong>(a)</strong> For <span class="math inline">\(k = 0, 1, \dots, 9\)</span>, let <span class="math inline">\(A_k\)</span> be the event that all the digits are <span class="math inline">\(k\)</span> or smaller. What is the probability of <span class="math inline">\(A_k\)</span>, as a function of <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span>?</p>
 <div class="myanswers">
 <p><em>Solution.</em>
-The sample space is <span class="math inline">\(\Omega = \{0,1,\dots,9\}^n\)</span>, the set of length-<span class="math inline">\(n\)</span> sequences of digits between <span class="math inline">\(0\)</span> and <span class="math inline">\(9\)</span>. The number of these is <span class="math inline">\(|\Omega| = 10^n\)</span>.</p>
+The sample space is <span class="math inline">\(\Omega = \{0,1,\dots,9\}^n\)</span>, the set of length-<span class="math inline">\(n\)</span> sequences of digits between <span class="math inline">\(0\)</span> and <span class="math inline">\(9\)</span>. The number of these is <span class="math inline">\(|\Omega| = 10^n\)</span>, as there are 10 choices for each of the <span class="math inline">\(n\)</span> digits.</p>
 <p>The event <span class="math inline">\(A_k\)</span> is <span class="math inline">\(\{0,1,\dots,k\}^n\)</span>, the set of length-<span class="math inline">\(n\)</span> sequences of digits that are between <span class="math inline">\(0\)</span> and <span class="math inline">\(k\)</span>. The number of these is <span class="math inline">\(|A_k| = (k+1)^n\)</span>. (Note that it’s <span class="math inline">\(k+1\)</span> because we’re allowing 0 as well.)</p>
 <p>Hence, the probability is
 <span class="math display">\[ \mathbb P(A_k) = \frac{|A_k|}{|\Omega|} = \frac{(k+1)^n}{10^n} . \]</span></p>
@@ -506,7 +528,7 @@ The sample space is <span class="math inline">\(\Omega = \{0,1,\dots,9\}^n\)</sp
 <span class="math display">\[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]</span></p>
 <div class="myanswers">
 <p><em>Solution.</em>
-Consider the event <span class="math inline">\(A_k\)</span> that all the digits are at most <span class="math inline">\(k\)</span>. Within <span class="math inline">\(A_k\)</span>, <em>either</em> one of the digits is <span class="math inline">\(k\)</span>, in which case we are in <span class="math inline">\(B_k\)</span>, <em>or</em> none of the digits are <span class="math inline">\(k\)</span>, in which case they are all at most <span class="math inline">\(k-1\)</span>, and we are in <span class="math inline">\(A_{k-1}\)</span>, <em>but not both</em>. Hence we have a disjoint union
+Consider the event <span class="math inline">\(A_k\)</span> that all the digits are at most <span class="math inline">\(k\)</span>. Within <span class="math inline">\(A_k\)</span>, <em>either</em> one or more of the digits is <span class="math inline">\(k\)</span>, in which case that is the largest digit we are in <span class="math inline">\(B_k\)</span>; <em>or</em> none of the digits are <span class="math inline">\(k\)</span>, in which case they are all at most <span class="math inline">\(k-1\)</span>, and we are in <span class="math inline">\(A_{k-1}\)</span>, <em>but not both</em>. Hence we have a disjoint union
 <span class="math display">\[ A_k = B_k \cup A_{k-1} . \]</span>
 Applying Axiom 3 gives
 <span class="math display">\[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]</span>

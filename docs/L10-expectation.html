@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Worksheets | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 10 Expectation and variance | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 10 Expectation and variance | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 10 Expectation and variance | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="P3.html"/>
-<link rel="next" href="solutions.html"/>
+<link rel="prev" href="L09-discrete-rv.html"/>
+<link rel="next" href="P3.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -237,6 +237,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
 <li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
+<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
+<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-L10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
@@ -255,7 +262,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -277,127 +283,238 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="R" class="section level1 unnumbered hasAnchor">
-<h1>R Worksheets<a href="R.html#R" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r-work" class="section level2 unnumbered hasAnchor">
-<h2>R worksheets<a href="R.html#r-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each week there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for worksheets with assessed questions, for checking and submitting your solutions.</p>
-<table>
-<colgroup>
-<col width="9%" />
-<col width="47%" />
-<col width="43%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Week</th>
-<th>Worksheet</th>
-<th align="center">Deadline for assessed work</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1</td>
-<td><a href="https://mpaldridge.github.io/math1710/R1.html"><strong>R basics</strong></a> (<a href="https://mpaldridge.github.io/math1710/R1-solutions.html">Solutions</a>)</td>
-<td align="center">—</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td><a href="https://mpaldridge.github.io/math1710/R2.html"><strong>Vectors</strong></a></td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td><a href="https://mpaldridge.github.io/math1710/R3.html"><strong>Data in R</strong></a></td>
-<td align="center">Monday 24 October (Week 4)</td>
-</tr>
-<tr class="even">
-<td align="center">4</td>
-<td><a href="https://mpaldridge.github.io/math1710/R4.html"><strong>Plots I:</strong> Making plots</a></td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td>Plots II: Making plots better</td>
-<td align="center">Monday 7 November (Week 6)</td>
-</tr>
-<tr class="even">
-<td align="center">6</td>
-<td>RMarkdown (optional)</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">7</td>
-<td>Discrete distributions</td>
-<td align="center">Monday 21 November (Week 8)</td>
-</tr>
-<tr class="even">
-<td align="center">8</td>
-<td>Discrete random variables</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">9</td>
-<td>Normal distribution</td>
-<td align="center">Monday 5 December (Week 10)</td>
-</tr>
-<tr class="even">
-<td align="center">10</td>
-<td>Law of large numbers</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">11</td>
-<td>Recap</td>
-<td align="center">Thursday 15 December (Week 11)</td>
-</tr>
-</tbody>
-</table>
+<div id="L10-expectation" class="section level1 hasAnchor" number="10">
+<h1><span class="header-section-number">Lecture 10</span> Expectation and variance<a href="L10-expectation.html#L10-expectation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="expectation" class="section level2 hasAnchor" number="10.1">
+<h2><span class="header-section-number">10.1</span> Expectation<a href="L10-expectation.html#expectation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
-|   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
-|   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
-|   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html) | --- |
-|   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html) | Monday 1 November |
-|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
-|   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]      |      Monday 15 November    |
-|   8  |  [**Discrete random variables**](https://mpaldridge.github.io/math1710/R8.html) [[Rmd](https://mpaldridge.github.io/math1710/R8.Rmd)] | --- |
-|   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) | Monday 29 November |
-|  10  |  ~~Law of large numbers~~     |             ---           |
-|  11  |   [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 16 December |
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/l9Pizg01Zbg"></iframe>
+:::
+::::
+-->
+<p>Often, we will be interested in the “average” value of a random variable – for example, the average total from two dice rolls – which represents what the “central” value of the random variable is. This average is called the “expectation”.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 10.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a finite or countably infinite sample space, <span class="math inline">\(\mathbb P\)</span> be a probability measure on <span class="math inline">\(\Omega\)</span>, and <span class="math inline">\(X\)</span> be a discrete random variable on <span class="math inline">\(\Omega\)</span>. Then the <strong>expectation</strong> (or <strong>expected value</strong>) of <span class="math inline">\(X\)</span> is
+<span class="math display">\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \mathbb P(\{\omega\}) . \]</span></p>
+<p>If <span class="math inline">\(p\)</span> is the PMF of <span class="math inline">\(X\)</span>, then a more convenient formula is
+<span class="math display">\[ \mathbb EX = \sum_{x \in \operatorname{Range}(X)} x\,p_X(x) . \]</span></p>
+</div>
+<p>We get the second formula from the first by grouping together all outcomes <span class="math inline">\(\omega\)</span> that lead to the same value <span class="math inline">\(x = X(\omega)\)</span> of <span class="math inline">\(X\)</span>. It’s this second formula we actually use when calculating expectations.</p>
+<p>Note that “expectation” is simply the name that mathematicians give to the value <span class="math inline">\(\mathbb EX = \sum_x x\, p(x)\)</span>. We don’t necessarily “expect” to get the value <span class="math inline">\(\mathbb EX\)</span> as the outcome in the normal English-language sense of the word “expect”. (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don’t “expect” to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of “long-run mean outcome”.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 10.1  </strong></span><em>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli trial with success probability <span class="math inline">\(p\)</span>. What is the expectation <span class="math inline">\(\mathbb EX\)</span>?</em></p>
+<p>Using the second formula in the definition, we have
+<span class="math display">\[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-50" class="example"><strong>Example 10.2  </strong></span><em>What is the expected value of the sum of two dice rolls?</em></p>
+<p>When <span class="math inline">\(X\)</span> is the total of two dice rolls, the expectation is
+<span class="math display">\[\begin{align*}
+  \mathbb EX &amp;= \sum_{x \in \operatorname{Range}(X)} x\,p(x)  \\
+    &amp;= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
+    &amp;= \tfrac{252}{36} \\
+    &amp;= 7 .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="functions" class="section level2 hasAnchor" number="10.2">
+<h2><span class="header-section-number">10.2</span> Functions of random variables<a href="L10-expectation.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In previous examples, we looked at <span class="math inline">\(X\)</span> being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total <span class="math inline">\(X\)</span>, like “double the total and add 1” <span class="math inline">\(Y = 2X + 1\)</span>, or “the total minus 4, all squared” <span class="math inline">\(Z = (X-4)^2\)</span>. (I’m not sure <em>why</em> you’d care about these, but you could study them if you wanted to…)</p>
+<!--
+::: {.example}
+Let $Y = 2X + 1$. Then for each potential outcome $x$ of $X$, there is a matching outcome $y = 2x +1$ of $Y$. So we can find the PMF for $Y$ by keeping the same probabilities as for $X$, but changing the values $x$ to the values $y = 2x +1$.
+
+| $y$ | $5$ | $7$ | $9$ | $\cdots$ | $23$ | $25$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| $p_Y(y)$ | $\frac{1}{36}$ | $\frac{2}{36}$ | $\frac{3}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
+:::
+
+::: {.example}
+What about $Z = (X - 4)^2$? This is a bit trickier, because more than one outcome $x$ can lead to the same outcome $z = (x - 4)^2$: for example, $(2 - 4)^2 = (6 - 4)^2 = 4$. So, more precisely, we have
+  \[ \mathbb P(Z = z) = \mathbb P\big(X \in \{x : (x - 4)^2 = z\}\big) , \]
+or, in terms of PMFs,
+  \[   p_Z(z) = \sum_{x : (x - 4)^2 = z} p_X(x) . \]
+  
+| $z$ | $0$ | $1$ | $4$ | $\cdots$ | $49$ | $64$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| $p_Z(z)$ | $\frac{3}{36}$ | $\frac{2}{36} + \frac{4}{36} = \frac{6}{36}$ | $\frac{1}{36} + \frac{5}{36} = \frac{6}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
+:::
+-->
+<p>It is possible, although sometimes rather tricky, to work out the whole PMF of these new random variables that are functions of <span class="math inline">\(X\)</span> – and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables, which is easier.</p>
+<!--
+So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
+-->
+<div class="theorem">
+<p><span id="thm:unconscious" class="theorem"><strong>Theorem 10.1  (Law of the unconscious statistician) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable, and let <span class="math inline">\(Y = g(X)\)</span> be another random variable that is a function of <span class="math inline">\(X\)</span>. Then
+<span class="math display">\[  \mathbb EY = \mathbb Eg(X) = \sum_{x} g(x) \, p_X(x) . \]</span></p>
+</div>
+<p>(The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for <span class="math inline">\(\mathbb Eg(X)\)</span> if you weren’t thinking carefully – but it turns out it’s correct!)</p>
+<div class="proof">
+<p><span id="unlabeled-div-51" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> As in the previous example, the idea is to group together <span class="math inline">\(x\)</span>s that give the same <span class="math inline">\(y\)</span>.</p>
+<p>From the definition of expectation, we have
+<span class="math display">\[ \mathbb EY = \sum_y y\, p_Y(y) . \]</span>
+Then using
+<span class="math display">\[ p_Y(y) = \sum_{x : g(x) = y} p_X(x) , \]</span>
+we get
+<span class="math display">\[\begin{align*}
+  \mathbb EY &amp;= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
+    &amp;= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
+    &amp;= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
+\end{align*}\]</span>
+since <span class="math inline">\(y = g(x)\)</span> inside the second sum. But those two sums together are summing over all <span class="math inline">\(x\)</span>, just partitioned by which value of <span class="math inline">\(y\)</span> they lead to, so can be replaced by a single sum over <span class="math inline">\(x\)</span>. That gives the theorem.</p>
+</div>
+<p>There are some functions for which this expression becomes particularly simple.</p>
+<div class="theorem">
+<p><span id="thm:linearity1" class="theorem"><strong>Theorem 10.2  (Linearity of expectation, 1) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. Then</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb E(aX) = a\mathbb EX\)</span>;</li>
+<li><span class="math inline">\(\mathbb E(X + b) = \mathbb EX + b\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-52" class="proof"><em>Proof</em>. </span>We use the law of the unconscious statistician.</p>
+<p>For part 1, we can take the <span class="math inline">\(a\)</span> outside the sum, to get
+<span class="math display">\[ \mathbb E(aX) = \sum_x ax\, p_X(x) = a\sum_x x\, p_X(x) = a\mathbb EX . \]</span></p>
+<p>For part 2, we have
+<span class="math display">\[\begin{align*}
+  \mathbb E(X+b) &amp;= \sum_x (x + b)\, p_X(x) \\
+    &amp;= \sum_x \big( x\, p_X(x) + b\,p_X(x) \big) \\
+    &amp;= \sum_x x\, p_X(x) + \sum_x b\,p_X(x) \\
+    &amp;= \mathbb E(X) + b \sum_x p_X(x) \\
+    &amp;= \mathbb E(X) + b .
+\end{align*}\]</span>
+The last line was because PMFs always add up to 1, so <span class="math inline">\(\sum_x p_X(x) = 1\)</span>.</p>
+</div>
+<p>So for our “double the dice total and add 1” random variable <span class="math inline">\(Y = 2X + 1\)</span>, we have
+<span class="math display">\[ \mathbb EY = \mathbb E(2X+1) = 2\mathbb EX + 1 = 2\times 7 + 1 = 15. \]</span></p>
+</div>
+<div id="variance" class="section level2 hasAnchor" number="10.3">
+<h2><span class="header-section-number">10.3</span> Variance<a href="L10-expectation.html#variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/_I4tCExElec"></iframe>
+:::
+::::
+-->
+<!-- \newcommand{\Var}{\operatorname{Var}} -->
+<p>In the same way as the expectation of a random variable tells us about central values of it, the “variance” of a random variable tells us about the spread of typical values.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-53" class="definition"><strong>Definition 10.2  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. Then the <strong>variance</strong> of <span class="math inline">\(X\)</span> is
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 . \]</span></p>
+</div>
+<p>(To be clear, the notation there means the expectation of <span class="math inline">\((X-\mu)^2\)</span>; and <em>not</em> <span class="math inline">\(\mathbb E(X - \mu)\)</span> then squared, which would be <span class="math inline">\(0^2 = 0\)</span>.)</p>
+<p>Note that <span class="math inline">\((X - \mu)^2 \geq 0\)</span> is a square, so always non-negative, and hence the variance <span class="math inline">\(\operatorname{Var}(X) \geq 0\)</span> is always non-negative also.</p>
+<p>It may not surprise you, if you remember <a href="L01-stats.html#L01-stats">Lecture 1</a> that to go along with that definitional formula for the variance, we also have a computational formula.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-54" class="theorem"><strong>Theorem 10.3  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. Then the variance <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span> can also be calculated as
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]</span></p>
+</div>
+<p>(Again, <span class="math inline">\(\mathbb EX^2\)</span> means the expectation of <span class="math inline">\(X^2\)</span>.)</p>
+<div class="proof">
+<p><span id="unlabeled-div-55" class="proof"><em>Proof</em>. </span>As previously we expand out the brackets, and use linearity of expectation (in the same way we “brought the sum inside” previously). We get
+<span class="math display">\[\begin{align*}
+  \operatorname{Var}(X) &amp;= \mathbb E(X - \mu)^2 \\
+    &amp;= \mathbb E(X^2 - 2\mu X + \mu^2) \\
+    &amp;= \mathbb EX^2 - \mathbb E(2\mu X) + \mathbb E \mu^2 \\
+    &amp;= \mathbb EX^2 - 2\mu \,\mathbb EX + \mu^2 .
+\end{align*}\]</span>
+But we said that <span class="math inline">\(\mathbb EX\)</span> would be called <span class="math inline">\(\mu\)</span>, so we can substitute in <span class="math inline">\(\mathbb EX = \mu\)</span>, to get
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]</span>
+as required.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-56" class="example"><strong>Example 10.3  </strong></span>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli trial, and recall that <span class="math inline">\(\mathbb EX = p\)</span>.</p>
+<p>Using the definitional formula, we have
+<span class="math display">\[\begin{align*}
+\operatorname{Var}(X) &amp;= \mathbb E(X-p)^2 \\
+        &amp;= (0 - p)^2 \,p_X(0) + (1-p)^2\, p_X(1) \\
+        &amp;= p^2\times(1-p) + (1-p)^2 \times p \\
+        &amp;= p(1-p)\big(p + (1-p)\big) \\
+        &amp;= p(1-p) .
+\end{align*}\]</span></p>
+<p>Alternatively, using the computational formula, we have
+<span class="math display">\[\begin{align*}
+\operatorname{Var}(X) &amp;= \mathbb EX^2 - p^2 \\
+        &amp;= \big(0^2\,p_X(0) + 1^2 p_X(1)\big) - p^2 \\
+        &amp;= 0\times(1-p) + 1\times p - p^2 \\
+        &amp;= p - p^2 \\
+        &amp;= p(1-p) .
+\end{align*}\]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-57" class="example"><strong>Example 10.4  </strong></span>For the total of two dice, using the computational formula, we have
+<span class="math display">\[\begin{align*}
+\operatorname{Var}(X) &amp;= \mathbb EX^2 - \mu^2 \\
+        &amp;= \left(2^2 \times \frac{1}{36} + 3^2 \times \frac{2}{36} + \cdots + 12^2 \times \frac{1}{36}\right) - 7^2 \\
+        &amp;= \frac{1974}{36} - 49 \\
+        &amp;= \frac{70}{12} \approx 5.8 .
+\end{align*}\]</span></p>
+</div>
+<p>Finally, a result on what happens to the variance of simple functions of random variables.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 10.4  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. Then</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\operatorname{Var}(aX) = a^2\operatorname{Var}(X)\)</span>;</li>
+<li><span class="math inline">\(\operatorname{Var}(X + b) = \operatorname{Var}(X)\)</span>.</li>
+</ol>
+</div>
+<p>You will prove this on <a href="P3.html#P3">the problem sheet</a>.</p>
+<!--
+## Discrete uniform distribution  {#discrete-uniform}
+
+As a sort of equivalent to the classical probability we saw in [Section 3](#S03-classical), we can consider a random variable that also takes finitely many values with equal probability. 
+
+Let $X$ take the values $\{1,2,\dots,n\}$ each with equal probability $1/n$. This is called the **discrete uniform distribution** on $\{1,2,\dots,n\}$.
+
+Then the PMF of $X$ is
+\[ p(x) = \frac 1n \qquad \text{for $x \in \{1,2,\dots, n\}$.} \]
+The CDF of $X$ is
+\[ F(x) = \begin{cases} 0 & \text{for $x < 1$,} \\
+              \displaystyle\frac in & \text{if $i \leq x < i+1$ for some $i \in \{1,2,\dots,n-1\}$,} \\
+              1 & \text{for $x \geq n$.} \end{cases} \]
+              
+The expectation of $X$ is
+\begin{align*}
+\mathbb EX &= 1\times\frac1n + 2\times\frac1n + \cdots n \times \frac1n \\
+  &= \frac 1n (1 + 2 + \cdots + n) \\
+  &= \frac 1n \cdot \frac{n(n+1)}{2} \\
+  &= \frac{n+1}{2} .
+\end{align*}
+
+To variance of $X$, we first calculate $\mathbb EX^2$ as
+\begin{align*}
+\mathbb EX^2 &= 1^2\times\frac1n + 2^2\times\frac1n + \cdots n^2 \times \frac1n \\
+  &= \frac 1n (1^2 + 2^2 + \cdots + n^2) \\
+  &= \frac 1n \cdot \frac{n(n+1)(2n + 1)}{6} \\
+  &= \frac{(n+1)(2n+1)}{6} .
+\end{align*}
+Hence,
+\begin{align*}
+  \Var(X) &= \mathbb EX^2 - \mu^2 \\
+    &= \frac{(n+1)(2n+1)}{6} - \left( \frac{n+1}{2}\right)^2 \\
+    &= \frac{(n+1)(2n+1)}{6} - \frac{(n+1)^2}{4} \\
+    &= \frac{2(n+1)(2n+1) - 3(n+1)^2}{12} \\
+    &= \frac{4n^2 + 6n + 2 - 3n^2 - 6n - 3}{12} \\
+    &= \frac{n^2 - 1}{12} .
+\end{align*}
+
+(In the example calculations, we used the facts
+\[  \sum_{i=1}^n i = \frac{n(n+1)}{2} \qquad \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6} .   \]
+You are not expected to know or memorise these for an exam.)
 -->
 </div>
-<div id="about-r" class="section level2 unnumbered hasAnchor">
-<h2>About R and RStudio<a href="R.html#about-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="summary-L10" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L10-expectation.html#summary-L10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
 <ul>
-<li><strong>R</strong> is a <em>programming language</em> that is particularly useful for working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.</li>
-<li><strong>RStudio</strong> is a <em>program</em> that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.</li>
+<li>The expectation of a random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb EX = \sum_x x\, p_X(x)\)</span>.</li>
+<li>The variance of a random variable <span class="math inline">\(X\)</span> with expectation <span class="math inline">\(\mu\)</span> is <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span>.</li>
+<li><span class="math inline">\(\mathbb E(aX+b) = a\mathbb EX + b\)</span> and <span class="math inline">\(\operatorname{Var}(aX+b) = a^2\operatorname{Var}(X)\)</span>.</li>
 </ul>
-<p>R and RStudio are free/open-source software.</p>
 </div>
-<div id="r-access" class="section level2 unnumbered hasAnchor">
-<h2>How to access R and RStudio<a href="R.html#r-access" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are a few ways you can access R and RStudio.</p>
-<p>First, you can <strong>install R and RStudio on your own computer</strong>. Students who have their own computer (with administration and installation rights) usually find this the most convenient way use R.</p>
-<p>When you install R and RStudio, it’s important that you install R (the programming language) first, and only install RStudio (the program to use R) after R has already been installed. This ensures that RStudio can “find” R on your computer.</p>
-<ol style="list-style-type: decimal">
-<li><p><em>First</em>, install R. Go to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a> and follow the instructions:</p>
-<ul>
-<li>Windows: Click <a href="https://cran.r-project.org/bin/windows/">“Download R for Windows”</a>, then <a href="https://cran.r-project.org/bin/windows/base/">“Install R for the first time”</a>. The main link at the top should be to download the most recent version of R.</li>
-<li>Mac: Click <a href="https://cran.r-project.org/bin/macosx/">Download R for macOS</a>, and then download the relevant PKG file. (For typically older Intel-based Macbooks, you must use the “Intel 64-bit build”; for post-November 2020 M1 or M2-based “Apple silicon” Macbooks, the “Apple silicon arm64 build” may be slightly faster.)</li>
-</ul></li>
-<li><p><em>After</em> R is installed, <em>then</em> install RStudio. Go to <a href="https://www.rstudio.com/products/rstudio/download/#download">the Download page at RStudio.com</a> and follow the instructions. You want “RStudio Desktop”, and you want the free version.</p></li>
-</ol>
-<p>If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it’s sufficiently portable), and we’ll do our best to help.</p>
-<p>Second, you can <strong>use R and RStudio on University computers</strong>. All University computers have access to R and RStudio, via the AppsAnywhere service. <em>First</em>, launch R via AppsAnywhere (at the time of writing, it’s confusingly named “Cran R 4.2.0 x64”). You can then close the program that opens. <em>Then</em> launch RStudio (“Rstudio 2022”), also via AppsAnywhere. (You can decline any updates that are suggested.)</p>
-<p>The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.</p>
-<p>Third, you can <strong>use the <a href="https://rstudio.cloud/">RStudio Cloud</a></strong>. The RStudio Cloud is a cloud-hosted “Google Docs for R” that you can use through your web browser, without having to install anything. You can get 25 hours per month for free, which should be plenty for this module, or pay for more.</p>
-<p>If you have access to a computer on which you can’t install software, such as some Chromebooks or tablet computers, or if you’re borrowing a friend’s laptop, the RStudio Cloud can be a convenient solution.</p>
-<p><em>Update:</em> If you have an Intel-based Chromebook, then we have had success installing R and RStudio using <a href="https://levente.littvay.hu/chromebook/">these (rather complicated) instructions</a>, although you may still find it more convenient just to use the RStudio Cloud.</p>
-</div>
-<div id="troubleshooting" class="section level2 unnumbered hasAnchor">
-<h2>R troubleshooting drop-in sessions<a href="R.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.</p>
-<p>However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional R troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details – they are probably listed as “computer practicals”.</p>
 
 </div>
 </div>
@@ -406,8 +523,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="P3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L09-discrete-rv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="P3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
