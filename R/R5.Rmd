@@ -111,7 +111,9 @@ Some of these arguments include:
 
 ## Assessed questions
 
-*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 5, but the official deadline is **Monday 7 November at 1400**.*
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to below. I recommend you do this in Week 5, but the official deadline is **Monday 7 November at 1400**.*
+
+*You should submit your work by typing your answers into [**this Microsoft Form**](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u). You may need to be logged into your University account.*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -138,3 +140,7 @@ https://mpaldridge.github.io/math1710/data/R5-xy.csv
 > **Assessed Question 4.** Draw a histogram of the `eta` data, and experiment with different numbers of breaks. How many "peaks" do you think it is accurate to say the histogram has? (Remember that too many breaks may cause too many "random" peaks, while to few breaks may smooth out actual peaks.)
 
 > **Assessed Question 5.** Draw a scatterplot with the `theta` data on the x-axis and the `iota` data on the y-axis. You should find that there is a non-linear relationship between the two data sets. As theta increases, does iota go up then down (like $\cap$, or a sad face), or down then up (like $\cup$ or a happy face)?
+
+---
+
+*Remember to submit your answers into  [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u) before 1400 on Monday 7 November.*

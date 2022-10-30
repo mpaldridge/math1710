@@ -155,7 +155,7 @@ and so on. Remember we can use `round()` and `signif()` with these to round the 
 
 ## Assessed questions
 
-*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 3, but the official deadline is **Monday 24 October at 1400**.*
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to below. I recommend you do this in Week 3, but the official deadline is **Monday 24 October at 1400**.*
 
 *You should submit your work by typing your answers into [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u). You may need to be logged into your University account.*
 
