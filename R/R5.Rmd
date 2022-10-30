@@ -1,11 +1,11 @@
 ---
 title:  "R Worksheet 5: Plots II: Making plots better"
 author: "MATH1710 Probability and Statistcs I"
-date:   "University of Leeds, 2021--22"
+date:   "University of Leeds, 2022--23"
 output: html_document
 ---
 
-*This R worksheet* does *include assessed questions at the bottom. Only the questions marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 1 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
+*This R worksheet* does *include assessed questions at the bottom. Only the questions marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 7 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
 
 ------------------------------------------------------------------------
 
@@ -44,7 +44,7 @@ But this picture would be clearer properly labelled and titled.
 hist(temperature$dec, freq = FALSE, xlab = "Average temperature (degrees Celsius)", ylab = "Probability density", main = "Historical December temperatures in the UK")
 ```
 
-Adding all these extra arguments can make your code difficult to read. Remember that R allows you to use line breaks when it's obvious a command isn't finished -- for example, when a pair of brackets has been opened but not yet closed. You can also add spaces to make your code easier to read. For example, you may find the following format of exactly the same command as above more pleasant.
+Adding all these extra arguments can make your code difficult to read. Remember that R allows you to use line breaks when it's obvious a command isn't finished -- for example, when a pair of brackets has been opened but not yet closed. You can also add spaces to make your code easier to read. For example, you may find the following formatting of exactly the same command as above more pleasant.
 
 ```{r, eval = FALSE}
 hist(temperature$dec, freq = FALSE,
@@ -54,7 +54,7 @@ hist(temperature$dec, freq = FALSE,
 )
 ```
 
-> **Exercise 5.1.** Last time, in Exercise 4.5, you drew a scatterplot of January and August temperatures. Do this again, but with explanatory labels on the axes and an explanatory title. (Don't forget to make sure you've read the temperature data in first.)
+> **Exercise 5.1.** Read the Met Office temperature data into R. Last time, in Exercise 4.5, you drew a scatterplot of January and August temperatures. Do this again, but with explanatory labels on the axes and an explanatory title.
 
 For boxplots diagrams with multiple boxplots, you will also want to label the individual boxplots. This is done with the **`names = ...`** arguments to `boxplot()`. Here, `names` should be equal to a vector of the names given to the boxplots. Remember that vectors are set with `c()`, and each of the names must be in quotation marks.
 
@@ -69,11 +69,13 @@ boxplot(temperature$jul, temperature$aug, temperature$sep,
 )
 ```
 
+> **Exercise 5.2.** Draw a figure consisting of boxplots for two or more months of temperature data. Make sure all axes are labelled, including each of the individual months.
+
 ## Axis limits
 
-When you draw a plot, R tries to chosen the upper and lower limits of the x and y axes sensibly, to ensure that all the data fits, and that the numbers sisplayed next to the axes can be nice round numbers. (For histograms, R also ensures the lower limit on the y-axis is 0.) However, sometimes, you may wish to choose the axis limits yourself. The main reason we might to fix the axis limits ourselves, is that in some circumstances, it's appropriate to let one of the axes start at 0, to put changes in the corresponding value in proper context. R, on the other hand, may choose to zoom in on relatively unimportant small changes.
+When you draw a plot, R tries to choose the upper and lower limits of the x and y axes sensibly, to ensure that all the data fits, and that the numbers displayed next to the axes can be nice round numbers. (For histograms, R also ensures the lower limit on the y-axis is 0.) However, sometimes, you may wish to choose the axis limits yourself. The main reason we might want to fix the axis limits ourselves is that, in some circumstances, it's appropriate ensure one or both of the axes start at 0, to put changes in the corresponding value in proper context. R, on the other hand, may choose to zoom in on relatively unimportant small changes.
 
-We can choose the axes limits ourselves using the **`xlim = ...`** and **`ylim = ...`** arguments. Here `xlim` or `ylim` should be set to be a vector of length 2, with the first number being the lower limit for the axis and the second number being the upper limit. If you just set one of the axis limits, R will still try to choose the other one sensibly.
+We can choose the axis limits ourselves using the **`xlim = ...`** and **`ylim = ...`** arguments. Here `xlim` or `ylim` should be set to be a vector of length 2, with the first number being the lower limit for the axis and the second number being the upper limit. If you just set one of the axis limits, R will still try to choose the other one sensibly.
 
 For example, if making a scatterplot of February and July temperatures, I may wan to put both month's temperatures on the same scale -- say from -2 to 10 -- to give a fair comparison between them.
 
@@ -86,7 +88,7 @@ plot(temperature$feb, temperature$apr,
 )
 ```
 
-> **Exercise 5.2.** Draw a histogram of of August temperature. Make sure the axes of your plot are appropriate and give your plot a title. Draw the histogram with the temperature axis going down to 0 (and an appropriate upper limit). Do you think changing the axis limits was helpful here?
+> **Exercise 5.3.** Draw a histogram of of August temperature. Make sure the axes of your plot are appropriate and give your plot a title.  Now redraw the histogram with the temperature axis going down to 0 (and an appropriate upper limit). Do you think changing the axis limits was helpful here?
 
 ## Other arguemnts
 
@@ -97,10 +99,11 @@ Some of these arguments include:
 * **`sub = ...`** sets a subheading -- remember the text must be in quotation marks.
 * **`col = ...`** to set colours. In `boxplot()` this is the shading of the two central boxes; in `hist()` this is the shading of the histogram bars; in `plot()` this is the colour of the points or lines. The argument `col = ...` takes many standard colour names provided they are in quotation marks: try `col = "blue"` or `col = "red"`, for example.
 * **`lwd = ...`** sets the line width. R's default line width (`lwd = 1`) is sometimes to thin, especially for `plot()` with the `type = "l"` option set. I find `lwd = 2` is sometimes preferable. (In `hist()`, this changes the thickness of the axes, slightly bizarrely.)
-* In a scatterplot with `plot()`, the argument **``pch = ...``** sets the character used to plot points. The default os `pch = 1`, which is a circle. Try setting `pch` to other numbers to see what happens.
-If you want to draw a plot with one or both axes on a logarithmic scale (or "log scale), try setting `log = ...` to `log = "x"`, `log = "y"`, or `log = "xy"`.
+* For a scatterplot with `plot()`, we already know that `type = ...` can give us points (`p`), lines (`l`) or both (`b`).
+* For a scatterplot with `plot()`, the argument **``pch = ...``** sets the character used to plot points. The default os `pch = 1`, which is a circle. Try setting `pch` to other numbers to see what happens.
+* For a scatterplot of boxplot, of you want to draw a plot with one or both axes on a logarithmic scale (or "log scale"), try setting `log = ...` to `log = "x"` (for just the x axis), `log = "y"` (for just the y axis), or `log = "xy"` (for both).
 
-> **Exercise 5.3.** Draw a plot of your choice based on the Met Office temperature data, but use as many extra wacky options as you can. (Make sure to title and label your plot, of course.)
+> **Exercise 5.4.** Draw a plot of your choice based on the Met Office temperature data, but use as many extra wacky options as you can. Make sure to title and label your plot, of course.
 
 
 
@@ -108,7 +111,7 @@ If you want to draw a plot with one or both axes on a logarithmic scale (or "log
 
 ## Assessed questions
 
-*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 5, but the official deadline is **Monday 1 November at 1400**.*
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 5, but the official deadline is **Monday 7 November at 1400**.*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -124,9 +127,7 @@ https://mpaldridge.github.io/math1710/data/R5-xy.csv
 
 **First**, read  the data set at `https://mpaldridge.github.io/math1710/data/R5-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set has nine columns, called `alpha`, `beta`, `gamma`, `delta`, `epsilon`, `zeta`, `eta`, `theta`, and `iota`.
 
-*[**Note:** All data sets should now (2:30pm on Tuesday) be working correctly.]*
-
-(I couldn't think of a good way to check, via Microsoft Form and automatic marking, that your plots are properly labelled and titled. But remember that it is always good practice to do this!)
+(I couldn't think of a good way to check via Microsoft Form and automatic marking that your plots are properly labelled and titled. But remember that it is always good practice to do this!)
 
 > **Assessed Question 1.** Draw a boxplot comparing the `alpha` data and `beta` data. Which data set is generally the larger?
 
