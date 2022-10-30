@@ -11,11 +11,11 @@ rather than
 \[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]
 The probability that $X = 5$ is $\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}$. We might also be interested in other things about the total score $X$, like what the average total score over many pairs if dice rolls is.
 
-The good news is that, once we have properly set up out random variable $X$, we can often then choose to ignore things like the sample space, the probability measure, and individual events.
+The good news is that, once we have properly set up our random variable $X$, we can often then choose to ignore things like the sample space, the probability measure, and individual events.
 
 Random variables are typically given capital letters from late in the alphabet, like $X$, $Y$, $Z$. Values that those random variables take are often given the lower-case equivalent, like $x$, $y$, $z$.
 
-This idea of a random variable as a numerical summary of an experiment is how we *think* about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We'll discuss that now (but if you find the next three paragraphs difficult to follow, you won't miss much if you skip them).
+This idea of a random variable as a numerical summary of an experiment is how we *think* about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We'll discuss that now (but if you find the next couple of paragraphs difficult to follow, you won't miss much if you skip them).
 
 In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
   \[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]
@@ -60,7 +60,7 @@ Random variables that we will consider in this module will be one of two types:
 * **Discrete random variables** have a range that is a collection of discrete separate counts, so $\Range(X)$ is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for "count data".
 * **Continuous random variables** have a range that is a continuum of slowly varying measurements, so $\Range(X)$ is uncountably infinite (like the real numbers, the positive real numbers, or the interval $[0,1]$). Continuous random variables can be used as models for "measurement data".
 
-For this week and the two weeks after, we will look at discrete random variables; later in Lecturer 15 to 17 we will look at continuous random variables.
+For this week and the two weeks after, we will look at discrete random variables; later in Lectures 15 to 17 we will look at continuous random variables.
 
 
 ## Probability mass function  {#pmf}
@@ -121,8 +121,9 @@ plot(x, prob, type = "h", xlab = "dice total, x", ylab = "probability mass funct
 
 
 
-Note that since $p(x) = \mathbb P(X = x)$ is a probability, it must be greater than or equal to 0. Further, if we add up $p(x)$ we get
-\[ \sum_{x} p(x) =  \sum_{x \in \Range(X)} \mathbb P(X = x) = \mathbb P\big(X \in \Range(X)\big)  =  \mathbb P(\Omega) = 1 . \]
+Note that since $p(x) = \mathbb P(X = x)$ is a probability, it must be greater than or equal to 0, by Axiom 1. Further, if we add up $p(x)$ we get
+\[ \sum_{x} p(x) =  \sum_{x \in \Range(X)} \mathbb P(X = x) = \mathbb P\big(X \in \Range(X)\big)  =  \mathbb P(\Omega) = 1,  \]
+by Axiom 2.
 Hence we have the following:
 
 ::: {.theorem}
@@ -138,14 +139,14 @@ Sometimes it is useful to know the probability a random variable $X$ is less or 
 \[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]
 
 ::: {.example}
-Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. It's impossible for the outcome to be less that 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability $p(0) = 1-p$; and it is certain to at most 1. So its CDF $F$ is
+Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. It's impossible for the outcome to be less than 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability $p(0) = 1-p$; and it is certain to at most 1. So its CDF $F$ is
 \[ F(x) = \begin{cases} 0 & \text{for $x < 0$} \\
                       1-p & \text{for $0 \leq x < 1$} \\
                       1   & \text{for $x \geq 1$} . \end{cases} \]
 :::
 
 ::: {.example}
-If $X$ is the sum of two dice rolls, then the CDF $F$ is given by adding up the PMF. So, for example, if $2 \leq x < 3$, we have $F(x) = p(2) = \frac{1}{36}$; if $3 \leq x < 4$ we have $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}$, and so. This gives
+If $X$ is the sum of two dice rolls, then the CDF $F$ is given by adding up the PMF. So, for example, if $2 \leq x < 3$, we have $F(x) = p(2) = \frac{1}{36}$; if $3 \leq x < 4$ we have $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}$, and so on. This gives
 
 | $x \in {}$ | $(-\infty, 2)$ | $[2,3)$ | $[3,4)$ | $[4,5)$ | $\cdots$ | $[11,12)$ | $[12, \infty)$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|

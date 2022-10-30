@@ -262,6 +262,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -285,6 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L10-expectation" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">Lecture 10</span> Expectation and variance<a href="L10-expectation.html#L10-expectation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>We continue our study of discrete random variables.</p>
 <div id="expectation" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Expectation<a href="L10-expectation.html#expectation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
@@ -294,23 +296,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 :::
 ::::
 -->
-<p>Often, we will be interested in the “average” value of a random variable – for example, the average total from two dice rolls – which represents what the “central” value of the random variable is. This average is called the “expectation”.</p>
+<p>Often, we will be interested in the “average” value of a random variable – for example, the “average” total from two dice rolls – which represents what the “central” value of the random variable is. This average is called the “expectation”.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 10.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a finite or countably infinite sample space, <span class="math inline">\(\mathbb P\)</span> be a probability measure on <span class="math inline">\(\Omega\)</span>, and <span class="math inline">\(X\)</span> be a discrete random variable on <span class="math inline">\(\Omega\)</span>. Then the <strong>expectation</strong> (or <strong>expected value</strong>) of <span class="math inline">\(X\)</span> is
-<span class="math display">\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \mathbb P(\{\omega\}) . \]</span></p>
+<span class="math display">\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]</span></p>
 <p>If <span class="math inline">\(p\)</span> is the PMF of <span class="math inline">\(X\)</span>, then a more convenient formula is
 <span class="math display">\[ \mathbb EX = \sum_{x \in \operatorname{Range}(X)} x\,p_X(x) . \]</span></p>
 </div>
-<p>We get the second formula from the first by grouping together all outcomes <span class="math inline">\(\omega\)</span> that lead to the same value <span class="math inline">\(x = X(\omega)\)</span> of <span class="math inline">\(X\)</span>. It’s this second formula we actually use when calculating expectations.</p>
+<p>We get the second formula from the first by grouping together all outcomes <span class="math inline">\(\omega\)</span> that lead to the same value <span class="math inline">\(x = X(\omega)\)</span> of <span class="math inline">\(X\)</span>. It’s only this second formula we actually use when calculating expectations.</p>
 <p>Note that “expectation” is simply the name that mathematicians give to the value <span class="math inline">\(\mathbb EX = \sum_x x\, p(x)\)</span>. We don’t necessarily “expect” to get the value <span class="math inline">\(\mathbb EX\)</span> as the outcome in the normal English-language sense of the word “expect”. (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don’t “expect” to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of “long-run mean outcome”.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-49" class="example"><strong>Example 10.1  </strong></span><em>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli trial with success probability <span class="math inline">\(p\)</span>. What is the expectation <span class="math inline">\(\mathbb EX\)</span>?</em></p>
-<p>Using the second formula in the definition, we have
+<p>We know that the PMF is <span class="math inline">\(p(0) = 1- p\)</span> and <span class="math inline">\(p(1) = p\)</span>. So, using the second formula in the definition, we have
 <span class="math display">\[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-50" class="example"><strong>Example 10.2  </strong></span><em>What is the expected value of the sum of two dice rolls?</em></p>
-<p>When <span class="math inline">\(X\)</span> is the total of two dice rolls, the expectation is
+<p>When <span class="math inline">\(X\)</span> is the total of two dice rolls, we found the PMF of <span class="math inline">\(X\)</span> last time. The expectation is
 <span class="math display">\[\begin{align*}
   \mathbb EX &amp;= \sum_{x \in \operatorname{Range}(X)} x\,p(x)  \\
     &amp;= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
@@ -342,28 +344,28 @@ or, in terms of PMFs,
 | $p_Z(z)$ | $\frac{3}{36}$ | $\frac{2}{36} + \frac{4}{36} = \frac{6}{36}$ | $\frac{1}{36} + \frac{5}{36} = \frac{6}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
 :::
 -->
-<p>It is possible, although sometimes rather tricky, to work out the whole PMF of these new random variables that are functions of <span class="math inline">\(X\)</span> – and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables, which is easier.</p>
+<p>It is possible, although sometimes a bit tricky, to work out the whole PMF of these new random variables that are functions of <span class="math inline">\(X\)</span> – and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.</p>
 <!--
 So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
 -->
 <div class="theorem">
-<p><span id="thm:unconscious" class="theorem"><strong>Theorem 10.1  (Law of the unconscious statistician) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable, and let <span class="math inline">\(Y = g(X)\)</span> be another random variable that is a function of <span class="math inline">\(X\)</span>. Then
-<span class="math display">\[  \mathbb EY = \mathbb Eg(X) = \sum_{x} g(x) \, p_X(x) . \]</span></p>
+<p><span id="thm:unconscious" class="theorem"><strong>Theorem 10.1  (Law of the unconscious statistician) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable, and let <span class="math inline">\(Y = g(X)\)</span> be another random variable that is a function <span class="math inline">\(g\)</span> of <span class="math inline">\(X\)</span>. Then
+<span class="math display">\[  \mathbb EY = \mathbb E\,g(X) = \sum_{x} g(x) \, p_X(x) . \]</span></p>
 </div>
 <p>(The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for <span class="math inline">\(\mathbb Eg(X)\)</span> if you weren’t thinking carefully – but it turns out it’s correct!)</p>
 <div class="proof">
-<p><span id="unlabeled-div-51" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> As in the previous example, the idea is to group together <span class="math inline">\(x\)</span>s that give the same <span class="math inline">\(y\)</span>.</p>
-<p>From the definition of expectation, we have
-<span class="math display">\[ \mathbb EY = \sum_y y\, p_Y(y) . \]</span>
-Then using
-<span class="math display">\[ p_Y(y) = \sum_{x : g(x) = y} p_X(x) , \]</span>
-we get
+<p><span id="unlabeled-div-51" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> <!--As in the previous example, the idea is to group together $x$s that give the same $y$.-->
+The PMF of <span class="math inline">\(y\)</span> can be given in terms of the PMF of <span class="math inline">\(x\)</span> – we just need to add up all the <span class="math inline">\(x\)</span>s that lead to the same <span class="math inline">\(y\)</span>. That is,
+<span class="math display">\[ p_Y(y) = \sum_{x\, :\, g(x) = y} p_X(x) . \]</span>
+(Remember that the colon <span class="math inline">\(:\)</span> here means “such that”, so this is a sum over all the <span class="math inline">\(x\)</span> such that <span class="math inline">\(g(x) = y\)</span>.)</p>
+<p>Using this, and from the definition of expectation, we have
 <span class="math display">\[\begin{align*}
-  \mathbb EY &amp;= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
+  \mathbb EY &amp;= \sum_y y \, p_Y(y) \\
+    &amp;= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
     &amp;= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
     &amp;= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
 \end{align*}\]</span>
-since <span class="math inline">\(y = g(x)\)</span> inside the second sum. But those two sums together are summing over all <span class="math inline">\(x\)</span>, just partitioned by which value of <span class="math inline">\(y\)</span> they lead to, so can be replaced by a single sum over <span class="math inline">\(x\)</span>. That gives the theorem.</p>
+since <span class="math inline">\(y = g(x)\)</span> inside the second sum. But these two sums together are summing over all <span class="math inline">\(x\)</span>, just partitioned by which value of <span class="math inline">\(y\)</span> they lead to, so they can be replaced by just a single sum over <span class="math inline">\(x\)</span>. That gives the theorem.</p>
 </div>
 <p>There are some functions for which this expression becomes particularly simple.</p>
 <div class="theorem">
@@ -405,16 +407,16 @@ The last line was because PMFs always add up to 1, so <span class="math inline">
 <p><span id="def:unlabeled-div-53" class="definition"><strong>Definition 10.2  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. Then the <strong>variance</strong> of <span class="math inline">\(X\)</span> is
 <span class="math display">\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 . \]</span></p>
 </div>
-<p>(To be clear, the notation there means the expectation of <span class="math inline">\((X-\mu)^2\)</span>; and <em>not</em> <span class="math inline">\(\mathbb E(X - \mu)\)</span> then squared, which would be <span class="math inline">\(0^2 = 0\)</span>.)</p>
-<p>Note that <span class="math inline">\((X - \mu)^2 \geq 0\)</span> is a square, so always non-negative, and hence the variance <span class="math inline">\(\operatorname{Var}(X) \geq 0\)</span> is always non-negative also.</p>
-<p>It may not surprise you, if you remember <a href="L01-stats.html#L01-stats">Lecture 1</a> that to go along with that definitional formula for the variance, we also have a computational formula.</p>
+<p>(To be clear, the notation here means the expectation of <span class="math inline">\((X-\mu)^2\)</span>; and <em>not</em> <span class="math inline">\(\mathbb E(X - \mu)\)</span> then squared, which would be <span class="math inline">\(0^2 = 0\)</span>.)</p>
+<p>Note that <span class="math inline">\((X - \mu)^2 \geq 0\)</span> is a square, so always non-negative, and hence the variance <span class="math inline">\(\operatorname{Var}(X) \geq 0\)</span> is always non-negative also. Sometimes we call the square-root of the variance the <strong>standard deviation</strong>.</p>
+<p>It may not surprise you, if you remember <a href="L01-stats.html#L01-stats">Lecture 1</a> that to go along with this “definitional formula” for the variance, we also have a “computational formula”, which can sometimes be more convenient.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-54" class="theorem"><strong>Theorem 10.3  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. Then the variance <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span> can also be calculated as
 <span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]</span></p>
 </div>
 <p>(Again, <span class="math inline">\(\mathbb EX^2\)</span> means the expectation of <span class="math inline">\(X^2\)</span>.)</p>
 <div class="proof">
-<p><span id="unlabeled-div-55" class="proof"><em>Proof</em>. </span>As previously we expand out the brackets, and use linearity of expectation (in the same way we “brought the sum inside” previously). We get
+<p><span id="unlabeled-div-55" class="proof"><em>Proof</em>. </span>As previously we expand out the brackets, and use linearity of expectation (in the same way we “brought the sum inside” with the sample variance previously). We get
 <span class="math display">\[\begin{align*}
   \operatorname{Var}(X) &amp;= \mathbb E(X - \mu)^2 \\
     &amp;= \mathbb E(X^2 - 2\mu X + \mu^2) \\
@@ -425,6 +427,7 @@ But we said that <span class="math inline">\(\mathbb EX\)</span> would be called
 <span class="math display">\[ \operatorname{Var}(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]</span>
 as required.</p>
 </div>
+<p>(A brief optional note for pedants: Writing <span class="math inline">\(\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X\)</span> is not, strictly speaking, justified by the result that above we called “linearity of expectation, 2”. However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call “linearity of expectation, 2”, of which it is a special case.)</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-56" class="example"><strong>Example 10.3  </strong></span>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli trial, and recall that <span class="math inline">\(\mathbb EX = p\)</span>.</p>
 <p>Using the definitional formula, we have

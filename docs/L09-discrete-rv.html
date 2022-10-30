@@ -30,7 +30,7 @@
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="L08-two-theorems.html"/>
-<link rel="next" href="P3.html"/>
+<link rel="next" href="L10-expectation.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -237,6 +237,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
 <li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
+<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
+<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-L10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
@@ -288,9 +295,9 @@ But if we are rolling the two dice as part of a board game, we might only care a
 rather than
 <span class="math display">\[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]</span>
 The probability that <span class="math inline">\(X = 5\)</span> is <span class="math inline">\(\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}\)</span>. We might also be interested in other things about the total score <span class="math inline">\(X\)</span>, like what the average total score over many pairs if dice rolls is.</p>
-<p>The good news is that, once we have properly set up out random variable <span class="math inline">\(X\)</span>, we can often then choose to ignore things like the sample space, the probability measure, and individual events.</p>
+<p>The good news is that, once we have properly set up our random variable <span class="math inline">\(X\)</span>, we can often then choose to ignore things like the sample space, the probability measure, and individual events.</p>
 <p>Random variables are typically given capital letters from late in the alphabet, like <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>. Values that those random variables take are often given the lower-case equivalent, like <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>.</p>
-<p>This idea of a random variable as a numerical summary of an experiment is how we <em>think</em> about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We’ll discuss that now (but if you find the next three paragraphs difficult to follow, you won’t miss much if you skip them).</p>
+<p>This idea of a random variable as a numerical summary of an experiment is how we <em>think</em> about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We’ll discuss that now (but if you find the next couple of paragraphs difficult to follow, you won’t miss much if you skip them).</p>
 <p>In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
 <span class="math display">\[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]</span>
 of pairs <span class="math inline">\(\boldsymbol\omega = (\omega_1, \omega_2)\)</span> of numbers from 1 to 6, where <span class="math inline">\(\omega_1\)</span> represents the first dice roll and <span class="math inline">\(\omega_2\)</span> the second dice roll.
@@ -324,7 +331,7 @@ However, the way we actually *think* about random variables *is* as random and i
 <li><strong>Discrete random variables</strong> have a range that is a collection of discrete separate counts, so <span class="math inline">\(\operatorname{Range}(X)\)</span> is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for “count data”.</li>
 <li><strong>Continuous random variables</strong> have a range that is a continuum of slowly varying measurements, so <span class="math inline">\(\operatorname{Range}(X)\)</span> is uncountably infinite (like the real numbers, the positive real numbers, or the interval <span class="math inline">\([0,1]\)</span>). Continuous random variables can be used as models for “measurement data”.</li>
 </ul>
-<p>For this week and the two weeks after, we will look at discrete random variables; later in Lecturer 15 to 17 we will look at continuous random variables.</p>
+<p>For this week and the two weeks after, we will look at discrete random variables; later in Lectures 15 to 17 we will look at continuous random variables.</p>
 </div>
 <div id="pmf" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> Probability mass function<a href="L09-discrete-rv.html#pmf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -424,8 +431,9 @@ The key idea about random variables is that, once we are thinking in terms of a 
 </table>
 <p><img src="math1710_files/figure-html/dice-pmf-1.png" width="672" /></p>
 </div>
-<p>Note that since <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> is a probability, it must be greater than or equal to 0. Further, if we add up <span class="math inline">\(p(x)\)</span> we get
-<span class="math display">\[ \sum_{x} p(x) =  \sum_{x \in \operatorname{Range}(X)} \mathbb P(X = x) = \mathbb P\big(X \in \operatorname{Range}(X)\big)  =  \mathbb P(\Omega) = 1 . \]</span>
+<p>Note that since <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> is a probability, it must be greater than or equal to 0, by Axiom 1. Further, if we add up <span class="math inline">\(p(x)\)</span> we get
+<span class="math display">\[ \sum_{x} p(x) =  \sum_{x \in \operatorname{Range}(X)} \mathbb P(X = x) = \mathbb P\big(X \in \operatorname{Range}(X)\big)  =  \mathbb P(\Omega) = 1,  \]</span>
+by Axiom 2.
 Hence we have the following:</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-45" class="theorem"><strong>Theorem 9.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable, and let <span class="math inline">\(p_X\)</span> be its PMF. Then</p>
@@ -440,13 +448,13 @@ Hence we have the following:</p>
 <p>Sometimes it is useful to know the probability a random variable <span class="math inline">\(X\)</span> is less or equal to than some value <span class="math inline">\(x\)</span>. This is captured by the <strong>cumulative distribution function</strong> (or <strong>CDF</strong>) <span class="math inline">\(F_X\)</span>, where
 <span class="math display">\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 9.3  </strong></span>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli random variable with success probability <span class="math inline">\(p\)</span>. It’s impossible for the outcome to be less that 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability <span class="math inline">\(p(0) = 1-p\)</span>; and it is certain to at most 1. So its CDF <span class="math inline">\(F\)</span> is
+<p><span id="exm:unlabeled-div-46" class="example"><strong>Example 9.3  </strong></span>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli random variable with success probability <span class="math inline">\(p\)</span>. It’s impossible for the outcome to be less than 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability <span class="math inline">\(p(0) = 1-p\)</span>; and it is certain to at most 1. So its CDF <span class="math inline">\(F\)</span> is
 <span class="math display">\[ F(x) = \begin{cases} 0 &amp; \text{for $x &lt; 0$} \\
                       1-p &amp; \text{for $0 \leq x &lt; 1$} \\
                       1   &amp; \text{for $x \geq 1$} . \end{cases} \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 9.4  </strong></span>If <span class="math inline">\(X\)</span> is the sum of two dice rolls, then the CDF <span class="math inline">\(F\)</span> is given by adding up the PMF. So, for example, if <span class="math inline">\(2 \leq x &lt; 3\)</span>, we have <span class="math inline">\(F(x) = p(2) = \frac{1}{36}\)</span>; if <span class="math inline">\(3 \leq x &lt; 4\)</span> we have <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}\)</span>, and so. This gives</p>
+<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 9.4  </strong></span>If <span class="math inline">\(X\)</span> is the sum of two dice rolls, then the CDF <span class="math inline">\(F\)</span> is given by adding up the PMF. So, for example, if <span class="math inline">\(2 \leq x &lt; 3\)</span>, we have <span class="math inline">\(F(x) = p(2) = \frac{1}{36}\)</span>; if <span class="math inline">\(3 \leq x &lt; 4\)</span> we have <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}\)</span>, and so on. This gives</p>
 <table>
 <colgroup>
 <col width="12%" />
@@ -512,7 +520,7 @@ Hence we have the following:</p>
         </div>
       </div>
 <a href="L08-two-theorems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="P3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L10-expectation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

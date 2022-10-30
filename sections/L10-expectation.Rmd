@@ -1,5 +1,8 @@
 # Expectation and variance  {#L10-expectation}
 
+
+We continue our study of discrete random variables.
+
 ## Expectation  {#expectation}
 
 <!--
@@ -70,7 +73,7 @@ or, in terms of PMFs,
 :::
 -->
 
-It is possible, although sometimes rather tricky, to work out the whole PMF of these new random variables that are functions of $X$ -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.
+It is possible, although sometimes a bit tricky, to work out the whole PMF of these new random variables that are functions of $X$ -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.
 
 <!--
 So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
@@ -97,7 +100,7 @@ Using this, and from the definition of expectation, we have
     &= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
     &= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
 \end{align*}
-since $y = g(x)$ inside the second sum. But those two sums together are summing over all $x$, just partitioned by which value of $y$ they lead to, so they can be replaced by just a single sum over $x$. That gives the theorem.
+since $y = g(x)$ inside the second sum. But these two sums together are summing over all $x$, just partitioned by which value of $y$ they lead to, so they can be replaced by just a single sum over $x$. That gives the theorem.
 :::
 
 There are some functions for which this expression becomes particularly simple.
@@ -151,11 +154,11 @@ Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the **var
 \[ \Var(X) = \mathbb E(X - \mu)^2 . \]
 :::
 
-(To be clear, the notation there means the expectation of $(X-\mu)^2$; and *not* $\mathbb E(X - \mu)$ then squared, which would be $0^2 = 0$.)
+(To be clear, the notation here means the expectation of $(X-\mu)^2$; and *not* $\mathbb E(X - \mu)$ then squared, which would be $0^2 = 0$.)
 
-Note that $(X - \mu)^2 \geq 0$ is a square, so always non-negative, and hence the variance $\Var(X) \geq 0$ is always non-negative also.
+Note that $(X - \mu)^2 \geq 0$ is a square, so always non-negative, and hence the variance $\Var(X) \geq 0$ is always non-negative also. Sometimes we call the square-root of the variance the **standard deviation**.
 
-It may not surprise you, if you remember [Lecture 1](#L01-stats) that to go along with that definitional formula for the variance, we also have a computational formula.
+It may not surprise you, if you remember [Lecture 1](#L01-stats) that to go along with this "definitional formula" for the variance, we also have a "computational formula", which can sometimes be more convenient.
 
 ::: {.theorem}
 Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the variance $\Var(X) = \mathbb E(X - \mu)^2$ can also be calculated as
@@ -165,7 +168,7 @@ Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the varia
 (Again, $\mathbb EX^2$ means the expectation of $X^2$.)
 
 ::: {.proof}
-As previously we expand out the brackets, and use linearity of expectation (in the same way we "brought the sum inside" previously). We get
+As previously we expand out the brackets, and use linearity of expectation (in the same way we "brought the sum inside" with the sample variance previously). We get
 \begin{align*}
   \Var(X) &= \mathbb E(X - \mu)^2 \\
     &= \mathbb E(X^2 - 2\mu X + \mu^2) \\
@@ -176,6 +179,8 @@ But we said that $\mathbb EX$ would be called $\mu$, so we can substitute in $\m
 \[ \Var(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]
 as required.
 :::
+
+(A brief optional note for pedants: Writing $\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X$ is not, strictly speaking, justified by the result that above we called "linearity of expectation, 2". However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call "linearity of expectation, 2", of which it is a special case.)
 
 ::: {.example}
 Let $X \sim \text{Bern}(p)$ be a Bernoulli trial, and recall that $\mathbb EX = p$.

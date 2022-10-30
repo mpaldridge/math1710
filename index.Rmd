@@ -14,6 +14,14 @@ url:    'https://mpaldridge.github.io/math1710/'
 \newcommand{\Var}{\operatorname{Var}}
 
 
+::: {.oldsched}
+**Week 5** (31 October -- 4 November):
+
+* [**Lecture 9:** Discrete random variables](#L07-expectation) (Monday 31 October)
+* [**Lecture 10:** Expectation and variance](#L08-two-theorems) (Wednesday 2 November)
+* [**Problem Sheet 3:**](#P3) Work through the short and long questions in preparation for your tutorial in Week 6. Deadline for assessed questions: Monday 14 November.
+* [**R Worksheet 5:** Plots II](#r-work) to be completed this week. Deadline for assessed questions: Monday 7 November.
+:::
 
 ::: {.oldsched}
 **Week 4** (24--28 October):
@@ -22,7 +30,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 * [**Lecture 8:** Two theorems on conditional probability](#L08-two-theorems) (Wednesday 26 October)
 * **Tutorial:** to discuss Problem Sheet 2; check your timetable for details.
 * [**Problem Sheet 2:**](#P2) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 31 October.
-* [**R Worksheet 3:** Plots I](#r-work) to be completed this week.
+* [**R Worksheet 4:** Plots I](#r-work) to be completed this week.
 :::
 
 ::: {.mysched}
