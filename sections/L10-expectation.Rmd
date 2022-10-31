@@ -1,7 +1,7 @@
 # Expectation and variance  {#L10-expectation}
 
 
-We continue our study of discrete random variables.
+We continue our study of discrete random variables. Recall that the PMF $p_X$ of a discrete random variable $X$ is $p_X(x) = \mathbb P(X = x)$.
 
 ## Expectation  {#expectation}
 
@@ -20,7 +20,7 @@ Often, we will be interested in the "average" value of a random variable -- for 
 Let $\Omega$ be a finite or countably infinite sample space, $\mathbb P$ be a probability measure on $\Omega$, and $X$ be a discrete random variable on $\Omega$. Then the **expectation** (or **expected value**) of $X$ is
 \[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]
 
-If $p$ is the PMF of $X$, then a more convenient formula is
+If $p_X$ is the PMF of $X$, then a more convenient formula is
 \[ \mathbb EX = \sum_{x \in \Range(X)} x\,p_X(x) . \]
 :::
 

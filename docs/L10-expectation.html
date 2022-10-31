@@ -286,7 +286,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L10-expectation" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">Lecture 10</span> Expectation and variance<a href="L10-expectation.html#L10-expectation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>We continue our study of discrete random variables.</p>
+<p>We continue our study of discrete random variables. Recall that the PMF <span class="math inline">\(p_X\)</span> of a discrete random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(p_X(x) = \mathbb P(X = x)\)</span>.</p>
 <div id="expectation" class="section level2 hasAnchor" number="10.1">
 <h2><span class="header-section-number">10.1</span> Expectation<a href="L10-expectation.html#expectation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
@@ -300,7 +300,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="definition">
 <p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 10.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a finite or countably infinite sample space, <span class="math inline">\(\mathbb P\)</span> be a probability measure on <span class="math inline">\(\Omega\)</span>, and <span class="math inline">\(X\)</span> be a discrete random variable on <span class="math inline">\(\Omega\)</span>. Then the <strong>expectation</strong> (or <strong>expected value</strong>) of <span class="math inline">\(X\)</span> is
 <span class="math display">\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]</span></p>
-<p>If <span class="math inline">\(p\)</span> is the PMF of <span class="math inline">\(X\)</span>, then a more convenient formula is
+<p>If <span class="math inline">\(p_X\)</span> is the PMF of <span class="math inline">\(X\)</span>, then a more convenient formula is
 <span class="math display">\[ \mathbb EX = \sum_{x \in \operatorname{Range}(X)} x\,p_X(x) . \]</span></p>
 </div>
 <p>We get the second formula from the first by grouping together all outcomes <span class="math inline">\(\omega\)</span> that lead to the same value <span class="math inline">\(x = X(\omega)\)</span> of <span class="math inline">\(X\)</span>. It’s only this second formula we actually use when calculating expectations.</p>

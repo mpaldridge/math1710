@@ -454,7 +454,14 @@ Hence we have the following:</p>
                       1   &amp; \text{for $x \geq 1$} . \end{cases} \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 9.4  </strong></span>If <span class="math inline">\(X\)</span> is the sum of two dice rolls, then the CDF <span class="math inline">\(F\)</span> is given by adding up the PMF. So, for example, if <span class="math inline">\(2 \leq x &lt; 3\)</span>, we have <span class="math inline">\(F(x) = p(2) = \frac{1}{36}\)</span>; if <span class="math inline">\(3 \leq x &lt; 4\)</span> we have <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}\)</span>, and so on. This gives</p>
+<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 9.4  </strong></span>If <span class="math inline">\(X\)</span> is the sum of two dice rolls, then the CDF <span class="math inline">\(F\)</span> is given by adding up the PMF. So, for example:</p>
+<ul>
+<li>If <span class="math inline">\(x &lt; 2\)</span>, then <span class="math inline">\(F(x) = 0\)</span>, because it’s not possible to have <span class="math inline">\(X \leq x &lt; 2\)</span>.</li>
+<li>If <span class="math inline">\(2 \leq x &lt; 3\)</span>, then <span class="math inline">\(F(x) = p(2) = \frac{1}{36}\)</span>, because <span class="math inline">\(X = 2\)</span> is the only outcome with <span class="math inline">\(X \leq x &lt; 3\)</span>.</li>
+<li>If <span class="math inline">\(3 \leq x &lt; 4\)</span>, then <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}\)</span>, as <span class="math inline">\(X = 2\)</span> or <span class="math inline">\(3\)</span> are the only outcomes with <span class="math inline">\(X \leq x\)</span>.</li>
+<li>…</li>
+<li>If <span class="math inline">\(x \geq 12\)</span>, then <span class="math inline">\(F(x) = 1\)</span>, because we always have <span class="math inline">\(X \leq 12 \leq x\)</span>.</li>
+</ul>
 <table>
 <colgroup>
 <col width="12%" />
