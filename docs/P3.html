@@ -363,7 +363,7 @@ We have
 \mathbb P(\text{second Ace}) &amp;= \frac{4}{52} = \frac1{13} \\
 \mathbb P(\text{first Heart and second Ace}) &amp;= \frac{12\times4 + 1\times 3}{52\times 51} = \frac{51}{52\times 51} = \frac{1}{52}
 \end{align*}\]</span>
-So <span class="math inline">\(\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{second Ace})\)</span>, and the events are independent.</p>
+Here, the <span class="math inline">\(12 \times 4\)</span> counted “a non-Ace Heart, followed by an Ace”, while the <span class="math inline">\(1 \times 3\)</span> counted “the Ace of Hearts, followed by a non-Heart Ace”. So <span class="math inline">\(\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{second Ace})\)</span>, and the events are independent.</p>
 </div>
 </div>
 </div>
@@ -372,32 +372,27 @@ So <span class="math inline">\(\mathbb P(\text{first Heart and second Ace}) = \m
 <div class="subq">
 <p><strong>(a)</strong> Are <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> independent?</p>
 <div class="myanswers">
-<p><em>Solution.</em> First note that the probability that a dice is even is <span class="math inline">\(\frac{3}{6} = \frac12\)</span>, and the probability the total of two dice is also <span class="math inline">\(\frac{18}{36} = \frac12\)</span>.</p>
-<ul>
-<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent by assumption.</li>
-<li>Since the sum of two even numbers is even, while even plus odd equals odd, we have that <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> occur if and only if both dice are even, which has probability <span class="math inline">\(\frac12 \times \frac12 = \frac14\)</span>. Hence <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \times \mathbb P(C) = \frac14\)</span>, so <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> are independent.</li>
-<li>For the same reason, <span class="math inline">\(V\)</span> and <span class="math inline">\(C\)</span> occur if and only if both dice are even, which has probability <span class="math inline">\(\frac12 \times \frac12 = \frac14\)</span>. Hence <span class="math inline">\(\mathbb P(B \cap C) = \mathbb P(B) \times \mathbb P(C) = \frac14\)</span>, so <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are independent.</li>
-</ul>
-<p>Hence <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are pairwise independent.</p>
+<p><em>Solution.</em> Let us first note that <span class="math inline">\(\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12\)</span>. It’s also the case that <span class="math inline">\(\mathbb P(C) = \frac{18}{36}\)</span>, for example by counting the even outcomes out of the 36 equally likely possibilities.</p>
+<p>We need to test is <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C) = \frac14\)</span> or not. By counting from the 36 possibilities, we see that indeed <span class="math inline">\(\mathbb P(A \cap C) = \frac{9}{36} = \frac{1}{4}\)</span>. Alternatively, we could note that <span class="math inline">\(\mathbb P(C \mid A) = \mathbb P(B) = \frac12\)</span>, since if the first dice is even, the second must be also even to get an even total. Then <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C \mid A) = \frac14\)</span>.</p>
+<p>So the events are indeepdent.</p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong> Are <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> independent?</p>
 <div class="myanswers">
-<p><em>Solution.</em> First note that the probability that a dice is even is <span class="math inline">\(\frac{3}{6} = \frac12\)</span>, and the probability the total of two dice is also <span class="math inline">\(\frac{18}{36} = \frac12\)</span>.</p>
-<ul>
-<li><span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent by assumption.</li>
-<li>Since the sum of two even numbers is even, while even plus odd equals odd, we have that <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> occur if and only if both dice are even, which has probability <span class="math inline">\(\frac12 \times \frac12 = \frac14\)</span>. Hence <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \times \mathbb P(C) = \frac14\)</span>, so <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> are independent.</li>
-<li>For the same reason, <span class="math inline">\(V\)</span> and <span class="math inline">\(C\)</span> occur if and only if both dice are even, which has probability <span class="math inline">\(\frac12 \times \frac12 = \frac14\)</span>. Hence <span class="math inline">\(\mathbb P(B \cap C) = \mathbb P(B) \times \mathbb P(C) = \frac14\)</span>, so <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are independent.</li>
-</ul>
-<p>Hence <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are pairwise independent.</p>
+<p><em>Solution.</em> Yes. The solution is essentially identical to part (a).</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Is it true that <span class="math inline">\(\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)\)</span>?</p>
+<p><strong>(c)</strong> Is it true that <span class="math inline">\(\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)\)</span>?</p>
 <div class="myanswers">
 <p><em>Solution.</em>
-For the same reasons as above, <span class="math inline">\(A \cap B \cap C\)</span> occurs if and only if both dice rolls are even, which happens with probability <span class="math inline">\(\frac12\times\frac12 = \frac14\)</span>. Hence, <span class="math inline">\(\mathbb P(A \cap B \cap C) = \frac14\)</span>, but <span class="math inline">\(\mathbb P(A)\,\mathbb P(B)\,\mathbb P(C) = \frac12\times\frac12\times\frac12 = \frac18\)</span>. So <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> are not mutually independent.</p>
+By checking the 36 possibilities, one sees that
+<span class="math display">\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac14 \times \frac14 \times \frac14 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]</span></p>
+<p>Alternatively, note that the total being even is certain if both dice rolls are certain, so
+<span class="math display">\[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]</span>
+to get the same result.</p>
+<p><strong>Group feedback:</strong> This shows that just because events are “pairwise independent”, it does not mean they are “mutually independent”.</p>
 </div>
 </div>
 </div>
@@ -434,7 +429,6 @@ For the expectation,
 <span class="math display">\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.3 + 0.5^2\times0.3+1^2\times0.2+2^2\times0.1 = 0.775 . \]</span>
 Then, using the computational formula,
 <span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = 0.775 - 0.45^2 = 0.5725. \]</span></p>
-<p><em>[<strong>Note:</strong> The answers at the bottom of the problem sheet for this were wrong.]</em></p>
 </div>
 </div>
 <div class="myq">
@@ -465,32 +459,15 @@ Then, using the computational formula,
 <div class="myanswers">
 <p><em>Solution.</em>
 First, a PMF must sum to 1, so
-<span class="math display">\[ 1 = 0.1 + 0.2 + 0.1 + b + c , \]</span>
-and hence
-<span class="math display">\[ b + c = 0.6 . \qquad\qquad (1) \]</span></p>
+<span class="math display">\[ 1 = 0.1 + 0.2 + 0.1 + b + 0.1 , \]</span>
+so <span class="math inline">\(b = 0.5\)</span>.</p>
 <p>Second, the expectation is
-<span class="math display">\[\begin{align*}
-\mathbb EX &amp;= 1\times0.1 + 2 \times 0.2 + 4 \times 0.1 + 5b + ac \\
-           &amp;= 0.9 + 5b + ac \\
-           &amp;= 4.3 .
-\end{align*}\]</span>
-Hence
-<span class="math display">\[ 5b + ac = 3.4 . \qquad\qquad (2) \]</span></p>
-<p>Third, the expectation of <span class="math inline">\(X^2\)</span> is
-<span class="math display">\[\begin{align*}
-\mathbb EX &amp;= 1^2\times0.1 + 2^2 \times 0.2 + 4^2 \times 0.1 + 5^2b + a^2c \\
-           &amp;= 2.5 + 25b + a^2c
-\end{align*}\]</span>
-and this must equal <span class="math inline">\(\mathbb EX^2 = \operatorname{Var}(X) + \mu^2 = 4.61 + 3.4^2 = 23.1\)</span>. Hence
-<span class="math display">\[ 25b + a^2 c = 20.6 \qquad\qquad (3) . \]</span></p>
-<p>Now we just have to solve the three equations. From (1) we get <span class="math inline">\(b = 0.6 - c\)</span>, and substituting into (2) and (3) gives
-<span class="math display">\[\begin{align*}
-(a-5)c &amp;= 0.4 \qquad\qquad (4) \\
-(a^2 - 25)c &amp;= 5.6 \qquad\qquad(5)
-\end{align*}\]</span>
-Noting that <span class="math inline">\(a^2 - 25 = (a+5)(a-5)\)</span> is a difference of two squares, we can divide (5) by (4) to get
-<span class="math display">\[ a + 5 = \frac{5.6}{0.4} = 14. \]</span>
-So <span class="math inline">\(a = 9\)</span>. Substituting this into (4) gives <span class="math inline">\(c = 0.1\)</span>, so <span class="math inline">\(b = 0.6 - 0.1 = 0.5\)</span>.</p>
+<span class="math display">\[
+\mathbb EX = 1\times0.1 + 2 \times 0.2 + 4 \times 0.1 + 5b + 0.1a
+           = 3.6 + 0.1a
+           = 4.3 .
+\]</span>
+So <span class="math inline">\(a = 7\)</span>.</p>
 </div>
 </div>
 <div class="myq">
@@ -511,7 +488,7 @@ So the answer is <span class="math inline">\(\frac95 \times 19.0 + 32 = 66.2\)</
 <p><em>Solution.</em>
 For the variance,
 <span class="math display">\[ \operatorname{Var}(T_F) = \operatorname{Var}\left(\tfrac95T_C + 32\right) = \left(\tfrac95\right)^2 \operatorname{Var}(T_C) = \tfrac{81}{25}\operatorname{Var}(T_C). \]</span>
-So the answer is <span class="math inline">\(\frac{81}{25} \times 10.4 = 33.7\)</span> °F<sup>2</sup>.</p>
+So the answer is <span class="math inline">\(\frac{81}{25} \times 10.4 = 33.7\)</span>.</p>
 </div>
 </div>
 </div>

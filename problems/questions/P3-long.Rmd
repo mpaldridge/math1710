@@ -4,7 +4,7 @@
 ::: {.myanswers data-latex=""}
 *Solution.* 
 We need to show that
-\[ \mathbb P(A \cap B^\comp) = \mathbb P(A) \, \mathbb P(B^\comp) . \tag{*} \]
+\[ \mathbb P(A \cap B^\comp) = \mathbb P(A) \, \mathbb P(B^\comp) . \tag{$*$} \]
 
 Note that
 \[ A = (A \cap B) \cup (A \cap B^\comp) , \]
@@ -17,7 +17,7 @@ Hence, the left-hand side of $(*)$ is
 &= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
 &= \mathbb P(A) \big(1 - \mathbb P(B)\big) ,
 \end{align*}
-where, in the second line, we used the fact that $A$ and $B$ are independent.
+where, in the second line, crucially we used the fact that $A$ and $B$ are independent to replace $\mathbb P(A \cap B)$ by $\mathbb P(A)\,\mathbb P(B)$.
 
 The right-hand side of $(*)$ is
 \[\mathbb P(A) \, \mathbb P(B^\comp) = \mathbb P(A) \big(1 - \mathbb P(B)\big) , \]
@@ -72,18 +72,42 @@ This is asking for $\mathbb P(B \mid L)$. We know $\mathbb P(L \mid B) = 0.2$, a
 
 :::: {.subq}
 **(a)** What is $\mathbb P(E_\mathrm{A})$, the probability that your hand contains the Ace of Spades?
+
+::: {.myanswers data-latex=""}
+*Solution.* There are 52 cards of which 13 will end up in my hand, so $\mathbb P(E_\mathrm{A}) = \frac{13}{52}$.
+:::
 ::::
 
 :::: {.subq}
 **(b)** Explain why $\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}$.
-:::::
+
+::: {.myanswers data-latex=""}
+*Solution.* Given I have the Ace of Spades, there are $52 - 1 = 51$ cards left available, of which $13 - 1 = 12$ will end up in my hand, so $\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}$.
+:::
+::::
 
 :::: {.subq}
 **(c)** Using the chain rule, calculate the probability that your hand contains all four of the Ace, King, Queen and Jack of Spades.
+
+::: {.myanswers data-latex=""}
+*Solution.* Continuing the logic of part (b), we have
+\[ \mathbb P(E_\mathrm{Q} \mid E_\mathrm{A} \cap E_\mathrm{K}) = \frac{11}{50} \qquad \mathbb P(E_\mathrm{J} \mid E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q}) = \frac{10}{49} . \]
+
+Using the chain rule,
+\begin{align*}
+P( E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q} \cap E_\mathrm{J} )
+  &= \mathbb P(E_\mathrm{A}) \, \mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) \, \mathbb P(E_\mathrm{Q} \mid E_\mathrm{A} \cap E_\mathrm{K}) \, \mathbb P(E_\mathrm{J} \mid E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q}) \\
+  &= \frac{13}{52} \times \frac{12}{51} \times \frac{11}{50} \times \frac{10}{49} = \frac{13 \times 12 \times 11 \times 10}{52 \times 51 \times 50 \times 49} , 
+\end{align*}
+which is the same as we got in lectures.
+:::
 ::::
 
 :::: {.subq}
 **(d)** Check that your answer agrees with the answer we found by classical probability methods in [Example 6.4](L06-classical-ii.html#exm:akqj) in Lecture 6. Which method do you prefer?
+
+::: {.myanswers data-latex=""}
+*Solution.* Personally, I slightly prefer this answer -- it seems more obvious how the answer relates to the method, whereas in lectures a lot of terms in a ratio of binomial coefficients "magically" cancelled out. Your mileage may vary.
 ::::
 :::::
 
@@ -132,6 +156,12 @@ where, in the fourth line we used Axiom 3 for the probability measure $\mathbb P
 
 :::: {.subq}
 **(a)** What are some advantages or disadvantages of performing the experiment this way?
+
+::: {.myanswers data-latex=""}
+*Solution.* The main advantage is that it seems likely that a soldier might want to lie in answer to a "straight question", given that if their superiors discovered they had taken illegal drugs, there could be very serious consequences. This method allows a certain "plausible deniability": just because the soldier answers "Yes", we cannot know for sure whether they have taken illegal drugs or merely picked the "Yes" card. Thus we might hope to get more honest answers this way. Perhaps you can think of other advantages.
+
+There could be disadvantages. The complicated set-up of the experiment could lead to the subjects (or experimenters) making an error. The scientists good be "lulled into a false sense of security" of thinking they get fully honest answers, when soldiers picking card 3 might still choose to lie. Perhaps you can think of other disadvantages.
+:::
 ::::
 
 :::: {.subq}
@@ -168,21 +198,39 @@ From the question we know that $\mathbb P(Y) = 0.4$. From part (a) we know that 
 
 :::: {.subq}
 **(a)** Show that the expectation of $X_n$ is $\mathbb EX_n = \displaystyle\frac{n+1}{2}$.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+We have $p(x) = \frac1n$ for $x = 1, 2, \dots, n$. So the expectation is
+\[ \mathbb EX = \sum_{x=1}^n x\,\frac{1}{n} = \frac{1}{n} \sum_{x = 1}^n x = \frac{1}{n}\, \frac{n(n+1)}{2} = \frac{n+1}{2} . \]
+:::
 ::::
 
 :::: {.subq}
 **(b)** Find the variance of $X_n$.
 
 ::: {.myanswers data-latex=""}
-*Hint.* I recommend using the computational formula. Can you find $\mathbb EX_n^2$.
+*Solution.*
+It turns out to be much easier to use the computational formual $\Var(X) = \mathbb EX^2 - \mu^2$. First, 
+\[ \mathbb EX^2 = \sum_{x=1}^n x^2 \,\frac{1}{n}  = \frac{1}{n} \sum_{x = 1}^n x^2 = \frac{1}{n}\,\frac{n(n+1)(2n+1)}{6} = \frac{(n+1)(2n + 1)}{6} . \]
+Then using $\mu = (n+1)/2$ from part (a), we have
+\[ \Var(X) =  \frac{(n+1)(2n + 1)}{6} - \left(\frac{n+1}{2}\right)^2 = \frac{(n+1)(4n + 2 - 3n -3)}{12} = \frac{(n+1)(n-1)}{12} = \frac{n^2 - 1}{12}  \]
 :::
 ::::
 
 :::: {.subq}
-**(c)** Let $Y$ be a discrete uniform distribution on $a+b-1$ values $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of $Y$.
+**(c)** Let $Y$ be a discrete uniform distribution on $b - a + 1$ values $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of $Y$.
+
+*[**Note:** "$b - a + 1$ values" is correct, but this was wrong earlier.]*
 
 ::: {.myanswers data-latex=""}
-*Hint.* Is there a function that maps a "standard" discrete uniform distribution, with an appriately chosen $n$, into this one?
+*Solution.* If we take $n = b - a + 1$, then $Y$ has the same distribution as $X_n + (a-1)$. This is because $x = 1$ maps to $y = 1 + (a-1) = a$; $x = 2$ maps to $y = 2 + (a-1) = a+1$; and so on; up to $x = n$ mapping to $y = n + (a-1) = (b - a + 1) + (a-1) = b$. So the ranges match up perfectly.
+
+Thus we have
+\[ \mathbb EY = \mathbb E\big(X_{b-a+1} + (a-1)\big) = \mathbb EX_{b-a+1} + (a-1)= \frac{b - a + 1 +1}{2} + (a-1) = \frac{a + b}{2}  \]
+and
+\[ \Var(Y) = \Var\big(X_{b-a+1} + (a-1)\big) = \Var(X_{b-a+1}) = \frac{(b - a + 1)^2 - 1}{12} . \]
+You can rearrange the variance a bit if you like, but it doesn't really get any nicer.
 :::
 ::::
 

@@ -73,7 +73,7 @@ We have
 \mathbb P(\text{second Ace}) &= \frac{4}{52} = \frac1{13} \\
 \mathbb P(\text{first Heart and second Ace}) &= \frac{12\times4 + 1\times 3}{52\times 51} = \frac{51}{52\times 51} = \frac{1}{52}
 \end{align*}
-So $\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{second Ace})$, and the events are independent.
+Here, the $12 \times 4$ counted "a non-Ace Heart, followed by an Ace", while the $1 \times 3$ counted "the Ace of Hearts, followed by a non-Heart Ace". So $\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{second Ace})$, and the events are independent.
 :::
 ::::
 :::::
@@ -85,13 +85,11 @@ So $\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})
 **(a)** Are $A$ and $C$ independent?
 
 ::: {.myanswers data-latex=""}
-*Solution.* First note that the probability that a dice is even is $\frac{3}{6} = \frac12$, and the probability the total of two dice is also $\frac{18}{36} = \frac12$.
+*Solution.* Let us first note that $\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12$. It's also the case that $\mathbb P(C) = \frac{18}{36}$, for example by counting the even outcomes out of the 36 equally likely possibilities.
 
-* $A$ and $B$ are independent by assumption.
-* Since the sum of two even numbers is even, while even plus odd equals odd, we have that $A$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(A \cap C) = \mathbb P(A) \times \mathbb P(C) = \frac14$, so $A$ and $C$ are independent.
-* For the same reason, $V$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(B \cap C) = \mathbb P(B) \times \mathbb P(C) = \frac14$, so $B$ and $C$ are independent.
+We need to test is $\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C) = \frac14$ or not. By counting from the 36 possibilities, we see that indeed $\mathbb P(A \cap C) = \frac{9}{36} = \frac{1}{4}$. Alternatively, we could note that $\mathbb P(C \mid A) = \mathbb P(B) = \frac12$, since if the first dice is even, the second must be also even to get an even total. Then $\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C \mid A) = \frac14$.
 
-Hence $A$, $B$ and $C$ are pairwise independent.
+So the events are indeepdent.
 :::
 ::::
 
@@ -99,22 +97,23 @@ Hence $A$, $B$ and $C$ are pairwise independent.
 **(b)** Are $B$ and $C$ independent?
 
 ::: {.myanswers data-latex=""}
-*Solution.* First note that the probability that a dice is even is $\frac{3}{6} = \frac12$, and the probability the total of two dice is also $\frac{18}{36} = \frac12$.
-
-* $A$ and $B$ are independent by assumption.
-* Since the sum of two even numbers is even, while even plus odd equals odd, we have that $A$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(A \cap C) = \mathbb P(A) \times \mathbb P(C) = \frac14$, so $A$ and $C$ are independent.
-* For the same reason, $V$ and $C$ occur if and only if both dice are even, which has probability $\frac12 \times \frac12 = \frac14$. Hence $\mathbb P(B \cap C) = \mathbb P(B) \times \mathbb P(C) = \frac14$, so $B$ and $C$ are independent.
-
-Hence $A$, $B$ and $C$ are pairwise independent.
+*Solution.* Yes. The solution is essentially identical to part (a).
 :::
 ::::
 
 :::: {.subq}
-**(b)** Is it true that $\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)$?
+**(c)** Is it true that $\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)$?
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-For the same reasons as above, $A \cap B \cap C$ occurs if and only if both dice rolls are even, which happens with probability $\frac12\times\frac12 = \frac14$. Hence, $\mathbb P(A \cap B \cap C) = \frac14$, but $\mathbb P(A)\,\mathbb P(B)\,\mathbb P(C) = \frac12\times\frac12\times\frac12 = \frac18$. So $A$, $B$ and $C$ are not mutually independent.
+By checking the 36 possibilities, one sees that
+\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac14 \times \frac14 \times \frac14 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
+
+Alternatively, note that the total being even is certain if both dice rolls are certain, so
+\[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]
+to get the same result.
+
+**Group feedback:** This shows that just because events are "pairwise independent", it does not mean they are "mutually independent".
 :::
 ::::
 :::::
@@ -137,8 +136,6 @@ For the variance, we start with
 \[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.3 + 0.5^2\times0.3+1^2\times0.2+2^2\times0.1 = 0.775 . \]
 Then, using the computational formula,
 \[ \Var(X) = \mathbb EX^2 - \mu^2 = 0.775 - 0.45^2 = 0.5725. \]
-
-*[**Note:** The answers at the bottom of the problem sheet for this were wrong.]*
 :::
 ::::
 
@@ -154,35 +151,16 @@ This random variable has $\mathbb EX = 4.3$. Find the values of $a$ and $b$.
 ::: {.myanswers data-latex=""}
 *Solution.*
 First, a PMF must sum to 1, so
-\[ 1 = 0.1 + 0.2 + 0.1 + b + c , \]
-and hence
-\[ b + c = 0.6 . \qquad\qquad (1) \]
+\[ 1 = 0.1 + 0.2 + 0.1 + b + 0.1 , \]
+so $b = 0.5$.
 
 Second, the expectation is
-\begin{align*}
-\mathbb EX &= 1\times0.1 + 2 \times 0.2 + 4 \times 0.1 + 5b + ac \\
-           &= 0.9 + 5b + ac \\
-           &= 4.3 .
-\end{align*}
-Hence
-\[ 5b + ac = 3.4 . \qquad\qquad (2) \]
-
-Third, the expectation of $X^2$ is
-\begin{align*}
-\mathbb EX &= 1^2\times0.1 + 2^2 \times 0.2 + 4^2 \times 0.1 + 5^2b + a^2c \\
-           &= 2.5 + 25b + a^2c 
-\end{align*}
-and this must equal $\mathbb EX^2 = \Var(X) + \mu^2 = 4.61 + 3.4^2 = 23.1$. Hence
-\[ 25b + a^2 c = 20.6 \qquad\qquad (3) . \]
-
-Now we just have to solve the three equations. From (1) we get $b = 0.6 - c$, and substituting into (2) and (3) gives
-\begin{align*}
-(a-5)c &= 0.4 \qquad\qquad (4) \\
-(a^2 - 25)c &= 5.6 \qquad\qquad(5)
-\end{align*}
-Noting that $a^2 - 25 = (a+5)(a-5)$ is a difference of two squares, we can divide (5) by (4) to get
-\[ a + 5 = \frac{5.6}{0.4} = 14. \]
-So $a = 9$. Substituting this into (4) gives $c = 0.1$, so $b = 0.6 - 0.1 = 0.5$.
+\[
+\mathbb EX = 1\times0.1 + 2 \times 0.2 + 4 \times 0.1 + 5b + 0.1a 
+           = 3.6 + 0.1a 
+           = 4.3 .
+\]
+So $a = 7$.
 :::
 ::::
 
@@ -209,7 +187,7 @@ So the answer is $\frac95 \times 19.0 + 32 = 66.2$ °F.
 *Solution.*
 For the variance,
 \[ \Var(T_F) = \Var\left(\tfrac95T_C + 32\right) = \left(\tfrac95\right)^2 \Var(T_C) = \tfrac{81}{25}\Var(T_C). \]
-So the answer is $\frac{81}{25} \times 10.4 = 33.7$ °F^2^.
+So the answer is $\frac{81}{25} \times 10.4 = 33.7$.
 :::
 ::::
 :::::

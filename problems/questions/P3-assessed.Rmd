@@ -4,7 +4,7 @@
 ::: {.myanswers data-latex=""}
 *Hints.* Some general advice:
 
-* Give the events in the question names. ("If we are to kill the demon then first we have to say its name.")
+* Give the events in the question names.
 * Note if any of the events make up a partition.
 * Write down what probabilities (or conditional probabilities) you are told in the question.
 * What probability (or conditional probability) do you want to find out?
@@ -18,13 +18,18 @@
 
 :::: {.subq}
 **(a)** Let $Y = aX$ be another random variable. What is $\mathbb EY$, in terms of $\mu = \mathbb EX$?
+
+::: {.myanswers data-latex=""}
+*Hint.* We have seen this in Lecture 10.
+:::
 ::::
 
 :::: {.subq}
 **(b)** Using part (a), show that $\Var(aX) = a^2 \Var(X)$.
 
 ::: {.myanswers data-latex=""}
-*Solution.*
+*Hint.* Use the definition of variance (or the computational formula), then use properties like the linearity of expectation. Don't actually compute any sums!
+<!--*Solution.*
 First, we recall that $\mathbb E(aX) = a\mathbb EX = a\mu$.
 
 Using the definitional formula, we have
@@ -39,7 +44,7 @@ where the penultimate equality used the linearity of expectation.
 \begin{multline}
 \Var(aX) = \mathbb E(aX)^2 - (a\mu)^2 = \mathbb E(a^2X^2) - a^2 \mu^2 \\
 = a^2 \mathbb EX^2 - a^2\mu^2 = a^2 (\mathbb EX^2 - \mu^2) = a^2 \Var(X) .
-\end{multline}
+\end{multline}-->
 :::
 ::::
 
@@ -47,13 +52,15 @@ where the penultimate equality used the linearity of expectation.
 **(c)** Prove that $\Var(X+b) = \Var(X)$.
 
 ::: {.myanswers data-latex=""}
+*Hint.* If $Z = X + b$, what is $\mathbb EZ$ in terms of $\mu$, to start with?
+<!--
 *Solution.*
 First recall that $\mathbb E(X + b) = \mathbb EX + b = \mu + b$.
 
 Using the definitional formula, we have
 \[ \Var(X + b) = \mathbb E\big((X + b) - (\mu + b)\big)^2 = \mathbb E(X - \mu)^2 = \Var(X) . \]
 
-(Using the computational formula is possible, but more hassle.)
+(Using the computational formula is possible, but more hassle.)-->
 :::
 ::::
 :::::

@@ -180,7 +180,7 @@ But we said that $\mathbb EX$ would be called $\mu$, so we can substitute in $\m
 as required.
 :::
 
-(A brief optional note for pedants: Writing $\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X$ is not, strictly speaking, justified by the result that above we called "linearity of expectation, 2". However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call "linearity of expectation, 2", of which it is a special case.)
+(A brief optional note for pedants: Writing $\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X$ is not, strictly speaking, justified by the result that above we called "linearity of expectation, 1". However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call "linearity of expectation, 2", of which it is a special case.)
 
 ::: {.example}
 Let $X \sim \text{Bern}(p)$ be a Bernoulli trial, and recall that $\mathbb EX = p$.
