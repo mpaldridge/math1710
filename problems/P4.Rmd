@@ -1,7 +1,8 @@
 # Problem Sheet 4  {#P4 .unnumbered}
 
 
-
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
 
 <style>
 .myanswers { 
@@ -15,7 +16,7 @@ display: none !important;
 
 
 ::: {.mysummary}
-This is Problem Sheet 4. This problem sheet covers [Section 6](#S06-discrete-dist) and [Section 7](S07-multi-rv). You should work through all the questions on this problem sheet during Weeks 6 and 7, in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by **2pm on  Monday 22 November**.
+This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by **2pm on  Monday 28 November**.
 :::
 
 ## A: Short questions {#P4-short .unnumbered}
@@ -34,8 +35,8 @@ This is Problem Sheet 4. This problem sheet covers [Section 6](#S06-discrete-dis
 ::: {.mysummary}
 The last two questions are **assessed questions**. These two questions count for 3% of your final mark for this module.
 
-The deadline for submitting your solutions is **2pm on Monday 22 November** at the beginning of Week 9, although I strongly recommend completing and submitting your work during Week 8. Submission will be via Gradescope; submission will open on Monday 15 November.
-Your work will be marked by your tutor and returned on Monday 29 November, when solutions will also be made available.
+The deadline for submitting your solutions is **2pm on Monday 28 November** at the beginning of Week 9. Submission will be via Gradescope.
+Your work will be marked by your tutor and returned on Monday 5 December, when solutions will also be made available.
 
 Both questions are "long questions", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 
 

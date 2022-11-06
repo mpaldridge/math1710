@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Problem Sheet 1 | MATH1710 Probability and Statistics I</title>
+  <title>Problem Sheet 4 | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Problem Sheet 1 | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Problem Sheet 4 | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Problem Sheet 1 | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Problem Sheet 4 | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="L02-dataviz.html"/>
-<link rel="next" href="L03-events.html"/>
+<link rel="prev" href="L12-poisson.html"/>
+<link rel="next" href="R.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -306,450 +306,478 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="P1" class="section level1 unnumbered hasAnchor">
-<h1>Problem Sheet 1<a href="P1.html#P1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="P4" class="section level1 unnumbered hasAnchor">
+<h1>Problem Sheet 4<a href="P4.html#P4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <style>
 .myanswers { 
 display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>You can <a href="P1-sheet.pdf">download this problem sheet as a PDF file</a></p>
+<p>This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by <strong>2pm on Monday 28 November</strong>.</p>
 </div>
-<div class="mysummary">
-<p>This is Problem Sheet 1, which covers material from Lectures <a href="L01-stats.html#L01-stats">1</a> and <a href="L02-dataviz.html#L02-dataviz">2</a> of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by <strong>2pm on Monday 17 October</strong>. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.</p>
-</div>
-<div id="P1-short" class="section level2 unnumbered hasAnchor">
-<h2>A: Short questions<a href="P1.html#P1-short" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="mysummary">
-<p>The first three questions are <strong>short questions</strong>, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the lectures. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.</p>
-</div>
+<div id="P4-short" class="section level2 unnumbered hasAnchor">
+<h2>A: Short questions<a href="P4.html#P4-short" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
-<p><strong>A1.</strong> Consider again the “number of Skittles in each packet” data from Example 1.1.
-<span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span></p>
+<p><strong>A1.</strong> Let <span class="math inline">\(X \sim \text{Bin}(20, 0.4)\)</span>. Calculate</p>
 <div class="subq">
-<p><strong>(a)</strong> Calculate the mean number of Skittles in each packet.</p>
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 8)\)</span></p>
 <div class="myanswers">
-<p><em>Solution.</em> This was in the notes:
-<span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.7 .\]</span></p>
+<p><em>Solution.</em>
+<span class="math display">\[ \mathbb P(X = 8) = \binom{20}{8} 0.4^8 \times 0.6^{12} = 0.180 . \]</span></p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Calculate the sample variance using the computational formula.</p>
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(8 \leq X \leq 11)\)</span></p>
 <div class="myanswers">
 <p><em>Solution.</em>
 <span class="math display">\[\begin{align*}
-s_x^2 &amp;= \frac{1}{13 - 1} \left( (59^2 + 59^2 + \cdots + 63^2) - 13 \times 60.6923^2)\right) \\
-      &amp;= \frac{1}{12} (47915 - 47886.2) \\
-      &amp;= 2.40
-\end{align*}\]</span></p>
-<p><strong>Group feedback:</strong> With the computational formula, the value <span class="math inline">\(\sum_i x_i^2 - n \bar{x}^2\)</span> is typically a fairly small number given as the difference between two very big numbers <span class="math inline">\(\sum_i x_i^2\)</span> and <span class="math inline">\(n \bar x^2\)</span>. This means you have to get the two big numbers very precise, to ensure the cancellation happens correctly; in particular, make sure you use plenty of decimal places of accuracy in <span class="math inline">\(\bar x\)</span>.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> Calculate the sample variance using the definitional
-formula.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-<span class="math display">\[\begin{align*}
-s_x^2 &amp;= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
-      &amp;= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
-      &amp;= \frac{1}{12} \times 28.77 \\
-      &amp;= 2.40
+\mathbb P(8 \leq X \leq 11) &amp;= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\
+&amp;= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
+&amp;= 0.180 + 0.160 + 0.117 + 0.071 \\
+&amp;= 0.528 .
 \end{align*}\]</span></p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(d)</strong> Out of (b) and (c), which calculation did you find easier, and why?</p>
+<p><strong>(c)</strong> <span class="math inline">\(\mathbb EX\)</span></p>
 <div class="myanswers">
-<p><em>Solution.</em> The computational formula required fewer presses of the calculator buttons, because <span class="math inline">\(\sum_i x_i^2\)</span> is fewer button-presses than <span class="math inline">\(\sum_i (x_i - \bar x)^2\)</span>, where you have to subtract the means before squaring.</p>
-<p>On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in <span class="math inline">\(\bar x\)</span> to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.</p>
-<p><strong>Group feedback:</strong> Many answer for (d) are fine provided you give a justification.</p>
+<p><em>Solution.</em> <span class="math inline">\(\mathbb EX = 20 \times 0.4 = 8\)</span>.</p>
 </div>
 </div>
 </div>
 <div class="myq">
-<p><strong>A2.</strong> Consider the following data sets of the age of elected politicians on a local council. (The “18–30” bin, for example, means from one’s
-18th birthday to the moment before one’s 30th birthday, so lasts 12 years.)</p>
-<table>
+<p><strong>A2.</strong> Let <span class="math inline">\(X \sim \text{Geom}(0.2)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 2)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X = 2) = 0.8^1 \times 0.2^1 = 0.16\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq 3)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.2 - 0.8\times 0.2 = 0.64\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\operatorname{Var}(X)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> Let <span class="math inline">\(X \sim \text{Po}(2.5)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 3)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math inline">\(\mathbb P(X = 3) = \mathrm e^{-2.5} \displaystyle\frac{2.5^3}{3!} = 0.214\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq \mathbb EX)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> First, <span class="math inline">\(\mathbb EX = 2.5\)</span>. So
+<span class="math display">\[\begin{align*}
+\mathbb P(X \geq \mathbb EX) &amp;= \mathbb P(X \geq 2.5) \\
+  &amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) - \mathbb P(X = 2) \\
+  &amp;= 1 - \mathrm e^{-2.5} - 2.5 \mathrm e^{-2.5} - \frac{2.5^2}{2} \mathrm e^{-2.5} \\
+  &amp;= 1 - 0.082 - 0.204 - 0.257 \\
+  &amp;= 0.456.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> Consider the following joint PMF:</p>
+<table style="width:100%;">
 <colgroup>
-<col width="25%" />
 <col width="16%" />
-<col width="29%" />
-<col width="28%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="center">Age (years)</th>
-<th align="center">Frequency</th>
-<th align="center">Relative frequency</th>
-<th align="center">Frequency density</th>
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(\phantom{p_X(x)}\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">18–30</td>
-<td align="center">1</td>
-<td align="center"></td>
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
 <td align="center"></td>
 </tr>
 <tr class="even">
-<td align="center">30–40</td>
-<td align="center">3</td>
-<td align="center"></td>
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(3k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
 <td align="center"></td>
 </tr>
 <tr class="odd">
-<td align="center">40–45</td>
-<td align="center">4</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center">45–50</td>
-<td align="center">5</td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">50–55</td>
-<td align="center">3</td>
-<td align="center"></td>
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
 <td align="center"></td>
 </tr>
 <tr class="even">
-<td align="center">55–60</td>
-<td align="center">1</td>
+<td align="center"><span class="math inline">\(\vphantom{p_Y(y)}\)</span></td>
 <td align="center"></td>
 <td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center">60–70</td>
-<td align="center">3</td>
 <td align="center"></td>
 <td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"><strong>Total</strong></td>
-<td align="center">20</td>
-<td align="center">1</td>
-<td align="center">—</td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
 <div class="subq">
-<p><strong>(a)</strong> Complete the table by filling in the relative frequency and
-frequency densities.</p>
+<p><strong>(a)</strong> Find the value of <span class="math inline">\(k\)</span> that makes this a joint PMF.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The total of the joint PMF is
+<span class="math display">\[ 2k + 2k + k + k + 3k + k + k + k + k + 2k = 15k \]</span>
+which must be 1, so <span class="math inline">\(k = \frac{1}{15}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Find the marginal PMFs of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By summing across the rows and down the columns, respectively, we get this:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(p_X(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{15}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{4}{15}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> What is the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> We get this by taking the <span class="math inline">\(x = 1\)</span> row of the table, than normalising it by dividing through by <span class="math inline">\(p_X(1) = \frac{6}{15}\)</span>. This gives
+<span class="math display">\[ p_{Y\mid X} (0 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (1 \mid 1) = \frac{3}{6} \qquad p_{Y\mid X} (2 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (3 \mid 1) = \frac{1}{6} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
+<div class="myanswers">
+<p><em>Solution.</em> No. For one example, <span class="math inline">\(p_{X,Y}(0,0) = \frac{2}{15}\)</span>, while <span class="math inline">\(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\)</span>, so they are not equal.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="P4-long" class="section level2 unnumbered hasAnchor">
+<h2>B: Long questions<a href="P4.html#P4-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="myq">
+<p><strong>B1.</strong> Calculate the CDF <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span> of the geometric distribution…</p>
+<div class="subq">
+<p><strong>(a)</strong> …by summing the PMF;</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have,using the standard formula for the sum of a finite geometric progression,
+<span class="math display">\[\begin{align*}
+F(x) &amp;= \sum_{y = 1}^x p(y) \\
+&amp;= \sum_{y = 1}^x (1-p)^{y-1} p \\
+&amp;= \frac{p\big(1 - (1-p)^x\big)}{1 - (1-p)} \\
+&amp;= \frac{p\big(1 - (1-p)^x\big)}{p} \\
+&amp;= 1 - (1 - p)^x .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> …by explaining how the “number of trials until success” definition tells us what <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> must be.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Note that <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> is precisely the probability that the first <span class="math inline">\(x\)</span> trials are failures, and hence that the first success comes strictly after the <span class="math inline">\(x\)</span>th trial. The probability that the first <span class="math inline">\(x\)</span> trials are failures is <span class="math inline">\((1-p)^x\)</span>. So <span class="math inline">\(F(x) = 1 - (1-p)^x\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let <span class="math inline">\(X \sim \text{Geom}(\frac{1}{36})\)</span>. Then
+<span class="math display">\[\begin{align*}
+\mathbb P(20 \leq X \leq 40) &amp;= \mathbb P(X \leq 40) - \mathbb P(X \leq 19) \\
+  &amp;= F(40) - F(19) \\
+  &amp;= \bigg(1 - \big(1 - \tfrac{1}{36})^{40}\bigg) - \bigg(1 - \big(1 - \tfrac{1}{36})^{19}\bigg) \\
+  &amp;= 0.676 - 0.414 \\
+  &amp;= 0.261.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B2.</strong> Let <span class="math inline">\(Y\)</span> be a geometric distribution with parameter <span class="math inline">\(p\)</span> according to the alternative “number of failures <em>before</em> the first success” definition.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the PMF for <span class="math inline">\(Y\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> Having <span class="math inline">\(Y = y\)</span> requires <span class="math inline">\(y\)</span> consecutive failures immediately followed by a success. So <span class="math inline">\(p_Y(y) = (1-p)^y p\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Calculate the expectation and variance of <span class="math inline">\(Y\)</span>. You may use without proof the fact that for a standard “number of trials up to and including the first success” geometric distribution we have <span class="math inline">\(\mathbb EX = 1/p\)</span> and <span class="math inline">\(\operatorname{Var}(X) = (1-p)/p^2\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> If <span class="math inline">\(X \sim \text{Geom}(p)\)</span> under the standard definition, then (as we saw in the notes) <span class="math inline">\(Y\)</span> has the same distribution as <span class="math inline">\(X -1\)</span>. Therefore,
+<span class="math display">\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} \]</span>
+and
+<span class="math display">\[ \operatorname{Var}(Y) = \operatorname{Var}(X -1) = \operatorname{Var}(X) = \frac{1-p}{p^2} .  \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B3</strong> Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
+<div class="subq">
+<p><strong>(a)</strong> Show that <span class="math inline">\(\mathbb EX(X-1) = \lambda^2\)</span>. You may use the Taylor series for the exponential,
+<span class="math display">\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We follow exactly the method used to calculate <span class="math inline">\(\mathbb EX\)</span> in the notes. We have
+<span class="math display">\[\begin{align*}
+\mathbb EX(X-1) &amp;= \sum_{x=0}^\infty x(x-1)\, \mathrm e^{-\lambda} \frac{\lambda^x}{x!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda} \sum_{x=2}^\infty \frac{\lambda^{x-2}}{(x - 2)!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda}\sum_{y=0}^\infty  \frac{\lambda^y}{y!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda} \, \mathrm e^{\lambda} \\
+  &amp;= \lambda^2  .
+\end{align*}\]</span>
+In the second line, we took a <span class="math inline">\(\lambda^2\)</span> and a <span class="math inline">\(\mathrm e^{-\lambda}\)</span> outside the brackets; cancelled the <span class="math inline">\(x\)</span> and <span class="math inline">\(x-1\)</span> out of the <span class="math inline">\(x!\)</span>; and removed the <span class="math inline">\(x = 0\)</span> and <span class="math inline">\(x = 1\)</span> terms from the sum, since they were 0 anyway. In the third line, we re-indexed the sum by setting <span class="math inline">\(y = x - 2\)</span>. In the fourth line, we used the Taylor series for the exponential</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Hence show that <span class="math inline">\(\operatorname{Var}(X) = \lambda\)</span>. You may use the fact, proved in the notes, that <span class="math inline">\(\mathbb EX = \lambda\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We know from part (a) that
+<span class="math display">\[ \mathbb EX(X-1) = \mathbb E(X^2 - X) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \lambda = \lambda^2 ,\]</span>
+which gives <span class="math inline">\(\mathbb EX^2 = \lambda^2 + \lambda\)</span>. We can then use the computational formula for the variance to get
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda .\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is <strong>(a)</strong> a roll-over (no jackpot winners), <strong>(b)</strong> a unique jackpot winner, or <strong>(c)</strong> when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We assume that each ticket is uniformly randomly chosen from all possible tickets, independent of all other tickets. Then the number of winners is <span class="math inline">\(X \sim \text{Bin}(15 \text{ million}, 1/(45 \text{ million}))\)</span>.
+It will be convenient to use a Poisson approximation with rate
+<span class="math display">\[ \lambda = 15 \text{ million} \times \frac{1}{45 \text{ million}} = \tfrac13 .  \]</span></p>
+<p>The probability there is a roll-over is
+<span class="math display">\[ \mathbb P(X = 0) \approx \mathrm e^{-1/3} = 0.72 . \]</span>
+The probability there is a unique jackpot winner is
+<span class="math display">\[ \mathbb P(X = 1) \approx \tfrac13 \mathrm e^{-1/3} = 0.24 . \]</span>
+The probability there are multiple winners is
+<span class="math display">\[ \mathbb P(X \geq 2) = 1 - \mathbb P(X = 0) - \mathbb P(X = 1) = 0.04  . \]</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be Bernoulli<span class="math inline">\((\frac12)\)</span> random variables.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the table for the joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
 <div class="myanswers">
 <p><em>Solution.</em></p>
 <table>
-<colgroup>
-<col width="25%" />
-<col width="16%" />
-<col width="29%" />
-<col width="28%" />
-</colgroup>
 <thead>
 <tr class="header">
-<th align="center">Age (years)</th>
-<th align="center">Frequency</th>
-<th align="center">Relative frequency</th>
-<th align="center">Frequency density</th>
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">18–30</td>
-<td align="center">1</td>
-<td align="center">0.05</td>
-<td align="center">0.0041</td>
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
 </tr>
 <tr class="even">
-<td align="center">30–40</td>
-<td align="center">3</td>
-<td align="center">0.15</td>
-<td align="center">0.015</td>
-</tr>
-<tr class="odd">
-<td align="center">40–45</td>
-<td align="center">4</td>
-<td align="center">0.2</td>
-<td align="center">0.04</td>
-</tr>
-<tr class="even">
-<td align="center">45–50</td>
-<td align="center">5</td>
-<td align="center">0.25</td>
-<td align="center">0.05</td>
-</tr>
-<tr class="odd">
-<td align="center">50–55</td>
-<td align="center">3</td>
-<td align="center">0.15</td>
-<td align="center">0.03</td>
-</tr>
-<tr class="even">
-<td align="center">55–60</td>
-<td align="center">1</td>
-<td align="center">0.05</td>
-<td align="center">0.01</td>
-</tr>
-<tr class="odd">
-<td align="center">60–70</td>
-<td align="center">3</td>
-<td align="center">0.15</td>
-<td align="center">0.015</td>
-</tr>
-<tr class="even">
-<td align="center"><strong>Total</strong></td>
-<td align="center">20</td>
-<td align="center">1</td>
-<td align="center">—</td>
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
 </tr>
 </tbody>
 </table>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> What is the median age bin?</p>
+<p><strong>(b)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a positive correlation.</p>
 <div class="myanswers">
-<p><em>Solution.</em> The 10th- and 11th-largest observations are both in the 45–50 bin, which is therefore the median bin.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> What is the modal age bin?</p>
-<div class="myanswers">
-<p><em>Solution.</em> The bin with the largest frequency density is 45–50, which is therefore the modal bin.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(d)</strong> Calculate (the standard approximation of) the mean age of the politicians.</p>
-<div class="myanswers">
-<p><em>Solution.</em> Pretending that each person is in the centre of their bin, we have
-<span class="math display">\[ \bar x = \frac{1}{20} (1\times24 + 3\times 35 + \cdots + 3 \times 65) = \frac{946.5}{20} = 47.3 . \]</span></p>
-</div>
-</div>
-</div>
-<div class="myq">
-<p><strong>A3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<p><img src="math1710_files/figure-html/unnamed-chunk-25-1.png" width="480" /></p>
-<div class="myanswers">
-<p><em>Solution.</em> Some answers could be:</p>
-<ul>
-<li>The median and inter-quartile range of Dataset 2 appear to be very slightly larger than those in Dataset 1, although the differences are very small and might not be important in real life.</li>
-<li>Dataset 2 has a few outliers; Dataset 1 has none.</li>
-<li>While Dataset 1 is fairly “balanced” either side of the median, Dataset 2 shows what statisticians call a “positive skew”: the data above the median is much more spread out than the data below the median.</li>
-</ul>
-<p><strong>Group feedback:</strong>
-You can probably think of other answers.</p>
-</div>
-</div>
-</div>
-<div id="P1-long" class="section level2 unnumbered hasAnchor">
-<h2>B: Long questions<a href="P1.html#P1-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="mysummary">
-<p>The next four questions are <strong>long questions</strong>, which are intended to be harder. Long questions often require you to think originally for yourself, not just directly follow procedures from the notes. You may not be able to solve all of these questions, although you should make multiple attempts to do so. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions – not only their mathematical content, but also how to clearly write good solutions – are likely to be the main topic for discussion in your tutorial.</p>
-</div>
-<div class="myq">
-<p><strong>B1.</strong> For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.</p>
-<div class="subq">
-<p><strong>(a)</strong> Six packets of Skittles are opened together, and the total number of sweets of each colour is:</p>
+<p><em>Solution.</em> For example</p>
 <table>
 <thead>
 <tr class="header">
-<th align="center"><strong>Colour</strong></th>
-<th align="center">Red</th>
-<th align="center">Orange</th>
-<th align="center">Yellow</th>
-<th align="center">Green</th>
-<th align="center">Purple</th>
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><strong>Number of Skittles</strong></td>
-<td align="center">67</td>
-<td align="center">71</td>
-<td align="center">87</td>
-<td align="center">74</td>
-<td align="center">62</td>
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
 </tr>
 </tbody>
 </table>
-<div class="myanswers">
-<p><em>Solution.</em>
-The modal colour is Yellow. The number of distinct outcomes is 5.</p>
-<p>It’s not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can’t be put “in order” from smallest to largest.</p>
-<p>It’s not possible to calculate the mean or sample variance, as these require us to have numerical data that can be “added up”, but this can’t be done with colours.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Shirt sizes for a university football squad:</p>
-<table style="width:100%;">
-<colgroup>
-<col width="33%" />
-<col width="16%" />
-<col width="11%" />
-<col width="11%" />
-<col width="11%" />
-<col width="16%" />
-</colgroup>
+<p><strong>(c)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a negative correlation.</p>
+<div class="myanswers">
+<p><em>Solution.</em> For example</p>
+<table>
 <thead>
 <tr class="header">
-<th align="center"><strong>Colour</strong></th>
-<th align="center">Xtra Small</th>
-<th align="center">Small</th>
-<th align="center">Medium</th>
-<th align="center">Large</th>
-<th align="center">Xtra Large</th>
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center"><strong>Number of shirts</strong></td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">6</td>
-<td align="center">4</td>
-<td align="center">5</td>
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
 </tr>
 </tbody>
 </table>
-<div class="myanswers">
-<p><em>Solution.</em>
-The modal shirt size is medium. The number of distinct outcomes is 4 (we don’t quite “Xtra Small”, which was not observed in the data).</p>
-<p>This time, we can order the data from smallest to largest, even though the data is not numerical. Since <span class="math inline">\((16 + 1)/2 - 8.5\)</span>, the median datapoint is the 8th or 9th datapoints, which are Large.</p>
-<p>Since <span class="math inline">\(1 + 0.25(16 - 1) = 4.75\)</span> the lower quartile is the 4th or 5th datapoints, which are Medium. Since <span class="math inline">\(1 + 0.75(16-1) = 12.25\)</span>, the upper quartile is the 12th or 13th datapoints, which are Xtra Large. So we can certainly say that the inner quartiles range from Medium to Xtra Large. We could probably also say that the interquartile range is 3 shirt sizes (Medium, Large, Xtra Large).</p>
-<p>Again, because the data is not numerical, we can’t add it up, so can’t calculate a mean or sample variance.</p>
-<p><strong>Group feedback:</strong> Make sure your explanation is clear for why we can’t calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be <em>ordered</em>.</p>
 </div>
 </div>
 </div>
-<div class="myq">
-<p><strong>B2.</strong> A summary statistic is informally said to be “robust” if it typically doesn’t change much if a small number of outliers are introduced to a large dataset, or “sensitive” if it often changes a lot when a small number of outliers are introduced. Briefly discuss the robustness or sensitivity of the following summary statistics: <strong>(a)</strong> mode; <strong>(b)</strong> median; <strong>(c)</strong> mean; <strong>(d)</strong> number of distinct outcomes; <strong>(e)</strong> inter-quartile range; and <strong>(f)</strong> sample variance.</p>
-<div class="myanswers">
-<p><em>Solutions.</em></p>
-<p><strong>(a)</strong> The mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so the outliers become “joint modes” along with everything else; but in this case the mode is not a useful statistic in the first place.)</p>
-<p><strong>(b)</strong> The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the “central mass” of the data. In particular, the <em>size</em> of the outliers won’t make any difference at all (only whether they are “high outliers” above the median or “low outliers” below the median). So the median is robust.</p>
-<p><strong>(c)</strong> The mean can change a lot if outliers are introduced, especially if the outlier is enormously far our from the data. So the mean is sensitive.</p>
-<p><strong>(d)</strong> The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced, so is robust.</p>
-<p><strong>(e)</strong> The interquartile range is robust, for the same reason as the median.</p>
-<p><strong>(f)</strong> The sample variance is sensitive, for the same reason as the mean.</p>
-<p>(You might like to think about situations where it’s better to use a robust statistic or better to use a sensitive statistic.)</p>
-<p><strong>Group feedback:</strong> I find it helpful to suppose I was studying the net worth of people in my tutorial group, and calculating summary statistics. How would those statistics changed change if Elon Musk (founder of Tesla, net worth roughly $200 billion) joined my tutorial group?</p>
-<p>Remember that “robust” and “sensitive” are general descriptions rather than precise mathematical definitions. So it doesn’t matter if you disagree with my opinions provided that you give clear and detailed explanations to back up your opinion.</p>
 </div>
-</div>
-<div class="myq">
-<p><strong>B3.</strong> Let <span class="math inline">\(\mathbf a = (a_1, a_2, \dots a_n)\)</span> and <span class="math inline">\(\mathbf b = (b_1, b_2, \dots, b_n)\)</span> be two real-valued vectors of the same length. Then the <em>Cauchy–Schwarz inequality</em> says that
-<span class="math display">\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]</span></p>
-<div class="subq">
-<p><strong>(a)</strong> By making a clever choice of <span class="math inline">\((a_i)\)</span> and <span class="math inline">\((b_i)\)</span> in the Cauchy–Schwarz inequality, show that <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>.</p>
-</div>
-<div class="myanswers">
-<p><em>Solutions.</em>
-Recalling the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>,
-<span class="math display">\[\begin{align*}
-s_{xy} &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,\\
-s_{x}^2 &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 ,\\
-s_{y}^2 &amp;= \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2 ,
-\end{align*}\]</span>
-and comparing them with the Cauchy–Schwarz inequality, it looks like taking <span class="math inline">\(a_i = x_i - \bar x\)</span> and <span class="math inline">\(b_i = y_i - \bar y\)</span> might be useful. Making the substitution, we get
-<span class="math display">\[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]</span></p>
-<p>These are very close to the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>, but are just missing the “<span class="math inline">\(1/(n-1)\)</span>”s; what we in fact have is
-<span class="math display">\[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]</span>
-Cancelling <span class="math inline">\((n-1)^2\)</span> from each side, we have <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>.</p>
-</div>
-<div class="subq">
-<p><strong>(b)</strong>
-Hence, show that the correlation <span class="math inline">\(r_{xy}\)</span> satisfies <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>.</p>
-</div>
-<div class="myanswers">
-<p><em>Solutions.</em>
-Recall the formula for the correlation is
-<span class="math display">\[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]</span>
-We can make part (a) look a bit like this dividing both sides by <span class="math inline">\(s_x^2 s_y^2\)</span>, to get
-<span class="math display">\[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]</span>
-In fact that’s the square of the correlation on the left-hand side, so we’ve shown that <span class="math inline">\(r_{xy}^2 \leq 1\)</span>.</p>
-<p>Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; number smalles than -1 become bigger than +1 when squared.) Hence we have shown that <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>, as required.</p>
-<p><strong>Group feedback:</strong> In part (b) there’s a temptation to “square-root both sides of the inequality”. But you have to be very careful when you do this – make sure you are properly accounting for the positive and negative square roots on both side (if necessary), and where that does or doesn’t require reversing the inequality. I recommend leaving the square-root operation until the last possible moment of the proof or, perhaps even better, reasoning through words as I did above.</p>
-<p>Remember that you can still attempt part (b) even if you got stuck on part (a).</p>
-</div>
-</div>
-<div class="myq">
-<p><strong>B4.</strong> A researcher wishes to study the effect of mental health on academic achievement. The researcher will collect data on the mental health of a cohort of students by asking them to fill in a questionnaire, and will measure academic achievement via the students’ scores on their university exams. Discuss some of the ethical issues associated with the collection, storage, and analysis of this data, and with the publication of the results of the analysis. Are there ways to mitigate these issues?</p>
-<p>(It’s not necessary to write an essay for this question – a few short bulletpoints will suffice. There may be an opportunity to discuss these issues in more detail in your tutorial.)</p>
-<div class="myanswers">
-<p><strong>Group feedback:</strong> There are no “correct” or “incorrect” answers here, but here are a few things that students in my own tutorials brought up, which may act as a prompt for your own discussions.</p>
-<ul>
-<li>It’s important the students/subjects have given their consent for their data to be used this way. It must be “informed consent”, where they understand for what purpose the data will be used, how it will be stored, and so on. It must be easy and painless for students to decline to take part.</li>
-<li>Consideration should be given on how to anonymise the data as much as possible – it’s not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.</li>
-<li>Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could “leak” that way. Perhaps imprecise data, such as classes rather than exact marks, might help while only slightly reducing the usefulness of the data?</li>
-<li>On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of “open science” suggest that the data should be kept – and even publically made available – for other researchers to check the work. There are competing ethical considerations here.</li>
-<li>If correlations are found in the data, care should be taken when publishing the analysis not to wrongly suggest a causation. (Just because X and Y are positively correlated, it doesn’t mean that X <em>causes</em> Y – or that Y causes X.)</li>
-</ul>
-<p>You can probably think of many other things.</p>
-</div>
-</div>
-</div>
-<div id="P1-assessed" class="section level2 unnumbered hasAnchor">
-<h2>C: Assessed questions<a href="P1.html#P1-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="P4-assessed" class="section level2 unnumbered hasAnchor">
+<h2>C: Assessed questions<a href="P4.html#P4-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
-<p>The last two questions are <strong>assessed questions</strong>. This means you will submit your answers, and your answers will be marked by your tutor. These two questions count for 3% of your final mark for this module. If you get stuck, your tutor may be willing to give you a small hint in your tutorial.</p>
-<p>The deadline for submitting your solutions is <strong>2pm on Monday 17 October</strong> at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva.
-You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) – please do not just submit photographs. Your work will be marked by your tutor and returned on Monday 24 October, when solutions will also be made available.</p>
-<p>Question C1 is a “short question”, where brief explanations or working are sufficient; Question C2 is a “long question”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
+<p>The last two questions are <strong>assessed questions</strong>. These two questions count for 3% of your final mark for this module.</p>
+<p>The deadline for submitting your solutions is <strong>2pm on Monday 28 November</strong> at the beginning of Week 9. Submission will be via Gradescope.
+Your work will be marked by your tutor and returned on Monday 5 December, when solutions will also be made available.</p>
+<p>Both questions are “long questions”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 <div class="myq">
-<p><strong>C1.</strong> The monthly average exchange rate for US dollars into British pounds over a 12-month period was:
-<span class="math display">\[\begin{gather*}
-1.306, \ 1.301, \ 1.290, \ 1.266, \ 1.268, \ 1.302,\\
-1.317, \ 1.304, \ 1.284, \ 1.268, \ 1.247, \ 1.215.
-\end{gather*}\]</span></p>
+<p><strong>C1.</strong> A collector wants to collect football stickers to fill an album. There are <span class="math inline">\(n\)</span> unique stickers to collect. Each time the collector buys a sticker, it is one of the <span class="math inline">\(n\)</span> stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having “swaps”, where he has received the same sticker more than once, so he will likely need to buy more than <span class="math inline">\(n\)</span> stickers in total to fill his album. But how many?</p>
 <div class="subq">
-<p><strong>(a)</strong> Calculate the median for this data.</p>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> Calculate the mean for this data.</p>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> Calculate the sample variance for this data.</p>
-</div>
+<p><strong>(a)</strong> Suppose the collector has already got <span class="math inline">\(j\)</span> unique stickers (and some number of swaps). Let <span class="math inline">\(X_j\)</span> be the the number of extra stickers he buys until getting a new unique sticker. Explain why <span class="math inline">\(X_j\)</span> is geometrically distributed, and state the parameter <span class="math inline">\(p = p_j\)</span> of the geometric distribution.</p>
 <div class="myanswers">
-<p><em>Hints.</em>
-Have you checked the definitions of these statistics from Subsection 1.3 of the notes?</p>
+<p><em>Hint.</em> To get a new sticker you need to “succeed” in an experiment, where “failure” is “receiving a sticker you already have a copy of” and “success” is “receiving a new sticker you haven’t already got”. What is the probabiltiy of success?</p>
+</div>
 </div>
 <div class="subq">
-<p><strong>(d)</strong> Is the mode an appropriate summary statistic for this sort of data? Why/why not?</p>
+<p><strong>(b)</strong> Hence, show that the expected number of stickers the collector must buy to fill his album is
+<span class="math display">\[ n \sum_{k=1}^n \frac{1}{k} . \]</span></p>
 <div class="myanswers">
-<p><em>Hint.</em>
-Is there a unique mode for this data? Why/why not? For what sort of data does the “mode” give us useful answers?</p>
+<p><em>Hint.</em> Recall the expectation of the geometric distribution, and use linearity of expectaiton.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> The Euro 2020 sticker album required <span class="math inline">\(n = 678\)</span> unique stickers to complete it, and stickers cost 15p each. Using the expression from (b), calculate the expected amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.</p>
+<div class="myanswers">
+<p><em>Hint.</em> In R, <code>sum(1 / (1:678))</code> sum the reciprocals of the integers from 1 to 678.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately <span class="math inline">\(n \log n\)</span>, where <span class="math inline">\(\log\)</span> denotes the natural logarithm to base <span class="math inline">\(\mathrm e\)</span>.</p>
+<div class="myanswers">
+<p><em>Hint.</em> A detailed proof is not required – just informally explain why the sum is approximately the area under the function (ie the integral).</p>
 </div>
 </div>
 </div>
 <div class="myq">
-<p><strong>C2.</strong>
- <strong>(a)</strong> Prove the following computational formula for the sample covariance:
-<span class="math display">\[ s_{xy} = \frac{1}{n-1} \left( \sum_{i=1}^n x_iy_i - n\bar x \bar y \right). \]</span></p>
+<p><strong>C2.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables, and let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be constants.</p>
 <div class="subq">
-<div class="myanswers">
-<p><em>Hint.</em>
-In Subsection 1.4 of the notes, we went from the definitional formula for the sample <em>variance</em> to a computational formula. Can you follow a similar argument here?</p>
-</div>
+<p><strong>(a)</strong> Starting from the definition of covariance, show that <span class="math inline">\(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\)</span>. You may find it helpful to remember that if <span class="math inline">\(\mathbb EX = \mu_X\)</span>, then <span class="math inline">\(\mathbb EaX = a\mu_X\)</span>.</p>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Suppose that a dataset <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span> (with <span class="math inline">\(n \geq 2\)</span>) has sample variance <span class="math inline">\(s_x^2 = 0\)</span>. Show that all the datapoints are in fact equal.</p>
+<p><strong>(b)</strong> Show that <span class="math inline">\(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X, Y)\)</span>.</p>
 <div class="myanswers">
-<p><em>Hint.</em>
-When is the square of something equal to 0? What can you say about the value of a square when it’s nonzero? What can you say about a “sum of squares” – that is, some numbers squared then added together?</p>
+<p><em>Hint.</em> You may find it helpful to look back at Theorem 7.4 in the notes.</p>
+</div>
+</div>
+<p>Now let <span class="math inline">\(X, Y, Z\)</span> be <em>independent</em> random variables with common variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<div class="subq">
+<p><strong>(c)</strong> Find the value of <span class="math inline">\(\operatorname{Corr}(2X - 3Y + 4, 2Y - Z - 1)\)</span>. You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.</p>
+<div class="myanswers">
+<p><em>Hint.</em> Start by calculating the covariance. Try to sort out the <span class="math inline">\(2X - 3Y + 4\)</span> part first, using the rules above. Once that’s done you can then deal with the <span class="math inline">\(2Y - Z -1\)</span> part with the same rules, because <span class="math inline">\(\operatorname{Cov}(U, V) = \operatorname{Cov}(V,U)\)</span>, so anything you can do to the first term you can also do to the second.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="P1-short-sols" class="section level2 unnumbered hasAnchor">
-<h2>Solutions to short questions<a href="P1.html#P1-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>A1.</strong> (a) 60.7, (b) 2.40, (c) 2.40, (d) —. <strong>A2.</strong> (a) —, (b) 45–50, (c) 45–50, (c) 47.3. <strong>A3.</strong> —</p>
+<div id="P4-short-sols" class="section level2 unnumbered hasAnchor">
+<h2>Solutions to short questions<a href="P4.html#P4-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>A1.</strong> (a) 0.180 (b) 0.528 (c) 8 <strong>A2.</strong> (a) 0.16 (b) 0.64 (c) 20 <strong>A3.</strong> (a) 0.214 (b) 0.456 <strong>A4.</strong> (a) <span class="math inline">\(\frac{1}{15}\)</span> (d) No</p>
 
 </div>
 </div>
@@ -761,8 +789,8 @@ When is the square of something equal to 0? What can you say about the value of 
           </div>
         </div>
       </div>
-<a href="L02-dataviz.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="L03-events.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L12-poisson.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

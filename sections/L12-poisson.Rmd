@@ -2,13 +2,15 @@
 
 ## Definition and properties  {#poisson}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/xbWQalpr5h0"></iframe>
 :::
 ::::
+-->
 
-Another important distribution is the Poisson distribution. The Poisson distribution (roughly "*pwa*-song") is typically used to model "the number of times something happens in a set period of time". For example, the number of emails you receive in a day; the number of claims at an insurance company each year; or the number of calls to call centre in one hour. (Famously, one of the first historical datasets modelled using a Poisson distribution was "the number of Prussian soldiers in different cavalry units kicked to death by their horse between 1875 and 1894".) We'll explain why the Poisson distribution is a good model for this in the next subsection.
+Another important distribution is the Poisson distribution. The Poisson distribution (roughly "*pwa*-song") is typically used to model "the number of times something happens in a set period of time". For example, the number of emails you receive in a day; the number of claims at an insurance company each year; or the number of calls to call centre in one hour. (Famously, one of the first historical datasets modelled using a Poisson distribution was "the number of Prussian soldiers in different cavalry units kicked to death by their own horse between 1875 and 1894".) We'll explain why the Poisson distribution is a good model for this in the next subsection.
 
 ::: {.definition}
 Let $X$ be a discrete random variable with range $\{0,1,2,\dots\}$ and PMF
@@ -170,21 +172,9 @@ Finally
 as $1 - \lambda/n \to 1$, and $x$ is fixed. Putting all that together gives the result.
 :::
 
-## Distributions as models for data  {#models}
+## Poisson process  {#poisson-process}
 
-Before finishing this section, I want to say a bit more about using these families of distributions as models for data. This is a preview of the Bayesian statistics we will discuss in Section 10 of this module, and previews an idea that is extremely important throughout the whole MATH1712 Probability and Statistics II.
-
-The families of distributions we have looked at here are sometimes called "parametric families", in that each of the distributions depended on one or more parameters: $p$  for the Bernoulli and geometric distributions; $\lambda$ for the Poisson distribution; and both $n$ and $p$ for the binomial distribution. (Later in the module we will also see some continuous parametric families: the exponential, normal and beta distributions.) This means we can adopt a model that data comes from a family, then use the data to estimate that parameter.
-
-For example:
-
-* You might assume that the number of emails you receive each day Poisson distributed with some unknown rate $\lambda$. You can then collect some data about how many emails you received each day for some large number of days, and use this data to estimate the value of $\lambda$.
-* A tutor might assume that the number of students that turn up to each tutorial is binomially distributed where $n$ is known to be 12, but $p$ is unknown. The tutor could then take records of how many students turned up to all the tutorials, and use this to estimate $p$.
-
-There are two main methods statisticians use to estimate parameters:
-
-* **Frequentist statistics:** Here, one seeks a parameter that makes the data that was actually seen very likely. For example, if the mean number of emails you received per day is $\bar x$, then this suggests that taking $\lambda = \bar x$, which leads to the expected number of emails being $\bar x$ also, could be a good estimate. The frequentist approach will pursued in detail in MATH1712.
-* **Bayesian statistics:** Here, one starts with a "prior" distribution for the parameters, which represents one's belief about which possible values for that parameter are more or less likely. One then uses Bayes' theorem to update that belief to a "posterior" distribution of one's beliefs about the parameter *given* the data. The Bayesian approach will be introduced in Section 10 of these notes, and there will be the opportunity to pursue this further later in your university career.
+A call centre is open 9 hours a day
 
 
 ## Summary  {#summary-06 .unnumbered}

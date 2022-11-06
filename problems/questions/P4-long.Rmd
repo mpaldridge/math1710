@@ -119,62 +119,44 @@ The probability there are multiple winners is
 ::::
 
 ::::: {.myq}
-**B5.**  Let $X_1, X_2, \dots, X_n$ be IID random variable with common expectation $\mu$ and common variance $\sigma^2$, and let $\overline X = (X_1 + \cdots + X_n)/n$ be the mean of these random variables. We will be considering the random variable $S^2$ given by
-\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
+**A5.** Let $X$ and $Y$ be Bernoulli$(\frac12)$ random variables.
 
 :::: {.subq}
-**(a)** By writing 
-\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]
-or otherwise, show that
-\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]
-
-::: {.myanswers data-latex=""}
-*Solution.*
-Using the suggestion in the question, we have
-\begin{align*}
-S^2 &= \sum_{i=1}^n (X_i - \overline X)^2 \\
-  &= \sum_{i=1}^n \big( (X_i - \mu) - (\overline X - \mu)  \big)^2 \\
-  &= \sum_{i=1}^n \big( (X_i - \mu)^2 - 2(X_i - \mu)(\overline X - \mu) + (\overline X - \mu)^2\big) \\
-  &= \sum_{i=1}^n (X_i - \mu)^2 - \sum_{i=1}^n 2(X_i - \mu)(\overline X - \mu) + \sum_{i=1}^n (\overline X - \mu)^2 \\
-  &= \sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n X_i - \sum_{i=1}^n \mu\right)(\overline X - \mu)  + (\overline X - \mu)^2 \sum_{i=1}^n 1 \\
-  &= \sum_{i=1}^n (X_i - \mu)^2 - 2(n\overline X - n\mu) (\overline X - \mu) + n (\overline X - \mu)^2 \\
-  &= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
-  &= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
-\end{align*}
-This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of $\overline X$ to write $\sum_{i=1}^n X_i$ as $n \overline X$.
-:::
-::::
-
-:::: {.subq}
-**(b)** Hence or otherwise, show that
-\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]
-You may use facts about $\overline X$ from the notes provided you state them clearly. (You may find it helpful to recognise some expectations as definitional formulas for variances, where appropriate.) <!--You might also find it useful to recall that if a random variable $Y$ has expectation $\mathbb EY = 0$, then $\mathbb EY^2 = \Var(Y)$.-->
-
-::: {.myanswers data-latex=""}
-*Solution.* Starting with the linearity of expectation, we have
-\begin{align*}
-\mathbb ES^2 &= \mathbb E \left( \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2  \right) \\
-  &= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
-  &= \sum_{i=1}^n \Var(X_i) - n \Var(\overline X) .
-\end{align*}
-The last line follows because $\mathbb EX_i = \mu$ for all $i$ by assumption, and we showed in the notes that $\mathbb E \overline X = \mu$ also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that $\Var(X_i) = \sigma^2$ by assumption, and we showed in the notes that $\Var(\overline X) = \sigma^2/n$. Hence
-\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]
-as required.
-:::
-::::
-
-:::: {.subq}
-**(c)** At the beginning of this course, we defined the sample variance of the values $x_1, x_2, \dots, x_n$ to be
-\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
-Explain one reason why we might consider it appropriate to use $1/(n-1)$ as the factor at the beginning of this expression, rather than simply $1/n$.
+**(a)** Write down the table for the joint PMF of $X$ and $Y$ if $X$ and $Y$ are independent.
 
 ::: {.myanswers data-latex=""}
 *Solution.* 
-We often model a data set $x_2, x_2, \dots, x_n$ as being realisations of an IID sequence of random variables $X_1, X_2, \dots, X_n$. In this case, we are using the summary statistic of the sample variance $s_x^2$ to "estimate" the variance $\Var(X_1) = \sigma^2$. Using the factor $1/(n-1)$ ensures that this estimator is correct "in expectation", because
-\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]
-This property of being correct in expectation is called being an "unbiased" estimator, and its usually considered beneficial for an estimator to be unbiased.
 
-Note that we already know that the sample mean $\bar x$ is an unbiased estimator for the expectation $\mathbb EX = \mu$, as we already know that $\mathbb E\overline X = \mu$.
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
+|:---:|:---:|:---:|
+| $y = 0$ | $\frac14$ | $\frac14$ |
+| $y = 1$ | $\frac14$ | $\frac14$ |
+:::
+::::
+
+:::: {.subq}
+**(b)** Write down a table for a joint PMF of $X$ and $Y$ that is consistent with their marginal distributions but that leads to $X$ and $Y$ having a positive correlation.
+
+::: {.myanswers data-latex=""}
+*Solution.* For example
+
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
+|:---:|:---:|:---:|
+| $y = 0$ | $\frac12$ | $0$ |
+| $y = 1$ | $0$ | $\frac12$ |
+:::
+::::
+
+:::: {.subq}
+**(c)** Write down a table for a joint PMF of $X$ and $Y$ that is consistent with their marginal distributions but that leads to $X$ and $Y$ having a negative correlation.
+
+::: {.myanswers data-latex=""}
+*Solution.* For example
+
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
+|:---:|:---:|:---:|
+| $y = 0$ | $0$ | $\frac12$ |
+| $y = 1$ | $\frac12$ | $0$ |
 :::
 ::::
 :::::

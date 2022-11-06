@@ -13,7 +13,7 @@ Each week there will be an R worksheet to work through in your own time. I recom
 |   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html)  | Monday 24 October (Week 4) |
 |   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html)   | --- |
 |   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html)  | Monday 7 November (Week 6) |
-|   6  |  RMarkdown (optional) | --- |
+|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd version](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
 |   7  |  Discrete distributions   |      Monday 21 November (Week 8)   |
 |   8  |  Discrete random variables  | --- |
 |   9  |  Normal distribution | Monday 5 December (Week 10) |

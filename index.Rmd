@@ -15,15 +15,25 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 
 ::: {.oldsched}
+**Week 6** (7--11 November):
+
+* [**Lecture 11:** Binomial and geometric distributions](#L07-expectation) (Monday 7 November)
+* [**Lecture 10:** Poisson distribution](#12-poisson) (Wednesday 9 November November)
+* **Tutorial:** to discuss Problem Sheet 3; check your timetable for details.
+* [**Problem Sheet 3:**](#P3) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 14 November.
+* [**R Worksheet 6:** R Markdown](#r-work) *optional* worksheet for this week.
+:::
+
+::: {.mysched}
 **Week 5** (31 October -- 4 November):
 
-* [**Lecture 9:** Discrete random variables](#L07-expectation) (Monday 31 October)
-* [**Lecture 10:** Expectation and variance](#L08-two-theorems) (Wednesday 2 November)
+* [**Lecture 9:** Discrete random variables](#L09-discrete-rv) (Monday 31 October)
+* [**Lecture 10:** Expectation and variance](#L10-expectation) (Wednesday 2 November)
 * [**Problem Sheet 3:**](#P3) Work through the short and long questions in preparation for your tutorial in Week 6. Deadline for assessed questions: Monday 14 November.
 * [**R Worksheet 5:** Plots II](#r-work) to be completed this week. Deadline for assessed questions: Monday 7 November.
 :::
 
-::: {.oldsched}
+::: {.mysched}
 **Week 4** (24--28 October):
 
 * [**Lecture 7:** Independence and conditional probability](#L07-conditional) (Monday 24 October)

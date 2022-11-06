@@ -144,48 +144,7 @@ By summing across the rows and down the columns, respectively, we get this:
 ::::
 ::::
 
-::::: {.myq}
-**A5.** Let $X$ and $Y$ be Bernoulli$(\frac12)$ random variables.
 
-:::: {.subq}
-**(a)** Write down the table for the joint PMF of $X$ and $Y$ if $X$ and $Y$ are independent.
-
-::: {.myanswers data-latex=""}
-*Solution.* 
-
-| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
-|:---:|:---:|:---:|
-| $y = 0$ | $\frac14$ | $\frac14$ |
-| $y = 1$ | $\frac14$ | $\frac14$ |
-:::
-::::
-
-:::: {.subq}
-**(b)** Write down a table for a joint PMF of $X$ and $Y$ that is consistent with their marginal distributions but that leads to $X$ and $Y$ having a positive correlation.
-
-::: {.myanswers data-latex=""}
-*Solution.* For example
-
-| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
-|:---:|:---:|:---:|
-| $y = 0$ | $\frac12$ | $0$ |
-| $y = 1$ | $0$ | $\frac12$ |
-:::
-::::
-
-:::: {.subq}
-**(c)** Write down a table for a joint PMF of $X$ and $Y$ that is consistent with their marginal distributions but that leads to $X$ and $Y$ having a negative correlation.
-
-::: {.myanswers data-latex=""}
-*Solution.* For example
-
-| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
-|:---:|:---:|:---:|
-| $y = 0$ | $0$ | $\frac12$ |
-| $y = 1$ | $\frac12$ | $0$ |
-:::
-::::
-:::::
 
 
 

@@ -1,5 +1,5 @@
 ---
-title: "Problem Sheet 2 (Solutions)"
+title: "Problem Sheet 3 (Solutions)"
 author: "MATH1710 Probability and Statistics I"
 date: "University of Leeds, 2022-23"
 output: pdf_document
