@@ -82,11 +82,13 @@ For my 10 biased coins that are each Heads with probability $0.7$, the expectati
 
 ## Geometric distribution  {#geometric}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/kQsgZ-kF6PY"></iframe>
 :::
 ::::
+-->
 
 ::: {.example}
 *I decide to roll a fair dice until I first roll a six, and then stop. What's the probability I get the first six on my 5th roll of the dice?*
@@ -103,7 +105,7 @@ Let $X$ be a discrete random variable with range $\{1,2,\dots\}$ and PMF
 Then we say that $X$ follows the **geometric distribution** with parameter $p$, and write $X \sim \text{Geom}(p)$.
 :::
 
-So a geometric random variable represents the number Bernoulli trials until the first success. In our previous example, the number of dice rolls until a six was $\text{Geom}(\frac16)$.
+So a geometric random variable represents the number of Bernoulli$(p)$ trials until the first success. In our previous example, the number of dice rolls until a six was $\text{Geom}(\frac16)$.
 
 
 ```{r geom-pic, cache = TRUE, echo = FALSE}
@@ -114,8 +116,19 @@ points(x+1+0.1, dgeom(x, 0.4), type = "h", lwd = 4, col = "red")
 legend("topright", c("Geom(0.2)", "Geom(0.4)"), col = c("blue", "red"), lwd = 4)
 ```
 
+::: {.example}
+*Let $X \sim \mathrm{Geom}(0.4)$. What is (a) $\mathbb P(X = 3)$? (b) $\mathbb P(X \geq 3)$.*
+
+For part (a), we have
+\[ \mathbb P(X = 3) = (1 - 0.4)^2 \times 0.4 = 0.144 . \]
+
+For part (b), we have
+\[ \mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.4 - (1-0.4)\times 0.4 = 1- 0.64 = 0.36 . \]
+:::
+
+
 ::: {.theorem}
-Let $X \sim \text{Geom}(n, p)$. Then
+Let $X \sim \text{Geom}(p)$. Then
 
 * $\mathbb EX = \displaystyle\frac1p$,
 * $\Var(X) = \displaystyle\frac{1-p}{p^2}$.

@@ -284,7 +284,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -366,12 +365,13 @@ However, in next section we will see an easier way, so we’ll reserve the proof
 </div>
 <div id="geometric" class="section level2 hasAnchor" number="11.2">
 <h2><span class="header-section-number">11.2</span> Geometric distribution<a href="L11-binomial-poisson.html#geometric" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="videowrap">
-<div class="videowrapper">
-<iframe src="https://www.youtube.com/embed/kQsgZ-kF6PY">
-</iframe>
-</div>
-</div>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/kQsgZ-kF6PY"></iframe>
+:::
+::::
+-->
 <div class="example">
 <p><span id="exm:unlabeled-div-63" class="example"><strong>Example 11.3  </strong></span><em>I decide to roll a fair dice until I first roll a six, and then stop. What’s the probability I get the first six on my 5th roll of the dice?</em></p>
 <p>For the first six to be on the 5th attempt, the first 4 rolls have to be non-sixes, and then the fifth roll has to be a six. This has probability
@@ -383,10 +383,17 @@ However, in next section we will see an easier way, so we’ll reserve the proof
 <span class="math display">\[ p(x) = (1-p)^{x-1}p . \]</span>
 Then we say that <span class="math inline">\(X\)</span> follows the <strong>geometric distribution</strong> with parameter <span class="math inline">\(p\)</span>, and write <span class="math inline">\(X \sim \text{Geom}(p)\)</span>.</p>
 </div>
-<p>So a geometric random variable represents the number Bernoulli trials until the first success. In our previous example, the number of dice rolls until a six was <span class="math inline">\(\text{Geom}(\frac16)\)</span>.</p>
+<p>So a geometric random variable represents the number of Bernoulli<span class="math inline">\((p)\)</span> trials until the first success. In our previous example, the number of dice rolls until a six was <span class="math inline">\(\text{Geom}(\frac16)\)</span>.</p>
 <p><img src="math1710_files/figure-html/geom-pic-1.png" width="672" /></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-65" class="example"><strong>Example 11.4  </strong></span><em>Let <span class="math inline">\(X \sim \mathrm{Geom}(0.4)\)</span>. What is (a) <span class="math inline">\(\mathbb P(X = 3)\)</span>? (b) <span class="math inline">\(\mathbb P(X \geq 3)\)</span>.</em></p>
+<p>For part (a), we have
+<span class="math display">\[ \mathbb P(X = 3) = (1 - 0.4)^2 \times 0.4 = 0.144 . \]</span></p>
+<p>For part (b), we have
+<span class="math display">\[ \mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.4 - (1-0.4)\times 0.4 = 1- 0.64 = 0.36 . \]</span></p>
+</div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-65" class="theorem"><strong>Theorem 11.2  </strong></span>Let <span class="math inline">\(X \sim \text{Geom}(n, p)\)</span>. Then</p>
+<p><span id="thm:unlabeled-div-66" class="theorem"><strong>Theorem 11.2  </strong></span>Let <span class="math inline">\(X \sim \text{Geom}(p)\)</span>. Then</p>
 <ul>
 <li><span class="math inline">\(\mathbb EX = \displaystyle\frac1p\)</span>,</li>
 <li><span class="math inline">\(\operatorname{Var}(X) = \displaystyle\frac{1-p}{p^2}\)</span>.</li>
@@ -397,7 +404,7 @@ Then we say that <span class="math inline">\(X\)</span> follows the <strong>geom
 with variance
 <span class="math display">\[ \operatorname{Var}(X) = \frac{1 - \frac16}{\big(\frac16\big)^2} = 30 . \]</span></p>
 <div class="proof">
-<p><span id="unlabeled-div-66" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
+<p><span id="unlabeled-div-67" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
 For the expectation, we want to calculate
 <span class="math display">\[ \mathbb EX = \sum_{x=1}^\infty x (1-p)^{x-1} p = p \sum_{x=0}^\infty x (1-p)^{x-1}. \]</span>
 (We can include the <span class="math inline">\(x = 0\)</span> term in the sum since it is equal to 0.)</p>

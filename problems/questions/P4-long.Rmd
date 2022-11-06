@@ -119,7 +119,7 @@ The probability there are multiple winners is
 ::::
 
 ::::: {.myq}
-**A5.** Let $X$ and $Y$ be Bernoulli$(\frac12)$ random variables.
+**B5.** Let $X$ and $Y$ be Bernoulli$(\frac12)$ random variables.
 
 :::: {.subq}
 **(a)** Write down the table for the joint PMF of $X$ and $Y$ if $X$ and $Y$ are independent.

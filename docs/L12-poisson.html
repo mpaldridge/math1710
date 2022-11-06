@@ -284,7 +284,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -319,7 +318,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 -->
 <p>Another important distribution is the Poisson distribution. The Poisson distribution (roughly “<em>pwa</em>-song”) is typically used to model “the number of times something happens in a set period of time”. For example, the number of emails you receive in a day; the number of claims at an insurance company each year; or the number of calls to call centre in one hour. (Famously, one of the first historical datasets modelled using a Poisson distribution was “the number of Prussian soldiers in different cavalry units kicked to death by their own horse between 1875 and 1894”.) We’ll explain why the Poisson distribution is a good model for this in the next subsection.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-67" class="definition"><strong>Definition 12.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{0,1,2,\dots\}\)</span> and PMF
+<p><span id="def:unlabeled-div-68" class="definition"><strong>Definition 12.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{0,1,2,\dots\}\)</span> and PMF
 <span class="math display">\[ p(x) = \mathrm e^{-\lambda}  \frac{\lambda^x}{x!} . \]</span>
 Then we say that <span class="math inline">\(X\)</span> follows the <strong>Poisson distribution</strong> with <strong>rate</strong> <span class="math inline">\(\lambda\)</span>, and write <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
 </div>
@@ -328,7 +327,7 @@ Then we say that <span class="math inline">\(X\)</span> follows the <strong>Pois
 <p><img src="math1710_files/figure-html/po-pic-1.png" width="672" /></p>
 <p>The Poisson distribution is named after the French mathematician <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Poisson/">Siméon-Denis Poisson</a> who wrote about it in 1837, although the origin of the idea is more than 100 years earlier with another French mathematician, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/De_Moivre/">Abraham de Moivre</a>.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-68" class="example"><strong>Example 12.1  </strong></span><em>An insurance company receives large insurance claims of over £100,000 at a rate of <span class="math inline">\(\lambda = 1.2\)</span> per day, modelled as a Poisson distribution and independent between days. What’s the probability that in a week (5 days) they get at least one large claim every day?</em></p>
+<p><span id="exm:unlabeled-div-69" class="example"><strong>Example 12.1  </strong></span><em>An insurance company receives large insurance claims of over £100,000 at a rate of <span class="math inline">\(\lambda = 1.2\)</span> per day, modelled as a Poisson distribution and independent between days. What’s the probability that in a week (5 days) they get at least one large claim every day?</em></p>
 <p>Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span> be the number of large claims received in a day. Then the probability there is at least one claim in a day – which is an “at least one” question, suggesting we look at the complement – is
 <span class="math display">\[ \mathbb P(X \geq 1) = 1 - \mathbb P(X = 0) = 1 - \mathrm e^{-1.2} \frac{1.2^0}{0!} = 1 - \mathrm e^{-1.2} =0.699 .    \]</span></p>
 <p>Since it’s assumed that days are independent, the probability there is at least one large claim all 5 days is
@@ -337,7 +336,7 @@ or about 17%.</p>
 </div>
 <p>The parameter <span class="math inline">\(\lambda\)</span> is called the “rate” because that indeed the number of emails (or insurance claims, or phone calls, or deaths by horse-kicking) that we expect to see.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-69" class="theorem"><strong>Theorem 12.1  </strong></span>Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>. Then</p>
+<p><span id="thm:unlabeled-div-70" class="theorem"><strong>Theorem 12.1  </strong></span>Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>. Then</p>
 <ul>
 <li><span class="math inline">\(p(x)\)</span> is indeed a PMF, in that <span class="math inline">\(\displaystyle\sum_{x=0}^\infty p(x) = 1\)</span>.</li>
 <li><span class="math inline">\(\mathbb EX = \lambda\)</span>,</li>
@@ -345,7 +344,7 @@ or about 17%.</p>
 </ul>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-70" class="proof"><em>Proof</em>. </span>We’ll do the first two here, then you can do the variance in Problem Sheet 4.</p>
+<p><span id="unlabeled-div-71" class="proof"><em>Proof</em>. </span>We’ll do the first two here, then you can do the variance in Problem Sheet 4.</p>
 <p>It will be useful to remember the Taylor series for the exponential function,
 <span class="math display">\[ \mathrm e^\lambda = \sum_{x=0}^\infty \frac{\lambda^k}{x!} . \]</span></p>
 <p>To see that the PMF does indeed sum to one, note that the Taylor series gives us
@@ -366,23 +365,24 @@ where we used the Taylor series again.</p>
 </div>
 <div id="poisson-approx" class="section level2 hasAnchor" number="12.2">
 <h2><span class="header-section-number">12.2</span> Poisson approximation to the binomial<a href="L12-poisson.html#poisson-approx" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="videowrap">
-<div class="videowrapper">
-<iframe src="https://www.youtube.com/embed/5Ma4YIF_r7w">
-</iframe>
-</div>
-</div>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/5Ma4YIF_r7w"></iframe>
+:::
+::::
+-->
 <p>Suppose I own a watch shop in Leeds. My watches are very expensive, so I don’t need to sell many each day – in fact, I sell an average of 4.8 watches per day. How should I model the number of watches sold each day as a random variable?</p>
 <p>One way could be to say this. There are <span class="math inline">\(n\)</span> people living in Leeds or nearby, and, on any given day, each of them will independently buy a watch from my shop with probability <span class="math inline">\(p\)</span>. Thus the total number of watches I sell could be modelled as a binomial distribution <span class="math inline">\(\text{Bin}(n, p)\)</span>.</p>
-<p>But what should <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> be? To make the average <span class="math inline">\(\mathbb EX = np = 4.8\)</span>, I should take <span class="math inline">\(p = 4.8/n\)</span>. But what about <span class="math inline">\(n\)</span>? We know <span class="math inline">\(n\)</span> is a very big number, because Leeds is a big city, so let’s take a limit as <span class="math inline">\(n \to \infty\)</span>. It turns out, that this distribution <span class="math inline">\(\text{Bin}(n, 4.8/n)\)</span> becomes a Poisson(4.8) distribution!</p>
+<p>But what should <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> be? To make the average <span class="math inline">\(\mathbb EX = np = 4.8\)</span>, I must take <span class="math inline">\(p = 4.8/n\)</span>. But what about <span class="math inline">\(n\)</span>? We know <span class="math inline">\(n\)</span> is a very big number, because Leeds is a big city, so let’s take a limit as <span class="math inline">\(n \to \infty\)</span>. It turns out, that this distribution <span class="math inline">\(\text{Bin}(n, 4.8/n)\)</span> becomes a Poisson(4.8) distribution!</p>
 <div class="theorem">
-<p><span id="thm:po-bint" class="theorem"><strong>Theorem 12.2  </strong></span>Fix <span class="math inline">\(\lambda \geq 0\)</span>, and let <span class="math inline">\(X_n \sim \text{Bin}(n, \lambda/n)\)</span> for all integers <span class="math inline">\(n \geq \lambda\)</span>. Then <span class="math inline">\(X_n \to \text{Po}(\lambda)\)</span> in distribution as <span class="math inline">\(n \to infty\)</span>, by which we mean that if <span class="math inline">\(Y \sim \text{Po}(\lambda)\)</span>, then
+<p><span id="thm:po-bint" class="theorem"><strong>Theorem 12.2  </strong></span>Fix <span class="math inline">\(\lambda \geq 0\)</span>, and let <span class="math inline">\(X_n \sim \text{Bin}(n, \lambda/n)\)</span> for all integers <span class="math inline">\(n \geq \lambda\)</span>. Then <span class="math inline">\(X_n \to \text{Po}(\lambda)\)</span> in distribution as <span class="math inline">\(n \to \infty\)</span>, by which we mean that if <span class="math inline">\(Y \sim \text{Po}(\lambda)\)</span>, then
 <span class="math display">\[ p_{X_n}(x) \to p_Y(x) \qquad \text{for all $x \in \{0, 1, \dots \}$}. \]</span></p>
 </div>
 <p>A looser way to state the principle of this theorem would be this: <em>When <span class="math inline">\(n\)</span> is very large and <span class="math inline">\(p\)</span> very small, in such a way that <span class="math inline">\(np\)</span> is a small-ish number, then <span class="math inline">\(\text{Bin}(n,p)\)</span> is well approximated by <span class="math inline">\(\text{Po}(\lambda)\)</span> where <span class="math inline">\(\lambda = np\)</span>.</em></p>
 <p>This is why a Poisson distribution is a good model for the number of occurrences in a set time period. It applies if there lots of things that could happen (large <span class="math inline">\(n\)</span>), each one is individually unlikely (small <span class="math inline">\(p\)</span>), and on average a few of them will actually happen (<span class="math inline">\(\lambda = np\)</span> small-ish).</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-71" class="example"><strong>Example 12.2  </strong></span><em>A lecturer teaches a module with <span class="math inline">\(n = 100\)</span>, and estimate that each student turns up to office hours drop-in sessions independently with probability <span class="math inline">\(p = 0.035\)</span>. What is the probability that <strong>(a)</strong> exactly 5, <strong>(b)</strong> 2 or more students turn up to a drop-in session?</em></p>
+<p><span id="exm:unlabeled-div-72" class="example"><strong>Example 12.2  </strong></span><em>A lecturer teaches a module with <span class="math inline">\(n = 100\)</span> students, and estimates that each student turns up to office hours drop-in sessions independently with probability <span class="math inline">\(p = 0.035\)</span>. What is the probability that <strong>(a)</strong> exactly 5, <strong>(b)</strong> 2 or more students turn up to a drop-in session?</em></p>
 <p>If we let <span class="math inline">\(X\)</span> be the number of students that turn up to a drop-in session, then the exact distribution of <span class="math inline">\(X\)</span> is <span class="math inline">\(X \sim \text{Bin}(100, 0.035)\)</span>.</p>
 <p>For part (a), we then have
 <span class="math display">\[ \mathbb P(X = 5) = \binom{100}{5} 0.035^5 (1 - 0.035)^{100-5} = 0.134 .  \]</span></p>
@@ -414,11 +414,11 @@ which is very close to the exact answer above of <span class="math inline">\(0.8
 </div>
 <p>For completeness, we include a proof of Theorem <a href="L12-poisson.html#thm:po-bint">12.2</a> here, although since it discusses use of limits, it’s not examinable material for this module.</p>
 <div class="proof">
-<p><span id="unlabeled-div-72" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
+<p><span id="unlabeled-div-73" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
 We need to show that, as <span class="math inline">\(n \to \infty\)</span>,
-<span class="math display">\[ \binom nx \left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x}
-\to \mathrm{e}^{-\lambda} \frac{\lambda^x}{x!} . \]</span>
-Let’s try! The left-hand side is
+<span class="math display">\[ p_X(x) = \binom nx \left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x}
+\to \mathrm{e}^{-\lambda} \frac{\lambda^x}{x!} = p_Y(x) . \]</span>
+Let’s try. The left-hand side is, by some simple rearrangements,
 <span class="math display">\[\begin{align*}
 \binom nx &amp;\left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x} \\
   &amp;= \frac{n(n-1)\cdots(n-x+1)}{x!} \frac{\lambda^x}{n^x} \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} \\
@@ -426,9 +426,9 @@ Let’s try! The left-hand side is
   &amp;= \frac{\lambda^x}{x!} \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-x+1}{n} \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} \\
   &amp;= \frac{\lambda^x}{x!} 1 \left(1 - \frac{1}{n}\right) \cdots \left(1 - \frac{x-1}{n}\right)  \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} .
 \end{align*}\]</span></p>
-<p>We take each of the terms in turn. First <span class="math inline">\(\lambda^x / x!\)</span> looks very promising, and can stay. Second, each of the terms <span class="math inline">\(1, 1 - 1/n, \dots, 1 - (x-1)/n\)</span> tend to 1 as <span class="math inline">\(n \to \infty\)</span>. Third,
+<p>Now let’s take each of the terms in turn. First <span class="math inline">\(\lambda^x / x!\)</span> looks very promising, and can stay. Second, each of the terms <span class="math inline">\(1, 1 - 1/n, \dots, 1 - (x-1)/n\)</span> tend to 1 as <span class="math inline">\(n \to \infty\)</span>. Third,
 <span class="math display">\[ \left(1 - \frac{\lambda}{n}\right)^{n} \to \mathrm{e}^{-\lambda} ; \]</span>
-this is from a standard result that
+this is from the standard “compound interest” result that
 <span class="math display">\[ \left(1 + \frac{a}{n}\right)^{n} \to \mathrm{e}^{a} \qquad \text{as $n \to \infty$}. \]</span>
 Finally
 <span class="math display">\[\left(1 - \frac{\lambda}{n}\right)^{-x} \to 1 , \]</span>
@@ -437,7 +437,7 @@ as <span class="math inline">\(1 - \lambda/n \to 1\)</span>, and <span class="ma
 </div>
 <div id="poisson-process" class="section level2 hasAnchor" number="12.3">
 <h2><span class="header-section-number">12.3</span> Poisson process<a href="L12-poisson.html#poisson-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A call centre is open 9 hours a day</p>
+<p>A call centre is open 9 hours a day ……….</p>
 </div>
 <div id="summary-06" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L12-poisson.html#summary-06" class="anchor-section" aria-label="Anchor link to header"></a></h2>

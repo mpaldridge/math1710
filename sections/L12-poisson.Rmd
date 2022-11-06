@@ -77,21 +77,22 @@ where we used the Taylor series again.
 
 ## Poisson approximation to the binomial  {#poisson-approx}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/5Ma4YIF_r7w"></iframe>
 :::
 ::::
-
+-->
 
 Suppose I own a watch shop in Leeds. My watches are very expensive, so I don't need to sell many each day -- in fact, I sell an average of 4.8 watches per day. How should I model the number of watches sold each day as a random variable?
 
 One way could be to say this. There are $n$ people living in Leeds or nearby, and, on any given day, each of them will independently buy a watch from my shop with probability $p$. Thus the total number of watches I sell could be modelled as a binomial distribution $\text{Bin}(n, p)$.
 
-But what should $n$ and $p$ be? To make the average $\mathbb EX = np = 4.8$, I should take $p = 4.8/n$. But what about $n$? We know $n$ is a very big number, because Leeds is a big city, so let's take a limit as $n \to \infty$. It turns out, that this distribution $\text{Bin}(n, 4.8/n)$ becomes a Poisson(4.8) distribution!
+But what should $n$ and $p$ be? To make the average $\mathbb EX = np = 4.8$, I must take $p = 4.8/n$. But what about $n$? We know $n$ is a very big number, because Leeds is a big city, so let's take a limit as $n \to \infty$. It turns out, that this distribution $\text{Bin}(n, 4.8/n)$ becomes a Poisson(4.8) distribution!
 
 :::  {.theorem #po-bint}
-Fix $\lambda \geq 0$, and let $X_n \sim \text{Bin}(n, \lambda/n)$ for all integers $n \geq \lambda$. Then $X_n \to \text{Po}(\lambda)$ in distribution as $n \to infty$, by which we mean that if $Y \sim \text{Po}(\lambda)$, then
+Fix $\lambda \geq 0$, and let $X_n \sim \text{Bin}(n, \lambda/n)$ for all integers $n \geq \lambda$. Then $X_n \to \text{Po}(\lambda)$ in distribution as $n \to \infty$, by which we mean that if $Y \sim \text{Po}(\lambda)$, then
 \[ p_{X_n}(x) \to p_Y(x) \qquad \text{for all $x \in \{0, 1, \dots \}$}. \]
 :::
 
@@ -100,7 +101,7 @@ A looser way to state the principle of this theorem would be this: *When $n$ is 
 This is why a Poisson distribution is a good model for the number of occurrences in a set time period. It applies if there lots of things that could happen (large $n$), each one is individually unlikely (small $p$), and on average a few of them will actually happen ($\lambda = np$ small-ish).
 
 ::: {.example}
-*A lecturer teaches a module with $n = 100$, and estimate that each student turns up to office hours drop-in sessions independently with probability $p = 0.035$. What is the probability that **(a)** exactly 5, **(b)** 2 or more students turn up to a drop-in session?*
+*A lecturer teaches a module with $n = 100$ students, and estimates that each student turns up to office hours drop-in sessions independently with probability $p = 0.035$. What is the probability that **(a)** exactly 5, **(b)** 2 or more students turn up to a drop-in session?*
 
 If we let $X$ be the  number of students that turn up to a drop-in session, then the exact distribution of $X$ is $X \sim \text{Bin}(100, 0.035)$.
 
@@ -152,9 +153,9 @@ For completeness, we include a proof of Theorem \@ref(thm:po-bint) here, althoug
 ::: {.proof}
 *(Non-examinable)*
 We need to show that, as $n \to \infty$, 
-\[ \binom nx \left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x}
-\to \mathrm{e}^{-\lambda} \frac{\lambda^x}{x!} . \]
-Let's try! The left-hand side is
+\[ p_X(x) = \binom nx \left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x}
+\to \mathrm{e}^{-\lambda} \frac{\lambda^x}{x!} = p_Y(x) . \]
+Let's try. The left-hand side is, by some simple rearrangements,
 \begin{align*}
 \binom nx &\left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x} \\
   &= \frac{n(n-1)\cdots(n-x+1)}{x!} \frac{\lambda^x}{n^x} \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} \\
@@ -163,9 +164,9 @@ Let's try! The left-hand side is
   &= \frac{\lambda^x}{x!} 1 \left(1 - \frac{1}{n}\right) \cdots \left(1 - \frac{x-1}{n}\right)  \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} .
 \end{align*}
 
-We take each of the terms in turn. First $\lambda^x / x!$ looks very promising, and can stay. Second, each of the terms $1, 1 - 1/n, \dots, 1 - (x-1)/n$ tend to 1 as $n \to \infty$. Third, 
+Now let's take each of the terms in turn. First $\lambda^x / x!$ looks very promising, and can stay. Second, each of the terms $1, 1 - 1/n, \dots, 1 - (x-1)/n$ tend to 1 as $n \to \infty$. Third, 
 \[ \left(1 - \frac{\lambda}{n}\right)^{n} \to \mathrm{e}^{-\lambda} ; \]
-this is from a standard result that
+this is from the standard "compound interest" result that
 \[ \left(1 + \frac{a}{n}\right)^{n} \to \mathrm{e}^{a} \qquad \text{as $n \to \infty$}. \]
 Finally
 \[\left(1 - \frac{\lambda}{n}\right)^{-x} \to 1 , \]
@@ -174,7 +175,7 @@ as $1 - \lambda/n \to 1$, and $x$ is fixed. Putting all that together gives the 
 
 ## Poisson process  {#poisson-process}
 
-A call centre is open 9 hours a day
+A call centre is open 9 hours a day ..........
 
 
 ## Summary  {#summary-06 .unnumbered}
