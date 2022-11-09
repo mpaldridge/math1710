@@ -17,8 +17,8 @@ url:    'https://mpaldridge.github.io/math1710/'
 ::: {.oldsched}
 **Week 6** (7--11 November):
 
-* [**Lecture 11:** Binomial and geometric distributions](#L07-expectation) (Monday 7 November)
-* [**Lecture 10:** Poisson distribution](#12-poisson) (Wednesday 9 November November)
+* [**Lecture 11:** Binomial and geometric distributions](#11-binomial-geometric) (Monday 7 November)
+* [**Lecture 12:** Poisson distribution](#L12-poisson) (Wednesday 9 November November)
 * **Tutorial:** to discuss Problem Sheet 3; check your timetable for details.
 * [**Problem Sheet 3:**](#P3) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 14 November.
 * [**R Worksheet 6:** R Markdown](#r-work) *optional* worksheet for this week.

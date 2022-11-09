@@ -307,6 +307,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L12-poisson" class="section level1 hasAnchor" number="12">
 <h1><span class="header-section-number">Lecture 12</span> Poisson distribution<a href="L12-poisson.html#L12-poisson" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>We have seen three important families of discrete random variables: the Bernoulli, binomial, and geometric distributions. We now look at our fourth and final discrete distribution: the Poisson distribution.</p>
 <div id="poisson" class="section level2 hasAnchor" number="12.1">
 <h2><span class="header-section-number">12.1</span> Definition and properties<a href="L12-poisson.html#poisson" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
@@ -319,38 +320,50 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Another important distribution is the Poisson distribution. The Poisson distribution (roughly “<em>pwa</em>-song”) is typically used to model “the number of times something happens in a set period of time”. For example, the number of emails you receive in a day; the number of claims at an insurance company each year; or the number of calls to call centre in one hour. (Famously, one of the first historical datasets modelled using a Poisson distribution was “the number of Prussian soldiers in different cavalry units kicked to death by their own horse between 1875 and 1894”.) We’ll explain why the Poisson distribution is a good model for this in the next subsection.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-68" class="definition"><strong>Definition 12.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{0,1,2,\dots\}\)</span> and PMF
-<span class="math display">\[ p(x) = \mathrm e^{-\lambda}  \frac{\lambda^x}{x!} . \]</span>
+<span class="math display">\[ p_X(x) = \mathrm e^{-\lambda}  \frac{\lambda^x}{x!} . \]</span>
 Then we say that <span class="math inline">\(X\)</span> follows the <strong>Poisson distribution</strong> with <strong>rate</strong> <span class="math inline">\(\lambda\)</span>, and write <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
 </div>
-<p>I should note that we interpret <span class="math inline">\(0! = 1\)</span>, so
+<p>Here, <span class="math inline">\(\lambda\)</span> is a lower-case Greek letter “lambda”. I should also note that we interpret <span class="math inline">\(0! = 1\)</span>, so
 <span class="math display">\[ p(0) = \mathrm e^{-\lambda}  \frac{\lambda^0}{0!} = \mathrm e^{-\lambda}  \frac{1}{1} = \mathrm e^{-\lambda} . \]</span></p>
 <p><img src="math1710_files/figure-html/po-pic-1.png" width="672" /></p>
 <p>The Poisson distribution is named after the French mathematician <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Poisson/">Siméon-Denis Poisson</a> who wrote about it in 1837, although the origin of the idea is more than 100 years earlier with another French mathematician, <a href="https://mathshistory.st-andrews.ac.uk/Biographies/De_Moivre/">Abraham de Moivre</a>.</p>
+<!--
+::: {.example}
+*An insurance company receives large insurance claims of over £100,000 at a rate of $\lambda = 1.2$ per day, modelled as a Poisson distribution and independent between days. What's the probability that in a week (5 days) they get at least one large claim every day?*
+
+Let $X \sim \text{Po}(\lambda)$ be the number of large claims received in a day. Then the probability there is at least one claim in a day -- which is an "at least one" question, suggesting we look at the complement -- is
+\[ \mathbb P(X \geq 1) = 1 - \mathbb P(X = 0) = 1 - \mathrm e^{-1.2} \frac{1.2^0}{0!} = 1 - \mathrm e^{-1.2} =0.699 .    \]
+
+Since it's assumed that days are independent, the probability there is at least one large claim all 5 days is
+\[  \mathbb P(X \geq 1)^5 = 0.699^5 = 0.167, \]
+or about 17%.
+:::
+-->
 <div class="example">
-<p><span id="exm:unlabeled-div-69" class="example"><strong>Example 12.1  </strong></span><em>An insurance company receives large insurance claims of over £100,000 at a rate of <span class="math inline">\(\lambda = 1.2\)</span> per day, modelled as a Poisson distribution and independent between days. What’s the probability that in a week (5 days) they get at least one large claim every day?</em></p>
-<p>Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span> be the number of large claims received in a day. Then the probability there is at least one claim in a day – which is an “at least one” question, suggesting we look at the complement – is
-<span class="math display">\[ \mathbb P(X \geq 1) = 1 - \mathbb P(X = 0) = 1 - \mathrm e^{-1.2} \frac{1.2^0}{0!} = 1 - \mathrm e^{-1.2} =0.699 .    \]</span></p>
-<p>Since it’s assumed that days are independent, the probability there is at least one large claim all 5 days is
-<span class="math display">\[  \mathbb P(X \geq 1)^5 = 0.699^5 = 0.167, \]</span>
-or about 17%.</p>
+<p><span id="exm:unlabeled-div-69" class="example"><strong>Example 12.1  </strong></span><em>I receive emails from students at the rate of <span class="math inline">\(\lambda = 3\)</span> per hour, modelled as a Poisson distribution. What is the probability I get (a) two email in an hour, (b) no email in an hour?</em></p>
+<p>The number of emails per hour is <span class="math inline">\(X \sim \mathrm{Po}(3)\)</span>.</p>
+<p>For (a), we have
+<span class="math display">\[ \mathbb P(X = 3) = p(3) = \mathrm{e}^{-3} \frac{3^2}{2!} = \frac94 \mathrm{e}^{-3} = 0.224 . \]</span></p>
+<p>For part (b), and remembering that <span class="math inline">\(0! = 1\)</span>, we have
+<span class="math display">\[ \mathbb P(X = 3) = p(0) = \mathrm{e}^{-3} \frac{3^0}{0!} = \mathrm{e}^{-3} = 0.050 . \]</span></p>
 </div>
 <p>The parameter <span class="math inline">\(\lambda\)</span> is called the “rate” because that indeed the number of emails (or insurance claims, or phone calls, or deaths by horse-kicking) that we expect to see.</p>
 <div class="theorem">
 <p><span id="thm:unlabeled-div-70" class="theorem"><strong>Theorem 12.1  </strong></span>Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>. Then</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li><span class="math inline">\(p(x)\)</span> is indeed a PMF, in that <span class="math inline">\(\displaystyle\sum_{x=0}^\infty p(x) = 1\)</span>.</li>
 <li><span class="math inline">\(\mathbb EX = \lambda\)</span>,</li>
 <li><span class="math inline">\(\operatorname{Var}(X) = \lambda\)</span>.</li>
-</ul>
+</ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-71" class="proof"><em>Proof</em>. </span>We’ll do the first two here, then you can do the variance in Problem Sheet 4.</p>
+<p><span id="unlabeled-div-71" class="proof"><em>Proof</em>. </span>We’ll do the first two here, then you can do the variance in <a href="P4.html#P4-long">Problem Sheet 4</a>.</p>
 <p>It will be useful to remember the Taylor series for the exponential function,
 <span class="math display">\[ \mathrm e^\lambda = \sum_{x=0}^\infty \frac{\lambda^k}{x!} . \]</span></p>
-<p>To see that the PMF does indeed sum to one, note that the Taylor series gives us
+<p>For part 1, to see that the PMF does indeed sum to one, note that the Taylor series gives us
 <span class="math display">\[ \sum_{x=0}^\infty p(x) = \sum_{x=0}^\infty \mathrm e^{-\lambda} \frac{\lambda^x}{x!}
 = \mathrm e^{-\lambda} \sum_{x=0}^\infty  \frac{\lambda^x}{x!} = \mathrm e^{-\lambda}\,\mathrm e^{\lambda} = 1. \]</span></p>
-<p>For the expectation, we have
+<p>For part 2, for the expectation, we have
 <span class="math display">\[\begin{align*}
 \mathbb EX &amp;= \sum_{x=0}^\infty x\,\mathrm e^{-\lambda}  \frac{\lambda^x}{x!} \\
   &amp;= \mathrm e^{-\lambda} \sum_{x=1}^\infty x\,\frac{\lambda^x}{x!} \\
@@ -361,6 +374,9 @@ In the second line, we took <span class="math inline">\(\mathrm e^{-\lambda}\)</
 <span class="math display">\[ \mathbb EX = \lambda \mathrm e^{-\lambda} \sum_{y=0}^\infty \frac{\lambda^{y}}{y!}
 = \lambda \mathrm e^{-\lambda} \mathrm e^{\lambda} = \lambda , \]</span>
 where we used the Taylor series again.</p>
+</div>
+<div class="mysummary">
+<p>At this point in the lecture, we took a break to fill in <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u">the <strong>mid-semester check-in survey</strong></a>. This is open for the rest of the week and is anonymous. Written comments in answer to the last question are particular useful – I will read them all and report back next week on changes I am making to the module in response to your comments.</p>
 </div>
 </div>
 <div id="poisson-approx" class="section level2 hasAnchor" number="12.2">
@@ -373,7 +389,7 @@ where we used the Taylor series again.</p>
 ::::
 -->
 <p>Suppose I own a watch shop in Leeds. My watches are very expensive, so I don’t need to sell many each day – in fact, I sell an average of 4.8 watches per day. How should I model the number of watches sold each day as a random variable?</p>
-<p>One way could be to say this. There are <span class="math inline">\(n\)</span> people living in Leeds or nearby, and, on any given day, each of them will independently buy a watch from my shop with probability <span class="math inline">\(p\)</span>. Thus the total number of watches I sell could be modelled as a binomial distribution <span class="math inline">\(\text{Bin}(n, p)\)</span>.</p>
+<p>One way could be to say this. There are <span class="math inline">\(n\)</span> people living in Leeds or nearby, and, on any given day, each of them will independently buy a watch from my shop with some probability <span class="math inline">\(p\)</span>. Thus the total number of watches I sell could be modelled as a binomial distribution <span class="math inline">\(\text{Bin}(n, p)\)</span>.</p>
 <p>But what should <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> be? To make the average <span class="math inline">\(\mathbb EX = np = 4.8\)</span>, I must take <span class="math inline">\(p = 4.8/n\)</span>. But what about <span class="math inline">\(n\)</span>? We know <span class="math inline">\(n\)</span> is a very big number, because Leeds is a big city, so let’s take a limit as <span class="math inline">\(n \to \infty\)</span>. It turns out, that this distribution <span class="math inline">\(\text{Bin}(n, 4.8/n)\)</span> becomes a Poisson(4.8) distribution!</p>
 <div class="theorem">
 <p><span id="thm:po-bint" class="theorem"><strong>Theorem 12.2  </strong></span>Fix <span class="math inline">\(\lambda \geq 0\)</span>, and let <span class="math inline">\(X_n \sim \text{Bin}(n, \lambda/n)\)</span> for all integers <span class="math inline">\(n \geq \lambda\)</span>. Then <span class="math inline">\(X_n \to \text{Po}(\lambda)\)</span> in distribution as <span class="math inline">\(n \to \infty\)</span>, by which we mean that if <span class="math inline">\(Y \sim \text{Po}(\lambda)\)</span>, then
@@ -382,11 +398,11 @@ where we used the Taylor series again.</p>
 <p>A looser way to state the principle of this theorem would be this: <em>When <span class="math inline">\(n\)</span> is very large and <span class="math inline">\(p\)</span> very small, in such a way that <span class="math inline">\(np\)</span> is a small-ish number, then <span class="math inline">\(\text{Bin}(n,p)\)</span> is well approximated by <span class="math inline">\(\text{Po}(\lambda)\)</span> where <span class="math inline">\(\lambda = np\)</span>.</em></p>
 <p>This is why a Poisson distribution is a good model for the number of occurrences in a set time period. It applies if there lots of things that could happen (large <span class="math inline">\(n\)</span>), each one is individually unlikely (small <span class="math inline">\(p\)</span>), and on average a few of them will actually happen (<span class="math inline">\(\lambda = np\)</span> small-ish).</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-72" class="example"><strong>Example 12.2  </strong></span><em>A lecturer teaches a module with <span class="math inline">\(n = 100\)</span> students, and estimates that each student turns up to office hours drop-in sessions independently with probability <span class="math inline">\(p = 0.035\)</span>. What is the probability that <strong>(a)</strong> exactly 5, <strong>(b)</strong> 2 or more students turn up to a drop-in session?</em></p>
+<p><span id="exm:unlabeled-div-72" class="example"><strong>Example 12.2  </strong></span><em>A lecturer teaches a module with <span class="math inline">\(n = 100\)</span> students, and estimates that each student turns up to office hours drop-in sessions independently with probability <span class="math inline">\(p = 0.035\)</span>. What is the probability that (a) exactly 5, (b) 2 or more students turn up to a drop-in session?</em></p>
 <p>If we let <span class="math inline">\(X\)</span> be the number of students that turn up to a drop-in session, then the exact distribution of <span class="math inline">\(X\)</span> is <span class="math inline">\(X \sim \text{Bin}(100, 0.035)\)</span>.</p>
 <p>For part (a), we then have
 <span class="math display">\[ \mathbb P(X = 5) = \binom{100}{5} 0.035^5 (1 - 0.035)^{100-5} = 0.134 .  \]</span></p>
-<p>For part (b), we use the complement rule to get
+<p>For part (b), we have an “at least” event, so we use the complement rule to get
 <span class="math display">\[\begin{align*}
 \mathbb P(X \geq 2)
 &amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
@@ -437,7 +453,25 @@ as <span class="math inline">\(1 - \lambda/n \to 1\)</span>, and <span class="ma
 </div>
 <div id="poisson-process" class="section level2 hasAnchor" number="12.3">
 <h2><span class="header-section-number">12.3</span> Poisson process<a href="L12-poisson.html#poisson-process" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>A call centre is open 9 hours a day ……….</p>
+<p>Suppose an insurance company’s call centre is open 10 hours a day, 5 days a week. The call centre receives a “large claim” – a claim in excess of £100,000 – on average 0.2 times per hour. It seems reasonable, therefore, to model the number of large claims in an hour as a <span class="math inline">\(\mathrm{Po}(\lambda)\)</span> distribution with <span class="math inline">\(\lambda = 0.2\)</span>.</p>
+<p>How should we model the nuber of large claims in a day? If the call centre receives <span class="math inline">\(\lambda = 0.2\)</span> claims per hour, on average, then it receives <span class="math inline">\(10\lambda = 2\)</span> claims per 10 hours, or one day. It seems reasonable to model this with a <span class="math inline">\(\mathrm{Po}(10\lambda)\)</span> distribution.</p>
+<p>Further, the number of claims on one day and on the next day seems like they should be independent.</p>
+<p>The two ideas in the model above lead to what is called the “Poisson process”.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-74" class="definition"><strong>Definition 12.2  </strong></span>A random set of arrivals is said to follow a <strong>Poisson process</strong> with rate <span class="math inline">\(\lambda\)</span> if</p>
+<ol style="list-style-type: decimal">
+<li>The number of arrivals in a time period of length <span class="math inline">\(t\)</span> is <span class="math inline">\(\mathrm{Po}(\lambda t)\)</span>.</li>
+<li>The number of arrivals in two non-overlapping time periods are independent.</li>
+</ol>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-75" class="example"><strong>Example 12.3  </strong></span><em>Suppose the number of large claims, as discussed above, is modelled as a Poisson process with rate <span class="math inline">\(\lambda = 0.2\)</span> claims per hour. What is the probability the call centre receives at least one large claim every day this week?</em></p>
+<p>The number of large claims in one 10-hour day is <span class="math inline">\(X \sim \mathrm{Po}(10\lambda) = \mathrm{Po}(2)\)</span>. So the probability of getting at least one claim in a day is
+<span class="math display">\[ \mathbb P(X \geq 1) = 1 - \mathbb P(X = 0) = 1 - \mathrm{e}^{-2} = 0.865 . \]</span></p>
+<p>Because the number of claims in each of the five days this week are independent, the probability of getting at least one claim in all five days is
+<span class="math display">\[ \mathbb P(X \geq 1)^5 = 0.865^5 = 0.483 . \]</span></p>
+</div>
+<p>This is just a brief taster of the Poisson process. The Poisson process is studied in much more detail in the second-year module <a href="https://mpaldridge.github.io/math2750/">MATH2750 Introduction to Markov Processes</a>.</p>
 </div>
 <div id="summary-06" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L12-poisson.html#summary-06" class="anchor-section" aria-label="Anchor link to header"></a></h2>

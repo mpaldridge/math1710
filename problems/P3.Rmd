@@ -13,6 +13,9 @@ display: none !important;
 
 \commfalse
 
+::: {.mysummary}
+The [mid-semester check-in survey](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u) is still open.
+:::
 
 ::: {.mysummary}
 You can [download this problem sheet as a PDF file](P3-sheet.pdf)
