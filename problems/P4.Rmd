@@ -1,8 +1,9 @@
 # Problem Sheet 4  {#P4 .unnumbered}
 
-
+<!--
 \newcommand{\Cov}{\operatorname{Cov}}
 \newcommand{\Corr}{\operatorname{Corr}}
+-->
 
 <style>
 .myanswers { 

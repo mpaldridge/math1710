@@ -2,11 +2,13 @@
 
 ## Expectation of sums and products {#sum-product}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/BaEbVJZkGGY"></iframe>
 :::
 ::::
+-->
 
 When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. (In fact, it's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.)
 
@@ -62,19 +64,23 @@ It's still the case that $\mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = 5\mu$, becaus
 
 ## Covariance {#covariance}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/eXsUrJzcRCE"></iframe>
 :::
 ::::
+-->
 
 If we are interested at how two random variables vary together, we need to look at the covariance.
+
 
 \newcommand{\Cov}{\operatorname{Cov}}
 \newcommand{\Corr}{\operatorname{Corr}}
 
+
 ::: {.definition}
-Let $X$ and $Y$ be two random variables with expectations $\mu_X$ and $\mu_Y$ respectively. Then their **covariance** is
+Let $X$ and $Y$ be two random variables with expectations $\mathbb EX =\mu_X$ and $\mathbb EY = \mu_Y$ respectively. Then their **covariance** is
 \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]
 :::
 
@@ -98,10 +104,12 @@ and we're done.
 :::
 
 ::: {.example}
-We continue with our coin-tossing example. We know that $X \sim \text{Bin}(2, \frac12)$ so $\mu_X = 1$ and  $Y \sim \text{Bin}(3, \frac12)$ so $\mu_Y = 1.5$. We then need $\mathbb EXY$, which is
+We continue with our coin-tossing example from the last lecture, where $X$ is the number of Heads in the first two coin tosses and $Y$ the number of Heads in the first three coin tosses.
+
+We know that $X \sim \text{Bin}(2, \frac12)$ so $\mu_X = 1$ and  $Y \sim \text{Bin}(3, \frac12)$ so $\mu_Y = 1.5$. To find the covariance using the computational formula, we also need $\mathbb EXY$, which is
 \begin{align*}
 \mathbb EXY &= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
-  &= 0\times 0\,p_{X,Y}(0,0) + 0 \times 1 \, p_{X,Y}(0,1) + \cdots + 2\times 3 \,p_{X,Y}(2,3) \\
+  &= 0\times 0\times p_{X,Y}(0,0) + 0 \times 1 \times p_{X,Y}(0,1) + \cdots + 2\times 3 \times p_{X,Y}(2,3) \\
   &= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
   &= 2.
 \end{align*}
@@ -116,7 +124,9 @@ A very important fact is the following.
 If $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
 :::
 
-To use the ["contrapositive"](https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive), in our example, $\Cov(X,Y) \neq 0$, which means that $X$ and $Y$ are not independent (confirming what we already knew).
+Be careful not to get this the wrong way around: if $\Cov(X,Y) = 0$ it doesn't necessarily mean that $X$ and $Y$ are independent.
+
+To use the ["contrapositive"](https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive) (which is allowed!), in our example, we have $\Cov(X,Y) \neq 0$, which means that $X$ and $Y$ are not independent -- confirming what we already knew.
 
 ::: {.proof}
 Recall from Theorem \@ref(thm:linearity2) that if $X$ and $Y$ are independent, we have $\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y$. Then from the computational formula, we have
@@ -130,7 +140,7 @@ Here are some more important properties of the covariance.
 Let $X$, $Y$ and $Z$ be random variables. Then
 
 1. $\Cov(X,Y) = \Cov(Y,X)$;
-2. $\Cov(X,X) = \Var(X)$'
+2. $\Cov(X,X) = \Var(X)$;
 3. $\Cov(aX, Y) = a\,\Cov(X,Y)$;
 4. $\Cov(X + b, Y) = \Cov(X,Y)$;
 5. $\Cov(X + Y, Z) = \Cov(X, Z) + \Cov(Y,Z)$.
@@ -144,7 +154,7 @@ Parts 3, 4 and 5 are quite similar. We'll do part 5 here, and you can do parts 3
 For part 5, note that $\mathbb E(X + Y) = \mu_X + \mu_Y$ by linearity of expectation. Hence
 \begin{align*}
 \Cov(X + Y, Z)
-  &= \mathbb E (X + Y - \mu_X - \mu_Y)(Z - \mu_Z) \\
+  &= \mathbb E \big((X + Y) - (\mu_X + \mu_Y)\big)(Z - \mu_Z) \\
   &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
   &= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
   &= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
@@ -154,10 +164,12 @@ as required.
 :::
 
 We could calculate the covariance in our coin-tossing example a different way, by noting that $Y = X + Z$, where $Z \sim \text{Bern}(\frac12)$ represents the third coin toss and is independent of $X$. Then we have
-\begin{multline*}
-\Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) \\
-= \Var(X) + 0 = 2 \times \tfrac12 \times \big(1 - \tfrac12\big) = \tfrac12, \end{multline*}
-matching our previous calculation. In the above calculation, we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent, and we knew the variance of $X$ because $X \sim \text{Bin}(2, \frac12)$.
+\[
+\Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) =
+= \Var(X) + 0 = \Var(X) ,\]
+where  we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent.
+We already know that $\Var(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12$ because $X \sim \text{Bin}(2, \frac12)$.. So $\Cov(X,Y) = \frac12$,
+matching our previous calculation. 
 
 Now that we know some facts about the covariance, we can calculate the variance of a sum.
 
@@ -188,6 +200,9 @@ where we used the linearity of expectation.
 For the second part, recall that is $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
 :::
 
+
+## Correlation  {#correlation}
+
 It can sometimes be useful to "normalise" the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.
 
 ::: {.definition}
@@ -206,18 +221,10 @@ For the coin-tossing again, we have
 
 
 
-## Summary  {#summary-07 .unnumbered}
+## Summary  {#summary-L14 .unnumbered}
 
 ::: {.mysummary}
-* For two random variables, the joint PMF $p_{X,Y}$, marginal PMF $p_X$, and conditional PMF $p_{Y \mid X}$ are
-\begin{align*}
-  p_{X,Y}(x,y) &= \mathbb P(X =x \text{ and } Y = y) \\
-  p_X(x) &= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
-  p_{Y \mid X}(y \mid x) &= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)} 
-\end{align*}
-* Two random variables are independent if $p_{X,Y}(x,y) = p_X(x) \, p_Y(y)$.
 * $\mathbb E(X + Y) = \mathbb EX + \mathbb EY$
 * The covariance is $\Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y$.
 * $\Var(X + Y) = \Var(X) + 2\Cov(X,Y) + \Var(Y)$; or if $X$ and $Y$ are independent, then $\Var(X + Y) = \Var(X) + \Var(Y)$.
-* The law of large numbers says that the mean $\overline X_n$ of IID random variables tends to the expectation $\mu$ as $n \to \infty$.
 :::

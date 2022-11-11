@@ -1114,7 +1114,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-23-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-25-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -3337,7 +3337,9 @@ You will prove this on \protect\hyperlink{P3}{the problem sheet}.
 
 \commfalse
 
-The \href{https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u}{mid-semester check-in survey} is still open.
+\protect\hyperlink{P3-solutions}{Full \textbf{solutions to non-assessed questions}} are now available.
+
+\href{https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u}{The \textbf{mid-semester check-in} survey} is still open.
 
 You can \href{P3-sheet.pdf}{download this problem sheet as a PDF file}
 
@@ -3424,11 +3426,11 @@ Here, the \(12 \times 4\) counted ``a non-Ace Heart, followed by an Ace'', while
 \textbf{(a)} Are \(A\) and \(C\) independent?
 
 \begin{myanswers}
-\emph{Solution.} Let us first note that \(\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12\). It's also the case that \(\mathbb P(C) = \frac{18}{36}\), for example by counting the even outcomes out of the 36 equally likely possibilities.
+\emph{Solution.} Let us first note that \(\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12\). It's also the case that \(\mathbb P(C) = \frac{18}{36} = \frac12\), for example by counting the 18 even outcomes out of the 36 equally likely possibilities.
 
 We need to test is \(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C) = \frac14\) or not. By counting from the 36 possibilities, we see that indeed \(\mathbb P(A \cap C) = \frac{9}{36} = \frac{1}{4}\). Alternatively, we could note that \(\mathbb P(C \mid A) = \mathbb P(B) = \frac12\), since if the first dice is even, the second must be also even to get an even total. Then \(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C \mid A) = \frac14\).
 
-So the events are indeepdent.
+So the events are independent.
 
 \end{myanswers}
 
@@ -3444,7 +3446,7 @@ So the events are indeepdent.
 \begin{myanswers}
 \emph{Solution.}
 By checking the 36 possibilities, one sees that
-\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac14 \times \frac14 \times \frac14 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
+\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
 
 Alternatively, note that the total being even is certain if both dice rolls are certain, so
 \[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]
@@ -3539,8 +3541,10 @@ So the answer is \(\frac{81}{25} \times 10.4 = 33.7\).
 \textbf{B1.} Suppose \(A\) and \(B\) are independent events. Show that \(A\) and \(B^\mathsf{c}\) are also independent events.
 
 \begin{myanswers}
-\emph{Solution.}
-We need to show that
+\emph{Solution.} We know that
+\[ \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B) , \]
+because \(A\) and \(B\) are independent.
+We need to show that \(A\) and \(B^\mathsf{c}\) are independent, which means showing that
 \[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]
 
 Note that
@@ -3564,7 +3568,6 @@ Hence, we've shown the left- and right-hand sides of \((*)\) are equal, and we a
 
 \end{myanswers}
 
-::::: \{.myq\}
 \textbf{B2.} You are dealt a hand of 13 cards from a 52-card deck. Let \(E_\mathrm{A}, E_\mathrm{K}, E_\mathrm{Q}, E_\mathrm{J}\) respectively be the events that your hand contains the Ace, King, Queen and Jack of Spades.
 
 \textbf{(a)} What is \(\mathbb P(E_\mathrm{A})\), the probability that your hand contains the Ace of Spades?
@@ -4266,12 +4269,496 @@ Variance
 \bottomrule()
 \end{longtable}
 
-\hypertarget{P4}{%
-\chapter*{Problem Sheet 4}\label{P4}}
-\addcontentsline{toc}{chapter}{Problem Sheet 4}
+\hypertarget{L13-multi-rv}{%
+\chapter{Multiple random variables}\label{L13-multi-rv}}
+
+\hypertarget{joint}{%
+\section{Joint distributions}\label{joint}}
+
+In previous sections, we have looked at single discrete random variables in isolation. In the lecture and the next, we want to look at how multiple discrete random variables can interact.
+
+Consider tossing a fair coin 3 times. Let \(X\) be the number of Heads in the first two tosses, and let \(Y\) be the number of Heads over all three tosses.
+
+We know that \(X \sim \text{Bin}(2, \frac12)\) and \(Y \sim \text{Bin}(3, \frac12)\), so we can easily write down their probability mass functions:
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(x\) & \(x = 0\) & \(x = 1\) & \(x = 2\) \\
+\midrule()
+\endhead
+\(p_X(x)\) & \(\frac14\) & \(\frac12\) & \(\frac14\) \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule()
+\(y\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) \\
+\midrule()
+\endhead
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) \\
+\bottomrule()
+\end{longtable}
+
+When we have multiple random variables and we want to emphasise that a PMF refers to only one of them, we often use the phrase \textbf{marginal PMF} or \textbf{marginal distribution}. So the PMFs above are the \emph{marginal distributions} of \(X\) and \(Y\).
+
+However, we might also want to know how \(X\) and \(Y\) interact. To do this, we will need the \textbf{joint PMF}, given by
+\[ p_{X,Y}(x,y) = \mathbb P(X = x \text{ and } Y = y) . \]
+
+In our case of the coin tosses, we have
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(p_{X,Y}(x,y)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\phantom{p_X(x)}\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
+\(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule()
+\end{longtable}
+
+For just one worked example, we have \(p_{X,Y}(2,2) = \frac18\), because the only way to have \(X =2\) (two Heads in the first two coin tosses) and \(Y = 2\) (two Heads in the first \emph{three} coin tosses) is to toss Head, Head, Tail, with probability \((\frac12)^3 = \frac18\).
+
+For probabilities of events, we had that if some \(A_i\)s form a partition, then
+\[ \mathbb P(B) = \sum_i \mathbb P(B \cap A_i) . \]
+Note that the events \(\{X = x\}\), as \(x\) varies over the range of \(X\), also make up a partition. Therefore, we have
+\[ \mathbb P(Y = y) = \sum_x \mathbb P(X = x \text{ and } Y = y) ; \]
+or, to phrase this in terms of joint and marginal PMFs,
+\[ p_Y(y) = \sum_x p_{X,Y}(x, y) . \]
+In other words, to get the marginal distribution of \(Y\), we need to sum down the columns in the table of the joint distribution.
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(p_{X,Y}(x,y)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\phantom{p_X(x)}\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule()
+\end{longtable}
+
+In exactly the same way, we have
+\[ p_X(x) = \sum_y p_{X,Y}(x, y) ; \]
+so to get the marginal distribution of \(X\), we need to sum across the rows in the table of the joint distribution.
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(p_X(x)\) \\
+\midrule()
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \(\frac14\) \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \(\frac12\) \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \(\frac14\) \\
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule()
+\end{longtable}
+
+We can check that these marginal PMFs match those we started with. (The term ``marginal'' PMF or distribution is presumably because one ends up writing the values in the ``margins'' of the table.)
+
+In summary, we have learned the following:
+
+\begin{itemize}
+\tightlist
+\item
+  A joint PMF of two discrete random variables \(X\) and \(Y\) is
+  \[ p_{X,Y}(x, y) = \mathbb P(X = x \text{ and } Y = y) . \]
+\item
+  We can get the marginal distributions \(p_X(x) = \mathbb P(X = x)\) and \(p_Y(y) = \mathbb P(Y = y)\) by summing over the other variable:
+  \[ p_X(x) = \sum_x p_{X,Y}(x,y) \qquad p_Y(y) = \sum_x p_{X,Y}(x,y) . \]
+\end{itemize}
+
+Note that the joint PMF conforms to the same rules as a normal PMF:
+
+\begin{itemize}
+\tightlist
+\item
+  it is non-negative: \(p_{X,Y}(x,y) \geq 0\);
+\item
+  it sums to 1: \(\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1\).
+\end{itemize}
+
+We may want to look at more than two random variables, \(\mathbf X = (X_1, X_2, \dots, X_n)\). In this case, the joint PMF is
+\[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]
+In the same way, we can find the marginal distribution of one of the variables -- say \(X_1\) -- by summing over all the other variables:
+\[ p_{X_1}(x_1) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x_1, x_2, \dots, x_n) . \]
+
+\hypertarget{independence-rv}{%
+\section{Independence of random variables}\label{independence-rv}}
+
+We said that two events are independent if \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\). We now can give a similar definition for what it means two random variables to be independent.
+
+\begin{definition}
+We say two discrete random variables are \textbf{independent} if, for all \(x\) and \(y\),
+\[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]
+In terms of the joint and marginal PMFs, this is the condition that
+\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]
+
+More generally, a sequence of random variables \(\mathbf X = (X_1, X_2, \dots)\) are independent if
+\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots \times p_{X_n}(x_n) = \prod_{i=1}^n p_X(x_i). \]
+\end{definition}
+
+Returning to our case of the dice from before, we see that \(X\) and \(Y\) are \emph{not} independent, because, for just one counterexample, \(p_{X,Y}(0,0) = \frac18\), while \(p_X(0) = \frac14\) and \(p_Y(0) = \frac18\), so \(p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)\).
+
+An important scenario in probability theory and statistics is that of \textbf{independent and identically distributed} (or \textbf{IID}) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So \(\mathbf X = (X_1, X_2, \dots )\) are IID random variables with a common PMF \(p_X\), say, if
+\[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]
+
+\begin{example}
+\emph{Let \(X_1, X_2, \dots, X_{20}\) be IID random variables following a binomial distribution with rate \(n = 10\) and \(p = 0.3\). What is the probability that all 20 of the the \(X_i\) are nonzero?}
+
+Because the \(X_i\) are identically distribution, the probability that any one of them is nonzero is
+\[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]
+Then, because the \(X_i\) independent, the probability that they are all nonzero is
+\[ \mathbb P(X_1 > 0)^{20} = 0.972^{20} = 0.564. \]
+\end{example}
+
+\hypertarget{cond-rv}{%
+\section{Conditional distributions}\label{cond-rv}}
+
+For probability with events, we had the conditional probability
+\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+In the same way, for random variables, we have
+\[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]
+We call the distribution of this the \textbf{conditional distribution}.
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables with joint PMF \(p_{X,Y}\) and marginal PMFs \(p_X\) and \(p_Y\) respectively. Then the \textbf{condition probability mass function of \(Y\) given \(X\)} \(p_{Y \mid X}\) is given by
+\[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]
+\end{definition}
+
+Let's think again about our coin tossing example. To get the conditional distribution of \(Y\) given \(X = 1\), say, we have
+\[ p_{Y \mid X}(y \mid 1) = \frac{p_{X,Y}(1,y)}{p_X(1)} ;   \]
+so we take the \(x = 1\) row of the joint distribution table and ``renormalise it'' by dividing through by the total \(p_X(1)\) of the row, so it adds up to 1. That is,
+\begin{align*}
+  p_{Y \mid X} (0 \mid 1) &= \frac{p_{X,Y}(1, 0)}{p_X(1)} = \frac{0}{\frac12} = 0 , \\
+  p_{Y \mid X} (1 \mid 1) &= \frac{p_{X,Y}(1, 1)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (2 \mid 1) &= \frac{p_{X,Y}(1, 2)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (3 \mid 1) &= \frac{p_{X,Y}(1, 3)}{p_X(1)} = \frac{0}{\frac12} = 0 .
+\end{align*}
+
+In just the same way, we could get the conditional distribution of \(X\) given \(Y = 2\), say, by taking the \(y = 2\) column of the joint distribution table, and renormalising by \(p_Y(2)\) so that the column sums to 1, That is,
+\begin{align*}
+  p_{X \mid Y} (0 \mid 2) &= \frac{p_{X,Y}(0,2)}{p_Y(2)} = \frac{0}{\frac38} = 0 , \\
+  p_{X \mid Y} (1 \mid 2) &= \frac{p_{X,Y}(1,2)}{p_Y(2)} = \frac{\frac14}{\frac38} = \tfrac23 , \\
+  p_{X \mid Y} (2 \mid 2) &= \frac{p_{X,Y}(2,2)}{p_Y(2)} = \frac{\frac18}{\frac38} = \tfrac13 .
+\end{align*}
+
+Results that we used for conditional probability with events also carry over to random variables. For example, from \textbf{Bayes' theorem} we know that
+\[ \mathbb P(A \mid B) = \frac{ \mathbb P(A) \, \mathbb P(B \mid A)}{\mathbb P(B)} . \]
+In the same way, we have
+\[ \mathbb P(X = x \mid Y = y) = \frac{ \mathbb P(X = x) \, \mathbb P(Y = y \mid X = x)}{\mathbb P(Y = y)} , \]
+which in terms of conditional and marginal PMFs is
+\[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]
+This will be a particularly important formula when we study Bayesian statistics at the end of the module.
+
+We can check Bayes' theorem with \(x = 1\) and \(y = 2\), for example.
+The right-hand side of Bayes' theorem is
+\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{23} .   \]
+The left-hand side of Bayes' theorem is
+\[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]
+which is equal, as it should be, to the right-hand side.
+
+\hypertarget{summary-L13}{%
+\section*{Summary}\label{summary-L13}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  For two random variables, the joint PMF \(p_{X,Y}\), marginal PMF \(p_X\), and conditional PMF \(p_{Y \mid X}\) are
+  \begin{align*}
+  p_{X,Y}(x,y) &= \mathbb P(X =x \text{ and } Y = y) \\
+  p_X(x) &= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
+  p_{Y \mid X}(y \mid x) &= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)} 
+  \end{align*}
+\item
+  Two random variables are independent if \(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\).
+\end{itemize}
+
+\hypertarget{L14-covariance}{%
+\chapter{Expectation and covariance}\label{L14-covariance}}
+
+\hypertarget{sum-product}{%
+\section{Expectation of sums and products}\label{sum-product}}
+
+When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. (In fact, it's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.)
+
+\begin{theorem}
+\protect\hypertarget{thm:linearity2}{}\label{thm:linearity2}
+
+Let \(X\) and \(Y\) be two random variables with joint probability mass function \(p_{X,Y}\). Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb Eg(X,Y) = \displaystyle\sum_{x,y} g(x,y) p_{X,Y}(x,y)\).
+\item
+  \textbf{(Linearity of expectation, 2)} \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\), regardless of whether \(X\) and \(Y\) are independent or not.
+\item
+  If \(X\) and \(Y\) are independent, then \(\mathbb EXY = \mathbb EX \times \mathbb EY\).
+\end{enumerate}
+
+\end{theorem}
+
+If we put the second point here together with the other result of linearity of expectation (Theorem \ref{thm:linearity1}) then we get the general rule
+\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]
+and this holds whether or not \(X\) and \(Y\) are independent.
+
+\begin{proof}
+Part 1 is just the law of the unconscious statistician for the random variable \((X,Y)\), and the same proof holds.
+
+For part 2, we have
+\begin{align*}
+\mathbb E(X + Y) &= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
+  &= \sum_{x,y} x\,p_{X,Y}(x,y) + \sum_{x,y} y\,p_{X,Y}(x,y) \\
+  &= \sum_x x \sum_y p_{X,Y}(x,y) + \sum_y y \sum_x p_{X,Y}(x,y)
+\end{align*}
+But summing a joint PMF over one of the variables gives the marginal PMF; so \(\sum_y p_{X,Y}(x,y) = p_X(x)\) and \(\sum_x p_{X,Y}(x,y) = p_Y(y)\). So this gives
+\begin{align*}
+\mathbb E(X + Y) &= \sum_x x\, p_X(x) + \sum_y y\,p_Y(y) \\
+&= \mathbb EX + \mathbb EY .
+\end{align*}
+
+For part 3, if \(X\) and \(Y\) are independent, then \(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\). Therefore,
+\begin{align*}
+\mathbb EXY &= \sum_{x,y} xy p_{X,Y}(x,y) \\
+  &= \sum_x \sum_y xy p_X(x) p_Y(y) \\
+  &= \sum_x x p_X(x) \sum_y y p_Y(y) \\
+  &= \mathbb EX \times \mathbb EY,
+\end{align*}
+as required.
+\end{proof}
+
+\begin{example}
+\emph{A student is solving five questions on a problem sheet. The time taken for each question to the nearest minute is an identically distributed random variable with expectation \(\mathbb EX_i = \mu\). What is the total expected time to complete the problem sheet?}
+
+By linearity of expectation, this is
+\[ \mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = \mathbb EX_1 + \mathbb EX_2 + \mathbb EX_3 + \mathbb EX_4 + \mathbb EX_5 = 5\mu . \]
+
+\emph{What if the lengths of time are not independent -- for example, if the student is slower at answering all the questions when she is tired?}
+
+It's still the case that \(\mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = 5\mu\), because this result is true whether or not the random variables are independent.
+\end{example}
+
+\hypertarget{covariance}{%
+\section{Covariance}\label{covariance}}
+
+If we are interested at how two random variables vary together, we need to look at the covariance.
 
 \newcommand{\Cov}{\operatorname{Cov}}
 \newcommand{\Corr}{\operatorname{Corr}}
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables with expectations \(\mathbb EX =\mu_X\) and \(\mathbb EY = \mu_Y\) respectively. Then their \textbf{covariance} is
+\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]
+\end{definition}
+
+In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.
+
+\begin{theorem}
+Let \(X\) and \(Y\) be two random variables with expectations \(\mu_X\) and \(\mu_Y\) respectively. Then their covariance can also be calculated as
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]
+\end{theorem}
+
+\begin{proof}
+Exactly as we've done many times before, we have
+\begin{align*}
+\operatorname{Cov}(X,Y) &= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
+&= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
+&= \mathbb EXY  - \mu_Y \,\mathbb EX - \mu_X \,\mathbb EY + \mu_X \, \mu_Y \\
+&= \mathbb EXY - \mu_X \, \mu_Y - \mu_X \, \mu_Y + \mu_X \, \mu_Y \\
+&= \mathbb EXY - \mu_X \, \mu_Y ,
+\end{align*}
+and we're done.
+\end{proof}
+
+\begin{example}
+We continue with our coin-tossing example from the last lecture, where \(X\) is the number of Heads in the first two coin tosses and \(Y\) the number of Heads in the first three coin tosses.
+
+We know that \(X \sim \text{Bin}(2, \frac12)\) so \(\mu_X = 1\) and \(Y \sim \text{Bin}(3, \frac12)\) so \(\mu_Y = 1.5\). To find the covariance using the computational formula, we also need \(\mathbb EXY\), which is
+\begin{align*}
+\mathbb EXY &= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
+  &= 0\times 0\times p_{X,Y}(0,0) + 0 \times 1 \times p_{X,Y}(0,1) + \cdots + 2\times 3 \times p_{X,Y}(2,3) \\
+  &= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
+  &= 2.
+\end{align*}
+Hence the covariance is
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]
+\end{example}
+
+A very important fact is the following.
+
+\begin{theorem}
+If \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X,Y) = 0\).
+\end{theorem}
+
+Be careful not to get this the wrong way around: if \(\operatorname{Cov}(X,Y) = 0\) it doesn't necessarily mean that \(X\) and \(Y\) are independent.
+
+To use the \href{https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive}{``contrapositive''} (which is allowed!), in our example, we have \(\operatorname{Cov}(X,Y) \neq 0\), which means that \(X\) and \(Y\) are not independent -- confirming what we already knew.
+
+\begin{proof}
+Recall from Theorem \ref{thm:linearity2} that if \(X\) and \(Y\) are independent, we have \(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\). Then from the computational formula, we have
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]
+and we are done.
+\end{proof}
+
+Here are some more important properties of the covariance.
+
+\begin{theorem}
+
+Let \(X\), \(Y\) and \(Z\) be random variables. Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\);
+\item
+  \(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\);
+\item
+  \(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\);
+\item
+  \(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X,Y)\);
+\item
+  \(\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y,Z)\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+Part 1 and 2 are immediate from the definition.
+
+Parts 3, 4 and 5 are quite similar. We'll do part 5 here, and you can do parts 3 and 4 on \protect\hyperlink{P4}{Problem Sheet 4}.
+
+For part 5, note that \(\mathbb E(X + Y) = \mu_X + \mu_Y\) by linearity of expectation. Hence
+\begin{align*}
+\operatorname{Cov}(X + Y, Z)
+  &= \mathbb E \big((X + Y) - (\mu_X + \mu_Y)\big)(Z - \mu_Z) \\
+  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
+  &= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
+  &= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
+  &= \operatorname{Cov}(X,Z) + \operatorname{Cov}(Y,Z) ,
+\end{align*}
+as required.
+\end{proof}
+
+We could calculate the covariance in our coin-tossing example a different way, by noting that \(Y = X + Z\), where \(Z \sim \text{Bern}(\frac12)\) represents the third coin toss and is independent of \(X\). Then we have
+\[
+\operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) =
+= \operatorname{Var}(X) + 0 = \operatorname{Var}(X) ,\]
+where we used \(\operatorname{Cov}(X, Z) = 0\) since \(X\) and \(Z\) are independent.
+We already know that \(\operatorname{Var}(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12\) because \(X \sim \text{Bin}(2, \frac12)\).. So \(\operatorname{Cov}(X,Y) = \frac12\),
+matching our previous calculation.
+
+Now that we know some facts about the covariance, we can calculate the variance of a sum.
+
+\begin{theorem}
+Let \(X\) and \(Y\) be two random variables. Then
+\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]
+
+If \(X\) and \(Y\) are independent, then
+\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]
+\end{theorem}
+
+It's easy to forget the conditions for the following two facts:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\) regardless of whether \(X\) and \(Y\) are independent or not.
+\item
+  \(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\) if \(X\) and \(Y\) are independent.
+\end{itemize}
+
+\begin{proof}
+For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have \(\mathbb E(X + Y) = \mu_X + \mu_Y\). So
+\begin{align*}
+\operatorname{Var}(X + Y) &= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
+  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
+  &= \mathbb E \big( (X - \mu_X)^2 + 2(X - \mu_X)(Y - \mu_Y) + (Y - \mu_Y)^2\big) \\
+  &= \mathbb E(X - \mu_X)^2 + 2 \mathbb E(X - \mu_X)(Y - \mu_Y) + \mathbb E (Y - \mu_Y)^2 \\
+  &= \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) ,
+\end{align*}
+where we used the linearity of expectation.
+
+For the second part, recall that is \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X,Y) = 0\).
+\end{proof}
+
+\hypertarget{correlation}{%
+\section{Correlation}\label{correlation}}
+
+It can sometimes be useful to ``normalise'' the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables. Then the \textbf{correlation} between \(X\) and \(Y\) is
+\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]
+\end{definition}
+
+As with the sample correlation \(r_{xy}\) from Section 1, the correlation is a number between \(-1\) and \(+1\), where values near \(+1\) mean that large values of \(X\) and large values of \(Y\) are likely to occur together, while values near \(-1\) mean that large values of \(X\) and small values of \(Y\) are likely to occur together.
+
+Recall that, if \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X,Y) = 0\). Hence it follows that if \(X\) and \(Y\) are independent, then \(\operatorname{Corr}(X,Y) = 0\) also.
+
+\begin{example}
+For the coin-tossing again, we have
+\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]
+\end{example}
+
+\hypertarget{summary-L14}{%
+\section*{Summary}\label{summary-L14}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)
+\item
+  The covariance is \(\operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y\).
+\item
+  \(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)\); or if \(X\) and \(Y\) are independent, then \(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\).
+\end{itemize}
+
+\hypertarget{P4}{%
+\chapter*{Problem Sheet 4}\label{P4}}
+\addcontentsline{toc}{chapter}{Problem Sheet 4}
 
 \commfalse
 
@@ -4962,7 +5449,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-24-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-26-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -5444,6 +5931,405 @@ Rearranging this gives
 \[ \mathbb P(B_k) = \mathbb P(A_k) - \mathbb P(A_{k-1}) . \]
 Substituting in the answer from part (a) gives
 \[\mathbb P(B_k) = \frac{(k+1)^n}{10^n} - \frac{(k-1+1)^n}{10^n} = \frac{(k+1)^n - k^n}{10^n} . \]
+
+\end{myanswers}
+
+\hypertarget{P3-solutions}{%
+\section*{Problem Sheet 3}\label{P3-solutions}}
+\addcontentsline{toc}{section}{Problem Sheet 3}
+
+\textbf{A1.} Consider dealing two cards (without replacement) from a pack of cards. Which of the following pairs of events are independent?
+
+\textbf{(a)} ``The first card is a Heart'' and ``The first card is Red''.
+
+\begin{myanswers}
+\emph{Solution.}
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Red}) &= \frac{26}{52} = \frac12 \\
+\mathbb P(\text{first Heart and first Red}) &= \mathbb P(\text{first Heart}) = \frac14 .
+\end{align*}
+So \(\mathbb P(\text{first Heart and first Red}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{first Red})\), and the events are not independent.
+
+\end{myanswers}
+
+\textbf{(b)} ``The first card is a Heart'' and ``The first card is a Spade''.
+
+\begin{myanswers}
+\emph{Solution.}
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Spade}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Heart and first Spade}) &= 0 .
+\end{align*}
+So \(\mathbb P(\text{first Heart and first Spade}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{first Spade})\), and the events are not independent.
+
+\end{myanswers}
+
+\textbf{(c)} ``The first card is a Heart'' and ``The first card is an Ace''.
+
+\begin{myanswers}
+\emph{Solution.}
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Ace}) &= \frac{4}{52} = \frac1{13} \\
+\mathbb P(\text{first Heart and first Ace}) &= \mathbb P(\text{first Ace of Hearts}) = \frac1{52} .
+\end{align*}
+So \(\mathbb P(\text{first Heart and first Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{first Ace})\), and the events are independent.
+
+\end{myanswers}
+
+\textbf{(d)} ``The first card is a Heart'' and ``The second card is a Heart''.
+
+\begin{myanswers}
+\emph{Solution.}
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{second Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Heart and second Heart}) &= \frac{13\times 12}{52 \times 51} = \frac{1}{17}
+\end{align*}
+So \(\mathbb P(\text{first Heart and second Heart}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{second Heart})\), and the events are not independent.
+
+\end{myanswers}
+
+\textbf{(e)} ``The first card is a Heart'' and ``The second card is an Ace''.
+
+\begin{myanswers}
+\emph{Solution.}
+We have
+\begin{align*}
+\mathbb P(\text{first Heart}) &= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{second Ace}) &= \frac{4}{52} = \frac1{13} \\
+\mathbb P(\text{first Heart and second Ace}) &= \frac{12\times4 + 1\times 3}{52\times 51} = \frac{51}{52\times 51} = \frac{1}{52}
+\end{align*}
+Here, the \(12 \times 4\) counted ``a non-Ace Heart, followed by an Ace'', while the \(1 \times 3\) counted ``the Ace of Hearts, followed by a non-Heart Ace''. So \(\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{second Ace})\), and the events are independent.
+
+\end{myanswers}
+
+\textbf{A2.} Consider rolling two dice. Let \(A\) be the event that the first roll is even, let \(B\) be the event that the second roll is even, and let \(C\) be the event that the total score is even. You may assume the dice rolls are independent; so, in particular, events \(A\) and \(B\) are independent.
+
+\textbf{(a)} Are \(A\) and \(C\) independent?
+
+\begin{myanswers}
+\emph{Solution.} Let us first note that \(\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12\). It's also the case that \(\mathbb P(C) = \frac{18}{36} = \frac12\), for example by counting the 18 even outcomes out of the 36 equally likely possibilities.
+
+We need to test is \(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C) = \frac14\) or not. By counting from the 36 possibilities, we see that indeed \(\mathbb P(A \cap C) = \frac{9}{36} = \frac{1}{4}\). Alternatively, we could note that \(\mathbb P(C \mid A) = \mathbb P(B) = \frac12\), since if the first dice is even, the second must be also even to get an even total. Then \(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C \mid A) = \frac14\).
+
+So the events are independent.
+
+\end{myanswers}
+
+\textbf{(b)} Are \(B\) and \(C\) independent?
+
+\begin{myanswers}
+\emph{Solution.} Yes. The solution is essentially identical to part (a).
+
+\end{myanswers}
+
+\textbf{(c)} Is it true that \(\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)\)?
+
+\begin{myanswers}
+\emph{Solution.}
+By checking the 36 possibilities, one sees that
+\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
+
+Alternatively, note that the total being even is certain if both dice rolls are certain, so
+\[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]
+to get the same result.
+
+\textbf{Group feedback:} This shows that just because events are ``pairwise independent'', it does not mean they are ``mutually independent''.
+
+\end{myanswers}
+
+\textbf{A3.} Consider the random variable \(X\) with the following PMF:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule()
+\(x\) & \(-1\) & \(0\) & \(0.5\) & \(1\) & \(2\) \\
+\midrule()
+\endhead
+\(p(x)\) & \(0.1\) & \(0.3\) & \(0.3\) & \(0.2\) & \(0.1\) \\
+\bottomrule()
+\end{longtable}
+
+Find the expectation and variance of \(X\).
+
+\begin{myanswers}
+\emph{Solution.}
+For the expectation,
+\[ \mathbb EX = -1\times0.1 + 0\times0.3 + 0.5\times0.3+1\times0.2+2\times0.1 = 0.45. \]
+
+For the variance, we start with
+\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.3 + 0.5^2\times0.3+1^2\times0.2+2^2\times0.1 = 0.775 . \]
+Then, using the computational formula,
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = 0.775 - 0.45^2 = 0.5725. \]
+
+\end{myanswers}
+
+\textbf{A4.} Consider the random variable \(X\) with the following PMF:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule()
+\(x\) & \(1\) & \(2\) & \(4\) & \(5\) & \(a\) \\
+\midrule()
+\endhead
+\(p(x)\) & \(0.1\) & \(0.2\) & \(0.1\) & \(b\) & \(0.1\) \\
+\bottomrule()
+\end{longtable}
+
+This random variable has \(\mathbb EX = 4.3\). Find the values of \(a\) and \(b\).
+
+\begin{myanswers}
+\emph{Solution.}
+First, a PMF must sum to 1, so
+\[ 1 = 0.1 + 0.2 + 0.1 + b + 0.1 , \]
+so \(b = 0.5\).
+
+Second, the expectation is
+\[
+\mathbb EX = 1\times0.1 + 2 \times 0.2 + 4 \times 0.1 + 5b + 0.1a 
+           = 3.6 + 0.1a 
+           = 4.3 .
+\]
+So \(a = 7\).
+
+\end{myanswers}
+
+\textbf{A5.} A temperature \(T_C\) measured in degrees Celsius can be converted to a temperature \(T_F\) in degrees Fahrenheit using the formula \(T_F = \frac95 T_C + 32\).
+
+The average daily maximum temperature in Leeds in July is 19.0~°C. The variance of the daily maximum temperature measured in degrees Celsius is 10.4.
+
+\textbf{(a)} What is the average daily maximum temperature in degrees Fahrenheit?
+
+\begin{myanswers}
+\emph{Solution.}
+By linearity of expectation,
+\[ \mathbb E T_F = \mathbb E\left(\tfrac95T_C + 32\right) = \tfrac95 \mathbb ET_C + 32 . \]
+So the answer is \(\frac95 \times 19.0 + 32 = 66.2\)~°F.
+
+\end{myanswers}
+
+\textbf{(b)} What is the variance of the daily maximum temperature when measured in degrees Fahrenheit?
+
+\begin{myanswers}
+\emph{Solution.}
+For the variance,
+\[ \operatorname{Var}(T_F) = \operatorname{Var}\left(\tfrac95T_C + 32\right) = \left(\tfrac95\right)^2 \operatorname{Var}(T_C) = \tfrac{81}{25}\operatorname{Var}(T_C). \]
+So the answer is \(\frac{81}{25} \times 10.4 = 33.7\).
+
+\end{myanswers}
+
+\textbf{B1.} Suppose \(A\) and \(B\) are independent events. Show that \(A\) and \(B^\mathsf{c}\) are also independent events.
+
+\begin{myanswers}
+\emph{Solution.} We know that
+\[ \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B) , \]
+because \(A\) and \(B\) are independent.
+We need to show that \(A\) and \(B^\mathsf{c}\) are independent, which means showing that
+\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]
+
+Note that
+\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) , \]
+and the union is disjoint, so by Axiom 3,
+\[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) . \]
+Hence, the left-hand side of \((*)\) is
+\begin{align*}
+\mathbb P(A \cap B^\mathsf{c})
+&= \mathbb P(A) - \mathbb P(A \cap B) \\
+&= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
+&= \mathbb P(A) \big(1 - \mathbb P(B)\big) ,
+\end{align*}
+where, in the second line, crucially we used the fact that \(A\) and \(B\) are independent to replace \(\mathbb P(A \cap B)\) by \(\mathbb P(A)\,\mathbb P(B)\).
+
+The right-hand side of \((*)\) is
+\[\mathbb P(A) \, \mathbb P(B^\mathsf{c}) = \mathbb P(A) \big(1 - \mathbb P(B)\big) , \]
+where we've used the complement rule \(\mathbb P(B^\mathsf{c}) = 1- \mathbb P(B)\).
+
+Hence, we've shown the left- and right-hand sides of \((*)\) are equal, and we are done.
+
+\end{myanswers}
+
+\textbf{B2.} You are dealt a hand of 13 cards from a 52-card deck. Let \(E_\mathrm{A}, E_\mathrm{K}, E_\mathrm{Q}, E_\mathrm{J}\) respectively be the events that your hand contains the Ace, King, Queen and Jack of Spades.
+
+\textbf{(a)} What is \(\mathbb P(E_\mathrm{A})\), the probability that your hand contains the Ace of Spades?
+
+\begin{myanswers}
+\emph{Solution.} There are 52 cards of which 13 will end up in my hand, so \(\mathbb P(E_\mathrm{A}) = \frac{13}{52}\).
+
+\end{myanswers}
+
+\textbf{(b)} Explain why \(\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}\).
+
+\begin{myanswers}
+\emph{Solution.} Given I have the Ace of Spades, there are \(52 - 1 = 51\) cards left available, of which \(13 - 1 = 12\) will end up in my hand, so \(\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}\).
+
+\end{myanswers}
+
+\textbf{(c)} Using the chain rule, calculate the probability that your hand contains all four of the Ace, King, Queen and Jack of Spades.
+
+\begin{myanswers}
+\emph{Solution.} Continuing the logic of part (b), we have
+\[ \mathbb P(E_\mathrm{Q} \mid E_\mathrm{A} \cap E_\mathrm{K}) = \frac{11}{50} \qquad \mathbb P(E_\mathrm{J} \mid E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q}) = \frac{10}{49} . \]
+
+Using the chain rule,
+\begin{align*}
+P( E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q} \cap E_\mathrm{J} )
+  &= \mathbb P(E_\mathrm{A}) \, \mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) \, \mathbb P(E_\mathrm{Q} \mid E_\mathrm{A} \cap E_\mathrm{K}) \, \mathbb P(E_\mathrm{J} \mid E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q}) \\
+  &= \frac{13}{52} \times \frac{12}{51} \times \frac{11}{50} \times \frac{10}{49} = \frac{13 \times 12 \times 11 \times 10}{52 \times 51 \times 50 \times 49} , 
+\end{align*}
+which is the same as we got in lectures.
+
+\end{myanswers}
+
+\textbf{(d)} Check that your answer agrees with the answer we found by classical probability methods in \href{L06-classical-ii.html\#exm:akqj}{Example 6.4} in Lecture 6. Which method do you prefer?
+
+\begin{myanswers}
+\emph{Solution.} Personally, I slightly prefer this answer -- it seems more obvious how the answer relates to the method, whereas in lectures a lot of terms in a ratio of binomial coefficients ``magically'' cancelled out. Your mileage may vary.
+
+\end{myanswers}
+
+\textbf{B3.} Soldiers are asked about their use of illegal drugs, using a so-called ``randomised survey''. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  ``Say `Yes.'\,''
+\item
+  ``Say `No.'\,''
+\item
+  ``Truthfully answer the question `Have you taken any illegal drugs in the past 12 months?'\,''
+\end{enumerate}
+
+\textbf{(a)} What are some advantages or disadvantages of performing the experiment this way?
+
+\begin{myanswers}
+\emph{Solution.} The main advantage is that it seems likely that a soldier might want to lie in answer to a ``straight question'', given that if their superiors discovered they had taken illegal drugs, there could be very serious consequences. This method allows a certain ``plausible deniability'': just because the soldier answers ``Yes'', we cannot know for sure whether they have taken illegal drugs or merely picked the ``Yes'' card. Thus we might hope to get more honest answers this way. Perhaps you can think of other advantages.
+
+There could be disadvantages. The complicated set-up of the experiment could lead to the subjects (or experimenters) making an error. The scientists good be ``lulled into a false sense of security'' of thinking they get fully honest answers, when soldiers picking card 3 might still choose to lie. Perhaps you can think of other disadvantages.
+
+\end{myanswers}
+
+\textbf{(b)} Suppose that 40\% of soldiers respond ``Yes''. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.
+
+\begin{myanswers}
+\emph{Solution.}
+Let \(C_1, C_2, C_3\) be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities \(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\) and make up a partition. Let \(Y\) be the event that the soldier answers yes. We know that \(\mathbb P(Y \mid C_1) = 1\), \(\mathbb P(Y \mid C_2) = 0\) and \(\mathbb P(Y \mid C_3) = \mathbb P(D)\), where \(\mathbb P(D)\), which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that \(\mathbb P(Y) = 0.4\).
+
+The law of total probability tells us that
+\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 
+\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]
+With the information we have, we get
+\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, p = \tfrac13 + \tfrac13 \,p . \]
+Solving this gives \(p = \frac15 = 20\%\).
+
+\end{myanswers}
+
+\textbf{(c)} If a soldier responds ``Yes'', what is the probability that the soldier has taken illegal drugs in the past 12 months.
+
+\begin{myanswers}
+\emph{Solution.}
+This is asking for \(\mathbb P(D \mid Y)\). Another one for Bayes theorem:
+\[ \mathbb P(D \mid Y) = \frac{\mathbb P(D) \mathbb P(Y \mid D)}{\mathbb P(Y)} . \]
+From the question we know that \(\mathbb P(Y) = 0.4\). From part (a) we know that \(\mathbb P(D) = 0.2\). We also know that \(\mathbb P(Y \mid D) = \frac23\), as the soldier will answer Yes is they pick either cards 1 or 3. Hence
+\[ \mathbb P(D \mid Y) = \frac{0.2 \times \frac23}{0.4} = \frac13 . \]
+
+\end{myanswers}
+
+\textbf{B4.} A random variable \(X_n\) is said to follow the \emph{discrete uniform distribution} on \(\{1, 2, \dots, n\}\) if each of the \(n\) values in that set \(\{1,2,\dots,n\}\) is equally likely.
+
+\textbf{(a)} Show that the expectation of \(X_n\) is \(\mathbb EX_n = \displaystyle\frac{n+1}{2}\).
+
+\begin{myanswers}
+\emph{Solution.}
+We have \(p(x) = \frac1n\) for \(x = 1, 2, \dots, n\). So the expectation is
+\[ \mathbb EX = \sum_{x=1}^n x\,\frac{1}{n} = \frac{1}{n} \sum_{x = 1}^n x = \frac{1}{n}\, \frac{n(n+1)}{2} = \frac{n+1}{2} . \]
+
+\end{myanswers}
+
+\textbf{(b)} Find the variance of \(X_n\).
+
+\begin{myanswers}
+\emph{Solution.}
+It turns out to be much easier to use the computational formual \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\). First,
+\[ \mathbb EX^2 = \sum_{x=1}^n x^2 \,\frac{1}{n}  = \frac{1}{n} \sum_{x = 1}^n x^2 = \frac{1}{n}\,\frac{n(n+1)(2n+1)}{6} = \frac{(n+1)(2n + 1)}{6} . \]
+Then using \(\mu = (n+1)/2\) from part (a), we have
+\[ \operatorname{Var}(X) =  \frac{(n+1)(2n + 1)}{6} - \left(\frac{n+1}{2}\right)^2 = \frac{(n+1)(4n + 2 - 3n -3)}{12} = \frac{(n+1)(n-1)}{12} = \frac{n^2 - 1}{12}  \]
+
+\end{myanswers}
+
+\textbf{(c)} Let \(Y\) be a discrete uniform distribution on \(b - a + 1\) values \(\{a, a+1, a+2, \dots, b-1, b\}\), for integers \(a\) and \(b\) with \(a<b\). Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of \(Y\).
+
+\emph{{[}\textbf{Note:} ``\(b - a + 1\) values'' is correct, but this was wrong earlier.{]}}
+
+\begin{myanswers}
+\emph{Solution.} If we take \(n = b - a + 1\), then \(Y\) has the same distribution as \(X_n + (a-1)\). This is because \(x = 1\) maps to \(y = 1 + (a-1) = a\); \(x = 2\) maps to \(y = 2 + (a-1) = a+1\); and so on; up to \(x = n\) mapping to \(y = n + (a-1) = (b - a + 1) + (a-1) = b\). So the ranges match up perfectly.
+
+Thus we have
+\[ \mathbb EY = \mathbb E\big(X_{b-a+1} + (a-1)\big) = \mathbb EX_{b-a+1} + (a-1)= \frac{b - a + 1 +1}{2} + (a-1) = \frac{a + b}{2}  \]
+and
+\[ \operatorname{Var}(Y) = \operatorname{Var}\big(X_{b-a+1} + (a-1)\big) = \operatorname{Var}(X_{b-a+1}) = \frac{(b - a + 1)^2 - 1}{12} . \]
+You can rearrange the variance a bit if you like, but it doesn't really get any nicer.
+
+\end{myanswers}
+
+You may use without proof the standard results
+\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]
+
+\textbf{B5.} A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If the first Head comes up on the \(n\)th coin toss, then you win \(2^n\) pounds.
+
+\textbf{(a)} What is the probability that the first Head is seen on the \(n\)th toss of the coin?
+
+\begin{myanswers}
+\emph{Solution.}
+This happens if the first \(n-1\) tosses are Tails, with probability \((\frac12)^{n-1}\), them the \(n\)th toss is Heads, with probability \(\frac12\). Altogether, this is \((\frac12)^{n-1}\times \frac12 = (\frac12)^n\).
+
+\end{myanswers}
+
+\textbf{(b)} Show that the expected winnings from playing this game are infinite.
+
+\begin{myanswers}
+\emph{Solution.}
+The expected winnings are
+\[ \sum_{n=1}^\infty 2^n \times \mathbb P(\text{first Head on $n$th toss}) = \sum_{n=1}^\infty 2^n \times \big(\tfrac12\big)^n = \sum_{n=1}^\infty 1 = \infty \]
+
+\end{myanswers}
+
+\textbf{(c)} The ``St Petersburg paradox'' refers to the observation that, despite the expected winnings from this game being infinite, few people would be prepared to play this game for, say, £100, and almost no one for £1000. Discuss a few possible ``resolutions'' to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.
+
+\begin{myanswers}
+\emph{Discussion.}
+One possibility is:
+
+\begin{itemize}
+\tightlist
+\item
+  The people are being irrational, and in fact \emph{should} play the game for £1000.
+\end{itemize}
+
+but I'm not sure anyone \emph{really} thinks that.
+
+Some other possible explanations include:
+
+\begin{itemize}
+\tightlist
+\item
+  The expectation is only infinite if you really could win an extraordinarily large amount of money. Suppose that the person offering the game only has £\(2^{20}\), or just over £1 million. In that case, if the first 20 tosses are all Tails, the opponent gives you all £\(2^{20}\) then declares bankruptcy and the game stops. In this more realistic case, your expected winnings are only
+  \[  \sum_{n=1}^{20} 2^n \times \big(\tfrac12\big)^n + 2^{20} \times \big(\tfrac12\big)^{20} = \sum_{n=1}^{20} 1 + 1 = 21 , \]
+  or £21; a more reasonable price to pay to play the game.
+\item
+  The amount of benefit (or ``utility'') one gets from winning a large amount of money might not be directly proportional to the amount. For example, £200 million might be very nice, but it's not \emph{twice} as nice as £100 million -- after all, what else could you really do with the second £100 million. Perhaps the utility of £\(m\) scales more logarithmically than linearly, like \(\log_2 m\) in some appropriate ``happiness units'' In that case, the expected \emph{utility} from the game is
+  \[ \sum_{n=1}^\infty \log_2(2^n) \times \big(\tfrac12\big)^n = \sum_{n=1}^\infty n \times \big(\tfrac12\big)^n = 2 , \]
+  happiness units, and you might be willing to pay 2 happiness-units-worth of money to play.
+\item
+  Normal advice to play games with positive expected winnings only really applies if you can play the game many times (or very similar games). For repeated games, the expected winnings can be interpreted as ``the winnings you are likely to get in the long run''. For one-off highly unusual games, this doesn't hold, so one needs a different criterion to decide whether to play. (If I was allowed to play this game a million times for £100 a round, but didn't have to settle the money until all one million games had finished, then I would strongly consider playing.)
+\end{itemize}
+
+You can probably come up with other explanations of your own too.
 
 \end{myanswers}
 

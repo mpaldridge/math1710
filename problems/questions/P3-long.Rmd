@@ -2,8 +2,10 @@
 **B1.** Suppose $A$ and $B$ are independent events. Show that $A$ and $B^\comp$ are also independent events.
 
 ::: {.myanswers data-latex=""}
-*Solution.* 
-We need to show that
+*Solution.* We know that
+\[ \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B) , \]
+because $A$ and $B$ are independent.
+We need to show that $A$ and $B^\comp$ are independent, which means showing that
 \[ \mathbb P(A \cap B^\comp) = \mathbb P(A) \, \mathbb P(B^\comp) . \tag{$*$} \]
 
 Note that
@@ -108,6 +110,7 @@ which is the same as we got in lectures.
 
 ::: {.myanswers data-latex=""}
 *Solution.* Personally, I slightly prefer this answer -- it seems more obvious how the answer relates to the method, whereas in lectures a lot of terms in a ratio of binomial coefficients "magically" cancelled out. Your mileage may vary.
+:::
 ::::
 :::::
 

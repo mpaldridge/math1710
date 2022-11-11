@@ -85,11 +85,11 @@ Here, the $12 \times 4$ counted "a non-Ace Heart, followed by an Ace", while the
 **(a)** Are $A$ and $C$ independent?
 
 ::: {.myanswers data-latex=""}
-*Solution.* Let us first note that $\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12$. It's also the case that $\mathbb P(C) = \frac{18}{36}$, for example by counting the even outcomes out of the 36 equally likely possibilities.
+*Solution.* Let us first note that $\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12$. It's also the case that $\mathbb P(C) = \frac{18}{36} = \frac12$, for example by counting the 18 even outcomes out of the 36 equally likely possibilities.
 
 We need to test is $\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C) = \frac14$ or not. By counting from the 36 possibilities, we see that indeed $\mathbb P(A \cap C) = \frac{9}{36} = \frac{1}{4}$. Alternatively, we could note that $\mathbb P(C \mid A) = \mathbb P(B) = \frac12$, since if the first dice is even, the second must be also even to get an even total. Then $\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C \mid A) = \frac14$.
 
-So the events are indeepdent.
+So the events are independent.
 :::
 ::::
 
@@ -107,7 +107,7 @@ So the events are indeepdent.
 ::: {.myanswers data-latex=""}
 *Solution.*
 By checking the 36 possibilities, one sees that
-\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac14 \times \frac14 \times \frac14 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
+\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
 
 Alternatively, note that the total being even is certain if both dice rolls are certain, so
 \[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]

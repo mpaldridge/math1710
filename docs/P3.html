@@ -265,6 +265,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-process"><i class="fa fa-check"></i><b>12.3</b> Poisson process</a></li>
 <li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
+<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
+<li class="chapter" data-level="" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#summary-L13"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
+<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
+<li class="chapter" data-level="14.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>14.3</b> Correlation</a></li>
+<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-L14"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
 <ul>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
@@ -284,6 +298,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -313,7 +328,10 @@ display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>The <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u">mid-semester check-in survey</a> is still open.</p>
+<p><a href="solutions.html#P3-solutions">Full <strong>solutions to non-assessed questions</strong></a> are now available.</p>
+</div>
+<div class="mysummary">
+<p><a href="https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u">The <strong>mid-semester check-in</strong> survey</a> is still open.</p>
 </div>
 <div class="mysummary">
 <p>You can <a href="P3-sheet.pdf">download this problem sheet as a PDF file</a></p>
@@ -396,9 +414,9 @@ Here, the <span class="math inline">\(12 \times 4\)</span> counted “a non-Ace 
 <div class="subq">
 <p><strong>(a)</strong> Are <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> independent?</p>
 <div class="myanswers">
-<p><em>Solution.</em> Let us first note that <span class="math inline">\(\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12\)</span>. It’s also the case that <span class="math inline">\(\mathbb P(C) = \frac{18}{36}\)</span>, for example by counting the even outcomes out of the 36 equally likely possibilities.</p>
+<p><em>Solution.</em> Let us first note that <span class="math inline">\(\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12\)</span>. It’s also the case that <span class="math inline">\(\mathbb P(C) = \frac{18}{36} = \frac12\)</span>, for example by counting the 18 even outcomes out of the 36 equally likely possibilities.</p>
 <p>We need to test is <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C) = \frac14\)</span> or not. By counting from the 36 possibilities, we see that indeed <span class="math inline">\(\mathbb P(A \cap C) = \frac{9}{36} = \frac{1}{4}\)</span>. Alternatively, we could note that <span class="math inline">\(\mathbb P(C \mid A) = \mathbb P(B) = \frac12\)</span>, since if the first dice is even, the second must be also even to get an even total. Then <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C \mid A) = \frac14\)</span>.</p>
-<p>So the events are indeepdent.</p>
+<p>So the events are independent.</p>
 </div>
 </div>
 <div class="subq">
@@ -412,7 +430,7 @@ Here, the <span class="math inline">\(12 \times 4\)</span> counted “a non-Ace 
 <div class="myanswers">
 <p><em>Solution.</em>
 By checking the 36 possibilities, one sees that
-<span class="math display">\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac14 \times \frac14 \times \frac14 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]</span></p>
+<span class="math display">\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]</span></p>
 <p>Alternatively, note that the total being even is certain if both dice rolls are certain, so
 <span class="math display">\[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]</span>
 to get the same result.</p>
@@ -522,8 +540,10 @@ So the answer is <span class="math inline">\(\frac{81}{25} \times 10.4 = 33.7\)<
 <div class="myq">
 <p><strong>B1.</strong> Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are also independent events.</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-We need to show that
+<p><em>Solution.</em> We know that
+<span class="math display">\[ \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B) , \]</span>
+because <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.
+We need to show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are independent, which means showing that
 <span class="math display">\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]</span></p>
 <p>Note that
 <span class="math display">\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) , \]</span>
@@ -582,8 +602,8 @@ This is asking for $\mathbb P(B \mid L)$. We know $\mathbb P(L \mid B) = 0.2$, a
 ::::
 :::::
 -->
-<p>::::: {.myq}
-<strong>B2.</strong> You are dealt a hand of 13 cards from a 52-card deck. Let <span class="math inline">\(E_\mathrm{A}, E_\mathrm{K}, E_\mathrm{Q}, E_\mathrm{J}\)</span> respectively be the events that your hand contains the Ace, King, Queen and Jack of Spades.</p>
+<div class="myq">
+<p><strong>B2.</strong> You are dealt a hand of 13 cards from a 52-card deck. Let <span class="math inline">\(E_\mathrm{A}, E_\mathrm{K}, E_\mathrm{Q}, E_\mathrm{J}\)</span> respectively be the events that your hand contains the Ace, King, Queen and Jack of Spades.</p>
 <div class="subq">
 <p><strong>(a)</strong> What is <span class="math inline">\(\mathbb P(E_\mathrm{A})\)</span>, the probability that your hand contains the Ace of Spades?</p>
 <div class="myanswers">
@@ -614,6 +634,7 @@ which is the same as we got in lectures.</p>
 <p><strong>(d)</strong> Check that your answer agrees with the answer we found by classical probability methods in <a href="L06-classical-ii.html#exm:akqj">Example 6.4</a> in Lecture 6. Which method do you prefer?</p>
 <div class="myanswers">
 <p><em>Solution.</em> Personally, I slightly prefer this answer – it seems more obvious how the answer relates to the method, whereas in lectures a lot of terms in a ratio of binomial coefficients “magically” cancelled out. Your mileage may vary.</p>
+</div>
 </div>
 </div>
 <!--

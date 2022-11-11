@@ -14,7 +14,11 @@ display: none !important;
 \commfalse
 
 ::: {.mysummary}
-The [mid-semester check-in survey](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u) is still open.
+[Full **solutions to non-assessed questions**](#P3-solutions) are now available.
+:::
+
+::: {.mysummary}
+[The **mid-semester check-in** survey](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u) is still open.
 :::
 
 ::: {.mysummary}

@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Worksheets | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="P4.html"/>
-<link rel="next" href="solutions.html"/>
+<link rel="prev" href="L13-multi-rv.html"/>
+<link rel="next" href="P4.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -320,127 +320,192 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="R" class="section level1 unnumbered hasAnchor">
-<h1>R Worksheets<a href="R.html#R" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r-work" class="section level2 unnumbered hasAnchor">
-<h2>R worksheets<a href="R.html#r-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each week there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for worksheets with assessed questions, for checking and submitting your solutions.</p>
-<table>
-<colgroup>
-<col width="9%" />
-<col width="47%" />
-<col width="43%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Week</th>
-<th>Worksheet</th>
-<th align="center">Deadline for assessed work</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">1</td>
-<td><a href="https://mpaldridge.github.io/math1710/R1.html"><strong>R basics</strong></a> (<a href="https://mpaldridge.github.io/math1710/R1-solutions.html">Solutions</a>)</td>
-<td align="center">—</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td><a href="https://mpaldridge.github.io/math1710/R2.html"><strong>Vectors</strong></a></td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td><a href="https://mpaldridge.github.io/math1710/R3.html"><strong>Data in R</strong></a></td>
-<td align="center">Monday 24 October (Week 4)</td>
-</tr>
-<tr class="even">
-<td align="center">4</td>
-<td><a href="https://mpaldridge.github.io/math1710/R4.html"><strong>Plots I:</strong> Making plots</a></td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td><a href="https://mpaldridge.github.io/math1710/R5.html"><strong>Plots II:</strong> Making plots better</a></td>
-<td align="center">Monday 7 November (Week 6)</td>
-</tr>
-<tr class="even">
-<td align="center">6</td>
-<td><a href="https://mpaldridge.github.io/math1710/R6.html"><strong>RMarkdown</strong> (optional)</a> [<a href="https://mpaldridge.github.io/math1710/R6.Rmd">Rmd version</a>]</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">7</td>
-<td>Discrete distributions</td>
-<td align="center">Monday 21 November (Week 8)</td>
-</tr>
-<tr class="even">
-<td align="center">8</td>
-<td>Discrete random variables</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">9</td>
-<td>Normal distribution</td>
-<td align="center">Monday 5 December (Week 10)</td>
-</tr>
-<tr class="even">
-<td align="center">10</td>
-<td>Law of large numbers</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">11</td>
-<td>Recap</td>
-<td align="center">Thursday 15 December (Week 11)</td>
-</tr>
-</tbody>
-</table>
+<div id="L14-covariance" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Lecture 14</span> Expectation and covariance<a href="L14-covariance.html#L14-covariance" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sum-product" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Expectation of sums and products<a href="L14-covariance.html#sum-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
-|   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
-|   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
-|   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html) | --- |
-|   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html) | Monday 1 November |
-|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
-|   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]      |      Monday 15 November    |
-|   8  |  [**Discrete random variables**](https://mpaldridge.github.io/math1710/R8.html) [[Rmd](https://mpaldridge.github.io/math1710/R8.Rmd)] | --- |
-|   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) | Monday 29 November |
-|  10  |  ~~Law of large numbers~~     |             ---           |
-|  11  |   [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 16 December |
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/BaEbVJZkGGY"></iframe>
+:::
+::::
 -->
-</div>
-<div id="about-r" class="section level2 unnumbered hasAnchor">
-<h2>About R and RStudio<a href="R.html#about-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><strong>R</strong> is a <em>programming language</em> that is particularly useful for working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.</li>
-<li><strong>RStudio</strong> is a <em>program</em> that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.</li>
-</ul>
-<p>R and RStudio are free/open-source software.</p>
-</div>
-<div id="r-access" class="section level2 unnumbered hasAnchor">
-<h2>How to access R and RStudio<a href="R.html#r-access" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are a few ways you can access R and RStudio.</p>
-<p>First, you can <strong>install R and RStudio on your own computer</strong>. Students who have their own computer (with administration and installation rights) usually find this the most convenient way use R.</p>
-<p>When you install R and RStudio, it’s important that you install R (the programming language) first, and only install RStudio (the program to use R) after R has already been installed. This ensures that RStudio can “find” R on your computer.</p>
+<p>When we have multiple random variables, we might be interested in functions of those multiple random variables – for example their sum or their product. (In fact, it’s often possible to find out about the whole distribution of a sum, product, or function of the variables – see MATH2715 Statistical Methods for more on this – but will just look at their expectations and, later, variances.)</p>
+<div class="theorem">
+<p><span id="thm:linearity2" class="theorem"><strong>Theorem 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint probability mass function <span class="math inline">\(p_{X,Y}\)</span>. Then</p>
 <ol style="list-style-type: decimal">
-<li><p><em>First</em>, install R. Go to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a> and follow the instructions:</p>
-<ul>
-<li>Windows: Click <a href="https://cran.r-project.org/bin/windows/">“Download R for Windows”</a>, then <a href="https://cran.r-project.org/bin/windows/base/">“Install R for the first time”</a>. The main link at the top should be to download the most recent version of R.</li>
-<li>Mac: Click <a href="https://cran.r-project.org/bin/macosx/">Download R for macOS</a>, and then download the relevant PKG file. (For typically older Intel-based Macbooks, you must use the “Intel 64-bit build”; for post-November 2020 M1 or M2-based “Apple silicon” Macbooks, the “Apple silicon arm64 build” may be slightly faster.)</li>
-</ul></li>
-<li><p><em>After</em> R is installed, <em>then</em> install RStudio. Go to <a href="https://www.rstudio.com/products/rstudio/download/#download">the Download page at RStudio.com</a> and follow the instructions. You want “RStudio Desktop”, and you want the free version.</p></li>
+<li><span class="math inline">\(\mathbb Eg(X,Y) = \displaystyle\sum_{x,y} g(x,y) p_{X,Y}(x,y)\)</span>.</li>
+<li><strong>(Linearity of expectation, 2)</strong> <span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span>, regardless of whether <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent or not.</li>
+<li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY\)</span>.</li>
 </ol>
-<p>If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it’s sufficiently portable), and we’ll do our best to help.</p>
-<p>Second, you can <strong>use R and RStudio on University computers</strong>. All University computers have access to R and RStudio, via the AppsAnywhere service. <em>First</em>, launch R via AppsAnywhere (at the time of writing, it’s confusingly named “Cran R 4.2.0 x64”). You can then close the program that opens. <em>Then</em> launch RStudio (“Rstudio 2022”), also via AppsAnywhere. (You can decline any updates that are suggested.)</p>
-<p>The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.</p>
-<p>Third, you can <strong>use the <a href="https://rstudio.cloud/">RStudio Cloud</a></strong>. The RStudio Cloud is a cloud-hosted “Google Docs for R” that you can use through your web browser, without having to install anything. You can get 25 hours per month for free, which should be plenty for this module, or pay for more.</p>
-<p>If you have access to a computer on which you can’t install software, such as some Chromebooks or tablet computers, or if you’re borrowing a friend’s laptop, the RStudio Cloud can be a convenient solution.</p>
-<p><em>Update:</em> If you have an Intel-based Chromebook, then we have had success installing R and RStudio using <a href="https://levente.littvay.hu/chromebook/">these (rather complicated) instructions</a>, although you may still find it more convenient just to use the RStudio Cloud.</p>
 </div>
-<div id="troubleshooting" class="section level2 unnumbered hasAnchor">
-<h2>R troubleshooting drop-in sessions<a href="R.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.</p>
-<p>However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional R troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details – they are probably listed as “computer practicals”.</p>
+<p>If we put the second point here together with the other result of linearity of expectation (Theorem <a href="L10-expectation.html#thm:linearity1">10.2</a>) then we get the general rule
+<span class="math display">\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]</span>
+and this holds whether or not <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<div class="proof">
+<p><span id="unlabeled-div-79" class="proof"><em>Proof</em>. </span>Part 1 is just the law of the unconscious statistician for the random variable <span class="math inline">\((X,Y)\)</span>, and the same proof holds.</p>
+<p>For part 2, we have
+<span class="math display">\[\begin{align*}
+\mathbb E(X + Y) &amp;= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
+  &amp;= \sum_{x,y} x\,p_{X,Y}(x,y) + \sum_{x,y} y\,p_{X,Y}(x,y) \\
+  &amp;= \sum_x x \sum_y p_{X,Y}(x,y) + \sum_y y \sum_x p_{X,Y}(x,y)
+\end{align*}\]</span>
+But summing a joint PMF over one of the variables gives the marginal PMF; so <span class="math inline">\(\sum_y p_{X,Y}(x,y) = p_X(x)\)</span> and <span class="math inline">\(\sum_x p_{X,Y}(x,y) = p_Y(y)\)</span>. So this gives
+<span class="math display">\[\begin{align*}
+\mathbb E(X + Y) &amp;= \sum_x x\, p_X(x) + \sum_y y\,p_Y(y) \\
+&amp;= \mathbb EX + \mathbb EY .
+\end{align*}\]</span></p>
+<p>For part 3, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\)</span>. Therefore,
+<span class="math display">\[\begin{align*}
+\mathbb EXY &amp;= \sum_{x,y} xy p_{X,Y}(x,y) \\
+  &amp;= \sum_x \sum_y xy p_X(x) p_Y(y) \\
+  &amp;= \sum_x x p_X(x) \sum_y y p_Y(y) \\
+  &amp;= \mathbb EX \times \mathbb EY,
+\end{align*}\]</span>
+as required.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 14.1  </strong></span><em>A student is solving five questions on a problem sheet. The time taken for each question to the nearest minute is an identically distributed random variable with expectation <span class="math inline">\(\mathbb EX_i = \mu\)</span>. What is the total expected time to complete the problem sheet?</em></p>
+<p>By linearity of expectation, this is
+<span class="math display">\[ \mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = \mathbb EX_1 + \mathbb EX_2 + \mathbb EX_3 + \mathbb EX_4 + \mathbb EX_5 = 5\mu . \]</span></p>
+<p><em>What if the lengths of time are not independent – for example, if the student is slower at answering all the questions when she is tired?</em></p>
+<p>It’s still the case that <span class="math inline">\(\mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = 5\mu\)</span>, because this result is true whether or not the random variables are independent.</p>
+</div>
+</div>
+<div id="covariance" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Covariance<a href="L14-covariance.html#covariance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/eXsUrJzcRCE"></iframe>
+:::
+::::
+-->
+<p>If we are interested at how two random variables vary together, we need to look at the covariance.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mathbb EX =\mu_X\)</span> and <span class="math inline">\(\mathbb EY = \mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]</span></p>
+</div>
+<p>In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-82" class="theorem"><strong>Theorem 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]</span></p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-83" class="proof"><em>Proof</em>. </span>Exactly as we’ve done many times before, we have
+<span class="math display">\[\begin{align*}
+\operatorname{Cov}(X,Y) &amp;= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
+&amp;= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
+&amp;= \mathbb EXY  - \mu_Y \,\mathbb EX - \mu_X \,\mathbb EY + \mu_X \, \mu_Y \\
+&amp;= \mathbb EXY - \mu_X \, \mu_Y - \mu_X \, \mu_Y + \mu_X \, \mu_Y \\
+&amp;= \mathbb EXY - \mu_X \, \mu_Y ,
+\end{align*}\]</span>
+and we’re done.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 14.2  </strong></span>We continue with our coin-tossing example from the last lecture, where <span class="math inline">\(X\)</span> is the number of Heads in the first two coin tosses and <span class="math inline">\(Y\)</span> the number of Heads in the first three coin tosses.</p>
+<p>We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span> so <span class="math inline">\(\mu_X = 1\)</span> and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span> so <span class="math inline">\(\mu_Y = 1.5\)</span>. To find the covariance using the computational formula, we also need <span class="math inline">\(\mathbb EXY\)</span>, which is
+<span class="math display">\[\begin{align*}
+\mathbb EXY &amp;= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
+  &amp;= 0\times 0\times p_{X,Y}(0,0) + 0 \times 1 \times p_{X,Y}(0,1) + \cdots + 2\times 3 \times p_{X,Y}(2,3) \\
+  &amp;= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
+  &amp;= 2.
+\end{align*}\]</span>
+Hence the covariance is
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]</span></p>
+</div>
+<p>A very important fact is the following.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 14.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
+</div>
+<p>Be careful not to get this the wrong way around: if <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span> it doesn’t necessarily mean that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<p>To use the <a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive">“contrapositive”</a> (which is allowed!), in our example, we have <span class="math inline">\(\operatorname{Cov}(X,Y) \neq 0\)</span>, which means that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent – confirming what we already knew.</p>
+<div class="proof">
+<p><span id="unlabeled-div-86" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="L14-covariance.html#thm:linearity2">14.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]</span>
+and we are done.</p>
+</div>
+<p>Here are some more important properties of the covariance.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 14.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\)</span>;</li>
+<li><span class="math inline">\(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\)</span>;</li>
+<li><span class="math inline">\(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\)</span>;</li>
+<li><span class="math inline">\(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X,Y)\)</span>;</li>
+<li><span class="math inline">\(\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y,Z)\)</span>.</li>
+</ol>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-88" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
+<p>Parts 3, 4 and 5 are quite similar. We’ll do part 5 here, and you can do parts 3 and 4 on <a href="P4.html#P4">Problem Sheet 4</a>.</p>
+<p>For part 5, note that <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span> by linearity of expectation. Hence
+<span class="math display">\[\begin{align*}
+\operatorname{Cov}(X + Y, Z)
+  &amp;= \mathbb E \big((X + Y) - (\mu_X + \mu_Y)\big)(Z - \mu_Z) \\
+  &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
+  &amp;= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
+  &amp;= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
+  &amp;= \operatorname{Cov}(X,Z) + \operatorname{Cov}(Y,Z) ,
+\end{align*}\]</span>
+as required.</p>
+</div>
+<p>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
+<span class="math display">\[
+\operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) =
+= \operatorname{Var}(X) + 0 = \operatorname{Var}(X) ,\]</span>
+where we used <span class="math inline">\(\operatorname{Cov}(X, Z) = 0\)</span> since <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> are independent.
+We already know that <span class="math inline">\(\operatorname{Var}(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12\)</span> because <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>.. So <span class="math inline">\(\operatorname{Cov}(X,Y) = \frac12\)</span>,
+matching our previous calculation.</p>
+<p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-89" class="theorem"><strong>Theorem 14.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
+<span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]</span></p>
+<p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then
+<span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]</span></p>
+</div>
+<p>It’s easy to forget the conditions for the following two facts:</p>
+<ul>
+<li><span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span> regardless of whether <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent or not.</li>
+<li><span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</li>
+</ul>
+<div class="proof">
+<p><span id="unlabeled-div-90" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
+<span class="math display">\[\begin{align*}
+\operatorname{Var}(X + Y) &amp;= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
+  &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
+  &amp;= \mathbb E \big( (X - \mu_X)^2 + 2(X - \mu_X)(Y - \mu_Y) + (Y - \mu_Y)^2\big) \\
+  &amp;= \mathbb E(X - \mu_X)^2 + 2 \mathbb E(X - \mu_X)(Y - \mu_Y) + \mathbb E (Y - \mu_Y)^2 \\
+  &amp;= \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) ,
+\end{align*}\]</span>
+where we used the linearity of expectation.</p>
+<p>For the second part, recall that is <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
+</div>
+</div>
+<div id="correlation" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Correlation<a href="L14-covariance.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>It can sometimes be useful to “normalise” the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-91" class="definition"><strong>Definition 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
+<span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]</span></p>
+</div>
+<p>As with the sample correlation <span class="math inline">\(r_{xy}\)</span> from Section 1, the correlation is a number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>, where values near <span class="math inline">\(+1\)</span> mean that large values of <span class="math inline">\(X\)</span> and large values of <span class="math inline">\(Y\)</span> are likely to occur together, while values near <span class="math inline">\(-1\)</span> mean that large values of <span class="math inline">\(X\)</span> and small values of <span class="math inline">\(Y\)</span> are likely to occur together.</p>
+<p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-92" class="example"><strong>Example 14.3  </strong></span>For the coin-tossing again, we have
+<span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]</span></p>
+</div>
+</div>
+<div id="summary-L14" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L14-covariance.html#summary-L14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li><span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span></li>
+<li>The covariance is <span class="math inline">\(\operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y\)</span>.</li>
+<li><span class="math inline">\(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)\)</span>; or if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span>.</li>
+</ul>
+</div>
 
 </div>
 </div>
@@ -449,8 +514,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="P4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L13-multi-rv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="P4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

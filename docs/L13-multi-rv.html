@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Worksheets | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 13 Multiple random variables | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 13 Multiple random variables | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 13 Multiple random variables | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="P4.html"/>
-<link rel="next" href="solutions.html"/>
+<link rel="prev" href="L12-poisson.html"/>
+<link rel="next" href="L14-covariance.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -320,127 +320,336 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="R" class="section level1 unnumbered hasAnchor">
-<h1>R Worksheets<a href="R.html#R" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="r-work" class="section level2 unnumbered hasAnchor">
-<h2>R worksheets<a href="R.html#r-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each week there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for worksheets with assessed questions, for checking and submitting your solutions.</p>
+<div id="L13-multi-rv" class="section level1 hasAnchor" number="13">
+<h1><span class="header-section-number">Lecture 13</span> Multiple random variables<a href="L13-multi-rv.html#L13-multi-rv" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="joint" class="section level2 hasAnchor" number="13.1">
+<h2><span class="header-section-number">13.1</span> Joint distributions<a href="L13-multi-rv.html#joint" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/5trzf2sZnLw"></iframe>
+:::
+::::
+-->
+<p>In previous sections, we have looked at single discrete random variables in isolation. In the lecture and the next, we want to look at how multiple discrete random variables can interact.</p>
+<p>Consider tossing a fair coin 3 times. Let <span class="math inline">\(X\)</span> be the number of Heads in the first two tosses, and let <span class="math inline">\(Y\)</span> be the number of Heads over all three tosses.</p>
+<p>We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span> and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span>, so we can easily write down their probability mass functions:</p>
 <table>
-<colgroup>
-<col width="9%" />
-<col width="47%" />
-<col width="43%" />
-</colgroup>
 <thead>
 <tr class="header">
-<th align="center">Week</th>
-<th>Worksheet</th>
-<th align="center">Deadline for assessed work</th>
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(x = 2\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">1</td>
-<td><a href="https://mpaldridge.github.io/math1710/R1.html"><strong>R basics</strong></a> (<a href="https://mpaldridge.github.io/math1710/R1-solutions.html">Solutions</a>)</td>
-<td align="center">—</td>
-</tr>
-<tr class="even">
-<td align="center">2</td>
-<td><a href="https://mpaldridge.github.io/math1710/R2.html"><strong>Vectors</strong></a></td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">3</td>
-<td><a href="https://mpaldridge.github.io/math1710/R3.html"><strong>Data in R</strong></a></td>
-<td align="center">Monday 24 October (Week 4)</td>
-</tr>
-<tr class="even">
-<td align="center">4</td>
-<td><a href="https://mpaldridge.github.io/math1710/R4.html"><strong>Plots I:</strong> Making plots</a></td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">5</td>
-<td><a href="https://mpaldridge.github.io/math1710/R5.html"><strong>Plots II:</strong> Making plots better</a></td>
-<td align="center">Monday 7 November (Week 6)</td>
-</tr>
-<tr class="even">
-<td align="center">6</td>
-<td><a href="https://mpaldridge.github.io/math1710/R6.html"><strong>RMarkdown</strong> (optional)</a> [<a href="https://mpaldridge.github.io/math1710/R6.Rmd">Rmd version</a>]</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">7</td>
-<td>Discrete distributions</td>
-<td align="center">Monday 21 November (Week 8)</td>
-</tr>
-<tr class="even">
-<td align="center">8</td>
-<td>Discrete random variables</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">9</td>
-<td>Normal distribution</td>
-<td align="center">Monday 5 December (Week 10)</td>
-</tr>
-<tr class="even">
-<td align="center">10</td>
-<td>Law of large numbers</td>
-<td align="center">—</td>
-</tr>
-<tr class="odd">
-<td align="center">11</td>
-<td>Recap</td>
-<td align="center">Thursday 15 December (Week 11)</td>
+<td align="center"><span class="math inline">\(p_X(x)\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
 </tr>
 </tbody>
 </table>
-<!--
-|   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
-|   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
-|   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html) | --- |
-|   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html) | Monday 1 November |
-|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
-|   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]      |      Monday 15 November    |
-|   8  |  [**Discrete random variables**](https://mpaldridge.github.io/math1710/R8.html) [[Rmd](https://mpaldridge.github.io/math1710/R8.Rmd)] | --- |
-|   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) | Monday 29 November |
-|  10  |  ~~Law of large numbers~~     |             ---           |
-|  11  |   [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 16 December |
--->
-</div>
-<div id="about-r" class="section level2 unnumbered hasAnchor">
-<h2>About R and RStudio<a href="R.html#about-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(y\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac38\)</span></td>
+<td align="center"><span class="math inline">\(\frac38\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>When we have multiple random variables and we want to emphasise that a PMF refers to only one of them, we often use the phrase <strong>marginal PMF</strong> or <strong>marginal distribution</strong>. So the PMFs above are the <em>marginal distributions</em> of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p>However, we might also want to know how <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> interact. To do this, we will need the <strong>joint PMF</strong>, given by
+<span class="math display">\[ p_{X,Y}(x,y) = \mathbb P(X = x \text{ and } Y = y) . \]</span></p>
+<p>In our case of the coin tosses, we have</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(\phantom{p_X(x)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\vphantom{p_Y(y)}\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>For just one worked example, we have <span class="math inline">\(p_{X,Y}(2,2) = \frac18\)</span>, because the only way to have <span class="math inline">\(X =2\)</span> (two Heads in the first two coin tosses) and <span class="math inline">\(Y = 2\)</span> (two Heads in the first <em>three</em> coin tosses) is to toss Head, Head, Tail, with probability <span class="math inline">\((\frac12)^3 = \frac18\)</span>.</p>
+<p>For probabilities of events, we had that if some <span class="math inline">\(A_i\)</span>s form a partition, then
+<span class="math display">\[ \mathbb P(B) = \sum_i \mathbb P(B \cap A_i) . \]</span>
+Note that the events <span class="math inline">\(\{X = x\}\)</span>, as <span class="math inline">\(x\)</span> varies over the range of <span class="math inline">\(X\)</span>, also make up a partition. Therefore, we have
+<span class="math display">\[ \mathbb P(Y = y) = \sum_x \mathbb P(X = x \text{ and } Y = y) ; \]</span>
+or, to phrase this in terms of joint and marginal PMFs,
+<span class="math display">\[ p_Y(y) = \sum_x p_{X,Y}(x, y) . \]</span>
+In other words, to get the marginal distribution of <span class="math inline">\(Y\)</span>, we need to sum down the columns in the table of the joint distribution.</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(\phantom{p_X(x)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac38\)</span></td>
+<td align="center"><span class="math inline">\(\frac38\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>In exactly the same way, we have
+<span class="math display">\[ p_X(x) = \sum_y p_{X,Y}(x, y) ; \]</span>
+so to get the marginal distribution of <span class="math inline">\(X\)</span>, we need to sum across the rows in the table of the joint distribution.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(p_X(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"><span class="math inline">\(\frac38\)</span></td>
+<td align="center"><span class="math inline">\(\frac38\)</span></td>
+<td align="center"><span class="math inline">\(\frac18\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>We can check that these marginal PMFs match those we started with. (The term “marginal” PMF or distribution is presumably because one ends up writing the values in the “margins” of the table.)</p>
+<div class="thpart">
+<p>In summary, we have learned the following:</p>
 <ul>
-<li><strong>R</strong> is a <em>programming language</em> that is particularly useful for working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.</li>
-<li><strong>RStudio</strong> is a <em>program</em> that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.</li>
+<li>A joint PMF of two discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
+<span class="math display">\[ p_{X,Y}(x, y) = \mathbb P(X = x \text{ and } Y = y) . \]</span></li>
+<li>We can get the marginal distributions <span class="math inline">\(p_X(x) = \mathbb P(X = x)\)</span> and <span class="math inline">\(p_Y(y) = \mathbb P(Y = y)\)</span> by summing over the other variable:
+<span class="math display">\[ p_X(x) = \sum_x p_{X,Y}(x,y) \qquad p_Y(y) = \sum_x p_{X,Y}(x,y) . \]</span></li>
 </ul>
-<p>R and RStudio are free/open-source software.</p>
 </div>
-<div id="r-access" class="section level2 unnumbered hasAnchor">
-<h2>How to access R and RStudio<a href="R.html#r-access" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are a few ways you can access R and RStudio.</p>
-<p>First, you can <strong>install R and RStudio on your own computer</strong>. Students who have their own computer (with administration and installation rights) usually find this the most convenient way use R.</p>
-<p>When you install R and RStudio, it’s important that you install R (the programming language) first, and only install RStudio (the program to use R) after R has already been installed. This ensures that RStudio can “find” R on your computer.</p>
-<ol style="list-style-type: decimal">
-<li><p><em>First</em>, install R. Go to the <a href="https://cran.r-project.org/">Comprehensive R Archive Network (CRAN)</a> and follow the instructions:</p>
+<p>Note that the joint PMF conforms to the same rules as a normal PMF:</p>
 <ul>
-<li>Windows: Click <a href="https://cran.r-project.org/bin/windows/">“Download R for Windows”</a>, then <a href="https://cran.r-project.org/bin/windows/base/">“Install R for the first time”</a>. The main link at the top should be to download the most recent version of R.</li>
-<li>Mac: Click <a href="https://cran.r-project.org/bin/macosx/">Download R for macOS</a>, and then download the relevant PKG file. (For typically older Intel-based Macbooks, you must use the “Intel 64-bit build”; for post-November 2020 M1 or M2-based “Apple silicon” Macbooks, the “Apple silicon arm64 build” may be slightly faster.)</li>
-</ul></li>
-<li><p><em>After</em> R is installed, <em>then</em> install RStudio. Go to <a href="https://www.rstudio.com/products/rstudio/download/#download">the Download page at RStudio.com</a> and follow the instructions. You want “RStudio Desktop”, and you want the free version.</p></li>
-</ol>
-<p>If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it’s sufficiently portable), and we’ll do our best to help.</p>
-<p>Second, you can <strong>use R and RStudio on University computers</strong>. All University computers have access to R and RStudio, via the AppsAnywhere service. <em>First</em>, launch R via AppsAnywhere (at the time of writing, it’s confusingly named “Cran R 4.2.0 x64”). You can then close the program that opens. <em>Then</em> launch RStudio (“Rstudio 2022”), also via AppsAnywhere. (You can decline any updates that are suggested.)</p>
-<p>The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.</p>
-<p>Third, you can <strong>use the <a href="https://rstudio.cloud/">RStudio Cloud</a></strong>. The RStudio Cloud is a cloud-hosted “Google Docs for R” that you can use through your web browser, without having to install anything. You can get 25 hours per month for free, which should be plenty for this module, or pay for more.</p>
-<p>If you have access to a computer on which you can’t install software, such as some Chromebooks or tablet computers, or if you’re borrowing a friend’s laptop, the RStudio Cloud can be a convenient solution.</p>
-<p><em>Update:</em> If you have an Intel-based Chromebook, then we have had success installing R and RStudio using <a href="https://levente.littvay.hu/chromebook/">these (rather complicated) instructions</a>, although you may still find it more convenient just to use the RStudio Cloud.</p>
+<li>it is non-negative: <span class="math inline">\(p_{X,Y}(x,y) \geq 0\)</span>;</li>
+<li>it sums to 1: <span class="math inline">\(\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1\)</span>.</li>
+</ul>
+<p>We may want to look at more than two random variables, <span class="math inline">\(\mathbf X = (X_1, X_2, \dots, X_n)\)</span>. In this case, the joint PMF is
+<span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]</span>
+In the same way, we can find the marginal distribution of one of the variables – say <span class="math inline">\(X_1\)</span> – by summing over all the other variables:
+<span class="math display">\[ p_{X_1}(x_1) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x_1, x_2, \dots, x_n) . \]</span></p>
 </div>
-<div id="troubleshooting" class="section level2 unnumbered hasAnchor">
-<h2>R troubleshooting drop-in sessions<a href="R.html#troubleshooting" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.</p>
-<p>However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional R troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details – they are probably listed as “computer practicals”.</p>
+<div id="independence-rv" class="section level2 hasAnchor" number="13.2">
+<h2><span class="header-section-number">13.2</span> Independence of random variables<a href="L13-multi-rv.html#independence-rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/ZxoVHpnI298"></iframe>
+:::
+::::
+-->
+<p>We said that two events are independent if <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\)</span>. We now can give a similar definition for what it means two random variables to be independent.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 13.1  </strong></span>We say two discrete random variables are <strong>independent</strong> if, for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>,
+<span class="math display">\[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]</span>
+In terms of the joint and marginal PMFs, this is the condition that
+<span class="math display">\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]</span></p>
+<p>More generally, a sequence of random variables <span class="math inline">\(\mathbf X = (X_1, X_2, \dots)\)</span> are independent if
+<span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots \times p_{X_n}(x_n) = \prod_{i=1}^n p_X(x_i). \]</span></p>
+</div>
+<p>Returning to our case of the dice from before, we see that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <em>not</em> independent, because, for just one counterexample, <span class="math inline">\(p_{X,Y}(0,0) = \frac18\)</span>, while <span class="math inline">\(p_X(0) = \frac14\)</span> and <span class="math inline">\(p_Y(0) = \frac18\)</span>, so <span class="math inline">\(p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)\)</span>.</p>
+<p>An important scenario in probability theory and statistics is that of <strong>independent and identically distributed</strong> (or <strong>IID</strong>) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So <span class="math inline">\(\mathbf X = (X_1, X_2, \dots )\)</span> are IID random variables with a common PMF <span class="math inline">\(p_X\)</span>, say, if
+<span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-77" class="example"><strong>Example 13.1  </strong></span><em>Let <span class="math inline">\(X_1, X_2, \dots, X_{20}\)</span> be IID random variables following a binomial distribution with rate <span class="math inline">\(n = 10\)</span> and <span class="math inline">\(p = 0.3\)</span>. What is the probability that all 20 of the the <span class="math inline">\(X_i\)</span> are nonzero?</em></p>
+<p>Because the <span class="math inline">\(X_i\)</span> are identically distribution, the probability that any one of them is nonzero is
+<span class="math display">\[ \mathbb P(X_1 &gt; 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]</span>
+Then, because the <span class="math inline">\(X_i\)</span> independent, the probability that they are all nonzero is
+<span class="math display">\[ \mathbb P(X_1 &gt; 0)^{20} = 0.972^{20} = 0.564. \]</span></p>
+</div>
+</div>
+<div id="cond-rv" class="section level2 hasAnchor" number="13.3">
+<h2><span class="header-section-number">13.3</span> Conditional distributions<a href="L13-multi-rv.html#cond-rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/U0kNB45K81w"></iframe>
+:::
+::::
+-->
+<p>For probability with events, we had the conditional probability
+<span class="math display">\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span>
+In the same way, for random variables, we have
+<span class="math display">\[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]</span>
+We call the distribution of this the <strong>conditional distribution</strong>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-78" class="definition"><strong>Definition 13.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint PMF <span class="math inline">\(p_{X,Y}\)</span> and marginal PMFs <span class="math inline">\(p_X\)</span> and <span class="math inline">\(p_Y\)</span> respectively. Then the <strong>condition probability mass function of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span></strong> <span class="math inline">\(p_{Y \mid X}\)</span> is given by
+<span class="math display">\[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]</span></p>
+</div>
+<p>Let’s think again about our coin tossing example. To get the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>, say, we have
+<span class="math display">\[ p_{Y \mid X}(y \mid 1) = \frac{p_{X,Y}(1,y)}{p_X(1)} ;   \]</span>
+so we take the <span class="math inline">\(x = 1\)</span> row of the joint distribution table and “renormalise it” by dividing through by the total <span class="math inline">\(p_X(1)\)</span> of the row, so it adds up to 1. That is,
+<span class="math display">\[\begin{align*}
+  p_{Y \mid X} (0 \mid 1) &amp;= \frac{p_{X,Y}(1, 0)}{p_X(1)} = \frac{0}{\frac12} = 0 , \\
+  p_{Y \mid X} (1 \mid 1) &amp;= \frac{p_{X,Y}(1, 1)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (2 \mid 1) &amp;= \frac{p_{X,Y}(1, 2)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (3 \mid 1) &amp;= \frac{p_{X,Y}(1, 3)}{p_X(1)} = \frac{0}{\frac12} = 0 .
+\end{align*}\]</span></p>
+<p>In just the same way, we could get the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = 2\)</span>, say, by taking the <span class="math inline">\(y = 2\)</span> column of the joint distribution table, and renormalising by <span class="math inline">\(p_Y(2)\)</span> so that the column sums to 1, That is,
+<span class="math display">\[\begin{align*}
+  p_{X \mid Y} (0 \mid 2) &amp;= \frac{p_{X,Y}(0,2)}{p_Y(2)} = \frac{0}{\frac38} = 0 , \\
+  p_{X \mid Y} (1 \mid 2) &amp;= \frac{p_{X,Y}(1,2)}{p_Y(2)} = \frac{\frac14}{\frac38} = \tfrac23 , \\
+  p_{X \mid Y} (2 \mid 2) &amp;= \frac{p_{X,Y}(2,2)}{p_Y(2)} = \frac{\frac18}{\frac38} = \tfrac13 .
+\end{align*}\]</span></p>
+<p>Results that we used for conditional probability with events also carry over to random variables. For example, from <strong>Bayes’ theorem</strong> we know that
+<span class="math display">\[ \mathbb P(A \mid B) = \frac{ \mathbb P(A) \, \mathbb P(B \mid A)}{\mathbb P(B)} . \]</span>
+In the same way, we have
+<span class="math display">\[ \mathbb P(X = x \mid Y = y) = \frac{ \mathbb P(X = x) \, \mathbb P(Y = y \mid X = x)}{\mathbb P(Y = y)} , \]</span>
+which in terms of conditional and marginal PMFs is
+<span class="math display">\[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]</span>
+This will be a particularly important formula when we study Bayesian statistics at the end of the module.</p>
+<p>We can check Bayes’ theorem with <span class="math inline">\(x = 1\)</span> and <span class="math inline">\(y = 2\)</span>, for example.
+The right-hand side of Bayes’ theorem is
+<span class="math display">\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{23} .   \]</span>
+The left-hand side of Bayes’ theorem is
+<span class="math display">\[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]</span>
+which is equal, as it should be, to the right-hand side.</p>
+</div>
+<div id="summary-L13" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L13-multi-rv.html#summary-L13" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li>For two random variables, the joint PMF <span class="math inline">\(p_{X,Y}\)</span>, marginal PMF <span class="math inline">\(p_X\)</span>, and conditional PMF <span class="math inline">\(p_{Y \mid X}\)</span> are
+<span class="math display">\[\begin{align*}
+p_{X,Y}(x,y) &amp;= \mathbb P(X =x \text{ and } Y = y) \\
+p_X(x) &amp;= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
+p_{Y \mid X}(y \mid x) &amp;= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)}
+\end{align*}\]</span></li>
+<li>Two random variables are independent if <span class="math inline">\(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\)</span>.</li>
+</ul>
+</div>
 
 </div>
 </div>
@@ -449,8 +658,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="P4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L12-poisson.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L14-covariance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
