@@ -294,6 +294,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
+<ul>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-intro"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Example</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
@@ -331,7 +336,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 :::
 ::::
 -->
-<p>When we have multiple random variables, we might be interested in functions of those multiple random variables – for example their sum or their product. (In fact, it’s often possible to find out about the whole distribution of a sum, product, or function of the variables – see MATH2715 Statistical Methods for more on this – but will just look at their expectations and, later, variances.)</p>
+<p>When we have multiple random variables, we might be interested in functions of those multiple random variables – for example their sum or their product. It’s often possible to find out about the whole distribution of a sum, product, or function of the variables – see MATH2715 Statistical Methods for more on this – but will just look at their expectations and, later, variances.</p>
 <div class="theorem">
 <p><span id="thm:linearity2" class="theorem"><strong>Theorem 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint probability mass function <span class="math inline">\(p_{X,Y}\)</span>. Then</p>
 <ol style="list-style-type: decimal">
@@ -405,7 +410,7 @@ and we’re done.</p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-84" class="example"><strong>Example 14.2  </strong></span>We continue with our coin-tossing example from the last lecture, where <span class="math inline">\(X\)</span> is the number of Heads in the first two coin tosses and <span class="math inline">\(Y\)</span> the number of Heads in the first three coin tosses.</p>
-<p>We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span> so <span class="math inline">\(\mu_X = 1\)</span> and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span> so <span class="math inline">\(\mu_Y = 1.5\)</span>. To find the covariance using the computational formula, we also need <span class="math inline">\(\mathbb EXY\)</span>, which is
+<p>We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>, so <span class="math inline">\(\mu_X = 1\)</span>, and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span>, so <span class="math inline">\(\mu_Y = 1.5\)</span>. To find the covariance using the computational formula, we also need <span class="math inline">\(\mathbb EXY\)</span>, which is
 <span class="math display">\[\begin{align*}
 \mathbb EXY &amp;= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
   &amp;= 0\times 0\times p_{X,Y}(0,0) + 0 \times 1 \times p_{X,Y}(0,1) + \cdots + 2\times 3 \times p_{X,Y}(2,3) \\

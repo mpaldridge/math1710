@@ -10,7 +10,7 @@
 ::::
 -->
 
-When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. (In fact, it's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.)
+When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. It's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.
 
 ::: {.theorem #linearity2}
 Let $X$ and $Y$ be two random variables with joint probability mass function $p_{X,Y}$. Then
@@ -106,7 +106,7 @@ and we're done.
 ::: {.example}
 We continue with our coin-tossing example from the last lecture, where $X$ is the number of Heads in the first two coin tosses and $Y$ the number of Heads in the first three coin tosses.
 
-We know that $X \sim \text{Bin}(2, \frac12)$ so $\mu_X = 1$ and  $Y \sim \text{Bin}(3, \frac12)$ so $\mu_Y = 1.5$. To find the covariance using the computational formula, we also need $\mathbb EXY$, which is
+We know that $X \sim \text{Bin}(2, \frac12)$, so $\mu_X = 1$, and  $Y \sim \text{Bin}(3, \frac12)$, so $\mu_Y = 1.5$. To find the covariance using the computational formula, we also need $\mathbb EXY$, which is
 \begin{align*}
 \mathbb EXY &= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
   &= 0\times 0\times p_{X,Y}(0,0) + 0 \times 1 \times p_{X,Y}(0,1) + \cdots + 2\times 3 \times p_{X,Y}(2,3) \\

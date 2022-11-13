@@ -75,7 +75,7 @@ In summary, we have learned the following:
 * A joint PMF of two discrete random variables $X$ and $Y$ is
 \[ p_{X,Y}(x, y) = \mathbb P(X = x \text{ and } Y = y) . \]
 * We can get the marginal distributions $p_X(x) = \mathbb P(X = x)$ and $p_Y(y) = \mathbb P(Y = y)$ by summing over the other variable:
-\[ p_X(x) = \sum_x p_{X,Y}(x,y) \qquad p_Y(y) = \sum_x p_{X,Y}(x,y) . \]
+\[ p_X(x) = \sum_y p_{X,Y}(x,y) \qquad p_Y(y) = \sum_x p_{X,Y}(x,y) . \]
 :::
 
 Note that the joint PMF conforms to the same rules as a normal PMF:
@@ -86,7 +86,7 @@ Note that the joint PMF conforms to the same rules as a normal PMF:
 We may want to look at more than two random variables, $\mathbf X = (X_1, X_2, \dots, X_n)$. In this case, the joint PMF is
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]
 In the same way, we can find the marginal distribution of one of the variables -- say $X_1$ -- by summing over all the other variables:
-\[ p_{X_1}(x_1) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x_1, x_2, \dots, x_n) . \]
+\[ p_{X_1}(x) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x, x_2, \dots, x_n) . \]
 
 ## Independence of random variables {#independence-rv}
 
@@ -99,27 +99,27 @@ In the same way, we can find the marginal distribution of one of the variables -
 -->
 
 
-We said that two events are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb  P(B)$. We now can give a similar definition for what it means two random variables to be independent.
+We said that two *events* are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb  P(B)$. We now can give a similar definition for what it means two *random variables* to be independent.
 
 ::: {.definition}
-We say two discrete random variables are **independent** if, for all $x$ and $y$,
+We say two discrete random variables are **independent** if, for all $x$ and $y$, the events $\{X = x\}$ and $\{Y = y\}$ are independent; that is, if
 \[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]
 In terms of the joint and marginal PMFs, this is the condition that
 \[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]
 
 More generally, a sequence of random variables $\mathbf X = (X_1, X_2, \dots)$ are independent if
-\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots \times p_{X_n}(x_n) = \prod_{i=1}^n p_X(x_i). \]
+\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots = \prod_{i} p_X(x_i). \]
 :::
 
 Returning to our case of the dice from before, we see that $X$ and $Y$ are *not* independent, because, for just one counterexample, $p_{X,Y}(0,0) = \frac18$, while $p_X(0) = \frac14$ and $p_Y(0) = \frac18$, so $p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)$.
 
-An important scenario in probability theory and statistics is that of **independent and identically distributed** (or **IID**) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So $\mathbf X = (X_1, X_2, \dots )$ are IID random variables with a common PMF $p_X$, say, if
+An important scenario in probability theory and statistics is that of **independent and identically distributed** (or **IID**) random variables. IID random variables represent the same experiment being repeated many times, with each experiment independent of the others. So all the random variables have the same distribution and they are all independent of each other. So $\mathbf X = (X_1, X_2, \dots )$ are IID random variables with a common PMF $p_X$, say, if
 \[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]
 
 ::: {.example}
 *Let $X_1, X_2, \dots, X_{20}$ be IID random variables following a binomial distribution with rate $n = 10$ and $p = 0.3$. What is the probability that all 20 of the the $X_i$ are nonzero?*
 
-Because the $X_i$ are identically distribution, the probability that any one of them is nonzero is
+Because the $X_i$ are identically distributed, the probability that any one of them is nonzero is
 \[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]
 Then, because the $X_i$ independent, the probability that they are all nonzero is
 \[ \mathbb P(X_1 > 0)^{20} = 0.972^{20} = 0.564. \]
@@ -137,14 +137,14 @@ Then, because the $X_i$ independent, the probability that they are all nonzero i
 -->
 
 
-For probability with events, we had the conditional probability
+For probabilities of events, we had the conditional probability
 \[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
 In the same way, for random variables, we have
 \[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]
 We call the distribution of this the **conditional distribution**.
 
 ::: {.definition}
-Let $X$ and $Y$ be two random variables with joint PMF $p_{X,Y}$ and marginal PMFs $p_X$ and $p_Y$ respectively. Then the **condition probability mass function of $Y$ given $X$** $p_{Y \mid X}$ is given by
+Let $X$ and $Y$ be two random variables with joint PMF $p_{X,Y}$ and marginal PMFs $p_X$ and $p_Y$ respectively. Then the **condition probability mass function** of $Y$ **given** $X$, $p_{Y \mid X}$, is given by
 \[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]
 :::
 
@@ -165,9 +165,9 @@ In just the same way, we could get the conditional distribution of $X$ given $Y 
   p_{X \mid Y} (2 \mid 2) &= \frac{p_{X,Y}(2,2)}{p_Y(2)} = \frac{\frac18}{\frac38} = \tfrac13 .
 \end{align*}
 
-Results that we used for conditional probability with events also carry over to random variables. For example, from **Bayes' theorem** we know that
+Results that we used for conditional probability with events also carry over to random variables. For example, from Bayes' theorem we know that
 \[ \mathbb P(A \mid B) = \frac{ \mathbb P(A) \, \mathbb P(B \mid A)}{\mathbb P(B)} . \]
-In the same way, we have
+In the same way, we have **Bayes' theorem** for random variables:
 \[ \mathbb P(X = x \mid Y = y) = \frac{ \mathbb P(X = x) \, \mathbb P(Y = y \mid X = x)}{\mathbb P(Y = y)} , \]
 which in terms of conditional and marginal PMFs is
 \[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]
@@ -175,7 +175,7 @@ This will be a particularly important formula when we study Bayesian statistics 
 
 We can check Bayes' theorem with $x = 1$ and $y = 2$, for example. 
 The right-hand side of Bayes' theorem is
-\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{23} .   \]
+\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{2}{3} .   \]
 The left-hand side of Bayes' theorem is
 \[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]
 which is equal, as it should be, to the right-hand side.
@@ -191,4 +191,6 @@ which is equal, as it should be, to the right-hand side.
   p_{Y \mid X}(y \mid x) &= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)} 
 \end{align*}
 * Two random variables are independent if $p_{X,Y}(x,y) = p_X(x) \, p_Y(y)$.
+* Bayes' theorem:
+\[ p_{X \mid Y}(x \mid y) = \frac{ p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]
 :::

@@ -1,0 +1,106 @@
+# Tips on writing mathematics  {.unnumbered #writing}
+
+::: {.mysummary}
+In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that.
+
+I may try to expand this a bit later.
+:::
+
+## Introduction {.unnumbered #writing-intro}
+
+If a maths question asks you to "State", "Write down" or "Calculate" something, you don't need to do any more than give the answer. But if a question asks you to "Prove", "Show that" or "Explain", then the marker is looking for a clearly explained answer, and will base your mark on how well you explain your solution, not just on it's mathematical accuracy.
+
+Some things a marker might look for include:
+
+* If you had to make your own notation, have you explained clearly what it means?
+* If it's a "words question", have you clearly translated the information into mathematical notation?
+* In your solution, do you clearly state how you know certain statements are true? ("From the question, we know that..." "From the definition of ..." "Using the law of total probability..." "From Axiom 2, we see that...")
+* When making non-obvious algebraic manipulations, do you explain what you're doing? (There's usually no need -- but no harm either! -- in stating obvious things like "Dividing both sides by 2...", but for less obvious things like "Recognising this as difference of two squares..." or "By the linearity of expectation...", you should say so.)
+* Does your solution show clearly the "direction" of the proof. ("We start with the definition of..." "We need to show that..." "Assume, seeking a contradiction, that..." "If we could show that ... then this would be sufficient to give the result." "We will bound each term in this expression separately.")
+* Do you write in full sentences? Even equations should (usually) include punctuation, such as ending with a full-stop if they end a sentence.
+* An extremely rough rule of thumb -- which is often, but not always, applicable -- is that a good solution should be at least 50% writing and at most 50% equations.
+* It's usually best to avoid abbreviations and shorthand, like "LHS" ("left-hand side"), "WLOG" ("without loss of generality"), "iff" ("if and only if"), etc, although specific technical abbreviations from the course, like "PMF" ("probability mass function") are OK. Mathematical shorthand like $\therefore$ or $\Rightarrow$ should be avoided as "word alternatives" ("So", "Thus", "Therefore", "Hence", etc, are better), but are OK in certain circumstances where they have specific technical meanings.
+* It's fine -- and often good! -- to use diagrams to aid your explanation. But a diagram is rarely sufficient by itself without some writing to explain what it shows.
+
+## Example  {.unnumbered #writing-ex}
+
+Here are two solutions for [Problem Sheet 3 Question B1](#P3-long). This first solution is a typical sort of solution I might see from a student. The second solution has exactly the same mathematical content, but is more clearly explained. Which do you think is better?
+
+::: {.thpart}
+**Problem Sheet 3, Question B1.** *Suppose $A$ and $B$ are independent events. Show that $A$ and $B^\comp$ are also independent events.*
+:::
+
+::: {.thpart}
+*Solution 1.* 
+
+```{tikz writing-pic-0, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
+\begin{tikzpicture}[line width=0.25pt, scale=0.8]
+
+\fill  [blue!25] (2,2) circle (1.5); 
+
+\begin{scope} 
+	\clip (2,2) circle (1.5);
+	\fill  [green!25] (4,2) circle (1.5); 
+\end{scope}
+
+
+\draw[thick] (0,0) rectangle (6,4);
+\draw (6.3,3.8) node {$\Omega$};
+\draw (2,2) circle (1.5); \draw (1.6,2.0) node {$A$};
+\draw (4,2) circle (1.5); \draw (4.4,2.0) node {$B$};
+\end{tikzpicture}
+```
+
+\[ \therefore \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\comp)  \]
+
+\begin{align*}
+\Rightarrow \qquad \mathbb P(A \cap B^\comp)
+&= \mathbb P(A) - \mathbb P(A \cap B) \\
+&= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
+&= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
+&= \mathbb P(A) \, \mathbb P(B^\comp) 
+\end{align*}
+:::
+
+::: {.thpart}
+*Solution 2.* 
+We need to show that $A$ and $B^\comp$ are independent, which means showing that
+\[ \mathbb P(A \cap B^\comp) = \mathbb P(A) \, \mathbb P(B^\comp) . \tag{$*$} \]
+
+By splitting the event $A$ up into "the bit in $B$" and the "the bit not in $A$", as shown in the Venn diagram below, we have a disjoint union
+\[ A = (A \cap B) \cup (A \cap B^\comp) . \]
+
+```{tikz writing-pic-1, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
+\begin{tikzpicture}[line width=0.25pt, scale=0.8]
+
+\fill  [blue!25] (2,2) circle (1.5); 
+
+\begin{scope} 
+	\clip (2,2) circle (1.5);
+	\fill  [green!25] (4,2) circle (1.5); 
+\end{scope}
+
+
+\draw[thick] (0,0) rectangle (6,4);
+\draw (6.3,3.8) node {$\Omega$};
+\draw (2,2) circle (1.5); \draw (1.6,2.0) node {$A$};
+\draw (4,2) circle (1.5); \draw (4.4,2.0) node {$B$};
+\end{tikzpicture}
+```
+
+Applying Axiom 3 to this disjoint union, we have
+\[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\comp) . \]
+
+Hence, the left-hand side of $(*)$ is
+\begin{align*}
+\mathbb P(A \cap B^\comp)
+&= \mathbb P(A) - \mathbb P(A \cap B) \\
+&= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
+&= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
+&= \mathbb P(A) \, \mathbb P(B^\comp) .
+\end{align*}
+In the second line, we used the fact that $A$ and $B$ are independent, as given in the question, to replace $\mathbb P(A \cap B)$ by $\mathbb P(A)\,\mathbb P(B)$. In the final line, we used the complement rule $\mathbb P(B^\comp) = 1 - \mathbb P(B)$. But this is exactly the right-hand side of $(*)$.
+Hence, we've shown the left- and right-hand sides of $(*)$ are equal, and we are done.
+:::
+
+

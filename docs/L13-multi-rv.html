@@ -294,6 +294,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
+<ul>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-intro"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Example</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
@@ -548,7 +553,7 @@ so to get the marginal distribution of <span class="math inline">\(X\)</span>, w
 <li>A joint PMF of two discrete random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
 <span class="math display">\[ p_{X,Y}(x, y) = \mathbb P(X = x \text{ and } Y = y) . \]</span></li>
 <li>We can get the marginal distributions <span class="math inline">\(p_X(x) = \mathbb P(X = x)\)</span> and <span class="math inline">\(p_Y(y) = \mathbb P(Y = y)\)</span> by summing over the other variable:
-<span class="math display">\[ p_X(x) = \sum_x p_{X,Y}(x,y) \qquad p_Y(y) = \sum_x p_{X,Y}(x,y) . \]</span></li>
+<span class="math display">\[ p_X(x) = \sum_y p_{X,Y}(x,y) \qquad p_Y(y) = \sum_x p_{X,Y}(x,y) . \]</span></li>
 </ul>
 </div>
 <p>Note that the joint PMF conforms to the same rules as a normal PMF:</p>
@@ -559,7 +564,7 @@ so to get the marginal distribution of <span class="math inline">\(X\)</span>, w
 <p>We may want to look at more than two random variables, <span class="math inline">\(\mathbf X = (X_1, X_2, \dots, X_n)\)</span>. In this case, the joint PMF is
 <span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]</span>
 In the same way, we can find the marginal distribution of one of the variables – say <span class="math inline">\(X_1\)</span> – by summing over all the other variables:
-<span class="math display">\[ p_{X_1}(x_1) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x_1, x_2, \dots, x_n) . \]</span></p>
+<span class="math display">\[ p_{X_1}(x) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x, x_2, \dots, x_n) . \]</span></p>
 </div>
 <div id="independence-rv" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> Independence of random variables<a href="L13-multi-rv.html#independence-rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -570,21 +575,21 @@ In the same way, we can find the marginal distribution of one of the variables �
 :::
 ::::
 -->
-<p>We said that two events are independent if <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\)</span>. We now can give a similar definition for what it means two random variables to be independent.</p>
+<p>We said that two <em>events</em> are independent if <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\)</span>. We now can give a similar definition for what it means two <em>random variables</em> to be independent.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 13.1  </strong></span>We say two discrete random variables are <strong>independent</strong> if, for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>,
+<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 13.1  </strong></span>We say two discrete random variables are <strong>independent</strong> if, for all <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, the events <span class="math inline">\(\{X = x\}\)</span> and <span class="math inline">\(\{Y = y\}\)</span> are independent; that is, if
 <span class="math display">\[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]</span>
 In terms of the joint and marginal PMFs, this is the condition that
 <span class="math display">\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]</span></p>
 <p>More generally, a sequence of random variables <span class="math inline">\(\mathbf X = (X_1, X_2, \dots)\)</span> are independent if
-<span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots \times p_{X_n}(x_n) = \prod_{i=1}^n p_X(x_i). \]</span></p>
+<span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots = \prod_{i} p_X(x_i). \]</span></p>
 </div>
 <p>Returning to our case of the dice from before, we see that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are <em>not</em> independent, because, for just one counterexample, <span class="math inline">\(p_{X,Y}(0,0) = \frac18\)</span>, while <span class="math inline">\(p_X(0) = \frac14\)</span> and <span class="math inline">\(p_Y(0) = \frac18\)</span>, so <span class="math inline">\(p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)\)</span>.</p>
-<p>An important scenario in probability theory and statistics is that of <strong>independent and identically distributed</strong> (or <strong>IID</strong>) random variables. IID random variables represent an experiment that is repeated many times, with each experiment independent of the others. So all the random variables have the same distribution, and they are all independent of each other. So <span class="math inline">\(\mathbf X = (X_1, X_2, \dots )\)</span> are IID random variables with a common PMF <span class="math inline">\(p_X\)</span>, say, if
+<p>An important scenario in probability theory and statistics is that of <strong>independent and identically distributed</strong> (or <strong>IID</strong>) random variables. IID random variables represent the same experiment being repeated many times, with each experiment independent of the others. So all the random variables have the same distribution and they are all independent of each other. So <span class="math inline">\(\mathbf X = (X_1, X_2, \dots )\)</span> are IID random variables with a common PMF <span class="math inline">\(p_X\)</span>, say, if
 <span class="math display">\[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]</span></p>
 <div class="example">
 <p><span id="exm:unlabeled-div-77" class="example"><strong>Example 13.1  </strong></span><em>Let <span class="math inline">\(X_1, X_2, \dots, X_{20}\)</span> be IID random variables following a binomial distribution with rate <span class="math inline">\(n = 10\)</span> and <span class="math inline">\(p = 0.3\)</span>. What is the probability that all 20 of the the <span class="math inline">\(X_i\)</span> are nonzero?</em></p>
-<p>Because the <span class="math inline">\(X_i\)</span> are identically distribution, the probability that any one of them is nonzero is
+<p>Because the <span class="math inline">\(X_i\)</span> are identically distributed, the probability that any one of them is nonzero is
 <span class="math display">\[ \mathbb P(X_1 &gt; 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]</span>
 Then, because the <span class="math inline">\(X_i\)</span> independent, the probability that they are all nonzero is
 <span class="math display">\[ \mathbb P(X_1 &gt; 0)^{20} = 0.972^{20} = 0.564. \]</span></p>
@@ -599,13 +604,13 @@ Then, because the <span class="math inline">\(X_i\)</span> independent, the prob
 :::
 ::::
 -->
-<p>For probability with events, we had the conditional probability
+<p>For probabilities of events, we had the conditional probability
 <span class="math display">\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]</span>
 In the same way, for random variables, we have
 <span class="math display">\[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]</span>
 We call the distribution of this the <strong>conditional distribution</strong>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-78" class="definition"><strong>Definition 13.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint PMF <span class="math inline">\(p_{X,Y}\)</span> and marginal PMFs <span class="math inline">\(p_X\)</span> and <span class="math inline">\(p_Y\)</span> respectively. Then the <strong>condition probability mass function of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X\)</span></strong> <span class="math inline">\(p_{Y \mid X}\)</span> is given by
+<p><span id="def:unlabeled-div-78" class="definition"><strong>Definition 13.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint PMF <span class="math inline">\(p_{X,Y}\)</span> and marginal PMFs <span class="math inline">\(p_X\)</span> and <span class="math inline">\(p_Y\)</span> respectively. Then the <strong>condition probability mass function</strong> of <span class="math inline">\(Y\)</span> <strong>given</strong> <span class="math inline">\(X\)</span>, <span class="math inline">\(p_{Y \mid X}\)</span>, is given by
 <span class="math display">\[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]</span></p>
 </div>
 <p>Let’s think again about our coin tossing example. To get the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>, say, we have
@@ -623,16 +628,16 @@ so we take the <span class="math inline">\(x = 1\)</span> row of the joint distr
   p_{X \mid Y} (1 \mid 2) &amp;= \frac{p_{X,Y}(1,2)}{p_Y(2)} = \frac{\frac14}{\frac38} = \tfrac23 , \\
   p_{X \mid Y} (2 \mid 2) &amp;= \frac{p_{X,Y}(2,2)}{p_Y(2)} = \frac{\frac18}{\frac38} = \tfrac13 .
 \end{align*}\]</span></p>
-<p>Results that we used for conditional probability with events also carry over to random variables. For example, from <strong>Bayes’ theorem</strong> we know that
+<p>Results that we used for conditional probability with events also carry over to random variables. For example, from Bayes’ theorem we know that
 <span class="math display">\[ \mathbb P(A \mid B) = \frac{ \mathbb P(A) \, \mathbb P(B \mid A)}{\mathbb P(B)} . \]</span>
-In the same way, we have
+In the same way, we have <strong>Bayes’ theorem</strong> for random variables:
 <span class="math display">\[ \mathbb P(X = x \mid Y = y) = \frac{ \mathbb P(X = x) \, \mathbb P(Y = y \mid X = x)}{\mathbb P(Y = y)} , \]</span>
 which in terms of conditional and marginal PMFs is
 <span class="math display">\[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]</span>
 This will be a particularly important formula when we study Bayesian statistics at the end of the module.</p>
 <p>We can check Bayes’ theorem with <span class="math inline">\(x = 1\)</span> and <span class="math inline">\(y = 2\)</span>, for example.
 The right-hand side of Bayes’ theorem is
-<span class="math display">\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{23} .   \]</span>
+<span class="math display">\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{2}{3} .   \]</span>
 The left-hand side of Bayes’ theorem is
 <span class="math display">\[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]</span>
 which is equal, as it should be, to the right-hand side.</p>
@@ -648,6 +653,8 @@ p_X(x) &amp;= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
 p_{Y \mid X}(y \mid x) &amp;= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)}
 \end{align*}\]</span></li>
 <li>Two random variables are independent if <span class="math inline">\(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\)</span>.</li>
+<li>Bayes’ theorem:
+<span class="math display">\[ p_{X \mid Y}(x \mid y) = \frac{ p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]</span></li>
 </ul>
 </div>
 

@@ -11,7 +11,7 @@
 Now let's write down what information we are given in the question:
 
 * $\mathbb P(J \mid S) = 0.98$, because the filter is 98% effective at sending spam emails to my junk folder.
-* $\mathbb P(J \mid L) = 0.01$, because the filter incorectly sends 1% of legitimate emails to my junk folder.
+* $\mathbb P(J \mid L) = 0.01$, because the filter incorrectly sends 1% of legitimate emails to my junk folder.
 * $\mathbb P(S) = 0.1$, because 1 in 10 emails are spam. Therefore $\mathbb P(L) = \mathbb P(S^{\mathsf{c}}) = 1 - 0.1 = 0.9$.
 * The question wants us to find out $\mathbb P(L \mid J)$, the proportion of emails in my junk folder that are legitimate.
 
@@ -22,10 +22,10 @@ What about the denominator $\mathbb P(J)$? Well, we know $\mathbb P(J \mid S)$ a
 \[ \mathbb P(J) = \mathbb P(L) \, \mathbb P(J \mid L) + \mathbb P(S) \, \mathbb P(J \mid S) = 0.9 \times 0.01 + 0.1 \times 0.98 = 0.107 \]
 
 Substituting this back into $(*)$, gives us
-\[ \mathbb P(L \mid J) = \frac{0.9 \times 0.01}{0.107} = 0.084 . \]
+\[ \mathbb P(L \mid J) = \frac{0.9 \times 0.01}{0.107} = 0.084 , \]
 So roughly 8% of emails in my junk folder are legitimate emails.
 
-**Marks.** Up to 4 marks for mathematical accuracy. You can probably award all 3 marks if the answer at the end is correct, 3 for the right idea but a minor error, 1 or 2 marks for some progress.
+**Marks.** Up to 4 marks for mathematical accuracy. You can probably award all 4 marks if the answer at the end is correct, 3 for the right idea but a minor error, 1 or 2 marks for some progress.
 
 Up to 3 marks for quality of writing. When awarding marks here, bear in mind:
 
@@ -33,6 +33,7 @@ Up to 3 marks for quality of writing. When awarding marks here, bear in mind:
 * Does the answer clearly set out in mathematics the information given in the question?
 * If the answer uses that "spam" and "legitimate" are a partition, is this explicitly stated?
 * Are results used clearly cited ("By Bayes' theorem...", "Using the law of total probability...", etc)?
+* Are all steps in the argument clearly explained?
 :::
 ::::
 
