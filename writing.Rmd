@@ -1,12 +1,10 @@
 # Tips on writing mathematics  {.unnumbered #writing}
 
 ::: {.mysummary}
-In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that.
-
-I may try to expand this a bit later.
+In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that. I may try to expand this a bit later.
 :::
 
-## Introduction {.unnumbered #writing-intro}
+## Advice {.unnumbered #advice}
 
 If a maths question asks you to "State", "Write down" or "Calculate" something, you don't need to do any more than give the answer. But if a question asks you to "Prove", "Show that" or "Explain", then the marker is looking for a clearly explained answer, and will base your mark on how well you explain your solution, not just on it's mathematical accuracy.
 
@@ -22,7 +20,7 @@ Some things a marker might look for include:
 * It's usually best to avoid abbreviations and shorthand, like "LHS" ("left-hand side"), "WLOG" ("without loss of generality"), "iff" ("if and only if"), etc, although specific technical abbreviations from the course, like "PMF" ("probability mass function") are OK. Mathematical shorthand like $\therefore$ or $\Rightarrow$ should be avoided as "word alternatives" ("So", "Thus", "Therefore", "Hence", etc, are better), but are OK in certain circumstances where they have specific technical meanings.
 * It's fine -- and often good! -- to use diagrams to aid your explanation. But a diagram is rarely sufficient by itself without some writing to explain what it shows.
 
-## Example  {.unnumbered #writing-ex}
+## Examples  {.unnumbered #writing-ex}
 
 Here are two solutions for [Problem Sheet 3 Question B1](#P3-long). This first solution is a typical sort of solution I might see from a student. The second solution has exactly the same mathematical content, but is more clearly explained. Which do you think is better?
 
@@ -51,7 +49,7 @@ Here are two solutions for [Problem Sheet 3 Question B1](#P3-long). This first s
 \end{tikzpicture}
 ```
 
-\[ \therefore \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\comp)  \]
+\[ \therefore \ \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\comp)  \]
 
 \begin{align*}
 \Rightarrow \qquad \mathbb P(A \cap B^\comp)
@@ -67,7 +65,7 @@ Here are two solutions for [Problem Sheet 3 Question B1](#P3-long). This first s
 We need to show that $A$ and $B^\comp$ are independent, which means showing that
 \[ \mathbb P(A \cap B^\comp) = \mathbb P(A) \, \mathbb P(B^\comp) . \tag{$*$} \]
 
-By splitting the event $A$ up into "the bit in $B$" and the "the bit not in $A$", as shown in the Venn diagram below, we have a disjoint union
+By splitting the event $A$ up into "the bit in $B$" and the "the bit not in $B$", as shown in the Venn diagram below, we have a disjoint union
 \[ A = (A \cap B) \cup (A \cap B^\comp) . \]
 
 ```{tikz writing-pic-1, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
@@ -101,6 +99,47 @@ Hence, the left-hand side of $(*)$ is
 \end{align*}
 In the second line, we used the fact that $A$ and $B$ are independent, as given in the question, to replace $\mathbb P(A \cap B)$ by $\mathbb P(A)\,\mathbb P(B)$. In the final line, we used the complement rule $\mathbb P(B^\comp) = 1 - \mathbb P(B)$. But this is exactly the right-hand side of $(*)$.
 Hence, we've shown the left- and right-hand sides of $(*)$ are equal, and we are done.
+:::
+
+Here's another example -- [Problem Sheet 3, Question B3(b)](#P3-long):
+
+::: {.thpart}
+**Problem Sheet 3, Question B3(b).** *Soldiers are asked about their use of illegal drugs, using a so-called "randomised survey". Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:*
+
+1. *"Say 'Yes.'"*
+2. *"Say 'No.'"*
+3. *"Truthfully answer the question 'Have you taken any illegal drugs in the past 12 months?'"*
+
+*Suppose that 40% of soldiers respond "Yes". What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months?*
+:::
+
+::: {.thpart}
+*Solution 1.*
+
+\begin{align*} \mathbb P(\text{Yes}) &= \mathbb P(C_1)\,\mathbb P(\text{Yes} \mid C_1) + \mathbb P(C_2)\,\mathbb P(\text{Yes} \mid C_2) + 
+\mathbb P(C_3)\,\mathbb P(\text{Yes} \mid C_3) \\
+\Rightarrow \qquad\qquad\  \, 0.4 &= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
+&=\tfrac13 + \tfrac13 \,\mathbb P(\text{Drugs})  \\
+\Rightarrow \qquad \mathbb P(\text{Drugs}) &= \frac{0.4 - \frac13}{\frac13} = 20\%
+\end{align*}
+:::
+
+
+::: {.thpart}
+*Solution 2.*
+Let $C_1, C_2, C_3$ be the events that a soldier picks cards 1, 2, or 3 respectively. These have each probability $\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13$, because the three cards are equally likely.
+
+Let $Y$ be the event that the soldier answers "Yes". We are told that $\mathbb P(Y) = 0.4$.
+
+We know that $\mathbb P(Y \mid C_1) = 1$, because a soldier must answer "Yes" to Card 1, and $\mathbb P(Y \mid C_2) = 0$, because a soldier must answer "No" to Card 2. For Card 3, a soldier answers "Yes" if they have taken drugs and "No" if they have not, so $\mathbb P(Y \mid C_3) = \mathbb P(D)$, where $\mathbb P(D)$, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. 
+
+Since $C_1, C_2, C_3$ make up a partition -- a soldier must pick exactly one card -- the law of total probability tells us that
+\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 
+\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]
+With the information we have gathered above, we have
+\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D)  . \]
+Solving this gives 
+\[ \mathbb P(D) = \frac{0.4 - \frac13}{\frac13} = \frac15 = 20\% . \]
 :::
 
 

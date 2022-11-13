@@ -296,8 +296,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
 <ul>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-intro"><i class="fa fa-check"></i>Introduction</a></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Example</a></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
 <ul>
@@ -328,11 +328,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="writing" class="section level1 unnumbered hasAnchor">
 <h1>Tips on writing mathematics<a href="writing.html#writing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="mysummary">
-<p>In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that.</p>
-<p>I may try to expand this a bit later.</p>
+<p>In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that. I may try to expand this a bit later.</p>
 </div>
-<div id="writing-intro" class="section level2 unnumbered hasAnchor">
-<h2>Introduction<a href="writing.html#writing-intro" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="advice" class="section level2 unnumbered hasAnchor">
+<h2>Advice<a href="writing.html#advice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If a maths question asks you to “State”, “Write down” or “Calculate” something, you don’t need to do any more than give the answer. But if a question asks you to “Prove”, “Show that” or “Explain”, then the marker is looking for a clearly explained answer, and will base your mark on how well you explain your solution, not just on it’s mathematical accuracy.</p>
 <p>Some things a marker might look for include:</p>
 <ul>
@@ -348,7 +347,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 </div>
 <div id="writing-ex" class="section level2 unnumbered hasAnchor">
-<h2>Example<a href="writing.html#writing-ex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<h2>Examples<a href="writing.html#writing-ex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here are two solutions for <a href="P3.html#P3-long">Problem Sheet 3 Question B1</a>. This first solution is a typical sort of solution I might see from a student. The second solution has exactly the same mathematical content, but is more clearly explained. Which do you think is better?</p>
 <div class="thpart">
 <p><strong>Problem Sheet 3, Question B1.</strong> <em>Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are also independent events.</em></p>
@@ -356,7 +355,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="thpart">
 <p><em>Solution 1.</em></p>
 <p><img src="math1710_files/figure-html/writing-pic-0-1.png" width="320pt" style="display: block; margin: auto;" /></p>
-<p><span class="math display">\[ \therefore \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c})  \]</span></p>
+<p><span class="math display">\[ \therefore \ \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c})  \]</span></p>
 <p><span class="math display">\[\begin{align*}
 \Rightarrow \qquad \mathbb P(A \cap B^\mathsf{c})
 &amp;= \mathbb P(A) - \mathbb P(A \cap B) \\
@@ -369,7 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Solution 2.</em>
 We need to show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are independent, which means showing that
 <span class="math display">\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]</span></p>
-<p>By splitting the event <span class="math inline">\(A\)</span> up into “the bit in <span class="math inline">\(B\)</span>” and the “the bit not in <span class="math inline">\(A\)</span>”, as shown in the Venn diagram below, we have a disjoint union
+<p>By splitting the event <span class="math inline">\(A\)</span> up into “the bit in <span class="math inline">\(B\)</span>” and the “the bit not in <span class="math inline">\(B\)</span>”, as shown in the Venn diagram below, we have a disjoint union
 <span class="math display">\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) . \]</span></p>
 <p><img src="math1710_files/figure-html/writing-pic-1-1.png" width="320pt" style="display: block; margin: auto;" /></p>
 <p>Applying Axiom 3 to this disjoint union, we have
@@ -384,6 +383,38 @@ We need to show that <span class="math inline">\(A\)</span> and <span class="mat
 \end{align*}\]</span>
 In the second line, we used the fact that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, as given in the question, to replace <span class="math inline">\(\mathbb P(A \cap B)\)</span> by <span class="math inline">\(\mathbb P(A)\,\mathbb P(B)\)</span>. In the final line, we used the complement rule <span class="math inline">\(\mathbb P(B^\mathsf{c}) = 1 - \mathbb P(B)\)</span>. But this is exactly the right-hand side of <span class="math inline">\((*)\)</span>.
 Hence, we’ve shown the left- and right-hand sides of <span class="math inline">\((*)\)</span> are equal, and we are done.</p>
+</div>
+<p>Here’s another example – <a href="P3.html#P3-long">Problem Sheet 3, Question B3(b)</a>:</p>
+<div class="thpart">
+<p><strong>Problem Sheet 3, Question B3(b).</strong> <em>Soldiers are asked about their use of illegal drugs, using a so-called “randomised survey”. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:</em></p>
+<ol style="list-style-type: decimal">
+<li><em>“Say ‘Yes.’”</em></li>
+<li><em>“Say ‘No.’”</em></li>
+<li><em>“Truthfully answer the question ‘Have you taken any illegal drugs in the past 12 months?’”</em></li>
+</ol>
+<p><em>Suppose that 40% of soldiers respond “Yes”. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months?</em></p>
+</div>
+<div class="thpart">
+<p><em>Solution 1.</em></p>
+<p><span class="math display">\[\begin{align*} \mathbb P(\text{Yes}) &amp;= \mathbb P(C_1)\,\mathbb P(\text{Yes} \mid C_1) + \mathbb P(C_2)\,\mathbb P(\text{Yes} \mid C_2) +
+\mathbb P(C_3)\,\mathbb P(\text{Yes} \mid C_3) \\
+\Rightarrow \qquad\qquad\  \, 0.4 &amp;= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
+&amp;=\tfrac13 + \tfrac13 \,\mathbb P(\text{Drugs})  \\
+\Rightarrow \qquad \mathbb P(\text{Drugs}) &amp;= \frac{0.4 - \frac13}{\frac13} = 20\%
+\end{align*}\]</span></p>
+</div>
+<div class="thpart">
+<p><em>Solution 2.</em>
+Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively. These have each probability <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span>, because the three cards are equally likely.</p>
+<p>Let <span class="math inline">\(Y\)</span> be the event that the soldier answers “Yes”. We are told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
+<p>We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, because a soldier must answer “Yes” to Card 1, and <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span>, because a soldier must answer “No” to Card 2. For Card 3, a soldier answers “Yes” if they have taken drugs and “No” if they have not, so <span class="math inline">\(\mathbb P(Y \mid C_3) = \mathbb P(D)\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months.</p>
+<p>Since <span class="math inline">\(C_1, C_2, C_3\)</span> make up a partition – a soldier must pick exactly one card – the law of total probability tells us that
+<span class="math display">\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) +
+\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]</span>
+With the information we have gathered above, we have
+<span class="math display">\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D)  . \]</span>
+Solving this gives
+<span class="math display">\[ \mathbb P(D) = \frac{0.4 - \frac13}{\frac13} = \frac15 = 20\% . \]</span></p>
 </div>
 
 </div>

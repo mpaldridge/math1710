@@ -5342,13 +5342,11 @@ However, many students find getting with started with R in the first few weeks p
 \chapter*{Tips on writing mathematics}\label{writing}}
 \addcontentsline{toc}{chapter}{Tips on writing mathematics}
 
-In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that.
+In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that. I may try to expand this a bit later.
 
-I may try to expand this a bit later.
-
-\hypertarget{writing-intro}{%
-\section*{Introduction}\label{writing-intro}}
-\addcontentsline{toc}{section}{Introduction}
+\hypertarget{advice}{%
+\section*{Advice}\label{advice}}
+\addcontentsline{toc}{section}{Advice}
 
 If a maths question asks you to ``State'', ``Write down'' or ``Calculate'' something, you don't need to do any more than give the answer. But if a question asks you to ``Prove'', ``Show that'' or ``Explain'', then the marker is looking for a clearly explained answer, and will base your mark on how well you explain your solution, not just on it's mathematical accuracy.
 
@@ -5377,8 +5375,8 @@ Some things a marker might look for include:
 \end{itemize}
 
 \hypertarget{writing-ex}{%
-\section*{Example}\label{writing-ex}}
-\addcontentsline{toc}{section}{Example}
+\section*{Examples}\label{writing-ex}}
+\addcontentsline{toc}{section}{Examples}
 
 Here are two solutions for \protect\hyperlink{P3-long}{Problem Sheet 3 Question B1}. This first solution is a typical sort of solution I might see from a student. The second solution has exactly the same mathematical content, but is more clearly explained. Which do you think is better?
 
@@ -5388,7 +5386,7 @@ Here are two solutions for \protect\hyperlink{P3-long}{Problem Sheet 3 Question 
 
 \begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/writing-pic-0-1} \end{center}
 
-\[ \therefore \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c})  \]
+\[ \therefore \ \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c})  \]
 
 \begin{align*}
 \Rightarrow \qquad \mathbb P(A \cap B^\mathsf{c})
@@ -5402,7 +5400,7 @@ Here are two solutions for \protect\hyperlink{P3-long}{Problem Sheet 3 Question 
 We need to show that \(A\) and \(B^\mathsf{c}\) are independent, which means showing that
 \[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]
 
-By splitting the event \(A\) up into ``the bit in \(B\)'' and the ``the bit not in \(A\)'', as shown in the Venn diagram below, we have a disjoint union
+By splitting the event \(A\) up into ``the bit in \(B\)'' and the ``the bit not in \(B\)'', as shown in the Venn diagram below, we have a disjoint union
 \[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) . \]
 
 \begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/writing-pic-1-1} \end{center}
@@ -5420,6 +5418,47 @@ Hence, the left-hand side of \((*)\) is
 \end{align*}
 In the second line, we used the fact that \(A\) and \(B\) are independent, as given in the question, to replace \(\mathbb P(A \cap B)\) by \(\mathbb P(A)\,\mathbb P(B)\). In the final line, we used the complement rule \(\mathbb P(B^\mathsf{c}) = 1 - \mathbb P(B)\). But this is exactly the right-hand side of \((*)\).
 Hence, we've shown the left- and right-hand sides of \((*)\) are equal, and we are done.
+
+Here's another example -- \protect\hyperlink{P3-long}{Problem Sheet 3, Question B3(b)}:
+
+\textbf{Problem Sheet 3, Question B3(b).} \emph{Soldiers are asked about their use of illegal drugs, using a so-called ``randomised survey''. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{``Say `Yes.'\,''}
+\item
+  \emph{``Say `No.'\,''}
+\item
+  \emph{``Truthfully answer the question `Have you taken any illegal drugs in the past 12 months?'\,''}
+\end{enumerate}
+
+\emph{Suppose that 40\% of soldiers respond ``Yes''. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months?}
+
+\emph{Solution 1.}
+
+\begin{align*} \mathbb P(\text{Yes}) &= \mathbb P(C_1)\,\mathbb P(\text{Yes} \mid C_1) + \mathbb P(C_2)\,\mathbb P(\text{Yes} \mid C_2) + 
+\mathbb P(C_3)\,\mathbb P(\text{Yes} \mid C_3) \\
+\Rightarrow \qquad\qquad\  \, 0.4 &= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
+&=\tfrac13 + \tfrac13 \,\mathbb P(\text{Drugs})  \\
+\Rightarrow \qquad \mathbb P(\text{Drugs}) &= \frac{0.4 - \frac13}{\frac13} = 20\%
+\end{align*}
+
+\emph{Solution 2.}
+Let \(C_1, C_2, C_3\) be the events that a soldier picks cards 1, 2, or 3 respectively. These have each probability \(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\), because the three cards are equally likely.
+
+Let \(Y\) be the event that the soldier answers ``Yes''. We are told that \(\mathbb P(Y) = 0.4\).
+
+We know that \(\mathbb P(Y \mid C_1) = 1\), because a soldier must answer ``Yes'' to Card 1, and \(\mathbb P(Y \mid C_2) = 0\), because a soldier must answer ``No'' to Card 2. For Card 3, a soldier answers ``Yes'' if they have taken drugs and ``No'' if they have not, so \(\mathbb P(Y \mid C_3) = \mathbb P(D)\), where \(\mathbb P(D)\), which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months.
+
+Since \(C_1, C_2, C_3\) make up a partition -- a soldier must pick exactly one card -- the law of total probability tells us that
+\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 
+\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]
+With the information we have gathered above, we have
+\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D)  . \]
+Solving this gives
+\[ \mathbb P(D) = \frac{0.4 - \frac13}{\frac13} = \frac15 = 20\% . \]
 
 \commtrue
 
