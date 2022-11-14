@@ -118,7 +118,7 @@ Here's another example -- [Problem Sheet 3, Question B3(b)](#P3-long):
 
 \begin{align*} \mathbb P(\text{Yes}) &= \mathbb P(C_1)\,\mathbb P(\text{Yes} \mid C_1) + \mathbb P(C_2)\,\mathbb P(\text{Yes} \mid C_2) + 
 \mathbb P(C_3)\,\mathbb P(\text{Yes} \mid C_3) \\
-\Rightarrow \qquad\qquad\  \, 0.4 &= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
+\Rightarrow \qquad\qquad\  \  0.4 &= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
 &=\tfrac13 + \tfrac13 \,\mathbb P(\text{Drugs})  \\
 \Rightarrow \qquad \mathbb P(\text{Drugs}) &= \frac{0.4 - \frac13}{\frac13} = 20\%
 \end{align*}
