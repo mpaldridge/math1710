@@ -162,11 +162,11 @@ This will temporarily create new functions `dgeomalt()`, `pgeomalt()`, `qgeomalt
 
 ## Assessed questions
 
-*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 7, but the official deadline is **Monday 21 November at 1400**.*
+*The following five assessed questions should be submitted [via this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUMVI0T0ZEWFlZOVZNUDQwN0hXOVROV0Y4Ty4u). I recommend you do this in Week 7, but the official deadline is **Monday 21 November at 1400**.*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
-*So that (most) students get different data to work with, the questions will use the number* $i$, where $i$ is the final digit of your Student ID number -- that is, a number between 0 and 9. (Note that we are only using one digit this time, where on previous worksheets we used two digits.)
+*So that (most) students get different data to work with, the questions will use the number $i$, where $i$ is the final digit of your Student ID number -- that is, a number between 0 and 9. (Note that we are only using one digit this time, where on previous worksheets we used two digits.)*
 
 *Any rounding should be performed with the R `round()` or `signif()` functions.*
 
