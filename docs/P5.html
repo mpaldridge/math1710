@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Problem Sheet 4 | MATH1710 Probability and Statistics I</title>
+  <title>Problem Sheet 5 | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Problem Sheet 4 | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Problem Sheet 5 | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Problem Sheet 4 | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Problem Sheet 5 | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="L14-covariance.html"/>
-<link rel="next" href="L15-continuous.html"/>
+<link rel="prev" href="L17-normal.html"/>
+<link rel="next" href="R.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -299,6 +299,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="16.3" data-path="L17-normal.html"><a href="L17-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
 <li class="chapter" data-level="16.4" data-path="L17-normal.html"><a href="L17-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -338,492 +345,419 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="P4" class="section level1 unnumbered hasAnchor">
-<h1>Problem Sheet 4<a href="P4.html#P4" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!--
-\newcommand{\Cov}{\operatorname{Cov}}
-\newcommand{\Corr}{\operatorname{Corr}}
--->
+<div id="P5" class="section level1 unnumbered hasAnchor">
+<h1>Problem Sheet 5<a href="P5.html#P5" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <style>
 .myanswers { 
 display: none !important;
 }
 </style>
 <div class="mysummary">
-<p>This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by <strong>2pm on Monday 28 November</strong>.</p>
+<p>This is Problem Sheet 4. This problem sheet covers <a href="#S08-continuous">Section 8</a>, and will later have questions added on Section 9. You should work through all the questions on this problem sheet so far during Week 8, in preparation for your tutorial in Week 10. The problem sheet contains two assessed questions, which are due in by <del>2pm on Monday 6 December</del> <strong>2pm on Tuesday 7 December</strong>.</p>
 </div>
-<div id="P4-short" class="section level2 unnumbered hasAnchor">
-<h2>A: Short questions<a href="P4.html#P4-short" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="P5-short" class="section level2 unnumbered hasAnchor">
+<h2>A: Short questions<a href="P5.html#P5-short" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="myq">
-<p><strong>A1.</strong> Let <span class="math inline">\(X \sim \text{Bin}(20, 0.4)\)</span>. Calculate</p>
+<p><strong>A1.</strong> Consider the continuous random variable <span class="math inline">\(X\)</span> with PDF
+<span class="math display">\[ f(x) = \begin{cases} \tfrac12x &amp; \text{for $0 \leq x \leq 1$} \\
+                        \tfrac12 &amp; \text{for $1 &lt; x \leq 2$} \\
+                        \tfrac32 - \tfrac12x &amp; \text{for $2 &lt; x \leq 3$} \end{cases} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
 <div class="subq">
-<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 8)\)</span></p>
+<p><strong>(a)</strong> Calculate the CDF for <span class="math inline">\(X\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-<span class="math display">\[ \mathbb P(X = 8) = \binom{20}{8} 0.4^8 \times 0.6^{12} = 0.180 . \]</span></p>
+<p><em>Solution.</em> We treat the different cases separately.</p>
+<p>For <span class="math inline">\(x &lt; 0\)</span>, we have <span class="math inline">\(F(x) = 0\)</span>.</p>
+<p>For <span class="math inline">\(0 \leq x \leq 1\)</span>, we have
+<span class="math display">\[ F(x) = \int_0^x \tfrac12 y \, \mathrm dy = \left[\tfrac14y^2\right]_0^x = \tfrac14 x^2 .\]</span>
+In particular, <span class="math inline">\(F(1) = \frac14\)</span>.</p>
+<p>For <span class="math inline">\(1 &lt; x \leq 2\)</span>, we have
+<span class="math display">\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(1) + \int_1^y \tfrac12 \, \mathrm dy = \tfrac14 + \left[ \tfrac 12 y\right]_1^x = \tfrac12 x - \tfrac14 .\]</span>
+In particular, <span class="math inline">\(F(2) = \frac34\)</span>.</p>
+<p>For <span class="math inline">\(2 &lt; x \leq 3\)</span>, we have
+<span class="math display">\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(2) + \int_2^y \left(\tfrac32 - \tfrac12y\right) \, \mathrm dy = \tfrac34 + \left[ \tfrac 32 y - \tfrac14 y^2\right]_2^x = \tfrac32 x - \tfrac14 x^2 - \tfrac 54 .\]</span>
+In particular, <span class="math inline">\(F(3) = 1\)</span>.</p>
+<p>For <span class="math inline">\(x &gt; 3\)</span>, we have <span class="math inline">\(F(x) = 1\)</span>.</p>
+<p>Hence,
+<span class="math display">\[ F(x) = \begin{cases}
+0 &amp; \text{for $x &lt; 0$} \\
+\tfrac14 x^2 &amp; \text{for $0 \leq x \leq 1$} \\
+\tfrac12 x - \tfrac14 &amp; \text{for $1 &lt; x \leq 2$} \\
+\tfrac32 x - \tfrac14 x^2 - \tfrac 54 &amp; \text{for $2 &lt; x \leq 3$} \\
+1 &amp; \text{for $x &gt; 3$.}
+\end{cases}
+\]</span></p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(8 \leq X \leq 11)\)</span></p>
+<p><strong>(b)</strong> What is <span class="math inline">\(\mathbb P(\tfrac32 \leq X \leq \tfrac52)\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is
+<span class="math display">\[ F\big(\tfrac52\big) - F\big(\tfrac32\big) = \tfrac{15}{16} - \tfrac12 = \tfrac{7}{16} .\]</span>
+(Here, it was useful to note that <span class="math inline">\(x = \tfrac52\)</span> is in the <span class="math inline">\(2 &lt; x \leq 3\)</span> range and <span class="math inline">\(x = \tfrac32\)</span> is in the <span class="math inline">\(1 &lt; x \leq 2\)</span> range.)</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Calculate the expectation <span class="math inline">\(\mathbb EX\)</span>.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
+We have
 <span class="math display">\[\begin{align*}
-\mathbb P(8 \leq X \leq 11) &amp;= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\
-&amp;= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
-&amp;= 0.180 + 0.160 + 0.117 + 0.071 \\
-&amp;= 0.528 .
-\end{align*}\]</span></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> <span class="math inline">\(\mathbb EX\)</span></p>
-<div class="myanswers">
-<p><em>Solution.</em> <span class="math inline">\(\mathbb EX = 20 \times 0.4 = 8\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="myq">
-<p><strong>A2.</strong> Let <span class="math inline">\(X \sim \text{Geom}(0.2)\)</span>. Calculate</p>
-<div class="subq">
-<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 2)\)</span></p>
-<div class="myanswers">
-<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X = 2) = 0.8^1 \times 0.2^1 = 0.16\)</span>.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq 3)\)</span></p>
-<div class="myanswers">
-<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.2 - 0.8\times 0.2 = 0.64\)</span>.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> <span class="math inline">\(\operatorname{Var}(X)\)</span></p>
-<div class="myanswers">
-<p><em>Solution.</em> <span class="math inline">\({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="myq">
-<p><strong>A3.</strong> Let <span class="math inline">\(X \sim \text{Po}(2.5)\)</span>. Calculate</p>
-<div class="subq">
-<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 3)\)</span></p>
-<div class="myanswers">
-<p><em>Solution.</em>
-<span class="math inline">\(\mathbb P(X = 3) = \mathrm e^{-2.5} \displaystyle\frac{2.5^3}{3!} = 0.214\)</span>.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq \mathbb EX)\)</span></p>
-<div class="myanswers">
-<p><em>Solution.</em> First, <span class="math inline">\(\mathbb EX = 2.5\)</span>. So
-<span class="math display">\[\begin{align*}
-\mathbb P(X \geq \mathbb EX) &amp;= \mathbb P(X \geq 2.5) \\
-  &amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) - \mathbb P(X = 2) \\
-  &amp;= 1 - \mathrm e^{-2.5} - 2.5 \mathrm e^{-2.5} - \frac{2.5^2}{2} \mathrm e^{-2.5} \\
-  &amp;= 1 - 0.082 - 0.204 - 0.257 \\
-  &amp;= 0.456.
+\mathbb EX &amp;= \int_{-\infty}^{\infty} x\,f(x)\, \mathrm dx \\
+  &amp;= \int_0^1 x\times\tfrac12x\, \mathrm dx + \int_1^2 x \times \tfrac12 \, \mathrm dx + \int_2^3 x \times \left(\tfrac32 - \tfrac12 x\right)\, \mathrm dx \\
+  &amp;= \left[\tfrac16 x^3 \right]_0^1 + \left[\tfrac14 x^2 \right]_1^2 + \left[\tfrac34 x^2 - \tfrac16 x^3 \right]_2^3 \\
+  &amp;= \tfrac16 - 0 + 1 - \tfrac14 + \tfrac94 - \tfrac53 \\
+  &amp;= \tfrac32 .
 \end{align*}\]</span></p>
 </div>
 </div>
 </div>
 <div class="myq">
-<p><strong>A4.</strong> Consider the following joint PMF:</p>
-<table style="width:100%;">
-<colgroup>
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
-<th align="center"><span class="math inline">\(y = 0\)</span></th>
-<th align="center"><span class="math inline">\(y = 1\)</span></th>
-<th align="center"><span class="math inline">\(y = 2\)</span></th>
-<th align="center"><span class="math inline">\(y = 3\)</span></th>
-<th align="center"><span class="math inline">\(\phantom{p_X(x)}\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(x=0\)</span></td>
-<td align="center"><span class="math inline">\(2k\)</span></td>
-<td align="center"><span class="math inline">\(2k\)</span></td>
-<td align="center"><span class="math inline">\(k\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(x=1\)</span></td>
-<td align="center"><span class="math inline">\(k\)</span></td>
-<td align="center"><span class="math inline">\(3k\)</span></td>
-<td align="center"><span class="math inline">\(k\)</span></td>
-<td align="center"><span class="math inline">\(k\)</span></td>
-<td align="center"></td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(x=2\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center"><span class="math inline">\(k\)</span></td>
-<td align="center"><span class="math inline">\(k\)</span></td>
-<td align="center"><span class="math inline">\(2k\)</span></td>
-<td align="center"></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(\vphantom{p_Y(y)}\)</span></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+<p><strong>A2.</strong> Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
+<span class="math display">\[ f(x) = \frac{k}{x^3} \qquad \text{for $x \geq 1$} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
 <div class="subq">
-<p><strong>(a)</strong> Find the value of <span class="math inline">\(k\)</span> that makes this a joint PMF.</p>
+<p><strong>(a)</strong> What value of <span class="math inline">\(k\)</span> makes this into a true PDF?</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-The total of the joint PMF is
-<span class="math display">\[ 2k + 2k + k + k + 3k + k + k + k + k + 2k = 15k \]</span>
-which must be 1, so <span class="math inline">\(k = \frac{1}{15}\)</span>.</p>
+<p><em>Solution.</em> We need the PDF to integrate to 1. So
+<span class="math display">\[ 1 = \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_1^\infty kx^{-3} \, \mathrm dx = \left[-\tfrac 12 kx^{-2}\right]_1^\infty = - 0 + \tfrac12k . \]</span>
+So <span class="math inline">\(k = 2\)</span>.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Find the marginal PMFs of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<p><strong>(b)</strong> What is <span class="math inline">\(\mathbb P(X \geq 3)\)</span>?</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-By summing across the rows and down the columns, respectively, we get this:</p>
-<table style="width:100%;">
-<colgroup>
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-<col width="16%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
-<th align="center"><span class="math inline">\(y = 0\)</span></th>
-<th align="center"><span class="math inline">\(y = 1\)</span></th>
-<th align="center"><span class="math inline">\(y = 2\)</span></th>
-<th align="center"><span class="math inline">\(y = 3\)</span></th>
-<th align="center"><span class="math inline">\(p_X(x)\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(x=0\)</span></td>
-<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center"><span class="math inline">\(\frac{5}{15}\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(x=1\)</span></td>
-<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
-</tr>
-<tr class="odd">
-<td align="center"><span class="math inline">\(x=2\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{4}{15}\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
-<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
-<td align="center"></td>
-</tr>
-</tbody>
-</table>
+<p><em>Solution.</em> This is
+<span class="math display">\[ \mathbb P(X \geq 3) = \int_3^\infty 2x^{-3}\,\mathrm dx = \left[-x^{-2}\right]_3^\infty = \tfrac19 .  \]</span></p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> What is the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>?</p>
+<p><strong>(c)</strong> What is the expected value <span class="math inline">\(\mathbb EX\)</span>?</p>
 <div class="myanswers">
-<p><em>Solution.</em> We get this by taking the <span class="math inline">\(x = 1\)</span> row of the table, than normalising it by dividing through by <span class="math inline">\(p_X(1) = \frac{6}{15}\)</span>. This gives
-<span class="math display">\[ p_{Y\mid X} (0 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (1 \mid 1) = \frac{3}{6} \qquad p_{Y\mid X} (2 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (3 \mid 1) = \frac{1}{6} . \]</span></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(d)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
-<div class="myanswers">
-<p><em>Solution.</em> No. For one example, <span class="math inline">\(p_{X,Y}(0,0) = \frac{2}{15}\)</span>, while <span class="math inline">\(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\)</span>, so they are not equal.</p>
-</div>
-</div>
-</div>
-</div>
-<div id="P4-long" class="section level2 unnumbered hasAnchor">
-<h2>B: Long questions<a href="P4.html#P4-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="myq">
-<p><strong>B1.</strong> Calculate the CDF <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span> of the geometric distribution…</p>
-<div class="subq">
-<p><strong>(a)</strong> …by summing the PMF;</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-We have,using the standard formula for the sum of a finite geometric progression,
-<span class="math display">\[\begin{align*}
-F(x) &amp;= \sum_{y = 1}^x p(y) \\
-&amp;= \sum_{y = 1}^x (1-p)^{y-1} p \\
-&amp;= \frac{p\big(1 - (1-p)^x\big)}{1 - (1-p)} \\
-&amp;= \frac{p\big(1 - (1-p)^x\big)}{p} \\
-&amp;= 1 - (1 - p)^x .
-\end{align*}\]</span></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> …by explaining how the “number of trials until success” definition tells us what <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> must be.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-Note that <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> is precisely the probability that the first <span class="math inline">\(x\)</span> trials are failures, and hence that the first success comes strictly after the <span class="math inline">\(x\)</span>th trial. The probability that the first <span class="math inline">\(x\)</span> trials are failures is <span class="math inline">\((1-p)^x\)</span>. So <span class="math inline">\(F(x) = 1 - (1-p)^x\)</span>.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-Let <span class="math inline">\(X \sim \text{Geom}(\frac{1}{36})\)</span>. Then
-<span class="math display">\[\begin{align*}
-\mathbb P(20 \leq X \leq 40) &amp;= \mathbb P(X \leq 40) - \mathbb P(X \leq 19) \\
-  &amp;= F(40) - F(19) \\
-  &amp;= \bigg(1 - \big(1 - \tfrac{1}{36})^{40}\bigg) - \bigg(1 - \big(1 - \tfrac{1}{36})^{19}\bigg) \\
-  &amp;= 0.676 - 0.414 \\
-  &amp;= 0.261.
-\end{align*}\]</span></p>
+<p><em>Solution.</em> This is
+<span class="math display">\[ \mathbb EX = \int_1^\infty x\times 2x^{-3} \mathrm dx = \left[2x^{-1}\right]_1^\infty = 2 . \]</span></p>
 </div>
 </div>
 </div>
 <div class="myq">
-<p><strong>B2.</strong> Let <span class="math inline">\(Y\)</span> be a geometric distribution with parameter <span class="math inline">\(p\)</span> according to the alternative “number of failures <em>before</em> the first success” definition.</p>
+<p><strong>A3.</strong> Let <span class="math inline">\(X \sim \text{Exp}(\frac12)\)</span>.</p>
 <div class="subq">
-<p><strong>(a)</strong> Write down the PMF for <span class="math inline">\(Y\)</span>.</p>
+<p><strong>(a)</strong> What is <span class="math inline">\(\mathbb EX\)</span>?</p>
 <div class="myanswers">
-<p><em>Solution.</em> Having <span class="math inline">\(Y = y\)</span> requires <span class="math inline">\(y\)</span> consecutive failures immediately followed by a success. So <span class="math inline">\(p_Y(y) = (1-p)^y p\)</span>.</p>
+<p><em>Solution.</em> <span class="math inline">\(\mathbb EX = \displaystyle\frac{1}{\frac12} = 2\)</span></p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Calculate the expectation and variance of <span class="math inline">\(Y\)</span>. You may use without proof the fact that for a standard “number of trials up to and including the first success” geometric distribution we have <span class="math inline">\(\mathbb EX = 1/p\)</span> and <span class="math inline">\(\operatorname{Var}(X) = (1-p)/p^2\)</span>.</p>
+<p><strong>(b)</strong> What is <span class="math inline">\(\mathbb P(1 \leq X \leq 3)\)</span>?</p>
 <div class="myanswers">
-<p><em>Solution.</em> If <span class="math inline">\(X \sim \text{Geom}(p)\)</span> under the standard definition, then (as we saw in the notes) <span class="math inline">\(Y\)</span> has the same distribution as <span class="math inline">\(X -1\)</span>. Therefore,
-<span class="math display">\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} \]</span>
-and
-<span class="math display">\[ \operatorname{Var}(Y) = \operatorname{Var}(X -1) = \operatorname{Var}(X) = \frac{1-p}{p^2} .  \]</span></p>
+<p><em>Solution.</em> We have
+<span class="math display">\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm e^{-3/2}) - (1 - \mathrm e^{-1/2}) = 0.383 . \]</span></p>
 </div>
 </div>
 </div>
 <div class="myq">
-<p><strong>B3</strong> Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
+<p><strong>A4.</strong> Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. Calculate the following <strong>(a)</strong> using <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a>; <strong>(b)</strong> using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)</p>
 <div class="subq">
-<p><strong>(a)</strong> Show that <span class="math inline">\(\mathbb EX(X-1) = \lambda^2\)</span>. You may use the Taylor series for the exponential,
-<span class="math display">\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]</span></p>
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(Z \leq -1.2)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> Using statistical tables,
+<span class="math display">\[ \Phi(-1.2) = 1 - \Phi(1.20) = 1 - 0.8849 = 0.1151 .\]</span></p>
+<p>Using R: <code>pnorm(-1.2)</code> gives <code>0.1150697</code>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(-1.2 \leq Z \leq 0.8)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> Using statistical tables, and part (i),
+<span class="math display">\[ \Phi(0.80) - \Phi(-1.2) = 0.7781 - 0.1151 = 0.6730 . \]</span></p>
+<p>Using R: <code>pnorm(0.8) - pnorm(-1.2)</code> gives <code>0.6730749</code>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(iii)</strong> <span class="math inline">\(\mathbb P(Z \leq 0.27)\)</span> (using interpolation for part (a))</p>
+<div class="myanswers">
+<p><em>Solution.</em> We can interpolate between <span class="math inline">\(\Phi(0.25) = 0.5987\)</span> and <span class="math inline">\(\Phi(0.30) = 0.6179\)</span>, to get
+<span class="math display">\[ \Phi(0.27) \approx 0.6 \,\Phi(0.25) + 0.4\, \Phi(0.30) = 0.6064 . \]</span></p>
+<p>Using R: <code>pnorm(0.27)</code> gives <code>0.6064199</code>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> Let <span class="math inline">\(X \sim \mathrm{Po}(25)\)</span>. Calculate the following <strong>(a)</strong> exactly, using R; <strong>(b)</strong> approximately, using a normal approximation with a continuity correction and <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a>. (For part (b), you should show enough working to convince a reader that you really did use the tables.)</p>
+<div class="subq">
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(X \leq 27)\)</span></p>
 <div class="myanswers">
 <p><em>Solution.</em>
-We follow exactly the method used to calculate <span class="math inline">\(\mathbb EX\)</span> in the notes. We have
+Using R: <code>ppois(27, 25)</code> gives <code>0.7001861</code>.</p>
+<p>The approximation is <span class="math inline">\(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\)</span>. With a continuity correction, we expand the interval <span class="math inline">\((-\infty,27]\)</span> outwards to <span class="math inline">\((-\infty, 27.5]\)</span>, and get
+<span class="math display">\[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(X \geq 28 \mid X \geq 27)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By the definition of conditional probability, we have
+<span class="math display">\[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]</span>
+since if <span class="math inline">\(X \geq 28\)</span> it’s automatically the case that <span class="math inline">\(X \geq 27\)</span>.</p>
+<p>Using R, we need to remember that <code>lower.tail = FALSE</code> gives <span class="math inline">\(\mathbb P(X &gt; x)\)</span> with strict inequality, which for discrete random variables is equivalent to <span class="math inline">\(\mathbb P(X \geq x +1)\)</span>. So we actually want</p>
+<p><code>ppois(27, 25, lower.tail = FALSE) / ppois(26, 25, lower.tail = FALSE)</code></p>
+<p>which gives <code>0.8089648</code>.</p>
+<p>The approximations are
 <span class="math display">\[\begin{align*}
-\mathbb EX(X-1) &amp;= \sum_{x=0}^\infty x(x-1)\, \mathrm e^{-\lambda} \frac{\lambda^x}{x!} \\
-  &amp;= \lambda^2 \mathrm e^{-\lambda} \sum_{x=2}^\infty \frac{\lambda^{x-2}}{(x - 2)!} \\
-  &amp;= \lambda^2 \mathrm e^{-\lambda}\sum_{y=0}^\infty  \frac{\lambda^y}{y!} \\
-  &amp;= \lambda^2 \mathrm e^{-\lambda} \, \mathrm e^{\lambda} \\
-  &amp;= \lambda^2  .
+\mathbb P(Z \geq 28) &amp;\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
+\mathbb P(Z \geq 27) &amp;\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821 ,
 \end{align*}\]</span>
-In the second line, we took a <span class="math inline">\(\lambda^2\)</span> and a <span class="math inline">\(\mathrm e^{-\lambda}\)</span> outside the brackets; cancelled the <span class="math inline">\(x\)</span> and <span class="math inline">\(x-1\)</span> out of the <span class="math inline">\(x!\)</span>; and removed the <span class="math inline">\(x = 0\)</span> and <span class="math inline">\(x = 1\)</span> terms from the sum, since they were 0 anyway. In the third line, we re-indexed the sum by setting <span class="math inline">\(y = x - 2\)</span>. In the fourth line, we used the Taylor series for the exponential</p>
+where again we used the continuity correct to expand <span class="math inline">\([28,\infty)\)</span> outwards to <span class="math inline">\([27.5,\infty)\)</span> and the same for <span class="math inline">\([27,\infty)\)</span>. This
+gives the answer <span class="math inline">\(0.3085/0.3821 = 0.807\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="P5-long" class="section level2 unnumbered hasAnchor">
+<h2>B: Long questions<a href="P5.html#P5-long" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="myq">
+<p><strong>B1.</strong>
+<strong>(a)</strong> Let <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Show that
+<span class="math display">\[ \mathbb P(X &gt; x + y \mid X &gt; y) = \mathbb P(X &gt; x) . \]</span></p>
+<div class="subq">
+<div class="myanswers">
+<p><em>Solution.</em><br />
+Using the definition of conditional probability, we have
+<span class="math display">\[\mathbb P(X &gt; x + y \mid X &gt; y) = \frac{\mathbb P(X &gt; x + y \text{ and } X &gt; y) }{\mathbb P(X &gt; y)}= \frac{\mathbb P(X &gt; x + y ) }{\mathbb P(X &gt; y)} , \]</span>
+since is <span class="math inline">\(X &gt; x + y\)</span> then we automatically have <span class="math inline">\(X &gt; y\)</span>.
+Note also that, for an exponential distribution we have
+<span class="math display">\[ \mathbb P(X &gt; x) = 1 - F(x) = 1 - (1 - \mathrm e^{-\lambda x}) = \mathrm e^{-\lambda x} . \]</span>
+So the left-hand side of the statement in the question is
+<span class="math display">\[ \frac{\mathrm{e}^{-\lambda(x + y)}}{\mathrm{e}^{-\lambda y}} = \mathrm e^{-\lambda x - \lambda y + \lambda y} = \mathrm{e}^{-\lambda x} , \]</span>
+which equals the right-hand side, by the above.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Hence show that <span class="math inline">\(\operatorname{Var}(X) = \lambda\)</span>. You may use the fact, proved in the notes, that <span class="math inline">\(\mathbb EX = \lambda\)</span>.</p>
+<p><strong>(b)</strong> The result proved in part (a) is called the “memoryless property”. Why do you think it’s called that?</p>
+<div class="myanswers">
+<p><em>Solution.</em> Think of <span class="math inline">\(X\)</span> as a waiting time. The result tells us that, given that we’ve already waited <span class="math inline">\(y\)</span> minutes, the probability that we have to wait at least another <span class="math inline">\(x\)</span> minutes is exactly the same as the probability we had to wait at least <span class="math inline">\(x\)</span> minutes starting from the beginning. In other words, <em>no matter when we start timing from</em>, the probability we have to wait more than <span class="math inline">\(x\)</span> minutes remains the same.</p>
+<p>This is called the “memoryless property” because it’s as if the process has no memory of how long we’ve already been waiting for.</p>
+<p>(This property also holds for the geometric distribution. The expected number of rolls of a dice until you get a six is always 6 rolls, no matter how many times you’ve already rolled the dice.)</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> When you get to certain bus stop, the average amount of time you have to wait for a bus to arrive is 20 minutes. Specifically, the time until the next bus arrives is modelled as an exponential distribution with expectation <span class="math inline">\(1/\lambda = 20\)</span> minutes. Suppose you have already been waiting at the bus stop for 15 minutes. What is the expected further amount of time you still have to wait for a bus to arrive?</p>
 <div class="myanswers">
 <p><em>Solution.</em>
-We know from part (a) that
-<span class="math display">\[ \mathbb EX(X-1) = \mathbb E(X^2 - X) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \lambda = \lambda^2 ,\]</span>
-which gives <span class="math inline">\(\mathbb EX^2 = \lambda^2 + \lambda\)</span>. We can then use the computational formula for the variance to get
-<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda .\]</span></p>
+By the memoryless property, it’s irrelevant how long we’ve been waiting for: the average time until a bus arrives is always <span class="math inline">\(1/\lambda = 20\)</span> minutes.</p>
 </div>
 </div>
 </div>
 <div class="myq">
-<p><strong>B4.</strong> Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is <strong>(a)</strong> a roll-over (no jackpot winners), <strong>(b)</strong> a unique jackpot winner, or <strong>(c)</strong> when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.</p>
+<p><strong>B2.</strong> The main dangerous radioactive material left over after the Chernobyl disaster is Caesium-137. The amount of time it takes a Caesium-137 particle to decay is known to follow an exponential distribution with rate <span class="math inline">\(\lambda = 0.023\)</span> years<sup>-1</sup>.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the average amount of time it takes a Caesium-137 particle to decay?</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-We assume that each ticket is uniformly randomly chosen from all possible tickets, independent of all other tickets. Then the number of winners is <span class="math inline">\(X \sim \text{Bin}(15 \text{ million}, 1/(45 \text{ million}))\)</span>.
-It will be convenient to use a Poisson approximation with rate
-<span class="math display">\[ \lambda = 15 \text{ million} \times \frac{1}{45 \text{ million}} = \tfrac13 .  \]</span></p>
-<p>The probability there is a roll-over is
-<span class="math display">\[ \mathbb P(X = 0) \approx \mathrm e^{-1/3} = 0.72 . \]</span>
-The probability there is a unique jackpot winner is
-<span class="math display">\[ \mathbb P(X = 1) \approx \tfrac13 \mathrm e^{-1/3} = 0.24 . \]</span>
-The probability there are multiple winners is
-<span class="math display">\[ \mathbb P(X \geq 2) = 1 - \mathbb P(X = 0) - \mathbb P(X = 1) = 0.04  . \]</span></p>
+<p><em>Solution.</em> The expectation is <span class="math inline">\(1/\lambda = 43.5\)</span> years.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> The “half-life” of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.</p>
+<div class="myanswers">
+<p><em>Solution.</em> The half-life is the median of the distribution; that is, the solution <span class="math inline">\(x\)</span> to
+<span class="math display">\[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]</span>
+So
+<span class="math display">\[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The proportion of Caesium-137 still remaining is
+<span class="math display">\[ \mathbb P(X &gt; 35.6) = \mathrm e^{-0.023 \times 35.6} = 0.441 , \]</span>
+so roughly <span class="math inline">\(24 \times 0.441 = 10.6\)</span> kg of Caesium-137 has still not decayed.</p>
+</div>
 </div>
 </div>
 <div class="myq">
-<p><strong>B5.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be Bernoulli<span class="math inline">\((\frac12)\)</span> random variables.</p>
+<p><strong>B3.</strong> Consider the pair of random variables <span class="math inline">\((X,Y)\)</span> with joint PDF
+<span class="math display">\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]</span>
+and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise. (In particular, note that the joint PDF is only nonzero when <span class="math inline">\(x \leq y\)</span>.)</p>
 <div class="subq">
-<p><strong>(a)</strong> Write down the table for the joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<p><strong>(a)</strong> Describe the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span>, for <span class="math inline">\(0 \leq y \leq 1\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em></p>
-<table>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
-<th align="center"><span class="math inline">\(x = 0\)</span></th>
-<th align="center"><span class="math inline">\(x = 1\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(y = 0\)</span></td>
-<td align="center"><span class="math inline">\(\frac14\)</span></td>
-<td align="center"><span class="math inline">\(\frac14\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(y = 1\)</span></td>
-<td align="center"><span class="math inline">\(\frac14\)</span></td>
-<td align="center"><span class="math inline">\(\frac14\)</span></td>
-</tr>
-</tbody>
-</table>
+<p><em>Solution.</em> Fix <span class="math inline">\(y\)</span>. The conditional distribution is
+<span class="math display">\[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]</span>
+We know that <span class="math inline">\(f_{X,Y}(x,y) = 2\)</span> when <span class="math inline">\(0 \leq x \leq y\)</span> and is <span class="math inline">\(0\)</span> otherwise. So the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span> is continuous uniform on the interval <span class="math inline">\([0, y]\)</span>.</p>
+<p>If we want to check the denominator <span class="math inline">\(f_Y(y)\)</span> too, we can check that
+<span class="math display">\[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]</span>
+so the conditional PDF is indeed <span class="math inline">\(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\)</span> for <span class="math inline">\(0 \leq x \leq y\)</span>.</p>
+<p>(In the online/video tutorial, I tried to explain this by drawing a graph in the <span class="math inline">\((x,y)\)</span> plain of where <span class="math inline">\(f_{X,Y}(x,y)\)</span> is 2 or 0, then drawing a horizontal line across it at <span class="math inline">\(y\)</span> to demonstrate the conditional distribution. I’m not sure how clear this made things…)</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a positive correlation.</p>
+<p><strong>(b)</strong> What is the marginal PDF <span class="math inline">\(f_X\)</span> of <span class="math inline">\(X\)</span>?</p>
 <div class="myanswers">
-<p><em>Solution.</em> For example</p>
-<table>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
-<th align="center"><span class="math inline">\(x = 0\)</span></th>
-<th align="center"><span class="math inline">\(x = 1\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(y = 0\)</span></td>
-<td align="center"><span class="math inline">\(\frac12\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(y = 1\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center"><span class="math inline">\(\frac12\)</span></td>
-</tr>
-</tbody>
-</table>
+<p><em>Solution.</em> Again the key is that the joint PDF is only nonzero when <span class="math inline">\(y \geq x\)</span> but <span class="math inline">\(y \leq 1\)</span>. So
+<span class="math display">\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]</span></p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a negative correlation.</p>
+<p><strong>(c)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
 <div class="myanswers">
-<p><em>Solution.</em> For example</p>
-<table>
-<thead>
-<tr class="header">
-<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
-<th align="center"><span class="math inline">\(x = 0\)</span></th>
-<th align="center"><span class="math inline">\(x = 1\)</span></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><span class="math inline">\(y = 0\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center"><span class="math inline">\(\frac12\)</span></td>
-</tr>
-<tr class="even">
-<td align="center"><span class="math inline">\(y = 1\)</span></td>
-<td align="center"><span class="math inline">\(\frac12\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-</tr>
-</tbody>
-</table>
+<p><em>Solution.</em> No. Take, for example, <span class="math inline">\(x = \frac34\)</span> and <span class="math inline">\(y = \frac14\)</span>. Since <span class="math inline">\(x &gt; y\)</span>, this has joint PDF <span class="math inline">\(f_{X,Y}(\frac34,\frac14) = 0\)</span>. We know the marginal PMFs, though are
+<span class="math display">\[\begin{align*}
+f_X\big(\tfrac34\big) &amp;= 2\big(1 - \tfrac34\big) = \tfrac12 \\
+f_Y\big(\tfrac14\big) &amp;= 2 \times \tfrac14 = \tfrac12 ,
+\end{align*}\]</span>
+so <span class="math inline">\(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\)</span>. So <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Engineers and scientists often use the rule of thumb “Only 5% of data is more than two sample standard deviations away from the sample mean.” Carefully justify this rule, using concepts from the module.</p>
+<div class="myanswers">
+<p><em>Solution.</em> By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data – especially that which is affected by the accumulation of numerous small effects – is approximately normally distributed.</p>
+<p>Write <span class="math inline">\(\mu\)</span> for the <em>true</em> expectation and <span class="math inline">\(\sigma^2\)</span> for the <em>true</em> variance of the population distribution <span class="math inline">\(X\)</span>. Then the proportion of data that is within two true-standard-deviations of the true-expectation will, be the law of large numbers, tends to
+<span class="math display">\[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]</span>
+Using standardisation, this is
+<span class="math display">\[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]</span>
+Using R or statistical tables, this is
+<span class="math display">\[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]</span>
+So only <span class="math inline">\(1 - 0.9545 = 0.0455\)</span>, or approximately 5%, of data is more than two true-standard-deviations away from the true-expectation.</p>
+<p>Finally, the law of large numbers also tells us that, provided a large number of datapoints <span class="math inline">\(n\)</span> are collected, the sample mean <span class="math inline">\(\bar x\)</span> and the sample standard deviation <span class="math inline">\(s_x\)</span> will be very close to the true expectation <span class="math inline">\(\mu\)</span> and the true standard deviation <span class="math inline">\(\sigma\)</span> respectively, so we can replace the latter with the former in our calculations.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The number of Heads in <span class="math inline">\(n\)</span> coin tosses is <span class="math inline">\(X \sim \mathrm{Bin}(n, \frac12)\)</span>, which is approximately <span class="math inline">\(Y \sim \mathrm{N}(\frac n2, \frac n4)\)</span>. We want to choose <span class="math inline">\(n\)</span> such that
+<span class="math display">\[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]</span></p>
+<p>Standardising, this is
+<span class="math display">\[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]</span>
+Since the normal distribution is symmetric, we want
+<span class="math display">\[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]</span>
+From Table 2 of the statistical tables, or by the R command <code>qnorm(0.975)</code>, this requires
+<span class="math inline">\(0.01\sqrt{n} = 1.960\)</span>, which is <span class="math inline">\(n \approx 9600\)</span>.</p>
+<p>So if we toss 10,000 coins, there’s about a 95% chance we get between 4900 and 5100 Heads.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B6.</strong> Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID random variable with common expectation <span class="math inline">\(\mu\)</span> and common variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(\overline X = (X_1 + \cdots + X_n)/n\)</span> be the mean of these random variables. We will be considering the random variable <span class="math inline">\(S^2\)</span> given by
+<span class="math display">\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> By writing
+<span class="math display">\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]</span>
+or otherwise, show that
+<span class="math display">\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Using the suggestion in the question, we have
+<span class="math display">\[\begin{align*}
+S^2 &amp;= \sum_{i=1}^n (X_i - \overline X)^2 \\
+  &amp;= \sum_{i=1}^n \big( (X_i - \mu) - (\overline X - \mu)  \big)^2 \\
+  &amp;= \sum_{i=1}^n \big( (X_i - \mu)^2 - 2(X_i - \mu)(\overline X - \mu) + (\overline X - \mu)^2\big) \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - \sum_{i=1}^n 2(X_i - \mu)(\overline X - \mu) + \sum_{i=1}^n (\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n X_i - \sum_{i=1}^n \mu\right)(\overline X - \mu)  + (\overline X - \mu)^2 \sum_{i=1}^n 1 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - 2(n\overline X - n\mu) (\overline X - \mu) + n (\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
+\end{align*}\]</span>
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of <span class="math inline">\(\overline X\)</span> to write <span class="math inline">\(\sum_{i=1}^n X_i\)</span> as <span class="math inline">\(n \overline X\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Hence or otherwise, show that
+<span class="math display">\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]</span>
+You may use facts about <span class="math inline">\(\overline X\)</span> from the notes provided you state them clearly. (You may find it helpful to recognise some expectations as definitional formulas for variances, where appropriate.) <!--You might also find it useful to recall that if a random variable $Y$ has expectation $\mathbb EY = 0$, then $\mathbb EY^2 = \Var(Y)$.--></p>
+<div class="myanswers">
+<p><em>Solution.</em> Starting with the linearity of expectation, we have
+<span class="math display">\[\begin{align*}
+\mathbb ES^2 &amp;= \mathbb E \left( \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2  \right) \\
+  &amp;= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
+  &amp;= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
+\end{align*}\]</span>
+The last line follows because <span class="math inline">\(\mathbb EX_i = \mu\)</span> for all <span class="math inline">\(i\)</span> by assumption, and we showed in the notes that <span class="math inline">\(\mathbb E \overline X = \mu\)</span> also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that <span class="math inline">\(\operatorname{Var}(X_i) = \sigma^2\)</span> by assumption, and we showed in the notes that <span class="math inline">\(\operatorname{Var}(\overline X) = \sigma^2/n\)</span>. Hence
+<span class="math display">\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]</span>
+as required.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> At the beginning of this course, we defined the sample variance of the values <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> to be
+<span class="math display">\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]</span>
+Explain one reason why we might consider it appropriate to use <span class="math inline">\(1/(n-1)\)</span> as the factor at the beginning of this expression, rather than simply <span class="math inline">\(1/n\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We often model a data set <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> as being realisations of an IID sequence of random variables <span class="math inline">\(X_1, X_2, \dots, X_n\)</span>. In this case, we are using the summary statistic of the sample variance <span class="math inline">\(s_x^2\)</span> to “estimate” the variance <span class="math inline">\(\operatorname{Var}(X_1) = \sigma^2\)</span>. Using the factor <span class="math inline">\(1/(n-1)\)</span> ensures that this estimator is correct “in expectation”, because
+<span class="math display">\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]</span>
+This property of being correct in expectation is called being an “unbiased” estimator, and its usually considered beneficial for an estimator to be unbiased.</p>
+<p>Note that we already know that the sample mean <span class="math inline">\(\bar x\)</span> is an unbiased estimator for the expectation <span class="math inline">\(\mathbb EX = \mu\)</span>, as we already know that <span class="math inline">\(\mathbb E\overline X = \mu\)</span>.</p>
 </div>
 </div>
 </div>
 </div>
-<div id="P4-assessed" class="section level2 unnumbered hasAnchor">
-<h2>C: Assessed questions<a href="P4.html#P4-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="P5-assessed" class="section level2 unnumbered hasAnchor">
+<h2>C: Assessed questions<a href="P5.html#P5-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
-<p>The last two questions are <strong>assessed questions</strong>. These two questions count for 3% of your final mark for this module.</p>
-<p>The deadline for submitting your solutions is <strong>2pm on Monday 28 November</strong> at the beginning of Week 9. Submission will be via Gradescope.
-Your work will be marked by your tutor and returned on Monday 5 December, when solutions will also be made available.</p>
+<p>The last two questions are <strong>assessed questions</strong>. One question is already available, and the second will be added in Week 9. These two questions count for 3% of your final mark for this module.</p>
+<p>The deadline for submitting your solutions is <del>2pm on Monday 6 December</del> <strong>2pm on Tuesday 7 December</strong> at the beginning of Week 11, although I strongly recommend completing and submitting your work during Week 10. Submission will be via Gradescope; submission will open on Monday 29 November.
+Your work will be marked by your tutor and returned later, when solutions will also be made available.</p>
 <p>Both questions are “long questions”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
 <div class="myq">
-<p><strong>C1.</strong> A collector wants to collect football stickers to fill an album. There are <span class="math inline">\(n\)</span> unique stickers to collect. Each time the collector buys a sticker, it is one of the <span class="math inline">\(n\)</span> stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having “swaps”, where he has received the same sticker more than once, so he will likely need to buy more than <span class="math inline">\(n\)</span> stickers in total to fill his album. But how many?</p>
+<p><strong>C1.</strong> Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
+<span class="math display">\[ f(x) = \tfrac29 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
 <div class="subq">
-<p><strong>(a)</strong> Suppose the collector has already got <span class="math inline">\(j\)</span> unique stickers (and some number of swaps). Let <span class="math inline">\(X_j\)</span> be the the number of extra stickers he buys until getting a new unique sticker. Explain why <span class="math inline">\(X_j\)</span> is geometrically distributed, and state the parameter <span class="math inline">\(p = p_j\)</span> of the geometric distribution.</p>
+<p><strong>(a)</strong> Calculate the CDF <span class="math inline">\(F\)</span> of <span class="math inline">\(X\)</span>, and hence find the constant <span class="math inline">\(c\)</span>.</p>
 <div class="myanswers">
 <p><em>Hint.</em> To get a new sticker you need to “succeed” in an experiment, where “failure” is “receiving a sticker you already have a copy of” and “success” is “receiving a new sticker you haven’t already got”. What is the probabiltiy of success?</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Hence, show that the expected number of stickers the collector must buy to fill his album is
-<span class="math display">\[ n \sum_{k=1}^n \frac{1}{k} . \]</span></p>
+<p><strong>(b)</strong>
+What is <span class="math inline">\(\mathbb P(X &gt; 1)\)</span>?</p>
 <div class="myanswers">
 <p><em>Hint.</em> Recall the expectation of the geometric distribution, and use linearity of expectaiton.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> The Euro 2020 sticker album required <span class="math inline">\(n = 678\)</span> unique stickers to complete it, and stickers cost 15p each. Using the expression from (b), calculate the expected amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.</p>
+<p><strong>(c)</strong> Calculate the expectation and variance of <span class="math inline">\(X\)</span>.</p>
 <div class="myanswers">
 <p><em>Hint.</em> In R, <code>sum(1 / (1:678))</code> sum the reciprocals of the integers from 1 to 678.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(d)</strong> By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately <span class="math inline">\(n \log n\)</span>, where <span class="math inline">\(\log\)</span> denotes the natural logarithm to base <span class="math inline">\(\mathrm e\)</span>.</p>
-<div class="myanswers">
-<p><em>Hint.</em> A detailed proof is not required – just informally explain why the sum is approximately the area under the function (ie the integral).</p>
-</div>
+<p><strong>(d)</strong> Let <span class="math inline">\(Y = \tfrac12 (X^2 - 1)\)</span>. What is the expectation of <span class="math inline">\(Y\)</span>?</p>
 </div>
 </div>
 <div class="myq">
-<p><strong>C2.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be random variables, and let <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> be constants.</p>
+<p><strong>C2.</strong> For each of the following, <strong>(a)</strong> calculate the exact value using R; <strong>(b)</strong> get an approximate value using an appropriate approximation and <em>without</em> using R. (<a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">Statistical tables</a> are available.)</p>
 <div class="subq">
-<p><strong>(a)</strong> Starting from the definition of covariance, show that <span class="math inline">\(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\)</span>. You may find it helpful to remember that if <span class="math inline">\(\mathbb EX = \mu_X\)</span>, then <span class="math inline">\(\mathbb EaX = a\mu_X\)</span>.</p>
+<p><strong>(i)</strong> <span class="math inline">\(\mathbb P(X \leq 3)\)</span>, where <span class="math inline">\(X \sim \mathrm{Bin}(1000, 0.005)\)</span>.</p>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Show that <span class="math inline">\(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X, Y)\)</span>.</p>
-<div class="myanswers">
-<p><em>Hint.</em> You may find it helpful to look back at Theorem 7.4 in the notes.</p>
+<p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(190 \leq Y \leq 205)\)</span>, where <span class="math inline">\(Y \sim \mathrm{Bin}(500, 0.4)\)</span>.</p>
 </div>
-</div>
-<p>Now let <span class="math inline">\(X, Y, Z\)</span> be <em>independent</em> random variables with common variance <span class="math inline">\(\sigma^2\)</span>.</p>
 <div class="subq">
-<p><strong>(c)</strong> Find the value of <span class="math inline">\(\operatorname{Corr}(2X - 3Y + 4, 2Y - Z - 1)\)</span>. You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.</p>
-<div class="myanswers">
-<p><em>Hint.</em> Start by calculating the covariance. Try to sort out the <span class="math inline">\(2X - 3Y + 4\)</span> part first, using the rules above. Once that’s done you can then deal with the <span class="math inline">\(2Y - Z -1\)</span> part with the same rules, because <span class="math inline">\(\operatorname{Cov}(U, V) = \operatorname{Cov}(V,U)\)</span>, so anything you can do to the first term you can also do to the second.</p>
+<p><strong>(iii)</strong> <span class="math inline">\(\mathbb P(Z \geq 398)\)</span>, where <span class="math inline">\(Z \sim \mathrm{Bin}(400, 0.999)\)</span>.</p>
 </div>
 </div>
 </div>
-</div>
-<div id="P4-short-sols" class="section level2 unnumbered hasAnchor">
-<h2>Solutions to short questions<a href="P4.html#P4-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>A1.</strong> (a) 0.180 (b) 0.528 (c) 8 <strong>A2.</strong> (a) 0.16 (b) 0.64 (c) 20 <strong>A3.</strong> (a) 0.214 (b) 0.456 <strong>A4.</strong> (a) <span class="math inline">\(\frac{1}{15}\)</span> (d) No</p>
+<div id="P5-short-sols" class="section level2 unnumbered hasAnchor">
+<h2>Solutions to short questions<a href="P5.html#P5-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>A1.</strong> (b) <span class="math inline">\(\tfrac{7}{16}\)</span> (c) 1.5 <strong>A2.</strong> (a) 2 (b) <span class="math inline">\(\tfrac19\)</span> (c) 2 <strong>A3.</strong> (a) 2 (b) 0.383</p>
 
 </div>
 </div>
+
+
+
             </section>
 
           </div>
         </div>
       </div>
-<a href="L14-covariance.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="L15-continuous.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L17-normal.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

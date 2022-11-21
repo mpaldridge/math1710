@@ -1114,7 +1114,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-25-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-32-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -5236,6 +5236,529 @@ Now let \(X, Y, Z\) be \emph{independent} random variables with common variance 
 
 \textbf{A1.} (a) 0.180 (b) 0.528 (c) 8 \textbf{A2.} (a) 0.16 (b) 0.64 (c) 20 \textbf{A3.} (a) 0.214 (b) 0.456 \textbf{A4.} (a) \(\frac{1}{15}\) (d) No
 
+\hypertarget{L15-continuous}{%
+\chapter{Continuous random variables}\label{L15-continuous}}
+
+\hypertarget{continuous-rv}{%
+\section{What is a continuous random variable?}\label{continuous-rv}}
+
+In the previous three sections, we have looked at discrete random variables, whose range is a finite (or countably infinite) set of separate discrete values. Discrete random variables can be used as a model for ``count data''.
+
+In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for ``measurement data''. For example:
+
+\begin{itemize}
+\tightlist
+\item
+  The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers \(\mathbb R\), where positive numbers represent credit and negative numbers represent debt.
+\item
+  The amount of time a machine in a factory works for before breaking down could be modelled as a continuous random variable with range the positive real numbers \(\mathbb R_+ = \{x \in \mathbb R : x \geq 0\}\).
+\item
+  The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval \([0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}\).
+\end{itemize}
+
+Imagine firing an arrow at a large target. We could ask ``What's the probability that the arrow exactly hits some point?'' -- but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we'd have to say that the probability is 0. What makes more sense is too take a section of the target -- perhaps a small circle in the middle, called the ``bulls-eye'' -- and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question -- a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.
+
+Similarly, imagine picking a random real number between 0 and 1. We could ask ``What is the probability that the random number is \emph{exactly} \(1/\sqrt{2} = 0.7071068\dots\)?'' But that probability is 0. It makes more sense to take an interval of numbers -- say, \([0.7, 0.8]\), the interval from \(0.7\) to \(0.8\) -- and ask what the probability is of the random number being in that interval.
+
+This is how continuous random variables work. The probability a continuous random variable \(X\) \emph{exactly} hits some value \(x\) is \(\mathbb P(X = x) = 0\). But we \emph{can} find the probability \(\mathbb P(a \leq X \leq b)\) that \(X\) lies in a certain interval and work with that.
+
+\hypertarget{pdf}{%
+\section{Probability density functions}\label{pdf}}
+
+With a continuous random variable, the probability of \emph{exactly} getting any particular outcome \(X = x\) is 0. However, we can express the ``intensity'' of probability \emph{around} \(x\) by \(f_X(x)\), where \(f_X\) is called the probability density function. The implied metaphor here is that for discrete random variables, we have probability ``mass'' \emph{at} the point \(x\), whereas for continuous random variables, we have a ``density'' of probability \emph{around} \(x\).
+
+\begin{definition}
+A random variable \(X\) is called a \textbf{continuous random variable} if the probability of landing in any interval between \(a\) and \(b\), for \(a \leq b\), can be written as
+\[ \mathbb P(a \leq X \leq b) = \int_a^b f_X(x) \, \mathrm{d}x , \]
+for some non-negative function \(f_X\). The function \(f_X\) is called the \textbf{probability density function} (or \textbf{PDF}).
+\end{definition}
+
+In other words, the probability that \(X\) is between \(a\) and \(b\) is the area under the curve of the PDF on that interval.
+
+As with PMFs, when it's obvious what random variable we're dealing with, we omit the subscript \(X\) on the PDF \(f_X\).
+
+\begin{example}
+\protect\hypertarget{exm:unifex}{}\label{exm:unifex}Let \(X\) be a continuous random variable with PDF
+\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} \]
+and \(f(x) = 0\) otherwise. This represents a random number between 0 and 1, where the intensity of the probability is equal across the whole interval. This is known as a \textbf{continuous uniform distribution}.
+
+\includegraphics{math1710_files/figure-latex/contunif-pdf-1.pdf}
+
+\emph{What is the probability that \(X\) is between 0.5 and 0.8?}
+
+We can calculate this using the definition above. We have
+\begin{align*}
+  \mathbb P(0.5 \leq X \leq 0.8) &= \int_{0.5}^{0.8} f(x) \, \mathrm dx \\
+    &= \int_{0.5}^{0.8} 1 \, \mathrm dx \\
+    &= [x]_{0.5}^{0.8} \\
+    &= 0.8 - 0.5 \\
+    &= 0.3 .
+\end{align*}
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:pdf2}{}\label{exm:pdf2}Let \(Y\) be a continuous random variable with PDF
+\[ f(y) = \begin{cases} y & \text{for $0 \leq y \leq 1$} \\
+2-y & \text{for $1 < y \leq 2$} \end{cases} \]
+and \(f(y) = 0\) otherwise. This represents a continuous value between 0 and 2 where the probability intensity is highest in the middle around 1 and is lower at the edges near 0 and 2.
+
+\includegraphics{math1710_files/figure-latex/second-pdf-1.pdf}
+
+\emph{What is the probability \(X\) is between \(\frac12\) and \(\frac32\)?}
+
+As before, we have
+\[ \mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big) = \int_{\frac12}^{\frac32} f(y) \, \mathrm dy .   \]
+But this time we have to be careful, because \(f(y)\) has different expressions below 1 and above 1. We will split the integral up into two parts based on this, to get
+\begin{align*}
+\mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big) 
+  &= \int_{\frac12}^{1} f(y) \, \mathrm dy + \int_{1}^{\frac32} f(y) \, \mathrm dy \\
+    &= \int_{\frac12}^{1} y \, \mathrm dy + \int_{1}^{\frac32} (2-y) \, \mathrm dy \\
+    &= \left[ \tfrac12 y^2\right]_{\frac12}^1 + \left[ 2y-\tfrac12 y^2\right]_1^{\frac32} \\
+    &= \tfrac12 - \tfrac18 + \big(\tfrac62 - \tfrac98\big) - \big(2 - \tfrac12\big) \\
+    &= \tfrac34 .
+\end{align*}
+\end{example}
+
+\hypertarget{prop-cont}{%
+\section{Properties of continuous random variables}\label{prop-cont}}
+
+The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution -- except you swap the PMF for the PDF and swap sums for integrals.
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Discrete random variables
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Continuous random variables
+\end{minipage} \\
+\midrule()
+\endhead
+A discrete random variable \(X\) is defined by a \textbf{probability mass function} (PMF) \(p(x)\), which represents the probability of getting exactly \(x\). & A continuous random variable \(X\) is defined by a \textbf{probability density function} (PDF) \(f(x)\), which represents the intensity of probability around \(x\). \\
+The PMF is positive, in that \(p(x) \geq 0\) for all \(x\). & The PDF is positive, in that \(f(x) \geq 0\) for all \(x\). \\
+The PMF sums to 1, in that \( \sum_{x} p(x) = 1. \) & The PDF integrates to 1 in that \( \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\) \\
+The \textbf{cumulative distribution function} (CDF) is \(F(x) = \mathbb P(X \leq x)\), and is given by a sum \( F(x) = \sum_{y \leq x} p(y) .\) & The \textbf{cumulative distribution function} (CDF) is \(F(x) = \mathbb P(X \leq x)\), and is given by an integral \( F(x) = \int_{-\infty}^x f(y) \, \mathrm{d}y .\) \\
+The \textbf{expectation} is the sum \( \mathbb EX = \sum_{x} x\,p(x) . \) & The \textbf{expectation} is the integral \( \mathbb EX = \int_{-\infty}^{\infty} x\,f(x)\,\mathrm dx . \) \\
+The expectation of a function \(g(X)\) of \(X\) is the sum \( \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \) & The expectation of a function \(g(X)\) of \(X\) is the integral \( \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \) \\
+Linearity of expectation says that \( \mathbb E(aX+b) = a\mathbb EX + b .\) & Linearity of expectation says that \( \mathbb E(aX+b) = a\mathbb EX + b .\) \\
+The \textbf{variance} is \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\), which also has the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\). & The \textbf{variance} is \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\), which also has the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\). \\
+\bottomrule()
+\end{longtable}
+
+Note, however, one property that doesn't follow through: Because, for a PMF, \(p(x) = \mathbb P(X = x)\) represented a probability, we had \(p(x) \leq 1\) for all \(x\). However, because, for a PDF, \(f(x)\) only represents intensity of probability, there's no contradiction to having \(f(x) > 1\) (although keeping the integral to 1 means that we can't have \(f(x) > 1\) too much). So \(f(x) = 10\) for \(0 <x < 0.1\) and \(f(x) = 0\) otherwise is a perfectly legitimate PDF, for example.
+
+\begin{example}
+Let's return to the case where \(X\) be a continuous uniform distribution, with
+\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} . \]
+Let's go through the properties from the table above.
+
+First, it's clear that \(f(x) \geq 0\) for all \(x\).
+
+Second, the PDF does indeed integrate to 1, because
+\[ \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_0^1 1 \, \mathrm dx = [x]_0^1 = 1 .    \]
+Because this PDF is zero below 0 and above 1, we only had to integrate between 0 and 1, with the rest of the integral over the real line being 0.
+
+Third, the CDF \(F\). It's clear that \(F(x) = \mathbb P(X \leq x) = 0\) for \(x < 0\), and \(F(x) = \mathbb P(X \leq x) = 1\) for \(x > 1\). In between, we have
+\[ F(x) = \int_{-\infty}^x f(y) \,\mathrm dy = \int_0^x 1\, \mathrm dy = [y]_0^x = x .   \]
+So, altogether, the CDF is
+\[  F(x) = \begin{cases} 0 & \text{for } x < 0 \\ x & \text{for }0 \leq x \leq 1 \\ 1 & \text{for }x > 1 . \end{cases} \]
+
+\includegraphics{math1710_files/figure-latex/contunif-cdf-1.pdf}
+
+Fourth, the expectation is
+\[ \mathbb EX = \int_{\infty}^\infty x\,f(x)\,\mathrm dx = \int_0^1 x \, \mathrm dx = \left[\tfrac12 x^2 \right]_0^1 = \tfrac12 - 0 = \tfrac12 .   \]
+
+Finally, to calculate the variance, we have
+\[ \mathbb EX^2 = \int_{\infty}^\infty x^2\,f(x)\,\mathrm dx = \int_0^1 x^2 \, \mathrm dx = \left[\tfrac13 x^3 \right]_0^1 = \tfrac13 - 0 = \tfrac13 .   \]
+So, using the computational formula, we have
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = \tfrac13 - \left(\tfrac12\right)^2 = \tfrac13 - \tfrac14 = \tfrac{1}{12} . \]
+\end{example}
+
+\begin{example}
+Let's also return to the ``triangular'' PDF from Example \ref{exm:pdf2},
+\[ f(y) = \begin{cases} y & \text{for $0 \leq y \leq 1$} \\
+2-y & \text{for $1 < y \leq 2$}. \end{cases} \]
+We'll just do the CDF and the expectation. (You can do the others yourself, if you like.)
+
+For the CDF, it's clear that \(F(y) = 0\) for \(y < 0\) and \(F(y) = 1\) for \(y > 2\). Again, we split the \(0 \leq y \leq 1\) case and the \(1 < y \leq 2\) case. In the first case, for \(0 \leq y \leq 1\), we have
+\begin{align*}
+  F(x) &= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &= \int_0^y z \, \mathrm dz \\
+    &= \left[ \tfrac12 z^2 \right]_0^y \\
+    &= \tfrac 12 y^2 .
+\end{align*}
+In the second case, for \(1 < y \leq 2\), we have
+\begin{align*}
+  F(x) &= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &= \int_0^1 z \, \mathrm dz + \int_1^y (2 - z)\,\mathrm dz \\
+    &= \left[ \tfrac12 z^2 \right]_0^1 + \left[ 2z - \tfrac12 z^2 \right]_1^y \\
+    &= \tfrac 12 - 0 + 2y - \tfrac12 y^2 - 2 + \tfrac12 \\
+    &= 2y - \tfrac12 y^2 - 1  .
+\end{align*}
+Hence, the CDF is
+\[ F(y) = \begin{cases} 0 & \text{for $y < 0$} \\
+            \tfrac12 y^2 & \text{for $0 \leq y \leq 1$} \\
+            2y - \tfrac12 y^2 - 1  & \text{for $1 < y \leq 2$} \\
+            1 & \text{for $y > 2$}. \end{cases} \]
+
+\includegraphics{math1710_files/figure-latex/second-cdf-1.pdf}
+
+For the expectation, we have
+\begin{align*}
+\mathbb EY &= \int_{-\infty}^{\infty} y\, f(y) \, \mathrm dy \\
+  &= \int_0^1 y^2 \mathrm dy + \int_1^2 y(2 - y)\, \mathrm dy \\
+  &= \left[ \tfrac13 y^3 \right]_0^1 + \left[  y^2 - \tfrac13 y^3 \right]_1^2 \\
+  &= \tfrac13 - 0 + 4 - \tfrac83 - 1 + \tfrac13 \\
+  &= 1 .
+\end{align*}
+\end{example}
+
+\hypertarget{L17-normal}{%
+\chapter{Normal distribution}\label{L17-normal}}
+
+\hypertarget{normal-definition}{%
+\section{Definition of the normal distribution}\label{normal-definition}}
+
+There's one very important distribution we need to talk about, which is the so-called ``normal'' (or ``Gaussian'') distribution.
+
+\begin{definition}
+If \(X\) is a continuous random variable with PDF
+\[ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right) , \]
+then we say that \(X\) has the \textbf{normal distribution} with expectation \(\mu\) and variance \(\sigma^2 > 0\), and write \(X \sim \mathrm N(\mu,\sigma^2)\).
+\end{definition}
+
+(Many people call \(\mu\) the ``mean'', which is a slight misnomer.)
+
+This PDF is the famous ``bell curve'', where the centre of the bell is at \(x = \mu\) and the width of the bell is controlled by the value of \(\sigma^2\). Note also that the PDF is symmetric about \(\mu\).
+
+\includegraphics{math1710_files/figure-latex/norm-pic-1-1.pdf}
+
+\includegraphics{math1710_files/figure-latex/norm-pic-2-1.pdf}
+
+One important special case is \(\mu = 0\) and \(\sigma^2 = 1\), in which case we say that \(Z \sim \mathrm N(0,1)\) has the \textbf{standard normal distribution}. We typically write \(\phi\) (lower-case ``phi''), where
+\[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]
+for the PDF of a standard normal distribution, and write \(\Phi\) (upper-case ``Phi''), where
+\[ \Phi(z) = \mathbb P(Z \leq z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]
+for the CDF of a standard normal distribution.
+
+The normal distribution is a very widely used distribution for modelling many things in real life.
+
+\begin{itemize}
+\tightlist
+\item
+  Measurement error with scientific instruments is typically modelled as a normal distribution with expectation \(\mu = 0\). The more precise the instrument, the lower the value of the variance \(\sigma^2\).
+\item
+  According to \href{http://www1.maths.leeds.ac.uk/~voss/2019/MATH1712/index.html}{a poll a few years ago}, the height of MATH1712 students in centimetres can be modelled well by a normal distribution with expectation \(\mu = 172\) and variance \(\sigma^2 = 86\).
+\item
+  In financial models, it is often assumed that the logarithm of the daily change in a stock price follows a normal distribution. In this context, the expectation \(\mu\) is known as the ``drift'' and the standard deviation \(\sigma\) as the ``volatility''. This ``log-normal'' model is the basis of the famous Black--Scholes model of financial markets.
+\end{itemize}
+
+More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.
+
+It's generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.
+
+\hypertarget{normal-properties}{%
+\section{Properties of the normal distribution}\label{normal-properties}}
+
+\begin{theorem}
+\protect\hypertarget{thm:norm-prop}{}\label{thm:norm-prop}Let \(X \sim \mathrm{N}(\mu, \sigma^2)\) be a normally distributed random variable. Then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f_X(x)\) is indeed a PDF, in that \(\displaystyle\int_{-\infty}^\infty f_X(x)\,\mathrm dx = 1\);
+\item
+  \(\mathbb EX = \mu\);
+\item
+  \(\operatorname{Var}(X) = \sigma^2\).
+\end{enumerate}
+
+In particular, if \(Z \sim \mathrm{N}(0, 1)\) is a standard normal distribution, then \(\mathbb EZ = 0\) and \(\operatorname{Var}(Z) = 1\).
+\end{theorem}
+
+We'll give (non-examinable) proofs of these soon. But first we'll note one other thing.
+
+Let \(X \sim \mathrm{N}(\mu, \sigma^2)\), and consider the random variable \(Y = aX + b\). Then we know that
+\begin{align*}
+\mathbb E(aX + b) &= a\mu + b , \\
+\operatorname{Var}(aX + b) &= a^2 \sigma^2 .
+\end{align*}
+In fact, it can be shown that \(aX + b\) is normally distributed too; that is, \(aX + b \sim \mathrm{N}(a\mu + b, a^2 \sigma^2)\). Importantly, if we take \(a = 1/\sigma\) and \(b = -\mu/\sigma\), then we see that
+\[ Z = \frac{X - \mu}{\sigma} \sim \text{N} (0, 1) . \]
+In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as ``standardisation'' and will be useful later.
+
+We can also use standardisation to help us prove Theorem \ref{thm:norm-prop}.
+
+\begin{proof}
+\emph{(Non-examinable)} By using standardisation, it suffices to prove the theorem for a standard normal random variable \(X \sim \mathrm{N}(0,1)\).
+
+For part 1, we need to show that
+\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]
+To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself \(I\), we can instead calculate the square of the integral \(I^2\), which we also need to show is equal to 1. This is
+\begin{align*}
+  I^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx \times \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-y^2/2}\, \mathrm dy\\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-x^2/2}\,\mathrm e^{-y^2/2} \, \mathrm dx\, \mathrm dy \\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-(x^2+y^2)/2}\,\mathrm dx\, \mathrm dy .
+\end{align*}
+The second part of the outrageous trick is notice that the appearance of \(x^2 + y^2\) suggests it might be useful to transfer from cartesian coordinates \((x,y)\) to polar coordinates \((r, \theta)\). Recalling that \(x^2 + y^2 = r^2\) and \(\mathrm dx\, \mathrm dy = r\, \mathrm dr \,\mathrm d\theta\), we have
+\begin{align*}
+  I^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \int_{0}^\infty  \mathrm e^{-r^2/2}\,r\,\mathrm dr\, \mathrm d\theta \\
+    &= \frac{1}{2\pi} \, 2\pi\int_{0}^\infty  r\, \mathrm e^{-r^2/2}\,\mathrm dr \\
+    &= \left[ -\mathrm e^{-r^2/2} \right]_0^\infty \\
+    &= - 0 -(-1) \\
+    &= 1 ,
+\end{align*}
+and we're done.
+
+For part 2, we need to show that \(\mathbb EX = 0\). We have
+\begin{align*}
+\mathbb EX &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-\mathrm e^{-x^2/2}\right]_{-\infty}^\infty \\
+  &= -0 - (-0) \\
+  &= 0 ,
+\end{align*}
+as required.
+
+For part 3, we need to show that \(\mathbb EX^2 = 1\). Using integration by parts with \(u = x\), \(v' = x\,\mathrm e^{-x^2/2}\), we have
+\begin{align*}
+\mathbb EX^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x^2\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-x \mathrm e^{-x^2/2}\right]_{-\infty}^\infty + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx \\
+  &= 0 + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx .
+\end{align*}
+But this integral on the right is just the integral \(I\) of the PDF as above, which we know equals 1, as required.
+\end{proof}
+
+There is one last property of the normal distribution that we won't use directly in this module, but is perhaps worth knowing anyway.
+
+\begin{theorem}
+If \(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\) and \(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\) are independent, then
+\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]
+\end{theorem}
+
+\hypertarget{normal-r}{%
+\section{Calculations using R}\label{normal-r}}
+
+We will try to answer a number of questions about the normal distribution.
+
+\textbf{Question 1.} \emph{A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?}
+
+Let \(X \sim \mathrm{N}(8, 0.04^2)\) denote the width of a random fibre, measured in nanometres. Then this question required us to find
+\[ F(8.15) = \mathbb P(X \leq 8.1) = \frac{1}{\sqrt{2\pi\times 0.04^2}} \int_{-\infty}^{8.1} \exp \left(-\frac{(x - 8)^2}{2\times 0.04^2} \right) \, \mathrm dx . \]
+
+Unfortunately, it is not possible to calculate this integral exactly. However, computers can approximate this integral very accurately and very quickly. In R, this is done with the \texttt{pnorm()} function, which calculates the CDF of a normal distribution. \texttt{pnorm()} typically takes three arguments:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the first argument is the value \(x\) at which we wish to evaluate the CDF;
+\item
+  the second argument is the expectation \(\mu\) of the normal distribution;
+\item
+  the third argument is the standard deviation \(\sigma\) of the normal distribution. (Note that this third argument is the \emph{standard deviation} \(\sigma\) and not the variance \(\sigma^2\). This is an easy mistake to make!)
+\end{enumerate}
+
+So here, the number we want is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{8.1}\NormalTok{, }\DecValTok{8}\NormalTok{, }\FloatTok{0.04}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9937903
+\end{verbatim}
+
+We see that roughly 99.4\% of fibres pass the test.
+
+\textbf{Question 2.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z \leq 1.45)\)?}
+
+This is asking for \(\Phi(1.45) = \mathbb P(Z \leq 1.45)\). This is:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.45}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9264707
+\end{verbatim}
+
+But in fact, the standard normal distribution CDF \(\Phi\) is so common that R allows you to omit the values of \(\mu\) and \(\sigma\) if they are 0 and 1 respectively. So you can save yourself a few keystrokes by simply writing:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{1.45}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9264707
+\end{verbatim}
+
+\textbf{Question 3.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z > 0.33)\)?}
+
+This is asking for the upper-tail probability. The direct way to get R to solve this is to use the \texttt{lower.tail\ =\ FALSE} option that we discussed in \protect\hyperlink{r-work}{R Worksheet 7}. That is, we use:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.33}\NormalTok{, }\AttributeTok{lower.tail =} \ConstantTok{FALSE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3707
+\end{verbatim}
+
+Alternatively, we could use the fact that \(\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\). Then we could equally well calculate this as
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\FloatTok{0.33}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.3707
+\end{verbatim}
+
+\textbf{Question 4.} \emph{We return to the fiberoptic model \(X \sim \mathrm{N}(8, 0.04^2)\) from Question 1. Fibres can be awarded a special ``high quality'' stamp if their width is between 7.95 and 8.05 nm. What proportion of these fibres qualify?}
+
+This is asking for \(\mathbb P(7.95 \leq X \leq 8.05)\). But we can calculate this as
+\[ \mathbb P(7.95 \leq X \leq 8.05) = \mathbb P(X \leq 8.05) - \mathbb P(X < 7.95) = F(8.05) - F(7.95) .\]
+(Formally, this is because
+\[ \{X < 7.95\} \cup \{7.95 \leq X \leq 8.05\} = \{X \leq 8.05\} \]
+is a disjoint union, so we can use Axiom 3.)
+
+So the proportion of qualifying fibres is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mu }\OtherTok{\textless{}{-}} \DecValTok{8}
+\NormalTok{sigma }\OtherTok{\textless{}{-}} \FloatTok{0.04}
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{8.05}\NormalTok{, mu, sigma) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\FloatTok{7.95}\NormalTok{, mu, sigma)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.7887005
+\end{verbatim}
+
+or about 79\%.
+
+\textbf{Question 5.} \emph{We stay with the fiberoptic model \(X \sim \mathrm{N}(8, 0.04^2)\) from Questions 1 and 4. The manufacturer wants to be able to advertise that 99.9\% of their fibres are between lower and upper limits \(x\) and \(y\). What values of \(x\) and \(y\) can they promise?}
+
+Is \(F\) is the CDF of this distribution, then we are looking for \(x\) and \(y\) such that \(F(x) = 0.0005\) and \(F(y) = 0.9995\). That way, \(F(y) - F(x) = 0.999\), so we have 99.9\% of fibres within that interval and 0.05\% outside either side.
+
+You may remember from R Worksheet 7 that the inverse \(F^{-1}\) of the CDF is called the \textbf{quantile function}. Here, we want \(F^{-1}(0.0005)\) and \(F^{-1}(0.9995)\). The quantile function for the normal distribution in R is \texttt{qnorm()}. (It also has a \texttt{lower.tail\ =\ FALSE} option, which is sometimes useful.) So we can use
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mu }\OtherTok{\textless{}{-}} \DecValTok{8}
+\NormalTok{sigma }\OtherTok{\textless{}{-}} \FloatTok{0.04}
+\FunctionTok{c}\NormalTok{(}\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.0005}\NormalTok{, mu, sigma), }\FunctionTok{qnorm}\NormalTok{(}\FloatTok{0.9995}\NormalTok{, mu, sigma))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 7.868379 8.131621
+\end{verbatim}
+
+We see that we can guarantee that 99.9\% of fibres are between roughly 7.87 and 8.13 nm wide.
+
+\hypertarget{normal-tables}{%
+\section{Calculations using statistical tables}\label{normal-tables}}
+
+Doing normal calculations with R is all very well. But what if you accidentally built a time machine and got transported back to Victorian times. Then how would you perform calculations with the normal distribution?
+
+In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of \(\Phi(x)\), the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{\textbf{this page of normal distribution tables} {[}PDF{]}} that will appear on the final page of your exam. (Like the Victorian times, your exam is another place R will not be available but statistical tables will be.)
+
+We will return to the same questions we answered in the previous subsection, although in a slightly different order.
+
+\textbf{Question 2.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z \leq 1.45)\)?}
+
+As we noted before, this is asking for \(\Phi(1.45) = \mathbb P(Z \leq 1.45)\). Consulting the \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables}, we see that the value of \(\Phi(1.45)\) is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that \(\Phi(1.45) = 0.9265\). This is the same value as we got from R (although we get fewer decimal places from the table).
+
+\textbf{Question 1.} \emph{A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?}
+
+If \(X \sim \mathrm{N}(8, 0.04^2)\), then this asks for \(F_X(8.1) = \mathbb P(X \leq 8.1)\). However, unfortunately the statistical tables only have the CDF \(\Phi\) for the standard normal distribution \(\mathrm N(0,1)\). So we are going to have ``standardise'' \(X\); that is, convert \(X\) to a standard normal distribution.
+Recall from above that we standardise a normal random variable by subtracting the expectation \(\mu\) and dividing by the standard deviation \(\sigma\). So in this case, we have
+\[ Z = \frac{X - \mu}{\sigma} = \frac{X - 8}{0.04} \sim \mathrm{N}(0,1) . \]
+
+Using this, we can write
+\[ \mathbb P(X \leq 8.1) = \mathbb P \left(\frac{X - 8}{0.04} \leq \frac{8.1 - 8}{0.04}\right) = \mathbb P(Z \leq 2.5) = \Phi(2.5).  \]
+We can then look up \(\Phi(2.5)\) in Table 1. We see from the first row of the last column that \(\Phi(2.5) = 0.9938\). This matches the answer we got from R.
+
+\textbf{Question 3.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z > 0.33)\)?}
+
+The statistical tables only have \(\Phi(z) = \mathbb P(Z \leq z)\). But as we noted above, \(\mathbb P(Z > 0.33) = 1 - \Phi(0.33)\). The tables don't have \(\Phi(0.33)\) either, though, because they jump straight from \(\Phi(0.30)\) to \(\Phi(0.35)\). We have two choices of what to do here.
+
+First choice, which is appropriate when an approximate answer will suffice, is simply to take the nearest value in the table, which here is \(0.35\). Hence
+\[ \mathbb P(Z > 0.33) = 1 - \Phi(0.33) \approx 1 - \Phi(0.35) = 1 - 0.6368 = 0.3632 . \]
+This is pretty close to the true answer \(0.3707\) we saw before: about a 2\% error.
+
+Second choice, which is more work but gets a more accurate answer, is to use interpolation. We know from the table that \(\Phi(0.30) = 0.6179\) and \(\Phi(0.35) = 0.6368\). To ``interpolate'', we assume that the graph of \(\Phi\) follows a straight line between \((0.30, 0.6179)\) and \((0.35, 0.6368)\). (In fact, \(\Phi\) has a slightly curve, so isn't \emph{quite} straight.) As the statistical tables state, the interpolation is to take
+\[ \Phi(x) = \frac{x_2 - x}{x_2 - x_1} \Phi(x_1) + \frac{x - x_1}{x_2 - x_1} \Phi(x_2) .\]
+In our case, if we take \(x_1 = 0.30\) and \(x_2 = 0.35\) as the interpolation points for \(x = 0.33\), we get the approximation
+\[ \Phi(0.33) = 0.4 \Phi(0.30) + 0.6 \Phi(0.35) = 0.4\times 0.6179 + 0.6 \times 0.6368 = 0.6292 \]
+This is off by only 0.01\%; a very accurate approximation.
+
+On problem sheets or in the exam, you will be told if an interpolation is necessary.
+
+\textbf{Question 4.} \emph{We return to the fiberoptic model \(X \sim \mathrm{N}(8, 0.04^2)\) from Question 1. Fibres can be awarded a special ``high quality'' stamp if their width is between 7.95 and 8.05 nm. What proportion of these fibres qualify?}
+
+As noted above, this is asking for \(\mathbb P(7.95 \leq X \leq 8.05)\). To allow us to use our statistical tables, we will have to standardise. We get
+\begin{align*}
+\mathbb P(7.95 \leq X \leq 8.05)
+  &= \mathbb P \left(\frac{7.95 - 8}{0.04} \leq \frac{X - 8}{0.04} \leq \frac{8.05 - 8}{0.04}\right) \\
+  &= \mathbb P(-1.25 \leq Z \leq 1.25) \\
+  &= \Phi(1.25) - \Phi(-1.25) .
+\end{align*}
+We can find \(\Phi(1.25) = 0.8944\) from the table. But the table only gives \(\Phi(x)\) for positive \(x\), so we can't look up \(\Phi(-1.25)\).
+
+Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that \(\mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25)\).
+
+\includegraphics{math1710_files/figure-latex/phiz-exm-1.pdf}
+Therefore, we have
+\[ \Phi(-1.25) = \mathbb P(Z > 1.25) = 1 - \Phi(1.25) = 1 - 0.8944 = 0.1056\]
+
+Putting this all together, we get
+\[\mathbb P(7.95 \leq X \leq 8.05) = 0.8944 - 0.1056 = 0.7888 , \]
+which is the same thing as we got from R (up to a small rounding error in the fourth decimal place).
+
+\textbf{Question 5.} \emph{We stay with the fiberoptic model \(X \sim \mathrm{N}(8, 0.04^2)\) from Questions 1 and 4. The manufacturer wants to be able to advertise that 99.9\% of their fibres are between lower and upper limits \(x\) and \(y\). What values of \(x\) and \(y\) can they promise?}
+
+Recall that this meant we were looking for the quantiles \(F^{-1}(0.0005)\) and \(F^{-1}(0.9995)\); that is, the values \(x\) and \(y\) such that \(\mathbb P(X \leq x) = 0.0005\) and \(\mathbb P(X \leq x) = 0.9995\). Table 2 of the \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables} does show us some quantiles for a standard normal. How can we use these?
+
+Let's start with the second case. The key here is to ``undo'' the standardisation. That is, if \(Z \sim \mathrm{N}(0,1)\), then \(X = \sigma Z + \mu \sim \mathrm{N}(\mu, \sigma^2)\). The table tells us that \(\Phi^{-1}(0.9995) = 3.2905\); that is, that \(\mathbb P(Z \leq 3.2905) = 0.9995\). Then by ``un-standardising'', we have
+\[ 0.9995 = \mathbb P(Z \leq 3.2905)  = \mathbb P(0.04Z + 8 \leq 0.04\times 3.2905 + 8) = \mathbb P(X \leq 8.1316) . \]
+This the upper quantile we are after is \(8.1316\).
+
+For the lower quantile, we can use symmetry again. Thus the \(0.0005 = 1 - 0.9995\) quantile for \(Z\) is minus the previous quantile; that is, \(-3.2905\). Hence the lower quantile we want is
+\[0.04\times (-3.2905) + 8 = 7.8684. \]
+These match the answers we got with R.
+
+I feel I shouldn't finish with this subsection before addressing the following question some readers may be asking themselves: \emph{Now that we have R (and other computing methods), what's the point learning to answer questions using statistical tables?} I might suggest a few possible answers to this question:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.
+\item
+  Someone has to write the computer program, and these people need to be able to do the sorts of conversions we will learn about here. So these are useful skills for mathematician--programmers to learn.
+\item
+  Being able to standardise normal distributions, approximate other distributions by normal distributions (see Subsection \ref{normal-approx}), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
+\item
+  Yes, you are right, this is a pointless skill for us to teach you.
+\end{enumerate}
+
+I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
+
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
 \addcontentsline{toc}{part}{Other stuff}
@@ -5630,7 +6153,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-26-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-33-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:

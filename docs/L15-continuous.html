@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 15 Continuous random variables | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 15 Continuous random variables | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 15 Continuous random variables | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="L13-multi-rv.html"/>
-<link rel="next" href="P4.html"/>
+<link rel="prev" href="P4.html"/>
+<link rel="next" href="L17-normal.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -338,191 +338,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="L14-covariance" class="section level1 hasAnchor" number="14">
-<h1><span class="header-section-number">Lecture 14</span> Expectation and covariance<a href="L14-covariance.html#L14-covariance" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sum-product" class="section level2 hasAnchor" number="14.1">
-<h2><span class="header-section-number">14.1</span> Expectation of sums and products<a href="L14-covariance.html#sum-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/BaEbVJZkGGY"></iframe>
-:::
-::::
--->
-<p>When we have multiple random variables, we might be interested in functions of those multiple random variables – for example their sum or their product. It’s often possible to find out about the whole distribution of a sum, product, or function of the variables – see MATH2715 Statistical Methods for more on this – but will just look at their expectations and, later, variances.</p>
-<div class="theorem">
-<p><span id="thm:linearity2" class="theorem"><strong>Theorem 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint probability mass function <span class="math inline">\(p_{X,Y}\)</span>. Then</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathbb Eg(X,Y) = \displaystyle\sum_{x,y} g(x,y) p_{X,Y}(x,y)\)</span>.</li>
-<li><strong>(Linearity of expectation, 2)</strong> <span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span>, regardless of whether <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent or not.</li>
-<li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY\)</span>.</li>
-</ol>
+<div id="L15-continuous" class="section level1 hasAnchor" number="15">
+<h1><span class="header-section-number">Lecture 15</span> Continuous random variables<a href="L15-continuous.html#L15-continuous" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="continuous-rv" class="section level2 hasAnchor" number="15.1">
+<h2><span class="header-section-number">15.1</span> What is a continuous random variable?<a href="L15-continuous.html#continuous-rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/1Oae0a12P1M">
+</iframe>
 </div>
-<p>If we put the second point here together with the other result of linearity of expectation (Theorem <a href="L10-expectation.html#thm:linearity1">10.2</a>) then we get the general rule
-<span class="math display">\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]</span>
-and this holds whether or not <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
-<div class="proof">
-<p><span id="unlabeled-div-79" class="proof"><em>Proof</em>. </span>Part 1 is just the law of the unconscious statistician for the random variable <span class="math inline">\((X,Y)\)</span>, and the same proof holds.</p>
-<p>For part 2, we have
+</div>
+<p>In the previous three sections, we have looked at discrete random variables, whose range is a finite (or countably infinite) set of separate discrete values. Discrete random variables can be used as a model for “count data”.</p>
+<p>In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for “measurement data”. For example:</p>
+<ul>
+<li>The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers <span class="math inline">\(\mathbb R\)</span>, where positive numbers represent credit and negative numbers represent debt.</li>
+<li>The amount of time a machine in a factory works for before breaking down could be modelled as a continuous random variable with range the positive real numbers <span class="math inline">\(\mathbb R_+ = \{x \in \mathbb R : x \geq 0\}\)</span>.</li>
+<li>The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval <span class="math inline">\([0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}\)</span>.</li>
+</ul>
+<p>Imagine firing an arrow at a large target. We could ask “What’s the probability that the arrow exactly hits some point?” – but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we’d have to say that the probability is 0. What makes more sense is too take a section of the target – perhaps a small circle in the middle, called the “bulls-eye” – and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question – a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.</p>
+<p>Similarly, imagine picking a random real number between 0 and 1. We could ask “What is the probability that the random number is <em>exactly</em> <span class="math inline">\(1/\sqrt{2} = 0.7071068\dots\)</span>?” But that probability is 0. It makes more sense to take an interval of numbers – say, <span class="math inline">\([0.7, 0.8]\)</span>, the interval from <span class="math inline">\(0.7\)</span> to <span class="math inline">\(0.8\)</span> – and ask what the probability is of the random number being in that interval.</p>
+<p>This is how continuous random variables work. The probability a continuous random variable <span class="math inline">\(X\)</span> <em>exactly</em> hits some value <span class="math inline">\(x\)</span> is <span class="math inline">\(\mathbb P(X = x) = 0\)</span>. But we <em>can</em> find the probability <span class="math inline">\(\mathbb P(a \leq X \leq b)\)</span> that <span class="math inline">\(X\)</span> lies in a certain interval and work with that.</p>
+</div>
+<div id="pdf" class="section level2 hasAnchor" number="15.2">
+<h2><span class="header-section-number">15.2</span> Probability density functions<a href="L15-continuous.html#pdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>With a continuous random variable, the probability of <em>exactly</em> getting any particular outcome <span class="math inline">\(X = x\)</span> is 0. However, we can express the “intensity” of probability <em>around</em> <span class="math inline">\(x\)</span> by <span class="math inline">\(f_X(x)\)</span>, where <span class="math inline">\(f_X\)</span> is called the probability density function. The implied metaphor here is that for discrete random variables, we have probability “mass” <em>at</em> the point <span class="math inline">\(x\)</span>, whereas for continuous random variables, we have a “density” of probability <em>around</em> <span class="math inline">\(x\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-93" class="definition"><strong>Definition 15.1  </strong></span>A random variable <span class="math inline">\(X\)</span> is called a <strong>continuous random variable</strong> if the probability of landing in any interval between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, for <span class="math inline">\(a \leq b\)</span>, can be written as
+<span class="math display">\[ \mathbb P(a \leq X \leq b) = \int_a^b f_X(x) \, \mathrm{d}x , \]</span>
+for some non-negative function <span class="math inline">\(f_X\)</span>. The function <span class="math inline">\(f_X\)</span> is called the <strong>probability density function</strong> (or <strong>PDF</strong>).</p>
+</div>
+<p>In other words, the probability that <span class="math inline">\(X\)</span> is between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the area under the curve of the PDF on that interval.</p>
+<p>As with PMFs, when it’s obvious what random variable we’re dealing with, we omit the subscript <span class="math inline">\(X\)</span> on the PDF <span class="math inline">\(f_X\)</span>.</p>
+<div class="example">
+<p><span id="exm:unifex" class="example"><strong>Example 15.1  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
+<span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise. This represents a random number between 0 and 1, where the intensity of the probability is equal across the whole interval. This is known as a <strong>continuous uniform distribution</strong>.</p>
+<p><img src="math1710_files/figure-html/contunif-pdf-1.png" width="672" /></p>
+<p><em>What is the probability that <span class="math inline">\(X\)</span> is between 0.5 and 0.8?</em></p>
+<p>We can calculate this using the definition above. We have
 <span class="math display">\[\begin{align*}
-\mathbb E(X + Y) &amp;= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
-  &amp;= \sum_{x,y} x\,p_{X,Y}(x,y) + \sum_{x,y} y\,p_{X,Y}(x,y) \\
-  &amp;= \sum_x x \sum_y p_{X,Y}(x,y) + \sum_y y \sum_x p_{X,Y}(x,y)
-\end{align*}\]</span>
-But summing a joint PMF over one of the variables gives the marginal PMF; so <span class="math inline">\(\sum_y p_{X,Y}(x,y) = p_X(x)\)</span> and <span class="math inline">\(\sum_x p_{X,Y}(x,y) = p_Y(y)\)</span>. So this gives
-<span class="math display">\[\begin{align*}
-\mathbb E(X + Y) &amp;= \sum_x x\, p_X(x) + \sum_y y\,p_Y(y) \\
-&amp;= \mathbb EX + \mathbb EY .
+  \mathbb P(0.5 \leq X \leq 0.8) &amp;= \int_{0.5}^{0.8} f(x) \, \mathrm dx \\
+    &amp;= \int_{0.5}^{0.8} 1 \, \mathrm dx \\
+    &amp;= [x]_{0.5}^{0.8} \\
+    &amp;= 0.8 - 0.5 \\
+    &amp;= 0.3 .
 \end{align*}\]</span></p>
-<p>For part 3, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\)</span>. Therefore,
-<span class="math display">\[\begin{align*}
-\mathbb EXY &amp;= \sum_{x,y} xy p_{X,Y}(x,y) \\
-  &amp;= \sum_x \sum_y xy p_X(x) p_Y(y) \\
-  &amp;= \sum_x x p_X(x) \sum_y y p_Y(y) \\
-  &amp;= \mathbb EX \times \mathbb EY,
-\end{align*}\]</span>
-as required.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 14.1  </strong></span><em>A student is solving five questions on a problem sheet. The time taken for each question to the nearest minute is an identically distributed random variable with expectation <span class="math inline">\(\mathbb EX_i = \mu\)</span>. What is the total expected time to complete the problem sheet?</em></p>
-<p>By linearity of expectation, this is
-<span class="math display">\[ \mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = \mathbb EX_1 + \mathbb EX_2 + \mathbb EX_3 + \mathbb EX_4 + \mathbb EX_5 = 5\mu . \]</span></p>
-<p><em>What if the lengths of time are not independent – for example, if the student is slower at answering all the questions when she is tired?</em></p>
-<p>It’s still the case that <span class="math inline">\(\mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = 5\mu\)</span>, because this result is true whether or not the random variables are independent.</p>
-</div>
-</div>
-<div id="covariance" class="section level2 hasAnchor" number="14.2">
-<h2><span class="header-section-number">14.2</span> Covariance<a href="L14-covariance.html#covariance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/eXsUrJzcRCE"></iframe>
-:::
-::::
--->
-<p>If we are interested at how two random variables vary together, we need to look at the covariance.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mathbb EX =\mu_X\)</span> and <span class="math inline">\(\mathbb EY = \mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
-<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]</span></p>
-</div>
-<p>In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-82" class="theorem"><strong>Theorem 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
-<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]</span></p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-83" class="proof"><em>Proof</em>. </span>Exactly as we’ve done many times before, we have
+<p><span id="exm:pdf2" class="example"><strong>Example 15.2  </strong></span>Let <span class="math inline">\(Y\)</span> be a continuous random variable with PDF
+<span class="math display">\[ f(y) = \begin{cases} y &amp; \text{for $0 \leq y \leq 1$} \\
+2-y &amp; \text{for $1 &lt; y \leq 2$} \end{cases} \]</span>
+and <span class="math inline">\(f(y) = 0\)</span> otherwise. This represents a continuous value between 0 and 2 where the probability intensity is highest in the middle around 1 and is lower at the edges near 0 and 2.</p>
+<p><img src="math1710_files/figure-html/second-pdf-1.png" width="672" /></p>
+<p><em>What is the probability <span class="math inline">\(X\)</span> is between <span class="math inline">\(\frac12\)</span> and <span class="math inline">\(\frac32\)</span>?</em></p>
+<p>As before, we have
+<span class="math display">\[ \mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big) = \int_{\frac12}^{\frac32} f(y) \, \mathrm dy .   \]</span>
+But this time we have to be careful, because <span class="math inline">\(f(y)\)</span> has different expressions below 1 and above 1. We will split the integral up into two parts based on this, to get
 <span class="math display">\[\begin{align*}
-\operatorname{Cov}(X,Y) &amp;= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
-&amp;= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
-&amp;= \mathbb EXY  - \mu_Y \,\mathbb EX - \mu_X \,\mathbb EY + \mu_X \, \mu_Y \\
-&amp;= \mathbb EXY - \mu_X \, \mu_Y - \mu_X \, \mu_Y + \mu_X \, \mu_Y \\
-&amp;= \mathbb EXY - \mu_X \, \mu_Y ,
-\end{align*}\]</span>
-and we’re done.</p>
+\mathbb P\big( \tfrac12 \leq Y \leq \tfrac32 \big)
+  &amp;= \int_{\frac12}^{1} f(y) \, \mathrm dy + \int_{1}^{\frac32} f(y) \, \mathrm dy \\
+    &amp;= \int_{\frac12}^{1} y \, \mathrm dy + \int_{1}^{\frac32} (2-y) \, \mathrm dy \\
+    &amp;= \left[ \tfrac12 y^2\right]_{\frac12}^1 + \left[ 2y-\tfrac12 y^2\right]_1^{\frac32} \\
+    &amp;= \tfrac12 - \tfrac18 + \big(\tfrac62 - \tfrac98\big) - \big(2 - \tfrac12\big) \\
+    &amp;= \tfrac34 .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div id="prop-cont" class="section level2 hasAnchor" number="15.3">
+<h2><span class="header-section-number">15.3</span> Properties of continuous random variables<a href="L15-continuous.html#prop-cont" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/J7CtqG0HErc">
+</iframe>
+</div>
+</div>
+<p>The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution – except you swap the PMF for the PDF and swap sums for integrals.</p>
+<table>
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Discrete random variables</th>
+<th>Continuous random variables</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>A discrete random variable <span class="math inline">\(X\)</span> is defined by a <strong>probability mass function</strong> (PMF) <span class="math inline">\(p(x)\)</span>, which represents the probability of getting exactly <span class="math inline">\(x\)</span>.</td>
+<td>A continuous random variable <span class="math inline">\(X\)</span> is defined by a <strong>probability density function</strong> (PDF) <span class="math inline">\(f(x)\)</span>, which represents the intensity of probability around <span class="math inline">\(x\)</span>.</td>
+</tr>
+<tr class="even">
+<td>The PMF is positive, in that <span class="math inline">\(p(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</td>
+<td>The PDF is positive, in that <span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</td>
+</tr>
+<tr class="odd">
+<td>The PMF sums to 1, in that <span class="math display">\[ \sum_{x} p(x) = 1. \]</span></td>
+<td>The PDF integrates to 1 in that <span class="math display">\[ \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\]</span></td>
+</tr>
+<tr class="even">
+<td>The <strong>cumulative distribution function</strong> (CDF) is <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span>, and is given by a sum <span class="math display">\[ F(x) = \sum_{y \leq x} p(y) .\]</span></td>
+<td>The <strong>cumulative distribution function</strong> (CDF) is <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span>, and is given by an integral <span class="math display">\[ F(x) = \int_{-\infty}^x f(y) \, \mathrm{d}y .\]</span></td>
+</tr>
+<tr class="odd">
+<td>The <strong>expectation</strong> is the sum <span class="math display">\[ \mathbb EX = \sum_{x} x\,p(x) . \]</span></td>
+<td>The <strong>expectation</strong> is the integral <span class="math display">\[ \mathbb EX = \int_{-\infty}^{\infty} x\,f(x)\,\mathrm dx . \]</span></td>
+</tr>
+<tr class="even">
+<td>The expectation of a function <span class="math inline">\(g(X)\)</span> of <span class="math inline">\(X\)</span> is the sum <span class="math display">\[ \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \]</span></td>
+<td>The expectation of a function <span class="math inline">\(g(X)\)</span> of <span class="math inline">\(X\)</span> is the integral <span class="math display">\[ \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \]</span></td>
+</tr>
+<tr class="odd">
+<td>Linearity of expectation says that <span class="math display">\[ \mathbb E(aX+b) = a\mathbb EX + b .\]</span></td>
+<td>Linearity of expectation says that <span class="math display">\[ \mathbb E(aX+b) = a\mathbb EX + b .\]</span></td>
+</tr>
+<tr class="even">
+<td>The <strong>variance</strong> is <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span>, which also has the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span>.</td>
+<td>The <strong>variance</strong> is <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span>, which also has the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span>.</td>
+</tr>
+</tbody>
+</table>
+<p>Note, however, one property that doesn’t follow through: Because, for a PMF, <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> represented a probability, we had <span class="math inline">\(p(x) \leq 1\)</span> for all <span class="math inline">\(x\)</span>. However, because, for a PDF, <span class="math inline">\(f(x)\)</span> only represents intensity of probability, there’s no contradiction to having <span class="math inline">\(f(x) &gt; 1\)</span> (although keeping the integral to 1 means that we can’t have <span class="math inline">\(f(x) &gt; 1\)</span> too much). So <span class="math inline">\(f(x) = 10\)</span> for <span class="math inline">\(0 &lt;x &lt; 0.1\)</span> and <span class="math inline">\(f(x) = 0\)</span> otherwise is a perfectly legitimate PDF, for example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 15.3  </strong></span>Let’s return to the case where <span class="math inline">\(X\)</span> be a continuous uniform distribution, with
+<span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} . \]</span>
+Let’s go through the properties from the table above.</p>
+<p>First, it’s clear that <span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</p>
+<p>Second, the PDF does indeed integrate to 1, because
+<span class="math display">\[ \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_0^1 1 \, \mathrm dx = [x]_0^1 = 1 .    \]</span>
+Because this PDF is zero below 0 and above 1, we only had to integrate between 0 and 1, with the rest of the integral over the real line being 0.</p>
+<p>Third, the CDF <span class="math inline">\(F\)</span>. It’s clear that <span class="math inline">\(F(x) = \mathbb P(X \leq x) = 0\)</span> for <span class="math inline">\(x &lt; 0\)</span>, and <span class="math inline">\(F(x) = \mathbb P(X \leq x) = 1\)</span> for <span class="math inline">\(x &gt; 1\)</span>. In between, we have
+<span class="math display">\[ F(x) = \int_{-\infty}^x f(y) \,\mathrm dy = \int_0^x 1\, \mathrm dy = [y]_0^x = x .   \]</span>
+So, altogether, the CDF is
+<span class="math display">\[  F(x) = \begin{cases} 0 &amp; \text{for } x &lt; 0 \\ x &amp; \text{for }0 \leq x \leq 1 \\ 1 &amp; \text{for }x &gt; 1 . \end{cases} \]</span></p>
+<p><img src="math1710_files/figure-html/contunif-cdf-1.png" width="672" /></p>
+<p>Fourth, the expectation is
+<span class="math display">\[ \mathbb EX = \int_{\infty}^\infty x\,f(x)\,\mathrm dx = \int_0^1 x \, \mathrm dx = \left[\tfrac12 x^2 \right]_0^1 = \tfrac12 - 0 = \tfrac12 .   \]</span></p>
+<p>Finally, to calculate the variance, we have
+<span class="math display">\[ \mathbb EX^2 = \int_{\infty}^\infty x^2\,f(x)\,\mathrm dx = \int_0^1 x^2 \, \mathrm dx = \left[\tfrac13 x^3 \right]_0^1 = \tfrac13 - 0 = \tfrac13 .   \]</span>
+So, using the computational formula, we have
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = \tfrac13 - \left(\tfrac12\right)^2 = \tfrac13 - \tfrac14 = \tfrac{1}{12} . \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 14.2  </strong></span>We continue with our coin-tossing example from the last lecture, where <span class="math inline">\(X\)</span> is the number of Heads in the first two coin tosses and <span class="math inline">\(Y\)</span> the number of Heads in the first three coin tosses.</p>
-<p>We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>, so <span class="math inline">\(\mu_X = 1\)</span>, and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span>, so <span class="math inline">\(\mu_Y = 1.5\)</span>. To find the covariance using the computational formula, we also need <span class="math inline">\(\mathbb EXY\)</span>, which is
+<p><span id="exm:unlabeled-div-95" class="example"><strong>Example 15.4  </strong></span>Let’s also return to the “triangular” PDF from Example <a href="L15-continuous.html#exm:pdf2">15.2</a>,
+<span class="math display">\[ f(y) = \begin{cases} y &amp; \text{for $0 \leq y \leq 1$} \\
+2-y &amp; \text{for $1 &lt; y \leq 2$}. \end{cases} \]</span>
+We’ll just do the CDF and the expectation. (You can do the others yourself, if you like.)</p>
+<p>For the CDF, it’s clear that <span class="math inline">\(F(y) = 0\)</span> for <span class="math inline">\(y &lt; 0\)</span> and <span class="math inline">\(F(y) = 1\)</span> for <span class="math inline">\(y &gt; 2\)</span>. Again, we split the <span class="math inline">\(0 \leq y \leq 1\)</span> case and the <span class="math inline">\(1 &lt; y \leq 2\)</span> case. In the first case, for <span class="math inline">\(0 \leq y \leq 1\)</span>, we have
 <span class="math display">\[\begin{align*}
-\mathbb EXY &amp;= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
-  &amp;= 0\times 0\times p_{X,Y}(0,0) + 0 \times 1 \times p_{X,Y}(0,1) + \cdots + 2\times 3 \times p_{X,Y}(2,3) \\
-  &amp;= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
-  &amp;= 2.
+  F(x) &amp;= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &amp;= \int_0^y z \, \mathrm dz \\
+    &amp;= \left[ \tfrac12 z^2 \right]_0^y \\
+    &amp;= \tfrac 12 y^2 .
 \end{align*}\]</span>
-Hence the covariance is
-<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]</span></p>
-</div>
-<p>A very important fact is the following.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 14.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
-</div>
-<p>Be careful not to get this the wrong way around: if <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span> it doesn’t necessarily mean that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
-<p>To use the <a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive">“contrapositive”</a> (which is allowed!), in our example, we have <span class="math inline">\(\operatorname{Cov}(X,Y) \neq 0\)</span>, which means that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent – confirming what we already knew.</p>
-<div class="proof">
-<p><span id="unlabeled-div-86" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="L14-covariance.html#thm:linearity2">14.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
-<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]</span>
-and we are done.</p>
-</div>
-<p>Here are some more important properties of the covariance.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 14.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\)</span>;</li>
-<li><span class="math inline">\(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\)</span>;</li>
-<li><span class="math inline">\(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\)</span>;</li>
-<li><span class="math inline">\(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X,Y)\)</span>;</li>
-<li><span class="math inline">\(\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y,Z)\)</span>.</li>
-</ol>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-88" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
-<p>Parts 3, 4 and 5 are quite similar. We’ll do part 5 here, and you can do parts 3 and 4 on <a href="P4.html#P4">Problem Sheet 4</a>.</p>
-<p>For part 5, note that <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span> by linearity of expectation. Hence
+In the second case, for <span class="math inline">\(1 &lt; y \leq 2\)</span>, we have
 <span class="math display">\[\begin{align*}
-\operatorname{Cov}(X + Y, Z)
-  &amp;= \mathbb E \big((X + Y) - (\mu_X + \mu_Y)\big)(Z - \mu_Z) \\
-  &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
-  &amp;= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
-  &amp;= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
-  &amp;= \operatorname{Cov}(X,Z) + \operatorname{Cov}(Y,Z) ,
+  F(x) &amp;= \int_{-\infty}^y f(z) \, \mathrm dz \\
+    &amp;= \int_0^1 z \, \mathrm dz + \int_1^y (2 - z)\,\mathrm dz \\
+    &amp;= \left[ \tfrac12 z^2 \right]_0^1 + \left[ 2z - \tfrac12 z^2 \right]_1^y \\
+    &amp;= \tfrac 12 - 0 + 2y - \tfrac12 y^2 - 2 + \tfrac12 \\
+    &amp;= 2y - \tfrac12 y^2 - 1  .
 \end{align*}\]</span>
-as required.</p>
-</div>
-<p>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
-<span class="math display">\[
-\operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z) =
-= \operatorname{Var}(X) + 0 = \operatorname{Var}(X) ,\]</span>
-where we used <span class="math inline">\(\operatorname{Cov}(X, Z) = 0\)</span> since <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> are independent.
-We already know that <span class="math inline">\(\operatorname{Var}(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12\)</span> because <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>.. So <span class="math inline">\(\operatorname{Cov}(X,Y) = \frac12\)</span>,
-matching our previous calculation.</p>
-<p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-89" class="theorem"><strong>Theorem 14.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
-<span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]</span></p>
-<p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then
-<span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]</span></p>
-</div>
-<p>It’s easy to forget the conditions for the following two facts:</p>
-<ul>
-<li><span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span> regardless of whether <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent or not.</li>
-<li><span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</li>
-</ul>
-<div class="proof">
-<p><span id="unlabeled-div-90" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
+Hence, the CDF is
+<span class="math display">\[ F(y) = \begin{cases} 0 &amp; \text{for $y &lt; 0$} \\
+            \tfrac12 y^2 &amp; \text{for $0 \leq y \leq 1$} \\
+            2y - \tfrac12 y^2 - 1  &amp; \text{for $1 &lt; y \leq 2$} \\
+            1 &amp; \text{for $y &gt; 2$}. \end{cases} \]</span></p>
+<p><img src="math1710_files/figure-html/second-cdf-1.png" width="672" /></p>
+<p>For the expectation, we have
 <span class="math display">\[\begin{align*}
-\operatorname{Var}(X + Y) &amp;= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
-  &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
-  &amp;= \mathbb E \big( (X - \mu_X)^2 + 2(X - \mu_X)(Y - \mu_Y) + (Y - \mu_Y)^2\big) \\
-  &amp;= \mathbb E(X - \mu_X)^2 + 2 \mathbb E(X - \mu_X)(Y - \mu_Y) + \mathbb E (Y - \mu_Y)^2 \\
-  &amp;= \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) ,
-\end{align*}\]</span>
-where we used the linearity of expectation.</p>
-<p>For the second part, recall that is <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
-</div>
-</div>
-<div id="correlation" class="section level2 hasAnchor" number="14.3">
-<h2><span class="header-section-number">14.3</span> Correlation<a href="L14-covariance.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>It can sometimes be useful to “normalise” the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-91" class="definition"><strong>Definition 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
-<span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]</span></p>
-</div>
-<p>As with the sample correlation <span class="math inline">\(r_{xy}\)</span> from Section 1, the correlation is a number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>, where values near <span class="math inline">\(+1\)</span> mean that large values of <span class="math inline">\(X\)</span> and large values of <span class="math inline">\(Y\)</span> are likely to occur together, while values near <span class="math inline">\(-1\)</span> mean that large values of <span class="math inline">\(X\)</span> and small values of <span class="math inline">\(Y\)</span> are likely to occur together.</p>
-<p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
-<div class="example">
-<p><span id="exm:unlabeled-div-92" class="example"><strong>Example 14.3  </strong></span>For the coin-tossing again, we have
-<span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]</span></p>
-</div>
-</div>
-<div id="summary-L14" class="section level2 unnumbered hasAnchor">
-<h2>Summary<a href="L14-covariance.html#summary-L14" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="mysummary">
-<ul>
-<li><span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span></li>
-<li>The covariance is <span class="math inline">\(\operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y\)</span>.</li>
-<li><span class="math inline">\(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)\)</span>; or if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span>.</li>
-</ul>
+\mathbb EY &amp;= \int_{-\infty}^{\infty} y\, f(y) \, \mathrm dy \\
+  &amp;= \int_0^1 y^2 \mathrm dy + \int_1^2 y(2 - y)\, \mathrm dy \\
+  &amp;= \left[ \tfrac13 y^3 \right]_0^1 + \left[  y^2 - \tfrac13 y^3 \right]_1^2 \\
+  &amp;= \tfrac13 - 0 + 4 - \tfrac83 - 1 + \tfrac13 \\
+  &amp;= 1 .
+\end{align*}\]</span></p>
 </div>
 
 </div>
@@ -532,8 +523,8 @@ where we used the linearity of expectation.</p>
           </div>
         </div>
       </div>
-<a href="L13-multi-rv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="P4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="P4.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L17-normal.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

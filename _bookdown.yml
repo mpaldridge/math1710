@@ -19,9 +19,9 @@ rmd_files:
   - sections/L13-multi-rv.Rmd
   - sections/L14-covariance.Rmd
   - problems/P4.Rmd
-#  - sections/L15-continuous.Rmd
+  - sections/L15-continuous.Rmd
+  - sections/L17-normal.Rmd
 #  - sections/L16-exponential-multi.Rmd
-#  - sections/L17-normal.Rmd
 #  - sections/L18-limit.Rmd
 #  - problems/P5.Rmd
 #  - sections/L19-bayes-idea.Rmd
