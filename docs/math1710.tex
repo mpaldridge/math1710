@@ -5414,8 +5414,23 @@ For the expectation, we have
 \end{align*}
 \end{example}
 
-\hypertarget{L17-normal}{%
-\chapter{Normal distribution}\label{L17-normal}}
+\hypertarget{summary-L15}{%
+\section*{Summary}\label{summary-L15}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  A continuous random variable is defined by its probability density function \(f\), where
+  \[ \mathbb P(a \leq X \leq b) = \int_a^b f(x) \, \mathrm dx . \]
+\item
+  Most properties of discrete random variables hold, with the PMF replaced by the PDF, and sums by integrals.
+\item
+  For example, the expectation is \(\mathbb EX = \displaystyle\int_{-\infty}^\infty x\, f(x) \, \mathrm dx\).
+\end{itemize}
+
+\hypertarget{L16-normal}{%
+\chapter{Normal distribution}\label{L16-normal}}
 
 When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we'll look at an extremely important distribution: the ``normal'' (or ``Gaussian'') distribution.
 
@@ -5752,12 +5767,28 @@ I feel I shouldn't finish with this subsection before addressing the following q
 \item
   Someone has to write the computer program, and these people need to be able to do the sorts of conversions we will learn about here. So these are useful skills for mathematician--programmers to learn.
 \item
-  Being able to standardise normal distributions, approximate other distributions by normal distributions (see Subsection \ref{normal-approx}), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
+  Being able to standardise normal distributions, approximate other distributions by normal distributions (see Lecture 18), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
 \item
   Yes, you are right, this is a pointless skill for us to teach you.
 \end{enumerate}
 
 I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
+
+\hypertarget{summary-L16}{%
+\section*{Summary}\label{summary-L16}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  The normal distribution has PDF
+  \[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left(- \frac{(x - \mu)^2}{2\sigma^2} \right) .\]
+  It has expectation \(\mu\) and variance \(\sigma^2\).
+\item
+  The standard normal distribution has \(\mu = 0\) and \(\sigma^2 = 1\).
+\item
+  The CDF of a normal distribution can be calculated in R with the \texttt{pnorm()} function. It can also be calculated using \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables} and by ``standardising''.
+\end{itemize}
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}

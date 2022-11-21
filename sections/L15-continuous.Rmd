@@ -213,3 +213,12 @@ For the expectation, we have
 \end{align*}
 :::
 
+
+## Summary  {#summary-L15 .unnumbered}
+
+::: {.mysummary}
+* A continuous random variable is defined by its probability density function $f$, where
+\[ \mathbb P(a \leq X \leq b) = \int_a^b f(x) \, \mathrm dx . \]
+* Most properties of discrete random variables hold, with the PMF replaced by the PDF, and sums by integrals.
+* For example, the expectation is $\mathbb EX = \displaystyle\int_{-\infty}^\infty x\, f(x) \, \mathrm dx$.
+:::

@@ -1,4 +1,4 @@
-# Exponential distribution and multiple continuous random variables
+# Exponential distribution and multiple continuous random variables  {#L17-exp-multiple}
 
 This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it's very similar to what we already know about multiple discrete random variables.
 
@@ -119,12 +119,9 @@ So therefore,
 \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
 ::::
 
-## Summary  {#summary-08 .unnumbered}
+## Summary  {#summary-L17 .unnumbered}
 
 ::: {.mysummary}
-* A continuous random variable is defined by its probability density function $f$, where
-\[ \mathbb P(a \leq X \leq b) = \int_a^b f(x) \, \mathrm dx . \]
-* Most properties of discrete random variables hold, with the PMF replaced by the PDF, and sums by integrals.
-* The expectation is $\mathbb EX = \displaystyle\int_{-\infty}^\infty x\, f(x) \, \mathrm dx$.
 * The exponential distribution has PDF $f(x) = \lambda \mathrm e^{-\lambda x}$, expectation $1/\lambda$, and variance $1/\lambda^2$.
+* Most properties of multiple discrete random variables carry of to multiple continuous random variables. To get a marginal PDF from a joint PDF, we integrate (rather than sum) over the other variable.
 :::

@@ -1,0 +1,132 @@
+---
+title:  "Properties of continuous <br /> random variables"
+author: "MATH1710 Probability and Statistics I"
+date:   "Lecture 15, 21 November 2022"
+output:
+  ioslides_presentation:
+    widescreen: true
+---
+
+## Properties
+
+\newcommand{\Var}{\operatorname{Var}}
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| A discrete random variable $X$ is defined by a **probability mass function** (PMF) $p(x)$, which represents the probability of getting exactly $x$. |  |
+
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| A discrete random variable $X$ is defined by a **probability mass function** (PMF) $p(x)$, which represents the probability of getting exactly $x$. | A continuous random variable $X$ is defined by a **probability density function** (PDF) $f(x)$, which represents the intensity of probability around $x$. |
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| A discrete random variable $X$ is defined by a **probability mass function** (PMF) $p(x)$, which represents the probability of getting exactly $x$. | A continuous random variable $X$ is defined by a **probability density function** (PDF) $f(x)$, which represents the intensity of probability around $x$. |
+| The PMF is positive, in that $p(x) \geq 0$ for all $x$. |  |
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| A discrete random variable $X$ is defined by a **probability mass function** (PMF) $p(x)$, which represents the probability of getting exactly $x$. | A continuous random variable $X$ is defined by a **probability density function** (PDF) $f(x)$, which represents the intensity of probability around $x$. |
+| The PMF is positive, in that $p(x) \geq 0$ for all $x$. | The PDF is positive, in that $f(x) \geq 0$ for all $x$. |
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The PMF is positive, in that $p(x) \geq 0$ for all $x$. | The PDF is positive, in that $f(x) \geq 0$ for all $x$. |
+| The PMF sums to 1, in that \[ \sum_{x} p(x) = 1. \] | |
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The PMF is positive, in that $p(x) \geq 0$ for all $x$. | The PDF is positive, in that $f(x) \geq 0$ for all $x$. |
+| The PMF sums to 1, in that \[ \sum_{x} p(x) = 1. \] | The PDF integrates to 1 in that \[ \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\] |
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The PMF sums to 1, in that \[ \sum_{x} p(x) = 1. \] | The PDF integrates to 1 in that \[ \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\]
+| The **cumulative distribution function** (CDF) is $F(x) = \mathbb P(X \leq x)$, and is given by a sum \[ F(x) = \sum_{y \leq x} p(y) .\] |   |
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The PMF sums to 1, in that \[ \sum_{x} p(x) = 1. \] | The PDF integrates to 1 in that \[ \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\]
+| The **cumulative distribution function** (CDF) is $F(x) = \mathbb P(X \leq x)$, and is given by a sum \[ F(x) = \sum_{y \leq x} p(y) .\] | The **cumulative distribution function** (CDF) is $F(x) = \mathbb P(X \leq x)$, and is given by an integral \[ F(x) = \int_{-\infty}^x f(y) \, \mathrm{d}y .\]  |
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The **cumulative distribution function** (CDF) is $F(x) = \mathbb P(X \leq x)$, and is given by a sum \[ F(x) = \sum_{y \leq x} p(y) .\] | The **cumulative distribution function** (CDF) is $F(x) = \mathbb P(X \leq x)$, and is given by an integral \[ F(x) = \int_{-\infty}^x f(y) \, \mathrm{d}y .\]  |
+| The **expectation** is the sum \[ \mathbb EX = \sum_{x} x\,p(x) . \] | |
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The **cumulative distribution function** (CDF) is $F(x) = \mathbb P(X \leq x)$, and is given by a sum \[ F(x) = \sum_{y \leq x} p(y) .\] | The **cumulative distribution function** (CDF) is $F(x) = \mathbb P(X \leq x)$, and is given by an integral \[ F(x) = \int_{-\infty}^x f(y) \, \mathrm{d}y .\]  |
+| The **expectation** is the sum \[ \mathbb EX = \sum_{x} x\,p(x) . \] | The **expectation** is the integral \[ \mathbb EX = \int_{-\infty}^{\infty} x\,f(x)\,\mathrm dx . \] |
+
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The **expectation** is the sum \[ \mathbb EX = \sum_{x} x\,p(x) . \] | The **expectation** is the integral \[ \mathbb EX = \int_{-\infty}^{\infty} x\,f(x)\,\mathrm dx . \] |
+| The expectation of a function $g(X)$ of $X$ is the sum \[ \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \] |  |
+
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The **expectation** is the sum \[ \mathbb EX = \sum_{x} x\,p(x) . \] | The **expectation** is the integral \[ \mathbb EX = \int_{-\infty}^{\infty} x\,f(x)\,\mathrm dx . \] |
+| The expectation of a function $g(X)$ of $X$ is the sum \[ \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \] | The expectation of a function $g(X)$ of $X$ is the integral  \[ \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \] |
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The expectation of a function $g(X)$ of $X$ is the sum \[ \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \] | The expectation of a function $g(X)$ of $X$ is the integral  \[ \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \] |
+| Linearity of expectation says that \[ \mathbb E(aX+b) = a\mathbb EX + b .\] |   |
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| The expectation of a function $g(X)$ of $X$ is the sum \[ \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \] | The expectation of a function $g(X)$ of $X$ is the integral  \[ \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \] |
+| Linearity of expectation says that \[ \mathbb E(aX+b) = a\mathbb EX + b .\] |  Linearity of expectation says that \[ \mathbb E(aX+b) = a\mathbb EX + b .\] |
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| Linearity of expectation says that \[ \mathbb E(aX+b) = a\mathbb EX + b .\] |  Linearity of expectation says that \[ \mathbb E(aX+b) = a\mathbb EX + b .\] |
+| The **variance** is $\Var(X) = \mathbb E(X - \mu)^2$, which also has the computational formula $\Var(X) = \mathbb EX^2 - \mu^2$. | |
+
+## Properties
+
+|   Discrete random variables   |   Continuous random variables   |
+|-----|-----|
+| Linearity of expectation says that \[ \mathbb E(aX+b) = a\mathbb EX + b .\] |  Linearity of expectation says that \[ \mathbb E(aX+b) = a\mathbb EX + b .\] |
+| The **variance** is $\Var(X) = \mathbb E(X - \mu)^2$, which also has the computational formula $\Var(X) = \mathbb EX^2 - \mu^2$. | The **variance** is $\Var(X) = \mathbb E(X - \mu)^2$, which also has the computational formula $\Var(X) = \mathbb EX^2 - \mu^2$. |
+

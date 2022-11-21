@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Lecture 16 Normal distribution | MATH1710 Probability and Statistics I</title>
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Lecture 16 Normal distribution | MATH1710 Probability and Statistics I" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Lecture 16 Normal distribution | MATH1710 Probability and Statistics I" />
+  
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  
+
+<meta name="author" content="Matthew Aldridge" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<link rel="prev" href="L15-continuous.html"/>
+<link rel="next" href="R.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">MATH1710 notes</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Probability</b></span></li>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Set theory</a></li>
+<li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="L05-classical-i.html"><a href="L05-classical-i.html"><i class="fa fa-check"></i><b>5</b> Classical probability I</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="L05-classical-i.html"><a href="L05-classical-i.html#classical-intro"><i class="fa fa-check"></i><b>5.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="5.2" data-path="L05-classical-i.html"><a href="L05-classical-i.html#multiplication"><i class="fa fa-check"></i><b>5.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="5.3" data-path="L05-classical-i.html"><a href="L05-classical-i.html#sampling"><i class="fa fa-check"></i><b>5.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="" data-path="L05-classical-i.html"><a href="L05-classical-i.html#summary-L05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
+<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
+<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
+<li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-L06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
+<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+<li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
+<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
+<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
+<li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
+<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
+<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-L10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
+<li class="chapter" data-level="11.3" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#models"><i class="fa fa-check"></i><b>11.3</b> Distributions as models for data</a></li>
+<li class="chapter" data-level="" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
+<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
+<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-process"><i class="fa fa-check"></i><b>12.3</b> Poisson process</a></li>
+<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
+<li class="chapter" data-level="" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#summary-L13"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
+<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
+<li class="chapter" data-level="14.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>14.3</b> Correlation</a></li>
+<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-L14"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
+<li class="chapter" data-level="" data-path="L15-continuous.html"><a href="L15-continuous.html#summary-L15"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="L16-normal.html"><a href="L16-normal.html"><i class="fa fa-check"></i><b>16</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="L16-normal.html"><a href="L16-normal.html#normal-definition"><i class="fa fa-check"></i><b>16.1</b> Definition of the normal distribution</a></li>
+<li class="chapter" data-level="16.2" data-path="L16-normal.html"><a href="L16-normal.html#normal-properties"><i class="fa fa-check"></i><b>16.2</b> Properties of the normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="L16-normal.html"><a href="L16-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
+<li class="chapter" data-level="16.4" data-path="L16-normal.html"><a href="L16-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
+<li class="chapter" data-level="" data-path="L16-normal.html"><a href="L16-normal.html#summary-L16"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="part"><span><b>Other stuff</b></span></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
+<ul>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
+</ul></li>
+<li class="divider"></li>
+<li></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">MATH1710 Probability and Statistics I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="L16-normal" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">Lecture 16</span> Normal distribution<a href="L16-normal.html#L16-normal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we’ll look at an extremely important distribution: the “normal” (or “Gaussian”) distribution.</p>
+<div id="normal-definition" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> Definition of the normal distribution<a href="L16-normal.html#normal-definition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/of84BBnJdgw"></iframe>
+:::
+::::
+
+
+There's one very important distribution we need to talk about, which is the so-called "normal" (or "Gaussian") distribution.
+-->
+<div class="definition">
+<p><span id="def:unlabeled-div-96" class="definition"><strong>Definition 16.1  </strong></span>If <span class="math inline">\(X\)</span> is a continuous random variable with PDF
+<span class="math display">\[ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right) , \]</span>
+then we say that <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2 &gt; 0\)</span>, and write <span class="math inline">\(X \sim \mathrm N(\mu,\sigma^2)\)</span>.</p>
+</div>
+<p>(Many people call <span class="math inline">\(\mu\)</span> the “mean”, which is a slight misnomer.)</p>
+<p>This PDF is the famous “bell curve”, where the centre of the bell is at <span class="math inline">\(x = \mu\)</span> and the width of the bell is controlled by the value of <span class="math inline">\(\sigma^2\)</span>. Note also that the PDF is symmetric about <span class="math inline">\(\mu\)</span>.</p>
+<p><img src="math1710_files/figure-html/norm-pic-1-1.png" width="672" /></p>
+<p><img src="math1710_files/figure-html/norm-pic-2-1.png" width="672" /></p>
+<p>One important special case is <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma^2 = 1\)</span>, in which case we say that <span class="math inline">\(Z \sim \mathrm N(0,1)\)</span> has the <strong>standard normal distribution</strong>. We typically write <span class="math inline">\(\phi\)</span> (lower-case “phi”), where
+<span class="math display">\[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]</span>
+for the PDF of a standard normal distribution, and write <span class="math inline">\(\Phi\)</span> (upper-case “Phi”), where
+<span class="math display">\[ \Phi(z) = \mathbb P(Z \leq z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]</span>
+for the CDF of a standard normal distribution.</p>
+<p>The normal distribution is a very widely used distribution for modelling many things in real life.</p>
+<ul>
+<li>Measurement error with scientific instruments is typically modelled as a normal distribution with expectation <span class="math inline">\(\mu = 0\)</span>. The more precise the instrument, the lower the value of the variance <span class="math inline">\(\sigma^2\)</span>.</li>
+<li>According to <a href="http://www1.maths.leeds.ac.uk/~voss/2019/MATH1712/index.html">a poll a few years ago</a>, the height of MATH1712 students in centimetres can be modelled well by a normal distribution with expectation <span class="math inline">\(\mu = 172\)</span> and variance <span class="math inline">\(\sigma^2 = 86\)</span>.</li>
+<li>In financial models, it is often assumed that the logarithm of the daily change in a stock price follows a normal distribution. In this context, the expectation <span class="math inline">\(\mu\)</span> is known as the “drift” and the standard deviation <span class="math inline">\(\sigma\)</span> as the “volatility”. This “log-normal” model is the basis of the famous Black–Scholes model of financial markets.</li>
+</ul>
+<p>More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.</p>
+<p>It’s generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.</p>
+</div>
+<div id="normal-properties" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> Properties of the normal distribution<a href="L16-normal.html#normal-properties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/4P6Xe1BbMn0"></iframe>
+:::
+::::
+-->
+<div class="theorem">
+<p><span id="thm:norm-prop" class="theorem"><strong>Theorem 16.1  </strong></span>Let <span class="math inline">\(X \sim \mathrm{N}(\mu, \sigma^2)\)</span> be a normally distributed random variable. Then:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(f_X(x)\)</span> is indeed a PDF, in that <span class="math inline">\(\displaystyle\int_{-\infty}^\infty f_X(x)\,\mathrm dx = 1\)</span>;</li>
+<li><span class="math inline">\(\mathbb EX = \mu\)</span>;</li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \sigma^2\)</span>.</li>
+</ol>
+<p>In particular, if <span class="math inline">\(Z \sim \mathrm{N}(0, 1)\)</span> is a standard normal distribution, then <span class="math inline">\(\mathbb EZ = 0\)</span> and <span class="math inline">\(\operatorname{Var}(Z) = 1\)</span>.</p>
+</div>
+<p>We’ll give (non-examinable) proofs of these soon. But first we’ll note one other thing.</p>
+<p>Let <span class="math inline">\(X \sim \mathrm{N}(\mu, \sigma^2)\)</span>, and consider the random variable <span class="math inline">\(Y = aX + b\)</span>. Then we know that
+<span class="math display">\[\begin{align*}
+\mathbb E(aX + b) &amp;= a\mu + b , \\
+\operatorname{Var}(aX + b) &amp;= a^2 \sigma^2 .
+\end{align*}\]</span>
+In fact, it can be shown that <span class="math inline">\(aX + b\)</span> is normally distributed too; that is, <span class="math inline">\(aX + b \sim \mathrm{N}(a\mu + b, a^2 \sigma^2)\)</span>. Importantly, if we take <span class="math inline">\(a = 1/\sigma\)</span> and <span class="math inline">\(b = -\mu/\sigma\)</span>, then we see that
+<span class="math display">\[ Z = \frac{X - \mu}{\sigma} \sim \text{N} (0, 1) . \]</span>
+In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as “standardisation” and will be useful later.</p>
+<p>We can also use standardisation to help us prove Theorem <a href="L16-normal.html#thm:norm-prop">16.1</a>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-97" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> By using standardisation, it suffices to prove the theorem for a standard normal random variable <span class="math inline">\(X \sim \mathrm{N}(0,1)\)</span>.</p>
+<p>For part 1, we need to show that
+<span class="math display">\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]</span>
+To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself <span class="math inline">\(I\)</span>, we can instead calculate the square of the integral <span class="math inline">\(I^2\)</span>, which we also need to show is equal to 1. This is
+<span class="math display">\[\begin{align*}
+  I^2 &amp;= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx \times \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-y^2/2}\, \mathrm dy\\
+    &amp;= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-x^2/2}\,\mathrm e^{-y^2/2} \, \mathrm dx\, \mathrm dy \\
+    &amp;= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-(x^2+y^2)/2}\,\mathrm dx\, \mathrm dy .
+\end{align*}\]</span>
+The second part of the outrageous trick is notice that the appearance of <span class="math inline">\(x^2 + y^2\)</span> suggests it might be useful to transfer from cartesian coordinates <span class="math inline">\((x,y)\)</span> to polar coordinates <span class="math inline">\((r, \theta)\)</span>. Recalling that <span class="math inline">\(x^2 + y^2 = r^2\)</span> and <span class="math inline">\(\mathrm dx\, \mathrm dy = r\, \mathrm dr \,\mathrm d\theta\)</span>, we have
+<span class="math display">\[\begin{align*}
+  I^2 &amp;= \frac{1}{2\pi} \int_{0}^{2\pi} \int_{0}^\infty  \mathrm e^{-r^2/2}\,r\,\mathrm dr\, \mathrm d\theta \\
+    &amp;= \frac{1}{2\pi} \, 2\pi\int_{0}^\infty  r\, \mathrm e^{-r^2/2}\,\mathrm dr \\
+    &amp;= \left[ -\mathrm e^{-r^2/2} \right]_0^\infty \\
+    &amp;= - 0 -(-1) \\
+    &amp;= 1 ,
+\end{align*}\]</span>
+and we’re done.</p>
+<p>For part 2, we need to show that <span class="math inline">\(\mathbb EX = 0\)</span>. We have
+<span class="math display">\[\begin{align*}
+\mathbb EX &amp;= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &amp;= \frac{1}{\sqrt{2\pi}} \left[-\mathrm e^{-x^2/2}\right]_{-\infty}^\infty \\
+  &amp;= -0 - (-0) \\
+  &amp;= 0 ,
+\end{align*}\]</span>
+as required.</p>
+<p>For part 3, we need to show that <span class="math inline">\(\mathbb EX^2 = 1\)</span>. Using integration by parts with <span class="math inline">\(u = x\)</span>, <span class="math inline">\(v&#39; = x\,\mathrm e^{-x^2/2}\)</span>, we have
+<span class="math display">\[\begin{align*}
+\mathbb EX^2 &amp;= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x^2\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &amp;= \frac{1}{\sqrt{2\pi}} \left[-x \mathrm e^{-x^2/2}\right]_{-\infty}^\infty + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx \\
+  &amp;= 0 + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx .
+\end{align*}\]</span>
+But this integral on the right is just the integral <span class="math inline">\(I\)</span> of the PDF as above, which we know equals 1, as required.</p>
+</div>
+<p>There is one last property of the normal distribution that we won’t use directly in this module, but is perhaps worth knowing anyway.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-98" class="theorem"><strong>Theorem 16.2  </strong></span>If <span class="math inline">\(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\)</span> and <span class="math inline">\(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\)</span> are independent, then
+<span class="math display">\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]</span></p>
+</div>
+</div>
+<div id="normal-r" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> Calculations using R<a href="L16-normal.html#normal-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We will try to answer a number of questions about the normal distribution.</p>
+<div class="thpart">
+<p><strong>Question 1.</strong> <em>A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?</em></p>
+<p>Let <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> denote the width of a random fibre, measured in nanometres. Then this question required us to find
+<span class="math display">\[ F(8.15) = \mathbb P(X \leq 8.1) = \frac{1}{\sqrt{2\pi\times 0.04^2}} \int_{-\infty}^{8.1} \exp \left(-\frac{(x - 8)^2}{2\times 0.04^2} \right) \, \mathrm dx . \]</span></p>
+<p>Unfortunately, it is not possible to calculate this integral exactly. However, computers can approximate this integral very accurately and very quickly. In R, this is done with the <code>pnorm()</code> function, which calculates the CDF of a normal distribution. <code>pnorm()</code> typically takes three arguments:</p>
+<ol style="list-style-type: decimal">
+<li>the first argument is the value <span class="math inline">\(x\)</span> at which we wish to evaluate the CDF;</li>
+<li>the second argument is the expectation <span class="math inline">\(\mu\)</span> of the normal distribution;</li>
+<li>the third argument is the standard deviation <span class="math inline">\(\sigma\)</span> of the normal distribution. (Note that this third argument is the <em>standard deviation</em> <span class="math inline">\(\sigma\)</span> and not the variance <span class="math inline">\(\sigma^2\)</span>. This is an easy mistake to make!)</li>
+</ol>
+<p>So here, the number we want is</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="L16-normal.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">8.1</span>, <span class="dv">8</span>, <span class="fl">0.04</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9937903</code></pre>
+<p>We see that roughly 99.4% of fibres pass the test.</p>
+</div>
+<div class="thpart">
+<p><strong>Question 2.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z \leq 1.45)\)</span>?</em></p>
+<p>This is asking for <span class="math inline">\(\Phi(1.45) = \mathbb P(Z \leq 1.45)\)</span>. This is:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="L16-normal.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.45</span>, <span class="dv">0</span>, <span class="dv">1</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9264707</code></pre>
+<p>But in fact, the standard normal distribution CDF <span class="math inline">\(\Phi\)</span> is so common that R allows you to omit the values of <span class="math inline">\(\mu\)</span> and <span class="math inline">\(\sigma\)</span> if they are 0 and 1 respectively. So you can save yourself a few keystrokes by simply writing:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="L16-normal.html#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">1.45</span>)</span></code></pre></div>
+<pre><code>## [1] 0.9264707</code></pre>
+</div>
+<div class="thpart">
+<p><strong>Question 3.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z &gt; 0.33)\)</span>?</em></p>
+<p>This is asking for the upper-tail probability. The direct way to get R to solve this is to use the <code>lower.tail = FALSE</code> option that we discussed in <a href="R.html#r-work">R Worksheet 7</a>. That is, we use:</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="L16-normal.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">0.33</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
+<pre><code>## [1] 0.3707</code></pre>
+<p>Alternatively, we could use the fact that <span class="math inline">\(\mathbb P(Z &gt; z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\)</span>. Then we could equally well calculate this as</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="L16-normal.html#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">0.33</span>)</span></code></pre></div>
+<pre><code>## [1] 0.3707</code></pre>
+</div>
+<div class="thpart">
+<p><strong>Question 4.</strong> <em>We return to the fiberoptic model <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> from Question 1. Fibres can be awarded a special “high quality” stamp if their width is between 7.95 and 8.05 nm. What proportion of these fibres qualify?</em></p>
+<p>This is asking for <span class="math inline">\(\mathbb P(7.95 \leq X \leq 8.05)\)</span>. But we can calculate this as
+<span class="math display">\[ \mathbb P(7.95 \leq X \leq 8.05) = \mathbb P(X \leq 8.05) - \mathbb P(X &lt; 7.95) = F(8.05) - F(7.95) .\]</span>
+(Formally, this is because
+<span class="math display">\[ \{X &lt; 7.95\} \cup \{7.95 \leq X \leq 8.05\} = \{X \leq 8.05\} \]</span>
+is a disjoint union, so we can use Axiom 3.)</p>
+<p>So the proportion of qualifying fibres is</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="L16-normal.html#cb29-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb29-2"><a href="L16-normal.html#cb29-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.04</span></span>
+<span id="cb29-3"><a href="L16-normal.html#cb29-3" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">8.05</span>, mu, sigma) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">7.95</span>, mu, sigma)</span></code></pre></div>
+<pre><code>## [1] 0.7887005</code></pre>
+<p>or about 79%.</p>
+</div>
+<div class="thpart">
+<p><strong>Question 5.</strong> <em>We stay with the fiberoptic model <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> from Questions 1 and 4. The manufacturer wants to be able to advertise that 99.9% of their fibres are between lower and upper limits <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. What values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can they promise?</em></p>
+<p>Is <span class="math inline">\(F\)</span> is the CDF of this distribution, then we are looking for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> such that <span class="math inline">\(F(x) = 0.0005\)</span> and <span class="math inline">\(F(y) = 0.9995\)</span>. That way, <span class="math inline">\(F(y) - F(x) = 0.999\)</span>, so we have 99.9% of fibres within that interval and 0.05% outside either side.</p>
+<p>You may remember from R Worksheet 7 that the inverse <span class="math inline">\(F^{-1}\)</span> of the CDF is called the <strong>quantile function</strong>. Here, we want <span class="math inline">\(F^{-1}(0.0005)\)</span> and <span class="math inline">\(F^{-1}(0.9995)\)</span>. The quantile function for the normal distribution in R is <code>qnorm()</code>. (It also has a <code>lower.tail = FALSE</code> option, which is sometimes useful.) So we can use</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="L16-normal.html#cb31-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb31-2"><a href="L16-normal.html#cb31-2" aria-hidden="true" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fl">0.04</span></span>
+<span id="cb31-3"><a href="L16-normal.html#cb31-3" aria-hidden="true" tabindex="-1"></a><span class="fu">c</span>(<span class="fu">qnorm</span>(<span class="fl">0.0005</span>, mu, sigma), <span class="fu">qnorm</span>(<span class="fl">0.9995</span>, mu, sigma))</span></code></pre></div>
+<pre><code>## [1] 7.868379 8.131621</code></pre>
+<p>We see that we can guarantee that 99.9% of fibres are between roughly 7.87 and 8.13 nm wide.</p>
+</div>
+</div>
+<div id="normal-tables" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> Calculations using statistical tables<a href="L16-normal.html#normal-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Doing normal calculations with R is all very well. But what if you accidentally built a time machine and got transported back to Victorian times. Then how would you perform calculations with the normal distribution?</p>
+<p>In the olden days, someone would (using some enormous computer the size of a room, or whatever) calculate lots of values of <span class="math inline">\(\Phi(x)\)</span>, the CDF of the standard normal distribution, and publish them in a book of statistical tables. An example of this is <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf"><strong>this page of normal distribution tables</strong> [PDF]</a> that will appear on the final page of your exam. (Like the Victorian times, your exam is another place R will not be available but statistical tables will be.)</p>
+<p>We will return to the same questions we answered in the previous subsection, although in a slightly different order.</p>
+<div class="thpart">
+<p><strong>Question 2.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z \leq 1.45)\)</span>?</em></p>
+<p>As we noted before, this is asking for <span class="math inline">\(\Phi(1.45) = \mathbb P(Z \leq 1.45)\)</span>. Consulting the <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a>, we see that the value of <span class="math inline">\(\Phi(1.45)\)</span> is listed on the table. Specifically, we see from column 3, row 10 of Table 1 that <span class="math inline">\(\Phi(1.45) = 0.9265\)</span>. This is the same value as we got from R (although we get fewer decimal places from the table).</p>
+</div>
+<div class="thpart">
+<p><strong>Question 1.</strong> <em>A fiberoptic fibre is manufactured with an average width of 8 nanometres (nm), with a standard deviation of 0.04 nm. Fibres that are wider than 8.1 nm fail testing and must be discarded. If the manufactured width is modelled as normally distributed, then what proportion of fibres pass the test?</em></p>
+<p>If <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span>, then this asks for <span class="math inline">\(F_X(8.1) = \mathbb P(X \leq 8.1)\)</span>. However, unfortunately the statistical tables only have the CDF <span class="math inline">\(\Phi\)</span> for the standard normal distribution <span class="math inline">\(\mathrm N(0,1)\)</span>. So we are going to have “standardise” <span class="math inline">\(X\)</span>; that is, convert <span class="math inline">\(X\)</span> to a standard normal distribution.
+Recall from above that we standardise a normal random variable by subtracting the expectation <span class="math inline">\(\mu\)</span> and dividing by the standard deviation <span class="math inline">\(\sigma\)</span>. So in this case, we have
+<span class="math display">\[ Z = \frac{X - \mu}{\sigma} = \frac{X - 8}{0.04} \sim \mathrm{N}(0,1) . \]</span></p>
+<p>Using this, we can write
+<span class="math display">\[ \mathbb P(X \leq 8.1) = \mathbb P \left(\frac{X - 8}{0.04} \leq \frac{8.1 - 8}{0.04}\right) = \mathbb P(Z \leq 2.5) = \Phi(2.5).  \]</span>
+We can then look up <span class="math inline">\(\Phi(2.5)\)</span> in Table 1. We see from the first row of the last column that <span class="math inline">\(\Phi(2.5) = 0.9938\)</span>. This matches the answer we got from R.</p>
+</div>
+<div class="thpart">
+<p><strong>Question 3.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z &gt; 0.33)\)</span>?</em></p>
+<p>The statistical tables only have <span class="math inline">\(\Phi(z) = \mathbb P(Z \leq z)\)</span>. But as we noted above, <span class="math inline">\(\mathbb P(Z &gt; 0.33) = 1 - \Phi(0.33)\)</span>. The tables don’t have <span class="math inline">\(\Phi(0.33)\)</span> either, though, because they jump straight from <span class="math inline">\(\Phi(0.30)\)</span> to <span class="math inline">\(\Phi(0.35)\)</span>. We have two choices of what to do here.</p>
+<p>First choice, which is appropriate when an approximate answer will suffice, is simply to take the nearest value in the table, which here is <span class="math inline">\(0.35\)</span>. Hence
+<span class="math display">\[ \mathbb P(Z &gt; 0.33) = 1 - \Phi(0.33) \approx 1 - \Phi(0.35) = 1 - 0.6368 = 0.3632 . \]</span>
+This is pretty close to the true answer <span class="math inline">\(0.3707\)</span> we saw before: about a 2% error.</p>
+<p>Second choice, which is more work but gets a more accurate answer, is to use interpolation. We know from the table that <span class="math inline">\(\Phi(0.30) = 0.6179\)</span> and <span class="math inline">\(\Phi(0.35) = 0.6368\)</span>. To “interpolate”, we assume that the graph of <span class="math inline">\(\Phi\)</span> follows a straight line between <span class="math inline">\((0.30, 0.6179)\)</span> and <span class="math inline">\((0.35, 0.6368)\)</span>. (In fact, <span class="math inline">\(\Phi\)</span> has a slightly curve, so isn’t <em>quite</em> straight.) As the statistical tables state, the interpolation is to take
+<span class="math display">\[ \Phi(x) = \frac{x_2 - x}{x_2 - x_1} \Phi(x_1) + \frac{x - x_1}{x_2 - x_1} \Phi(x_2) .\]</span>
+In our case, if we take <span class="math inline">\(x_1 = 0.30\)</span> and <span class="math inline">\(x_2 = 0.35\)</span> as the interpolation points for <span class="math inline">\(x = 0.33\)</span>, we get the approximation
+<span class="math display">\[ \Phi(0.33) = 0.4 \Phi(0.30) + 0.6 \Phi(0.35) = 0.4\times 0.6179 + 0.6 \times 0.6368 = 0.6292 \]</span>
+This is off by only 0.01%; a very accurate approximation.</p>
+</div>
+<p>On problem sheets or in the exam, you will be told if an interpolation is necessary.</p>
+<div class="thpart">
+<p><strong>Question 4.</strong> <em>We return to the fiberoptic model <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> from Question 1. Fibres can be awarded a special “high quality” stamp if their width is between 7.95 and 8.05 nm. What proportion of these fibres qualify?</em></p>
+<p>As noted above, this is asking for <span class="math inline">\(\mathbb P(7.95 \leq X \leq 8.05)\)</span>. To allow us to use our statistical tables, we will have to standardise. We get
+<span class="math display">\[\begin{align*}
+\mathbb P(7.95 \leq X \leq 8.05)
+  &amp;= \mathbb P \left(\frac{7.95 - 8}{0.04} \leq \frac{X - 8}{0.04} \leq \frac{8.05 - 8}{0.04}\right) \\
+  &amp;= \mathbb P(-1.25 \leq Z \leq 1.25) \\
+  &amp;= \Phi(1.25) - \Phi(-1.25) .
+\end{align*}\]</span>
+We can find <span class="math inline">\(\Phi(1.25) = 0.8944\)</span> from the table. But the table only gives <span class="math inline">\(\Phi(x)\)</span> for positive <span class="math inline">\(x\)</span>, so we can’t look up <span class="math inline">\(\Phi(-1.25)\)</span>.</p>
+<p>Instead, we can use the symmetry of the normal distribution. Because the standard normal is symmetric about 0, we have that <span class="math inline">\(\mathbb P(Z \leq -1.25) = \mathbb P(Z &gt; 1.25)\)</span>.</p>
+<p><img src="math1710_files/figure-html/phiz-exm-1.png" width="672" />
+Therefore, we have
+<span class="math display">\[ \Phi(-1.25) = \mathbb P(Z &gt; 1.25) = 1 - \Phi(1.25) = 1 - 0.8944 = 0.1056\]</span></p>
+<p>Putting this all together, we get
+<span class="math display">\[\mathbb P(7.95 \leq X \leq 8.05) = 0.8944 - 0.1056 = 0.7888 , \]</span>
+which is the same thing as we got from R (up to a small rounding error in the fourth decimal place).</p>
+</div>
+<div class="thpart">
+<p><strong>Question 5.</strong> <em>We stay with the fiberoptic model <span class="math inline">\(X \sim \mathrm{N}(8, 0.04^2)\)</span> from Questions 1 and 4. The manufacturer wants to be able to advertise that 99.9% of their fibres are between lower and upper limits <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. What values of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> can they promise?</em></p>
+<p>Recall that this meant we were looking for the quantiles <span class="math inline">\(F^{-1}(0.0005)\)</span> and <span class="math inline">\(F^{-1}(0.9995)\)</span>; that is, the values <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> such that <span class="math inline">\(\mathbb P(X \leq x) = 0.0005\)</span> and <span class="math inline">\(\mathbb P(X \leq x) = 0.9995\)</span>. Table 2 of the <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a> does show us some quantiles for a standard normal. How can we use these?</p>
+<p>Let’s start with the second case. The key here is to “undo” the standardisation. That is, if <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>, then <span class="math inline">\(X = \sigma Z + \mu \sim \mathrm{N}(\mu, \sigma^2)\)</span>. The table tells us that <span class="math inline">\(\Phi^{-1}(0.9995) = 3.2905\)</span>; that is, that <span class="math inline">\(\mathbb P(Z \leq 3.2905) = 0.9995\)</span>. Then by “un-standardising”, we have
+<span class="math display">\[ 0.9995 = \mathbb P(Z \leq 3.2905)  = \mathbb P(0.04Z + 8 \leq 0.04\times 3.2905 + 8) = \mathbb P(X \leq 8.1316) . \]</span>
+This the upper quantile we are after is <span class="math inline">\(8.1316\)</span>.</p>
+<p>For the lower quantile, we can use symmetry again. Thus the <span class="math inline">\(0.0005 = 1 - 0.9995\)</span> quantile for <span class="math inline">\(Z\)</span> is minus the previous quantile; that is, <span class="math inline">\(-3.2905\)</span>. Hence the lower quantile we want is
+<span class="math display">\[0.04\times (-3.2905) + 8 = 7.8684. \]</span>
+These match the answers we got with R.</p>
+</div>
+<p>I feel I shouldn’t finish with this subsection before addressing the following question some readers may be asking themselves: <em>Now that we have R (and other computing methods), what’s the point learning to answer questions using statistical tables?</em> I might suggest a few possible answers to this question:</p>
+<ol style="list-style-type: decimal">
+<li>Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.</li>
+<li>Someone has to write the computer program, and these people need to be able to do the sorts of conversions we will learn about here. So these are useful skills for mathematician–programmers to learn.</li>
+<li>Being able to standardise normal distributions, approximate other distributions by normal distributions (see Lecture 18), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.</li>
+<li>Yes, you are right, this is a pointless skill for us to teach you.</li>
+</ol>
+<p>I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn’t totally without merit.</p>
+</div>
+<div id="summary-L16" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L16-normal.html#summary-L16" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li>The normal distribution has PDF
+<span class="math display">\[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left(- \frac{(x - \mu)^2}{2\sigma^2} \right) .\]</span>
+It has expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>.</li>
+<li>The standard normal distribution has <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma^2 = 1\)</span>.</li>
+<li>The CDF of a normal distribution can be calculated in R with the <code>pnorm()</code> function. It can also be calculated using <a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">statistical tables</a> and by “standardising”.</li>
+</ul>
+</div>
+
+</div>
+</div>
+
+
+
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="L15-continuous.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": null,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["math1710.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "section"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

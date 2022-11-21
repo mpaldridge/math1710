@@ -155,11 +155,7 @@ Using a continuity correction -- that is, rounding outwards halfway to the next 
 ## Summary  {#summary-09 .unnumbered}
 
 ::: {.mysummary}
-* The normal distribution has PDF
-\[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left(- \frac{(x - \mu)^2}{2\sigma^2} \right) .\]
-It has expectation $\mu$ and variance $\sigma^2$.
-* The standard normal distibution has $\mu = 0$ and $\sigma^2 = 1$.
-* The CDF of a normal distribution can be calculated in R with the `pnorm()` function. For the standard normal distribution, [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) can be used.
+* ...
 * The central limit theorem says that the mean of $n$ IID random variables is approximately normally distributed for large $n$.
 * Other random variables can also be approximated by the normal distribution. When approximating a discrete random variable, use a continuity correction.
 :::

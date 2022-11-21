@@ -1,4 +1,4 @@
-# Normal distribution  {#L17-normal}
+# Normal distribution  {#L16-normal}
 
 When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we'll look at an extremely important distribution: the "normal" (or "Gaussian") distribution.
 
@@ -333,8 +333,17 @@ I feel I shouldn't finish with this subsection before addressing the following q
 
 1. Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.
 1. Someone has to write the computer program, and these people need to be able to do the sorts of conversions we will learn about here. So these are useful skills for mathematician--programmers to learn.
-1. Being able to standardise normal distributions, approximate other distributions by normal distributions (see Subsection \@ref(normal-approx)), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
+1. Being able to standardise normal distributions, approximate other distributions by normal distributions (see Lecture 18), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
 1. Yes, you are right, this is a pointless skill for us to teach you.
 
 I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
 
+## Summary  {#summary-L16 .unnumbered}
+
+::: {.mysummary}
+* The normal distribution has PDF
+\[ f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left(- \frac{(x - \mu)^2}{2\sigma^2} \right) .\]
+It has expectation $\mu$ and variance $\sigma^2$.
+* The standard normal distribution has $\mu = 0$ and $\sigma^2 = 1$.
+* The CDF of a normal distribution can be calculated in R with the `pnorm()` function. It can also be calculated using [statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) and by "standardising".
+:::
