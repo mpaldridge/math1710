@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.4)  21 NOV 2022 00:21
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2022.11.4)  21 NOV 2022 01:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -996,7 +996,7 @@ Chapter 15.
 File: math1710_files/figure-latex/contunif-pdf-1.pdf Graphic file (type pdf)
 <use math1710_files/figure-latex/contunif-pdf-1.pdf>
 
-Underfull \vbox (badness 3668) has occurred while \output is active []
+Underfull \vbox (badness 2529) has occurred while \output is active []
 
 [134]
 File: math1710_files/figure-latex/second-pdf-1.pdf Graphic file (type pdf)

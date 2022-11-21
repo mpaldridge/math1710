@@ -2,16 +2,17 @@
 
 ## What is a continuous random variable?  {#continuous-rv}
 
-
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/1Oae0a12P1M"></iframe>
 :::
 ::::
+-->
 
 
 
-In the previous three sections, we have looked at discrete random variables, whose range is a finite (or countably infinite) set of separate discrete values. Discrete random variables can be used as a model for "count data".
+In the previous six lectures, we have looked at discrete random variables, whose range is a finite or countably infinite set of separate discrete values. Discrete random variables can be used as a model for "count data".
 
 In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for "measurement data". For example:
 
@@ -21,13 +22,14 @@ In this section and the next, we will instead look at continuous random variable
 
 Imagine firing an arrow at a large target. We could ask "What's the probability that the arrow exactly hits some point?" -- but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we'd have to say that the probability is 0.  What makes more sense is too take a section of the target -- perhaps a small circle in the middle, called the "bulls-eye" -- and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question -- a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.
 
-Similarly, imagine picking a random real number between 0 and 1. We could ask "What is the probability that the random number is *exactly* $1/\sqrt{2} = 0.7071068\dots$?" But that probability is 0. It makes more sense to take an interval of numbers -- say, $[0.7, 0.8]$, the interval from $0.7$ to $0.8$ -- and ask what the probability is of the random number being in that interval.
+Similarly, imagine picking a random real number between 0 and 1. We could ask "What is the probability that the random number is *exactly* $1/\sqrt{2} = 0.7071068\dots$?" But that probability, if it means anything, must be 0. It makes more sense to take an interval of numbers -- say, $[0.7, 0.8]$, the interval from $0.7$ to $0.8$ -- and ask what the probability is of the random number being in that interval.
 
 This is how continuous random variables work. The probability a continuous random variable $X$ *exactly* hits some value $x$ is $\mathbb P(X = x) = 0$. But we *can* find the probability $\mathbb P(a \leq X \leq b)$ that $X$ lies in a certain interval and work with that. 
 
+
 ## Probability density functions  {#pdf}
 
-With a continuous random variable, the probability of *exactly* getting any particular outcome $X = x$ is 0. However, we can express the "intensity" of probability *around* $x$ by $f_X(x)$, where $f_X$ is called the probability density function. The implied metaphor here is that for discrete random variables, we have probability "mass" *at* the point $x$, whereas for continuous random variables, we have a "density" of probability *around* $x$.
+With a continuous random variable, the probability of *exactly* getting any particular outcome $X = x$ is 0. However, we can express the "intensity" of probability *around* $x$ by $f_X(x)$, where $f_X$ is called the "probability density function". The implied metaphor here is that for discrete random variables, we have probability "mass" *at* the point $x$, whereas for continuous random variables, we have a "density" of probability *around* $x$.
 
 ::: {.definition}
 A random variable $X$ is called a **continuous random variable** if the probability of landing in any interval between $a$ and $b$, for $a \leq b$, can be written as
@@ -35,7 +37,7 @@ A random variable $X$ is called a **continuous random variable** if the probabil
 for some non-negative function $f_X$. The function $f_X$ is called the **probability density function** (or **PDF**).
 :::
 
-In other words, the probability that $X$ is between $a$ and $b$ is the area under the curve of the PDF on that interval.
+In other words, the probability that $X$ is between $a$ and $b$ is the area under the curve of the PDF $f_X(x)$ between $x = a$ and $x = b$.
 
 As with PMFs, when it's obvious what random variable we're dealing with, we omit the subscript $X$ on the PDF $f_X$.
 
@@ -106,11 +108,13 @@ But this time we have to be careful, because $f(y)$ has different expressions be
 
 ## Properties of continuous random variables {#prop-cont}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/J7CtqG0HErc"></iframe>
 :::
 ::::
+-->
 
 
 The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution -- except you swap the PMF for the PDF and swap sums for integrals.
@@ -130,8 +134,8 @@ Note, however, one property that doesn't follow through: Because, for a PMF, $p(
 
 ::: {.example}
 Let's return to the case where $X$ be a continuous uniform distribution, with
-\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} . \]
-Let's go through the properties from the table above.
+\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$}  \]
+and $f(x) = 0$ otherwise. Let's go through the properties from the table above.
 
 First, it's clear that $f(x) \geq 0$ for all $x$.
 
@@ -156,17 +160,17 @@ curve(x - x + 1, from = 1,  to = 2.5, lwd = 2, col = "blue", add = TRUE)
 Fourth, the expectation is
 \[ \mathbb EX = \int_{\infty}^\infty x\,f(x)\,\mathrm dx = \int_0^1 x \, \mathrm dx = \left[\tfrac12 x^2 \right]_0^1 = \tfrac12 - 0 = \tfrac12 .   \]
 
-Finally, to calculate the variance, we have
+Finally, to calculate the variance using the computational formula $\Var(X) = \mathbb EX^2 - \mu^2$, we first need $\mathbb EX^2$. This is
 \[ \mathbb EX^2 = \int_{\infty}^\infty x^2\,f(x)\,\mathrm dx = \int_0^1 x^2 \, \mathrm dx = \left[\tfrac13 x^3 \right]_0^1 = \tfrac13 - 0 = \tfrac13 .   \]
-So, using the computational formula, we have
+So, the variance is
 \[ \Var(X) = \mathbb EX^2 - \mu^2 = \tfrac13 - \left(\tfrac12\right)^2 = \tfrac13 - \tfrac14 = \tfrac{1}{12} . \]
 :::
 
 ::: {.example}
 Let's also return to the "triangular" PDF from Example \@ref(exm:pdf2),
 \[ f(y) = \begin{cases} y & \text{for $0 \leq y \leq 1$} \\
-2-y & \text{for $1 < y \leq 2$}. \end{cases} \]
-We'll just do the CDF and the expectation. (You can do the others yourself, if you like.)
+2-y & \text{for $1 < y \leq 2$} \end{cases} \]
+and $f(y) = 0$ otherwise. We'll just do the CDF and the expectation. (You can do the others yourself, if you like.)
 
 For the CDF, it's clear that $F(y) = 0$ for $y < 0$ and $F(y) = 1$ for $y > 2$. Again, we split the $0 \leq y \leq 1$ case and the $1 < y \leq 2$ case. In the first case, for $0 \leq y \leq 1$, we have
 \begin{align*}

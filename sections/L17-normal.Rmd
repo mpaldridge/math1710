@@ -1,14 +1,19 @@
 # Normal distribution  {#L17-normal}
 
+When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we'll look at an extremely important distribution: the "normal" (or "Gaussian") distribution.
+
 ## Definition of the normal distribution  {#normal-definition}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/of84BBnJdgw"></iframe>
 :::
 ::::
 
+
 There's one very important distribution we need to talk about, which is the so-called "normal" (or "Gaussian") distribution.
+-->
 
 ::: {.definition}
 If $X$ is a continuous random variable with PDF
@@ -58,11 +63,13 @@ It's generally difficult, or even impossible, to directly calculate probabilitie
 
 ## Properties of the normal distribution {#normal-properties}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/4P6Xe1BbMn0"></iframe>
 :::
 ::::
+-->
 
 ::: {.theorem #norm-prop}
 Let $X \sim \mathrm{N}(\mu, \sigma^2)$ be a normally distributed random variable. Then:

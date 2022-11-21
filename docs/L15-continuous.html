@@ -342,13 +342,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Lecture 15</span> Continuous random variables<a href="L15-continuous.html#L15-continuous" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="continuous-rv" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> What is a continuous random variable?<a href="L15-continuous.html#continuous-rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="videowrap">
-<div class="videowrapper">
-<iframe src="https://www.youtube.com/embed/1Oae0a12P1M">
-</iframe>
-</div>
-</div>
-<p>In the previous three sections, we have looked at discrete random variables, whose range is a finite (or countably infinite) set of separate discrete values. Discrete random variables can be used as a model for “count data”.</p>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/1Oae0a12P1M"></iframe>
+:::
+::::
+-->
+<p>In the previous six lectures, we have looked at discrete random variables, whose range is a finite or countably infinite set of separate discrete values. Discrete random variables can be used as a model for “count data”.</p>
 <p>In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for “measurement data”. For example:</p>
 <ul>
 <li>The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers <span class="math inline">\(\mathbb R\)</span>, where positive numbers represent credit and negative numbers represent debt.</li>
@@ -356,18 +357,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval <span class="math inline">\([0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}\)</span>.</li>
 </ul>
 <p>Imagine firing an arrow at a large target. We could ask “What’s the probability that the arrow exactly hits some point?” – but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we’d have to say that the probability is 0. What makes more sense is too take a section of the target – perhaps a small circle in the middle, called the “bulls-eye” – and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question – a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.</p>
-<p>Similarly, imagine picking a random real number between 0 and 1. We could ask “What is the probability that the random number is <em>exactly</em> <span class="math inline">\(1/\sqrt{2} = 0.7071068\dots\)</span>?” But that probability is 0. It makes more sense to take an interval of numbers – say, <span class="math inline">\([0.7, 0.8]\)</span>, the interval from <span class="math inline">\(0.7\)</span> to <span class="math inline">\(0.8\)</span> – and ask what the probability is of the random number being in that interval.</p>
+<p>Similarly, imagine picking a random real number between 0 and 1. We could ask “What is the probability that the random number is <em>exactly</em> <span class="math inline">\(1/\sqrt{2} = 0.7071068\dots\)</span>?” But that probability, if it means anything, must be 0. It makes more sense to take an interval of numbers – say, <span class="math inline">\([0.7, 0.8]\)</span>, the interval from <span class="math inline">\(0.7\)</span> to <span class="math inline">\(0.8\)</span> – and ask what the probability is of the random number being in that interval.</p>
 <p>This is how continuous random variables work. The probability a continuous random variable <span class="math inline">\(X\)</span> <em>exactly</em> hits some value <span class="math inline">\(x\)</span> is <span class="math inline">\(\mathbb P(X = x) = 0\)</span>. But we <em>can</em> find the probability <span class="math inline">\(\mathbb P(a \leq X \leq b)\)</span> that <span class="math inline">\(X\)</span> lies in a certain interval and work with that.</p>
 </div>
 <div id="pdf" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Probability density functions<a href="L15-continuous.html#pdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>With a continuous random variable, the probability of <em>exactly</em> getting any particular outcome <span class="math inline">\(X = x\)</span> is 0. However, we can express the “intensity” of probability <em>around</em> <span class="math inline">\(x\)</span> by <span class="math inline">\(f_X(x)\)</span>, where <span class="math inline">\(f_X\)</span> is called the probability density function. The implied metaphor here is that for discrete random variables, we have probability “mass” <em>at</em> the point <span class="math inline">\(x\)</span>, whereas for continuous random variables, we have a “density” of probability <em>around</em> <span class="math inline">\(x\)</span>.</p>
+<p>With a continuous random variable, the probability of <em>exactly</em> getting any particular outcome <span class="math inline">\(X = x\)</span> is 0. However, we can express the “intensity” of probability <em>around</em> <span class="math inline">\(x\)</span> by <span class="math inline">\(f_X(x)\)</span>, where <span class="math inline">\(f_X\)</span> is called the “probability density function”. The implied metaphor here is that for discrete random variables, we have probability “mass” <em>at</em> the point <span class="math inline">\(x\)</span>, whereas for continuous random variables, we have a “density” of probability <em>around</em> <span class="math inline">\(x\)</span>.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-93" class="definition"><strong>Definition 15.1  </strong></span>A random variable <span class="math inline">\(X\)</span> is called a <strong>continuous random variable</strong> if the probability of landing in any interval between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, for <span class="math inline">\(a \leq b\)</span>, can be written as
 <span class="math display">\[ \mathbb P(a \leq X \leq b) = \int_a^b f_X(x) \, \mathrm{d}x , \]</span>
 for some non-negative function <span class="math inline">\(f_X\)</span>. The function <span class="math inline">\(f_X\)</span> is called the <strong>probability density function</strong> (or <strong>PDF</strong>).</p>
 </div>
-<p>In other words, the probability that <span class="math inline">\(X\)</span> is between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the area under the curve of the PDF on that interval.</p>
+<p>In other words, the probability that <span class="math inline">\(X\)</span> is between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the area under the curve of the PDF <span class="math inline">\(f_X(x)\)</span> between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>.</p>
 <p>As with PMFs, when it’s obvious what random variable we’re dealing with, we omit the subscript <span class="math inline">\(X\)</span> on the PDF <span class="math inline">\(f_X\)</span>.</p>
 <div class="example">
 <p><span id="exm:unifex" class="example"><strong>Example 15.1  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
@@ -406,12 +407,13 @@ But this time we have to be careful, because <span class="math inline">\(f(y)\)<
 </div>
 <div id="prop-cont" class="section level2 hasAnchor" number="15.3">
 <h2><span class="header-section-number">15.3</span> Properties of continuous random variables<a href="L15-continuous.html#prop-cont" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="videowrap">
-<div class="videowrapper">
-<iframe src="https://www.youtube.com/embed/J7CtqG0HErc">
-</iframe>
-</div>
-</div>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/J7CtqG0HErc"></iframe>
+:::
+::::
+-->
 <p>The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution – except you swap the PMF for the PDF and swap sums for integrals.</p>
 <table>
 <colgroup>
@@ -462,8 +464,8 @@ But this time we have to be careful, because <span class="math inline">\(f(y)\)<
 <p>Note, however, one property that doesn’t follow through: Because, for a PMF, <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> represented a probability, we had <span class="math inline">\(p(x) \leq 1\)</span> for all <span class="math inline">\(x\)</span>. However, because, for a PDF, <span class="math inline">\(f(x)\)</span> only represents intensity of probability, there’s no contradiction to having <span class="math inline">\(f(x) &gt; 1\)</span> (although keeping the integral to 1 means that we can’t have <span class="math inline">\(f(x) &gt; 1\)</span> too much). So <span class="math inline">\(f(x) = 10\)</span> for <span class="math inline">\(0 &lt;x &lt; 0.1\)</span> and <span class="math inline">\(f(x) = 0\)</span> otherwise is a perfectly legitimate PDF, for example.</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-94" class="example"><strong>Example 15.3  </strong></span>Let’s return to the case where <span class="math inline">\(X\)</span> be a continuous uniform distribution, with
-<span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} . \]</span>
-Let’s go through the properties from the table above.</p>
+<span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$}  \]</span>
+and <span class="math inline">\(f(x) = 0\)</span> otherwise. Let’s go through the properties from the table above.</p>
 <p>First, it’s clear that <span class="math inline">\(f(x) \geq 0\)</span> for all <span class="math inline">\(x\)</span>.</p>
 <p>Second, the PDF does indeed integrate to 1, because
 <span class="math display">\[ \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_0^1 1 \, \mathrm dx = [x]_0^1 = 1 .    \]</span>
@@ -475,16 +477,16 @@ So, altogether, the CDF is
 <p><img src="math1710_files/figure-html/contunif-cdf-1.png" width="672" /></p>
 <p>Fourth, the expectation is
 <span class="math display">\[ \mathbb EX = \int_{\infty}^\infty x\,f(x)\,\mathrm dx = \int_0^1 x \, \mathrm dx = \left[\tfrac12 x^2 \right]_0^1 = \tfrac12 - 0 = \tfrac12 .   \]</span></p>
-<p>Finally, to calculate the variance, we have
+<p>Finally, to calculate the variance using the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span>, we first need <span class="math inline">\(\mathbb EX^2\)</span>. This is
 <span class="math display">\[ \mathbb EX^2 = \int_{\infty}^\infty x^2\,f(x)\,\mathrm dx = \int_0^1 x^2 \, \mathrm dx = \left[\tfrac13 x^3 \right]_0^1 = \tfrac13 - 0 = \tfrac13 .   \]</span>
-So, using the computational formula, we have
+So, the variance is
 <span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = \tfrac13 - \left(\tfrac12\right)^2 = \tfrac13 - \tfrac14 = \tfrac{1}{12} . \]</span></p>
 </div>
 <div class="example">
 <p><span id="exm:unlabeled-div-95" class="example"><strong>Example 15.4  </strong></span>Let’s also return to the “triangular” PDF from Example <a href="L15-continuous.html#exm:pdf2">15.2</a>,
 <span class="math display">\[ f(y) = \begin{cases} y &amp; \text{for $0 \leq y \leq 1$} \\
-2-y &amp; \text{for $1 &lt; y \leq 2$}. \end{cases} \]</span>
-We’ll just do the CDF and the expectation. (You can do the others yourself, if you like.)</p>
+2-y &amp; \text{for $1 &lt; y \leq 2$} \end{cases} \]</span>
+and <span class="math inline">\(f(y) = 0\)</span> otherwise. We’ll just do the CDF and the expectation. (You can do the others yourself, if you like.)</p>
 <p>For the CDF, it’s clear that <span class="math inline">\(F(y) = 0\)</span> for <span class="math inline">\(y &lt; 0\)</span> and <span class="math inline">\(F(y) = 1\)</span> for <span class="math inline">\(y &gt; 2\)</span>. Again, we split the <span class="math inline">\(0 \leq y \leq 1\)</span> case and the <span class="math inline">\(1 &lt; y \leq 2\)</span> case. In the first case, for <span class="math inline">\(0 \leq y \leq 1\)</span>, we have
 <span class="math display">\[\begin{align*}
   F(x) &amp;= \int_{-\infty}^y f(z) \, \mathrm dz \\

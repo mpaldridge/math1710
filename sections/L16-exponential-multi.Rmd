@@ -1,12 +1,16 @@
 # Exponential distribution and multiple continuous random variables
 
+This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it's very similar to what we already know about multiple discrete random variables.
+
 ## Exponential distribution  {#exponential}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/t11Rsll3jVI"></iframe>
 :::
 ::::
+-->
 
 
 An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
