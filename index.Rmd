@@ -13,12 +13,30 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 \newcommand{\Var}{\operatorname{Var}}
 
-
 ::: {.oldsched}
+**Week 8** (7--11 November):
+
+* **Tutorials:** *All in-person tutorials cancelled. Online tutorial: Wednesday 23 November at 1000, link in Minerva.*
+* [**Lecture 15:** Continuous random variables](#L15-continuous) (Monday 21 November)
+* [**Lecture 16:** Normal distribution](#L16-normal) (Wednesday 23 November)
+* [**Problem Sheet 4:**](#P4) Work through the short and long questions in preparation for *the online tutorial*. Deadline for assessed questions: *Tuesday 29 November*
+* [**R Worksheet 8:** Discrete random variables](#r-work) to be completed this week
+:::
+
+::: {.mysched}
+**Week 7** (7--11 November):
+
+* [**Lecture 13:** Multiple random variables](#L13-multi-rv) (Monday 7 November)
+* [**Lecture 14:** Expectation and covariance](#L14-covariance) (Wednesday 9 November)
+* [**Problem Sheet 4:**](#P4) Work through the short and long questions in preparation for your tutorial next week. Deadline for assessed questions: Monday 28 November.
+* [**R Worksheet 7:** Discrete distributions](#r-work) to be completed this week; assessed work due Monday 21 November.
+:::
+
+::: {.mysched}
 **Week 6** (7--11 November):
 
-* [**Lecture 11:** Binomial and geometric distributions](#11-binomial-geometric) (Monday 7 November)
-* [**Lecture 12:** Poisson distribution](#L12-poisson) (Wednesday 9 November November)
+* [**Lecture 11:** Binomial and geometric distributions](#L11-binomial-geometric) (Monday 7 November)
+* [**Lecture 12:** Poisson distribution](#L12-poisson) (Wednesday 9 November)
 * **Tutorial:** to discuss Problem Sheet 3; check your timetable for details.
 * [**Problem Sheet 3:**](#P3) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 14 November.
 * [**R Worksheet 6:** R Markdown](#r-work) *optional* worksheet for this week.
