@@ -319,6 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -676,13 +677,46 @@ The probability there are multiple winners is
 <div class="subq">
 <p><strong>(a)</strong> Write down the table for the joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
 <div class="myanswers">
-<p><em>Solution.</em></p>
+<p><em>Solution.</em>
+For all these questions, we need to fill in a table for the joint PMF, where the columns sum to <span class="math inline">\(p_X(0) = p_X(1) = \frac12\)</span> and the rows sum to <span class="math inline">\(p_Y(0) = p_Y(1) = \frac12\)</span>.</p>
 <table>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
 <th align="center"><span class="math inline">\(x = 0\)</span></th>
 <th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(p_{X,Y}(x,y) = p_X(x)\,p_Y(y)\)</span>; so, for example, <span class="math inline">\(p_{X,Y}(0,0) = p_X(0)\,p_Y(0) = \frac12 \times \frac12 = \frac14\)</span>. In fact, all the entries in the joint PMF table are <span class="math inline">\(\frac14\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -690,11 +724,19 @@ The probability there are multiple winners is
 <td align="center"><span class="math inline">\(y = 0\)</span></td>
 <td align="center"><span class="math inline">\(\frac14\)</span></td>
 <td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(y = 1\)</span></td>
 <td align="center"><span class="math inline">\(\frac14\)</span></td>
 <td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -703,13 +745,15 @@ The probability there are multiple winners is
 <div class="subq">
 <p><strong>(b)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a positive correlation.</p>
 <div class="myanswers">
-<p><em>Solution.</em> For example</p>
+<p><em>Solution.</em>
+We still need the rows and columns to add up to <span class="math inline">\(\frac12\)</span>, but we want low values of <span class="math inline">\(X\)</span> (that is, 0) to be more likely to occur alongside low values of <span class="math inline">\(Y\)</span> (that is, 0), and high values of <span class="math inline">\(X\)</span> (that is, 1) alongside high values of <span class="math inline">\(Y\)</span> (that is, 1). One was to do this is</p>
 <table>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
 <th align="center"><span class="math inline">\(x = 0\)</span></th>
 <th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -717,14 +761,58 @@ The probability there are multiple winners is
 <td align="center"><span class="math inline">\(y = 0\)</span></td>
 <td align="center"><span class="math inline">\(\frac12\)</span></td>
 <td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(y = 1\)</span></td>
 <td align="center"><span class="math inline">\(0\)</span></td>
 <td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
+<p>A single table like that is a perfectly sufficient answer. But, in fact, any table of the form</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>for <span class="math inline">\(\frac14 &lt; a \leq \frac12\)</span> will do. This has
+<span class="math display">\[ \mathbb EXY = \sum_{x,y} xy\, p_{X,Y}(x,y) = p_{X,Y}(1, 1) = a , \]</span>
+as <span class="math inline">\(x = y = 1\)</span> is the only nonzero term in the sum. This means the covariance is, by the computational formula,
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = a - \tfrac12 \times \tfrac12 = a - \tfrac14 . \]</span>
+So the covariance is positive for <span class="math inline">\(a &gt; \frac14\)</span>, so the correlation is too.</p>
 </div>
 </div>
 <div class="subq">
@@ -737,6 +825,7 @@ The probability there are multiple winners is
 <th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
 <th align="center"><span class="math inline">\(x = 0\)</span></th>
 <th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
 </tr>
 </thead>
 <tbody>
@@ -744,14 +833,54 @@ The probability there are multiple winners is
 <td align="center"><span class="math inline">\(y = 0\)</span></td>
 <td align="center"><span class="math inline">\(0\)</span></td>
 <td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
 </tr>
 <tr class="even">
 <td align="center"><span class="math inline">\(y = 1\)</span></td>
 <td align="center"><span class="math inline">\(\frac12\)</span></td>
 <td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
+<p>Alternatively, any table of the form</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>for <span class="math inline">\(0 \leq a &lt; \frac14\)</span> will have negative covariance <span class="math inline">\(a - \frac14\)</span>, so negative correlation.</p>
 </div>
 </div>
 </div>

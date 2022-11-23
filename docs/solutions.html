@@ -319,6 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -563,7 +564,7 @@ frequency densities.</p>
 </div>
 <div class="myq">
 <p><strong>A3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<p><img src="math1710_files/figure-html/unnamed-chunk-33-1.png" width="480" /></p>
+<p><img src="math1710_files/figure-html/unnamed-chunk-35-1.png" width="480" /></p>
 <div class="myanswers">
 <p><em>Solution.</em> Some answers could be:</p>
 <ul>
@@ -1462,6 +1463,533 @@ happiness units, and you might be willing to pay 2 happiness-units-worth of mone
 <li>Normal advice to play games with positive expected winnings only really applies if you can play the game many times (or very similar games). For repeated games, the expected winnings can be interpreted as “the winnings you are likely to get in the long run”. For one-off highly unusual games, this doesn’t hold, so one needs a different criterion to decide whether to play. (If I was allowed to play this game a million times for £100 a round, but didn’t have to settle the money until all one million games had finished, then I would strongly consider playing.)</li>
 </ul>
 <p>You can probably come up with other explanations of your own too.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="P4-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 4<a href="solutions.html#P4-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="myq">
+<p><strong>A1.</strong> Let <span class="math inline">\(X \sim \text{Bin}(20, 0.4)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 8)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ \mathbb P(X = 8) = \binom{20}{8} 0.4^8 \times 0.6^{12} = 0.180 . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(8 \leq X \leq 11)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[\begin{align*}
+\mathbb P(8 \leq X \leq 11) &amp;= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\
+&amp;= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
+&amp;= 0.180 + 0.160 + 0.117 + 0.071 \\
+&amp;= 0.528 .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\mathbb EX\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb EX = 20 \times 0.4 = 8\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A2.</strong> Let <span class="math inline">\(X \sim \text{Geom}(0.2)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 2)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X = 2) = 0.8^1 \times 0.2^1 = 0.16\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq 3)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\(\mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.2 - 0.8\times 0.2 = 0.64\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\(\operatorname{Var}(X)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> <span class="math inline">\({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> Let <span class="math inline">\(X \sim \text{Po}(2.5)\)</span>. Calculate</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(X = 3)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math inline">\(\mathbb P(X = 3) = \mathrm e^{-2.5} \displaystyle\frac{2.5^3}{3!} = 0.214\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(X \geq \mathbb EX)\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> First, <span class="math inline">\(\mathbb EX = 2.5\)</span>. So
+<span class="math display">\[\begin{align*}
+\mathbb P(X \geq \mathbb EX) &amp;= \mathbb P(X \geq 2.5) \\
+  &amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) - \mathbb P(X = 2) \\
+  &amp;= 1 - \mathrm e^{-2.5} - 2.5 \mathrm e^{-2.5} - \frac{2.5^2}{2} \mathrm e^{-2.5} \\
+  &amp;= 1 - 0.082 - 0.204 - 0.257 \\
+  &amp;= 0.456.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> Consider the following joint PMF:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(\phantom{p_X(x)}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(3k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(k\)</span></td>
+<td align="center"><span class="math inline">\(2k\)</span></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(\vphantom{p_Y(y)}\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<div class="subq">
+<p><strong>(a)</strong> Find the value of <span class="math inline">\(k\)</span> that makes this a joint PMF.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The total of the joint PMF is
+<span class="math display">\[ 2k + 2k + k + k + 3k + k + k + k + k + 2k = 15k \]</span>
+which must be 1, so <span class="math inline">\(k = \frac{1}{15}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Find the marginal PMFs of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By summing across the rows and down the columns, respectively, we get this:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(y = 0\)</span></th>
+<th align="center"><span class="math inline">\(y = 1\)</span></th>
+<th align="center"><span class="math inline">\(y = 2\)</span></th>
+<th align="center"><span class="math inline">\(y = 3\)</span></th>
+<th align="center"><span class="math inline">\(p_X(x)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{15}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(x=1\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(x=2\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{4}{15}\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{15}\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> What is the conditional distribution of <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = 1\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em> We get this by taking the <span class="math inline">\(x = 1\)</span> row of the table, than normalising it by dividing through by <span class="math inline">\(p_X(1) = \frac{6}{15}\)</span>. This gives
+<span class="math display">\[ p_{Y\mid X} (0 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (1 \mid 1) = \frac{3}{6} \qquad p_{Y\mid X} (2 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (3 \mid 1) = \frac{1}{6} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
+<div class="myanswers">
+<p><em>Solution.</em> No. For one example, <span class="math inline">\(p_{X,Y}(0,0) = \frac{2}{15}\)</span>, while <span class="math inline">\(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\)</span>, so they are not equal.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B1.</strong> Calculate the CDF <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span> of the geometric distribution…</p>
+<div class="subq">
+<p><strong>(a)</strong> …by summing the PMF;</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have,using the standard formula for the sum of a finite geometric progression,
+<span class="math display">\[\begin{align*}
+F(x) &amp;= \sum_{y = 1}^x p(y) \\
+&amp;= \sum_{y = 1}^x (1-p)^{y-1} p \\
+&amp;= \frac{p\big(1 - (1-p)^x\big)}{1 - (1-p)} \\
+&amp;= \frac{p\big(1 - (1-p)^x\big)}{p} \\
+&amp;= 1 - (1 - p)^x .
+\end{align*}\]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> …by explaining how the “number of trials until success” definition tells us what <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> must be.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Note that <span class="math inline">\(1 - F(x) = \mathbb P(X &gt; x)\)</span> is precisely the probability that the first <span class="math inline">\(x\)</span> trials are failures, and hence that the first success comes strictly after the <span class="math inline">\(x\)</span>th trial. The probability that the first <span class="math inline">\(x\)</span> trials are failures is <span class="math inline">\((1-p)^x\)</span>. So <span class="math inline">\(F(x) = 1 - (1-p)^x\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let <span class="math inline">\(X \sim \text{Geom}(\frac{1}{36})\)</span>. Then
+<span class="math display">\[\begin{align*}
+\mathbb P(20 \leq X \leq 40) &amp;= \mathbb P(X \leq 40) - \mathbb P(X \leq 19) \\
+  &amp;= F(40) - F(19) \\
+  &amp;= \bigg(1 - \big(1 - \tfrac{1}{36})^{40}\bigg) - \bigg(1 - \big(1 - \tfrac{1}{36})^{19}\bigg) \\
+  &amp;= 0.676 - 0.414 \\
+  &amp;= 0.261.
+\end{align*}\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B2.</strong> Let <span class="math inline">\(Y\)</span> be a geometric distribution with parameter <span class="math inline">\(p\)</span> according to the alternative “number of failures <em>before</em> the first success” definition.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the PMF for <span class="math inline">\(Y\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> Having <span class="math inline">\(Y = y\)</span> requires <span class="math inline">\(y\)</span> consecutive failures immediately followed by a success. So <span class="math inline">\(p_Y(y) = (1-p)^y p\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Calculate the expectation and variance of <span class="math inline">\(Y\)</span>. You may use without proof the fact that for a standard “number of trials up to and including the first success” geometric distribution we have <span class="math inline">\(\mathbb EX = 1/p\)</span> and <span class="math inline">\(\operatorname{Var}(X) = (1-p)/p^2\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> If <span class="math inline">\(X \sim \text{Geom}(p)\)</span> under the standard definition, then (as we saw in the notes) <span class="math inline">\(Y\)</span> has the same distribution as <span class="math inline">\(X -1\)</span>. Therefore,
+<span class="math display">\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} \]</span>
+and
+<span class="math display">\[ \operatorname{Var}(Y) = \operatorname{Var}(X -1) = \operatorname{Var}(X) = \frac{1-p}{p^2} .  \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B3</strong> Let <span class="math inline">\(X \sim \text{Po}(\lambda)\)</span>.</p>
+<div class="subq">
+<p><strong>(a)</strong> Show that <span class="math inline">\(\mathbb EX(X-1) = \lambda^2\)</span>. You may use the Taylor series for the exponential,
+<span class="math display">\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We follow exactly the method used to calculate <span class="math inline">\(\mathbb EX\)</span> in the notes. We have
+<span class="math display">\[\begin{align*}
+\mathbb EX(X-1) &amp;= \sum_{x=0}^\infty x(x-1)\, \mathrm e^{-\lambda} \frac{\lambda^x}{x!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda} \sum_{x=2}^\infty \frac{\lambda^{x-2}}{(x - 2)!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda}\sum_{y=0}^\infty  \frac{\lambda^y}{y!} \\
+  &amp;= \lambda^2 \mathrm e^{-\lambda} \, \mathrm e^{\lambda} \\
+  &amp;= \lambda^2  .
+\end{align*}\]</span>
+In the second line, we took a <span class="math inline">\(\lambda^2\)</span> and a <span class="math inline">\(\mathrm e^{-\lambda}\)</span> outside the brackets; cancelled the <span class="math inline">\(x\)</span> and <span class="math inline">\(x-1\)</span> out of the <span class="math inline">\(x!\)</span>; and removed the <span class="math inline">\(x = 0\)</span> and <span class="math inline">\(x = 1\)</span> terms from the sum, since they were 0 anyway. In the third line, we re-indexed the sum by setting <span class="math inline">\(y = x - 2\)</span>. In the fourth line, we used the Taylor series for the exponential</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Hence show that <span class="math inline">\(\operatorname{Var}(X) = \lambda\)</span>. You may use the fact, proved in the notes, that <span class="math inline">\(\mathbb EX = \lambda\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We know from part (a) that
+<span class="math display">\[ \mathbb EX(X-1) = \mathbb E(X^2 - X) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \lambda = \lambda^2 ,\]</span>
+which gives <span class="math inline">\(\mathbb EX^2 = \lambda^2 + \lambda\)</span>. We can then use the computational formula for the variance to get
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda .\]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Each week in the UK about 15 million Lotto tickets are sold. As we saw in Section 3, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is <strong>(a)</strong> a roll-over (no jackpot winners), <strong>(b)</strong> a unique jackpot winner, or <strong>(c)</strong> when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We assume that each ticket is uniformly randomly chosen from all possible tickets, independent of all other tickets. Then the number of winners is <span class="math inline">\(X \sim \text{Bin}(15 \text{ million}, 1/(45 \text{ million}))\)</span>.
+It will be convenient to use a Poisson approximation with rate
+<span class="math display">\[ \lambda = 15 \text{ million} \times \frac{1}{45 \text{ million}} = \tfrac13 .  \]</span></p>
+<p>The probability there is a roll-over is
+<span class="math display">\[ \mathbb P(X = 0) \approx \mathrm e^{-1/3} = 0.72 . \]</span>
+The probability there is a unique jackpot winner is
+<span class="math display">\[ \mathbb P(X = 1) \approx \tfrac13 \mathrm e^{-1/3} = 0.24 . \]</span>
+The probability there are multiple winners is
+<span class="math display">\[ \mathbb P(X \geq 2) = 1 - \mathbb P(X = 0) - \mathbb P(X = 1) = 0.04  . \]</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be Bernoulli<span class="math inline">\((\frac12)\)</span> random variables.</p>
+<div class="subq">
+<p><strong>(a)</strong> Write down the table for the joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+For all these questions, we need to fill in a table for the joint PMF, where the columns sum to <span class="math inline">\(p_X(0) = p_X(1) = \frac12\)</span> and the rows sum to <span class="math inline">\(p_Y(0) = p_Y(1) = \frac12\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(p_{X,Y}(x,y) = p_X(x)\,p_Y(y)\)</span>; so, for example, <span class="math inline">\(p_{X,Y}(0,0) = p_X(0)\,p_Y(0) = \frac12 \times \frac12 = \frac14\)</span>. In fact, all the entries in the joint PMF table are <span class="math inline">\(\frac14\)</span>.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac14\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a positive correlation.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We still need the rows and columns to add up to <span class="math inline">\(\frac12\)</span>, but we want low values of <span class="math inline">\(X\)</span> (that is, 0) to be more likely to occur alongside low values of <span class="math inline">\(Y\)</span> (that is, 0), and high values of <span class="math inline">\(X\)</span> (that is, 1) alongside high values of <span class="math inline">\(Y\)</span> (that is, 1). One was to do this is</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>A single table like that is a perfectly sufficient answer. But, in fact, any table of the form</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>for <span class="math inline">\(\frac14 &lt; a \leq \frac12\)</span> will do. This has
+<span class="math display">\[ \mathbb EXY = \sum_{x,y} xy\, p_{X,Y}(x,y) = p_{X,Y}(1, 1) = a , \]</span>
+as <span class="math inline">\(x = y = 1\)</span> is the only nonzero term in the sum. This means the covariance is, by the computational formula,
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = a - \tfrac12 \times \tfrac12 = a - \tfrac14 . \]</span>
+So the covariance is positive for <span class="math inline">\(a &gt; \frac14\)</span>, so the correlation is too.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Write down a table for a joint PMF of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> that is consistent with their marginal distributions but that leads to <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> having a negative correlation.</p>
+<div class="myanswers">
+<p><em>Solution.</em> For example</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>Alternatively, any table of the form</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(p_{X,Y}(x,y)\)</span></th>
+<th align="center"><span class="math inline">\(x = 0\)</span></th>
+<th align="center"><span class="math inline">\(x = 1\)</span></th>
+<th align="center"><span class="math inline">\(p_Y(y)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(y = 0\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(y = 1\)</span></td>
+<td align="center"><span class="math inline">\(\frac12 - a\)</span></td>
+<td align="center"><span class="math inline">\(a\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+</tr>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p_Y(y)\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"><span class="math inline">\(\frac12\)</span></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<p>for <span class="math inline">\(0 \leq a &lt; \frac14\)</span> will have negative covariance <span class="math inline">\(a - \frac14\)</span>, so negative correlation.</p>
 </div>
 </div>
 </div>

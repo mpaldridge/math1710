@@ -126,11 +126,21 @@ The probability there are multiple winners is
 
 ::: {.myanswers data-latex=""}
 *Solution.* 
+For all these questions, we need to fill in a table for the joint PMF, where the columns sum to $p_X(0) = p_X(1) = \frac12$ and the rows sum to $p_Y(0) = p_Y(1) = \frac12$.
 
-| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
-|:---:|:---:|:---:|
-| $y = 0$ | $\frac14$ | $\frac14$ |
-| $y = 1$ | $\frac14$ | $\frac14$ |
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ | $p_Y(y)$ |
+|:--------:|:---------:|:---------:|:----------:|
+| $y = 0$  |           |           | $\frac12$  |
+| $y = 1$  |           |           | $\frac12$  |
+| $p_Y(y)$ | $\frac12$ | $\frac12$ |            | 
+
+If $X$ and $Y$ are independent, we have $p_{X,Y}(x,y) = p_X(x)\,p_Y(y)$; so, for example, $p_{X,Y}(0,0) = p_X(0)\,p_Y(0) = \frac12 \times \frac12 = \frac14$. In fact, all the entries in the joint PMF table are $\frac14$.
+
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ | $p_Y(y)$ |
+|:--------:|:---------:|:---------:|:----------:|
+| $y = 0$  | $\frac14$ | $\frac14$ | $\frac12$  |
+| $y = 1$  | $\frac14$ | $\frac14$ | $\frac12$  |
+| $p_Y(y)$ | $\frac12$ | $\frac12$ |            | 
 :::
 ::::
 
@@ -138,12 +148,28 @@ The probability there are multiple winners is
 **(b)** Write down a table for a joint PMF of $X$ and $Y$ that is consistent with their marginal distributions but that leads to $X$ and $Y$ having a positive correlation.
 
 ::: {.myanswers data-latex=""}
-*Solution.* For example
+*Solution.*
+We still need the rows and columns to add up to $\frac12$, but we want low values of $X$ (that is, 0) to be more likely to occur alongside low values of $Y$ (that is, 0), and high values of $X$ (that is, 1) alongside high values of $Y$ (that is, 1). One was to do this is
 
-| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
-|:---:|:---:|:---:|
-| $y = 0$ | $\frac12$ | $0$ |
-| $y = 1$ | $0$ | $\frac12$ |
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ | $p_Y(y)$ |
+|:--------:|:---------:|:---------:|:----------:|
+| $y = 0$ | $\frac12$ | $0$ | $\frac12$  |
+| $y = 1$ | $0$ | $\frac12$ | $\frac12$  |
+| $p_Y(y)$ | $\frac12$ | $\frac12$ |            | 
+
+A single table like that is a perfectly sufficient answer. But, in fact, any table of the form
+
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ | $p_Y(y)$ |
+|:--------:|:---------:|:---------:|:----------:|
+| $y = 0$  | $a$ |  $\frac12 - a$  | $\frac12$  |
+| $y = 1$  |  $\frac12 - a$  | $a$ | $\frac12$  |
+| $p_Y(y)$ | $\frac12$ | $\frac12$ |            | 
+
+for $\frac14 < a \leq \frac12$ will do. This has
+\[ \mathbb EXY = \sum_{x,y} xy\, p_{X,Y}(x,y) = p_{X,Y}(1, 1) = a , \]
+as $x = y = 1$ is the only nonzero term in the sum. This means the covariance is, by the computational formula,
+\[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y = a - \tfrac12 \times \tfrac12 = a - \tfrac14 . \]
+So the covariance is positive for $a > \frac14$, so the correlation is too.
 :::
 ::::
 
@@ -153,10 +179,21 @@ The probability there are multiple winners is
 ::: {.myanswers data-latex=""}
 *Solution.* For example
 
-| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ |
-|:---:|:---:|:---:|
-| $y = 0$ | $0$ | $\frac12$ |
-| $y = 1$ | $\frac12$ | $0$ |
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ | $p_Y(y)$ |
+|:--------:|:---------:|:---------:|:----------:|
+| $y = 0$ | $0$ | $\frac12$ | $\frac12$  |
+| $y = 1$ | $\frac12$ | $0$ | $\frac12$  |
+| $p_Y(y)$ | $\frac12$ | $\frac12$ |            | 
+
+Alternatively, any table of the form
+
+| $p_{X,Y}(x,y)$ | $x = 0$ | $x = 1$ | $p_Y(y)$ |
+|:--------:|:---------:|:---------:|:----------:|
+| $y = 0$  | $a$ |  $\frac12 - a$  | $\frac12$  |
+| $y = 1$  |  $\frac12 - a$  | $a$ | $\frac12$  |
+| $p_Y(y)$ | $\frac12$ | $\frac12$ |            | 
+
+for $0 \leq a < \frac14$ will have negative covariance $a - \frac14$, so negative correlation.
 :::
 ::::
 :::::
