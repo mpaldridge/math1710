@@ -14,7 +14,16 @@ url:    'https://mpaldridge.github.io/math1710/'
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
-**Week 8** (7--11 November):
+**Week 9** (28 November -- 2 December):
+
+* [**Lecture 17:** Exponential distribution and multiple continuous random variables](#L17-exponential-multi) (Monday 21 November)
+* [**Lecture 18:** Limit theorem](#L18-limit): *The lecture on Wednesday 23 November will be cancelled; instead you should learn this material from the online notes and embedded videos*
+* [**Problem Sheet 5:**](#P5) Work through the short and long questions in preparation your tutorial next week. Deadline for assessed questions: *Monday 12 December*
+* [**R Worksheet 9:** Normal distribution](#r-work) to be completed this week; assessed work due Monday 5 December
+:::
+
+::: {.mysched}
+**Week 8** (21--25 November):
 
 * **Tutorials:** *All in-person tutorials cancelled. Online tutorial: Wednesday 23 November at 1000; recording available on Minerva.*
 * [**Lecture 15:** Continuous random variables](#L15-continuous) (Monday 21 November)
@@ -24,10 +33,10 @@ url:    'https://mpaldridge.github.io/math1710/'
 :::
 
 ::: {.mysched}
-**Week 7** (7--11 November):
+**Week 7** (14--18 November):
 
-* [**Lecture 13:** Multiple random variables](#L13-multi-rv) (Monday 7 November)
-* [**Lecture 14:** Expectation and covariance](#L14-covariance) (Wednesday 9 November)
+* [**Lecture 13:** Multiple random variables](#L13-multi-rv) (Monday 14 November)
+* [**Lecture 14:** Expectation and covariance](#L14-covariance) (Wednesday 16 November)
 * [**Problem Sheet 4:**](#P4) Work through the short and long questions in preparation for your tutorial next week. Deadline for assessed questions: Monday 28 November.
 * [**R Worksheet 7:** Discrete distributions](#r-work) to be completed this week; assessed work due Monday 21 November.
 :::
