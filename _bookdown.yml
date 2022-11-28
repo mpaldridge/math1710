@@ -21,9 +21,9 @@ rmd_files:
   - problems/P4.Rmd
   - sections/L15-continuous.Rmd
   - sections/L17-normal.Rmd
-#  - sections/L16-exponential-multi.Rmd
-#  - sections/L18-limit.Rmd
-#  - problems/P5.Rmd
+  - sections/L16-exponential-multi.Rmd
+  - sections/L18-limit.Rmd
+  - problems/P5.Rmd
 #  - sections/L19-bayes-idea.Rmd
 #  - sections/L20-bayes-models.Rmd
 #  - problems/P6.Rmd

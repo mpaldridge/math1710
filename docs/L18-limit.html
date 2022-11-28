@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 1 Summary statistics | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 18 Limit theorems | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 1 Summary statistics | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 18 Limit theorems | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 1 Summary statistics | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 18 Limit theorems | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="about.html"/>
-<link rel="next" href="L02-dataviz.html"/>
+<link rel="prev" href="L17-exp-multiple.html"/>
+<link rel="next" href="P5.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -361,125 +361,138 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="L01-stats" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Lecture 1</span> Summary statistics<a href="L01-stats.html#L01-stats" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="what-is-eda" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> What is EDA?<a href="L01-stats.html#what-is-eda" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Statistics</strong> is the study of data. <strong>Exploratory data analysis</strong> (or <strong>EDA</strong>, for short) is the part of statistics concerned with taking a “first look” at some data. Later, toward the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics II (for those who take it) you will see many other statistical techniques – in particular, ways of testing formal hypotheses for data. But here we’re just interested in first impressions and brief summaries.</p>
-<p>In this section, we will concentrate on two aspects of EDA:</p>
-<ul>
-<li><strong>Summary statistics:</strong> That is, calculating numbers that briefly summarise the data. A summary statistic might tell us what “central” or “typical” values of the data are, how spread out the data is, or about the relationship between two different variables.</li>
-<li><strong>Data visualisation:</strong> Drawing a picture based on the data is an another way to show the shape (centrality and spread) of data, or the relationship between different variables.</li>
-</ul>
-<p>Even before calculating summary statistics or drawing a plot, however, there are other questions it is important to ask about the data:</p>
-<ul>
-<li><em>What is the data?</em> What variables have been measured? How were they measured? How many datapoints are there? What is the possible range of responses?</li>
-<li><em>How was the data collected?</em> Was data collected on the whole population or just a smaller sample? If a sample: How was that sample chosen? Is that sample representative of the population?</li>
-<li><em>Are there any outliers?</em> “Outliers” are datapoints that seem to be very different from the other datapoints – for example, are much larger or much smaller than the others. Each outlier should be investigated to seek the reason for it. Perhaps it is a genuine-but-unusual datapoint (which is useful for understanding the extremes of the data), or perhaps there is an extraordinary explanation (a measurement or recording error, for example) meaning the data is not relevant. Once the reason for an outlier is understood, it then <em>might</em> be appropriate to exclude it from analysis (for example, the incorrectly recorded measurement). It’s usually bad practice to exclude an outlier merely for being an outlier before understanding what caused it.</li>
-<li><em>Ethical questions:</em> Was the data collected ethically and, where necessary, with the informed consent of the subjects? Has it been stored properly? Are their privacy issues with the collection and storage of the data? What ethical issues should be considered before publishing (or not publishing) results of the analysis? Should the data be kept confidential, or should it be openly shared with other researchers for the betterment of science?</li>
-</ul>
+<div id="L18-limit" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">Lecture 18</span> Limit theorems<a href="L18-limit.html#L18-limit" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="mysummary">
+<p>There will be no lecture on Wednesday 30 November, as <a href="https://www.leedsucu.org.uk/information-for-students-2/">the UCU are on strike</a>. Instead, you should learn the material that would have been given in the lecture from these notes. This material is fully examinable, as much as any other lecture.</p>
+<p>I have provided some old pandemic-era videos embedded in these notes, which may help you – the section numbering has changed since these videos were made, but the material is mostly the same. Drop-in sessions are available on Thursday (2pm in <a href="https://mpaldridge.github.io/office.html">PRD 9.320</a> and 4pm in Roger Stevens LT17) if you struggle with anything in this lecture.</p>
 </div>
-<div id="what-is-R" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> What is R?<a href="L01-stats.html#what-is-R" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>R</strong> is a programming language that is particularly good at working with probability and statistics. A convenient way to use the language R is through the program <strong>RStudio</strong>. An important part of this module is learning to use R, by completing weekly worksheets – you can read more in <a href="R.html#R">the R section of these notes</a>.</p>
-<p>R can easily and quickly perform all the calculations and draw all the plots in this section of notes on exploratory data analysis. In this text, we’ll show the relevant R code. Code will appear like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="L01-stats.html#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb1-2"><a href="L01-stats.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code></pre></div>
-<pre><code>## [1] 5.428571</code></pre>
-<p>Here, the code in the first shaded box is the R commands that are typed into
-RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudio “console”. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign <code>##</code>. The <code>[1]</code> can be ignored (this is just R’s way of saying that this is the first part of the answer – but the answer here only has one part anyway). Plots produced by R are displayed in these notes as pictures.</p>
-<p>Most importantly for now, <em>you are not expected to understand the R code in this section yet</em>. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.</p>
+<div id="lln" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Law of large numbers<a href="L18-limit.html#lln" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/u4hJv2sDUoc">
+</iframe>
 </div>
-<div id="stat-central" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Statistics of centrality<a href="L01-stats.html#stat-central" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/_OaCRCFZXoY"></iframe>
-:::
-::::
--->
-<p>Suppose we have collected some data on a certain variable. We will assume here that we have <span class="math inline">\(n\)</span> datapoints, each of which is a single real number. We can write this data as a vector
-<span class="math display">\[ \mathbf x = (x_1, x_2, \dots, x_n) . \]</span></p>
-<p>A <strong>statistic</strong> is a calculation from the data <span class="math inline">\(\mathbf x\)</span>, which is (usually) also a real number. In this section we will look at two types of “summary statistics”, which are statistics that we feel will give us useful information about the data.</p>
-<p>We’ll look here at two types of summary statistic:</p>
-<ul>
-<li><strong>Statistics of centrality</strong>, which tell us where the “middle” of the data is.</li>
-<li><strong>Statistics of spread</strong>, which tell us how far the data typically spreads out from that middle.</li>
-</ul>
-<p>Some measures of centrality are the following.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-1" class="definition"><strong>Definition 1.1  </strong></span>Consider some real-valued data <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span>.</p>
-<ul>
-<li>The <strong>mode</strong> is the most common value of <span class="math inline">\(x_i\)</span>. (If there are multiple joint-most common values, they are all modes.)</li>
-<li>Suppose the data is ordered as <span class="math inline">\(x_1 \leq x_2 \leq \cdots \leq x_n\)</span>. Then the <strong>median</strong> is the central value in the ordered list. If <span class="math inline">\(n\)</span> is odd, this is <span class="math inline">\(x_{(n+1)/2}\)</span>; if <span class="math inline">\(n\)</span> is even, we normally take halfway between the two central points, <span class="math inline">\(\frac12(x_{n/2}+x_{n/2 + 1})\)</span>.</li>
-<li>The <strong>mean</strong> <span class="math inline">\(\bar x\)</span> is
-<span class="math display">\[ \bar x = \frac{1}{n}(x_1 + x_2 + \cdots + x_n) = \frac1n \sum_{i=1}^n x_i . \]</span></li>
-</ul>
 </div>
-<p>(In that last expression, we’ve made use of <a href="https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf">Sigma notation</a> to write down the sum.)</p>
-<div class="example">
-<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 1.1  </strong></span>Some packets of Skittles (a small fruit-flavoured sweet) were opened, and the number of Skittles in each packet counted. There were 13 packets, and the number of sweets (sorted from smallest to largest) were:
-<span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span>
-The mode is 59, because there were 4 packets containing 59 sweets; more than any other number. Since there are <span class="math inline">\(n = 13\)</span> packets, the middle packet is number <span class="math inline">\(i = 7\)</span>, so the median is <span class="math inline">\(x_7 = 60\)</span>. The mean is
-<span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) = \frac{789}{13} = 60.7 .\]</span></p>
-</div>
-<p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the datapoint <span class="math inline">\(\alpha\)</span> of the way along the list. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>nine</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
-<ul>
-<li>The <strong>median</strong> is the <span class="math inline">\(\frac12\)</span>-quantile <span class="math inline">\(q(\frac12)\)</span>, which is <span class="math inline">\(q(\frac12) = x_7 = 60\)</span> for this data.</li>
-<li>The <strong>minimum</strong> is the 0-quantile <span class="math inline">\(q(0)\)</span>, which is <span class="math inline">\(q(0) = x_1 = 59\)</span> for this data.</li>
-<li>The <strong>maximum</strong> is the 1-quantile <span class="math inline">\(q(1)\)</span>, which is <span class="math inline">\(q(1) = x_{13} = 63\)</span> for this data</li>
-<li>The <strong>lower quartile</strong> (that’s “quartile”, as in “quarter” – not “quantile”) is the <span class="math inline">\(\frac14\)</span>-quantile <span class="math inline">\(q(\frac14)\)</span>, which is <span class="math inline">\(q(\frac14) = x_4 = 59\)</span> for this data.</li>
-<li>The <strong>upper quartile</strong> is the <span class="math inline">\(\frac34\)</span>-quantile <span class="math inline">\(q(\frac34)\)</span>, which is <span class="math inline">\(q(\frac34) = x_{10} = 62\)</span> for this data.</li>
-</ul>
-<p>The following R code reads in some data which has the daily average temperature in Leeds in 2020, divided into months. We can find, for example, the mean October temperature or the lower quartile of the July temperature.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="L01-stats.html#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://mpaldridge.github.io/math1710/data/temperature.csv&quot;</span>)</span>
-<span id="cb3-2"><a href="L01-stats.html#cb3-2" aria-hidden="true" tabindex="-1"></a>jul <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;jul&quot;</span>, ]</span>
-<span id="cb3-3"><a href="L01-stats.html#cb3-3" aria-hidden="true" tabindex="-1"></a>oct <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;oct&quot;</span>, ]</span>
-<span id="cb3-4"><a href="L01-stats.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="L01-stats.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
-<pre><code>## [1] 11.93548</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="L01-stats.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(jul<span class="sc">$</span>temp, <span class="at">probs =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">4</span>)</span></code></pre></div>
-<pre><code>## 25% 
-##  15</code></pre>
-</div>
-<div id="stat-spread" class="section level2 hasAnchor" number="1.4">
-<h2><span class="header-section-number">1.4</span> Statistics of spread<a href="L01-stats.html#stat-spread" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Some measures of spread are:</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-3" class="definition"><strong>Definition 1.2  </strong></span>The <strong>number of distinct observations</strong> is precisely that: the number of different datapoints we have after removing any repeats.</p>
-<p>The <strong>interquartile range</strong> is the difference between the upper and lower quartiles <span class="math inline">\(\text{IQR} = q(\frac34) - q(\frac14)\)</span>.</p>
-<p>The <strong>sample variance</strong> is
-<span class="math display">\[  s^2_x = \frac{1}{n-1} \left((x_1 - \bar x)^2 + \cdots + (x_n - \bar x)^2 \right) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]</span>
-where <span class="math inline">\(\bar x\)</span> is the sample mean from before. The <strong>standard deviation</strong> <span class="math inline">\(s_x = \sqrt{s^2_x}\)</span> is the square-root of the sample variance.</p>
-</div>
-<p>The formula we’ve given for sample variance is sometimes called the “definitional formula”, as it’s the formula used to <em>define</em> the sample variance. We can rearrange that formula as follows:
+<p>In this lecture we will look at some “limit” results; that is, results about a large number of <span class="math inline">\(n\)</span> of random variables, as <span class="math inline">\(n\)</span> tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.</p>
+<p>So let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Let us write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance.</p>
+<p>At the beginning of the course, we saw the mean of some values was
+<span class="math display">\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]</span>
+that is, what we get if we add them up and divide by <span class="math inline">\(n\)</span>. In the same way, we could calculate the “mean” of some random variables by adding them up and dividing by <span class="math inline">\(n\)</span>; that is:
+<span class="math display">\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]</span>
+(The subscript <span class="math inline">\(n\)</span> on “<span class="math inline">\(\overline X_n\)</span>” is just to remind us this is a mean of <span class="math inline">\(n\)</span> random variables.)</p>
+<p>Here, each of the <span class="math inline">\(X_i\)</span>s is a random variable, so their mean <span class="math inline">\(\overline X_n\)</span> is another random variable as well. This mean random variable <span class="math inline">\(\overline X_n\)</span> will be out main object in this lecture. We can ask questions about the random variable <span class="math inline">\(\overline X_n\)</span> just the same as we would ask about any other random variable. For example: What is its expectation and variance?</p>
+<p>The expectation of <span class="math inline">\(\bar X_n\)</span> is
 <span class="math display">\[\begin{align*}
-  s^2_x &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 \\
-      &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i^2 - 2x_i\bar x + \bar x^2) \\
-      &amp;= \frac{1}{n-1}\left(\sum_{i=1}^nx_i^2 - \sum_{i=1}^n 2x_i\bar x + \sum_{i=1}^n\bar x^2 \right) \\
-      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 - 2\bar x \sum_{i=1}^n x_i + \bar x^2 \sum_{i=1}^n 1 \right) \\
-      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 - 2n\bar x^2 + n\bar x^2 \right) \\
-      &amp;= \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) .
+\mathbb E \overline X_n &amp;= \mathbb E \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&amp;=   \frac{1}{n} (\mathbb EX_1 + \mathbb EX_2 + \cdots + \mathbb EX_n)\\
+&amp;= \frac{1}{n} (\mu + \mu + \cdots + \mu)\\
+&amp;= \frac{1}{n} n \mu \\
+&amp;= \mu .
 \end{align*}\]</span>
-Here, the first line is the definitional formula; the second line is from expanding out the bracket; the third line is taking the sum term-by-term; the fourth line takes any constants (things not involving <span class="math inline">\(i\)</span>) outside the sums; the fifth line uses <span class="math inline">\(\sum_{i=1}^n x_i = n\bar x\)</span>, from the definition of the mean, and <span class="math inline">\(\sum_{i=1}^n 1 = 1 + 1 + \cdots 1 = n\)</span>; and the sixth line simplifies the final two terms.</p>
-<p>This has left us with
-<span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
-This is sometimes called the “computational formula”; this is because it usually takes fewer presses of calculator buttons to compute the sample variance with this formula rather than the definitional formula. (But make sure you keep enough decimal points in <span class="math inline">\(\bar x^2\)</span>.)</p>
-<p>Going back to our weather data in R, we can find the sample variance of the October weather or the interquartile range of the July weather.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="L01-stats.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
-<pre><code>## [1] 2.862366</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="L01-stats.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(jul<span class="sc">$</span>temp)</span></code></pre></div>
-<pre><code>## [1] 3</code></pre>
+Here we used linearity of expectation to take the <span class="math inline">\(1/n\)</span> out of the brackets, and then added up the individual expectations.</p>
+<p>In the same way, the variance of <span class="math inline">\(\overline X_n\)</span> is
+<span class="math display">\[\begin{align*}
+\operatorname{Var}( \overline X_n) &amp;= \operatorname{Var}\left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&amp;= \left(\frac{1}{n}\right)^2 \operatorname{Var}(X_1 + X_2 + \cdots + X_n) \\
+&amp;=   \frac{1}{n^2} \big(\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \operatorname{Var}(X_n)\big)\\
+&amp;= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
+&amp;= \frac{1}{n^2} n \sigma^2 \\
+&amp;= \frac{\sigma^2}{n} .
+\end{align*}\]</span>
+Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.</p>
+<p>In conclusion we have this:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-104" class="theorem"><strong>Theorem 18.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables, and write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance. Further, write
+<span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean of these random variables. Then
+<span class="math display">\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]</span></p>
 </div>
-<div id="summary-01" class="section level2 unnumbered hasAnchor">
-<h2>Summary<a href="L01-stats.html#summary-01" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now think about what happens to this mean <span class="math inline">\(\overline X_n\)</span> when <span class="math inline">\(n\)</span> gets very large. We see that the expectation <span class="math inline">\(\mathbb E\overline X_n = \mu\)</span> stays the same, but the variance <span class="math inline">\(\operatorname{Var}(\overline X_n) = \sigma^2/n\)</span> gets smaller and smaller as <span class="math inline">\(n\)</span> gets bigger. So the range of probable values for <span class="math inline">\(\overline X_n\)</span> will be squeezing tighter and tighter around <span class="math inline">\(\mu\)</span>. Given that, it seems as if (and it can be rigorously proven that) we have the “law of large numbers”.</p>
+<div class="theorem">
+<p><span id="thm:thLLN" class="theorem"><strong>Theorem 18.2  (Law of large numbers) </strong></span>Let <span class="math inline">\(X_1, X_2, \dots\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean of the first <span class="math inline">\(n\)</span> random variables. Then
+<span class="math display">\[ \overline X_n \to \mu \quad \text{in probability as $n \to \infty$}; \]</span>
+by which we mean that, for any <span class="math inline">\(\epsilon &gt; 0\)</span>,
+<span class="math display">\[ \mathbb P\big(|\overline X_n - \mu| &gt; \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]</span></p>
+</div>
+<p>The precise mathematical definition of the convergence is not important here. What is important is the general principle that the mean <span class="math inline">\(\overline X_n\)</span> is overwhelmingly likely to get closer and closer to the expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. In other words, the expectation <span class="math inline">\(\mathbb EX = \mu\)</span> represents the “long-run average” of independent experiments – this justifies referring to the expectation as a kind of average.</p>
+<p>One special case is if we have repeated experiments that succeed with probability <span class="math inline">\(p\)</span>; that is, <span class="math inline">\(X_n \sim \text{Bern}(p)\)</span>. Then the law of large numbers says that the long-run proportion of successes is
+<span class="math display">\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]</span>
+So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about “frequentist probability” <a href="L03-events.html#what-is-prob">right at the beginning of Lecture</a>: that one way to understand the probability of an event is as the long-run frequency of its occurrence.</p>
+</div>
+<div id="clt" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Central limit theorem<a href="L18-limit.html#clt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/yygv7L5hcOg">
+</iframe>
+</div>
+</div>
+<p>We have seen that if the <span class="math inline">\(X_i\)</span> are IID random variables with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, then
+<span class="math display">\[ \mathbb E\overline X_n = \mu \qquad \operatorname{Var}\big(\overline X_n\big) = \frac{\sigma^2}{n} \]</span>
+and the law of large numbers tells us that <span class="math inline">\(\overline X_n \to \mu\)</span> as <span class="math inline">\(n \to \infty\)</span>. Alternatively, we could say that <span class="math inline">\(\overline X_n - \mu \to 0\)</span>.</p>
+<p>We might also want to know what the variation of <span class="math inline">\(\overline X_n - \mu\)</span> is around 0. Obviously, the law of large numbers tells us this variation shrinks away to 0, but we might be interested in the “shape” of that variation as it shrinks away. To study this variation, we need to “re-inflate” it, to stop it disappearing. It turns out that the correct way to do this is by multiplying by <span class="math inline">\(\sqrt{n}\)</span> and looking at <span class="math inline">\(\sqrt{n}(\overline X_n - \mu)\)</span>.</p>
+<p>It’s fairly easy to check that the expectation and variance of the “re-inflated variation” is
+<span class="math display">\[\begin{align*}
+\mathbb E\sqrt{n} (\overline X_n - \mu) &amp;= \sqrt{n}(\mu - \mu) = 0 \\
+\operatorname{Var}\big(\sqrt{n} (\overline X_n - \mu)\big) &amp;= (\sqrt n)^2 \, \frac{\sigma^2}{n} = \sigma^2 .
+\end{align*}\]</span>
+So whatever distribution <span class="math inline">\(\sqrt{n}(\overline X_n - \mu)\)</span> has, that distribution must have expectation <span class="math inline">\(0\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. But in fact, <em>no matter what distribution the <span class="math inline">\(X_i\)</span> have</em>, this “variation around 0” <span class="math inline">\(\sqrt{n}(\overline X_n - \mu)\)</span> always gets closer and closer to the normal distribution!</p>
+<div class="theorem">
+<p><span id="thm:thCLT" class="theorem"><strong>Theorem 18.3  (Central limit theorem) </strong></span>Let <span class="math inline">\(X_1, X_2, \dots\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation, <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean of the first <span class="math inline">\(n\)</span> random variables. Then
+<span class="math display">\[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]</span>
+by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma^2)\)</span>, then, for all <span class="math inline">\(a &lt; b\)</span>,
+<span class="math display">\[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]</span></p>
+</div>
+<p>(A full proof of the central limit theorem is too complicated to include here.)</p>
+<p>Another alternative way to write this is to divide both sides by <span class="math inline">\(\sigma\)</span> and write it as
+<span class="math display">\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]</span></p>
+<p>The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too – the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.</p>
+</div>
+<div id="normal-approx" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Approximations with the normal distribution<a href="L18-limit.html#normal-approx" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="videowrap">
+<div class="videowrapper">
+<iframe src="https://www.youtube.com/embed/OYv464S0fDI">
+</iframe>
+</div>
+</div>
+<p>There are many other distributions <span class="math inline">\(X\)</span> that can be well approximated by a normal distribution where <span class="math inline">\(\mu\)</span> is set to <span class="math inline">\(\mathbb EX\)</span> and <span class="math inline">\(\sigma^2\)</span> is set to <span class="math inline">\(\operatorname{Var}(X)\)</span>. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.</p>
+<ul>
+<li>A binomial distribution <span class="math inline">\(X \sim \mathrm{Bin}(n, p)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(np, np(1-p))\)</span> when <span class="math inline">\(n\)</span> is large and <span class="math inline">\(p\)</span> is not too close to 0 or 1. (When <span class="math inline">\(p\)</span> is small, we already know that the Poisson distribution is a good approximation.)</li>
+<li>A Poisson distribution <span class="math inline">\(X \sim \mathrm{Po}(\lambda)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(\lambda, \lambda)\)</span> when <span class="math inline">\(\lambda\)</span> is large.</li>
+<li>A sum <span class="math inline">\(Y = X_1 + \cdots + X_n\)</span> of <span class="math inline">\(n\)</span> IID geometric distributions <span class="math inline">\(X_1, \dots, X_n \sim \mathrm{Geom}(p)\)</span> (sometimes known as a “negative binomial” distribution) is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(n/p, np/(1-p)^2)\)</span> when <span class="math inline">\(p\)</span> is not to close to 1.</li>
+<li>A sum <span class="math inline">\(Y = X_1 + \cdots + X_n\)</span> of <span class="math inline">\(n\)</span> IID exponential distributions <span class="math inline">\(X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)\)</span> (sometimes known as a “Gamma” distribution) is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(n/\lambda, n/\lambda^2)\)</span> when the expectation <span class="math inline">\(1/\lambda\)</span> is not too small.</li>
+</ul>
+<div class="example">
+<p><span id="exm:unlabeled-div-105" class="example"><strong>Example 18.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
+<p>The true distribution of Heads is <span class="math inline">\(X \sim \mathrm{Bin}(1000, \frac12)\)</span>, and the question wants
+<span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]</span>
+We can calculate the exact answer using R:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="L18-limit.html#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">dbinom</span>(<span class="dv">495</span><span class="sc">:</span><span class="dv">505</span>, <span class="dv">1000</span>, <span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span></code></pre></div>
+<pre><code>## [1] 0.2720284</code></pre>
+<p>However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since <span class="math inline">\(\mathbb EX = 1000 \times \frac12 = 500\)</span> and <span class="math inline">\(\operatorname{Var}(X) = 1000 \times \frac12 \times \frac12 = 250\)</span>, we have the normal approximation <span class="math inline">\(X \approx \mathrm N(500, 250)\)</span>. We could then calculate
+<span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]</span>
+We could standardise and use the statistical tables, or just use R:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="L18-limit.html#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="dv">505</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="dv">495</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<pre><code>## [1] 0.2481704</code></pre>
+<p>This is not too far off the correct answer <span class="math inline">\(0.272\)</span> we calculated exactly, but it does miss by about 9%.</p>
+<p>Note, though, that we approximated the discrete random variable <span class="math inline">\(X\)</span> by a continuous random variable <span class="math inline">\(Y\)</span>. So the next possibility for <span class="math inline">\(X\)</span> above 505 was 506 and below 495 was 494, whereas <span class="math inline">\(Y\)</span> could smoothly vary between the two. So we usually get a more accurate approximation if we use a <strong>continuity correction</strong> and round outwards halfway to the next discrete point. So we should get a better approximation from
+<span class="math display">\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]</span></p>
+<p>Calculating this in R (or with statistical tables) we get</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="L18-limit.html#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">505.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>)) <span class="sc">-</span> <span class="fu">pnorm</span>(<span class="fl">494.5</span>, <span class="dv">500</span>, <span class="fu">sqrt</span>(<span class="dv">250</span>))</span></code></pre></div>
+<pre><code>## [1] 0.2720476</code></pre>
+<p>Using the continuity correction, we now have an incredibly accurate approximation – it only misses by 0.006%.</p>
+</div>
+<p>Using a continuity correction – that is, rounding outwards halfway to the next discrete point – typically makes approximations more accurate whenever you are approximating a discrete random variable by a continuous random variable (such as a normal distribution).</p>
+</div>
+<div id="summary-09" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L18-limit.html#summary-09" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
 <ul>
-<li>Exploratory data analysis is about taking a first look at data.</li>
-<li>Summary statistics are numbers calculated from data that give us useful information about the data.</li>
-<li>Summary statistics that measure the centre of the data include the mode, median, and mean.</li>
-<li>Summary statistics that measure the spread of the data include the number of distinct outcomes, the interquartile range, and the sample variance.</li>
+<li>If <span class="math inline">\(\overline X_n\)</span> is the mean of <span class="math inline">\(n\)</span> IID random variables with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, then <span class="math inline">\(\mathbb E\overline X_n = \mu\)</span> and <span class="math inline">\(\operatorname{Var}(\overline X_n) = \sigma^2/n\)</span>.</li>
+<li>The law of large numbers says that <span class="math inline">\(\overline X_n \to \mu\)</span>.</li>
+<li>The central limit theorem says that <span class="math inline">\(\sqrt{n}(\overline X_n - \mu) \to \text{N}(0, \sigma^2)\)</span>.</li>
 </ul>
 </div>
 
@@ -490,8 +503,8 @@ This is sometimes called the “computational formula”; this is because it usu
           </div>
         </div>
       </div>
-<a href="about.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="L02-dataviz.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L17-exp-multiple.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="P5.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

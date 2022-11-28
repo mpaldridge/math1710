@@ -16,7 +16,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 ::: {.oldsched}
 **Week 8** (7--11 November):
 
-* **Tutorials:** *All in-person tutorials cancelled. Online tutorial: Wednesday 23 November at 1000, link in Minerva.*
+* **Tutorials:** *All in-person tutorials cancelled. Online tutorial: Wednesday 23 November at 1000; recording available on Minerva.*
 * [**Lecture 15:** Continuous random variables](#L15-continuous) (Monday 21 November)
 * [**Lecture 16:** Normal distribution](#L16-normal) (Wednesday 23 November)
 * [**Problem Sheet 4:**](#P4) Work through the short and long questions in preparation for *the online tutorial*. Deadline for assessed questions: *Tuesday 29 November*

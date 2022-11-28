@@ -44,5 +44,9 @@ There are many ways you get feedback on this module, both group feedback (feedba
 ```{r, child = "problems/questions/P4-short.Rmd"}
 ```
 
+::: {.mysummary}
+Questions B3, B4 and B5 on Problem Sheet 4 were discussed in the online tutorial. A video recording of the tutorial is available on Minerva.
+:::
+
 ```{r, child = "problems/questions/P4-long.Rmd"}
 ```

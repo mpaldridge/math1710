@@ -1,25 +1,29 @@
 ---
 title:  "R Worksheet 9: Normal distribution"
 author: "MATH1710 Probability and Statistcs I"
-date:   "University of Leeds, 2021--22"
+date:   "University of Leeds, 2022--23"
 output: html_document
 ---
 
-*This R worksheet* does *include assessed questions at the bottom. Only the questions marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 29 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
+*This R worksheet* does *include assessed questions at the bottom. Only the questions marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 5 December at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
 
 ------------------------------------------------------------------------
 
 
-When dealing with normal distributions in R, we have the following functions:
+When we looked a discrete distributions, we saw the `dxxx()`, `pxxx()`, `qxxx()` and `rxxx()` functions (where `xxx` could be `binom`, `geom` or `pois`). These gave, respectively the PMF, CDF, quantile function, and random samples. The same works with continuous distributions `norm` (for the normal distribution), `exp` (for the exponential distribution), or `beta` (for the Beta distribution, which we see later in Lecture 20).
 
-* `dnorm()` gives the probability density function $f(x)$ of a normal distribution $X \sim \mathrm{N}(\mu, \sigma^2)$. The format is `dnorm(x, mu, sigma)`, where `x` is the point at which the density is evaluated, `mu` is the expectation $\mu$ of the normal distribution, and `sigma` is the standard deviation $\sigma$ of the normal distribution. Note that the third parameter is the standard deviation $\sigma$ -- that is, the square-root $\sigma = \sqrt{\sigma^2}$ of the variance -- not the variance $\sigma^2$ itself: this is the easiest mistake to make when working with the normal distribution in R!
-* `pnorm()` gives the CDF $F(x) = \mathbb P(X \leq x)$ if a normal distribution. The format is `pnorm(x, mu, sigma)` in the same way. There is an optional argument `lower.tail`, which by default is `TRUE`, but when set to `lower.tail = FALSE`, we instead get the upper-tail probability $1 - F(x) = \mathbb P(X > x)$. So a full command for that is `pnorm(x, mu, sigma, lower.tail = FALSE)`.
-* `qnorm()` gives the quantile function $F^{-1}(q)$. That is, `qnorm(q, mu, sigma)` gives the value $x$ such that $F(x) = \mathbb P(X \leq x ) = q$. Similarly, there is a `lower.tail = FALSE` argument that gives the $x$ such that $1 - F(x) = \mathbb P(X > x) = q$.
-* `rnorm()` gives random IID samples from a normal distribution. That is, `rnorm(n, mu, sigma)` gives $n$ such random samples.
+We will concentrate in this worksheet just on the functions for the normal distribution:
+
+* **`dnorm()`** gives the probability density function $f(x)$ of a normal distribution $X \sim \mathrm{N}(\mu, \sigma^2)$. The format is `dnorm(x, mu, sigma)`, where `x` is the point at which the density is evaluated, `mu` is the expectation $\mu$ of the normal distribution, and `sigma` is the standard deviation $\sigma$ of the normal distribution. Note that the third parameter is the standard deviation $\sigma$ -- that is, the square-root $\sigma = \sqrt{\sigma^2}$ of the variance -- not the variance $\sigma^2$ itself: this is the easiest mistake to make when working with the normal distribution in R!
+* **`pnorm()`** gives the CDF $F(x) = \mathbb P(X \leq x)$ if a normal distribution. The format is `pnorm(x, mu, sigma)` in the same way.
+   * There is an optional argument `lower.tail`, which by default is `TRUE`, but when set to `lower.tail = FALSE`, we instead get the upper-tail probability $1 - F(x) = \mathbb P(X > x)$. So a full command for that is `pnorm(x, mu, sigma, lower.tail = FALSE)`.
+* **`qnorm()`** gives the quantile function $F^{-1}(q)$. That is, `qnorm(q, mu, sigma)` gives the value $x$ such that $F(x) = \mathbb P(X \leq x ) = q$. 
+   * Similarly, there is a `lower.tail = FALSE` argument that gives the $x$ such that $1 - F(x) = \mathbb P(X > x) = q$.
+* **`rnorm()`** gives random IID samples from a normal distribution. That is, `rnorm(n, mu, sigma)` gives $n$ such random samples.
 
 In all these functions, if `mu` and `sigma` are omitted, it is assumed you are dealing with a standard normal distribution $\mu = 0, \sigma^2 = \sigma = 1$.
 
-In [Section 9.3 of the notes](https://mpaldridge.github.io/math1710/S09-normal.html#normal-r) we gave many examples of how to perform calculations using the `pnorm()` and `qnorm()` functions. Your main task for this worksheet is to read through and understand that.
+In [Lecture 16](https://mpaldridge.github.io/math1710/L16-normal.html#normal-r) we gave many examples of how to perform calculations using the `pnorm()` and one example `qnorm()` functions. Your main task for this worksheet is to revise what was in that lecture.
 
 > **Exercise 9.1.** What is the value of the standard normal density at 0?
 
@@ -29,11 +33,15 @@ In [Section 9.3 of the notes](https://mpaldridge.github.io/math1710/S09-normal.h
 
 > **Exercise 9.4.** Let $X_4 \sim \mathrm{N}(42, 17^2)$. Sample 10,000 samples from the distribution $X_4$. Calculate the sample mean and sample variance of your samples.
 
+We briefly mention that the `pexp()` variation takes the format `pexp(x, lambda)`, where $x$ is where the CDF should be evaluated and `lambda` is the rate parameter $\lambda$. The `pbeta()` variation takes the format `pbeta(x, alpha, beta)`, which will make sense to you after Lecture 20.
+
+> **Exercise 9.5.** Let $X_4 \sim \mathrm{Exp}(0.2)$. Calculate $\mathbb P(4 \leq X_4 \leq 7)$ using the `pexp()` function.
+
 ---
 
 ## Assessed questions
 
-*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 9, but the official deadline is **Monday 29 November at 1400**.*
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module. I recommend you do this in Week 9, but the official deadline is **Monday 5 December at 1400**.*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -62,7 +70,7 @@ mean(log(samples) + 0.1 * samples)
 ```
 > in the limit as `n` tends to infinity. Give your answer to four significant figures using R's `signif()` function.
 
-The final two questions are based on the normal distribution $Y \sim \mathrm{N}(100, 1 + i)$, where $i$ is the final *single* digit of your student ID. that is, the normal distribution with expectation $\mu = 100$, and whose variance $\sigma^2$ is equal to the last digit of your student ID plus 1.
+The final two questions are based on the normal distribution $Y \sim \mathrm{N}(100, i+1)$, where $i$ is the final *single* digit of your student ID. that is, the normal distribution with expectation $\mu = 100$, and whose *variance* $\sigma^2$ is equal to the last digit of your student ID plus 1.
 
 > **Assessed Question 4.** What is the conditional probability $\mathbb P(Y > 105 \mid Y > 103)$? Round your answer to 3 significant figures.
 

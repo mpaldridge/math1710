@@ -4,7 +4,7 @@
 and $f(x) = 0$ otherwise.
 
 :::: {.subq}
-**(a)** Calculate the CDF $F$ of $X$, and hence find the constant $c$.
+**(a)** Explaining your work, find the value of the constant $c$.
 
 ::: {.myanswers data-latex=""}
 *Hint.* To get a new sticker you need to "succeed" in an experiment, where "failure" is "receiving a sticker you already have a copy of" and "success" is "receiving a new sticker you haven't already got". What is the probabiltiy of success?
@@ -21,7 +21,7 @@ What is $\mathbb P(X > 1)$?
 ::::
 
 :::: {.subq}
-**(c)** Calculate the expectation and variance of $X$.
+**(c)** Calculate the expectation of$X$.
 
 ::: {.myanswers data-latex=""}
 *Hint.* In R, `sum(1 / (1:678))` sum the reciprocals of the integers from 1 to 678.
@@ -29,23 +29,23 @@ What is $\mathbb P(X > 1)$?
 ::::
 
 :::: {.subq}
-**(d)** Let $Y = \tfrac12 (X^2 - 1)$. What is the expectation of $Y$?
+**(d)** Calculate the variance of $X$.
 ::::
 :::::
 
 
 ::::: {.myq}
-**C2.** For each of the following, **(a)** calculate the exact value using R; **(b)** get an approximate value using an appropriate approximation and *without* using R. ([Statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) are available.)
+**C2.** For each of the following, **(a)** calculate the *exact* value using R; **(b)** get an approximate value using an appropriate approximation and *without* using R. ([Statistical tables](https://mpaldridge.github.io/math1710/stat-tab.pdf) are available.)
 
 :::: {.subq}
 **(i)** $\mathbb P(X \leq 3)$, where $X \sim \mathrm{Bin}(1000, 0.005)$.
 ::::
 
 :::: {.subq}
-**(ii)** $\mathbb P(190 \leq Y \leq 205)$, where $Y \sim \mathrm{Bin}(500, 0.4)$.
+**(ii)** $\mathbb P(296 \leq Y \leq 307)$, where $Y \sim \mathrm{Bin}(1200, 0.25)$.
 ::::
 
 :::: {.subq}
-**(iii)** $\mathbb P(Z \geq 398)$, where $Z \sim \mathrm{Bin}(400, 0.999)$.
+**(iii)** $\mathbb P(Z \geq 398)$, where $Z \sim \mathrm{Bin}(400, 0.995)$.
 ::::
 :::::

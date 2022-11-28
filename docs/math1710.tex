@@ -160,7 +160,7 @@
 \begin{itemize}
 \tightlist
 \item
-  \textbf{Tutorials:} \emph{All in-person tutorials cancelled. Online tutorial: Wednesday 23 November at 1000, link in Minerva.}
+  \textbf{Tutorials:} \emph{All in-person tutorials cancelled. Online tutorial: Wednesday 23 November at 1000; recording available on Minerva.}
 \item
   \protect\hyperlink{L15-continuous}{\textbf{Lecture 15:} Continuous random variables} (Monday 21 November)
 \item
@@ -1145,7 +1145,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-34-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-40-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -5873,6 +5873,765 @@ I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn
   The CDF of a normal distribution can be calculated in R with the \texttt{pnorm()} function. It can also be calculated using \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables} and by ``standardising''.
 \end{itemize}
 
+\hypertarget{L17-exp-multiple}{%
+\chapter{Exponential distribution and multiple continuous random variables}\label{L17-exp-multiple}}
+
+This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it's very similar to what we already know about multiple discrete random variables.
+
+\hypertarget{exponential}{%
+\section{Exponential distribution}\label{exponential}}
+
+An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
+
+\begin{definition}
+A continuous random variable \(X\) is said to have the \textbf{exponential distribution with rate \(\lambda > 0\)} if it has the PDF
+\[ f(x) = \lambda \mathrm{e}^{-\lambda x} \qquad \text{for $x \geq 0$}, \]
+and 0 otherwise. We write \(X \sim \text{Exp}(\lambda)\).
+\end{definition}
+
+\includegraphics{math1710_files/figure-latex/exp-pic-1.pdf}
+
+\begin{example}
+\emph{The length of time in years that a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate \(\lambda = 2\). What is the probability the lightbulb needs replacing within a year?}
+
+If \(X \sim \text{Exp}(2)\) is the lifetime of the lightbulb, we seek \(\mathbb P(X \leq 1)\). This is
+\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]
+\end{example}
+
+\begin{theorem}
+\protect\hypertarget{thm:exp-prop}{}\label{thm:exp-prop}
+
+Suppose \(X \sim \text{Exp}(\lambda)\). Then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f\) is indeed a PDF, in that \(\displaystyle\int_0^\infty f(x)\,\mathrm{d}x = 1\);
+\item
+  the CDF of \(X\) is \(F(x) = 1 - \mathrm{e}^{-\lambda x}\);
+\item
+  the expectation of \(X\) is \(\mathbb EX = \displaystyle\frac{1}{\lambda}\);
+\item
+  the variance of \(X\) is \(\operatorname{Var}(X) = \displaystyle\frac{1}{\lambda^2}\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{example}
+Returning to the lightbulb example, where \(X \sim \text{Exp}(2)\), we see that the average lifetime of a lightbulb is \(\mathbb EX = \frac12\) a year with variance \(\operatorname{Var}(X) = \frac14\).
+
+If we wanted to calculate \(\mathbb P(1 \leq X \leq 3)\), we could do this by integrating the PDF between 1 and 3. Alternatively, we could use the CDF:
+\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm{e}^{-2\times 3}) - (1 - \mathrm{e}^{-2\times 1}) = \mathrm{e}^{-2} - \mathrm{e}^{-6} = 0.132 . \]
+\end{example}
+
+\begin{proof}
+\emph{of Theorem \ref{thm:exp-prop}.}
+For part 1,
+\[ \int_0^\infty \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x
+     = \big[-\mathrm{e}^{-\lambda x} \big]_0^\infty = -0 -(-1) = 1 . \]
+
+Similarly for part 2,
+\[ F(x) = \int_0^x \lambda \mathrm{e}^{-\lambda y}\,\mathrm{d}y
+     = \big[-\mathrm{e}^{-\lambda y} \big]_0^x = -\mathrm{e}^{-\lambda x} -(-1) = 1 - \mathrm{e}^{-\lambda x}. \]
+
+For part 3, we use integration by parts with \(u = x\) and \(v' = \lambda \mathrm{e}^{-\lambda x}\), so \(u' = 1\) and \(v = -\mathrm{e}^{-\lambda x}\). We get
+\begin{align*}
+\mathbb EX &= \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \big[-x \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= -0 - (-0) + \left[ -\frac{1}{\lambda} \mathrm{e}^{-\lambda x} \right]_0^\infty \\
+  &= -0 - \left(- \frac{1}{\lambda}\right) \\
+  &= \frac{1}{\lambda}
+\end{align*}
+
+For part 4, we use integration by parts with \(u = x^2\) and \(v' = \lambda \mathrm{e}^{-\lambda x}\), so \(u' = 2x\) and \(v = -\mathrm{e}^{-\lambda x}\) again. We get
+\begin{align*}
+\mathbb EX^2 &= \int_0^\infty x^2  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \big[-x^2 \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty 2x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= -0 - (-0) + \frac{2}{\lambda} \int_0^\infty x  \lambda x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \frac{2}{\lambda} \mathbb EX \\
+  &= \frac{2}{\lambda^2} ,
+\end{align*}
+where we used a cunning trick on the integral on the right -- spotting that we could turn it into the expectation, which is \(1/\lambda\), by part 3 -- to save us the effort of calculating it again.
+Hence
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]
+\end{proof}
+
+\hypertarget{continuous-multiple}{%
+\section{Multiple continuous random variables}\label{continuous-multiple}}
+
+The theory we set up for two or more discrete random variables also works for two or more continuous random variables.
+
+Now, the intensity of probability for \((X,Y)\) being around \((x,y)\) is given by the \textbf{joint probability density function} \(f_{X,Y}\). In particular for \(a \leq b\) and \(c \leq d\), we have
+\[ \mathbb P(a \leq X \leq b \text{ and } c \leq Y \leq d ) = \int_{x = a}^b \int_{y = c}^d f_{X,Y}(x,y)\, \mathrm dx \,\mathrm dy .\]
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Discrete random variables
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Continuous random variables
+\end{minipage} \\
+\midrule()
+\endhead
+We can get the \textbf{marginal PMF} \(p_X\) of \(X\) by summing over \(y\), so \( p_X(x) = \sum_y p_{X,Y}(x,y) . \) & We can get the \textbf{marginal PDF} \(f_X\) of \(X\) by integrating over \(y\), so \( f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy. \) \\
+Two discrete random variables \(X\) and \(Y\) are \textbf{independent} if their PMFs satisfy \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y) \qquad \text{for all $x, y$}.\) & Two continuous random variables \(X\) and \(Y\) are \textbf{independent} if they have PDFs which satisfy \(f_{X,Y}(x,y) = f_X(x)\,f_Y(y) \qquad \text{for all $x, y$}.\) \\
+The \textbf{conditional PMF} of \(Y\) given \(X\) is defined by \( p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} . \) & The \textbf{conditional PDF} of \(Y\) given \(X\) is defined by \( f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)} . \) \\
+\textbf{Bayes' theorem} states that \( p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)} . \) & \textbf{Bayes' theorem} states that \( f_{X \mid Y}(x \mid y) = \frac{f_X(x)\,f_{Y\mid X}(y\mid x)}{f_Y(y)} . \) \\
+The expectation of a function of \(X\) and \(Y\) is given by the sum \( \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y) . \) & The expectation of a function of \(X\) and \(Y\) is given by the integral \( \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy . \) \\
+The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) & The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) \\
+\bottomrule()
+\end{longtable}
+
+\begin{example}
+Consider the pair of continuous random variable \((X,Y)\) with joint PDF
+\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]
+and \(f_{X,Y}(x,y) = 0\) otherwise.
+
+We get the marginal distribution for \(X\) by integrating over \(y\), so
+\[ f_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]
+
+We can find the the conditional PDF for \(Y\) given \(X = \tfrac14\). It is
+\[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
+    = \frac{\tfrac12\big(1 + \tfrac14 + y\big)}{\tfrac34 + \tfrac12\times\tfrac14 } = \tfrac{5}{7} + \tfrac47 y . \]
+
+We can calculate the covariance. First, the expectations are
+\[ \mathbb EX = \int_{-\infty}^\infty x\, f_X(x) \,\mathrm dx = \int_0^1 x\big(\tfrac34 + \tfrac12x\big)\, \mathrm dx = \left[\tfrac38 x^2 + \tfrac16 x^3 \right] = \tfrac{13}{24} \]
+and \(\mathbb EY = \frac{13}{24}\) also, by symmetry. Second, we have
+\begin{align*}
+\mathbb EXY
+&= \int_{-\infty}^\infty \int_{-\infty}^\infty xy\, f_{X,Y}(x,y) \, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \int_0^1 xy \, \tfrac12(1 + x + y)\, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \left[ \tfrac14 x^2y + \tfrac16 x^3y + \tfrac14 x^2y^2  \right]_{x=0}^1 \, \mathrm dy\\
+&= \int_0^1 \big( \tfrac14 y + \tfrac16 y + \tfrac14 y^2 \big) \, \mathrm dy\\
+&= \left[ \tfrac18 y^2 + \tfrac{1}{12}y^2 + \tfrac{1}{12}y^3  \right]_0^1 \\
+&= \tfrac{7}{24} .
+\end{align*}
+So therefore,
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
+\end{example}
+
+\hypertarget{summary-L17}{%
+\section*{Summary}\label{summary-L17}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  The exponential distribution has PDF \(f(x) = \lambda \mathrm e^{-\lambda x}\), expectation \(1/\lambda\), and variance \(1/\lambda^2\).
+\item
+  Most properties of multiple discrete random variables carry of to multiple continuous random variables. To get a marginal PDF from a joint PDF, we integrate (rather than sum) over the other variable.
+\end{itemize}
+
+\hypertarget{L18-limit}{%
+\chapter{Limit theorems}\label{L18-limit}}
+
+There will be no lecture on Wednesday 30 November, as \href{https://www.leedsucu.org.uk/information-for-students-2/}{the UCU are on strike}. Instead, you should learn the material that would have been given in the lecture from these notes. This material is fully examinable, as much as any other lecture.
+
+I have provided some old pandemic-era videos embedded in these notes, which may help you -- the section numbering has changed since these videos were made, but the material is mostly the same. Drop-in sessions are available on Thursday (2pm in \href{https://mpaldridge.github.io/office.html}{PRD 9.320} and 4pm in Roger Stevens LT17) if you struggle with anything in this lecture.
+
+\hypertarget{lln}{%
+\section{Law of large numbers}\label{lln}}
+
+In this lecture we will look at some ``limit'' results; that is, results about a large number of \(n\) of random variables, as \(n\) tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.
+
+So let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables. Let us write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance.
+
+At the beginning of the course, we saw the mean of some values was
+\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]
+that is, what we get if we add them up and divide by \(n\). In the same way, we could calculate the ``mean'' of some random variables by adding them up and dividing by \(n\); that is:
+\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]
+(The subscript \(n\) on ``\(\overline X_n\)'' is just to remind us this is a mean of \(n\) random variables.)
+
+Here, each of the \(X_i\)s is a random variable, so their mean \(\overline X_n\) is another random variable as well. This mean random variable \(\overline X_n\) will be out main object in this lecture. We can ask questions about the random variable \(\overline X_n\) just the same as we would ask about any other random variable. For example: What is its expectation and variance?
+
+The expectation of \(\bar X_n\) is
+\begin{align*}
+\mathbb E \overline X_n &= \mathbb E \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&=   \frac{1}{n} (\mathbb EX_1 + \mathbb EX_2 + \cdots + \mathbb EX_n)\\
+&= \frac{1}{n} (\mu + \mu + \cdots + \mu)\\
+&= \frac{1}{n} n \mu \\
+&= \mu .
+\end{align*}
+Here we used linearity of expectation to take the \(1/n\) out of the brackets, and then added up the individual expectations.
+
+In the same way, the variance of \(\overline X_n\) is
+\begin{align*}
+\operatorname{Var}( \overline X_n) &= \operatorname{Var}\left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&= \left(\frac{1}{n}\right)^2 \operatorname{Var}(X_1 + X_2 + \cdots + X_n) \\
+&=   \frac{1}{n^2} \big(\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \operatorname{Var}(X_n)\big)\\
+&= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
+&= \frac{1}{n^2} n \sigma^2 \\
+&= \frac{\sigma^2}{n} .
+\end{align*}
+Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.
+
+In conclusion we have this:
+
+\begin{theorem}
+Let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables, and write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance. Further, write
+\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of these random variables. Then
+\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]
+\end{theorem}
+
+Now think about what happens to this mean \(\overline X_n\) when \(n\) gets very large. We see that the expectation \(\mathbb E\overline X_n = \mu\) stays the same, but the variance \(\operatorname{Var}(\overline X_n) = \sigma^2/n\) gets smaller and smaller as \(n\) gets bigger. So the range of probable values for \(\overline X_n\) will be squeezing tighter and tighter around \(\mu\). Given that, it seems as if (and it can be rigorously proven that) we have the ``law of large numbers''.
+
+\begin{theorem}[Law of large numbers]
+\protect\hypertarget{thm:thLLN}{}\label{thm:thLLN}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
+\[ \overline X_n \to \mu \quad \text{in probability as $n \to \infty$}; \]
+by which we mean that, for any \(\epsilon > 0\),
+\[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
+\end{theorem}
+
+The precise mathematical definition of the convergence is not important here. What is important is the general principle that the mean \(\overline X_n\) is overwhelmingly likely to get closer and closer to the expectation \(\mathbb EX = \mu\). In other words, the expectation \(\mathbb EX = \mu\) represents the ``long-run average'' of independent experiments -- this justifies referring to the expectation as a kind of average.
+
+One special case is if we have repeated experiments that succeed with probability \(p\); that is, \(X_n \sim \text{Bern}(p)\). Then the law of large numbers says that the long-run proportion of successes is
+\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
+So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about ``frequentist probability'' \protect\hyperlink{what-is-prob}{right at the beginning of Lecture}: that one way to understand the probability of an event is as the long-run frequency of its occurrence.
+
+\hypertarget{clt}{%
+\section{Central limit theorem}\label{clt}}
+
+We have seen that if the \(X_i\) are IID random variables with expectation \(\mu\) and variance \(\sigma^2\), then
+\[ \mathbb E\overline X_n = \mu \qquad \operatorname{Var}\big(\overline X_n\big) = \frac{\sigma^2}{n} \]
+and the law of large numbers tells us that \(\overline X_n \to \mu\) as \(n \to \infty\). Alternatively, we could say that \(\overline X_n - \mu \to 0\).
+
+We might also want to know what the variation of \(\overline X_n - \mu\) is around 0. Obviously, the law of large numbers tells us this variation shrinks away to 0, but we might be interested in the ``shape'' of that variation as it shrinks away. To study this variation, we need to ``re-inflate'' it, to stop it disappearing. It turns out that the correct way to do this is by multiplying by \(\sqrt{n}\) and looking at \(\sqrt{n}(\overline X_n - \mu)\).
+
+It's fairly easy to check that the expectation and variance of the ``re-inflated variation'' is
+\begin{align*}
+\mathbb E\sqrt{n} (\overline X_n - \mu) &= \sqrt{n}(\mu - \mu) = 0 \\
+\operatorname{Var}\big(\sqrt{n} (\overline X_n - \mu)\big) &= (\sqrt n)^2 \, \frac{\sigma^2}{n} = \sigma^2 . 
+\end{align*}
+So whatever distribution \(\sqrt{n}(\overline X_n - \mu)\) has, that distribution must have expectation \(0\) and variance \(\sigma^2\). But in fact, \emph{no matter what distribution the \(X_i\) have}, this ``variation around 0'' \(\sqrt{n}(\overline X_n - \mu)\) always gets closer and closer to the normal distribution!
+
+\begin{theorem}[Central limit theorem]
+\protect\hypertarget{thm:thCLT}{}\label{thm:thCLT}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation, \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance, and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
+\[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]
+by which we mean that, if \(Y \sim \mathrm N(0, \sigma^2)\), then, for all \(a < b\),
+\[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
+\end{theorem}
+
+(A full proof of the central limit theorem is too complicated to include here.)
+
+Another alternative way to write this is to divide both sides by \(\sigma\) and write it as
+\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
+
+The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
+
+\hypertarget{normal-approx}{%
+\section{Approximations with the normal distribution}\label{normal-approx}}
+
+There are many other distributions \(X\) that can be well approximated by a normal distribution where \(\mu\) is set to \(\mathbb EX\) and \(\sigma^2\) is set to \(\operatorname{Var}(X)\). Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
+
+\begin{itemize}
+\tightlist
+\item
+  A binomial distribution \(X \sim \mathrm{Bin}(n, p)\) is well approximated by a normal distribution \(\mathrm{N}(np, np(1-p))\) when \(n\) is large and \(p\) is not too close to 0 or 1. (When \(p\) is small, we already know that the Poisson distribution is a good approximation.)
+\item
+  A Poisson distribution \(X \sim \mathrm{Po}(\lambda)\) is well approximated by a normal distribution \(\mathrm{N}(\lambda, \lambda)\) when \(\lambda\) is large.
+\item
+  A sum \(Y = X_1 + \cdots + X_n\) of \(n\) IID geometric distributions \(X_1, \dots, X_n \sim \mathrm{Geom}(p)\) (sometimes known as a ``negative binomial'' distribution) is well approximated by a normal distribution \(\mathrm{N}(n/p, np/(1-p)^2)\) when \(p\) is not to close to 1.
+\item
+  A sum \(Y = X_1 + \cdots + X_n\) of \(n\) IID exponential distributions \(X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)\) (sometimes known as a ``Gamma'' distribution) is well approximated by a normal distribution \(\mathrm{N}(n/\lambda, n/\lambda^2)\) when the expectation \(1/\lambda\) is not too small.
+\end{itemize}
+
+\begin{example}
+\emph{Suppose I toss 1000 coins. What's the probability I get between 495 and 505 Heads?}
+
+The true distribution of Heads is \(X \sim \mathrm{Bin}(1000, \frac12)\), and the question wants
+\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]
+We can calculate the exact answer using R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{dbinom}\NormalTok{(}\DecValTok{495}\SpecialCharTok{:}\DecValTok{505}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2720284
+\end{verbatim}
+
+However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since \(\mathbb EX = 1000 \times \frac12 = 500\) and \(\operatorname{Var}(X) = 1000 \times \frac12 \times \frac12 = 250\), we have the normal approximation \(X \approx \mathrm N(500, 250)\). We could then calculate
+\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]
+We could standardise and use the statistical tables, or just use R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{505}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{)) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\DecValTok{495}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2481704
+\end{verbatim}
+
+This is not too far off the correct answer \(0.272\) we calculated exactly, but it does miss by about 9\%.
+
+Note, though, that we approximated the discrete random variable \(X\) by a continuous random variable \(Y\). So the next possibility for \(X\) above 505 was 506 and below 495 was 494, whereas \(Y\) could smoothly vary between the two. So we usually get a more accurate approximation if we use a \textbf{continuity correction} and round outwards halfway to the next discrete point. So we should get a better approximation from
+\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]
+
+Calculating this in R (or with statistical tables) we get
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{505.5}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{)) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\FloatTok{494.5}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.2720476
+\end{verbatim}
+
+Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006\%.
+\end{example}
+
+Using a continuity correction -- that is, rounding outwards halfway to the next discrete point -- typically makes approximations more accurate whenever you are approximating a discrete random variable by a continuous random variable (such as a normal distribution).
+
+\hypertarget{summary-09}{%
+\section*{Summary}\label{summary-09}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  If \(\overline X_n\) is the mean of \(n\) IID random variables with expectation \(\mu\) and variance \(\sigma^2\), then \(\mathbb E\overline X_n = \mu\) and \(\operatorname{Var}(\overline X_n) = \sigma^2/n\).
+\item
+  The law of large numbers says that \(\overline X_n \to \mu\).
+\item
+  The central limit theorem says that \(\sqrt{n}(\overline X_n - \mu) \to \text{N}(0, \sigma^2)\).
+\end{itemize}
+
+\hypertarget{P5}{%
+\chapter*{Problem Sheet 5}\label{P5}}
+\addcontentsline{toc}{chapter}{Problem Sheet 5}
+
+\commfalse
+
+This is Problem Sheet 4. This problem sheet covers \protect\hyperlink{S08-continuous}{Section 8}, and will later have questions added on Section 9. You should work through all the questions on this problem sheet so far during Week 8, in preparation for your tutorial in Week 10. The problem sheet contains two assessed questions, which are due in by \sout{2pm on Monday 6 December} \textbf{2pm on Tuesday 7 December}.
+
+\hypertarget{P5-short}{%
+\section*{A: Short questions}\label{P5-short}}
+\addcontentsline{toc}{section}{A: Short questions}
+
+\textbf{A1.} Consider the continuous random variable \(X\) with PDF
+\[ f(x) = \begin{cases} \tfrac12x & \text{for $0 \leq x \leq 1$} \\ 
+                        \tfrac12 & \text{for $1 < x \leq 2$} \\
+                        \tfrac32 - \tfrac12x & \text{for $2 < x \leq 3$} \end{cases} \]
+and \(f(x) = 0\) otherwise.
+
+\textbf{(a)} Calculate the CDF for \(X\).
+
+\begin{myanswers}
+\emph{Solution.} We treat the different cases separately.
+
+For \(x < 0\), we have \(F(x) = 0\).
+
+For \(0 \leq x \leq 1\), we have
+\[ F(x) = \int_0^x \tfrac12 y \, \mathrm dy = \left[\tfrac14y^2\right]_0^x = \tfrac14 x^2 .\]
+In particular, \(F(1) = \frac14\).
+
+For \(1 < x \leq 2\), we have
+\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(1) + \int_1^y \tfrac12 \, \mathrm dy = \tfrac14 + \left[ \tfrac 12 y\right]_1^x = \tfrac12 x - \tfrac14 .\]
+In particular, \(F(2) = \frac34\).
+
+For \(2 < x \leq 3\), we have
+\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(2) + \int_2^y \left(\tfrac32 - \tfrac12y\right) \, \mathrm dy = \tfrac34 + \left[ \tfrac 32 y - \tfrac14 y^2\right]_2^x = \tfrac32 x - \tfrac14 x^2 - \tfrac 54 .\]
+In particular, \(F(3) = 1\).
+
+For \(x > 3\), we have \(F(x) = 1\).
+
+Hence,
+\[ F(x) = \begin{cases}
+0 & \text{for $x < 0$} \\
+\tfrac14 x^2 & \text{for $0 \leq x \leq 1$} \\
+\tfrac12 x - \tfrac14 & \text{for $1 < x \leq 2$} \\
+\tfrac32 x - \tfrac14 x^2 - \tfrac 54 & \text{for $2 < x \leq 3$} \\
+1 & \text{for $x > 3$.}
+\end{cases}
+\]
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(\tfrac32 \leq X \leq \tfrac52)\)?
+
+\begin{myanswers}
+\emph{Solution.} This is
+\[ F\big(\tfrac52\big) - F\big(\tfrac32\big) = \tfrac{15}{16} - \tfrac12 = \tfrac{7}{16} .\]
+(Here, it was useful to note that \(x = \tfrac52\) is in the \(2 < x \leq 3\) range and \(x = \tfrac32\) is in the \(1 < x \leq 2\) range.)
+
+\end{myanswers}
+
+\textbf{(c)} Calculate the expectation \(\mathbb EX\).
+
+\begin{myanswers}
+\emph{Solution.}
+We have
+\begin{align*}
+\mathbb EX &= \int_{-\infty}^{\infty} x\,f(x)\, \mathrm dx \\
+  &= \int_0^1 x\times\tfrac12x\, \mathrm dx + \int_1^2 x \times \tfrac12 \, \mathrm dx + \int_2^3 x \times \left(\tfrac32 - \tfrac12 x\right)\, \mathrm dx \\
+  &= \left[\tfrac16 x^3 \right]_0^1 + \left[\tfrac14 x^2 \right]_1^2 + \left[\tfrac34 x^2 - \tfrac16 x^3 \right]_2^3 \\
+  &= \tfrac16 - 0 + 1 - \tfrac14 + \tfrac94 - \tfrac53 \\
+  &= \tfrac32 .
+\end{align*}
+
+\end{myanswers}
+
+\textbf{A2.} Let \(X\) be a continuous random variable with PDF
+\[ f(x) = \frac{k}{x^3} \qquad \text{for $x \geq 1$} \]
+and \(f(x) = 0\) otherwise.
+
+\textbf{(a)} What value of \(k\) makes this into a true PDF?
+
+\begin{myanswers}
+\emph{Solution.} We need the PDF to integrate to 1. So
+\[ 1 = \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_1^\infty kx^{-3} \, \mathrm dx = \left[-\tfrac 12 kx^{-2}\right]_1^\infty = - 0 + \tfrac12k . \]
+So \(k = 2\).
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(X \geq 3)\)?
+
+\begin{myanswers}
+\emph{Solution.} This is
+\[ \mathbb P(X \geq 3) = \int_3^\infty 2x^{-3}\,\mathrm dx = \left[-x^{-2}\right]_3^\infty = \tfrac19 .  \]
+
+\end{myanswers}
+
+\textbf{(c)} What is the expected value \(\mathbb EX\)?
+
+\begin{myanswers}
+\emph{Solution.} This is
+\[ \mathbb EX = \int_1^\infty x\times 2x^{-3} \mathrm dx = \left[2x^{-1}\right]_1^\infty = 2 . \]
+
+\end{myanswers}
+
+\textbf{A3.} Let \(X \sim \text{Exp}(\frac12)\).
+
+\textbf{(a)} What is \(\mathbb EX\)?
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb EX = \displaystyle\frac{1}{\frac12} = 2\)
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(1 \leq X \leq 3)\)?
+
+\begin{myanswers}
+\emph{Solution.} We have
+\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm e^{-3/2}) - (1 - \mathrm e^{-1/2}) = 0.383 . \]
+
+\end{myanswers}
+
+\textbf{A4.} Let \(Z \sim \mathrm{N}(0,1)\). Calculate the following \textbf{(a)} using \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables}; \textbf{(b)} using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)
+
+\textbf{(i)} \(\mathbb P(Z \leq -1.2)\)
+
+\begin{myanswers}
+\emph{Solution.} Using statistical tables,
+\[ \Phi(-1.2) = 1 - \Phi(1.20) = 1 - 0.8849 = 0.1151 .\]
+
+Using R: \texttt{pnorm(-1.2)} gives \texttt{0.1150697}.
+
+\end{myanswers}
+
+\textbf{(ii)} \(\mathbb P(-1.2 \leq Z \leq 0.8)\)
+
+\begin{myanswers}
+\emph{Solution.} Using statistical tables, and part (i),
+\[ \Phi(0.80) - \Phi(-1.2) = 0.7781 - 0.1151 = 0.6730 . \]
+
+Using R: \texttt{pnorm(0.8)\ -\ pnorm(-1.2)} gives \texttt{0.6730749}.
+
+\end{myanswers}
+
+\textbf{(iii)} \(\mathbb P(Z \leq 0.27)\) (using interpolation for part (a))
+
+\begin{myanswers}
+\emph{Solution.} We can interpolate between \(\Phi(0.25) = 0.5987\) and \(\Phi(0.30) = 0.6179\), to get
+\[ \Phi(0.27) \approx 0.6 \,\Phi(0.25) + 0.4\, \Phi(0.30) = 0.6064 . \]
+
+Using R: \texttt{pnorm(0.27)} gives \texttt{0.6064199}.
+
+\end{myanswers}
+
+\textbf{A5.} Let \(X \sim \mathrm{Po}(25)\). Calculate the following \textbf{(a)} exactly, using R; \textbf{(b)} approximately, using a normal approximation with a continuity correction and \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables}. (For part (b), you should show enough working to convince a reader that you really did use the tables.)
+
+\textbf{(i)} \(\mathbb P(X \leq 27)\)
+
+\begin{myanswers}
+\emph{Solution.}
+Using R: \texttt{ppois(27,\ 25)} gives \texttt{0.7001861}.
+
+The approximation is \(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\). With a continuity correction, we expand the interval \((-\infty,27]\) outwards to \((-\infty, 27.5]\), and get
+\[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]
+
+\end{myanswers}
+
+\textbf{(ii)} \(\mathbb P(X \geq 28 \mid X \geq 27)\)
+
+\begin{myanswers}
+\emph{Solution.}
+By the definition of conditional probability, we have
+\[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]
+since if \(X \geq 28\) it's automatically the case that \(X \geq 27\).
+
+Using R, we need to remember that \texttt{lower.tail\ =\ FALSE} gives \(\mathbb P(X > x)\) with strict inequality, which for discrete random variables is equivalent to \(\mathbb P(X \geq x +1)\). So we actually want
+
+\texttt{ppois(27,\ 25,\ lower.tail\ =\ FALSE)\ /\ ppois(26,\ 25,\ lower.tail\ =\ FALSE)}
+
+which gives \texttt{0.8089648}.
+
+The approximations are
+\begin{align*}
+\mathbb P(Z \geq 28) &\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
+\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821 ,
+\end{align*}
+where again we used the continuity correct to expand \([28,\infty)\) outwards to \([27.5,\infty)\) and the same for \([27,\infty)\). This
+gives the answer \(0.3085/0.3821 = 0.807\).
+
+\end{myanswers}
+
+\hypertarget{P5-long}{%
+\section*{B: Long questions}\label{P5-long}}
+\addcontentsline{toc}{section}{B: Long questions}
+
+\textbf{B1.}
+\textbf{(a)} Let \(X \sim \text{Exp}(\lambda)\). Show that
+\[ \mathbb P(X > x + y \mid X > y) = \mathbb P(X > x) . \]
+
+\begin{myanswers}
+\emph{Solution.}\\
+Using the definition of conditional probability, we have
+\[\mathbb P(X > x + y \mid X > y) = \frac{\mathbb P(X > x + y \text{ and } X > y) }{\mathbb P(X > y)}= \frac{\mathbb P(X > x + y ) }{\mathbb P(X > y)} , \]
+since is \(X > x + y\) then we automatically have \(X > y\).
+Note also that, for an exponential distribution we have
+\[ \mathbb P(X > x) = 1 - F(x) = 1 - (1 - \mathrm e^{-\lambda x}) = \mathrm e^{-\lambda x} . \]
+So the left-hand side of the statement in the question is
+\[ \frac{\mathrm{e}^{-\lambda(x + y)}}{\mathrm{e}^{-\lambda y}} = \mathrm e^{-\lambda x - \lambda y + \lambda y} = \mathrm{e}^{-\lambda x} , \]
+which equals the right-hand side, by the above.
+
+\end{myanswers}
+
+\textbf{(b)} The result proved in part (a) is called the ``memoryless property''. Why do you think it's called that?
+
+\begin{myanswers}
+\emph{Solution.} Think of \(X\) as a waiting time. The result tells us that, given that we've already waited \(y\) minutes, the probability that we have to wait at least another \(x\) minutes is exactly the same as the probability we had to wait at least \(x\) minutes starting from the beginning. In other words, \emph{no matter when we start timing from}, the probability we have to wait more than \(x\) minutes remains the same.
+
+This is called the ``memoryless property'' because it's as if the process has no memory of how long we've already been waiting for.
+
+(This property also holds for the geometric distribution. The expected number of rolls of a dice until you get a six is always 6 rolls, no matter how many times you've already rolled the dice.)
+
+\end{myanswers}
+
+\textbf{(c)} When you get to certain bus stop, the average amount of time you have to wait for a bus to arrive is 20 minutes. Specifically, the time until the next bus arrives is modelled as an exponential distribution with expectation \(1/\lambda = 20\) minutes. Suppose you have already been waiting at the bus stop for 15 minutes. What is the expected further amount of time you still have to wait for a bus to arrive?
+
+\begin{myanswers}
+\emph{Solution.}
+By the memoryless property, it's irrelevant how long we've been waiting for: the average time until a bus arrives is always \(1/\lambda = 20\) minutes.
+
+\end{myanswers}
+
+\textbf{B2.} The main dangerous radioactive material left over after the Chernobyl disaster is Caesium-137. The amount of time it takes a Caesium-137 particle to decay is known to follow an exponential distribution with rate \(\lambda = 0.023\) years\textsuperscript{-1}.
+
+\textbf{(a)} What is the average amount of time it takes a Caesium-137 particle to decay?
+
+\begin{myanswers}
+\emph{Solution.} The expectation is \(1/\lambda = 43.5\) years.
+
+\end{myanswers}
+
+\textbf{(b)} The ``half-life'' of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.
+
+\begin{myanswers}
+\emph{Solution.} The half-life is the median of the distribution; that is, the solution \(x\) to
+\[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]
+So
+\[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]
+
+\end{myanswers}
+
+\textbf{(c)} It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed?
+
+\begin{myanswers}
+\emph{Solution.} The proportion of Caesium-137 still remaining is
+\[ \mathbb P(X > 35.6) = \mathrm e^{-0.023 \times 35.6} = 0.441 , \]
+so roughly \(24 \times 0.441 = 10.6\) kg of Caesium-137 has still not decayed.
+
+\end{myanswers}
+
+\textbf{B3.} Consider the pair of random variables \((X,Y)\) with joint PDF
+\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]
+and \(f_{X,Y}(x,y) = 0\) otherwise. (In particular, note that the joint PDF is only nonzero when \(x \leq y\).)
+
+\textbf{(a)} Draw a picture of the range of \((X,Y)\) in the \(xy\)-plane.
+
+\textbf{(b)} Describe the conditional distribution of \(X\) given \(Y = y\), for \(0 \leq y \leq 1\).
+
+\begin{myanswers}
+\emph{Solution.} Fix \(y\). The conditional distribution is
+\[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]
+We know that \(f_{X,Y}(x,y) = 2\) when \(0 \leq x \leq y\) and is \(0\) otherwise. So the conditional distribution of \(X\) given \(Y = y\) is continuous uniform on the interval \([0, y]\).
+
+If we want to check the denominator \(f_Y(y)\) too, we can check that
+\[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]
+so the conditional PDF is indeed \(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\) for \(0 \leq x \leq y\).
+
+(In the online/video tutorial, I tried to explain this by drawing a graph in the \((x,y)\) plain of where \(f_{X,Y}(x,y)\) is 2 or 0, then drawing a horizontal line across it at \(y\) to demonstrate the conditional distribution. I'm not sure how clear this made things\ldots)
+
+\end{myanswers}
+
+\textbf{(c)} What is the marginal PDF \(f_X\) of \(X\)?
+
+\begin{myanswers}
+\emph{Solution.} Again the key is that the joint PDF is only nonzero when \(y \geq x\) but \(y \leq 1\). So
+\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]
+
+\end{myanswers}
+
+\textbf{(d)} Are \(X\) and \(Y\) independent?
+
+\begin{myanswers}
+\emph{Solution.} No.~Take, for example, \(x = \frac34\) and \(y = \frac14\). Since \(x > y\), this has joint PDF \(f_{X,Y}(\frac34,\frac14) = 0\). We know the marginal PMFs, though are
+\begin{align*}
+f_X\big(\tfrac34\big) &= 2\big(1 - \tfrac34\big) = \tfrac12 \\
+f_Y\big(\tfrac14\big) &= 2 \times \tfrac14 = \tfrac12 ,
+\end{align*}
+so \(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\). So \(X\) and \(Y\) are not independent.
+
+\end{myanswers}
+
+\textbf{B4.} Engineers and scientists often use the rule of thumb ``Only 5\% of data is more than two sample standard deviations away from the sample mean.'' Carefully justify this rule, using concepts from the module.
+
+\begin{myanswers}
+\emph{Solution.} By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data -- especially that which is affected by the accumulation of numerous small effects -- is approximately normally distributed.
+
+Write \(\mu\) for the \emph{true} expectation and \(\sigma^2\) for the \emph{true} variance of the population distribution \(X\). Then the proportion of data that is within two true-standard-deviations of the true-expectation will, be the law of large numbers, tends to
+\[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]
+Using standardisation, this is
+\[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]
+Using R or statistical tables, this is
+\[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]
+So only \(1 - 0.9545 = 0.0455\), or approximately 5\%, of data is more than two true-standard-deviations away from the true-expectation.
+
+Finally, the law of large numbers also tells us that, provided a large number of datapoints \(n\) are collected, the sample mean \(\bar x\) and the sample standard deviation \(s_x\) will be very close to the true expectation \(\mu\) and the true standard deviation \(\sigma\) respectively, so we can replace the latter with the former in our calculations.
+
+\end{myanswers}
+
+\textbf{B6.} Let \(X_1, X_2, \dots, X_n\) be IID random variable with common expectation \(\mu\) and common variance \(\sigma^2\), and let \(\overline X = (X_1 + \cdots + X_n)/n\) be the mean of these random variables. We will be considering the random variable \(S^2\) given by
+\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
+
+\textbf{(a)} By writing
+\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]
+or otherwise, show that
+\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]
+
+\begin{myanswers}
+\emph{Solution.}
+Using the suggestion in the question, we have
+\begin{align*}
+S^2 &= \sum_{i=1}^n (X_i - \overline X)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu) - (\overline X - \mu)  \big)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu)^2 - 2(X_i - \mu)(\overline X - \mu) + (\overline X - \mu)^2\big) \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - \sum_{i=1}^n 2(X_i - \mu)(\overline X - \mu) + \sum_{i=1}^n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n X_i - \sum_{i=1}^n \mu\right)(\overline X - \mu)  + (\overline X - \mu)^2 \sum_{i=1}^n 1 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2(n\overline X - n\mu) (\overline X - \mu) + n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
+\end{align*}
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of \(\overline X\) to write \(\sum_{i=1}^n X_i\) as \(n \overline X\).
+
+\end{myanswers}
+
+\textbf{(b)} Hence or otherwise, show that
+\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]
+You may use facts about \(\overline X\) from the notes provided you state them clearly. (You may find it helpful to recognise some expectations as definitional formulas for variances, where appropriate.)
+
+\begin{myanswers}
+\emph{Solution.} Starting with the linearity of expectation, we have
+\begin{align*}
+\mathbb ES^2 &= \mathbb E \left( \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2  \right) \\
+  &= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
+\end{align*}
+The last line follows because \(\mathbb EX_i = \mu\) for all \(i\) by assumption, and we showed in the notes that \(\mathbb E \overline X = \mu\) also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that \(\operatorname{Var}(X_i) = \sigma^2\) by assumption, and we showed in the notes that \(\operatorname{Var}(\overline X) = \sigma^2/n\). Hence
+\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]
+as required.
+
+\end{myanswers}
+
+\textbf{(c)} At the beginning of this course, we defined the sample variance of the values \(x_1, x_2, \dots, x_n\) to be
+\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
+Explain one reason why we might consider it appropriate to use \(1/(n-1)\) as the factor at the beginning of this expression, rather than simply \(1/n\).
+
+\begin{myanswers}
+\emph{Solution.}
+We often model a data set \(x_1, x_2, \dots, x_n\) as being realisations of an IID sequence of random variables \(X_1, X_2, \dots, X_n\). In this case, we are using the summary statistic of the sample variance \(s_x^2\) to ``estimate'' the variance \(\operatorname{Var}(X_1) = \sigma^2\). Using the factor \(1/(n-1)\) ensures that this estimator is correct ``in expectation'', because
+\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]
+This property of being correct in expectation is called being an ``unbiased'' estimator, and its usually considered beneficial for an estimator to be unbiased.
+
+Note that we already know that the sample mean \(\bar x\) is an unbiased estimator for the expectation \(\mathbb EX = \mu\), as we already know that \(\mathbb E\overline X = \mu\).
+
+\end{myanswers}
+
+\hypertarget{P5-assessed}{%
+\section*{C: Assessed questions}\label{P5-assessed}}
+\addcontentsline{toc}{section}{C: Assessed questions}
+
+The last two questions are \textbf{assessed questions}. One question is already available, and the second will be added in Week 9. These two questions count for 3\% of your final mark for this module.
+
+The deadline for submitting your solutions is \sout{2pm on Monday 6 December} \textbf{2pm on Tuesday 7 December} at the beginning of Week 11, although I strongly recommend completing and submitting your work during Week 10. Submission will be via Gradescope; submission will open on Monday 29 November.
+Your work will be marked by your tutor and returned later, when solutions will also be made available.
+
+Both questions are ``long questions'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
+
+\textbf{C1.} Let \(X\) be a continuous random variable with PDF
+\[ f(x) = \tfrac29 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]
+and \(f(x) = 0\) otherwise.
+
+\textbf{(a)} Explaining your work, find the value of the constant \(c\).
+
+\begin{myanswers}
+\emph{Hint.} To get a new sticker you need to ``succeed'' in an experiment, where ``failure'' is ``receiving a sticker you already have a copy of'' and ``success'' is ``receiving a new sticker you haven't already got''. What is the probabiltiy of success?
+
+\end{myanswers}
+
+\textbf{(b)}
+What is \(\mathbb P(X > 1)\)?
+
+\begin{myanswers}
+\emph{Hint.} Recall the expectation of the geometric distribution, and use linearity of expectaiton.
+
+\end{myanswers}
+
+\textbf{(c)} Calculate the expectation of\(X\).
+
+\begin{myanswers}
+\emph{Hint.} In R, \texttt{sum(1\ /\ (1:678))} sum the reciprocals of the integers from 1 to 678.
+
+\end{myanswers}
+
+\textbf{(d)} Calculate the variance of \(X\).
+
+\textbf{C2.} For each of the following, \textbf{(a)} calculate the \emph{exact} value using R; \textbf{(b)} get an approximate value using an appropriate approximation and \emph{without} using R. (\href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{Statistical tables} are available.)
+
+\textbf{(i)} \(\mathbb P(X \leq 3)\), where \(X \sim \mathrm{Bin}(1000, 0.005)\).
+
+\textbf{(ii)} \(\mathbb P(296 \leq Y \leq 307)\), where \(Y \sim \mathrm{Bin}(1200, 0.25)\).
+
+\textbf{(iii)} \(\mathbb P(Z \geq 398)\), where \(Z \sim \mathrm{Bin}(400, 0.995)\).
+
+\hypertarget{P5-short-sols}{%
+\section*{Solutions to short questions}\label{P5-short-sols}}
+\addcontentsline{toc}{section}{Solutions to short questions}
+
+\textbf{A1.} (b) \(\tfrac{7}{16}\) (c) 1.5 \textbf{A2.} (a) 2 (b) \(\tfrac19\) (c) 2 \textbf{A3.} (a) 2 (b) 0.383
+
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
 \addcontentsline{toc}{part}{Other stuff}
@@ -6267,7 +7026,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-35-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-41-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -7327,6 +8086,8 @@ By summing across the rows and down the columns, respectively, we get this:
 \emph{Solution.} No.~For one example, \(p_{X,Y}(0,0) = \frac{2}{15}\), while \(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\), so they are not equal.
 
 \end{myanswers}
+
+Questions B3, B4 and B5 on Problem Sheet 4 were discussed in the online tutorial. A video recording of the tutorial is available on Minerva.
 
 \textbf{B1.} Calculate the CDF \(F(x) = \mathbb P(X \leq x)\) of the geometric distribution\ldots{}
 

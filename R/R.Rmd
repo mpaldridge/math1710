@@ -16,7 +16,7 @@ Each week there will be an R worksheet to work through in your own time. I recom
 |   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
 |   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]    |      Monday 21 November (Week 8)   |
 |   8  |  [**Discrete random variables**](https://mpaldridge.github.io/math1710/R8.html) [[Rmd](https://mpaldridge.github.io/math1710/R8.Rmd)] | --- |
-|   9  |  Normal distribution | Monday 5 December (Week 10) |
+|   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) [[Rmd](https://mpaldridge.github.io/math1710/R9.Rmd)] | Monday 5 December (Week 10) |
 |  10  |  Law of large numbers     |             ---           |
 |  11  |  Recap | Thursday 15 December (Week 11) |
 

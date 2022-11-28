@@ -78,7 +78,11 @@ so roughly $24 \times 0.441 = 10.6$ kg of Caesium-137 has still not decayed.
 and $f_{X,Y}(x,y) = 0$ otherwise. (In particular, note that the joint PDF is only nonzero when $x \leq y$.)
 
 :::: {.subq}
-**(a)** Describe the conditional distribution of $X$ given $Y = y$, for $0 \leq y \leq 1$.
+**(a)** Draw a picture of the range of $(X,Y)$ in the $xy$-plane.
+::::
+
+:::: {.subq}
+**(b)** Describe the conditional distribution of $X$ given $Y = y$, for $0 \leq y \leq 1$.
 
 ::: {.myanswers data-latex=""}
 *Solution.* Fix $y$. The conditional distribution is
@@ -94,7 +98,7 @@ so the conditional PDF is indeed $f_{X \mid Y}(x \mid y) = 2/2y = 1/y$ for $0 \l
 ::::
 
 :::: {.subq}
-**(b)** What is the marginal PDF $f_X$ of $X$?
+**(c)** What is the marginal PDF $f_X$ of $X$?
 
 ::: {.myanswers data-latex=""}
 *Solution.* Again the key is that the joint PDF is only nonzero when $y \geq x$ but $y \leq 1$. So
@@ -103,7 +107,7 @@ so the conditional PDF is indeed $f_{X \mid Y}(x \mid y) = 2/2y = 1/y$ for $0 \l
 ::::
 
 :::: {.subq}
-**(c)** Are $X$ and $Y$ independent?
+**(d)** Are $X$ and $Y$ independent?
 
 ::: {.myanswers data-latex=""}
 *Solution.* No. Take, for example, $x = \frac34$ and $y = \frac14$. Since $x > y$, this has joint PDF $f_{X,Y}(\frac34,\frac14) = 0$. We know the marginal PMFs, though are
@@ -134,6 +138,7 @@ Finally, the law of large numbers also tells us that, provided a large number of
 :::
 :::::
 
+<!--
 ::::: {.myq}
 **B5.** Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?
 
@@ -152,10 +157,11 @@ $0.01\sqrt{n} = 1.960$, which is $n \approx 9600$.
 So if we toss 10,000 coins, there's about a 95% chance we get between 4900 and 5100 Heads.
 :::
 :::::
+-->
 
 
 ::::: {.myq}
-**B6.**  Let $X_1, X_2, \dots, X_n$ be IID random variable with common expectation $\mu$ and common variance $\sigma^2$, and let $\overline X = (X_1 + \cdots + X_n)/n$ be the mean of these random variables. We will be considering the random variable $S^2$ given by
+**B5.**  Let $X_1, X_2, \dots, X_n$ be IID random variable with common expectation $\mu$ and common variance $\sigma^2$, and let $\overline X = (X_1 + \cdots + X_n)/n$ be the mean of these random variables. We will be considering the random variable $S^2$ given by
 \[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
 
 :::: {.subq}
