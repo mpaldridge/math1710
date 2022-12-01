@@ -47,6 +47,10 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P5-short-sols .unnumbered}
 
-**A1.** (b) $\tfrac{7}{16}$ (c) 1.5 **A2.** (a) 2 (b) $\tfrac19$ (c) 2 **A3.** (a) 2 (b) 0.383
+**A1.** (b) $\tfrac{7}{16}$ (c) 1.5  
+**A2.** (a) 2 (b) $\tfrac19$ (c) 2  
+**A3.** (a) 2 (b) 0.383  
+**A4.** (i)  0.1150 (ii) 0.6731 (or 0.6730 with tables) (iii) 0.6064  
+**A5.** (a) (i) 0.7002 (ii) 0.809 (b) (i) 0.6914 (ii) 0.807
 
 
