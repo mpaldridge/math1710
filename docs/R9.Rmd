@@ -77,3 +77,13 @@ The final two questions are based on the normal distribution $Y \sim \mathrm{N}(
 > **Assessed Question 5.** What is the value of the PDF $f_Y(y)$ evaluated where $y$ is the 95th percentile of $Y$; that is, where $y$ is the point below which 95% of the probability lies? Round your answer to 3 decimal places.
 
 *Remember to submit your answers [via the Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUQzFRVERNNVpXWTdQT0gzOTdHNE9RWlIwRy4u).*
+
+---
+
+# Solutions to exercises
+
+**9.1** `0.3989423`  
+**9.2** `0.4596479`  
+**9.3** `93.2551 106.7449`  
+**9.4** Should be roughly $42$ and $17^2 = 289$  
+**9.5** `0.202732`
