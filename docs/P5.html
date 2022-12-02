@@ -588,6 +588,7 @@ So
 <p><em>Solution.</em> The proportion of Caesium-137 still remaining is
 <span class="math display">\[ \mathbb P(X &gt; 35.6) = \mathrm e^{-0.023 \times 35.6} = 0.441 , \]</span>
 so roughly <span class="math inline">\(24 \times 0.441 = 10.6\)</span> kg of Caesium-137 has still not decayed.</p>
+<p><em>(The Chernobyl disaster was actually</em> 36.6 <em>years ago – I forgot to update the question this year. The amount of Caesium-137 will have gone down about another 250g in the last year.)</em></p>
 </div>
 </div>
 </div>
@@ -604,33 +605,36 @@ and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise. (In particu
 <p><em>Solution.</em> Fix <span class="math inline">\(y\)</span>. The conditional distribution is
 <span class="math display">\[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]</span>
 We know that <span class="math inline">\(f_{X,Y}(x,y) = 2\)</span> when <span class="math inline">\(0 \leq x \leq y\)</span> and is <span class="math inline">\(0\)</span> otherwise. So the conditional distribution of <span class="math inline">\(X\)</span> given <span class="math inline">\(Y = y\)</span> is continuous uniform on the interval <span class="math inline">\([0, y]\)</span>.</p>
-<p>If we want to check the denominator <span class="math inline">\(f_Y(y)\)</span> too, we can check that
+<p>If we want to check the denominator <span class="math inline">\(f_Y(y)\)</span> formally, we can check that
 <span class="math display">\[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]</span>
-so the conditional PDF is indeed <span class="math inline">\(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\)</span> for <span class="math inline">\(0 \leq x \leq y\)</span>.</p>
-<p>(In the online/video tutorial, I tried to explain this by drawing a graph in the <span class="math inline">\((x,y)\)</span> plain of where <span class="math inline">\(f_{X,Y}(x,y)\)</span> is 2 or 0, then drawing a horizontal line across it at <span class="math inline">\(y\)</span> to demonstrate the conditional distribution. I’m not sure how clear this made things…)</p>
+so the conditional PDF is indeed <span class="math inline">\(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\)</span> for <span class="math inline">\(0 \leq x \leq y\)</span> and 0 otherwise.</p>
+<!--(In the online/video tutorial, I tried to explain this by drawing a graph in the $(x,y)$ plain of where $f_{X,Y}(x,y)$ is 2 or 0, then drawing a horizontal line across it at $y$ to demonstrate the conditional distribution. I'm not sure how clear this made things...)-->
 </div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> What is the marginal PDF <span class="math inline">\(f_X\)</span> of <span class="math inline">\(X\)</span>?</p>
 <div class="myanswers">
 <p><em>Solution.</em> Again the key is that the joint PDF is only nonzero when <span class="math inline">\(y \geq x\)</span> but <span class="math inline">\(y \leq 1\)</span>. So
-<span class="math display">\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]</span></p>
+<span class="math display">\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x)  \]</span>
+for <span class="math inline">\(0 \leq x \leq 1\)</span> and 0 otherwise.</p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(d)</strong> Are <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> independent?</p>
 <div class="myanswers">
-<p><em>Solution.</em> No. Take, for example, <span class="math inline">\(x = \frac34\)</span> and <span class="math inline">\(y = \frac14\)</span>. Since <span class="math inline">\(x &gt; y\)</span>, this has joint PDF <span class="math inline">\(f_{X,Y}(\frac34,\frac14) = 0\)</span>. We know the marginal PMFs, though are
+<p><em>Solution.</em> No. Take, for example, <span class="math inline">\(x = \frac34\)</span> and <span class="math inline">\(y = \frac14\)</span>. It’s clear that this <span class="math inline">\(f_{X,Y}(\frac34,\frac14) = 0\)</span>, while <span class="math inline">\(f_X(\frac34)\)</span> and <span class="math inline">\(f_Y(\frac14)\)</span> are nonzero, just by looking at the picture from part (a).</p>
+<p>We can check it formally too, if we want. Since <span class="math inline">\(x &gt; y\)</span>, this point has joint PDF <span class="math inline">\(f_{X,Y}(\frac34,\frac14) = 0\)</span>. We know the marginal PMFs, though are
 <span class="math display">\[\begin{align*}
 f_X\big(\tfrac34\big) &amp;= 2\big(1 - \tfrac34\big) = \tfrac12 \\
-f_Y\big(\tfrac14\big) &amp;= 2 \times \tfrac14 = \tfrac12 ,
+f_Y\big(\tfrac14\big) &amp;= 2 \times \tfrac14 = \tfrac12 .
 \end{align*}\]</span>
-so <span class="math inline">\(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\)</span>. So <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent.</p>
+(we used <span class="math inline">\(f_Y(y) = 2y)\)</span> based on symmetry with <span class="math inline">\(f_X(1-x)\)</span>, or alternatively by calculating it “long-hand”.)
+So <span class="math inline">\(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\)</span>. So <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent.</p>
 </div>
 </div>
 </div>
 <div class="myq">
-<p><strong>B4.</strong> Engineers and scientists often use the rule of thumb “Only 5% of data is more than two sample standard deviations away from the sample mean.” Carefully justify this rule, using concepts from the module.</p>
+<p><strong>B4.</strong> <em>(Optional)</em> Engineers and scientists often use the rule of thumb “Only 5% of data is more than two sample standard deviations away from the sample mean.” Carefully justify this rule, using concepts from the module.</p>
 <div class="myanswers">
 <p><em>Solution.</em> By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data – especially that which is affected by the accumulation of numerous small effects – is approximately normally distributed.</p>
 <p>Write <span class="math inline">\(\mu\)</span> for the <em>true</em> expectation and <span class="math inline">\(\sigma^2\)</span> for the <em>true</em> variance of the population distribution <span class="math inline">\(X\)</span>. Then the proportion of data that is within two true-standard-deviations of the true-expectation will, be the law of large numbers, tends to
@@ -643,26 +647,6 @@ So only <span class="math inline">\(1 - 0.9545 = 0.0455\)</span>, or approximate
 <p>Finally, the law of large numbers also tells us that, provided a large number of datapoints <span class="math inline">\(n\)</span> are collected, the sample mean <span class="math inline">\(\bar x\)</span> and the sample standard deviation <span class="math inline">\(s_x\)</span> will be very close to the true expectation <span class="math inline">\(\mu\)</span> and the true standard deviation <span class="math inline">\(\sigma\)</span> respectively, so we can replace the latter with the former in our calculations.</p>
 </div>
 </div>
-<!--
-::::: {.myq}
-**B5.** Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?
-
-::: {.myanswers data-latex=""}
-*Solution.*
-The number of Heads in $n$ coin tosses is $X \sim \mathrm{Bin}(n, \frac12)$, which is approximately $Y \sim \mathrm{N}(\frac n2, \frac n4)$. We want to choose $n$ such that
-\[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]
-
-Standardising, this is
-\[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]
-Since the normal distribution is symmetric, we want
-\[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]
-From Table 2 of the statistical tables, or by the R command `qnorm(0.975)`, this requires
-$0.01\sqrt{n} = 1.960$, which is $n \approx 9600$.
-
-So if we toss 10,000 coins, there's about a 95% chance we get between 4900 and 5100 Heads.
-:::
-:::::
--->
 <div class="myq">
 <p><strong>B5.</strong> Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID random variable with common expectation <span class="math inline">\(\mu\)</span> and common variance <span class="math inline">\(\sigma^2\)</span>, and let <span class="math inline">\(\overline X = (X_1 + \cdots + X_n)/n\)</span> be the mean of these random variables. We will be considering the random variable <span class="math inline">\(S^2\)</span> given by
 <span class="math display">\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]</span></p>
@@ -684,7 +668,7 @@ S^2 &amp;= \sum_{i=1}^n (X_i - \overline X)^2 \\
   &amp;= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
   &amp;= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
 \end{align*}\]</span>
-This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of <span class="math inline">\(\overline X\)</span> to write <span class="math inline">\(\sum_{i=1}^n X_i\)</span> as <span class="math inline">\(n \overline X\)</span>.</p>
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we used the definition of <span class="math inline">\(\overline X\)</span> to write <span class="math inline">\(\sum_{i=1}^n X_i\)</span> as <span class="math inline">\(n \overline X\)</span>.</p>
 </div>
 </div>
 <div class="subq">
@@ -698,13 +682,13 @@ You may use facts about <span class="math inline">\(\overline X\)</span> from th
   &amp;= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
   &amp;= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
 \end{align*}\]</span>
-The last line follows because <span class="math inline">\(\mathbb EX_i = \mu\)</span> for all <span class="math inline">\(i\)</span> by assumption, and we showed in the notes that <span class="math inline">\(\mathbb E \overline X = \mu\)</span> also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that <span class="math inline">\(\operatorname{Var}(X_i) = \sigma^2\)</span> by assumption, and we showed in the notes that <span class="math inline">\(\operatorname{Var}(\overline X) = \sigma^2/n\)</span>. Hence
+The last line follows because <span class="math inline">\(\mathbb EX_i = \mu\)</span> for all <span class="math inline">\(i\)</span> by assumption, and we showed in the notes that <span class="math inline">\(\mathbb E \overline X = \mu\)</span> also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that <span class="math inline">\(\operatorname{Var}(X_i) = \sigma^2\)</span> by assumption, and we showed Lecture 18 that <span class="math inline">\(\operatorname{Var}(\overline X) = \sigma^2/n\)</span>. Hence
 <span class="math display">\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]</span>
 as required.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> At the beginning of this course, we defined the sample variance of the values <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> to be
+<p><strong>(c)</strong> At the beginning of this module, we defined the sample variance of the values <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> to be
 <span class="math display">\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]</span>
 Explain one reason why we might consider it appropriate to use <span class="math inline">\(1/(n-1)\)</span> as the factor at the beginning of this expression, rather than simply <span class="math inline">\(1/n\)</span>.</p>
 <div class="myanswers">
@@ -713,9 +697,26 @@ We often model a data set <span class="math inline">\(x_1, x_2, \dots, x_n\)</sp
 <span class="math display">\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]</span>
 This property of being correct in expectation is called being an “unbiased” estimator, and its usually considered beneficial for an estimator to be unbiased.</p>
 <p>Note that we already know that the sample mean <span class="math inline">\(\bar x\)</span> is an unbiased estimator for the expectation <span class="math inline">\(\mathbb EX = \mu\)</span>, as we already know that <span class="math inline">\(\mathbb E\overline X = \mu\)</span>.</p>
+<p>(You may learn more about estimation and “unbiasedness” in MATH1712 Probability and Statistics II.)</p>
 </div>
 </div>
 </div>
+<div class="myq">
+<p><strong>B6.</strong> <em>(New)</em> Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The number of Heads in <span class="math inline">\(n\)</span> coin tosses is <span class="math inline">\(X \sim \mathrm{Bin}(n, \frac12)\)</span>, which is approximately <span class="math inline">\(Y \sim \mathrm{N}(\frac n2, \frac n4)\)</span>. We want to choose <span class="math inline">\(n\)</span> such that
+<span class="math display">\[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]</span></p>
+<p>Standardising, this is
+<span class="math display">\[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]</span>
+Since the normal distribution is symmetric, we want
+<span class="math display">\[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]</span>
+From Table 2 of the statistical tables, or by the R command <code>qnorm(0.975)</code>, this requires
+<span class="math inline">\(0.01\sqrt{n} = 1.960\)</span>, which is <span class="math inline">\(n \approx 9600\)</span>.</p>
+<p>So if we toss 10,000 coins, there’s about a 95% chance we get between 4900 and 5100 Heads.</p>
+</div>
+</div>
+<p><em>(I meant to delete Question B4 from this problem sheet, to make it shorter, but I accidentally deleted Question B6 instead. I’ve now added B6 and marked B4 as “optional”.)</em></p>
 </div>
 <div id="P5-assessed" class="section level2 unnumbered hasAnchor">
 <h2>C: Assessed questions<a href="P5.html#P5-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>

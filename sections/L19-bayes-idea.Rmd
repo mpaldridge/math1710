@@ -4,15 +4,17 @@
 
 ## Example: fake coin?  {#fake-coin}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/BUZ_4DqHjIM"></iframe>
 :::
 ::::
+-->
 
 
 
-**Statistics** concerns how to draw conclusions from data; and **Bayesian statistics** is one particular framework for doing this. The idea of Bayesian statistics is that we use the data (together with Bayes' theorem) to update our "prior" ("before") beliefs about the underlying model to our "posterior" ("after") beliefs about the model *given* the data we have observed.
+**Statistics** concerns how to draw conclusions from data; and **Bayesian statistics** is one particular framework for doing this. The idea of Bayesian statistics is that we start with "prior" ("before") beliefs about the underlying model, then use the data (together with Bayes' theorem) to update our to our "posterior" ("after") beliefs about the model *given* the data we have observed.
 
 We will start by illustrating the main idea with an example.
 
@@ -37,11 +39,13 @@ Compared to our prior beliefs, our belief that the coin is fair has stayed about
 
 ## Bayesian framework  {#bayesian-framework}
 
+<!--
 :::: {.videowrap}
 ::: {.videowrapper}
 <iframe src="https://www.youtube.com/embed/9moh0KYc6fE"></iframe>
 :::
 ::::
+-->
 
 
 Let's think more systematically about what we did in the previous example.
@@ -77,26 +81,58 @@ This can either be a conditional PMF or PDF, but will be the same type as the pr
   
 
 
-## Modern Bayesian statistics  {#modern-bayes}
-
-In this section, we've given just a brief taster of Bayesian statistics. Bayesian statistics is a deep and complicated subject, and you may have the opportunity to find out a lot more about it later in your university career.
-
-We have seen that in Bayesian statistics, one brings in a subjective "prior" based on previous beliefs and evidence, then updates this prior based on the data. This contrasts with the more traditional **frequentist statistics**. In frequentist one uses only the data -- no prior beliefs! -- and judges to what extent the data is consistent or inconsistent with a hypothesis, without weighing in on how likely such a hypothesis is. (Frequentist statistics is the main subject studied in MATH1712 Probability and Statistics II.)
-
-In the two main examples of Bayesian statistics we have looked at -- the Bernoulli likelihood and the normal likelihood -- we ended up with a posterior in the same parametric family as prior, just with different parameters. Such a prior is called a "conjugate prior". Of course, these are very convenient and easy to work with. However, with more complicated likelihoods and more complicated priors -- especially those not with a single parameter but with many parameters -- calculating the posterior distribution can be very difficult. In particular, working out the constant of proportionality (even just approximately) and/or sampling from the posterior distribution are very hard problems.
-
-For this reason, Bayesian statistics was for a long time a minor area of statistics. However, increases in computer power in the 1980s made some of these problems more tractable, and Bayesian statistics has increased in importance and popularity since then.
-
-For a while, there was an occasionally fierce debate between "Bayesians" and "frequentists". Frequentists thought that bringing subjective personal beliefs into things was unmathematical, while Bayesians thought that ignoring how plausible a hypothesis is before testing it is unscientific. The debate has now largely dissipated, and it is largely accepted that modern statisticians need to know about both frequentist and Bayesian methods.
-
-There are still plenty of open problems in Bayesian statistics, and lots of these involve the computational side: finding algorithms that can efficiently calculate the normalising constants in posterior distributions or sample from those posterior distributions, especially when the parameter(s) have very high dimension.
 
 
-## Summary  {#summary-10 .unnumbered}
+## Normal--normal model  {#normal-normal}
 
-::: {.mysummary}
-* In Bayesian statistics, we start with a prior distribution for a parameter $\theta$, and update to a posterior distribution given the data $\mathbf x$, through $\pi(\theta \mid \mathbf x) \propto \pi(\theta)p(\mathbf x \mid \theta)$, or $\text{posterior} \propto \text{prior} \times \text{likelihood}$.
-* The Beta distribution is a useful family of distributions to use as priors for probability parameters.
-* A Beta prior for a Bernoulli likelihood leads to a Beta posterior with different parameters.
-* A normal prior for the expectation of a normal likelihood wioth known variance leads to a normal posterior with different parameters.
+In our first example, the "joke coins" was a bit artificial, giving us a prior with only three points in its range. Its often more appropriate to have a prior distribution for a parameter that is continuous of a wide range of possibilities (although concentrated towards the more probable parameters).
+
+Consider a normal likelihood, where $X_1, X_2, \dots, X_n$ are IID $\text{N}(\theta, \sigma^2)$, and where the expectation $\theta$ is the unknown parameter but the variance $\sigma^2$ is known. This could model trying to measure some quantity $\theta$ with an instrument which is known to have a $\text{N}(0,\sigma^2)$ error. 
+
+So the model has joint PDF
+\[ p(\mathbf x \mid \theta) \propto \prod_{i=1}^n \exp \left(- \frac{(x_i - \theta)^2}{2\sigma^2}\right) = \exp \left( - \frac{1}{2} \sum_{i=1}^n \frac{(x_i - \theta)^2}{\sigma^2} \right) . \]
+(Again, we only worry about distributions up to proportionality, because we work out the multiplicative constant at the end.)
+In fact, when doing Bayesian statistics, it's often convenient to write $\tau = 1/\sigma^2$ for the inverse of the known variance; this $\tau$ is called the **precision** and is also known. So with this notation, the model is that $X_1, X_2, \dots, X_n$ are IID $\text{N}(\theta, 1 / \tau^2)$, with joint PDF
+\[ p(\mathbf x \mid \theta) \propto \exp \left( - \frac{1}{2} \sum_{i=1}^n \tau(x_i - \theta)^2 \right) . \]
+
+We might well to choose using a normal $\text{N}(\mu_0, 1/\tau_0)$ prior for the unknown expectation parameter $\theta$. This represents that we expect the quantity we are trying to mention to be around $\mu_0$, with an amount of uncertainty captured by the precision $\tau_0$ on the prior. So the prior PDF is 
+\[ \pi(\theta) \propto \exp \left( - \tfrac{1}{2} \tau_0(\theta - \mu_0)^2 \right) \]
+
+Because both the model for the data and the prior distribution are normal, this is known as the **normal--normal model**.
+
+Suppose we collect data $\mathbf x = (x_1, x_2, \dots, x_n)$, and recall that we write $\bar x = (\sum_i x_i)/n$ for the sample mean. 
+
+To get the posterior distribution requires a bit of an algebra slog (see below), but the outcome is that the posterior distribution is yet another normal distribution
+\[ \theta \mid \mathbf x \sim \mathrm{N} \left( \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x, \frac{1}{\tau_0 + n\tau} \right)  . \]
+In other words, the posterior expectation is a weighted average of the prior expectation $\mu_0$ and the mean of the data $\bar x$, and the more datapoints $n$ you get, the heavier the weighting on the data compared to the prior. Further, the precision has increased from the prior precision $\tau_0$ to the posterior precision $\tau_0 + n\tau$; so the more data we get, the larger the precision gets, so the smaller the variance gets, and the more sure we get about the true value of $\theta$. 
+
+
+::: {.thpart}
+*The algebra slog (non-examinable).* Before even getting to Bayes, let's remind ourselves from [Problem Sheet 4 Question B5](#P4-long) that
+\[ \sum_{i=1}^n \tau(x_i - \theta)^2 = \sum_{i=1}^n \tau(x_i - \bar x)^2 + n\tau(\theta - \bar x)^2 . \]
+Recall that we can ignore multiplicative terms that don't contain $\theta$, thanks to our proportionality trick, and note also that a multiplicative term becomes an additive term inside an exponential. So we can always ignore any "plus constants" that don't involve $\theta$ that are inside an exponential. Thus we get
+\begin{align*}
+ \exp \left( - \frac{1}{2} \sum_{i=1}^n \tau (x_i - \theta)^2 \right)
+ &=  \exp \left( - \frac{1}{2} \sum_{i=1}^n \tau(x_i - \bar x)^2 - n\tau(\theta - \bar x)^2 \right)\\
+ &\propto \exp \left( -\tfrac{1}{2} n\tau(\theta - \bar x)^2 \right) \\
+ &= \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta + n\tau \bar{x}^2 ) \right) \\
+ &\propto \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta) \right).
+\end{align*}
+
+Now we can invoke Bayes' theorem, and continue to ignore "plus constants", to get
+\begin{align*}
+\pi(\mathbf x \mid \theta)
+  &\propto \pi(\theta) \, p(\mathbf x \mid \theta) \\
+  &\propto \exp \left( -\tfrac{1}{2} \tau_0(\theta - \mu_0)^2  \right) \times \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
+  &= \exp \left( -\tfrac{1}{2} (\tau_0(\theta - \mu_0)^2 + n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
+  &=\exp \left( - \tfrac{1}{2} (\tau_0\theta^2 - 2\tau_0\mu_0\theta + \tau_0 \mu_0^2 + n\tau\theta^2 - 2n\tau\bar x\theta)\right) \\
+  &\propto \exp \left( - \tfrac{1}{2} \big( (\tau_0 + n\tau)\theta^2 - 2 (\tau_0 \mu_0 +n\tau \bar x )\theta \big)\right) \\
+  &= \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta^2 - 2 \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \theta \right)\right)  \\
+  &\propto \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) . 
+\end{align*}
+This is (proportional to) the PDF for a normal distribution with expectation
+\[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]
+and precision $\tau_0 + n\tau$.
 :::
+
+

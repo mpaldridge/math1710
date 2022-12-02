@@ -6485,6 +6485,8 @@ So
 \[ \mathbb P(X > 35.6) = \mathrm e^{-0.023 \times 35.6} = 0.441 , \]
 so roughly \(24 \times 0.441 = 10.6\) kg of Caesium-137 has still not decayed.
 
+\emph{(The Chernobyl disaster was actually} 36.6 \emph{years ago -- I forgot to update the question this year. The amount of Caesium-137 will have gone down about another 250g in the last year.)}
+
 \end{myanswers}
 
 \textbf{B3.} Consider the pair of random variables \((X,Y)\) with joint PDF
@@ -6496,15 +6498,14 @@ and \(f_{X,Y}(x,y) = 0\) otherwise. (In particular, note that the joint PDF is o
 \textbf{(b)} Describe the conditional distribution of \(X\) given \(Y = y\), for \(0 \leq y \leq 1\).
 
 \begin{myanswers}
+
 \emph{Solution.} Fix \(y\). The conditional distribution is
 \[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]
 We know that \(f_{X,Y}(x,y) = 2\) when \(0 \leq x \leq y\) and is \(0\) otherwise. So the conditional distribution of \(X\) given \(Y = y\) is continuous uniform on the interval \([0, y]\).
 
-If we want to check the denominator \(f_Y(y)\) too, we can check that
+If we want to check the denominator \(f_Y(y)\) formally, we can check that
 \[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]
-so the conditional PDF is indeed \(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\) for \(0 \leq x \leq y\).
-
-(In the online/video tutorial, I tried to explain this by drawing a graph in the \((x,y)\) plain of where \(f_{X,Y}(x,y)\) is 2 or 0, then drawing a horizontal line across it at \(y\) to demonstrate the conditional distribution. I'm not sure how clear this made things\ldots)
+so the conditional PDF is indeed \(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\) for \(0 \leq x \leq y\) and 0 otherwise.
 
 \end{myanswers}
 
@@ -6512,23 +6513,27 @@ so the conditional PDF is indeed \(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\) for \(0
 
 \begin{myanswers}
 \emph{Solution.} Again the key is that the joint PDF is only nonzero when \(y \geq x\) but \(y \leq 1\). So
-\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x) . \]
+\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x)  \]
+for \(0 \leq x \leq 1\) and 0 otherwise.
 
 \end{myanswers}
 
 \textbf{(d)} Are \(X\) and \(Y\) independent?
 
 \begin{myanswers}
-\emph{Solution.} No.~Take, for example, \(x = \frac34\) and \(y = \frac14\). Since \(x > y\), this has joint PDF \(f_{X,Y}(\frac34,\frac14) = 0\). We know the marginal PMFs, though are
+\emph{Solution.} No.~Take, for example, \(x = \frac34\) and \(y = \frac14\). It's clear that this \(f_{X,Y}(\frac34,\frac14) = 0\), while \(f_X(\frac34)\) and \(f_Y(\frac14)\) are nonzero, just by looking at the picture from part (a).
+
+We can check it formally too, if we want. Since \(x > y\), this point has joint PDF \(f_{X,Y}(\frac34,\frac14) = 0\). We know the marginal PMFs, though are
 \begin{align*}
 f_X\big(\tfrac34\big) &= 2\big(1 - \tfrac34\big) = \tfrac12 \\
-f_Y\big(\tfrac14\big) &= 2 \times \tfrac14 = \tfrac12 ,
+f_Y\big(\tfrac14\big) &= 2 \times \tfrac14 = \tfrac12 .
 \end{align*}
-so \(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\). So \(X\) and \(Y\) are not independent.
+(we used \(f_Y(y) = 2y)\) based on symmetry with \(f_X(1-x)\), or alternatively by calculating it ``long-hand''.)
+So \(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\). So \(X\) and \(Y\) are not independent.
 
 \end{myanswers}
 
-\textbf{B4.} Engineers and scientists often use the rule of thumb ``Only 5\% of data is more than two sample standard deviations away from the sample mean.'' Carefully justify this rule, using concepts from the module.
+\textbf{B4.} \emph{(Optional)} Engineers and scientists often use the rule of thumb ``Only 5\% of data is more than two sample standard deviations away from the sample mean.'' Carefully justify this rule, using concepts from the module.
 
 \begin{myanswers}
 \emph{Solution.} By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data -- especially that which is affected by the accumulation of numerous small effects -- is approximately normally distributed.
@@ -6566,7 +6571,7 @@ S^2 &= \sum_{i=1}^n (X_i - \overline X)^2 \\
   &= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
   &= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
 \end{align*}
-This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we use the definition of \(\overline X\) to write \(\sum_{i=1}^n X_i\) as \(n \overline X\).
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we used the definition of \(\overline X\) to write \(\sum_{i=1}^n X_i\) as \(n \overline X\).
 
 \end{myanswers}
 
@@ -6581,13 +6586,13 @@ You may use facts about \(\overline X\) from the notes provided you state them c
   &= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
   &= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
 \end{align*}
-The last line follows because \(\mathbb EX_i = \mu\) for all \(i\) by assumption, and we showed in the notes that \(\mathbb E \overline X = \mu\) also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that \(\operatorname{Var}(X_i) = \sigma^2\) by assumption, and we showed in the notes that \(\operatorname{Var}(\overline X) = \sigma^2/n\). Hence
+The last line follows because \(\mathbb EX_i = \mu\) for all \(i\) by assumption, and we showed in the notes that \(\mathbb E \overline X = \mu\) also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that \(\operatorname{Var}(X_i) = \sigma^2\) by assumption, and we showed Lecture 18 that \(\operatorname{Var}(\overline X) = \sigma^2/n\). Hence
 \[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]
 as required.
 
 \end{myanswers}
 
-\textbf{(c)} At the beginning of this course, we defined the sample variance of the values \(x_1, x_2, \dots, x_n\) to be
+\textbf{(c)} At the beginning of this module, we defined the sample variance of the values \(x_1, x_2, \dots, x_n\) to be
 \[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
 Explain one reason why we might consider it appropriate to use \(1/(n-1)\) as the factor at the beginning of this expression, rather than simply \(1/n\).
 
@@ -6599,7 +6604,29 @@ This property of being correct in expectation is called being an ``unbiased'' es
 
 Note that we already know that the sample mean \(\bar x\) is an unbiased estimator for the expectation \(\mathbb EX = \mu\), as we already know that \(\mathbb E\overline X = \mu\).
 
+(You may learn more about estimation and ``unbiasedness'' in MATH1712 Probability and Statistics II.)
+
 \end{myanswers}
+
+\textbf{B6.} \emph{(New)} Roughly how many times should I toss a coin for there to be a 95\% chance that between 49\% and 51\% of my coin tosses land Heads?
+
+\begin{myanswers}
+\emph{Solution.}
+The number of Heads in \(n\) coin tosses is \(X \sim \mathrm{Bin}(n, \frac12)\), which is approximately \(Y \sim \mathrm{N}(\frac n2, \frac n4)\). We want to choose \(n\) such that
+\[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]
+
+Standardising, this is
+\[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]
+Since the normal distribution is symmetric, we want
+\[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]
+From Table 2 of the statistical tables, or by the R command \texttt{qnorm(0.975)}, this requires
+\(0.01\sqrt{n} = 1.960\), which is \(n \approx 9600\).
+
+So if we toss 10,000 coins, there's about a 95\% chance we get between 4900 and 5100 Heads.
+
+\end{myanswers}
+
+\emph{(I meant to delete Question B4 from this problem sheet, to make it shorter, but I accidentally deleted Question B6 instead. I've now added B6 and marked B4 as ``optional''.)}
 
 \hypertarget{P5-assessed}{%
 \section*{C: Assessed questions}\label{P5-assessed}}

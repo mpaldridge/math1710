@@ -171,7 +171,7 @@ pnorm(505.5, 500, sqrt(250)) - pnorm(494.5, 500, sqrt(250))
 Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006%.
 :::
 
-Whenever we approximate a discrete random variable by a continuous random variable (such as a normal distribution), using a continuity correction -- that is, rounding halfway to the next discrete point -- typically makes the approximation more accurate. If $X$ is a discrete randonm variable that takes integer values and $Y$ is a continuous approximation, then the appropriate continuity corrections are
+Whenever we approximate a discrete random variable by a continuous random variable (such as a normal distribution), using a continuity correction -- that is, rounding halfway to the next discrete point -- typically makes the approximation more accurate. If $X$ is a discrete random variable that takes integer values and $Y$ is a continuous approximation, then the appropriate continuity corrections are
 \begin{align*}
 \mathbb P(X \leq n) &\approx \mathbb P(Y \leq n + \tfrac12) & \mathbb P(X \geq n) &\approx \mathbb P(Y \geq n - \tfrac12) \\
 \mathbb P(X < n) &\approx \mathbb P(Y < n - \tfrac12) & \mathbb P(X > n) &\approx \mathbb P(Y > n + \tfrac12) 
