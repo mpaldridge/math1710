@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Tips on writing mathematics | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 19 The Bayesian idea | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Tips on writing mathematics | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 19 The Bayesian idea | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tips on writing mathematics | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 19 The Bayesian idea | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="R.html"/>
-<link rel="next" href="solutions.html"/>
+<link rel="prev" href="P5.html"/>
+<link rel="next" href="L20-bayes-models.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -376,96 +376,168 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="writing" class="section level1 unnumbered hasAnchor">
-<h1>Tips on writing mathematics<a href="writing.html#writing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="mysummary">
-<p>In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that. I may try to expand this a bit later.</p>
+<div id="L19-bayes-idea" class="section level1 hasAnchor" number="19">
+<h1><span class="header-section-number">Lecture 19</span> The Bayesian idea<a href="L19-bayes-idea.html#L19-bayes-idea" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>In this final section of the module, we return to statistics, where we will look at an approach to data analysis known as “Bayesian statistics”.</p>
+<p><strong>Statistics</strong> concerns how to draw conclusions from data; and <strong>Bayesian statistics</strong> is one particular framework for doing this. The idea of Bayesian statistics is that we start with “prior” (“before”) beliefs about the underlying model, then use the data (together with Bayes’ theorem) to update our to our “posterior” (“after”) beliefs about the model <em>given</em> the data we have observed.</p>
+<div id="fake-coin" class="section level2 hasAnchor" number="19.1">
+<h2><span class="header-section-number">19.1</span> Example: fake coin?<a href="L19-bayes-idea.html#fake-coin" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/BUZ_4DqHjIM"></iframe>
+:::
+::::
+-->
+<p>We will start by illustrating the main idea with an example.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-106" class="example"><strong>Example 19.1  </strong></span><em>A joke shop sells three types of coins: normal fair coins; Heads-biased coins, which land Heads with probability 0.8; and Tails-biased coins, which land Heads with probability 0.2. I pick up a coin and examine it; since it looks mostly like a normal coin, I believe there’s 60% chance it’s s fair coin, and a 20% chance it’s biased either way. I decide to toss the coin four times, to gather some more evidence. The result is that all three are Heads. How should I update my beliefs?</em></p>
+<p>So, we start with the “prior” (before) belief
+<span class="math display">\[ \mathbb P(\text{fair}) = 0.6 \qquad \mathbb P(\text{H-bias}) = 0.2 \qquad \mathbb P(\text{T-bias}) = 0.2 \]</span></p>
+<p>We know how to update our beliefs after seeing the data: we use Bayes’ theorem. We have
+<span class="math display">\[\begin{align*}
+\mathbb P(\text{fair} \mid \text{HHH}) &amp;= \frac{\mathbb P(\text{fair})\, \mathbb P(\text{HHH}\mid \text{fair})}{\mathbb P(\text{HHH})} = \frac{0.6 \times 0.5^3}{\mathbb P(\text{HHH})} = \frac{0.075}{\mathbb P(\text{HHH})} \\
+\mathbb P(\text{H-bias} \mid \text{HHH}) &amp;= \frac{\mathbb P(\text{H-bias})\, \mathbb P(\text{HHH}\mid \text{H-bias})}{\mathbb P(\text{HHH})} = \frac{0.2 \times 0.8^3}{\mathbb P(\text{HHH})} = \frac{0.1024}{\mathbb P(\text{HHH})} \\
+\mathbb P(\text{T-bias} \mid \text{HHH}) &amp;= \frac{\mathbb P(\text{H-bias})\, \mathbb P(\text{HHH}\mid \text{T-bias})}{\mathbb P(\text{HHH})} = \frac{0.2 \times 0.2^3}{\mathbb P(\text{HHH})} = \frac{0.0016}{\mathbb P(\text{HHH})}  .
+\end{align*}\]</span>
+We also need to find common denominator <span class="math inline">\(\mathbb P(\text{HHH})\)</span>. We could do that using the law of total probability. But a convenient short-cut is to notice that the above three probabilities have to add up to 1, and so that common denominator must be $0.075 + 0.1024 + 0.0016 = 0.179, so we have
+<span class="math display">\[\begin{align*}
+  \mathbb P(\text{fair} \mid \text{data}) &amp;= \frac{0.075}{0.179} = 0.419 \\
+  \mathbb P(\text{H-bias}\mid \text{data}) &amp;= \frac{0.1024}{0.179} = 0.572 \\
+  \mathbb P(\text{T-bias}\mid \text{data}) &amp;= \frac{0.0016}{0.179} = 0.009 .
+\end{align*}\]</span></p>
+<p>So, after tossing the coin four times, our belief has been updated from the “prior” (before) belief
+<span class="math display">\[ \mathbb P(\text{fair}) = 0.6 \qquad \mathbb P(\text{H-bias}) = 0.2 \qquad \mathbb P(\text{T-bias}) = 0.2 \]</span>
+to the “posterior” (after) belief
+<span class="math display">\[ \mathbb P(\text{fair} \mid \text{data}) = 0.419 \qquad \mathbb P(\text{H-bias}\mid \text{data}) = 0.572 \qquad \mathbb P(\text{T-bias}\mid \text{data}) = 0.009 . \]</span>
+Compared to our prior beliefs, our belief that the coin is fair has decreased a little bit; our belief the coin is biased towards Heads has shot up, and is now our most likely belief; while our belief the coin is biased towards Tails has plummeted to just 1%.</p>
 </div>
-<div id="advice" class="section level2 unnumbered hasAnchor">
-<h2>Advice<a href="writing.html#advice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If a maths question asks you to “State”, “Write down” or “Calculate” something, you don’t need to do any more than give the answer. But if a question asks you to “Prove”, “Show that” or “Explain”, then the marker is looking for a clearly explained answer, and will base your mark on how well you explain your solution, not just on it’s mathematical accuracy.</p>
-<p>Some things a marker might look for include:</p>
+</div>
+<div id="bayesian-framework" class="section level2 hasAnchor" number="19.2">
+<h2><span class="header-section-number">19.2</span> Bayesian framework<a href="L19-bayes-idea.html#bayesian-framework" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<!--
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/9moh0KYc6fE"></iframe>
+:::
+::::
+-->
+<p>Let’s think more systematically about what we did in the previous example.</p>
 <ul>
-<li>If you had to make your own notation, have you explained clearly what it means?</li>
-<li>If it’s a “words question”, have you clearly translated the information into mathematical notation?</li>
-<li>In your solution, do you clearly state how you know certain statements are true? (“From the question, we know that…” “From the definition of …” “Using the law of total probability…” “From Axiom 2, we see that…”)</li>
-<li>When making non-obvious algebraic manipulations, do you explain what you’re doing? (There’s usually no need – but no harm either! – in stating obvious things like “Dividing both sides by 2…”, but for less obvious things like “Recognising this as difference of two squares…” or “By the linearity of expectation…”, you should say so.)</li>
-<li>Does your solution show clearly the “direction” of the proof. (“We start with the definition of…” “We need to show that…” “Assume, seeking a contradiction, that…” “If we could show that … then this would be sufficient to give the result.” “We will bound each term in this expression separately.”)</li>
-<li>Do you write in full sentences? Even equations should (usually) include punctuation, such as ending with a full-stop if they end a sentence.</li>
-<li>An extremely rough rule of thumb – which is often, but not always, applicable – is that a good solution should be at least 50% writing and at most 50% equations.</li>
-<li>It’s usually best to avoid abbreviations and shorthand, like “LHS” (“left-hand side”), “WLOG” (“without loss of generality”), “iff” (“if and only if”), etc, although specific technical abbreviations from the course, like “PMF” (“probability mass function”) are OK. Mathematical shorthand like <span class="math inline">\(\therefore\)</span> or <span class="math inline">\(\Rightarrow\)</span> should be avoided as “word alternatives” (“So”, “Thus”, “Therefore”, “Hence”, etc, are better), but are OK in certain circumstances where they have specific technical meanings.</li>
-<li>It’s fine – and often good! – to use diagrams to aid your explanation. But a diagram is rarely sufficient by itself without some writing to explain what it shows.</li>
+<li><strong>Model:</strong> The four coin tosses were modelled as four IID Bernoulli trials <span class="math inline">\(X_1, X_2, X_3, X_4 \sim \text{Bern}(\theta)\)</span> (if we let <span class="math inline">\(X_i = 1\)</span> denote that the <span class="math inline">\(i\)</span>th coin was Heads). Here, the probability of Heads is some unknown parameter <span class="math inline">\(\theta\)</span>. (Recall we talked about parametric models for data in Subsection <a href="L11-binomial-poisson.html#models">11.3</a>.) This model gives a distribution that depends on the parameter. Hre we had a conditional PMF for one trial
+<span class="math display">\[ p(x \mid \theta) = \theta^{x} (1 - \theta)^{1- x}  \]</span>
+(this is a convenient way of writing the PMF for a Bernoulli trial). So the joint PMF for the IID trials is
+<span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^4 \theta^{x_i} (1 - \theta)^{1- x_i} = \theta^{\sum_i x_i} (1 - \theta)^{4- \sum_i x_i} . \]</span>
+(Here and throughout, <span class="math inline">\(\prod\)</span>, the Greek capital Pi, means a product – it’s the multiplication equivalent of the summation Sigma, <span class="math inline">\(\Sigma\)</span>.)</li>
+<li><strong>Prior:</strong> We started with a prior belief <span class="math inline">\(\pi(\theta)\)</span> on the value of the unknown parameter. In our case, we had the PMF
+<span class="math display">\[ \pi(0.2) = 0.2 \qquad \pi(0.5) = 0.6 \qquad \pi(0.8) = 0.2 . \]</span></li>
+<li><strong>Data:</strong> We collected the data <span class="math inline">\(\mathbf x\)</span>, which here had <span class="math inline">\(x_1 = 1\)</span>, <span class="math inline">\(x_2 = 1\)</span>, <span class="math inline">\(x_3 = 1\)</span> (with 1 denoting Heads and 0 denoting Tails).</li>
+<li><strong>Posterior:</strong> We calculated the posterior distribution <span class="math inline">\(\pi(\theta \mid \mathbf x)\)</span> for the parameter <em>given</em> the data. We did this using Bayes’ theorem:
+<span class="math display">\[ \pi(\theta \mid \mathbf x) = \frac{\pi(\theta) \, p(\mathbf x \mid \theta)}{p(\mathbf x)} \propto \pi(\theta) \, p(\mathbf x \mid \theta) .\]</span>
+We recovered the constant of proportionality – that is, the denominator of Bayes’ theorem – because we knew <span class="math inline">\(\pi(\theta \mid \mathbf x)\)</span> was a conditional PMF so must add up to 1. We ended up with
+<span class="math display">\[ \pi(0.2 \mid \mathbf x) = 0.009 \qquad \pi(0.5 \mid \mathbf x) = 0.419 \qquad \pi(0.8 \mid \mathbf x) = 0.572 . \]</span></li>
+</ul>
+<p>This is the framework of how Bayesian statistics works: model, prior, data, posterior. To lay it out more generally, the procedure goes like this:</p>
+<div class="thpart">
+<ul>
+<li><strong>Model:</strong> We start with a model for the data <span class="math inline">\(\mathbf x\)</span> that depends on one or more parameters <span class="math inline">\(\theta\)</span>, as expressed by a conditional PMF (for discrete data) or PDF (for continuous data) <span class="math inline">\(p(\mathbf x \mid \theta)\)</span>. This normally represents <span class="math inline">\(n\)</span> IID experiments, so
+<span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n p(x_i \mid \theta) . \]</span>
+This conditional distribution is often called the <strong>likelihood</strong>.</li>
+<li><strong>Prior:</strong> We have a prior distribution <span class="math inline">\(\pi(\theta)\)</span> for the parameter <span class="math inline">\(\theta\)</span>, which can be either a PMF or PDF. The prior distribution represents our beliefs about the parameter before we collect the data; this can be based on previous evidence, expert opinion, personal intuition, etc.</li>
+<li><strong>Data:</strong> We collect the data <span class="math inline">\(\mathbf x\)</span>.</li>
+<li><strong>Posterior:</strong> We then form the posterior distribution <span class="math inline">\(\pi(\theta \mid \mathbf x)\)</span> for the parameter given the data, using Bayes’ theorem:
+<span class="math display">\[\begin{align*}
+\pi(\theta \mid \mathbf x) &amp;\propto \pi(\theta)\, p(\mathbf x \mid \theta) \\
+\text{posterior} &amp;\propto \text{prior} \times \text{likelihood} .
+\end{align*}\]</span>
+This can either be a conditional PMF or PDF, but will be the same type as the prior <span class="math inline">\(\pi(\theta)\)</span>.</li>
 </ul>
 </div>
-<div id="writing-ex" class="section level2 unnumbered hasAnchor">
-<h2>Examples<a href="writing.html#writing-ex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here are two solutions for <a href="P3.html#P3-long">Problem Sheet 3 Question B1</a>. This first solution is a typical sort of solution I might see from a student. The second solution has exactly the same mathematical content, but is more clearly explained. Which do you think is better?</p>
-<div class="thpart">
-<p><strong>Problem Sheet 3, Question B1.</strong> <em>Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are also independent events.</em></p>
 </div>
-<div class="thpart">
-<p><em>Solution 1.</em></p>
-<p><img src="math1710_files/figure-html/writing-pic-0-1.png" width="320pt" style="display: block; margin: auto;" /></p>
-<p><span class="math display">\[ \therefore \ \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c})  \]</span></p>
-<p><span class="math display">\[\begin{align*}
-\Rightarrow \qquad \mathbb P(A \cap B^\mathsf{c})
-&amp;= \mathbb P(A) - \mathbb P(A \cap B) \\
-&amp;= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
-&amp;= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
-&amp;= \mathbb P(A) \, \mathbb P(B^\mathsf{c})
-\end{align*}\]</span></p>
-</div>
-<div class="thpart">
-<p><em>Solution 2.</em>
-We need to show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are independent, which means showing that
-<span class="math display">\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]</span></p>
-<p>By splitting the event <span class="math inline">\(A\)</span> up into “the bit in <span class="math inline">\(B\)</span>” and the “the bit not in <span class="math inline">\(B\)</span>”, as shown in the Venn diagram below, we have a disjoint union
-<span class="math display">\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) . \]</span></p>
-<p><img src="math1710_files/figure-html/writing-pic-1-1.png" width="320pt" style="display: block; margin: auto;" /></p>
-<p>Applying Axiom 3 to this disjoint union, we have
-<span class="math display">\[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) . \]</span></p>
-<p>Hence, the left-hand side of <span class="math inline">\((*)\)</span> is
+<div id="normal-normal" class="section level2 hasAnchor" number="19.3">
+<h2><span class="header-section-number">19.3</span> Normal–normal model<a href="L19-bayes-idea.html#normal-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In our first example, the “joke coins” was a bit artificial, giving us a prior with only three points in its range. Its often more appropriate to have a prior distribution for a parameter that is continuous over a wide range of possibilities (although concentrated towards the more parameters values we believe are more probable.).</p>
+<p>Consider a normal likelihood, where <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are IID <span class="math inline">\(\text{N}(\theta, \sigma^2)\)</span>, and where the expectation <span class="math inline">\(\theta\)</span> is the unknown parameter but the variance <span class="math inline">\(\sigma^2\)</span> is known. This could model trying to measure some quantity <span class="math inline">\(\theta\)</span> with an instrument which is known to have a <span class="math inline">\(\text{N}(0,\sigma^2)\)</span> error.
+So the model has joint PDF
 <span class="math display">\[\begin{align*}
-\mathbb P(A \cap B^\mathsf{c})
-&amp;= \mathbb P(A) - \mathbb P(A \cap B) \\
-&amp;= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
-&amp;= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
-&amp;= \mathbb P(A) \, \mathbb P(B^\mathsf{c}) .
+p(\mathbf x \mid \theta)
+  &amp;\propto \prod_{i=1}^n \exp \left(- \frac{(x_i - \theta)^2}{2\sigma^2}\right)
+  &amp;= \exp \left( - \frac{1}{2} \sum_{i=1}^n \frac{(x_i - \theta)^2}{\sigma^2} \right) \\
+  &amp;= \exp \left( - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \theta)^2 \right).
 \end{align*}\]</span>
-In the second line, we used the fact that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, as given in the question, to replace <span class="math inline">\(\mathbb P(A \cap B)\)</span> by <span class="math inline">\(\mathbb P(A)\,\mathbb P(B)\)</span>. In the final line, we used the complement rule <span class="math inline">\(\mathbb P(B^\mathsf{c}) = 1 - \mathbb P(B)\)</span>. But this is exactly the right-hand side of <span class="math inline">\((*)\)</span>.
-Hence, we’ve shown the left- and right-hand sides of <span class="math inline">\((*)\)</span> are equal, and we are done.</p>
-</div>
-<p>Here’s another example – <a href="P3.html#P3-long">Problem Sheet 3, Question B3(b)</a>:</p>
+(Again, we only worry about distributions up to proportionality, because we work out the multiplicative constant at the end.)</p>
+<p>In fact, when doing Bayesian statistics, it’s often convenient to write <span class="math inline">\(\tau = 1/\sigma^2\)</span> for the inverse of the known variance; this <span class="math inline">\(\tau\)</span> is called the <strong>precision</strong> and is also known. So with this notation, the model is that <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are IID <span class="math inline">\(\text{N}(\theta, 1 / \tau^2)\)</span>, with joint PDF
+<span class="math display">\[ p(\mathbf x \mid \theta) \propto \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) . \]</span></p>
+<p>What about a prior for the unknown expectation <span class="math inline">\(\theta\)</span>. Often an appropriate choice is a normal <span class="math inline">\(\text{N}(\mu_0, 1/\tau_0)\)</span> prior for the unknown expectation parameter <span class="math inline">\(\theta\)</span>. This represents that we expect the quantity we are trying to mention to be around <span class="math inline">\(\mu_0\)</span>, with an amount of uncertainty captured by the precision <span class="math inline">\(\tau_0\)</span> on the prior. So the prior PDF is
+<span class="math display">\[ \pi(\theta) \propto \exp \left( - \frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \]</span></p>
+<p>Because both the prior distribution and the model for the data are normal, this is known as the <strong>normal–normal model</strong>.</p>
+<p>Suppose we collect data <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span>, and recall that we write <span class="math inline">\(\bar x = (\sum_i x_i)/n\)</span> for the sample mean.</p>
+<p>To get the posterior distribution requires a bit of an algebra slog (see below), but the outcome is that the posterior distribution is
+<span class="math display">\[ \pi(\theta \mid \mathbf x) \propto \exp \left( - \frac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) , \]</span>
+which is (proportional to) the PDF for yet another normal distribution
+<span class="math display">\[ \theta \mid \mathbf x \sim \mathrm{N} \left( \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x, \ \frac{1}{\tau_0 + n\tau} \right)  . \]</span>
+In other words, the posterior expectation
+<span class="math display">\[ \mathbb E(\theta \mid \mathbf x) = \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x \]</span>
+is a weighted average of the prior expectation <span class="math inline">\(\mu_0\)</span> and the mean of the data <span class="math inline">\(\bar x\)</span>, and the more datapoints <span class="math inline">\(n\)</span> you get, the heavier the weighting on the data compared to the prior. Further, the precision has increased from the prior precision <span class="math inline">\(\tau_0\)</span> to the posterior precision <span class="math inline">\(\tau_0 + n\tau\)</span>; so the more data we get, the larger the precision gets, so the smaller the variance gets, and the more sure we get about the true value of <span class="math inline">\(\theta\)</span>.</p>
 <div class="thpart">
-<p><strong>Problem Sheet 3, Question B3(b).</strong> <em>Soldiers are asked about their use of illegal drugs, using a so-called “randomised survey”. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:</em></p>
-<ol style="list-style-type: decimal">
-<li><em>“Say ‘Yes.’”</em></li>
-<li><em>“Say ‘No.’”</em></li>
-<li><em>“Truthfully answer the question ‘Have you taken any illegal drugs in the past 12 months?’”</em></li>
-</ol>
-<p><em>Suppose that 40% of soldiers respond “Yes”. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months?</em></p>
-</div>
-<div class="thpart">
-<p><em>Solution 1.</em></p>
-<p><span class="math display">\[\begin{align*} \mathbb P(\text{Yes}) &amp;= \mathbb P(C_1)\,\mathbb P(\text{Yes} \mid C_1) + \mathbb P(C_2)\,\mathbb P(\text{Yes} \mid C_2) +
-\mathbb P(C_3)\,\mathbb P(\text{Yes} \mid C_3) \\
-\Rightarrow \qquad\qquad\  \  0.4 &amp;= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
-&amp;=\tfrac13 + \tfrac13 \,\mathbb P(\text{Drugs})  \\
-\Rightarrow \qquad \mathbb P(\text{Drugs}) &amp;= \frac{0.4 - \frac13}{\frac13} = 20\%
-\end{align*}\]</span></p>
-</div>
-<div class="thpart">
-<p><em>Solution 2.</em>
-Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively. These have each probability <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span>, because the three cards are equally likely.</p>
-<p>Let <span class="math inline">\(Y\)</span> be the event that the soldier answers “Yes”. We are told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
-<p>We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, because a soldier must answer “Yes” to Card 1, and <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span>, because a soldier must answer “No” to Card 2. For Card 3, a soldier answers “Yes” if they have taken drugs and “No” if they have not, so <span class="math inline">\(\mathbb P(Y \mid C_3) = \mathbb P(D)\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months.</p>
-<p>Since <span class="math inline">\(C_1, C_2, C_3\)</span> make up a partition – a soldier must pick exactly one card – the law of total probability tells us that
-<span class="math display">\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) +
-\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]</span>
-With the information we have gathered above, we have
-<span class="math display">\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D)  . \]</span>
-Solving this gives
-<span class="math display">\[ \mathbb P(D) = \frac{0.4 - \frac13}{\frac13} = \frac15 = 20\% . \]</span></p>
+<p><em>The algebra slog (non-examinable).</em>
+Recall that we can ignore multiplicative terms that don’t contain <span class="math inline">\(\theta\)</span>, thanks to our proportionality trick. But note also that a multiplicative term becomes an additive term inside an exponential. So, within an exponential, we can always ignore any “plus constants” that don’t involve <span class="math inline">\(\theta\)</span>.</p>
+<p>So the prior can be written as
+<span class="math display">\[\begin{align*}
+\pi(\theta) &amp;\propto \exp\left(-\frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \\
+  &amp;= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta -  \frac{\tau_0}{2}\mu_0^2 \right) \\
+  &amp;\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) ,
+\end{align*}\]</span>
+where we ignored the final constant term.</p>
+<p>Similarly, the likelihood can be written as
+<span class="math display">\[\begin{align*}
+p(\mathbf x \mid \theta) &amp;= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) \\
+  &amp;= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n x_i^2 + \tau \theta \sum_{i=1}^n x_i - \frac{\tau}{2} n\theta^2 \right) \\
+  &amp;\propto \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) ,
+\end{align*}\]</span>
+where we ignored the first constant term in the second line, and recognised <span class="math inline">\(\sum_i x_i\)</span> as <span class="math inline">\(n\bar x\)</span>, as we have done before.</p>
+<p>Then Bayes’ theorem gives us
+<span class="math display">\[\begin{align*}
+\pi(\mathbf x \mid \theta)
+  &amp;\propto \pi(\theta) \, p(\mathbf x \mid \theta) \\
+  &amp;\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) \times \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
+  &amp;= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta + n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
+  &amp;= \exp \left( -\frac{\tau_0 + n\tau}{2} \theta^2 + (\tau_0\mu_0 + n\tau\bar x)\theta \right) \\
+  &amp;= \exp \left( -\left(\frac{\tau_0 + n\tau}{2}\right) \left(\theta^2 - 2 \frac{\tau_0\mu_0 + n\tau\bar x}{\tau_0 + n\tau}\theta \right) \right) \\
+  &amp;\propto \exp \left( - \tfrac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) .
+\end{align*}\]</span>
+In the final line, the squared term differs from the line above only by some additive constant. But this is exactly (proportional to) the PDF of a normal distribution with expectation
+<span class="math display">\[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]</span>
+and precision <span class="math inline">\(\tau_0 + n\tau\)</span>.
+<!--
+
+Before even getting to Bayes, let's remind ourselves from [Problem Sheet 4 Question B5](#P4-long) that
+\[ \sum_{i=1}^n (x_i - \theta)^2 = \sum_{i=1}^n (x_i - \bar x)^2 + n(\theta - \bar x)^2 . \]
+ Thus we get
+\begin{align*}
+ \exp \left( - \frac{\tau}{2} \sum_{i=1}^n  (x_i - \theta)^2 \right)
+ &=  \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \bar x)^2 - n\tau(\theta - \bar x)^2 \right)\\
+ &\propto \exp \left( -\frac{\tau}{2} n(\theta - \bar x)^2 \right) \\
+ &= \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta + n\tau \bar{x}^2 ) \right) \\
+ &\propto \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta) \right),
+\end{align*}
+where we indeed ignored the first constant terms in the first line and the last constant term in the third line.
+
+Now we can invoke Bayes' theorem, and continue to ignore "plus constants", to get
+\begin{align*}
+\pi(\mathbf x \mid \theta)
+  &\propto \pi(\theta) \, p(\mathbf x \mid \theta) \\
+  &\propto \exp \left( -\tfrac{1}{2} \tau_0(\theta - \mu_0)^2  \right) \times \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
+  &= \exp \left( -\tfrac{1}{2} (\tau_0(\theta - \mu_0)^2 + n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
+  &=\exp \left( - \tfrac{1}{2} (\tau_0\theta^2 - 2\tau_0\mu_0\theta + \tau_0 \mu_0^2 + n\tau\theta^2 - 2n\tau\bar x\theta)\right) \\
+  &\propto \exp \left( - \tfrac{1}{2} \big( (\tau_0 + n\tau)\theta^2 - 2 (\tau_0 \mu_0 +n\tau \bar x )\theta \big)\right) \\
+  &= \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta^2 - 2 \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \theta \right)\right)  \\
+  &\propto \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) . 
+\end{align*}
+This is (proportional to) the PDF for a normal distribution with expectation
+\[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]
+and precision $\tau_0 + n\tau$.
+--></p>
 </div>
 
 </div>
@@ -475,8 +547,8 @@ Solving this gives
           </div>
         </div>
       </div>
-<a href="R.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="P5.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L20-bayes-models.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

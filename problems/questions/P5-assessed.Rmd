@@ -1,13 +1,13 @@
 ::::: {.myq}
 **C1.** Let $X$ be a continuous random variable with PDF
-\[ f(x) = \tfrac29 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]
+\[ f(x) = \tfrac29 (2 - x) \qquad \text{for $-1 \leq x \leq c$} \]
 and $f(x) = 0$ otherwise.
 
 :::: {.subq}
 **(a)** Explaining your work, find the value of the constant $c$.
 
 ::: {.myanswers data-latex=""}
-*Hint.* To get a new sticker you need to "succeed" in an experiment, where "failure" is "receiving a sticker you already have a copy of" and "success" is "receiving a new sticker you haven't already got". What is the probabiltiy of success?
+*Hint.* Remember that the integral under a PDF must equal 1.
 :::
 ::::
 
@@ -16,7 +16,7 @@ and $f(x) = 0$ otherwise.
 What is $\mathbb P(X > 1)$?
 
 ::: {.myanswers data-latex=""}
-*Hint.* Recall the expectation of the geometric distribution, and use linearity of expectaiton.
+*Hint.* This is standard.
 :::
 ::::
 
@@ -24,12 +24,16 @@ What is $\mathbb P(X > 1)$?
 **(c)** Calculate the expectation of$X$.
 
 ::: {.myanswers data-latex=""}
-*Hint.* In R, `sum(1 / (1:678))` sum the reciprocals of the integers from 1 to 678.
+*Hint.* This is standard.
 :::
 ::::
 
 :::: {.subq}
 **(d)** Calculate the variance of $X$.
+
+::: {.myanswers data-latex=""}
+*Hint.* This is standard. I recommend using the computational formula, so start by finding $\mathbb EX^2$.
+:::
 ::::
 :::::
 
@@ -39,13 +43,25 @@ What is $\mathbb P(X > 1)$?
 
 :::: {.subq}
 **(i)** $\mathbb P(X \leq 3)$, where $X \sim \mathrm{Bin}(1000, 0.005)$.
+
+::: {.myanswers data-latex=""}
+*Hint.* For the approximation, note that $n$ is large and $p$ is small.
+:::
 ::::
 
 :::: {.subq}
 **(ii)** $\mathbb P(296 \leq Y \leq 307)$, where $Y \sim \mathrm{Bin}(1200, 0.25)$.
+
+::: {.myanswers data-latex=""}
+*Hint.* For the approximation, note that $n$ is large and $p$ is *not* small.
+:::
 ::::
 
 :::: {.subq}
 **(iii)** $\mathbb P(Z \geq 398)$, where $Z \sim \mathrm{Bin}(400, 0.995)$.
+
+::: {.myanswers data-latex=""}
+*Hint.* This one will require you to think for yourself! I have not told you how to do this question. You might notice it looks a bit like the Poisson `small $p$' case, but mirror-imaged. How can you use this to your advantage.
+:::
 ::::
 :::::

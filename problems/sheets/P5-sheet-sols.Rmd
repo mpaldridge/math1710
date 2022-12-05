@@ -1,0 +1,36 @@
+---
+title: "Problem Sheet 3 (Solutions)"
+author: "MATH1710 Probability and Statistics I"
+date: "University of Leeds, 2022-23"
+output: pdf_document
+header-includes:
+  - \usepackage{mdframed}
+  - \usepackage{comment}
+  - \newmdenv[linecolor=black, leftmargin=2em,rightmargin=2em,innertopmargin=1em,innerbottommargin=1em]{myanswers}
+  - \excludecomment{mysummary}
+  - \usepackage{titling}
+  - \setlength{\droptitle}{-7em}
+  - \newcommand{\ff}[2]{{#1}^{\underline{#2}}}
+  - \newcommand{\comp}{\mathsf{c}}
+  - \newcommand{\Var}{\operatorname{Var}}
+---
+
+
+## A: Short questions {#P5-short .unnumbered}
+
+```{r, child = "../questions/P5-short.Rmd"}
+```
+
+
+
+## B: Long questions {#P5-long .unnumbered}
+
+```{r, child = "../questions/P5-long.Rmd"}
+```
+
+
+
+## C: Assessed questions {#P5-assessed .unnumbered}
+
+```{r, child = "../questions/P5-assessed.Rmd"}
+```

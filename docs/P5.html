@@ -30,7 +30,7 @@
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="L18-limit.html"/>
-<link rel="next" href="R.html"/>
+<link rel="next" href="L19-bayes-idea.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -321,6 +321,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
+<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#normal-normal"><i class="fa fa-check"></i><b>19.3</b> Normal–normal model</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> Bayesian models</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
+<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -729,41 +744,53 @@ Your work will be marked by your tutor and returned later, when solutions will a
 </div>
 <div class="myq">
 <p><strong>C1.</strong> Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
-<span class="math display">\[ f(x) = \tfrac29 (2 − x) \qquad \text{for $-1 \leq x \leq c$} \]</span>
+<span class="math display">\[ f(x) = \tfrac29 (2 - x) \qquad \text{for $-1 \leq x \leq c$} \]</span>
 and <span class="math inline">\(f(x) = 0\)</span> otherwise.</p>
 <div class="subq">
 <p><strong>(a)</strong> Explaining your work, find the value of the constant <span class="math inline">\(c\)</span>.</p>
 <div class="myanswers">
-<p><em>Hint.</em> To get a new sticker you need to “succeed” in an experiment, where “failure” is “receiving a sticker you already have a copy of” and “success” is “receiving a new sticker you haven’t already got”. What is the probabiltiy of success?</p>
+<p><em>Hint.</em> Remember that the integral under a PDF must equal 1.</p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(b)</strong>
 What is <span class="math inline">\(\mathbb P(X &gt; 1)\)</span>?</p>
 <div class="myanswers">
-<p><em>Hint.</em> Recall the expectation of the geometric distribution, and use linearity of expectaiton.</p>
+<p><em>Hint.</em> This is standard.</p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(c)</strong> Calculate the expectation of<span class="math inline">\(X\)</span>.</p>
 <div class="myanswers">
-<p><em>Hint.</em> In R, <code>sum(1 / (1:678))</code> sum the reciprocals of the integers from 1 to 678.</p>
+<p><em>Hint.</em> This is standard.</p>
 </div>
 </div>
 <div class="subq">
 <p><strong>(d)</strong> Calculate the variance of <span class="math inline">\(X\)</span>.</p>
+<div class="myanswers">
+<p><em>Hint.</em> This is standard. I recommend using the computational formula, so start by finding <span class="math inline">\(\mathbb EX^2\)</span>.</p>
+</div>
 </div>
 </div>
 <div class="myq">
 <p><strong>C2.</strong> For each of the following, <strong>(a)</strong> calculate the <em>exact</em> value using R; <strong>(b)</strong> get an approximate value using an appropriate approximation and <em>without</em> using R. (<a href="https://mpaldridge.github.io/math1710/stat-tab.pdf">Statistical tables</a> are available.)</p>
 <div class="subq">
 <p><strong>(i)</strong> <span class="math inline">\(\mathbb P(X \leq 3)\)</span>, where <span class="math inline">\(X \sim \mathrm{Bin}(1000, 0.005)\)</span>.</p>
+<div class="myanswers">
+<p><em>Hint.</em> For the approximation, note that <span class="math inline">\(n\)</span> is large and <span class="math inline">\(p\)</span> is small.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(ii)</strong> <span class="math inline">\(\mathbb P(296 \leq Y \leq 307)\)</span>, where <span class="math inline">\(Y \sim \mathrm{Bin}(1200, 0.25)\)</span>.</p>
+<div class="myanswers">
+<p><em>Hint.</em> For the approximation, note that <span class="math inline">\(n\)</span> is large and <span class="math inline">\(p\)</span> is <em>not</em> small.</p>
+</div>
 </div>
 <div class="subq">
 <p><strong>(iii)</strong> <span class="math inline">\(\mathbb P(Z \geq 398)\)</span>, where <span class="math inline">\(Z \sim \mathrm{Bin}(400, 0.995)\)</span>.</p>
+<div class="myanswers">
+<p><em>Hint.</em> This one will require you to think for yourself! I have not told you how to do this question. You might notice it looks a bit like the Poisson `small <span class="math inline">\(p\)</span>’ case, but mirror-imaged. How can you use this to your advantage.</p>
+</div>
 </div>
 </div>
 </div>
@@ -786,7 +813,7 @@ What is <span class="math inline">\(\mathbb P(X &gt; 1)\)</span>?</p>
         </div>
       </div>
 <a href="L18-limit.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L19-bayes-idea.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

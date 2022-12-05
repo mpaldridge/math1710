@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Tips on writing mathematics | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 20 Bayesian models | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Tips on writing mathematics | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 20 Bayesian models | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Tips on writing mathematics | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 20 Bayesian models | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="R.html"/>
-<link rel="next" href="solutions.html"/>
+<link rel="prev" href="L19-bayes-idea.html"/>
+<link rel="next" href="P6.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -376,96 +376,80 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="writing" class="section level1 unnumbered hasAnchor">
-<h1>Tips on writing mathematics<a href="writing.html#writing" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="mysummary">
-<p>In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that. I may try to expand this a bit later.</p>
+<div id="L20-bayes-models" class="section level1 hasAnchor" number="20">
+<h1><span class="header-section-number">Lecture 20</span> Bayesian models<a href="L20-bayes-models.html#L20-bayes-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="beta" class="section level2 hasAnchor" number="20.1">
+<h2><span class="header-section-number">20.1</span> Beta distribution<a href="L20-bayes-models.html#beta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In our fake-coin example in the last lecture, we had a prior PMF for the parameter <span class="math inline">\(\theta = p\)</span> that could only take one of three possible values. But when doing Bayesian statistics with a parameter that represents a probability, it makes more sense to have a prior PDF that covers the whole interval <span class="math inline">\([0,1]\)</span>. After all, any parameter value that is given a probability of 0 in the prior always has a probability 0 in the posterior as well, no matter how strong the evidence in its favour; it’s considered good practice to only put 0 prior probability on parameter values that are <em>literally impossible</em>, such as probabilities below 0 or above 1. (This is sometimes called <a href="https://en.wikipedia.org/wiki/Cromwell%27s_rule">“Cromwell’s rule”</a>.)</p>
+<p>One useful family of distributions to use as a prior distribution for a probability parameter is the Beta distribution, whose range is the whole interval <span class="math inline">\([0,1]\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-107" class="definition"><strong>Definition 20.1  </strong></span>A continuous random variable <span class="math inline">\(X\)</span> is said to have the <strong>Beta distribution</strong> with parameters <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span> if it has the PDF
+<span class="math display">\[ f(x) = \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta - 1} \qquad \text{for $0 \leq x \leq 1$}  \]</span>
+and 0 otherwise. Here, the constant
+<span class="math display">\[ B(\alpha, \beta) = \int_0^1 x^{\alpha-1} (1-x)^{\beta - 1} \, \mathrm dx , \]</span>
+known as the “Beta function”, ensures that the PDF integrates to 1. We write <span class="math inline">\(X \sim \text{Beta}(\alpha, \beta)\)</span>.</p>
 </div>
-<div id="advice" class="section level2 unnumbered hasAnchor">
-<h2>Advice<a href="writing.html#advice" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>If a maths question asks you to “State”, “Write down” or “Calculate” something, you don’t need to do any more than give the answer. But if a question asks you to “Prove”, “Show that” or “Explain”, then the marker is looking for a clearly explained answer, and will base your mark on how well you explain your solution, not just on it’s mathematical accuracy.</p>
-<p>Some things a marker might look for include:</p>
-<ul>
-<li>If you had to make your own notation, have you explained clearly what it means?</li>
-<li>If it’s a “words question”, have you clearly translated the information into mathematical notation?</li>
-<li>In your solution, do you clearly state how you know certain statements are true? (“From the question, we know that…” “From the definition of …” “Using the law of total probability…” “From Axiom 2, we see that…”)</li>
-<li>When making non-obvious algebraic manipulations, do you explain what you’re doing? (There’s usually no need – but no harm either! – in stating obvious things like “Dividing both sides by 2…”, but for less obvious things like “Recognising this as difference of two squares…” or “By the linearity of expectation…”, you should say so.)</li>
-<li>Does your solution show clearly the “direction” of the proof. (“We start with the definition of…” “We need to show that…” “Assume, seeking a contradiction, that…” “If we could show that … then this would be sufficient to give the result.” “We will bound each term in this expression separately.”)</li>
-<li>Do you write in full sentences? Even equations should (usually) include punctuation, such as ending with a full-stop if they end a sentence.</li>
-<li>An extremely rough rule of thumb – which is often, but not always, applicable – is that a good solution should be at least 50% writing and at most 50% equations.</li>
-<li>It’s usually best to avoid abbreviations and shorthand, like “LHS” (“left-hand side”), “WLOG” (“without loss of generality”), “iff” (“if and only if”), etc, although specific technical abbreviations from the course, like “PMF” (“probability mass function”) are OK. Mathematical shorthand like <span class="math inline">\(\therefore\)</span> or <span class="math inline">\(\Rightarrow\)</span> should be avoided as “word alternatives” (“So”, “Thus”, “Therefore”, “Hence”, etc, are better), but are OK in certain circumstances where they have specific technical meanings.</li>
-<li>It’s fine – and often good! – to use diagrams to aid your explanation. But a diagram is rarely sufficient by itself without some writing to explain what it shows.</li>
-</ul>
-</div>
-<div id="writing-ex" class="section level2 unnumbered hasAnchor">
-<h2>Examples<a href="writing.html#writing-ex" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Here are two solutions for <a href="P3.html#P3-long">Problem Sheet 3 Question B1</a>. This first solution is a typical sort of solution I might see from a student. The second solution has exactly the same mathematical content, but is more clearly explained. Which do you think is better?</p>
-<div class="thpart">
-<p><strong>Problem Sheet 3, Question B1.</strong> <em>Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are also independent events.</em></p>
-</div>
-<div class="thpart">
-<p><em>Solution 1.</em></p>
-<p><img src="math1710_files/figure-html/writing-pic-0-1.png" width="320pt" style="display: block; margin: auto;" /></p>
-<p><span class="math display">\[ \therefore \ \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c})  \]</span></p>
-<p><span class="math display">\[\begin{align*}
-\Rightarrow \qquad \mathbb P(A \cap B^\mathsf{c})
-&amp;= \mathbb P(A) - \mathbb P(A \cap B) \\
-&amp;= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
-&amp;= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
-&amp;= \mathbb P(A) \, \mathbb P(B^\mathsf{c})
-\end{align*}\]</span></p>
-</div>
-<div class="thpart">
-<p><em>Solution 2.</em>
-We need to show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are independent, which means showing that
-<span class="math display">\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]</span></p>
-<p>By splitting the event <span class="math inline">\(A\)</span> up into “the bit in <span class="math inline">\(B\)</span>” and the “the bit not in <span class="math inline">\(B\)</span>”, as shown in the Venn diagram below, we have a disjoint union
-<span class="math display">\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) . \]</span></p>
-<p><img src="math1710_files/figure-html/writing-pic-1-1.png" width="320pt" style="display: block; margin: auto;" /></p>
-<p>Applying Axiom 3 to this disjoint union, we have
-<span class="math display">\[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) . \]</span></p>
-<p>Hence, the left-hand side of <span class="math inline">\((*)\)</span> is
-<span class="math display">\[\begin{align*}
-\mathbb P(A \cap B^\mathsf{c})
-&amp;= \mathbb P(A) - \mathbb P(A \cap B) \\
-&amp;= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
-&amp;= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
-&amp;= \mathbb P(A) \, \mathbb P(B^\mathsf{c}) .
-\end{align*}\]</span>
-In the second line, we used the fact that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, as given in the question, to replace <span class="math inline">\(\mathbb P(A \cap B)\)</span> by <span class="math inline">\(\mathbb P(A)\,\mathbb P(B)\)</span>. In the final line, we used the complement rule <span class="math inline">\(\mathbb P(B^\mathsf{c}) = 1 - \mathbb P(B)\)</span>. But this is exactly the right-hand side of <span class="math inline">\((*)\)</span>.
-Hence, we’ve shown the left- and right-hand sides of <span class="math inline">\((*)\)</span> are equal, and we are done.</p>
-</div>
-<p>Here’s another example – <a href="P3.html#P3-long">Problem Sheet 3, Question B3(b)</a>:</p>
-<div class="thpart">
-<p><strong>Problem Sheet 3, Question B3(b).</strong> <em>Soldiers are asked about their use of illegal drugs, using a so-called “randomised survey”. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:</em></p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-108" class="theorem"><strong>Theorem 20.1  </strong></span>Let <span class="math inline">\(X \sim \text{Beta}(\alpha,\beta)\)</span>. Then</p>
 <ol style="list-style-type: decimal">
-<li><em>“Say ‘Yes.’”</em></li>
-<li><em>“Say ‘No.’”</em></li>
-<li><em>“Truthfully answer the question ‘Have you taken any illegal drugs in the past 12 months?’”</em></li>
+<li><span class="math inline">\(\mathbb EX = \displaystyle\frac{\alpha}{\alpha + \beta}\)</span></li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \displaystyle\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} = \displaystyle\frac{\mu(1-\mu)}{\alpha+\beta + 1}\)</span>, where <span class="math inline">\(\mu = \mathbb EX\)</span>.</li>
 </ol>
-<p><em>Suppose that 40% of soldiers respond “Yes”. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months?</em></p>
 </div>
-<div class="thpart">
-<p><em>Solution 1.</em></p>
-<p><span class="math display">\[\begin{align*} \mathbb P(\text{Yes}) &amp;= \mathbb P(C_1)\,\mathbb P(\text{Yes} \mid C_1) + \mathbb P(C_2)\,\mathbb P(\text{Yes} \mid C_2) +
-\mathbb P(C_3)\,\mathbb P(\text{Yes} \mid C_3) \\
-\Rightarrow \qquad\qquad\  \  0.4 &amp;= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
-&amp;=\tfrac13 + \tfrac13 \,\mathbb P(\text{Drugs})  \\
-\Rightarrow \qquad \mathbb P(\text{Drugs}) &amp;= \frac{0.4 - \frac13}{\frac13} = 20\%
-\end{align*}\]</span></p>
+<p>(Proving this requires some awkward messing around with Gamma functions, which we won’t bother with here.)</p>
+<p>So the idea is that the expectation of <span class="math inline">\(X\)</span> is decided on by the <em>relative</em> values of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>, while the variance is decided by the <em>total</em> value of <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta\)</span>. The following two pictures illustrate this:</p>
+<p><img src="math1710_files/figure-html/beta-pic-1-1.png" width="672" /></p>
+<p><img src="math1710_files/figure-html/beta-pic-2-1.png" width="672" /></p>
+<p>Note also that <span class="math inline">\(\text{Beta}(1,1)\)</span> is the continuous uniform distribution from Example <a href="L15-continuous.html#exm:unifex">15.1</a>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-109" class="example"><strong>Example 20.1  </strong></span><em>A statistician is studying the probability <span class="math inline">\(\theta\)</span> that ordinary coins land Heads. She would like to use a prior distribution for <span class="math inline">\(\theta\)</span> with prior expectation <span class="math inline">\(0.5\)</span> and prior standard deviation <span class="math inline">\(0.01\)</span>. What Beta distribution would be appropriate to use?</em></p>
+<p>To get <span class="math inline">\(\mathbb E\theta = 0.5\)</span>, we need <span class="math inline">\(\alpha = \beta\)</span>. Then the variance, which needs to be <span class="math inline">\(0.01^2 = 0.0001\)</span>, is
+<span class="math display">\[ \operatorname{Var}(\theta) = \frac{\mu(1-\mu)}{\alpha+\beta+1} = \frac{0.25}{\alpha + \beta + 1} . \]</span>
+This requires <span class="math inline">\(\alpha = \beta = 1250\)</span>. (Well, actually <span class="math inline">\(1249.5\)</span>.)</p>
 </div>
-<div class="thpart">
-<p><em>Solution 2.</em>
-Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively. These have each probability <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span>, because the three cards are equally likely.</p>
-<p>Let <span class="math inline">\(Y\)</span> be the event that the soldier answers “Yes”. We are told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
-<p>We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, because a soldier must answer “Yes” to Card 1, and <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span>, because a soldier must answer “No” to Card 2. For Card 3, a soldier answers “Yes” if they have taken drugs and “No” if they have not, so <span class="math inline">\(\mathbb P(Y \mid C_3) = \mathbb P(D)\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months.</p>
-<p>Since <span class="math inline">\(C_1, C_2, C_3\)</span> make up a partition – a soldier must pick exactly one card – the law of total probability tells us that
-<span class="math display">\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) +
-\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]</span>
-With the information we have gathered above, we have
-<span class="math display">\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D)  . \]</span>
-Solving this gives
-<span class="math display">\[ \mathbb P(D) = \frac{0.4 - \frac13}{\frac13} = \frac15 = 20\% . \]</span></p>
+</div>
+<div id="beta-bern" class="section level2 hasAnchor" number="20.2">
+<h2><span class="header-section-number">20.2</span> Beta–Bernoulli model<a href="L20-bayes-models.html#beta-bern" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Consider a Bernoulli likelihood, where <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are IID <span class="math inline">\(\text{Bern}(\theta)\)</span>, so have joint PMF
+<span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n \theta^{x_i} (1-\theta)^{1 - x_i} = \theta^{\sum_i x_i} (1 - \theta)^{n-\sum_i x_i} = \theta^y (1 - \theta)^{n-y}, \]</span>
+where we have written <span class="math inline">\(y = \sum_i x_i\)</span> for the total number of successes.
+Consider further using a <span class="math inline">\(\text{Beta}(\alpha, \beta)\)</span> prior for <span class="math inline">\(\theta\)</span>, so that
+<span class="math display">\[ \pi(\theta) = \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta - 1} \propto \theta^{\alpha-1} (1-\theta)^{\beta - 1} \]</span>
+(Because we’re going to use the “posterior has to add up to 1” trick at the end, we’re free to drop constants whenever we want.) This is known as the <strong>Beta–Bernoulli model</strong>.</p>
+<p>Suppose we collect data <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_i)\)</span>, with <span class="math inline">\(y = \sum_i x_i\)</span> successes. What now is the posterior distribution for <span class="math inline">\(\theta\)</span> given this data?</p>
+<p>Using Bayes’ theorem, we have
+<span class="math display">\[\begin{align*}
+\pi(\mathbf x \mid \theta)
+  &amp;\propto \pi(\theta) p(\mathbf x \mid \theta) \\
+  &amp;= \theta^{\alpha-1} (1-\theta)^{\beta - 1} \times \theta^y (1 - \theta)^{n-y} \\
+  &amp;= \theta^{\alpha + y - 1} (1 - \theta)^{\beta + n - y - 1} .
+\end{align*}\]</span>
+We can recognise immediately that this is proportional to the PDF for a <span class="math inline">\(\text{Beta}(\alpha + y, \beta + n - y)\)</span> distribution, so in particular, the constant of proportionality must be <span class="math inline">\(1/B(\alpha + y, \beta + n - y)\)</span>.</p>
+<p>So we see that, like the prior, the posterior is also a Beta distribution, where the first parameter has gone from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\alpha + y\)</span> and the second parameter has gone from <span class="math inline">\(\beta\)</span> to <span class="math inline">\(\beta + (n-y)\)</span>. In other words, <span class="math inline">\(\alpha\)</span> has increased by the number of successes, and <span class="math inline">\(\beta\)</span> has increased by the number of failures.
+The expectation has gone from the prior expectation
+<span class="math display">\[ \frac{\alpha}{\alpha + \beta} \]</span>
+to the posterior expectation
+<span class="math display">\[ \frac{\alpha + y}{\alpha + \beta + n} .\]</span>
+This can be thought of as a sort of average between the prior expectation <span class="math inline">\(\alpha/(\alpha + \beta)\)</span> and the mean of the data <span class="math inline">\(y/n\)</span>.</p>
+</div>
+<div id="modern-bayes" class="section level2 hasAnchor" number="20.3">
+<h2><span class="header-section-number">20.3</span> Modern Bayesian statistics<a href="L20-bayes-models.html#modern-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>In this section, we’ve given just a brief taster of Bayesian statistics. Bayesian statistics is a deep and complicated subject, and you may have the opportunity to find out a lot more about it later in your university career.</p>
+<p>We have seen that in Bayesian statistics, one brings in a subjective “prior” based on previous beliefs and evidence, then updates this prior based on the data. This contrasts with the more traditional <strong>frequentist statistics</strong>. In frequentist one uses only the data – no prior beliefs! – and judges to what extent the data is consistent or inconsistent with a hypothesis, without weighing in on how likely such a hypothesis is. (Frequentist statistics is the main subject studied in MATH1712 Probability and Statistics II.)</p>
+<p>In the two main examples of Bayesian statistics we have looked at – the Bernoulli likelihood and the normal likelihood – we ended up with a posterior in the same parametric family as prior, just with different parameters. Such a prior is called a “conjugate prior”. Of course, these are very convenient and easy to work with. However, with more complicated likelihoods and more complicated priors – especially those not with a single parameter but with many parameters – calculating the posterior distribution can be very difficult. In particular, working out the constant of proportionality (even just approximately) and/or sampling from the posterior distribution are very hard problems.</p>
+<p>For this reason, Bayesian statistics was for a long time a minor area of statistics. However, increases in computer power in the 1980s made some of these problems more tractable, and Bayesian statistics has increased in importance and popularity since then.</p>
+<p>For a while, there was an occasionally fierce debate between “Bayesians” and “frequentists”. Frequentists thought that bringing subjective personal beliefs into things was unmathematical, while Bayesians thought that ignoring how plausible a hypothesis is before testing it is unscientific. The debate has now largely dissipated, and it is largely accepted that modern statisticians need to know about both frequentist and Bayesian methods.</p>
+<p>There are still plenty of open problems in Bayesian statistics, and lots of these involve the computational side: finding algorithms that can efficiently calculate the normalising constants in posterior distributions or sample from those posterior distributions, especially when the parameter(s) have very high dimension.</p>
+</div>
+<div id="summary-10" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L20-bayes-models.html#summary-10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li>In Bayesian statistics, we start with a prior distribution for a parameter <span class="math inline">\(\theta\)</span>, and update to a posterior distribution given the data <span class="math inline">\(\mathbf x\)</span>, through <span class="math inline">\(\pi(\theta \mid \mathbf x) \propto \pi(\theta)p(\mathbf x \mid \theta)\)</span>, or <span class="math inline">\(\text{posterior} \propto \text{prior} \times \text{likelihood}\)</span>.</li>
+<li>The Beta distribution is a useful family of distributions to use as priors for probability parameters.</li>
+<li>A Beta prior for a Bernoulli likelihood leads to a Beta posterior with different parameters.</li>
+<li>A normal prior for the expectation of a normal likelihood wioth known variance leads to a normal posterior with different parameters.</li>
+</ul>
 </div>
 
 </div>
@@ -475,8 +459,8 @@ Solving this gives
           </div>
         </div>
       </div>
-<a href="R.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L19-bayes-idea.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="P6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
