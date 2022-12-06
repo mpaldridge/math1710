@@ -1,13 +1,13 @@
 ---
 title:  "R Worksheet 11: Recap"
 author: "MATH1710 Probability and Statistcs I"
-date:   "University of Leeds, 2021--22"
+date:   "University of Leeds, 2022--23"
 output: html_document
 ---
 
-*This R worksheet consists solely of assessed questions. The material for these questions recaps all of the R Worksheets on the course so far. The deadline for submitting your solutions to these questions is **Thursday 16 December at 1400**.*
+*This R worksheet consists solely of assessed questions. The material for these questions recaps all of the R Worksheets on the course so far. The deadline for submitting your solutions to these questions is **Thursday 15 December at 1400** -- note that this is an earlier deadline than usual.*
 
-*The following five assessed questions should be submitted to the Microsoft Form that is linked to on the Minerva page for this module.*
+*Answers to the following five assessed questions should be submitted to the Microsoft Form.*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -29,9 +29,9 @@ https://mpaldridge.github.io/math1710/data/R3-xy.csv
 
 where `xy` is the last two digits of your Student ID. Note that the file name is `R3-xy.csv`, with a number `3`.
 
-**Assessed Question 1.** What is the correlation between the stock prices of Amaflix and Netazon Give your answer to 4 significant figures.
+> **Assessed Question 1.** What is the correlation between the stock prices of Amaflix and Netazon? Give your answer to 4 significant figures.
 
-**Assessed Question 2.** The 10th entry of the Amaflix stock price was wrongly recorded -- the actual value should be double the recorded value. Correct this entry, and then calculate the mean of the first 20 days of the Amaflix data. Give this mean to 2 decimal places.
+> **Assessed Question 2.** The 10th entry of the Amaflix stock price was wrongly recorded -- the actual value should be double the recorded value. Correct this entry, and then calculate the mean of the first 20 days of the Amaflix data. Give this mean to 2 decimal places.
 
 For the next question, you should read in the data set at
 
@@ -41,11 +41,11 @@ https://mpaldridge.github.io/math1710/data/R11-xy.csv
 
 where `xy` is the last two digits of your Student ID. Note that the file name is `R11-xy.csv`, with a number `11`.
 
-**Assessed Question 3.** Draw a scatterplot from this `R11` data, where the x-axis is the column `x` from this data and the y-axis is the other column (whose name you should find out). You should see a clear outlier point, to the top-left, top-right, bottom-left, or bottom-right. Which?
+> **Assessed Question 3.** Draw a scatterplot from this `R11` data, where the x-axis is the column `x` from this data and the y-axis is the other column (whose name you should find out using R). You should see a clear outlier point, to the top-left, top-right, bottom-left, or bottom-right. Which?
 
 For the next question, you do not need to read in any data.
 
-**Assessed Question 4.** Let $X \sim \mathrm{Po}(100)$. What is $\mathbb P(X \leq 103 \mid X \geq 94)$? Give your answer to 3 decimal places.
+> **Assessed Question 4.** Let $X \sim \mathrm{Po}(100)$. What is $\mathbb P(X \leq 103 \mid X \geq 94)$? Give your answer to 3 decimal places.
 
 For the final question, you should read in the data set at
 
@@ -55,7 +55,7 @@ https://mpaldridge.github.io/math1710/data/R9-xy.csv
 
 where `xy` is the last two digits of your Student ID. Note that the file name is `R9-xy.csv`, with a number `9`.
 
-**Assessed Question 5.** The `R9` data represents a discrete random variable $X$ with range given by the column `x` and PMF given by the column `pmf_x`. What is $\mathbb E\sqrt{X}$, the expected value of the square-root of $X$? Give your answer to one decimal place.
+> **Assessed Question 5.** The `R9` data represents a discrete random variable $X$ with range given by the column `x` and PMF given by the column `pmf_x`. What is $\mathbb E\sqrt{X}$, the expected value of the square-root of $X$? Give your answer to one decimal place.
 
 
 
