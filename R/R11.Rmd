@@ -7,7 +7,7 @@ output: html_document
 
 *This R worksheet consists solely of assessed questions. The material for these questions recaps all of the R Worksheets on the course so far. The deadline for submitting your solutions to these questions is **Thursday 15 December at 1400** -- note that this is an earlier deadline than usual.*
 
-*Answers to the following five assessed questions should be submitted to the Microsoft Form.*
+*Answers to the following five assessed questions should be submitted [via this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUOTZYNjFPT0k2MFY3REtJTkQxR0VRWjM5TC4u).*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 

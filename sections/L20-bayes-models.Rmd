@@ -1,4 +1,4 @@
-# Bayesian models {#L20-bayes-models}
+# More Bayesian models {#L20-bayes-models}
 
 ## Beta distribution  {#beta}
 

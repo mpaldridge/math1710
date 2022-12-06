@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 20 Bayesian models | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 20 More Bayesian models | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 20 Bayesian models | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 20 More Bayesian models | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 20 Bayesian models | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 20 More Bayesian models | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
   
@@ -328,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
 <li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#normal-normal"><i class="fa fa-check"></i><b>19.3</b> Normal–normal model</a></li>
 </ul></li>
-<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> Bayesian models</a>
+<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> More Bayesian models</a>
 <ul>
 <li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
 <li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
@@ -377,7 +377,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="L20-bayes-models" class="section level1 hasAnchor" number="20">
-<h1><span class="header-section-number">Lecture 20</span> Bayesian models<a href="L20-bayes-models.html#L20-bayes-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1><span class="header-section-number">Lecture 20</span> More Bayesian models<a href="L20-bayes-models.html#L20-bayes-models" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="beta" class="section level2 hasAnchor" number="20.1">
 <h2><span class="header-section-number">20.1</span> Beta distribution<a href="L20-bayes-models.html#beta" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In our fake-coin example in the last lecture, we had a prior PMF for the parameter <span class="math inline">\(\theta = p\)</span> that could only take one of three possible values. But when doing Bayesian statistics with a parameter that represents a probability, it makes more sense to have a prior PDF that covers the whole interval <span class="math inline">\([0,1]\)</span>. After all, any parameter value that is given a probability of 0 in the prior always has a probability 0 in the posterior as well, no matter how strong the evidence in its favour; it’s considered good practice to only put 0 prior probability on parameter values that are <em>literally impossible</em>, such as probabilities below 0 or above 1. (This is sometimes called <a href="https://en.wikipedia.org/wiki/Cromwell%27s_rule">“Cromwell’s rule”</a>.)</p>

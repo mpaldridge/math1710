@@ -14,10 +14,20 @@ url:    'https://mpaldridge.github.io/math1710/'
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
+**Week 10** (5-9 December):
+
+* [**Lecture 19:** The Bayesian idea](#L19-bayes-idea) (Monday 5 December)
+* [**Lecture 20:** More Bayesian models](#L20-bayes-models): (Wednesday 7 December)
+* [**Problem Sheet 5:**](#P5) Work through the short and long questions in preparation your tutorial. Deadline for assessed questions: *Monday 12 December*
+* [**R Worksheet 10:** Law of large numbers](#r-work) to be completed this week
+* [**R Worksheet 11:** Recap](#r-work) next week's sheet, available now due to the unusually early deadline: Thursday 15 December
+:::
+
+::: {.mysched}
 **Week 9** (28 November -- 2 December):
 
-* [**Lecture 17:** Exponential distribution and multiple continuous random variables](#L17-exponential-multi) (Monday 21 November)
-* [**Lecture 18:** Limit theorems](#L18-limit): *The lecture on Wednesday 23 November will be cancelled; instead you should learn this material from the online notes and embedded videos*
+* [**Lecture 17:** Exponential distribution and multiple continuous random variables](#L17-exponential-multi) (Monday 28 November)
+* [**Lecture 18:** Limit theorems](#L18-limit): *The lecture on Wednesday 30 November will be cancelled; instead you should learn this material from the online notes and embedded videos*
 * [**Problem Sheet 5:**](#P5) Work through the short and long questions in preparation your tutorial next week. Deadline for assessed questions: *Monday 12 December*
 * [**R Worksheet 9:** Normal distribution](#r-work) to be completed this week; assessed work due Monday 5 December
 :::
