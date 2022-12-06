@@ -27,7 +27,7 @@ For the first two questions, you should read in the data set at
 https://mpaldridge.github.io/math1710/data/R3-xy.csv
 ```
 
-where `xy` is the last two digits of your Student ID. Note that the file name is `R3-xy.csv`, with a number `3`.
+where `xy` is the last two digits of your Student ID. Note that the file name is `R3-xy.csv`, with a number `3` after the `R`.
 
 > **Assessed Question 1.** What is the correlation between the stock prices of Amaflix and Netazon? Give your answer to 4 significant figures.
 
