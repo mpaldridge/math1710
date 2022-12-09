@@ -50,3 +50,16 @@ Questions B3, B4 and B5 on Problem Sheet 4 were discussed in the online tutorial
 
 ```{r, child = "problems/questions/P4-long.Rmd"}
 ```
+
+## Problem Sheet 5 {#P5-solutions .unnumbered}
+
+```{r, child = "problems/questions/P5-short.Rmd"}
+```
+
+```{r, child = "problems/questions/P5-long.Rmd"}
+```
+
+## Problem Sheet 6 {#P6-solutions .unnumbered}
+
+```{r, child = "problems/questions/P6-qs.Rmd"}
+```

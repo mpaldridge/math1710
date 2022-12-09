@@ -1175,7 +1175,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-41-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-44-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -7489,7 +7489,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-42-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-45-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -8761,6 +8761,497 @@ Alternatively, any table of the form
 \end{longtable}
 
 for \(0 \leq a < \frac14\) will have negative covariance \(a - \frac14\), so negative correlation.
+
+\end{myanswers}
+
+\hypertarget{P5-solutions}{%
+\section*{Problem Sheet 5}\label{P5-solutions}}
+\addcontentsline{toc}{section}{Problem Sheet 5}
+
+\textbf{A1.} Consider the continuous random variable \(X\) with PDF
+\[ f(x) = \begin{cases} \tfrac12x & \text{for $0 \leq x \leq 1$} \\ 
+                        \tfrac12 & \text{for $1 < x \leq 2$} \\
+                        \tfrac32 - \tfrac12x & \text{for $2 < x \leq 3$} \end{cases} \]
+and \(f(x) = 0\) otherwise.
+
+\textbf{(a)} Calculate the CDF for \(X\).
+
+\begin{myanswers}
+\emph{Solution.} We treat the different cases separately.
+
+For \(x < 0\), we have \(F(x) = 0\).
+
+For \(0 \leq x \leq 1\), we have
+\[ F(x) = \int_0^x \tfrac12 y \, \mathrm dy = \left[\tfrac14y^2\right]_0^x = \tfrac14 x^2 .\]
+In particular, \(F(1) = \frac14\).
+
+For \(1 < x \leq 2\), we have
+\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(1) + \int_1^y \tfrac12 \, \mathrm dy = \tfrac14 + \left[ \tfrac 12 y\right]_1^x = \tfrac12 x - \tfrac14 .\]
+In particular, \(F(2) = \frac34\).
+
+For \(2 < x \leq 3\), we have
+\[ F(x) = \int_0^x f(y)\, \mathrm dy = F(2) + \int_2^y \left(\tfrac32 - \tfrac12y\right) \, \mathrm dy = \tfrac34 + \left[ \tfrac 32 y - \tfrac14 y^2\right]_2^x = \tfrac32 x - \tfrac14 x^2 - \tfrac 54 .\]
+In particular, \(F(3) = 1\).
+
+For \(x > 3\), we have \(F(x) = 1\).
+
+Hence,
+\[ F(x) = \begin{cases}
+0 & \text{for $x < 0$} \\
+\tfrac14 x^2 & \text{for $0 \leq x \leq 1$} \\
+\tfrac12 x - \tfrac14 & \text{for $1 < x \leq 2$} \\
+\tfrac32 x - \tfrac14 x^2 - \tfrac 54 & \text{for $2 < x \leq 3$} \\
+1 & \text{for $x > 3$.}
+\end{cases}
+\]
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(\tfrac32 \leq X \leq \tfrac52)\)?
+
+\begin{myanswers}
+\emph{Solution.} This is
+\[ F\big(\tfrac52\big) - F\big(\tfrac32\big) = \tfrac{15}{16} - \tfrac12 = \tfrac{7}{16} .\]
+(Here, it was useful to note that \(x = \tfrac52\) is in the \(2 < x \leq 3\) range and \(x = \tfrac32\) is in the \(1 < x \leq 2\) range.)
+
+\end{myanswers}
+
+\textbf{(c)} Calculate the expectation \(\mathbb EX\).
+
+\begin{myanswers}
+\emph{Solution.}
+We have
+\begin{align*}
+\mathbb EX &= \int_{-\infty}^{\infty} x\,f(x)\, \mathrm dx \\
+  &= \int_0^1 x\times\tfrac12x\, \mathrm dx + \int_1^2 x \times \tfrac12 \, \mathrm dx + \int_2^3 x \times \left(\tfrac32 - \tfrac12 x\right)\, \mathrm dx \\
+  &= \left[\tfrac16 x^3 \right]_0^1 + \left[\tfrac14 x^2 \right]_1^2 + \left[\tfrac34 x^2 - \tfrac16 x^3 \right]_2^3 \\
+  &= \tfrac16 - 0 + 1 - \tfrac14 + \tfrac94 - \tfrac53 \\
+  &= \tfrac32 .
+\end{align*}
+
+\end{myanswers}
+
+\textbf{A2.} Let \(X\) be a continuous random variable with PDF
+\[ f(x) = \frac{k}{x^3} \qquad \text{for $x \geq 1$} \]
+and \(f(x) = 0\) otherwise.
+
+\textbf{(a)} What value of \(k\) makes this into a true PDF?
+
+\begin{myanswers}
+\emph{Solution.} We need the PDF to integrate to 1. So
+\[ 1 = \int_{-\infty}^\infty f(x) \, \mathrm dx = \int_1^\infty kx^{-3} \, \mathrm dx = \left[-\tfrac 12 kx^{-2}\right]_1^\infty = - 0 + \tfrac12k . \]
+So \(k = 2\).
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(X \geq 3)\)?
+
+\begin{myanswers}
+\emph{Solution.} This is
+\[ \mathbb P(X \geq 3) = \int_3^\infty 2x^{-3}\,\mathrm dx = \left[-x^{-2}\right]_3^\infty = \tfrac19 .  \]
+
+\end{myanswers}
+
+\textbf{(c)} What is the expected value \(\mathbb EX\)?
+
+\begin{myanswers}
+\emph{Solution.} This is
+\[ \mathbb EX = \int_1^\infty x\times 2x^{-3} \mathrm dx = \left[2x^{-1}\right]_1^\infty = 2 . \]
+
+\end{myanswers}
+
+\textbf{A3.} Let \(X \sim \text{Exp}(\frac12)\).
+
+\textbf{(a)} What is \(\mathbb EX\)?
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb EX = \displaystyle\frac{1}{\frac12} = 2\)
+
+\end{myanswers}
+
+\textbf{(b)} What is \(\mathbb P(1 \leq X \leq 3)\)?
+
+\begin{myanswers}
+\emph{Solution.} We have
+\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm e^{-3/2}) - (1 - \mathrm e^{-1/2}) = 0.383 . \]
+
+\end{myanswers}
+
+\textbf{A4.} Let \(Z \sim \mathrm{N}(0,1)\). Calculate the following \textbf{(a)} using \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables}; \textbf{(b)} using R. (For part (a), you should show enough working to convince a reader that you really did use the tables.)
+
+\textbf{(i)} \(\mathbb P(Z \leq -1.2)\)
+
+\begin{myanswers}
+\emph{Solution.} Using statistical tables,
+\[ \Phi(-1.2) = 1 - \Phi(1.20) = 1 - 0.8849 = 0.1151 .\]
+
+Using R: \texttt{pnorm(-1.2)} gives \texttt{0.1150697}.
+
+\end{myanswers}
+
+\textbf{(ii)} \(\mathbb P(-1.2 \leq Z \leq 0.8)\)
+
+\begin{myanswers}
+\emph{Solution.} Using statistical tables, and part (i),
+\[ \Phi(0.80) - \Phi(-1.2) = 0.7781 - 0.1151 = 0.6730 . \]
+
+Using R: \texttt{pnorm(0.8)\ -\ pnorm(-1.2)} gives \texttt{0.6730749}.
+
+\end{myanswers}
+
+\textbf{(iii)} \(\mathbb P(Z \leq 0.27)\) (using interpolation for part (a))
+
+\begin{myanswers}
+\emph{Solution.} We can interpolate between \(\Phi(0.25) = 0.5987\) and \(\Phi(0.30) = 0.6179\), to get
+\[ \Phi(0.27) \approx 0.6 \,\Phi(0.25) + 0.4\, \Phi(0.30) = 0.6064 . \]
+
+Using R: \texttt{pnorm(0.27)} gives \texttt{0.6064199}.
+
+\end{myanswers}
+
+\textbf{A5.} Let \(X \sim \mathrm{Po}(25)\). Calculate the following \textbf{(a)} exactly, using R; \textbf{(b)} approximately, using a normal approximation with a continuity correction and \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables}. (For part (b), you should show enough working to convince a reader that you really did use the tables.)
+
+\textbf{(i)} \(\mathbb P(X \leq 27)\)
+
+\begin{myanswers}
+\emph{Solution.}
+Using R: \texttt{ppois(27,\ 25)} gives \texttt{0.7001861}.
+
+The approximation is \(X \approx Y \sim \mathrm N(25, 25) = \mathrm{N}(25, 5^2)\). With a continuity correction, we expand the interval \((-\infty,27]\) outwards to \((-\infty, 27.5]\), and get
+\[ \mathbb P(X \leq 27) \approx \mathbb P(Y \leq 27.5) \approx \mathbb P \left(\frac{Y - 25}{5} \leq \frac{27.5 - 25}{5}\right) = \Phi(0.50) = 0.692. \]
+
+\end{myanswers}
+
+\textbf{(ii)} \(\mathbb P(X \geq 28 \mid X \geq 27)\)
+
+\begin{myanswers}
+\emph{Solution.}
+By the definition of conditional probability, we have
+\[ \mathbb P(X \geq 28 \mid X \geq 27) =  \frac{\mathbb P(X \geq 28 \text{ and } X \geq 27)}{\mathbb P(X \geq 27)} = \frac{\mathbb P(X \geq 28)}{\mathbb P(X \geq 27)} ,\]
+since if \(X \geq 28\) it's automatically the case that \(X \geq 27\).
+
+Using R, we need to remember that \texttt{lower.tail\ =\ FALSE} gives \(\mathbb P(X > x)\) with strict inequality, which for discrete random variables is equivalent to \(\mathbb P(X \geq x +1)\). So we actually want
+
+\texttt{ppois(27,\ 25,\ lower.tail\ =\ FALSE)\ /\ ppois(26,\ 25,\ lower.tail\ =\ FALSE)}
+
+which gives \texttt{0.8089648}.
+
+The approximations are
+\begin{align*}
+\mathbb P(Z \geq 28) &\approx \mathbb P(Y \geq 27.5) = 1 - \Phi(0.50) = 0.3085 \\
+\mathbb P(Z \geq 27) &\approx \mathbb P(Y \geq 26.5) = 1 - \Phi(0.30) = 0.3821 ,
+\end{align*}
+where again we used the continuity correct to expand \([28,\infty)\) outwards to \([27.5,\infty)\) and the same for \([27,\infty)\). This
+gives the answer \(0.3085/0.3821 = 0.807\).
+
+\end{myanswers}
+
+\textbf{B1.}
+\textbf{(a)} Let \(X \sim \text{Exp}(\lambda)\). Show that
+\[ \mathbb P(X > x + y \mid X > y) = \mathbb P(X > x) . \]
+
+\begin{myanswers}
+\emph{Solution.}\\
+Using the definition of conditional probability, we have
+\[\mathbb P(X > x + y \mid X > y) = \frac{\mathbb P(X > x + y \text{ and } X > y) }{\mathbb P(X > y)}= \frac{\mathbb P(X > x + y ) }{\mathbb P(X > y)} , \]
+since is \(X > x + y\) then we automatically have \(X > y\).
+Note also that, for an exponential distribution we have
+\[ \mathbb P(X > x) = 1 - F(x) = 1 - (1 - \mathrm e^{-\lambda x}) = \mathrm e^{-\lambda x} . \]
+So the left-hand side of the statement in the question is
+\[ \frac{\mathrm{e}^{-\lambda(x + y)}}{\mathrm{e}^{-\lambda y}} = \mathrm e^{-\lambda x - \lambda y + \lambda y} = \mathrm{e}^{-\lambda x} , \]
+which equals the right-hand side, by the above.
+
+\end{myanswers}
+
+\textbf{(b)} The result proved in part (a) is called the ``memoryless property''. Why do you think it's called that?
+
+\begin{myanswers}
+\emph{Solution.} Think of \(X\) as a waiting time. The result tells us that, given that we've already waited \(y\) minutes, the probability that we have to wait at least another \(x\) minutes is exactly the same as the probability we had to wait at least \(x\) minutes starting from the beginning. In other words, \emph{no matter when we start timing from}, the probability we have to wait more than \(x\) minutes remains the same.
+
+This is called the ``memoryless property'' because it's as if the process has no memory of how long we've already been waiting for.
+
+(This property also holds for the geometric distribution. The expected number of rolls of a dice until you get a six is always 6 rolls, no matter how many times you've already rolled the dice.)
+
+\end{myanswers}
+
+\textbf{(c)} When you get to certain bus stop, the average amount of time you have to wait for a bus to arrive is 20 minutes. Specifically, the time until the next bus arrives is modelled as an exponential distribution with expectation \(1/\lambda = 20\) minutes. Suppose you have already been waiting at the bus stop for 15 minutes. What is the expected further amount of time you still have to wait for a bus to arrive?
+
+\begin{myanswers}
+\emph{Solution.}
+By the memoryless property, it's irrelevant how long we've been waiting for: the average time until a bus arrives is always \(1/\lambda = 20\) minutes.
+
+\end{myanswers}
+
+\textbf{B2.} The main dangerous radioactive material left over after the Chernobyl disaster is Caesium-137. The amount of time it takes a Caesium-137 particle to decay is known to follow an exponential distribution with rate \(\lambda = 0.023\) years\textsuperscript{-1}.
+
+\textbf{(a)} What is the average amount of time it takes a Caesium-137 particle to decay?
+
+\begin{myanswers}
+\emph{Solution.} The expectation is \(1/\lambda = 43.5\) years.
+
+\end{myanswers}
+
+\textbf{(b)} The ``half-life'' of a radioactive substance is the amount of time it takes for half of the substance to decay. Using the information in the question, calculate the half-life of Caesium-137.
+
+\begin{myanswers}
+\emph{Solution.} The half-life is the median of the distribution; that is, the solution \(x\) to
+\[ F(x) = 1 - \mathrm{e}^{-0.023x} = \tfrac12 . \]
+So
+\[ x = \frac{\log\frac12}{-0.023} = \frac{\log 2}{0.023} = 30.1 \text{ years} . \]
+
+\end{myanswers}
+
+\textbf{(c)} It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed?
+
+\begin{myanswers}
+\emph{Solution.} The proportion of Caesium-137 still remaining is
+\[ \mathbb P(X > 35.6) = \mathrm e^{-0.023 \times 35.6} = 0.441 , \]
+so roughly \(24 \times 0.441 = 10.6\) kg of Caesium-137 has still not decayed.
+
+\emph{(The Chernobyl disaster was actually} 36.6 \emph{years ago -- I forgot to update the question this year. The amount of Caesium-137 will have gone down about another 250g in the last year.)}
+
+\end{myanswers}
+
+\textbf{B3.} Consider the pair of random variables \((X,Y)\) with joint PDF
+\[ f_{X,Y}(x,y) = 2 \qquad \text{for $0 \leq x \leq y \leq 1$} \]
+and \(f_{X,Y}(x,y) = 0\) otherwise. (In particular, note that the joint PDF is only nonzero when \(x \leq y\).)
+
+\textbf{(a)} Draw a picture of the range of \((X,Y)\) in the \(xy\)-plane.
+
+\textbf{(b)} Describe the conditional distribution of \(X\) given \(Y = y\), for \(0 \leq y \leq 1\).
+
+\begin{myanswers}
+
+\emph{Solution.} Fix \(y\). The conditional distribution is
+\[ f_{X \mid Y}(x \mid y) = \frac{f_{X,Y}(x,y)}{f_Y(y)} \propto f_{X,Y}(x,y) .\]
+We know that \(f_{X,Y}(x,y) = 2\) when \(0 \leq x \leq y\) and is \(0\) otherwise. So the conditional distribution of \(X\) given \(Y = y\) is continuous uniform on the interval \([0, y]\).
+
+If we want to check the denominator \(f_Y(y)\) formally, we can check that
+\[ f_Y(y) = \int_{-\infty}^{\infty} f_{X,Y}(x,y) \mathrm dx = \int_0^y 2\, \mathrm dy = 2y ,\]
+so the conditional PDF is indeed \(f_{X \mid Y}(x \mid y) = 2/2y = 1/y\) for \(0 \leq x \leq y\) and 0 otherwise.
+
+\end{myanswers}
+
+\textbf{(c)} What is the marginal PDF \(f_X\) of \(X\)?
+
+\begin{myanswers}
+\emph{Solution.} Again the key is that the joint PDF is only nonzero when \(y \geq x\) but \(y \leq 1\). So
+\[ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy = \int_x^1 2 \, \mathrm dy = 2(1 - x)  \]
+for \(0 \leq x \leq 1\) and 0 otherwise.
+
+\end{myanswers}
+
+\textbf{(d)} Are \(X\) and \(Y\) independent?
+
+\begin{myanswers}
+\emph{Solution.} No.~Take, for example, \(x = \frac34\) and \(y = \frac14\). It's clear that this \(f_{X,Y}(\frac34,\frac14) = 0\), while \(f_X(\frac34)\) and \(f_Y(\frac14)\) are nonzero, just by looking at the picture from part (a).
+
+We can check it formally too, if we want. Since \(x > y\), this point has joint PDF \(f_{X,Y}(\frac34,\frac14) = 0\). We know the marginal PMFs, though are
+\begin{align*}
+f_X\big(\tfrac34\big) &= 2\big(1 - \tfrac34\big) = \tfrac12 \\
+f_Y\big(\tfrac14\big) &= 2 \times \tfrac14 = \tfrac12 .
+\end{align*}
+(we used \(f_Y(y) = 2y)\) based on symmetry with \(f_X(1-x)\), or alternatively by calculating it ``long-hand''.)
+So \(f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0\). So \(X\) and \(Y\) are not independent.
+
+\end{myanswers}
+
+\textbf{B4.} \emph{(Optional)} Engineers and scientists often use the rule of thumb ``Only 5\% of data is more than two sample standard deviations away from the sample mean.'' Carefully justify this rule, using concepts from the module.
+
+\begin{myanswers}
+\emph{Solution.} By the central limit theorem, and other related approximation arguments, it is reasonable that lots of real life data -- especially that which is affected by the accumulation of numerous small effects -- is approximately normally distributed.
+
+Write \(\mu\) for the \emph{true} expectation and \(\sigma^2\) for the \emph{true} variance of the population distribution \(X\). Then the proportion of data that is within two true-standard-deviations of the true-expectation will, be the law of large numbers, tends to
+\[ \mathbb P (\mu - 2\sigma \leq X \leq \mu + 2\sigma) \]
+Using standardisation, this is
+\[ \mathbb P\left( \frac{(\mu - 2\sigma) - \mu}{\sigma} \leq \frac{X - \mu}{\sigma} \leq \frac{(\mu + 2\sigma) - \mu}{\sigma}\right) = \mathbb P(-2 \leq Z \leq 2) . \]
+Using R or statistical tables, this is
+\[ \Phi(2) - \Phi(-2) = 2 \, \Phi(2) - 1 = 0.9545 . \]
+So only \(1 - 0.9545 = 0.0455\), or approximately 5\%, of data is more than two true-standard-deviations away from the true-expectation.
+
+Finally, the law of large numbers also tells us that, provided a large number of datapoints \(n\) are collected, the sample mean \(\bar x\) and the sample standard deviation \(s_x\) will be very close to the true expectation \(\mu\) and the true standard deviation \(\sigma\) respectively, so we can replace the latter with the former in our calculations.
+
+\end{myanswers}
+
+\textbf{B5.} Let \(X_1, X_2, \dots, X_n\) be IID random variable with common expectation \(\mu\) and common variance \(\sigma^2\), and let \(\overline X = (X_1 + \cdots + X_n)/n\) be the mean of these random variables. We will be considering the random variable \(S^2\) given by
+\[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
+
+\textbf{(a)} By writing
+\[ X_i - \overline X = (X_i - \mu) - (\overline X - \mu)  \]
+or otherwise, show that
+\[ S^2 = \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 . \]
+
+\begin{myanswers}
+\emph{Solution.}
+Using the suggestion in the question, we have
+\begin{align*}
+S^2 &= \sum_{i=1}^n (X_i - \overline X)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu) - (\overline X - \mu)  \big)^2 \\
+  &= \sum_{i=1}^n \big( (X_i - \mu)^2 - 2(X_i - \mu)(\overline X - \mu) + (\overline X - \mu)^2\big) \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - \sum_{i=1}^n 2(X_i - \mu)(\overline X - \mu) + \sum_{i=1}^n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2\left(\sum_{i=1}^n X_i - \sum_{i=1}^n \mu\right)(\overline X - \mu)  + (\overline X - \mu)^2 \sum_{i=1}^n 1 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2(n\overline X - n\mu) (\overline X - \mu) + n (\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - 2n(\overline X - \mu)^2 + n(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2 .
+\end{align*}
+This is mostly manipulation of sums as we have seen before, although note that going from the fifth to sixth lines we used the definition of \(\overline X\) to write \(\sum_{i=1}^n X_i\) as \(n \overline X\).
+
+\end{myanswers}
+
+\textbf{(b)} Hence or otherwise, show that
+\[ \mathbb E S^2 = (n - 1)\sigma^2 . \]
+You may use facts about \(\overline X\) from the notes provided you state them clearly. (You may find it helpful to recognise some expectations as definitional formulas for variances, where appropriate.)
+
+\begin{myanswers}
+\emph{Solution.} Starting with the linearity of expectation, we have
+\begin{align*}
+\mathbb ES^2 &= \mathbb E \left( \sum_{i=1}^n (X_i - \mu)^2 - n(\overline X - \mu)^2  \right) \\
+  &= \sum_{i=1}^n \mathbb E (X_i - \mu)^2 - n \mathbb E(\overline X - \mu)^2 \\
+  &= \sum_{i=1}^n \operatorname{Var}(X_i) - n \operatorname{Var}(\overline X) .
+\end{align*}
+The last line follows because \(\mathbb EX_i = \mu\) for all \(i\) by assumption, and we showed in the notes that \(\mathbb E \overline X = \mu\) also; hence, as hinted, the expectations are precisely definitional formulas for the variances. We then also know that \(\operatorname{Var}(X_i) = \sigma^2\) by assumption, and we showed Lecture 18 that \(\operatorname{Var}(\overline X) = \sigma^2/n\). Hence
+\[ \mathbb ES^2 = \sum_{i=1}^n \sigma^2 - n\, \frac{\sigma^2}{n} = n \sigma^2 - \sigma^2 = (n-1)\sigma^2, \]
+as required.
+
+\end{myanswers}
+
+\textbf{(c)} At the beginning of this module, we defined the sample variance of the values \(x_1, x_2, \dots, x_n\) to be
+\[ s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 . \]
+Explain one reason why we might consider it appropriate to use \(1/(n-1)\) as the factor at the beginning of this expression, rather than simply \(1/n\).
+
+\begin{myanswers}
+\emph{Solution.}
+We often model a data set \(x_1, x_2, \dots, x_n\) as being realisations of an IID sequence of random variables \(X_1, X_2, \dots, X_n\). In this case, we are using the summary statistic of the sample variance \(s_x^2\) to ``estimate'' the variance \(\operatorname{Var}(X_1) = \sigma^2\). Using the factor \(1/(n-1)\) ensures that this estimator is correct ``in expectation'', because
+\[ \mathbb E s_X^2 = \mathbb E \frac{1}{n-1}S^2 = \frac{1}{n-1} \mathbb ES^2 = \frac{1}{n-1}(n-1)\sigma^2 = \sigma^2 . \]
+This property of being correct in expectation is called being an ``unbiased'' estimator, and its usually considered beneficial for an estimator to be unbiased.
+
+Note that we already know that the sample mean \(\bar x\) is an unbiased estimator for the expectation \(\mathbb EX = \mu\), as we already know that \(\mathbb E\overline X = \mu\).
+
+(You may learn more about estimation and ``unbiasedness'' in MATH1712 Probability and Statistics II.)
+
+\end{myanswers}
+
+\textbf{B6.} \emph{(New)} Roughly how many times should I toss a coin for there to be a 95\% chance that between 49\% and 51\% of my coin tosses land Heads?
+
+\begin{myanswers}
+\emph{Solution.}
+The number of Heads in \(n\) coin tosses is \(X \sim \mathrm{Bin}(n, \frac12)\), which is approximately \(Y \sim \mathrm{N}(\frac n2, \frac n4)\). We want to choose \(n\) such that
+\[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]
+
+Standardising, this is
+\[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]
+Since the normal distribution is symmetric, we want
+\[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]
+From Table 2 of the statistical tables, or by the R command \texttt{qnorm(0.975)}, this requires
+\(0.01\sqrt{n} = 1.960\), which is \(n \approx 9600\).
+
+So if we toss 10,000 coins, there's about a 95\% chance we get between 4900 and 5100 Heads.
+
+\end{myanswers}
+
+\emph{(I meant to delete Question B4 from this problem sheet, to make it shorter, but I accidentally deleted Question B6 instead. I've now added B6 and marked B4 as ``optional''.)}
+
+\hypertarget{P6-solutions}{%
+\section*{Problem Sheet 6}\label{P6-solutions}}
+\addcontentsline{toc}{section}{Problem Sheet 6}
+
+\textbf{1.} I want to use a prior distribution for a parameter \(\theta\) whose range is the interval \([0,1]\), whose expectation is \(0.4\) and whose standard deviation is \(0.2\). Suggest an appropriate distribution.
+
+\begin{myanswers}
+\emph{Solution.}
+A \(\text{Beta}(\alpha, \beta)\) would be appropriate if we can choose \(\alpha\) and \(\beta\) to give us the correct expectation and standard deviation.
+
+Thus, we need to find \(\alpha\) and \(\beta\) that solve
+\begin{align*}
+\frac{\alpha}{\alpha + \beta} &= 0.4 \\
+\frac{0.4 \times (1 - 0.4)}{\alpha + \beta + 1} = 0.2^2 .
+\end{align*}
+From the second equation, we get \(\alpha + \beta = 5\). Substituting this into the first equation, we get \(\alpha = 2\), which then means we need \(\beta = 3\).
+
+Therefore, a \(\text{Beta}(2,3)\) distribution would be appropriate.
+
+\end{myanswers}
+
+\textbf{2.} My data is modelled as having a \(\text{Bern}(\theta)\) likelihood, and I plan to record 10 IID observations. I choose to use a \(\text{Beta}(1,4)\) prior.
+
+\textbf{(a)} What is the prior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.} The prior expectation is
+\[ \frac{\alpha}{\alpha + \beta} = \frac{1}{1+4} = 0.2 , \]
+and the prior variance is
+\[ \frac{\mu(1-\mu)}{\alpha + \beta + 1} = \frac{0.2 \times 0.8}{1 + 4 + 1} = 0.027 . \]
+
+\end{myanswers}
+
+\textbf{(b)} Suppose my data records 2 successes and 8 failures. What is the posterior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.}
+We know that the posterior distribution is \(\text{Beta}(1 + 2, 4 + 8) = \text{Beta}(3, 12)\). This has posterior expectation
+\[ \frac{3}{3 + 12} = 0.2 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.01 .\]
+
+\end{myanswers}
+
+\textbf{(c)} Suppose my data records 5 successes and 5 failures. What is the posterior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.}
+We know that the posterior distribution is \(\text{Beta}(1 + 5, 4 + 5) = \text{Beta}(6, 9)\). This has posterior expectation
+\[ \frac{6}{6 + 9} = 0.4 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.015 .\]
+
+\end{myanswers}
+
+\textbf{(d)} Briefly comment on these results.
+
+\begin{myanswers}
+\emph{Solution.}
+In the first example, the data was what we would have expected from the model. Thus the posterior expectation has remained the same as the prior expectation, while the variance has decreased, as we have become more confident about the correctness of our model.
+
+In the second example, the data had more successes that we would have expected from the model. The posterior expectation has moved from the prior expectation \(0.2\) towards the mean of the data \(0.5\), but not all the way. The variance is bigger the the first example, as we are more unsure, although collecting data has still managed to decrease the variance -- and thus increase the certainty -- of the prior alone.
+
+\end{myanswers}
+
+\textbf{3.} \textbf{(a)} My data is modelled as a single data point with a \(\text{Geom}(\theta)\) likelihood, so
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+
+I use a \(\text{Beta}(\alpha,\beta)\) prior for \(\theta\). Show that the posterior distribution is \(\text{Beta}(\alpha + 1, \beta + x - 1)\).
+
+\begin{myanswers}
+\emph{Solution.}
+The geometric likelihood is
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+The Beta prior is
+\[ \pi(\theta) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} . \]
+Therefore the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{x-1} \theta
+= \theta^{\alpha} (1 - \theta)^{\beta + x - 1 - 1} , \]
+which is the \(\text{Beta}(\alpha + 1, \beta + x - 1)\) distribution.
+
+\end{myanswers}
+
+\textbf{(b)} I instead choose to collect \(n\) IID data points, using the same geometric likelihood and Beta prior. Show that the posterior distribution is a Beta distribution, and state the parameters.
+
+\begin{myanswers}
+\emph{Solution.}
+We have the same prior, but not have a product likelihood
+\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n (1 - \theta)^{x_i - 1} \theta = (1 - \theta)^{y - n} \theta^n , \]
+where \(y = \sum_{i=1}^n x_i\). Then the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{y-n} \theta^n
+= \theta^{\alpha + n - 1} (1 - \theta)^{\beta + y - n - 1} , \]
+which is the \(\text{Beta}(\alpha + n, \beta + y - n)\) distribution.
+
+\end{myanswers}
+
+\textbf{(c)} Compare your results to that of the Beta--Bernoulli model, and briefly comment.
+
+\begin{myanswers}
+\emph{Solution.}
+Each geometric experiment has \(x_i - 1\) failures (the first \(x_i - 1\) trials) and 1 success (the final trial). So in total, over \(n\) experiments, we have \(\sum_i (x_i - 1) = y - n\) failures and \(n\) successes. Thus to get from the prior Beta distribution to the posterior distribution, we have increased \(\alpha\) by the number of suvvesses and increased \(\beta\) by the number of failures. This is exactly the same way we got from the Beta prior to the Beta posterior when using a Bernoulli likelihood.
 
 \end{myanswers}
 
