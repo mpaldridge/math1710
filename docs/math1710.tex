@@ -1175,7 +1175,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-44-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-49-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -7099,6 +7099,317 @@ Each geometric experiment has \(x_i - 1\) failures (the first \(x_i - 1\) trials
 \part*{Other stuff}\label{part-other-stuff}}
 \addcontentsline{toc}{part}{Other stuff}
 
+\hypertarget{L21-questions}{%
+\chapter{All questions answered}\label{L21-questions}}
+
+\hypertarget{distributions}{%
+\section{Distributions}\label{distributions}}
+
+\emph{Can you summarise the distributions we need to know?}
+
+The main random variables we have covered in the module are the following. First, the discrete random variables:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2941}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Distribution
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+PMF
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Expectation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Variance
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Bernoulli:} \(\text{Bern}(p)\) & \(\{0,1\}\) & \(p(0) = 1- p\), \(p(1) = p\) & \(p\) & \(p(1-p)\) \\
+\textbf{Binomial:} \(\text{Bin}(n,p)\) & \(\{0,1,\dots,n\}\) & \(\displaystyle\binom{n}{x} p^x (1-p)^{n-x}\) & \(np\) & \(np(1-p)\) \\
+\textbf{Geometric:} \(\text{Geom}(p)\) & \(\{1,2,\dots\}\) & \((1-p)^{x-1}p\) & \(\displaystyle\frac{1}{p}\) & \(\displaystyle\frac{1-p}{p^2}\) \\
+\textbf{Poisson:} \(\text{Po}(\lambda)\) & \(\{0,1,\dots\}\) & \(\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}\) & \(\lambda\) & \(\lambda\) \\
+\bottomrule()
+\end{longtable}
+
+Then the continuous random variables:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Distribution
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+PDF
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Expectation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Variance
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Exponential:} \(\text{Exp}(\lambda)\) & \(\mathbb R_+\) & \(\lambda \mathrm e^{-\lambda x}\) & \(\displaystyle\frac{1}{\lambda}\) & \(\displaystyle\frac{1}{\lambda^2}\) \\
+\textbf{Normal:} \(\mathrm N(\mu,\sigma^2)\) & \(\mathbb R\) & \({\displaystyle{\small \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right)}}\) & \(\mu\) & \(\sigma^2\) \\
+\textbf{Beta:} \(\text{Beta}(\alpha, \beta)\) & \([0,1]\) & \(\propto x^{\alpha - 1}(1-x)^{\beta - 1}\) & \(\displaystyle\frac{\alpha}{\alpha + \beta}\) & \({\displaystyle{\small \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{discrete-random-variables-in-r}{%
+\section{Discrete random variables in R}\label{discrete-random-variables-in-r}}
+
+\emph{How do you work with discrete random variables in R?}
+
+(This was actually lectured at the end of Lecture 20.)
+
+If we are dealing with a famous distribution like the binomial, geometric or Poisson distributions, we can use the functions like \texttt{pbinom()}, \texttt{pgeom()}, \texttt{ppois()} and their relatives, as on \protect\hyperlink{R}{R Worksheet 7}. However, for arbitrary random variables, we need to do more of the work ourselves. This was discussed on \protect\hyperlink{R}{R Worksheet 8}, but when questions came up on this on \protect\hyperlink{R}{R Worksheet 9}, lots of people got them wrong, so perhaps I didn't explain it well.
+
+Let's do an example with a simple discrete random variable. Its PMF is as follows:
+
+\begin{longtable}[]{@{}ccccccc@{}}
+\toprule()
+\(x\) & 1 & 2 & 3 & 5.5 & 7 & 8 \\
+\midrule()
+\endhead
+\(p(x)\) & 0.1 & 0.2 & 0.1 & 0.2 & 0.3 & 0.1 \\
+\bottomrule()
+\end{longtable}
+
+If we want to work with this in R, we need two vectors. One, which I'll call \texttt{x}, to hold the values that the random variable can take, and one, which I'll call \texttt{pmf\_x}, to hold the values of the PMF \(p(x) = \mathbb P(X = x)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x     }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(  }\DecValTok{1}\NormalTok{,   }\DecValTok{2}\NormalTok{,   }\DecValTok{3}\NormalTok{, }\FloatTok{5.5}\NormalTok{,   }\DecValTok{7}\NormalTok{,   }\DecValTok{8}\NormalTok{)}
+\NormalTok{pmf\_x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\FloatTok{0.2}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.2}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+I can check that the PMF sums to 1, as it must.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(pmf\_x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 1
+\end{verbatim}
+
+Suppose I wanted to calculate the expectation of this random variable. When doing this ``by hand'', we know that this is
+\[ \mathbb EX = \sum_x x \,p(x) . \]
+So in R, this is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mu }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(x }\SpecialCharTok{*}\NormalTok{ pmf\_x)}
+\NormalTok{mu}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 4.8
+\end{verbatim}
+
+Suppose I wanted to find the variance. Using the definitional formula, we know this is
+\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 = \sum_x (x-\mu)^2\,p(x) . \]
+In R, I've already saved the expectation as the R object \texttt{mu}. So now I can use
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{((x }\SpecialCharTok{{-}}\NormalTok{ mu)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pmf\_x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.91
+\end{verbatim}
+
+Alternatively, we have the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\), where
+\[ \mathbb EX^2 = \sum_x x^2 \, p(x) .\]
+In R, this is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EX2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(x}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pmf\_x)}
+\NormalTok{EX2 }\SpecialCharTok{{-}}\NormalTok{ mu}\SpecialCharTok{\^{}}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 5.91
+\end{verbatim}
+
+which gives the same answer.
+
+When calculating a variance, especially with the computational formula and especially when dealing with a discrete random variable with a large range, it's important to keep plenty of accuracy in \(\mu = \mathbb EX\). In the above, I did this by saving this as an R object \texttt{mu}. This is much better and more accurate than just writing down a few decimal places and writing it out by hand again.
+
+Remember that the function \texttt{var()} is used for calculating the \emph{sample variance} of some \emph{data} -- that's no use for us here when we want to find the variance of a random variable.
+
+See \protect\hyperlink{R}{R Worksheet 8} for more on this, including how to use the ``step function'' function \texttt{stepfun()} to work with the CDF \(F(x) = \mathbb P(X \leq x)\).
+
+\hypertarget{joint-distributions}{%
+\section{Joint distributions}\label{joint-distributions}}
+
+\hypertarget{law-of-the-unconscious-statistician}{%
+\section{Law of the unconscious statistician}\label{law-of-the-unconscious-statistician}}
+
+\hypertarget{statistical-tables}{%
+\section{Statistical tables}\label{statistical-tables}}
+
+\emph{Can you go over the rules for how to use statistical tables?}
+
+In \protect\hyperlink{L17-normal}{Lecture 17}, we discussed how to do calculations with the normal distribution using R and using statistical tables.
+
+We need to be able to do this when working with a normal distribution \(X \sim \mathrm{N}(\mu, \sigma^2)\). We also need to be able to do this when approximating another distribution by the normal distribution -- for example, \(\mathrm{Bin}(n,p) \approx \mathrm{N}(np, np(1-p))\) where \(n\) is large and \(p\) is neither close to 0 nor to 1, or a \(\mathrm{Po}(\lambda) \approx \mathrm{N}(\lambda,\lambda)\) when \(\lambda\) is large. (Remember to use a continuity correction when approximating a discrete distribution by the normal).
+
+The first thing we need to do to use statistical tables is to standardise. That is, we can convert \(X \sim \mathrm{N}(\mu, \sigma^2)\) to \(Z = (X - \mu)/\sigma \sim \mathrm{N}(0,1)\) by subtracting the mean and dividing by the standard deviation. So, for example if \(X \sim \mathrm{N}(10, 4^2)\) and we want to calculate
+\(\mathbb P(8 \leq X \leq 13)\), then standardising gives
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P \left( \frac{8 - 10}{4} \leq \frac{X - 10}{4} \leq \frac{13 - 10}{4} \right) = \mathbb P(-0.5 \leq Z \leq 0.75) . \]
+
+Statistical tables give values of \(\Phi(z) = \mathbb P(Z \leq z)\) for \(z \geq 0\). We can use these values in a few different ways. In what follows, we always assume \(z \geq 0\). (Remember, too, that for continuous distributions it's irrelevant whether an inequality is \(<\) or \(\leq\).)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If we have a standard ``less than'' problem, so want to know \(\mathbb P(Z \leq z) = \Phi(z)\), we can just look this up in the table.
+\item
+  If we have a ``greater than'', so want to know \(\mathbb P(Z > z)\), we can use the complement rule to write \(\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\). We then look up \(\Phi(z)\) in the table, and our answer is \(1 - \Phi(z)\).
+\item
+  If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
+  \begin{align*}
+  \mathbb P(Z \geq -z) &= \mathbb P(Z \leq z) = \Phi(z) \\
+  \mathbb P(Z \leq -z) &= \mathbb P(Z \geq z) = 1 - \mathbb P(Z < z) = 1 - \Phi(z) .
+  \end{align*}
+  In the second of these, we used rule 2 again in the second equality.
+\end{enumerate}
+
+So to go back to our example, we've already standardised to get
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(-0.5 \leq Z \leq 0.75) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) . \]
+The first term can be looked up directly in the table (rule 1):
+\[ \mathbb P(Z \leq 0.75) = \Phi(0.75) = 0.7734 . \]
+For the second term, we can use rules 2 and 3 to get
+\[ \mathbb P(Z \leq -0.5) = \mathbb P(Z \geq 0.5) = 1 - \mathbb P(Z < 0.5) = 1 - \Phi(0.5) = 1 - 0.6915 = 0.3085 , \]
+where we found \(\Phi(0.5) = 0.6815\) in the table. To put this all together, we get
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) = 0.7734 - 0.3085 = 0.4649 . \]
+
+\hypertarget{end-of-semester-survey}{%
+\section{End-of semester survey}\label{end-of-semester-survey}}
+
+\hypertarget{other-modules}{%
+\section{Other modules}\label{other-modules}}
+
+\hypertarget{L22-exam}{%
+\chapter{Exam}\label{L22-exam}}
+
+\hypertarget{about-the-exam}{%
+\section{About the exam}\label{about-the-exam}}
+
+First, the details of the exam:
+
+\begin{itemize}
+\tightlist
+\item
+  Check your exam timetable for the date and time of the exam. For most people (without unusual clashes or special arrangements), the exam will happen on \textbf{Tuesday 11 January at 0900}.
+\item
+  The exam will happen in person on campus.
+\item
+  The exam will last for 2 hours (except for some students with special arrangements).
+\item
+  You are allowed to use a basic non-programmable calculator for the exam.
+\item
+  The exam will be ``closed-book'' style: you are not permitted to bring notes into the exam hall.
+\item
+  The exam will contain multiple-choice questions, short questions, and long questions. See below for more details about the structure of the exam.
+\item
+  A page of \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables for the normal distribution} will be attached to the exam paper. There will not be a formula book.
+\item
+  The exam makes up 70\% of your mark for this module. The pass mark for this module is 40\%. You must pass the exam to pass the module. The pass mark for the exam is also 40\%, or 32 marks out of 80.
+\end{itemize}
+
+The exam will be in three sections:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Section A} contains 10 multiple-choice questions, worth 2 marks each, for a total of 20 marks. These each require a single letter answer. You will enter these letter answers on a multiple-choice ``bubble sheet''; there is an example of this sheet on Minerva.
+\item
+  \textbf{Section B} contains 10 single-part ``short answer'' questions, worth 2 marks each, for a total of 20 marks. This require a clear answer and brief working or explanation. You will answer these in an answer booklet.
+\item
+  \textbf{Section C} contains 2 multi-part ``long answer'' questions, worth 20 marks each, for a total of 40 marks. Parts of these questions require full detailed answers, as in assessed work from problem sheets. You will answer these in the same answer booklet.
+\end{itemize}
+
+\hypertarget{past-papers}{%
+\section{Past papers}\label{past-papers}}
+
+Three \textbf{past papers} for MATH1710 are available: the 2018--19, 2019--20, and 2020--21 papers. I strongly recommend using all these past papers as part of your revision. University policy is only to provide ``checksheets'', rather than full answers -- these allow you to check that your numerical answers are correct, but do not give full details.
+
+Some notes on the past papers:
+
+\begin{itemize}
+\tightlist
+\item
+  General comments
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Most past papers write \(\Pr(A)\) for probabilities, where we write \(\mathbb P(A)\). Most past papers write \(\mathrm{E}[X]\) for expectations, where we write \(\mathbb EX\).
+  \item
+    Some past papers write \(\subseteq\) for ``is a subset of'', where we write \(\subset\).
+  \item
+    In R questions, often \texttt{=} is used for assignment, as in \texttt{variable\ =\ 2\ +\ 3}, whereas we prefer to use \texttt{\textless{}-}, as in \texttt{variable\ \textless{}-\ 2\ +\ 3}.
+  \item
+    Although the 2018--19 and 2019--20 papers in Section A instructed students to ``write down a single letter'', you will fill in your multiple-choice answers on the ``bubble sheet'' provided.
+  \end{itemize}
+\item
+  2018--19 paper:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Questions A6 and B9: This writes \(\Omega_X\) for the range (or ``range space'') of a random variable \(X\), where we wrote \(\operatorname{Range}(X)\).
+  \item
+    Question C2(b): Some of the notation here is a bit different to ours; for example, writing \(l(x|p)\) for the likelihood.
+  \end{itemize}
+\item
+  2019--20 paper:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Question B9: You are not expected to be able to answer this question.
+  \item
+    Question C2(b): Some of the notation here is a bit different to ours; for example, writing \(l(x|p)\) for the likelihood.
+  \end{itemize}
+\item
+  2020--21 paper:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Because this was a ``take-home'' paper, there was no multiple-choice section, which it was thought would be too easy for nefarious students to cheat on. Instead, there were twice as many short questions.
+  \item
+    Because this was an ``open-book'' paper, there were fewer ``fact'' questions than usual, such as stating definitions or giving standard proofs from the notes.
+  \item
+    Question A11(ii): You are not expected to be able to answer this question.
+  \item
+    Question A12: An event \(A\) is said to be ``preferable'' for an event \(B\) is \(\mathbb P(B \mid A) > \mathbb P(A)\). You are not expected to know this definition (although, once told the definition, you should be able to work with it).
+  \item
+    Question A18: You are not expected to be able to answer this question.
+  \end{itemize}
+\end{itemize}
+
 \hypertarget{R}{%
 \chapter*{R Worksheets}\label{R}}
 \addcontentsline{toc}{chapter}{R Worksheets}
@@ -7489,7 +7800,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-45-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-50-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:

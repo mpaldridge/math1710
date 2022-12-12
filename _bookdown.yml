@@ -27,8 +27,8 @@ rmd_files:
   - sections/L19-bayes-idea.Rmd
   - sections/L20-bayes-models.Rmd
   - problems/P6.Rmd
-#  - sections/L21-summary.Rmd
-#  - sections/L22-exam.Rmd
+  - sections/L21-summary.Rmd
+  - sections/L22-exam.Rmd
   - R/R.Rmd
   - writing.Rmd
   - problems/solutions.Rmd

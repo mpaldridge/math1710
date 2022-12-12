@@ -1,22 +1,14 @@
-# (PART\*) Revision  {-}
+# (PART\*) Other stuff {-}
 
-# Summary {#L21-summary}
+# All questions answered {#L21-questions}
 
-## Summary of the module
+## Distributions
 
-We've now reached the end of the mathematical portion of MATH1710 Probability and Statistics I. This last section will be about summarising what we've learned, and starting to prepare for the exam.
+::: {.thpart}
+*Can you summarise the distributions we need to know?*
+:::
 
-Here is a summary of what we have learned in the course. You may like to use this list to guide your revision.
-
-* **Exploratory data analysis**: Summary statistics, data visualisation, binned data
-* **Probability**:
-   * Probability with events: Probability spaces, probability axioms, properties of probability including the addition rule for unions, "classical probability" of equally likely events, ways of counting for classical probability, independence, conditional probability, law of total probability, Bayes' theorem
-   * Probability with random variables: Discrete random variables, expectation and variance, binomial distribution, geometric distribution, Poisson distribution, multiple random variables: joint, marginal and conditional distributions, law of large numbers, continuous random variables, exponential distribution, normal distribution, central limit theorem
-* **Bayesian statistics**: Bayesian framework, Beta prior, Beta--Bernoulli model, normal--normal model
-
-We spent 1 week on EDA, 8 weeks on probability, and 1 week on Bayesian statistics. You can expect a similar proportion of your exam on each topic.
-
-The following two tables summarise the discrete and continuous distributions we learned about in the course. In general, you are expected to know this material in the exam without being told; so I *strongly recommend* learning this.
+The main random variables we have covered in the module are the following. First, the discrete random variables:
 
 | Distribution | Range | PMF | Expectation | Variance |
 |:----|:-:|:-:|:-:|:-:|
@@ -25,11 +17,117 @@ The following two tables summarise the discrete and continuous distributions we 
 | **Geometric:** $\text{Geom}(p)$ | $\{1,2,\dots\}$ | $(1-p)^{x-1}p$ | $\displaystyle\frac{1}{p}$ | $\displaystyle\frac{1-p}{p^2}$ |
 | **Poisson:** $\text{Po}(\lambda)$ | $\{0,1,\dots\}$ | $\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}$ | $\lambda$ | $\lambda$ |
 
+Then the continuous random variables:
+
 | Distribution | Range | PDF | Expectation | Variance |
 |:-----|:-:|:-:|:-:|:-:|
 | **Exponential:** $\text{Exp}(\lambda)$ | $\mathbb R_+$ | $\lambda \mathrm e^{-\lambda x}$ | $\displaystyle\frac{1}{\lambda}$ | $\displaystyle\frac{1}{\lambda^2}$ |
 | **Normal:** $\mathrm N(\mu,\sigma^2)$ | $\mathbb R$ | ${\displaystyle{\small \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right)}}$ | $\mu$ | $\sigma^2$ |
 | **Beta:** $\text{Beta}(\alpha, \beta)$ | $[0,1]$ | $\propto x^{\alpha - 1}(1-x)^{\beta - 1}$ | $\displaystyle\frac{\alpha}{\alpha + \beta}$ | ${\displaystyle{\small \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}}$ |
 
+## Discrete random variables in R
 
+::: {.thpart}
+*How do you work with discrete random variables in R?*
+:::
+
+(This was actually lectured at the end of Lecture 20.)
+
+If we are dealing with a famous distribution like the binomial, geometric or Poisson distributions, we can use the functions like `pbinom()`, `pgeom()`, `ppois()` and their relatives, as on [R Worksheet 7](#R). However, for arbitrary random variables, we need to do more of the work ourselves. This was discussed on [R Worksheet 8](#R), but when questions came up on this on [R Worksheet 9](#R), lots of people got them wrong, so perhaps I didn't explain it well.
+
+Let's do an example with a simple discrete random variable. Its PMF is as follows:
+
+| $x$ | 1 | 2 | 3 | 5.5 | 7 | 8 |
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+| $p(x)$ | 0.1 | 0.2 | 0.1 | 0.2 | 0.3 | 0.1 |
+
+If we want to work with this in R, we need two vectors. One, which I'll call `x`, to hold the values that the random variable can take, and one, which I'll call `pmf_x`, to hold the values of the PMF $p(x) = \mathbb P(X = x)$.
+
+```{r}
+x     <- c(  1,   2,   3, 5.5,   7,   8)
+pmf_x <- c(0.1, 0.2, 0.1, 0.2, 0.3, 0.1)
+```
+
+I can check that the PMF sums to 1, as it must.
+
+```{r}
+sum(pmf_x)
+```
+
+Suppose I wanted to calculate the expectation of this random variable. When doing this "by hand", we know that this is
+\[ \mathbb EX = \sum_x x \,p(x) . \]
+So in R, this is
+
+```{r}
+mu <- sum(x * pmf_x)
+mu
+```
+
+Suppose I wanted to find the variance. Using the definitional formula, we know this is
+\[ \Var(X) = \mathbb E(X - \mu)^2 = \sum_x (x-\mu)^2\,p(x) . \]
+In R, I've already saved the expectation as the R object `mu`. So now I can use
+
+```{r}
+sum((x - mu)^2 * pmf_x)
+```
+
+Alternatively, we have the computational formula $\Var(X) = \mathbb EX^2 - \mu^2$, where
+\[ \mathbb EX^2 = \sum_x x^2 \, p(x) .\]
+In R, this is
+
+```{r}
+EX2 <- sum(x^2 * pmf_x)
+EX2 - mu^2
+```
+
+which gives the same answer.
+
+When calculating a variance, especially with the computational formula and especially when dealing with a discrete random variable with a large range, it's important to keep plenty of accuracy in $\mu = \mathbb EX$. In the above, I did this by saving this as an R object `mu`. This is much better and more accurate than just writing down a few decimal places and writing it out by hand again.
+
+Remember that the function `var()` is used for calculating the *sample variance* of some *data* -- that's no use for us here when we want to find the variance of a random variable.
+
+See [R Worksheet 8](#R) for more on this, including how to use the "step function" function `stepfun()` to work with the CDF $F(x) = \mathbb P(X \leq x)$.
+
+
+## Joint distributions
+
+## Law of the unconscious statistician
+
+## Statistical tables
+
+::: {.thpart}
+*Can you go over the rules for how to use statistical tables?*
+:::
+
+In [Lecture 17](#L17-normal), we discussed how to do calculations with the normal distribution using R and using statistical tables.
+
+We need to be able to do this when working with a normal distribution $X \sim \mathrm{N}(\mu, \sigma^2)$. We also need to be able to do this when approximating another distribution by the normal distribution -- for example, $\mathrm{Bin}(n,p) \approx \mathrm{N}(np, np(1-p))$ where $n$ is large and $p$ is neither close to 0 nor to 1, or a $\mathrm{Po}(\lambda) \approx \mathrm{N}(\lambda,\lambda)$ when $\lambda$ is large. (Remember to use a continuity correction when approximating a discrete distribution by the normal).
+
+The first thing we need to do to use statistical tables is to standardise. That is, we can convert $X \sim \mathrm{N}(\mu, \sigma^2)$ to $Z = (X - \mu)/\sigma \sim \mathrm{N}(0,1)$ by subtracting the mean and dividing by the standard deviation. So, for example if $X \sim \mathrm{N}(10, 4^2)$ and we want to calculate
+$\mathbb P(8 \leq X \leq 13)$, then standardising gives
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P \left( \frac{8 - 10}{4} \leq \frac{X - 10}{4} \leq \frac{13 - 10}{4} \right) = \mathbb P(-0.5 \leq Z \leq 0.75) . \]
+
+Statistical tables give values of $\Phi(z) = \mathbb P(Z \leq z)$ for $z \geq 0$. We can use these values in a few different ways. In what follows, we always assume $z \geq 0$. (Remember, too, that for continuous distributions it's irrelevant whether an inequality is $<$ or $\leq$.) 
+
+1. If we have a standard "less than" problem, so want to know $\mathbb P(Z \leq z) = \Phi(z)$, we can just look this up in the table.
+2. If we have a "greater than", so want to know $\mathbb P(Z > z)$, we can use the complement rule to write $\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)$. We then look up $\Phi(z)$ in the table, and our answer is $1 - \Phi(z)$.
+3. If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
+\begin{align*}
+\mathbb P(Z \geq -z) &= \mathbb P(Z \leq z) = \Phi(z) \\
+\mathbb P(Z \leq -z) &= \mathbb P(Z \geq z) = 1 - \mathbb P(Z < z) = 1 - \Phi(z) .
+\end{align*}
+In the second of these, we used rule 2 again in the second equality.
+
+So to go back to our example, we've already standardised to get 
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(-0.5 \leq Z \leq 0.75) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) . \]
+The first term can be looked up directly in the table (rule 1):
+\[ \mathbb P(Z \leq 0.75) = \Phi(0.75) = 0.7734 . \]
+For the second term, we can use rules 2 and 3 to get
+\[ \mathbb P(Z \leq -0.5) = \mathbb P(Z \geq 0.5) = 1 - \mathbb P(Z < 0.5) = 1 - \Phi(0.5) = 1 - 0.6915 = 0.3085 , \]
+where we found $\Phi(0.5) = 0.6815$ in the table. To put this all together, we get
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) = 0.7734 - 0.3085 = 0.4649 . \]
+
+## End-of semester survey
+
+## Other modules
 
