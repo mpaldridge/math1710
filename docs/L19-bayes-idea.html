@@ -409,7 +409,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 -->
 <p>We will start by illustrating the main idea with an example.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-106" class="example"><strong>Example 19.1  </strong></span><em>A joke shop sells three types of coins: normal fair coins; Heads-biased coins, which land Heads with probability 0.8; and Tails-biased coins, which land Heads with probability 0.2. I pick up a coin and examine it; since it looks mostly like a normal coin, I believe there’s 60% chance it’s s fair coin, and a 20% chance it’s biased either way. I decide to toss the coin four times, to gather some more evidence. The result is that all three are Heads. How should I update my beliefs?</em></p>
+<p><span id="exm:unlabeled-div-106" class="example"><strong>Example 19.1  </strong></span><em>A joke shop sells three types of coins: normal fair coins; Heads-biased coins, which land Heads with probability 0.8; and Tails-biased coins, which land Heads with probability 0.2. I pick up a coin and examine it; since it looks mostly like a normal coin, I believe there’s 60% chance it’s s fair coin, and a 20% chance it’s biased either way. I decide to toss the coin three times, to gather some more evidence. The result is that all three are Heads. How should I update my beliefs?</em></p>
 <p>So, we start with the “prior” (before) belief
 <span class="math display">\[ \mathbb P(\text{fair}) = 0.6 \qquad \mathbb P(\text{H-bias}) = 0.2 \qquad \mathbb P(\text{T-bias}) = 0.2 \]</span></p>
 <p>We know how to update our beliefs after seeing the data: we use Bayes’ theorem. We have
@@ -424,7 +424,7 @@ We also need to find common denominator <span class="math inline">\(\mathbb P(\t
   \mathbb P(\text{H-bias}\mid \text{data}) &amp;= \frac{0.1024}{0.179} = 0.572 \\
   \mathbb P(\text{T-bias}\mid \text{data}) &amp;= \frac{0.0016}{0.179} = 0.009 .
 \end{align*}\]</span></p>
-<p>So, after tossing the coin four times, our belief has been updated from the “prior” (before) belief
+<p>So, after tossing the coin three times, our belief has been updated from the “prior” (before) belief
 <span class="math display">\[ \mathbb P(\text{fair}) = 0.6 \qquad \mathbb P(\text{H-bias}) = 0.2 \qquad \mathbb P(\text{T-bias}) = 0.2 \]</span>
 to the “posterior” (after) belief
 <span class="math display">\[ \mathbb P(\text{fair} \mid \text{data}) = 0.419 \qquad \mathbb P(\text{H-bias}\mid \text{data}) = 0.572 \qquad \mathbb P(\text{T-bias}\mid \text{data}) = 0.009 . \]</span>
@@ -442,10 +442,10 @@ Compared to our prior beliefs, our belief that the coin is fair has decreased a 
 -->
 <p>Let’s think more systematically about what we did in the previous example.</p>
 <ul>
-<li><strong>Model:</strong> The four coin tosses were modelled as four IID Bernoulli trials <span class="math inline">\(X_1, X_2, X_3, X_4 \sim \text{Bern}(\theta)\)</span> (if we let <span class="math inline">\(X_i = 1\)</span> denote that the <span class="math inline">\(i\)</span>th coin was Heads). Here, the probability of Heads is some unknown parameter <span class="math inline">\(\theta\)</span>. (Recall we talked about parametric models for data in Subsection <a href="L11-binomial-poisson.html#models">11.3</a>.) This model gives a distribution that depends on the parameter. Hre we had a conditional PMF for one trial
+<li><strong>Model:</strong> The three coin tosses were modelled as three IID Bernoulli trials <span class="math inline">\(X_1, X_2, X_3 \sim \text{Bern}(\theta)\)</span> (if we let <span class="math inline">\(X_i = 1\)</span> denote that the <span class="math inline">\(i\)</span>th coin was Heads). Here, the probability of Heads is some unknown parameter <span class="math inline">\(\theta\)</span>. (Recall we talked about parametric models for data in Subsection <a href="L11-binomial-poisson.html#models">11.3</a>.) This model gives a distribution that depends on the parameter. Here we had a conditional PMF for one trial
 <span class="math display">\[ p(x \mid \theta) = \theta^{x} (1 - \theta)^{1- x}  \]</span>
 (this is a convenient way of writing the PMF for a Bernoulli trial). So the joint PMF for the IID trials is
-<span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^4 \theta^{x_i} (1 - \theta)^{1- x_i} = \theta^{\sum_i x_i} (1 - \theta)^{4- \sum_i x_i} . \]</span>
+<span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^3 \theta^{x_i} (1 - \theta)^{1- x_i} = \theta^{\sum_i x_i} (1 - \theta)^{3- \sum_i x_i} . \]</span>
 (Here and throughout, <span class="math inline">\(\prod\)</span>, the Greek capital Pi, means a product – it’s the multiplication equivalent of the summation Sigma, <span class="math inline">\(\Sigma\)</span>.)</li>
 <li><strong>Prior:</strong> We started with a prior belief <span class="math inline">\(\pi(\theta)\)</span> on the value of the unknown parameter. In our case, we had the PMF
 <span class="math display">\[ \pi(0.2) = 0.2 \qquad \pi(0.5) = 0.6 \qquad \pi(0.8) = 0.2 . \]</span></li>
