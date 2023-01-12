@@ -2,7 +2,7 @@
 
 # All questions answered {#L21-questions}
 
-## Distributions
+## Distributions {#faq-R-RV}
 
 ::: {.thpart}
 *Can you summarise the distributions we need to know?*
