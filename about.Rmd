@@ -2,24 +2,24 @@
 
 ## Organisation of MATH1710  {#organisation .unnumbered}
 
-This module is **MATH1710 Probability and Statistics I**. (It is possible to take this module as half of **MATH2700 Probability and Statistics for Scientists**, but I am not aware that any students are enrolled on MATH2700 this year -- please [let me know](mailto:m.aldridge@leeds.ac.uk) if you are.)
+This module is **MATH1710 Probability and Statistics I**. (A small number of second-year scientists are taking this module as the first half of **MATH2700 Probability and Statistics for Scientists**.)
 
-This module lasts for 11 weeks from 3 October to 16 December 2022. The exam will take place between 16 and 27 January 2023.
+This module lasts for 11 weeks from 2 October to 15 December 2023. The exam will take place between 15 and 26 January 2024.
 
-The module leader, the lecturer, and the main author of these notes is Dr Matthew Aldridge (you can call me "Matt" or "Dr Aldridge", pronounced "*old*-ridge").
+The module leader, the lecturer, and the main author of these notes is Dr Matthew Aldridge (you can call me "Matt", "Matthew", or "Dr Aldridge", pronounced "*old*-ridge").
 
 
 
 ### Lectures {#lectures .unnumbered}
 
-The main way you will learn new material for this module is by attending lectures. There are two lectures per week. Because this is a very large class, you are split into two groups for lectures:
+The main way you will learn new material for this module is by attending lectures. There are two lectures per week. Because this is a very large class each lecture will be delivered twice:
 
-* Group 1: Mondays at 1200 and Wednesdays at 1600
-* Group 2: Mondays at 1500 and Wednesdays at 1500
+* **Mondays** at 1200 or at 1500, in [Chemistry West LT F](https://students.leeds.ac.uk/rooms?type=room&id=99879)
+* **Wednesdays** at 1500 in [Chemistry West LT F](https://students.leeds.ac.uk/rooms?type=room&id=99879) or at 1600 in [Roger Stevens LT 20](https://students.leeds.ac.uk/rooms?type=room&id=100044)
 
-All lectures are in [Roger Stevens LT 20](https://students.leeds.ac.uk/rooms?type=room&id=100044). Check your timetable to see which group you are in.
+ Check your timetable to see which lecture you are assigned to each day.
 
-I recommend taking your own notes during the lecture. This website will keep brief notes from the lectures, summarising the main definitions and theorems, but will not reflect all the details I say and write during the lectures. Lectures will go through material quite quickly and the material may be quite difficult, so it's likely you'll want to spend time reading through your notes after the lecture.
+I recommend taking your own notes during the lecture. I will put brief summary notes from the lectures on this website, but will not reflect all the details I say and write during the lectures. Lectures will go through material quite quickly and the material may be quite difficult, so it's likely you'll want to spend time reading through your notes after the lecture.
 
 You are probably reading the web version of the notes. If you want a PDF copy (to read offline or to print out), it can be downloaded via the top ribbon of the page. (Warning: I have not made as much effort to make the PDF as neat and tidy as I have the web version, and there may be formatting errors.) I am very keen to hear about errors in the notes, mathematical, typographical or otherwise. Please [email me](mailto:m.aldridge@leeds.ac.uk) if think you may have found any.
 
@@ -28,31 +28,30 @@ You are probably reading the web version of the notes. If you want a PDF copy (t
 
 ### Problem sheets {.unnumbered #problem-sheets}
 
-There will be 5 problem sheets. Each problem sheet has a number of short and long questions for you to cover in your own time to help you learn the material, and two assessed questions, which you should submit for marking.  The assessed questions on each problem sheet make up 3% of your mark on this module, for a total of 15%. Deadlines are 2pm on Mondays, although I'd personally recommend completing and submitting the work in the previous week.
+There will be 5 problem sheets. Each problem sheet has a number of short and long questions, for you to work on in your own time to help you learn the material, and two assessed questions, which you should submit for marking.  The assessed questions on each problem sheet make up 3% of your mark on this module, for a total of 15%. Deadlines are 2pm on Mondays, although I'd recommend completing and submitting the work in the previous week.
 
 | Problem Sheet | Lectures covered | Deadline for assessed work      |
 |:-------------:|:----------------:|:-------------------------------:|
-|       1       |  1 and 2         |   Monday 17 October  (Week 3)   |
-|       2       |  3--6            |   Monday 31 October  (Week 5)   |
-|       3       |  7--10           |   Monday 14 November (Week 7)   |
-|       4       |  11--14          |   Monday 28 November (Week 9)   |
-|       5       |  15--18          |   Monday 12 December (Week 11)   |
+|       1       |  1 and 2         |   Monday 16 October  (Week 3)   |
+|       2       |  3--6            |   Monday 30 October  (Week 5)   |
+|       3       |  7--10           |   Monday 13 November (Week 7)   |
+|       4       |  11--14          |   Monday 27 November (Week 9)   |
+|       5       |  15--18          |   Monday 11 December (Week 11)   |
 
-An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available; Lectures 21 and 22 are revision lectures with no new material.
+An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available. Lectures 21 and 22 are revision lectures with no new material.
 
-Assessed questions should be submitted in PDF format through Gradescope. (Further Gradescope details will follow.) Most students choose to hand-write their solutions on paper and then scan them to PDF using their phone; you should use a proper scanning app -- we recommend Microsoft Office Lens or Adobe Scan -- and not just submit photographs.
-
+Assessed questions should be submitted in online through the Gradescope platform.  Most students choose to hand-write their solutions on paper and then scan and submit on their phone using the Gradescope app. Further Gradescope details to follow nearer the first deadline.
 
 
 ### Tutorials {.unnumbered #tutorials}
 
-Tutorials are small groups of about a dozen students. You have been assigned to one of 38 tutorial groups, each with a member of staff as the tutor. Your tutorial group will meet five times, in Weeks 2, 4, 6, 8, and 10; you should check your timetable to see when and where your tutorial group meets.
+Tutorials are small groups of about a dozen students. You have been assigned to one of 34 tutorial groups, each with a member of staff as the tutor. Your tutorial group will meet five times, in Weeks 2, 4, 6, 8, and 10; you should check your timetable to see when and where your tutorial group meets.
 
-The main goal of the tutorials will be to go over your answers to the non-assessed questions on the problems sheets in an interactive session. In this smaller group, you will be able to ask detailed questions of your tutor, and have the chance to discuss your answers to the problem sheet. Your tutor may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutor may be willing to give you a hint on the assessed questions if you've made a first attempt but have got stuck. Because of the much smaller groups, the tutorials are the most valuable type of teaching on the module; you should make sure you attend, and you should be well prepared to ensure you make the most of the opportunity.
+The tutorials are an interactive session, where the main goal will be to go over your answers to the non-assessed questions on the problems sheets, which you will have worked on in advance of the tutorial. In this smaller group, you will be able to ask detailed questions of your tutor, and have the chance to discuss your answers to the problem sheet. Your tutor may ask you to present some of your work to your fellow students, or may give you the opportunity to work together with others during the tutorial. Your tutor may be willing to give you a hint on the assessed questions if you've made a first attempt but have got stuck. Because of the much smaller groups, the tutorials are the most valuable type of teaching on the module; you should make sure you attend, and you should be well prepared to ensure you make the most of the opportunity.
 
 My recommended approach to problem sheets and tutorials is the following:
 
-* Work through the problem sheet before the tutorial, spending plenty of time on it, and making multiple efforts at questions you get stuck on. I recommend spending *at least 4 hours per problem sheet*. This is a long time, but you shouldn't expect to be able to answer the hardest questions on a problem sheet with making multiple attempts. You don't have to wait until all lectures in a section are complete until starting to work on some of the questions -- this is particularly important for students with Monday tutorials. Collaboration is encouraged when working through the non-assessed problems, but I recommend writing up your work on your own; answers to assessed questions must be solely your own work.
+* Work through the problem sheet before the tutorial, spending plenty of time on it, and making multiple efforts at questions you get stuck on. I recommend spending *at least 4 hours per problem sheet*. This is a long time, but you shouldn't expect to be able to answer the hardest questions on a problem sheet without making multiple attempts. You don't have to wait until all lectures in a section are complete until starting to work on some of the questions. Collaboration is encouraged when working through the non-assessed problems, but I recommend writing up your work on your own; answers to assessed questions must be solely your own work.
 * Take advantage of the small group setting of the tutorial to ask for help or clarification on questions you weren't able to complete.
 * After the tutorial, attempt again the questions you were previously stuck on.
 * If you're still unable to complete a question after this second round of attempts, *then* consult the solutions.
@@ -64,43 +63,42 @@ Your tutor will also be the marker of your answers to the assessed questions on 
 
 ### R worksheets {.unnumbered #r-worksheets}
 
-R is a programming language that is particularly good at working with probability and statistics. Learning to use R is an important part of this module, and is used in many other modules in the University, particularly in MATH1712 Probability and Statistics II. R is used by statisticians throughout academia and increasingly in industry too. Learning to program is a valuable skill for all students, and learning to use R is particularly valuable for students interested in statistics and related topics like actuarial science.
+R is a programming language that is particularly good at working with probability and statistics. Learning to use R is an important part of this module, and is used in many other modules in the University, including MATH1712 Probability and Statistics II. R is used by statisticians throughout academia and increasingly in industry too. Learning to program is a valuable skill for all students, and learning to use R is particularly valuable for students interested in statistics and related topics like actuarial science.
 
-You will learn R by working through one R worksheet each week in your own time. Worksheets 3, 5, 7, 9 and 11 will also contain a few questions for assessment, which will be due by 2pm Monday the following week (except the last one). Each of these is worth 3% of your mark for a total of 15%. You will submit your answers through a Microsoft Form (details to follow later). I recommend spending one hour per week on the week's R worksheet, plus one extra hour if there are assessed questions that week.
+You will learn R by working through one R worksheet each week in your own time, starting from Week 2. Even-numbered worksheets will also contain a few questions for assessment, which will be due by 2pm Monday the following week (except the last one). Each of these is worth 3% of your mark for a total of 15%. You will submit your answers through a Microsoft Form (details to follow later). I recommend spending one hour per week on the week's R worksheet, plus one extra hour if there are assessed questions that week.
 
 | Week | Worksheet                     | Deadline for assessed work |
 |:----:|-------------------------------|:--------------------------:|
-|   1  |  R basics  | --- |
-|   2  |  Vectors   | --- |
-|   3  |  Data in R  | Monday 24 October (Week 4) |
-|   4  |  Plots I: Making plots  | --- |
-|   5  |  Plots II: Making plots better  | Monday 7 November (Week 6) |
-|   6  |  RMarkdown (optional) | --- |
-|   7  |  Discrete distributions   |      Monday 21 November (Week 8)   |
-|   8  |  Discrete random variables  | --- |
-|   9  |  Normal distribution | Monday 5 December (Week 10) |
-|  10  |  Law of large numbers     |             ---           |
-|  11  |  Recap | Thursday 15 December (Week 11) | 
+|   2  |  1: R basics  | --- |
+|   3  |  2: Vectors   | Monday 23 October (Week 4) |
+|   4  |  3: Data in R  | --- |
+|   5  |  4: Plots I -- Making plots  | Monday 6 November (Week 6) |
+|   6  |  5: Plots II -- Making plots better  | --- |
+|   7  |  6: Discrete distributions   |      Monday 20 November (Week 8)   |
+|   8  |  7: Discrete random variables  | --- |
+|   9  |  8: Normal distribution | Monday 4 December (Week 10) |
+|  10  |  9: Law of large numbers     |             ---           |
+|  11  |  10: Recap | Thursday 14 December (Week 11) | 
 
-You can read more about the language R, and about the program RStudio that we recommend you use to interact with R, in [the R section of these notes](#R).
+**R practical sessions:** We will introduce you to R in your first practical session in Week 2. We will first show you how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session. A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
 
-To help you if you have problems with R, we have organised **optional R troubleshooting drop-in sessions**, where you can discuss any problems you have with an R expert, in Weeks 2 and 3. Check your timetable for details -- these will be listed on your timetable as "practicals".
+There are 11 R practical session groups -- check your timetable for Weeks 2 and 3 to see when and where your group meets.
 
-*Attendance at R troubleshooting drop-in sessions is optional.*
+*Attendance at the first R practical session (Week 2) is compulsory.*
 
 
-### Optional "office hours" drop-in sessions {.unnumbered #dropin}
+### "Office hours" drop-in sessions {.unnumbered #dropin}
 
-If you there is something in the module you wish to discuss privately one-on-one with the module leader, the place for the is the optional weekly "office hours", which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to a member of staff; these are particularly useful if there's something on the module that you are stuck on or confused about, but I'm happy to discuss any statistics-related issues or questions you have.
+If you there is something in the module you wish to discuss one-on-one with the module leader, the place for the is the optional weekly "office hours", which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to me; these are particularly useful if there's something on the module that you are stuck on or confused about, but I'm happy to discuss any statistics-related issues or questions you have.
 
 I currently plan two optional "office hours" drop-in session per week:
 
 * Thursdays from 1400 to 1500 in [Roger Stevens LT 7](https://students.leeds.ac.uk/rooms?type=room&id=100031)
 * Thursdays from 1600 to 1700 in [Roger Stevens LT 17](https://students.leeds.ac.uk/rooms?type=room&id=100041)
 
-Although only the second of these appears on your timetable, you are equally welcome at either. Depending on attendance levels, I may change arrangements as term continues. If neither time is possible, you may [email me](mailto:m.aldridge@leeds.ac.uk) to book a time to talk to me.
+I may change arrangements as term continues, depending on attendance levels. If neither time is possible, you may [email me](mailto:m.aldridge@leeds.ac.uk) to book a time to talk to me.
 
-*Attendance at "office hours" drop-in sessions is optional.* You should prioritise mandatory sessions (like lectures or tutorials, such as for LUBS1940 Economics for Management) over this optional session.
+*Attendance at "office hours" drop-in sessions is optional.*
 
 
 ### Time management {.unnumbered #time}
@@ -111,10 +109,10 @@ It is, of course, up to you how you choose to spend your time on this module. Bu
 * **Problem sheets:** 4 hours per problem sheet, plus 1 extra hour for writing up and submitting answers to assessed questions.
 * **R worksheets:** 1 hour per week, plus 1 extra hour if there are assessed questions.
 * **Tutorials:** 1 hour every other week.
-* **Revision:** 15 hours total at the end of the module.
+* **Revision:** 16 hours total at the end of the module.
 * **Exam:** 2 hours.
 
-That makes 100 hours in total. (MATH1710 is a 10-credit module, so is supposed to represent 100 hours work. MATH2700 students are expected to be able to use their greater experience to get through the material in just 75 hours, so should scale these recommendations accordingly.)
+That makes about 100 hours in total. (MATH1710 is a 10-credit module, so is supposed to represent 100 hours work. MATH2700 students are expected to be able to use their greater experience to get through the material in just 75 hours, so should scale these recommendations accordingly.)
 
 
 ### Exam {.unnumbered #exam}
@@ -124,16 +122,16 @@ There will be an exam in January, which makes up the remaining 70% of your mark.
 
 ### Who should I ask about...?  {.unnumbered #ask}
 
-There are over 420 students on this module. If each student emails me once a week, and if each email takes me 10 minutes to read and respond, that will take more than 14 hours of my time every day. Generally, it's much better to come to speak to me at the "office hours" drop-in session or, if it will be very quick, before or after a lecture.
+There are over 440 students registered for this module. If each student emails me once a week, and if each email takes me 10 minutes to read and respond, that will take more than 15 hours of my time every day! Generally, it's much better to come to speak to me at the "office hours" drop-in session or, if it will be very quick, before or after a lecture.
 
 * *I don't understand something in the notes or on a problem sheet*: Come to office hours, or ask your tutor in your next tutorial.
-* *I'm having difficulties with R:* In Weeks 2 or 3, you should attend an R trouble-shooting drop-in session; at other times, come to office hours.
+* *I'm having difficulties with R:* In Weeks 2 or 3, you should ask at your R practical session; at other times, come to office hours.
 * *I have an admin question about arrangements for the module:* Come to office hours or talk to me before/after lectures.
 * *I have an admin question about arrangements for my tutorial:* Contact your tutor.
-* *I have an admin question about general arrangements for my programme as a whole:* [Contact the Student Information Service](https://students.leeds.ac.uk/askingforhelp) or speak to your personal academic tutor.
-* *I have a question about the marking of my assessed work on the problem sheets:* First, check your feedback on Gradescope; if you still have questions, contact your tutor.
-* *I have a question about the marking of my assessed work on the R worksheets:* You can [email me](mailto:m.aldridge@leeds.ac.uk) about this.
-* *Due to truly exceptional and unforeseeable personal circumstances I require an extension on or exemption from assessed work:* You can apply by [filling in the mitigating circumstances form at this link](https://students.leeds.ac.uk/info/10111/assessment/860/mitigating_circumstances). Neither I nor your tutor can unilaterally offer an extension or exemption, so please don't ask. (Only exemptions, not extensions, are available for R worksheets.) 
+* *I have an admin question about general arrangements for my programme as a whole:* [Contact the Student Information Service](https://students.leeds.ac.uk/askingforhelp) or speak to your personal tutor.
+* *I have a question about the marking of my assessed work on the Problem Sheets:* First, check your feedback on Gradescope; if you still have questions, contact your tutor.
+* *I have a question about the marking of my assessed work on the R Worksheets:* You can [email me](mailto:m.aldridge@leeds.ac.uk) about this.
+* *Due to truly exceptional and unforeseeable personal circumstances I require an extension on or exemption from assessed work:* You can apply by [filling in the mitigating circumstances form at this link](https://students.leeds.ac.uk/info/10111/assessment/860/mitigating_circumstances). Neither I nor your tutor can unilaterally offer an extension or exemption, so please don't ask. (Extensions of up to 4 days are available for Problem Sheets. Only exemptions are available for R Worksheets.) 
 
 
 
@@ -142,7 +140,7 @@ There are over 420 students on this module. If each student emails me once a wee
 
 ### Prerequisites {.unnumbered #prereqs}
 
-The formal prerequisite for MATH1710 is "Grade B in A-level Mathematics or equivalent". I'll assume you have some basic school-level maths knowledge, but I won't assume you've studied probability or statistics in detail before (although I recognise that many of you will have). If you have studied probability and/or statistics at A-level (or post-16 equivalent) level, you'll recognise some of the material in this module; however you should find that we go deeper in some areas, and that we treat the material through with a greater deal of mathematical formality and rigour. "Rigour" here means precisely stating our assumptions, and carefully *proving* how other statements follow from those assumptions.
+The formal prerequisite for MATH1710 is "Grade B in A-level Mathematics or equivalent". I'll assume you have some basic school-level maths knowledge, but I won't assume you've studied probability or statistics in detail before (although I recognise that many of you will have). If you have studied probability and/or statistics at A-level (or post-16 equivalent) level, you'll recognise some of the material in this module; however you should find that we go deeper in many areas, and that we treat the material through with a greater deal of mathematical formality and rigour. "Rigour" here means precisely stating our assumptions, and carefully *proving* how other statements follow from those assumptions.
 
 
 ### Syllabus {.unnumbered #syllabus}
@@ -158,12 +156,12 @@ An outline plan of the topics covered is the following.
 * **Bayesian statistics** [2 lectures]: Bayesian framework, Beta prior, normal--normal model
 * Summary and revision [2 lectures]
 
-You'll notice that this module is heavier on the "Probability" than the "Statistics" of its title. MATH1712 Probability and Statistics II, on the other hand, which many students on this module will take next semester, is almost entirely "Statistics".
+You'll notice that this module is heavier on the "Probability" than the "Statistics" of its title. MATH1712 Probability and Statistics II, on the other hand, which many students on this module will take next semester, is almost entirely "Statistics", but uses probabilistic techniques developed here.
 
 
 ### Books {.unnumbered #books}
 
-You can do well on this module by reading the notes and watching the videos, attending the lectures and tutorials, and working on the problem sheets and R worksheets, without needing to do any further reading beyond this. However, students can benefit from optional extra background reading or an alternative view on the material, especially in the parts of the module on probability. These books are also a good place to look if you want extra exercises and problems for revision.
+You can do well on this module by attending the lectures and tutorials, and working on the problem sheets and R worksheets, without needing to do any further reading beyond this. However, students can benefit from optional pre-reading in advance, extra background reading, or an alternative view on the material, especially in the parts of the module on probability. These books are also a good place to look if you want extra exercises and problems for revision.
 
 For exploratory data analysis, you can stick to Wikipedia, but if you really want a book, I'd recommend:
 
@@ -190,6 +188,6 @@ For R, there are many excellent resources online.
 
 ## About these notes  {#about-notes .unnumbered}
 
-These notes were written by Matthew Aldridge in 2021, and were edited and updated in 2022. They are based in part on previous notes by Dr Robert G Aykroyd and Prof Wally Gilks.  Dr Jason Susanna Anquandah and Dr Aykroyd advised on the R worksheets. Dr Aykroyd's help and advice on many aspects of the module was particularly valuable.
+These notes were written by Matthew Aldridge in 2021, and were edited and updated a lot in 2022 and a little bit in 2023. They are based in part on previous notes by Dr Robert G Aykroyd and Prof Wally Gilks. Dr Jason Susanna Anquandah and Dr Aykroyd advised on the R worksheets. Dr Aykroyd's help and advice on many aspects of the module was particularly valuable.
 
 These notes (in the web format) should be accessible by screenreaders. If you have accessibility difficulties with these notes, [contact me](mailto:m.aldridge@leeds.ac.uk).
