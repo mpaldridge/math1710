@@ -1,4 +1,4 @@
-# R Worksheets {#R .unnumbered}
+# R {#R .unnumbered}
 
 ## About R and RStudio  {#about-r .unnumbered}
 
@@ -14,7 +14,7 @@ There are a number ways you can use R and RStudio:
 3. *Using the Posit Cloud.* The Posit Cloud is a way to use R and RStudio online -- sort of like a "Google Docs for R". You can use it free for 25 hours a month, which should be plenty for this module, or pay for more. I recommend the Posit Cloud for using R/RStudio with Chromebooks, tablet computers, or when borrowing someone else's device.
 
 
-## R practical sessions
+## R practical sessions {#r-practicals .unnumbered}
 
 We will introduce you to R and RStudio in your first practical session, in Week 2. We will first show you how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session.
 
@@ -27,7 +27,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
 
 | Week | Worksheet                    | Solutions | Deadline for assessed work |
 |:----:|------------------------------|:---------:|:--------------------------:|
-|   2  |  **1: R basics**             | Solutions | --- |
+|   2  | **1: R basics**              | Solutions | --- |
 
 <!--
 | Week | Worksheet                     | Deadline for assessed work |

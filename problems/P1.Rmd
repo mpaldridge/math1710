@@ -16,7 +16,7 @@ You can [download this problem sheet as a PDF file](P1-sheet.pdf)
 :::
 
 ::: {.mysummary}
-This is Problem Sheet 1, which covers material from Lectures [1](#L01-stats) and [2](#L02-dataviz) of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by **2pm on Monday 17 October**. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.
+This is Problem Sheet 1, which covers material from Lectures [1](#L01-stats) and [2](#L02-dataviz) of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by **2pm on Monday 16 October**. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.
 :::
 
 ## A: Short questions {#P1-short .unnumbered}
@@ -31,7 +31,7 @@ The first three questions are **short questions**, which are intended to be most
 ## B: Long questions {#P1-long .unnumbered}
 
 ::: {.mysummary}
-The next four questions are **long questions**, which are intended to be harder. Long questions often require you to think originally for yourself, not just directly follow procedures from the notes. You may not be able to solve all of these questions, although you should make multiple attempts to do so. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to clearly write good solutions -- are likely to be the main topic for discussion in your tutorial.
+The next four questions are **long questions**, which are intended to be harder. Long questions often require you to think originally for yourself, not just directly follow procedures from the notes. You may not be able to solve all of these questions, although you should make multiple attempts to do so. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to write good, clear solutions -- are likely to be the main topic for discussion in your tutorial.
 :::
 
 ```{r, child = "problems/questions/P1-long.Rmd"}
@@ -42,8 +42,8 @@ The next four questions are **long questions**, which are intended to be harder.
 ::: {.mysummary}
 The last two questions are **assessed questions**. This means you will submit your answers, and your answers will be marked by your tutor. These two questions count for 3% of your final mark for this module. If you get stuck, your tutor may be willing to give you a small hint in your tutorial.
 
-The deadline for submitting your solutions is **2pm on Monday 17 October** at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva.
-You should submit your answers as a single PDF file. Most students choose to hand-write their work, then scan it to PDF using their phone; if you do this, you should use a proper scanning app (like Microsoft Lens or Adobe Scan) -- please do not just submit photographs. Your work will be marked by your tutor and returned on Monday 24 October, when solutions will also be made available.
+The deadline for submitting your solutions is **2pm on Monday 16 October** at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva or on the Gradescope mobile app.
+You should submit your answers as a single PDF file. Most students choose to hand-write their work on paper, then scan-and-submit it to using the Gradescope app on their phone. Your work will be marked by your tutor and returned on Monday 23 October, when solutions will also be made available.
 
 Question C1 is a "short question", where brief explanations or working are sufficient; Question C2 is a "long question", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 
 
