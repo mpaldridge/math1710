@@ -80,7 +80,7 @@ You will learn R by working through one R worksheet each week in your own time, 
 |  10  |  9: Law of large numbers     |             ---           |
 |  11  |  10: Recap | Thursday 14 December (Week 11) | 
 
-**R practical sessions:** We will introduce you to R in your first practical session in Week 2. We will first show you how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session. A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
+**R practical sessions:** You will be introduced you to R in your first practical session, in Week 2. You will first see how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session. A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
 
 There are 11 R practical session groups -- check your timetable for Weeks 2 and 3 to see when and where your group meets.
 
@@ -91,14 +91,15 @@ There are 11 R practical session groups -- check your timetable for Weeks 2 and 
 
 If you there is something in the module you wish to discuss one-on-one with the module leader, the place for the is the optional weekly "office hours", which will operate as drop-in sessions. These sessions are an optional opportunity for you to ask questions you have to me; these are particularly useful if there's something on the module that you are stuck on or confused about, but I'm happy to discuss any statistics-related issues or questions you have.
 
-I currently plan two optional "office hours" drop-in session per week:
+I currently plan two "office hours" drop-in sessions per week:
 
-* Thursdays from 1400 to 1500 in [Roger Stevens LT 7](https://students.leeds.ac.uk/rooms?type=room&id=100031)
-* Thursdays from 1600 to 1700 in [Roger Stevens LT 17](https://students.leeds.ac.uk/rooms?type=room&id=100041)
+* Fridays 1100--1200 and 1300--1400 in the Mathematics Boardroom (9.26).
 
-I may change arrangements as term continues, depending on attendance levels. If neither time is possible, you may [email me](mailto:m.aldridge@leeds.ac.uk) to book a time to talk to me.
+The Maths Boardroom is in the School of Mathematics. From the main entrance, which enters on the 9th floor, go through the foyer and through the open working area and past the reading room, bearing left as you do. The boardroom is around the corner to the left, sort of "behind" the reception area. I may change arrangements as term continues -- if attendance levels are low, I will move office hours to be actual office.
 
-*Attendance at "office hours" drop-in sessions is optional.*
+If neither time is possible, you may [email me](mailto:m.aldridge@leeds.ac.uk) to arrange an alternative time to talk to me.
+
+*Attendance at "office hours" sessions is optional.*
 
 
 ### Time management {.unnumbered #time}

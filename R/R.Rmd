@@ -1,9 +1,35 @@
 # R Worksheets {#R .unnumbered}
 
+## About R and RStudio  {#about-r .unnumbered}
+
+* **R** is a *programming language* that is particularly useful for working with probability and statistics. The R language is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.
+* **RStudio** is a *program* (or *app*) that gives a convenient way to work with the language R. The RStudio program is made by the company Posit. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
+
+R and RStudio are free/open-source software.
+
+There are a number ways you can use R and RStudio:
+
+1. *On University computers.* You will learn how to use R and RStudio on University computers in your first practical session, in Week 2.
+2. *On your own computer.* R and RStudio can easily be installed on Windows and Mac laptops (and on Intel-based Chromebooks with considerable difficulty). Bring your laptop along to the first practical session to learn how to install R and RStudio.
+3. *Using the Posit Cloud.* The Posit Cloud is a way to use R and RStudio online -- sort of like a "Google Docs for R". You can use it free for 25 hours a month, which should be plenty for this module, or pay for more. I recommend the Posit Cloud for using R/RStudio with Chromebooks, tablet computers, or when borrowing someone else's device.
+
+
+## R practical sessions
+
+We will introduce you to R and RStudio in your first practical session, in Week 2. We will first show you how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session.
+
+A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
+
+
 ## R worksheets  {#r-work .unnumbered}
 
-Each week there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for worksheets with assessed questions, for checking and submitting your solutions.
+Each week (starting in Week 2) there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for even-numbered worksheets with assessed questions, for checking and submitting your solutions.
 
+| Week | Worksheet                    | Solutions | Deadline for assessed work |
+|:----:|------------------------------|:---------:|:--------------------------:|
+|   2  |  **1: R basics**             | Solutions | --- |
+
+<!--
 | Week | Worksheet                     | Deadline for assessed work |
 |:----:|-------------------------------|:--------------------------:|
 |   1  |  [**R basics**](https://mpaldridge.github.io/math1710/R1.html) ([Solutions](https://mpaldridge.github.io/math1710/R1-solutions.html)) | --- |
@@ -17,7 +43,7 @@ Each week there will be an R worksheet to work through in your own time. I recom
 |   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) [[Rmd](https://mpaldridge.github.io/math1710/R9.Rmd)] | Monday 5 December (Week 10) |
 |  10  |  [**Law of large numbers**](https://mpaldridge.github.io/math1710/R10.html) [[Rmd](https://mpaldridge.github.io/math1710/R10.Rmd)] |             ---           |
 |  11  |  [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 15 December (Week 11) |
-
+-->
 <!--
 |   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
 |   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
@@ -31,13 +57,8 @@ Each week there will be an R worksheet to work through in your own time. I recom
 |  11  |   [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 16 December |
 -->
 
-## About R and RStudio  {#about-r .unnumbered}
 
-* **R** is a *programming language* that is particularly useful for working with probability and statistics. R is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.
-* **RStudio** is a *program* that gives a convenient way to work with the language R. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
-
-R and RStudio are free/open-source software.
-
+<!--
 
 ## How to access R and RStudio  {#r-access .unnumbered}
 
@@ -72,6 +93,8 @@ If you have access to a computer on which you can't install software, such as so
 You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.
 
 However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional R troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details -- they are probably listed as "computer practicals".
+
+-->
 
 
 
