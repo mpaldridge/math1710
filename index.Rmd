@@ -19,6 +19,7 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 * [**Lecture 1:** Summary statistics](#L01-stats) (Monday 2 October)
 * [**Lecture 2:** Data visualisation](#L02-dataviz) (Wednesday 4 October)
+  * [Map of how to find Chemistry West LT F](chem-west-map.png)
 * [**Problem Sheet 1:**](#P1) Work through the short and long questions in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
 :::
 

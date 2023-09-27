@@ -14,10 +14,10 @@ The module leader, the lecturer, and the main author of these notes is Dr Matthe
 
 The main way you will learn new material for this module is by attending lectures. There are two lectures per week. Because this is a very large class each lecture will be delivered twice:
 
-* **Mondays** at 1200 or at 1500, in [Chemistry West LT F](https://students.leeds.ac.uk/rooms?type=room&id=99879)
-* **Wednesdays** at 1500 in [Chemistry West LT F](https://students.leeds.ac.uk/rooms?type=room&id=99879) or at 1600 in [Roger Stevens LT 20](https://students.leeds.ac.uk/rooms?type=room&id=100044)
+* **Mondays** at 1200 or at 1500, in [Chemistry West LT F](chem-west-map.png)
+* **Wednesdays** at 1500 in [Chemistry West LT F](chem-west-map.png) or at 1600 in [Roger Stevens LT 20](https://students.leeds.ac.uk/rooms?type=room&id=100044)
 
- Check your timetable to see which lecture you are assigned to each day.
+Check your timetable to see which lecture you are assigned to each day (or [click this link for a map of how to get to Chemistry West LT F]((chem-west-map.png)).
 
 I recommend taking your own notes during the lecture. I will put brief summary notes from the lectures on this website, but will not reflect all the details I say and write during the lectures. Lectures will go through material quite quickly and the material may be quite difficult, so it's likely you'll want to spend time reading through your notes after the lecture.
 

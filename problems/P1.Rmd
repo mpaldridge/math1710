@@ -16,13 +16,13 @@ You can [download this problem sheet as a PDF file](P1-sheet.pdf)
 :::
 
 ::: {.mysummary}
-This is Problem Sheet 1, which covers material from Lectures [1](#L01-stats) and [2](#L02-dataviz) of the notes. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by **2pm on Monday 16 October**. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.
+This is Problem Sheet 1, which covers material from Lectures [1](#L01-stats) and [2](#L02-dataviz) of the notes. You should work through all the questions on this problem sheet in advance of your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by **2pm on Monday 16 October**. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.
 :::
 
 ## A: Short questions {#P1-short .unnumbered}
 
 ::: {.mysummary}
-The first three questions are **short questions**, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the lectures. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available later. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.
+The first three questions are **short questions**, which are intended to be mostly not too difficult. Short questions usually follow directly from the material in the lectures. Here, you should clearly state your final answer, and give enough working-out (or a short written explanation) for it to be clear how you reached that answer. You can check your answers with the solutions-without-working at the bottom of this sheet; solutions-with-working will be available after Friday 13 October. If you get stuck on any of these questions, you might want to ask for guidance in your tutorial.
 :::
 
 ```{r, child = "problems/questions/P1-short.Rmd"}
@@ -31,7 +31,7 @@ The first three questions are **short questions**, which are intended to be most
 ## B: Long questions {#P1-long .unnumbered}
 
 ::: {.mysummary}
-The next four questions are **long questions**, which are intended to be harder. Long questions often require you to think originally for yourself, not just directly follow procedures from the notes. You may not be able to solve all of these questions, although you should make multiple attempts to do so. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to write good, clear solutions -- are likely to be the main topic for discussion in your tutorial.
+The next four questions are **long questions**, which are intended to be harder. Long questions often require you to think originally for yourself, not just directly follow procedures from the notes. You may not be able to solve all of these questions, although you should make multiple attempts to do so. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to write good, clear solutions -- are likely to be the main topic for discussion in your tutorial. Solutions will be available after Friday 13 October.
 :::
 
 ```{r, child = "problems/questions/P1-long.Rmd"}
@@ -55,4 +55,6 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P1-short-sols .unnumbered}
 
-**A1.** (a) 60.7, (b) 2.40, (c) 2.40, (d) ---. **A2.** (a) ---, (b) 45--50, (c) 45--50, (c) 47.3. **A3.** ---
+**A1.** (a) 60.7, (b) 2.40, (c) 2.40, (d) ---.  
+**A2.** (a) ---, (b) 45--50, (c) 45--50, (c) 47.3.  
+**A3.** ---
