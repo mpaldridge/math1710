@@ -35,22 +35,24 @@ Is there a unique mode for this data? Why/why not? For what sort of data does th
 
 ::::: {.myq}
 **C2.**
- **(a)** Prove the following computational formula for the sample covariance:
+**(a)** Suppose that a dataset $\mathbf x = (x_1, x_2, \dots, x_n)$ (with $n \geq 2$) has sample variance $s_x^2 = 0$. Show that all the datapoints are in fact equal.
+
+:::: {.subq}
+::: {.myanswers data-latex=""}
+*Hint.*
+When is the square of something equal to 0? What can you say about the value of a square when it's nonzero? What can you say about a "sum of squares" -- that is, some numbers squared then added together?
+:::
+::::
+
+
+:::: {.subq}
+ **(b)** Prove the following computational formula for the sample covariance:
 \[ s_{xy} = \frac{1}{n-1} \left( \sum_{i=1}^n x_iy_i - n\bar x \bar y \right). \]
 
 :::: {.subq}
 ::: {.myanswers data-latex=""}
 *Hint.*
 In Subsection 1.4 of the notes, we went from the definitional formula for the sample *variance* to a computational formula. Can you follow a similar argument here?
-:::
-::::
-
-:::: {.subq}
-**(b)** Suppose that a dataset $\mathbf x = (x_1, x_2, \dots, x_n)$ (with $n \geq 2$) has sample variance $s_x^2 = 0$. Show that all the datapoints are in fact equal.
-
-::: {.myanswers data-latex=""}
-*Hint.*
-When is the square of something equal to 0? What can you say about the value of a square when it's nonzero? What can you say about a "sum of squares" -- that is, some numbers squared then added together?
 :::
 ::::
 :::::

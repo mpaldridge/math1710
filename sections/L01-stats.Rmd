@@ -67,7 +67,7 @@ Consider some real-valued data $\mathbf x = (x_1, x_2, \dots, x_n)$.
 \[ \bar x = \frac{1}{n}(x_1 + x_2 + \cdots + x_n) = \frac1n \sum_{i=1}^n x_i . \]
 :::
 
-(In that last expression, we've made use of [Sigma notation](https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf) to write down the sum.)
+In that last expression, we've made use of Sigma notation to write down the sum. (If Sigma notation is new to you, I recommend [this PDF from MathCentre](https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf), or Section 2.4 of Clarke and Cooke, *A Basic Course in Statistics*.)
 
 ::: {.example}
 Some packets of Skittles (a small fruit-flavoured sweet) were opened, and the number of Skittles in each packet counted. There were 13 packets, and the number of sweets (sorted from smallest to largest) were:
@@ -141,3 +141,10 @@ IQR(jul$temp)
 * Summary statistics that measure the centre of the data include the mode, median, and mean.
 * Summary statistics that measure the spread of the data include the number of distinct outcomes, the interquartile range, and the sample variance.
 :::
+
+**Recommended reading:**
+
+* Wikipedia: [Exploratory data analysis](https://en.wikipedia.org/wiki/Exploratory_data_analysis), [Mode (statistics)](https://en.wikipedia.org/wiki/Mode_(statistics)), [Median](https://en.wikipedia.org/wiki/Median), [Arithmetic mean](https://en.wikipedia.org/wiki/Arithmetic_mean), [Quantile](https://en.wikipedia.org/wiki/Quantile), [Interquartile range](https://en.wikipedia.org/wiki/Interquartile_range).
+* Clarke and Cooke, *A Basic Course in Statistics*, Sections 2.1--2.4, 2.7, 4.1--4.4, 4.6, 4.7.
+
+On [Problem Sheet 1](#P1), you should now be able to complete Questions A1, B1, B2, B4, C1.

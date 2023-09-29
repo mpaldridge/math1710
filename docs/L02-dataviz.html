@@ -410,7 +410,10 @@ More generally, if <span class="math inline">\(m_j\)</span> is the midpoint of b
 <p>A useful summary statistic here is the <strong>correlation</strong>
 <span class="math display">\[ r_{xy} = \frac{s_{xy}}{s_x s_y} , \]</span>
 where <span class="math inline">\(s_{xy}\)</span> is the <strong>sample covariance</strong>
-<span class="math display">\[ s_{xy} = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) , \]</span>
+<span class="math display">\[\begin{align*}
+s_{xy} &amp;= \frac{1}{n-1} \big( (x_1 - \bar x)(y_1 - \bar y) + \cdots + (x_n - \bar x)(y_n - \bar y) \big) \\
+  &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,
+\end{align*}\]</span>
 and <span class="math inline">\(s_x = \sqrt{s_x^2}\)</span> and <span class="math inline">\(s_y = \sqrt{s_y^2}\)</span> are the standard deviations.</p>
 <p>The correlation <span class="math inline">\(r_{xy}\)</span> is always between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>. Values of <span class="math inline">\(r_{xy}\)</span> near <span class="math inline">\(+1\)</span> indicate that the scatterpoints are close to a straight line with an upward slope (big <span class="math inline">\(x\)</span> = big <span class="math inline">\(y\)</span>); values of <span class="math inline">\(r_{xy}\)</span> near <span class="math inline">\(-1\)</span> indicate that the scatterpoints are close to a straight line with a downward slope (big <span class="math inline">\(x\)</span> = small <span class="math inline">\(y\)</span>); and values of <span class="math inline">\(r_{xy}\)</span> near 0 indicate that there is a weak linear relationship between <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>.</p>
 <p>For the elections data, the correlation is</p>
@@ -427,6 +430,12 @@ and <span class="math inline">\(s_x = \sqrt{s_x^2}\)</span> and <span class="mat
 <li>Scatterplots show the relationship between two datasets.</li>
 </ul>
 </div>
+<p><strong>Recommended reading:</strong></p>
+<ul>
+<li>Wikipedia: <a href="https://en.wikipedia.org/wiki/Box_plot">Box plot</a>, <a href="https://en.wikipedia.org/wiki/Histogram">Histogram</a>, <a href="https://en.wikipedia.org/wiki/Grouped_data">Grouped data</a>, <a href="https://en.wikipedia.org/wiki/Scatter_plot">Scatter plot</a>, <a href="https://en.wikipedia.org/wiki/Pearson_correlation_coefficient">Pearson correlation coefficient</a>.</li>
+<li>Clarke and Cooke, <em>A Basic Course in Statistics</em>, Sections 1.2, 2.5, 4.5, 4.6, 21.2, 21.3.</li>
+</ul>
+<p>On <a href="P1.html#P1">Problem Sheet 1</a>, you should now be able to complete all questions.</p>
 
 </div>
 </div>

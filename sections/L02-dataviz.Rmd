@@ -159,7 +159,10 @@ We see that there is a strong relationship between $\mathbf x$ and $\mathbf y$, 
 A useful summary statistic here is the **correlation**
 \[ r_{xy} = \frac{s_{xy}}{s_x s_y} , \]
 where $s_{xy}$ is the **sample covariance**
-\[ s_{xy} = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) , \]
+\begin{align*}
+s_{xy} &= \frac{1}{n-1} \big( (x_1 - \bar x)(y_1 - \bar y) + \cdots + (x_n - \bar x)(y_n - \bar y) \big) \\
+  &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,
+\end{align*}
 and $s_x = \sqrt{s_x^2}$ and $s_y = \sqrt{s_y^2}$ are the standard deviations.
 
 The correlation $r_{xy}$ is always between $-1$ and $+1$. Values of $r_{xy}$ near $+1$ indicate that the scatterpoints are close to a straight line with an upward slope (big $x$ = big $y$); values of $r_{xy}$ near $-1$ indicate that the scatterpoints are close to a straight line with a downward slope (big $x$ = small $y$); and values of $r_{xy}$ near 0 indicate that there is a weak linear relationship between $x$ and $y$.
@@ -177,5 +180,12 @@ which, as we expected, is extremely high.
 * Histograms show the shape of binned data.
 * Scatterplots show the relationship between two datasets.
 :::
+
+**Recommended reading:**
+
+* Wikipedia: [Box plot](https://en.wikipedia.org/wiki/Box_plot), [Histogram](https://en.wikipedia.org/wiki/Histogram), [Grouped data](https://en.wikipedia.org/wiki/Grouped_data), [Scatter plot](https://en.wikipedia.org/wiki/Scatter_plot), [Pearson correlation coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient).
+* Clarke and Cooke, *A Basic Course in Statistics*, Sections 1.2, 2.5, 4.5, 4.6, 21.2, 21.3.
+
+On [Problem Sheet 1](#P1), you should now be able to complete all questions.
 
 

@@ -12,6 +12,21 @@
 ::::
 
 :::: {.subq}
+**(b)** Calculate the sample variance using the definitional
+formula.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+\begin{align*}
+s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
+      &= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
+      &= \frac{1}{12} \times 28.77 \\
+      &= 2.40
+\end{align*}
+:::
+::::
+
+:::: {.subq}
 **(b)** Calculate the sample variance using the computational formula.
 
 ::: {.myanswers data-latex=""}
@@ -27,21 +42,6 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59^2 + 59^2 + \cdots + 63^2) - 13 \times 60.69
 ::::
 
 :::: {.subq}
-**(c)** Calculate the sample variance using the definitional
-formula.
-
-::: {.myanswers data-latex=""}
-*Solution.*
-\begin{align*}
-s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
-      &= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
-      &= \frac{1}{12} \times 28.77 \\
-      &= 2.40
-\end{align*}
-:::
-::::
-
-:::: {.subq}
 **(d)** Out of (b) and (c), which calculation did you find easier, and why?
 
 ::: {.myanswers data-latex=""}
@@ -49,7 +49,7 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 
 
 On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in $\bar x$ to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.
 
-**Group feedback:** Many answer for (d) are fine provided you give a justification.
+**Group feedback:** Many different answers for (d) are fine provided you give a justification.
 :::
 ::::
 :::::
@@ -61,12 +61,11 @@ On the other hand, the expression inside the brackets of the computational formu
 |   Age (years)    | Frequency | Relative frequency | Frequency density |
 |:---------------:|:---------:|:------------------:|:-----------------:|
 |   18--30   |     1     |            |              |
-|   30--40   |     3     |            |              |
+|   30--40   |     2     |            |              |
 |   40--45   |     4     |            |              |
 |   45--50   |     5     |            |              |
-|   50--55   |     3     |            |              |
-|   55--60   |     1     |            |              |
-|   60--70   |     3     |            |              |
+|   50--60   |     6     |            |              |
+|   60--80   |     2     |            |              |
 |    **Total**    |    20    |          1         |      ---             |
 
 :::: {.subq}
@@ -78,14 +77,13 @@ frequency densities.
 
 |   Age (years)    | Frequency | Relative frequency | Frequency density |
 |:---------------:|:---------:|:------------------:|:-----------------:|
-| 18--30   |     1     |    0.05    |     0.0041        |
-|   30--40   |     3  |  0.15     |       0.015      |
-|   40--45   |     4    |   0.2     |  0.04     |
-|   45--50   |     5    |   0.25      |    0.05      |
-|   50--55   |  3    |   0.15     |        0.03      |
-|   55--60   |     1     |    0.05    |  0.01        |
-|   60--70   |     3     |    0.15    |       0.015       |
-|  **Total**    |    20    |          1         |      ---             |
+|   18--30   |    1    |   0.05   |  0.0041  |
+|   30--40   |    2    |   0.15   |  0.015   |
+|   40--45   |    4    |   0.2    |  0.04    |
+|   45--50   |    5    |   0.25   |  0.05    |
+|   50--60   |    6    |   0.15   |  0.03    |
+|   60--80   |    2    |   0.15   |  0.015   |
+|  **Total**  |   20   |   1      |  ---     |
 
 :::
 ::::

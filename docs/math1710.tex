@@ -567,7 +567,7 @@ Consider some real-valued data \(\mathbf x = (x_1, x_2, \dots, x_n)\).
 
 \end{definition}
 
-(In that last expression, we've made use of \href{https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf}{Sigma notation} to write down the sum.)
+In that last expression, we've made use of Sigma notation to write down the sum. (If Sigma notation is new to you, I recommend \href{https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf}{this PDF from MathCentre}, or Section 2.4 of Clarke and Cooke, \emph{A Basic Course in Statistics}.)
 
 \begin{example}
 Some packets of Skittles (a small fruit-flavoured sweet) were opened, and the number of Skittles in each packet counted. There were 13 packets, and the number of sweets (sorted from smallest to largest) were:
@@ -686,6 +686,18 @@ Going back to our weather data in R, we can find the sample variance of the Octo
 \item
   Summary statistics that measure the spread of the data include the number of distinct outcomes, the interquartile range, and the sample variance.
 \end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  Wikipedia: \href{https://en.wikipedia.org/wiki/Exploratory_data_analysis}{Exploratory data analysis}, \href{https://en.wikipedia.org/wiki/Mode_(statistics)}{Mode (statistics)}, \href{https://en.wikipedia.org/wiki/Median}{Median}, \href{https://en.wikipedia.org/wiki/Arithmetic_mean}{Arithmetic mean}, \href{https://en.wikipedia.org/wiki/Quantile}{Quantile}, \href{https://en.wikipedia.org/wiki/Interquartile_range}{Interquartile range}.
+\item
+  Clarke and Cooke, \emph{A Basic Course in Statistics}, Sections 2.1--2.4, 2.7, 4.1--4.4, 4.6, 4.7.
+\end{itemize}
+
+On \protect\hyperlink{P1}{Problem Sheet 1}, you should now be able to complete Questions A1, B1, B2, B4, C1.
 
 \hypertarget{L02-dataviz}{%
 \chapter{Data visualisations}\label{L02-dataviz}}
@@ -857,7 +869,10 @@ We see that there is a strong relationship between \(\mathbf x\) and \(\mathbf y
 A useful summary statistic here is the \textbf{correlation}
 \[ r_{xy} = \frac{s_{xy}}{s_x s_y} , \]
 where \(s_{xy}\) is the \textbf{sample covariance}
-\[ s_{xy} = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) , \]
+\begin{align*}
+s_{xy} &= \frac{1}{n-1} \big( (x_1 - \bar x)(y_1 - \bar y) + \cdots + (x_n - \bar x)(y_n - \bar y) \big) \\
+  &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,
+\end{align*}
 and \(s_x = \sqrt{s_x^2}\) and \(s_y = \sqrt{s_y^2}\) are the standard deviations.
 
 The correlation \(r_{xy}\) is always between \(-1\) and \(+1\). Values of \(r_{xy}\) near \(+1\) indicate that the scatterpoints are close to a straight line with an upward slope (big \(x\) = big \(y\)); values of \(r_{xy}\) near \(-1\) indicate that the scatterpoints are close to a straight line with a downward slope (big \(x\) = small \(y\)); and values of \(r_{xy}\) near 0 indicate that there is a weak linear relationship between \(x\) and \(y\).
@@ -890,6 +905,18 @@ which, as we expected, is extremely high.
   Scatterplots show the relationship between two datasets.
 \end{itemize}
 
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  Wikipedia: \href{https://en.wikipedia.org/wiki/Box_plot}{Box plot}, \href{https://en.wikipedia.org/wiki/Histogram}{Histogram}, \href{https://en.wikipedia.org/wiki/Grouped_data}{Grouped data}, \href{https://en.wikipedia.org/wiki/Scatter_plot}{Scatter plot}, \href{https://en.wikipedia.org/wiki/Pearson_correlation_coefficient}{Pearson correlation coefficient}.
+\item
+  Clarke and Cooke, \emph{A Basic Course in Statistics}, Sections 1.2, 2.5, 4.5, 4.6, 21.2, 21.3.
+\end{itemize}
+
+On \protect\hyperlink{P1}{Problem Sheet 1}, you should now be able to complete all questions.
+
 \hypertarget{P1}{%
 \chapter*{Problem Sheet 1}\label{P1}}
 \addcontentsline{toc}{chapter}{Problem Sheet 1}
@@ -917,6 +944,20 @@ The first three questions are \textbf{short questions}, which are intended to be
 
 \end{myanswers}
 
+\textbf{(b)} Calculate the sample variance using the definitional
+formula.
+
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
+      &= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
+      &= \frac{1}{12} \times 28.77 \\
+      &= 2.40
+\end{align*}
+
+\end{myanswers}
+
 \textbf{(b)} Calculate the sample variance using the computational formula.
 
 \begin{myanswers}
@@ -931,20 +972,6 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59^2 + 59^2 + \cdots + 63^2) - 13 \times 60.69
 
 \end{myanswers}
 
-\textbf{(c)} Calculate the sample variance using the definitional
-formula.
-
-\begin{myanswers}
-\emph{Solution.}
-\begin{align*}
-s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
-      &= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
-      &= \frac{1}{12} \times 28.77 \\
-      &= 2.40
-\end{align*}
-
-\end{myanswers}
-
 \textbf{(d)} Out of (b) and (c), which calculation did you find easier, and why?
 
 \begin{myanswers}
@@ -952,7 +979,7 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 
 
 On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in \(\bar x\) to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.
 
-\textbf{Group feedback:} Many answer for (d) are fine provided you give a justification.
+\textbf{Group feedback:} Many different answers for (d) are fine provided you give a justification.
 
 \end{myanswers}
 
@@ -979,12 +1006,11 @@ Frequency density
 \bottomrule\noalign{}
 \endlastfoot
 18--30 & 1 & & \\
-30--40 & 3 & & \\
+30--40 & 2 & & \\
 40--45 & 4 & & \\
 45--50 & 5 & & \\
-50--55 & 3 & & \\
-55--60 & 1 & & \\
-60--70 & 3 & & \\
+50--60 & 6 & & \\
+60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
 \end{longtable}
 
@@ -1015,12 +1041,11 @@ Frequency density
 \bottomrule\noalign{}
 \endlastfoot
 18--30 & 1 & 0.05 & 0.0041 \\
-30--40 & 3 & 0.15 & 0.015 \\
+30--40 & 2 & 0.15 & 0.015 \\
 40--45 & 4 & 0.2 & 0.04 \\
 45--50 & 5 & 0.25 & 0.05 \\
-50--55 & 3 & 0.15 & 0.03 \\
-55--60 & 1 & 0.05 & 0.01 \\
-60--70 & 3 & 0.15 & 0.015 \\
+50--60 & 6 & 0.15 & 0.03 \\
+60--80 & 2 & 0.15 & 0.015 \\
 \textbf{Total} & 20 & 1 & --- \\
 \end{longtable}
 
@@ -1274,21 +1299,22 @@ Is there a unique mode for this data? Why/why not? For what sort of data does th
 
 \end{myanswers}
 
+::::: \{.myq\}
 \textbf{C2.}
-~\textbf{(a)} Prove the following computational formula for the sample covariance:
+\textbf{(a)} Suppose that a dataset \(\mathbf x = (x_1, x_2, \dots, x_n)\) (with \(n \geq 2\)) has sample variance \(s_x^2 = 0\). Show that all the datapoints are in fact equal.
+
+\begin{myanswers}
+\emph{Hint.}
+When is the square of something equal to 0? What can you say about the value of a square when it's nonzero? What can you say about a ``sum of squares'' -- that is, some numbers squared then added together?
+
+\end{myanswers}
+
+~\textbf{(b)} Prove the following computational formula for the sample covariance:
 \[ s_{xy} = \frac{1}{n-1} \left( \sum_{i=1}^n x_iy_i - n\bar x \bar y \right). \]
 
 \begin{myanswers}
 \emph{Hint.}
 In Subsection 1.4 of the notes, we went from the definitional formula for the sample \emph{variance} to a computational formula. Can you follow a similar argument here?
-
-\end{myanswers}
-
-\textbf{(b)} Suppose that a dataset \(\mathbf x = (x_1, x_2, \dots, x_n)\) (with \(n \geq 2\)) has sample variance \(s_x^2 = 0\). Show that all the datapoints are in fact equal.
-
-\begin{myanswers}
-\emph{Hint.}
-When is the square of something equal to 0? What can you say about the value of a square when it's nonzero? What can you say about a ``sum of squares'' -- that is, some numbers squared then added together?
 
 \end{myanswers}
 
