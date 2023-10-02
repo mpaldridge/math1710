@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Problem Sheet 1 | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Problem Sheet 1 | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
@@ -118,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -141,9 +145,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem Sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R Worksheets and Practicals</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>“Office hours” drop-in sessions</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
@@ -420,7 +424,7 @@ frequency densities.</p>
 </div>
 <div class="myq">
 <p><strong>A3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<p><img src="math1710_files/figure-html/unnamed-chunk-9-1.png" width="480" /></p>
+<p><img src="math1710_files/figure-html/unnamed-chunk-10-1.png" width="480" /></p>
 <div class="myanswers">
 <p><em>Solution.</em> Some answers could be:</p>
 <ul>
@@ -441,38 +445,7 @@ You can probably think of other answers.</p>
 <div class="myq">
 <p><strong>B1.</strong> For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.</p>
 <div class="subq">
-<p><strong>(a)</strong> Six packets of Skittles are opened together, and the total number of sweets of each colour is:</p>
-<table>
-<thead>
-<tr class="header">
-<th align="center"><strong>Colour</strong></th>
-<th align="center">Red</th>
-<th align="center">Orange</th>
-<th align="center">Yellow</th>
-<th align="center">Green</th>
-<th align="center">Purple</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center"><strong>Number of Skittles</strong></td>
-<td align="center">67</td>
-<td align="center">71</td>
-<td align="center">87</td>
-<td align="center">74</td>
-<td align="center">62</td>
-</tr>
-</tbody>
-</table>
-<div class="myanswers">
-<p><em>Solution.</em>
-The modal colour is Yellow. The number of distinct outcomes is 5.</p>
-<p>It’s not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can’t be put “in order” from smallest to largest.</p>
-<p>It’s not possible to calculate the mean or sample variance, as these require us to have numerical data that can be “added up”, but this can’t be done with colours.</p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> Shirt sizes for a university football squad:</p>
+<p><strong>(a)</strong> Shirt sizes for the <span class="math inline">\(n = 16\)</span> members of a university football squad:</p>
 <table style="width:100%;">
 <colgroup>
 <col width="33%" />
@@ -510,6 +483,37 @@ The modal shirt size is medium. The number of distinct outcomes is 4 (we don’t
 <p>Since <span class="math inline">\(1 + 0.25(16 - 1) = 4.75\)</span> the lower quartile is the 4th or 5th datapoints, which are Medium. Since <span class="math inline">\(1 + 0.75(16-1) = 12.25\)</span>, the upper quartile is the 12th or 13th datapoints, which are Xtra Large. So we can certainly say that the inner quartiles range from Medium to Xtra Large. We could probably also say that the interquartile range is 3 shirt sizes (Medium, Large, Xtra Large).</p>
 <p>Again, because the data is not numerical, we can’t add it up, so can’t calculate a mean or sample variance.</p>
 <p><strong>Group feedback:</strong> Make sure your explanation is clear for why we can’t calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be <em>ordered</em>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Six packets of Skittles are opened together, a total of <span class="math inline">\(n = 361\)</span> sweets. The colours of these sweets is recorded as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>Colour</strong></th>
+<th align="center">Red</th>
+<th align="center">Orange</th>
+<th align="center">Yellow</th>
+<th align="center">Green</th>
+<th align="center">Purple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Number of Skittles</strong></td>
+<td align="center">67</td>
+<td align="center">71</td>
+<td align="center">87</td>
+<td align="center">74</td>
+<td align="center">62</td>
+</tr>
+</tbody>
+</table>
+<div class="myanswers">
+<p><em>Solution.</em>
+The modal colour is Yellow. The number of distinct outcomes is 5.</p>
+<p>It’s not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can’t be put “in order” from smallest to largest.</p>
+<p>It’s not possible to calculate the mean or sample variance, as these require us to have numerical data that can be “added up”, but this can’t be done with colours.</p>
 </div>
 </div>
 </div>

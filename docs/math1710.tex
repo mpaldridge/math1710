@@ -6,19 +6,16 @@
   a4paper,
 ]{book}
 \usepackage{amsmath,amssymb}
+\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -48,13 +45,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -62,7 +59,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -71,7 +68,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -116,7 +113,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={MATH1710 Probability and Statistics I},
   pdfauthor={Matthew Aldridge},
@@ -212,23 +209,22 @@ You are probably reading the web version of the notes. If you want a PDF copy (t
 \emph{Attendance at lectures is compulsory.}
 
 \hypertarget{problem-sheets}{%
-\subsection*{Problem sheets}\label{problem-sheets}}
-\addcontentsline{toc}{subsection}{Problem sheets}
+\subsection*{Problem Sheets}\label{problem-sheets}}
+\addcontentsline{toc}{subsection}{Problem Sheets}
 
 There will be 5 problem sheets. Each problem sheet has a number of short and long questions, for you to work on in your own time to help you learn the material, and two assessed questions, which you should submit for marking. The assessed questions on each problem sheet make up 3\% of your mark on this module, for a total of 15\%. Deadlines are 2pm on Mondays, although I'd recommend completing and submitting the work in the previous week.
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Problem Sheet & Lectures covered & Deadline for assessed work \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 1 & 1 and 2 & Monday 16 October (Week 3) \\
 2 & 3--6 & Monday 30 October (Week 5) \\
 3 & 7--10 & Monday 13 November (Week 7) \\
 4 & 11--14 & Monday 27 November (Week 9) \\
 5 & 15--18 & Monday 11 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
 An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available. Lectures 21 and 22 are revision lectures with no new material.
@@ -262,8 +258,8 @@ Your tutor will also be the marker of your answers to the assessed questions on 
 \emph{Attendance at tutorials is compulsory.}
 
 \hypertarget{r-worksheets}{%
-\subsection*{R worksheets}\label{r-worksheets}}
-\addcontentsline{toc}{subsection}{R worksheets}
+\subsection*{R Worksheets and Practicals}\label{r-worksheets}}
+\addcontentsline{toc}{subsection}{R Worksheets and Practicals}
 
 R is a programming language that is particularly good at working with probability and statistics. Learning to use R is an important part of this module, and is used in many other modules in the University, including MATH1712 Probability and Statistics II. R is used by statisticians throughout academia and increasingly in industry too. Learning to program is a valuable skill for all students, and learning to use R is particularly valuable for students interested in statistics and related topics like actuarial science.
 
@@ -273,7 +269,7 @@ You will learn R by working through one R worksheet each week in your own time, 
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0923}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4769}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4308}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -281,10 +277,8 @@ Worksheet
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & 1: R basics & --- \\
 3 & 2: Vectors & Monday 23 October (Week 4) \\
 4 & 3: Data in R & --- \\
@@ -295,9 +289,12 @@ Deadline for assessed work
 9 & 8: Normal distribution & Monday 4 December (Week 10) \\
 10 & 9: Law of large numbers & --- \\
 11 & 10: Recap & Thursday 14 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
-\textbf{R practical sessions:} You will be introduced you to R in your first practical session, in Week 2. You will first see how to use R on University computers (these sessions will take place in computer ``clusters''). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session. A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
+~
+
+\textbf{R Practical sessions:} You will be introduced you to R in your first Practical session, in Week 2. You will first see how to use R on University computers (these sessions will take place in computer ``clusters''). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session. A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
 
 There are 11 R practical session groups -- check your timetable for Weeks 2 and 3 to see when and where your group meets.
 
@@ -481,7 +478,7 @@ These notes (in the web format) should be accessible by screenreaders. If you ha
 \hypertarget{what-is-eda}{%
 \section{What is EDA?}\label{what-is-eda}}
 
-\textbf{Statistics} is the study of data. \textbf{Exploratory data analysis} (or \textbf{EDA}, for short) is the part of statistics concerned with taking a ``first look'' at some data. Later, toward the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics II (for those who take it) you will see many other statistical techniques -- in particular, ways of testing formal hypotheses for data. But here we're just interested in first impressions and brief summaries.
+\textbf{Statistics} is the study of data. \textbf{Exploratory data analysis} (or \textbf{EDA}, for short) is the part of statistics concerned with taking a ``first look'' at some data. Later, toward the end of this module, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics II (for those who take it) you will see many other statistical techniques -- in particular, ways of testing formal hypotheses for data. But here we're just interested in first impressions and brief summaries.
 
 In this section, we will concentrate on two aspects of EDA:
 
@@ -522,13 +519,13 @@ R can easily and quickly perform all the calculations and draw all the plots in 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 5.428571
+[1] 5.428571
 \end{verbatim}
 
 Here, the code in the first shaded box is the R commands that are typed into
-RStudio, which you can type in next to the \texttt{\textgreater{}} arrow in the RStudio ``console''. The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign \texttt{\#\#}. The \texttt{{[}1{]}} can be ignored (this is just R's way of saying that this is the first part of the answer -- but the answer here only has one part anyway). Plots produced by R are displayed in these notes as pictures.
+RStudio, which you can type in next to the \texttt{\textgreater{}} arrow in the RStudio ``console''. The numerical answers that R returns are shown here in the second unshaded box. The \texttt{{[}1{]}} can be ignored (this is just R's way of saying that this is the first part of the answer -- but the answer here only has one part anyway). Plots produced by R are displayed in these notes as pictures.
 
-Most importantly for now, \emph{you are not expected to understand the R code in this section yet}. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.
+Most importantly for now, \emph{you are not expected to understand the R code in this section yet}. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in Week 6, you should be able understand most of the R code in this section.
 
 \hypertarget{stat-central}{%
 \section{Statistics of centrality}\label{stat-central}}
@@ -605,7 +602,7 @@ The following R code reads in some data which has the daily average temperature 
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 11.93548
+[1] 11.93548
 \end{verbatim}
 
 \begin{Shaded}
@@ -615,8 +612,8 @@ The following R code reads in some data which has the daily average temperature 
 \end{Shaded}
 
 \begin{verbatim}
-## 25% 
-##  15
+25% 
+ 15 
 \end{verbatim}
 
 \hypertarget{stat-spread}{%
@@ -658,7 +655,7 @@ Going back to our weather data in R, we can find the sample variance of the Octo
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 2.862366
+[1] 2.862366
 \end{verbatim}
 
 \begin{Shaded}
@@ -668,7 +665,7 @@ Going back to our weather data in R, we can find the sample variance of the Octo
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 3
+[1] 3
 \end{verbatim}
 
 \hypertarget{summary-01}{%
@@ -750,12 +747,10 @@ Often when collecting data, we don't collect exact data, but rather collect data
 Consider the following binned data, from \(n = 100\) students:
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 \\
 5--10 minutes & 8 & 0.08 \\
 10--15 minutes & 21 & 0.21 \\
@@ -764,6 +759,7 @@ Time & Frequency & Relative frequency \\
 45--60 minutes & 8 & 0.08 \\
 60--120 minutes & 2 & 0.02 \\
 \textbf{Total} & 100 & 1 \\
+\bottomrule()
 \end{longtable}
 
 Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The \textbf{relative frequency} of bin \(j\) is \(f_j/n\); that is, the proportion of the observations in that bin.
@@ -771,12 +767,10 @@ Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observa
 Which bin would you say is the most popular -- that is, the ``modal'' bin? The bin with the most observations in it is the ``15--30 minute'' bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the \textbf{frequency density}: the relative frequency divided by the size of the bin.
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency & Frequency density \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 & 0.008 \\
 5--10 minutes & 8 & 0.08 & 0.016 \\
 10--15 minutes & 21 & 0.21 & 0.042 \\
@@ -785,6 +779,7 @@ Time & Frequency & Relative frequency & Frequency density \\
 45--60 minutes & 8 & 0.08 & 0.005 \\
 60--120 minutes & 2 & 0.02 & 0.0003 \\
 \textbf{Total} & 100 & 1 & \\
+\bottomrule()
 \end{longtable}
 
 In the first row, for example, the relative frequency is 0.04 and the size of the bin is 5 minutes, so the frequency density is \(0.04/5 = 0.008\). We now see that the modal bin -- the bin with the highest frequency \emph{density} -- is in fact the ``10--15 minutes'' bin. This bin has somewhat fewer datapoints that the ``15--30 minutes'' bin, but they're squashed into a much smaller bin.
@@ -886,7 +881,7 @@ For the elections data, the correlation is
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 0.9919659
+[1] 0.9919659
 \end{verbatim}
 
 which, as we expected, is extremely high.
@@ -991,7 +986,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1001,10 +996,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -1012,6 +1005,7 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -1026,7 +1020,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1036,10 +1030,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & 0.05 & 0.0041 \\
 30--40 & 2 & 0.15 & 0.015 \\
 40--45 & 4 & 0.2 & 0.04 \\
@@ -1047,6 +1039,7 @@ Frequency density
 50--60 & 6 & 0.15 & 0.03 \\
 60--80 & 2 & 0.15 & 0.015 \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -1075,7 +1068,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-9-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-10-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -1103,29 +1096,7 @@ The next four questions are \textbf{long questions}, which are intended to be ha
 
 \textbf{B1.} For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.
 
-\textbf{(a)} Six packets of Skittles are opened together, and the total number of sweets of each colour is:
-
-\begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
-\textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule\noalign{}
-\endhead
-\bottomrule\noalign{}
-\endlastfoot
-\textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
-\end{longtable}
-
-\begin{myanswers}
-\emph{Solution.}
-The modal colour is Yellow. The number of distinct outcomes is 5.
-
-It's not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can't be put ``in order'' from smallest to largest.
-
-It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be ``added up'', but this can't be done with colours.
-
-\end{myanswers}
-
-\textbf{(b)} Shirt sizes for a university football squad:
+\textbf{(a)} Shirt sizes for the \(n = 16\) members of a university football squad:
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333}}
@@ -1134,7 +1105,7 @@ It's not possible to calculate the mean or sample variance, as these require us 
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1148,11 +1119,10 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1166,6 +1136,27 @@ Since \(1 + 0.25(16 - 1) = 4.75\) the lower quartile is the 4th or 5th datapoint
 Again, because the data is not numerical, we can't add it up, so can't calculate a mean or sample variance.
 
 \textbf{Group feedback:} Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be \emph{ordered}.
+
+\end{myanswers}
+
+\textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule()
+\textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
+\midrule()
+\endhead
+\textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
+\end{longtable}
+
+\begin{myanswers}
+\emph{Solution.}
+The modal colour is Yellow. The number of distinct outcomes is 5.
+
+It's not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can't be put ``in order'' from smallest to largest.
+
+It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be ``added up'', but this can't be done with colours.
 
 \end{myanswers}
 
@@ -1375,7 +1366,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1467}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3733}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1385,11 +1376,10 @@ Solutions
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & \textbf{1: R basics} & Solutions & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{document}

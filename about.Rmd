@@ -26,7 +26,7 @@ You are probably reading the web version of the notes. If you want a PDF copy (t
 *Attendance at lectures is compulsory.*
 
 
-### Problem sheets {.unnumbered #problem-sheets}
+### Problem Sheets {.unnumbered #problem-sheets}
 
 There will be 5 problem sheets. Each problem sheet has a number of short and long questions, for you to work on in your own time to help you learn the material, and two assessed questions, which you should submit for marking.  The assessed questions on each problem sheet make up 3% of your mark on this module, for a total of 15%. Deadlines are 2pm on Mondays, although I'd recommend completing and submitting the work in the previous week.
 
@@ -61,7 +61,7 @@ Your tutor will also be the marker of your answers to the assessed questions on 
 *Attendance at tutorials is compulsory.*
 
 
-### R worksheets {.unnumbered #r-worksheets}
+### R Worksheets and Practicals {.unnumbered #r-worksheets}
 
 R is a programming language that is particularly good at working with probability and statistics. Learning to use R is an important part of this module, and is used in many other modules in the University, including MATH1712 Probability and Statistics II. R is used by statisticians throughout academia and increasingly in industry too. Learning to program is a valuable skill for all students, and learning to use R is particularly valuable for students interested in statistics and related topics like actuarial science.
 
@@ -80,7 +80,9 @@ You will learn R by working through one R worksheet each week in your own time, 
 |  10  |  9: Law of large numbers     |             ---           |
 |  11  |  10: Recap | Thursday 14 December (Week 11) | 
 
-**R practical sessions:** You will be introduced you to R in your first practical session, in Week 2. You will first see how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session. A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
+ 
+
+**R Practical sessions:** You will be introduced you to R in your first Practical session, in Week 2. You will first see how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session. A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
 
 There are 11 R practical session groups -- check your timetable for Weeks 2 and 3 to see when and where your group meets.
 
