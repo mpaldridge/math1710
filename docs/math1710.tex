@@ -569,7 +569,12 @@ In that last expression, we've made use of Sigma notation to write down the sum.
 \begin{example}
 Some packets of Skittles (a small fruit-flavoured sweet) were opened, and the number of Skittles in each packet counted. There were 13 packets, and the number of sweets (sorted from smallest to largest) were:
 \[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]
-The mode is 59, because there were 4 packets containing 59 sweets; more than any other number. Since there are \(n = 13\) packets, the middle packet is number \(i = 7\), so the median is \(x_7 = 60\). The mean is
+
+The mode is 59, because there were 4 packets containing 59 sweets; more than any other number.
+
+Since there are \(n = 13\) packets, the middle packet is number \(i = 7\), so the median is \(x_7 = 60\).
+
+The mean is
 \[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) = \frac{789}{13} = 60.7 .\]
 \end{example}
 
@@ -630,6 +635,16 @@ The \textbf{sample variance} is
 \[  s^2_x = \frac{1}{n-1} \left((x_1 - \bar x)^2 + \cdots + (x_n - \bar x)^2 \right) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]
 where \(\bar x\) is the sample mean from before. The \textbf{standard deviation} \(s_x = \sqrt{s^2_x}\) is the square-root of the sample variance.
 \end{definition}
+
+\begin{example}
+We continue with the Skittles data.
+
+The number of distinct observation is 5. (These are 59, 60, 61, 62, and 63.)
+
+The interquartile range is \(x_{10} - x_4 = 62 - 59 = 3\).
+
+You will calculate the sample variance on \protect\hyperlink{P1}{Problem Sheet 1}.
+\end{example}
 
 The formula we've given for sample variance is sometimes called the ``definitional formula'', as it's the formula used to \emph{define} the sample variance. We can rearrange that formula as follows:
 \begin{align*}

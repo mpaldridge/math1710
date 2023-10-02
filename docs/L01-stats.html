@@ -269,8 +269,10 @@ RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudi
 <p>In that last expression, we’ve made use of Sigma notation to write down the sum. (If Sigma notation is new to you, I recommend <a href="https://www.mathcentre.ac.uk/resources/workbooks/mathcentre/sigma.pdf">this PDF from MathCentre</a>, or Section 2.4 of Clarke and Cooke, <em>A Basic Course in Statistics</em>.)</p>
 <div class="example">
 <p><span id="exm:unlabeled-div-2" class="example"><strong>Example 1.1  </strong></span>Some packets of Skittles (a small fruit-flavoured sweet) were opened, and the number of Skittles in each packet counted. There were 13 packets, and the number of sweets (sorted from smallest to largest) were:
-<span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span>
-The mode is 59, because there were 4 packets containing 59 sweets; more than any other number. Since there are <span class="math inline">\(n = 13\)</span> packets, the middle packet is number <span class="math inline">\(i = 7\)</span>, so the median is <span class="math inline">\(x_7 = 60\)</span>. The mean is
+<span class="math display">\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]</span></p>
+<p>The mode is 59, because there were 4 packets containing 59 sweets; more than any other number.</p>
+<p>Since there are <span class="math inline">\(n = 13\)</span> packets, the middle packet is number <span class="math inline">\(i = 7\)</span>, so the median is <span class="math inline">\(x_7 = 60\)</span>.</p>
+<p>The mean is
 <span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) = \frac{789}{13} = 60.7 .\]</span></p>
 </div>
 <p>The median is one example of a “quantile” of the data. Suppose our data is increasing order again. For <span class="math inline">\(0 \leq \alpha \leq 1\)</span>, the <strong><span class="math inline">\(\alpha\)</span>-quantile</strong> <span class="math inline">\(q(\alpha)\)</span> of the data is the datapoint <span class="math inline">\(\alpha\)</span> of the way along the list. Generally, <span class="math inline">\(q(\alpha)\)</span> is equal to <span class="math inline">\(x_{1+\alpha(n-1)}\)</span> when <span class="math inline">\(1+\alpha(n-1)\)</span> is an integer. (If <span class="math inline">\(1+\alpha(n-1)\)</span> isn’t an integer, there are various conventions of how to choose that we won’t go into here. R has <em>nine</em> different settings for choosing quantiles! – we will always just use R’s default choice.)</p>
@@ -301,6 +303,12 @@ The mode is 59, because there were 4 packets containing 59 sweets; more than any
 <p>The <strong>sample variance</strong> is
 <span class="math display">\[  s^2_x = \frac{1}{n-1} \left((x_1 - \bar x)^2 + \cdots + (x_n - \bar x)^2 \right) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]</span>
 where <span class="math inline">\(\bar x\)</span> is the sample mean from before. The <strong>standard deviation</strong> <span class="math inline">\(s_x = \sqrt{s^2_x}\)</span> is the square-root of the sample variance.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 1.2  </strong></span>We continue with the Skittles data.</p>
+<p>The number of distinct observation is 5. (These are 59, 60, 61, 62, and 63.)</p>
+<p>The interquartile range is <span class="math inline">\(x_{10} - x_4 = 62 - 59 = 3\)</span>.</p>
+<p>You will calculate the sample variance on <a href="P1.html#P1">Problem Sheet 1</a>.</p>
 </div>
 <p>The formula we’ve given for sample variance is sometimes called the “definitional formula”, as it’s the formula used to <em>define</em> the sample variance. We can rearrange that formula as follows:
 <span class="math display">\[\begin{align*}
