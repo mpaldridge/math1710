@@ -2,24 +2,7 @@
 **B1.** For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.
 
 :::: {.subq}
-**(a)** Six packets of Skittles are opened together, and the total number of sweets of each colour is:
-
-| **Colour**             | Red | Orange | Yellow | Green  | Purple |
-|:----------------------:|:---:|:------:|:------:|:------:|:------:|
-| **Number of Skittles** |  67 |   71   |   87   |   74   |   62   |
-
-::: {.myanswers data-latex=""}
-*Solution.*
-The modal colour is Yellow. The number of distinct outcomes is 5.
-
-It's not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can't be put "in order" from smallest to largest.
-
-It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be "added up", but this can't be done with colours.
-:::
-::::
-
-:::: {.subq}
-**(b)** Shirt sizes for a university football squad:
+**(a)** Shirt sizes for the $n = 16$ members of a university football squad:
 
 | **Colour**             | Xtra Small | Small  | Medium | Large  | Xtra Large |
 |:----------------------:|:----------:|:------:|:------:|:------:|:----------:|
@@ -37,6 +20,23 @@ Since $1 + 0.25(16 - 1) = 4.75$ the lower quartile is the 4th or 5th datapoints,
 Again, because the data is not numerical, we can't add it up, so can't calculate a mean or sample variance.
 
 **Group feedback:** Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be *ordered*.
+:::
+::::
+
+:::: {.subq}
+**(b)** Six packets of Skittles are opened together, a total of $n = 361$ sweets. The colours of these sweets is recorded as follows:
+
+| **Colour**             | Red | Orange | Yellow | Green  | Purple |
+|:----------------------:|:---:|:------:|:------:|:------:|:------:|
+| **Number of Skittles** |  67 |   71   |   87   |   74   |   62   |
+
+::: {.myanswers data-latex=""}
+*Solution.*
+The modal colour is Yellow. The number of distinct outcomes is 5.
+
+It's not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can't be put "in order" from smallest to largest.
+
+It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be "added up", but this can't be done with colours.
 :::
 ::::
 :::::

@@ -11,6 +11,10 @@ url:    'https://mpaldridge.github.io/math1710/'
 
 # Schedule {.unnumbered}
 
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
 \newcommand{\Var}{\operatorname{Var}}
 
 

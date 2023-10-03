@@ -4,7 +4,7 @@
 
 ## What is EDA? {#what-is-eda}
 
-**Statistics** is the study of data. **Exploratory data analysis** (or **EDA**, for short) is the part of statistics concerned with taking a "first look" at some data. Later, toward the end of this course, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics II (for those who take it) you will see many other statistical techniques -- in particular, ways of testing formal hypotheses for data. But here we're just interested in first impressions and brief summaries.
+**Statistics** is the study of data. **Exploratory data analysis** (or **EDA**, for short) is the part of statistics concerned with taking a "first look" at some data. Later, toward the end of this module, we will see more detailed and complex ways of building models for data, and in MATH1712 Probability and Statistics II (for those who take it) you will see many other statistical techniques -- in particular, ways of testing formal hypotheses for data. But here we're just interested in first impressions and brief summaries.
 
 In this section, we will concentrate on two aspects of EDA:
 
@@ -31,9 +31,9 @@ mean(data)
 ```
 
 Here, the code in the first shaded box is the R commands that are typed into 
-RStudio, which you can type in next to the `>` arrow in the RStudio "console". The numerical answers that R returns are shown here in the second unshaded box next to a double hashsign `##`. The `[1]` can be ignored (this is just R's way of saying that this is the first part of the answer -- but the answer here only has one part anyway). Plots produced by R are displayed in these notes as pictures.
+RStudio, which you can type in next to the `>` arrow in the RStudio "console". The numerical answers that R returns are shown here in the second unshaded box. The `[1]` can be ignored (this is just R's way of saying that this is the first part of the answer -- but the answer here only has one part anyway). Plots produced by R are displayed in these notes as pictures.
 
-Most importantly for now, *you are not expected to understand the R code in this section yet*. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in week 5, you should be able understand most of the R code in this section.
+Most importantly for now, *you are not expected to understand the R code in this section yet*. The code is included so that, in the future, as you work through the R worksheets week by week, you can look back at the code in the section, and it will start to make sense. By the time you have finished R Worksheet 5 in Week 6, you should be able understand most of the R code in this section.
 
 
 ## Statistics of centrality  {#stat-central}
@@ -72,7 +72,12 @@ In that last expression, we've made use of Sigma notation to write down the sum.
 ::: {.example}
 Some packets of Skittles (a small fruit-flavoured sweet) were opened, and the number of Skittles in each packet counted. There were 13 packets, and the number of sweets (sorted from smallest to largest) were:
 \[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]
-The mode is 59, because there were 4 packets containing 59 sweets; more than any other number. Since there are $n = 13$ packets, the middle packet is number $i = 7$, so the median is $x_7 = 60$. The mean is
+
+The mode is 59, because there were 4 packets containing 59 sweets; more than any other number.
+
+Since there are $n = 13$ packets, the middle packet is number $i = 7$, so the median is $x_7 = 60$.
+
+The mean is
 \[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) = \frac{789}{13} = 60.7 .\]
 :::
 
@@ -109,6 +114,16 @@ The **interquartile range** is the difference between the upper and lower quarti
 The **sample variance** is
 \[  s^2_x = \frac{1}{n-1} \left((x_1 - \bar x)^2 + \cdots + (x_n - \bar x)^2 \right) = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 , \]
 where $\bar x$ is the sample mean from before. The **standard deviation** $s_x = \sqrt{s^2_x}$ is the square-root of the sample variance.
+:::
+
+::: {.example}
+We continue with the Skittles data.
+
+The number of distinct observation is 5. (These are 59, 60, 61, 62, and 63.)
+
+The interquartile range is $x_{10} - x_4 = 62 - 59 = 3$.
+
+You will calculate the sample variance on [Problem Sheet 1](#P1).
 :::
 
 The formula we've given for sample variance is sometimes called the "definitional formula", as it's the formula used to *define* the sample variance. We can rearrange that formula as follows:
