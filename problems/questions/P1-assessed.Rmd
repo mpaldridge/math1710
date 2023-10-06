@@ -40,6 +40,8 @@ Is there a unique mode for this data? Why/why not? For what sort of data does th
 :::: {.subq}
 ::: {.myanswers data-latex=""}
 *Hint.*
+I recommend starting with the definitional formula.
+
 When is the square of something equal to 0? What can you say about the value of a square when it's nonzero? What can you say about a "sum of squares" -- that is, some numbers squared then added together?
 :::
 ::::

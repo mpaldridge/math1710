@@ -1,5 +1,6 @@
-# R {#R .unnumbered}
+# R Worksheets {#R .unnumbered}
 
+<!--
 ## About R and RStudio  {#about-r .unnumbered}
 
 * **R** is a *programming language* that is particularly useful for working with probability and statistics. The R language is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.
@@ -22,6 +23,8 @@ A second practical, in Week 3, will allow you to get help on the R Worksheet 2, 
 
 
 ## R worksheets  {#r-work .unnumbered}
+
+-->
 
 Each week (starting in Week 2) there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for even-numbered worksheets with assessed questions, for checking and submitting your solutions.
 

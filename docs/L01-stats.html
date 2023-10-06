@@ -184,11 +184,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R</a>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html"><i class="fa fa-check"></i>R Practical 1</a>
 <ul>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-practicals"><i class="fa fa-check"></i>R practical sessions</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#about-prac"><i class="fa fa-check"></i>About the Practical</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#directions"><i class="fa fa-check"></i>Where are the computer clusters?</a>
+<ul>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#stoner"><i class="fa fa-check"></i>EC Stoner Cluster 6.68</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#fourman"><i class="fa fa-check"></i>Fourman O &amp; P Clusters</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#manton"><i class="fa fa-check"></i>Irene Manton North &amp; South Clusters</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#psychology"><i class="fa fa-check"></i>Psychology Cluster 1.43</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#hughes"><i class="fa fa-check"></i>Richard Hughes Cluster</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -232,8 +239,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">1.2</span> What is R?<a href="L01-stats.html#what-is-R" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>R</strong> is a programming language that is particularly good at working with probability and statistics. A convenient way to use the language R is through the program <strong>RStudio</strong>. An important part of this module is learning to use R, by completing weekly worksheets – you can read more in <a href="R.html#R">the R section of these notes</a>.</p>
 <p>R can easily and quickly perform all the calculations and draw all the plots in this section of notes on exploratory data analysis. In this text, we’ll show the relevant R code. Code will appear like this:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="L01-stats.html#cb1-1" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
-<span id="cb1-2"><a href="L01-stats.html#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="L01-stats.html#cb1-1" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">4</span>, <span class="dv">7</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">5</span>)</span>
+<span id="cb1-2"><a href="L01-stats.html#cb1-2" tabindex="-1"></a><span class="fu">mean</span>(data)</span></code></pre></div>
 <pre><code>[1] 5.428571</code></pre>
 <p>Here, the code in the first shaded box is the R commands that are typed into
 RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudio “console”. The numerical answers that R returns are shown here in the second unshaded box. The <code>[1]</code> can be ignored (this is just R’s way of saying that this is the first part of the answer – but the answer here only has one part anyway). Plots produced by R are displayed in these notes as pictures.</p>
@@ -284,13 +291,13 @@ RStudio, which you can type in next to the <code>&gt;</code> arrow in the RStudi
 <li>The <strong>upper quartile</strong> is the <span class="math inline">\(\frac34\)</span>-quantile <span class="math inline">\(q(\frac34)\)</span>, which is <span class="math inline">\(q(\frac34) = x_{10} = 62\)</span> for this data.</li>
 </ul>
 <p>The following R code reads in some data which has the daily average temperature in Leeds in 2020, divided into months. We can find, for example, the mean October temperature or the lower quartile of the July temperature.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="L01-stats.html#cb3-1" aria-hidden="true" tabindex="-1"></a>temperature <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://mpaldridge.github.io/math1710/data/temperature.csv&quot;</span>)</span>
-<span id="cb3-2"><a href="L01-stats.html#cb3-2" aria-hidden="true" tabindex="-1"></a>jul <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;jul&quot;</span>, ]</span>
-<span id="cb3-3"><a href="L01-stats.html#cb3-3" aria-hidden="true" tabindex="-1"></a>oct <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;oct&quot;</span>, ]</span>
-<span id="cb3-4"><a href="L01-stats.html#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="L01-stats.html#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="L01-stats.html#cb3-1" tabindex="-1"></a>temperature <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;https://mpaldridge.github.io/math1710/data/temperature.csv&quot;</span>)</span>
+<span id="cb3-2"><a href="L01-stats.html#cb3-2" tabindex="-1"></a>jul <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;jul&quot;</span>, ]</span>
+<span id="cb3-3"><a href="L01-stats.html#cb3-3" tabindex="-1"></a>oct <span class="ot">&lt;-</span> temperature[temperature<span class="sc">$</span>month <span class="sc">==</span> <span class="st">&quot;oct&quot;</span>, ]</span>
+<span id="cb3-4"><a href="L01-stats.html#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="L01-stats.html#cb3-5" tabindex="-1"></a><span class="fu">mean</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
 <pre><code>[1] 11.93548</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="L01-stats.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">quantile</span>(jul<span class="sc">$</span>temp, <span class="at">probs =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">4</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="L01-stats.html#cb5-1" tabindex="-1"></a><span class="fu">quantile</span>(jul<span class="sc">$</span>temp, <span class="at">probs =</span> <span class="dv">1</span> <span class="sc">/</span> <span class="dv">4</span>)</span></code></pre></div>
 <pre><code>25% 
  15 </code></pre>
 </div>
@@ -324,9 +331,9 @@ Here, the first line is the definitional formula; the second line is from expand
 <span class="math display">\[ s^2_x = \frac{1}{n-1} \left(\sum_{i=1}^n x_i^2 -  n\bar x^2 \right) . \]</span>
 This is sometimes called the “computational formula”; this is because it usually takes fewer presses of calculator buttons to compute the sample variance with this formula rather than the definitional formula. (But make sure you keep enough decimal points in <span class="math inline">\(\bar x^2\)</span>.)</p>
 <p>Going back to our weather data in R, we can find the sample variance of the October weather or the interquartile range of the July weather.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="L01-stats.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="L01-stats.html#cb7-1" tabindex="-1"></a><span class="fu">var</span>(oct<span class="sc">$</span>temp)</span></code></pre></div>
 <pre><code>[1] 2.862366</code></pre>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="L01-stats.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">IQR</span>(jul<span class="sc">$</span>temp)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="L01-stats.html#cb9-1" tabindex="-1"></a><span class="fu">IQR</span>(jul<span class="sc">$</span>temp)</span></code></pre></div>
 <pre><code>[1] 3</code></pre>
 </div>
 <div id="summary-01" class="section level2 unnumbered hasAnchor">

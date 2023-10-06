@@ -27,7 +27,7 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 
 ::::
 
 :::: {.subq}
-**(b)** Calculate the sample variance using the computational formula.
+**(c)** Calculate the sample variance using the computational formula.
 
 ::: {.myanswers data-latex=""}
 *Solution.*
@@ -77,12 +77,12 @@ frequency densities.
 
 |   Age (years)    | Frequency | Relative frequency | Frequency density |
 |:---------------:|:---------:|:------------------:|:-----------------:|
-|   18--30   |    1    |   0.05   |  0.0041  |
-|   30--40   |    2    |   0.15   |  0.015   |
+|   18--30   |    1    |   0.05   |  0.0042  |
+|   30--40   |    2    |   0.1    |  0.01    |
 |   40--45   |    4    |   0.2    |  0.04    |
 |   45--50   |    5    |   0.25   |  0.05    |
-|   50--60   |    6    |   0.15   |  0.03    |
-|   60--80   |    2    |   0.15   |  0.015   |
+|   50--60   |    6    |   0.3    |  0.03    |
+|   60--80   |    2    |   0.1    |  0.005   |
 |  **Total**  |   20   |   1      |  ---     |
 
 :::
@@ -101,6 +101,8 @@ frequency densities.
 
 ::: {.myanswers data-latex=""}
 *Solution.* The bin with the largest frequency density is 45--50, which is therefore the modal bin.
+
+**Group feedback:** Remember that the modal bin is the one with the largest frequency *density*, not necessarily the bin with the highest frequency.
 :::
 ::::
 
@@ -109,7 +111,7 @@ frequency densities.
 
 ::: {.myanswers data-latex=""}
 *Solution.* Pretending that each person is in the centre of their bin, we have
-\[ \bar x = \frac{1}{20} (1\times24 + 3\times 35 + \cdots + 3 \times 65) = \frac{946.5}{20} = 47.3 . \]
+\[ \bar x = \frac{1}{20} (1\times24 + 2\times 35 + \cdots + 2 \times 65) = \frac{971.9}{20} = 48.6 . \]
 :::
 ::::
 :::::

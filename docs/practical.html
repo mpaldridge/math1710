@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>R Worksheets | MATH1710 Probability and Statistics I</title>
+  <title>R Practical 1 | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="R Practical 1 | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="R Worksheets | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="R Practical 1 | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="P1.html"/>
-<link rel="next" href="practical.html"/>
+<link rel="prev" href="R.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -217,131 +217,57 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="R" class="section level1 unnumbered hasAnchor">
-<h1>R Worksheets<a href="R.html#R" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!--
-## About R and RStudio  {#about-r .unnumbered}
+<div id="practical" class="section level1 unnumbered hasAnchor">
+<h1>R Practical 1<a href="practical.html#practical" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="about-prac" class="section level2 unnumbered hasAnchor">
+<h2>About the Practical<a href="practical.html#about-prac" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The first computer practical sessions are this week to introduce you to the R programming language. You should make sure:</p>
+<ul>
+<li>You know where and when your practical session is – check your timetable!</li>
+<li>You know your username, password, and the Duo authentication system to log on to university computers.</li>
+<li>To bring your laptop along if (optionally) you want to install R and RStudio on it.</li>
+</ul>
+<p>Below are some directions of how to find the various computer clusters.</p>
+</div>
+<div id="directions" class="section level2 unnumbered hasAnchor">
+<h2>Where are the computer clusters?<a href="practical.html#directions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="stoner" class="section level3 unnumbered hasAnchor">
+<h3>EC Stoner Cluster 6.68<a href="practical.html#stoner" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><strong>EC Stoner Cluster 6.68</strong> is in the <strong>EC Stoner building</strong>. The easiest way to enter the 6th floor of EC Stoner is via the sliding doors opposite the multi-storey car park.</p>
+<p>Alternatively, from the “red route” along the 10th floor corridor of EC Stoner, go all the way along to the School of Food Science and Nutrition, by staircase 4, and take the lift (<em>not</em> the stairs) to the 6th floor.</p>
+<p>EC Stoner Cluster 6.68 is the bigger room to the east (right from the doors; left from the lift).</p>
+</div>
+<div id="fourman" class="section level3 unnumbered hasAnchor">
+<h3>Fourman O &amp; P Clusters<a href="practical.html#fourman" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Fourman O &amp; P clusters</strong> are in the <strong>Worsley building</strong>, at the south of the campus. The easiest route is from Chancellor’s Court next to the Roger Stevens building: follow the North–South Access Route alongside then through the Garstang building, and enter the Worsley building at the 7th floor “airport lounge” area. Follow the signs to “Central Teaching Space”: turn left to get to the East staircase, and go up one floor the the 8th floor.</p>
+<p>Alternatively, enter the Worsley building on Clarendon Way at the 4th floor. The East lifts are to your left: take the lift to the 8th floor.</p>
+<p>The Fourman Clusters are two connected rooms right next the stairs/lift – O is on the right; P is on the left.</p>
+</div>
+<div id="manton" class="section level3 unnumbered hasAnchor">
+<h3>Irene Manton North &amp; South Clusters<a href="practical.html#manton" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <a href="manton.png"><strong>Irene Manton Clusters</strong> [map]</a> are in the <strong>Irene Manton building</strong>, which is behind the Roger Stevens building. You can get there out the back door of Roger Stevens, by LT 01, or via the gardens to the right of Roger Stevens.</p>
+<p>Walking down the walkway alongside the Irene Manton building, there’s a modest, unassuming door on your left. Enter it. Irene Manton North is the room to your left; Irene Manton South is to your right.</p>
+</div>
+<div id="psychology" class="section level3 unnumbered hasAnchor">
+<h3>Psychology Cluster 1.43<a href="practical.html#psychology" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="psychology.png"><strong>Psychology Cluster 1.43</strong> [map]</a> is in the <strong>Psychology building</strong>, which is in between the two main east–west thoroughfares through campus, University Road and Beach Grove Terrace/Precinct/Lifton Place. One entrance to Psychology is on Lifton Place, opposite Cromer Street, up some steps; the other is on University Road, opposite the School of Fine Art, through a little garden.</p>
+<p>Once inside Psychology, there are signs to the “CBL clusters”. Follow a long winding corridor to the east (right from Lifton Place entrance; left from University Road entrance), past a giant glittery brain sculpture, all the way to a spiral staircase. Go up one floor. Psychology Cluster 1.43 is the room on the right.</p>
+</div>
+<div id="hughes" class="section level3 unnumbered hasAnchor">
+<h3>Richard Hughes Cluster<a href="practical.html#hughes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong>Richard Hughes Cluster</strong> is on the side of the <strong>Clothworkers’ Link building</strong>, on the north side of University Road by the “Clothworkers’ Link” – the sky-bridge that goes over University Road.</p>
+<p>Just to the east (Hyde Park side) of the Link bridge, go up the alleyway between the Clothworkers’ building and 28 University Road. Enter a small door on the right; the Richard Hughes Cluster is at the top of some stairs.</p>
 
-* **R** is a *programming language* that is particularly useful for working with probability and statistics. The R language is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.
-* **RStudio** is a *program* (or *app*) that gives a convenient way to work with the language R. The RStudio program is made by the company Posit. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
-
-R and RStudio are free/open-source software.
-
-There are a number ways you can use R and RStudio:
-
-1. *On University computers.* You will learn how to use R and RStudio on University computers in your first practical session, in Week 2.
-2. *On your own computer.* R and RStudio can easily be installed on Windows and Mac laptops (and on Intel-based Chromebooks with considerable difficulty). Bring your laptop along to the first practical session to learn how to install R and RStudio.
-3. *Using the Posit Cloud.* The Posit Cloud is a way to use R and RStudio online -- sort of like a "Google Docs for R". You can use it free for 25 hours a month, which should be plenty for this module, or pay for more. I recommend the Posit Cloud for using R/RStudio with Chromebooks, tablet computers, or when borrowing someone else's device.
-
-
-## R practical sessions {#r-practicals .unnumbered}
-
-We will introduce you to R and RStudio in your first practical session, in Week 2. We will first show you how to use R on University computers (these sessions will take place in computer "clusters"). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session.
-
-A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
-
-
-## R worksheets  {#r-work .unnumbered}
-
--->
-<p>Each week (starting in Week 2) there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for even-numbered worksheets with assessed questions, for checking and submitting your solutions.</p>
-<table>
-<colgroup>
-<col width="8%" />
-<col width="40%" />
-<col width="14%" />
-<col width="37%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="center">Week</th>
-<th>Worksheet</th>
-<th align="center">Solutions</th>
-<th align="center">Deadline for assessed work</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="center">2</td>
-<td><strong>1: R basics</strong></td>
-<td align="center">Solutions</td>
-<td align="center">—</td>
-</tr>
-</tbody>
-</table>
-<!--
-| Week | Worksheet                     | Deadline for assessed work |
-|:----:|-------------------------------|:--------------------------:|
-|   1  |  [**R basics**](https://mpaldridge.github.io/math1710/R1.html) ([Solutions](https://mpaldridge.github.io/math1710/R1-solutions.html)) | --- |
-|   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
-|   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html)  | Monday 24 October (Week 4) |
-|   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html)   | --- |
-|   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html)  | Monday 7 November (Week 6) |
-|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
-|   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]    |      Monday 21 November (Week 8)   |
-|   8  |  [**Discrete random variables**](https://mpaldridge.github.io/math1710/R8.html) [[Rmd](https://mpaldridge.github.io/math1710/R8.Rmd)] | --- |
-|   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) [[Rmd](https://mpaldridge.github.io/math1710/R9.Rmd)] | Monday 5 December (Week 10) |
-|  10  |  [**Law of large numbers**](https://mpaldridge.github.io/math1710/R10.html) [[Rmd](https://mpaldridge.github.io/math1710/R10.Rmd)] |             ---           |
-|  11  |  [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 15 December (Week 11) |
--->
-<!--
-|   2  |  [**Vectors**](https://mpaldridge.github.io/math1710/R2.html)   | --- |
-|   3  |  [**Data in R**](https://mpaldridge.github.io/math1710/R3.html) | Monday 18 October |
-|   4  |  [**Plots I:** Making plots](https://mpaldridge.github.io/math1710/R4.html) | --- |
-|   5  |  [**Plots II:** Making plots better](https://mpaldridge.github.io/math1710/R5.html) | Monday 1 November |
-|   6  |  [**RMarkdown** (optional)](https://mpaldridge.github.io/math1710/R6.html) [[Rmd](https://mpaldridge.github.io/math1710/R6.Rmd)] | --- |
-|   7  |  [**Discrete distributions**](https://mpaldridge.github.io/math1710/R7.html) [[Rmd](https://mpaldridge.github.io/math1710/R7.Rmd)]      |      Monday 15 November    |
-|   8  |  [**Discrete random variables**](https://mpaldridge.github.io/math1710/R8.html) [[Rmd](https://mpaldridge.github.io/math1710/R8.Rmd)] | --- |
-|   9  |  [**Normal distribution**](https://mpaldridge.github.io/math1710/R9.html) | Monday 29 November |
-|  10  |  ~~Law of large numbers~~     |             ---           |
-|  11  |   [**Recap**](https://mpaldridge.github.io/math1710/R11.html) | Thursday 16 December |
--->
-<!--
-
-## How to access R and RStudio  {#r-access .unnumbered}
-
-There are a few ways you can access R and RStudio.
-
-First, you can **install R and RStudio on your own computer**. Students who have their own computer (with administration and installation rights) usually find this the most convenient way use R.
-
-When you install R and RStudio, it's important that you install R (the programming language) first, and only install RStudio (the program to use R) after R has already been installed. This ensures that RStudio can "find" R on your computer.
-
-1. *First*, install R. Go to the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) and follow the instructions:
-
-   * Windows: Click ["Download R for Windows"](https://cran.r-project.org/bin/windows/), then ["Install R for the first time"](https://cran.r-project.org/bin/windows/base/). The main link at the top should be to download the most recent version of R.
-   * Mac: Click [Download R for macOS](https://cran.r-project.org/bin/macosx/), and then download the relevant PKG file. (For typically older Intel-based Macbooks, you must use the "Intel 64-bit build"; for post-November 2020 M1 or M2-based "Apple silicon" Macbooks, the "Apple silicon arm64 build" may be slightly faster.)
-2. *After* R is installed, *then* install RStudio. Go to [the Download page at RStudio.com](https://www.rstudio.com/products/rstudio/download/#download) and follow the instructions. You want "RStudio Desktop", and you want the free version.
-
-If you have difficulty installing R, come along to the R troubleshooting drop-in session in Week 2 and bring your computer with you (if it's sufficiently portable), and we'll do our best to help.
-
-Second, you can **use R and RStudio on University computers**. All University computers have access to R and RStudio, via the AppsAnywhere service. *First*, launch R via AppsAnywhere (at the time of writing, it's confusingly named "Cran R 4.2.0 x64"). You can then close the program that opens. *Then* launch RStudio ("Rstudio 2022"), also via AppsAnywhere. (You can decline any updates that are suggested.)
-
-The R drop-in sessions take place in computer rooms, so if you have problems accessing R and RStudio on University computers, you can get help at the drop-in sessions too.
-
-Third, you can **use the [RStudio Cloud](https://rstudio.cloud/)**. The RStudio Cloud is a cloud-hosted "Google Docs for R" that you can use through your web browser, without having to install anything. You can get 25 hours per month for free, which should be plenty for this module, or pay for more.
-
-If you have access to a computer on which you can't install software, such as some Chromebooks or tablet computers, or if you're borrowing a friend's laptop, the RStudio Cloud can be a convenient solution. 
-
-*Update:* If you have an Intel-based Chromebook, then we have had success installing R and RStudio using [these (rather complicated) instructions](https://levente.littvay.hu/chromebook/), although you may still find it more convenient just to use the RStudio Cloud.
-
-
-
-## R troubleshooting drop-in sessions  {#troubleshooting .unnumbered}
-
-You will learn to use R by working through the R Worksheets. Learning to use a programming language is different from learning mathematics: you should expect to regularly get frustrated and annoyed when the computer seems to refuse to do what you want it to (but also occasionally experience the joy of getting it right!). This is a normal part of learning.
-
-However, many students find getting with started with R in the first few weeks particularly difficult. Also, sometimes students have problems installing R and RStudio on their own computers. To help with this, we have organised optional R troubleshooting drop-in sessions in Weeks 2 and 3. Check your timetable for details -- they are probably listed as "computer practicals".
-
--->
-
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="P1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="practical.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="R.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

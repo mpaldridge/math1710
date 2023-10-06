@@ -1,0 +1,47 @@
+# R Practical 1 {#practical .unnumbered}
+
+## About the Practical  {#about-prac .unnumbered}
+
+The first computer practical sessions are this week to introduce you to the R programming language. You should make sure:
+
+* You know where and when your practical session is -- check your timetable!
+* You know your username, password, and the Duo authentication system to log on to university computers.
+* To bring your laptop along if (optionally) you want to install R and RStudio on it.
+
+Below are some directions of how to find the various computer clusters.
+
+## Where are the computer clusters?  {#directions .unnumbered}
+
+### EC Stoner Cluster 6.68  {#stoner .unnumbered}
+
+**EC Stoner Cluster 6.68** is in the **EC Stoner building**. The easiest way to enter the 6th floor of EC Stoner is via the sliding doors opposite the multi-storey car park.
+
+Alternatively, from the "red route" along the 10th floor corridor of EC Stoner, go all the way along to the School of Food Science and Nutrition, by staircase 4, and take the lift (*not* the stairs) to the 6th floor.
+
+EC Stoner Cluster 6.68 is the bigger room to the east (right from the doors; left from the lift).
+
+### Fourman O & P Clusters  {#fourman .unnumbered}
+
+The **Fourman O & P clusters** are in the **Worsley building**, at the south of the campus. The easiest route is from Chancellor's Court next to the Roger Stevens building: follow the North--South Access Route alongside then through the Garstang building, and enter the Worsley building at the 7th floor "airport lounge" area. Follow the signs to "Central Teaching Space": turn left to get to the East staircase, and go up one floor the the 8th floor.
+
+Alternatively, enter the Worsley building on Clarendon Way at the 4th floor. The East lifts are to your left: take the lift to the 8th floor.
+
+The Fourman Clusters are two connected rooms right next the stairs/lift – O is on the right; P is on the left.
+
+### Irene Manton North & South Clusters  {#manton .unnumbered}
+
+The [**Irene Manton Clusters** [map]](manton.png) are in the **Irene Manton building**, which is behind the Roger Stevens building. You can get there out the back door of Roger Stevens, by LT 01, or via the gardens to the right of Roger Stevens.
+
+Walking down the walkway alongside the Irene Manton building, there's a modest, unassuming door on your left. Enter it. Irene Manton North is the room to your left; Irene Manton South is to your right.
+
+### Psychology Cluster 1.43  {#psychology .unnumbered}
+
+[**Psychology Cluster 1.43** [map]](psychology.png) is in the **Psychology building**, which is in between the two main east–west thoroughfares through campus, University Road and Beach Grove Terrace/Precinct/Lifton Place. One entrance to Psychology is on Lifton Place, opposite Cromer Street, up some steps; the other is on University Road, opposite the School of Fine Art, through a little garden.
+
+Once inside Psychology, there are signs to the "CBL clusters". Follow a long winding corridor to the east (right from Lifton Place entrance; left from University Road entrance), past a giant glittery brain sculpture, all the way to a spiral staircase. Go up one floor. Psychology Cluster 1.43 is the room on the right.
+
+### Richard Hughes Cluster  {#hughes .unnumbered}
+
+The **Richard Hughes Cluster** is on the side of the **Clothworkers' Link building**, on the north side of University Road by the "Clothworkers' Link" -- the sky-bridge that goes over University Road.
+
+Just to the east (Hyde Park side) of the Link bridge, go up the alleyway between the Clothworkers' building and 28 University Road. Enter a small door on the right; the Richard Hughes Cluster is at the top of some stairs.

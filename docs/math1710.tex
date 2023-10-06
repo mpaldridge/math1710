@@ -6,16 +6,19 @@
   a4paper,
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -45,13 +48,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -59,7 +62,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -68,7 +71,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -113,7 +116,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={MATH1710 Probability and Statistics I},
   pdfauthor={Matthew Aldridge},
@@ -215,16 +218,17 @@ You are probably reading the web version of the notes. If you want a PDF copy (t
 There will be 5 problem sheets. Each problem sheet has a number of short and long questions, for you to work on in your own time to help you learn the material, and two assessed questions, which you should submit for marking. The assessed questions on each problem sheet make up 3\% of your mark on this module, for a total of 15\%. Deadlines are 2pm on Mondays, although I'd recommend completing and submitting the work in the previous week.
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule()
+\toprule\noalign{}
 Problem Sheet & Lectures covered & Deadline for assessed work \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 1 & 1 and 2 & Monday 16 October (Week 3) \\
 2 & 3--6 & Monday 30 October (Week 5) \\
 3 & 7--10 & Monday 13 November (Week 7) \\
 4 & 11--14 & Monday 27 November (Week 9) \\
 5 & 15--18 & Monday 11 December (Week 11) \\
-\bottomrule()
 \end{longtable}
 
 An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available. Lectures 21 and 22 are revision lectures with no new material.
@@ -269,7 +273,7 @@ You will learn R by working through one R worksheet each week in your own time, 
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0923}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4769}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4308}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -277,8 +281,10 @@ Worksheet
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 2 & 1: R basics & --- \\
 3 & 2: Vectors & Monday 23 October (Week 4) \\
 4 & 3: Data in R & --- \\
@@ -289,7 +295,6 @@ Deadline for assessed work
 9 & 8: Normal distribution & Monday 4 December (Week 10) \\
 10 & 9: Law of large numbers & --- \\
 11 & 10: Recap & Thursday 14 December (Week 11) \\
-\bottomrule()
 \end{longtable}
 
 ~
@@ -762,10 +767,12 @@ Often when collecting data, we don't collect exact data, but rather collect data
 Consider the following binned data, from \(n = 100\) students:
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule()
+\toprule\noalign{}
 Time & Frequency & Relative frequency \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 0--5 minutes & 4 & 0.04 \\
 5--10 minutes & 8 & 0.08 \\
 10--15 minutes & 21 & 0.21 \\
@@ -774,7 +781,6 @@ Time & Frequency & Relative frequency \\
 45--60 minutes & 8 & 0.08 \\
 60--120 minutes & 2 & 0.02 \\
 \textbf{Total} & 100 & 1 \\
-\bottomrule()
 \end{longtable}
 
 Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The \textbf{relative frequency} of bin \(j\) is \(f_j/n\); that is, the proportion of the observations in that bin.
@@ -782,10 +788,12 @@ Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observa
 Which bin would you say is the most popular -- that is, the ``modal'' bin? The bin with the most observations in it is the ``15--30 minute'' bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the \textbf{frequency density}: the relative frequency divided by the size of the bin.
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule()
+\toprule\noalign{}
 Time & Frequency & Relative frequency & Frequency density \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 0--5 minutes & 4 & 0.04 & 0.008 \\
 5--10 minutes & 8 & 0.08 & 0.016 \\
 10--15 minutes & 21 & 0.21 & 0.042 \\
@@ -794,7 +802,6 @@ Time & Frequency & Relative frequency & Frequency density \\
 45--60 minutes & 8 & 0.08 & 0.005 \\
 60--120 minutes & 2 & 0.02 & 0.0003 \\
 \textbf{Total} & 100 & 1 & \\
-\bottomrule()
 \end{longtable}
 
 In the first row, for example, the relative frequency is 0.04 and the size of the bin is 5 minutes, so the frequency density is \(0.04/5 = 0.008\). We now see that the modal bin -- the bin with the highest frequency \emph{density} -- is in fact the ``10--15 minutes'' bin. This bin has somewhat fewer datapoints that the ``15--30 minutes'' bin, but they're squashed into a much smaller bin.
@@ -968,7 +975,7 @@ s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 
 
 \end{myanswers}
 
-\textbf{(b)} Calculate the sample variance using the computational formula.
+\textbf{(c)} Calculate the sample variance using the computational formula.
 
 \begin{myanswers}
 \emph{Solution.}
@@ -1001,7 +1008,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1011,8 +1018,10 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -1020,7 +1029,6 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
-\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -1035,7 +1043,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1045,16 +1053,17 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
-18--30 & 1 & 0.05 & 0.0041 \\
-30--40 & 2 & 0.15 & 0.015 \\
+\bottomrule\noalign{}
+\endlastfoot
+18--30 & 1 & 0.05 & 0.0042 \\
+30--40 & 2 & 0.1 & 0.01 \\
 40--45 & 4 & 0.2 & 0.04 \\
 45--50 & 5 & 0.25 & 0.05 \\
-50--60 & 6 & 0.15 & 0.03 \\
-60--80 & 2 & 0.15 & 0.015 \\
+50--60 & 6 & 0.3 & 0.03 \\
+60--80 & 2 & 0.1 & 0.005 \\
 \textbf{Total} & 20 & 1 & --- \\
-\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -1071,13 +1080,15 @@ Frequency density
 \begin{myanswers}
 \emph{Solution.} The bin with the largest frequency density is 45--50, which is therefore the modal bin.
 
+\textbf{Group feedback:} Remember that the modal bin is the one with the largest frequency \emph{density}, not necessarily the bin with the highest frequency.
+
 \end{myanswers}
 
 \textbf{(d)} Calculate (the standard approximation of) the mean age of the politicians.
 
 \begin{myanswers}
 \emph{Solution.} Pretending that each person is in the centre of their bin, we have
-\[ \bar x = \frac{1}{20} (1\times24 + 3\times 35 + \cdots + 3 \times 65) = \frac{946.5}{20} = 47.3 . \]
+\[ \bar x = \frac{1}{20} (1\times24 + 2\times 35 + \cdots + 2 \times 65) = \frac{971.9}{20} = 48.6 . \]
 
 \end{myanswers}
 
@@ -1120,7 +1131,7 @@ The next four questions are \textbf{long questions}, which are intended to be ha
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1134,10 +1145,11 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
-\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1150,19 +1162,18 @@ Since \(1 + 0.25(16 - 1) = 4.75\) the lower quartile is the 4th or 5th datapoint
 
 Again, because the data is not numerical, we can't add it up, so can't calculate a mean or sample variance.
 
-\textbf{Group feedback:} Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be \emph{ordered}.
-
 \end{myanswers}
 
 \textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule()
+\toprule\noalign{}
 \textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
-\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1173,6 +1184,8 @@ It's not possible to calculate the median or the quartiles, because, unlike nume
 
 It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be ``added up'', but this can't be done with colours.
 
+\textbf{Group feedback:} Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be \emph{ordered}.
+
 \end{myanswers}
 
 \textbf{B2.} A summary statistic is informally said to be ``robust'' if it typically doesn't change much if a small number of outliers are introduced to a large dataset, or ``sensitive'' if it often changes a lot when a small number of outliers are introduced. Briefly discuss the robustness or sensitivity of the following summary statistics: \textbf{(a)} mode; \textbf{(b)} median; \textbf{(c)} mean; \textbf{(d)} number of distinct outcomes; \textbf{(e)} inter-quartile range; and \textbf{(f)} sample variance.
@@ -1180,7 +1193,7 @@ It's not possible to calculate the mean or sample variance, as these require us 
 \begin{myanswers}
 \emph{Solutions.}
 
-\textbf{(a)} The mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so the outliers become ``joint modes'' along with everything else; but in this case the mode is not a useful statistic in the first place.)
+\textbf{(a)} An outlier will typically be the only data point with its value, or certainly rare. Therefore, the mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so any outliers become ``joint modes'' along with everything else; but in this case the mode is not a useful statistic in the first place.)
 
 \textbf{(b)} The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the ``central mass'' of the data. In particular, the \emph{size} of the outliers won't make any difference at all (only whether they are ``high outliers'' above the median or ``low outliers'' below the median). So the median is robust.
 
@@ -1194,7 +1207,7 @@ It's not possible to calculate the mean or sample variance, as these require us 
 
 (You might like to think about situations where it's better to use a robust statistic or better to use a sensitive statistic.)
 
-\textbf{Group feedback:} I find it helpful to suppose I was studying the net worth of people in my tutorial group, and calculating summary statistics. How would those statistics changed change if Elon Musk (founder of Tesla, net worth roughly \$200 billion) joined my tutorial group?
+\textbf{Group feedback:} I find it helpful to suppose I was studying the net worth of people in my tutorial group, and calculating summary statistics. How would those statistics changed change if Elon Musk (owner of Tesla and Twitter, net worth roughly \$200 billion) joined my tutorial group? The mean and sample variance would change an enormous amount, while the median and interquartile range would barely change at all in comparison.
 
 Remember that ``robust'' and ``sensitive'' are general descriptions rather than precise mathematical definitions. So it doesn't matter if you disagree with my opinions provided that you give clear and detailed explanations to back up your opinion.
 
@@ -1213,12 +1226,18 @@ s_{xy} &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,\\
 s_{x}^2 &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 ,\\
 s_{y}^2 &= \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2 ,
 \end{align*}
-and comparing them with the Cauchy--Schwarz inequality, it looks like taking \(a_i = x_i - \bar x\) and \(b_i = y_i - \bar y\) might be useful. Making the substitution, we get
+and comparing them with the Cauchy--Schwarz inequality, it looks like taking \(a_i = x_i - \bar x\) and \(b_i = y_i - \bar y\) might be useful.
+
+Making that substitution, we get
 \[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]
 
 These are very close to the formulas for \(s_{xy}\), \(s_x^2\), and \(s_y^2\), but are just missing the ``\(1/(n-1)\)''s; what we in fact have is
 \[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]
-Cancelling \((n-1)^2\) from each side, we have \(s_{xy}^2 \leq s_x^2 s_y^2\).
+Cancelling \((n-1)^2\) from each side, we have \(s_{xy}^2 \leq s_x^2 s_y^2\), as required.
+
+\textbf{Group feedback:} Keep trying different choices for \((a_i)\) and \((b_i)\); maybe your first attempt won't work, but it pays to be persistent!
+
+A fancier choice is \(a_i = (x_i - \bar x)/\sqrt{n-1}\) and \(b_i = (y_i - \bar y)/\sqrt{n-1}\), to get the exact result without needing a second cancellation step, but I would find that harder to spot.
 
 \end{myanswers}
 
@@ -1233,9 +1252,9 @@ We can make part (a) look a bit like this dividing both sides by \(s_x^2 s_y^2\)
 \[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]
 In fact that's the square of the correlation on the left-hand side, so we've shown that \(r_{xy}^2 \leq 1\).
 
-Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; number smalles than -1 become bigger than +1 when squared.) Hence we have shown that \(-1 \leq r_{xy} \leq 1\), as required.
+Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; numbers smaller than -1 become bigger than +1 when squared; numbers between -1 and +1 get closer to 0.) Hence we have shown that \(-1 \leq r_{xy} \leq 1\), as required.
 
-\textbf{Group feedback:} In part (b) there's a temptation to ``square-root both sides of the inequality''. But you have to be very careful when you do this -- make sure you are properly accounting for the positive and negative square roots on both side (if necessary), and where that does or doesn't require reversing the inequality. I recommend leaving the square-root operation until the last possible moment of the proof or, perhaps even better, reasoning through words as I did above.
+\textbf{Group feedback:} In part (b) there's a temptation to ``square-root both sides of the inequality''. But you have to be extremely careful if you do this -- make sure you are properly accounting for the positive and negative square roots on both sides (if necessary), and where that does or doesn't require reversing the direction of the inequality. I recommend leaving the square-root operation until the last possible moment of the proof or, perhaps even better, reasoning through words as I did above.
 
 Remember that you can still attempt part (b) even if you got stuck on part (a).
 
@@ -1249,7 +1268,6 @@ Remember that you can still attempt part (b) even if you got stuck on part (a).
 \textbf{Group feedback:} There are no ``correct'' or ``incorrect'' answers here, but here are a few things that students in my own tutorials brought up, which may act as a prompt for your own discussions.
 
 \begin{itemize}
-\tightlist
 \item
   It's important the students/subjects have given their consent for their data to be used this way. It must be ``informed consent'', where they understand for what purpose the data will be used, how it will be stored, and so on. It must be easy and painless for students to decline to take part.
 \item
@@ -1257,7 +1275,7 @@ Remember that you can still attempt part (b) even if you got stuck on part (a).
 \item
   Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could ``leak'' that way. Perhaps imprecise data, such as classes rather than exact marks, might help while only slightly reducing the usefulness of the data?
 \item
-  On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of ``open science'' suggest that the data should be kept -- and even publically made available -- for other researchers to check the work. There are competing ethical considerations here.
+  On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of ``open science'' suggest that the data should be kept -- and even publicly made available -- for other researchers to check the work. There are competing ethical considerations here.
 \item
   If correlations are found in the data, care should be taken when publishing the analysis not to wrongly suggest a causation. (Just because X and Y are positively correlated, it doesn't mean that X \emph{causes} Y -- or that Y causes X.)
 \end{itemize}
@@ -1310,6 +1328,8 @@ Is there a unique mode for this data? Why/why not? For what sort of data does th
 
 \begin{myanswers}
 \emph{Hint.}
+I recommend starting with the definitional formula.
+
 When is the square of something equal to 0? What can you say about the value of a square when it's nonzero? What can you say about a ``sum of squares'' -- that is, some numbers squared then added together?
 
 \end{myanswers}
@@ -1332,47 +1352,8 @@ In Subsection 1.4 of the notes, we went from the definitional formula for the sa
 \textbf{A3.} ---
 
 \hypertarget{R}{%
-\chapter*{R}\label{R}}
-\addcontentsline{toc}{chapter}{R}
-
-\hypertarget{about-r}{%
-\section*{About R and RStudio}\label{about-r}}
-\addcontentsline{toc}{section}{About R and RStudio}
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{R} is a \emph{programming language} that is particularly useful for working with probability and statistics. The R language is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15\% of your module mark. Many other statistics-related modules at the University also use R.
-\item
-  \textbf{RStudio} is a \emph{program} (or \emph{app}) that gives a convenient way to work with the language R. The RStudio program is made by the company Posit. RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
-\end{itemize}
-
-R and RStudio are free/open-source software.
-
-There are a number ways you can use R and RStudio:
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \emph{On University computers.} You will learn how to use R and RStudio on University computers in your first practical session, in Week 2.
-\item
-  \emph{On your own computer.} R and RStudio can easily be installed on Windows and Mac laptops (and on Intel-based Chromebooks with considerable difficulty). Bring your laptop along to the first practical session to learn how to install R and RStudio.
-\item
-  \emph{Using the Posit Cloud.} The Posit Cloud is a way to use R and RStudio online -- sort of like a ``Google Docs for R''. You can use it free for 25 hours a month, which should be plenty for this module, or pay for more. I recommend the Posit Cloud for using R/RStudio with Chromebooks, tablet computers, or when borrowing someone else's device.
-\end{enumerate}
-
-\hypertarget{r-practicals}{%
-\section*{R practical sessions}\label{r-practicals}}
-\addcontentsline{toc}{section}{R practical sessions}
-
-We will introduce you to R and RStudio in your first practical session, in Week 2. We will first show you how to use R on University computers (these sessions will take place in computer ``clusters''). There will then be an opportunity to install R on your own device -- if you have a laptop on which you want to install R, bring it along to the practical session.
-
-A second practical, in Week 3, will allow you to get help on the R Worksheet 2, which is the first worksheet with assessed questions.
-
-\hypertarget{r-work}{%
-\section*{R worksheets}\label{r-work}}
-\addcontentsline{toc}{section}{R worksheets}
+\chapter*{R Worksheets}\label{R}}
+\addcontentsline{toc}{chapter}{R Worksheets}
 
 Each week (starting in Week 2) there will be an R worksheet to work through in your own time. I recommend spending about one hour on each worksheet, plus one extra hour for even-numbered worksheets with assessed questions, for checking and submitting your solutions.
 
@@ -1381,7 +1362,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1467}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3733}}@{}}
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -1391,10 +1372,81 @@ Solutions
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 2 & \textbf{1: R basics} & Solutions & --- \\
-\bottomrule()
 \end{longtable}
+
+\hypertarget{practical}{%
+\chapter*{R Practical 1}\label{practical}}
+\addcontentsline{toc}{chapter}{R Practical 1}
+
+\hypertarget{about-prac}{%
+\section*{About the Practical}\label{about-prac}}
+\addcontentsline{toc}{section}{About the Practical}
+
+The first computer practical sessions are this week to introduce you to the R programming language. You should make sure:
+
+\begin{itemize}
+\tightlist
+\item
+  You know where and when your practical session is -- check your timetable!
+\item
+  You know your username, password, and the Duo authentication system to log on to university computers.
+\item
+  To bring your laptop along if (optionally) you want to install R and RStudio on it.
+\end{itemize}
+
+Below are some directions of how to find the various computer clusters.
+
+\hypertarget{directions}{%
+\section*{Where are the computer clusters?}\label{directions}}
+\addcontentsline{toc}{section}{Where are the computer clusters?}
+
+\hypertarget{stoner}{%
+\subsection*{EC Stoner Cluster 6.68}\label{stoner}}
+\addcontentsline{toc}{subsection}{EC Stoner Cluster 6.68}
+
+\textbf{EC Stoner Cluster 6.68} is in the \textbf{EC Stoner building}. The easiest way to enter the 6th floor of EC Stoner is via the sliding doors opposite the multi-storey car park.
+
+Alternatively, from the ``red route'' along the 10th floor corridor of EC Stoner, go all the way along to the School of Food Science and Nutrition, by staircase 4, and take the lift (\emph{not} the stairs) to the 6th floor.
+
+EC Stoner Cluster 6.68 is the bigger room to the east (right from the doors; left from the lift).
+
+\hypertarget{fourman}{%
+\subsection*{Fourman O \& P Clusters}\label{fourman}}
+\addcontentsline{toc}{subsection}{Fourman O \& P Clusters}
+
+The \textbf{Fourman O \& P clusters} are in the \textbf{Worsley building}, at the south of the campus. The easiest route is from Chancellor's Court next to the Roger Stevens building: follow the North--South Access Route alongside then through the Garstang building, and enter the Worsley building at the 7th floor ``airport lounge'' area. Follow the signs to ``Central Teaching Space'': turn left to get to the East staircase, and go up one floor the the 8th floor.
+
+Alternatively, enter the Worsley building on Clarendon Way at the 4th floor. The East lifts are to your left: take the lift to the 8th floor.
+
+The Fourman Clusters are two connected rooms right next the stairs/lift -- O is on the right; P is on the left.
+
+\hypertarget{manton}{%
+\subsection*{Irene Manton North \& South Clusters}\label{manton}}
+\addcontentsline{toc}{subsection}{Irene Manton North \& South Clusters}
+
+The \href{manton.png}{\textbf{Irene Manton Clusters} {[}map{]}} are in the \textbf{Irene Manton building}, which is behind the Roger Stevens building. You can get there out the back door of Roger Stevens, by LT 01, or via the gardens to the right of Roger Stevens.
+
+Walking down the walkway alongside the Irene Manton building, there's a modest, unassuming door on your left. Enter it. Irene Manton North is the room to your left; Irene Manton South is to your right.
+
+\hypertarget{psychology}{%
+\subsection*{Psychology Cluster 1.43}\label{psychology}}
+\addcontentsline{toc}{subsection}{Psychology Cluster 1.43}
+
+\href{psychology.png}{\textbf{Psychology Cluster 1.43} {[}map{]}} is in the \textbf{Psychology building}, which is in between the two main east--west thoroughfares through campus, University Road and Beach Grove Terrace/Precinct/Lifton Place. One entrance to Psychology is on Lifton Place, opposite Cromer Street, up some steps; the other is on University Road, opposite the School of Fine Art, through a little garden.
+
+Once inside Psychology, there are signs to the ``CBL clusters''. Follow a long winding corridor to the east (right from Lifton Place entrance; left from University Road entrance), past a giant glittery brain sculpture, all the way to a spiral staircase. Go up one floor. Psychology Cluster 1.43 is the room on the right.
+
+\hypertarget{hughes}{%
+\subsection*{Richard Hughes Cluster}\label{hughes}}
+\addcontentsline{toc}{subsection}{Richard Hughes Cluster}
+
+The \textbf{Richard Hughes Cluster} is on the side of the \textbf{Clothworkers' Link building}, on the north side of University Road by the ``Clothworkers' Link'' -- the sky-bridge that goes over University Road.
+
+Just to the east (Hyde Park side) of the Link bridge, go up the alleyway between the Clothworkers' building and 28 University Road. Enter a small door on the right; the Richard Hughes Cluster is at the top of some stairs.
 
 \end{document}
