@@ -32,7 +32,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
 
 | Week | Worksheet                    | Solutions | Deadline for assessed work |
 |:----:|------------------------------|:---------:|:--------------------------:|
-|   2  | [**1: R basics**](R1.html)   | Solutions | --- |
+|   2  | [**1: R basics**](R1.html)   | [Solutions](R1-solutions.html) |  ---  |
 
 <!--
 | Week | Worksheet                     | Deadline for assessed work |
