@@ -1,14 +1,68 @@
 # R Practical 1 {#practical .unnumbered}
 
+::: {.mysummary}
+[**R Worksheet 1** is here](R1.html)
+:::
+
+
 ## About the Practical  {#about-prac .unnumbered}
 
 The first computer practical sessions are this week to introduce you to the R programming language. You should make sure:
 
-* You know where and when your practical session is -- check your timetable!
+* You know [where](#directions) and when your practical session is -- check your timetable!
 * You know your username, password, and the Duo authentication system to log on to university computers.
 * To bring your laptop along if (optionally) you want to install R and RStudio on it.
 
-Below are some directions of how to find the various computer clusters.
+[Below are some directions](#directions) of how to find the various computer clusters.
+
+
+## What are R and RStudio?  {#what-is-r .unnumbered}
+
+* **R** is a *programming language* that is particularly useful for working with probability and statistics. The R language is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15% of your module mark. Many other statistics-related modules at the University also use R.
+* **RStudio** is a *computer program* (or *app*) that gives a convenient way to work with the language R. The RStudio program is made by the company Posit. THe program RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
+
+R and RStudio are free/open-source software.
+
+There are a number ways you can use R and RStudio:
+
+1. *On University computers.* You will learn how to use R and RStudio on University computers in your first practical session, in Week 2.
+2. *On your own computer.* R and RStudio can easily be installed on Windows and Mac laptops. Bring your laptop along to the first practical session to learn how to install R and RStudio.
+3. *Using the [Posit Cloud](https://posit.cloud).* The [Posit Cloud](https://posit.cloud) is a way to use R and RStudio online -- sort of like a "Google Docs for R". You can use it free for 25 hours a month, which should be plenty for this module, or pay for more. I recommend the Posit Cloud for using R/RStudio with Chromebooks, tablet computers, or when borrowing someone else's device.
+
+## Accessing R and RStudio on University computers  {#r-uni .unnumbered}
+
+R and RStudio can be used on University computers via the AppsAnywhere portal. AppsAnywhere is the University of Leeds system for loading "unusual" programs (common programs like Microsoft Office and web browsers are preloaded).
+
+There are three steps to using R and RStudio on University computers:
+
+1. Open the AppsAnywhere portal.
+2. Load the language R onto your computer.
+3. Open the program RStudio.
+
+First, open the AppsAnywhere portal by double-clicking on the desktop icon. This will open a web browser, and invite you to "Open AppsAnywhere Launcher" -- you should accept and open. AppsAnywhere has loaded properly when the blue "Validation in progress..." box turns into a green "Validation Successful" box.
+
+Second, launch R from AppsAnywhere. R is called "Cran R 4.2.0 x64" on AppsAnywhere, so searching for "Cran" is an easy way to find it. Click "Launch".
+
+This will do two things. First, it will silently load the language R in the background. Second, it will open a program called "RGui". RGui is basically like an older and less good version of RStudio; we do not recommend using the RGui program, so you can close it. (The R language will remain loaded.)
+
+Third, launch RStudio from AppsAnywhere. THe most recent version on AppsAnywhere is RStudio 2023 (03.0.386). Click "Launch". After a few second, RStudio will launch. (If invited to choose a version of the language R, pick "64-bit". If invited to update R or RStudio, decline.)
+
+You need to repeat all three steps each time you log onto a University computer.
+
+
+## Installing R and RStudio  {#r-install .unnumbered}
+
+When you install R and RStudio, it's important that you install the language R first, and only install the program RStudio after the language R has already been installed. This ensures that RStudio can "find" R on your computer.
+
+1. *First*, install R. Go to the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) and follow the instructions:
+
+   * Windows: Click ["Download R for Windows"](https://cran.r-project.org/bin/windows/), then ["Install R for the first time"](https://cran.r-project.org/bin/windows/base/). The main link at the top should be to download the most recent version of R.
+   * Mac: Click [Download R for macOS](https://cran.r-project.org/bin/macosx/), and then download the relevant PKG file. (Most modern Macbooks are based on Apple's M1 or M2 processors, so you should choose "Apple silicon arm64 build". Some older Macbooks, mostly 2020 or earlier, use Intel processors; for these you should use the "Intel 64-bit build".)
+   
+2. *After* R is installed, *then* install RStudio. Go to the ["Download RStudio" page at posit.co](https://posit.co/download/rstudio-desktop/) and follow the instructions. You want "RStudio Desktop" and you want the free version, if given a choice.
+
+For Chromebooks, we recommend using the [Posit Cloud](https://posit.cloud), as mentioned above. However, if you have an Intel-based Chromebook and are feeling brave, then we have had success installing R and RStudio using [these instructions](https://levente.littvay.hu/chromebook/), which are long and complicated.
+
 
 ## Where are the computer clusters?  {#directions .unnumbered}
 

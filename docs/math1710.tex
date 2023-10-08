@@ -1383,6 +1383,8 @@ Deadline for assessed work
 \chapter*{R Practical 1}\label{practical}}
 \addcontentsline{toc}{chapter}{R Practical 1}
 
+\href{R1.html}{\textbf{R Worksheet 1} is here}
+
 \hypertarget{about-prac}{%
 \section*{About the Practical}\label{about-prac}}
 \addcontentsline{toc}{section}{About the Practical}
@@ -1392,14 +1394,94 @@ The first computer practical sessions are this week to introduce you to the R pr
 \begin{itemize}
 \tightlist
 \item
-  You know where and when your practical session is -- check your timetable!
+  You know \protect\hyperlink{directions}{where} and when your practical session is -- check your timetable!
 \item
   You know your username, password, and the Duo authentication system to log on to university computers.
 \item
   To bring your laptop along if (optionally) you want to install R and RStudio on it.
 \end{itemize}
 
-Below are some directions of how to find the various computer clusters.
+\protect\hyperlink{directions}{Below are some directions} of how to find the various computer clusters.
+
+\hypertarget{what-is-r}{%
+\section*{What are R and RStudio?}\label{what-is-r}}
+\addcontentsline{toc}{section}{What are R and RStudio?}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{R} is a \emph{programming language} that is particularly useful for working with probability and statistics. The R language is very widely used in universities and increasingly widely used in industry. Learning to use R is a mandatory part of this module, and exercises requiring use of R make up at least 15\% of your module mark. Many other statistics-related modules at the University also use R.
+\item
+  \textbf{RStudio} is a \emph{computer program} (or \emph{app}) that gives a convenient way to work with the language R. The RStudio program is made by the company Posit. THe program RStudio is the most common way to use the language R, and learning to use RStudio is strongly recommended.
+\end{itemize}
+
+R and RStudio are free/open-source software.
+
+There are a number ways you can use R and RStudio:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{On University computers.} You will learn how to use R and RStudio on University computers in your first practical session, in Week 2.
+\item
+  \emph{On your own computer.} R and RStudio can easily be installed on Windows and Mac laptops. Bring your laptop along to the first practical session to learn how to install R and RStudio.
+\item
+  \emph{Using the \href{https://posit.cloud}{Posit Cloud}.} The \href{https://posit.cloud}{Posit Cloud} is a way to use R and RStudio online -- sort of like a ``Google Docs for R''. You can use it free for 25 hours a month, which should be plenty for this module, or pay for more. I recommend the Posit Cloud for using R/RStudio with Chromebooks, tablet computers, or when borrowing someone else's device.
+\end{enumerate}
+
+\hypertarget{r-uni}{%
+\section*{Accessing R and RStudio on University computers}\label{r-uni}}
+\addcontentsline{toc}{section}{Accessing R and RStudio on University computers}
+
+R and RStudio can be used on University computers via the AppsAnywhere portal. AppsAnywhere is the University of Leeds system for loading ``unusual'' programs (common programs like Microsoft Office and web browsers are preloaded).
+
+There are three steps to using R and RStudio on University computers:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Open the AppsAnywhere portal.
+\item
+  Load the language R onto your computer.
+\item
+  Open the program RStudio.
+\end{enumerate}
+
+First, open the AppsAnywhere portal by double-clicking on the desktop icon. This will open a web browser, and invite you to ``Open AppsAnywhere Launcher'' -- you should accept and open. AppsAnywhere has loaded properly when the blue ``Validation in progress\ldots{}'' box turns into a green ``Validation Successful'' box.
+
+Second, launch R from AppsAnywhere. R is called ``Cran R 4.2.0 x64'' on AppsAnywhere, so searching for ``Cran'' is an easy way to find it. Click ``Launch''.
+
+This will do two things. First, it will silently load the language R in the background. Second, it will open a program called ``RGui''. RGui is basically like an older and less good version of RStudio; we do not recommend using the RGui program, so you can close it. (The R language will remain loaded.)
+
+Third, launch RStudio from AppsAnywhere. THe most recent version on AppsAnywhere is RStudio 2023 (03.0.386). Click ``Launch''. After a few second, RStudio will launch. (If invited to choose a version of the language R, pick ``64-bit''. If invited to update R or RStudio, decline.)
+
+You need to repeat all three steps each time you log onto a University computer.
+
+\hypertarget{r-install}{%
+\section*{Installing R and RStudio}\label{r-install}}
+\addcontentsline{toc}{section}{Installing R and RStudio}
+
+When you install R and RStudio, it's important that you install the language R first, and only install the program RStudio after the language R has already been installed. This ensures that RStudio can ``find'' R on your computer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \emph{First}, install R. Go to the \href{https://cran.r-project.org/}{Comprehensive R Archive Network (CRAN)} and follow the instructions:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Windows: Click \href{https://cran.r-project.org/bin/windows/}{``Download R for Windows''}, then \href{https://cran.r-project.org/bin/windows/base/}{``Install R for the first time''}. The main link at the top should be to download the most recent version of R.
+  \item
+    Mac: Click \href{https://cran.r-project.org/bin/macosx/}{Download R for macOS}, and then download the relevant PKG file. (Most modern Macbooks are based on Apple's M1 or M2 processors, so you should choose ``Apple silicon arm64 build''. Some older Macbooks, mostly 2020 or earlier, use Intel processors; for these you should use the ``Intel 64-bit build''.)
+  \end{itemize}
+\item
+  \emph{After} R is installed, \emph{then} install RStudio. Go to the \href{https://posit.co/download/rstudio-desktop/}{``Download RStudio'' page at posit.co} and follow the instructions. You want ``RStudio Desktop'' and you want the free version, if given a choice.
+\end{enumerate}
+
+For Chromebooks, we recommend using the \href{https://posit.cloud}{Posit Cloud}, as mentioned above. However, if you have an Intel-based Chromebook and are feeling brave, then we have had success installing R and RStudio using \href{https://levente.littvay.hu/chromebook/}{these instructions}, which are long and complicated.
 
 \hypertarget{directions}{%
 \section*{Where are the computer clusters?}\label{directions}}
