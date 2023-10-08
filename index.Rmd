@@ -18,13 +18,25 @@ knitr::opts_chunk$set(comment = NA)
 \newcommand{\Var}{\operatorname{Var}}
 
 
+::: {.oldsched}
+**Week 2** (9--13 October):
+
+* [**Lecture 3:** Sample spaces and events](#L03-events) (Monday 9 October)
+* [**Lecture 4:** Probability](#L04-probability) (Wednesday 11 October)
+* **Tutorial** on [Problem Sheet 1](#P1)
+* [**R Practical**](#practical)
+* [**Problem Sheet 1:**](#P1) Work through in preparation for your tutorial. Deadline for assessed questions: Monday 17 October.
+* [**R Worksheet 1**](#R)
+* **Office hours:** Friday 13 October, 11--12 and 1--2, [Maths Boardroom](boardroom.png)
+:::
+
 ::: {.mysched}
 **Week 1** (2--6 October):
 
 * [**Lecture 1:** Summary statistics](#L01-stats) (Monday 2 October)
 * [**Lecture 2:** Data visualisation](#L02-dataviz) (Wednesday 4 October)
-  * [Map of how to find Chemistry West LT F](chem-west-map.png)
-* [**Problem Sheet 1:**](#P1) Work through the short and long questions in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
+* [**Problem Sheet 1:**](#P1) Work through in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
+* **Office hours:** Friday 6 October, 11--12 and 1--2, [Maths Boardroom](boardroom.png)
 :::
 
 <!--

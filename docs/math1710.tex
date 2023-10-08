@@ -157,6 +157,26 @@
 
 \newcommand{\Var}{\operatorname{Var}}
 
+\textbf{Week 2} (9--13 October):
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{L03-events}{\textbf{Lecture 3:} Sample spaces and events} (Monday 9 October)
+\item
+  \protect\hyperlink{L04-probability}{\textbf{Lecture 4:} Probability} (Wednesday 11 October)
+\item
+  \textbf{Tutorial} on \protect\hyperlink{P1}{Problem Sheet 1}
+\item
+  \protect\hyperlink{practical}{\textbf{R Practical}}
+\item
+  \protect\hyperlink{P1}{\textbf{Problem Sheet 1:}} Work through in preparation for your tutorial. Deadline for assessed questions: Monday 17 October.
+\item
+  \protect\hyperlink{R}{\textbf{R Worksheet 1}}
+\item
+  \textbf{Office hours:} Friday 13 October, 11--12 and 1--2, \href{boardroom.png}{Maths Boardroom}
+\end{itemize}
+
 \textbf{Week 1} (2--6 October):
 
 \begin{itemize}
@@ -165,14 +185,10 @@
   \protect\hyperlink{L01-stats}{\textbf{Lecture 1:} Summary statistics} (Monday 2 October)
 \item
   \protect\hyperlink{L02-dataviz}{\textbf{Lecture 2:} Data visualisation} (Wednesday 4 October)
-
-  \begin{itemize}
-  \tightlist
-  \item
-    \href{chem-west-map.png}{Map of how to find Chemistry West LT F}
-  \end{itemize}
 \item
-  \protect\hyperlink{P1}{\textbf{Problem Sheet 1:}} Work through the short and long questions in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
+  \protect\hyperlink{P1}{\textbf{Problem Sheet 1:}} Work through in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
+\item
+  \textbf{Office hours:} Friday 6 October, 11--12 and 1--2, \href{boardroom.png}{Maths Boardroom}
 \end{itemize}
 
 \hypertarget{about}{%
@@ -1094,7 +1110,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-10-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-13-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -1291,9 +1307,9 @@ You can probably think of many other things.
 The last two questions are \textbf{assessed questions}. This means you will submit your answers, and your answers will be marked by your tutor. These two questions count for 3\% of your final mark for this module. If you get stuck, your tutor may be willing to give you a small hint in your tutorial.
 
 The deadline for submitting your solutions is \textbf{2pm on Monday 16 October} at the beginning of Week 3. Submission will be via Gradescope, which you can access via Minerva or on the Gradescope mobile app.
-You should submit your answers as a single PDF file. Most students choose to hand-write their work on paper, then scan-and-submit it to using the Gradescope app on their phone. Your work will be marked by your tutor and returned on Monday 23 October, when solutions will also be made available.
+You should submit your answers as a single PDF file. Most students choose to hand-write their work on paper, then scan-and-submit it to using the Gradescope mobile app. Your work will be marked by your tutor and returned on Monday 23 October, when solutions will also be made available.
 
-Question C1 is a ``short question'', where brief explanations or working are sufficient; Question C2 is a ``long question'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
+Question C1 is a ``short question'', where brief explanations or working are sufficient; Question C2 is a ``long question'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanatory writing.
 
 You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
 
@@ -1351,6 +1367,865 @@ In Subsection 1.4 of the notes, we went from the definitional formula for the sa
 \textbf{A2.} (a) ---, (b) 45--50, (c) 45--50, (c) 47.3.\\
 \textbf{A3.} ---
 
+\hypertarget{part-part-ii-probability}{%
+\part*{Part II: Probability}\label{part-part-ii-probability}}
+\addcontentsline{toc}{part}{Part II: Probability}
+
+\hypertarget{L03-events}{%
+\chapter{Sample spaces and events}\label{L03-events}}
+
+\renewcommand{\complement}{\mathsf{c}}
+\newcommand{\comp}{\complement}
+\newcommand{\ff}[2]{{#1}^{\underline{#2}}}
+
+\hypertarget{what-is-prob}{%
+\section{What is probability?}\label{what-is-prob}}
+
+We now begin the big central block of this module, on probability theory.
+
+Probability theory is the study of randomness. Probability, as an area of mathematics, is a fascinating subject in its own right. However, probability is particularly important due to its usefulness in applications -- especially in statistics (the study of data), in finance, and in actuarial science (the study of insurance).
+
+Probability is well suited to modelling situations that involve randomness, uncertainty, or unpredictability. If you want to predict the time of the next solar eclipse, a deterministic (that is, non-random) model based on physical laws will tell you when the sun, the moon, and the earth will be in the correct positions; but if you want to predict the weather tomorrow, or the price of a share of Apple stock next month, or the results of an election next year, you will need a probabilistic model that takes into account the uncertainty in the outcome. A probabilistic model could tell you the most likely outcome, or a range of the most probable outcomes.
+
+So what do we mean when we talk about the ``probability'' of an event occurring? You might say that the probability of an event is a measure of ``how likely'' it is to occur, or what the ``chance'' of it occurring is.
+
+More concretely, here are some interpretations of probability:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Subjective} (or \textbf{Bayesian}) \textbf{probability:} The probability of an event is the way someone expresses their degree of belief that the event will occur, based on their own judgement, and given the evidence they have seen. Their belief is measured on a scale from 0 to 1, from probabilities near 0 meaning they believe the event is very unlikely to occur to probabilities near 1 meaning they believe the event is very likely to occur.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This interpretation is philosophically sound, but a bit vague to be the basis for a mathematics module.
+  \end{itemize}
+\item
+  \textbf{Classical} (or \textbf{enumerative}) \textbf{probability:} Suppose there are a finite number of equally likely outcomes. Then the probability of an event is the proportion of those outcomes that correspond to the event occurring. So when we say that a randomly dealt card has a probability \(\frac{1}{13}\) of being an ace, this is because there are 52 cards of which 4 are aces, so the proportion of favourable outcomes is \(\frac{4}{52} = \frac{1}{13}\).
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This interpretation is good for simple procedures like flipping a fair coin, rolling a dice, or dealing cards, where the ``finite number of equally likely outcomes'' assumption holds. But we want to be able to study more complicated situations, where some outcomes are more likely than others, or where infinitely many different outcomes are possible.
+  \end{itemize}
+\item
+  \textbf{Frequentist probability:} In a repeated experiment, the probability of an event is its long-run frequency. That is, if we repeat an experiment a very large number of times, the probability of the event is (approximately) the proportion of the experiments in which the event occurs. So when we say a biased coin has probability 0.9 of landing heads, we mean that were we toss it 1000 times, we would expect to see very close to \(0.9 \times 1000 = 900\) heads.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    There are two problems with this. First, this doesn't deal with events that can't be repeated over and over again (like ``What's the probability that Labour win the 2024 general election?''). Second, to answer the question, ``Yes, but \emph{how} close to the probability should the proportion of occurrences be?'', you end up having to answer, ``Well, it depends on the probability,'' and you've got a circular definition.
+  \end{itemize}
+\item
+  \textbf{Mathematical probability:} We have a function that assigns to each event a number between 0 and 1, called its probability, and that function has to obey certain mathematical rules, called ``axioms''.
+\end{itemize}
+
+It will not surprise you to learn that, in this mathematics course, we will take the ``mathematical probability'' approach. However, we will also learn useful things about the other approaches: we will see that classical probability is one special case of mathematical probability; we will see a result called the ``law of large numbers'' that says that the long-run frequency does indeed get closer and closer to the mathematical probability; and a result called ``Bayes' theorem'' will advise a subjectivist on how to update her subjective beliefs when she sees new evidence.
+
+\hypertarget{sample-events}{%
+\section{Sample spaces and events}\label{sample-events}}
+
+Taking the ``mathematical probability'' approach, we will want to give a formal mathematical definition of the \emph{probability} of an event. But even before that, we need to give a formal mathematical definition of an \emph{event} itself. Our setup will be this:
+
+\begin{itemize}
+\tightlist
+\item
+  There is a set called the \textbf{sample space}, normally given the letter \(\Omega\) (upper-case Omega), which is the set of all possible outcomes.
+\item
+  An element of the sample space \(\Omega\) is a \textbf{sample outcome}, sometimes given the letter \(\omega\) (lower-case omega), represents one of the possible outcomes.
+\item
+  An \textbf{event} is a set of sample outcomes; that is, a subset of the sample space \(\Omega\). Events are often given letters like \(A\), \(B\), \(C\). We write \(A \subset \Omega\) to mean that \(A\) is an event in (or, equivalently, is a subset of) the sample space \(\Omega\).
+\end{itemize}
+
+This will be easier to understand with some concrete examples. We write a set (such as a sample space or an event) by writing all the elements of that set inside curly brackets \(\{\ \}\), separated by commas.
+
+\begin{example}
+Suppose we toss a (possibly biased) coin, and record whether it lands heads or tails. Then our sample space is \(\Omega = \{\mathrm H, \mathrm T\}\), where the sample outcome H denotes heads and the sample outcome T denotes tails.
+
+The event that the coin lands heads is \(\{\mathrm H\}\).
+\end{example}
+
+\begin{example}
+Suppose we roll a dice, and record the number rolled. Then our sample space is \(\Omega = \{1,2,3,4,5,6\}\), where the sample outcome \(1\) corresponds to rolling a one, and so on.
+
+The event ``we roll an even number'' is \(\{2,4,6\}\). The event ``we roll at least a five'' is \(\{5,6\}\).
+\end{example}
+
+\begin{example}
+Suppose we wish to count how many claims are made to an insurance company in a year. We could model this by taking the sample space \(\Omega\) to be \(\mathbb Z_+ = \{0, 1, 2, \dots\}\), the set of all non-negative integers.
+
+The event ``the company receives less than 1000 claims'' is \(\{0, 1, 2, \dots, 998, 999\}\).
+\end{example}
+
+\begin{example}
+Suppose we want a computer to pick a random number between 0 and 1. We could model this by taking the sample space \(\Omega\) to be the interval \([0, 1]\) of all real numbers between 0 and 1.
+
+The event ``the number is bigger than \(\frac12\)'' is the sub-interval \((\frac12, 1]\) of all real numbers greater than \(\frac12\) but no bigger than 1. The event ``the first digit is a 7'' is the sub-interval \([0.7, 0.8)\). The event ``the random number is exactly \(1/\sqrt{2}\)'' is \(\{1/\sqrt{2}\}\).
+\end{example}
+
+In the first two examples, the sample space \(\Omega\) was finite. In third example, the sample space was infinite but ``countably infinite'', in that it could be counted using the discrete values of the positive integers. Both of these were for \emph{counting} discrete observations. In the fourth example, the sample space was infinite but ``uncountably infinite'', in that it had a sliding scale or ``continuum'' of gradually varying measurements. This was for \emph{measuring} continuous observations. This distinction will be important later in the course.
+
+For any sample space \(\Omega\), there are two special events that always exist. There's \(\Omega\) itself, the event containing all of the sample outcomes, which represents ``something happens''. There's also the empty set \(\varnothing\), which contains none of the sample outcomes, which represents ``nothing happens''. Common sense suggests that \(\Omega\) should have probability 1, because \emph{something} is bound to happen -- this will later be one of our probability ``axioms''. Common sense also suggests that \(\varnothing\) should have probability 0, because it can't be that \emph{nothing} happens -- this will not be one probability axioms, but we'll show that it follows logically from the axioms we do choose.
+
+\hypertarget{set-theory}{%
+\section{Set theory}\label{set-theory}}
+
+Since we've now defined events as being sets -- specifically, subsets of the sample space \(\Omega\) -- it will be useful to mention a little set basic theory here.
+
+First, there are ways we can build new sets (or events) out of old. It's fine to just read the words and look at the pictures for these definitions, but those who want to read the equations too will need to know this:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\omega \in A\) means ``\(\omega\) is in \(A\)'' or ``\(\omega\) is an element of \(A\)'', while \(\omega \not\in A\) means the opposite, that \(\omega\) is \emph{not} in \(A\);
+\item
+  a colon \(:\) in the middle of set notation should be read as ``such that'';
+\item
+  so \(\{\omega \in \Omega : \text{fact about $\omega$}\}\) should be read as ``the set of sample outcomes \(\omega\) in the sample space \(\Omega\) such that the fact is true''.
+\end{itemize}
+
+\begin{definition}
+
+Consider a sample space \(\Omega\), and let \(A\) and \(B\) be events in that sample space.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{{NOT:}} The \textbf{complement} of \(A\), written \(A^\mathsf{c}\) (and said ``\(A\) complement'' or ``not \(A\)''), is the set of sample outcomes not in \(A\); that is
+  \[ A^\mathsf{c}= \{\omega \in \Omega : \omega \not\in A \} . \]
+  This represents the event that \(A\) does not occur.
+\item
+  \textbf{{AND}:} The \textbf{intersection} of \(A\) and \(B\), written \(A \cap B\) (and said ``\(A\) intersect \(B\)'' or ``\(A\) and \(B\)'') is the set of sample outcomess in both \(A\) and \(B\); that is,\\
+  \[ A \cap B = \{\omega \in \Omega : \omega \in A \text{ and } \omega \in B \} . \]
+  This represents the event that both \(A\) and \(B\) occur.
+\item
+  \textbf{{OR:}} The \textbf{union} of \(A\) and \(B\), written \(A \cup B\) (and said ``\(A\) union \(B\)'' or ``\(A\) or \(B\)'') is the set of sample outcomess in \(A\) or in \(B\); that is,
+  \[ A \cup B = \{\omega \in \Omega : \omega \in A \text{ or } \omega \in B \} . \]
+  This represents the event that \(A\) occurs or \(B\) occurs. (In mathematics, ``or'' includes ``both'', so a sample outcome in both \(A\) and \(B\) is in \(A\cup B\) too.)
+\end{itemize}
+
+~
+
+\begin{center}\includegraphics[width=550pt]{math1710_files/figure-latex/venn-not-1} \end{center}
+
+\begin{center}\includegraphics[width=550pt]{math1710_files/figure-latex/venn-and-1} \end{center}
+
+\begin{center}\includegraphics[width=550pt]{math1710_files/figure-latex/venn-or-1} \end{center}
+
+\end{definition}
+
+\begin{example}
+Suppose we are rolling a dice, so our sample space is \(\Omega = \{1,2,3,4,5,6\}\). Let \(A = \{2,4,6\}\) be the event that we roll and even number, and let \(B = \{5,6\}\) be the event that we roll at least a 5. Then
+\begin{align*}
+A^\mathsf{c}&= \{1,3,5\} = \{\text{roll an odd number}\} ,\\
+A \cap B &= \{6\} = \{\text{roll a 6}\} ,\\
+A \cup B &= \{2,4,5,6\} .
+\end{align*}
+\end{example}
+
+An important case is when two events \(A, B\) cannot happen at the same time; that is, \(A \cap B = \varnothing\) (``\(A\) intersect \(B\) is the empty set''). In this case, we say that \(A\) and \(B\) are \textbf{disjoint} or \textbf{mutually exclusive}. For example, when \(\Omega\) is \href{https://en.wikipedia.org/wiki/Standard_52-card_deck}{a deck of cards}, then \(A = \{\text{the card is a spade}\}\) and \(B = \{\text{the card is red}\}\) are disjoint, because a card cannot be both a spade (a black suit) and red.
+
+You might think that if two events are disjoint, then it would be reasonable to find the probability of their union -- that is, the probability that one (and, by necessity, only one) of them happens -- you can just add the two separate probabilities together. This will be another of our ``axioms'' of probability.
+
+There are a few rules about ways you can combine the complement, intersection and union operations. These are ways of building new events from old.
+
+\begin{itemize}
+\tightlist
+\item
+  The \textbf{double complement law} tells us that not-not-\(A\) is the same as \(A\):
+  \[ (A^\mathsf{c})^\mathsf{c}= A .\]
+  This says that if it's not ``not-raining'', then it's raining!
+\item
+  The \textbf{distributive laws} tells us we can ``multiply out of the brackets'' with sets:
+  \begin{align*}
+  A \cap (B \cup C) &= (A \cap B) \cup (A \cap C) ,\\
+  A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) .
+  \end{align*}
+  The first says that if you are eating a burger with fries or salad, then you're eating a burger with fries or eating a burger with salad. The second is a bit less intuitive, I find, but it's clear that if \(A\) is true then the first of each of the terms on the right is true, while if both \(B\) and \(C\) are true then the second of each of the terms on the right is true.
+\item
+  \textbf{De Morgan's laws} tell us how complements interact with intersection/unions:
+  \begin{align*}
+  (A \cap B)^\mathsf{c}&= A^\mathsf{c}\cup B^\mathsf{c}\\
+  (A \cup B)^\mathsf{c}&= A^\mathsf{c}\cap B^\mathsf{c}
+  \end{align*}
+  The first of these says that if it's not a Monday in October, then either it's not Monday or it's not October (or both). The second says that if a maths lecture is not ``useful or fun'', then it's not useful and it's not fun. (\href{https://mathshistory.st-andrews.ac.uk/Biographies/De_Morgan/}{Augustus De Morgan} was a British mathematician of the 19th century who did important work in logic.)
+\end{itemize}
+
+For this module, these mostly count as ``common sense'' -- but if you ever do need to prove one of these statements (or a similar one), one way is to use a Venn diagram.
+
+Let's prove the second distributive law,
+\[   A \cup (B \cap C) = (A \cup B) \cap (A \cup C) , \]
+with a Venn diagram as an example.
+
+We can build the left-hand side of the law as:
+
+\begin{center}\includegraphics[width=1\linewidth]{math1710_files/figure-latex/dist1-1} \end{center}
+
+~
+
+\begin{center}\includegraphics[width=1\linewidth]{math1710_files/figure-latex/dist2-1} \end{center}
+
+~
+
+\begin{center}\includegraphics[width=1\linewidth]{math1710_files/figure-latex/dist3-1} \end{center}
+
+The left-hand figure is \(\color{orange}{A}\), the middle figure is \(\color{purple}{B\cap C}\), and the right-hand figure is union of these, \(A\cup (B\cap C)\).
+
+Then for the right-hand side of the law, we have:
+
+\begin{center}\includegraphics[width=1\linewidth]{math1710_files/figure-latex/dist4-1} \end{center}
+
+~
+
+\begin{center}\includegraphics[width=1\linewidth]{math1710_files/figure-latex/dist5-1} \end{center}
+
+~
+
+\begin{center}\includegraphics[width=1\linewidth]{math1710_files/figure-latex/dist6-1} \end{center}
+
+The left-hand figure is \(\color{orange}{A} \cup \color{blue}{B}\), the middle figure is \(\color{orange}{A}\cup \color{red}{C}\), and the right-hand figure is intersection of these, \((A\cup B)\cap (A\cup C)\).
+
+We see that the areas shaded in two right-hand figures are the same, so it is indeed the case that
+\(A\cup (B\cap C) = (A\cup B)\cap (A\cup C)\).
+
+\hypertarget{summary-L03}{%
+\section*{Summary}\label{summary-L03}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  A sample space \(\Omega\) is a set representing all possible sample outcomes.
+\item
+  An event is a subset of \(\Omega\).
+\item
+  For events \(A\) and \(B\), we also have the complement ``not \(A\)'' \(A^\mathsf{c}\), the intersection ``\(A\) and \(B\)'' \(A \cap B\), and the union ``\(A\) or \(B\)'' \(A \cup B\).
+\end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 1.1 and 1.2 (plus optionally Chapter 0).
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Sections 1.1 and 1.2.
+\end{itemize}
+
+\hypertarget{L04-probability}{%
+\chapter{Probability}\label{L04-probability}}
+
+\hypertarget{axioms}{%
+\section{Probability axioms}\label{axioms}}
+
+Recall that, in this mathematics course, the probability of an event will be a real number that satisfies certain properties, which we call \textbf{axioms}.
+
+\begin{definition}
+\protect\hypertarget{def:axioms}{}\label{def:axioms}Let \(\Omega\) be a sample space. A \textbf{probability measure} on \(\Omega\) is a function \(\mathbb P\) that assigns to each event \(A \subset \Omega\) a real number \(\mathbb P(A)\), called the \textbf{probability} of \(A\), and that satisfies the following three axioms:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb P(A) \geq 0\) for all events \(A \subset \Omega\);
+\item
+  \(\mathbb P(\Omega) = 1\);
+\item
+  if \(A_1, A_2, \dots\) is a finite or infinite sequence of disjoint events, then
+  \[ \mathbb P(A_1 \cup A_2 \cup \cdots) = \mathbb P(A_1) + \mathbb P(A_2) + \cdots . \]
+\end{enumerate}
+
+The sample space \(\Omega\) together with the probability measure \(\mathbb P\) are called a \textbf{probability space}.
+\end{definition}
+
+Axiom 1 says that all probabilities are non-negative numbers. Axiom 2 says the probability that \emph{something} happens is 1. Axiom 3 says that \emph{for disjoint events} the probability that one of them happens is the sum of the individual probabilities. (Those who like their mathematical statements very precise should note that an infinite sequence in Axiom 3 must be ``countable''; that is, indexed by the natural numbers \(1, 2, 3. \dots\).)
+
+These axioms of probability (and our later results that follow from them) were first written down by the Russian mathematician \href{https://mathshistory.st-andrews.ac.uk/Biographies/Kolmogorov/}{Andrey Nikolaevich Kolmogorov} in 1933. This marked the point from when probability theory could now be considered a proper branch of mathematics -- just as legitimate as geometry or number theory -- and not just a past-time that can be useful to help gamblers calculate their odds. I always find it surprising that the axioms of probability are only 90 years old!
+
+There are other properties that it seems natural that a probability measure should have aside from the axioms -- for example, that \(\mathbb P(A) \leq 1\) for all events \(A\). But we will show shortly that other properties can be proven just by starting from the three axioms.
+
+But first, let's see some examples.
+
+\begin{example}
+
+Suppose we wish to model tossing an biased coin the is heads with probability \(p\), where \(0 \leq p \leq 1\).
+
+Our probability space is \(\Omega = \{\text{H}, \text{T}\}\). The probability measure is given by
+\begin{align*}
+   \mathbb P(\varnothing) &= 0  &  \mathbb P(\{\text{H}\}) &= p \\
+   \mathbb P(\{\text{T}\}) &= 1 - p  &  \mathbb P(\{\text{H},\text{T}\})  &= 1 .
+\end{align*}
+
+Let's check that the axioms hold:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Since \(0 \leq p \leq 1\), all the probabilities are greater than or equal to 0.
+\item
+  It is indeed the case that \(\mathbb P(\Omega) = \mathbb P(\{\text{H},\text{T}\}) = 1\).
+\item
+  The only nontrivial disjoint union to check is \(\{\text{H}\} \cup \{\text{T}\} = \{\text{H},\text{T}\}\), where we see that
+  \[ \mathbb P(\{\text{H}\}) + \mathbb P(\{\text{T}\}) = p + (1 - p) = 1 = \mathbb P(\{\text{H},\text{T}\}) , \]
+  as required.
+\end{enumerate}
+
+\end{example}
+
+\begin{example}
+Suppose we wish to model rolling a dice.
+
+Our sample space is \(\{1,2,3,4,5,6\}\). The probability measure is given by
+\[ \mathbb P(A) = \frac{|A|}{6} , \]
+where \(|A|\) is the number of sample outcomes in \(A\).
+
+So, for example, the probability of rolling an even number is
+\[ \mathbb P(\{2,4,6\}) = \frac36 = \frac12 . \]
+\end{example}
+
+The dice rolling is a particular case of the ``classical probability'' of equally likely outcomes. We'll look at this more in the next lecture, and prove that the classical probability measure does indeed satisfy the axioms
+
+\hypertarget{prob-properties}{%
+\section{Properties of probability}\label{prob-properties}}
+
+The axioms of Definition \ref{def:axioms} only gave us some of the properties that we would like a probability measure to have. Our task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we're not allowed to make claims that merely ``seem likely to be true'' or ``are common sense'' -- we can only use the three axioms together with strict logical deductions and nothing else.
+
+\begin{theorem}
+
+Let \(\Omega\) be a sample space with a probability measure \(\mathbb P\). Then we have the following:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb P(\varnothing) = 0\).
+\item
+  \(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\) for all events \(A \subset \Omega\).
+\item
+  For events \(A\) and \(B\) with \(B \subset A\), we have \(\mathbb P(B) \leq \mathbb P(A)\).
+\item
+  \(0 \leq \mathbb P(A) \leq 1\) for all events \(A \subset \Omega\).
+\end{enumerate}
+
+\end{theorem}
+
+Importantly, the second result here tells us how to deal with complements or ``not'' events: the probability of \(A\) \emph{not} happening is 1 minus the probability it does happen. This is often very useful.
+
+\begin{proof}
+The key with most of these ``prove from the axioms'' problems is to think of a way to write the relevant events as part of a \emph{disjoint} union, then use Axiom 3. Statements 1 and 2 are exercises for you on \protect\hyperlink{P2}{Problem Sheet 2}. We'll start with the third statement.
+
+Here, since \(B\) is a subset of \(A\), meaning that \(B\) is entirely inside \(A\).
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/subs0-1} \end{center}
+
+It would be useful to write \(A\) as a \emph{disjoint} union of \(\color{orange}B\) and {``the bit of \(A\) that isn't in \(B\)''}. That is, we have the disjoint union
+\[ A = \color{orange}B \cup (\color{purple}{A \cap B^\mathsf{c}}) .\]
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/subs-1} \end{center}
+
+Applying Axiom 3 to this disjoint union gives
+\[ \mathbb P(A) =  \mathbb P(B) + \mathbb P(A \cap B^\mathsf{c}) . \]
+
+We're happy to see the term on the left-hand side and the first term on the right-hand side. But what about the awkward \(\mathbb P(A \cap B^\mathsf{c})\)? Well, by Axiom 1, we know that the probability of any event is greater than or equal to 0, so in particular. \(\mathbb P(A \cap B^\mathsf{c}) \geq 0\). Hence
+\[ \mathbb P(A)  \geq \mathbb P(B) + 0 = \mathbb P(B) , \]
+and we are done with the third statement.
+
+For the fourth statement, we have \(\mathbb P(A) \geq 0\) directly from Axiom 1, so only need to show that \(\mathbb P(A) \leq 1\). We can do this using the third statement of this theorem. For any event \(A\) we have \(A \subset \Omega\), so the third statement tells us that \(\mathbb P(A) \leq \mathbb P(\Omega)\). But Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), so \(\mathbb P(A) \leq 1\) and we are done.
+\end{proof}
+
+\hypertarget{addition}{%
+\section{Addition rules for unions}\label{addition}}
+
+If we have two or more events, we'd like to work out the probability of their union; that is, the probability that at least one of them occurs.
+
+We already have an addition rule for \emph{disjoint} unions.
+
+\begin{theorem}
+Let \(A, B \subset \Omega\) be two disjoint events. Then
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) . \]
+\end{theorem}
+
+\begin{proof}
+In Axiom 3, take the finite sequence \(A_1 = A\), \(A_2 = B\).
+\end{proof}
+
+But what about if \(A\) and \(B\) are not disjoint? Then we have the following.
+
+\begin{theorem}
+Let \(A, B \subset \Omega\) be two events. Then
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+\end{theorem}
+
+You may have seen this result before. You've perhaps justified it by saying something like this: ``We can add the two probabilities together, except now we've double-counted the overlap, so we have to take the probability of that away.'' Maybe you drew a Venn diagram. That's OK as a way to remember the result -- but this is a proper university mathematics course, so we have to carefully \emph{prove} it starting from just the axioms and nothing else.
+
+\begin{proof}
+The problem here is that \(A\) and \(B\) are not (in general) disjoint, so we can't apply Axiom 3.
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/add3-1} \end{center}
+
+Instead, let's split this up into the three disjoint bits: {``\(A\) but not \(B\)''} \(\color{red}{A \cap B^\mathsf{c}}\), {``\(B\) but not \(A\)''} \(\color{blue}{B \cap A^\mathsf{c}}\), and {``both''} \(\color{green}{A \cap B}\).
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/add4-1} \end{center}
+
+Now we can write \(A\), \(B\) and \(A \cup B\) in terms of these disjoint bits.
+\begin{align}
+A &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+B &= (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+A \cup B &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}),
+\end{align}
+with all the unions on the right-hand side being disjoint. Applying Axiom 3 to them all gives
+\begin{align}
+\mathbb P(A) &= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(A \cap B) \label{eq:un1}  \\
+\mathbb P(B) &= \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B)  \label{eq:un2} \\
+\mathbb P(A \cup B) &= \mathbb P(A \cap B^\mathsf{c}) + \mathbb P(B \cap A^\mathsf{c}) + \mathbb P(A \cap B) . \label{eq:un3}
+\end{align}
+Here, \eqref{eq:un3} is looking good, but we need to get rid of the awkward \(\mathbb P(A \cap B^\mathsf{c})\) and \(\mathbb P(B \cap A^\mathsf{c})\) terms. We can do that be rearranging \eqref{eq:un1} and \eqref{eq:un2} to get
+\begin{align}
+\mathbb P(A \cap B^\mathsf{c}) &= \mathbb P(A) - \mathbb P(A \cap B) \\
+\mathbb P(B \cap A^\mathsf{c}) &= \mathbb P(B) - \mathbb P(A \cap B) .
+\end{align}
+Substituting these into \eqref{eq:un3} gives
+\begin{align}
+\mathbb P(A \cup B) &= \mathbb P(A) - \mathbb P(A \cap B) + \mathbb P(B) - \mathbb P(A \cap B) + \mathbb P(A \cap B) \\
+  &= \mathbb P(A)+ \mathbb P(B) - \mathbb P(A \cap B) ,
+\end{align}
+as required.
+\end{proof}
+
+\begin{example}
+\emph{Consider picking a card from a \href{https://en.wikipedia.org/wiki/Standard_52-card_deck}{deck} at random, with \(\mathbb P(A) = |A|/52\). What's the probability the card is a spade or an ace?}
+
+It is possible to just to work this out directly. But let's use our addition law for unions.
+
+We have \(\mathbb P(\text{spade}) = \frac{13}{52}\) and \(\mathbb P(\text{ace}) = \frac{4}{52}\). So we have
+\[ \mathbb P(\text{spade or ace}) = \tfrac{13}{52} + \tfrac{4}{52} - \mathbb P(\text{spade and ace}) . \]
+But \(\mathbb P(\text{spade and ace})\) is the probability of picking the ace of spades, which is \(\frac{1}{52}\). Therefore
+\[ \mathbb P(\text{spade or ace}) = \tfrac{13}{52} + \tfrac{4}{52}  - \tfrac{1}{52} = \tfrac{16}{52} = \tfrac{4}{13} . \]
+\end{example}
+
+\hypertarget{summary-L04}{%
+\section*{Summary}\label{summary-L04}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  The axioms of probability are (1) \(\mathbb P(A) \geq 0\); (2) \(\mathbb P(\Omega) = 1\); and (3) that for disjoint events \(A_1, A_2, \dots\), we have \(\mathbb P(A_1 \cup A_2 \cup \cdots) = \mathbb P(A_1) + \mathbb P(A_2) + \cdots\).
+\item
+  Other properties can be proven from these axioms, like the complement rule \(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\), and the addition rule for unions \(\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B)\).
+\end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 1.1 and 1.2 (plus optionally Chapter 0).
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Sections 1.3 and 1.4.
+\end{itemize}
+
+On \protect\hyperlink{P2}{Problem Sheet 2}, you should now be able to complete Questions A1, A2, B1, B2 and perhaps C1.
+
+\hypertarget{P2}{%
+\chapter*{Problem Sheet 2}\label{P2}}
+\addcontentsline{toc}{chapter}{Problem Sheet 2}
+
+\commfalse
+
+This is Problem Sheet 2. This problem sheet covers material from Lectures 3 to 6. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 4. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on Monday 30 October}.
+
+\hypertarget{P2-short}{%
+\section*{A: Short questions}\label{P2-short}}
+\addcontentsline{toc}{section}{A: Short questions}
+
+\textbf{A1.} Suppose you toss a coin 4 times.
+
+\textbf{(a)} What would you suggest for a sample space \(\Omega\) \textbf{(i)} if you only care about the total number of heads; \textbf{(ii)} if you care about the result of each coin toss?
+
+\textbf{(b)} For each of the cases in part (a), what is \(|\Omega|\)?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\textbf{(i)} We can take \(\Omega = \{0,1,2,3,4\}\), with \(|\Omega| = 5\).
+
+\textbf{(ii)} Here, \(\Omega = \{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}\) should be the set of all sequences of four ``H''s or ``T''s. So here, \(|\Omega| = 2^4 = 16\).
+
+\end{myanswers}
+
+\textbf{A2.} Let \(A\), \(B\) and \(C\) be events in a sample space \(\Omega\). Write the following events using only \(A\), \(B\), \(C\) and the complement, intersection, and union operations.
+
+\textbf{(a)} \(C\) happens but \(A\) doesn't.
+
+\begin{myanswers}
+\emph{Solution.} This is ``\(C\) and not \(A\)'': \(C\cap A^{\mathsf{c}}\).
+
+\end{myanswers}
+
+\textbf{(b)} At least one of \(A\), \(B\) and \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} This is simply the union \(A \cup B\cup C\).
+
+\end{myanswers}
+
+\textbf{(c)} Exactly one of \(B\) or \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} One way to write this is to split it up as ``\,`\(B\) but not \(C\)' or `\(C\) but not \(B\)'\,'', which is \((B \cap C^{\mathsf{c}}) \cup (B^{\mathsf{c}} \cap C)\).
+
+An alternative is to split it up as ``\,`\(B\) or \(C\)' but not `both \(B\) and \(C\)'\,'', which is \((B \cup C) \cap (B\cap C)^{\mathsf{c}}\).
+
+You can check these are equal by (for example) using De Morgan's law and the distributive law to expand out the second version.
+
+\end{myanswers}
+
+\textbf{(d)} Exactly two of \(A\), \(B\) and \(C\) happens.
+
+\begin{myanswers}
+\emph{Solution.} I would split this up into ``\(A\) and \(B\) but not \(C\)'', ``\(A\) and \(C\) but not \(B\)'', and ``\(B\) and \(C\) but not \(A\)'' and take the union. This gives
+\[  (A \cap B \cap C^{\mathsf{c}}) \cup (A \cap B^{\mathsf{c}} \cap C) \cup (A^{\mathsf{c}} \cap B \cap C) . \]
+There are other equivalent formulations.
+
+\end{myanswers}
+
+\textbf{A3.} What is the value of the following expressions?
+
+\textbf{(a)} \(6!\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720. \]
+
+\end{myanswers}
+
+\textbf{(b)} \(8^4\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ 8^4 = 8 \times 8 \times 8 \times 8 = 4096 \]
+
+\end{myanswers}
+
+\textbf{(c)} \({8}^{\underline{4}}\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ {8}^{\underline{4}} = 8 \times 7 \times 6 \times 5 = 1680 \]
+
+\end{myanswers}
+
+\textbf{(d)} \({\displaystyle \binom{10}{4}}\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ \binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4\times 3\times 2\times 1} = 210 \]
+
+\end{myanswers}
+
+\textbf{A4.} An urn contains 4 red balls and 6 blue balls. Two balls are drawn from the urn. What is the probability that both balls are red, if the balls are drawn \textbf{(a)} with replacement; \textbf{(b)} without replacement?
+
+\begin{myanswers}
+\emph{Solution.}
+
+\textbf{(a)} There are \(|\Omega| = 10^2 = 100\) ways to draw two balls with replacement. There are \(|A| = 4^2=16\) ways to draw two blue balls. So
+\(\mathbb P(A) = \frac{16}{100} = 0.16\).
+
+\textbf{(b)} There are \(|\Omega| = {10}^{\underline{2}} = 10 \times 9 = 90\) ways to draw two balls without replacement. There are \(|A| = {4}^{\underline{2}} = 4 \times 3 = 12\) to draw two blue balls. So
+\(\mathbb P(A) = \frac{12}{90} = \frac{2}{15} = 0.133\).
+
+\end{myanswers}
+
+\hypertarget{P2-long}{%
+\section*{B: Long questions}\label{P2-long}}
+\addcontentsline{toc}{section}{B: Long questions}
+
+\textbf{B1.} Starting from just the three probability axioms, prove the following statements:
+
+\textbf{(a)} \(\mathbb P(\varnothing) = 0\).
+
+\begin{myanswers}
+\emph{Solution.} Let \(A\) be any event (such as \(A = \varnothing\) or \(A = \Omega\), for example). Then \(A \cup \varnothing = A\), and the union is disjoint -- since \(\varnothing\) contains no sample points, it certainly can't contain any sample points that are also in \(A\). Then applying Axiom 3, we get \(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\). Subtracting \(\mathbb P(A)\) from both sides gives the result.
+
+\emph{Alternatively}, if you prove part (b) first, you can apply that with \(A = \varnothing\). Since \(\varnothing^\mathsf{c}= \Omega\) and Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), the result follows.
+
+\textbf{Group feedback:} With this, and most ``prove from the axioms'' questions, the key is to find a relevant disjoint union, which then allows us to use Axiom 3. So if we can find \(C = A \cup B\) as a disjoint union (hopefully containing some events relevant to the question at hand), Axiom 3 allows us to write \(\mathbb P(C) = \mathbb P(A) + \mathbb P(B)\).
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\).
+
+\begin{myanswers}
+\emph{Solution.} A very useful and relevant disjoint union is \(A \cup A^\mathsf{c}= \Omega\). Applying Axiom 3 gives us \(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = \mathbb P(\Omega)\). But Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), so \(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = 1\). Rearranging gives the result.
+
+\end{myanswers}
+
+\textbf{B2.} In this question, you will have to use the standard two-event form of the addition rule for unions
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+
+\textbf{(a)} Using the two-event addition rule, show that
+\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]
+
+\begin{myanswers}
+\emph{Solution.} As with the Cauchy--Schwarz question from Problem Sheet 1, the key is to make a good choice for what \(A\) and \(B\) should be. This time, \(A = C\) and \(B = D \cup E\) will work well, since \(C \cup (D \cup E) = C \cup D \cup E\). (You can call this ``associativity'', if you like.) Making that substitution immediately gives us
+\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]
+as required.
+
+\end{myanswers}
+
+\textbf{(b)} Using your result from part (a), the two-event addition rule, the distributive law, and the two-event addition rule again, prove the three-event form of the addition rule for unions:
+\[
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E) 
+  - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
+\]
+
+\begin{myanswers}
+\emph{Solution.}
+Let's take the three terms on the right of the equation from part (a) separately.
+
+The first term is \(\mathbb P(C)\), which is fine as it is.
+
+The second term is \(\mathbb P(D \cup E)\). This is the probability of the union of two events, so we can use addition rule for the union of two events to get
+\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E) . \]
+
+The third term is \(\mathbb P\big(C \cap (D \cup E)\big)\). If we use the distributive law, as suggested in the question, we get \(C \cap (D \cup E) = (C \cap D) \cup (C\cap E)\), so we want to find \(\mathbb P\big((C \cap D) \cup (C\cap E)\big)\). But this is another union of two events again, this time with \(A = C \cap D\) and \(B = C \cap E\). So the two-event addition rule gives
+\[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]
+since \((C \cap D) \cap (C \cap E) = C \cap D \cap E\).
+
+Finally, we put this all together, and get
+\begin{align*}
+  \mathbb P(C &\cup D \cup E) \\
+  &= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
+  &= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) , 
+\end{align*}
+which is what we wanted.
+
+\end{myanswers}
+
+\textbf{B3.} Suppose we pick a number at random from the set \(\{1, 2, \dots, 2022\}\).
+
+\textbf{(a)} What is the probability that the number is divisible by 5?
+
+\begin{myanswers}
+
+\emph{Solution.} The sample space is \(\Omega = \{1, 2, \dots, 2022\}\). Clearly \(|\Omega| = 2022\). Further, the event in question is \(A = \{5, 10, \dots, 2020\}\) of numbers up to 2022 that are divisible by 5. Thus \(|A|\) is the largest integer no bigger than \(\frac{2022}{5} = 404.4\), which is 404, as this is how many times 5 ``goes into'' 2022. Hence
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]
+just a tiny bit smaller than \(\frac{1}{5}\).
+
+\textbf{Group feedback:} With these ``classical probability'' questions, the steps should always be:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  State clearly what the sample space \(\Omega\) is.
+\item
+  Count how many outcomes \(|\Omega|\) are in the sample space.
+\item
+  State clearly what the event \(A\) is.
+\item
+  Count how many outcomes \(|A|\) are in the event.
+\item
+  The desired probability is then \(\mathbb P(A) = |A|/|\Omega|\).
+\end{enumerate}
+
+\end{myanswers}
+
+\textbf{(b)} What is the probability the number is divisible by 5 or by 7?
+
+\begin{myanswers}
+\emph{Solution.} With the same \(\Omega\) and \(A\), now let \(B\) be the numbers up to 2022 divisible by \(7\); so we're looking for \(\mathbb P(A \cup B)\). By the addition rule for unions, this is
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+We already know \(\mathbb P(A) = \frac{404}{2022}\), so need to find out \(\mathbb P(B)\) and \(\mathbb P(A \cap B)\).
+
+As before, \(|B|\) is the largest integer no bigger that \(\frac{2022}{7} = 288.9\), which is \(288\). So
+So \(\mathbb P(B) = \frac{288}{2022}\).
+Now, \(A \cap B\) is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by \(5 \times 7 = 35\). Then \(|A \cap B|\) is \(\frac{2022}{35} = 57.8\) rounded down, so \(\mathbb P(A \cap B) = \frac{57}{2022}\).
+
+So finally, we have
+\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]
+
+\end{myanswers}
+
+\textbf{B4.} Eight friends are about to sit down at random at a round table. Find the probability that
+
+\textbf{(a)} Ashley and Brook sit next to each other, with Chris directly opposite Brook;
+
+\begin{myanswers}
+\emph{Solution.}
+Let \(\Omega\) be the sample space of ways the friends can sit around the table. This is an ordering problem, so \(|\Omega| = 8!\).
+
+Let \(A\) be the event in the question. What is \(|A|\)? Well,
+
+\begin{itemize}
+\tightlist
+\item
+  Ashley can sit anywhere, so has 8 choices of seat.
+\item
+  Brook can sit either directly to Ashley's left or directly to Ashley's right, so has 2 choices of seat.
+\item
+  Chris must sit directly opposite Brook, so only has 1 choice of seat.
+\item
+  The remaining five friends can fill up the remaining seats however they like, so have 5, 4, 3, 2, and 1 choices respectively.
+\end{itemize}
+
+Hence \(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\). Thus we get
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
+
+\textbf{Group feedback:} As we have discussed recently, often ``classical probability'' problems can be solved by the step-by-step ``chain rule'' method. Can you use a chain rule argument to find the same answer as
+\[ \mathbb P(A) = 1 \times \frac27 \times \frac16 \times 1 \times 1 \times 1 \times 1 \times 1 = \frac{1}{21} ? \]
+
+\end{myanswers}
+
+\textbf{(b)} neither Ashley, Brook nor Chris sit next to each other.
+
+\begin{myanswers}
+\emph{Solution.}
+The sample space \(\Omega\) is as before. Let's count the outcomes in \(B\), the event in the question.
+
+\begin{itemize}
+\tightlist
+\item
+  Ashley can sit anywhere, so has 8 choices of seat.
+\item
+  Chris's number of choices will depend on where Brook sits, so we'll have to count Brook's and Chris's choices together:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Brook cannot sit next to Ashley.
+  \item
+    If Brook sits next-but-one to Ashley -- of which there are 2 choices -- then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side, leaving \(6-3=3\) choices.
+  \item
+    If Brook sits neither next nor next-but-one to Ashley -- of which there are 3 choices -- then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook, leaving \(6-4=2\) choices.
+  \end{itemize}
+\item
+  The remaining friends have 5, 4, 3, 2, and 1 choices again.
+\end{itemize}
+
+Hence, \(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\). So
+\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]
+
+\emph{Alternatively}, in a previous tutorial, a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
+
+Ashley has 5 gaps to choose from, then Brook will have 6 gaps (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is \(|\Omega| = 5 \times 6 \times 7\).
+
+To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has \(6 - 2 = 4\) choices (not in the gap directly to the left or right of Ashley), and Chris only has \(7 - 4 = 3\) choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook -- these four gaps are distinct assuming Brook was not next to Ashley). Hence \(|B| = 5 \times 4 \times 3\), and we have
+\[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]
+
+\end{myanswers}
+
+\textbf{B5.} A ``random digit'' is a number chosen at random from \(\{0, 1, \dots, 9\}\), each with equal probability. A statistician chooses \(n\) random digits (with replacement).
+
+\textbf{(a)} For \(k = 0, 1, \dots, 9\), let \(A_k\) be the event that all the digits are \(k\) or smaller. What is the probability of \(A_k\), as a function of \(k\) and \(n\)?
+
+\begin{myanswers}
+\emph{Solution.}
+The sample space is \(\Omega = \{0,1,\dots,9\}^n\), the set of length-\(n\) sequences of digits between \(0\) and \(9\). The number of these is \(|\Omega| = 10^n\), as there are 10 choices for each of the \(n\) digits.
+
+The event \(A_k\) is \(\{0,1,\dots,k\}^n\), the set of length-\(n\) sequences of digits that are between \(0\) and \(k\). The number of these is \(|A_k| = (k+1)^n\). (Note that it's \(k+1\) because we're allowing 0 as well.)
+
+Hence, the probability is
+\[ \mathbb P(A_k) = \frac{|A_k|}{|\Omega|} = \frac{(k+1)^n}{10^n} . \]
+
+\end{myanswers}
+
+\textbf{(b)} Let \(B_k\) be the event that the largest digit chosen is equal to \(k\). By finding a relationship between \(B_k\), \(A_{k-1}\) and \(A_k\), or otherwise, show that
+\[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]
+
+\begin{myanswers}
+\emph{Solution.}
+Consider the event \(A_k\) that all the digits are at most \(k\). Within \(A_k\), \emph{either} one or more of the digits is \(k\), in which case that is the largest digit we are in \(B_k\); \emph{or} none of the digits are \(k\), in which case they are all at most \(k-1\), and we are in \(A_{k-1}\), \emph{but not both}. Hence we have a disjoint union
+\[ A_k = B_k \cup A_{k-1} . \]
+Applying Axiom 3 gives
+\[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]
+Rearranging this gives
+\[ \mathbb P(B_k) = \mathbb P(A_k) - \mathbb P(A_{k-1}) . \]
+Substituting in the answer from part (a) gives
+\[\mathbb P(B_k) = \frac{(k+1)^n}{10^n} - \frac{(k-1+1)^n}{10^n} = \frac{(k+1)^n - k^n}{10^n} . \]
+
+\end{myanswers}
+
+\hypertarget{P2-assessed}{%
+\section*{C: Assessed questions}\label{P2-assessed}}
+\addcontentsline{toc}{section}{C: Assessed questions}
+
+The last two questions are \textbf{assessed questions}. These two questions count for 3\% of your final mark for this module.
+
+The deadline for submitting your solutions is \textbf{2pm on Monday 30 October} at the beginning of Week 5. You should submit a PDF to Gradescope.
+Your work will be marked by your tutor and returned on Monday 6 November, when solutions will also be made available.
+
+Both questions are ``long questions'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanatory writing.
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
+
+\textbf{C1.} Let \(\Omega\) be a sample space with a probability measure \(\mathbb P\), and let \(A, B \subset \Omega\) be events. For each of the following statements, state whether the statement is true or false (that is, always true or sometimes false). If it is true, briefly justify the statement; if it is false, give a counterexample.
+
+\textbf{(a)} If \(\mathbb P(A) \leq \mathbb P(B)\), then \(A \subset B\).
+
+\begin{myanswers}
+\emph{Hint.} Try to find a counterexample. Make sure you're paying attention to the direction of implication (the other direction is true).
+
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(A \cap B) + \mathbb P(A \cap B^{\mathsf{c}}) = \mathbb P(A)\).
+
+\begin{myanswers}
+\emph{Hint.} Is there a relevant disjoint union here?
+
+
+\end{myanswers}
+
+\textbf{(c)} \(\mathbb P(A \cup B) \leq \mathbb P(A)\)
+
+\begin{myanswers}
+\emph{Hint.} You'd expect the inequality to be the other way round -- so it should be possible to find a counterexample.
+
+\end{myanswers}
+
+\textbf{(d)} If \(A\) and \(B\) are disjoint, then \(\mathbb P((A \cup B)^{\mathsf{c}}) = 1 - \mathbb P(A) - \mathbb P(B)\).
+
+\begin{myanswers}
+\emph{Hint.} Can you use the complement rule to start off with?
+
+\end{myanswers}
+
+\textbf{C2.} An urn contains 15 balls: 4 red balls, 5 blue balls, and 6 green balls.
+
+\textbf{(a)} If three balls are drawn \emph{with} replacement, what is the probability that all three balls are the \emph{same} colour?
+
+\begin{myanswers}
+\emph{Hint.} If \(A\) is the event all three balls are the same colour, then we have a disjoint union \(A = A_{\text{red}} \cup A_{\text{blue}} \cup A_{\text{green}}\), where \(A_{\text{red}}\) is the event all three balls are red, and so on.
+
+\end{myanswers}
+
+\textbf{(b)} If three balls are drawn \emph{without} replacement, what is the probability that all three balls are \emph{different} colours?
+
+\begin{myanswers}
+\emph{Hint.} One way to do this is to look at the ordered collection of balls, and look at all \(3!\) possible orderings red-blue-green, red-green-blue, etc.
+
+Another way is to look at the unordered collection, so the denominator is \(\binom{15}{3}\).
+
+\end{myanswers}
+
+\hypertarget{P2-short-sols}{%
+\section*{Solutions to short questions}\label{P2-short-sols}}
+\addcontentsline{toc}{section}{Solutions to short questions}
+
+\textbf{A1.} (a) (i) \(\{0,1,\dots, 4\}\) (ii) \(\{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}\) (b) (i) 5 (ii) 16.\\
+\textbf{A2.} (a) \(C \cap A^\mathsf{c}\) (b) \(A \cup B \cup C\) (c) \((B \cup C) \cap (B \cap C)^\mathsf{c}\) or \((B \cap C^\mathsf{c}) \cup (B^\mathsf{c}\cap C)\)\\
+(d) \((A \cap B \cap C^\mathsf{c}) \cup (A \cap B^\mathsf{c}\cap C) \cup (A^\mathsf{c}\cap B \cap C)\) or other equivalent\\
+\textbf{A3.} (a) 720 (b) 4092 (c) 1680 (d) 210\\
+\textbf{A4.} (a) \(\frac{4}{25} = 0.16\) (b) \(\frac{2}{15} = 0.133\)
+
+\hypertarget{part-other-stuff}{%
+\part*{Other stuff}\label{part-other-stuff}}
+\addcontentsline{toc}{part}{Other stuff}
+
 \hypertarget{R}{%
 \chapter*{R Worksheets}\label{R}}
 \addcontentsline{toc}{chapter}{R Worksheets}
@@ -1376,7 +2251,7 @@ Deadline for assessed work
 \endhead
 \bottomrule\noalign{}
 \endlastfoot
-2 & \textbf{1: R basics} & Solutions & --- \\
+2 & \href{R1.html}{\textbf{1: R basics}} & Solutions & --- \\
 \end{longtable}
 
 \hypertarget{practical}{%

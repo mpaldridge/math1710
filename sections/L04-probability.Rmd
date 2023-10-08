@@ -26,7 +26,7 @@ The sample space $\Omega$ together with the probability measure $\mathbb P$ are 
 
 Axiom 1 says that all probabilities are non-negative numbers. Axiom 2 says the probability that *something* happens is 1. Axiom 3 says that *for disjoint events* the probability that one of them happens is the sum of the individual probabilities. (Those who like their mathematical statements very precise should note that an infinite sequence in Axiom 3 must be "countable"; that is, indexed by the natural numbers $1, 2, 3. \dots$.)
 
-These axioms of probability (and our later results that follow from them) were first written down by the Russian mathematician [Andrey Nikolaevich Kolmogorov](https://mathshistory.st-andrews.ac.uk/Biographies/Kolmogorov/) in 1933. This marked the point from when probability theory could now be considered a proper branch of mathematics -- just as legitimate as geometry or number theory -- and not just a past-time that can be useful to help gamblers calculate their odds. I always find it surprising that the axioms of probability are less than 90 years old!
+These axioms of probability (and our later results that follow from them) were first written down by the Russian mathematician [Andrey Nikolaevich Kolmogorov](https://mathshistory.st-andrews.ac.uk/Biographies/Kolmogorov/) in 1933. This marked the point from when probability theory could now be considered a proper branch of mathematics -- just as legitimate as geometry or number theory -- and not just a past-time that can be useful to help gamblers calculate their odds. I always find it surprising that the axioms of probability are only 90 years old!
 
 There are other properties that it seems natural that a probability measure should have aside from the axioms -- for example, that $\mathbb P(A) \leq 1$ for all events $A$. But we will show shortly that other properties can be proven just by starting from the three axioms.
 
@@ -163,8 +163,6 @@ Let $A, B \subset \Omega$ be two events. Then
 :::
 
 You may have seen this result before. You've perhaps justified it by saying something like this: "We can add the two probabilities together, except now we've double-counted the overlap, so we have to take the probability of that away." Maybe you drew a Venn diagram. That's OK as a way to remember the result -- but this is a proper university mathematics course, so we have to carefully *prove* it starting from just the axioms and nothing else.
-
-*(The following proof has been updated to match how I taught it in Wednesday's lecture.)*
 
 ::: {.proof}
 The problem here is that $A$ and $B$ are not (in general) disjoint, so we can't apply Axiom 3.
@@ -333,3 +331,10 @@ where we continue by subtracting the probabilities of quadruples, adding the pro
 * The axioms of probability are (1) $\mathbb P(A) \geq 0$; (2) $\mathbb P(\Omega) = 1$; and (3) that for disjoint events $A_1, A_2, \dots$, we have $\mathbb P(A_1 \cup A_2 \cup \cdots) = \mathbb P(A_1) + \mathbb P(A_2) + \cdots$.
 * Other properties can be proven from these axioms, like the complement rule $\mathbb P(A^\comp) = 1 - \mathbb P(A)$, and the addition rule for unions $\mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B)$.
 :::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 1.1 and 1.2 (plus optionally Chapter 0).
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Sections 1.3 and 1.4.
+
+On [Problem Sheet 2](#P2), you should now be able to complete Questions A1, A2, B1, B2 and perhaps C1.

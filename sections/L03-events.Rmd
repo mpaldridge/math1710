@@ -12,7 +12,7 @@ We now begin the big central block of this module, on probability theory.
 
 Probability theory is the study of randomness. Probability, as an area of mathematics, is a fascinating subject in its own right. However, probability is particularly important due to its usefulness in applications -- especially in statistics (the study of data), in finance, and in actuarial science (the study of insurance).
 
-Probability is well suited to modelling situations that involve randomness, uncertainty, or unpredictability. If we you want to predict the time of the next solar eclipse, a deterministic (that is, non-random) model based on physical laws will tell you when the sun, the moon, and the earth will be in the correct positions; but if you want to predict the weather tomorrow, or the price of a share of Apple stock next month, or the results of an election next year, you will need a probabilistic model that takes into account the uncertainty in the outcome. A probabilistic model could tell you the most likely outcome, or a range of the most probable outcomes.
+Probability is well suited to modelling situations that involve randomness, uncertainty, or unpredictability. If you want to predict the time of the next solar eclipse, a deterministic (that is, non-random) model based on physical laws will tell you when the sun, the moon, and the earth will be in the correct positions; but if you want to predict the weather tomorrow, or the price of a share of Apple stock next month, or the results of an election next year, you will need a probabilistic model that takes into account the uncertainty in the outcome. A probabilistic model could tell you the most likely outcome, or a range of the most probable outcomes.
 
 So what do we mean when we talk about the "probability" of an event occurring? You might say that the probability of an event is a measure of "how likely" it is to occur, or what the "chance" of it occurring is.
 
@@ -23,7 +23,7 @@ More concretely, here are some interpretations of probability:
 * **Classical** (or **enumerative**) **probability:** Suppose there are a finite number of equally likely outcomes. Then the probability of an event is the proportion of those outcomes that correspond to the event occurring. So when we say that a randomly dealt card has a probability $\frac{1}{13}$ of being an ace, this is because there are 52 cards of which 4 are aces, so the proportion of favourable outcomes is $\frac{4}{52} = \frac{1}{13}$.
    * This interpretation is good for simple procedures like flipping a fair coin, rolling a dice, or dealing cards, where the "finite number of equally likely outcomes" assumption holds. But we want to be able to study more complicated situations, where some outcomes are more likely than others, or where infinitely many different outcomes are possible.
 * **Frequentist probability:** In a repeated experiment, the probability of an event is its long-run frequency. That is, if we repeat an experiment a very large number of times, the probability of the event is (approximately) the proportion of the experiments in which the event occurs. So when we say a biased coin has probability 0.9 of landing heads, we mean that were we toss it 1000 times, we would expect to see very close to $0.9 \times 1000 = 900$ heads.
-   * There are two problems with this. First, this doesn't deal with events that can't be repeated over and over again (like "What's the probability that England win the 2022 World Cup?"). Second, to answer the question, "Yes, but *how* close to the probability should the proportion of occurrences be?", you end up having to answer, "Well, it depends on the probability," and you've got a circular definition.
+   * There are two problems with this. First, this doesn't deal with events that can't be repeated over and over again (like "What's the probability that Labour win the 2024 general election?"). Second, to answer the question, "Yes, but *how* close to the probability should the proportion of occurrences be?", you end up having to answer, "Well, it depends on the probability," and you've got a circular definition.
 * **Mathematical probability:** We have a function that assigns to each event a number between 0 and 1, called its probability, and that function has to obey certain mathematical rules, called "axioms".
 
 It will not surprise you to learn that, in this mathematics course, we will take the "mathematical probability" approach. However, we will also learn useful things about the other approaches: we will see that classical probability is one special case of mathematical probability; we will see a result called the "law of large numbers" that says that the long-run frequency does indeed get closer and closer to the mathematical probability; and a result called "Bayes' theorem" will advise a subjectivist on how to update her subjective beliefs when she sees new evidence.
@@ -93,21 +93,21 @@ First, there are ways we can build new sets (or events) out of old. It's fine to
 
 * $\omega \in A$ means "$\omega$ is in $A$" or "$\omega$ is an element of $A$", while $\omega \not\in A$ means the opposite, that $\omega$ is *not* in $A$;
 * a colon $:$ in the middle of set notation should be read as "such that";
-* so $\{\omega \in \Omega : \text{fact about $\omega$}\}$ should be read as "the set of sample points $\omega$ in the sample space $\Omega$ such that the fact is true".
+* so $\{\omega \in \Omega : \text{fact about $\omega$}\}$ should be read as "the set of sample outcomes $\omega$ in the sample space $\Omega$ such that the fact is true".
 
 ::::: {.definition}
 Consider a sample space $\Omega$, and let $A$ and $B$ be events in that sample space.
 
 :::: {style="display: flex;"}
 ::: {}
-* **<span style="color: blue;">NOT:</span>** The **complement** of $A$, written $A^\comp$ (and said "$A$ complement" or "not $A$"), is the set of sample points not in $A$; that is
+* **<span style="color: blue;">NOT:</span>** The **complement** of $A$, written $A^\comp$ (and said "$A$ complement" or "not $A$"), is the set of sample outcomes not in $A$; that is
 \[ A^\comp = \{\omega \in \Omega : \omega \not\in A \} . \]
 This represents the event that $A$ does not occur.
-* **<span style="color: green;">AND</span>:** The **intersection** of $A$ and $B$, written $A \cap B$ (and said "$A$ intersect $B$" or "$A$ and $B$") is the set of sample points in both $A$ and $B$; that is,
+* **<span style="color: green;">AND</span>:** The **intersection** of $A$ and $B$, written $A \cap B$ (and said "$A$ intersect $B$" or "$A$ and $B$") is the set of sample outcomess in both $A$ and $B$; that is,
 \
 \[ A \cap B = \{\omega \in \Omega : \omega \in A \text{ and } \omega \in B \} . \]
 This represents the event that both $A$ and $B$ occur.
-* **<span style="color: red;">OR:</span>** The **union** of $A$ and $B$, written $A \cup B$ (and said "$A$ union $B$" or "$A$ or $B$") is the set of sample points in $A$ or in $B$; that is,
+* **<span style="color: red;">OR:</span>** The **union** of $A$ and $B$, written $A \cup B$ (and said "$A$ union $B$" or "$A$ or $B$") is the set of sample outcomess in $A$ or in $B$; that is,
 \[ A \cup B = \{\omega \in \Omega : \omega \in A \text{ or } \omega \in B \} . \]
 This represents the event that $A$ occurs or $B$ occurs. (In mathematics, "or" includes "both", so a sample outcome in both $A$ and $B$ is in $A\cup B$ too.)
 :::
@@ -403,3 +403,8 @@ Since the $(A \cap B)^\comp$ column and the $A^\comp \cup B^\comp$ column are th
 * An event is a subset of $\Omega$.
 * For events $A$ and $B$, we also have the complement "not $A$" $A^\comp$, the intersection "$A$ and $B$" $A \cap B$, and the union "$A$ or $B$" $A \cup B$.
 :::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 1.1 and 1.2 (plus optionally Chapter 0).
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Sections 1.1 and 1.2.
