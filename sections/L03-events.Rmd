@@ -6,6 +6,7 @@
 \newcommand{\comp}{\complement}
 \newcommand{\ff}[2]{{#1}^{\underline{#2}}}
 
+<!--
 ## What is probability?  {#what-is-prob}
 
 We now begin the big central block of this module, on probability theory.
@@ -30,14 +31,6 @@ It will not surprise you to learn that, in this mathematics course, we will take
 
 
 ## Sample spaces and events  {#sample-events}
-
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/9tiQ5p1jD-E"></iframe>
-:::
-::::
--->
 
 Taking the "mathematical probability" approach, we will want to give a formal mathematical definition of the *probability* of an event. But even before that, we need to give a formal mathematical definition of an *event* itself. Our setup will be this:
 
@@ -77,15 +70,6 @@ For any sample space $\Omega$, there are two special events that always exist. T
 
 
 ## Set theory  {#set-theory}
-
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/ILZ4b3lpklo"></iframe>
-:::
-::::
--->
-
 
 Since we've now defined events as being sets -- specifically, subsets of the sample space $\Omega$ -- it will be useful to mention a little set basic theory here.
 
@@ -183,7 +167,7 @@ An important case is when two events $A, B$ cannot happen at the same time; that
 
 You might think that if two events are disjoint, then it would be reasonable to find the probability of their union -- that is, the probability that one (and, by necessity, only one) of them happens -- you can just add the two separate probabilities together. This will be another of our "axioms" of probability.
 
-There are a few rules about ways you can combine the complement, intersection and union operations. These are ways of building new events from old. <!--This are mostly "common sense", and you probably don't need to remember them. But if you do need to prove them, you can do so either by sketching the relevant diagram, or using a "truth table" -- we give some details on those below after we've stated the rules.-->
+There are a few rules about ways you can combine the complement, intersection and union operations. These are ways of building new events from old. 
 
 * The **double complement law** tells us that not-not-$A$ is the same as $A$:
 \[ (A^\comp)^\comp = A .\]
@@ -362,8 +346,17 @@ The left-hand figure is $\color{orange}{A} \cup \color{blue}{B}$, the middle fig
 
 We see that the areas shaded in two right-hand figures are the same, so it is indeed the case that
 $A\cup (B\cap C) = (A\cup B)\cap (A\cup C)$.
+--->
 
-<!--
+
+
+
+
+<!-- REALLY DELETE THIS!!!!!!!!!!
+
+
+
+
 
 Let's also prove the first of De Morgan's laws, 
   \[ (A \cap B)^\comp = A^\comp \cup B^\comp , \]
@@ -395,6 +388,7 @@ and the second half to find a column for the right-hand side of the law $A^\comp
 Since the $(A \cap B)^\comp$ column and the $A^\comp \cup B^\comp$ column are the same, these must be the same sets.
 
 -->  
+
 
 ## Summary  {#summary-L03 .unnumbered}
 

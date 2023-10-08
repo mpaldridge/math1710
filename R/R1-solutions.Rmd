@@ -72,7 +72,7 @@ We do this as follows:
 ringo <- paul * john
 ringo
 ringo <- 2* ringo
-ringo <- ringo + 6
+ringo <- ringo + 7
 ringo
 ```
 
