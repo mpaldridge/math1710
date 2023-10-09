@@ -6,7 +6,7 @@
 \newcommand{\comp}{\complement}
 \newcommand{\ff}[2]{{#1}^{\underline{#2}}}
 
-<!--
+
 ## What is probability?  {#what-is-prob}
 
 We now begin the big central block of this module, on probability theory.
@@ -346,7 +346,7 @@ The left-hand figure is $\color{orange}{A} \cup \color{blue}{B}$, the middle fig
 
 We see that the areas shaded in two right-hand figures are the same, so it is indeed the case that
 $A\cup (B\cap C) = (A\cup B)\cap (A\cup C)$.
---->
+
 
 
 
