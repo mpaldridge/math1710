@@ -380,8 +380,8 @@ language R and the program RStudio installed. <!--This might be:
 
 If you have problems installing R and RStudio, I recommend using one of the other methods, then getting installation help at your R troubleshooting drop-in in Week 2.
 --></p>
-<p>Open RStudio. (On University computers, remember to the language R
-first.)</p>
+<p>Open RStudio. (On University computers, remember to load the language
+R first.)</p>
 <p>To enter commands, you should type them into the “Console” – this
 normally takes up either the left half of the screen, or the bottom-left
 quarter. When you open RStudio, there will be some information about R
@@ -414,9 +414,10 @@ encouraged to try them out yourself.</p>
 <p>The simplest way to use R is to use it to perform simple calculations
 for us – like the <code>2 + 3</code> we saw earlier. R can perform
 <strong>addition <code>+</code>, subtraction <code>-</code>,
-multiplication <code>*</code>, division <code>\</code> and powers
-<code>^</code></strong>. So, for example, we can find <span class="math inline">\((4 + 5) \times 6\)</span> by entering into the
-Console:</p>
+multiplication <code>*</code>, division <code>/</code></strong> and
+<strong>powers <code>^</code></strong>. So, for example, we can find
+<span class="math inline">\((4 + 5) \times 6\)</span> by entering into
+the Console:</p>
 <pre class="r"><code>(4 + 5) * 6</code></pre>
 <pre><code>[1] 54</code></pre>
 <p>Spaces (with a few exceptions) are ignored by R, so <code>2+3</code>
@@ -452,9 +453,10 @@ function to, then close brackets. For example, to find the square-root
 of 1000, we use</p>
 <pre class="r"><code>sqrt(1000)</code></pre>
 <pre><code>[1] 31.62278</code></pre>
-<p>Other similar functions include the exponential <code>exp()</code>,
-the natural logarithm <code>log()</code>, and the absolute value
-<code>abs()</code>.</p>
+<p>Other similar functions include the <strong>exponential
+<code>exp()</code></strong>, the <strong>natural logarithm
+<code>log()</code></strong>, and the <strong>absolute value
+<code>abs()</code></strong>.</p>
 <p>A useful function is <strong><code>signif()</code></strong>, which
 rounds a number to a given number of <strong>significant
 figures</strong>. This function takes two arguments, which should be
@@ -472,14 +474,14 @@ I find it useful when reading through my code, because it reminds me
 what the second argument does; but it is extra typing, so you might not
 want to bother.</p>
 <p>A similar function is <strong><code>round()</code></strong>, which
-rounds a number to a given number of decimal places. But
-<code>round()</code> can be used either with one argument or with two
-arguments. The first argument is always the number to be rounded. The
-optional second argument (with or without <code>digits =</code>) is the
-number of decimal places to round to. If no second argument is given, R
-will assume you wanted it to be <code>0</code>; that is, to round to 0
-decimal places, or the nearest whole number. So all of these commands do
-exactly the same thing – give <span class="math inline">\(\sqrt{1000}\)</span> to the nearest whole
+<strong>rounds</strong> a number to a given number of decimal places.
+But <code>round()</code> can be used either with one argument or with
+two arguments. The first argument is always the number to be rounded.
+The optional second argument (with or without <code>digits =</code>) is
+the number of decimal places to round to. If no second argument is
+given, R will assume you wanted it to be <code>0</code>; that is, to
+round to 0 decimal places, or the nearest whole number. So all of these
+commands do exactly the same thing – give <span class="math inline">\(\sqrt{1000}\)</span> to the nearest whole
 number:</p>
 <pre class="r"><code>round(sqrt(1000), digits = 0)</code></pre>
 <pre><code>[1] 32</code></pre>

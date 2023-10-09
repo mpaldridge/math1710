@@ -31,7 +31,7 @@ This worksheet assumes you or using a computer with the programming language R a
 If you have problems installing R and RStudio, I recommend using one of the other methods, then getting installation help at your R troubleshooting drop-in in Week 2.
 -->
 
-Open RStudio. (On University computers, remember to the language R first.)
+Open RStudio. (On University computers, remember to load the language R first.)
 
 To enter commands, you should type them into the "Console" -- this normally takes up either the left half of the screen, or the bottom-left quarter. When you open RStudio, there will be some information about R in the console, in black writing, then an arrow `>` in blue. You can type commands next to this blue arrow.
 
@@ -62,7 +62,7 @@ Whenever you see commands in this worksheet, you are strongly encouraged to try 
 
 ## Using R as a calculator
 
-The simplest way to use R is to use it to perform simple calculations for us -- like the `2 + 3` we saw earlier. R can perform **addition `+`, subtraction `-`, multiplication `*`, division `\` and powers `^`**. So, for example, we can find $(4 + 5) \times 6$ by entering into the Console:
+The simplest way to use R is to use it to perform simple calculations for us -- like the `2 + 3` we saw earlier. R can perform **addition `+`, subtraction `-`, multiplication `*`, division `/`** and **powers `^`**. So, for example, we can find $(4 + 5) \times 6$ by entering into the Console:
 
 ```{r}
 (4 + 5) * 6
@@ -87,7 +87,7 @@ R has an enormous number of useful functions. Let's take as an example the **squ
 sqrt(1000)
 ```
 
-Other similar functions include the exponential `exp()`, the natural logarithm `log()`, and the absolute value `abs()`.
+Other similar functions include the **exponential `exp()`**, the **natural logarithm `log()`**, and the **absolute value `abs()`**.
 
 A useful function is **`signif()`**, which rounds a number to a given number of **significant figures**. This function takes two arguments, which should be separated by a comma. The first argument is the number to be rounded, and the second is the number of significant figures to round it to. To give $\sqrt{1000}$ to four significant figures, we can put the `sqrt()` function into the `signif()` function with either of the following:
 
@@ -98,7 +98,7 @@ signif(sqrt(1000), 4)
 
 Putting `digits =` before the `4` is optional. I find it useful when reading through my code, because it reminds me what the second argument does; but it is extra typing, so you might not want to bother.
 
-A similar function is **`round()`**, which rounds a number to a given number of decimal places. But `round()` can be used either with one argument or with two arguments. The first argument is always the number to be rounded. The optional second argument (with or without `digits =`) is the number of decimal places to round to. If no second argument is given, R will assume you wanted it to be `0`; that is, to round to 0 decimal places, or the nearest whole number. So all of these commands do exactly the same thing -- give $\sqrt{1000}$ to the nearest whole number:
+A similar function is **`round()`**, which **rounds** a number to a given number of decimal places. But `round()` can be used either with one argument or with two arguments. The first argument is always the number to be rounded. The optional second argument (with or without `digits =`) is the number of decimal places to round to. If no second argument is given, R will assume you wanted it to be `0`; that is, to round to 0 decimal places, or the nearest whole number. So all of these commands do exactly the same thing -- give $\sqrt{1000}$ to the nearest whole number:
 
 ```{r}
 round(sqrt(1000), digits = 0)
