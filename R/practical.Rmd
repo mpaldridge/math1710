@@ -45,7 +45,7 @@ Second, launch R from AppsAnywhere. R is called "Cran R 4.2.0 x64" on AppsAnywhe
 
 This will do two things. First, it will silently load the language R in the background. Second, it will open a program called "RGui". RGui is basically like an older and less good version of RStudio; we do not recommend using the RGui program, so you can close it. (The R language will remain loaded.)
 
-Third, launch RStudio from AppsAnywhere. THe most recent version on AppsAnywhere is RStudio 2023 (03.0.386). Click "Launch". After a few second, RStudio will launch. (If invited to choose a version of the language R, pick "64-bit". If invited to update R or RStudio, decline.)
+Third, launch RStudio from AppsAnywhere. The most recent version on AppsAnywhere is "RStudio 2023 (03.0.386)". Click "Launch". After a few second, RStudio will launch. (If invited to choose a version of the language R, pick "64-bit". If invited to update R or RStudio, decline.)
 
 You need to repeat all three steps each time you log onto a University computer.
 
