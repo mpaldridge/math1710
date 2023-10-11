@@ -1616,6 +1616,195 @@ We see that the areas shaded in two right-hand figures are the same, so it is in
 \hypertarget{L04-probability}{%
 \chapter{Probability}\label{L04-probability}}
 
+\hypertarget{axioms}{%
+\section{Probability axioms}\label{axioms}}
+
+Recall that, in this mathematics course, the probability of an event will be a real number that satisfies certain properties, which we call \textbf{axioms}.
+
+\begin{definition}
+\protect\hypertarget{def:axioms}{}\label{def:axioms}Let \(\Omega\) be a sample space. A \textbf{probability measure} on \(\Omega\) is a function \(\mathbb P\) that assigns to each event \(A \subset \Omega\) a real number \(\mathbb P(A)\), called the \textbf{probability} of \(A\), and that satisfies the following three axioms:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb P(A) \geq 0\) for all events \(A \subset \Omega\);
+\item
+  \(\mathbb P(\Omega) = 1\);
+\item
+  if \(A_1, A_2, \dots\) is a finite or infinite sequence of disjoint events, then
+  \[ \mathbb P(A_1 \cup A_2 \cup \cdots) = \mathbb P(A_1) + \mathbb P(A_2) + \cdots . \]
+\end{enumerate}
+
+The sample space \(\Omega\) together with the probability measure \(\mathbb P\) are called a \textbf{probability space}.
+\end{definition}
+
+Axiom 1 says that all probabilities are non-negative numbers. Axiom 2 says the probability that \emph{something} happens is 1. Axiom 3 is about \emph{disjoint} events -- recall that these are events that cannot happen at the same time, because their intersection is empty. \emph{{[}\textbf{Correction:} In the 3pm lecture I wrongly said that their* union *is empty.{]}} Axiom 3 says that for disjoint events the probability that one of them happens is the sum of the individual probabilities. (Those who like their mathematical statements very precise should note that an infinite sequence in Axiom 3 must be ``countable''; that is, indexed by the natural numbers \(1, 2, 3, \dots\).)
+
+These axioms of probability (and our later results that follow from them) were first written down by the Russian mathematician \href{https://mathshistory.st-andrews.ac.uk/Biographies/Kolmogorov/}{Andrey Nikolaevich Kolmogorov} in 1933. This marked the point from when probability theory could now be considered a proper branch of mathematics -- just as legitimate as geometry or number theory -- and not just a past-time that can be useful to help gamblers calculate their odds. I always find it surprising that the axioms of probability are only 90 years old!
+
+There are other properties that it seems natural that a probability measure should have aside from the axioms -- for example, that \(\mathbb P(A) \leq 1\) for all events \(A\). But we will show shortly that other properties can be proven just by starting from the three axioms.
+
+But first, let's see some examples.
+
+\begin{example}
+
+Suppose we wish to model tossing an biased coin the is heads with probability \(p\), where \(0 \leq p \leq 1\).
+
+Our probability space is \(\Omega = \{\text{H}, \text{T}\}\). The probability measure is given by
+\begin{align*}
+   \mathbb P(\varnothing) &= 0  &  \mathbb P(\{\text{H}\}) &= p \\
+   \mathbb P(\{\text{T}\}) &= 1 - p  &  \mathbb P(\{\text{H},\text{T}\})  &= 1 .
+\end{align*}
+
+Let's check that the axioms hold:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Since \(0 \leq p \leq 1\), all the probabilities are greater than or equal to 0.
+\item
+  It is indeed the case that \(\mathbb P(\Omega) = \mathbb P(\{\text{H},\text{T}\}) = 1\).
+\item
+  The only nontrivial disjoint union to check is \(\{\text{H}\} \cup \{\text{T}\} = \{\text{H},\text{T}\}\), where we see that
+  \[ \mathbb P(\{\text{H}\}) + \mathbb P(\{\text{T}\}) = p + (1 - p) = 1 = \mathbb P(\{\text{H},\text{T}\}) , \]
+  as required.
+\end{enumerate}
+
+\end{example}
+
+\begin{example}
+Suppose we wish to model rolling a dice.
+
+Our sample space is \(\{1,2,3,4,5,6\}\). The probability measure is given by
+\[ \mathbb P(A) = \frac{|A|}{6} , \]
+where \(|A|\) is the number of sample outcomes in \(A\).
+
+So, for example, the probability of rolling an even number is
+\[ \mathbb P(\{2,4,6\}) = \frac36 = \frac12 . \]
+\end{example}
+
+The dice rolling is a particular case of the ``classical probability'' of equally likely outcomes. We'll look at this more in the next lecture, and prove that the classical probability measure does indeed satisfy the axioms
+
+\hypertarget{prob-properties}{%
+\section{Properties of probability}\label{prob-properties}}
+
+The axioms of Definition \ref{def:axioms} only gave us some of the properties that we would like a probability measure to have. Our task now (in this subsection and the next) is to carefully prove how these other properties follow from just those axioms. In particular, we're not allowed to make claims that merely ``seem likely to be true'' or ``are common sense'' -- we can only use the three axioms together with strict logical deductions and nothing else.
+
+\begin{theorem}
+
+Let \(\Omega\) be a sample space with a probability measure \(\mathbb P\). Then we have the following:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb P(\varnothing) = 0\).
+\item
+  \(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\) for all events \(A \subset \Omega\).
+\item
+  For events \(A\) and \(B\) with \(B \subset A\), we have \(\mathbb P(B) \leq \mathbb P(A)\).
+\item
+  \(0 \leq \mathbb P(A) \leq 1\) for all events \(A \subset \Omega\).
+\end{enumerate}
+
+\end{theorem}
+
+Importantly, the second result here tells us how to deal with complements or ``not'' events: the probability of \(A\) \emph{not} happening is 1 minus the probability it does happen. This is often very useful.
+
+\begin{proof}
+The key with most of these ``prove from the axioms'' problems is to think of a way to write the relevant events as part of a \emph{disjoint} union, then use Axiom 3. Statements 1 and 2 are exercises for you on \protect\hyperlink{P2}{Problem Sheet 2}. We'll start with the third statement.
+
+Here, since \(B\) is a subset of \(A\), meaning that \(B\) is entirely inside \(A\).
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/subs0-1} \end{center}
+
+It would be useful to write \(A\) as a \emph{disjoint} union of \(\color{orange}B\) and {``the bit of \(A\) that isn't in \(B\)''}. That is, we have the disjoint union
+\[ A = \color{orange}B \cup (\color{purple}{A \cap B^\mathsf{c}}) .\]
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/subs-1} \end{center}
+
+Applying Axiom 3 to this disjoint union gives
+\[ \mathbb P(A) =  \mathbb P(\color{orange}B) + \mathbb P(\color{purple}{A \cap B^\mathsf{c}}) . \]
+
+We're happy to see the term on the left-hand side and the first term on the right-hand side. But what about the awkward \(\mathbb P(A \cap B^\mathsf{c})\)? Well, by Axiom 1, we know that the probability of any event is greater than or equal to 0, so in particular. \(\mathbb P(A \cap B^\mathsf{c}) \geq 0\). Hence
+\[ \mathbb P(A)  \geq \mathbb P(B) + 0 = \mathbb P(B) , \]
+and we are done with the third statement.
+
+For the fourth statement, we have \(\mathbb P(A) \geq 0\) directly from Axiom 1, so only need to show that \(\mathbb P(A) \leq 1\). We can do this using the third statement of this theorem. For any event \(A\) we have \(A \subset \Omega\), so the third statement tells us that \(\mathbb P(A) \leq \mathbb P(\Omega)\). But Axiom 2 tells us that \(\mathbb P(\Omega) = 1\), so \(\mathbb P(A) \leq 1\) and we are done.
+\end{proof}
+
+\hypertarget{addition}{%
+\section{Addition rules for unions}\label{addition}}
+
+If we have two or more events, we'd like to work out the probability of their union; that is, the probability that at least one of them occurs.
+
+We already have an addition rule for \emph{disjoint} unions.
+
+\begin{theorem}
+Let \(A, B \subset \Omega\) be two disjoint events. Then
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) . \]
+\end{theorem}
+
+\begin{proof}
+In Axiom 3, take the finite sequence \(A_1 = A\), \(A_2 = B\).
+\end{proof}
+
+But what about if \(A\) and \(B\) are not disjoint? Then we have the following.
+
+\begin{theorem}
+Let \(A, B \subset \Omega\) be two events. Then
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+\end{theorem}
+
+You may have seen this result before. You've perhaps justified it by saying something like this: ``We can add the two probabilities together, except now we've double-counted the overlap, so we have to take the probability of that away.'' Maybe you drew a Venn diagram. That's OK as a way to remember the result -- but this is a proper university mathematics course, so we have to carefully \emph{prove} it starting from just the axioms and nothing else.
+
+\begin{proof}
+The problem here is that \(A\) and \(B\) are not (in general) disjoint, so we can't apply Axiom 3.
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/add3-1} \end{center}
+
+Instead, let's split this up into the three disjoint bits: {``\(A\) but not \(B\)''} \(\color{red}{A \cap B^\mathsf{c}}\), {``\(B\) but not \(A\)''} \(\color{blue}{B \cap A^\mathsf{c}}\), and {``both''} \(\color{green}{A \cap B}\).
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/add4-1} \end{center}
+
+Now we can write \(A\), \(B\) and \(A \cup B\) in terms of these disjoint bits.
+\begin{align}
+A &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+B &= (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}) \\
+A \cup B &= (\color{red}{A \cap B^\mathsf{c}}) \cup (\color{blue}{B \cap A^\mathsf{c}}) \cup (\color{green}{A \cap B}),
+\end{align}
+with all the unions on the right-hand side being disjoint. Applying Axiom 3 to them all gives
+\begin{align}
+\mathbb P(A) &= \mathbb P(\color{red}{A \cap B^\mathsf{c}}) + \mathbb P(\color{green}{A \cap B}) \label{eq:un1}  \\
+\mathbb P(B) &= \mathbb P(\color{blue}{B \cap A^\mathsf{c}}) + \mathbb P(\color{green}{A \cap B})  \label{eq:un2} \\
+\mathbb P(A \cup B) &= \mathbb P(\color{red}{A \cap B^\mathsf{c}}) + \mathbb P(\color{blue}{B \cap A^\mathsf{c}}) + \mathbb P(\color{green}{A \cap B}) . \label{eq:un3}
+\end{align}
+Here, \eqref{eq:un3} is looking good, but we need to get rid of the awkward \(\mathbb P(\color{red}{A \cap B^\mathsf{c}})\) and \(\mathbb P(\color{blue}{B \cap A^\mathsf{c}})\) terms. We can do that be rearranging \eqref{eq:un1} and \eqref{eq:un2} to get
+\begin{align}
+\mathbb P(\color{red}{A \cap B^\mathsf{c}}) &= \mathbb P(A) - \mathbb P(\color{green}{A \cap B}) \\
+\mathbb P(\color{blue}{B \cap A^\mathsf{c}}) &= \mathbb P(B) - \mathbb P(\color{green}{A \cap B}) .
+\end{align}
+Substituting these into \eqref{eq:un3} gives
+\begin{align}
+\mathbb P(A \cup B) &= \mathbb P(A) - \mathbb P(\color{green}{A \cap B}) + \mathbb P(B) - \mathbb P(\color{green}{A \cap B}) + \mathbb P(\color{green}{A \cap B}) \\
+  &= \mathbb P(A)+ \mathbb P(B) - \mathbb P(A \cap B) ,
+\end{align}
+as required.
+\end{proof}
+
+\begin{example}
+\emph{Consider picking a card from a \href{https://en.wikipedia.org/wiki/Standard_52-card_deck}{standard 52-card deck} at random, with \(\mathbb P(A) = |A|/52\). What's the probability the card is a spade or an ace?}
+
+It is possible to just to work this out directly. But let's use our addition law for unions.
+
+We have \(\mathbb P(\text{spade}) = \frac{13}{52}\) and \(\mathbb P(\text{ace}) = \frac{4}{52}\). So we have
+\[ \mathbb P(\text{spade or ace}) = \tfrac{13}{52} + \tfrac{4}{52} - \mathbb P(\text{spade and ace}) . \]
+But \(\mathbb P(\text{spade and ace})\) is the probability of picking the ace of spades, which is \(\frac{1}{52}\). Therefore
+\[ \mathbb P(\text{spade or ace}) = \tfrac{13}{52} + \tfrac{4}{52}  - \tfrac{1}{52} = \tfrac{16}{52} = \tfrac{4}{13} . \]
+\end{example}
+
 \hypertarget{summary-L04}{%
 \section*{Summary}\label{summary-L04}}
 \addcontentsline{toc}{section}{Summary}

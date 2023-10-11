@@ -161,3 +161,6 @@ Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample wi
 * Sampling $k$ objects out of $n$ without replacement gives $n^{\underline{k}} = n(n-1)\cdots(n-k+1)$ choices.
 :::
 
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 3.1 and 3.2.

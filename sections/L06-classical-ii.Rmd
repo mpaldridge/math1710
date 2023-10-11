@@ -87,7 +87,7 @@ Here, $\Omega$ is the set of all possible sets of 6 winning numbers, and $A$ is 
 Well, the first ball out of the machine has 59 possibilities, the second ball has 58 possibilities, and so on, making
 \[ 59 \times 58 \times 57 \times 56 \times 55 \times 54 = \ff{59}{6} . \]
 
-But this isn't the correct answer, because the same set of balls could be drawn from the machine in any order! The sets of balls $\{1,2,3,4,5,6\}$ and $\{1,2,3,4,6,5\}$ and $\{6,5,4,3,2,1\}$ are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 balls, which we know is $6!$. So the number of possible sets of 6 balls to come out of the machine is actually
+But this isn't the correct answer, because the same set of balls could be drawn from the machine in any order! The sets of balls $\{1,2,3,4,5,6\}$ and $\{6,5,4,3,2,1\}$ and $\{1,3,5,6,4,2\}$ are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 balls, which we know is $6!$. So the number of possible sets of 6 balls to come out of the machine is actually
 \[ \binom{59}{6} = \frac{\ff{59}{6}}{6!} = \frac{59 \times 58 \times 57 \times 56 \times 55 \times 54}{6\times5\times4\times3\times2\times1} \approx 45 \text{ million} . \]
 
 Thus the probability that your ticket wins the jackpot is
@@ -172,9 +172,9 @@ Which proof do you prefer? (I strongly prefer the second proof, because I think 
 
 This a famous problem, known as the "birthday problem". You may have seen this problem before -- but let's try to solve it using the techniques from this section of notes. If you haven't seen it before, you might like to guess what you think the answer might be. (We'll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)
 
-The sample space $\Omega$ is the set of possible birthdays for the $k$ students. Clearly $|\Omega| = 365^k$.
+The sample space $\Omega$ is the set of possible birthdays for all $k$ students. Clearly $|\Omega| = 365^k$.
 
-Let $A$ be the even that at least two students share a birthday. Since this is an "at least" event, it seems like it might be a good idea to look instead at the complementary event $A^\comp$. If $A$ is the event that there's at least one shared birthday, then $A^\comp$ is the event that there are *no* shared birthdays; that is, $A^\comp$ is the event that all $k$ students have *different* birthdays.
+Let $A$ be the even that at least one pair of student share a birthday. Since this is an "at least" event, it seems like it might be a good idea to look instead at the complementary event $A^\comp$. If $A$ is the event that there's at least one shared birthday, then $A^\comp$ is the event that there are *no* shared birthdays; that is, $A^\comp$ is the event that all $k$ students have *different* birthdays.
 
 So what is $|A^\comp|$, the number of ways the $k$ students can have different birthdays? Well, the first student can have any of the 365 days for their birthday. For them to have different birthdays, the second student only has 364 days available. Then the third student must avoid the birthday of students 1 and 2, so has 363 available days, and so on. We see that 
 \[ |A^\comp| = 365 \times 364 \times \cdots \times (365 - k + 1) = 365^{\underline{k}} . \]
@@ -199,3 +199,9 @@ Some people find it surprising that only 23 students have such a high probabilit
 * Ordering $n$ objects can be done in $n! = n^{\underline{n}} = n(n-1)\cdots2\cdot1$ ways.
 * The number of ways to sample $k$ objects out of $n$ when the order doesn't matter is given by the binomial coefficient $\binom nk = \ff{n}{k}/k!$.
 :::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 3.2 and 3.3.
+
+On [Problem Sheet 2](#P2), you should now be able to complete all questions.
