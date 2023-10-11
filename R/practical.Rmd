@@ -57,9 +57,11 @@ When you install R and RStudio, it's important that you install the language R f
 1. *First*, install R. Go to the [Comprehensive R Archive Network (CRAN)](https://cran.r-project.org/) and follow the instructions:
 
    * Windows: Click ["Download R for Windows"](https://cran.r-project.org/bin/windows/), then ["Install R for the first time"](https://cran.r-project.org/bin/windows/base/). The main link at the top should be to download the most recent version of R.
-   * Mac: Click [Download R for macOS](https://cran.r-project.org/bin/macosx/), and then download the relevant PKG file. (Most modern Macbooks are based on Apple's M1 or M2 processors, so you should choose "Apple silicon arm64 build". Some older Macbooks, mostly 2020 or earlier, use Intel processors; for these you should use the "Intel 64-bit build".)
+   * Mac: Click [Download R for macOS](https://cran.r-project.org/bin/macosx/), and then download the relevant PKG file. (Most modern Macbooks are based on Apple's M1 or M2 processors, so you can choose "Apple silicon arm64 build". Some older Macbooks, mostly 2020 or earlier, have Intel processors; for these you should use the "Intel 64-bit build".)
    
 2. *After* R is installed, *then* install RStudio. Go to the ["Download RStudio" page at posit.co](https://posit.co/download/rstudio-desktop/) and follow the instructions. You want "RStudio Desktop" and you want the free version, if given a choice.
+
+Now, whenever you want to use R and RStudio, simply open program RStudio. (The language R will automatically be loaded on your computer.)
 
 For Chromebooks, we recommend using the [Posit Cloud](https://posit.cloud), as mentioned above. However, if you have an Intel-based Chromebook and are feeling brave, then we have had success installing R and RStudio using [these instructions](https://levente.littvay.hu/chromebook/), which are long and complicated.
 
@@ -68,7 +70,7 @@ For Chromebooks, we recommend using the [Posit Cloud](https://posit.cloud), as m
 
 ### EC Stoner Cluster 6.68  {#stoner .unnumbered}
 
-[**EC Stoner Cluster 6.68** [map]](ecstoner.png) is in the **EC Stoner building**. The easiest way to enter the 6th floor of EC Stoner is via the sliding doors opposite the multi-storey car park ([red arrow](ecstoner.png)).
+[**EC Stoner Cluster 6.68** [map]](ecstoner.png) is in the **EC Stoner building**. The easiest way to enter the 6th floor of EC Stoner is via the sliding doors ("South Entrance 4") opposite the multi-storey car park ([red arrow](ecstoner.png)).
 
 Alternatively, from the "red route" along the 10th floor corridor of EC Stoner, go all the way along to the School of Food Science and Nutrition, by staircase 4, and take the lift (*not* the stairs) to the 6th floor ([blue dotted line](ecstoner.png)).
 
@@ -76,9 +78,9 @@ EC Stoner Cluster 6.68 is the big room to the east (right from the doors; left f
 
 ### Fourman O & P Clusters  {#fourman .unnumbered}
 
-The **Fourman O & P Clusters** are in the **Worsley building**, at the south of campus. The easiest route is from Chancellor's Court, next to the Roger Stevens building: follow the North--South Access Route alongside and then through the Garstang building, and enter the Worsley building at the 7th floor "airport lounge" area. Follow the signs to "Central Teaching Space": turn left to get to the East staircase, and go up one floor the the 8th floor.
+The [**Fourman O & P Clusters** [map]](fourman.png) are in the **Worsley building**, at the south of campus. The easiest route is from Chancellor's Court, next to the Roger Stevens building: follow the North--South Access Route alongside and then through the Garstang building, and enter the Worsley building at the 7th floor "airport lounge" area ([red arrow](fourman.png)). Follow the signs to "Central Teaching Space": turn left to get to the East staircase, and go up one floor the the 8th floor.
 
-Alternatively, enter the Worsley building on Clarendon Way at the 4th floor. The East lifts are to your left: take the lift to the 8th floor.
+Alternatively, enter the Worsley building on Clarendon Way at the 4th floor ([blue arrow](fourman.png)). The East lifts are to your left: take the lift to the 8th floor.
 
 On the 8th floor of the Worsley building, the Fourman Clusters are two connected rooms right next the East staircase/lifts – Fourman O is on the right; Fourman P is on the left.
 
@@ -90,12 +92,12 @@ Walking down the walkway alongside the Irene Manton building, there's a modest, 
 
 ### Psychology Cluster 1.43  {#psychology .unnumbered}
 
-[**Psychology Cluster 1.43** [map]](psychology.png) is in the **Psychology building**, which is in between the two main east–west thoroughfares through campus, University Road and Beach Grove Terrace/Precinct/Lifton Place. One entrance to Psychology is on Lifton Place, opposite Cromer Street, up some steps; the other is on University Road, opposite the School of Fine Art, through a little garden.
+[**Psychology Cluster 1.43** [map]](psychology.png) is in the **Psychology building**, which is in between the two main east–west thoroughfares through campus -- University Road and Beach Grove Terrace/Precinct/Lifton Place. One entrance to Psychology is on Lifton Place, opposite Cromer Street, up some steps; the other is on University Road, opposite the School of Fine Art, through a little garden.
 
 Once inside Psychology, there are signs to the "CBL clusters". Follow a long winding corridor to the east (right from Lifton Place entrance; left from University Road entrance), past a giant glittery brain sculpture, all the way to a spiral staircase. Go up one floor. Psychology Cluster 1.43 is the room on the right.
 
 ### Richard Hughes Cluster  {#hughes .unnumbered}
 
-The **Richard Hughes Cluster** is on the side of the **Clothworkers' Link building**, on the north side of University Road by the "Clothworkers' Link" -- the sky-bridge that goes over University Road.
+The [**Richard Hughes Cluster** [map]](richard-hughes.png) is on the side of the **Clothworkers' Link building**, on the north side of University Road by the "Clothworkers' Link" -- the sky-bridge that goes over University Road.
 
 Just to the west (Hyde Park side) of the Link bridge, go up the alleyway between the Clothworkers' Link building and 28 University Road. Enter a small door on the right; the Richard Hughes Cluster is at the top of a short flight of stairs to your left.
