@@ -154,6 +154,24 @@
 
 \newcommand{\Var}{\operatorname{Var}}
 
+\textbf{Week 3} (16--20 October):
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{L05-classical-i}{\textbf{Lecture 5:} Classical probability I} (Monday 16 October)
+\item
+  \protect\hyperlink{L06-classical-ii}{\textbf{Lecture 6:} Classical probability II} (Wednesday 18 October)
+\item
+  \textbf{R Practical}
+\item
+  \protect\hyperlink{P2}{\textbf{Problem Sheet 2:}} Work through in preparation for your tutorial in Week 4. Deadline for assessed questions: Monday 30 October.
+\item
+  \protect\hyperlink{R}{\textbf{R Worksheet 2:}} Deadline for assessed exercises: Monday 23 October
+\item
+  \textbf{Office hours:} Friday 20 October, 11--12 and 1--2, \href{boardroom.png}{Maths Boardroom}
+\end{itemize}
+
 \textbf{Week 2} (9--13 October):
 
 \begin{itemize}
@@ -167,7 +185,7 @@
 \item
   \protect\hyperlink{practical}{\textbf{R Practical}}
 \item
-  \protect\hyperlink{P1}{\textbf{Problem Sheet 1:}} Work through in preparation for your tutorial. Deadline for assessed questions: Monday 17 October.
+  \protect\hyperlink{P1}{\textbf{Problem Sheet 1:}} Work through in preparation for your tutorial. Deadline for assessed questions: Monday 16 October.
 \item
   \protect\hyperlink{R}{\textbf{R Worksheet 1}}
 \item
@@ -183,7 +201,7 @@
 \item
   \protect\hyperlink{L02-dataviz}{\textbf{Lecture 2:} Data visualisation} (Wednesday 4 October)
 \item
-  \protect\hyperlink{P1}{\textbf{Problem Sheet 1:}} Work through in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
+  \protect\hyperlink{P1}{\textbf{Problem Sheet 1:}} Work through in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 16 October.
 \item
   \textbf{Office hours:} Friday 6 October, 11--12 and 1--2, \href{boardroom.png}{Maths Boardroom}
 \end{itemize}
@@ -1101,7 +1119,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-13-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-14-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -1817,6 +1835,58 @@ But \(\mathbb P(\text{spade and ace})\) is the probability of picking the ace of
 \end{itemize}
 
 On \protect\hyperlink{P2}{Problem Sheet 2}, you should now be able to complete Questions A1, A2, B1, B2 and perhaps C1.
+
+\hypertarget{L05-classical-i}{%
+\chapter{Classical probability I}\label{L05-classical-i}}
+
+\hypertarget{summary-L05}{%
+\section*{Summary}\label{summary-L05}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  ``Classical probability'' describes the situation where there are finitely many equally likely outcomes. The classical probability \(\mathbb P(A) = |A|/|\Omega|\) requires us to count how many outcomes there are in events or sample spaces.
+\item
+  The multiplication principle says that \(n\) choices followed by \(m\) choices makes \(n \times m\) choices in total.
+\item
+  Sampling \(k\) objects out of \(n\) with replacement gives \(n^k\) choices.
+\item
+  Sampling \(k\) objects out of \(n\) without replacement gives \(n^{\underline{k}} = n(n-1)\cdots(n-k+1)\) choices.
+\end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 3.1 and 3.2.
+\end{itemize}
+
+\hypertarget{L06-classical-ii}{%
+\chapter{Classical probability II}\label{L06-classical-ii}}
+
+\hypertarget{summary-L06}{%
+\section*{Summary}\label{summary-L06}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  Ordering \(n\) objects can be done in \(n! = n^{\underline{n}} = n(n-1)\cdots2\cdot1\) ways.
+\item
+  The number of ways to sample \(k\) objects out of \(n\) when the order doesn't matter is given by the binomial coefficient \(\binom nk = {n}^{\underline{k}}/k!\).
+\end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 3.2 and 3.3.
+\end{itemize}
+
+On \protect\hyperlink{P2}{Problem Sheet 2}, you should now be able to complete all questions.
 
 \hypertarget{P2}{%
 \chapter*{Problem Sheet 2}\label{P2}}

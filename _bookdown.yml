@@ -6,8 +6,8 @@ rmd_files:
   - problems/P1.Rmd
   - sections/L03-events.Rmd
   - sections/L04-probability.Rmd
-#  - sections/L05-classical-i.Rmd
-#  - sections/L06-classical-ii.Rmd
+  - sections/L05-classical-i.Rmd
+  - sections/L06-classical-ii.Rmd
   - problems/P2.Rmd
 #  - sections/L07-conditional.Rmd
 #  - sections/L08-two-theorems.Rmd

@@ -1,14 +1,7 @@
 # Classical probability I  {#L05-classical-i}
 
-## Probability with equally likely outcomes {#classical-intro}
-
 <!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/EdRPMx4eCXc"></iframe>
-:::
-::::
--->
+## Probability with equally likely outcomes {#classical-intro}
 
 **Classical probability** is the name we give to probability where there are a finite number of equally likely outcomes.
 
@@ -55,13 +48,6 @@ and Axiom 3 is fulfilled.
 
 ## Multiplication principle  {#multiplication}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/uvKMmlnr1oU"></iframe>
-:::
-::::
--->
 
 In classical probability, to find the probability of an event $A$, we need to count the number of outcomes in $A$ and the total number of possible outcomes in $\Omega$. This can be easy when we're just looking at one choice -- like the 2 outcomes from tossing a single coin, the 6 outcomes of rolling a single dice, or the 52 outcomes from dealing a single card. Now we're going to look at what happens if there are a number of choices one after another -- like tossing multiple coins, rolling more than one dice, or dealing a hand of cards.
 
@@ -74,24 +60,6 @@ Here, an important principle is the **multiplication principle**. The multiplica
 
 More generally, if you have $m$ stages of choosing, with $n_1$ choices in the first stage, then $n_2$ choices in the second stage, all the way to $n_m$ choices in the final stage, you have $n_1 \times n_2 \times \cdots \times n_m$ total choices altogether.
 
-<!--
-::: {.example}
-*Two dice are rolled. What is the probability of getting a total score of 8?*
-
-Here, the sample space $\Omega$ is the set of all pairs of dice rolls
-\[ \Omega = \big\{ (1,1), (1, 2), (1, 2), \dots, (6,5), (6,6) \big\} . \]
-Note that all the outcomes are equally likely, so we have a classical probability problem.
-
-Because there are 6 possible values for the first dice and 6 possible values for the second dice, by the multiplication principle we have $|\Omega| = 6 \times 6 = 36$.
-
-Let $A$ be the event we roll a total of 8. We need to find $|A|$, the number of sample outcomes in $A$. We can find this simply by listing them all:
-\[ A = \big\{ (2,6), (3, 5), (4, 4), (5,3), (6,2) \big\} .\]
-We see that $|A| = 5$.
-
-Hence, the probability of getting a total of 8 is
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{5}{36} \approx 0.14 .\]
-:::
--->
 
 ::: {.example}
 *Five fair coins are tossed. What is the probability they all show the same face?*
@@ -109,7 +77,7 @@ So the probability all five coins show the same face is
 
 Here, $\Omega$ is the set of all possible sequences of four dice rolls. Clearly $|\Omega| = 6^4 = 1296$.
 
-The event $A$ is the set of all dice roll sequences with at least one 6. Whenever you see a question with the phrase "at least one" in it, it's very often to look at the complementary event $A^\comp$ instead. We know from the last section that $\mathbb P(A) = 1 - \mathbb P(A^\comp)$, but in "at least one" questions, it's often easier to count $|A^\comp|$ than to count $|A|$.
+The event $A$ is the set of all dice roll sequences with at least one 6. Whenever you see a question with the phrase "at least one" in it, it's very often a good idea to look at the complementary event $A^\comp$ instead. We know from [the last lecture](#prob-properties) that $\mathbb P(A) = 1 - \mathbb P(A^\comp)$, but in "at least one" questions, it's often easier to count $|A^\comp|$ than to count $|A|$.
 
 Here, since $A$ is the set of all dice roll sequences with at least one 6, then $A^\comp$ is the set of dice roll sequence without any 6s at all. This means all four dice must have rolled a 1, 2, 3, 4 or 5. Since each of the four dice rolls has five possibilities, this means that $|A^\comp| = 5^4 = 625$.
 
@@ -123,13 +91,6 @@ So there's about a 52% chance we get at least one 6.
 
 ## Sampling with and without replacement  {#sampling}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/EXqEcklxlj8"></iframe>
-:::
-::::
--->
 
 ::: {.example}
 *A bag contains 15 balls: 10 black balls and 5 white balls. We draw 3 balls out of the bag. What is the probability all 3 balls are black **(a)** if we put each ball back into the bag after it is chosen; **(b)** if we do not put each ball back into the bag after it is chosen.*
@@ -150,7 +111,7 @@ This example illustrated the difference between **sampling with replacement** (w
 \[ \ff{n}{k} = n\times(n-1)\times \cdots\times (n-k+1) .\]
 
 Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. This is still $k$ numbers multiplied together, but decreasing by 1 each time down from $n$. The final number in the product is the number of choices in the $k$th an final round: this is the original $n$ items minus the $k-1$ items sampled in the previous $k-1$ rounds; so the final number is $n - (k-1) = n - k + 1$, not $n - k$. A notation point: Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes $(n)_k$, $P(n,k)$, or ${}^nP_k$.
-
+ -->
 
 ## Summary  {#summary-L05 .unnumbered}
 
@@ -164,3 +125,22 @@ Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample wi
 **Recommended reading:**
 
 * [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 3.1 and 3.2.
+
+<!--
+::: {.example}
+*Two dice are rolled. What is the probability of getting a total score of 8?*
+
+Here, the sample space $\Omega$ is the set of all pairs of dice rolls
+\[ \Omega = \big\{ (1,1), (1, 2), (1, 2), \dots, (6,5), (6,6) \big\} . \]
+Note that all the outcomes are equally likely, so we have a classical probability problem.
+
+Because there are 6 possible values for the first dice and 6 possible values for the second dice, by the multiplication principle we have $|\Omega| = 6 \times 6 = 36$.
+
+Let $A$ be the event we roll a total of 8. We need to find $|A|$, the number of sample outcomes in $A$. We can find this simply by listing them all:
+\[ A = \big\{ (2,6), (3, 5), (4, 4), (5,3), (6,2) \big\} .\]
+We see that $|A| = 5$.
+
+Hence, the probability of getting a total of 8 is
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{5}{36} \approx 0.14 .\]
+:::
+-->
