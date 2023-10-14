@@ -231,6 +231,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#hughes"><i class="fa fa-check"></i>Richard Hughes Cluster</a></li>
 </ul></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
+</ul></li>
 <li class="divider"></li>
 <li></li>
 
@@ -259,6 +267,9 @@ display: none !important;
 }
 </style>
 <div class="mysummary">
+<p><a href="solutions.html#P1-solutions"><strong>Solutions</strong> are now available</a> to all non-assessed questions.</p>
+</div>
+<div class="mysummary">
 <p>You can <a href="P1-sheet.pdf">download this problem sheet as a PDF file</a></p>
 </div>
 <div class="mysummary">
@@ -276,7 +287,7 @@ display: none !important;
 <p><strong>(a)</strong> Calculate the mean number of Skittles in each packet.</p>
 <div class="myanswers">
 <p><em>Solution.</em> This was in the notes:
-<span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.7 .\]</span></p>
+<span class="math display">\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.6923\dots \approx 60.7 .\]</span></p>
 </div>
 </div>
 <div class="subq">
@@ -466,7 +477,7 @@ frequency densities.</p>
 </div>
 <div class="myq">
 <p><strong>A3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<p><img src="math1710_files/figure-html/unnamed-chunk-14-1.png" width="480" /></p>
+<p><img src="math1710_files/figure-html/unnamed-chunk-16-1.png" width="480" /></p>
 <div class="myanswers">
 <p><em>Solution.</em> Some answers could be:</p>
 <ul>
@@ -555,7 +566,7 @@ The modal shirt size is medium. The number of distinct outcomes is 4 (we don’t
 The modal colour is Yellow. The number of distinct outcomes is 5.</p>
 <p>It’s not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can’t be put “in order” from smallest to largest.</p>
 <p>It’s not possible to calculate the mean or sample variance, as these require us to have numerical data that can be “added up”, but this can’t be done with colours.</p>
-<p><strong>Group feedback:</strong> Make sure your explanation is clear for why we can’t calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be <em>ordered</em>.</p>
+<p><strong>Group feedback:</strong> Make sure your explanation is clear for why we can’t calculate a median for the Skittles data but can for the shirts: the key is whether or not the data can be <em>ordered</em>.</p>
 </div>
 </div>
 </div>
@@ -566,7 +577,7 @@ The modal colour is Yellow. The number of distinct outcomes is 5.</p>
 <p><strong>(a)</strong> An outlier will typically be the only data point with its value, or certainly rare. Therefore, the mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so any outliers become “joint modes” along with everything else; but in this case the mode is not a useful statistic in the first place.)</p>
 <p><strong>(b)</strong> The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the “central mass” of the data. In particular, the <em>size</em> of the outliers won’t make any difference at all (only whether they are “high outliers” above the median or “low outliers” below the median). So the median is robust.</p>
 <p><strong>(c)</strong> The mean can change a lot if outliers are introduced, especially if the outlier is enormously far our from the data. So the mean is sensitive.</p>
-<p><strong>(d)</strong> The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced, so is robust.</p>
+<p><strong>(d)</strong> The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced. This is not typically a relevant increase, so the number of distinct outcomes is robust.</p>
 <p><strong>(e)</strong> The interquartile range is robust, for the same reason as the median.</p>
 <p><strong>(f)</strong> The sample variance is sensitive, for the same reason as the mean.</p>
 <p>(You might like to think about situations where it’s better to use a robust statistic or better to use a sensitive statistic.)</p>
@@ -621,7 +632,7 @@ In fact that’s the square of the correlation on the left-hand side, so we’ve
 <ul>
 <li><p>It’s important the students/subjects have given their consent for their data to be used this way. It must be “informed consent”, where they understand for what purpose the data will be used, how it will be stored, and so on. It must be easy and painless for students to decline to take part.</p></li>
 <li><p>Consideration should be given on how to anonymise the data as much as possible – it’s not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.</p></li>
-<li><p>Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could “leak” that way. Perhaps imprecise data, such as classes rather than exact marks, might help while only slightly reducing the usefulness of the data?</p></li>
+<li><p>Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could “leak” that way. Perhaps imprecise data, such as classes rather than exact marks, might help maintain privacy while only slightly reducing the usefulness of the data?</p></li>
 <li><p>On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of “open science” suggest that the data should be kept – and even publicly made available – for other researchers to check the work. There are competing ethical considerations here.</p></li>
 <li><p>If correlations are found in the data, care should be taken when publishing the analysis not to wrongly suggest a causation. (Just because X and Y are positively correlated, it doesn’t mean that X <em>causes</em> Y – or that Y causes X.)</p></li>
 </ul>

@@ -36,7 +36,7 @@ It's not possible to calculate the median or the quartiles, because, unlike nume
 
 It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be "added up", but this can't be done with colours.
 
-**Group feedback:** Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be *ordered*.
+**Group feedback:** Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: the key is whether or not the data can be *ordered*.
 :::
 ::::
 :::::
@@ -53,7 +53,7 @@ It's not possible to calculate the mean or sample variance, as these require us 
 
 **(c)** The mean can change a lot if outliers are introduced, especially if the outlier is enormously far our from the data. So the mean is sensitive.
 
-**(d)** The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced, so is robust.
+**(d)** The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced. This is not typically a relevant increase, so the number of distinct outcomes is robust.
 
 **(e)** The interquartile range is robust, for the same reason as the median.
 
@@ -130,7 +130,7 @@ Remember that you can still attempt part (b) even if you got stuck on part (a).
 
 * Consideration should be given on how to anonymise the data as much as possible -- it's not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.
 
-* Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could "leak" that way. Perhaps imprecise data, such as classes rather than exact marks, might help while only slightly reducing the usefulness of the data?
+* Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could "leak" that way. Perhaps imprecise data, such as classes rather than exact marks, might help maintain privacy while only slightly reducing the usefulness of the data?
 
 * On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of "open science" suggest that the data should be kept -- and even publicly made available -- for other researchers to check the work. There are competing ethical considerations here.
 

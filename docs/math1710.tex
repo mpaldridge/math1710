@@ -967,6 +967,8 @@ On \protect\hyperlink{P1}{Problem Sheet 1}, you should now be able to complete a
 
 \commfalse
 
+\protect\hyperlink{P1-solutions}{\textbf{Solutions} are now available} to all non-assessed questions.
+
 You can \href{P1-sheet.pdf}{download this problem sheet as a PDF file}
 
 This is Problem Sheet 1, which covers material from Lectures \protect\hyperlink{L01-stats}{1} and \protect\hyperlink{L02-dataviz}{2} of the notes. You should work through all the questions on this problem sheet in advance of your tutorial in Week 2. Questions C1 and C2 are assessed questions, and are due in by \textbf{2pm on Monday 16 October}. I recommend spending about 4 hours on this problem sheet, plus 1 extra hour to neatly write up and submit your answers to the assessed questions.
@@ -984,7 +986,7 @@ The first three questions are \textbf{short questions}, which are intended to be
 
 \begin{myanswers}
 \emph{Solution.} This was in the notes:
-\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.7 .\]
+\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.6923\dots \approx 60.7 .\]
 
 \end{myanswers}
 
@@ -1119,7 +1121,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-14-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-16-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -1207,7 +1209,7 @@ It's not possible to calculate the median or the quartiles, because, unlike nume
 
 It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be ``added up'', but this can't be done with colours.
 
-\textbf{Group feedback:} Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: they key is whether or not the data can be \emph{ordered}.
+\textbf{Group feedback:} Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: the key is whether or not the data can be \emph{ordered}.
 
 \end{myanswers}
 
@@ -1222,7 +1224,7 @@ It's not possible to calculate the mean or sample variance, as these require us 
 
 \textbf{(c)} The mean can change a lot if outliers are introduced, especially if the outlier is enormously far our from the data. So the mean is sensitive.
 
-\textbf{(d)} The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced, so is robust.
+\textbf{(d)} The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced. This is not typically a relevant increase, so the number of distinct outcomes is robust.
 
 \textbf{(e)} The interquartile range is robust, for the same reason as the median.
 
@@ -1296,7 +1298,7 @@ Remember that you can still attempt part (b) even if you got stuck on part (a).
 \item
   Consideration should be given on how to anonymise the data as much as possible -- it's not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.
 \item
-  Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could ``leak'' that way. Perhaps imprecise data, such as classes rather than exact marks, might help while only slightly reducing the usefulness of the data?
+  Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could ``leak'' that way. Perhaps imprecise data, such as classes rather than exact marks, might help maintain privacy while only slightly reducing the usefulness of the data?
 \item
   On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of ``open science'' suggest that the data should be kept -- and even publicly made available -- for other researchers to check the work. There are competing ethical considerations here.
 \item
@@ -2465,5 +2467,365 @@ Once inside Psychology, there are signs to the ``CBL clusters''. Follow a long w
 The \href{richard-hughes.png}{\textbf{Richard Hughes Cluster} {[}map{]}} is on the side of the \textbf{Clothworkers' Link building}, on the north side of University Road by the ``Clothworkers' Link'' -- the sky-bridge that goes over University Road.
 
 Just to the west (Hyde Park side) of the Link bridge, go up the alleyway between the Clothworkers' Link building and 28 University Road. Enter a small door on the right; the Richard Hughes Cluster is at the top of a short flight of stairs to your left.
+
+\commtrue
+
+\hypertarget{solutions}{%
+\chapter*{Solutions}\label{solutions}}
+\addcontentsline{toc}{chapter}{Solutions}
+
+This page has the solutions to all the non-assessed questions on Problem Sheet 1. Solutions are added after all tutorials on the Problem Sheet have finished.
+
+Solutions to assessed questions are available on Minerva in the ``Assessments'' tab, from one week after the deadline.
+
+There are many ways you get feedback on this module, both group feedback (feedback that is generally relevant to many people) and individual feedback (feedback based specifically on your own approach to the work).
+
+\begin{itemize}
+\tightlist
+\item
+  You will have received both individual and group spoken feedback in your tutorial (the more you speak up in your tutorial, the more individualised the feedback you get in return).
+\item
+  These solutions include group written feedback on common issues for the class.
+\item
+  Most importantly, when your work on assessed questions is marked, individual written feedback will be given via the Gradescope site. It is very important that you read that feedback.
+\item
+  Finally, students who would like even more feedback can discuss their work with me in the ``office hours'' drop-in sessions.
+\end{itemize}
+
+\hypertarget{P1-solutions}{%
+\section*{Problem Sheet 1}\label{P1-solutions}}
+\addcontentsline{toc}{section}{Problem Sheet 1}
+
+\hypertarget{P1-short-solutions}{%
+\subsection*{A: Short questions}\label{P1-short-solutions}}
+\addcontentsline{toc}{subsection}{A: Short questions}
+
+\textbf{A1.} Consider again the ``number of Skittles in each packet'' data from Example 1.1.
+\[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]
+
+\textbf{(a)} Calculate the mean number of Skittles in each packet.
+
+\begin{myanswers}
+\emph{Solution.} This was in the notes:
+\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.6923\dots \approx 60.7 .\]
+
+\end{myanswers}
+
+\textbf{(b)} Calculate the sample variance using the definitional
+formula.
+
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+s_x^2 &= \frac{1}{13 - 1} \left( (59 - 60.7)^2 + (59 - 60.7)^2 + \cdots + (63 - 60.7)^2 \right) \\
+      &= \frac{1}{12} (2.86 + 2.86 + \cdots + 5.33) \\
+      &= \frac{1}{12} \times 28.77 \\
+      &= 2.40
+\end{align*}
+
+\end{myanswers}
+
+\textbf{(c)} Calculate the sample variance using the computational formula.
+
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+s_x^2 &= \frac{1}{13 - 1} \left( (59^2 + 59^2 + \cdots + 63^2) - 13 \times 60.6923^2)\right) \\
+      &= \frac{1}{12} (47915 - 47886.2) \\
+      &= 2.40
+\end{align*}
+
+\textbf{Group feedback:} With the computational formula, the value \(\sum_i x_i^2 - n \bar{x}^2\) is typically a fairly small number given as the difference between two very big numbers \(\sum_i x_i^2\) and \(n \bar x^2\). This means you have to get the two big numbers very precise, to ensure the cancellation happens correctly; in particular, make sure you use plenty of decimal places of accuracy in \(\bar x\).
+
+\end{myanswers}
+
+\textbf{(d)} Out of (b) and (c), which calculation did you find easier, and why?
+
+\begin{myanswers}
+\emph{Solution.} The computational formula required fewer presses of the calculator buttons, because \(\sum_i x_i^2\) is fewer button-presses than \(\sum_i (x_i - \bar x)^2\), where you have to subtract the means before squaring.
+
+On the other hand, the expression inside the brackets of the computational formula is a fairly small number given as the difference of two very large numbers, so it was necessary to use lots of decimal places of accuracy in \(\bar x\) to make sure the second large number was accurate and therefore that the subtraction cancelled correctly.
+
+\textbf{Group feedback:} Many different answers for (d) are fine provided you give a justification.
+
+\end{myanswers}
+
+\textbf{A2.} Consider the following data sets of the age of elected politicians on a local council. (The ``18--30'' bin, for example, means from one's
+18th birthday to the moment before one's 30th birthday, so lasts 12 years.)
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2537}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Age (years)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequency
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Relative frequency
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequency density
+\end{minipage} \\
+\midrule()
+\endhead
+18--30 & 1 & & \\
+30--40 & 2 & & \\
+40--45 & 4 & & \\
+45--50 & 5 & & \\
+50--60 & 6 & & \\
+60--80 & 2 & & \\
+\textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
+\end{longtable}
+
+\textbf{(a)} Complete the table by filling in the relative frequency and
+frequency densities.
+
+\begin{myanswers}
+
+\emph{Solution.}
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2537}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
+  >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+Age (years)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequency
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Relative frequency
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Frequency density
+\end{minipage} \\
+\midrule()
+\endhead
+18--30 & 1 & 0.05 & 0.0042 \\
+30--40 & 2 & 0.1 & 0.01 \\
+40--45 & 4 & 0.2 & 0.04 \\
+45--50 & 5 & 0.25 & 0.05 \\
+50--60 & 6 & 0.3 & 0.03 \\
+60--80 & 2 & 0.1 & 0.005 \\
+\textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
+\end{longtable}
+
+\end{myanswers}
+
+\textbf{(b)} What is the median age bin?
+
+\begin{myanswers}
+\emph{Solution.} The 10th- and 11th-largest observations are both in the 45--50 bin, which is therefore the median bin.
+
+\end{myanswers}
+
+\textbf{(c)} What is the modal age bin?
+
+\begin{myanswers}
+\emph{Solution.} The bin with the largest frequency density is 45--50, which is therefore the modal bin.
+
+\textbf{Group feedback:} Remember that the modal bin is the one with the largest frequency \emph{density}, not necessarily the bin with the highest frequency.
+
+\end{myanswers}
+
+\textbf{(d)} Calculate (the standard approximation of) the mean age of the politicians.
+
+\begin{myanswers}
+\emph{Solution.} Pretending that each person is in the centre of their bin, we have
+\[ \bar x = \frac{1}{20} (1\times24 + 2\times 35 + \cdots + 2 \times 65) = \frac{971.9}{20} = 48.6 . \]
+
+\end{myanswers}
+
+\textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
+
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-17-1.pdf}
+
+\begin{myanswers}
+\emph{Solution.} Some answers could be:
+
+\begin{itemize}
+\tightlist
+\item
+  The median and inter-quartile range of Dataset 2 appear to be very slightly larger than those in Dataset 1, although the differences are very small and might not be important in real life.
+\item
+  Dataset 2 has a few outliers; Dataset 1 has none.
+\item
+  While Dataset 1 is fairly ``balanced'' either side of the median, Dataset 2 shows what statisticians call a ``positive skew'': the data above the median is much more spread out than the data below the median.
+\end{itemize}
+
+\textbf{Group feedback:}
+You can probably think of other answers.
+
+\end{myanswers}
+
+\hypertarget{P1-long-solutions}{%
+\subsection*{B: Long questions}\label{P1-long-solutions}}
+\addcontentsline{toc}{subsection}{B: Long questions}
+
+\textbf{B1.} For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.
+
+\textbf{(a)} Shirt sizes for the \(n = 16\) members of a university football squad:
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.3333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\textbf{Colour}
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Xtra Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Small
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Medium
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Large
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Xtra Large
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
+\end{longtable}
+
+\begin{myanswers}
+\emph{Solution.}
+The modal shirt size is medium. The number of distinct outcomes is 4 (we don't quite ``Xtra Small'', which was not observed in the data).
+
+This time, we can order the data from smallest to largest, even though the data is not numerical. Since \((16 + 1)/2 - 8.5\), the median datapoint is the 8th or 9th datapoints, which are Large.
+
+Since \(1 + 0.25(16 - 1) = 4.75\) the lower quartile is the 4th or 5th datapoints, which are Medium. Since \(1 + 0.75(16-1) = 12.25\), the upper quartile is the 12th or 13th datapoints, which are Xtra Large. So we can certainly say that the inner quartiles range from Medium to Xtra Large. We could probably also say that the interquartile range is 3 shirt sizes (Medium, Large, Xtra Large).
+
+Again, because the data is not numerical, we can't add it up, so can't calculate a mean or sample variance.
+
+\end{myanswers}
+
+\textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule()
+\textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
+\midrule()
+\endhead
+\textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
+\end{longtable}
+
+\begin{myanswers}
+\emph{Solution.}
+The modal colour is Yellow. The number of distinct outcomes is 5.
+
+It's not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can't be put ``in order'' from smallest to largest.
+
+It's not possible to calculate the mean or sample variance, as these require us to have numerical data that can be ``added up'', but this can't be done with colours.
+
+\textbf{Group feedback:} Make sure your explanation is clear for why we can't calculate a median for the Skittles data but can for the shirts: the key is whether or not the data can be \emph{ordered}.
+
+\end{myanswers}
+
+\textbf{B2.} A summary statistic is informally said to be ``robust'' if it typically doesn't change much if a small number of outliers are introduced to a large dataset, or ``sensitive'' if it often changes a lot when a small number of outliers are introduced. Briefly discuss the robustness or sensitivity of the following summary statistics: \textbf{(a)} mode; \textbf{(b)} median; \textbf{(c)} mean; \textbf{(d)} number of distinct outcomes; \textbf{(e)} inter-quartile range; and \textbf{(f)} sample variance.
+
+\begin{myanswers}
+\emph{Solutions.}
+
+\textbf{(a)} An outlier will typically be the only data point with its value, or certainly rare. Therefore, the mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so any outliers become ``joint modes'' along with everything else; but in this case the mode is not a useful statistic in the first place.)
+
+\textbf{(b)} The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the ``central mass'' of the data. In particular, the \emph{size} of the outliers won't make any difference at all (only whether they are ``high outliers'' above the median or ``low outliers'' below the median). So the median is robust.
+
+\textbf{(c)} The mean can change a lot if outliers are introduced, especially if the outlier is enormously far our from the data. So the mean is sensitive.
+
+\textbf{(d)} The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced. This is not typically a relevant increase, so the number of distinct outcomes is robust.
+
+\textbf{(e)} The interquartile range is robust, for the same reason as the median.
+
+\textbf{(f)} The sample variance is sensitive, for the same reason as the mean.
+
+(You might like to think about situations where it's better to use a robust statistic or better to use a sensitive statistic.)
+
+\textbf{Group feedback:} I find it helpful to suppose I was studying the net worth of people in my tutorial group, and calculating summary statistics. How would those statistics changed change if Elon Musk (owner of Tesla and Twitter, net worth roughly \$200 billion) joined my tutorial group? The mean and sample variance would change an enormous amount, while the median and interquartile range would barely change at all in comparison.
+
+Remember that ``robust'' and ``sensitive'' are general descriptions rather than precise mathematical definitions. So it doesn't matter if you disagree with my opinions provided that you give clear and detailed explanations to back up your opinion.
+
+\end{myanswers}
+
+\textbf{B3.} Let \(\mathbf a = (a_1, a_2, \dots a_n)\) and \(\mathbf b = (b_1, b_2, \dots, b_n)\) be two real-valued vectors of the same length. Then the \emph{Cauchy--Schwarz inequality} says that
+\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]
+
+\textbf{(a)} By making a clever choice of \((a_i)\) and \((b_i)\) in the Cauchy--Schwarz inequality, show that \(s_{xy}^2 \leq s_x^2 s_y^2\).
+
+\begin{myanswers}
+\emph{Solutions.}
+Recalling the formulas for \(s_{xy}\), \(s_x^2\), and \(s_y^2\),
+\begin{align*}
+s_{xy} &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,\\
+s_{x}^2 &= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 ,\\
+s_{y}^2 &= \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2 ,
+\end{align*}
+and comparing them with the Cauchy--Schwarz inequality, it looks like taking \(a_i = x_i - \bar x\) and \(b_i = y_i - \bar y\) might be useful.
+
+Making that substitution, we get
+\[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]
+
+These are very close to the formulas for \(s_{xy}\), \(s_x^2\), and \(s_y^2\), but are just missing the ``\(1/(n-1)\)''s; what we in fact have is
+\[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]
+Cancelling \((n-1)^2\) from each side, we have \(s_{xy}^2 \leq s_x^2 s_y^2\), as required.
+
+\textbf{Group feedback:} Keep trying different choices for \((a_i)\) and \((b_i)\); maybe your first attempt won't work, but it pays to be persistent!
+
+A fancier choice is \(a_i = (x_i - \bar x)/\sqrt{n-1}\) and \(b_i = (y_i - \bar y)/\sqrt{n-1}\), to get the exact result without needing a second cancellation step, but I would find that harder to spot.
+
+\end{myanswers}
+
+\textbf{(b)}
+Hence, show that the correlation \(r_{xy}\) satisfies \(-1 \leq r_{xy} \leq 1\).
+
+\begin{myanswers}
+\emph{Solutions.}
+Recall the formula for the correlation is
+\[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]
+We can make part (a) look a bit like this dividing both sides by \(s_x^2 s_y^2\), to get
+\[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]
+In fact that's the square of the correlation on the left-hand side, so we've shown that \(r_{xy}^2 \leq 1\).
+
+Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; numbers smaller than -1 become bigger than +1 when squared; numbers between -1 and +1 get closer to 0.) Hence we have shown that \(-1 \leq r_{xy} \leq 1\), as required.
+
+\textbf{Group feedback:} In part (b) there's a temptation to ``square-root both sides of the inequality''. But you have to be extremely careful if you do this -- make sure you are properly accounting for the positive and negative square roots on both sides (if necessary), and where that does or doesn't require reversing the direction of the inequality. I recommend leaving the square-root operation until the last possible moment of the proof or, perhaps even better, reasoning through words as I did above.
+
+Remember that you can still attempt part (b) even if you got stuck on part (a).
+
+\end{myanswers}
+
+\textbf{B4.} A researcher wishes to study the effect of mental health on academic achievement. The researcher will collect data on the mental health of a cohort of students by asking them to fill in a questionnaire, and will measure academic achievement via the students' scores on their university exams. Discuss some of the ethical issues associated with the collection, storage, and analysis of this data, and with the publication of the results of the analysis. Are there ways to mitigate these issues?
+
+(It's not necessary to write an essay for this question -- a few short bulletpoints will suffice. There may be an opportunity to discuss these issues in more detail in your tutorial.)
+
+\begin{myanswers}
+\textbf{Group feedback:} There are no ``correct'' or ``incorrect'' answers here, but here are a few things that students in my own tutorials brought up, which may act as a prompt for your own discussions.
+
+\begin{itemize}
+\item
+  It's important the students/subjects have given their consent for their data to be used this way. It must be ``informed consent'', where they understand for what purpose the data will be used, how it will be stored, and so on. It must be easy and painless for students to decline to take part.
+\item
+  Consideration should be given on how to anonymise the data as much as possible -- it's not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.
+\item
+  Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could ``leak'' that way. Perhaps imprecise data, such as classes rather than exact marks, might help maintain privacy while only slightly reducing the usefulness of the data?
+\item
+  On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of ``open science'' suggest that the data should be kept -- and even publicly made available -- for other researchers to check the work. There are competing ethical considerations here.
+\item
+  If correlations are found in the data, care should be taken when publishing the analysis not to wrongly suggest a causation. (Just because X and Y are positively correlated, it doesn't mean that X \emph{causes} Y -- or that Y causes X.)
+\end{itemize}
+
+You can probably think of many other things.
+
+\end{myanswers}
 
 \end{document}

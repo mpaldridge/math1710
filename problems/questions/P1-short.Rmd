@@ -7,7 +7,7 @@
 
 ::: {.myanswers data-latex=""}
 *Solution.* This was in the notes:
-\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.7 .\]
+\[ \bar x = \frac{1}{13} (59 + 59 + \cdots + 63) =  \frac{789}{13} = 60.6923\dots \approx 60.7 .\]
 :::
 ::::
 

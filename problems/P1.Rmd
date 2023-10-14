@@ -12,6 +12,10 @@ display: none !important;
 \commfalse
 
 ::: {.mysummary}
+[**Solutions** are now available](#P1-solutions) to all non-assessed questions.
+:::
+
+::: {.mysummary}
 You can [download this problem sheet as a PDF file](P1-sheet.pdf)
 :::
 

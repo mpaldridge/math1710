@@ -32,7 +32,7 @@ rmd_files:
   - R/R.Rmd
   - R/practical.Rmd
 #  - writing.Rmd
-#  - problems/solutions.Rmd
+  - problems/solutions.Rmd
 book_filename: "math1710"
 output_dir: "docs"
 delete_merged_file: true
