@@ -1,11 +1,11 @@
 ---
 title:  "R Worksheet 2: Vectors"
 author: "MATH1710 Probability and Statistcs I"
-date:   "University of Leeds, 2021--22"
+date:   "University of Leeds, 2023--24"
 output: html_document
 ---
 
-*This R worksheet* does *include assessed questions at the end. Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 23 October at 1400**. I recommend working on this worksheet during your R Practical in Week 3 -- check your timetable for details.*
+*This R worksheet* does *include Assessed Questions at the end. The deadline for submitting your solutions to the Assessed Questions is **Monday 23 October at 1400**. I recommend working on this worksheet during your R Practical in Week 3 -- check your timetable for details.*
 
 *Remember to open a new R Script (or add to your last R Script) to save your work.*
 
@@ -18,7 +18,7 @@ So far, our objects in R have just been single numbers. However, we can do much 
 We can enter a vector by using the **`c()`** function. (The letter `c` stands for "combine" -- or maybe "concatenate".) So to enter the vector $(1, 3, 4, 4, 2, 4, 1)$ as an object -- let's call it "`my_vector`" -- we enter
 
 ```{r}
-my_vector <-  c(1, 3, 4, 4, 2, 4, 1)
+my_vector <- c(1, 3, 4, 4, 2, 4, 1)
 ```
 
 and we can view it with
@@ -64,7 +64,7 @@ The first three entries are
 my_vector[1:3]
 ```
 
-Notice that in the second and third example examples we put a vector (`c(2, 4)` and then `1:3 = c(1, 2, 3)`) into the square brackets to pull out multiple entries of the vector.
+Notice that in the second and third examples we put a vector (`c(2, 4)` and then `1:3 = c(1, 2, 3)`) into the square brackets to pull out multiple entries of `my_vector`.
 
 We can also assign values to entries using the same notation. So to change the second entry of `my_vector` to a 5, we enter
 
@@ -78,7 +78,7 @@ and we can check this second entry has indeed changed by reading the vector:
 my_vector
 ```
 
-> **Exercise 2.3.** The student from Example 3.1 discovers an extra sandwich that was sold on Monday. Increase the first entry of the `sandwiches` by 1. (Try to do it without looking at what the first entry was previously.)
+> **Exercise 2.3.** The student from Example 2.1 discovers an extra sandwich that was sold on Monday. Increase the first entry of the `sandwiches` by 1. (Try to do it without looking at what the first entry was previously.)
 
 ## Operations with vectors
 
@@ -141,6 +141,7 @@ There are a number of useful functions that operate on vectors, including:
 -   **`length()`** gives us the **length** of the vector; that is, how many numbers were in the vector.
 -   **`min()`** and **`max()`** give the **minimum** (smallest) and **maximum** (largest) entries of the vector, respectively.
 -   The are a number of useful statistical functions, like **`median()`** (**median**) **`sd()`** (**standard deviation**), **`var()`** (**sample variance**), **`IQR()`** (**interquartile range**). You can find others by using Google or just experimenting with R to see what works.
+-   Some functions on vectors, like **`cov()`** (**sample covariance**) and **`cor()`** (**correlation**) require two arguments.
 
 So, for example, to find the sum of our vector `my_vector`, we enter
 
@@ -172,34 +173,36 @@ outputs a vector whose first element is the exponential of the first element of 
 
 *Your numerical answer to the following five assessed questions should be submitted to the Microsoft Form that is linked to below. I recommend you do this in Week 3, but the official deadline is **Monday 23 October at 1400**.*
 
-*You should submit your work by typing your answers into [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u). You may need to log into your University account.*
+*You should submit your work by typing your answers into [this Microsoft Form](). You may need to log into your University account to access the Form.*
 
 *This worked will be marked automatically by computer, so make sure you answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
-*So that (most) students get different data to work with, you will work from a data file whose name is based on your student ID number. You student ID number is (usually) a 9-digit number starting `201`. Your data set is the CSV file at*
-
-```
-https://mpaldridge.github.io/math1710/data/R3-xy.csv
-```
-
-*where `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then you should use the file at `https://mpaldridge.github.io/math1710/data/R3-29.csv`; if your student ID number is `201491200` then you should use the file `https://mpaldridge.github.io/math1710/data/R3-00.csv` and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 total marks.*
+*So that (most) students get different data to work with, you will work with data whose name is based on your student ID number. Your student ID number is (usually) a 9-digit number starting `201`. In the command below, `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then `xy` is `29`; while if your student ID is `201790400`, then `xy` is `00`. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data, the computer is likely to mark all your answers wrong award you 0 total marks.*
 
 *If asked to round your answer, you should give your answer as produced by R's `round()` or `signif()` functions. (It will not make any difference to the computer marking whether or not `trailing 0s' are given.)*
 
 ---
 
-**First**, run the following code *exactly*. I strongly recommend copy-pasting diremb
+**First**, run the following line of code exactly, except that the letters `xy` toward the end of the line are to be replaced by the last two digits of your student ID number, as described above. The code is this:
 
-> **Assessed Question 1.** How many days of data are in the data set?
+```{r, eval = FALSE}
+source("http://mpaldridge.github.io/math1710/data/R2-xy.R")
+```
+
+If you copy-and-paste this command -- which is recommended -- remember to replace the letters `xy` by the last two digits of your student ID before pressing enter.
+
+That line of code should create two vectors for you in R. These two vectors, `amaflix` and `netazon` are the stock prices of two companies, "Amaflix" and "Netazon" over a number of days.
+
+> **Assessed Question 1.** How many days of data are in the dataset?
 
 > **Assessed Question 2.** What was the mean stock price of Amaflix? Give your answer to two decimal places.
 
 > **Assessed Question 3.** What was the variance of stock price of Netazon over the first 25 days of the dataset? Round your answer to three significant figures.
 
-> **Assessed Question 4.** Which company's data had the greater inter-quartile range?
+> **Assessed Question 4.** Which company's data was generally more spread out?
 
 > **Assessed Question 5.** Would you say that the relationship between the companies' stock prices is a strong positive relationship, a strong negative relationship, or a weak relationship?
 
 ---
 
-*Remember to submit your answers into  [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u) before 1400 on Monday 24 October.*
+*Remember to submit your answers into [this Microsoft Form]() before 1400 on Monday 23 October.*
