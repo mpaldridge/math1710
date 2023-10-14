@@ -2,18 +2,21 @@
 
 
 
-# Solutions {#solutions .unnumbered}
+# Solutions and group feedback {#solutions .unnumbered}
 
 ::: {.mysummary}
-This page has the solutions to all the non-assessed questions on Problem Sheet 1. Solutions are added after all tutorials on the Problem Sheet have finished.
+This page has the solutions to all the non-assessed questions on Problem Sheet 1. Solutions are added after all tutorials on a Problem Sheet have finished.
 
 Solutions to assessed questions are available on Minerva in the "Assessments" tab, from one week after the deadline.
 
 There are many ways you get feedback on this module, both group feedback (feedback that is generally relevant to many people) and individual feedback (feedback based specifically on your own approach to the work).
 
 * You will have received both individual and group spoken feedback in your tutorial (the more you speak up in your tutorial, the more individualised the feedback you get in return).
+
 * These solutions include group written feedback on common issues for the class.
+
 * Most importantly, when your work on assessed questions is marked, individual written feedback will be given via the Gradescope site. It is very important that you read that feedback.
+
 * Finally, students who would like even more feedback can discuss their work with me in the "office hours" drop-in sessions.
 :::
 
