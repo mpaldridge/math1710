@@ -2066,14 +2066,14 @@ which is what we wanted.
 
 \end{myanswers}
 
-\textbf{B3.} Suppose we pick a number at random from the set \(\{1, 2, \dots, 2022\}\).
+\textbf{B3.} Suppose we pick a number at random from the set \(\{1, 2, \dots, 2023\}\).
 
 \textbf{(a)} What is the probability that the number is divisible by 5?
 
 \begin{myanswers}
 
-\emph{Solution.} The sample space is \(\Omega = \{1, 2, \dots, 2022\}\). Clearly \(|\Omega| = 2022\). Further, the event in question is \(A = \{5, 10, \dots, 2020\}\) of numbers up to 2022 that are divisible by 5. Thus \(|A|\) is the largest integer no bigger than \(\frac{2022}{5} = 404.4\), which is 404, as this is how many times 5 ``goes into'' 2022. Hence
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2022} = 0.1998 , \]
+\emph{Solution.} The sample space is \(\Omega = \{1, 2, \dots, 2023\}\). Clearly \(|\Omega| = 2023\). The event in question is \(A = \{5, 10, \dots, 2020\}\) of numbers up to 2022 that are divisible by 5. Thus \(|A|\) is the largest integer no bigger than \(\frac{2023}{5} = 404.6\), which is 404, as this is how many times 5 ``goes into'' 2022. Hence
+\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2023} = 0.1997 , \]
 just a tiny bit smaller than \(\frac{1}{5}\).
 
 \textbf{Group feedback:} With these ``classical probability'' questions, the steps should always be:
@@ -2098,16 +2098,18 @@ just a tiny bit smaller than \(\frac{1}{5}\).
 \textbf{(b)} What is the probability the number is divisible by 5 or by 7?
 
 \begin{myanswers}
-\emph{Solution.} With the same \(\Omega\) and \(A\), now let \(B\) be the numbers up to 2022 divisible by \(7\); so we're looking for \(\mathbb P(A \cup B)\). By the addition rule for unions, this is
+\emph{Solution.} With the same \(\Omega\) and \(A\), now let \(B\) be the numbers up to 2023 divisible by \(7\); so we're looking for \(\mathbb P(A \cup B)\). By the addition rule for unions, this is
 \[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
 We already know \(\mathbb P(A) = \frac{404}{2022}\), so need to find out \(\mathbb P(B)\) and \(\mathbb P(A \cap B)\).
 
-As before, \(|B|\) is the largest integer no bigger that \(\frac{2022}{7} = 288.9\), which is \(288\). So
-So \(\mathbb P(B) = \frac{288}{2022}\).
-Now, \(A \cap B\) is the numbers divisible by both 5 and 7, which is precisely the numbers divisible by \(5 \times 7 = 35\). Then \(|A \cap B|\) is \(\frac{2022}{35} = 57.8\) rounded down, so \(\mathbb P(A \cap B) = \frac{57}{2022}\).
+This time, 7 goes into 2023 exactly, so \(|B|\) is \(\frac{2023}{7} = 289\). So
+\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{289}{2023} = \frac{1}{7}  . \]
+
+Now, \(A \cap B\) is the set of numbers divisible by both 5 and 7, which is precisely the numbers divisible by their least common multiple \(5 \times 7 = 35\). Then \(|A \cap B|\) is \(\frac{2023}{35} = 57.8\) rounded down, so \(\mathbb P(A \cap B) = \frac{57}{2023}\).
 
 So finally, we have
-\[ \mathbb P(A \cup B) = \frac{404}{2022} + \frac{288}{2022} - \frac{57}{2022} = \frac{635}{2022} = 0.314. \]
+\[ \mathbb P(A \cup B) = \frac{404}{2023} + \frac{289}{2023} - \frac{57}{2023} = \frac{636}{2023} = 0.314 , \]
+just a tiny bit larger than \(\frac{11}{35}\)
 
 \end{myanswers}
 
@@ -2136,7 +2138,7 @@ Let \(A\) be the event in the question. What is \(|A|\)? Well,
 Hence \(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\). Thus we get
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]
 
-\textbf{Group feedback:} As we have discussed recently, often ``classical probability'' problems can be solved by the step-by-step ``chain rule'' method. Can you use a chain rule argument to find the same answer as
+\textbf{Group feedback:} As we have discussed more recently, after this Problem Sheet was assigned, often ``classical probability'' problems also can be equivalently solved by the step-by-step ``chain rule'' method. Can you use a chain rule argument to find the same answer as
 \[ \mathbb P(A) = 1 \times \frac27 \times \frac16 \times 1 \times 1 \times 1 \times 1 \times 1 = \frac{1}{21} ? \]
 
 \end{myanswers}
@@ -2170,12 +2172,14 @@ The sample space \(\Omega\) is as before. Let's count the outcomes in \(B\), the
 Hence, \(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\). So
 \[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]
 
-\emph{Alternatively}, in a previous tutorial, a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
+\emph{Alternatively}, in a previous year's tutorial, a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.
 
 Ashley has 5 gaps to choose from, then Brook will have 6 gaps (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is \(|\Omega| = 5 \times 6 \times 7\).
 
 To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has \(6 - 2 = 4\) choices (not in the gap directly to the left or right of Ashley), and Chris only has \(7 - 4 = 3\) choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook -- these four gaps are distinct assuming Brook was not next to Ashley). Hence \(|B| = 5 \times 4 \times 3\), and we have
 \[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]
+
+\textbf{Group feedback:} Again, an equivalent answer can be derived using the step-by-step ``chain rule'' method.
 
 \end{myanswers}
 
@@ -2199,9 +2203,10 @@ Hence, the probability is
 
 \begin{myanswers}
 \emph{Solution.}
-Consider the event \(A_k\) that all the digits are at most \(k\). Within \(A_k\), \emph{either} one or more of the digits is \(k\), in which case that is the largest digit we are in \(B_k\); \emph{or} none of the digits are \(k\), in which case they are all at most \(k-1\), and we are in \(A_{k-1}\), \emph{but not both}. Hence we have a disjoint union
+Consider the event \(A_k\) that all the digits are at most \(k\). Within \(A_k\), \emph{either} one or more of the digits equal \(k\), in which case that \(k\) is the largest digit and we are in \(B_k\); \emph{or} none of the digits equal \(k\), in which case they are all at most \(k-1\), and we are in \(A_{k-1}\). Only one of these two possibilitie can occur, so we have a disjoint union
 \[ A_k = B_k \cup A_{k-1} . \]
-Applying Axiom 3 gives
+
+Applying Axiom 3 to the disjoint union gives
 \[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]
 Rearranging this gives
 \[ \mathbb P(B_k) = \mathbb P(A_k) - \mathbb P(A_{k-1}) . \]

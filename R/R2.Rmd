@@ -173,7 +173,7 @@ outputs a vector whose first element is the exponential of the first element of 
 
 *Your numerical answer to the following five assessed questions should be submitted to the Microsoft Form that is linked to below. I recommend you do this in Week 3, but the official deadline is **Monday 23 October at 1400**.*
 
-*You should submit your work by typing your answers into [this Microsoft Form](). You may need to log into your University account to access the Form.*
+*You should submit your work by typing your answers into **[this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUQTVHWlpRS1ZaNzA5SlJGWjlCTzNXWEJUUS4u)**. You may need to log into your University account to access the Form.*
 
 *This worked will be marked automatically by computer, so make sure you answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -205,4 +205,4 @@ That line of code should create two vectors for you in R. These two vectors, `am
 
 ---
 
-*Remember to submit your answers into [this Microsoft Form]() before 1400 on Monday 23 October.*
+*Remember to submit your answers into [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUQTVHWlpRS1ZaNzA5SlJGWjlCTzNXWEJUUS4u) before 1400 on Monday 23 October.*
