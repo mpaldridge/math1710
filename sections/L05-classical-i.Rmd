@@ -1,6 +1,6 @@
 # Classical probability I  {#L05-classical-i}
 
-<!--
+
 ## Probability with equally likely outcomes {#classical-intro}
 
 **Classical probability** is the name we give to probability where there are a finite number of equally likely outcomes.
@@ -91,6 +91,7 @@ So there's about a 52% chance we get at least one 6.
 
 ## Sampling with and without replacement  {#sampling}
 
+Probabilists love problems where they pick coloured balls out of a bag!
 
 ::: {.example}
 *A bag contains 15 balls: 10 black balls and 5 white balls. We draw 3 balls out of the bag. What is the probability all 3 balls are black **(a)** if we put each ball back into the bag after it is chosen; **(b)** if we do not put each ball back into the bag after it is chosen.*
@@ -100,7 +101,7 @@ Let's start with (a). The number of ways to choose a ball out 15 on three occasi
 
 What about (b)? Here we don't put the ball back in the bag once it has been chosen. There are 15 ways to pick the first ball. But then there are only 14 balls left in the bag for the second choice, and only 13 balls for the third choice. So $|\Omega| = 15\times14\times13$. Similarly, there are 10 ways the first ball can be black. But once that black ball is removed, only 9 choices for the second black ball, and only 8 for the third. So $|A| = 10\times9\times8$. So this time we have
 \[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{10\times9\times8}{15\times14\times13} =  \frac{720}{2730} = \frac{24}{91} \approx 0.26, \]
-which is smaller than the answer in part (a).
+which is slightly smaller than the answer in part (a).
 :::
 
 This example illustrated the difference between **sampling with replacement** (when the balls were put back into the bag) and **sampling without replacement** (when the balls were not put back). If we want to sample $k$ items from a set of $n$ items, then:
@@ -110,8 +111,11 @@ This example illustrated the difference between **sampling with replacement** (w
 * the number of ways to sample without replacement is
 \[ \ff{n}{k} = n\times(n-1)\times \cdots\times (n-k+1) .\]
 
-Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. This is still $k$ numbers multiplied together, but decreasing by 1 each time down from $n$. The final number in the product is the number of choices in the $k$th an final round: this is the original $n$ items minus the $k-1$ items sampled in the previous $k-1$ rounds; so the final number is $n - (k-1) = n - k + 1$, not $n - k$. A notation point: Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes $(n)_k$, $P(n,k)$, or ${}^nP_k$.
- -->
+Here, we've defined the notation $\ff{n}{k}$ for the number of ways to sample without replacement; this is called the **falling factorial** or **permutation number**. This is still $k$ numbers multiplied together, but decreasing by 1 each time down from $n$. The final number in the product is the number of choices in the $k$th an final round: this is the original $n$ items minus the $k-1$ items sampled in the previous $k-1$ rounds; so the final number is $n - (k-1) = n - k + 1$. A notation point: Notice that the subscript is underlined in the falling factorial; other notation sometimes used includes $(n)_k$, $P(n,k)$, or ${}^nP_k$.
+
+In our balls-in-a-bag problem, the answer for sampling with replacement was $10^3/15^3$, while the answer for sampling without replacement was $\ff{10}{3}/\ff{15}{3}$.
+
+Next time, we will look at more classical probability problems. Do two of your friends share a birthday? Can you shuffle a deck of cards in an order that has never happened before in the history of the universe? And can you win the National Lottery?
 
 ## Summary  {#summary-L05 .unnumbered}
 

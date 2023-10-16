@@ -230,5 +230,6 @@ But $\mathbb P(\text{spade and ace})$ is the probability of picking the ace of s
 
 * [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 1.3 and 1.4.
 * [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Sections 1.3 and 1.4.
+* My blogpost ["How to prove the addition rule for unions"](https://mpaldridge.github.io/blog/union.html)
 
 On [Problem Sheet 2](#P2), you should now be able to complete Questions A1, A2, B1, B2 and perhaps C1.
