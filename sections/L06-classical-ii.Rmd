@@ -1,12 +1,14 @@
 # Classical probability II  {#L06-classical-ii}
 
-<!--
+
 
 We continue looking at the classical probability $\mathbb P(A) = |A|/|\Omega|$, by looking at ways to enumerate $\Omega$ and $A$. Last time we saw:
 
 * The multiplication principle: $n_1$ choices followed by $n_2$ choices, ..., up to $n_k$ choices gives $n_1 \times n_2 \times \cdots \times n_k$ choices in total.
 * Sampling $k$ objects out of $n$ with replacement gives $n^k$ choices.
 * Sampling $k$ objects out of $n$ without replacement gives $n^{\underline{k}} = n(n-1)\dots(n-k+1)$ choices.
+
+
 
 ## Ordering  {#ordering}
 
@@ -135,7 +137,7 @@ The probability is 50.7%. So it's more likely than not that at least two student
 
 Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are $\binom{23}{2} = 253$ *pairs* of birthdays, and each of those 253 pairs is a potential match.
 
--->
+
 
 ## Summary  {#summary-L06 .unnumbered}
 

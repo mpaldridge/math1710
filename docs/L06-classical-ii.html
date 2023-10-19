@@ -208,6 +208,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
 <ul>
+<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
+<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
+<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
 <li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-L06"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
@@ -264,147 +267,103 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L06-classical-ii" class="section level1 hasAnchor" number="6">
 <h1><span class="header-section-number">Lecture 6</span> Classical probability II<a href="L06-classical-ii.html#L06-classical-ii" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!--
-
-We continue looking at the classical probability $\mathbb P(A) = |A|/|\Omega|$, by looking at ways to enumerate $\Omega$ and $A$. Last time we saw:
-
-* The multiplication principle: $n_1$ choices followed by $n_2$ choices, ..., up to $n_k$ choices gives $n_1 \times n_2 \times \cdots \times n_k$ choices in total.
-* Sampling $k$ objects out of $n$ with replacement gives $n^k$ choices.
-* Sampling $k$ objects out of $n$ without replacement gives $n^{\underline{k}} = n(n-1)\dots(n-k+1)$ choices.
-
-## Ordering  {#ordering}
-
-
-
-::: {.example}
-*Suppose a lecturer marks a pile of $n$ exam papers, all of which receive a different mark. What is the probability she ends up marking them in order from lowest scoring first in the pile to highest scoring last in the pile?*
-
-Here, the sample space $\Omega$ is the set of all orderings of the $n$ exam papers by mark, and $A$ is the event that the papers are in order from lowest to highest scoring. It's clear that $|A| = 1$: since the exams scored different marks, there's only one way of putting the exams in the correct lowest-to-highest order. But what's $|\Omega|$?
-
-There are $n$ choices for the first exam paper to be marked. Then, for the second exam paper, there are $n - 1$ choices left, because the lecturer is not going to mark the same paper twice. There are $n-2$ choices for the third exam paper. And so on, until she has marked $n-1$ papers, and there is only 1 choice left for the final paper. So we have
-\[ |\Omega| = \ff nn = n(n-1)(n-2)\cdots3\cdot2\cdot1 = n! \]
-ways to order the exam papers.
-
-Hence, the probability the papers are marked in order is
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{n(n-1)\cdots2\cdot1} = \frac{1}{n!} . \]
-:::
-
-This number
-\[ n! = \ff nn = n(n-1)(n-2)\cdots3\cdot2\cdot1 \]
-is called **$n$ factorial** and denoted $n!$. It is the number of ways that $n$ different objects can be ordered.
-
-The factorial $n!$ gets very large very quickly. **Stirling's formula** gives the approximation
-$n! \approx \sqrt{2\pi n} \, \mathrm{e}^{-n} \, n^n$.
-
-::: {.example}
-Suppose you shuffle a pack of cards. The resulting ordering of the deck has $52!$ possibilities. This is an unimaginably huge number -- the exact value to 3 significant figures is
-\[ 52! = 8.07 \times 10^{67} , \]
-while Stirling's formula gives the approximation
-\[ 52! \approx \sqrt{2\pi \times 52} \times \mathrm{e}^{-52} \times 52^{52} = 8.05 \times 10^{67} . \]
-This is an 8 followed by 67 zeroes.
-
-If every person on the planet (very roughly $10^{10}$) had shuffled a deck of cards one million ($10^6$) times a second for the entire lifetime of the universe (roughly $10^{17}$ seconds), they could only expect to have got through about $10^{33}$ shuffles.
-This is only the most tiny, microscopic fraction of $52!$. So every time you have ever shuffled a deck of cards, it is essentially certain that you have created an ordering of the deck that has never existed before.
-:::
-
-If we take the ratio of a bigger factorial $n!$ over a smaller factorial $j!$, we get lot of cancellation,
-\begin{align*}
-\frac{n!}{j!} &= \frac{n(n-1) \cdots(j+1)j(j-1) \cdots 1}{j(j-1) \cdots 1} \\
-  &= n(n-1) \cdots (j+1) ,
-\end{align*}
-because the last part of the product in the numerator cancels with the whole of the denominator. Replacing $j$ with $n-k$, this gives
-\[ \frac{n!}{(n-k)!} = n(n-1) \cdots (n - k + 1) = \ff{n}{k} . \]
-This gives a way of writing the falling factorial as the ratio of two (normal) factorials, which can sometimes be useful.
-
-
-
-## Sampling without replacement in any order  {#combinations}
-
-
-
-::: {.example #lotto}
-*In the Lotto, the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers match the 6 numbers on the balls chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?*
-
-Here, $\Omega$ is the set of all possible sets of 6 winning numbers, and $A$ is the set of numbers on your ticket. Clearly $|A| = 1$, but what is $|\Omega|$?
-
-Well, the first ball out of the machine has 59 possibilities, the second ball has 58 possibilities, and so on, making
-\[ 59 \times 58 \times 57 \times 56 \times 55 \times 54 = \ff{59}{6} . \]
-
-But this isn't the correct answer, because the same set of balls could be drawn from the machine in any order! The sets of balls $\{1,2,3,4,5,6\}$ and $\{6,5,4,3,2,1\}$ and $\{1,3,5,6,4,2\}$ are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 balls, which we know is $6!$. So the number of possible sets of 6 balls to come out of the machine is actually
-\[ \binom{59}{6} = \frac{\ff{59}{6}}{6!} = \frac{59 \times 58 \times 57 \times 56 \times 55 \times 54}{6\times5\times4\times3\times2\times1} \approx 45 \text{ million} . \]
-
-Thus the probability that your ticket wins the jackpot is
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{\binom{59}{6}} \approx \frac{1}{45 \text{ million}} \approx 0.000\,000\,02 . \]
-:::
-
-Here, we have introduced the notation
-\[ \binom{n}{k} = \frac{\ff{n}{k}}{k!} = \frac{n(n-1) \cdots (n-k+1)}{k(k-1)\cdots2\cdot1}  \]
-for the number of ways to choose $k$ objects out of $n$ without replacement *and where the order they were chosen in doesn't matter*. This is called the **binomial coefficient**, although when we say it out loud we normally just say "$n$ choose $k$". (Another notation for the binomial coefficient is ${}^n C_k$.)
-
-It can sometimes be useful to remember that $\ff nk = n!/(n-k)!$ allows us to write the binomial coefficient in terms of the factorial function as
-\[ \binom nk = \frac{\ff nk}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]
-
-
-::: {.example #akqj}
-*You are dealt a "hand" of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?*
-
-Here, $\Omega$ is the set of all 13-card hands from the deck, and $A$ is the subset of those that contain the AKQJ of Spades.
-
-Using the binomial coefficient notation, it's clear that
-\[ |\Omega| = \binom{52}{13} = \frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1} . \]
-
-What about $|A|$? If we fix the fact that the hand contains the 4 cards AKQJ of Spades, then it also contains $13-4=9$ cards out of the other $52-4 = 48$ remaining cards in the deck. This makes
-\[ |A| = \binom{48}{9} = \frac{48\times47\times\cdots\times41\times40}{9\times8\times\cdots\times2\times1}\]
-hands.
-
-Thus the probability that the hand contains AKQJ of Spades is
-\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{\binom{48}{9}}{\binom{52}{13}} . \]
-
-Conveniently, we can simplify the expression quite a lot, because plenty of cancellation will occur. We have
-\begin{align*}
+<p>We continue looking at the classical probability <span class="math inline">\(\mathbb P(A) = |A|/|\Omega|\)</span>, by looking at ways to enumerate <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(A\)</span>. Last time we saw:</p>
+<ul>
+<li>The multiplication principle: <span class="math inline">\(n_1\)</span> choices followed by <span class="math inline">\(n_2\)</span> choices, …, up to <span class="math inline">\(n_k\)</span> choices gives <span class="math inline">\(n_1 \times n_2 \times \cdots \times n_k\)</span> choices in total.</li>
+<li>Sampling <span class="math inline">\(k\)</span> objects out of <span class="math inline">\(n\)</span> with replacement gives <span class="math inline">\(n^k\)</span> choices.</li>
+<li>Sampling <span class="math inline">\(k\)</span> objects out of <span class="math inline">\(n\)</span> without replacement gives <span class="math inline">\(n^{\underline{k}} = n(n-1)\dots(n-k+1)\)</span> choices.</li>
+</ul>
+<div id="ordering" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Ordering<a href="L06-classical-ii.html#ordering" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="example">
+<p><span id="exm:unlabeled-div-27" class="example"><strong>Example 6.1  </strong></span><em>Suppose a lecturer marks a pile of <span class="math inline">\(n\)</span> exam papers, all of which receive a different mark. What is the probability she ends up marking them in order from lowest scoring first in the pile to highest scoring last in the pile?</em></p>
+<p>Here, the sample space <span class="math inline">\(\Omega\)</span> is the set of all orderings of the <span class="math inline">\(n\)</span> exam papers by mark, and <span class="math inline">\(A\)</span> is the event that the papers are in order from lowest to highest scoring. It’s clear that <span class="math inline">\(|A| = 1\)</span>: since the exams scored different marks, there’s only one way of putting the exams in the correct lowest-to-highest order. But what’s <span class="math inline">\(|\Omega|\)</span>?</p>
+<p>There are <span class="math inline">\(n\)</span> choices for the first exam paper to be marked. Then, for the second exam paper, there are <span class="math inline">\(n - 1\)</span> choices left, because the lecturer is not going to mark the same paper twice. There are <span class="math inline">\(n-2\)</span> choices for the third exam paper. And so on, until she has marked <span class="math inline">\(n-1\)</span> papers, and there is only 1 choice left for the final paper. So we have
+<span class="math display">\[ |\Omega| = {n}^{\underline{n}} = n(n-1)(n-2)\cdots3\cdot2\cdot1 = n! \]</span>
+ways to order the exam papers.</p>
+<p>Hence, the probability the papers are marked in order is
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{n(n-1)\cdots2\cdot1} = \frac{1}{n!} . \]</span></p>
+</div>
+<p>This number
+<span class="math display">\[ n! = {n}^{\underline{n}} = n(n-1)(n-2)\cdots3\cdot2\cdot1 \]</span>
+is called <strong><span class="math inline">\(n\)</span> factorial</strong> and denoted <span class="math inline">\(n!\)</span>. It is the number of ways that <span class="math inline">\(n\)</span> different objects can be ordered.</p>
+<p>The factorial <span class="math inline">\(n!\)</span> gets very large very quickly. <strong>Stirling’s formula</strong> gives the approximation
+<span class="math inline">\(n! \approx \sqrt{2\pi n} \, \mathrm{e}^{-n} \, n^n\)</span>.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-28" class="example"><strong>Example 6.2  </strong></span>Suppose you shuffle a pack of cards. The resulting ordering of the deck has <span class="math inline">\(52!\)</span> possibilities. This is an unimaginably huge number – the exact value to 3 significant figures is
+<span class="math display">\[ 52! = 8.07 \times 10^{67} , \]</span>
+while Stirling’s formula gives the approximation
+<span class="math display">\[ 52! \approx \sqrt{2\pi \times 52} \times \mathrm{e}^{-52} \times 52^{52} = 8.05 \times 10^{67} . \]</span>
+This is an 8 followed by 67 zeroes.</p>
+<p>If every person on the planet (very roughly <span class="math inline">\(10^{10}\)</span>) had shuffled a deck of cards one million (<span class="math inline">\(10^6\)</span>) times a second for the entire lifetime of the universe (roughly <span class="math inline">\(10^{17}\)</span> seconds), they could only expect to have got through about <span class="math inline">\(10^{33}\)</span> shuffles.
+This is only the most tiny, microscopic fraction of <span class="math inline">\(52!\)</span>. So every time you have ever shuffled a deck of cards, it is essentially certain that you have created an ordering of the deck that has never existed before.</p>
+</div>
+<p>If we take the ratio of a bigger factorial <span class="math inline">\(n!\)</span> over a smaller factorial <span class="math inline">\(j!\)</span>, we get lot of cancellation,
+<span class="math display">\[\begin{align*}
+\frac{n!}{j!} &amp;= \frac{n(n-1) \cdots(j+1)j(j-1) \cdots 1}{j(j-1) \cdots 1} \\
+  &amp;= n(n-1) \cdots (j+1) ,
+\end{align*}\]</span>
+because the last part of the product in the numerator cancels with the whole of the denominator. Replacing <span class="math inline">\(j\)</span> with <span class="math inline">\(n-k\)</span>, this gives
+<span class="math display">\[ \frac{n!}{(n-k)!} = n(n-1) \cdots (n - k + 1) = {n}^{\underline{k}} . \]</span>
+This gives a way of writing the falling factorial as the ratio of two (normal) factorials, which can sometimes be useful.</p>
+</div>
+<div id="combinations" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Sampling without replacement in any order<a href="L06-classical-ii.html#combinations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="example">
+<p><span id="exm:lotto" class="example"><strong>Example 6.3  </strong></span><em>In the Lotto, the UK national lottery, you can buy a ticket for £2 and choose 6 numbers between 1 and 59. If your 6 numbers match the 6 numbers on the balls chosen by the lottery machine, you win the jackpot (usually between £2 million and £20 million, shared between the tickets that get all 6 numbers). If you buy a ticket, what is the probability you win the jackpot?</em></p>
+<p>Here, <span class="math inline">\(\Omega\)</span> is the set of all possible sets of 6 winning numbers, and <span class="math inline">\(A\)</span> is the set of numbers on your ticket. Clearly <span class="math inline">\(|A| = 1\)</span>, but what is <span class="math inline">\(|\Omega|\)</span>?</p>
+<p>Well, the first ball out of the machine has 59 possibilities, the second ball has 58 possibilities, and so on, making
+<span class="math display">\[ 59 \times 58 \times 57 \times 56 \times 55 \times 54 = {59}^{\underline{6}} . \]</span></p>
+<p>But this isn’t the correct answer, because the same set of balls could be drawn from the machine in any order! The sets of balls <span class="math inline">\(\{1,2,3,4,5,6\}\)</span> and <span class="math inline">\(\{6,5,4,3,2,1\}\)</span> and <span class="math inline">\(\{1,3,5,6,4,2\}\)</span> are all the same set of numbers. How many ways can we see the same list of numbers? This is precisely the number of orderings of 6 balls, which we know is <span class="math inline">\(6!\)</span>. So the number of possible sets of 6 balls to come out of the machine is actually
+<span class="math display">\[ \binom{59}{6} = \frac{{59}^{\underline{6}}}{6!} = \frac{59 \times 58 \times 57 \times 56 \times 55 \times 54}{6\times5\times4\times3\times2\times1} \approx 45 \text{ million} . \]</span></p>
+<p>Thus the probability that your ticket wins the jackpot is
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{1}{\binom{59}{6}} \approx \frac{1}{45 \text{ million}} \approx 0.000\,000\,02 . \]</span></p>
+</div>
+<p>Here, we have introduced the notation
+<span class="math display">\[ \binom{n}{k} = \frac{{n}^{\underline{k}}}{k!} = \frac{n(n-1) \cdots (n-k+1)}{k(k-1)\cdots2\cdot1}  \]</span>
+for the number of ways to choose <span class="math inline">\(k\)</span> objects out of <span class="math inline">\(n\)</span> without replacement <em>and where the order they were chosen in doesn’t matter</em>. This is called the <strong>binomial coefficient</strong>, although when we say it out loud we normally just say “<span class="math inline">\(n\)</span> choose <span class="math inline">\(k\)</span>”. (Another notation for the binomial coefficient is <span class="math inline">\({}^n C_k\)</span>.)</p>
+<p>It can sometimes be useful to remember that <span class="math inline">\({n}^{\underline{k}} = n!/(n-k)!\)</span> allows us to write the binomial coefficient in terms of the factorial function as
+<span class="math display">\[ \binom nk = \frac{{n}^{\underline{k}}}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]</span></p>
+<div class="example">
+<p><span id="exm:akqj" class="example"><strong>Example 6.4  </strong></span><em>You are dealt a “hand” of 13 cards from a deck of 52 cards. What is the probability that you have the Ace, King, Queen, and Jack of Spades?</em></p>
+<p>Here, <span class="math inline">\(\Omega\)</span> is the set of all 13-card hands from the deck, and <span class="math inline">\(A\)</span> is the subset of those that contain the AKQJ of Spades.</p>
+<p>Using the binomial coefficient notation, it’s clear that
+<span class="math display">\[ |\Omega| = \binom{52}{13} = \frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1} . \]</span></p>
+<p>What about <span class="math inline">\(|A|\)</span>? If we fix the fact that the hand contains the 4 cards AKQJ of Spades, then it also contains <span class="math inline">\(13-4=9\)</span> cards out of the other <span class="math inline">\(52-4 = 48\)</span> remaining cards in the deck. This makes
+<span class="math display">\[ |A| = \binom{48}{9} = \frac{48\times47\times\cdots\times41\times40}{9\times8\times\cdots\times2\times1}\]</span>
+hands.</p>
+<p>Thus the probability that the hand contains AKQJ of Spades is
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{\binom{48}{9}}{\binom{52}{13}} . \]</span></p>
+<p>Conveniently, we can simplify the expression quite a lot, because plenty of cancellation will occur. We have
+<span class="math display">\[\begin{align*}
 \mathbb P(A) = \frac{\binom{48}{9}}{\binom{52}{13}}
-  &= \frac{\frac{48\times47\times\cdots\times41\times40}{9\times8\times\cdots\times2\times1}}{\frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1}} \\
-  &= \frac{48\times47\times\cdots\times41\times40}{52\times51\times\cdots\times41\times40} \times \frac{13\times12\times\cdots\times2\times1}{9\times8\times\cdots\times2\times1} \\
-  &= \frac{13\times12\times11\times10}{52\times51\times50\times49} \\
-  &\approx 0.0026 ,
-\end{align*}
-or about 1 in every 380 hands.
-:::
-
-
-## Birthday problem  {#birthday}
-
-::: {.example}
-*There are $k = 23$ students in a class. What is the probability that at least two of the students share a birthday?*
-
-This a famous problem, known as the "birthday problem". You may have seen this problem before -- but let's try to solve it using the techniques from this section of notes. If you haven't seen it before, you might like to guess what you think the answer might be. (We'll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)
-
-The sample space $\Omega$ is the set of possible birthdays for all $k$ students. Clearly $|\Omega| = 365^k$.
-
-Let $A$ be the even that at least one pair of student share a birthday. Since this is an "at least" event, it seems like it might be a good idea to look instead at the complementary event $A^\comp$. If $A$ is the event that there's at least one shared birthday, then $A^\comp$ is the event that there are *no* shared birthdays; that is, $A^\comp$ is the event that all $k$ students have *different* birthdays.
-
-So what is $|A^\comp|$, the number of ways the $k$ students can have different birthdays? Well, the first student can have any of the 365 days for their birthday. For them to have different birthdays, the second student only has 364 days available. Then the third student must avoid the birthday of students 1 and 2, so has 363 available days, and so on. We see that 
-\[ |A^\comp| = 365 \times 364 \times \cdots \times (365 - k + 1) = 365^{\underline{k}} . \]
-
-Hence, the probability at least two students share a birthday is
-\[ \mathbb P(A) = 1 - \mathbb P(A^\comp) = 1 - \frac{365^{\underline{k}}}{365^k} = 1 - \frac{365}{365} \cdot \frac{364}{365} \cdots \frac{365-k+1}{365} . \]
-
-Setting $k = 23$, we can calculate the required answer in R:
-
-```r
-k <- 23
-1 - prod((365:(365 - k + 1)) / 365)
-```
-
-```
-[1] 0.5072972
-```
-The probability is 50.7%. So it's more likely than not that at least two students share a birthday.
-:::
-
-Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are $\binom{23}{2} = 253$ *pairs* of birthdays, and each of those 253 pairs is a potential match.
-
--->
+  &amp;= \frac{\frac{48\times47\times\cdots\times41\times40}{9\times8\times\cdots\times2\times1}}{\frac{52\times51\times\cdots\times41\times40}{13\times12\times\cdots\times2\times1}} \\
+  &amp;= \frac{48\times47\times\cdots\times41\times40}{52\times51\times\cdots\times41\times40} \times \frac{13\times12\times\cdots\times2\times1}{9\times8\times\cdots\times2\times1} \\
+  &amp;= \frac{13\times12\times11\times10}{52\times51\times50\times49} \\
+  &amp;\approx 0.0026 ,
+\end{align*}\]</span>
+or about 1 in every 380 hands.</p>
+</div>
+</div>
+<div id="birthday" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Birthday problem<a href="L06-classical-ii.html#birthday" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="example">
+<p><span id="exm:unlabeled-div-29" class="example"><strong>Example 6.5  </strong></span><em>There are <span class="math inline">\(k = 23\)</span> students in a class. What is the probability that at least two of the students share a birthday?</em></p>
+<p>This a famous problem, known as the “birthday problem”. You may have seen this problem before – but let’s try to solve it using the techniques from this section of notes. If you haven’t seen it before, you might like to guess what you think the answer might be. (We’ll assume all days are equally likely for birthdays, and ignore the leap day 29 February.)</p>
+<p>The sample space <span class="math inline">\(\Omega\)</span> is the set of possible birthdays for all <span class="math inline">\(k\)</span> students. Clearly <span class="math inline">\(|\Omega| = 365^k\)</span>.</p>
+<p>Let <span class="math inline">\(A\)</span> be the even that at least one pair of student share a birthday. Since this is an “at least” event, it seems like it might be a good idea to look instead at the complementary event <span class="math inline">\(A^\mathsf{c}\)</span>. If <span class="math inline">\(A\)</span> is the event that there’s at least one shared birthday, then <span class="math inline">\(A^\mathsf{c}\)</span> is the event that there are <em>no</em> shared birthdays; that is, <span class="math inline">\(A^\mathsf{c}\)</span> is the event that all <span class="math inline">\(k\)</span> students have <em>different</em> birthdays.</p>
+<p>So what is <span class="math inline">\(|A^\mathsf{c}|\)</span>, the number of ways the <span class="math inline">\(k\)</span> students can have different birthdays? Well, the first student can have any of the 365 days for their birthday. For them to have different birthdays, the second student only has 364 days available. Then the third student must avoid the birthday of students 1 and 2, so has 363 available days, and so on. We see that
+<span class="math display">\[ |A^\mathsf{c}| = 365 \times 364 \times \cdots \times (365 - k + 1) = 365^{\underline{k}} . \]</span></p>
+<p>Hence, the probability at least two students share a birthday is
+<span class="math display">\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{365^{\underline{k}}}{365^k} = 1 - \frac{365}{365} \cdot \frac{364}{365} \cdots \frac{365-k+1}{365} . \]</span></p>
+<p>Setting <span class="math inline">\(k = 23\)</span>, we can calculate the required answer in R:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="L06-classical-ii.html#cb17-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">23</span></span>
+<span id="cb17-2"><a href="L06-classical-ii.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>((<span class="dv">365</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">-</span> k <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">365</span>)</span></code></pre></div>
+<pre><code>[1] 0.5072972</code></pre>
+<p>The probability is 50.7%. So it’s more likely than not that at least two students share a birthday.</p>
+</div>
+<p>Some people find it surprising that only 23 students have such a high probability of sharing a birthday, since 23 is so small compared to 365. But remember there are <span class="math inline">\(\binom{23}{2} = 253\)</span> <em>pairs</em> of birthdays, and each of those 253 pairs is a potential match.</p>
+</div>
 <div id="summary-L06" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L06-classical-ii.html#summary-L06" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
