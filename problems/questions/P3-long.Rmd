@@ -163,7 +163,7 @@ where, in the fourth line we used Axiom 3 for the probability measure $\mathbb P
 ::: {.myanswers data-latex=""}
 *Solution.* The main advantage is that it seems likely that a soldier might want to lie in answer to a "straight question", given that if their superiors discovered they had taken illegal drugs, there could be very serious consequences. This method allows a certain "plausible deniability": just because the soldier answers "Yes", we cannot know for sure whether they have taken illegal drugs or merely picked the "Yes" card. Thus we might hope to get more honest answers this way. Perhaps you can think of other advantages.
 
-There could be disadvantages. The complicated set-up of the experiment could lead to the subjects (or experimenters) making an error. The scientists good be "lulled into a false sense of security" of thinking they get fully honest answers, when soldiers picking card 3 might still choose to lie. Perhaps you can think of other disadvantages.
+There could be disadvantages. The complicated set-up of the experiment could lead to the subjects (or experimenters) making an error. The scientists could be "lulled into a false sense of security" of thinking they get fully honest answers, when soldiers picking card 3 might still choose to lie. Perhaps you can think of other disadvantages.
 :::
 ::::
 
@@ -172,14 +172,14 @@ There could be disadvantages. The complicated set-up of the experiment could lea
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-Let $C_1, C_2, C_3$ be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities $\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13$ and make up a partition. Let $Y$ be the event that the soldier answers yes. We know that $\mathbb P(Y \mid C_1) = 1$, $\mathbb P(Y \mid C_2) = 0$ and $\mathbb P(Y \mid C_3) = \mathbb P(D)$, where $\mathbb P(D)$, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that $\mathbb P(Y) = 0.4$.
+Let $C_1, C_2, C_3$ be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities $\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13$ and make up a partition. Let $Y$ be the event that the soldier answers yes. We know that $\mathbb P(Y \mid C_1) = 1$, $\mathbb P(Y \mid C_2) = 0$ and $\mathbb P(Y \mid C_3) = \delta$, where $\mathbb P(D)$, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that $\mathbb P(Y) = 0.4$.
 
 The law of total probability tells us that
 \[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 
 \mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]
 With the information we have, we get
-\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, p = \tfrac13 + \tfrac13 \,p . \]
-Solving this gives $p = \frac15 = 20\%$.
+\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D) . \]
+Solving this gives $\mathbb P(D) = \frac15 = 20\%$.
 :::
 ::::
 
@@ -223,8 +223,6 @@ Then using $\mu = (n+1)/2$ from part (a), we have
 
 :::: {.subq}
 **(c)** Let $Y$ be a discrete uniform distribution on $b - a + 1$ values $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of $Y$.
-
-*[**Note:** "$b - a + 1$ values" is correct, but this was wrong earlier.]*
 
 ::: {.myanswers data-latex=""}
 *Solution.* If we take $n = b - a + 1$, then $Y$ has the same distribution as $X_n + (a-1)$. This is because $x = 1$ maps to $y = 1 + (a-1) = a$; $x = 2$ maps to $y = 2 + (a-1) = a+1$; and so on; up to $x = n$ mapping to $y = n + (a-1) = (b - a + 1) + (a-1) = b$. So the ranges match up perfectly.
@@ -280,10 +278,12 @@ Some other possible explanations include:
 * The expectation is only infinite if you really could win an extraordinarily large amount of money. Suppose that the person offering the game only has £$2^{20}$, or just over £1 million. In that case, if the first 20 tosses are all Tails, the opponent gives you all £$2^{20}$ then declares bankruptcy and the game stops. In this more realistic case, your expected winnings are only
 \[  \sum_{n=1}^{20} 2^n \times \big(\tfrac12\big)^n + 2^{20} \times \big(\tfrac12\big)^{20} = \sum_{n=1}^{20} 1 + 1 = 21 , \]
 or £21; a more reasonable price to pay to play the game.
-* The amount of benefit (or "utility") one gets from winning a large amount of money might not be directly proportional to the amount. For example, £200 million might be very nice, but it's not *twice* as nice as £100 million -- after all, what else could you really do with the second £100 million. Perhaps the utility of £$m$ scales more logarithmically than linearly, like $\log_2 m$ in some appropriate "happiness units" In that case, the expected *utility* from the game is
-\[ \sum_{n=1}^\infty \log_2(2^n) \times \big(\tfrac12\big)^n = \sum_{n=1}^\infty n \times \big(\tfrac12\big)^n = 2 , \]
-happiness units, and you might be willing to pay 2 happiness-units-worth of money to play.
-* Normal advice to play games with positive expected winnings only really applies if you can play the game many times (or very similar games). For repeated games, the expected winnings can be interpreted as "the winnings you are likely to get in the long run". For one-off highly unusual games, this doesn't hold, so one needs a different criterion to decide whether to play. (If I was allowed to play this game a million times for £100 a round, but didn't have to settle the money until all one million games had finished, then I would strongly consider playing.)
+
+* The amount of benefit (or "utility") one gets from winning a large amount of money might not be directly proportional to the amount. For example, £200 million might be very nice, but it's not *twice* as nice as £100 million -- after all, what else could you really do with the second £100 million? Perhaps the utility $U(m)$ of £$m$ scales more logarithmically than linearly, like $U(m) = \log_2 m$ in some appropriate "happiness units" In that case, the expected *utility* from the game is
+\[ \sum_{n=1}^\infty U(2^n) \, \big(\tfrac12\big)^n = \sum_{n=1}^\infty \log_2(2^n) \, \big(\tfrac12\big)^n = \sum_{n=1}^\infty n \times \big(\tfrac12\big)^n = 2 , \]
+happiness units, and you might be willing to pay 2 happiness-units-worth of money to play. Since $U(4) = \log_2 4 = 2$, this would be £4.
+
+* Normal advice to play games with positive expected winnings only really applies if you can play the game many times (or very similar games many times). For repeated games, the expected winnings can be interpreted as "the winnings you are likely to get in the long run". For one-off highly unusual games, this doesn't hold, so one needs a different criterion to decide whether to play. (If I was allowed to play this game a million times for £100 a round, but didn't have to settle the money until all one million games had finished, then I would strongly consider playing.)
 
 You can probably come up with other explanations of your own too.
 :::

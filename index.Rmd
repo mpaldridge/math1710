@@ -18,6 +18,17 @@ knitr::opts_chunk$set(comment = NA)
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
+**Week 4** (23--27 October):
+
+* [**Lecture 7:** Independence and conditional probabilty](#L07-conditional) (Monday 23 October)
+* [**Lecture 8:** Two theorems on conditional probability](#L08-two-theorems) (Wednesday 25 October)
+* **Tutorial** on [Problem Sheet 2](#P2)
+* [**Problem Sheet 2:**](#P2) Work through in preparation for your tutorial. Deadline for assessed questions: Monday 30 October.
+* [**R Worksheet 3**](#R)
+* **Office hours:** Friday 27 October, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html) (*note change of venue*)
+:::
+
+::: {.mysched}
 **Week 3** (16--20 October):
 
 * [**Lecture 5:** Classical probability I](#L05-classical-i) (Monday 16 October)

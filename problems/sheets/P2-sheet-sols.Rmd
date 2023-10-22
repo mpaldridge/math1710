@@ -15,21 +15,21 @@ header-includes:
 ---
 
 
-## A: Short questions {#P1-short .unnumbered}
+## A: Short questions {#P2-short .unnumbered}
 
 ```{r, child = "../questions/P2-short.Rmd"}
 ```
 
 \clearpage
 
-## B: Long questions {#P1-long .unnumbered}
+## B: Long questions {#P2-long .unnumbered}
 
 ```{r, child = "../questions/P2-long.Rmd"}
 ```
 
 \clearpage
 
-## C: Assessed questions {#P1-assessed .unnumbered}
+## C: Assessed questions {#P2-assessed .unnumbered}
 
 ```{r, child = "../questions/P2-assessed.Rmd"}
 ```

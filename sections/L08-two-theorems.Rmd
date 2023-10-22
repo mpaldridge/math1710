@@ -1,16 +1,11 @@
 # Two theorems on conditional probability {#L08-two-theorems}
 
+<!--
+
 Last time we met the conditional probability $\mathbb P(B \mid A)$ of one event $B$ given another event $A$. In this lecture we will be looking two very useful theorems about conditional probability, called the **law of total probability** and **Bayes' theorem** -- and they're particularly powerful when used together.
 
 ## Law of total probability  {#total-prob}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/zBfFOYkfoss"></iframe>
-:::
-::::
--->
 
 ::: {.example #dice-total}
 *My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?*
@@ -63,13 +58,6 @@ Therefore, we have
 
 ## Bayes' theorem  {#bayes}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/uLSewGUPH1g"></iframe>
-:::
-::::
--->
 
 
 In this section, we will discuss an important result called **Bayes' theorem**. 
@@ -80,7 +68,7 @@ For events $A$ and $B$ with $\mathbb P(A), \mathbb P(B) > 0$, we have
 \[ \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} .  \]
 :::
 
-Bayes' theorem is thought to have first appeared in the writings of Rev. [Thomas Bayes](https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/), a British church minister and mathematician, shortly after his death, in the 1760s. (Bayes' work was significantly edited by [Richard Price](https://mathshistory.st-andrews.ac.uk/Biographies/Price/), another minister--mathematician, and many historians think that Price deserves a large share of the credit.)
+Bayes' theorem is thought to have first appeared in the writings of Rev. [Thomas Bayes](https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/), a British church minister and mathematician, shortly after his death, in the 1760s. (Bayes' work was significantly edited by [Richard Price](https://mathshistory.st-andrews.ac.uk/Biographies/Price/), another minister--mathematician, and many historians of mathematics think that Price deserves a good share of the credit.)
 
 ::: {.proof}
 From the definition of conditional probability, we can write $\mathbb P(A \cap B)$ in two different ways: we can write it as
@@ -162,6 +150,8 @@ Many people find this result surprising. It sometimes helps to put more concrete
 
 The key point is that the disease is rare -- only 2% of people have it. So even though positive test increases the likelihood you have the disease a lot (it's about 14 times more likely), it's not enough to make it a very large probability.
 
+-->
+
 ## Summary  {#summary-L08 .unnumbered}
 
 ::: {.mysummary}
@@ -169,3 +159,10 @@ The key point is that the disease is rare -- only 2% of people have it. So even 
 \[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
 * Bayes' theorem says that ${\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }$.
 :::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 2.1 and 2.2.
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Section 1.8.
+
+On [Problem Sheet 3](#P3), you should now be able to complete Questions A1, A2, B1--3 and C1.

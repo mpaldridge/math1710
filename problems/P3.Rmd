@@ -12,7 +12,7 @@ display: none !important;
 
 
 \commfalse
-
+<!--
 ::: {.mysummary}
 [Full **solutions to non-assessed questions**](#P3-solutions) are now available.
 :::
@@ -24,9 +24,9 @@ display: none !important;
 ::: {.mysummary}
 You can [download this problem sheet as a PDF file](P3-sheet.pdf)
 :::
-
+-->
 ::: {.mysummary}
-This is Problem Sheet 3. This problem sheet covers material from Lectures 7 to 10. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by **Monday 14 November**.
+This is Problem Sheet 3. This problem sheet covers material from Lectures 7 to 10. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 6. The problem sheet contains two assessed questions, which are due in by **Monday 13 November**.
 :::
 
 ## A: Short questions {#P3-short .unnumbered}

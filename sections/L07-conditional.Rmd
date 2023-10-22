@@ -1,14 +1,9 @@
 # Independence and conditional probability  {#L07-conditional}
 
+<!--
+
 ## Independent events  {#independent-events}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/9lhF4WEoJxk"></iframe>
-:::
-::::
--->
 
 *Suppose 40% of people have blond hair, and 20% of people have blue eyes. What proportion of people have both blond hair and blue eyes?*
 
@@ -31,7 +26,7 @@ There are two ways we can use this definition.
 In this second case, we might know $A$ and $B$ are independent because we are specifically told they are in a question. But alternatively we might reason that $A$ and $B$ must be independent because the related experiments are not physically related. For example if we roll a dice then toss a coin, we might reason that $\{\text{roll a 5}\}$ and $\{\text{the coin lands Heads}\}$ must be independent because the dice roll doesn't effect the coin toss -- we could then use the independence assumption in calculations.
 
 ::: {.example}
-*Consider rolling a dice. Let $A = \{\text{even number}\} = \{2,4,6\}$, and let $B = \{\text{roll at least 4}\} = \{4,5,6\}$. Are $A$ and $B$ independent?*
+*I roll a single dice dice. Let $A = \{\text{even number}\} = \{2,4,6\}$ be the event I roll an even number, and let $B = \{\text{at least 4}\} = \{4,5,6\}$ be the event I roll at least 4. Are the events $A$ and $B$ independent?*
 
 Clearly we have $\mathbb P(A) = \frac36 = \frac12$ and $\mathbb P(B) = \frac 36 = \frac12$. The intersection is $A \cap B = \{4,6\}$, so $\mathbb P(A \cap B) = \frac26 = \frac13$. So we see that
 \[ \mathbb P(A\cap B) = \frac13  \qquad \text{and} \qquad  \mathbb P(A)\, \mathbb P(B) = \frac12 \times \frac12 = \frac14 . \]
@@ -62,13 +57,6 @@ Finally, because the events are disjoint, we have
 
 ## Conditional probability  {#conditional}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/x3wISv0RWic"></iframe>
-:::
-::::
--->
 
 Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:
 
@@ -95,12 +83,12 @@ Let $A$ and $B$ be events, with $\mathbb P(A) > 0$. Then the **conditional proba
 The condition $\mathbb P(A) > 0$ is just to ensure we don't have any "divide by 0" errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
 
 Conditional probability ties in with independence in an important way. Suppose $A$ and $B$ are independent, so $\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)$. Then the conditional probability becomes
-\[ \mathbb P(B \mid A) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]
+\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]
 so $\mathbb P(B \mid A) = \mathbb P(B)$. In other words, if $A$ and $B$ are independent, then $A$ happening doesn't affect the probability of $B$ happening (and vice versa).
 
-So when we have independence, $\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)$, and the mathematics is quite easy. But conditional probability tells us how things work when we don't have independence.
+So when we have independence, we know that $\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)$, and the mathematics is quite easy. But conditional probability tells us how things work when we don't have independence.
 
-Like with independence, we can use the definition of conditional probability in two ways. The first way is that if we know $\mathbb P(A \cap B)$ and $\mathbb P(A)$, then we can calculate the conditional probability of $B$ given $A$ as
+As with independence, we can use the definition of conditional probability in two ways. The first way is that if we know $\mathbb P(A \cap B)$ and $\mathbb P(A)$, then we can calculate the conditional probability of $B$ given $A$ as
 \[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
 
 ::: {.example}
@@ -161,6 +149,8 @@ The answer we got before was
 It's easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer "all at once", while this new chain rule method gets the answer "one step at a time".
 :::
 
+-->
+
 
 ## Summary  {#summary-L07 .unnumbered}
 
@@ -173,3 +163,8 @@ It's easy to see that this is the same answer. The structure of the answers show
   = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap \cdots \cap  A_{n-1}) . 
 \end{multline*}
 :::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 2.1 and 2.2.
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Sections 1.6 and 1.7.

@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 8 Two theorems on conditional probability | MATH1710 Probability and Statistics I</title>
-  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 8 Two theorems on conditional probability | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lecture 8 Two theorems on conditional probability | MATH1710 Probability and Statistics I" />
   
-  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
 <meta name="author" content="Matthew Aldridge" />
@@ -30,7 +30,7 @@
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="L07-conditional.html"/>
-<link rel="next" href="L09-discrete-rv.html"/>
+<link rel="next" href="P3.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -118,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -141,10 +145,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem Sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R Worksheets and Practicals</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>“Office hours” drop-in sessions</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
@@ -218,31 +222,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
-<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
-<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
 <li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
 <ul>
-<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
-<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
-<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
 <li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
-<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
-<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
-<li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
-<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
-<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
-<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-L10"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
 <ul>
@@ -251,135 +235,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
-<li class="chapter" data-level="11.3" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#models"><i class="fa fa-check"></i><b>11.3</b> Distributions as models for data</a></li>
-<li class="chapter" data-level="" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
-<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
-<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-process"><i class="fa fa-check"></i><b>12.3</b> Poisson process</a></li>
-<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
-<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
-<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#summary-L13"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
-<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
-<li class="chapter" data-level="14.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>14.3</b> Correlation</a></li>
-<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-L14"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
-<ul>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
-<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
-<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L15-continuous.html"><a href="L15-continuous.html#summary-L15"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="L16-normal.html"><a href="L16-normal.html"><i class="fa fa-check"></i><b>16</b> Normal distribution</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="L16-normal.html"><a href="L16-normal.html#normal-definition"><i class="fa fa-check"></i><b>16.1</b> Definition of the normal distribution</a></li>
-<li class="chapter" data-level="16.2" data-path="L16-normal.html"><a href="L16-normal.html#normal-properties"><i class="fa fa-check"></i><b>16.2</b> Properties of the normal distribution</a></li>
-<li class="chapter" data-level="16.3" data-path="L16-normal.html"><a href="L16-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
-<li class="chapter" data-level="16.4" data-path="L16-normal.html"><a href="L16-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
-<li class="chapter" data-level="" data-path="L16-normal.html"><a href="L16-normal.html#summary-L16"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html"><i class="fa fa-check"></i><b>17</b> Exponential distribution and multiple continuous random variables</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#exponential"><i class="fa fa-check"></i><b>17.1</b> Exponential distribution</a></li>
-<li class="chapter" data-level="17.2" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#continuous-multiple"><i class="fa fa-check"></i><b>17.2</b> Multiple continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#summary-L17"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
-<ul>
-<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.1</b> Law of large numbers</a></li>
-<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.2</b> Central limit theorem</a></li>
-<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.3</b> Approximations with the normal distribution</a></li>
-<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
-<ul>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
-<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
-<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
-<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#normal-normal"><i class="fa fa-check"></i><b>19.3</b> Normal–normal model</a></li>
-</ul></li>
-<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> More Bayesian models</a>
-<ul>
-<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
-<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
-<li class="chapter" data-level="" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
-<li class="chapter" data-level="21" data-path="L21-questions.html"><a href="L21-questions.html"><i class="fa fa-check"></i><b>21</b> All questions answered</a>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html"><i class="fa fa-check"></i>R Practical 1</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
-<li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
-<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#joint-distributions"><i class="fa fa-check"></i><b>21.3</b> Joint distributions</a></li>
-<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#law-of-the-unconscious-statistician"><i class="fa fa-check"></i><b>21.4</b> Law of the unconscious statistician</a></li>
-<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.5</b> Statistical tables</a></li>
-<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.6</b> End-of semester survey</a></li>
-<li class="chapter" data-level="21.7" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.7</b> Other modules</a></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#about-prac"><i class="fa fa-check"></i>About the Practical</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#r-uni"><i class="fa fa-check"></i>Accessing R and RStudio on University computers</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#directions"><i class="fa fa-check"></i>Where are the computer clusters?</a>
 <ul>
-<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#about-the-exam"><i class="fa fa-check"></i><b>22.1</b> About the exam</a></li>
-<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.2</b> Past papers</a></li>
-<li class="chapter" data-level="22.3" data-path="L22-exam.html"><a href="L22-exam.html#exam-faqs"><i class="fa fa-check"></i><b>22.3</b> Exam FAQs</a>
-<ul>
-<li class="chapter" data-level="22.3.1" data-path="L22-exam.html"><a href="L22-exam.html#calculators"><i class="fa fa-check"></i><b>22.3.1</b> Calculators</a></li>
-<li class="chapter" data-level="22.3.2" data-path="L22-exam.html"><a href="L22-exam.html#revision"><i class="fa fa-check"></i><b>22.3.2</b> Revision</a></li>
-<li class="chapter" data-level="22.3.3" data-path="L22-exam.html"><a href="L22-exam.html#r-questions-on-the-exam"><i class="fa fa-check"></i><b>22.3.3</b> R questions on the exam</a></li>
-<li class="chapter" data-level="22.3.4" data-path="L22-exam.html"><a href="L22-exam.html#statistical-tables-1"><i class="fa fa-check"></i><b>22.3.4</b> Statistical tables</a></li>
-<li class="chapter" data-level="22.3.5" data-path="L22-exam.html"><a href="L22-exam.html#how-much-should-i-write"><i class="fa fa-check"></i><b>22.3.5</b> How much should I write?</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#stoner"><i class="fa fa-check"></i>EC Stoner Cluster 6.68</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#fourman"><i class="fa fa-check"></i>Fourman O &amp; P Clusters</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#manton"><i class="fa fa-check"></i>Irene Manton North &amp; South Clusters</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#psychology"><i class="fa fa-check"></i>Psychology Cluster 1.43</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#hughes"><i class="fa fa-check"></i>Richard Hughes Cluster</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions and group feedback</a>
 <ul>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
-<ul>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
-<ul>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P6-solutions"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -403,131 +282,157 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L08-two-theorems" class="section level1 hasAnchor" number="8">
 <h1><span class="header-section-number">Lecture 8</span> Two theorems on conditional probability<a href="L08-two-theorems.html#L08-two-theorems" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Last time we met the conditional probability <span class="math inline">\(\mathbb P(B \mid A)\)</span> of one event <span class="math inline">\(B\)</span> given another event <span class="math inline">\(A\)</span>. In this lecture we will be looking two very useful theorems about conditional probability, called the <strong>law of total probability</strong> and <strong>Bayes’ theorem</strong> – and they’re particularly powerful when used together.</p>
-<div id="total-prob" class="section level2 hasAnchor" number="8.1">
-<h2><span class="header-section-number">8.1</span> Law of total probability<a href="L08-two-theorems.html#total-prob" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/zBfFOYkfoss"></iframe>
+
+Last time we met the conditional probability $\mathbb P(B \mid A)$ of one event $B$ given another event $A$. In this lecture we will be looking two very useful theorems about conditional probability, called the **law of total probability** and **Bayes' theorem** -- and they're particularly powerful when used together.
+
+## Law of total probability  {#total-prob}
+
+
+::: {.example #dice-total}
+*My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?*
+
+If my friend were to tell which dice he picked, then this question would be very easy! If we write $D_4$, $D_6$ and $D_{10}$ to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
+\[ \mathbb P(\text{roll 5} \mid D_4) = 0 \qquad \mathbb P(\text{roll 5} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 5} \mid D_{10}) = \tfrac{1}{10} .  \]
+What we need is a way to combine the results for different "sub-cases" into an over-all answer.
 :::
-::::
--->
-<div class="example">
-<p><span id="exm:dice-total" class="example"><strong>Example 8.1  </strong></span><em>My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?</em></p>
-<p>If my friend were to tell which dice he picked, then this question would be very easy! If we write <span class="math inline">\(D_4\)</span>, <span class="math inline">\(D_6\)</span> and <span class="math inline">\(D_{10}\)</span> to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
-<span class="math display">\[ \mathbb P(\text{roll 5} \mid D_4) = 0 \qquad \mathbb P(\text{roll 5} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 5} \mid D_{10}) = \tfrac{1}{10} .  \]</span>
-What we need is a way to combine the results for different “sub-cases” into an over-all answer.</p>
-</div>
-<p>Luckily, there exists just such a tool for this job! It’s called the “law of total probability” (also known as the “partition theorem”). The important point is to make sure that the different sub-cases cover all possibilities, but that only one of them happens at a time.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-35" class="definition"><strong>Definition 8.1  </strong></span>A set of events <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> are said to be a <strong>partition</strong> of the sample space <span class="math inline">\(\Omega\)</span> if</p>
-<ol style="list-style-type: decimal">
-<li>they are disjoint, in that <span class="math inline">\(A_i \cap A_j = \varnothing\)</span> for all <span class="math inline">\(i \neq j\)</span>;</li>
-<li>they cover space, in that <span class="math inline">\(A_1 \cup A_2 \cup \cdots \cup A_n = \Omega\)</span>.</li>
-</ol>
-</div>
-<div class="theorem">
-<p><span id="thm:thlawtotal" class="theorem"><strong>Theorem 8.1  (Law of total probability) </strong></span>Let <span class="math inline">\(A_1, A_2, \dots, A_n\)</span> be a partition, and <span class="math inline">\(B\)</span> another event. Then
-<span class="math display">\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]</span></p>
-</div>
-<p>So the law of total probability tells us we can add up the probabilities <span class="math inline">\(\mathbb P(B \mid A_i)\)</span> for each of the sub-cases provided we weight them by how likely <span class="math inline">\(\mathbb P(A_i)\)</span> by how likely each sub-case is.</p>
-<div class="proof">
-<p><span id="unlabeled-div-36" class="proof"><em>Proof</em>. </span>Since the partition of <span class="math inline">\(A_i\)</span>s cover space, we can split up <span class="math inline">\(B\)</span> depending on which part of the partition it is in:
-<span class="math display">\[  B = (B \cap A_1) \cup (B \cap A_2) \cup \cdots \cup (B \cap A_n) .  \]</span></p>
-<p><em>[I meant to draw a picture here, but didn’t get round to it – perhaps you’d like to draw your own?]</em></p>
-<p>Since the <span class="math inline">\(A_i\)</span> are disjoint, the union on the right is disjoint also.
+
+Luckily, there exists just such a tool for this job! It's called the "law of total probability" (also known as the "partition theorem"). The important point is to make sure that the different sub-cases cover all possibilities, but that only one of them happens at a time.
+
+::: {.definition}
+A set of events $A_1, A_2, \dots, A_n$ are said to be a **partition** of the sample space $\Omega$ if 
+
+1. they are disjoint, in that $A_i \cap A_j = \varnothing$ for all $i \neq j$;
+1. they cover space, in that $A_1 \cup A_2 \cup \cdots \cup A_n = \Omega$.
+:::
+
+::: {.theorem #thlawtotal name="Law of total probability"}
+Let $A_1, A_2, \dots, A_n$ be a partition, and $B$ another event. Then
+\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
+:::
+
+So the law of total probability tells us we can add up the probabilities $\mathbb P(B \mid A_i)$ for each of the sub-cases provided we weight them by how likely $\mathbb P(A_i)$ by how likely each sub-case is.
+
+::: {.proof}
+Since the partition of $A_i$s cover space, we can split up $B$ depending on which part of the partition it is in:
+\[  B = (B \cap A_1) \cup (B \cap A_2) \cup \cdots \cup (B \cap A_n) .  \]
+
+*[I meant to draw a picture here, but didn't get round to it -- perhaps you'd like to draw your own?]*
+
+Since the $A_i$ are disjoint, the union on the right is disjoint also.
 Therefore we can use Axiom 3 to get
-<span class="math display">\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(B \cap A_i) . \]</span>
-But using the definition of conditional probability, each “summand” (term inside the sum) is
-<span class="math display">\[ \mathbb P(B \cap A_i) = \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]</span>
-The result follows.</p>
-</div>
-<div class="thpart">
-<p><strong>Example <a href="L08-two-theorems.html#exm:dice-total">8.1</a> continued.</strong> Returning to our dice example, we see that <span class="math inline">\(\{D_4, D_6, D_{10}\}\)</span> is indeed a partition, since my friend must choose exactly one of the three dice. So the law of total probability tells us that
-<span class="math display">\[ \mathbb P(\text{roll 5}) = \mathbb P(D_4) \, \mathbb P(\text{roll 5} \mid D_4) +  \mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6) + \mathbb P(D_{10}) \, \mathbb P(\text{roll 5} \mid D_{10}) . \]</span></p>
-<p>We were told that all the dice were picked with equal probability, so <span class="math inline">\(\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13\)</span>, and we’ve already calculated the individual conditional probabilities as
-<span class="math display">\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]</span>
-Therefore, we have
-<span class="math display">\[ \mathbb P(\text{roll 5}) = \tfrac13\times 0 +  \tfrac13\times\tfrac16 +  \tfrac13\times\tfrac1{10} = \tfrac{8}{90} = 0.089. \]</span></p>
-</div>
-</div>
-<div id="bayes" class="section level2 hasAnchor" number="8.2">
-<h2><span class="header-section-number">8.2</span> Bayes’ theorem<a href="L08-two-theorems.html#bayes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/uLSewGUPH1g"></iframe>
+\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(B \cap A_i) . \]
+But using the definition of conditional probability, each "summand" (term inside the sum) is
+\[ \mathbb P(B \cap A_i) = \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
+The result follows.
 :::
-::::
--->
-<p>In this section, we will discuss an important result called <strong>Bayes’ theorem</strong>.
-Let’s first state and prove this result, and do an example, and then afterwards we’ll talk about two reasons why Bayes’ theorem is so important.</p>
-<div class="theorem">
-<p><span id="thm:thbayes" class="theorem"><strong>Theorem 8.2  (Bayes' theorem) </strong></span>For events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> with <span class="math inline">\(\mathbb P(A), \mathbb P(B) &gt; 0\)</span>, we have
-<span class="math display">\[ \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} .  \]</span></p>
-</div>
-<p>Bayes’ theorem is thought to have first appeared in the writings of Rev. <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/">Thomas Bayes</a>, a British church minister and mathematician, shortly after his death, in the 1760s. (Bayes’ work was significantly edited by <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Price/">Richard Price</a>, another minister–mathematician, and many historians think that Price deserves a large share of the credit.)</p>
-<div class="proof">
-<p><span id="unlabeled-div-37" class="proof"><em>Proof</em>. </span>From the definition of conditional probability, we can write <span class="math inline">\(\mathbb P(A \cap B)\)</span> in two different ways: we can write it as
-<span class="math display">\[  \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B\mid A) , \]</span>
+
+::: {.thpart}
+**Example \@ref(exm:dice-total) continued.** Returning to our dice example, we see that $\{D_4, D_6, D_{10}\}$ is indeed a partition, since my friend must choose exactly one of the three dice. So the law of total probability tells us that
+\[ \mathbb P(\text{roll 5}) = \mathbb P(D_4) \, \mathbb P(\text{roll 5} \mid D_4) +  \mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6) + \mathbb P(D_{10}) \, \mathbb P(\text{roll 5} \mid D_{10}) . \]
+
+We were told that all the dice were picked with equal probability, so $\mathbb P(D_4) = \mathbb P(D_6) = \mathbb P(D_{10}) = \frac13$, and we've already  calculated the individual conditional probabilities as
+\[ \mathbb P(\text{roll 4} \mid D_4) = 0 \qquad \mathbb P(\text{roll 4} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 4} \mid D_{10}) = \tfrac{1}{10} .  \]
+Therefore, we have
+\[ \mathbb P(\text{roll 5}) = \tfrac13\times 0 +  \tfrac13\times\tfrac16 +  \tfrac13\times\tfrac1{10} = \tfrac{8}{90} = 0.089. \]
+:::
+
+
+## Bayes' theorem  {#bayes}
+
+
+
+In this section, we will discuss an important result called **Bayes' theorem**. 
+Let's first state and prove this result, and do an example, and then afterwards we'll talk about two reasons why Bayes' theorem is so important.
+
+::: {.theorem #thbayes name="Bayes' theorem"}
+For events $A$ and $B$ with $\mathbb P(A), \mathbb P(B) > 0$, we have
+\[ \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} .  \]
+:::
+
+Bayes' theorem is thought to have first appeared in the writings of Rev. [Thomas Bayes](https://mathshistory.st-andrews.ac.uk/Biographies/Bayes/), a British church minister and mathematician, shortly after his death, in the 1760s. (Bayes' work was significantly edited by [Richard Price](https://mathshistory.st-andrews.ac.uk/Biographies/Price/), another minister--mathematician, and many historians of mathematics think that Price deserves a good share of the credit.)
+
+::: {.proof}
+From the definition of conditional probability, we can write $\mathbb P(A \cap B)$ in two different ways: we can write it as
+\[  \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B\mid A) , \]
 but we can also write it as
-<span class="math display">\[  \mathbb P(A \cap B) = \mathbb P(B) \, \mathbb P(A\mid B) . \]</span>
+\[  \mathbb P(A \cap B) = \mathbb P(B) \, \mathbb P(A\mid B) . \]
 Since these are two different ways of writing the same thing, we can equate them, to get
-<span class="math display">\[ \mathbb P(A) \, \mathbb P(B\mid A) = \mathbb P(B) \, \mathbb P(A\mid B) . \]</span>
-Dividing both sides by <span class="math inline">\(\mathbb P(B)\)</span> gives the result.</p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-38" class="example"><strong>Example 8.2  </strong></span><em>My friend again secretly picks the 4-sided, 6-sided, or 10-sided dice, each with probability <span class="math inline">\(\frac13\)</span>. He rolls that secret dice, and tells me he rolled a 5. What is the probability he picked the 6-sided dice?</em></p>
-<p>This is asking us to calculate <span class="math inline">\(\mathbb P(D_6 \mid \text{roll 5})\)</span>. Bayes’ theorem tells us that
-<span class="math display">\[
+\[ \mathbb P(A) \, \mathbb P(B\mid A) = \mathbb P(B) \, \mathbb P(A\mid B) . \]
+Dividing both sides by $\mathbb P(B)$ gives the result.
+:::
+
+::: {.example}
+*My friend again secretly picks the 4-sided, 6-sided, or 10-sided dice, each with probability $\frac13$. He rolls that secret dice, and tells me he rolled a 5. What is the probability he picked the 6-sided dice?*
+
+This is asking us to calculate $\mathbb P(D_6 \mid \text{roll 5})$. Bayes' theorem tells us that
+\[
   \mathbb P(D_6 \mid \text{roll 5})
-  = \frac{\mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6)}{\mathbb P(\text{roll 5})}
-  = \frac{\frac13 \times \frac16}{\frac{8}{90}}
+  = \frac{\mathbb P(D_6) \, \mathbb P(\text{roll 5} \mid D_6)}{\mathbb P(\text{roll 5})} 
+  = \frac{\frac13 \times \frac16}{\frac{8}{90}} 
   = \tfrac{5}{8} ,
-\]</span>
-since we had calculated <span class="math inline">\(\mathbb P(\text{roll 5}) = \frac{8}{90}\)</span> in the previous subsection.</p>
-</div>
-<p>The first way to think about Bayes’ theorem is that it tells us how to relate <span class="math inline">\(\mathbb P(A \mid B)\)</span> and <span class="math inline">\(\mathbb P(B \mid A)\)</span>. Remember that <span class="math inline">\(\mathbb P(A \mid B)\)</span> and <span class="math inline">\(\mathbb P(B \mid A)\)</span> are not the same thing! The conditional probability someone is under 40 given they are a Premiership footballer is very high, but the conditional probability someone is a Premiership footballer given they are under 40 is very low.</p>
-<p>Bayes’ theorem, in this first view, is a useful technical result that helps us switch the order of a conditional probability from <span class="math inline">\(B\)</span> given <span class="math inline">\(A\)</span> to <span class="math inline">\(A\)</span> given <span class="math inline">\(B\)</span>: we have
-<span class="math display">\[ \mathbb P(A \mid B) = \frac{\mathbb P(A)}{\mathbb P(B)} \times \mathbb P(B \mid A) .  \]</span></p>
-<p>In the dice example, the probability <span class="math inline">\(\mathbb P(\text{roll 5} \mid D_6) = \frac16\)</span> was very obvious, but Bayes’ theorem allowed us to reverse the conditioning, to find <span class="math inline">\(\mathbb P(D_6 \mid \text{roll 5}) = \frac58\)</span> instead.</p>
-<p>The second way to think about Bayes’ theorem is that it tells us how to update our beliefs as we acquire more evidence. That is, we might start by believing that the probability some event <span class="math inline">\(A\)</span> will occur is <span class="math inline">\(\mathbb P(A)\)</span>. But then we find out that <span class="math inline">\(B\)</span> has occurred, so we want to incorporate this knowledge and update our belief of the probability <span class="math inline">\(A\)</span> will occur to <span class="math inline">\(\mathbb P(A \mid B)\)</span>, the conditional probability <span class="math inline">\(A\)</span> will occur given this new evidence <span class="math inline">\(B\)</span>.</p>
-<p>Bayes theorem, in this second view, tells us how to update from <span class="math inline">\(\mathbb P(A)\)</span> to <span class="math inline">\(\mathbb P(A \mid B)\)</span>: we have
-<span class="math display">\[ \mathbb P(A \mid B) = \mathbb P(A) \times \frac{\mathbb P(B \mid A)}{\mathbb P(B)} .  \]</span></p>
-<p>In the dice example, we initially believed there was a <span class="math inline">\(\mathbb P(D_6) = \frac13 = 0.333\)</span> chance our friend had chosen the six-sided dice. But when we heard that our friend had rolled a 5, we updated our belief to now thinking there was now a <span class="math inline">\(\mathbb P(D_6 \mid \text{roll 5}) =\frac58 = 0.625\)</span> chance it was the 6-sided dice.</p>
-<p>This second way of thinking about Bayes’ theorem is at the heart of <strong>Bayesian statistics</strong>. In Bayesian statistics, we start with a “prior” belief about a model, then, after collecting some data, we update, using Bayes’ theorem, to a “posterior” belief about the model. We will discuss Bayesian statistics much more in Week 10.</p>
-<p>Quite often we use Bayes’ theorem and the law of total probability together. If we have a partition <span class="math inline">\(A_1, A_2, \dots, A_n\)</span>, perhaps representing some possible hypotheses, and we observe some evidence <span class="math inline">\(B\)</span>, then Bayes’ theorem tells us how likely each hypothesis is given the evidence:
-<span class="math display">\[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\mathbb P(B)} .  \]</span>
-But this shared denominator <span class="math inline">\(\mathbb P(B)\)</span> can be expanded using the law of total probability
-<span class="math display">\[ \mathbb P(B) = \sum_{j=1}^n \mathbb P(A_j) \,\mathbb P(B \mid A_j) . \]</span>
-Putting these together, we get the following.</p>
-<div class="theorem">
-<p><span id="thm:bayes-total" class="theorem"><strong>Theorem 8.3  </strong></span>Let <span class="math inline">\(\{A_1, A_2, \dots, A_n\}\)</span> be a partition of a sample space and let <span class="math inline">\(B\)</span> be another event. Then, for all <span class="math inline">\(i=1,2,\dots,n\)</span>, we have
-<span class="math display">\[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\sum_{j=1}^n \mathbb P(A_j) \, \mathbb P(B \mid A_j)} .  \]</span></p>
-</div>
-<p>This is essentially what we did with the dice example – although we split up the calculation into two separate parts rather than using this formula directly.</p>
-</div>
-<div id="screening" class="section level2 hasAnchor" number="8.3">
-<h2><span class="header-section-number">8.3</span> Diagnostic testing<a href="L08-two-theorems.html#screening" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="example">
-<p><span id="exm:unlabeled-div-39" class="example"><strong>Example 8.3  </strong></span><em>Members of the public are tested for a certain rare disease. About 2% of the population have the disease. The test is 95% accurate, in the following sense: if you have the disease, there’s a 95% chance you correctly get a positive test result; while if you don’t have the disease, there’s a 95% chance you correctly get a negative test result. Suppose you get a positive test result. What is the probability you have the disease?</em></p>
-<p>The first thing we have to do is translate the words in the question into probability statements. Let <span class="math inline">\(D\)</span> be the event you have the disease, so <span class="math inline">\(D^\mathsf{c}\)</span> is the event you don’t have the disease, and let <span class="math inline">\(+\)</span> be the event you get a positive result. Then the question tells us that</p>
-<ul>
-<li><span class="math inline">\(\mathbb P(D) = 0.02\)</span> and <span class="math inline">\(\mathbb P(D^\mathsf{c}) = 0.98\)</span>;</li>
-<li><span class="math inline">\(\mathbb P({+} \mid D) = 0.95\)</span>;</li>
-<li><span class="math inline">\(\mathbb P({+}\mid D^\mathsf{c}) = 0.05\)</span>;</li>
-<li>we want to find <span class="math inline">\(\mathbb P(D \mid {+})\)</span>.</li>
-</ul>
-<p>Importantly, <span class="math inline">\(D\)</span> (you have the disease) and <span class="math inline">\(D^\mathsf{c}\)</span> (you don’t) make up a partition. So Theorem <a href="L08-two-theorems.html#thm:bayes-total">8.3</a> tells us that
-<span class="math display">\[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\mathsf{c}) \,\mathbb P({+} \mid D^\mathsf{c})} . \]</span>
+\]
+since we had calculated $\mathbb P(\text{roll 5}) = \frac{8}{90}$ in the previous subsection.
+:::
+
+The first way to think about Bayes' theorem is that it tells us how to relate $\mathbb P(A \mid B)$ and $\mathbb P(B \mid A)$. Remember that $\mathbb P(A \mid B)$ and $\mathbb P(B \mid A)$ are not the same thing! The conditional probability someone is under 40 given they are a Premiership footballer is very high, but the conditional probability someone is a Premiership footballer given they are under 40 is very low.
+
+Bayes' theorem, in this first view, is a useful technical result that helps us switch the order of a conditional probability from $B$ given $A$ to $A$ given $B$: we have
+\[ \mathbb P(A \mid B) = \frac{\mathbb P(A)}{\mathbb P(B)} \times \mathbb P(B \mid A) .  \]
+
+In the dice example, the probability $\mathbb P(\text{roll 5} \mid D_6) = \frac16$ was very obvious, but Bayes' theorem allowed us to reverse the conditioning, to find $\mathbb P(D_6 \mid \text{roll 5}) = \frac58$ instead.
+
+The second way to think about Bayes' theorem is that it tells us how to update our beliefs as we acquire more evidence. That is, we might start by believing that the probability some event $A$ will occur is $\mathbb P(A)$. But then we find out that $B$ has occurred, so we want to incorporate this knowledge and update our belief of the probability $A$ will occur to $\mathbb P(A \mid B)$, the conditional probability $A$ will occur given this new evidence $B$.
+
+Bayes theorem, in this second view, tells us how to update from $\mathbb P(A)$ to $\mathbb P(A \mid B)$: we have
+\[ \mathbb P(A \mid B) = \mathbb P(A) \times \frac{\mathbb P(B \mid A)}{\mathbb P(B)} .  \]
+
+In the dice example, we initially believed there was a $\mathbb P(D_6) = \frac13 = 0.333$ chance our friend had chosen the six-sided dice. But when we heard that our friend had rolled a 5, we updated our belief to now thinking there was now a $\mathbb P(D_6 \mid \text{roll 5}) =\frac58 = 0.625$ chance it was the 6-sided dice.
+
+This second way of thinking about Bayes' theorem is at the heart of **Bayesian statistics**. In Bayesian statistics, we start with a "prior" belief about a model, then, after collecting some data, we update, using Bayes' theorem, to a "posterior" belief about the model. We will discuss Bayesian statistics much more in Week 10.
+
+
+
+
+Quite often we use Bayes' theorem and the law of total probability together. If we have a partition $A_1, A_2, \dots, A_n$, perhaps representing some possible hypotheses, and we observe some evidence $B$, then Bayes' theorem tells us how likely each hypothesis is given the evidence:
+\[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\mathbb P(B)} .  \]
+But this shared denominator $\mathbb P(B)$ can be expanded using the law of total probability
+\[ \mathbb P(B) = \sum_{j=1}^n \mathbb P(A_j) \,\mathbb P(B \mid A_j) . \]
+Putting these together, we get the following.
+
+::: {.theorem #bayes-total}
+Let $\{A_1, A_2, \dots, A_n\}$ be a partition of a sample space and let $B$ be another event. Then, for all $i=1,2,\dots,n$, we have
+\[ \mathbb P(A_i \mid B) = \frac{\mathbb P(A_i) \,\mathbb P(B \mid A_i)}{\sum_{j=1}^n \mathbb P(A_j) \, \mathbb P(B \mid A_j)} .  \]
+:::
+
+This is essentially what we did with the dice example -- although we split up the calculation into two separate parts rather than using this formula directly.
+
+
+## Diagnostic testing  {#screening}
+
+::: {.example}
+*Members of the public are tested for a certain rare disease. About 2% of the population have the disease. The test is 95% accurate, in the following sense: if you have the disease, there's a 95% chance you correctly get a positive test result; while if you don't have the disease, there's a 95% chance you correctly get a negative test result. Suppose you get a positive test result. What is the probability you have the disease?*
+
+The first thing we have to do is translate the words in the question into probability statements. Let $D$ be the event you have the disease, so $D^\comp$ is the event you don't have the disease, and let $+$ be the event you get a positive result. Then the question tells us that
+
+* $\mathbb P(D) = 0.02$ and $\mathbb P(D^\comp) = 0.98$;
+* $\mathbb P({+} \mid D) = 0.95$;
+* $\mathbb P({+}\mid D^\comp) = 0.05$;
+* we want to find $\mathbb P(D \mid {+})$.
+
+Importantly, $D$ (you have the disease) and $D^\comp$ (you don't) make up a partition. So Theorem \@ref(thm:bayes-total) tells us that
+\[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\comp) \,\mathbb P({+} \mid D^\comp)} . \]
 Putting in all the numbers we have, we get
-<span class="math display">\[ \mathbb P(D \mid {+}) = \frac{0.02 \times 0.95}{0.02 \times 0.95 + 0.98 \times 0.05} = 0.28 .\]</span></p>
-<p>So if you get a positive result on this 95%-accurate test, there’s still only about a 1 in 4 chance you actually have the disease.</p>
-</div>
-<p>Many people find this result surprising. It sometimes helps to put more concrete numbers on things. Suppose 1000 people get tested. On average, we expect about 20 of them to have the disease, and 980 of to not have the disease. Of the 20 with the disease, on average 19 will correctly test positive, while 1 will test negative. Of the 980 without the disease, an average 931 will correctly test negative, but 49 will wrongly test positive. So of the <span class="math inline">\(19+49 = 68\)</span> people with positive tests, only 19 of them actually have the disease, which is 28%.</p>
-<p>The key point is that the disease is rare – only 2% of people have it. So even though positive test increases the likelihood you have the disease a lot (it’s about 14 times more likely), it’s not enough to make it a very large probability.</p>
-</div>
+\[ \mathbb P(D \mid {+}) = \frac{0.02 \times 0.95}{0.02 \times 0.95 + 0.98 \times 0.05} = 0.28 .\]
+
+So if you get a positive result on this 95%-accurate test, there's still only about a 1 in 4 chance you actually have the disease.
+:::
+
+Many people find this result surprising. It sometimes helps to put more concrete numbers on things. Suppose 1000 people get tested. On average, we expect about 20 of them to have the disease, and 980 of to not have the disease. Of the 20 with the disease, on average 19 will correctly test positive, while 1 will test negative. Of the 980 without the disease, an average 931 will correctly test negative, but 49 will wrongly test positive. So of the $19+49 = 68$ people with positive tests, only 19 of them actually have the disease, which is 28%.
+
+The key point is that the disease is rare -- only 2% of people have it. So even though positive test increases the likelihood you have the disease a lot (it's about 14 times more likely), it's not enough to make it a very large probability.
+
+-->
 <div id="summary-L08" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L08-two-theorems.html#summary-L08" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
@@ -537,6 +442,12 @@ Putting in all the numbers we have, we get
 <li>Bayes’ theorem says that <span class="math inline">\({\displaystyle \mathbb P(A \mid B) = \frac{\mathbb P(A) \,\mathbb P(B \mid A)}{\mathbb P(B)} }\)</span>.</li>
 </ul>
 </div>
+<p><strong>Recommended reading:</strong></p>
+<ul>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181">Stirzaker, <em>Elementary Probability</em></a>, Sections 2.1 and 2.2.</li>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181">Grimmett and Welsh, <em>Probability</em></a>, Section 1.8.</li>
+</ul>
+<p>On <a href="P3.html#P3">Problem Sheet 3</a>, you should now be able to complete Questions A1, A2, B1–3 and C1.</p>
 
 </div>
 </div>
@@ -546,7 +457,7 @@ Putting in all the numbers we have, we get
         </div>
       </div>
 <a href="L07-conditional.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="L09-discrete-rv.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="P3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
