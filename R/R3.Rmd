@@ -5,15 +5,15 @@ date:   "University of Leeds, 2022--23"
 output: html_document
 ---
 
-*This R worksheet* does *include assessed questions at the end. Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 24 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*
+*This R worksheet* does not *include assessed questions.* <!--Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 24 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*-->
 
 ------------------------------------------------------------------------
 
 ## CSV files
 
-If we are dealing with a very small amount of data, then we can simply type it into one or more vectors in R, using the `c()` function. But if we have a large amount of data, we will want to "read" it into R directly from a file -- that is, we will want R to take the data from an external file and turn it into an R object.
+If we are dealing with a very small amount of data, then we can simply type it into one or more vectors in R, using the `c()` function, as on R Worksheet 2. But if we have a large amount of data, we will want to "read" it into R directly from a file -- that is, we will want R to take the data from an external file and turn it automatically into an R object.
 
-When large amounts of data are transferred, the standard format is a **comma-separated variable** or **CSV** file, which typically have the file suffix `.csv`. A comma-separated variable file looks like this:
+When large amounts of data are transferred, the standard format is a **comma-separated variable** or **CSV** file, which typically have the file suffix **`.csv`**. A comma-separated variable file looks like this:
 
 ```
 year,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec
@@ -36,28 +36,32 @@ Here, the first line of the file represents a row of "headers", telling us what 
 
 There are many advantages to using CSV files to store and send data:
 
-* They can be read by many different programs: you can open them in a text editor (like Notepad), you can open them in a spreadsheet program (like Excel), or you can read them directly into R.
-* Because a CSV file contains just the data and some commas and nothing else, file sizes can be kept small even for very large amounts of data.
+* CSV files are highly "interoperable" -- they can be read by many different programs: you can open them in a text editor (like Notepad), you can open them in a spreadsheet program (like Excel), or you can read them directly into R.
+
+* A CSV file simply contains the data, some commas, and nothing else. This means file sizes can be kept small, even for very large amounts of data.
+
 * CSV files contain "just the data", and no unnecessary presentational information like fonts, text size, colours, and so on.
 
-We can read data into R from a CSV file saved "locally" -- that is, saved on the hard drive of the computer you are working on now -- or from a CSV file on the internet. In these R worksheets, we will only read in data from the internet: for this module, you never need to save any CSV data files to your computer. The advantages of reading data in from the internet include:
+We can read data into R from a CSV file saved "locally" -- that is, saved on the hard drive of the computer you are working on now -- or from a CSV file on the internet. In these R Worksheets, we will only read in data from the internet: for this module, you never need to save any CSV data files to your computer. The advantages of reading data in from the internet include:
 
 * Your R code will always work on any (internet-connected) computer, for example if you send your work to a colleague.
+
 * If the data owner updates their data on the internet, your R code will work automatically with this new updated data.
 
 A disadvantage is that the data owner might remove their data from the internet.
 
+
 ## Reading CSV files into R
 
-We read data from CSV files into R using the **`read.csv()`** function. To read in more of the UK temperature data we mentioned above from the website <https://mpaldridge.github.io/math1710/data/met-office.csv>, we use the R command
+We read data from CSV files into R using the **`read.csv()`** function. The temperature data we mentioned is available at the web address <https://mpaldridge.github.io/math1710/data/met-office.csv>. To read in this data into R, we use the R command:
 
 ```{r}
 temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")
 ```
 
-By using `temperature <- `, we have read the data into an R object called `temperature`. Nothing will happen until we interact with this R object in some way. (Note the quotation marks `" "` around the web address in the `read.csv()` command.)
+(Note the quotation marks `" "` around the web address in the `read.csv()` command.) By using `temperature <- `, we have read the data into an R object we have called `temperature`. Nothing will happen until we interact with this R object `temperature` in some way. 
 
-*Remember:* to read data from a CSV file you must use the `read.csv()` -- just typing a web address straight into R will not do anything (except return an error).
+**Remember:** *To read data from a CSV file into R you must use the `read.csv()` command. Just typing a web address straight into R will not do anything (except return an error).* The most common query I get from MATH1710 students is "I typed a web address into R and it returned an error. Has the data been deleted?" My response is almost always "No, the data has not been deleted. You forgot to use the `read.csv()` command.".
 
 Once we've read some data into R, we will want to check it has worked, and find out some basic details about the data. There are various functions that will do this:
 
@@ -83,7 +87,7 @@ head(temperature)
 
 A data frame is a two-dimensional table. The columns have names: the names `"year"`, `"jan"`, `"feb"`, etc, that we saw above. The rows are simply numbered.
 
-We can extract a single data point using the square brackets `[ ]`, similar to how we extracted single entries of vectors on Worksheet 2. So, the datapoint in row 21 and column "oct" is
+We can extract a single data point using the square brackets `[ ]`, similar to how we extracted single entries of vectors on R Worksheet 2. So, the datapoint in row 21 and column "oct" is
 
 ```{r}
 temperature[21, "oct"]
@@ -121,9 +125,10 @@ temperature$oct
 **(c)** Output the whole list of January temperatures.\
 **(d)** Output the December temperature for rows 50 to 60.
 
+
 ## Functions with data
 
-Once we extract the rows or columns we need, we can then apply any of the functions we learned about on Worksheet 2, like `mean()`, `median()`, `var()`, `IQR()`, `cor()`, `min()`, `max()` and so on.
+Once we extract the rows or columns we need, we can then apply any of the functions we learned about on R Worksheet 2, like `mean()`, `median()`, `var()`, `IQR()`, `cor()`, `min()`, `max()` and so on.
 
 So, for example, the mean February temperature is given by
 
@@ -151,6 +156,7 @@ and so on. Remember we can use `round()` and `signif()` with these to round the 
 **(c)** What is the lowest December temperature?\
 **(d)** What is the correlation between October and November temperatures, restricted only to the first 100 years of data?
 
+<!--
 ---
 
 ## Assessed questions
@@ -188,3 +194,4 @@ https://mpaldridge.github.io/math1710/data/R3-xy.csv
 ---
 
 *Remember to submit your answers into  [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NURUJBT080Mks5NkVNRzhMQldDMFBLNUkxVy4u) before 1400 on Monday 24 October.*
+-->
