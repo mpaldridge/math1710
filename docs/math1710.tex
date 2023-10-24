@@ -2592,6 +2592,169 @@ Another way is to look at the unordered collection, so the denominator is \(\bin
 \hypertarget{L07-conditional}{%
 \chapter{Independence and conditional probability}\label{L07-conditional}}
 
+\hypertarget{independent-events}{%
+\section{Independent events}\label{independent-events}}
+
+\emph{Suppose 40\% of people have blond hair, and 20\% of people have blue eyes. What proportion of people have both blond hair and blue eyes?}
+
+The answer to this question is: we don't know. The question doesn't give us enough information to tell. However, \emph{if} it were the case that having blond hair didn't effect your chance of having blue eyes, \emph{then} we could work out the answer. If that were true, we would think that the 20\% of people with blue eyes would equally make up both 20\% of the blonds and also 20\% of the non-blonds. Thus the proportion of people with blond hair and blue eyes would be this 20\% of the 40\% of people with blond hair; and 20\% of 40\% is \(0.2 \times 0.4 = 0.08\), or 8\%.
+
+To put it in probability language, \emph{if} blond hair and blue eyes were unrelated, then we would expect that
+\[ \mathbb P(\text{blond hair and blue eyes}) = \mathbb P(\text{blond hair}) \times \mathbb P(\text{blue eyes}) . \]
+This is an important property known as ``independence''.
+
+\begin{definition}
+Two events \(A\) and \(B\) are said to be \textbf{independent} if
+\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B) .  \]
+\end{definition}
+
+There are two ways we can use this definition.
+
+\begin{itemize}
+\tightlist
+\item
+  If we know \(\mathbb P(A)\), \(\mathbb P(B)\), and \(\mathbb P(A \cap B)\), then we can find out whether or not \(A\) and \(B\) are independent by checking whether or not \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\).
+\item
+  If we know \(\mathbb P(A)\) and \(\mathbb P(B)\) and we know that \(A\) and \(B\) are independent, then we can find \(\mathbb P(A \cap B)\) by calculating \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\).
+\end{itemize}
+
+In this second case, we might know \(A\) and \(B\) are independent because we are specifically told they are in a question. But alternatively we might reason that \(A\) and \(B\) must be independent because the related experiments are not physically related. For example if we roll a dice then toss a coin, we might reason that \(\{\text{roll a 5}\}\) and \(\{\text{the coin lands Heads}\}\) must be independent because the dice roll doesn't effect the coin toss -- we could then use the independence assumption in calculations.
+
+\begin{example}
+\emph{I roll a single dice. Let \(A = \{\text{even number}\} = \{2,4,6\}\) be the event I roll an even number, and let \(B = \{\text{at least 4}\} = \{4,5,6\}\) be the event I roll at least 4. Are the events \(A\) and \(B\) independent?}
+
+Clearly we have \(\mathbb P(A) = \frac36 = \frac12\) and \(\mathbb P(B) = \frac 36 = \frac12\). The intersection is \(A \cap B = \{4,6\}\), so \(\mathbb P(A \cap B) = \frac26 = \frac13\). So we see that
+\[ \mathbb P(A\cap B) = \frac13  \qquad \text{and} \qquad  \mathbb P(A)\, \mathbb P(B) = \frac12 \times \frac12 = \frac14 . \]
+So \(\mathbb P(A \cap B) \neq \mathbb P(A)\, \mathbb P(B)\), and the two events are not independent.
+\end{example}
+
+\begin{example}
+\emph{A biased coin has probability \(p\) of landing Heads and probability \(1-p\) of landing Tails. You toss the coin 3 times. Assuming tosses of the coin are independent, calculate the probability of getting exactly 2 Heads.}
+
+There are three ways we could get exactly 2 Heads: HHT, HTH, or THH. For the first of these,
+\[ \mathbb P(\text{HHT}) = \mathbb P(\text{first coin H} \cap \text{second coin H} \cap \text{third coin T}) . \]
+Since tosses of the coin are independent, we therefore have
+\begin{align*}
+\mathbb P(\text{HHT})
+  &= \mathbb P(\text{first coin H}) \times \mathbb P ( \text{second coin H} )\times \mathbb P(\text{third coin T}) \\
+  &=p \times p \times (1-p) \\
+  &= p^2(1-p).
+\end{align*}
+
+Similarly,
+\[ \mathbb P(\text{HTH}) = \mathbb P(\text{THH}) = p^2(1-p) \]
+also.
+
+Finally, because the events are disjoint, we have
+\[ \mathbb P(\text{HHT} \cup\text{HTH} \cup \text{THH}) = \mathbb P(\text{HHT} ) + \mathbb P(\text{HTH}) + \mathbb P(\text{THH}) = 3p^2(1-p) . \]
+\end{example}
+
+\hypertarget{conditional}{%
+\section{Conditional probability}\label{conditional}}
+
+Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+& \textbf{Brown hair} & \textbf{Blond hair} & \textbf{Total} \\
+\midrule()
+\endhead
+\textbf{Brown eyes} & 50\% & 30\% & \textbf{80\%} \\
+\textbf{Blue eyes} & 10\% & 10\% & \textbf{20\%} \\
+\textbf{Total} & \textbf{60\%} & \textbf{40\%} & \textbf{100\%} \\
+\bottomrule()
+\end{longtable}
+
+It turns out that \(\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08\), so having blond hair and having blue eyes are not in fact independent.
+
+We know from this table that 20\% of people have blue eyes. But suppose you already know that someone has blond hair: what \emph{then} is the probability they have blue eyes \emph{given} that they have blond hair?
+
+Well, the 40\% of blond-haired people is made up of the 10\% of people who also have blue eyes along with their blond hair, and the 30\% of people who have brown eyes along with their blond hair. So of the 40\% of blond-haired people, only one quarter of that 40\% -- which makes 10\% -- have blue eyes. If we use a vertical line \(|\) in a probability to mean ``given'' (or ``assuming that'' or ``conditional upon''), then we can write this as
+\[  \mathbb P(\text{blue eyes} \mid \text{blond hair}) = \frac{\mathbb P(\text{blue eyes and blond hair})}{\mathbb P(\text{blond hair})} = \frac{0.1}{0.4} = \frac14. \]
+
+What we've seen here is called a ``conditional probability''.
+
+\begin{definition}
+Let \(A\) and \(B\) be events, with \(\mathbb P(A) > 0\). Then the \textbf{conditional probability of \(B\) given \(A\)} is defined to be
+\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+\end{definition}
+
+The condition \(\mathbb P(A) > 0\) is just to ensure we don't have any ``divide by 0'' errors. (I normally won't bother saying this explicitly -- any statement about conditional probability will implicitly assume that the event being conditioned on has nonzero probability.)
+
+Conditional probability ties in with independence in an important way. Suppose \(A\) and \(B\) are independent, so \(\mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B)\). Then the conditional probability becomes
+\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} =  \frac{\mathbb P(A) \, \mathbb P(B)}{\mathbb P(A)} = \mathbb P(B) , \]
+so \(\mathbb P(B \mid A) = \mathbb P(B)\). In other words, if \(A\) and \(B\) are independent, then \(A\) happening doesn't affect the probability of \(B\) happening (and vice versa).
+
+So when we have independence, we know that \(\mathbb P(A \cap B) = \mathbb P(A)\,\mathbb P(B)\), and the mathematics is quite easy. But conditional probability tells us how things work when we don't have independence.
+
+As with independence, we can use the definition of conditional probability in two ways. The first way is that if we know \(\mathbb P(A \cap B)\) and \(\mathbb P(A)\), then we can calculate the conditional probability of \(B\) given \(A\) as
+\[  \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+
+\begin{example}
+\emph{With the dice roll again, what's the probability of rolling at least 4 given that you roll an even number?}
+
+We previously calculated
+\begin{gather*}
+\mathbb P(\text{even and at least 4}) = \mathbb P(A \cap B) = \tfrac{2}{6} \\
+\mathbb P(\text{even number}) = \mathbb P(A) = \tfrac{3}{6} .
+\end{gather*}
+Hence
+\[ \mathbb P(\text{even} \mid \text{at least 4}) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} = \frac{\frac26}{\frac36} = \tfrac23 . \]
+
+This is intuitively correct: of the three possibilities of rolling at least 4, \(\{4,5,6\}\), two of those three are even, so the probability is \(\frac23\).
+\end{example}
+
+Note that with classical probability \(\mathbb P(A) = |A|/|\Omega|\), where we have finitely many equally likely outcomes, we have
+\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} = \frac{\frac{|A\cap B|}{|\Omega|}}{\frac{|A|}{|\Omega|}} = \frac{|A \cap B|}{|A|} . \]
+This is effectively reducing ourselves from the whole sample space \(\Omega\) and moving to a smaller ``restricted sample space'' \(A\).
+
+Note that this worked in the previous example, when
+\[ \mathbb P(B \mid A) = \frac{|A \cap B|}{|A|} = \frac{2}{3} . \]
+
+\hypertarget{chain-rule}{%
+\section{Chain rule}\label{chain-rule}}
+
+The second way to use the definition of conditional probability is that if we know \(\mathbb P(A)\) and \(\mathbb P(B \mid A)\), then we can calculate the event that both \(A\) and \(B\) occur as
+\[ \mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B \mid A). \]
+This can be a particularly useful tool when \(A\) concerns the first stage of an experiment and \(B\) the second stage. This says that the probability \(A\) happens then \(B\) happens is equal to the probability \(A\) happens multiplied the conditional probability, given that \(A\) has already happened, that \(B\) then happens too.
+
+We can extend this to more events. For three events, we have
+\begin{align*}
+\mathbb P(A \cap B \cap C)
+  &= \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) \\
+  &= \mathbb P(A) \, \mathbb P(B \mid A)\, \mathbb P(C \mid A \cap B) ,
+\end{align*}
+which can be useful when we have three stages of an experiment.
+
+Continuing that process, we get a general rule.
+
+\begin{theorem}[Chain rule]
+\protect\hypertarget{thm:thchain}{}\label{thm:thchain}For events \(A_1, A_2, \dots, A_n\), we have
+\begin{multline*}  \mathbb P(A_1 \cap A_2 \cap \cdots \cap A_n) \\
+  = \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_n \mid A_1 \cap A_2 \cap \cdots \cap  A_{n-1}) .\end{multline*}
+\end{theorem}
+
+At each step, we need to calculate the probability of that step given all the previous steps being successful. We then multiply them all together.
+
+Often questions that can be solved using the classical probability counting methods from Section 3 also be solved ``step by step'' using the chain rule. (It's a matter of personal taste which you prefer, but I find that chain rule methods are often simpler and more intuitive.)
+
+\begin{example}
+\emph{Recall the Lotto problem from Example \ref{exm:lotto}: What is the probability we match 6 balls from 59?}
+
+Let \(A_1, A_2, \dots, A_6\) be the events that the first, second, \ldots, sixth balls out of the machine are on our ticket. Clearly \(\mathbb P(A_1) = \frac{6}{59}\), as we have six numbers on our ticket that the first ball could match. The conditional probability that the second ball matches given that the first ball matched is \(\mathbb P(A_2 \mid A_1) = \frac{5}{58}\), because there are 58 balls left in the machine and, given that we got the first number right, there are 5 numbers left on our ticket. Similarly, \(\mathbb P(A_3 \mid A_1 \cap A_2) = \frac{4}{57}\), and so on, until \(\mathbb P(A_6 \mid A_1 \cap \cdots\cap A_5) = \frac{1}{54}\).
+
+So, using the chain rule, we get
+\begin{align*}
+\mathbb P(A_1 \cap A_2 &\cap \cdots \cap A_6) \\
+&= \mathbb P(A_1) \, \mathbb P(A_2 \mid A_1) \, \mathbb P(A_3 \mid A_1 \cap A_2) \cdots \mathbb P(A_6 \mid A_1 \cap \cdots \cap A_5) \\
+&= \frac{6}{59} \times \frac{5}{58} \times \frac{4}{57} \times \frac{3}{56} \times \frac{2}{55} \times \frac{1}{54} .
+\end{align*}
+
+The answer we got before was
+\[ \frac{1}{\binom{59}{6}} = \frac{6 \times 5 \times 4 \times 3 \times 2 \times 1}{59 \times 58 \times 57 \times 56 \times 55 \times 54} = \frac{1}{45 \text{ million}} . \]
+It's easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer ``all at once'', while this new chain rule method gets the answer ``one step at a time''.
+\end{example}
+
 \hypertarget{summary-L07}{%
 \section*{Summary}\label{summary-L07}}
 \addcontentsline{toc}{section}{Summary}

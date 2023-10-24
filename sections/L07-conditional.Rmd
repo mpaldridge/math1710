@@ -1,6 +1,6 @@
 # Independence and conditional probability  {#L07-conditional}
 
-<!--
+
 
 ## Independent events  {#independent-events}
 
@@ -26,7 +26,7 @@ There are two ways we can use this definition.
 In this second case, we might know $A$ and $B$ are independent because we are specifically told they are in a question. But alternatively we might reason that $A$ and $B$ must be independent because the related experiments are not physically related. For example if we roll a dice then toss a coin, we might reason that $\{\text{roll a 5}\}$ and $\{\text{the coin lands Heads}\}$ must be independent because the dice roll doesn't effect the coin toss -- we could then use the independence assumption in calculations.
 
 ::: {.example}
-*I roll a single dice dice. Let $A = \{\text{even number}\} = \{2,4,6\}$ be the event I roll an even number, and let $B = \{\text{at least 4}\} = \{4,5,6\}$ be the event I roll at least 4. Are the events $A$ and $B$ independent?*
+*I roll a single dice. Let $A = \{\text{even number}\} = \{2,4,6\}$ be the event I roll an even number, and let $B = \{\text{at least 4}\} = \{4,5,6\}$ be the event I roll at least 4. Are the events $A$ and $B$ independent?*
 
 Clearly we have $\mathbb P(A) = \frac36 = \frac12$ and $\mathbb P(B) = \frac 36 = \frac12$. The intersection is $A \cap B = \{4,6\}$, so $\mathbb P(A \cap B) = \frac26 = \frac13$. So we see that
 \[ \mathbb P(A\cap B) = \frac13  \qquad \text{and} \qquad  \mathbb P(A)\, \mathbb P(B) = \frac12 \times \frac12 = \frac14 . \]
@@ -53,6 +53,8 @@ also.
 Finally, because the events are disjoint, we have
 \[ \mathbb P(\text{HHT} \cup\text{HTH} \cup \text{THH}) = \mathbb P(\text{HHT} ) + \mathbb P(\text{HTH}) + \mathbb P(\text{THH}) = 3p^2(1-p) . \]
 :::
+
+
 
 
 ## Conditional probability  {#conditional}
@@ -96,14 +98,21 @@ As with independence, we can use the definition of conditional probability in tw
 
 We previously calculated
 \begin{gather*}
-\mathbb P(\text{even and at least 4}) = \mathbb P(A \cap B) = \tfrac{1}{3} \\
-\mathbb P(\text{even number}) = \mathbb P(A) = \tfrac{1}{2} .
+\mathbb P(\text{even and at least 4}) = \mathbb P(A \cap B) = \tfrac{2}{6} \\
+\mathbb P(\text{even number}) = \mathbb P(A) = \tfrac{3}{6} .
 \end{gather*}
 Hence
-\[ \mathbb P(\text{even} \mid \text{at least 4}) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} = \frac{\frac13}{\frac12} = \tfrac23 . \]
+\[ \mathbb P(\text{even} \mid \text{at least 4}) = \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} = \frac{\frac26}{\frac36} = \tfrac23 . \]
 
 This is intuitively correct: of the three possibilities of rolling at least 4, $\{4,5,6\}$, two of those three are even, so the probability is $\frac23$.
 :::
+
+Note that with classical probability $\mathbb P(A) = |A|/|\Omega|$, where we have finitely many equally likely outcomes, we have
+\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} = \frac{\frac{|A\cap B|}{|\Omega|}}{\frac{|A|}{|\Omega|}} = \frac{|A \cap B|}{|A|} . \]
+This is effectively reducing ourselves from the whole sample space $\Omega$ and moving to a smaller "restricted sample space" $A$.
+
+Note that this worked in the previous example, when
+\[ \mathbb P(B \mid A) = \frac{|A \cap B|}{|A|} = \frac{2}{3} . \]
 
 
 ## Chain rule  {#chain-rule}
@@ -149,7 +158,7 @@ The answer we got before was
 It's easy to see that this is the same answer. The structure of the answers shows how our previous classical probability method got the answer "all at once", while this new chain rule method gets the answer "one step at a time".
 :::
 
--->
+
 
 
 ## Summary  {#summary-L07 .unnumbered}
