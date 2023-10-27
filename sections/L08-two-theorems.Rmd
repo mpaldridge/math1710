@@ -136,9 +136,16 @@ The first thing we have to do is translate the words in the question into probab
 * $\mathbb P({+}\mid D^\comp) = 0.05$;
 * we want to find $\mathbb P(D \mid {+})$.
 
-Importantly, $D$ (you have the disease) and $D^\comp$ (you don't) make up a partition. So Theorem \@ref(thm:bayes-total) tells us that
-\[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\comp) \,\mathbb P({+} \mid D^\comp)} . \]
-Putting in all the numbers we have, we get
+So from Bayes' theorem, we have 
+\[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(+)} = \frac{0.02 \times 0.95}{\mathbb P(+)} . \]
+
+How can we find $\mathbb P(+)$? Well, importantly, $D$ (you have the disease) and $D^\comp$ (you don't) make up a partition -- so we can use the law of total probability. We have
+\begin{align*}
+  \mathbb P(+) &= \mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\comp) \,\mathbb P({+} \mid D^\comp) \\\
+    &= 0.02 \times 0.95 + 0.98 \times 0.05 .
+\end{align*}
+
+Putting the Bayes' theorem result and the law of total probability result together, we get
 \[ \mathbb P(D \mid {+}) = \frac{0.02 \times 0.95}{0.02 \times 0.95 + 0.98 \times 0.05} = 0.28 .\]
 
 So if you get a positive result on this 95%-accurate test, there's still only about a 1 in 4 chance you actually have the disease.

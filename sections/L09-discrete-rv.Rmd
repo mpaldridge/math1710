@@ -1,5 +1,7 @@
 # Discrete random variables  {#L09-discrete-rv}
 
+\newcommand{\Range}{\operatorname{Range}}
+
 <!--
 
 ## What is a random variable?  {#rv}
@@ -36,8 +38,6 @@ Expressions like $\mathbb P(X = x)$ or $\mathbb P(X \in A)$ should be understood
 :::
 
 It's useful to have a notation for the values a random variable can take.
-
-\newcommand{\Range}{\operatorname{Range}}
 
 ::: {.definition}
 The set of values a random variable $X$ can take is called its **range**, $\Range(X) = \{X(\omega) : \omega \in \Omega \}$.

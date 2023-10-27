@@ -273,6 +273,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -298,7 +303,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1>Solutions and group feedback<a href="solutions.html#solutions" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div class="mysummary">
 <p>This page has the solutions to all the non-assessed questions on Problem Sheet 1. Solutions are added after all tutorials on a Problem Sheet have finished.</p>
-<p>Solutions to assessed questions are available on Minerva in the “Assessments” tab, from one week after the deadline.</p>
+<p>Solutions to assessed questions are available on Minerva in the “Assessments and Feedback” tab, from one week after the deadline.</p>
 <p>There are many ways you get feedback on this module, both group feedback (feedback that is generally relevant to many people) and individual feedback (feedback based specifically on your own approach to the work).</p>
 <ul>
 <li><p>You will have received both individual and group spoken feedback in your tutorial (the more you speak up in your tutorial, the more individualised the feedback you get in return).</p></li>
@@ -508,7 +513,7 @@ frequency densities.</p>
 </div>
 <div class="myq">
 <p><strong>A3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<p><img src="math1710_files/figure-html/unnamed-chunk-20-1.png" width="480" /></p>
+<p><img src="math1710_files/figure-html/unnamed-chunk-22-1.png" width="480" /></p>
 <div class="myanswers">
 <p><em>Solution.</em> Some answers could be:</p>
 <ul>
@@ -667,6 +672,320 @@ In fact that’s the square of the correlation on the left-hand side, so we’ve
 <p>You can probably think of many other things.</p>
 </div>
 </div>
+</div>
+</div>
+<div id="P2-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 2<a href="solutions.html#P2-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="P2-short-solutions" class="section level3 unnumbered hasAnchor">
+<h3>A: Short questions<a href="solutions.html#P2-short-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="myq">
+<p><strong>A1.</strong> Suppose you toss a coin 4 times.</p>
+<div class="subq">
+<p><strong>(a)</strong> What would you suggest for a sample space <span class="math inline">\(\Omega\)</span> <strong>(i)</strong> if you only care about the total number of heads; <strong>(ii)</strong> if you care about the result of each coin toss?</p>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> For each of the cases in part (a), what is <span class="math inline">\(|\Omega|\)</span>?</p>
+</div>
+<div class="myanswers">
+<p><em>Solution.</em></p>
+<p><strong>(i)</strong> We can take <span class="math inline">\(\Omega = \{0,1,2,3,4\}\)</span>, with <span class="math inline">\(|\Omega| = 5\)</span>.</p>
+<p><strong>(ii)</strong> Here, <span class="math inline">\(\Omega = \{ \text{HHHH}, \text{HHHT}, \text{HHTH},\dots, \text{TTTT} \}\)</span> should be the set of all sequences of four “H”s or “T”s. So here, <span class="math inline">\(|\Omega| = 2^4 = 16\)</span>.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A2.</strong> Let <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> be events in a sample space <span class="math inline">\(\Omega\)</span>. Write the following events using only <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span>, <span class="math inline">\(C\)</span> and the complement, intersection, and union operations.</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(C\)</span> happens but <span class="math inline">\(A\)</span> doesn’t.</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is “<span class="math inline">\(C\)</span> and not <span class="math inline">\(A\)</span>”: <span class="math inline">\(C\cap A^{\mathsf{c}}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> At least one of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> This is simply the union <span class="math inline">\(A \cup B\cup C\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Exactly one of <span class="math inline">\(B\)</span> or <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> One way to write this is to split it up as “‘<span class="math inline">\(B\)</span> but not <span class="math inline">\(C\)</span>’ or ‘<span class="math inline">\(C\)</span> but not <span class="math inline">\(B\)</span>’”, which is <span class="math inline">\((B \cap C^{\mathsf{c}}) \cup (B^{\mathsf{c}} \cap C)\)</span>.</p>
+<p>An alternative is to split it up as “‘<span class="math inline">\(B\)</span> or <span class="math inline">\(C\)</span>’ but not ‘both <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span>’”, which is <span class="math inline">\((B \cup C) \cap (B\cap C)^{\mathsf{c}}\)</span>.</p>
+<p>You can check these are equal by (for example) using De Morgan’s law and the distributive law to expand out the second version.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Exactly two of <span class="math inline">\(A\)</span>, <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> happens.</p>
+<div class="myanswers">
+<p><em>Solution.</em> I would split this up into “<span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> but not <span class="math inline">\(C\)</span>”, “<span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> but not <span class="math inline">\(B\)</span>”, and “<span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> but not <span class="math inline">\(A\)</span>” and take the union. This gives
+<span class="math display">\[  (A \cap B \cap C^{\mathsf{c}}) \cup (A \cap B^{\mathsf{c}} \cap C) \cup (A^{\mathsf{c}} \cap B \cap C) . \]</span>
+There are other equivalent formulations.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> What is the value of the following expressions?</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(6!\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720. \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(8^4\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ 8^4 = 8 \times 8 \times 8 \times 8 = 4096 \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> <span class="math inline">\({8}^{\underline{4}}\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ {8}^{\underline{4}} = 8 \times 7 \times 6 \times 5 = 1680 \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> <span class="math inline">\({\displaystyle \binom{10}{4}}\)</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+<span class="math display">\[ \binom{10}{4} = \frac{10 \times 9 \times 8 \times 7}{4\times 3\times 2\times 1} = 210 \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> An urn contains 4 red balls and 6 blue balls. Two balls are drawn from the urn. What is the probability that both balls are red, if the balls are drawn <strong>(a)</strong> with replacement; <strong>(b)</strong> without replacement?</p>
+<div class="myanswers">
+<p><em>Solution.</em></p>
+<p><strong>(a)</strong> There are <span class="math inline">\(|\Omega| = 10^2 = 100\)</span> ways to draw two balls with replacement. There are <span class="math inline">\(|A| = 4^2=16\)</span> ways to draw two red balls. So
+<span class="math inline">\(\mathbb P(A) = \frac{16}{100} = 0.16\)</span>.</p>
+<p><strong>(b)</strong> There are <span class="math inline">\(|\Omega| = {10}^{\underline{2}} = 10 \times 9 = 90\)</span> ways to draw two balls without replacement. There are <span class="math inline">\(|A| = {4}^{\underline{2}} = 4 \times 3 = 12\)</span> to draw two red balls. So
+<span class="math inline">\(\mathbb P(A) = \frac{12}{90} = \frac{2}{15} = 0.133\)</span>.</p>
+</div>
+</div>
+</div>
+<div id="P2-long-solutions" class="section level3 unnumbered hasAnchor">
+<h3>B: Long questions<a href="solutions.html#P2-long-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="myq">
+<p><strong>B1.</strong> Starting from just the three probability axioms, prove the following statements:</p>
+<div class="subq">
+<p><strong>(a)</strong> <span class="math inline">\(\mathbb P(\varnothing) = 0\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> Let <span class="math inline">\(A\)</span> be any event (such as <span class="math inline">\(A = \varnothing\)</span> or <span class="math inline">\(A = \Omega\)</span>, for example). Then <span class="math inline">\(A \cup \varnothing = A\)</span>, and the union is disjoint – since <span class="math inline">\(\varnothing\)</span> contains no sample points, it certainly can’t contain any sample points that are also in <span class="math inline">\(A\)</span>. Then applying Axiom 3, we get <span class="math inline">\(\mathbb P(A) + \mathbb P(\varnothing) = \mathbb P(A)\)</span>. Subtracting <span class="math inline">\(\mathbb P(A)\)</span> from both sides gives the result.</p>
+<p><em>Alternatively</em>, if you prove part (b) first, you can apply that with <span class="math inline">\(A = \varnothing\)</span>. Since <span class="math inline">\(\varnothing^\mathsf{c}= \Omega\)</span> and Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, the result follows.</p>
+<p><strong>Group feedback:</strong> With this, and most “prove from the axioms” questions, the key is to find a relevant disjoint union, which then allows us to use Axiom 3. So if we can find <span class="math inline">\(C = A \cup B\)</span> as a disjoint union (hopefully containing some events relevant to the question at hand), Axiom 3 allows us to write <span class="math inline">\(\mathbb P(C) = \mathbb P(A) + \mathbb P(B)\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> <span class="math inline">\(\mathbb P(A^\mathsf{c}) = 1 - \mathbb P(A)\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> A very useful and relevant disjoint union is <span class="math inline">\(A \cup A^\mathsf{c}= \Omega\)</span>. Applying Axiom 3 gives us <span class="math inline">\(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = \mathbb P(\Omega)\)</span>. But Axiom 2 tells us that <span class="math inline">\(\mathbb P(\Omega) = 1\)</span>, so <span class="math inline">\(\mathbb P(A) + \mathbb P(A^\mathsf{c}) = 1\)</span>. Rearranging gives the result.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B2.</strong> In this question, you will have to use the standard two-event form of the addition rule for unions
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> Using the two-event addition rule, show that
+<span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big).  \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em> As with the Cauchy–Schwarz question from Problem Sheet 1, the key is to make a good choice for what <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> should be. This time, <span class="math inline">\(A = C\)</span> and <span class="math inline">\(B = D \cup E\)</span> will work well, since <span class="math inline">\(C \cup (D \cup E) = C \cup D \cup E\)</span>. (You can call this “associativity”, if you like.) Making that substitution immediately gives us
+<span class="math display">\[ \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D \cup E) - \mathbb P\big(C \cap (D \cup E)\big) ,  \]</span>
+as required.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Using your result from part (a), the two-event addition rule, the distributive law, and the two-event addition rule again, prove the three-event form of the addition rule for unions:
+<span class="math display">\[
+  \mathbb P(C \cup D \cup E) = \mathbb P(C) + \mathbb P(D) + \mathbb P(E)
+  - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) .
+\]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let’s take the three terms on the right of the equation from part (a) separately.</p>
+<p>The first term is <span class="math inline">\(\mathbb P(C)\)</span>, which is fine as it is.</p>
+<p>The second term is <span class="math inline">\(\mathbb P(D \cup E)\)</span>. This is the probability of the union of two events, so we can use addition rule for the union of two events to get
+<span class="math display">\[ \mathbb P(D \cup E) = \mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E) . \]</span></p>
+<p>The third term is <span class="math inline">\(\mathbb P\big(C \cap (D \cup E)\big)\)</span>. If we use the distributive law, as suggested in the question, we get <span class="math inline">\(C \cap (D \cup E) = (C \cap D) \cup (C\cap E)\)</span>, so we want to find <span class="math inline">\(\mathbb P\big((C \cap D) \cup (C\cap E)\big)\)</span>. But this is another union of two events again, this time with <span class="math inline">\(A = C \cap D\)</span> and <span class="math inline">\(B = C \cap E\)</span>. So the two-event addition rule gives
+<span class="math display">\[ \mathbb P\big((C \cap D) \cup (C\cap E)\big) = \mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E) , \]</span>
+since <span class="math inline">\((C \cap D) \cap (C \cap E) = C \cap D \cap E\)</span>.</p>
+<p>Finally, we put this all together, and get
+<span class="math display">\[\begin{align*}
+  \mathbb P(C &amp;\cup D \cup E) \\
+  &amp;= \mathbb P(C) + \big(\mathbb P(D) + \mathbb P(E) - \mathbb P(D \cap E)\big) - \big(\mathbb P(C \cap D) + \mathbb P(C \cap E) - \mathbb P(C \cap D \cap E)\big) \\
+  &amp;= \mathbb P(C) + \mathbb P(D) + \mathbb P(E) - \mathbb P(C \cap D) - \mathbb P(C \cap E) - \mathbb P(D \cap E) + \mathbb P(C \cap D \cap E) ,
+\end{align*}\]</span>
+which is what we wanted.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B3.</strong> Suppose we pick a number at random from the set <span class="math inline">\(\{1, 2, \dots, 2023\}\)</span>.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the probability that the number is divisible by 5?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The sample space is <span class="math inline">\(\Omega = \{1, 2, \dots, 2023\}\)</span>. Clearly <span class="math inline">\(|\Omega| = 2023\)</span>. The event in question is <span class="math inline">\(A = \{5, 10, \dots, 2020\}\)</span> of numbers up to 2023 that are divisible by 5. Thus <span class="math inline">\(|A|\)</span> is the largest integer no bigger than <span class="math inline">\(\frac{2023}{5} = 404.6\)</span>, which is 404, as this is how many times 5 “goes into” 2023. Hence
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{404}{2023} = 0.1997 , \]</span>
+just a tiny bit smaller than <span class="math inline">\(\frac{1}{5}\)</span>.</p>
+<p><strong>Group feedback:</strong> With these “classical probability” questions, the steps should always be:</p>
+<ol style="list-style-type: decimal">
+<li>State clearly what the sample space <span class="math inline">\(\Omega\)</span> is.</li>
+<li>Count how many outcomes <span class="math inline">\(|\Omega|\)</span> are in the sample space.</li>
+<li>State clearly what the event <span class="math inline">\(A\)</span> is.</li>
+<li>Count how many outcomes <span class="math inline">\(|A|\)</span> are in the event.</li>
+<li>The desired probability is then <span class="math inline">\(\mathbb P(A) = |A|/|\Omega|\)</span>.</li>
+</ol>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is the probability the number is divisible by 5 or by 7?</p>
+<div class="myanswers">
+<p><em>Solution.</em> With the same <span class="math inline">\(\Omega\)</span> and <span class="math inline">\(A\)</span>, now let <span class="math inline">\(B\)</span> be the numbers up to 2023 divisible by <span class="math inline">\(7\)</span>; so we’re looking for <span class="math inline">\(\mathbb P(A \cup B)\)</span>. By the addition rule for unions, this is
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span>
+We already know <span class="math inline">\(\mathbb P(A) = \frac{404}{2022}\)</span>, so need to find out <span class="math inline">\(\mathbb P(B)\)</span> and <span class="math inline">\(\mathbb P(A \cap B)\)</span>.</p>
+<p>This time, 7 goes into 2023 exactly, so <span class="math inline">\(|B|\)</span> is <span class="math inline">\(\frac{2023}{7} = 289\)</span>. So
+<span class="math display">\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{289}{2023} = \frac{1}{7}  . \]</span></p>
+<p>Now, <span class="math inline">\(A \cap B\)</span> is the set of numbers divisible by both 5 and 7, which is precisely the numbers divisible by their least common multiple <span class="math inline">\(5 \times 7 = 35\)</span>. Then <span class="math inline">\(|A \cap B|\)</span> is <span class="math inline">\(\frac{2023}{35} = 57.8\)</span> rounded down, so <span class="math inline">\(\mathbb P(A \cap B) = \frac{57}{2023}\)</span>.</p>
+<p>So finally, we have
+<span class="math display">\[ \mathbb P(A \cup B) = \frac{404}{2023} + \frac{289}{2023} - \frac{57}{2023} = \frac{636}{2023} = 0.314 , \]</span>
+just a tiny bit larger than <span class="math inline">\(\frac{11}{35}\)</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> Eight friends are about to sit down at random at a round table. Find the probability that</p>
+<div class="subq">
+<p><strong>(a)</strong> Ashley and Brook sit next to each other, with Chris directly opposite Brook;</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let <span class="math inline">\(\Omega\)</span> be the sample space of ways the friends can sit around the table. This is an ordering problem, so <span class="math inline">\(|\Omega| = 8!\)</span>.</p>
+<p>Let <span class="math inline">\(A\)</span> be the event in the question. What is <span class="math inline">\(|A|\)</span>? Well,</p>
+<ul>
+<li>Ashley can sit anywhere, so has 8 choices of seat.</li>
+<li>Brook can sit either directly to Ashley’s left or directly to Ashley’s right, so has 2 choices of seat.</li>
+<li>Chris must sit directly opposite Brook, so only has 1 choice of seat.</li>
+<li>The remaining five friends can fill up the remaining seats however they like, so have 5, 4, 3, 2, and 1 choices respectively.</li>
+</ul>
+<p>Hence <span class="math inline">\(|A| = 8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. Thus we get
+<span class="math display">\[ \mathbb P(A) = \frac{|A|}{|\Omega|} = \frac{8 \times 2 \times 1 \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2 \times 1}{7 \times 6} = \frac{1}{21} . \]</span></p>
+<p><strong>Group feedback:</strong> As we have discussed more recently, after this Problem Sheet was assigned, often “classical probability” problems also can be equivalently solved by the step-by-step “chain rule” method. Can you use a chain rule argument to find the same answer as
+<span class="math display">\[ \mathbb P(A) = 1 \times \frac27 \times \frac16 \times 1 \times 1 \times 1 \times 1 \times 1 = \frac{1}{21} ? \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> neither Ashley, Brook nor Chris sit next to each other.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The sample space <span class="math inline">\(\Omega\)</span> is as before. Let’s count the outcomes in <span class="math inline">\(B\)</span>, the event in the question.</p>
+<ul>
+<li>Ashley can sit anywhere, so has 8 choices of seat.</li>
+<li>Chris’s number of choices will depend on where Brook sits, so we’ll have to count Brook’s and Chris’s choices together:
+<ul>
+<li>Brook cannot sit next to Ashley.</li>
+<li>If Brook sits next-but-one to Ashley – of which there are 2 choices – then Chris has 3 choices: Chris cannot sit on the seat directly between Ashley and Brook, nor directly next to Ashley on the other side, nor directly next to Brook on the other side, leaving <span class="math inline">\(6-3=3\)</span> choices.</li>
+<li>If Brook sits neither next nor next-but-one to Ashley – of which there are 3 choices – then Chris has 2 choices: he cannot sit to the right or left of Ashley, nor to the right or left of Brook, leaving <span class="math inline">\(6-4=2\)</span> choices.</li>
+</ul></li>
+<li>The remaining friends have 5, 4, 3, 2, and 1 choices again.</li>
+</ul>
+<p>Hence, <span class="math inline">\(|B| = 8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1\)</span>. So
+<span class="math display">\[ \mathbb P(B) = \frac{|B|}{|\Omega|} = \frac{8 \times (2\times 3 + 3 \times 2) \times 5 \times 4 \times 3 \times 2 \times 1}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = \frac{2\times 3 + 3 \times 2}{7 \times 6} = \frac{12}{42} = \frac{2}{7} .  \]</span></p>
+<p><em>Alternatively</em>, in a previous year’s tutorial, a MATH1710 student suggested to me the following rather elegant solution. Suppose the five other friends are already sat at a round table with five chairs. Ashley, then Brook, then Chris will each bring along their own chair, and push into one of the gaps between the friends.</p>
+<p>Ashley has 5 gaps to choose from, then Brook will have 6 gaps (Ashley joining the table will have increased the number of gaps by 1), then Chris will have 7, so the total number of ways they can push in is <span class="math inline">\(|\Omega| = 5 \times 6 \times 7\)</span>.</p>
+<p>To not sit next to each other, Ashley can push in any of the 5 gaps, Brook only has <span class="math inline">\(6 - 2 = 4\)</span> choices (not in the gap directly to the left or right of Ashley), and Chris only has <span class="math inline">\(7 - 4 = 3\)</span> choices (not in the gaps directly to the left or right of Ashley nor the gaps directly to the left or right of Brook – these four gaps are distinct assuming Brook was not next to Ashley). Hence <span class="math inline">\(|B| = 5 \times 4 \times 3\)</span>, and we have
+<span class="math display">\[ \mathbb P(B) = \frac{5 \times 4 \times 3}{5 \times 6 \times 7} = \frac{4 \times 3}{6 \times 7} = \frac{12}{42} = \frac{2}{7}.  \]</span></p>
+<p><strong>Group feedback:</strong> Again, an equivalent answer can be derived using the step-by-step “chain rule” method.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> A “random digit” is a number chosen at random from <span class="math inline">\(\{0, 1, \dots, 9\}\)</span>, each with equal probability. A statistician chooses <span class="math inline">\(n\)</span> random digits (with replacement).</p>
+<div class="subq">
+<p><strong>(a)</strong> For <span class="math inline">\(k = 0, 1, \dots, 9\)</span>, let <span class="math inline">\(A_k\)</span> be the event that all the digits are <span class="math inline">\(k\)</span> or smaller. What is the probability of <span class="math inline">\(A_k\)</span>, as a function of <span class="math inline">\(k\)</span> and <span class="math inline">\(n\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The sample space is <span class="math inline">\(\Omega = \{0,1,\dots,9\}^n\)</span>, the set of length-<span class="math inline">\(n\)</span> sequences of digits between <span class="math inline">\(0\)</span> and <span class="math inline">\(9\)</span>. The number of these is <span class="math inline">\(|\Omega| = 10^n\)</span>, as there are 10 choices for each of the <span class="math inline">\(n\)</span> digits.</p>
+<p>The event <span class="math inline">\(A_k\)</span> is <span class="math inline">\(\{0,1,\dots,k\}^n\)</span>, the set of length-<span class="math inline">\(n\)</span> sequences of digits that are between <span class="math inline">\(0\)</span> and <span class="math inline">\(k\)</span>. The number of these is <span class="math inline">\(|A_k| = (k+1)^n\)</span>. (Note that it’s <span class="math inline">\(k+1\)</span> because we’re allowing 0 as well.)</p>
+<p>Hence, the probability is
+<span class="math display">\[ \mathbb P(A_k) = \frac{|A_k|}{|\Omega|} = \frac{(k+1)^n}{10^n} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Let <span class="math inline">\(B_k\)</span> be the event that the largest digit chosen is equal to <span class="math inline">\(k\)</span>. By finding a relationship between <span class="math inline">\(B_k\)</span>, <span class="math inline">\(A_{k-1}\)</span> and <span class="math inline">\(A_k\)</span>, or otherwise, show that
+<span class="math display">\[ \mathbb P(B_k) = \frac{(k+1)^n - k^n}{10^n} . \]</span></p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Consider the event <span class="math inline">\(A_k\)</span> that all the digits are at most <span class="math inline">\(k\)</span>. Within <span class="math inline">\(A_k\)</span>, <em>either</em> one or more of the digits equal <span class="math inline">\(k\)</span>, in which case that <span class="math inline">\(k\)</span> is the largest digit and we are in <span class="math inline">\(B_k\)</span>; <em>or</em> none of the digits equal <span class="math inline">\(k\)</span>, in which case they are all at most <span class="math inline">\(k-1\)</span>, and we are in <span class="math inline">\(A_{k-1}\)</span>. Only one of these two possibilitie can occur, so we have a disjoint union
+<span class="math display">\[ A_k = B_k \cup A_{k-1} . \]</span></p>
+<p>Applying Axiom 3 to the disjoint union gives
+<span class="math display">\[ \mathbb P(A_k) = \mathbb P(B_k) + \mathbb P(A_{k-1}) . \]</span>
+Rearranging this gives
+<span class="math display">\[ \mathbb P(B_k) = \mathbb P(A_k) - \mathbb P(A_{k-1}) . \]</span>
+Substituting in the answer from part (a) gives
+<span class="math display">\[\mathbb P(B_k) = \frac{(k+1)^n}{10^n} - \frac{(k-1+1)^n}{10^n} = \frac{(k+1)^n - k^n}{10^n} . \]</span></p>
+</div>
+</div>
+</div>
+<!--
+::::: {.myq}
+**B5.** Suppose your tutorial group contains 12 students -- you and 11 others. The tutor wishes to choose 4 members of the group to present their work.
+
+:::: {.subq}
+**(a)** How many ways can the tutor choose the presentation group?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+The tutor is sampling 4 items from 12, without replacement (the same person can't be picked twice) and where the order doesn't matter. So this is
+\[ \binom{12}{4} = 495 . \]
+:::
+::::
+
+:::: {.subq}
+**(b)** How many ways can the tutor choose the presentation group if you are one of the presenters?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+Once the tutor has chosen you, she must pick 3 other students to complete the presentation group out of the other 11 students. So this is
+\[ \binom{11}{3} = 165 . \]
+:::
+::::
+
+:::: {.subq}
+**(c)** How many ways can the tutor choose the presentation group if you are *not* one of the presenters?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+If the tutor doesn't chose you, she must pick all 4 presenters out of the other 11 students. So this is
+\[ \binom{11}{4} = 330 . \]
+:::
+::::
+
+:::: {.subq}
+**(d)** Pascal's formula says that
+\[ \binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k} . \]
+Prove Pascal's formula.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+We'd like a "double-counting" argument, where we count the same number in two different ways. Let's follow the breadcrumbs from the first three parts of the question.
+
+Suppose the tutorial group has $n$ students and there will be $k$ presenters. How many ways can the presentation group be chosen?
+
+One way is simply to say that this is $\displaystyle\binom{n}{k}$.
+
+Another way is to separately count the presentation groups that do include you and the presentation groups that don't include you, and add them together. The presentation groups including you require another $k-1$ presenters from the other $n -1$ students, which makes $\binom{n-1}{k-1}$. The presentation groups not including you require all $k$ presenters from the other $n-1$, which makes $\binom{n-1}{k}$. In total, the number of presentation groups is
+\[ \binom{n-1}{k-1} + \binom{n-1}{k} . \]
+
+Since we've counted the number of presentation groups in two different ways, these expressions must be equal.
+
+*Alternatively*, you can prove algebraically that
+\[  \frac{n(n-1)\cdots(n-k+1)}{k(k-1)\cdots2\cdot1} = \frac{(n-1)(n-2)\cdots(n-k+1)}{(k-1)(k-2)\cdots2\cdot1} + \frac{(n-1)(n-2)\cdots(n-k)}{k(k-1)\cdots2\cdot1} \]
+(start by making $k!$ the common denominator on the right), but I feel that's not in the spirit of the question.
+:::
+::::
+:::::
+-->
 
 </div>
 </div>

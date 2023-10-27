@@ -7,7 +7,7 @@
 ::: {.mysummary}
 This page has the solutions to all the non-assessed questions on Problem Sheet 1. Solutions are added after all tutorials on a Problem Sheet have finished.
 
-Solutions to assessed questions are available on Minerva in the "Assessments" tab, from one week after the deadline.
+Solutions to assessed questions are available on Minerva in the "Assessments and Feedback" tab, from one week after the deadline.
 
 There are many ways you get feedback on this module, both group feedback (feedback that is generally relevant to many people) and individual feedback (feedback based specifically on your own approach to the work).
 
@@ -30,4 +30,16 @@ There are many ways you get feedback on this module, both group feedback (feedba
 ### B: Long questions {#P1-long-solutions .unnumbered}
 
 ```{r, child = "problems/questions/P1-long.Rmd"}
+```
+
+## Problem Sheet 2 {#P2-solutions .unnumbered}
+
+### A: Short questions {#P2-short-solutions .unnumbered}
+
+```{r, child = "problems/questions/P2-short.Rmd"}
+```
+
+### B: Long questions {#P2-long-solutions .unnumbered}
+
+```{r, child = "problems/questions/P2-long.Rmd"}
 ```

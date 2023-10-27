@@ -273,6 +273,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -398,9 +403,15 @@ Putting these together, we get the following.</p>
 <li><span class="math inline">\(\mathbb P({+}\mid D^\mathsf{c}) = 0.05\)</span>;</li>
 <li>we want to find <span class="math inline">\(\mathbb P(D \mid {+})\)</span>.</li>
 </ul>
-<p>Importantly, <span class="math inline">\(D\)</span> (you have the disease) and <span class="math inline">\(D^\mathsf{c}\)</span> (you don’t) make up a partition. So Theorem <a href="L08-two-theorems.html#thm:bayes-total">8.3</a> tells us that
-<span class="math display">\[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\mathsf{c}) \,\mathbb P({+} \mid D^\mathsf{c})} . \]</span>
-Putting in all the numbers we have, we get
+<p>So from Bayes’ theorem, we have
+<span class="math display">\[  \mathbb P(D \mid {+}) = \frac{\mathbb P(D) \,\mathbb P({+} \mid D)}{\mathbb P(+)} = \frac{0.02 \times 0.95}{\mathbb P(+)} . \]</span></p>
+<p>How can we find <span class="math inline">\(\mathbb P(+)\)</span>? Well, importantly, <span class="math inline">\(D\)</span> (you have the disease) and <span class="math inline">\(D^\mathsf{c}\)</span> (you don’t) make up a partition – so we can use the law of total probability. We have
+<span class="math display">\[\begin{align*}
+  \mathbb P(+) &amp;= \mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\mathsf{c}) \,\mathbb P({+} \mid D^\mathsf{c}) \\\
+    &amp;= 0.02 \times 0.95 + 0.98 \times 0.05 .
+\end{align*}\]</span> + 0.98 .
+\end{align*}</p>
+<p>Putting the Bayes’ theorem result and the law of total probability result together, we get
 <span class="math display">\[ \mathbb P(D \mid {+}) = \frac{0.02 \times 0.95}{0.02 \times 0.95 + 0.98 \times 0.05} = 0.28 .\]</span></p>
 <p>So if you get a positive result on this 95%-accurate test, there’s still only about a 1 in 4 chance you actually have the disease.</p>
 </div>
