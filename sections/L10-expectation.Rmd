@@ -1,17 +1,11 @@
 # Expectation and variance  {#L10-expectation}
 
 
+<!--
+
 We continue our study of discrete random variables. Recall that the PMF $p_X$ of a discrete random variable $X$ is $p_X(x) = \mathbb P(X = x)$.
 
 ## Expectation  {#expectation}
-
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/l9Pizg01Zbg"></iframe>
-:::
-::::
--->
 
 
 Often, we will be interested in the "average" value of a random variable -- for example, the "average" total from two dice rolls -- which represents what the "central" value of the random variable is. This average is called the "expectation".
@@ -52,32 +46,11 @@ When $X$ is the total of two dice rolls, we found the PMF of $X$ last time. The 
 
 In previous examples, we looked at $X$ being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total $X$, like "double the total and add 1" $Y = 2X + 1$, or "the total minus 4, all squared" $Z = (X-4)^2$. (I'm not sure *why* you'd care about these, but you could study them if you wanted to...)
 
-<!--
-::: {.example}
-Let $Y = 2X + 1$. Then for each potential outcome $x$ of $X$, there is a matching outcome $y = 2x +1$ of $Y$. So we can find the PMF for $Y$ by keeping the same probabilities as for $X$, but changing the values $x$ to the values $y = 2x +1$.
 
-| $y$ | $5$ | $7$ | $9$ | $\cdots$ | $23$ | $25$ |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $p_Y(y)$ | $\frac{1}{36}$ | $\frac{2}{36}$ | $\frac{3}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
-:::
-
-::: {.example}
-What about $Z = (X - 4)^2$? This is a bit trickier, because more than one outcome $x$ can lead to the same outcome $z = (x - 4)^2$: for example, $(2 - 4)^2 = (6 - 4)^2 = 4$. So, more precisely, we have
-  \[ \mathbb P(Z = z) = \mathbb P\big(X \in \{x : (x - 4)^2 = z\}\big) , \]
-or, in terms of PMFs,
-  \[   p_Z(z) = \sum_{x : (x - 4)^2 = z} p_X(x) . \]
-  
-| $z$ | $0$ | $1$ | $4$ | $\cdots$ | $49$ | $64$ |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $p_Z(z)$ | $\frac{3}{36}$ | $\frac{2}{36} + \frac{4}{36} = \frac{6}{36}$ | $\frac{1}{36} + \frac{5}{36} = \frac{6}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
-:::
--->
 
 It is possible, although sometimes a bit tricky, to work out the whole PMF of these new random variables that are functions of $X$ -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.
 
-<!--
-So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
--->
+
 
 
 ::: {.theorem #unconscious name="Law of the unconscious statistician"}
@@ -88,7 +61,7 @@ Let $X$ be a random variable, and let $Y = g(X)$ be another random variable that
 (The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for $\mathbb Eg(X)$ if you weren't thinking carefully -- but it turns out it's correct!)
 
 ::: {.proof}
-*(Non-examinable)* <!--As in the previous example, the idea is to group together $x$s that give the same $y$.-->
+*(Non-examinable)* 
 The PMF of $y$ can be given in terms of the PMF of $x$ -- we just need to add up all the $x$s that lead to the same $y$. That is,
 \[ p_Y(y) = \sum_{x\, :\, g(x) = y} p_X(x) . \]
 (Remember that the colon $:$ here means "such that", so this is a sum over all the $x$ such that $g(x) = y$.)
@@ -134,18 +107,6 @@ So for our "double the dice total and add 1" random variable $Y = 2X + 1$, we ha
 
 
 ## Variance  {#variance}
-
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/_I4tCExElec"></iframe>
-:::
-::::
--->
-
-
-
-<!-- \newcommand{\Var}{\operatorname{Var}} -->
 
 In the same way as the expectation of a random variable tells us about central values of it, the "variance" of a random variable tells us about the spread of typical values.
 
@@ -225,6 +186,45 @@ Let $X$ be a random variable. Then
 
 You will prove this on [the problem sheet](#P3).
 
+-->
+
+## Summary  {#summary-L10 .unnumbered}
+
+::: {.mysummary}
+* The expectation of a random variable $X$ is $\mathbb EX = \sum_x x\, p_X(x)$.
+* The variance of a random variable $X$ with expectation $\mu$ is $\Var(X) = \mathbb E(X - \mu)^2$.
+* $\mathbb E(aX+b) = a\mathbb EX + b$ and $\Var(aX+b) = a^2\Var(X)$.
+:::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Section 4.3.
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Sections 2.3 and 2.4.
+
+On [Problem Sheet 3](#P3), you should now be able to complete all questions.
+
+
+<!--
+::: {.example}
+Let $Y = 2X + 1$. Then for each potential outcome $x$ of $X$, there is a matching outcome $y = 2x +1$ of $Y$. So we can find the PMF for $Y$ by keeping the same probabilities as for $X$, but changing the values $x$ to the values $y = 2x +1$.
+
+| $y$ | $5$ | $7$ | $9$ | $\cdots$ | $23$ | $25$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| $p_Y(y)$ | $\frac{1}{36}$ | $\frac{2}{36}$ | $\frac{3}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
+:::
+
+::: {.example}
+What about $Z = (X - 4)^2$? This is a bit trickier, because more than one outcome $x$ can lead to the same outcome $z = (x - 4)^2$: for example, $(2 - 4)^2 = (6 - 4)^2 = 4$. So, more precisely, we have
+  \[ \mathbb P(Z = z) = \mathbb P\big(X \in \{x : (x - 4)^2 = z\}\big) , \]
+or, in terms of PMFs,
+  \[   p_Z(z) = \sum_{x : (x - 4)^2 = z} p_X(x) . \]
+  
+| $z$ | $0$ | $1$ | $4$ | $\cdots$ | $49$ | $64$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| $p_Z(z)$ | $\frac{3}{36}$ | $\frac{2}{36} + \frac{4}{36} = \frac{6}{36}$ | $\frac{1}{36} + \frac{5}{36} = \frac{6}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
+:::
+-->
+
 <!--
 ## Discrete uniform distribution  {#discrete-uniform}
 
@@ -268,11 +268,3 @@ Hence,
 \[  \sum_{i=1}^n i = \frac{n(n+1)}{2} \qquad \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6} .   \]
 You are not expected to know or memorise these for an exam.)
 -->
-
-## Summary  {#summary-L10 .unnumbered}
-
-::: {.mysummary}
-* The expectation of a random variable $X$ is $\mathbb EX = \sum_x x\, p_X(x)$.
-* The variance of a random variable $X$ with expectation $\mu$ is $\Var(X) = \mathbb E(X - \mu)^2$.
-* $\mathbb E(aX+b) = a\mathbb EX + b$ and $\Var(aX+b) = a^2\Var(X)$.
-:::

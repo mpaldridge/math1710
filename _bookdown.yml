@@ -11,8 +11,8 @@ rmd_files:
   - problems/P2.Rmd
   - sections/L07-conditional.Rmd
   - sections/L08-two-theorems.Rmd
-#  - sections/L09-discrete-rv.Rmd
-#  - sections/L10-expectation.Rmd
+  - sections/L09-discrete-rv.Rmd
+  - sections/L10-expectation.Rmd
   - problems/P3.Rmd
 #  - sections/L11-binomial-geometric.Rmd
 #  - sections/L12-poisson.Rmd

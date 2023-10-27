@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 10 Expectation and variance | MATH1710 Probability and Statistics I</title>
-  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
+  <meta name="generator" content="bookdown 0.35 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 10 Expectation and variance | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lecture 10 Expectation and variance | MATH1710 Probability and Statistics I" />
   
-  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
 <meta name="author" content="Matthew Aldridge" />
@@ -118,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -141,10 +145,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem Sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R Worksheets and Practicals</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>“Office hours” drop-in sessions</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
@@ -232,16 +236,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
 <ul>
-<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
-<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
-<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
 <li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
 <ul>
-<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
-<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
-<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
 <li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-L10"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
@@ -251,135 +249,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
-<li class="chapter" data-level="11.3" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#models"><i class="fa fa-check"></i><b>11.3</b> Distributions as models for data</a></li>
-<li class="chapter" data-level="" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
-<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
-<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-process"><i class="fa fa-check"></i><b>12.3</b> Poisson process</a></li>
-<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
-<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
-<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#summary-L13"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
-<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
-<li class="chapter" data-level="14.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>14.3</b> Correlation</a></li>
-<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-L14"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
-<ul>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
-<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
-<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L15-continuous.html"><a href="L15-continuous.html#summary-L15"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="L16-normal.html"><a href="L16-normal.html"><i class="fa fa-check"></i><b>16</b> Normal distribution</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="L16-normal.html"><a href="L16-normal.html#normal-definition"><i class="fa fa-check"></i><b>16.1</b> Definition of the normal distribution</a></li>
-<li class="chapter" data-level="16.2" data-path="L16-normal.html"><a href="L16-normal.html#normal-properties"><i class="fa fa-check"></i><b>16.2</b> Properties of the normal distribution</a></li>
-<li class="chapter" data-level="16.3" data-path="L16-normal.html"><a href="L16-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
-<li class="chapter" data-level="16.4" data-path="L16-normal.html"><a href="L16-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
-<li class="chapter" data-level="" data-path="L16-normal.html"><a href="L16-normal.html#summary-L16"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html"><i class="fa fa-check"></i><b>17</b> Exponential distribution and multiple continuous random variables</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#exponential"><i class="fa fa-check"></i><b>17.1</b> Exponential distribution</a></li>
-<li class="chapter" data-level="17.2" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#continuous-multiple"><i class="fa fa-check"></i><b>17.2</b> Multiple continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#summary-L17"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
-<ul>
-<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.1</b> Law of large numbers</a></li>
-<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.2</b> Central limit theorem</a></li>
-<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.3</b> Approximations with the normal distribution</a></li>
-<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
-<ul>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
-<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
-<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
-<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#normal-normal"><i class="fa fa-check"></i><b>19.3</b> Normal–normal model</a></li>
-</ul></li>
-<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> More Bayesian models</a>
-<ul>
-<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
-<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
-<li class="chapter" data-level="" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
-<li class="chapter" data-level="21" data-path="L21-questions.html"><a href="L21-questions.html"><i class="fa fa-check"></i><b>21</b> All questions answered</a>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html"><i class="fa fa-check"></i>R Practical 1</a>
 <ul>
-<li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
-<li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
-<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#joint-distributions"><i class="fa fa-check"></i><b>21.3</b> Joint distributions</a></li>
-<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#law-of-the-unconscious-statistician"><i class="fa fa-check"></i><b>21.4</b> Law of the unconscious statistician</a></li>
-<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.5</b> Statistical tables</a></li>
-<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.6</b> End-of semester survey</a></li>
-<li class="chapter" data-level="21.7" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.7</b> Other modules</a></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#about-prac"><i class="fa fa-check"></i>About the Practical</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#r-uni"><i class="fa fa-check"></i>Accessing R and RStudio on University computers</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#directions"><i class="fa fa-check"></i>Where are the computer clusters?</a>
 <ul>
-<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#about-the-exam"><i class="fa fa-check"></i><b>22.1</b> About the exam</a></li>
-<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.2</b> Past papers</a></li>
-<li class="chapter" data-level="22.3" data-path="L22-exam.html"><a href="L22-exam.html#exam-faqs"><i class="fa fa-check"></i><b>22.3</b> Exam FAQs</a>
-<ul>
-<li class="chapter" data-level="22.3.1" data-path="L22-exam.html"><a href="L22-exam.html#calculators"><i class="fa fa-check"></i><b>22.3.1</b> Calculators</a></li>
-<li class="chapter" data-level="22.3.2" data-path="L22-exam.html"><a href="L22-exam.html#revision"><i class="fa fa-check"></i><b>22.3.2</b> Revision</a></li>
-<li class="chapter" data-level="22.3.3" data-path="L22-exam.html"><a href="L22-exam.html#r-questions-on-the-exam"><i class="fa fa-check"></i><b>22.3.3</b> R questions on the exam</a></li>
-<li class="chapter" data-level="22.3.4" data-path="L22-exam.html"><a href="L22-exam.html#statistical-tables-1"><i class="fa fa-check"></i><b>22.3.4</b> Statistical tables</a></li>
-<li class="chapter" data-level="22.3.5" data-path="L22-exam.html"><a href="L22-exam.html#how-much-should-i-write"><i class="fa fa-check"></i><b>22.3.5</b> How much should I write?</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#stoner"><i class="fa fa-check"></i>EC Stoner Cluster 6.68</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#fourman"><i class="fa fa-check"></i>Fourman O &amp; P Clusters</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#manton"><i class="fa fa-check"></i>Irene Manton North &amp; South Clusters</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#psychology"><i class="fa fa-check"></i>Psychology Cluster 1.43</a></li>
+<li class="chapter" data-level="" data-path="practical.html"><a href="practical.html#hughes"><i class="fa fa-check"></i>Richard Hughes Cluster</a></li>
 </ul></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions and group feedback</a>
 <ul>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
-<ul>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
-<ul>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P6-solutions"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -403,44 +296,207 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L10-expectation" class="section level1 hasAnchor" number="10">
 <h1><span class="header-section-number">Lecture 10</span> Expectation and variance<a href="L10-expectation.html#L10-expectation" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>We continue our study of discrete random variables. Recall that the PMF <span class="math inline">\(p_X\)</span> of a discrete random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(p_X(x) = \mathbb P(X = x)\)</span>.</p>
-<div id="expectation" class="section level2 hasAnchor" number="10.1">
-<h2><span class="header-section-number">10.1</span> Expectation<a href="L10-expectation.html#expectation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/l9Pizg01Zbg"></iframe>
+
+We continue our study of discrete random variables. Recall that the PMF $p_X$ of a discrete random variable $X$ is $p_X(x) = \mathbb P(X = x)$.
+
+## Expectation  {#expectation}
+
+
+Often, we will be interested in the "average" value of a random variable -- for example, the "average" total from two dice rolls -- which represents what the "central" value of the random variable is. This average is called the "expectation".
+
+::: {.definition}
+Let $\Omega$ be a finite or countably infinite sample space, $\mathbb P$ be a probability measure on $\Omega$, and $X$ be a discrete random variable on $\Omega$. Then the **expectation** (or **expected value**) of $X$ is
+\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]
+
+If $p_X$ is the PMF of $X$, then a more convenient formula is
+\[ \mathbb EX = \sum_{x \in \Range(X)} x\,p_X(x) . \]
 :::
-::::
+
+We get the second formula from the first by grouping together all outcomes $\omega$ that lead to the same value $x = X(\omega)$ of $X$. It's only this second formula we actually use when calculating expectations.
+
+Note that "expectation" is simply the name that mathematicians give to the value $\mathbb EX = \sum_x x\, p(x)$. We don't necessarily "expect" to get the value $\mathbb EX$ as the outcome in the normal English-language sense of the word "expect". (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don't "expect" to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of "long-run mean outcome".
+
+::: {.example}
+*Let $X \sim \text{Bern}(p)$ be a Bernoulli trial with success probability $p$. What is the expectation $\mathbb EX$?*
+
+We know that the PMF is $p(0) = 1- p$ and $p(1) = p$. So, using the second formula in the definition, we have
+\[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]
+:::
+
+::: {.example}
+*What is the expected value of the sum of two dice rolls?*
+
+When $X$ is the total of two dice rolls, we found the PMF of $X$ last time. The expectation is
+\begin{align*}
+  \mathbb EX &= \sum_{x \in \Range(X)} x\,p(x)  \\
+    &= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
+    &= \tfrac{252}{36} \\
+    &= 7 .
+\end{align*}
+:::
+
+
+## Functions of random variables  {#functions}
+
+In previous examples, we looked at $X$ being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total $X$, like "double the total and add 1" $Y = 2X + 1$, or "the total minus 4, all squared" $Z = (X-4)^2$. (I'm not sure *why* you'd care about these, but you could study them if you wanted to...)
+
+
+
+It is possible, although sometimes a bit tricky, to work out the whole PMF of these new random variables that are functions of $X$ -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.
+
+
+
+
+::: {.theorem #unconscious name="Law of the unconscious statistician"}
+Let $X$ be a random variable, and let $Y = g(X)$ be another random variable that is a function $g$  of $X$. Then
+\[  \mathbb EY = \mathbb E\,g(X) = \sum_{x} g(x) \, p_X(x) . \]
+:::
+
+(The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for $\mathbb Eg(X)$ if you weren't thinking carefully -- but it turns out it's correct!)
+
+::: {.proof}
+*(Non-examinable)* 
+The PMF of $y$ can be given in terms of the PMF of $x$ -- we just need to add up all the $x$s that lead to the same $y$. That is,
+\[ p_Y(y) = \sum_{x\, :\, g(x) = y} p_X(x) . \]
+(Remember that the colon $:$ here means "such that", so this is a sum over all the $x$ such that $g(x) = y$.)
+
+Using this, and from the definition of expectation, we have
+\begin{align*}
+  \mathbb EY &= \sum_y y \, p_Y(y) \\
+    &= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
+    &= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
+    &= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
+\end{align*}
+since $y = g(x)$ inside the second sum. But these two sums together are summing over all $x$, just partitioned by which value of $y$ they lead to, so they can be replaced by just a single sum over $x$. That gives the theorem.
+:::
+
+There are some functions for which this expression becomes particularly simple.
+
+::: {.theorem #linearity1 name="Linearity of expectation, 1"}
+Let $X$ be a random variable. Then
+
+1. $\mathbb E(aX) = a\mathbb EX$;
+2. $\mathbb E(X + b) = \mathbb EX + b$.
+:::
+
+::: {.proof}
+We use the law of the unconscious statistician.
+
+For part 1, we can take the $a$ outside the sum, to get
+\[ \mathbb E(aX) = \sum_x ax\, p_X(x) = a\sum_x x\, p_X(x) = a\mathbb EX . \]
+
+For part 2, we have
+\begin{align*}
+  \mathbb E(X+b) &= \sum_x (x + b)\, p_X(x) \\
+    &= \sum_x \big( x\, p_X(x) + b\,p_X(x) \big) \\
+    &= \sum_x x\, p_X(x) + \sum_x b\,p_X(x) \\
+    &= \mathbb E(X) + b \sum_x p_X(x) \\
+    &= \mathbb E(X) + b .
+\end{align*}
+The last line was because PMFs always add up to 1, so $\sum_x p_X(x) = 1$.
+:::
+
+So for our "double the dice total and add 1" random variable $Y = 2X + 1$, we have
+\[ \mathbb EY = \mathbb E(2X+1) = 2\mathbb EX + 1 = 2\times 7 + 1 = 15. \]
+
+
+## Variance  {#variance}
+
+In the same way as the expectation of a random variable tells us about central values of it, the "variance" of a random variable tells us about the spread of typical values.
+
+::: {.definition}
+Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the **variance** of $X$ is
+\[ \Var(X) = \mathbb E(X - \mu)^2 . \]
+:::
+
+(To be clear, the notation here means the expectation of $(X-\mu)^2$; and *not* $\mathbb E(X - \mu)$ then squared, which would be $0^2 = 0$.)
+
+Note that $(X - \mu)^2 \geq 0$ is a square, so always non-negative, and hence the variance $\Var(X) \geq 0$ is always non-negative also. Sometimes we call the square-root of the variance the **standard deviation**.
+
+It may not surprise you, if you remember [Lecture 1](#L01-stats) that to go along with this "definitional formula" for the variance, we also have a "computational formula", which can sometimes be more convenient.
+
+::: {.theorem}
+Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the variance $\Var(X) = \mathbb E(X - \mu)^2$ can also be calculated as
+\[ \Var(X) = \mathbb EX^2 - \mu^2 . \]
+:::
+
+(Again, $\mathbb EX^2$ means the expectation of $X^2$.)
+
+::: {.proof}
+As previously we expand out the brackets, and use linearity of expectation (in the same way we "brought the sum inside" with the sample variance previously). We get
+\begin{align*}
+  \Var(X) &= \mathbb E(X - \mu)^2 \\
+    &= \mathbb E(X^2 - 2\mu X + \mu^2) \\
+    &= \mathbb EX^2 - \mathbb E(2\mu X) + \mathbb E \mu^2 \\
+    &= \mathbb EX^2 - 2\mu \,\mathbb EX + \mu^2 .
+\end{align*}
+But we said that $\mathbb EX$ would be called $\mu$, so we can substitute in $\mathbb EX = \mu$, to get
+\[ \Var(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]
+as required.
+:::
+
+(A brief optional note for pedants: Writing $\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X$ is not, strictly speaking, justified by the result that above we called "linearity of expectation, 1". However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call "linearity of expectation, 2", of which it is a special case.)
+
+::: {.example}
+Let $X \sim \text{Bern}(p)$ be a Bernoulli trial, and recall that $\mathbb EX = p$.
+
+Using the definitional formula, we have
+\begin{align*}
+\Var(X) &= \mathbb E(X-p)^2 \\
+        &= (0 - p)^2 \,p_X(0) + (1-p)^2\, p_X(1) \\
+        &= p^2\times(1-p) + (1-p)^2 \times p \\
+        &= p(1-p)\big(p + (1-p)\big) \\
+        &= p(1-p) .
+\end{align*}
+
+Alternatively, using the computational formula, we have
+\begin{align*}
+\Var(X) &= \mathbb EX^2 - p^2 \\
+        &= \big(0^2\,p_X(0) + 1^2 p_X(1)\big) - p^2 \\
+        &= 0\times(1-p) + 1\times p - p^2 \\
+        &= p - p^2 \\
+        &= p(1-p) .
+\end{align*}
+:::
+
+::: {.example}
+For the total of two dice, using the computational formula, we have
+\begin{align*}
+\Var(X) &= \mathbb EX^2 - \mu^2 \\
+        &= \left(2^2 \times \frac{1}{36} + 3^2 \times \frac{2}{36} + \cdots + 12^2 \times \frac{1}{36}\right) - 7^2 \\
+        &= \frac{1974}{36} - 49 \\
+        &= \frac{70}{12} \approx 5.8 .
+\end{align*}
+:::
+
+Finally, a result on what happens to the variance of simple functions of random variables.
+
+::: {.theorem}
+Let $X$ be a random variable. Then
+
+1. $\Var(aX) = a^2\Var (X)$;
+2. $\Var(X + b) = \Var(X)$.
+:::
+
+You will prove this on [the problem sheet](#P3).
+
 -->
-<p>Often, we will be interested in the “average” value of a random variable – for example, the “average” total from two dice rolls – which represents what the “central” value of the random variable is. This average is called the “expectation”.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-48" class="definition"><strong>Definition 10.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a finite or countably infinite sample space, <span class="math inline">\(\mathbb P\)</span> be a probability measure on <span class="math inline">\(\Omega\)</span>, and <span class="math inline">\(X\)</span> be a discrete random variable on <span class="math inline">\(\Omega\)</span>. Then the <strong>expectation</strong> (or <strong>expected value</strong>) of <span class="math inline">\(X\)</span> is
-<span class="math display">\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]</span></p>
-<p>If <span class="math inline">\(p_X\)</span> is the PMF of <span class="math inline">\(X\)</span>, then a more convenient formula is
-<span class="math display">\[ \mathbb EX = \sum_{x \in \operatorname{Range}(X)} x\,p_X(x) . \]</span></p>
+<div id="summary-L10" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L10-expectation.html#summary-L10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="mysummary">
+<ul>
+<li>The expectation of a random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb EX = \sum_x x\, p_X(x)\)</span>.</li>
+<li>The variance of a random variable <span class="math inline">\(X\)</span> with expectation <span class="math inline">\(\mu\)</span> is <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span>.</li>
+<li><span class="math inline">\(\mathbb E(aX+b) = a\mathbb EX + b\)</span> and <span class="math inline">\(\operatorname{Var}(aX+b) = a^2\operatorname{Var}(X)\)</span>.</li>
+</ul>
 </div>
-<p>We get the second formula from the first by grouping together all outcomes <span class="math inline">\(\omega\)</span> that lead to the same value <span class="math inline">\(x = X(\omega)\)</span> of <span class="math inline">\(X\)</span>. It’s only this second formula we actually use when calculating expectations.</p>
-<p>Note that “expectation” is simply the name that mathematicians give to the value <span class="math inline">\(\mathbb EX = \sum_x x\, p(x)\)</span>. We don’t necessarily “expect” to get the value <span class="math inline">\(\mathbb EX\)</span> as the outcome in the normal English-language sense of the word “expect”. (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don’t “expect” to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of “long-run mean outcome”.</p>
-<div class="example">
-<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 10.1  </strong></span><em>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli trial with success probability <span class="math inline">\(p\)</span>. What is the expectation <span class="math inline">\(\mathbb EX\)</span>?</em></p>
-<p>We know that the PMF is <span class="math inline">\(p(0) = 1- p\)</span> and <span class="math inline">\(p(1) = p\)</span>. So, using the second formula in the definition, we have
-<span class="math display">\[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]</span></p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-50" class="example"><strong>Example 10.2  </strong></span><em>What is the expected value of the sum of two dice rolls?</em></p>
-<p>When <span class="math inline">\(X\)</span> is the total of two dice rolls, we found the PMF of <span class="math inline">\(X\)</span> last time. The expectation is
-<span class="math display">\[\begin{align*}
-  \mathbb EX &amp;= \sum_{x \in \operatorname{Range}(X)} x\,p(x)  \\
-    &amp;= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
-    &amp;= \tfrac{252}{36} \\
-    &amp;= 7 .
-\end{align*}\]</span></p>
-</div>
-</div>
-<div id="functions" class="section level2 hasAnchor" number="10.2">
-<h2><span class="header-section-number">10.2</span> Functions of random variables<a href="L10-expectation.html#functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In previous examples, we looked at <span class="math inline">\(X\)</span> being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total <span class="math inline">\(X\)</span>, like “double the total and add 1” <span class="math inline">\(Y = 2X + 1\)</span>, or “the total minus 4, all squared” <span class="math inline">\(Z = (X-4)^2\)</span>. (I’m not sure <em>why</em> you’d care about these, but you could study them if you wanted to…)</p>
+<p><strong>Recommended reading:</strong></p>
+<ul>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181">Stirzaker, <em>Elementary Probability</em></a>, Section 4.3.</li>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181">Grimmett and Welsh, <em>Probability</em></a>, Sections 2.3 and 2.4.</li>
+</ul>
+<p>On <a href="P3.html#P3">Problem Sheet 3</a>, you should now be able to complete all questions.</p>
 <!--
 ::: {.example}
 Let $Y = 2X + 1$. Then for each potential outcome $x$ of $X$, there is a matching outcome $y = 2x +1$ of $Y$. So we can find the PMF for $Y$ by keeping the same probabilities as for $X$, but changing the values $x$ to the values $y = 2x +1$.
@@ -461,127 +517,6 @@ or, in terms of PMFs,
 | $p_Z(z)$ | $\frac{3}{36}$ | $\frac{2}{36} + \frac{4}{36} = \frac{6}{36}$ | $\frac{1}{36} + \frac{5}{36} = \frac{6}{36}$ | $\cdots$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
 :::
 -->
-<p>It is possible, although sometimes a bit tricky, to work out the whole PMF of these new random variables that are functions of <span class="math inline">\(X\)</span> – and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.</p>
-<!--
-So if we wanted to find the expectation of a function of a random variable, we could first find the PMF, like in the above examples, and then use that PMF to find the expectation. But there is a quicker way.
--->
-<div class="theorem">
-<p><span id="thm:unconscious" class="theorem"><strong>Theorem 10.1  (Law of the unconscious statistician) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable, and let <span class="math inline">\(Y = g(X)\)</span> be another random variable that is a function <span class="math inline">\(g\)</span> of <span class="math inline">\(X\)</span>. Then
-<span class="math display">\[  \mathbb EY = \mathbb E\,g(X) = \sum_{x} g(x) \, p_X(x) . \]</span></p>
-</div>
-<p>(The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for <span class="math inline">\(\mathbb Eg(X)\)</span> if you weren’t thinking carefully – but it turns out it’s correct!)</p>
-<div class="proof">
-<p><span id="unlabeled-div-51" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> <!--As in the previous example, the idea is to group together $x$s that give the same $y$.-->
-The PMF of <span class="math inline">\(y\)</span> can be given in terms of the PMF of <span class="math inline">\(x\)</span> – we just need to add up all the <span class="math inline">\(x\)</span>s that lead to the same <span class="math inline">\(y\)</span>. That is,
-<span class="math display">\[ p_Y(y) = \sum_{x\, :\, g(x) = y} p_X(x) . \]</span>
-(Remember that the colon <span class="math inline">\(:\)</span> here means “such that”, so this is a sum over all the <span class="math inline">\(x\)</span> such that <span class="math inline">\(g(x) = y\)</span>.)</p>
-<p>Using this, and from the definition of expectation, we have
-<span class="math display">\[\begin{align*}
-  \mathbb EY &amp;= \sum_y y \, p_Y(y) \\
-    &amp;= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
-    &amp;= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
-    &amp;= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
-\end{align*}\]</span>
-since <span class="math inline">\(y = g(x)\)</span> inside the second sum. But these two sums together are summing over all <span class="math inline">\(x\)</span>, just partitioned by which value of <span class="math inline">\(y\)</span> they lead to, so they can be replaced by just a single sum over <span class="math inline">\(x\)</span>. That gives the theorem.</p>
-</div>
-<p>There are some functions for which this expression becomes particularly simple.</p>
-<div class="theorem">
-<p><span id="thm:linearity1" class="theorem"><strong>Theorem 10.2  (Linearity of expectation, 1) </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. Then</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\mathbb E(aX) = a\mathbb EX\)</span>;</li>
-<li><span class="math inline">\(\mathbb E(X + b) = \mathbb EX + b\)</span>.</li>
-</ol>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-52" class="proof"><em>Proof</em>. </span>We use the law of the unconscious statistician.</p>
-<p>For part 1, we can take the <span class="math inline">\(a\)</span> outside the sum, to get
-<span class="math display">\[ \mathbb E(aX) = \sum_x ax\, p_X(x) = a\sum_x x\, p_X(x) = a\mathbb EX . \]</span></p>
-<p>For part 2, we have
-<span class="math display">\[\begin{align*}
-  \mathbb E(X+b) &amp;= \sum_x (x + b)\, p_X(x) \\
-    &amp;= \sum_x \big( x\, p_X(x) + b\,p_X(x) \big) \\
-    &amp;= \sum_x x\, p_X(x) + \sum_x b\,p_X(x) \\
-    &amp;= \mathbb E(X) + b \sum_x p_X(x) \\
-    &amp;= \mathbb E(X) + b .
-\end{align*}\]</span>
-The last line was because PMFs always add up to 1, so <span class="math inline">\(\sum_x p_X(x) = 1\)</span>.</p>
-</div>
-<p>So for our “double the dice total and add 1” random variable <span class="math inline">\(Y = 2X + 1\)</span>, we have
-<span class="math display">\[ \mathbb EY = \mathbb E(2X+1) = 2\mathbb EX + 1 = 2\times 7 + 1 = 15. \]</span></p>
-</div>
-<div id="variance" class="section level2 hasAnchor" number="10.3">
-<h2><span class="header-section-number">10.3</span> Variance<a href="L10-expectation.html#variance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/_I4tCExElec"></iframe>
-:::
-::::
--->
-<!-- \newcommand{\Var}{\operatorname{Var}} -->
-<p>In the same way as the expectation of a random variable tells us about central values of it, the “variance” of a random variable tells us about the spread of typical values.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-53" class="definition"><strong>Definition 10.2  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. Then the <strong>variance</strong> of <span class="math inline">\(X\)</span> is
-<span class="math display">\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 . \]</span></p>
-</div>
-<p>(To be clear, the notation here means the expectation of <span class="math inline">\((X-\mu)^2\)</span>; and <em>not</em> <span class="math inline">\(\mathbb E(X - \mu)\)</span> then squared, which would be <span class="math inline">\(0^2 = 0\)</span>.)</p>
-<p>Note that <span class="math inline">\((X - \mu)^2 \geq 0\)</span> is a square, so always non-negative, and hence the variance <span class="math inline">\(\operatorname{Var}(X) \geq 0\)</span> is always non-negative also. Sometimes we call the square-root of the variance the <strong>standard deviation</strong>.</p>
-<p>It may not surprise you, if you remember <a href="L01-stats.html#L01-stats">Lecture 1</a> that to go along with this “definitional formula” for the variance, we also have a “computational formula”, which can sometimes be more convenient.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-54" class="theorem"><strong>Theorem 10.3  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable with expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. Then the variance <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span> can also be calculated as
-<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]</span></p>
-</div>
-<p>(Again, <span class="math inline">\(\mathbb EX^2\)</span> means the expectation of <span class="math inline">\(X^2\)</span>.)</p>
-<div class="proof">
-<p><span id="unlabeled-div-55" class="proof"><em>Proof</em>. </span>As previously we expand out the brackets, and use linearity of expectation (in the same way we “brought the sum inside” with the sample variance previously). We get
-<span class="math display">\[\begin{align*}
-  \operatorname{Var}(X) &amp;= \mathbb E(X - \mu)^2 \\
-    &amp;= \mathbb E(X^2 - 2\mu X + \mu^2) \\
-    &amp;= \mathbb EX^2 - \mathbb E(2\mu X) + \mathbb E \mu^2 \\
-    &amp;= \mathbb EX^2 - 2\mu \,\mathbb EX + \mu^2 .
-\end{align*}\]</span>
-But we said that <span class="math inline">\(\mathbb EX\)</span> would be called <span class="math inline">\(\mu\)</span>, so we can substitute in <span class="math inline">\(\mathbb EX = \mu\)</span>, to get
-<span class="math display">\[ \operatorname{Var}(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]</span>
-as required.</p>
-</div>
-<p>(A brief optional note for pedants: Writing <span class="math inline">\(\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X\)</span> is not, strictly speaking, justified by the result that above we called “linearity of expectation, 1”. However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call “linearity of expectation, 2”, of which it is a special case.)</p>
-<div class="example">
-<p><span id="exm:unlabeled-div-56" class="example"><strong>Example 10.3  </strong></span>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli trial, and recall that <span class="math inline">\(\mathbb EX = p\)</span>.</p>
-<p>Using the definitional formula, we have
-<span class="math display">\[\begin{align*}
-\operatorname{Var}(X) &amp;= \mathbb E(X-p)^2 \\
-        &amp;= (0 - p)^2 \,p_X(0) + (1-p)^2\, p_X(1) \\
-        &amp;= p^2\times(1-p) + (1-p)^2 \times p \\
-        &amp;= p(1-p)\big(p + (1-p)\big) \\
-        &amp;= p(1-p) .
-\end{align*}\]</span></p>
-<p>Alternatively, using the computational formula, we have
-<span class="math display">\[\begin{align*}
-\operatorname{Var}(X) &amp;= \mathbb EX^2 - p^2 \\
-        &amp;= \big(0^2\,p_X(0) + 1^2 p_X(1)\big) - p^2 \\
-        &amp;= 0\times(1-p) + 1\times p - p^2 \\
-        &amp;= p - p^2 \\
-        &amp;= p(1-p) .
-\end{align*}\]</span></p>
-</div>
-<div class="example">
-<p><span id="exm:unlabeled-div-57" class="example"><strong>Example 10.4  </strong></span>For the total of two dice, using the computational formula, we have
-<span class="math display">\[\begin{align*}
-\operatorname{Var}(X) &amp;= \mathbb EX^2 - \mu^2 \\
-        &amp;= \left(2^2 \times \frac{1}{36} + 3^2 \times \frac{2}{36} + \cdots + 12^2 \times \frac{1}{36}\right) - 7^2 \\
-        &amp;= \frac{1974}{36} - 49 \\
-        &amp;= \frac{70}{12} \approx 5.8 .
-\end{align*}\]</span></p>
-</div>
-<p>Finally, a result on what happens to the variance of simple functions of random variables.</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 10.4  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. Then</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(\operatorname{Var}(aX) = a^2\operatorname{Var}(X)\)</span>;</li>
-<li><span class="math inline">\(\operatorname{Var}(X + b) = \operatorname{Var}(X)\)</span>.</li>
-</ol>
-</div>
-<p>You will prove this on <a href="P3.html#P3">the problem sheet</a>.</p>
 <!--
 ## Discrete uniform distribution  {#discrete-uniform}
 
@@ -625,16 +560,6 @@ Hence,
 \[  \sum_{i=1}^n i = \frac{n(n+1)}{2} \qquad \sum_{i=1}^n i^2 = \frac{n(n+1)(2n+1)}{6} .   \]
 You are not expected to know or memorise these for an exam.)
 -->
-</div>
-<div id="summary-L10" class="section level2 unnumbered hasAnchor">
-<h2>Summary<a href="L10-expectation.html#summary-L10" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="mysummary">
-<ul>
-<li>The expectation of a random variable <span class="math inline">\(X\)</span> is <span class="math inline">\(\mathbb EX = \sum_x x\, p_X(x)\)</span>.</li>
-<li>The variance of a random variable <span class="math inline">\(X\)</span> with expectation <span class="math inline">\(\mu\)</span> is <span class="math inline">\(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\)</span>.</li>
-<li><span class="math inline">\(\mathbb E(aX+b) = a\mathbb EX + b\)</span> and <span class="math inline">\(\operatorname{Var}(aX+b) = a^2\operatorname{Var}(X)\)</span>.</li>
-</ul>
-</div>
 
 </div>
 </div>

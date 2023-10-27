@@ -2970,154 +2970,10 @@ On \protect\hyperlink{P3}{Problem Sheet 3}, you should now be able to complete Q
 \hypertarget{L09-discrete-rv}{%
 \chapter{Discrete random variables}\label{L09-discrete-rv}}
 
-\hypertarget{rv}{%
-\section{What is a random variable?}\label{rv}}
-
-Let's consider again the case of rolling two dice. We know that the sample space is the set of pairs of numbers between 1 and 6.
-But if we are rolling the two dice as part of a board game, we might only care about the \emph{total} score on the two dice, and the actual the two individual dice scores might be irrelevant. Let us wrote write \(X\) for the total score. This \(X\) is a sort of ``numerical summary'' of the experiment. Probabilists call such a numerical summary a \textbf{random variable}.
-
-One we've defined this random variable \(X\), it can be easier to work with \(X\) than with sample spaces and events. For example, if we want to know the probability that our two dice rolls add up to 5, it's more convenient to write
-\[ \mathbb P(X = 5) \]
-rather than
-\[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]
-The probability that \(X = 5\) is \(\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}\). We might also be interested in other things about the total score \(X\), like what the average total score over many pairs if dice rolls is.
-
-The good news is that, once we have properly set up our random variable \(X\), we can often then choose to ignore things like the sample space, the probability measure, and individual events.
-
-Random variables are typically given capital letters from late in the alphabet, like \(X\), \(Y\), \(Z\). Values that those random variables take are often given the lower-case equivalent, like \(x\), \(y\), \(z\).
-
-This idea of a random variable as a numerical summary of an experiment is how we \emph{think} about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We'll discuss that now (but if you find the next couple of paragraphs difficult to follow, you won't miss much if you skip them).
-
-In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
-\[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]
-of pairs \(\boldsymbol\omega = (\omega_1, \omega_2)\) of numbers from 1 to 6, where \(\omega_1\) represents the first dice roll and \(\omega_2\) the second dice roll.
-The random variable \(X\) is the score on the first dice plus the score on the second dice -- that is,
-\[ X(\boldsymbol\omega) = \omega_1 + \omega_2 . \]
-In other words, \(X\) is a \emph{function} which takes in a sample outcome \(\boldsymbol\omega \in \Omega\) and outputs a real number \(X = X(\boldsymbol\omega) = \omega_1 + \omega_2\).
-
-\begin{definition}
-Let \(\Omega\) be a sample space. Then a \textbf{random variable} is a function \(X\) from \(\Omega\) to the real numbers \(\mathbb R\); that is, to each sample outcome \(\omega\) it assigns a real number \(X(\omega)\).
-
-Expressions like \(\mathbb P(X = x)\) or \(\mathbb P(X \in A)\) should be understood as representing more formal probabilities
-\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) \quad \text{or} \quad \mathbb P \big( \{\omega : X(\omega) \in A \}\big)  . \]
-\end{definition}
-
-It's useful to have a notation for the values a random variable can take.
-
-\newcommand{\Range}{\operatorname{Range}}
-
-\begin{definition}
-The set of values a random variable \(X\) can take is called its \textbf{range}, \(\operatorname{Range}(X) = \{X(\omega) : \omega \in \Omega \}\).
-\end{definition}
-
-So, for example, the range of the dice total \(X\) is \(\operatorname{Range}(X) = \{2, 3, \dots, 12\}\), because those are the possible outcome from the sum of two dice rolls.
-
-Random variables that we will consider in this module will be one of two types:
-
-\begin{itemize}
-\tightlist
-\item
-  \textbf{Discrete random variables} have a range that is a collection of discrete separate counts, so \(\operatorname{Range}(X)\) is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for ``count data''.
-\item
-  \textbf{Continuous random variables} have a range that is a continuum of slowly varying measurements, so \(\operatorname{Range}(X)\) is uncountably infinite (like the real numbers, the positive real numbers, or the interval \([0,1]\)). Continuous random variables can be used as models for ``measurement data''.
-\end{itemize}
-
-For this week and the two weeks after, we will look at discrete random variables; later in Lectures 15 to 17 we will look at continuous random variables.
-
-\hypertarget{pmf}{%
-\section{Probability mass function}\label{pmf}}
-
-We now consider only discrete random variables \(X\), where the range \(\operatorname{Range}(X)\) is finite or countably infinite. To fully understand a discrete random variable \(X\), we need only understand the probabilities \(p(x) = \mathbb P(X = x)\). These are captured by the probability mass function.
-
-\begin{definition}
-For a discrete random variable \(X\), its \textbf{probability mass function} (or \textbf{PMF}) is the function \(p_X\) where
-\[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \operatorname{Range}(X)$.} \]
-(When the random variable \(X\) is obvious from context, we'll just write \(p(x)\) without the subscript.)
-\end{definition}
-
-Once we have the PMF, then Axiom 3 tells us that for any set \(A\), we have
-\[ \mathbb P(X \in A) = \sum_{x \in A} \mathbb P(X = x) = \sum_{x \in A} p(x) . \]
-(Recall that the symbol \(\in\) means ``is an element of'', or just ``is in'' for short.) So the probability that \(X\) is in some set \(A\) can be found by simply adding up \(p(x)\) for all the values \(x\) in \(A\). Thus the PMF \(p(x)\) is the only thing we need to know.
-
-\begin{example}
-Consider tossing a biased coin, that is Heads with probability \(p\) and Tails with probability \(1-p\). Let \(X = 1\) if the coin lands Heads, and \(X = 0\) if the coin lands Tails. The PMF \(p_X\) of this random variable is given by
-\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]
-
-We could alternatively think of the same random variable \(X\) as representing the result of an experiment, where \(X = 1\) represents a success, with probability \(p_X(1) = p\), and \(X = 0\) represents a failure, with probability \(p_X(0) = 1 - p\).
-
-A random variable \(X\) with this PMF is called a \textbf{Bernoulli trial} (or a ``Bernoulli random variable'', or is said to ``follow the Bernoulli distribution'' -- after the seventeenth-century Swiss mathematician \href{https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/}{Jacob Bernoulli}). We use the notation \(X \sim \text{Bern}(p)\) for short.
-\end{example}
-
-\begin{example}
-Let \(X\) being the sum of two dice rolls. As this is a classical probability problem, the probability \(p(x)\) of rolling a total of \(x\) is \(n(x) / 36\), where \(n(x)\) is the number of ways of rolling a total of \(x\). So, for example, there is only one way \((1,1)\) of rolling a total of 2, so \(p(2) = \frac1{36}\), but there are 5 ways of rolling a 6: \((1,5), (2,4), (3, 3), (4, 2), (5, 1)\); so \(p(5) = \frac5{36}\).
-
-The PMF \(p\) of \(X\) is given by
-
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\centering
-\(x\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(2\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(3\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(4\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(5\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(6\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(7\)
-\end{minipage} \\
-\midrule()
-\endhead
-\(p(x)\) & \(\frac{1}{36}\) & \(\frac{2}{36}\) & \(\frac{3}{36}\) & \(\frac{4}{36}\) & \(\frac{5}{36}\) & \(\frac{6}{36}\) \\
-\bottomrule()
-\end{longtable}
-
-\begin{longtable}[]{@{}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
-  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule()
-\begin{minipage}[b]{\linewidth}\centering
-\(x\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(\cdots\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(8\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(9\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(10\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(11\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\(12\)
-\end{minipage} \\
-\midrule()
-\endhead
-\(p(x)\) & \(\cdots\) & \(\frac{5}{36}\) & \(\frac{4}{36}\) & \(\frac{3}{36}\) & \(\frac{2}{36}\) & \(\frac{1}{36}\) \\
-\bottomrule()
-\end{longtable}
-
-\includegraphics{math1710_files/figure-latex/dice-pmf-1.pdf}
-\end{example}
+:::
 
 Note that since \(p(x) = \mathbb P(X = x)\) is a probability, it must be greater than or equal to 0, by Axiom 1. Further, if we add up \(p(x)\) we get
-\[ \sum_{x} p(x) =  \sum_{x \in \operatorname{Range}(X)} \mathbb P(X = x) = \mathbb P\big(X \in \operatorname{Range}(X)\big)  =  \mathbb P(\Omega) = 1,  \]
+\[ \sum_{x} p(x) =  \sum_{x \in \Range(X)} \mathbb P(X = x) = \mathbb P\big(X \in \Range(X)\big)  =  \mathbb P(\Omega) = 1,  \]
 by Axiom 2.
 Hence we have the following:
 
@@ -3128,9 +2984,9 @@ Let \(X\) be a discrete random variable, and let \(p_X\) be its PMF. Then
 \begin{itemize}
 \tightlist
 \item
-  \(p_X(x) \geq 0\) for all \(x \in \operatorname{Range}(X)\);
+  \(p_X(x) \geq 0\) for all \(x \in \Range(X)\);
 \item
-  \({\displaystyle \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1}\).
+  \({\displaystyle \sum_{x \in \Range(X)} p_X(x) = 1}\).
 \end{itemize}
 
 \end{theorem}
@@ -3208,12 +3064,14 @@ For any random variable \(X\) with CDF \(F\),
 \begin{itemize}
 \tightlist
 \item
-  if \(x\) is smaller than everything in the \(\operatorname{Range}(X)\), then \(F(x) = 0\), because \(X\) cannot be that small;
+  if \(x\) is smaller than everything in the \(\Range(X)\), then \(F(x) = 0\), because \(X\) cannot be that small;
 \item
-  if \(x\) is greater than everything in the \(\operatorname{Range}(X)\), then \(F(x) = 1\), because \(X\) cannot be any bigger than that;
+  if \(x\) is greater than everything in the \(\Range(X)\), then \(F(x) = 1\), because \(X\) cannot be any bigger than that;
 \item
   \(F(x)\) is increasing in \(x\), because the probability you are less than \(x\) gets bigger as \(x\) gets bigger.
 \end{itemize}
+
+--\textgreater{}
 
 \hypertarget{summary-L09}{%
 \section*{Summary}\label{summary-L09}}
@@ -3231,203 +3089,18 @@ For any random variable \(X\) with CDF \(F\),
   A Bernoulli random variable is 0 with probability \(1-p\) and 1 with probability \(p\).
 \end{itemize}
 
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 4.1 and 4.2.
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Section 2.1.
+\end{itemize}
+
 \hypertarget{L10-expectation}{%
 \chapter{Expectation and variance}\label{L10-expectation}}
-
-We continue our study of discrete random variables. Recall that the PMF \(p_X\) of a discrete random variable \(X\) is \(p_X(x) = \mathbb P(X = x)\).
-
-\hypertarget{expectation}{%
-\section{Expectation}\label{expectation}}
-
-Often, we will be interested in the ``average'' value of a random variable -- for example, the ``average'' total from two dice rolls -- which represents what the ``central'' value of the random variable is. This average is called the ``expectation''.
-
-\begin{definition}
-Let \(\Omega\) be a finite or countably infinite sample space, \(\mathbb P\) be a probability measure on \(\Omega\), and \(X\) be a discrete random variable on \(\Omega\). Then the \textbf{expectation} (or \textbf{expected value}) of \(X\) is
-\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]
-
-If \(p_X\) is the PMF of \(X\), then a more convenient formula is
-\[ \mathbb EX = \sum_{x \in \operatorname{Range}(X)} x\,p_X(x) . \]
-\end{definition}
-
-We get the second formula from the first by grouping together all outcomes \(\omega\) that lead to the same value \(x = X(\omega)\) of \(X\). It's only this second formula we actually use when calculating expectations.
-
-Note that ``expectation'' is simply the name that mathematicians give to the value \(\mathbb EX = \sum_x x\, p(x)\). We don't necessarily ``expect'' to get the value \(\mathbb EX\) as the outcome in the normal English-language sense of the word ``expect''. (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don't ``expect'' to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of ``long-run mean outcome''.
-
-\begin{example}
-\emph{Let \(X \sim \text{Bern}(p)\) be a Bernoulli trial with success probability \(p\). What is the expectation \(\mathbb EX\)?}
-
-We know that the PMF is \(p(0) = 1- p\) and \(p(1) = p\). So, using the second formula in the definition, we have
-\[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]
-\end{example}
-
-\begin{example}
-\emph{What is the expected value of the sum of two dice rolls?}
-
-When \(X\) is the total of two dice rolls, we found the PMF of \(X\) last time. The expectation is
-\begin{align*}
-  \mathbb EX &= \sum_{x \in \operatorname{Range}(X)} x\,p(x)  \\
-    &= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
-    &= \tfrac{252}{36} \\
-    &= 7 .
-\end{align*}
-\end{example}
-
-\hypertarget{functions}{%
-\section{Functions of random variables}\label{functions}}
-
-In previous examples, we looked at \(X\) being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total \(X\), like ``double the total and add 1'' \(Y = 2X + 1\), or ``the total minus 4, all squared'' \(Z = (X-4)^2\). (I'm not sure \emph{why} you'd care about these, but you could study them if you wanted to\ldots)
-
-It is possible, although sometimes a bit tricky, to work out the whole PMF of these new random variables that are functions of \(X\) -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.
-
-\begin{theorem}[Law of the unconscious statistician]
-\protect\hypertarget{thm:unconscious}{}\label{thm:unconscious}Let \(X\) be a random variable, and let \(Y = g(X)\) be another random variable that is a function \(g\) of \(X\). Then
-\[  \mathbb EY = \mathbb E\,g(X) = \sum_{x} g(x) \, p_X(x) . \]
-\end{theorem}
-
-(The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for \(\mathbb Eg(X)\) if you weren't thinking carefully -- but it turns out it's correct!)
-
-\begin{proof}
-\emph{(Non-examinable)}
-The PMF of \(y\) can be given in terms of the PMF of \(x\) -- we just need to add up all the \(x\)s that lead to the same \(y\). That is,
-\[ p_Y(y) = \sum_{x\, :\, g(x) = y} p_X(x) . \]
-(Remember that the colon \(:\) here means ``such that'', so this is a sum over all the \(x\) such that \(g(x) = y\).)
-
-Using this, and from the definition of expectation, we have
-\begin{align*}
-  \mathbb EY &= \sum_y y \, p_Y(y) \\
-    &= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
-    &= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
-    &= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
-\end{align*}
-since \(y = g(x)\) inside the second sum. But these two sums together are summing over all \(x\), just partitioned by which value of \(y\) they lead to, so they can be replaced by just a single sum over \(x\). That gives the theorem.
-\end{proof}
-
-There are some functions for which this expression becomes particularly simple.
-
-\begin{theorem}[Linearity of expectation, 1]
-\protect\hypertarget{thm:linearity1}{}\label{thm:linearity1}
-
-Let \(X\) be a random variable. Then
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \(\mathbb E(aX) = a\mathbb EX\);
-\item
-  \(\mathbb E(X + b) = \mathbb EX + b\).
-\end{enumerate}
-
-\end{theorem}
-
-\begin{proof}
-We use the law of the unconscious statistician.
-
-For part 1, we can take the \(a\) outside the sum, to get
-\[ \mathbb E(aX) = \sum_x ax\, p_X(x) = a\sum_x x\, p_X(x) = a\mathbb EX . \]
-
-For part 2, we have
-\begin{align*}
-  \mathbb E(X+b) &= \sum_x (x + b)\, p_X(x) \\
-    &= \sum_x \big( x\, p_X(x) + b\,p_X(x) \big) \\
-    &= \sum_x x\, p_X(x) + \sum_x b\,p_X(x) \\
-    &= \mathbb E(X) + b \sum_x p_X(x) \\
-    &= \mathbb E(X) + b .
-\end{align*}
-The last line was because PMFs always add up to 1, so \(\sum_x p_X(x) = 1\).
-\end{proof}
-
-So for our ``double the dice total and add 1'' random variable \(Y = 2X + 1\), we have
-\[ \mathbb EY = \mathbb E(2X+1) = 2\mathbb EX + 1 = 2\times 7 + 1 = 15. \]
-
-\hypertarget{variance}{%
-\section{Variance}\label{variance}}
-
-In the same way as the expectation of a random variable tells us about central values of it, the ``variance'' of a random variable tells us about the spread of typical values.
-
-\begin{definition}
-Let \(X\) be a random variable with expectation \(\mathbb EX = \mu\). Then the \textbf{variance} of \(X\) is
-\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 . \]
-\end{definition}
-
-(To be clear, the notation here means the expectation of \((X-\mu)^2\); and \emph{not} \(\mathbb E(X - \mu)\) then squared, which would be \(0^2 = 0\).)
-
-Note that \((X - \mu)^2 \geq 0\) is a square, so always non-negative, and hence the variance \(\operatorname{Var}(X) \geq 0\) is always non-negative also. Sometimes we call the square-root of the variance the \textbf{standard deviation}.
-
-It may not surprise you, if you remember \protect\hyperlink{L01-stats}{Lecture 1} that to go along with this ``definitional formula'' for the variance, we also have a ``computational formula'', which can sometimes be more convenient.
-
-\begin{theorem}
-Let \(X\) be a random variable with expectation \(\mathbb EX = \mu\). Then the variance \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\) can also be calculated as
-\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]
-\end{theorem}
-
-(Again, \(\mathbb EX^2\) means the expectation of \(X^2\).)
-
-\begin{proof}
-As previously we expand out the brackets, and use linearity of expectation (in the same way we ``brought the sum inside'' with the sample variance previously). We get
-\begin{align*}
-  \operatorname{Var}(X) &= \mathbb E(X - \mu)^2 \\
-    &= \mathbb E(X^2 - 2\mu X + \mu^2) \\
-    &= \mathbb EX^2 - \mathbb E(2\mu X) + \mathbb E \mu^2 \\
-    &= \mathbb EX^2 - 2\mu \,\mathbb EX + \mu^2 .
-\end{align*}
-But we said that \(\mathbb EX\) would be called \(\mu\), so we can substitute in \(\mathbb EX = \mu\), to get
-\[ \operatorname{Var}(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]
-as required.
-\end{proof}
-
-(A brief optional note for pedants: Writing \(\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X\) is not, strictly speaking, justified by the result that above we called ``linearity of expectation, 1''. However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call ``linearity of expectation, 2'', of which it is a special case.)
-
-\begin{example}
-Let \(X \sim \text{Bern}(p)\) be a Bernoulli trial, and recall that \(\mathbb EX = p\).
-
-Using the definitional formula, we have
-\begin{align*}
-\operatorname{Var}(X) &= \mathbb E(X-p)^2 \\
-        &= (0 - p)^2 \,p_X(0) + (1-p)^2\, p_X(1) \\
-        &= p^2\times(1-p) + (1-p)^2 \times p \\
-        &= p(1-p)\big(p + (1-p)\big) \\
-        &= p(1-p) .
-\end{align*}
-
-Alternatively, using the computational formula, we have
-\begin{align*}
-\operatorname{Var}(X) &= \mathbb EX^2 - p^2 \\
-        &= \big(0^2\,p_X(0) + 1^2 p_X(1)\big) - p^2 \\
-        &= 0\times(1-p) + 1\times p - p^2 \\
-        &= p - p^2 \\
-        &= p(1-p) .
-\end{align*}
-\end{example}
-
-\begin{example}
-For the total of two dice, using the computational formula, we have
-\begin{align*}
-\operatorname{Var}(X) &= \mathbb EX^2 - \mu^2 \\
-        &= \left(2^2 \times \frac{1}{36} + 3^2 \times \frac{2}{36} + \cdots + 12^2 \times \frac{1}{36}\right) - 7^2 \\
-        &= \frac{1974}{36} - 49 \\
-        &= \frac{70}{12} \approx 5.8 .
-\end{align*}
-\end{example}
-
-Finally, a result on what happens to the variance of simple functions of random variables.
-
-\begin{theorem}
-
-Let \(X\) be a random variable. Then
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  \(\operatorname{Var}(aX) = a^2\operatorname{Var}(X)\);
-\item
-  \(\operatorname{Var}(X + b) = \operatorname{Var}(X)\).
-\end{enumerate}
-
-\end{theorem}
-
-You will prove this on \protect\hyperlink{P3}{the problem sheet}.
 
 \hypertarget{summary-L10}{%
 \section*{Summary}\label{summary-L10}}
@@ -3442,6 +3115,18 @@ You will prove this on \protect\hyperlink{P3}{the problem sheet}.
 \item
   \(\mathbb E(aX+b) = a\mathbb EX + b\) and \(\operatorname{Var}(aX+b) = a^2\operatorname{Var}(X)\).
 \end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Section 4.3.
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Sections 2.3 and 2.4.
+\end{itemize}
+
+On \protect\hyperlink{P3}{Problem Sheet 3}, you should now be able to complete all questions.
 
 \hypertarget{P3}{%
 \chapter*{Problem Sheet 3}\label{P3}}

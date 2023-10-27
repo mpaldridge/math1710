@@ -1,14 +1,12 @@
 # Two theorems on conditional probability {#L08-two-theorems}
 
-<!--
-
 Last time we met the conditional probability $\mathbb P(B \mid A)$ of one event $B$ given another event $A$. In this lecture we will be looking two very useful theorems about conditional probability, called the **law of total probability** and **Bayes' theorem** -- and they're particularly powerful when used together.
 
 ## Law of total probability  {#total-prob}
 
 
 ::: {.example #dice-total}
-*My friend has three dice: a 4-sided dice, a 6-side dice, and a 10-side dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?*
+*My friend has three dice: a 4-sided dice, a 6-sided dice, and a 10-sided dice. He picks one of them at random, with each dice equally likely. What is the probability my friend rolls a 5?*
 
 If my friend were to tell which dice he picked, then this question would be very easy! If we write $D_4$, $D_6$ and $D_{10}$ to be the events that he picks the 4-sided, 6-sided, or 10-sided dice, then we know immediately that
 \[ \mathbb P(\text{roll 5} \mid D_4) = 0 \qquad \mathbb P(\text{roll 5} \mid D_6) = \tfrac16 \qquad \mathbb P(\text{roll 5} \mid D_{10}) = \tfrac{1}{10} .  \]
@@ -150,7 +148,7 @@ Many people find this result surprising. It sometimes helps to put more concrete
 
 The key point is that the disease is rare -- only 2% of people have it. So even though positive test increases the likelihood you have the disease a lot (it's about 14 times more likely), it's not enough to make it a very large probability.
 
--->
+
 
 ## Summary  {#summary-L08 .unnumbered}
 
