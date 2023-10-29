@@ -379,7 +379,7 @@ function. (The letter <code>c</code> stands for “combine” – or maybe
 <pre class="r"><code>my_vector &lt;- c(1, 3, 4, 4, 2, 4, 1)</code></pre>
 <p>and we can view it with</p>
 <pre class="r"><code>my_vector</code></pre>
-<pre><code>## [1] 1 3 4 4 2 4 1</code></pre>
+<pre><code>[1] 1 3 4 4 2 4 1</code></pre>
 <blockquote>
 <p><strong>Exercise 2.1.</strong> A student collects data for one week
 on the number of sandwiches sold by the Dolche Vita cafe. On Monday 27
@@ -396,7 +396,7 @@ quickly using using colon operator <strong><code>:</code></strong>. For
 example, to get the consecutive integers from 1 to 10 using the
 <code>:</code> operator, we enter</p>
 <pre class="r"><code>1:10</code></pre>
-<pre><code>##  [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 <blockquote>
 <p><strong>Exercise 2.2.</strong> As efficiently as you can, enter the
 following vectors into R:<br />
@@ -417,13 +417,13 @@ vector. We do that using square brackets
 <strong><code>[ ]</code></strong>.</p>
 <p>So, for example, the fifth entry of <code>my_vector</code> is</p>
 <pre class="r"><code>my_vector[5]</code></pre>
-<pre><code>## [1] 2</code></pre>
+<pre><code>[1] 2</code></pre>
 <p>The second and fourth entries are</p>
 <pre class="r"><code>my_vector[c(2, 4)]</code></pre>
-<pre><code>## [1] 3 4</code></pre>
+<pre><code>[1] 3 4</code></pre>
 <p>The first three entries are</p>
 <pre class="r"><code>my_vector[1:3]</code></pre>
-<pre><code>## [1] 1 3 4</code></pre>
+<pre><code>[1] 1 3 4</code></pre>
 <p>Notice that in the second and third examples we put a vector
 (<code>c(2, 4)</code> and then <code>1:3 = c(1, 2, 3)</code>) into the
 square brackets to pull out multiple entries of
@@ -434,7 +434,7 @@ change the second entry of <code>my_vector</code> to a 5, we enter</p>
 <p>and we can check this second entry has indeed changed by reading the
 vector:</p>
 <pre class="r"><code>my_vector</code></pre>
-<pre><code>## [1] 1 5 4 4 2 4 1</code></pre>
+<pre><code>[1] 1 5 4 4 2 4 1</code></pre>
 <blockquote>
 <p><strong>Exercise 2.3.</strong> The student from Example 2.1 discovers
 an extra sandwich that was sold on Monday. Increase the first entry of
@@ -452,7 +452,7 @@ vectors of the same length:</p>
 vector_2 &lt;- 1:5</code></pre>
 <p>Then</p>
 <pre class="r"><code>vector_1 + vector_2</code></pre>
-<pre><code>## [1]  4  5  7  8 10</code></pre>
+<pre><code>[1]  4  5  7  8 10</code></pre>
 <p>outputs a new vector. The first entry of the new vector is the first
 entry of <code>vector_1</code>, which is 3, plus the first entry of
 <code>vector_2</code>, which is 1, making 4. Then the second entry of
@@ -460,13 +460,13 @@ the new vector is the second entry of <code>vector_1</code>, 3, plus the
 second entry of <code>vector_2</code>, 2, making 5. And so on.</p>
 <p>Note that</p>
 <pre class="r"><code>vector_1 * vector_2</code></pre>
-<pre><code>## [1]  3  6 12 16 25</code></pre>
+<pre><code>[1]  3  6 12 16 25</code></pre>
 <p>gives the vector of entry-by-entry multiplications, not the scalar
 dot-product <span class="math inline">\(\mathbf{x} \cdot \mathbf{y} =
 \sum_i x_i y_i\)</span>. If you want the dot-product, you can use the
 <code>sum()</code> function from the next section:</p>
 <pre class="r"><code>sum(vector_1 * vector_2)</code></pre>
-<pre><code>## [1] 62</code></pre>
+<pre><code>[1] 62</code></pre>
 <blockquote>
 <p><strong>Exercise 2.4.</strong> The number of baguettes sold in the
 cafe each day was <span class="math inline">\((8, 9, 8, 7, 5)\)</span>.
@@ -477,9 +477,9 @@ new values to the previous data.</p>
 <p>What happens if we try to use one of these operations between a
 vector and a single number, like this?</p>
 <pre class="r"><code>vector_1 + 2</code></pre>
-<pre><code>## [1] 5 5 6 6 7</code></pre>
+<pre><code>[1] 5 5 6 6 7</code></pre>
 <pre class="r"><code>vector_2 * 3</code></pre>
-<pre><code>## [1]  3  6  9 12 15</code></pre>
+<pre><code>[1]  3  6  9 12 15</code></pre>
 <p>You should notice that R has added 2 to each entry of
 <code>vector_1</code>, and multiplied every entry of
 <code>vector_2</code> by 3. That is because R has “recycled” the scalar
@@ -532,7 +532,7 @@ require two arguments.</li>
 <p>So, for example, to find the sum of our vector
 <code>my_vector</code>, we enter</p>
 <pre class="r"><code>sum(my_vector)</code></pre>
-<pre><code>## [1] 21</code></pre>
+<pre><code>[1] 21</code></pre>
 <p>If we think we’re likely to use the value of the sum many times in
 the future, it will be convenient to save that sum as an R object
 itself:</p>
@@ -548,7 +548,7 @@ work on a single number. If you apply these functions to a vector, R
 applies the function to each entry of the vector one at a time. So, for
 example,</p>
 <pre class="r"><code>exp(my_vector)</code></pre>
-<pre><code>## [1]   2.718282 148.413159  54.598150  54.598150   7.389056  54.598150   2.718282</code></pre>
+<pre><code>[1]   2.718282 148.413159  54.598150  54.598150   7.389056  54.598150   2.718282</code></pre>
 <p>outputs a vector whose first element is the exponential of the first
 element of <code>my_vector</code>, whose second element is the
 exponential of the second element of <code>my_vector</code>, and so

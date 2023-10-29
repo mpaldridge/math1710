@@ -1,11 +1,15 @@
 ---
 title:  "R Worksheet 4: Plots I: Making plots"
 author: "MATH1710 Probability and Statistcs I"
-date:   "University of Leeds, 2022--23"
+date:   "University of Leeds, 2023--24"
 output: html_document
 ---
 
-*This R worksheet does* not *include assessed questions.You should complete this worksheet in Week 4. If you have difficulty with this worksheet, you can get help at the office hours drop-in sessions.*
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+*This R worksheet* does *include assessed questions at the bottom. The deadline for submitting your solutions to these questions is **Monday 6 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
 
 ------------------------------------------------------------------------
 
@@ -35,7 +39,7 @@ boxplot(temperature$jan)
 
 You should find that a picture like the one above appears in the "Plots" tab of RStudio -- this is usually in the bottom-right quadrant of the screen. If the "Plots" tab is too small on your screen, the picture may fail to appear -- your should drag the borders of the "Plots" tab to make it bigger then try again.
 
-Above the picture, you should see the "Export" button. Clicking on this will give you the opportunity to either save your graph our copy it to the clipboard. Saving the plot is useful if you think you might want it again in the future -- although if you are saving all your commands in an R script, as we discussed in Worksheet 1, you can very quickly recreate any plots you need again without having to save each one. Copying the plot to the clipboard can be helpful if you want to include your plot in another document, like a Word document or a Powerpoint presentation.
+Above the picture, you should see the "Export" button. Clicking on this will give you the opportunity to either save your graph our copy it to the clipboard. Saving the plot is useful if you think you might want it again in the future -- although if you are saving all your commands in an R script, as we discussed on R Worksheet 1, you can very quickly recreate any plots you need again without having to save each one. Copying the plot to the clipboard can be helpful if you want to include your plot in another document, like a Word document or a Powerpoint presentation.
 
 > **Exercise 4.2.** Draw a boxplot of the August temperature. Save your graph as an image.
 
@@ -61,7 +65,7 @@ The basic method of how to draw a **histogram** is again pretty simple -- just p
 hist(temperature$dec)
 ```
 
-An important extra optional argument is the `freq = ...` argument. You'll notice that the histogram above plots "Frequency" on the y-axis. Setting `freq = TRUE` ensures that that the frequency is plotted -- although since this is the default behaviour (with one exception mentioned below), it's not necessary to do so, and it can be more convenient to leave it out. Setting `freq = FALSE` instead plots the frequency *density*, as we discussed in Section 2.1 in Lecture 2. Compare the first picture above with this one (and look carefully at the y-axis):
+An important extra optional argument is the `freq = ...` argument. You'll notice that the histogram above plots "Frequency" on the y-axis. Setting `freq = TRUE` ensures that that the frequency is plotted -- although since this is the default behaviour (with one exception mentioned below), it's not *necessary* to do so, and it can be more convenient to leave it out. Setting `freq = FALSE` instead plots the frequency *density*, as we discussed in Section 2.1 in Lecture 2. Compare the first picture above with this one (and look carefully at the y-axis):
 
 ```{r}
 hist(temperature$dec, freq = FALSE)
@@ -70,7 +74,9 @@ hist(temperature$dec, freq = FALSE)
 Another important extra optional arguments is `breaks = ...`. This allows you to specify the bins you create. Your choices here are:
 
 * **Don't use** the `breaks` argument at all: this lets R choose what it thinks is a sensible number of bins.
+
 * Set `breaks` equal to a **number**, like `breaks = 5`: this tells R how many bins you want. R won't necessarily choose *exactly* the number of bins you request -- rather it will pick a number close to that which it thinks splits up the x-axis nicely. (You may find this behaviour helpful or annoying, according to taste.)
+
 * Set `breaks` equal to a **vector**, like `breaks = c(-5, 0, 2, 4, 6, 10, 20)`: these are the exact breakpoints between bins that R uses. Note that if the vectors are not equally spaced, then -- very sensibly -- plotting the density (`freq = FALSE`) becomes the default behaviour.
 
 Here's an example of specifying the bins we want to use:
@@ -81,7 +87,7 @@ hist(temperature$mar, breaks = c(0, 2, 4, 5, 6, 8, 10))
 
 > **Exercise 4.4.** Plot four histograms of the May temperature with density on the y-axis using (approximately) 3, 6, 10, and 20 bins. Which number of bins do you think is the most appropriate, and why?
 
-In the next worksheet we will cover how to label our histogram to make it clearer.
+In the next worksheet we will cover how to label our histogram to make the data display more clearly.
 
 ## Scatterplots
 
@@ -103,7 +109,7 @@ cor(temperature$jul, temperature$aug)
 
 In R Worksheet 5, we will look at some of the many extra optional arguments that `plot()` can take. But we will mention one here.
 
-By default, R plots points (or, rather, small circles) for each pair of datapoints. But sometimes you might prefer to join up points with a line -- this can be particularly appropriate if the x-axis represents time and there is only one y-data-point per time-point. Here, we want the argument `type = ...`. There are many options here, but the three most important are:
+By default, R plots a point (or, rather, a small circle) for each pair $(x_i, y_i)$ of datapoints. But sometimes you might prefer to join up points with a line -- this can be particularly appropriate if the x-axis represents time and there is only one y-data-point per time-point. Here, we want the argument `type = ...`. There are many options here, but the three most important are:
 
 * `type = "p"` plots **p**oints, and is the default behaviour.
 * `type = "l"` plots **l**ines.
@@ -117,4 +123,40 @@ plot(temperature$year, temperature$oct, type = "l")
 
 You might want to think about what we can learn about the data from this scatterplot.
 
-> **Exercise 4.6.** Draw a scatterplot for the first 30 years of data with year as the x-axis and February temperature as the y-axis, with points plotted that are also joined up with lines.
+> **Exercise 4.6.** Draw a scatterplot for the first 30 years of data, with year as the x-axis and February temperature as the y-axis, with points plotted that are also joined up with lines.
+
+---
+
+## Assessed questions
+
+*The following five assessed questions should be submitted to the Microsoft Form that is linked to below. I recommend you do this in Week 5, but the official deadline is **Monday 6 November at 1400**.*
+
+*You should submit your work by typing your answers into [**this Microsoft Form**](). You may need to be logged into your University account.*
+
+*This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
+
+*So that (most) students get different data to work with, you will work from a data file whose name is based on your student ID number. Your student ID number is (usually) a 9-digit number starting `201`. Your dataset is the CSV file at*
+
+```
+https://mpaldridge.github.io/math1710/data/R4-xy.csv
+```
+
+*where `xy` is replaced by the last two digits of your student ID number. So if your student ID is `201623429`, then you should use the file at `https://mpaldridge.github.io/math1710/data/R4-29.csv`; if your student ID number is `201491200` then you should use the file `https://mpaldridge.github.io/math1710/data/R4-00.csv` and so on. Take care to check you get this correct: if you get your student ID number wrong and/or use the wrong data file, the computer is likely to award you 0 marks.*
+
+---
+
+**First**, read the data set at `https://mpaldridge.github.io/math1710/data/R4-xy.csv` into R. Remember that `xy` should be replaced by the last 2 digits of your student ID number. This data set has nine columns, called `alpha`, `beta`, `gamma`, `delta`, `epsilon`, `zeta`, `eta`, `theta`, and `iota`.
+
+> **Assessed Question 1.** Consider the `alpha` data and `beta` data. Which dataset has the larger mean?
+
+> **Assessed Question 2.** Draw a boxplot comparing the `gamma` data and `delta` data. Which data set is generally the more spread out?
+
+> **Assessed Question 3.** Draw a boxplot comparing the `epsilon` data and `zeta` data. One of the datasets has a very significant outlier. Which one?
+
+> **Assessed Question 4.** Draw a histogram of the `eta` data, and experiment with different numbers of breaks. How many "peaks" do you think it is accurate to say the histogram has? (Remember that too many breaks may cause too many "random" peaks, while too few breaks may smooth out actual peaks.)
+
+> **Assessed Question 5.** Draw a scatterplot with the `theta` data on the x-axis and the `iota` data on the y-axis. You should find that there is a non-linear relationship between the two data sets. As theta increases, does iota go up then down (like $\cap$, or a sad face), or down then up (like $\cup$ or a happy face)?
+
+---
+
+*Remember to submit your answers into  [this Microsoft Form]() before 1400 on Monday 6 November.*

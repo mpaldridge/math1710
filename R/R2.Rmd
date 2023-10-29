@@ -5,6 +5,10 @@ date:   "University of Leeds, 2023--24"
 output: html_document
 ---
 
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
 *This R worksheet* does *include Assessed Questions at the end. The deadline for submitting your solutions to the Assessed Questions is **Monday 23 October at 1400**. I recommend working on this worksheet during your R Practical in Week 3 -- check your timetable for details.*
 
 *Remember to open a new R Script (or add to your last R Script) to save your work.*

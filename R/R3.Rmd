@@ -5,6 +5,10 @@ date:   "University of Leeds, 2023--24"
 output: html_document
 ---
 
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
 *This R worksheet* does not *include assessed questions.* <!--Only the question marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 24 October at 1400**. If you have difficulty with this worksheet, you can get help at your R troubleshooting drop-in in Week 3.*-->
 
 ------------------------------------------------------------------------
@@ -61,7 +65,7 @@ temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.c
 
 (Note the quotation marks `" "` around the web address in the `read.csv()` command.) By using `temperature <- `, we have read the data into an R object we have called `temperature`. Nothing will happen until we interact with this R object `temperature` in some way. 
 
-**Remember:** *To read data from a CSV file into R you must use the `read.csv()` command. Just typing a web address straight into R will not do anything (except return an error).* The most common query I get from MATH1710 students is "I typed a web address into R and it returned an error. Has the data been deleted?" My response is almost always "No, the data has not been deleted. You forgot to use the `read.csv()` command.".
+**Remember:** *To read data from a CSV file into R you must use the `read.csv()` command. Just typing a web address straight into R will not do anything (except return an error).* The most common query I get from MATH1710 students is "I typed a web address into R and it returned an error. Has the data been deleted?" My response is almost always "No, the data has not been deleted. You forgot to use the `read.csv()` command."
 
 Once we've read some data into R, we will want to check it has worked, and find out some basic details about the data. There are various functions that will do this:
 

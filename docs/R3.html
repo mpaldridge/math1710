@@ -544,7 +544,7 @@ address straight into R will not do anything (except return an
 error).</em> The most common query I get from MATH1710 students is “I
 typed a web address into R and it returned an error. Has the data been
 deleted?” My response is almost always “No, the data has not been
-deleted. You forgot to use the <code>read.csv()</code> command.”.</p>
+deleted. You forgot to use the <code>read.csv()</code> command.”</p>
 <p>Once we’ve read some data into R, we will want to check it has
 worked, and find out some basic details about the data. There are
 various functions that will do this:</p>
@@ -567,7 +567,7 @@ Met Office temperature data to an object called
 <p>Let us note for later that the names of our <code>temperature</code>
 data are these:</p>
 <pre class="r"><code>names(temperature)</code></pre>
-<pre><code>##  [1] &quot;year&quot; &quot;jan&quot;  &quot;feb&quot;  &quot;mar&quot;  &quot;apr&quot;  &quot;may&quot;  &quot;jun&quot;  &quot;jul&quot;  &quot;aug&quot;  &quot;sep&quot;  &quot;oct&quot;  &quot;nov&quot;  &quot;dec&quot;</code></pre>
+<pre><code> [1] &quot;year&quot; &quot;jan&quot;  &quot;feb&quot;  &quot;mar&quot;  &quot;apr&quot;  &quot;may&quot;  &quot;jun&quot;  &quot;jul&quot;  &quot;aug&quot;  &quot;sep&quot;  &quot;oct&quot;  &quot;nov&quot;  &quot;dec&quot; </code></pre>
 </div>
 <div id="data-frames" class="section level2">
 <h2>Data frames</h2>
@@ -575,13 +575,13 @@ data are these:</p>
 known as a <strong>data frame</strong>. Let us look at the top of
 <code>temperature</code>:</p>
 <pre class="r"><code>head(temperature)</code></pre>
-<pre><code>##   year jan feb mar apr  may  jun  jul  aug  sep oct nov dec
-## 1 1884 4.9 3.9 4.9 6.0  9.7 12.6 14.7 15.5 13.0 8.0 4.6 2.9
-## 2 1885 1.8 4.1 3.2 6.3  7.5 12.4 14.5 12.2 10.7 6.1 4.6 2.7
-## 3 1886 0.8 0.5 2.6 5.9  8.4 11.6 14.2 14.3 12.0 9.8 5.4 0.9
-## 4 1887 1.3 3.1 3.0 5.3  8.1 14.1 15.9 13.8 10.4 6.1 3.7 1.8
-## 5 1888 2.5 1.1 1.7 5.1  9.2 11.3 12.0 12.6 10.8 7.1 6.3 3.9
-## 6 1889 2.7 1.9 3.4 5.7 11.3 14.0 13.5 13.5 11.3 7.5 5.5 2.4</code></pre>
+<pre><code>  year jan feb mar apr  may  jun  jul  aug  sep oct nov dec
+1 1884 4.9 3.9 4.9 6.0  9.7 12.6 14.7 15.5 13.0 8.0 4.6 2.9
+2 1885 1.8 4.1 3.2 6.3  7.5 12.4 14.5 12.2 10.7 6.1 4.6 2.7
+3 1886 0.8 0.5 2.6 5.9  8.4 11.6 14.2 14.3 12.0 9.8 5.4 0.9
+4 1887 1.3 3.1 3.0 5.3  8.1 14.1 15.9 13.8 10.4 6.1 3.7 1.8
+5 1888 2.5 1.1 1.7 5.1  9.2 11.3 12.0 12.6 10.8 7.1 6.3 3.9
+6 1889 2.7 1.9 3.4 5.7 11.3 14.0 13.5 13.5 11.3 7.5 5.5 2.4</code></pre>
 <p>A data frame is a two-dimensional table. The columns have names: the
 names <code>&quot;year&quot;</code>, <code>&quot;jan&quot;</code>, <code>&quot;feb&quot;</code>, etc,
 that we saw above. The rows are simply numbered.</p>
@@ -589,19 +589,19 @@ that we saw above. The rows are simply numbered.</p>
 <code>[ ]</code>, similar to how we extracted single entries of vectors
 on R Worksheet 2. So, the datapoint in row 21 and column “oct” is</p>
 <pre class="r"><code>temperature[21, &quot;oct&quot;]</code></pre>
-<pre><code>## [1] 8.7</code></pre>
+<pre><code>[1] 8.7</code></pre>
 <p>The notation here in the square brackets is: first the number of the
 row, then a comma, then the name of the column in quotation marks.
 (Don’t forget the quotation marks!)</p>
 <p>You’ll also remember from R Worksheet 2 that we can pull out a
 segment from a column with, for example,</p>
 <pre class="r"><code>temperature[21:26, &quot;oct&quot;]</code></pre>
-<pre><code>## [1]  8.7  6.1  9.6  8.7 11.1  9.1</code></pre>
+<pre><code>[1]  8.7  6.1  9.6  8.7 11.1  9.1</code></pre>
 <p>If we want a whole row, we can just omit the column identifier – but
 remember that we still need the comma!</p>
 <pre class="r"><code>temperature[21, ]</code></pre>
-<pre><code>##    year jan feb mar apr may  jun  jul  aug  sep oct nov dec
-## 21 1904 3.1   2 3.1 7.6 9.4 12.2 15.3 13.8 11.7 8.7 4.6 2.5</code></pre>
+<pre><code>   year jan feb mar apr may  jun  jul  aug  sep oct nov dec
+21 1904 3.1   2 3.1 7.6 9.4 12.2 15.3 13.8 11.7 8.7 4.6 2.5</code></pre>
 <p>Similarly, if we want a whole column we can miss out the row
 identifier – but still keep the comma! – with</p>
 <pre class="r"><code>temperature[, &quot;oct&quot;]</code></pre>
@@ -632,14 +632,14 @@ the functions we learned about on R Worksheet 2, like
 <code>max()</code> and so on.</p>
 <p>So, for example, the mean February temperature is given by</p>
 <pre class="r"><code>mean(temperature$feb)</code></pre>
-<pre><code>## [1] 3.081618</code></pre>
+<pre><code>[1] 3.081618</code></pre>
 <p>the interquartile range of April temperatures in the first 100 rows
 is given by</p>
 <pre class="r"><code>IQR(temperature[1:100, &quot;apr&quot;])</code></pre>
-<pre><code>## [1] 1.625</code></pre>
+<pre><code>[1] 1.625</code></pre>
 <p>the correlation between June and July temperatures is</p>
 <pre class="r"><code>cor(temperature$jun, temperature$jul)</code></pre>
-<pre><code>## [1] 0.2827105</code></pre>
+<pre><code>[1] 0.2827105</code></pre>
 <p>and so on. Remember we can use <code>round()</code> and
 <code>signif()</code> with these to round the answers.</p>
 <blockquote>
