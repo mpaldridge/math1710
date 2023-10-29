@@ -131,7 +131,7 @@ You might want to think about what we can learn about the data from this scatter
 
 *The following five assessed questions should be submitted to the Microsoft Form that is linked to below. I recommend you do this in Week 5, but the official deadline is **Monday 6 November at 1400**.*
 
-*You should submit your work by typing your answers into [**this Microsoft Form**](). You may need to be logged into your University account.*
+*You should submit your work by typing your answers into [**this Microsoft Form**](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUQjlCWkIwVjFBV0s5T0tCVEM1MEdaMjI4Ny4u). You may need to be logged into your University account.*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -159,4 +159,4 @@ https://mpaldridge.github.io/math1710/data/R4-xy.csv
 
 ---
 
-*Remember to submit your answers into  [this Microsoft Form]() before 1400 on Monday 6 November.*
+*Remember to submit your answers into  [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUQjlCWkIwVjFBV0s5T0tCVEM1MEdaMjI4Ny4u) before 1400 on Monday 6 November.*
