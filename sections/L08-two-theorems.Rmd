@@ -37,7 +37,10 @@ Since the partition of $A_i$s cover space, we can split up $B$ depending on whic
 
 Since the $A_i$ are disjoint, the union on the right is disjoint also.
 Therefore we can use Axiom 3 to get
-\[ \mathbb P(B) = \sum_{i=1}^n \mathbb P(B \cap A_i) . \]
+\begin{align*} \mathbb P(B) = \mathbb P(B \cap A_1) + \mathbb P(B \cap A_2) + \cdots + \mathbb P(B \cap A_n)  \\
+  &- \sum_{i=1}^n \mathbb P(B \cap A_i) .
+\end{align*}
+
 But using the definition of conditional probability, each "summand" (term inside the sum) is
 \[ \mathbb P(B \cap A_i) = \mathbb P(A_i) \, \mathbb P(B \mid A_i) . \]
 The result follows.
@@ -141,7 +144,7 @@ So from Bayes' theorem, we have
 
 How can we find $\mathbb P(+)$? Well, importantly, $D$ (you have the disease) and $D^\comp$ (you don't) make up a partition -- so we can use the law of total probability. We have
 \begin{align*}
-  \mathbb P(+) &= \mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\comp) \,\mathbb P({+} \mid D^\comp) \\\
+  \mathbb P(+) &= \mathbb P(D) \,\mathbb P({+} \mid D)+\mathbb P(D^\comp) \,\mathbb P({+} \mid D^\comp) \\
     &= 0.02 \times 0.95 + 0.98 \times 0.05 .
 \end{align*}
 
