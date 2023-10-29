@@ -222,7 +222,7 @@ Then using $\mu = (n+1)/2$ from part (a), we have
 ::::
 
 :::: {.subq}
-**(c)** Let $Y$ be a discrete uniform distribution on $b - a + 1$ values $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of $Y$.
+**(c)** Let $Y$ be a discrete uniform distribution on $b - a + 1$ values $\{a, a+1, a+2, \dots, b-1, b\}$, for integers $a$ and $b$ with $a<b$. By finding a relationship between $Y$ and $X_n$, for an appropriate value of $n$, find the expectation and variance of $Y$.
 
 ::: {.myanswers data-latex=""}
 *Solution.* If we take $n = b - a + 1$, then $Y$ has the same distribution as $X_n + (a-1)$. This is because $x = 1$ maps to $y = 1 + (a-1) = a$; $x = 2$ maps to $y = 2 + (a-1) = a+1$; and so on; up to $x = n$ mapping to $y = n + (a-1) = (b - a + 1) + (a-1) = b$. So the ranges match up perfectly.

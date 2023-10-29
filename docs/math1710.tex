@@ -157,6 +157,22 @@
 
 \newcommand{\Var}{\operatorname{Var}}
 
+\textbf{Week 4} (30 October--3 November):
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{L09-discrete-rv}{\textbf{Lecture 9:} Discrete random variables} (Monday 30 October)
+\item
+  \protect\hyperlink{L10-expectation}{\textbf{Lecture 10:} Expectation and variance} (Wednesday 1 November)
+\item
+  \protect\hyperlink{P3}{\textbf{Problem Sheet 3:}} Work through in preparation for your tutorial in Week 6. Deadline for assessed questions: Monday 13 November.
+\item
+  \protect\hyperlink{R}{\textbf{R Worksheet 3}} -- deadline for assessed questions: Monday 6 November
+\item
+  \textbf{Office hours:} Friday 3 November, 11--1, \href{https://mpaldridge.github.io/office.html}{Physics Research Deck 9.320} (\emph{note change of time})
+\end{itemize}
+
 \textbf{Week 4} (23--27 October):
 
 \begin{itemize}
@@ -3275,7 +3291,17 @@ to get the same result.
 
 \end{myanswers}
 
-\textbf{A3.} Consider the random variable \(X\) with the following PMF:
+\textbf{A3.} Two events \(A\) and \(B\) have probabilities \(\mathbb P(A) = 0.6\) and \(\mathbb P(B) = 0.5\), and the two events are independent. What is \(\mathbb P(A \cup B)\)?
+
+\begin{myanswers}
+By the addition rule for unions, we have
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+The question tells us that \(\mathbb P(A) = 0.6\) and \(\mathbb P(B) = 0.5\). Further, because \(A\) and \(B\) are independent, we have \(\mathbb P(A \cap B) = \mathbb P(A)\mathbb P(B) = 0.6 \times 0.5 = 0.3\). Hence,
+\[ \mathbb P(A \cup B) = 0.6 + 0.5 - 0.3 = 0.8 . \]
+
+\end{myanswers}
+
+\textbf{A4.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}cccccc@{}}
 \toprule\noalign{}
@@ -3301,7 +3327,7 @@ Then, using the computational formula,
 
 \end{myanswers}
 
-\textbf{A4.} Consider the random variable \(X\) with the following PMF:
+\textbf{A5.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}cccccc@{}}
 \toprule\noalign{}
@@ -3331,7 +3357,7 @@ So \(a = 7\).
 
 \end{myanswers}
 
-\textbf{A5.} A temperature \(T_C\) measured in degrees Celsius can be converted to a temperature \(T_F\) in degrees Fahrenheit using the formula \(T_F = \frac95 T_C + 32\).
+\textbf{A6.} A temperature \(T_C\) measured in degrees Celsius can be converted to a temperature \(T_F\) in degrees Fahrenheit using the formula \(T_F = \frac95 T_C + 32\).
 
 The average daily maximum temperature in Leeds in July is 19.0~°C. The variance of the daily maximum temperature measured in degrees Celsius is 10.4.
 
@@ -3498,7 +3524,7 @@ Then using \(\mu = (n+1)/2\) from part (a), we have
 
 \end{myanswers}
 
-\textbf{(c)} Let \(Y\) be a discrete uniform distribution on \(b - a + 1\) values \(\{a, a+1, a+2, \dots, b-1, b\}\), for integers \(a\) and \(b\) with \(a<b\). Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of \(Y\).
+\textbf{(c)} Let \(Y\) be a discrete uniform distribution on \(b - a + 1\) values \(\{a, a+1, a+2, \dots, b-1, b\}\), for integers \(a\) and \(b\) with \(a<b\). By finding a relationship between \(Y\) and \(X_n\), for an appropriate value of \(n\), find the expectation and variance of \(Y\).
 
 \begin{myanswers}
 \emph{Solution.} If we take \(n = b - a + 1\), then \(Y\) has the same distribution as \(X_n + (a-1)\). This is because \(x = 1\) maps to \(y = 1 + (a-1) = a\); \(x = 2\) maps to \(y = 2 + (a-1) = a+1\); and so on; up to \(x = n\) mapping to \(y = n + (a-1) = (b - a + 1) + (a-1) = b\). So the ranges match up perfectly.
@@ -3572,8 +3598,8 @@ You can probably come up with other explanations of your own too.
 
 The last two questions are \textbf{assessed questions}. These two questions count for 3\% of your final mark for this module.
 
-The deadline for submitting your solutions is \textbf{2pm on Monday 14 November} at the beginning of Week 7. Submission is via Gradescope.
-Your work will be marked by your tutor and returned on Monday 21 November, when solutions will also be made available.
+The deadline for submitting your solutions is \textbf{2pm on Monday 13 November} at the beginning of Week 7. Submission is via Gradescope.
+Your work will be marked by your tutor and returned on Monday 20 November, when solutions will also be made available.
 
 Both questions are ``long questions'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
 
@@ -3688,9 +3714,10 @@ Using the definitional formula, we have
 
 \textbf{A1.} (c) and (e) are independent.\\
 \textbf{A2.} (a) Yes (b) Yes (c) No\\
-\textbf{A3.} 0.45 and 0.5725\\
-\textbf{A4.} \(a = 9, b = 0.5\)\\
-\textbf{A5} (a) 66.2~°F (b) 33.7~°F\textsuperscript{2}
+\textbf{A3.} 0.8\\
+\textbf{A4.} 0.45 and 0.5725\\
+\textbf{A5.} \(a = 9, b = 0.5\)\\
+\textbf{A6} (a) 66.2~°F (b) 33.7~°F\textsuperscript{2}
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}

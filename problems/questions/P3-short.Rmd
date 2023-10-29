@@ -119,7 +119,19 @@ to get the same result.
 :::::
 
 :::: {.myq}
-**A3.** Consider the random variable $X$ with the following PMF:
+**A3.** Two events $A$ and $B$ have probabilities $\mathbb P(A) = 0.6$ and $\mathbb P(B) = 0.5$, and the two events are independent. What is $\mathbb P(A \cup B)$?
+
+::: {.myanswers data-latex=""}
+By the addition rule for unions, we have
+\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]
+The question tells us that $\mathbb P(A) = 0.6$ and $\mathbb P(B) = 0.5$. Further, because $A$ and $B$ are independent, we have $\mathbb P(A \cap B) = \mathbb P(A)\mathbb P(B) = 0.6 \times 0.5 = 0.3$. Hence,
+\[ \mathbb P(A \cup B) = 0.6 + 0.5 - 0.3 = 0.8 . \]
+:::
+::::
+
+
+:::: {.myq}
+**A4.** Consider the random variable $X$ with the following PMF:
 
 | $x$ | $-1$ | $0$ | $0.5$ | $1$ | $2$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|
@@ -140,7 +152,7 @@ Then, using the computational formula,
 ::::
 
 :::: {.myq}
-**A4.** Consider the random variable $X$ with the following PMF:
+**A5.** Consider the random variable $X$ with the following PMF:
 
 | $x$ | $1$ | $2$ | $4$ | $5$ | $a$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|
@@ -165,7 +177,7 @@ So $a = 7$.
 ::::
 
 ::::: {.myq}
-**A5.** A temperature $T_C$ measured in degrees Celsius can be converted to a temperature $T_F$ in degrees Fahrenheit using the formula $T_F = \frac95 T_C + 32$.
+**A6.** A temperature $T_C$ measured in degrees Celsius can be converted to a temperature $T_F$ in degrees Fahrenheit using the formula $T_F = \frac95 T_C + 32$.
 
 The average daily maximum temperature in Leeds in July is 19.0 °C. The variance of the daily maximum temperature measured in degrees Celsius is 10.4.
 

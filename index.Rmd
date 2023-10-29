@@ -18,6 +18,16 @@ knitr::opts_chunk$set(comment = NA)
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
+**Week 4** (30 October--3 November):
+
+* [**Lecture 9:** Discrete random variables](#L09-discrete-rv) (Monday 30 October)
+* [**Lecture 10:** Expectation and variance](#L10-expectation) (Wednesday 1 November)
+* [**Problem Sheet 3:**](#P3) Work through in preparation for your tutorial in Week 6. Deadline for assessed questions: Monday 13 November.
+* [**R Worksheet 3**](#R) -- deadline for assessed questions: Monday 6 November
+* **Office hours:** Friday 3 November, 11--1, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html) (*note change of time*)
+:::
+
+::: {.mysched}
 **Week 4** (23--27 October):
 
 * [**Lecture 7:** Independence and conditional probabilty](#L07-conditional) (Monday 23 October)

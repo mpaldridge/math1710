@@ -415,7 +415,16 @@ to get the same result.</p>
 </div>
 </div>
 <div class="myq">
-<p><strong>A3.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
+<p><strong>A3.</strong> Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have probabilities <span class="math inline">\(\mathbb P(A) = 0.6\)</span> and <span class="math inline">\(\mathbb P(B) = 0.5\)</span>, and the two events are independent. What is <span class="math inline">\(\mathbb P(A \cup B)\)</span>?</p>
+<div class="myanswers">
+<p>By the addition rule for unions, we have
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span>
+The question tells us that <span class="math inline">\(\mathbb P(A) = 0.6\)</span> and <span class="math inline">\(\mathbb P(B) = 0.5\)</span>. Further, because <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, we have <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\mathbb P(B) = 0.6 \times 0.5 = 0.3\)</span>. Hence,
+<span class="math display">\[ \mathbb P(A \cup B) = 0.6 + 0.5 - 0.3 = 0.8 . \]</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
 <table>
 <thead>
 <tr class="header">
@@ -450,7 +459,7 @@ Then, using the computational formula,
 </div>
 </div>
 <div class="myq">
-<p><strong>A4.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
+<p><strong>A5.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
 <table>
 <thead>
 <tr class="header">
@@ -489,7 +498,7 @@ So <span class="math inline">\(a = 7\)</span>.</p>
 </div>
 </div>
 <div class="myq">
-<p><strong>A5.</strong> A temperature <span class="math inline">\(T_C\)</span> measured in degrees Celsius can be converted to a temperature <span class="math inline">\(T_F\)</span> in degrees Fahrenheit using the formula <span class="math inline">\(T_F = \frac95 T_C + 32\)</span>.</p>
+<p><strong>A6.</strong> A temperature <span class="math inline">\(T_C\)</span> measured in degrees Celsius can be converted to a temperature <span class="math inline">\(T_F\)</span> in degrees Fahrenheit using the formula <span class="math inline">\(T_F = \frac95 T_C + 32\)</span>.</p>
 <p>The average daily maximum temperature in Leeds in July is 19.0 °C. The variance of the daily maximum temperature measured in degrees Celsius is 10.4.</p>
 <div class="subq">
 <p><strong>(a)</strong> What is the average daily maximum temperature in degrees Fahrenheit?</p>
@@ -706,7 +715,7 @@ Then using <span class="math inline">\(\mu = (n+1)/2\)</span> from part (a), we 
 </div>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> Let <span class="math inline">\(Y\)</span> be a discrete uniform distribution on <span class="math inline">\(b - a + 1\)</span> values <span class="math inline">\(\{a, a+1, a+2, \dots, b-1, b\}\)</span>, for integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> with <span class="math inline">\(a&lt;b\)</span>. Using parts (a) and (b), but without calculating any sums directly, find the expectation and variance of <span class="math inline">\(Y\)</span>.</p>
+<p><strong>(c)</strong> Let <span class="math inline">\(Y\)</span> be a discrete uniform distribution on <span class="math inline">\(b - a + 1\)</span> values <span class="math inline">\(\{a, a+1, a+2, \dots, b-1, b\}\)</span>, for integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> with <span class="math inline">\(a&lt;b\)</span>. By finding a relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X_n\)</span>, for an appropriate value of <span class="math inline">\(n\)</span>, find the expectation and variance of <span class="math inline">\(Y\)</span>.</p>
 <div class="myanswers">
 <p><em>Solution.</em> If we take <span class="math inline">\(n = b - a + 1\)</span>, then <span class="math inline">\(Y\)</span> has the same distribution as <span class="math inline">\(X_n + (a-1)\)</span>. This is because <span class="math inline">\(x = 1\)</span> maps to <span class="math inline">\(y = 1 + (a-1) = a\)</span>; <span class="math inline">\(x = 2\)</span> maps to <span class="math inline">\(y = 2 + (a-1) = a+1\)</span>; and so on; up to <span class="math inline">\(x = n\)</span> mapping to <span class="math inline">\(y = n + (a-1) = (b - a + 1) + (a-1) = b\)</span>. So the ranges match up perfectly.</p>
 <p>Thus we have
@@ -764,8 +773,8 @@ happiness units, and you might be willing to pay 2 happiness-units-worth of mone
 <h2>C: Assessed questions<a href="P3.html#P3-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">
 <p>The last two questions are <strong>assessed questions</strong>. These two questions count for 3% of your final mark for this module.</p>
-<p>The deadline for submitting your solutions is <strong>2pm on Monday 14 November</strong> at the beginning of Week 7. Submission is via Gradescope.
-Your work will be marked by your tutor and returned on Monday 21 November, when solutions will also be made available.</p>
+<p>The deadline for submitting your solutions is <strong>2pm on Monday 13 November</strong> at the beginning of Week 7. Submission is via Gradescope.
+Your work will be marked by your tutor and returned on Monday 20 November, when solutions will also be made available.</p>
 <p>Both questions are “long questions”, where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.</p>
 <p>You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University’s rules on <a href="https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism">academic integrity</a> – and the related punishments for violating them – apply to your work on the assessed questions.</p>
 </div>
@@ -845,9 +854,10 @@ First recall that <span class="math inline">\(\mathbb E(X + b) = \mathbb EX + b 
 <h2>Solutions to short questions<a href="P3.html#P3-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p><strong>A1.</strong> (c) and (e) are independent.<br />
 <strong>A2.</strong> (a) Yes (b) Yes (c) No<br />
-<strong>A3.</strong> 0.45 and 0.5725<br />
-<strong>A4.</strong> <span class="math inline">\(a = 9, b = 0.5\)</span><br />
-<strong>A5</strong> (a) 66.2 °F (b) 33.7 °F<sup>2</sup></p>
+<strong>A3.</strong> 0.8<br />
+<strong>A4.</strong> 0.45 and 0.5725<br />
+<strong>A5.</strong> <span class="math inline">\(a = 9, b = 0.5\)</span><br />
+<strong>A6</strong> (a) 66.2 °F (b) 33.7 °F<sup>2</sup></p>
 
 </div>
 </div>
