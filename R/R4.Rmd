@@ -21,7 +21,7 @@ In this worksheet, we will look at how to make the three types of data visualisa
 
 In this worksheet, we will just consider the basics of how to produce the plot. In the next worksheet, R Worksheet 5, we will see ways to improve and alter the plots, by adding axis titles, changing the colours, and so on.
 
-We will use the same Met Office historical temperature data as our example data.
+We will use the same Met Office historical temperature data as we used on R Worksheet 3 for our example data.
 
 ```{r}
 temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")

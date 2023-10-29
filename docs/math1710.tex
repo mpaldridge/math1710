@@ -6,19 +6,16 @@
   a4paper,
 ]{book}
 \usepackage{amsmath,amssymb}
+\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -48,13 +45,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -62,7 +59,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -71,7 +68,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -116,7 +113,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={MATH1710 Probability and Statistics I},
   pdfauthor={Matthew Aldridge},
@@ -270,17 +267,16 @@ You are probably reading the web version of the notes. If you want a PDF copy (t
 There will be 5 problem sheets. Each problem sheet has a number of short and long questions, for you to work on in your own time to help you learn the material, and two assessed questions, which you should submit for marking. The assessed questions on each problem sheet make up 3\% of your mark on this module, for a total of 15\%. Deadlines are 2pm on Mondays, although I'd recommend completing and submitting the work in the previous week.
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Problem Sheet & Lectures covered & Deadline for assessed work \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 1 & 1 and 2 & Monday 16 October (Week 3) \\
 2 & 3--6 & Monday 30 October (Week 5) \\
 3 & 7--10 & Monday 13 November (Week 7) \\
 4 & 11--14 & Monday 27 November (Week 9) \\
 5 & 15--18 & Monday 11 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
 An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available. Lectures 21 and 22 are revision lectures with no new material.
@@ -325,7 +321,7 @@ You will learn R by working through one R worksheet each week in your own time, 
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0923}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4769}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4308}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -333,10 +329,8 @@ Worksheet
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & 1: R basics & --- \\
 3 & 2: Vectors & Monday 23 October (Week 4) \\
 4 & 3: Data in R & --- \\
@@ -347,6 +341,7 @@ Deadline for assessed work
 9 & 8: Normal distribution & Monday 4 December (Week 10) \\
 10 & 9: Law of large numbers & --- \\
 11 & 10: Recap & Thursday 14 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
 ~
@@ -819,12 +814,10 @@ Often when collecting data, we don't collect exact data, but rather collect data
 Consider the following binned data, from \(n = 100\) students:
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 \\
 5--10 minutes & 8 & 0.08 \\
 10--15 minutes & 21 & 0.21 \\
@@ -833,6 +826,7 @@ Time & Frequency & Relative frequency \\
 45--60 minutes & 8 & 0.08 \\
 60--120 minutes & 2 & 0.02 \\
 \textbf{Total} & 100 & 1 \\
+\bottomrule()
 \end{longtable}
 
 Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The \textbf{relative frequency} of bin \(j\) is \(f_j/n\); that is, the proportion of the observations in that bin.
@@ -840,12 +834,10 @@ Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observa
 Which bin would you say is the most popular -- that is, the ``modal'' bin? The bin with the most observations in it is the ``15--30 minute'' bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the \textbf{frequency density}: the relative frequency divided by the size of the bin.
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency & Frequency density \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 & 0.008 \\
 5--10 minutes & 8 & 0.08 & 0.016 \\
 10--15 minutes & 21 & 0.21 & 0.042 \\
@@ -854,6 +846,7 @@ Time & Frequency & Relative frequency & Frequency density \\
 45--60 minutes & 8 & 0.08 & 0.005 \\
 60--120 minutes & 2 & 0.02 & 0.0003 \\
 \textbf{Total} & 100 & 1 & \\
+\bottomrule()
 \end{longtable}
 
 In the first row, for example, the relative frequency is 0.04 and the size of the bin is 5 minutes, so the frequency density is \(0.04/5 = 0.008\). We now see that the modal bin -- the bin with the highest frequency \emph{density} -- is in fact the ``10--15 minutes'' bin. This bin has somewhat fewer datapoints that the ``15--30 minutes'' bin, but they're squashed into a much smaller bin.
@@ -1062,7 +1055,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1072,10 +1065,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -1083,6 +1074,7 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -1097,7 +1089,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1107,10 +1099,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & 0.05 & 0.0042 \\
 30--40 & 2 & 0.1 & 0.01 \\
 40--45 & 4 & 0.2 & 0.04 \\
@@ -1118,6 +1108,7 @@ Frequency density
 50--60 & 6 & 0.3 & 0.03 \\
 60--80 & 2 & 0.1 & 0.005 \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -1185,7 +1176,7 @@ The next four questions are \textbf{long questions}, which are intended to be ha
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1199,11 +1190,10 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1221,13 +1211,12 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 \textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1934,7 +1923,7 @@ Here, an important principle is the \textbf{multiplication principle}. The multi
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Beefburger
@@ -1943,12 +1932,11 @@ Chicken burger
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Veggie burger
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Fries} & 1: Beefburger with fries & 2: Chicken burger with fries & 3: Veggie burger with fries \\
 \textbf{Salad} & 4: Beefburger with salad & 5: Chicken burger with salad & 6: Veggie burger with salad \\
+\bottomrule()
 \end{longtable}
 
 More generally, if you have \(m\) stages of choosing, with \(n_1\) choices in the first stage, then \(n_2\) choices in the second stage, all the way to \(n_m\) choices in the final stage, you have \(n_1 \times n_2 \times \cdots \times n_m\) total choices altogether.
@@ -2669,15 +2657,14 @@ Finally, because the events are disjoint, we have
 Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 & \textbf{Brown hair} & \textbf{Blond hair} & \textbf{Total} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Brown eyes} & 50\% & 30\% & \textbf{80\%} \\
 \textbf{Blue eyes} & 10\% & 10\% & \textbf{20\%} \\
 \textbf{Total} & \textbf{60\%} & \textbf{40\%} & \textbf{100\%} \\
+\bottomrule()
 \end{longtable}
 
 It turns out that \(\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08\), so having blond hair and having blue eyes are not in fact independent.
@@ -3055,7 +3042,7 @@ If \(X\) is the sum of two dice rolls, then the CDF \(F\) is given by adding up 
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3073,11 +3060,10 @@ If \(X\) is the sum of two dice rolls, then the CDF \(F\) is given by adding up 
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([12, \infty)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(F(x)\) & \(0\) & \(\frac{1}{36}\) & \(\frac{3}{36}\) & \(\frac{5}{36}\) & \(\cdots\) & \(\frac{35}{36}\) & \(1\) \\
+\bottomrule()
 \end{longtable}
 
 \includegraphics{math1710_files/figure-latex/dice-cdf-1.pdf}
@@ -3276,13 +3262,12 @@ to get the same result.
 \textbf{A3.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(-1\) & \(0\) & \(0.5\) & \(1\) & \(2\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(0.1\) & \(0.3\) & \(0.3\) & \(0.2\) & \(0.1\) \\
+\bottomrule()
 \end{longtable}
 
 Find the expectation and variance of \(X\).
@@ -3302,13 +3287,12 @@ Then, using the computational formula,
 \textbf{A4.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(1\) & \(2\) & \(4\) & \(5\) & \(a\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(0.1\) & \(0.2\) & \(0.1\) & \(b\) & \(0.1\) \\
+\bottomrule()
 \end{longtable}
 
 This random variable has \(\mathbb EX = 4.3\). Find the values of \(a\) and \(b\).
@@ -3705,7 +3689,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1467}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3733}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -3715,14 +3699,13 @@ Solutions
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & \href{R1.html}{\textbf{1: R basics}} & \href{R1-solutions.html}{Solutions} & --- \\
 3 & \href{R2.html}{\textbf{2: Vectors}} & \href{R2-solutions.html}{Solutions} & Monday 23 October \\
 4 & \href{R3.html}{\textbf{3: Data in R}} & \href{R3-solutions.html}{Solutions} & --- \\
 5 & \href{R4.html}{\textbf{Plots I:} Making plots} & & Monday 6 November \\
+\bottomrule()
 \end{longtable}
 
 \hypertarget{what-is-r}{%
@@ -3898,7 +3881,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3908,10 +3891,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -3919,6 +3900,7 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -3933,7 +3915,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3943,10 +3925,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & 0.05 & 0.0042 \\
 30--40 & 2 & 0.1 & 0.01 \\
 40--45 & 4 & 0.2 & 0.04 \\
@@ -3954,6 +3934,7 @@ Frequency density
 50--60 & 6 & 0.3 & 0.03 \\
 60--80 & 2 & 0.1 & 0.005 \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -4019,7 +4000,7 @@ You can probably think of other answers.
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4033,11 +4014,10 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -4055,13 +4035,12 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 \textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
