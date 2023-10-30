@@ -337,7 +337,7 @@ In other words, <span class="math inline">\(X\)</span> is a <em>function</em> wh
 <p>We now consider only discrete random variables <span class="math inline">\(X\)</span>, where the range <span class="math inline">\(\operatorname{Range}(X)\)</span> is finite or countably infinite.</p>
 <p>To fully understand a discrete random variable <span class="math inline">\(X\)</span>, we need only understand the probabilities <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span>. These are captured by the probability mass function.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-43" class="definition"><strong>Definition 9.3  </strong></span>For a discrete random variable <span class="math inline">\(X\)</span>, its <strong>probability mass function</strong> (or <strong>PMF</strong>) is the function <span class="math inline">\(p_X\)</span> where
+<p><span id="def:unlabeled-div-43" class="definition"><strong>Definition 9.3  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable. Theb the <strong>probability mass function</strong> (or <strong>PMF</strong>) <span class="math inline">\(p_X\)</span> of <span class="math inline">\(X\)</span> is given by
 <span class="math display">\[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \operatorname{Range}(X)$.} \]</span></p>
 <p>(When the random variable <span class="math inline">\(X\)</span> is obvious from context, we’ll just write <span class="math inline">\(p(x)\)</span> without the subscript.)</p>
 </div>
@@ -435,15 +435,21 @@ Hence we have the following:</p>
 </div>
 <div id="cdf" class="section level2 hasAnchor" number="9.3">
 <h2><span class="header-section-number">9.3</span> Cumulative distribution function<a href="L09-discrete-rv.html#cdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Sometimes it is useful to know the probability a random variable <span class="math inline">\(X\)</span> is less or equal to than some value <span class="math inline">\(x\)</span>. This is captured by the <strong>cumulative distribution function</strong> (or <strong>CDF</strong>) <span class="math inline">\(F_X\)</span>, where
-<span class="math display">\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]</span></p>
+<p>Sometimes it is useful to know the probability a random variable <span class="math inline">\(X\)</span> is less or equal to than some value <span class="math inline">\(x\)</span>. This is captured by the cumulative distribution function.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-47" class="definition"><strong>Definition 9.4  </strong></span>Let <span class="math inline">\(X\)</span> be a random variable. Then the
+<strong>cumulative distribution function</strong> (or <strong>CDF</strong>) <span class="math inline">\(F_X\)</span> of <span class="math inline">\(X\)</span> is given by
+<span class="math display">\[ F_X(x) = \mathbb P(X \leq x) \qquad \text{for $x \in \mathbb R$.} . \]</span></p>
+</div>
+<p>When <span class="math inline">\(X\)</span> is a discrete random variable, we can find <span class="math inline">\(F_X(x) = \mathbb P(X = x)\)</span> by simply adding up the probabilities of all the outcomes <span class="math inline">\(y\)</span> that are less than or equal to <span class="math inline">\(x\)</span>. That is,
+<span class="math display">\[ F_X(x) = \sum_{y \leq x} \mathbb P(X = y) = \sum_{y \leq x} p_X(y) . \]</span></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 9.3  </strong></span><em>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli random variable with success probability <span class="math inline">\(p\)</span>. What is the CDF <span class="math inline">\(F_X\)</span> of <span class="math inline">\(X\)</span>?</em></p>
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 9.3  </strong></span><em>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli random variable with success probability <span class="math inline">\(p\)</span>. What is the CDF <span class="math inline">\(F_X\)</span> of <span class="math inline">\(X\)</span>?</em></p>
 <p>The value <span class="math inline">\(F_X(x)\)</span> of CDF will depend on the number <span class="math inline">\(x\)</span> given as an input.</p>
 <ul>
 <li><p>If <span class="math inline">\(x\)</span> is a number less than 0 (like <span class="math inline">\(x = -1\)</span>, for example), then the event <span class="math inline">\(X \leq x\)</span> cannot happen, as there are no outcomes for <span class="math inline">\(X\)</span> that are that small. So <span class="math inline">\(F_X(x) = 0\)</span>.</p></li>
 <li><p>If <span class="math inline">\(x\)</span> is a number at least 0 but smaller than 1 (like <span class="math inline">\(x = \frac12\)</span>, for example), then the event <span class="math inline">\(X \leq x\)</span> can only happen if <span class="math inline">\(X = 0\)</span>. So <span class="math inline">\(F_X(x) = \mathbb P(X = 0) = p_X(0) = 1 - p\)</span>.</p></li>
-<li><p>If <span class="math inline">\(x\)</span> a number at least 1 (like <span class="math inline">\(x = 2\)</span>, for example), then event <span class="math inline">\(X \leq x\)</span> will definitely happen, because both outcomes, 0 and 1, are less than or equal to <span class="math inline">\(x\)</span>. So <span class="math inline">\(F_X(x) = 1\)</span>.</p></li>
+<li><p>If <span class="math inline">\(x\)</span> is a number at least 1 (like <span class="math inline">\(x = 2\)</span>, for example), then event <span class="math inline">\(X \leq x\)</span> will definitely happen, because both outcomes, 0 and 1, are less than or equal to <span class="math inline">\(x\)</span>. So <span class="math inline">\(F_X(x) = 1\)</span>.</p></li>
 </ul>
 <p>So the CDF <span class="math inline">\(F_X\)</span> is
 <span class="math display">\[ F_X(x) = \begin{cases} 0 &amp; \text{for $x &lt; 0$} \\
@@ -451,7 +457,7 @@ Hence we have the following:</p>
                       1   &amp; \text{for $x \geq 1$} . \end{cases} \]</span></p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 9.4  </strong></span><em>Let <span class="math inline">\(X\)</span> be the sum of two dice rolls. What is the CDF <span class="math inline">\(F\)</span>?</em></p>
+<p><span id="exm:unlabeled-div-49" class="example"><strong>Example 9.4  </strong></span><em>Let <span class="math inline">\(X\)</span> be the sum of two dice rolls. What is the CDF <span class="math inline">\(F\)</span>?</em></p>
 <p>Again, the answer depends on the value of the number <span class="math inline">\(x\)</span>.</p>
 <ul>
 <li><p>If <span class="math inline">\(x &lt; 2\)</span>, then <span class="math inline">\(X \leq x\)</span> cannot occur. So <span class="math inline">\(F(x) = 0\)</span>.</p></li>

@@ -62,7 +62,7 @@ We now consider only discrete random variables $X$, where the range $\Range(X)$ 
 To fully understand a discrete random variable $X$, we need only understand the probabilities $p(x) = \mathbb P(X = x)$. These are captured by the probability mass function.
 
 ::: {.definition}
-For a discrete random variable $X$, its **probability mass function** (or **PMF**) is the function $p_X$ where 
+Let $X$ be a discrete random variable. Theb the **probability mass function** (or **PMF**) $p_X$ of $X$ is given by
 \[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \Range(X)$.} \]
 
 (When the random variable $X$ is obvious from context, we'll just write $p(x)$ without the subscript.)
@@ -119,8 +119,16 @@ Let $X$ be a discrete random variable, and let $p_X$ be its PMF. Then
 
 ## Cumulative distribution function {#cdf}
 
-Sometimes it is useful to know the probability a random variable $X$ is less or equal to than some value $x$. This is captured by the **cumulative distribution function** (or **CDF**) $F_X$, where
-\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]
+Sometimes it is useful to know the probability a random variable $X$ is less or equal to than some value $x$. This is captured by the cumulative distribution function.
+
+::: {.definition}
+Let $X$ be a random variable. Then the
+**cumulative distribution function** (or **CDF**) $F_X$ of $X$ is given by
+\[ F_X(x) = \mathbb P(X \leq x) \qquad \text{for $x \in \mathbb R$.} . \]
+:::
+
+When $X$ is a discrete random variable, we can find $F_X(x) = \mathbb P(X = x)$ by simply adding up the probabilities of all the outcomes $y$ that are less than or equal to $x$. That is,
+\[ F_X(x) = \sum_{y \leq x} \mathbb P(X = y) = \sum_{y \leq x} p_X(y) . \]
 
 ::: {.example}
 *Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. What is the CDF $F_X$ of $X$?*
@@ -131,7 +139,7 @@ The value $F_X(x)$ of CDF will depend on the number $x$ given as an input.
 
 * If $x$ is a number at least 0 but smaller than 1 (like $x = \frac12$, for example), then the event $X \leq x$ can only happen if $X = 0$. So $F_X(x) = \mathbb P(X = 0) = p_X(0) = 1 - p$.
 
-* If $x$ a number at least 1 (like $x = 2$, for example), then event $X \leq x$ will definitely happen, because both outcomes, 0 and 1, are less than or equal to $x$. So $F_X(x) = 1$.
+* If $x$ is a number at least 1 (like $x = 2$, for example), then event $X \leq x$ will definitely happen, because both outcomes, 0 and 1, are less than or equal to $x$. So $F_X(x) = 1$.
 
 So the CDF $F_X$ is
 \[ F_X(x) = \begin{cases} 0 & \text{for $x < 0$} \\
