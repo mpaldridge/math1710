@@ -2,7 +2,7 @@
 
 \newcommand{\Range}{\operatorname{Range}}
 
-<!--
+
 
 ## What is a random variable?  {#rv}
 
@@ -48,19 +48,23 @@ So, for example, the range of the dice total $X$ is $\Range(X) = \{2, 3, \dots, 
 Random variables that we will consider in this module will be one of two types:
 
 * **Discrete random variables** have a range that is a collection of discrete separate counts, so $\Range(X)$ is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for "count data".
+
 * **Continuous random variables** have a range that is a continuum of slowly varying measurements, so $\Range(X)$ is uncountably infinite (like the real numbers, the positive real numbers, or the interval $[0,1]$). Continuous random variables can be used as models for "measurement data".
 
-For this week and the two weeks after, we will look at discrete random variables; later in Lectures 15 to 17 we will look at continuous random variables.
+The techniques we will use to study discrete random variable and continuous random variables are quite different, although have some similarities. For this week and the two weeks after, we will just look at discrete random variables; later in Lectures 15 to 17 we will look at continuous random variables.
 
 
 ## Probability mass function  {#pmf}
 
 
-We now consider only discrete random variables $X$, where the range $\Range(X)$ is finite or countably infinite. To fully understand a discrete random variable $X$, we need only understand the probabilities $p(x) = \mathbb P(X = x)$. These are captured by the probability mass function.
+We now consider only discrete random variables $X$, where the range $\Range(X)$ is finite or countably infinite.
+
+To fully understand a discrete random variable $X$, we need only understand the probabilities $p(x) = \mathbb P(X = x)$. These are captured by the probability mass function.
 
 ::: {.definition}
 For a discrete random variable $X$, its **probability mass function** (or **PMF**) is the function $p_X$ where 
 \[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \Range(X)$.} \]
+
 (When the random variable $X$ is obvious from context, we'll just write $p(x)$ without the subscript.)
 :::
 
@@ -119,24 +123,44 @@ Sometimes it is useful to know the probability a random variable $X$ is less or 
 \[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]
 
 ::: {.example}
-Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. It's impossible for the outcome to be less than 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability $p(0) = 1-p$; and it is certain to at most 1. So its CDF $F$ is
-\[ F(x) = \begin{cases} 0 & \text{for $x < 0$} \\
+*Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. What is the CDF $F_X$ of $X$?*
+
+The value $F_X(x)$ of CDF will depend on the number $x$ given as an input.
+
+* If $x$ is a number less than 0 (like $x = -1$, for example), then the event $X \leq x$ cannot happen, as there are no outcomes for $X$ that are that small. So $F_X(x) = 0$.
+
+* If $x$ is a number at least 0 but smaller than 1 (like $x = \frac12$, for example), then the event $X \leq x$ can only happen if $X = 0$. So $F_X(x) = \mathbb P(X = 0) = p_X(0) = 1 - p$.
+
+* If $x$ a number at least 1 (like $x = 2$, for example), then event $X \leq x$ will definitely happen, because both outcomes, 0 and 1, are less than or equal to $x$. So $F_X(x) = 1$.
+
+So the CDF $F_X$ is
+\[ F_X(x) = \begin{cases} 0 & \text{for $x < 0$} \\
                       1-p & \text{for $0 \leq x < 1$} \\
                       1   & \text{for $x \geq 1$} . \end{cases} \]
 :::
 
 ::: {.example}
-If $X$ is the sum of two dice rolls, then the CDF $F$ is given by adding up the PMF. So, for example:
+*Let $X$ be the sum of two dice rolls. What is the CDF $F$?*
 
-* If $x < 2$, then $F(x) = 0$, because it's not possible to have $X \leq x < 2$. 
-* If $2 \leq x < 3$, then $F(x) = p(2) = \frac{1}{36}$, because $X = 2$ is the only outcome with $X \leq x < 3$.
-* If $3 \leq x < 4$, then $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}$, as $X = 2$ or $3$ are the only outcomes with $X \leq x$.
+Again, the answer depends on the value of the number $x$.
+
+* If $x < 2$, then $X \leq x$ cannot occur. So $F(x) = 0$.
+
+* If $2 \leq x < 3$, then the only outcome of $X$ consistent with $X \leq x$ is the outcome $X = 2$. So $F(x) = p(2) = \frac{1}{36}$.
+
+* If $3 \leq x < 4$, then the only outcomes of $X$ consistent with $X \leq x$ are the outcomes $X = 2$ and $X = 3$. So $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}$.
+
+* If $4 \leq x < 5$, then the only outcomes of $X$ consistent with $X \leq x$ are the outcomes $X = 2$, $X = 3$ and $X = 4$. So $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}$.
+
 * ...
-* If $x \geq 12$, then $F(x) = 1$, because we always have $X \leq 12 \leq x$.
+
+* If $x \geq 12$, then all the outcomes in the range of $X$ have $X \leq x$, so $F(x) = 1$.
+
+Hence, the CDF $F$ of $X$ is given by the following step function:
 
 | $x \in {}$ | $(-\infty, 2)$ | $[2,3)$ | $[3,4)$ | $[4,5)$ | $\cdots$ | $[11,12)$ | $[12, \infty)$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $F(x)$ | $0$ | $\frac{1}{36}$ | $\frac{3}{36}$ | $\frac{5}{36}$ | $\cdots$ | $\frac{35}{36}$ | $1$ |
+| $F(x)$ | $0$ | $\frac{1}{36}$ | $\frac{3}{36}$ | $\frac{6}{36}$ | $\cdots$ | $\frac{35}{36}$ | $1$ |
 
 ```{r dice-cdf, cache = TRUE, echo = FALSE}
 x <- 2:12
@@ -157,7 +181,7 @@ For any random variable $X$ with CDF $F$,
 * if $x$ is greater than everything in the $\Range(X)$, then $F(x) = 1$, because $X$ cannot be any bigger than that;
 * $F(x)$ is increasing in $x$, because the probability you are less than $x$ gets bigger as $x$ gets bigger.
 
--->
+
 
 
 

@@ -236,6 +236,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
 <ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
+<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
 <li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
@@ -253,7 +256,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
-<li class="chapter" data-level="10.1" data-path="R.html"><a href="R.html#how-to-use-r-and-rstudio"><i class="fa fa-check"></i><b>10.1</b> How to use R and RStudio</a>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#how-to-use-r-and-rstudio"><i class="fa fa-check"></i>How to use R and RStudio</a>
 <ul>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-uni"><i class="fa fa-check"></i>Accessing R and RStudio on University computers</a></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
@@ -294,149 +297,217 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L09-discrete-rv" class="section level1 hasAnchor" number="9">
 <h1><span class="header-section-number">Lecture 9</span> Discrete random variables<a href="L09-discrete-rv.html#L09-discrete-rv" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!--
-
-## What is a random variable?  {#rv}
-
-Let's consider again the case of rolling two dice. We know that the sample space is the set of pairs of numbers between 1 and 6.
-But if we are rolling the two dice as part of a board game, we might only care about the *total* score on the two dice, and the actual the two individual dice scores might be irrelevant. Let us wrote write $X$ for the total score. This $X$ is a sort of "numerical summary" of the experiment. Probabilists call such a numerical summary a **random variable**.
-
-One we've defined this random variable $X$, it can be easier to work with $X$ than with sample spaces and events. For example, if we want to know the probability that our two dice rolls add up to 5, it's more convenient to write
-\[ \mathbb P(X = 5) \]
+<div id="rv" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> What is a random variable?<a href="L09-discrete-rv.html#rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Let’s consider again the case of rolling two dice. We know that the sample space is the set of pairs of numbers between 1 and 6.
+But if we are rolling the two dice as part of a board game, we might only care about the <em>total</em> score on the two dice, and the actual the two individual dice scores might be irrelevant. Let us wrote write <span class="math inline">\(X\)</span> for the total score. This <span class="math inline">\(X\)</span> is a sort of “numerical summary” of the experiment. Probabilists call such a numerical summary a <strong>random variable</strong>.</p>
+<p>One we’ve defined this random variable <span class="math inline">\(X\)</span>, it can be easier to work with <span class="math inline">\(X\)</span> than with sample spaces and events. For example, if we want to know the probability that our two dice rolls add up to 5, it’s more convenient to write
+<span class="math display">\[ \mathbb P(X = 5) \]</span>
 rather than
-\[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]
-The probability that $X = 5$ is $\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}$. We might also be interested in other things about the total score $X$, like what the average total score over many pairs if dice rolls is.
-
-The good news is that, once we have properly set up our random variable $X$, we can often then choose to ignore things like the sample space, the probability measure, and individual events.
-
-Random variables are typically given capital letters from late in the alphabet, like $X$, $Y$, $Z$. Values that those random variables take are often given the lower-case equivalent, like $x$, $y$, $z$.
-
-This idea of a random variable as a numerical summary of an experiment is how we *think* about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We'll discuss that now (but if you find the next couple of paragraphs difficult to follow, you won't miss much if you skip them).
-
-In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
-  \[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]
-of pairs $\boldsymbol\omega = (\omega_1, \omega_2)$ of numbers from 1 to 6, where $\omega_1$ represents the first dice roll and $\omega_2$ the second dice roll.
-The random variable $X$ is the score on the first dice plus the score on the second dice -- that is,
-\[ X(\boldsymbol\omega) = \omega_1 + \omega_2 . \]
-In other words, $X$ is a *function* which takes in a sample outcome $\boldsymbol\omega \in \Omega$ and outputs a real number $X = X(\boldsymbol\omega) = \omega_1 + \omega_2$.
-
-
-
-::: {.definition}
-Let $\Omega$ be a sample space. Then a **random variable** is a function $X$ from $\Omega$ to the real numbers $\mathbb R$; that is, to each sample outcome $\omega$ it assigns a real number $X(\omega)$.
-
-Expressions like $\mathbb P(X = x)$ or $\mathbb P(X \in A)$ should be understood as representing more formal probabilities
-\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) \quad \text{or} \quad \mathbb P \big( \{\omega : X(\omega) \in A \}\big)  . \]
-:::
-
-It's useful to have a notation for the values a random variable can take.
-
-::: {.definition}
-The set of values a random variable $X$ can take is called its **range**, $\Range(X) = \{X(\omega) : \omega \in \Omega \}$.
-:::
-
-So, for example, the range of the dice total $X$ is $\Range(X) = \{2, 3, \dots, 12\}$, because those are the possible outcome from the sum of two dice rolls.
-
-Random variables that we will consider in this module will be one of two types:
-
-* **Discrete random variables** have a range that is a collection of discrete separate counts, so $\Range(X)$ is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for "count data".
-* **Continuous random variables** have a range that is a continuum of slowly varying measurements, so $\Range(X)$ is uncountably infinite (like the real numbers, the positive real numbers, or the interval $[0,1]$). Continuous random variables can be used as models for "measurement data".
-
-For this week and the two weeks after, we will look at discrete random variables; later in Lectures 15 to 17 we will look at continuous random variables.
-
-
-## Probability mass function  {#pmf}
-
-
-We now consider only discrete random variables $X$, where the range $\Range(X)$ is finite or countably infinite. To fully understand a discrete random variable $X$, we need only understand the probabilities $p(x) = \mathbb P(X = x)$. These are captured by the probability mass function.
-
-::: {.definition}
-For a discrete random variable $X$, its **probability mass function** (or **PMF**) is the function $p_X$ where 
-\[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \Range(X)$.} \]
-(When the random variable $X$ is obvious from context, we'll just write $p(x)$ without the subscript.)
-:::
-
-Once we have the PMF, then Axiom 3 tells us that for any set $A$, we have
-\[ \mathbb P(X \in A) = \sum_{x \in A} \mathbb P(X = x) = \sum_{x \in A} p(x) . \]
-(Recall that the symbol $\in$ means "is an element of", or just "is in" for short.) So the probability that $X$ is in some set $A$ can be found by simply adding up $p(x)$ for all the values $x$ in $A$. Thus the PMF $p(x)$ is the only thing we need to know.
-
-
-::: {.example}
-Consider tossing a biased coin, that is Heads with probability $p$ and Tails with probability $1-p$. Let $X = 1$ if the coin lands Heads, and $X = 0$ if the coin lands Tails. The PMF $p_X$ of this random variable is given by
-\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]
-
-We could alternatively think of the same random variable $X$ as representing the result of an experiment, where $X = 1$ represents a success, with probability $p_X(1) = p$, and $X = 0$ represents a failure, with probability $p_X(0) = 1 - p$.
-
-A random variable $X$ with this PMF is called a **Bernoulli trial** (or a "Bernoulli random variable", or is said to "follow the Bernoulli distribution" -- after the seventeenth-century Swiss mathematician [Jacob Bernoulli](https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/)). We use the notation $X \sim \text{Bern}(p)$ for short.
-:::
-
-::: {.example}
-Let $X$ being the sum of two dice rolls. As this is a classical probability problem, the probability $p(x)$ of rolling a total of $x$ is $n(x) / 36$, where $n(x)$ is the number of ways of rolling a total of $x$. So, for example, there is only one way $(1,1)$ of rolling a total of 2, so $p(2) = \frac1{36}$, but there are 5 ways of rolling a 6: $(1,5), (2,4), (3, 3), (4, 2), (5, 1)$; so $p(5) = \frac5{36}$.
-
-The PMF $p$ of $X$ is given by
-
-| $x$ | $2$ | $3$ | $4$ | $5$ | $6$ | $7$ |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $p(x)$ | $\frac{1}{36}$ | $\frac{2}{36}$ | $\frac{3}{36}$ | $\frac{4}{36}$ | $\frac{5}{36}$ | $\frac{6}{36}$ |
-
-| $x$ | $\cdots$ | $8$ | $9$ | $10$ | $11$ | $12$ |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $p(x)$ | $\cdots$ | $\frac{5}{36}$ | $\frac{4}{36}$ | $\frac{3}{36}$ | $\frac{2}{36}$ | $\frac{1}{36}$ |
-
-<img src="math1710_files/figure-html/dice-pmf-1.png" width="672" />
-:::
-
-
-
-Note that since $p(x) = \mathbb P(X = x)$ is a probability, it must be greater than or equal to 0, by Axiom 1. Further, if we add up $p(x)$ we get
-\[ \sum_{x} p(x) =  \sum_{x \in \Range(X)} \mathbb P(X = x) = \mathbb P\big(X \in \Range(X)\big)  =  \mathbb P(\Omega) = 1,  \]
+<span class="math display">\[ \mathbb P(A) \quad \text{where} \quad A = \big\{ (1,4), (2,3), (3,2), (4,1) \big\} . \]</span>
+The probability that <span class="math inline">\(X = 5\)</span> is <span class="math inline">\(\mathbb P(X = 5) = \frac{4}{36} = \frac{1}{9}\)</span>. We might also be interested in other things about the total score <span class="math inline">\(X\)</span>, like what the average total score over many pairs if dice rolls is.</p>
+<p>The good news is that, once we have properly set up our random variable <span class="math inline">\(X\)</span>, we can often then choose to ignore things like the sample space, the probability measure, and individual events.</p>
+<p>Random variables are typically given capital letters from late in the alphabet, like <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span>, <span class="math inline">\(Z\)</span>. Values that those random variables take are often given the lower-case equivalent, like <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>, <span class="math inline">\(z\)</span>.</p>
+<p>This idea of a random variable as a numerical summary of an experiment is how we <em>think</em> about random variables when solving problems. On the other hand, as mathematicians, we also want to define carefully what a random variable is as a mathematical object. We’ll discuss that now (but if you find the next couple of paragraphs difficult to follow, you won’t miss much if you skip them).</p>
+<p>In this formal mathematical view, our experiment of rolling two dice is represented by a sample space
+<span class="math display">\[  \Omega = \big\{ \boldsymbol\omega = (\omega_1, \omega_2) : \omega_1, \omega_2 \in \{1,2,3,4,5,6\} \big\}  \]</span>
+of pairs <span class="math inline">\(\boldsymbol\omega = (\omega_1, \omega_2)\)</span> of numbers from 1 to 6, where <span class="math inline">\(\omega_1\)</span> represents the first dice roll and <span class="math inline">\(\omega_2\)</span> the second dice roll.
+The random variable <span class="math inline">\(X\)</span> is the score on the first dice plus the score on the second dice – that is,
+<span class="math display">\[ X(\boldsymbol\omega) = \omega_1 + \omega_2 . \]</span>
+In other words, <span class="math inline">\(X\)</span> is a <em>function</em> which takes in a sample outcome <span class="math inline">\(\boldsymbol\omega \in \Omega\)</span> and outputs a real number <span class="math inline">\(X = X(\boldsymbol\omega) = \omega_1 + \omega_2\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 9.1  </strong></span>Let <span class="math inline">\(\Omega\)</span> be a sample space. Then a <strong>random variable</strong> is a function <span class="math inline">\(X\)</span> from <span class="math inline">\(\Omega\)</span> to the real numbers <span class="math inline">\(\mathbb R\)</span>; that is, to each sample outcome <span class="math inline">\(\omega\)</span> it assigns a real number <span class="math inline">\(X(\omega)\)</span>.</p>
+<p>Expressions like <span class="math inline">\(\mathbb P(X = x)\)</span> or <span class="math inline">\(\mathbb P(X \in A)\)</span> should be understood as representing more formal probabilities
+<span class="math display">\[ \mathbb P \big( \{\omega : X(\omega) = x \}\big) \quad \text{or} \quad \mathbb P \big( \{\omega : X(\omega) \in A \}\big)  . \]</span></p>
+</div>
+<p>It’s useful to have a notation for the values a random variable can take.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-42" class="definition"><strong>Definition 9.2  </strong></span>The set of values a random variable <span class="math inline">\(X\)</span> can take is called its <strong>range</strong>, <span class="math inline">\(\operatorname{Range}(X) = \{X(\omega) : \omega \in \Omega \}\)</span>.</p>
+</div>
+<p>So, for example, the range of the dice total <span class="math inline">\(X\)</span> is <span class="math inline">\(\operatorname{Range}(X) = \{2, 3, \dots, 12\}\)</span>, because those are the possible outcome from the sum of two dice rolls.</p>
+<p>Random variables that we will consider in this module will be one of two types:</p>
+<ul>
+<li><p><strong>Discrete random variables</strong> have a range that is a collection of discrete separate counts, so <span class="math inline">\(\operatorname{Range}(X)\)</span> is finite (like the dice total being an integer between 2 and 12) or countably infinite (like the positive integers). Discrete random variables can be used as models for “count data”.</p></li>
+<li><p><strong>Continuous random variables</strong> have a range that is a continuum of slowly varying measurements, so <span class="math inline">\(\operatorname{Range}(X)\)</span> is uncountably infinite (like the real numbers, the positive real numbers, or the interval <span class="math inline">\([0,1]\)</span>). Continuous random variables can be used as models for “measurement data”.</p></li>
+</ul>
+<p>The techniques we will use to study discrete random variable and continuous random variables are quite different, although have some similarities. For this week and the two weeks after, we will just look at discrete random variables; later in Lectures 15 to 17 we will look at continuous random variables.</p>
+</div>
+<div id="pmf" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> Probability mass function<a href="L09-discrete-rv.html#pmf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We now consider only discrete random variables <span class="math inline">\(X\)</span>, where the range <span class="math inline">\(\operatorname{Range}(X)\)</span> is finite or countably infinite.</p>
+<p>To fully understand a discrete random variable <span class="math inline">\(X\)</span>, we need only understand the probabilities <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span>. These are captured by the probability mass function.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-43" class="definition"><strong>Definition 9.3  </strong></span>For a discrete random variable <span class="math inline">\(X\)</span>, its <strong>probability mass function</strong> (or <strong>PMF</strong>) is the function <span class="math inline">\(p_X\)</span> where
+<span class="math display">\[ p_X(x) = \mathbb P(X = x)  \qquad \text{for $x \in \operatorname{Range}(X)$.} \]</span></p>
+<p>(When the random variable <span class="math inline">\(X\)</span> is obvious from context, we’ll just write <span class="math inline">\(p(x)\)</span> without the subscript.)</p>
+</div>
+<p>Once we have the PMF, then Axiom 3 tells us that for any set <span class="math inline">\(A\)</span>, we have
+<span class="math display">\[ \mathbb P(X \in A) = \sum_{x \in A} \mathbb P(X = x) = \sum_{x \in A} p(x) . \]</span>
+(Recall that the symbol <span class="math inline">\(\in\)</span> means “is an element of”, or just “is in” for short.) So the probability that <span class="math inline">\(X\)</span> is in some set <span class="math inline">\(A\)</span> can be found by simply adding up <span class="math inline">\(p(x)\)</span> for all the values <span class="math inline">\(x\)</span> in <span class="math inline">\(A\)</span>. Thus the PMF <span class="math inline">\(p(x)\)</span> is the only thing we need to know.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-44" class="example"><strong>Example 9.1  </strong></span>Consider tossing a biased coin, that is Heads with probability <span class="math inline">\(p\)</span> and Tails with probability <span class="math inline">\(1-p\)</span>. Let <span class="math inline">\(X = 1\)</span> if the coin lands Heads, and <span class="math inline">\(X = 0\)</span> if the coin lands Tails. The PMF <span class="math inline">\(p_X\)</span> of this random variable is given by
+<span class="math display">\[ p_X(0) = 1 - p \qquad p_X(1) = p . \]</span></p>
+<p>We could alternatively think of the same random variable <span class="math inline">\(X\)</span> as representing the result of an experiment, where <span class="math inline">\(X = 1\)</span> represents a success, with probability <span class="math inline">\(p_X(1) = p\)</span>, and <span class="math inline">\(X = 0\)</span> represents a failure, with probability <span class="math inline">\(p_X(0) = 1 - p\)</span>.</p>
+<p>A random variable <span class="math inline">\(X\)</span> with this PMF is called a <strong>Bernoulli trial</strong> (or a “Bernoulli random variable”, or is said to “follow the Bernoulli distribution” – after the seventeenth-century Swiss mathematician <a href="https://mathshistory.st-andrews.ac.uk/Biographies/Bernoulli_Jacob/">Jacob Bernoulli</a>). We use the notation <span class="math inline">\(X \sim \text{Bern}(p)\)</span> for short.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-45" class="example"><strong>Example 9.2  </strong></span>Let <span class="math inline">\(X\)</span> being the sum of two dice rolls. As this is a classical probability problem, the probability <span class="math inline">\(p(x)\)</span> of rolling a total of <span class="math inline">\(x\)</span> is <span class="math inline">\(n(x) / 36\)</span>, where <span class="math inline">\(n(x)\)</span> is the number of ways of rolling a total of <span class="math inline">\(x\)</span>. So, for example, there is only one way <span class="math inline">\((1,1)\)</span> of rolling a total of 2, so <span class="math inline">\(p(2) = \frac1{36}\)</span>, but there are 5 ways of rolling a 6: <span class="math inline">\((1,5), (2,4), (3, 3), (4, 2), (5, 1)\)</span>; so <span class="math inline">\(p(5) = \frac5{36}\)</span>.</p>
+<p>The PMF <span class="math inline">\(p\)</span> of <span class="math inline">\(X\)</span> is given by</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(2\)</span></th>
+<th align="center"><span class="math inline">\(3\)</span></th>
+<th align="center"><span class="math inline">\(4\)</span></th>
+<th align="center"><span class="math inline">\(5\)</span></th>
+<th align="center"><span class="math inline">\(6\)</span></th>
+<th align="center"><span class="math inline">\(7\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{4}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\(8\)</span></th>
+<th align="center"><span class="math inline">\(9\)</span></th>
+<th align="center"><span class="math inline">\(10\)</span></th>
+<th align="center"><span class="math inline">\(11\)</span></th>
+<th align="center"><span class="math inline">\(12\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{5}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{4}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{2}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="math1710_files/figure-html/dice-pmf-1.png" width="672" /></p>
+</div>
+<p>Note that since <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span> is a probability, it must be greater than or equal to 0, by Axiom 1. Further, if we add up <span class="math inline">\(p(x)\)</span> we get
+<span class="math display">\[ \sum_{x} p(x) =  \sum_{x \in \operatorname{Range}(X)} \mathbb P(X = x) = \mathbb P\big(X \in \operatorname{Range}(X)\big)  =  \mathbb P(\Omega) = 1,  \]</span>
 by Axiom 2.
-Hence we have the following:
-
-::: {.theorem}
-Let $X$ be a discrete random variable, and let $p_X$ be its PMF. Then
-
-* $p_X(x) \geq 0$ for all $x \in \Range(X)$;
-* ${\displaystyle \sum_{x \in \Range(X)} p_X(x) = 1}$.
-:::
-
-## Cumulative distribution function {#cdf}
-
-Sometimes it is useful to know the probability a random variable $X$ is less or equal to than some value $x$. This is captured by the **cumulative distribution function** (or **CDF**) $F_X$, where
-\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]
-
-::: {.example}
-Let $X \sim \text{Bern}(p)$ be a Bernoulli random variable with success probability $p$. It's impossible for the outcome to be less than 0; it is at least 0 but strictly less than 1 only if it equals 0, which happens with probability $p(0) = 1-p$; and it is certain to at most 1. So its CDF $F$ is
-\[ F(x) = \begin{cases} 0 & \text{for $x < 0$} \\
-                      1-p & \text{for $0 \leq x < 1$} \\
-                      1   & \text{for $x \geq 1$} . \end{cases} \]
-:::
-
-::: {.example}
-If $X$ is the sum of two dice rolls, then the CDF $F$ is given by adding up the PMF. So, for example:
-
-* If $x < 2$, then $F(x) = 0$, because it's not possible to have $X \leq x < 2$. 
-* If $2 \leq x < 3$, then $F(x) = p(2) = \frac{1}{36}$, because $X = 2$ is the only outcome with $X \leq x < 3$.
-* If $3 \leq x < 4$, then $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{35} = \frac{3}{36}$, as $X = 2$ or $3$ are the only outcomes with $X \leq x$.
-* ...
-* If $x \geq 12$, then $F(x) = 1$, because we always have $X \leq 12 \leq x$.
-
-| $x \in {}$ | $(-\infty, 2)$ | $[2,3)$ | $[3,4)$ | $[4,5)$ | $\cdots$ | $[11,12)$ | $[12, \infty)$ |
-|:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $F(x)$ | $0$ | $\frac{1}{36}$ | $\frac{3}{36}$ | $\frac{5}{36}$ | $\cdots$ | $\frac{35}{36}$ | $1$ |
-
-<img src="math1710_files/figure-html/dice-cdf-1.png" width="672" />
-
-Note that the CDF is a "step function" that starts at 0, then jumps up suddenly at each of the values $2, 3, \dots, 12$, finally ending up at 1.
-:::
-
-For any random variable $X$ with CDF $F$,
-
-* if $x$ is smaller than everything in the $\Range(X)$, then $F(x) = 0$, because $X$ cannot be that small;
-* if $x$ is greater than everything in the $\Range(X)$, then $F(x) = 1$, because $X$ cannot be any bigger than that;
-* $F(x)$ is increasing in $x$, because the probability you are less than $x$ gets bigger as $x$ gets bigger.
-
--->
+Hence we have the following:</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-46" class="theorem"><strong>Theorem 9.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable, and let <span class="math inline">\(p_X\)</span> be its PMF. Then</p>
+<ul>
+<li><span class="math inline">\(p_X(x) \geq 0\)</span> for all <span class="math inline">\(x \in \operatorname{Range}(X)\)</span>;</li>
+<li><span class="math inline">\({\displaystyle \sum_{x \in \operatorname{Range}(X)} p_X(x) = 1}\)</span>.</li>
+</ul>
+</div>
+</div>
+<div id="cdf" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Cumulative distribution function<a href="L09-discrete-rv.html#cdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Sometimes it is useful to know the probability a random variable <span class="math inline">\(X\)</span> is less or equal to than some value <span class="math inline">\(x\)</span>. This is captured by the <strong>cumulative distribution function</strong> (or <strong>CDF</strong>) <span class="math inline">\(F_X\)</span>, where
+<span class="math display">\[ F_X(x) = \mathbb P(X \leq x) = \sum_{y \leq x} p_X(y) \qquad \text{for $x \in \mathbb R$.}  \]</span></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-47" class="example"><strong>Example 9.3  </strong></span><em>Let <span class="math inline">\(X \sim \text{Bern}(p)\)</span> be a Bernoulli random variable with success probability <span class="math inline">\(p\)</span>. What is the CDF <span class="math inline">\(F_X\)</span> of <span class="math inline">\(X\)</span>?</em></p>
+<p>The value <span class="math inline">\(F_X(x)\)</span> of CDF will depend on the number <span class="math inline">\(x\)</span> given as an input.</p>
+<ul>
+<li><p>If <span class="math inline">\(x\)</span> is a number less than 0 (like <span class="math inline">\(x = -1\)</span>, for example), then the event <span class="math inline">\(X \leq x\)</span> cannot happen, as there are no outcomes for <span class="math inline">\(X\)</span> that are that small. So <span class="math inline">\(F_X(x) = 0\)</span>.</p></li>
+<li><p>If <span class="math inline">\(x\)</span> is a number at least 0 but smaller than 1 (like <span class="math inline">\(x = \frac12\)</span>, for example), then the event <span class="math inline">\(X \leq x\)</span> can only happen if <span class="math inline">\(X = 0\)</span>. So <span class="math inline">\(F_X(x) = \mathbb P(X = 0) = p_X(0) = 1 - p\)</span>.</p></li>
+<li><p>If <span class="math inline">\(x\)</span> a number at least 1 (like <span class="math inline">\(x = 2\)</span>, for example), then event <span class="math inline">\(X \leq x\)</span> will definitely happen, because both outcomes, 0 and 1, are less than or equal to <span class="math inline">\(x\)</span>. So <span class="math inline">\(F_X(x) = 1\)</span>.</p></li>
+</ul>
+<p>So the CDF <span class="math inline">\(F_X\)</span> is
+<span class="math display">\[ F_X(x) = \begin{cases} 0 &amp; \text{for $x &lt; 0$} \\
+                      1-p &amp; \text{for $0 \leq x &lt; 1$} \\
+                      1   &amp; \text{for $x \geq 1$} . \end{cases} \]</span></p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-48" class="example"><strong>Example 9.4  </strong></span><em>Let <span class="math inline">\(X\)</span> be the sum of two dice rolls. What is the CDF <span class="math inline">\(F\)</span>?</em></p>
+<p>Again, the answer depends on the value of the number <span class="math inline">\(x\)</span>.</p>
+<ul>
+<li><p>If <span class="math inline">\(x &lt; 2\)</span>, then <span class="math inline">\(X \leq x\)</span> cannot occur. So <span class="math inline">\(F(x) = 0\)</span>.</p></li>
+<li><p>If <span class="math inline">\(2 \leq x &lt; 3\)</span>, then the only outcome of <span class="math inline">\(X\)</span> consistent with <span class="math inline">\(X \leq x\)</span> is the outcome <span class="math inline">\(X = 2\)</span>. So <span class="math inline">\(F(x) = p(2) = \frac{1}{36}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(3 \leq x &lt; 4\)</span>, then the only outcomes of <span class="math inline">\(X\)</span> consistent with <span class="math inline">\(X \leq x\)</span> are the outcomes <span class="math inline">\(X = 2\)</span> and <span class="math inline">\(X = 3\)</span>. So <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(4 \leq x &lt; 5\)</span>, then the only outcomes of <span class="math inline">\(X\)</span> consistent with <span class="math inline">\(X \leq x\)</span> are the outcomes <span class="math inline">\(X = 2\)</span>, <span class="math inline">\(X = 3\)</span> and <span class="math inline">\(X = 4\)</span>. So <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}\)</span>.</p></li>
+<li><p>…</p></li>
+<li><p>If <span class="math inline">\(x \geq 12\)</span>, then all the outcomes in the range of <span class="math inline">\(X\)</span> have <span class="math inline">\(X \leq x\)</span>, so <span class="math inline">\(F(x) = 1\)</span>.</p></li>
+</ul>
+<p>Hence, the CDF <span class="math inline">\(F\)</span> of <span class="math inline">\(X\)</span> is given by the following step function:</p>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x \in {}\)</span></th>
+<th align="center"><span class="math inline">\((-\infty, 2)\)</span></th>
+<th align="center"><span class="math inline">\([2,3)\)</span></th>
+<th align="center"><span class="math inline">\([3,4)\)</span></th>
+<th align="center"><span class="math inline">\([4,5)\)</span></th>
+<th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\([11,12)\)</span></th>
+<th align="center"><span class="math inline">\([12, \infty)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F(x)\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{35}{36}\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><img src="math1710_files/figure-html/dice-cdf-1.png" width="672" /></p>
+<p>Note that the CDF is a “step function” that starts at 0, then jumps up suddenly at each of the values <span class="math inline">\(2, 3, \dots, 12\)</span>, finally ending up at 1.</p>
+</div>
+<p>For any random variable <span class="math inline">\(X\)</span> with CDF <span class="math inline">\(F\)</span>,</p>
+<ul>
+<li>if <span class="math inline">\(x\)</span> is smaller than everything in the <span class="math inline">\(\operatorname{Range}(X)\)</span>, then <span class="math inline">\(F(x) = 0\)</span>, because <span class="math inline">\(X\)</span> cannot be that small;</li>
+<li>if <span class="math inline">\(x\)</span> is greater than everything in the <span class="math inline">\(\operatorname{Range}(X)\)</span>, then <span class="math inline">\(F(x) = 1\)</span>, because <span class="math inline">\(X\)</span> cannot be any bigger than that;</li>
+<li><span class="math inline">\(F(x)\)</span> is increasing in <span class="math inline">\(x\)</span>, because the probability you are less than <span class="math inline">\(x\)</span> gets bigger as <span class="math inline">\(x\)</span> gets bigger.</li>
+</ul>
+</div>
 <div id="summary-L09" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L09-discrete-rv.html#summary-L09" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="mysummary">

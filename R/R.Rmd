@@ -113,8 +113,7 @@ R and RStudio are free/open-source software.
 
 There are a number ways you can use R and RStudio:
 
-## How to use R and RStudio
-
+## How to use R and RStudio {.unnumbered}
 
 1. *On University computers.* You will learn how to use R and RStudio on University computers in your first practical session, in Week 2.
 
