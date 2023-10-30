@@ -3298,8 +3298,10 @@ For any random variable \(X\) with CDF \(F\),
 \item
   if \(x\) is greater than everything in the \(\operatorname{Range}(X)\), then \(F(x) = 1\), because \(X\) cannot be any bigger than that;
 \item
-  \(F(x)\) is increasing in \(x\), because the probability you are less than \(x\) gets bigger as \(x\) gets bigger.
+  \(F(x)\) is non-decreasing in \(x\), because the events \(\{X \leq x\}\) get bigger as \(x\) gets increases.
 \end{itemize}
+
+So \(F(x)\) starts at \(0\) and goes upwards until it gets to \(1\). For a discrete random variable, there are sudden upward jumps at values of \(x\) in the range of \(X\), with constant values in between.
 
 \hypertarget{summary-L09}{%
 \section*{Summary}\label{summary-L09}}

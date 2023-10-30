@@ -191,7 +191,9 @@ For any random variable $X$ with CDF $F$,
 
 * if $x$ is smaller than everything in the $\Range(X)$, then $F(x) = 0$, because $X$ cannot be that small;
 * if $x$ is greater than everything in the $\Range(X)$, then $F(x) = 1$, because $X$ cannot be any bigger than that;
-* $F(x)$ is increasing in $x$, because the probability you are less than $x$ gets bigger as $x$ gets bigger.
+* $F(x)$ is non-decreasing in $x$, because the events $\{X \leq x\}$ get bigger as $x$ gets increases.
+
+So $F(x)$ starts at $0$ and goes upwards until it gets to $1$. For a discrete random variable, there are sudden upward jumps at values of $x$ in the range of $X$, with constant values in between.
 
 
 
