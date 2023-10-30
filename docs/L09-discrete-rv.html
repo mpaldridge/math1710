@@ -457,11 +457,44 @@ Hence we have the following:</p>
 <li><p>If <span class="math inline">\(x &lt; 2\)</span>, then <span class="math inline">\(X \leq x\)</span> cannot occur. So <span class="math inline">\(F(x) = 0\)</span>.</p></li>
 <li><p>If <span class="math inline">\(2 \leq x &lt; 3\)</span>, then the only outcome of <span class="math inline">\(X\)</span> consistent with <span class="math inline">\(X \leq x\)</span> is the outcome <span class="math inline">\(X = 2\)</span>. So <span class="math inline">\(F(x) = p(2) = \frac{1}{36}\)</span>.</p></li>
 <li><p>If <span class="math inline">\(3 \leq x &lt; 4\)</span>, then the only outcomes of <span class="math inline">\(X\)</span> consistent with <span class="math inline">\(X \leq x\)</span> are the outcomes <span class="math inline">\(X = 2\)</span> and <span class="math inline">\(X = 3\)</span>. So <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}\)</span>.</p></li>
-<li><p>If <span class="math inline">\(4 \leq x &lt; 5\)</span>, then the only outcomes of <span class="math inline">\(X\)</span> consistent with <span class="math inline">\(X \leq x\)</span> are the outcomes <span class="math inline">\(X = 2\)</span>, <span class="math inline">\(X = 3\)</span> and <span class="math inline">\(X = 4\)</span>. So <span class="math inline">\(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}\)</span>.</p></li>
+<li><p>If <span class="math inline">\(4 \leq x &lt; 5\)</span>, then the only outcomes of <span class="math inline">\(X\)</span> consistent with <span class="math inline">\(X \leq x\)</span> are the outcomes <span class="math inline">\(X = 2\)</span>, <span class="math inline">\(X = 3\)</span> and <span class="math inline">\(X = 4\)</span>. So <span class="math inline">\(F(x) = p(2) + p(3) + p(4) = \frac{1}{36} + \frac{2}{36} + \frac{3}{36}= \frac{6}{36}\)</span>.</p></li>
 <li><p>…</p></li>
 <li><p>If <span class="math inline">\(x \geq 12\)</span>, then all the outcomes in the range of <span class="math inline">\(X\)</span> have <span class="math inline">\(X \leq x\)</span>, so <span class="math inline">\(F(x) = 1\)</span>.</p></li>
 </ul>
 <p>Hence, the CDF <span class="math inline">\(F\)</span> of <span class="math inline">\(X\)</span> is given by the following step function:</p>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x \in {}\)</span></th>
+<th align="center"><span class="math inline">\((-\infty, 2)\)</span></th>
+<th align="center"><span class="math inline">\([2,3)\)</span></th>
+<th align="center"><span class="math inline">\([3,4)\)</span></th>
+<th align="center"><span class="math inline">\([4,5)\)</span></th>
+<th align="center"><span class="math inline">\([5,6)\)</span></th>
+<th align="center"><span class="math inline">\([6,7)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F(x)\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{6}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{10}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{15}{36}\)</span></td>
+</tr>
+</tbody>
+</table>
 <table>
 <colgroup>
 <col width="12%" />
@@ -476,23 +509,23 @@ Hence we have the following:</p>
 <thead>
 <tr class="header">
 <th align="center"><span class="math inline">\(x \in {}\)</span></th>
-<th align="center"><span class="math inline">\((-\infty, 2)\)</span></th>
-<th align="center"><span class="math inline">\([2,3)\)</span></th>
-<th align="center"><span class="math inline">\([3,4)\)</span></th>
-<th align="center"><span class="math inline">\([4,5)\)</span></th>
 <th align="center"><span class="math inline">\(\cdots\)</span></th>
+<th align="center"><span class="math inline">\([7,8)\)</span></th>
+<th align="center"><span class="math inline">\([8,9)\)</span></th>
+<th align="center"><span class="math inline">\([9,10)\)</span></th>
+<th align="center"><span class="math inline">\([10,11)\)</span></th>
 <th align="center"><span class="math inline">\([11,12)\)</span></th>
-<th align="center"><span class="math inline">\([12, \infty)\)</span></th>
+<th align="center"><span class="math inline">\([12,\infty)\)</span></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="center"><span class="math inline">\(F(x)\)</span></td>
-<td align="center"><span class="math inline">\(0\)</span></td>
-<td align="center"><span class="math inline">\(\frac{1}{36}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{3}{36}\)</span></td>
-<td align="center"><span class="math inline">\(\frac{6}{36}\)</span></td>
 <td align="center"><span class="math inline">\(\cdots\)</span></td>
+<td align="center"><span class="math inline">\(\frac{21}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{26}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{30}{36}\)</span></td>
+<td align="center"><span class="math inline">\(\frac{33}{36}\)</span></td>
 <td align="center"><span class="math inline">\(\frac{35}{36}\)</span></td>
 <td align="center"><span class="math inline">\(1\)</span></td>
 </tr>

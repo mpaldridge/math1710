@@ -150,7 +150,7 @@ Again, the answer depends on the value of the number $x$.
 
 * If $3 \leq x < 4$, then the only outcomes of $X$ consistent with $X \leq x$ are the outcomes $X = 2$ and $X = 3$. So $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}$.
 
-* If $4 \leq x < 5$, then the only outcomes of $X$ consistent with $X \leq x$ are the outcomes $X = 2$, $X = 3$ and $X = 4$. So $F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}$.
+* If $4 \leq x < 5$, then the only outcomes of $X$ consistent with $X \leq x$ are the outcomes $X = 2$, $X = 3$ and $X = 4$. So $F(x) = p(2) + p(3) + p(4) = \frac{1}{36} + \frac{2}{36} + \frac{3}{36}= \frac{6}{36}$.
 
 * ...
 
@@ -158,9 +158,13 @@ Again, the answer depends on the value of the number $x$.
 
 Hence, the CDF $F$ of $X$ is given by the following step function:
 
-| $x \in {}$ | $(-\infty, 2)$ | $[2,3)$ | $[3,4)$ | $[4,5)$ | $\cdots$ | $[11,12)$ | $[12, \infty)$ |
+| $x \in {}$ | $(-\infty, 2)$ | $[2,3)$ | $[3,4)$ | $[4,5)$ | $[5,6)$ | $[6,7)$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| $F(x)$ | $0$ | $\frac{1}{36}$ | $\frac{3}{36}$ | $\frac{6}{36}$ | $\frac{10}{36}$ | $\frac{15}{36}$ |
+
+| $x \in {}$ | $\cdots$ |  $[7,8)$ | $[8,9)$ | $[9,10)$ | $[10,11)$ | $[11,12)$ | $[12,\infty)$ |
 |:--:|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
-| $F(x)$ | $0$ | $\frac{1}{36}$ | $\frac{3}{36}$ | $\frac{6}{36}$ | $\cdots$ | $\frac{35}{36}$ | $1$ |
+| $F(x)$ | $\cdots$ | $\frac{21}{36}$ | $\frac{26}{36}$ | $\frac{30}{36}$ | $\frac{33}{36}$ | $\frac{35}{36}$ | $1$ |
 
 ```{r dice-cdf, cache = TRUE, echo = FALSE}
 x <- 2:12

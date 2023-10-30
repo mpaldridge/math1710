@@ -3204,7 +3204,7 @@ Again, the answer depends on the value of the number \(x\).
 \item
   If \(3 \leq x < 4\), then the only outcomes of \(X\) consistent with \(X \leq x\) are the outcomes \(X = 2\) and \(X = 3\). So \(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}\).
 \item
-  If \(4 \leq x < 5\), then the only outcomes of \(X\) consistent with \(X \leq x\) are the outcomes \(X = 2\), \(X = 3\) and \(X = 4\). So \(F(x) = p(2) + p(3) = \frac{1}{36} + \frac{2}{36} = \frac{3}{36}\).
+  If \(4 \leq x < 5\), then the only outcomes of \(X\) consistent with \(X \leq x\) are the outcomes \(X = 2\), \(X = 3\) and \(X = 4\). So \(F(x) = p(2) + p(3) + p(4) = \frac{1}{36} + \frac{2}{36} + \frac{3}{36}= \frac{6}{36}\).
 \item
   \ldots{}
 \item
@@ -3212,6 +3212,36 @@ Again, the answer depends on the value of the number \(x\).
 \end{itemize}
 
 Hence, the CDF \(F\) of \(X\) is given by the following step function:
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
+  >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(x \in {}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\((-\infty, 2)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([2,3)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([3,4)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([4,5)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([5,6)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([6,7)\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(F(x)\) & \(0\) & \(\frac{1}{36}\) & \(\frac{3}{36}\) & \(\frac{6}{36}\) & \(\frac{10}{36}\) & \(\frac{15}{36}\) \\
+\bottomrule()
+\end{longtable}
 
 \begin{longtable}[]{@{}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
@@ -3226,23 +3256,23 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\((-\infty, 2)\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\([2,3)\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\([3,4)\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\([4,5)\)
-\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(\cdots\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([7,8)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([8,9)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([9,10)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([10,11)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([11,12)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
-\([12, \infty)\)
+\([12,\infty)\)
 \end{minipage} \\
 \midrule()
 \endhead
-\(F(x)\) & \(0\) & \(\frac{1}{36}\) & \(\frac{3}{36}\) & \(\frac{6}{36}\) & \(\cdots\) & \(\frac{35}{36}\) & \(1\) \\
+\(F(x)\) & \(\cdots\) & \(\frac{21}{36}\) & \(\frac{26}{36}\) & \(\frac{30}{36}\) & \(\frac{33}{36}\) & \(\frac{35}{36}\) & \(1\) \\
 \bottomrule()
 \end{longtable}
 
