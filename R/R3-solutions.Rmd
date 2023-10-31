@@ -1,0 +1,80 @@
+---
+title:  "R Worksheet 3: Data in R -- Solutions"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2023--24"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+These are my solutions to the exercises on R Worksheet 3. This R code is not the only way to solve these exercises -- although your numerical answers should agree (up to rounding).
+
+> **Exercise 3.1.** Copy the command above to read in the Met Office temperature data to an object called `temperature`. How many rows does the data have?
+
+I started by reading the temperature data into R.
+
+```{r}
+temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")
+```
+
+I then found the number of rows in the data
+
+```{r}
+nrow(temperature)
+```
+
+
+> **Exercise 3.2** We continue with the `temperature` data.\
+**(a)** What year does the 40th row correspond to?
+
+```{r}
+temperature[40, "year"]
+```
+
+> **(b)** What was the temperature in August of that year?
+
+```{r}
+temperature[40, "aug"]
+```
+
+> **(c)** Output the whole list of January temperatures.
+
+```{r}
+temperature$jan
+```
+
+> **(d)** Output the December temperature for rows 50 to 60.
+
+```{r}
+temperature[50:60, "dec"]
+```
+
+
+> **Exercise 3.3.** We continue with the `temperature` data.\
+**(a)** What was the median temperature in September?
+
+```{r}
+median(temperature$sep)
+```
+
+> **(b)** What is the sample variance of the first fifty years of February data?
+
+```{r}
+answer33b <- var(temperature[1:50, "feb"])
+round(answer33b, digits = 2)
+```
+
+**(c)** What is the lowest December temperature?
+
+```{r}
+min(temperature$dec)
+```
+
+**(d)** What is the correlation between October and November temperatures, restricted only to the first 100 years of data?
+
+```{r}
+answer33d <- cor(temperature[1:100, "oct"], temperature[1:100, "nov"])
+signif(answer33d, digits = 2)
+```

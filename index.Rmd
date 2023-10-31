@@ -18,7 +18,7 @@ knitr::opts_chunk$set(comment = NA)
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
-**Week 4** (30 October--3 November):
+**Week 5** (30 October--3 November):
 
 * [**Lecture 9:** Discrete random variables](#L09-discrete-rv) (Monday 30 October)
 * [**Lecture 10:** Expectation and variance](#L10-expectation) (Wednesday 1 November)

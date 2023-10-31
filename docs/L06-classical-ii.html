@@ -387,8 +387,8 @@ or about 1 in every 380 hands.</p>
 <p>Hence, the probability at least two students share a birthday is
 <span class="math display">\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{365^{\underline{k}}}{365^k} = 1 - \frac{365}{365} \cdot \frac{364}{365} \cdots \frac{365-k+1}{365} . \]</span></p>
 <p>Setting <span class="math inline">\(k = 23\)</span>, we can calculate the required answer in R:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="L06-classical-ii.html#cb17-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">23</span></span>
-<span id="cb17-2"><a href="L06-classical-ii.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>((<span class="dv">365</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">-</span> k <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">365</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="L06-classical-ii.html#cb17-1" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">23</span></span>
+<span id="cb17-2"><a href="L06-classical-ii.html#cb17-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>((<span class="dv">365</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">-</span> k <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">365</span>)</span></code></pre></div>
 <pre><code>[1] 0.5072972</code></pre>
 <p>The probability is 50.7%. So it’s more likely than not that at least two students share a birthday.</p>
 </div>
