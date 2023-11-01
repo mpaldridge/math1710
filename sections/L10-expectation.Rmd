@@ -1,7 +1,7 @@
 # Expectation and variance  {#L10-expectation}
 
 
-<!--
+
 
 We continue our study of discrete random variables. Recall that the PMF $p_X$ of a discrete random variable $X$ is $p_X(x) = \mathbb P(X = x)$.
 
@@ -126,10 +126,10 @@ Let $X$ be a random variable with expectation $\mathbb EX = \mu$. Then the varia
 \[ \Var(X) = \mathbb EX^2 - \mu^2 . \]
 :::
 
-(Again, $\mathbb EX^2$ means the expectation of $X^2$.)
+(Again, $\mathbb EX^2$ means the expectation of $X^2$, not $\mathbb EX$ squared, which would make the variance 0.)
 
 ::: {.proof}
-As previously we expand out the brackets, and use linearity of expectation (in the same way we "brought the sum inside" with the sample variance previously). We get
+Similar to before, we expand out the brackets, and use linearity of expectation (in the same way we "brought the sum inside" with the sample variance previously). We get
 \begin{align*}
   \Var(X) &= \mathbb E(X - \mu)^2 \\
     &= \mathbb E(X^2 - 2\mu X + \mu^2) \\
@@ -186,7 +186,7 @@ Let $X$ be a random variable. Then
 
 You will prove this on [the problem sheet](#P3).
 
--->
+
 
 ## Summary  {#summary-L10 .unnumbered}
 

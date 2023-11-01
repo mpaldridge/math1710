@@ -6,19 +6,16 @@
   a4paper,
 ]{book}
 \usepackage{amsmath,amssymb}
+\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -48,13 +45,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -62,7 +59,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -71,7 +68,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -116,7 +113,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={MATH1710 Probability and Statistics I},
   pdfauthor={Matthew Aldridge},
@@ -286,17 +283,16 @@ You are probably reading the web version of the notes. If you want a PDF copy (t
 There will be 5 problem sheets. Each problem sheet has a number of short and long questions, for you to work on in your own time to help you learn the material, and two assessed questions, which you should submit for marking. The assessed questions on each problem sheet make up 3\% of your mark on this module, for a total of 15\%. Deadlines are 2pm on Mondays, although I'd recommend completing and submitting the work in the previous week.
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Problem Sheet & Lectures covered & Deadline for assessed work \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 1 & 1 and 2 & Monday 16 October (Week 3) \\
 2 & 3--6 & Monday 30 October (Week 5) \\
 3 & 7--10 & Monday 13 November (Week 7) \\
 4 & 11--14 & Monday 27 November (Week 9) \\
 5 & 15--18 & Monday 11 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
 An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available. Lectures 21 and 22 are revision lectures with no new material.
@@ -341,7 +337,7 @@ You will learn R by working through one R worksheet each week in your own time, 
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0923}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4769}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4308}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -349,10 +345,8 @@ Worksheet
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & 1: R basics & --- \\
 3 & 2: Vectors & Monday 23 October (Week 4) \\
 4 & 3: Data in R & --- \\
@@ -363,6 +357,7 @@ Deadline for assessed work
 9 & 8: Normal distribution & Monday 4 December (Week 10) \\
 10 & 9: Law of large numbers & --- \\
 11 & 10: Recap & Thursday 14 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
 ~
@@ -835,12 +830,10 @@ Often when collecting data, we don't collect exact data, but rather collect data
 Consider the following binned data, from \(n = 100\) students:
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 \\
 5--10 minutes & 8 & 0.08 \\
 10--15 minutes & 21 & 0.21 \\
@@ -849,6 +842,7 @@ Time & Frequency & Relative frequency \\
 45--60 minutes & 8 & 0.08 \\
 60--120 minutes & 2 & 0.02 \\
 \textbf{Total} & 100 & 1 \\
+\bottomrule()
 \end{longtable}
 
 Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The \textbf{relative frequency} of bin \(j\) is \(f_j/n\); that is, the proportion of the observations in that bin.
@@ -856,12 +850,10 @@ Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observa
 Which bin would you say is the most popular -- that is, the ``modal'' bin? The bin with the most observations in it is the ``15--30 minute'' bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the \textbf{frequency density}: the relative frequency divided by the size of the bin.
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency & Frequency density \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 & 0.008 \\
 5--10 minutes & 8 & 0.08 & 0.016 \\
 10--15 minutes & 21 & 0.21 & 0.042 \\
@@ -870,6 +862,7 @@ Time & Frequency & Relative frequency & Frequency density \\
 45--60 minutes & 8 & 0.08 & 0.005 \\
 60--120 minutes & 2 & 0.02 & 0.0003 \\
 \textbf{Total} & 100 & 1 & \\
+\bottomrule()
 \end{longtable}
 
 In the first row, for example, the relative frequency is 0.04 and the size of the bin is 5 minutes, so the frequency density is \(0.04/5 = 0.008\). We now see that the modal bin -- the bin with the highest frequency \emph{density} -- is in fact the ``10--15 minutes'' bin. This bin has somewhat fewer datapoints that the ``15--30 minutes'' bin, but they're squashed into a much smaller bin.
@@ -1078,7 +1071,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1088,10 +1081,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -1099,6 +1090,7 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -1113,7 +1105,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1123,10 +1115,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & 0.05 & 0.0042 \\
 30--40 & 2 & 0.1 & 0.01 \\
 40--45 & 4 & 0.2 & 0.04 \\
@@ -1134,6 +1124,7 @@ Frequency density
 50--60 & 6 & 0.3 & 0.03 \\
 60--80 & 2 & 0.1 & 0.005 \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -1201,7 +1192,7 @@ The next four questions are \textbf{long questions}, which are intended to be ha
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1215,11 +1206,10 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1237,13 +1227,12 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 \textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1950,7 +1939,7 @@ Here, an important principle is the \textbf{multiplication principle}. The multi
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Beefburger
@@ -1959,12 +1948,11 @@ Chicken burger
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Veggie burger
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Fries} & 1: Beefburger with fries & 2: Chicken burger with fries & 3: Veggie burger with fries \\
 \textbf{Salad} & 4: Beefburger with salad & 5: Chicken burger with salad & 6: Veggie burger with salad \\
+\bottomrule()
 \end{longtable}
 
 More generally, if you have \(m\) stages of choosing, with \(n_1\) choices in the first stage, then \(n_2\) choices in the second stage, all the way to \(n_m\) choices in the final stage, you have \(n_1 \times n_2 \times \cdots \times n_m\) total choices altogether.
@@ -2685,15 +2673,14 @@ Finally, because the events are disjoint, we have
 Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 & \textbf{Brown hair} & \textbf{Blond hair} & \textbf{Total} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Brown eyes} & 50\% & 30\% & \textbf{80\%} \\
 \textbf{Blue eyes} & 10\% & 10\% & \textbf{20\%} \\
 \textbf{Total} & \textbf{60\%} & \textbf{40\%} & \textbf{100\%} \\
+\bottomrule()
 \end{longtable}
 
 It turns out that \(\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08\), so having blond hair and having blue eyes are not in fact independent.
@@ -3104,7 +3091,7 @@ The PMF \(p\) of \(X\) is given by
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3120,11 +3107,10 @@ The PMF \(p\) of \(X\) is given by
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(7\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(\frac{1}{36}\) & \(\frac{2}{36}\) & \(\frac{3}{36}\) & \(\frac{4}{36}\) & \(\frac{5}{36}\) & \(\frac{6}{36}\) \\
+\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -3135,7 +3121,7 @@ The PMF \(p\) of \(X\) is given by
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3151,11 +3137,10 @@ The PMF \(p\) of \(X\) is given by
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(12\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(\cdots\) & \(\frac{5}{36}\) & \(\frac{4}{36}\) & \(\frac{3}{36}\) & \(\frac{2}{36}\) & \(\frac{1}{36}\) \\
+\bottomrule()
 \end{longtable}
 
 \includegraphics{math1710_files/figure-latex/dice-pmf-1.pdf}
@@ -3244,7 +3229,7 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3260,11 +3245,10 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([6,7)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(F(x)\) & \(0\) & \(\frac{1}{36}\) & \(\frac{3}{36}\) & \(\frac{6}{36}\) & \(\frac{10}{36}\) & \(\frac{15}{36}\) \\
+\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -3276,7 +3260,7 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3294,11 +3278,10 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([12,\infty)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(F(x)\) & \(\cdots\) & \(\frac{21}{36}\) & \(\frac{26}{36}\) & \(\frac{30}{36}\) & \(\frac{33}{36}\) & \(\frac{35}{36}\) & \(1\) \\
+\bottomrule()
 \end{longtable}
 
 \includegraphics{math1710_files/figure-latex/dice-cdf-1.pdf}
@@ -3348,6 +3331,201 @@ So \(F(x)\) starts at \(0\) and goes upwards until it gets to \(1\). For a discr
 
 \hypertarget{L10-expectation}{%
 \chapter{Expectation and variance}\label{L10-expectation}}
+
+We continue our study of discrete random variables. Recall that the PMF \(p_X\) of a discrete random variable \(X\) is \(p_X(x) = \mathbb P(X = x)\).
+
+\hypertarget{expectation}{%
+\section{Expectation}\label{expectation}}
+
+Often, we will be interested in the ``average'' value of a random variable -- for example, the ``average'' total from two dice rolls -- which represents what the ``central'' value of the random variable is. This average is called the ``expectation''.
+
+\begin{definition}
+Let \(\Omega\) be a finite or countably infinite sample space, \(\mathbb P\) be a probability measure on \(\Omega\), and \(X\) be a discrete random variable on \(\Omega\). Then the \textbf{expectation} (or \textbf{expected value}) of \(X\) is
+\[ \mathbb EX = \sum_{\omega \in \Omega} X(\omega) \, \mathbb P(\{\omega\}) . \]
+
+If \(p_X\) is the PMF of \(X\), then a more convenient formula is
+\[ \mathbb EX = \sum_{x \in \operatorname{Range}(X)} x\,p_X(x) . \]
+\end{definition}
+
+We get the second formula from the first by grouping together all outcomes \(\omega\) that lead to the same value \(x = X(\omega)\) of \(X\). It's only this second formula we actually use when calculating expectations.
+
+Note that ``expectation'' is simply the name that mathematicians give to the value \(\mathbb EX = \sum_x x\, p(x)\). We don't necessarily ``expect'' to get the value \(\mathbb EX\) as the outcome in the normal English-language sense of the word ``expect''. (Indeed, you might like to check that the expectation of a single dice roll is 3.5, but you certainly don't ``expect'' to get the number 3.5 in a single roll of the dice!) We will see later in the module that the the expectation can be interpreted as a sort of ``long-run mean outcome''.
+
+\begin{example}
+\emph{Let \(X \sim \text{Bern}(p)\) be a Bernoulli trial with success probability \(p\). What is the expectation \(\mathbb EX\)?}
+
+We know that the PMF is \(p(0) = 1- p\) and \(p(1) = p\). So, using the second formula in the definition, we have
+\[ \mathbb EX = \sum_{x} x\,p(x) = 0\times (1-p) + 1\times p = p. \]
+\end{example}
+
+\begin{example}
+\emph{What is the expected value of the sum of two dice rolls?}
+
+When \(X\) is the total of two dice rolls, we found the PMF of \(X\) last time. The expectation is
+\begin{align*}
+  \mathbb EX &= \sum_{x \in \operatorname{Range}(X)} x\,p(x)  \\
+    &= 2 \times \tfrac{1}{36} + 3 \times \tfrac{2}{36} + \cdots + 12 \times \tfrac{1}{36} \\
+    &= \tfrac{252}{36} \\
+    &= 7 .
+\end{align*}
+\end{example}
+
+\hypertarget{functions}{%
+\section{Functions of random variables}\label{functions}}
+
+In previous examples, we looked at \(X\) being the total of the dice rolls. But we could equally well chosen to have looked at a different random variable that is a function of that total \(X\), like ``double the total and add 1'' \(Y = 2X + 1\), or ``the total minus 4, all squared'' \(Z = (X-4)^2\). (I'm not sure \emph{why} you'd care about these, but you could study them if you wanted to\ldots)
+
+It is possible, although sometimes a bit tricky, to work out the whole PMF of these new random variables that are functions of \(X\) -- and indeed you may learn how to do this if you take more probability or statistics modules next year. Here, we will stick to the easier problem of just calculating the expectation of the new random variables.
+
+\begin{theorem}[Law of the unconscious statistician]
+\protect\hypertarget{thm:unconscious}{}\label{thm:unconscious}Let \(X\) be a random variable, and let \(Y = g(X)\) be another random variable that is a function \(g\) of \(X\). Then
+\[  \mathbb EY = \mathbb E\,g(X) = \sum_{x} g(x) \, p_X(x) . \]
+\end{theorem}
+
+(The rather cruel name of this theorem is, I think, because this is the formula you might carelessly write down for \(\mathbb Eg(X)\) if you weren't thinking carefully -- but it turns out it's correct!)
+
+\begin{proof}
+\emph{(Non-examinable)}
+The PMF of \(y\) can be given in terms of the PMF of \(x\) -- we just need to add up all the \(x\)s that lead to the same \(y\). That is,
+\[ p_Y(y) = \sum_{x\, :\, g(x) = y} p_X(x) . \]
+(Remember that the colon \(:\) here means ``such that'', so this is a sum over all the \(x\) such that \(g(x) = y\).)
+
+Using this, and from the definition of expectation, we have
+\begin{align*}
+  \mathbb EY &= \sum_y y \, p_Y(y) \\
+    &= \sum_y y \sum_{x : g(x) = y} p_X(x) \\
+    &= \sum_y \sum_{x : g(x) = y} y\,p_X(x) \\
+    &= \sum_y \sum_{x : g(x) = y} g(x) \, p_X(x) ,
+\end{align*}
+since \(y = g(x)\) inside the second sum. But these two sums together are summing over all \(x\), just partitioned by which value of \(y\) they lead to, so they can be replaced by just a single sum over \(x\). That gives the theorem.
+\end{proof}
+
+There are some functions for which this expression becomes particularly simple.
+
+\begin{theorem}[Linearity of expectation, 1]
+\protect\hypertarget{thm:linearity1}{}\label{thm:linearity1}
+
+Let \(X\) be a random variable. Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb E(aX) = a\mathbb EX\);
+\item
+  \(\mathbb E(X + b) = \mathbb EX + b\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+We use the law of the unconscious statistician.
+
+For part 1, we can take the \(a\) outside the sum, to get
+\[ \mathbb E(aX) = \sum_x ax\, p_X(x) = a\sum_x x\, p_X(x) = a\mathbb EX . \]
+
+For part 2, we have
+\begin{align*}
+  \mathbb E(X+b) &= \sum_x (x + b)\, p_X(x) \\
+    &= \sum_x \big( x\, p_X(x) + b\,p_X(x) \big) \\
+    &= \sum_x x\, p_X(x) + \sum_x b\,p_X(x) \\
+    &= \mathbb E(X) + b \sum_x p_X(x) \\
+    &= \mathbb E(X) + b .
+\end{align*}
+The last line was because PMFs always add up to 1, so \(\sum_x p_X(x) = 1\).
+\end{proof}
+
+So for our ``double the dice total and add 1'' random variable \(Y = 2X + 1\), we have
+\[ \mathbb EY = \mathbb E(2X+1) = 2\mathbb EX + 1 = 2\times 7 + 1 = 15. \]
+
+\hypertarget{variance}{%
+\section{Variance}\label{variance}}
+
+In the same way as the expectation of a random variable tells us about central values of it, the ``variance'' of a random variable tells us about the spread of typical values.
+
+\begin{definition}
+Let \(X\) be a random variable with expectation \(\mathbb EX = \mu\). Then the \textbf{variance} of \(X\) is
+\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 . \]
+\end{definition}
+
+(To be clear, the notation here means the expectation of \((X-\mu)^2\); and \emph{not} \(\mathbb E(X - \mu)\) then squared, which would be \(0^2 = 0\).)
+
+Note that \((X - \mu)^2 \geq 0\) is a square, so always non-negative, and hence the variance \(\operatorname{Var}(X) \geq 0\) is always non-negative also. Sometimes we call the square-root of the variance the \textbf{standard deviation}.
+
+It may not surprise you, if you remember \protect\hyperlink{L01-stats}{Lecture 1} that to go along with this ``definitional formula'' for the variance, we also have a ``computational formula'', which can sometimes be more convenient.
+
+\begin{theorem}
+Let \(X\) be a random variable with expectation \(\mathbb EX = \mu\). Then the variance \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\) can also be calculated as
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]
+\end{theorem}
+
+(Again, \(\mathbb EX^2\) means the expectation of \(X^2\), not \(\mathbb EX\) squared, which would make the variance 0.)
+
+\begin{proof}
+Similar to before, we expand out the brackets, and use linearity of expectation (in the same way we ``brought the sum inside'' with the sample variance previously). We get
+\begin{align*}
+  \operatorname{Var}(X) &= \mathbb E(X - \mu)^2 \\
+    &= \mathbb E(X^2 - 2\mu X + \mu^2) \\
+    &= \mathbb EX^2 - \mathbb E(2\mu X) + \mathbb E \mu^2 \\
+    &= \mathbb EX^2 - 2\mu \,\mathbb EX + \mu^2 .
+\end{align*}
+But we said that \(\mathbb EX\) would be called \(\mu\), so we can substitute in \(\mathbb EX = \mu\), to get
+\[ \operatorname{Var}(X) = \mathbb E X^2 - 2\mu^2 + \mu^2 = \mathbb E X^2 - \mu^2 , \]
+as required.
+\end{proof}
+
+(A brief optional note for pedants: Writing \(\mathbb E(X^2 - 2\mu X) = \mathbb EX^2 - \mathbb 2\mu X\) is not, strictly speaking, justified by the result that above we called ``linearity of expectation, 1''. However, you can check that it easily follows from the law of the unconscious statistician, and we will also later see a result we call ``linearity of expectation, 2'', of which it is a special case.)
+
+\begin{example}
+Let \(X \sim \text{Bern}(p)\) be a Bernoulli trial, and recall that \(\mathbb EX = p\).
+
+Using the definitional formula, we have
+\begin{align*}
+\operatorname{Var}(X) &= \mathbb E(X-p)^2 \\
+        &= (0 - p)^2 \,p_X(0) + (1-p)^2\, p_X(1) \\
+        &= p^2\times(1-p) + (1-p)^2 \times p \\
+        &= p(1-p)\big(p + (1-p)\big) \\
+        &= p(1-p) .
+\end{align*}
+
+Alternatively, using the computational formula, we have
+\begin{align*}
+\operatorname{Var}(X) &= \mathbb EX^2 - p^2 \\
+        &= \big(0^2\,p_X(0) + 1^2 p_X(1)\big) - p^2 \\
+        &= 0\times(1-p) + 1\times p - p^2 \\
+        &= p - p^2 \\
+        &= p(1-p) .
+\end{align*}
+\end{example}
+
+\begin{example}
+For the total of two dice, using the computational formula, we have
+\begin{align*}
+\operatorname{Var}(X) &= \mathbb EX^2 - \mu^2 \\
+        &= \left(2^2 \times \frac{1}{36} + 3^2 \times \frac{2}{36} + \cdots + 12^2 \times \frac{1}{36}\right) - 7^2 \\
+        &= \frac{1974}{36} - 49 \\
+        &= \frac{70}{12} \approx 5.8 .
+\end{align*}
+\end{example}
+
+Finally, a result on what happens to the variance of simple functions of random variables.
+
+\begin{theorem}
+
+Let \(X\) be a random variable. Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\operatorname{Var}(aX) = a^2\operatorname{Var}(X)\);
+\item
+  \(\operatorname{Var}(X + b) = \operatorname{Var}(X)\).
+\end{enumerate}
+
+\end{theorem}
+
+You will prove this on \protect\hyperlink{P3}{the problem sheet}.
 
 \hypertarget{summary-L10}{%
 \section*{Summary}\label{summary-L10}}
@@ -3506,20 +3684,21 @@ The question tells us that \(\mathbb P(A) = 0.6\) and \(\mathbb P(B) = 0.5\). Fu
 
 \textbf{A4.} Consider the random variable \(X\) with the following PMF:
 
-\begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
-\(x\) & \(-1\) & \(0\) & \(0.5\) & \(1\) & \(2\) \\
-\midrule\noalign{}
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule()
+\(x\) & \(-1\) & \(0\) & \(0.5\) & \(2\) \\
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
-\(p(x)\) & \(0.1\) & \(0.3\) & \(0.3\) & \(0.2\) & \(0.1\) \\
+\(p(x)\) & \(0.1\) & \(0.4\) & \(0.2\) & \(0.3\) \\
+\bottomrule()
 \end{longtable}
 
-Find the expectation and variance of \(X\).
+Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), and \textbf{(c)} the variance \(\operatorname{Var}(X)\) of \(X\).
 
 \begin{myanswers}
 \emph{Solution.}
+CDF HERE THEN REDO THE NEXT TWO BITS
+
 For the expectation,
 \[ \mathbb EX = -1\times0.1 + 0\times0.3 + 0.5\times0.3+1\times0.2+2\times0.1 = 0.45. \]
 
@@ -3533,13 +3712,12 @@ Then, using the computational formula,
 \textbf{A5.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(1\) & \(2\) & \(4\) & \(5\) & \(a\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(0.1\) & \(0.2\) & \(0.1\) & \(b\) & \(0.1\) \\
+\bottomrule()
 \end{longtable}
 
 This random variable has \(\mathbb EX = 4.3\). Find the values of \(a\) and \(b\).
@@ -3937,7 +4115,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1467}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3733}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -3947,14 +4125,13 @@ Solutions
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & \href{R1.html}{\textbf{1: R basics}} & \href{R1-solutions.html}{Solutions} & --- \\
 3 & \href{R2.html}{\textbf{2: Vectors}} & \href{R2-solutions.html}{Solutions} & Monday 23 October \\
 4 & \href{R3.html}{\textbf{3: Data in R}} & \href{R3-solutions.html}{Solutions} & --- \\
 5 & \href{R4.html}{\textbf{Plots I:} Making plots} & & Monday 6 November \\
+\bottomrule()
 \end{longtable}
 
 \hypertarget{what-is-r}{%
@@ -4131,7 +4308,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4141,10 +4318,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -4152,6 +4327,7 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -4166,7 +4342,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4176,10 +4352,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & 0.05 & 0.0042 \\
 30--40 & 2 & 0.1 & 0.01 \\
 40--45 & 4 & 0.2 & 0.04 \\
@@ -4187,6 +4361,7 @@ Frequency density
 50--60 & 6 & 0.3 & 0.03 \\
 60--80 & 2 & 0.1 & 0.005 \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -4252,7 +4427,7 @@ You can probably think of other answers.
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4266,11 +4441,10 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -4288,13 +4462,12 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 \textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}

@@ -133,14 +133,16 @@ The question tells us that $\mathbb P(A) = 0.6$ and $\mathbb P(B) = 0.5$. Furthe
 :::: {.myq}
 **A4.** Consider the random variable $X$ with the following PMF:
 
-| $x$ | $-1$ | $0$ | $0.5$ | $1$ | $2$ |
-|:--:|:--:|:--:|:--:|:--:|:--:|
-| $p(x)$ | $0.1$ | $0.3$ | $0.3$ | $0.2$ | $0.1$ |
+| $x$ | $-1$ | $0$ | $0.5$ | $2$ |
+|:--:|:--:|:--:|:--:|:--:|
+| $p(x)$ | $0.1$ | $0.4$ | $0.2$ | $0.3$ |
 
-Find the expectation and variance of $X$.
+Find **(a)** the CDF $F_X$, **(b)** the expectation $\mathbb EX$, and **(c)** the variance $\Var(X)$ of $X$.
 
 ::: {.myanswers data-latex=""}
 *Solution.*
+CDF HERE THEN REDO THE NEXT TWO BITS
+
 For the expectation,
 \[ \mathbb EX = -1\times0.1 + 0\times0.3 + 0.5\times0.3+1\times0.2+2\times0.1 = 0.45. \]
 
