@@ -61,7 +61,7 @@ You should not collaborate with others on the assessed questions: your answers m
 **A1.** (c) and (e) are independent.  
 **A2.**  (a) Yes (b) Yes (c) No  
 **A3.** 0.8  
-**A4.** 0.45 and 0.5725  
+**A4.** (a) --- (b) 0.6 (c) 0.99  
 **A5.** $a = 9, b = 0.5$  
 **A6** (a) 66.2 °F (b) 33.7 °F^2^
 
