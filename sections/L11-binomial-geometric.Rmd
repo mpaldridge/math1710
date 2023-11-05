@@ -1,18 +1,13 @@
 # Binomial and geometric distributions  {#L11-binomial-poisson}
 
+<!--
 Last week, we developed the idea of random variables, and in particular discrete random variables. We saw that the benefit of random variables is that we can just worry about their distribution, which often allows us to move the sample space $\Omega$ and other more technical matters into the background. (Here, we informally use the word "distribution" to refer to the probability mass function of a random variable -- or, later, the continuous equivalent, the probability density function).
 
 There are some distributions -- or, rather, some families of distributions -- that are so useful that we often want to use them for modelling real-world quantities. This week, we will look at a number of useful discrete distributions.
 
 ## Binomial distribution  {#binomial}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/x6pVSCBjuzk"></iframe>
-:::
-::::
--->
+
 
 One family of distributions we have already seen is the Bernoulli trial $\text{Bern}(p)$, which is 1 with probability $p$ and 0 with probability $1-p$. We saw that this could model whether or a biased coin lands Heads, or more generally whether an experiment is successful.
 
@@ -82,13 +77,7 @@ For my 10 biased coins that are each Heads with probability $0.7$, the expectati
 
 ## Geometric distribution  {#geometric}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/kQsgZ-kF6PY"></iframe>
-:::
-::::
--->
+
 
 ::: {.example}
 *I decide to roll a fair dice until I first roll a six, and then stop. What's the probability I get the first six on my 5th roll of the dice?*
@@ -176,24 +165,9 @@ So
 *Note:* Here, we defined a geometric random variable as being the number of trials up to *and including* the first success, which is a number in $\{1, 2, \dots\}$. However, some authors define it as the number of failures *before* the first success, which is a number in $\{0, 1, 2,\dots\}$. If $X$ is our definition and $Y$ is the second "number of failures" definition, then $X$ and $Y+1$ have the same distribution. Annoyingly, R uses the "number of failures before success" definition, as we will discuss in a later R worksheet.
 
 
-## Distributions as models for data  {#models}
-
-Families of distributions -- like the Bernoulli, binomial and geometric distributions we have seen so far in this module -- are very useful for models in statistics. This idea is developed Bayesian statistics we will discuss in Lectures 19 and 20 of this module, and is an idea that is extremely important throughout the whole MATH1712 Probability and Statistics II.
-
-The families of distributions we have looked at here are sometimes called "parametric families", in that each of the distributions depended on one or more parameters: $p$ for the Bernoulli and geometric distributions; and both $n$ and $p$ for the binomial distribution. (In the next lecture we will see another discrete distribution, the Poisson distribution, and later in the module we will also see some continuous parametric families: the exponential, normal and beta distributions.) This means we can adopt a model that data comes from one of the distributions within a family, then use data to estimate the value of that parameter.
-
-For example:
-
-* When testing the bias of a coin, you might assume, counting Heads as 1 and Tails as 0, that the outcome of each test is Bernoulli distributed with parameter $p$, but where the value of the Heads probability $p$ is unknown. You could then toss the coin many times and use this data to estimate $p$.
-* The number of years between severe summer floods in a tropical climate could be modelled as geometrically distributed where the flood risk parameter $p$ is unknown. By look at the gaps between severe floods in historical data, a statistician could try to estimate $p$.
-* A tutor might assume that the number of students that turn up to each tutorial is binomially distributed where $n$ is known to be 12, the number of students assigned to the group, but $p$, the "turning-up probability" is unknown. The tutor could then take records of how many students turned up to all the tutorials, and use this to estimate $p$.
-
-There are two main methods statisticians use to estimate parameters:
-
-* **Bayesian statistics:** Here, one starts with a subjective "prior" distribution for the parameters, which represents one's personal belief about which possible values for that parameter are more or less likely before conducting any experiment. After the experiment, one then uses Bayes' theorem to update that belief to a "posterior" distribution of one's beliefs about the parameter *given* the data. The Bayesian approach will be introduced in Lecture 19 of this module.
-* **Frequentist statistics:** Frequentist statistics does not involve any subjective prior views. Rather, frequentism is about assessing the extent to which the data is consistent with certain hypotheses. For example, one might try to find the value for the parameter that would seem "most consistent" with the data, and use that as an "estimate" of the parameter: "My best guess of the Heads probability $p$ of the coin is $p = 0.53$." Alternatively, one might find a range of values for the parameter that are all at least somewhat consistent with the data: "I am confident the value of the Heads probability lies in the range $0.49 \leq p \leq 0.57$, as these values are all consistent with the data." Third, one could text if a specific hypothesis is consistent with the data or not: "The data is consistent with the hypothesis that $p = 0.50$, whih would mean the coin is fair, so I have no strong evidence for disbelieving that." The frequentist approach will pursued in detail in MATH1712.
 
 
+-->
 
 ## Summary  {#summary-L11 .unnumbered}
 
@@ -202,3 +176,8 @@ There are two main methods statisticians use to estimate parameters:
 | **Bernoulli:** $\text{Bern}(p)$ | $\{0,1\}$ | $p(0) = 1- p$, $p(1) = p$ | $p$ | $p(1-p)$ |
 | **Binomial:** $\text{Bin}(n,p)$ | $\{0,1,\dots,n\}$ | $\displaystyle\binom{n}{x} p^x (1-p)^{n-x}$ | $np$ | $np(1-p)$ |
 | **Geometric:** $\text{Geom}(p)$ | $\{1,2,\dots\}$ | $(1-p)^{x-1}p$ | $\displaystyle\frac{1}{p}$ | $\displaystyle\frac{1-p}{p^2}$ |
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 4.2 and 4.3.
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Section 2.2.

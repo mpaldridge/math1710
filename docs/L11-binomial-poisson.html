@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 11 Binomial and geometric distributions | MATH1710 Probability and Statistics I</title>
-  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 11 Binomial and geometric distributions | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lecture 11 Binomial and geometric distributions | MATH1710 Probability and Statistics I" />
   
-  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
 <meta name="author" content="Matthew Aldridge" />
@@ -118,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -141,10 +145,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem Sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R Worksheets and Practicals</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>“Office hours” drop-in sessions</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
@@ -253,133 +257,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
-<li class="chapter" data-level="11.3" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#models"><i class="fa fa-check"></i><b>11.3</b> Distributions as models for data</a></li>
 <li class="chapter" data-level="" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
-<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
-<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-process"><i class="fa fa-check"></i><b>12.3</b> Poisson process</a></li>
 <li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
-<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
-<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#summary-L13"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
-<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
-<li class="chapter" data-level="14.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>14.3</b> Correlation</a></li>
-<li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-L14"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
-<ul>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
-<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
-<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L15-continuous.html"><a href="L15-continuous.html#summary-L15"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="L16-normal.html"><a href="L16-normal.html"><i class="fa fa-check"></i><b>16</b> Normal distribution</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="L16-normal.html"><a href="L16-normal.html#normal-definition"><i class="fa fa-check"></i><b>16.1</b> Definition of the normal distribution</a></li>
-<li class="chapter" data-level="16.2" data-path="L16-normal.html"><a href="L16-normal.html#normal-properties"><i class="fa fa-check"></i><b>16.2</b> Properties of the normal distribution</a></li>
-<li class="chapter" data-level="16.3" data-path="L16-normal.html"><a href="L16-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
-<li class="chapter" data-level="16.4" data-path="L16-normal.html"><a href="L16-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
-<li class="chapter" data-level="" data-path="L16-normal.html"><a href="L16-normal.html#summary-L16"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html"><i class="fa fa-check"></i><b>17</b> Exponential distribution and multiple continuous random variables</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#exponential"><i class="fa fa-check"></i><b>17.1</b> Exponential distribution</a></li>
-<li class="chapter" data-level="17.2" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#continuous-multiple"><i class="fa fa-check"></i><b>17.2</b> Multiple continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#summary-L17"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
-<ul>
-<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.1</b> Law of large numbers</a></li>
-<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.2</b> Central limit theorem</a></li>
-<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.3</b> Approximations with the normal distribution</a></li>
-<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
-<ul>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
-<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
-<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
-<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#normal-normal"><i class="fa fa-check"></i><b>19.3</b> Normal–normal model</a></li>
-</ul></li>
-<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> More Bayesian models</a>
-<ul>
-<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
-<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
-<li class="chapter" data-level="" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
-<li class="chapter" data-level="21" data-path="L21-questions.html"><a href="L21-questions.html"><i class="fa fa-check"></i><b>21</b> All questions answered</a>
-<ul>
-<li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
-<li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
-<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#joint-distributions"><i class="fa fa-check"></i><b>21.3</b> Joint distributions</a></li>
-<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#law-of-the-unconscious-statistician"><i class="fa fa-check"></i><b>21.4</b> Law of the unconscious statistician</a></li>
-<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.5</b> Statistical tables</a></li>
-<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.6</b> End-of semester survey</a></li>
-<li class="chapter" data-level="21.7" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.7</b> Other modules</a></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#about-the-exam"><i class="fa fa-check"></i><b>22.1</b> About the exam</a></li>
-<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.2</b> Past papers</a></li>
-<li class="chapter" data-level="22.3" data-path="L22-exam.html"><a href="L22-exam.html#exam-faqs"><i class="fa fa-check"></i><b>22.3</b> Exam FAQs</a>
-<ul>
-<li class="chapter" data-level="22.3.1" data-path="L22-exam.html"><a href="L22-exam.html#calculators"><i class="fa fa-check"></i><b>22.3.1</b> Calculators</a></li>
-<li class="chapter" data-level="22.3.2" data-path="L22-exam.html"><a href="L22-exam.html#revision"><i class="fa fa-check"></i><b>22.3.2</b> Revision</a></li>
-<li class="chapter" data-level="22.3.3" data-path="L22-exam.html"><a href="L22-exam.html#r-questions-on-the-exam"><i class="fa fa-check"></i><b>22.3.3</b> R questions on the exam</a></li>
-<li class="chapter" data-level="22.3.4" data-path="L22-exam.html"><a href="L22-exam.html#statistical-tables-1"><i class="fa fa-check"></i><b>22.3.4</b> Statistical tables</a></li>
-<li class="chapter" data-level="22.3.5" data-path="L22-exam.html"><a href="L22-exam.html#how-much-should-i-write"><i class="fa fa-check"></i><b>22.3.5</b> How much should I write?</a></li>
-</ul></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#how-to-use-r-and-rstudio"><i class="fa fa-check"></i>How to use R and RStudio</a>
 <ul>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-uni"><i class="fa fa-check"></i>Accessing R and RStudio on University computers</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions and group feedback</a>
 <ul>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P6-solutions"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -403,149 +308,162 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L11-binomial-poisson" class="section level1 hasAnchor" number="11">
 <h1><span class="header-section-number">Lecture 11</span> Binomial and geometric distributions<a href="L11-binomial-poisson.html#L11-binomial-poisson" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>Last week, we developed the idea of random variables, and in particular discrete random variables. We saw that the benefit of random variables is that we can just worry about their distribution, which often allows us to move the sample space <span class="math inline">\(\Omega\)</span> and other more technical matters into the background. (Here, we informally use the word “distribution” to refer to the probability mass function of a random variable – or, later, the continuous equivalent, the probability density function).</p>
-<p>There are some distributions – or, rather, some families of distributions – that are so useful that we often want to use them for modelling real-world quantities. This week, we will look at a number of useful discrete distributions.</p>
-<div id="binomial" class="section level2 hasAnchor" number="11.1">
-<h2><span class="header-section-number">11.1</span> Binomial distribution<a href="L11-binomial-poisson.html#binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/x6pVSCBjuzk"></iframe>
+Last week, we developed the idea of random variables, and in particular discrete random variables. We saw that the benefit of random variables is that we can just worry about their distribution, which often allows us to move the sample space $\Omega$ and other more technical matters into the background. (Here, we informally use the word "distribution" to refer to the probability mass function of a random variable -- or, later, the continuous equivalent, the probability density function).
+
+There are some distributions -- or, rather, some families of distributions -- that are so useful that we often want to use them for modelling real-world quantities. This week, we will look at a number of useful discrete distributions.
+
+## Binomial distribution  {#binomial}
+
+
+
+One family of distributions we have already seen is the Bernoulli trial $\text{Bern}(p)$, which is 1 with probability $p$ and 0 with probability $1-p$. We saw that this could model whether or a biased coin lands Heads, or more generally whether an experiment is successful.
+
+::: {.example}
+*Suppose we toss 10 independent biased coins, each of which lands Heads with probability 0.7 and Tails with probability 0.3. What is the probability we get exactly 8 Heads altogether?*
+
+The probability that any specific 8 coins land Heads and the other 2 land Tails is $0.7^8\times 0.3^2$. However, there are $\binom{10}{8}$ choices for which 8 coins are the ones that land Heads. Hence, the probability is
+\[ \mathbb P(\text{8 Heads}) = \binom{10}{8} \times 0.7^8 \times 0.3^2 = 0.23.\]
 :::
-::::
--->
-<p>One family of distributions we have already seen is the Bernoulli trial <span class="math inline">\(\text{Bern}(p)\)</span>, which is 1 with probability <span class="math inline">\(p\)</span> and 0 with probability <span class="math inline">\(1-p\)</span>. We saw that this could model whether or a biased coin lands Heads, or more generally whether an experiment is successful.</p>
-<div class="example">
-<p><span id="exm:unlabeled-div-59" class="example"><strong>Example 11.1  </strong></span><em>Suppose we toss 10 independent biased coins, each of which lands Heads with probability 0.7 and Tails with probability 0.3. What is the probability we get exactly 8 Heads altogether?</em></p>
-<p>The probability that any specific 8 coins land Heads and the other 2 land Tails is <span class="math inline">\(0.7^8\times 0.3^2\)</span>. However, there are <span class="math inline">\(\binom{10}{8}\)</span> choices for which 8 coins are the ones that land Heads. Hence, the probability is
-<span class="math display">\[ \mathbb P(\text{8 Heads}) = \binom{10}{8} \times 0.7^8 \times 0.3^2 = 0.23.\]</span></p>
-</div>
-<p>This is a special case of the binomial distribution.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-60" class="definition"><strong>Definition 11.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{0,1,2,\dots,n\}\)</span> and PMF
-<span class="math display">\[ p(x) = \binom{n}{x} p^x (1-p)^{n-x} . \]</span>
-Then we say that <span class="math inline">\(X\)</span> follows the <strong>binomial distribution</strong> with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(k\)</span>, and write <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>.</p>
-</div>
-<p>So a binomial random variable represents the number of successes in <span class="math inline">\(n\)</span> Bernoulli trials. In our previous example, the number of Heads from the coin tosses was <span class="math inline">\(\text{Bin}(10, 0.7)\)</span>.</p>
-<p><img src="math1710_files/figure-html/binom-pic-1.png" width="672" /></p>
-<div class="example">
-<p><span id="exm:unlabeled-div-61" class="example"><strong>Example 11.2  </strong></span><em>Let <span class="math inline">\(X \sim \mathrm{Bin}(8, 0.2)\)</span>. What is (a) <span class="math inline">\(\mathbb P(X = 3)\)</span>? (b) <span class="math inline">\(\mathbb P(X \geq 2)\)</span>?</em></p>
-<p>For (a), we have from the definition
-<span class="math display">\[ \mathbb P(X = 3) = \binom83 0.2^3 (1 - 0.2)^{8-3} = 56\times 0.2^3\times0.8^5 = 0.147 .\]</span></p>
-<p>For (b), this is an “at least” question, so it’s more convenient to look at the complementary event, <span class="math inline">\(\mathbb P(X &lt; 2)\)</span>. So
-<span class="math display">\[\begin{align*}
-\mathbb P(X \geq 2) &amp;= 1 - \mathbb P(X &lt; 2) \\
-  &amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
-  &amp;= 1 - 0.8^8 - 8\times 0.2 \times 0.8^7 \\
-  &amp;= 1 - 0.168 - 0.336 \\
-  &amp; = 0.497 .
-\end{align*}\]</span></p>
-</div>
-<p>What about the expectation and variance of a binomial random variable?</p>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-62" class="theorem"><strong>Theorem 11.1  </strong></span>Let <span class="math inline">\(X \sim \text{Bin}(n, p)\)</span>. Then</p>
-<ul>
-<li><span class="math inline">\(\mathbb EX = np\)</span>,</li>
-<li><span class="math inline">\(\operatorname{Var}(X) =np(1-p)\)</span>.</li>
-</ul>
-</div>
-<p>One can prove this by working out the sums – for example, the expectation is the value of the sum
-<span class="math display">\[ \mathbb EX = \sum_{x=0}^n x \binom{n}{x} p^x (1-p)^{n-x} , \]</span>
+
+This is a special case of the binomial distribution.
+
+::: {.definition}
+Let $X$ be a discrete random variable with range $\{0,1,2,\dots,n\}$ and PMF
+\[ p(x) = \binom{n}{x} p^x (1-p)^{n-x} . \]
+Then we say that $X$ follows the **binomial distribution** with parameters $n$ and $k$, and write $X \sim \text{Bin}(n,p)$.
+:::
+
+So a binomial random variable represents the number of successes in $n$ Bernoulli trials. In our previous example, the number of Heads from the coin tosses was $\text{Bin}(10, 0.7)$.
+
+
+<img src="math1710_files/figure-html/binom-pic-1.png" width="672" />
+
+::: {.example}
+*Let $X \sim \mathrm{Bin}(8, 0.2)$. What is (a) $\mathbb P(X = 3)$? (b) $\mathbb P(X \geq 2)$?*
+
+For (a), we have from the definition
+\[ \mathbb P(X = 3) = \binom83 0.2^3 (1 - 0.2)^{8-3} = 56\times 0.2^3\times0.8^5 = 0.147 .\]
+
+For (b), this is an "at least" question, so it's more convenient to look at the complementary event, $\mathbb P(X < 2)$. So
+\begin{align*}
+\mathbb P(X \geq 2) &= 1 - \mathbb P(X < 2) \\
+  &= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
+  &= 1 - 0.8^8 - 8\times 0.2 \times 0.8^7 \\
+  &= 1 - 0.168 - 0.336 \\
+  & = 0.497 .
+\end{align*}
+:::
+
+What about the expectation and variance of a binomial random variable?
+
+::: {.theorem}
+Let $X \sim \text{Bin}(n, p)$. Then
+
+* $\mathbb EX = np$,
+* $\Var(X) =np(1-p)$.
+:::
+
+One can prove this by working out the sums -- for example, the expectation is the value of the sum
+\[ \mathbb EX = \sum_{x=0}^n x \binom{n}{x} p^x (1-p)^{n-x} , \]
 which is a bit tricky to calculate, but not fundamentally difficult mathematics.
-However, in next section we will see an easier way, so we’ll reserve the proof until then instead.</p>
-<p>For my 10 biased coins that are each Heads with probability <span class="math inline">\(0.7\)</span>, the expectation and variance are
-<span class="math display">\[\begin{align*}
-  \mathbb EX &amp;= 10 \times 0.7 = 7 \\
-  \operatorname{Var}(X) &amp;= 10 \times 0.7 \times 0.3 = 2.1
-\end{align*}\]</span></p>
-</div>
-<div id="geometric" class="section level2 hasAnchor" number="11.2">
-<h2><span class="header-section-number">11.2</span> Geometric distribution<a href="L11-binomial-poisson.html#geometric" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/kQsgZ-kF6PY"></iframe>
+However, in next section we will see an easier way, so we'll reserve the proof until then instead.
+
+For my 10 biased coins that are each Heads with probability $0.7$, the expectation and variance are
+\begin{align*}
+  \mathbb EX &= 10 \times 0.7 = 7 \\
+  \Var(X) &= 10 \times 0.7 \times 0.3 = 2.1
+\end{align*}
+
+
+
+## Geometric distribution  {#geometric}
+
+
+
+::: {.example}
+*I decide to roll a fair dice until I first roll a six, and then stop. What's the probability I get the first six on my 5th roll of the dice?*
+
+For the first six to be on the 5th attempt, the first 4 rolls have to be non-sixes, and then the fifth roll has to be a six. This has probability
+\[ \left(\tfrac56\right)^4 \times  \tfrac16 = \tfrac{625}{7776} = 0.08.\]
 :::
-::::
--->
-<div class="example">
-<p><span id="exm:unlabeled-div-63" class="example"><strong>Example 11.3  </strong></span><em>I decide to roll a fair dice until I first roll a six, and then stop. What’s the probability I get the first six on my 5th roll of the dice?</em></p>
-<p>For the first six to be on the 5th attempt, the first 4 rolls have to be non-sixes, and then the fifth roll has to be a six. This has probability
-<span class="math display">\[ \left(\tfrac56\right)^4 \times  \tfrac16 = \tfrac{625}{7776} = 0.08.\]</span></p>
-</div>
-<p>This is a special case of the geometric distribution.</p>
-<div class="definition">
-<p><span id="def:unlabeled-div-64" class="definition"><strong>Definition 11.2  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{1,2,\dots\}\)</span> and PMF
-<span class="math display">\[ p(x) = (1-p)^{x-1}p . \]</span>
-Then we say that <span class="math inline">\(X\)</span> follows the <strong>geometric distribution</strong> with parameter <span class="math inline">\(p\)</span>, and write <span class="math inline">\(X \sim \text{Geom}(p)\)</span>.</p>
-</div>
-<p>So a geometric random variable represents the number of Bernoulli<span class="math inline">\((p)\)</span> trials until the first success. In our previous example, the number of dice rolls until a six was <span class="math inline">\(\text{Geom}(\frac16)\)</span>.</p>
-<p><img src="math1710_files/figure-html/geom-pic-1.png" width="672" /></p>
-<div class="example">
-<p><span id="exm:unlabeled-div-65" class="example"><strong>Example 11.4  </strong></span><em>Let <span class="math inline">\(X \sim \mathrm{Geom}(0.4)\)</span>. What is (a) <span class="math inline">\(\mathbb P(X = 3)\)</span>? (b) <span class="math inline">\(\mathbb P(X \geq 3)\)</span>.</em></p>
-<p>For part (a), we have
-<span class="math display">\[ \mathbb P(X = 3) = (1 - 0.4)^2 \times 0.4 = 0.144 . \]</span></p>
-<p>For part (b), we have
-<span class="math display">\[ \mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.4 - (1-0.4)\times 0.4 = 1- 0.64 = 0.36 . \]</span></p>
-</div>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-66" class="theorem"><strong>Theorem 11.2  </strong></span>Let <span class="math inline">\(X \sim \text{Geom}(p)\)</span>. Then</p>
-<ul>
-<li><span class="math inline">\(\mathbb EX = \displaystyle\frac1p\)</span>,</li>
-<li><span class="math inline">\(\operatorname{Var}(X) = \displaystyle\frac{1-p}{p^2}\)</span>.</li>
-</ul>
-</div>
-<p>So the expected number of rolls until rolling a six is
-<span class="math display">\[ \mathbb EX = \frac{1}{\frac16} = 6 , \]</span>
+
+This is a special case of the geometric distribution.
+
+::: {.definition}
+Let $X$ be a discrete random variable with range $\{1,2,\dots\}$ and PMF
+\[ p(x) = (1-p)^{x-1}p . \]
+Then we say that $X$ follows the **geometric distribution** with parameter $p$, and write $X \sim \text{Geom}(p)$.
+:::
+
+So a geometric random variable represents the number of Bernoulli$(p)$ trials until the first success. In our previous example, the number of dice rolls until a six was $\text{Geom}(\frac16)$.
+
+
+<img src="math1710_files/figure-html/geom-pic-1.png" width="672" />
+
+::: {.example}
+*Let $X \sim \mathrm{Geom}(0.4)$. What is (a) $\mathbb P(X = 3)$? (b) $\mathbb P(X \geq 3)$.*
+
+For part (a), we have
+\[ \mathbb P(X = 3) = (1 - 0.4)^2 \times 0.4 = 0.144 . \]
+
+For part (b), we have
+\[ \mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.4 - (1-0.4)\times 0.4 = 1- 0.64 = 0.36 . \]
+:::
+
+
+::: {.theorem}
+Let $X \sim \text{Geom}(p)$. Then
+
+* $\mathbb EX = \displaystyle\frac1p$,
+* $\Var(X) = \displaystyle\frac{1-p}{p^2}$.
+:::
+
+So the expected number of rolls until rolling a six is
+\[ \mathbb EX = \frac{1}{\frac16} = 6 , \]
 with variance
-<span class="math display">\[ \operatorname{Var}(X) = \frac{1 - \frac16}{\big(\frac16\big)^2} = 30 . \]</span></p>
-<div class="proof">
-<p><span id="unlabeled-div-67" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
+\[ \Var(X) = \frac{1 - \frac16}{\big(\frac16\big)^2} = 30 . \]
+
+::: {.proof}
+*(Non-examinable)*
 For the expectation, we want to calculate
-<span class="math display">\[ \mathbb EX = \sum_{x=1}^\infty x (1-p)^{x-1} p = p \sum_{x=0}^\infty x (1-p)^{x-1}. \]</span>
-(We can include the <span class="math inline">\(x = 0\)</span> term in the sum since it is equal to 0.)</p>
-<p>At this point we will invoke the identity
-<span class="math display">\[ \sum_{x = 0}^\infty x a^{x-1} = \frac{1}{(1-a)^2} , \]</span>
+\[ \mathbb EX = \sum_{x=1}^\infty x (1-p)^{x-1} p = p \sum_{x=0}^\infty x (1-p)^{x-1}. \]
+(We can include the $x = 0$ term in the sum since it is equal to 0.)
+
+At this point we will invoke the identity
+\[ \sum_{x = 0}^\infty x a^{x-1} = \frac{1}{(1-a)^2} , \]
 which can be proved by differentiating the standard sum of a geometric progression
-<span class="math display">\[ \sum_{x = 0}^\infty a^x = \frac{1}{1 - a} \]</span>
-with respect to <span class="math inline">\(a\)</span>.</p>
-<p>Using that identity with <span class="math inline">\(a = 1-p\)</span>, we get
-<span class="math display">\[ \mathbb EX = p \sum_{x=0}^\infty x (1-p)^{x-1} = p\, \frac{1}{\big(1 - (1-p)\big)^2} = \frac{1}{p} , \]</span>
-as required.</p>
-<p>For the variance, we will use a trick that sometimes comes in useful, which is to start by calculating <span class="math inline">\(\mathbb EX(X-1)\)</span>. Here we get
-<span class="math display">\[ \mathbb EX(X-1) = \sum_{x=1}^\infty x (x-1) (1-p)^{x-1} p = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} . \]</span>
+\[ \sum_{x = 0}^\infty a^x = \frac{1}{1 - a} \]
+with respect to $a$.
+
+Using that identity with $a = 1-p$, we get
+\[ \mathbb EX = p \sum_{x=0}^\infty x (1-p)^{x-1} = p\, \frac{1}{\big(1 - (1-p)\big)^2} = \frac{1}{p} , \]
+as required.
+
+For the variance, we will use a trick that sometimes comes in useful, which is to start by calculating $\mathbb EX(X-1)$. Here we get
+\[ \mathbb EX(X-1) = \sum_{x=1}^\infty x (x-1) (1-p)^{x-1} p = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} . \]
 To calculate the sum, we note that differentiating the geometric progression formula twice gives
-<span class="math display">\[ \sum_{x = 0}^\infty x(x-1) a^{x-2} = \frac{2}{(1-a)^3} , \]</span>
+\[ \sum_{x = 0}^\infty x(x-1) a^{x-2} = \frac{2}{(1-a)^3} , \]
 so we get
-<span class="math display">\[ \mathbb EX(X-1) = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} = p(1 -p) \, \frac{2}{p^3} = \frac{2(1-p)}{p^2} . \]</span></p>
-<p>We now want to use the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span> to get the variance. We know <span class="math inline">\(\mu = 1/p\)</span>, and from the calculation above, we have
-<span class="math display">\[ \mathbb EX(X-1) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \frac{1}{p} = \frac{2(1-p)}{p^2} . \]</span>
+\[ \mathbb EX(X-1) = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} = p(1 -p) \, \frac{2}{p^3} = \frac{2(1-p)}{p^2} . \]
+
+We now want to use the computational formula $\Var(X) = \mathbb EX^2 - \mu^2$ to get the variance. We know $\mu = 1/p$, and from the calculation above, we have
+\[ \mathbb EX(X-1) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \frac{1}{p} = \frac{2(1-p)}{p^2} . \]
 So
-<span class="math display">\[\begin{align*}
-\operatorname{Var}(X) = \mathbb EX^2 - \mu^2
-&amp;= \left(\frac{2(1-p)}{p^2} + \frac{1}{p}\right) - \left(\frac{1}{p}\right)^2 \\
-&amp;= \frac{2(1-p) + p - 1}{p^2} \\
-&amp;= \frac{1-p}{p^2} .
-\end{align*}\]</span></p>
-</div>
-<p><em>Note:</em> Here, we defined a geometric random variable as being the number of trials up to <em>and including</em> the first success, which is a number in <span class="math inline">\(\{1, 2, \dots\}\)</span>. However, some authors define it as the number of failures <em>before</em> the first success, which is a number in <span class="math inline">\(\{0, 1, 2,\dots\}\)</span>. If <span class="math inline">\(X\)</span> is our definition and <span class="math inline">\(Y\)</span> is the second “number of failures” definition, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y+1\)</span> have the same distribution. Annoyingly, R uses the “number of failures before success” definition, as we will discuss in a later R worksheet.</p>
-</div>
-<div id="models" class="section level2 hasAnchor" number="11.3">
-<h2><span class="header-section-number">11.3</span> Distributions as models for data<a href="L11-binomial-poisson.html#models" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Families of distributions – like the Bernoulli, binomial and geometric distributions we have seen so far in this module – are very useful for models in statistics. This idea is developed Bayesian statistics we will discuss in Lectures 19 and 20 of this module, and is an idea that is extremely important throughout the whole MATH1712 Probability and Statistics II.</p>
-<p>The families of distributions we have looked at here are sometimes called “parametric families”, in that each of the distributions depended on one or more parameters: <span class="math inline">\(p\)</span> for the Bernoulli and geometric distributions; and both <span class="math inline">\(n\)</span> and <span class="math inline">\(p\)</span> for the binomial distribution. (In the next lecture we will see another discrete distribution, the Poisson distribution, and later in the module we will also see some continuous parametric families: the exponential, normal and beta distributions.) This means we can adopt a model that data comes from one of the distributions within a family, then use data to estimate the value of that parameter.</p>
-<p>For example:</p>
-<ul>
-<li>When testing the bias of a coin, you might assume, counting Heads as 1 and Tails as 0, that the outcome of each test is Bernoulli distributed with parameter <span class="math inline">\(p\)</span>, but where the value of the Heads probability <span class="math inline">\(p\)</span> is unknown. You could then toss the coin many times and use this data to estimate <span class="math inline">\(p\)</span>.</li>
-<li>The number of years between severe summer floods in a tropical climate could be modelled as geometrically distributed where the flood risk parameter <span class="math inline">\(p\)</span> is unknown. By look at the gaps between severe floods in historical data, a statistician could try to estimate <span class="math inline">\(p\)</span>.</li>
-<li>A tutor might assume that the number of students that turn up to each tutorial is binomially distributed where <span class="math inline">\(n\)</span> is known to be 12, the number of students assigned to the group, but <span class="math inline">\(p\)</span>, the “turning-up probability” is unknown. The tutor could then take records of how many students turned up to all the tutorials, and use this to estimate <span class="math inline">\(p\)</span>.</li>
-</ul>
-<p>There are two main methods statisticians use to estimate parameters:</p>
-<ul>
-<li><strong>Bayesian statistics:</strong> Here, one starts with a subjective “prior” distribution for the parameters, which represents one’s personal belief about which possible values for that parameter are more or less likely before conducting any experiment. After the experiment, one then uses Bayes’ theorem to update that belief to a “posterior” distribution of one’s beliefs about the parameter <em>given</em> the data. The Bayesian approach will be introduced in Lecture 19 of this module.</li>
-<li><strong>Frequentist statistics:</strong> Frequentist statistics does not involve any subjective prior views. Rather, frequentism is about assessing the extent to which the data is consistent with certain hypotheses. For example, one might try to find the value for the parameter that would seem “most consistent” with the data, and use that as an “estimate” of the parameter: “My best guess of the Heads probability <span class="math inline">\(p\)</span> of the coin is <span class="math inline">\(p = 0.53\)</span>.” Alternatively, one might find a range of values for the parameter that are all at least somewhat consistent with the data: “I am confident the value of the Heads probability lies in the range <span class="math inline">\(0.49 \leq p \leq 0.57\)</span>, as these values are all consistent with the data.” Third, one could text if a specific hypothesis is consistent with the data or not: “The data is consistent with the hypothesis that <span class="math inline">\(p = 0.50\)</span>, whih would mean the coin is fair, so I have no strong evidence for disbelieving that.” The frequentist approach will pursued in detail in MATH1712.</li>
-</ul>
-</div>
+\begin{align*}
+\Var(X) = \mathbb EX^2 - \mu^2
+&= \left(\frac{2(1-p)}{p^2} + \frac{1}{p}\right) - \left(\frac{1}{p}\right)^2 \\
+&= \frac{2(1-p) + p - 1}{p^2} \\
+&= \frac{1-p}{p^2} .
+\end{align*}
+:::
+
+*Note:* Here, we defined a geometric random variable as being the number of trials up to *and including* the first success, which is a number in $\{1, 2, \dots\}$. However, some authors define it as the number of failures *before* the first success, which is a number in $\{0, 1, 2,\dots\}$. If $X$ is our definition and $Y$ is the second "number of failures" definition, then $X$ and $Y+1$ have the same distribution. Annoyingly, R uses the "number of failures before success" definition, as we will discuss in a later R worksheet.
+
+
+
+
+-->
 <div id="summary-L11" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L11-binomial-poisson.html#summary-L11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <table>
@@ -589,6 +507,11 @@ So
 </tr>
 </tbody>
 </table>
+<p><strong>Recommended reading:</strong></p>
+<ul>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181">Stirzaker, <em>Elementary Probability</em></a>, Sections 4.2 and 4.3.</li>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181">Grimmett and Welsh, <em>Probability</em></a>, Section 2.2.</li>
+</ul>
 
 </div>
 </div>

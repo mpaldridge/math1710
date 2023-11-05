@@ -154,6 +154,24 @@
 
 \newcommand{\Var}{\operatorname{Var}}
 
+\textbf{Week 6} (6--10 November):
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{L11-binomial-geometric}{\textbf{Lecture 11:} Binomial and geometric distributions} (Monday 6 November)
+\item
+  \protect\hyperlink{L12-poisson}{\textbf{Lecture 12:} Poisson distribution} (Wednesday 8 November)
+\item
+  \textbf{Tutorial} on Problem Sheet 3
+\item
+  \protect\hyperlink{P3}{\textbf{Problem Sheet 3:}} Work through in preparation for your tutorial. Deadline for assessed questions: Monday 13 November.
+\item
+  \protect\hyperlink{R}{\textbf{R Worksheet 5}}
+\item
+  \textbf{Office hours:} Friday 10 November, 11--12 and 1--2, \href{https://mpaldridge.github.io/office.html}{Physics Research Deck 9.320}
+\end{itemize}
+
 \textbf{Week 5} (30 October--3 November):
 
 \begin{itemize}
@@ -165,7 +183,7 @@
 \item
   \protect\hyperlink{P3}{\textbf{Problem Sheet 3:}} Work through in preparation for your tutorial in Week 6. Deadline for assessed questions: Monday 13 November.
 \item
-  \protect\hyperlink{R}{\textbf{R Worksheet 3}} -- deadline for assessed questions: Monday 6 November
+  \protect\hyperlink{R}{\textbf{R Worksheet 4}} -- deadline for assessed questions: Monday 6 November
 \item
   \textbf{Office hours:} Friday 3 November, 11--1, \href{https://mpaldridge.github.io/office.html}{Physics Research Deck 9.320} (\emph{note change of time})
 \end{itemize}
@@ -3664,7 +3682,7 @@ So the events are independent.
 By checking the 36 possibilities, one sees that
 \[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
 
-Alternatively, note that the total being even is certain if both dice rolls are certain, so
+Alternatively, note that the total being even is certain if both dice rolls are even, so
 \[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]
 to get the same result.
 
@@ -3697,15 +3715,46 @@ Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), 
 
 \begin{myanswers}
 \emph{Solution.}
-CDF HERE THEN REDO THE NEXT TWO BITS
 
-For the expectation,
-\[ \mathbb EX = -1\times0.1 + 0\times0.3 + 0.5\times0.3+1\times0.2+2\times0.1 = 0.45. \]
+\textbf{(a)} The CDF is
 
-For the variance, we start with
-\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.3 + 0.5^2\times0.3+1^2\times0.2+2^2\times0.1 = 0.775 . \]
-Then, using the computational formula,
-\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = 0.775 - 0.45^2 = 0.5725. \]
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(x \in {}\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\((-\infty, -1)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([-1, 0)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([0, 0.5)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([0.5, 2)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\([2, \infty)\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(F(x)\) & \(0\) & \(0.1\) & \(0.5\) & \(0.7\) & \(1\) \\
+\bottomrule()
+\end{longtable}
+
+\textbf{(b)} The expectation is
+\[ \mathbb EX = -1\times0.1 + 0\times0.4 + 0.5\times0.2+2\times0.3= 0.6. \]
+
+\textbf{(c)} With the computational formula for the variance, we first have
+\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.4 + 0.5^2\times0.2+2^2\times0.3 = 1.35 , \]
+and so
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = 1.35 - 0.6^2 = 0.99. \]
+
+Alternatively, using the definitional formula,
+\[ \operatorname{Var}(X) = (-1-0.6)^2 \times 0.1 + (0 - 0.6)^2\times 0.4 + (0.5-0.6)^2\times 0.2 + (2-0.6)^2 \times0.3 = 0.99.\]
 
 \end{myanswers}
 
@@ -3861,7 +3910,7 @@ There could be disadvantages. The complicated set-up of the experiment could lea
 
 \begin{myanswers}
 \emph{Solution.}
-Let \(C_1, C_2, C_3\) be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities \(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\) and make up a partition. Let \(Y\) be the event that the soldier answers yes. We know that \(\mathbb P(Y \mid C_1) = 1\), \(\mathbb P(Y \mid C_2) = 0\) and \(\mathbb P(Y \mid C_3) = \delta\), where \(\mathbb P(D)\), which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that \(\mathbb P(Y) = 0.4\).
+Let \(C_1, C_2, C_3\) be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities \(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\) and make up a partition. Let \(Y\) be the event that the soldier answers yes. We know that \(\mathbb P(Y \mid C_1) = 1\), \(\mathbb P(Y \mid C_2) = 0\) and \(\mathbb P(Y \mid C_3) = \mathbb P(D)\), where \(\mathbb P(D)\), which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that \(\mathbb P(Y) = 0.4\).
 
 The law of total probability tells us that
 \[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 
@@ -4093,12 +4142,439 @@ Using the definitional formula, we have
 \section*{Solutions to short questions}\label{P3-short-sols}}
 \addcontentsline{toc}{section}{Solutions to short questions}
 
-\textbf{A1.} (c) and (e) are independent.\\
+\textbf{A1.} (c) and (e) are independent\\
 \textbf{A2.} (a) Yes (b) Yes (c) No\\
 \textbf{A3.} 0.8\\
 \textbf{A4.} (a) --- (b) 0.6 (c) 0.99\\
 \textbf{A5.} \(a = 9, b = 0.5\)\\
 \textbf{A6} (a) 66.2~°F (b) 33.7~°F\textsuperscript{2}
+
+\hypertarget{L11-binomial-poisson}{%
+\chapter{Binomial and geometric distributions}\label{L11-binomial-poisson}}
+
+\begin{example}
+\emph{Let \(X \sim \mathrm{Bin}(8, 0.2)\). What is (a) \(\mathbb P(X = 3)\)? (b) \(\mathbb P(X \geq 2)\)?}
+
+For (a), we have from the definition
+\[ \mathbb P(X = 3) = \binom83 0.2^3 (1 - 0.2)^{8-3} = 56\times 0.2^3\times0.8^5 = 0.147 .\]
+
+For (b), this is an ``at least'' question, so it's more convenient to look at the complementary event, \(\mathbb P(X < 2)\). So
+\begin{align*}
+\mathbb P(X \geq 2) &= 1 - \mathbb P(X < 2) \\
+  &= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
+  &= 1 - 0.8^8 - 8\times 0.2 \times 0.8^7 \\
+  &= 1 - 0.168 - 0.336 \\
+  & = 0.497 .
+\end{align*}
+\end{example}
+
+What about the expectation and variance of a binomial random variable?
+
+\begin{theorem}
+
+Let \(X \sim \text{Bin}(n, p)\). Then
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb EX = np\),
+\item
+  \(\operatorname{Var}(X) =np(1-p)\).
+\end{itemize}
+
+\end{theorem}
+
+One can prove this by working out the sums -- for example, the expectation is the value of the sum
+\[ \mathbb EX = \sum_{x=0}^n x \binom{n}{x} p^x (1-p)^{n-x} , \]
+which is a bit tricky to calculate, but not fundamentally difficult mathematics.
+However, in next section we will see an easier way, so we'll reserve the proof until then instead.
+
+For my 10 biased coins that are each Heads with probability \(0.7\), the expectation and variance are
+\begin{align*}
+  \mathbb EX &= 10 \times 0.7 = 7 \\
+  \operatorname{Var}(X) &= 10 \times 0.7 \times 0.3 = 2.1
+\end{align*}
+
+\hypertarget{geometric}{%
+\section{Geometric distribution}\label{geometric}}
+
+\begin{example}
+\emph{I decide to roll a fair dice until I first roll a six, and then stop. What's the probability I get the first six on my 5th roll of the dice?}
+
+For the first six to be on the 5th attempt, the first 4 rolls have to be non-sixes, and then the fifth roll has to be a six. This has probability
+\[ \left(\tfrac56\right)^4 \times  \tfrac16 = \tfrac{625}{7776} = 0.08.\]
+\end{example}
+
+This is a special case of the geometric distribution.
+
+\begin{definition}
+Let \(X\) be a discrete random variable with range \(\{1,2,\dots\}\) and PMF
+\[ p(x) = (1-p)^{x-1}p . \]
+Then we say that \(X\) follows the \textbf{geometric distribution} with parameter \(p\), and write \(X \sim \text{Geom}(p)\).
+\end{definition}
+
+So a geometric random variable represents the number of Bernoulli\((p)\) trials until the first success. In our previous example, the number of dice rolls until a six was \(\text{Geom}(\frac16)\).
+
+\includegraphics{math1710_files/figure-latex/geom-pic-1.pdf}
+
+\begin{example}
+\emph{Let \(X \sim \mathrm{Geom}(0.4)\). What is (a) \(\mathbb P(X = 3)\)? (b) \(\mathbb P(X \geq 3)\).}
+
+For part (a), we have
+\[ \mathbb P(X = 3) = (1 - 0.4)^2 \times 0.4 = 0.144 . \]
+
+For part (b), we have
+\[ \mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.4 - (1-0.4)\times 0.4 = 1- 0.64 = 0.36 . \]
+\end{example}
+
+\begin{theorem}
+
+Let \(X \sim \text{Geom}(p)\). Then
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb EX = \displaystyle\frac1p\),
+\item
+  \(\operatorname{Var}(X) = \displaystyle\frac{1-p}{p^2}\).
+\end{itemize}
+
+\end{theorem}
+
+So the expected number of rolls until rolling a six is
+\[ \mathbb EX = \frac{1}{\frac16} = 6 , \]
+with variance
+\[ \operatorname{Var}(X) = \frac{1 - \frac16}{\big(\frac16\big)^2} = 30 . \]
+
+\begin{proof}
+\emph{(Non-examinable)}
+For the expectation, we want to calculate
+\[ \mathbb EX = \sum_{x=1}^\infty x (1-p)^{x-1} p = p \sum_{x=0}^\infty x (1-p)^{x-1}. \]
+(We can include the \(x = 0\) term in the sum since it is equal to 0.)
+
+At this point we will invoke the identity
+\[ \sum_{x = 0}^\infty x a^{x-1} = \frac{1}{(1-a)^2} , \]
+which can be proved by differentiating the standard sum of a geometric progression
+\[ \sum_{x = 0}^\infty a^x = \frac{1}{1 - a} \]
+with respect to \(a\).
+
+Using that identity with \(a = 1-p\), we get
+\[ \mathbb EX = p \sum_{x=0}^\infty x (1-p)^{x-1} = p\, \frac{1}{\big(1 - (1-p)\big)^2} = \frac{1}{p} , \]
+as required.
+
+For the variance, we will use a trick that sometimes comes in useful, which is to start by calculating \(\mathbb EX(X-1)\). Here we get
+\[ \mathbb EX(X-1) = \sum_{x=1}^\infty x (x-1) (1-p)^{x-1} p = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} . \]
+To calculate the sum, we note that differentiating the geometric progression formula twice gives
+\[ \sum_{x = 0}^\infty x(x-1) a^{x-2} = \frac{2}{(1-a)^3} , \]
+so we get
+\[ \mathbb EX(X-1) = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} = p(1 -p) \, \frac{2}{p^3} = \frac{2(1-p)}{p^2} . \]
+
+We now want to use the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\) to get the variance. We know \(\mu = 1/p\), and from the calculation above, we have
+\[ \mathbb EX(X-1) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \frac{1}{p} = \frac{2(1-p)}{p^2} . \]
+So
+\begin{align*}
+\operatorname{Var}(X) = \mathbb EX^2 - \mu^2
+&= \left(\frac{2(1-p)}{p^2} + \frac{1}{p}\right) - \left(\frac{1}{p}\right)^2 \\
+&= \frac{2(1-p) + p - 1}{p^2} \\
+&= \frac{1-p}{p^2} .
+\end{align*}
+\end{proof}
+
+\emph{Note:} Here, we defined a geometric random variable as being the number of trials up to \emph{and including} the first success, which is a number in \(\{1, 2, \dots\}\). However, some authors define it as the number of failures \emph{before} the first success, which is a number in \(\{0, 1, 2,\dots\}\). If \(X\) is our definition and \(Y\) is the second ``number of failures'' definition, then \(X\) and \(Y+1\) have the same distribution. Annoyingly, R uses the ``number of failures before success'' definition, as we will discuss in a later R worksheet.
+
+--\textgreater{}
+
+\hypertarget{summary-L11}{%
+\section*{Summary}\label{summary-L11}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2941}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Distribution
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+PMF
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Expectation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Variance
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Bernoulli:} \(\text{Bern}(p)\) & \(\{0,1\}\) & \(p(0) = 1- p\), \(p(1) = p\) & \(p\) & \(p(1-p)\) \\
+\textbf{Binomial:} \(\text{Bin}(n,p)\) & \(\{0,1,\dots,n\}\) & \(\displaystyle\binom{n}{x} p^x (1-p)^{n-x}\) & \(np\) & \(np(1-p)\) \\
+\textbf{Geometric:} \(\text{Geom}(p)\) & \(\{1,2,\dots\}\) & \((1-p)^{x-1}p\) & \(\displaystyle\frac{1}{p}\) & \(\displaystyle\frac{1-p}{p^2}\) \\
+\bottomrule()
+\end{longtable}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 4.2 and 4.3.
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Section 2.2.
+\end{itemize}
+
+\hypertarget{L12-poisson}{%
+\chapter{Poisson distribution}\label{L12-poisson}}
+
+The Poisson distribution is named after the French mathematician \href{https://mathshistory.st-andrews.ac.uk/Biographies/Poisson/}{Siméon-Denis Poisson} who wrote about it in 1837, although the origin of the idea is more than 100 years earlier with another French mathematician, \href{https://mathshistory.st-andrews.ac.uk/Biographies/De_Moivre/}{Abraham de Moivre}.
+
+\begin{example}
+\emph{I receive emails from students at the rate of \(\lambda = 3\) per hour, modelled as a Poisson distribution. What is the probability I get (a) two email in an hour, (b) no email in an hour?}
+
+The number of emails per hour is \(X \sim \mathrm{Po}(3)\).
+
+For (a), we have
+\[ \mathbb P(X = 3) = p(3) = \mathrm{e}^{-3} \frac{3^2}{2!} = \frac94 \mathrm{e}^{-3} = 0.224 . \]
+
+For part (b), and remembering that \(0! = 1\), we have
+\[ \mathbb P(X = 3) = p(0) = \mathrm{e}^{-3} \frac{3^0}{0!} = \mathrm{e}^{-3} = 0.050 . \]
+\end{example}
+
+The parameter \(\lambda\) is called the ``rate'' because that indeed the number of emails (or insurance claims, or phone calls, or deaths by horse-kicking) that we expect to see.
+
+\begin{theorem}
+
+Let \(X \sim \text{Po}(\lambda)\). Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(p(x)\) is indeed a PMF, in that \(\displaystyle\sum_{x=0}^\infty p(x) = 1\).
+\item
+  \(\mathbb EX = \lambda\),
+\item
+  \(\operatorname{Var}(X) = \lambda\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{proof}
+We'll do the first two here, then you can do the variance in \protect\hyperlink{P4-long}{Problem Sheet 4}.
+
+It will be useful to remember the Taylor series for the exponential function,
+\[ \mathrm e^\lambda = \sum_{x=0}^\infty \frac{\lambda^k}{x!} . \]
+
+For part 1, to see that the PMF does indeed sum to one, note that the Taylor series gives us
+\[ \sum_{x=0}^\infty p(x) = \sum_{x=0}^\infty \mathrm e^{-\lambda} \frac{\lambda^x}{x!}
+= \mathrm e^{-\lambda} \sum_{x=0}^\infty  \frac{\lambda^x}{x!} = \mathrm e^{-\lambda}\,\mathrm e^{\lambda} = 1. \]
+
+For part 2, for the expectation, we have
+\begin{align*}
+\mathbb EX &= \sum_{x=0}^\infty x\,\mathrm e^{-\lambda}  \frac{\lambda^x}{x!} \\
+  &= \mathrm e^{-\lambda} \sum_{x=1}^\infty x\,\frac{\lambda^x}{x!} \\
+  &= \mathrm e^{-\lambda} \sum_{x=1}^\infty \frac{\lambda^x}{(x-1)!} \\
+  &= \lambda \mathrm e^{-\lambda} \sum_{x=1}^\infty \frac{\lambda^{x-1}}{(x-1)!}
+\end{align*}
+In the second line, we took \(\mathrm e^{-\lambda}\) outside the sum, and allowed ourselves to start the sum from 1, since the \(x = 0\) term was 0 anyway; in the third line, we cancelled the \(x\) from the \(x!\) to get \((x-1)!\); and in the fourth line we took one of the \(\lambda\)s in \(\lambda^x\) outside the sum, to give ourselves terms in \(x - 1\) inside the sum. We can now ``re-index'' the sum by putting \(y = x - 1\), to get
+\[ \mathbb EX = \lambda \mathrm e^{-\lambda} \sum_{y=0}^\infty \frac{\lambda^{y}}{y!}
+= \lambda \mathrm e^{-\lambda} \mathrm e^{\lambda} = \lambda , \]
+where we used the Taylor series again.
+\end{proof}
+
+At this point in the lecture, we took a break to fill in \href{https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u}{the \textbf{mid-semester check-in survey}}. This is open for the rest of the week and is anonymous. Written comments in answer to the last question are particular useful -- I will read them all and report back next week on changes I am making to the module in response to your comments.
+
+\hypertarget{poisson-approx}{%
+\section{Poisson approximation to the binomial}\label{poisson-approx}}
+
+Suppose I own a watch shop in Leeds. My watches are very expensive, so I don't need to sell many each day -- in fact, I sell an average of 4.8 watches per day. How should I model the number of watches sold each day as a random variable?
+
+One way could be to say this. There are \(n\) people living in Leeds or nearby, and, on any given day, each of them will independently buy a watch from my shop with some probability \(p\). Thus the total number of watches I sell could be modelled as a binomial distribution \(\text{Bin}(n, p)\).
+
+But what should \(n\) and \(p\) be? To make the average \(\mathbb EX = np = 4.8\), I must take \(p = 4.8/n\). But what about \(n\)? We know \(n\) is a very big number, because Leeds is a big city, so let's take a limit as \(n \to \infty\). It turns out, that this distribution \(\text{Bin}(n, 4.8/n)\) becomes a Poisson(4.8) distribution!
+
+\begin{theorem}
+\protect\hypertarget{thm:po-bint}{}\label{thm:po-bint}Fix \(\lambda \geq 0\), and let \(X_n \sim \text{Bin}(n, \lambda/n)\) for all integers \(n \geq \lambda\). Then \(X_n \to \text{Po}(\lambda)\) in distribution as \(n \to \infty\), by which we mean that if \(Y \sim \text{Po}(\lambda)\), then
+\[ p_{X_n}(x) \to p_Y(x) \qquad \text{for all $x \in \{0, 1, \dots \}$}. \]
+\end{theorem}
+
+A looser way to state the principle of this theorem would be this: \emph{When \(n\) is very large and \(p\) very small, in such a way that \(np\) is a small-ish number, then \(\text{Bin}(n,p)\) is well approximated by \(\text{Po}(\lambda)\) where \(\lambda = np\).}
+
+This is why a Poisson distribution is a good model for the number of occurrences in a set time period. It applies if there lots of things that could happen (large \(n\)), each one is individually unlikely (small \(p\)), and on average a few of them will actually happen (\(\lambda = np\) small-ish).
+
+\begin{example}
+\emph{A lecturer teaches a module with \(n = 100\) students, and estimates that each student turns up to office hours drop-in sessions independently with probability \(p = 0.035\). What is the probability that (a) exactly 5, (b) 2 or more students turn up to a drop-in session?}
+
+If we let \(X\) be the number of students that turn up to a drop-in session, then the exact distribution of \(X\) is \(X \sim \text{Bin}(100, 0.035)\).
+
+For part (a), we then have
+\[ \mathbb P(X = 5) = \binom{100}{5} 0.035^5 (1 - 0.035)^{100-5} = 0.134 .  \]
+
+For part (b), we have an ``at least'' event, so we use the complement rule to get
+\begin{align*}
+\mathbb P(X \geq 2)
+&= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
+&= 1 - \binom{100}{0} 0.035^0 (1 - 0.035)^{100-0} + \binom{100}{1} 0.035^1 (1 - 0.035)^{100 - 1} \\
+&= 1 - (1 - 0.035)^{100} + 100 \times 0.035 (1 - 0.035)^{99} \\
+&= 1 - 0.028 - 0.103 \\
+&= 0.869
+\end{align*}
+
+Alternatively, it might be more convenient to approximate \(X\) by a Poisson distribution \(Y \sim \text{Po}(100 \times 0.035) = \text{Po}(3.5)\).
+
+For part (a), this gives
+\[ \mathbb P(Y = 5) = \mathrm e^{-3.5} \frac{3.5^5}{5!} = 0.132 ,  \]
+which is very close to the exact answer above of \(0.134\).
+
+For part (b), the approximation gives
+\begin{align*}
+\mathbb P(Y \geq 2)
+&= 1 - \mathbb P(Y = 0) - \mathbb P(Y = 1) \\
+&= 1 - \mathrm e^{-3.5} \frac{3.5^0}{0!} - \mathrm e^{-3.5} \frac{3.5^1}{1!} \\
+&= 1 - \mathrm e^{-3.5} - 3.5 \mathrm e^{-3.5} \\
+&= 1 - 0.030 - 0.106 \\
+&= 0.864
+\end{align*}
+which is very close to the exact answer above of \(0.869\).
+
+The following graph shows how close the \(\text{Po}(3.5)\) distribution is to a \(\text{Bin}(100, 0.035)\) distribution -- not exact, but pretty good.
+
+\includegraphics{math1710_files/figure-latex/po-binom-pic-1.pdf}
+\end{example}
+
+For completeness, we include a proof of Theorem \ref{thm:po-bint} here, although since it discusses use of limits, it's not examinable material for this module.
+
+\begin{proof}
+\emph{(Non-examinable)}
+We need to show that, as \(n \to \infty\),
+\[ p_X(x) = \binom nx \left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x}
+\to \mathrm{e}^{-\lambda} \frac{\lambda^x}{x!} = p_Y(x) . \]
+Let's try. The left-hand side is, by some simple rearrangements,
+\begin{align*}
+\binom nx &\left(\frac{\lambda}{n}\right)^x \left(1 - \frac{\lambda}{n}\right)^{n-x} \\
+  &= \frac{n(n-1)\cdots(n-x+1)}{x!} \frac{\lambda^x}{n^x} \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} \\
+  &= \frac{\lambda^x}{x!} \frac{n(n-1)\cdots(n-x+1)}{n^x} \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} \\
+  &= \frac{\lambda^x}{x!} \frac{n}{n} \frac{n-1}{n} \cdots \frac{n-x+1}{n} \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} \\
+  &= \frac{\lambda^x}{x!} 1 \left(1 - \frac{1}{n}\right) \cdots \left(1 - \frac{x-1}{n}\right)  \left(1 - \frac{\lambda}{n}\right)^{n}\left(1 - \frac{\lambda}{n}\right)^{-x} .
+\end{align*}
+
+Now let's take each of the terms in turn. First \(\lambda^x / x!\) looks very promising, and can stay. Second, each of the terms \(1, 1 - 1/n, \dots, 1 - (x-1)/n\) tend to 1 as \(n \to \infty\). Third,
+\[ \left(1 - \frac{\lambda}{n}\right)^{n} \to \mathrm{e}^{-\lambda} ; \]
+this is from the standard ``compound interest'' result that
+\[ \left(1 + \frac{a}{n}\right)^{n} \to \mathrm{e}^{a} \qquad \text{as $n \to \infty$}. \]
+Finally
+\[\left(1 - \frac{\lambda}{n}\right)^{-x} \to 1 , \]
+as \(1 - \lambda/n \to 1\), and \(x\) is fixed. Putting all that together gives the result.
+\end{proof}
+
+\hypertarget{poisson-process}{%
+\section{Poisson process}\label{poisson-process}}
+
+Suppose an insurance company's call centre is open 10 hours a day, 5 days a week. The call centre receives a ``large claim'' -- a claim in excess of £100,000 -- on average 0.2 times per hour. It seems reasonable, therefore, to model the number of large claims in an hour as a \(\mathrm{Po}(\lambda)\) distribution with \(\lambda = 0.2\).
+
+How should we model the nuber of large claims in a day? If the call centre receives \(\lambda = 0.2\) claims per hour, on average, then it receives \(10\lambda = 2\) claims per 10 hours, or one day. It seems reasonable to model this with a \(\mathrm{Po}(10\lambda)\) distribution.
+
+Further, the number of claims on one day and on the next day seems like they should be independent.
+
+The two ideas in the model above lead to what is called the ``Poisson process''.
+
+\begin{definition}
+
+A random set of arrivals is said to follow a \textbf{Poisson process} with rate \(\lambda\) if
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The number of arrivals in a time period of length \(t\) is \(\mathrm{Po}(\lambda t)\).
+\item
+  The number of arrivals in two non-overlapping time periods are independent.
+\end{enumerate}
+
+\end{definition}
+
+\begin{example}
+\emph{Suppose the number of large claims, as discussed above, is modelled as a Poisson process with rate \(\lambda = 0.2\) claims per hour. What is the probability the call centre receives at least one large claim every day this week?}
+
+The number of large claims in one 10-hour day is \(X \sim \mathrm{Po}(10\lambda) = \mathrm{Po}(2)\). So the probability of getting at least one claim in a day is
+\[ \mathbb P(X \geq 1) = 1 - \mathbb P(X = 0) = 1 - \mathrm{e}^{-2} = 0.865 . \]
+
+Because the number of claims in each of the five days this week are independent, the probability of getting at least one claim in all five days is
+\[ \mathbb P(X \geq 1)^5 = 0.865^5 = 0.483 . \]
+\end{example}
+
+This is just a brief taster of the Poisson process. The Poisson process is studied in much more detail in the second-year module \href{https://mpaldridge.github.io/math2750/}{MATH2750 Introduction to Markov Processes}.
+
+\hypertarget{models}{%
+\section{Distributions as models for data}\label{models}}
+
+Families of distributions -- like the Bernoulli, binomial and geometric distributions we have seen so far in this module -- are very useful for models in statistics. This idea is developed Bayesian statistics we will discuss in Lectures 19 and 20 of this module, and is an idea that is extremely important throughout the whole MATH1712 Probability and Statistics II.
+
+The families of distributions we have looked at here are sometimes called ``parametric families'', in that each of the distributions depended on one or more parameters: \(p\) for the Bernoulli and geometric distributions; and both \(n\) and \(p\) for the binomial distribution. (In the next lecture we will see another discrete distribution, the Poisson distribution, and later in the module we will also see some continuous parametric families: the exponential, normal and beta distributions.) This means we can adopt a model that data comes from one of the distributions within a family, then use data to estimate the value of that parameter.
+
+For example:
+
+\begin{itemize}
+\tightlist
+\item
+  When testing the bias of a coin, you might assume, counting Heads as 1 and Tails as 0, that the outcome of each test is Bernoulli distributed with parameter \(p\), but where the value of the Heads probability \(p\) is unknown. You could then toss the coin many times and use this data to estimate \(p\).
+\item
+  The number of years between severe summer floods in a tropical climate could be modelled as geometrically distributed where the flood risk parameter \(p\) is unknown. By look at the gaps between severe floods in historical data, a statistician could try to estimate \(p\).
+\item
+  A tutor might assume that the number of students that turn up to each tutorial is binomially distributed where \(n\) is known to be 12, the number of students assigned to the group, but \(p\), the ``turning-up probability'' is unknown. The tutor could then take records of how many students turned up to all the tutorials, and use this to estimate \(p\).
+\end{itemize}
+
+There are two main methods statisticians use to estimate parameters:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Bayesian statistics:} Here, one starts with a subjective ``prior'' distribution for the parameters, which represents one's personal belief about which possible values for that parameter are more or less likely before conducting any experiment. After the experiment, one then uses Bayes' theorem to update that belief to a ``posterior'' distribution of one's beliefs about the parameter \emph{given} the data. The Bayesian approach will be introduced in Lecture 19 of this module.
+\item
+  \textbf{Frequentist statistics:} Frequentist statistics does not involve any subjective prior views. Rather, frequentism is about assessing the extent to which the data is consistent with certain hypotheses. For example, one might try to find the value for the parameter that would seem ``most consistent'' with the data, and use that as an ``estimate'' of the parameter: ``My best guess of the Heads probability \(p\) of the coin is \(p = 0.53\).'' Alternatively, one might find a range of values for the parameter that are all at least somewhat consistent with the data: ``I am confident the value of the Heads probability lies in the range \(0.49 \leq p \leq 0.57\), as these values are all consistent with the data.'' Third, one could text if a specific hypothesis is consistent with the data or not: ``The data is consistent with the hypothesis that \(p = 0.50\), whih would mean the coin is fair, so I have no strong evidence for disbelieving that.'' The frequentist approach will pursued in detail in MATH1712.
+\end{itemize}
+
+--\textgreater{}
+
+\hypertarget{summary-06}{%
+\section*{Summary}\label{summary-06}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2941}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Distribution
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+PMF
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Expectation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Variance
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Bernoulli:} \(\text{Bern}(p)\) & \(\{0,1\}\) & \(p(0) = 1- p\), \(p(1) = p\) & \(p\) & \(p(1-p)\) \\
+\textbf{Binomial:} \(\text{Bin}(n,p)\) & \(\{0,1,\dots,n\}\) & \(\displaystyle\binom{n}{x} p^x (1-p)^{n-x}\) & \(np\) & \(np(1-p)\) \\
+\textbf{Geometric:} \(\text{Geom}(p)\) & \(\{1,2,\dots\}\) & \((1-p)^{x-1}p\) & \(\displaystyle\frac{1}{p}\) & \(\displaystyle\frac{1-p}{p^2}\) \\
+\textbf{Poisson:} \(\text{Po}(\lambda)\) & \(\{0,1,\dots\}\) & \(\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}\) & \(\lambda\) & \(\lambda\) \\
+\bottomrule()
+\end{longtable}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Section 4.2.
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Section 2.2.
+\end{itemize}
 
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
@@ -4131,6 +4607,7 @@ Deadline for assessed work
 3 & \href{R2.html}{\textbf{2: Vectors}} & \href{R2-solutions.html}{Solutions} & Monday 23 October \\
 4 & \href{R3.html}{\textbf{3: Data in R}} & \href{R3-solutions.html}{Solutions} & --- \\
 5 & \href{R4.html}{\textbf{Plots I:} Making plots} & & Monday 6 November \\
+2 & \href{R5.html}{\textbf{Plots II:} Making plots better} & & --- \\
 \bottomrule()
 \end{longtable}
 

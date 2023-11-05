@@ -35,7 +35,8 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
 |   2  | [**1: R basics**](R1.html)   | [Solutions](R1-solutions.html) |  ---  |
 |   3  | [**2: Vectors**](R2.html)    | [Solutions](R2-solutions.html) | Monday 23 October |
 |   4  | [**3: Data in R**](R3.html)  | [Solutions](R3-solutions.html) |  ---                       |
-|   5  |[**Plots I:** Making plots](R4.html) |    | Monday 6 November          |
+|   5  | [**Plots I:** Making plots](R4.html) |   | Monday 6 November          |
+|   2  | [**Plots II:** Making plots better](R5.html) |                |  ---  |
 
 <!--
 | Week | Worksheet                     | Deadline for assessed work |

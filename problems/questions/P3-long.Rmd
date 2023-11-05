@@ -172,7 +172,7 @@ There could be disadvantages. The complicated set-up of the experiment could lea
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-Let $C_1, C_2, C_3$ be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities $\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13$ and make up a partition. Let $Y$ be the event that the soldier answers yes. We know that $\mathbb P(Y \mid C_1) = 1$, $\mathbb P(Y \mid C_2) = 0$ and $\mathbb P(Y \mid C_3) = \delta$, where $\mathbb P(D)$, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that $\mathbb P(Y) = 0.4$.
+Let $C_1, C_2, C_3$ be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities $\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13$ and make up a partition. Let $Y$ be the event that the soldier answers yes. We know that $\mathbb P(Y \mid C_1) = 1$, $\mathbb P(Y \mid C_2) = 0$ and $\mathbb P(Y \mid C_3) = \mathbb P(D)$, where $\mathbb P(D)$, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that $\mathbb P(Y) = 0.4$.
 
 The law of total probability tells us that
 \[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 

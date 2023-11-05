@@ -109,7 +109,7 @@ So the events are independent.
 By checking the 36 possibilities, one sees that
 \[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]
 
-Alternatively, note that the total being even is certain if both dice rolls are certain, so
+Alternatively, note that the total being even is certain if both dice rolls are even, so
 \[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]
 to get the same result.
 
@@ -141,15 +141,23 @@ Find **(a)** the CDF $F_X$, **(b)** the expectation $\mathbb EX$, and **(c)** th
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-CDF HERE THEN REDO THE NEXT TWO BITS
 
-For the expectation,
-\[ \mathbb EX = -1\times0.1 + 0\times0.3 + 0.5\times0.3+1\times0.2+2\times0.1 = 0.45. \]
+**(a)** The CDF is
 
-For the variance, we start with
-\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.3 + 0.5^2\times0.3+1^2\times0.2+2^2\times0.1 = 0.775 . \]
-Then, using the computational formula,
-\[ \Var(X) = \mathbb EX^2 - \mu^2 = 0.775 - 0.45^2 = 0.5725. \]
+| $x \in {}$ | $(-\infty, -1)$ | $[-1, 0)$ | $[0, 0.5)$ | $[0.5, 2)$ | $[2, \infty)$ |
+|:--:|:--:|:--:|:--:|:--:|:--:|
+| $F(x)$ | $0$ | $0.1$ | $0.5$ | $0.7$ | $1$ |
+
+**(b)** The expectation is
+\[ \mathbb EX = -1\times0.1 + 0\times0.4 + 0.5\times0.2+2\times0.3= 0.6. \]
+
+**(c)** With the computational formula for the variance, we first have
+\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.4 + 0.5^2\times0.2+2^2\times0.3 = 1.35 , \]
+and so
+\[ \Var(X) = \mathbb EX^2 - \mu^2 = 1.35 - 0.6^2 = 0.99. \]
+
+Alternatively, using the definitional formula,
+\[ \Var(X) = (-1-0.6)^2 \times 0.1 + (0 - 0.6)^2\times 0.4 + (0.5-0.6)^2\times 0.2 + (2-0.6)^2 \times0.3 = 0.99.\]
 :::
 ::::
 

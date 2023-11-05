@@ -30,7 +30,7 @@
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="L10-expectation.html"/>
-<link rel="next" href="R.html"/>
+<link rel="next" href="L11-binomial-poisson.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -255,6 +255,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
+<ul>
+<li class="chapter" data-level="" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
+<ul>
+<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -413,7 +421,7 @@ Here, the <span class="math inline">\(12 \times 4\)</span> counted “a non-Ace 
 <p><em>Solution.</em>
 By checking the 36 possibilities, one sees that
 <span class="math display">\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]</span></p>
-<p>Alternatively, note that the total being even is certain if both dice rolls are certain, so
+<p>Alternatively, note that the total being even is certain if both dice rolls are even, so
 <span class="math display">\[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]</span>
 to get the same result.</p>
 <p><strong>Group feedback:</strong> This shows that just because events are “pairwise independent”, it does not mean they are “mutually independent”.</p>
@@ -453,14 +461,46 @@ The question tells us that <span class="math inline">\(\mathbb P(A) = 0.6\)</spa
 </table>
 <p>Find <strong>(a)</strong> the CDF <span class="math inline">\(F_X\)</span>, <strong>(b)</strong> the expectation <span class="math inline">\(\mathbb EX\)</span>, and <strong>(c)</strong> the variance <span class="math inline">\(\operatorname{Var}(X)\)</span> of <span class="math inline">\(X\)</span>.</p>
 <div class="myanswers">
-<p><em>Solution.</em>
-CDF HERE THEN REDO THE NEXT TWO BITS</p>
-<p>For the expectation,
-<span class="math display">\[ \mathbb EX = -1\times0.1 + 0\times0.3 + 0.5\times0.3+1\times0.2+2\times0.1 = 0.45. \]</span></p>
-<p>For the variance, we start with
-<span class="math display">\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.3 + 0.5^2\times0.3+1^2\times0.2+2^2\times0.1 = 0.775 . \]</span>
-Then, using the computational formula,
-<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = 0.775 - 0.45^2 = 0.5725. \]</span></p>
+<p><em>Solution.</em></p>
+<p><strong>(a)</strong> The CDF is</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x \in {}\)</span></th>
+<th align="center"><span class="math inline">\((-\infty, -1)\)</span></th>
+<th align="center"><span class="math inline">\([-1, 0)\)</span></th>
+<th align="center"><span class="math inline">\([0, 0.5)\)</span></th>
+<th align="center"><span class="math inline">\([0.5, 2)\)</span></th>
+<th align="center"><span class="math inline">\([2, \infty)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F(x)\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+<td align="center"><span class="math inline">\(0.7\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>(b)</strong> The expectation is
+<span class="math display">\[ \mathbb EX = -1\times0.1 + 0\times0.4 + 0.5\times0.2+2\times0.3= 0.6. \]</span></p>
+<p><strong>(c)</strong> With the computational formula for the variance, we first have
+<span class="math display">\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.4 + 0.5^2\times0.2+2^2\times0.3 = 1.35 , \]</span>
+and so
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = 1.35 - 0.6^2 = 0.99. \]</span></p>
+<p>Alternatively, using the definitional formula,
+<span class="math display">\[ \operatorname{Var}(X) = (-1-0.6)^2 \times 0.1 + (0 - 0.6)^2\times 0.4 + (0.5-0.6)^2\times 0.2 + (2-0.6)^2 \times0.3 = 0.99.\]</span></p>
 </div>
 </div>
 <div class="myq">
@@ -679,7 +719,7 @@ where, in the fourth line we used Axiom 3 for the probability measure $\mathbb P
 <p><strong>(b)</strong> Suppose that 40% of soldiers respond “Yes”. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.</p>
 <div class="myanswers">
 <p><em>Solution.</em>
-Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span> and make up a partition. Let <span class="math inline">\(Y\)</span> be the event that the soldier answers yes. We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span> and <span class="math inline">\(\mathbb P(Y \mid C_3) = \delta\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
+Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span> and make up a partition. Let <span class="math inline">\(Y\)</span> be the event that the soldier answers yes. We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span> and <span class="math inline">\(\mathbb P(Y \mid C_3) = \mathbb P(D)\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
 <p>The law of total probability tells us that
 <span class="math display">\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) +
 \mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]</span>
@@ -857,7 +897,7 @@ First recall that <span class="math inline">\(\mathbb E(X + b) = \mathbb EX + b 
 </div>
 <div id="P3-short-sols" class="section level2 unnumbered hasAnchor">
 <h2>Solutions to short questions<a href="P3.html#P3-short-sols" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>A1.</strong> (c) and (e) are independent.<br />
+<p><strong>A1.</strong> (c) and (e) are independent<br />
 <strong>A2.</strong> (a) Yes (b) Yes (c) No<br />
 <strong>A3.</strong> 0.8<br />
 <strong>A4.</strong> (a) — (b) 0.6 (c) 0.99<br />
@@ -866,16 +906,13 @@ First recall that <span class="math inline">\(\mathbb E(X + b) = \mathbb EX + b 
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>
         </div>
       </div>
 <a href="L10-expectation.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L11-binomial-poisson.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

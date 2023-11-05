@@ -58,7 +58,7 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P3-short-sols .unnumbered}
 
-**A1.** (c) and (e) are independent.  
+**A1.** (c) and (e) are independent  
 **A2.**  (a) Yes (b) Yes (c) No  
 **A3.** 0.8  
 **A4.** (a) --- (b) 0.6 (c) 0.99  

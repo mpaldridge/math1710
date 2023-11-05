@@ -28,7 +28,7 @@ header-includes:
 ```{r, child = "../questions/P3-long.Rmd"}
 ```
 
-\clearpage
+
 
 ## C: Assessed questions {#P3-assessed .unnumbered}
 
