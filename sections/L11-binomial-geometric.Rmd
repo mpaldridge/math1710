@@ -4,7 +4,7 @@
 The [**mid-semester check-in survey**](https://forms.office.com/e/8ETiji58Zi) is now open.
 :::
 
-<!--
+
 Last week, we developed the idea of random variables, and in particular discrete random variables. We saw that the benefit of random variables is that we can just worry about their distribution, which often allows us to move the sample space $\Omega$ and other more technical matters into the background. (Here, we informally use the word "distribution" to refer to the probability mass function of a random variable -- or, later, the continuous equivalent, the probability density function).
 
 There are some distributions -- or, rather, some families of distributions -- that are so useful that we often want to use them for modelling real-world quantities. This week, we will look at a number of useful discrete distributions.
@@ -171,7 +171,7 @@ So
 
 
 
--->
+
 
 ## Summary  {#summary-L11 .unnumbered}
 

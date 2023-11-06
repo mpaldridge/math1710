@@ -4157,6 +4157,34 @@ Using the definitional formula, we have
 
 The \href{https://forms.office.com/e/8ETiji58Zi}{\textbf{mid-semester check-in survey}} is now open.
 
+Last week, we developed the idea of random variables, and in particular discrete random variables. We saw that the benefit of random variables is that we can just worry about their distribution, which often allows us to move the sample space \(\Omega\) and other more technical matters into the background. (Here, we informally use the word ``distribution'' to refer to the probability mass function of a random variable -- or, later, the continuous equivalent, the probability density function).
+
+There are some distributions -- or, rather, some families of distributions -- that are so useful that we often want to use them for modelling real-world quantities. This week, we will look at a number of useful discrete distributions.
+
+\hypertarget{binomial}{%
+\section{Binomial distribution}\label{binomial}}
+
+One family of distributions we have already seen is the Bernoulli trial \(\text{Bern}(p)\), which is 1 with probability \(p\) and 0 with probability \(1-p\). We saw that this could model whether or a biased coin lands Heads, or more generally whether an experiment is successful.
+
+\begin{example}
+\emph{Suppose we toss 10 independent biased coins, each of which lands Heads with probability 0.7 and Tails with probability 0.3. What is the probability we get exactly 8 Heads altogether?}
+
+The probability that any specific 8 coins land Heads and the other 2 land Tails is \(0.7^8\times 0.3^2\). However, there are \(\binom{10}{8}\) choices for which 8 coins are the ones that land Heads. Hence, the probability is
+\[ \mathbb P(\text{8 Heads}) = \binom{10}{8} \times 0.7^8 \times 0.3^2 = 0.23.\]
+\end{example}
+
+This is a special case of the binomial distribution.
+
+\begin{definition}
+Let \(X\) be a discrete random variable with range \(\{0,1,2,\dots,n\}\) and PMF
+\[ p(x) = \binom{n}{x} p^x (1-p)^{n-x} . \]
+Then we say that \(X\) follows the \textbf{binomial distribution} with parameters \(n\) and \(k\), and write \(X \sim \text{Bin}(n,p)\).
+\end{definition}
+
+So a binomial random variable represents the number of successes in \(n\) Bernoulli trials. In our previous example, the number of Heads from the coin tosses was \(\text{Bin}(10, 0.7)\).
+
+\includegraphics{math1710_files/figure-latex/binom-pic-1.pdf}
+
 \begin{example}
 \emph{Let \(X \sim \mathrm{Bin}(8, 0.2)\). What is (a) \(\mathbb P(X = 3)\)? (b) \(\mathbb P(X \geq 2)\)?}
 
@@ -4286,8 +4314,6 @@ So
 \end{proof}
 
 \emph{Note:} Here, we defined a geometric random variable as being the number of trials up to \emph{and including} the first success, which is a number in \(\{1, 2, \dots\}\). However, some authors define it as the number of failures \emph{before} the first success, which is a number in \(\{0, 1, 2,\dots\}\). If \(X\) is our definition and \(Y\) is the second ``number of failures'' definition, then \(X\) and \(Y+1\) have the same distribution. Annoyingly, R uses the ``number of failures before success'' definition, as we will discuss in a later R worksheet.
-
---\textgreater{}
 
 \hypertarget{summary-L11}{%
 \section*{Summary}\label{summary-L11}}
