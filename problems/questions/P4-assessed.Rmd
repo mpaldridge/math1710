@@ -1,7 +1,3 @@
-::: {.mysummary}
-*Because marking time will be reduced due to the [UCU strike](https://www.leedsucu.org.uk/information-for-students-2/) on Wednesday 30 November, Questions C1(d) and C2(c) are no longer required to be submitted. You may choose to complete for your own practice.*
-:::
-
 ::::: {.myq}
 **C1.** A collector wants to collect football stickers to fill an album. There are $n$ unique stickers to collect. Each time the collector buys a sticker, it is one of the $n$ stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having "swaps", where he has received the same sticker more than once, so he will likely need to buy more than $n$ stickers in total to fill his album. But how many?
 
