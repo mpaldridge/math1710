@@ -5,7 +5,7 @@
 **(a)** Suppose the collector has already got $j$ unique stickers (and some number of swaps), for $j = 0, 1, 2, \dots, n-1$. Let $X_j$ be the the number of extra stickers he buys until getting a new unique sticker. Explain why $X_j$ is geometrically distributed, and state the parameter $p = p_j$ of the geometric distribution.
 
 ::: {.myanswers data-latex=""}
-*Hint.* To get a new sticker you need to "succeed" in an experiment, where "failure" is "receiving a sticker you already have a copy of" and "success" is "receiving a new sticker you haven't already got". What is the probabiltiy of success?
+*Hint.* To get a new sticker you need to "succeed" in an experiment, where "failure" is "receiving a sticker you already have a copy of" and "success" is "receiving a new sticker you haven't already got". What is the probability of success?
 :::
 ::::
 
@@ -52,10 +52,10 @@
 :::
 ::::
 
-~~Now let $X, Y, Z$ be *independent* random variables with common variance $\sigma^2$.~~
+Now let $X, Y, Z$ be *independent* random variables with common variance $\sigma^2$.
 
 :::: {.subq}
-~~**(c)** Find the value of $\Corr(2X - 3Y + 4, 2Y - Z - 1)$. You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.~~
+**(c)** Find the value of $\Corr(2X - 3Y + 4, 2Y - Z - 1)$. You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.
 
 ::: {.myanswers data-latex=""}
 *Hint.* Start by calculating the covariance. Try to sort out the $2X - 3Y + 4$ part first, using the rules above. Once that's done you can then deal with the $2Y - Z -1$ part with the same rules, because $\Cov(U, V) = \Cov(V,U)$, so anything you can do to the first term you can also do to the second.
