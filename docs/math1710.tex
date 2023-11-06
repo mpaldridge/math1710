@@ -97,6 +97,7 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
+\usepackage[normalem]{ulem}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -1173,7 +1174,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-21-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-24-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -4576,6 +4577,494 @@ Variance
   \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Section 2.2.
 \end{itemize}
 
+\hypertarget{P4}{%
+\chapter*{Problem Sheet 4}\label{P4}}
+\addcontentsline{toc}{chapter}{Problem Sheet 4}
+
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+
+\commfalse
+
+This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for \sout{your} \textbf{the online} tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on} \sout{Monday 28} \textbf{Tuesday 29 November}.
+
+\hypertarget{P4-short}{%
+\section*{A: Short questions}\label{P4-short}}
+\addcontentsline{toc}{section}{A: Short questions}
+
+\textbf{A1.} Let \(X \sim \text{Bin}(20, 0.4)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 8)\)
+
+\begin{myanswers}
+\emph{Solution.}
+\[ \mathbb P(X = 8) = \binom{20}{8} 0.4^8 \times 0.6^{12} = 0.180 . \]
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(8 \leq X \leq 11)\)
+
+\begin{myanswers}
+\emph{Solution.}
+\begin{align*}
+\mathbb P(8 \leq X \leq 11) &= \mathbb P(X = 8) + \mathbb P(X = 9) + \mathbb P(X = 10) + \mathbb P(X = 11) \\ 
+&= \binom{20}{8} 0.4^8 \times 0.6^{12} + \binom{20}{9} 0.4^9 \times 0.6^{11} + \binom{20}{10} 0.4^10 \times 0.6^{10} + \binom{20}{11} 0.4^8 \times 0.6^{11} \\
+&= 0.180 + 0.160 + 0.117 + 0.071 \\
+&= 0.528 .
+\end{align*}
+
+\end{myanswers}
+
+\textbf{(c)} \(\mathbb EX\)
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb EX = 20 \times 0.4 = 8\).
+
+\end{myanswers}
+
+\textbf{A2.} Let \(X \sim \text{Geom}(0.2)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 2)\)
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb P(X = 2) = 0.8^1 \times 0.2^1 = 0.16\).
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(X \geq 3)\)
+
+\begin{myanswers}
+\emph{Solution.} \(\mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.2 - 0.8\times 0.2 = 0.64\).
+
+\end{myanswers}
+
+\textbf{(c)} \(\operatorname{Var}(X)\)
+
+\begin{myanswers}
+\emph{Solution.} \({\displaystyle \operatorname{Var}(X) = \frac{1 - 0.2}{0.2^2} = 20}\).
+
+\end{myanswers}
+
+\textbf{A3.} Let \(X \sim \text{Po}(2.5)\). Calculate
+
+\textbf{(a)} \(\mathbb P(X = 3)\)
+
+\begin{myanswers}
+\emph{Solution.}
+\(\mathbb P(X = 3) = \mathrm e^{-2.5} \displaystyle\frac{2.5^3}{3!} = 0.214\).
+
+\end{myanswers}
+
+\textbf{(b)} \(\mathbb P(X \geq \mathbb EX)\)
+
+\begin{myanswers}
+\emph{Solution.} First, \(\mathbb EX = 2.5\). So
+\begin{align*}
+\mathbb P(X \geq \mathbb EX) &= \mathbb P(X \geq 2.5) \\
+  &= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) - \mathbb P(X = 2) \\
+  &= 1 - \mathrm e^{-2.5} - 2.5 \mathrm e^{-2.5} - \frac{2.5^2}{2} \mathrm e^{-2.5} \\
+  &= 1 - 0.082 - 0.204 - 0.257 \\
+  &= 0.456.
+\end{align*}
+
+\end{myanswers}
+
+\textbf{A4.} Consider the following joint PMF:
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(p_{X,Y}(x,y)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\phantom{p_X(x)}\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(x=0\) & \(2k\) & \(2k\) & \(k\) & \(0\) & \\
+\(x=1\) & \(k\) & \(3k\) & \(k\) & \(k\) & \\
+\(x=2\) & \(0\) & \(k\) & \(k\) & \(2k\) & \\
+\(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule()
+\end{longtable}
+
+\textbf{(a)} Find the value of \(k\) that makes this a joint PMF.
+
+\begin{myanswers}
+\emph{Solution.}
+The total of the joint PMF is
+\[ 2k + 2k + k + k + 3k + k + k + k + k + 2k = 15k \]
+which must be 1, so \(k = \frac{1}{15}\).
+
+\end{myanswers}
+
+\textbf{(b)} Find the marginal PMFs of \(X\) and \(Y\).
+
+\begin{myanswers}
+
+\emph{Solution.}
+By summing across the rows and down the columns, respectively, we get this:
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(p_{X,Y}(x,y)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(p_X(x)\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(x=0\) & \(\frac{2}{15}\) & \(\frac{2}{15}\) & \(\frac{1}{15}\) & \(0\) & \(\frac{5}{15}\) \\
+\(x=1\) & \(\frac{1}{15}\) & \(\frac{3}{15}\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{6}{15}\) \\
+\(x=2\) & \(0\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{2}{15}\) & \(\frac{4}{15}\) \\
+\(p_Y(y)\) & \(\frac{3}{15}\) & \(\frac{6}{15}\) & \(\frac{3}{15}\) & \(\frac{3}{15}\) & \\
+\bottomrule()
+\end{longtable}
+
+\end{myanswers}
+
+\textbf{(c)} What is the conditional distribution of \(Y\) given \(X = 1\)?
+
+\begin{myanswers}
+\emph{Solution.} We get this by taking the \(x = 1\) row of the table, than normalising it by dividing through by \(p_X(1) = \frac{6}{15}\). This gives
+\[ p_{Y\mid X} (0 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (1 \mid 1) = \frac{3}{6} \qquad p_{Y\mid X} (2 \mid 1) = \frac{1}{6} \qquad p_{Y\mid X} (3 \mid 1) = \frac{1}{6} . \]
+
+\end{myanswers}
+
+\textbf{(d)} Are \(X\) and \(Y\) independent?
+
+\begin{myanswers}
+\emph{Solution.} No.~For one example, \(p_{X,Y}(0,0) = \frac{2}{15}\), while \(p_X(0) \, p_Y(0) = \frac{5}{15} \times \frac{3}{15} = \frac{1}{15}\), so they are not equal.
+
+\end{myanswers}
+
+\hypertarget{P4-long}{%
+\section*{B: Long questions}\label{P4-long}}
+\addcontentsline{toc}{section}{B: Long questions}
+
+\textbf{B1.} Calculate the CDF \(F(x) = \mathbb P(X \leq x)\) of the geometric distribution\ldots{}
+
+\textbf{(a)} \ldots by summing the PMF;
+
+\begin{myanswers}
+\emph{Solution.}
+We have,using the standard formula for the sum of a finite geometric progression,
+\begin{align*}
+F(x) &= \sum_{y = 1}^x p(y) \\
+&= \sum_{y = 1}^x (1-p)^{y-1} p \\
+&= \frac{p\big(1 - (1-p)^x\big)}{1 - (1-p)} \\
+&= \frac{p\big(1 - (1-p)^x\big)}{p} \\
+&= 1 - (1 - p)^x .
+\end{align*}
+
+\end{myanswers}
+
+\textbf{(b)} \ldots by explaining how the ``number of trials until success'' definition tells us what \(1 - F(x) = \mathbb P(X > x)\) must be.
+
+\begin{myanswers}
+\emph{Solution.}
+Note that \(1 - F(x) = \mathbb P(X > x)\) is precisely the probability that the first \(x\) trials are failures, and hence that the first success comes strictly after the \(x\)th trial. The probability that the first \(x\) trials are failures is \((1-p)^x\). So \(F(x) = 1 - (1-p)^x\).
+
+\end{myanswers}
+
+\textbf{(c)} A gambler rolls a pair of dice until he gets a double-six. What is the probability that this takes between 20 and 40 double-rolls?
+
+\begin{myanswers}
+\emph{Solution.}
+Let \(X \sim \text{Geom}(\frac{1}{36})\). Then
+\begin{align*}
+\mathbb P(20 \leq X \leq 40) &= \mathbb P(X \leq 40) - \mathbb P(X \leq 19) \\
+  &= F(40) - F(19) \\
+  &= \bigg(1 - \big(1 - \tfrac{1}{36})^{40}\bigg) - \bigg(1 - \big(1 - \tfrac{1}{36})^{19}\bigg) \\
+  &= 0.676 - 0.414 \\
+  &= 0.261.
+\end{align*}
+
+\end{myanswers}
+
+\textbf{B2.} Let \(X \sim \text{Geom}(p)\). Recall that \(X\) represents the number of trials up to and including the first success. Recall also that \(\mathbb EX = 1/p\) and \(\operatorname{Var}(X) = (1-p)/p^2\).
+
+Let \(Y\) be a geometric distribution with parameter \(p\) according to the alternative ``number of failures \emph{before} the first success'' definition.
+
+\textbf{(a)} Write down the PMF for \(Y\).
+
+\begin{myanswers}
+\emph{Solution.} Having \(Y = y\) requires \(y\) consecutive failures immediately followed by a success. So \(p_Y(y) = (1-p)^y p\).
+
+\end{myanswers}
+
+\textbf{(b)} Explain why the expectation of \(Y\) of
+\[ \mathbb EY = \frac{1}{p} - 1 = \frac{1-p}{p} . \]
+
+\begin{myanswers}
+\emph{Solution.} If \(X \sim \text{Geom}(p)\) under the standard definition, then (as we saw in the notes) \(Y\) has the same distribution as \(X -1\). Therefore,
+\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} . \]
+
+\end{myanswers}
+
+\textbf{(c)} What is the variance of \(Y\)?
+
+\begin{myanswers}
+\emph{Solution.}
+\[ \operatorname{Var}(Y) = \operatorname{Var}(X -1) = \operatorname{Var}(X) = \frac{1-p}{p^2} .  \]
+
+\end{myanswers}
+
+\textbf{B3} Let \(X \sim \text{Po}(\lambda)\).
+
+\textbf{(a)} Show that \(\mathbb EX(X-1) = \lambda^2\). You may use the Taylor series for the exponential,
+\[ \mathrm{e}^\lambda = \sum_{y=0}^\infty \frac{\lambda^y}{y!} . \]
+
+\begin{myanswers}
+\emph{Solution.}
+We follow exactly the method used to calculate \(\mathbb EX\) in the notes. We have
+\begin{align*}
+\mathbb EX(X-1) &= \sum_{x=0}^\infty x(x-1)\, \mathrm e^{-\lambda} \frac{\lambda^x}{x!} \\
+  &= \lambda^2 \mathrm e^{-\lambda} \sum_{x=2}^\infty \frac{\lambda^{x-2}}{(x - 2)!} \\
+  &= \lambda^2 \mathrm e^{-\lambda}\sum_{y=0}^\infty  \frac{\lambda^y}{y!} \\
+  &= \lambda^2 \mathrm e^{-\lambda} \, \mathrm e^{\lambda} \\
+  &= \lambda^2  .
+\end{align*}
+In the second line, we took a \(\lambda^2\) and a \(\mathrm e^{-\lambda}\) outside the brackets; cancelled the \(x\) and \(x-1\) out of the \(x!\); and removed the \(x = 0\) and \(x = 1\) terms from the sum, since they were 0 anyway. In the third line, we re-indexed the sum by setting \(y = x - 2\). In the fourth line, we used the Taylor series for the exponential
+
+\end{myanswers}
+
+\textbf{(b)} Hence show that \(\operatorname{Var}(X) = \lambda\). You may use the fact that \(\mathbb EX = \lambda\).
+
+\begin{myanswers}
+\emph{Solution.}
+We know from part (a) that
+\[ \mathbb EX(X-1) = \mathbb E(X^2 - X) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \lambda = \lambda^2 ,\]
+which gives \(\mathbb EX^2 = \lambda^2 + \lambda\). We can then use the computational formula for the variance to get
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \lambda^2 = \lambda^2 + \lambda - \lambda^2 = \lambda .\]
+
+\end{myanswers}
+
+\textbf{B4.} Each week in the UK about 15 million Lotto tickets are sold. As we saw in \protect\hyperlink{combinations}{Lecture 6}, the probability of each ticket winning is about 1 in 45 million. Estimate the proportion of weeks when there is \textbf{(a)} a roll-over (no jackpot winners), \textbf{(b)} a unique jackpot winner, or \textbf{(c)} when multiple winners share the jackpot. State any modelling assumptions you make and the approximation that you use.
+
+\begin{myanswers}
+\emph{Solution.}
+We assume that each ticket is uniformly randomly chosen from all possible tickets, independent of all other tickets. Then the number of winners is \(X \sim \text{Bin}(15 \text{ million}, 1/(45 \text{ million}))\).
+It will be convenient to use a Poisson approximation with rate
+\[ \lambda = 15 \text{ million} \times \frac{1}{45 \text{ million}} = \tfrac13 .  \]
+
+The probability there is a roll-over is
+\[ \mathbb P(X = 0) \approx \mathrm e^{-1/3} = 0.72 . \]
+The probability there is a unique jackpot winner is
+\[ \mathbb P(X = 1) \approx \tfrac13 \mathrm e^{-1/3} = 0.24 . \]
+The probability there are multiple winners is
+\[ \mathbb P(X \geq 2) = 1 - \mathbb P(X = 0) - \mathbb P(X = 1) = 0.04  . \]
+
+\end{myanswers}
+
+\textbf{B5.} Let \(X\) and \(Y\) be Bernoulli\((\frac12)\) random variables.
+
+\textbf{(a)} Write down the table for the joint PMF of \(X\) and \(Y\) if \(X\) and \(Y\) are independent.
+
+\begin{myanswers}
+
+\emph{Solution.}
+For all these questions, we need to fill in a table for the joint PMF, where the columns sum to \(p_X(0) = p_X(1) = \frac12\) and the rows sum to \(p_Y(0) = p_Y(1) = \frac12\).
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
+\midrule()
+\endhead
+\(y = 0\) & & & \(\frac12\) \\
+\(y = 1\) & & & \(\frac12\) \\
+\(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
+\end{longtable}
+
+If \(X\) and \(Y\) are independent, we have \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y)\); so, for example, \(p_{X,Y}(0,0) = p_X(0)\,p_Y(0) = \frac12 \times \frac12 = \frac14\). In fact, all the entries in the joint PMF table are \(\frac14\).
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
+\midrule()
+\endhead
+\(y = 0\) & \(\frac14\) & \(\frac14\) & \(\frac12\) \\
+\(y = 1\) & \(\frac14\) & \(\frac14\) & \(\frac12\) \\
+\(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
+\end{longtable}
+
+\end{myanswers}
+
+\textbf{(b)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a positive correlation.
+
+\begin{myanswers}
+\emph{Solution.}
+We still need the rows and columns to add up to \(\frac12\), but we want low values of \(X\) (that is, 0) to be more likely to occur alongside low values of \(Y\) (that is, 0), and high values of \(X\) (that is, 1) alongside high values of \(Y\) (that is, 1). One was to do this is
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
+\midrule()
+\endhead
+\(y = 0\) & \(\frac12\) & \(0\) & \(\frac12\) \\
+\(y = 1\) & \(0\) & \(\frac12\) & \(\frac12\) \\
+\(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
+\end{longtable}
+
+A single table like that is a perfectly sufficient answer. But, in fact, any table of the form
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
+\midrule()
+\endhead
+\(y = 0\) & \(a\) & \(\frac12 - a\) & \(\frac12\) \\
+\(y = 1\) & \(\frac12 - a\) & \(a\) & \(\frac12\) \\
+\(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
+\end{longtable}
+
+for \(\frac14 < a \leq \frac12\) will do. This has
+\[ \mathbb EXY = \sum_{x,y} xy\, p_{X,Y}(x,y) = p_{X,Y}(1, 1) = a , \]
+as \(x = y = 1\) is the only nonzero term in the sum. This means the covariance is, by the computational formula,
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = a - \tfrac12 \times \tfrac12 = a - \tfrac14 . \]
+So the covariance is positive for \(a > \frac14\), so the correlation is too.
+
+\end{myanswers}
+
+\textbf{(c)} Write down a table for a joint PMF of \(X\) and \(Y\) that is consistent with their marginal distributions but that leads to \(X\) and \(Y\) having a negative correlation.
+
+\begin{myanswers}
+\emph{Solution.} For example
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
+\midrule()
+\endhead
+\(y = 0\) & \(0\) & \(\frac12\) & \(\frac12\) \\
+\(y = 1\) & \(\frac12\) & \(0\) & \(\frac12\) \\
+\(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
+\end{longtable}
+
+Alternatively, any table of the form
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
+\midrule()
+\endhead
+\(y = 0\) & \(a\) & \(\frac12 - a\) & \(\frac12\) \\
+\(y = 1\) & \(\frac12 - a\) & \(a\) & \(\frac12\) \\
+\(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
+\end{longtable}
+
+for \(0 \leq a < \frac14\) will have negative covariance \(a - \frac14\), so negative correlation.
+
+\end{myanswers}
+
+\hypertarget{P4-assessed}{%
+\section*{C: Assessed questions}\label{P4-assessed}}
+\addcontentsline{toc}{section}{C: Assessed questions}
+
+The last two questions are \textbf{assessed questions}. These two questions count for 3\% of your final mark for this module.
+
+The deadline for submitting your solutions is \textbf{2pm on Monday 27 November} at the beginning of Week 9. Submission will be via Gradescope.
+Your work will be marked by your tutor and returned on Monday 4 December, when solutions will also be made available.
+
+Both questions are ``long questions'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
+
+You should not collaborate with others on the assessed questions: your answers must represent solely your own work. The University's rules on \href{https://library.leeds.ac.uk/info/1401/academic_skills/46/academic_integrity_and_plagiarism}{academic integrity} -- and the related punishments for violating them -- apply to your work on the assessed questions.
+
+\emph{Because marking time will be reduced due to the \href{https://www.leedsucu.org.uk/information-for-students-2/}{UCU strike} on Wednesday 30 November, Questions C1(d) and C2(c) are no longer required to be submitted. You may choose to complete for your own practice.}
+
+\textbf{C1.} A collector wants to collect football stickers to fill an album. There are \(n\) unique stickers to collect. Each time the collector buys a sticker, it is one of the \(n\) stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having ``swaps'', where he has received the same sticker more than once, so he will likely need to buy more than \(n\) stickers in total to fill his album. But how many?
+
+\textbf{(a)} Suppose the collector has already got \(j\) unique stickers (and some number of swaps), for \(j = 0, 1, 2, \dots, n-1\). Let \(X_j\) be the the number of extra stickers he buys until getting a new unique sticker. Explain why \(X_j\) is geometrically distributed, and state the parameter \(p = p_j\) of the geometric distribution.
+
+\begin{myanswers}
+\emph{Hint.} To get a new sticker you need to ``succeed'' in an experiment, where ``failure'' is ``receiving a sticker you already have a copy of'' and ``success'' is ``receiving a new sticker you haven't already got''. What is the probabiltiy of success?
+
+\end{myanswers}
+
+\textbf{(b)} Hence, show that the expected number of stickers the collector must buy to fill his album is
+\[ n \sum_{k=1}^n \frac{1}{k} . \]
+
+\begin{myanswers}
+\emph{Hint.} Recall the expectation of the geometric distribution, and use linearity of expectation.
+
+\end{myanswers}
+
+\textbf{(c)} The World Cup 2020 sticker album required \(n = 670\) unique stickers to complete it, and stickers cost 18p each. Using the expression from (b), calculate the expected amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.
+
+\begin{myanswers}
+\emph{Hint.} In R, \texttt{sum(1\ /\ (1:678))} sum the reciprocals of the integers from 1 to 678.
+
+\end{myanswers}
+
+\textbf{(d)} By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately \(n \log n\), where \(\log\) denotes the natural logarithm to base \(\mathrm e\).
+
+\begin{myanswers}
+\emph{Hint.} A detailed proof is not required -- just informally explain why the sum is approximately the area under the function (ie the integral).
+
+\end{myanswers}
+
+\textbf{C2.} Let \(X\) and \(Y\) be random variables, and let \(a\) and \(b\) be constants.
+
+\textbf{(a)} Starting from the definition of covariance, show that \(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\). You may find it helpful to remember that if \(\mathbb EX = \mu_X\), then \(\mathbb EaX = a\mu_X\).
+
+\textbf{(b)} Show that \(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X, Y)\).
+
+\begin{myanswers}
+\emph{Hint.} You may find it helpful to look back at Theorem 7.4 in the notes.
+
+\end{myanswers}
+
+\sout{Now let \(X, Y, Z\) be \emph{independent} random variables with common variance \(\sigma^2\).}
+
+\sout{\textbf{(c)} Find the value of \(\operatorname{Corr}(2X - 3Y + 4, 2Y - Z - 1)\). You may use any facts about covariance from the notes, including those from parts (a) and (b) of this question, provided you state them clearly.}
+
+\begin{myanswers}
+\emph{Hint.} Start by calculating the covariance. Try to sort out the \(2X - 3Y + 4\) part first, using the rules above. Once that's done you can then deal with the \(2Y - Z -1\) part with the same rules, because \(\operatorname{Cov}(U, V) = \operatorname{Cov}(V,U)\), so anything you can do to the first term you can also do to the second.
+
+\end{myanswers}
+
+\hypertarget{P4-short-sols}{%
+\section*{Solutions to short questions}\label{P4-short-sols}}
+\addcontentsline{toc}{section}{Solutions to short questions}
+
+\textbf{A1.} (a) 0.180 (b) 0.528 (c) 8\\
+\textbf{A2.} (a) 0.16 (b) 0.64 (c) 20\\
+\textbf{A3.} (a) 0.214 (b) 0.456\\
+\textbf{A4.} (a) \(\frac{1}{15}\) (d) No
+
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
 \addcontentsline{toc}{part}{Other stuff}
@@ -4606,8 +5095,8 @@ Deadline for assessed work
 2 & \href{R1.html}{\textbf{1: R basics}} & \href{R1-solutions.html}{Solutions} & --- \\
 3 & \href{R2.html}{\textbf{2: Vectors}} & \href{R2-solutions.html}{Solutions} & Monday 23 October \\
 4 & \href{R3.html}{\textbf{3: Data in R}} & \href{R3-solutions.html}{Solutions} & --- \\
-5 & \href{R4.html}{\textbf{Plots I:} Making plots} & & Monday 6 November \\
-2 & \href{R5.html}{\textbf{Plots II:} Making plots better} & & --- \\
+5 & \href{R4.html}{\textbf{4: Plots I} -- Making plots} & & Monday 6 November \\
+6 & \href{R5.html}{\textbf{5: Plots II} -- Making plots better} & & --- \\
 \bottomrule()
 \end{longtable}
 
@@ -4869,7 +5358,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-22-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-25-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:

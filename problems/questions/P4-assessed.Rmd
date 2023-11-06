@@ -6,7 +6,7 @@
 **C1.** A collector wants to collect football stickers to fill an album. There are $n$ unique stickers to collect. Each time the collector buys a sticker, it is one of the $n$ stickers chosen independently uniformly at random. Unfortunately, it is likely the collector will end up having "swaps", where he has received the same sticker more than once, so he will likely need to buy more than $n$ stickers in total to fill his album. But how many?
 
 :::: {.subq}
-**(a)** Suppose the collector has already got $j$ unique stickers (and some number of swaps). Let $X_j$ be the the number of extra stickers he buys until getting a new unique sticker. Explain why $X_j$ is geometrically distributed, and state the parameter $p = p_j$ of the geometric distribution.
+**(a)** Suppose the collector has already got $j$ unique stickers (and some number of swaps), for $j = 0, 1, 2, \dots, n-1$. Let $X_j$ be the the number of extra stickers he buys until getting a new unique sticker. Explain why $X_j$ is geometrically distributed, and state the parameter $p = p_j$ of the geometric distribution.
 
 ::: {.myanswers data-latex=""}
 *Hint.* To get a new sticker you need to "succeed" in an experiment, where "failure" is "receiving a sticker you already have a copy of" and "success" is "receiving a new sticker you haven't already got". What is the probabiltiy of success?
@@ -18,12 +18,12 @@
 \[ n \sum_{k=1}^n \frac{1}{k} . \]
 
 ::: {.myanswers data-latex=""}
-*Hint.* Recall the expectation of the geometric distribution, and use linearity of expectaiton.
+*Hint.* Recall the expectation of the geometric distribution, and use linearity of expectation.
 :::
 ::::
 
 :::: {.subq}
-**(c)** The Euro 2020 sticker album required $n = 678$ unique stickers to complete it, and stickers cost 15p each. Using the expression from (b), calculate the expected amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.
+**(c)** The World Cup 2020 sticker album required $n = 670$ unique stickers to complete it, and stickers cost 18p each. Using the expression from (b), calculate the expected amount of money needed to fill the album. You should do this calculation in R and include the command you used in your answer.
 
 ::: {.myanswers data-latex=""}
 *Hint.* In R, `sum(1 / (1:678))` sum the reciprocals of the integers from 1 to 678.
@@ -31,7 +31,7 @@
 ::::
 
 :::: {.subq}
-~~**(d)** By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately $n \log n$, where $\log$ denotes the natural logarithm to base $\mathrm e$.~~
+**(d)** By approximating the sum in part (b) by an integral, explain why the expected number of stickers required is approximately $n \log n$, where $\log$ denotes the natural logarithm to base $\mathrm e$.
 
 ::: {.myanswers data-latex=""}
 *Hint.* A detailed proof is not required -- just informally explain why the sum is approximately the area under the function (ie the integral).

@@ -1,9 +1,9 @@
 # Problem Sheet 4  {#P4 .unnumbered}
 
-<!--
+
 \newcommand{\Cov}{\operatorname{Cov}}
 \newcommand{\Corr}{\operatorname{Corr}}
--->
+
 
 <style>
 .myanswers { 
@@ -36,8 +36,8 @@ This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should
 ::: {.mysummary}
 The last two questions are **assessed questions**. These two questions count for 3% of your final mark for this module.
 
-The deadline for submitting your solutions is **2pm on** ~~Monday 28~~ **Tuesday 29 November** ~~at the beginning~~ of Week 9. Submission will be via Gradescope.
-Your work will be marked by your tutor and returned on ~~Monday 5~~ Wednesday 7 December, when solutions will also be made available.
+The deadline for submitting your solutions is **2pm on Monday 27 November** at the beginning of Week 9. Submission will be via Gradescope.
+Your work will be marked by your tutor and returned on Monday 4 December, when solutions will also be made available.
 
 Both questions are "long questions", where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations. 
 
@@ -49,6 +49,9 @@ You should not collaborate with others on the assessed questions: your answers m
 
 ## Solutions to short questions {#P4-short-sols .unnumbered}
 
-**A1.** (a) 0.180 (b) 0.528 (c) 8 **A2.** (a) 0.16 (b) 0.64 (c) 20 **A3.** (a) 0.214 (b) 0.456 **A4.** (a) $\frac{1}{15}$ (d) No
+**A1.** (a) 0.180 (b) 0.528 (c) 8  
+**A2.** (a) 0.16 (b) 0.64 (c) 20  
+**A3.** (a) 0.214 (b) 0.456  
+**A4.** (a) $\frac{1}{15}$ (d) No
 
 

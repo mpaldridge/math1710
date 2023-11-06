@@ -44,7 +44,9 @@ Let $X \sim \text{Geom}(\frac{1}{36})$. Then
 :::::
 
 ::::: {.myq}
-**B2.** Let $Y$ be a geometric distribution with parameter $p$ according to the alternative "number of failures *before* the first success" definition.
+**B2.** Let $X \sim \text{Geom}(p)$. Recall that $X$ represents the number of trials up to and including the first success. Recall also that $\mathbb EX = 1/p$ and $\Var(X) = (1-p)/p^2$.
+
+Let $Y$ be a geometric distribution with parameter $p$ according to the alternative "number of failures *before* the first success" definition.
 
 :::: {.subq}
 **(a)** Write down the PMF for $Y$.
@@ -55,12 +57,20 @@ Let $X \sim \text{Geom}(\frac{1}{36})$. Then
 ::::
 
 :::: {.subq}
-**(b)** Calculate the expectation and variance of $Y$. You may use without proof the fact that for a standard "number of trials up to and including the first success" geometric distribution we have $\mathbb EX = 1/p$ and $\Var(X) = (1-p)/p^2$.
+**(b)** Explain why the expectation of $Y$ of
+\[ \mathbb EY = \frac{1}{p} - 1 = \frac{1-p}{p} . \]
 
 ::: {.myanswers data-latex=""}
 *Solution.* If $X \sim \text{Geom}(p)$ under the standard definition, then (as we saw in the notes) $Y$ has the same distribution as $X -1$. Therefore,
-\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} \]
-and
+\[ \mathbb EY = \mathbb E(X-1) = \mathbb EX - 1 = \frac{1}{p} - 1 = \frac{1-p}{p} . \]
+:::
+::::
+
+:::: {.subq}
+**(c)** What is the variance of $Y$?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
 \[ \Var(Y) = \Var(X -1) = \Var(X) = \frac{1-p}{p^2} .  \]
 :::
 ::::
@@ -88,7 +98,7 @@ In the second line, we took a $\lambda^2$ and a $\mathrm e^{-\lambda}$ outside t
 ::::
 
 :::: {.subq}
-**(b)** Hence show that $\Var(X) = \lambda$. You may use the fact, proved in the notes, that $\mathbb EX = \lambda$.
+**(b)** Hence show that $\Var(X) = \lambda$. You may use the fact that $\mathbb EX = \lambda$.
 
 ::: {.myanswers data-latex=""}
 *Solution.* 

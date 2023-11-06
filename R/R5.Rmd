@@ -1,11 +1,11 @@
 ---
 title:  "R Worksheet 5: Plots II: Making plots better"
 author: "MATH1710 Probability and Statistcs I"
-date:   "University of Leeds, 2022--23"
+date:   "University of Leeds, 2023--24"
 output: html_document
 ---
 
-*This R worksheet* does *include assessed questions at the bottom. Only the questions marked "Assessed Question" are assessed, not the other "Exercises". The deadline for submitting your solutions to these questions is **Monday 7 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
+*This R worksheet does* not *include any assessed questions.*
 
 ------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ hist(temperature$dec, freq = FALSE)
 But this picture would be clearer properly labelled and titled.
 
 ```{r}
-hist(temperature$dec, freq = FALSE, xlab = "Average temperature (degrees Celsius)", ylab = "Probability density", main = "Historical December temperatures in the UK")
+hist(temperature$dec, freq = FALSE, xlab = "Average temperature (degrees Celsius)", ylab = "Frequency density", main = "Historical December temperatures in the UK")
 ```
 
 Adding all these extra arguments can make your code difficult to read. Remember that R allows you to use line breaks when it's obvious a command isn't finished -- for example, when a pair of brackets has been opened but not yet closed. You can also add spaces to make your code easier to read. For example, you may find the following formatting of exactly the same command as above more pleasant.
@@ -98,15 +98,15 @@ Some of these arguments include:
 
 * **`sub = ...`** sets a subheading -- remember the text must be in quotation marks.
 * **`col = ...`** to set colours. In `boxplot()` this is the shading of the two central boxes; in `hist()` this is the shading of the histogram bars; in `plot()` this is the colour of the points or lines. The argument `col = ...` takes many standard colour names provided they are in quotation marks: try `col = "blue"` or `col = "red"`, for example.
-* **`lwd = ...`** sets the line width. R's default line width (`lwd = 1`) is sometimes to thin, especially for `plot()` with the `type = "l"` option set. I find `lwd = 2` is sometimes preferable. (In `hist()`, this changes the thickness of the axes, slightly bizarrely.)
+* **`lwd = ...`** sets the line width. R's default line width (`lwd = 1`) is sometimes too thin, especially for `plot()` with the `type = "l"` option set. I find `lwd = 2` is sometimes preferable for scatterplots with lines. (In `hist()`, `lwd` changes the thickness of the axes, slightly bizarrely.)
 * For a scatterplot with `plot()`, we already know that `type = ...` can give us points (`p`), lines (`l`) or both (`b`).
-* For a scatterplot with `plot()`, the argument **``pch = ...``** sets the character used to plot points. The default os `pch = 1`, which is a circle. Try setting `pch` to other numbers to see what happens.
-* For a scatterplot of boxplot, of you want to draw a plot with one or both axes on a logarithmic scale (or "log scale"), try setting `log = ...` to `log = "x"` (for just the x axis), `log = "y"` (for just the y axis), or `log = "xy"` (for both).
+* For a scatterplot with `plot()`, the argument **``pch = ...``** sets the symbol used to plot points. The default is `pch = 1`, which is a circle. Try setting `pch` to other numbers to see what happens.
+* For a scatterplot or boxplot, if you want to draw a plot with one or both axes on a logarithmic scale (or "log scale"), try setting `log = ...` to `log = "x"` (for just the x axis), `log = "y"` (for just the y axis), or `log = "xy"` (for both).
 
 > **Exercise 5.4.** Draw a plot of your choice based on the Met Office temperature data, but use as many extra wacky options as you can. Make sure to title and label your plot, of course.
 
 
-
+<!--
 ---
 
 ## Assessed questions
@@ -144,3 +144,4 @@ https://mpaldridge.github.io/math1710/data/R5-xy.csv
 ---
 
 *Remember to submit your answers into  [this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUM1U2MUYySUJXTzM5V0NIRlZKQzg4VzFQSi4u) before 1400 on Monday 7 November.*
+-->

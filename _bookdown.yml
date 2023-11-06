@@ -18,7 +18,7 @@ rmd_files:
   - sections/L12-poisson.Rmd
 #  - sections/L13-multi-rv.Rmd
 #  - sections/L14-covariance.Rmd
-#  - problems/P4.Rmd
+  - problems/P4.Rmd
 #  - sections/L15-continuous.Rmd
 #  - sections/L17-normal.Rmd
 #  - sections/L16-exponential-multi.Rmd
