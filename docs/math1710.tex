@@ -4152,8 +4152,8 @@ Using the definitional formula, we have
 \textbf{A5.} \(a = 9, b = 0.5\)\\
 \textbf{A6} (a) 66.2~°F (b) 33.7~°F\textsuperscript{2}
 
-\hypertarget{L11-binomial-poisson}{%
-\chapter{Binomial and geometric distributions}\label{L11-binomial-poisson}}
+\hypertarget{L11-binomial-geometric}{%
+\chapter{Binomial and geometric distributions}\label{L11-binomial-geometric}}
 
 The \href{https://forms.office.com/e/8ETiji58Zi}{\textbf{mid-semester check-in survey}} is now open.
 
@@ -4358,18 +4358,35 @@ Variance
 \hypertarget{L12-poisson}{%
 \chapter{Poisson distribution}\label{L12-poisson}}
 
+We have seen three important families of discrete random variables: the Bernoulli, binomial, and geometric distributions. We now look at our fourth and final discrete distribution: the Poisson distribution.
+
+\hypertarget{poisson}{%
+\section{Definition and properties}\label{poisson}}
+
+Another important distribution is the Poisson distribution. The Poisson distribution (roughly ``\emph{pwa}-song'') is typically used to model ``the number of times something happens in a set period of time''. For example, the number of emails you receive in a day; the number of claims at an insurance company each year; or the number of calls to call centre in one hour. (Famously, one of the first historical datasets modelled using a Poisson distribution was ``the number of Prussian soldiers in different cavalry units kicked to death by their own horse between 1875 and 1894''.) We'll explain why the Poisson distribution is a good model for this in the next subsection.
+
+\begin{definition}
+Let \(X\) be a discrete random variable with range \(\{0,1,2,\dots\}\) and PMF
+\[ p_X(x) = \mathrm e^{-\lambda}  \frac{\lambda^x}{x!} . \]
+Then we say that \(X\) follows the \textbf{Poisson distribution} with \textbf{rate} \(\lambda\), and write \(X \sim \text{Po}(\lambda)\).
+\end{definition}
+
+Here, \(\lambda\) is a lower-case Greek letter ``lambda''. I should also note that we interpret \(0! = 1\).
+
+\includegraphics{math1710_files/figure-latex/po-pic-1.pdf}
+
 The Poisson distribution is named after the French mathematician \href{https://mathshistory.st-andrews.ac.uk/Biographies/Poisson/}{Siméon-Denis Poisson} who wrote about it in 1837, although the origin of the idea is more than 100 years earlier with another French mathematician, \href{https://mathshistory.st-andrews.ac.uk/Biographies/De_Moivre/}{Abraham de Moivre}.
 
 \begin{example}
-\emph{I receive emails from students at the rate of \(\lambda = 3\) per hour, modelled as a Poisson distribution. What is the probability I get (a) two email in an hour, (b) no email in an hour?}
+\emph{I receive emails from students at the rate of \(\lambda = 3\) per hour, modelled as a Poisson distribution. What is the probability I get (a) two emails in an hour, (b) no emails in an hour?}
 
 The number of emails per hour is \(X \sim \mathrm{Po}(3)\).
 
 For (a), we have
-\[ \mathbb P(X = 3) = p(3) = \mathrm{e}^{-3} \frac{3^2}{2!} = \frac94 \mathrm{e}^{-3} = 0.224 . \]
+\[ \mathbb P(X = 2) = p(2) = \mathrm{e}^{-3} \frac{3^2}{2!} = \frac92 \mathrm{e}^{-3} = 0.224 . \]
 
 For part (b), and remembering that \(0! = 1\), we have
-\[ \mathbb P(X = 3) = p(0) = \mathrm{e}^{-3} \frac{3^0}{0!} = \mathrm{e}^{-3} = 0.050 . \]
+\[ \mathbb P(X = 0) = p(0) = \mathrm{e}^{-3} \frac{3^0}{0!} = \mathrm{e}^{-3} = 0.050 . \]
 \end{example}
 
 The parameter \(\lambda\) is called the ``rate'' because that indeed the number of emails (or insurance claims, or phone calls, or deaths by horse-kicking) that we expect to see.
@@ -4414,16 +4431,14 @@ In the second line, we took \(\mathrm e^{-\lambda}\) outside the sum, and allowe
 where we used the Taylor series again.
 \end{proof}
 
-At this point in the lecture, we took a break to fill in \href{https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNkoxWUlTSTBXQUVSUThGU0pXOTMwTjA0UC4u}{the \textbf{mid-semester check-in survey}}. This is open for the rest of the week and is anonymous. Written comments in answer to the last question are particular useful -- I will read them all and report back next week on changes I am making to the module in response to your comments.
-
 \hypertarget{poisson-approx}{%
 \section{Poisson approximation to the binomial}\label{poisson-approx}}
 
 Suppose I own a watch shop in Leeds. My watches are very expensive, so I don't need to sell many each day -- in fact, I sell an average of 4.8 watches per day. How should I model the number of watches sold each day as a random variable?
 
-One way could be to say this. There are \(n\) people living in Leeds or nearby, and, on any given day, each of them will independently buy a watch from my shop with some probability \(p\). Thus the total number of watches I sell could be modelled as a binomial distribution \(\text{Bin}(n, p)\).
+One way could be to say this. There are \(n\) people living in Leeds and the surrounding area. On any given day, each of those \(n\) people will independently buy a watch from my shop with some probability \(p\). Thus the total number of watches I sell could be modelled as a binomial distribution \(\text{Bin}(n, p)\).
 
-But what should \(n\) and \(p\) be? To make the average \(\mathbb EX = np = 4.8\), I must take \(p = 4.8/n\). But what about \(n\)? We know \(n\) is a very big number, because Leeds is a big city, so let's take a limit as \(n \to \infty\). It turns out, that this distribution \(\text{Bin}(n, 4.8/n)\) becomes a Poisson(4.8) distribution!
+But what should \(n\) and \(p\) be? To make the average \(\mathbb EX = np = 4.8\), I must take \(p = 4.8/n\). But what about \(n\)? We know \(n\) is a very big number, because Leeds is a big city -- so let's take a limit as \(n \to \infty\). It turns out, that this distribution \(\text{Bin}(n, 4.8/n)\) becomes a Poisson(4.8) distribution!
 
 \begin{theorem}
 \protect\hypertarget{thm:po-bint}{}\label{thm:po-bint}Fix \(\lambda \geq 0\), and let \(X_n \sim \text{Bin}(n, \lambda/n)\) for all integers \(n \geq \lambda\). Then \(X_n \to \text{Po}(\lambda)\) in distribution as \(n \to \infty\), by which we mean that if \(Y \sim \text{Po}(\lambda)\), then
@@ -4499,74 +4514,46 @@ Finally
 as \(1 - \lambda/n \to 1\), and \(x\) is fixed. Putting all that together gives the result.
 \end{proof}
 
-\hypertarget{poisson-process}{%
-\section{Poisson process}\label{poisson-process}}
-
-Suppose an insurance company's call centre is open 10 hours a day, 5 days a week. The call centre receives a ``large claim'' -- a claim in excess of £100,000 -- on average 0.2 times per hour. It seems reasonable, therefore, to model the number of large claims in an hour as a \(\mathrm{Po}(\lambda)\) distribution with \(\lambda = 0.2\).
-
-How should we model the nuber of large claims in a day? If the call centre receives \(\lambda = 0.2\) claims per hour, on average, then it receives \(10\lambda = 2\) claims per 10 hours, or one day. It seems reasonable to model this with a \(\mathrm{Po}(10\lambda)\) distribution.
-
-Further, the number of claims on one day and on the next day seems like they should be independent.
-
-The two ideas in the model above lead to what is called the ``Poisson process''.
-
-\begin{definition}
-
-A random set of arrivals is said to follow a \textbf{Poisson process} with rate \(\lambda\) if
-
-\begin{enumerate}
-\def\labelenumi{\arabic{enumi}.}
-\tightlist
-\item
-  The number of arrivals in a time period of length \(t\) is \(\mathrm{Po}(\lambda t)\).
-\item
-  The number of arrivals in two non-overlapping time periods are independent.
-\end{enumerate}
-
-\end{definition}
-
-\begin{example}
-\emph{Suppose the number of large claims, as discussed above, is modelled as a Poisson process with rate \(\lambda = 0.2\) claims per hour. What is the probability the call centre receives at least one large claim every day this week?}
-
-The number of large claims in one 10-hour day is \(X \sim \mathrm{Po}(10\lambda) = \mathrm{Po}(2)\). So the probability of getting at least one claim in a day is
-\[ \mathbb P(X \geq 1) = 1 - \mathbb P(X = 0) = 1 - \mathrm{e}^{-2} = 0.865 . \]
-
-Because the number of claims in each of the five days this week are independent, the probability of getting at least one claim in all five days is
-\[ \mathbb P(X \geq 1)^5 = 0.865^5 = 0.483 . \]
-\end{example}
-
-This is just a brief taster of the Poisson process. The Poisson process is studied in much more detail in the second-year module \href{https://mpaldridge.github.io/math2750/}{MATH2750 Introduction to Markov Processes}.
-
 \hypertarget{models}{%
 \section{Distributions as models for data}\label{models}}
 
-Families of distributions -- like the Bernoulli, binomial and geometric distributions we have seen so far in this module -- are very useful for models in statistics. This idea is developed Bayesian statistics we will discuss in Lectures 19 and 20 of this module, and is an idea that is extremely important throughout the whole MATH1712 Probability and Statistics II.
+Families of distributions -- like the Bernoulli, binomial, geometric and Poisson distributions we have seen so far in this module -- are very useful for models in statistics. The idea of using families of distributions as models for data will be developed in the topic of Bayesian statistics we will discuss in Lectures 19 and 20 of this module, and, even more so, will be extremely important throughout the whole of MATH1712 Probability and Statistics II.
 
-The families of distributions we have looked at here are sometimes called ``parametric families'', in that each of the distributions depended on one or more parameters: \(p\) for the Bernoulli and geometric distributions; and both \(n\) and \(p\) for the binomial distribution. (In the next lecture we will see another discrete distribution, the Poisson distribution, and later in the module we will also see some continuous parametric families: the exponential, normal and beta distributions.) This means we can adopt a model that data comes from one of the distributions within a family, then use data to estimate the value of that parameter.
+The families of distributions we have looked at here are sometimes called ``parametric families'', in that each of the distributions depended on one or more parameters: \(p\) for the Bernoulli and geometric distributions, both \(n\) and \(p\) for the binomial distribution, and \(\lambda\) for the Poisson distribution. (Later in the module we will also see some continuous parametric families: the exponential, normal and beta distributions.) This means we can adopt a model that data comes from one of the distributions within a family, then use data to estimate the value of that parameter.
 
 For example:
 
 \begin{itemize}
-\tightlist
 \item
   When testing the bias of a coin, you might assume, counting Heads as 1 and Tails as 0, that the outcome of each test is Bernoulli distributed with parameter \(p\), but where the value of the Heads probability \(p\) is unknown. You could then toss the coin many times and use this data to estimate \(p\).
 \item
   The number of years between severe summer floods in a tropical climate could be modelled as geometrically distributed where the flood risk parameter \(p\) is unknown. By look at the gaps between severe floods in historical data, a statistician could try to estimate \(p\).
 \item
-  A tutor might assume that the number of students that turn up to each tutorial is binomially distributed where \(n\) is known to be 12, the number of students assigned to the group, but \(p\), the ``turning-up probability'' is unknown. The tutor could then take records of how many students turned up to all the tutorials, and use this to estimate \(p\).
+  A tutor might assume that the number of students that turn up to each tutorial is binomially distributed where \(n\) is known to equal 12, the number of students assigned to the group, but \(p\), the ``turning-up probability'' is unknown. The tutor could then take records of how many students turned up to all the tutorials, and use this to estimate \(p\).
+\item
+  The number of calls received each day by call centre might be modelled as a Poisson distribution where the rate \(\lambda\) is unknown. The company could exam its records to estimate \(\lambda\).
 \end{itemize}
 
 There are two main methods statisticians use to estimate parameters:
 
 \begin{itemize}
-\tightlist
 \item
   \textbf{Bayesian statistics:} Here, one starts with a subjective ``prior'' distribution for the parameters, which represents one's personal belief about which possible values for that parameter are more or less likely before conducting any experiment. After the experiment, one then uses Bayes' theorem to update that belief to a ``posterior'' distribution of one's beliefs about the parameter \emph{given} the data. The Bayesian approach will be introduced in Lecture 19 of this module.
 \item
-  \textbf{Frequentist statistics:} Frequentist statistics does not involve any subjective prior views. Rather, frequentism is about assessing the extent to which the data is consistent with certain hypotheses. For example, one might try to find the value for the parameter that would seem ``most consistent'' with the data, and use that as an ``estimate'' of the parameter: ``My best guess of the Heads probability \(p\) of the coin is \(p = 0.53\).'' Alternatively, one might find a range of values for the parameter that are all at least somewhat consistent with the data: ``I am confident the value of the Heads probability lies in the range \(0.49 \leq p \leq 0.57\), as these values are all consistent with the data.'' Third, one could text if a specific hypothesis is consistent with the data or not: ``The data is consistent with the hypothesis that \(p = 0.50\), whih would mean the coin is fair, so I have no strong evidence for disbelieving that.'' The frequentist approach will pursued in detail in MATH1712.
+  \textbf{Frequentist statistics:} Frequentist statistics does not involve any subjective prior views. Rather, frequentism is about assessing the extent to which the data is consistent with certain hypotheses.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    You might try to find the value for the parameter that seems ``most consistent'' with the data, and use that as an estimate of the parameter: ``My best guess of the Heads probability \(p\) of the coin is \(p = 0.53\).
+  \item
+    You might find a range of values for the parameter that are all at least somewhat consistent with the data: ``I am confident the value of the Heads probability lies in the range \(0.49 \leq p \leq 0.57\), as these values are all consistent with the data.''
+  \item
+    You could test if a specific hypothesis is consistent with the data or not: ``The data is consistent with the hypothesis that \(p = 0.50\), which would mean the coin is fair, so I have no strong evidence for concluding that the coin is biased.''
+  \end{itemize}
 \end{itemize}
 
---\textgreater{}
+The frequentist approach will pursued in detail throughout MATH1712.
 
 \hypertarget{summary-06}{%
 \section*{Summary}\label{summary-06}}

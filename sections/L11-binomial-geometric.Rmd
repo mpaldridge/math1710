@@ -1,4 +1,4 @@
-# Binomial and geometric distributions  {#L11-binomial-poisson}
+# Binomial and geometric distributions  {#L11-binomial-geometric}
 
 ::: {.mysummary}
 The [**mid-semester check-in survey**](https://forms.office.com/e/8ETiji58Zi) is now open.

@@ -2,15 +2,8 @@
 
 ## Expectation of sums and products {#sum-product}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/BaEbVJZkGGY"></iframe>
-:::
-::::
--->
 
-When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. It's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but will just look at their expectations and, later, variances.
+When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. It's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but here we will just look at their expectations and, later, variances.
 
 ::: {.theorem #linearity2}
 Let $X$ and $Y$ be two random variables with joint probability mass function $p_{X,Y}$. Then

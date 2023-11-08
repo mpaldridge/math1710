@@ -2,16 +2,9 @@
 
 ## Joint distributions  {#joint}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/5trzf2sZnLw"></iframe>
-:::
-::::
--->
 
 
-In previous sections, we have looked at single discrete random variables in isolation. In the lecture and the next, we want to look at how multiple discrete random variables can interact.
+In previous lectures, we have looked at single discrete random variables in isolation. In this lecture and the next, we want to look at how multiple discrete random variables can interact.
 
 Consider tossing a fair coin 3 times. Let $X$ be the number of Heads in the first two tosses, and let $Y$ be the number of Heads over all three tosses.
 
@@ -43,9 +36,9 @@ For just one worked example, we have $p_{X,Y}(2,2) = \frac18$, because the only 
 
 For probabilities of events, we had that if some $A_i$s form a partition, then
 \[ \mathbb P(B) = \sum_i \mathbb P(B \cap A_i) . \]
-Note that the events $\{X = x\}$, as $x$ varies over the range of $X$, also make up a partition. Therefore, we have
-\[ \mathbb P(Y = y) = \sum_x \mathbb P(X = x \text{ and } Y = y) ; \]
-or, to phrase this in terms of joint and marginal PMFs,
+Here, the events $\{X = x\}$, as $x$ varies over the range of $X$, also make up a partition. Therefore, we have
+\[ \mathbb P(Y = y) = \sum_x \mathbb P(X = x \text{ and } Y = y) . \]
+To phrase this in terms of joint and marginal PMFs, we have
 \[ p_Y(y) = \sum_x p_{X,Y}(x, y) . \]
 In other words, to get the marginal distribution of $Y$, we need to sum down the columns in the table of the joint distribution.
 
@@ -80,8 +73,9 @@ In summary, we have learned the following:
 
 Note that the joint PMF conforms to the same rules as a normal PMF:
 
-* it is non-negative: $p_{X,Y}(x,y) \geq 0$;
-* it sums to 1: $\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1$. 
+* It is non-negative: $p_{X,Y}(x,y) \geq 0$.
+
+* It sums to 1: $\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1$. 
 
 We may want to look at more than two random variables, $\mathbf X = (X_1, X_2, \dots, X_n)$. In this case, the joint PMF is
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]
@@ -90,13 +84,7 @@ In the same way, we can find the marginal distribution of one of the variables -
 
 ## Independence of random variables {#independence-rv}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/ZxoVHpnI298"></iframe>
-:::
-::::
--->
+
 
 
 We said that two *events* are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb  P(B)$. We now can give a similar definition for what it means two *random variables* to be independent.
@@ -105,11 +93,13 @@ We said that two *events* are independent if $\mathbb P(A \cap B) = \mathbb P(A)
 We say two discrete random variables are **independent** if, for all $x$ and $y$, the events $\{X = x\}$ and $\{Y = y\}$ are independent; that is, if
 \[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]
 In terms of the joint and marginal PMFs, this is the condition that
-\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y) . \]
+\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y)  \]
+for all $x$ and $y$.
 
 More generally, a sequence of random variables $\mathbf X = (X_1, X_2, \dots)$ are independent if
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots = \prod_{i} p_X(x_i). \]
 :::
+(Here the Pi notation $\prod$ is to multiplication exactly what the Sigma notation $\sum$ is to addition.)
 
 Returning to our case of the dice from before, we see that $X$ and $Y$ are *not* independent, because, for just one counterexample, $p_{X,Y}(0,0) = \frac18$, while $p_X(0) = \frac14$ and $p_Y(0) = \frac18$, so $p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)$.
 
@@ -117,7 +107,7 @@ An important scenario in probability theory and statistics is that of **independ
 \[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]
 
 ::: {.example}
-*Let $X_1, X_2, \dots, X_{20}$ be IID random variables following a binomial distribution with rate $n = 10$ and $p = 0.3$. What is the probability that all 20 of the the $X_i$ are nonzero?*
+*Let $X_1, X_2, \dots, X_{20}$ be IID random variables following a binomial distribution with parameters $n = 10$ and $p = 0.3$. What is the probability that all 20 of the the $X_i$ are nonzero?*
 
 Because the $X_i$ are identically distributed, the probability that any one of them is nonzero is
 \[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]
@@ -128,13 +118,6 @@ Then, because the $X_i$ independent, the probability that they are all nonzero i
 
 ## Conditional distributions  {#cond-rv}
 
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/U0kNB45K81w"></iframe>
-:::
-::::
--->
 
 
 For probabilities of events, we had the conditional probability

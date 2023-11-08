@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>MATH1710 Probability and Statistics I</title>
+  <title>Lecture 11 Binomial and geometric distributions | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 11 Binomial and geometric distributions | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 11 Binomial and geometric distributions | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2025" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-
-<link rel="next" href="about.html"/>
+<link rel="prev" href="P3.html"/>
+<link rel="next" href="L12-poisson.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -318,184 +318,182 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">MATH1710 Probability and Statistics I</h1>
-<p class="author"><em><a href="https://mpaldridge.github.io/">Matthew Aldridge</a></em></p>
-<p class="date"><em>University of Leeds, 2023–24</em></p>
+<div id="L11-binomial-geometric" class="section level1 hasAnchor" number="11">
+<h1><span class="header-section-number">Lecture 11</span> Binomial and geometric distributions<a href="L11-binomial-geometric.html#L11-binomial-geometric" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="mysummary">
+<p>The <a href="https://forms.office.com/e/8ETiji58Zi"><strong>mid-semester check-in survey</strong></a> is now open.</p>
 </div>
-<div id="schedule" class="section level1 unnumbered hasAnchor">
-<h1>Schedule<a href="index.html#schedule" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="oldsched">
-<p><strong>Week 6</strong> (6–10 November):</p>
+<p>Last week, we developed the idea of random variables, and in particular discrete random variables. We saw that the benefit of random variables is that we can just worry about their distribution, which often allows us to move the sample space <span class="math inline">\(\Omega\)</span> and other more technical matters into the background. (Here, we informally use the word “distribution” to refer to the probability mass function of a random variable – or, later, the continuous equivalent, the probability density function).</p>
+<p>There are some distributions – or, rather, some families of distributions – that are so useful that we often want to use them for modelling real-world quantities. This week, we will look at a number of useful discrete distributions.</p>
+<div id="binomial" class="section level2 hasAnchor" number="11.1">
+<h2><span class="header-section-number">11.1</span> Binomial distribution<a href="L11-binomial-geometric.html#binomial" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>One family of distributions we have already seen is the Bernoulli trial <span class="math inline">\(\text{Bern}(p)\)</span>, which is 1 with probability <span class="math inline">\(p\)</span> and 0 with probability <span class="math inline">\(1-p\)</span>. We saw that this could model whether or a biased coin lands Heads, or more generally whether an experiment is successful.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-61" class="example"><strong>Example 11.1  </strong></span><em>Suppose we toss 10 independent biased coins, each of which lands Heads with probability 0.7 and Tails with probability 0.3. What is the probability we get exactly 8 Heads altogether?</em></p>
+<p>The probability that any specific 8 coins land Heads and the other 2 land Tails is <span class="math inline">\(0.7^8\times 0.3^2\)</span>. However, there are <span class="math inline">\(\binom{10}{8}\)</span> choices for which 8 coins are the ones that land Heads. Hence, the probability is
+<span class="math display">\[ \mathbb P(\text{8 Heads}) = \binom{10}{8} \times 0.7^8 \times 0.3^2 = 0.23.\]</span></p>
+</div>
+<p>This is a special case of the binomial distribution.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-62" class="definition"><strong>Definition 11.1  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{0,1,2,\dots,n\}\)</span> and PMF
+<span class="math display">\[ p(x) = \binom{n}{x} p^x (1-p)^{n-x} . \]</span>
+Then we say that <span class="math inline">\(X\)</span> follows the <strong>binomial distribution</strong> with parameters <span class="math inline">\(n\)</span> and <span class="math inline">\(k\)</span>, and write <span class="math inline">\(X \sim \text{Bin}(n,p)\)</span>.</p>
+</div>
+<p>So a binomial random variable represents the number of successes in <span class="math inline">\(n\)</span> Bernoulli trials. In our previous example, the number of Heads from the coin tosses was <span class="math inline">\(\text{Bin}(10, 0.7)\)</span>.</p>
+<p><img src="math1710_files/figure-html/binom-pic-1.png" width="672" /></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-63" class="example"><strong>Example 11.2  </strong></span><em>Let <span class="math inline">\(X \sim \mathrm{Bin}(8, 0.2)\)</span>. What is (a) <span class="math inline">\(\mathbb P(X = 3)\)</span>? (b) <span class="math inline">\(\mathbb P(X \geq 2)\)</span>?</em></p>
+<p>For (a), we have from the definition
+<span class="math display">\[ \mathbb P(X = 3) = \binom83 0.2^3 (1 - 0.2)^{8-3} = 56\times 0.2^3\times0.8^5 = 0.147 .\]</span></p>
+<p>For (b), this is an “at least” question, so it’s more convenient to look at the complementary event, <span class="math inline">\(\mathbb P(X &lt; 2)\)</span>. So
+<span class="math display">\[\begin{align*}
+\mathbb P(X \geq 2) &amp;= 1 - \mathbb P(X &lt; 2) \\
+  &amp;= 1 - \mathbb P(X = 0) - \mathbb P(X = 1) \\
+  &amp;= 1 - 0.8^8 - 8\times 0.2 \times 0.8^7 \\
+  &amp;= 1 - 0.168 - 0.336 \\
+  &amp; = 0.497 .
+\end{align*}\]</span></p>
+</div>
+<p>What about the expectation and variance of a binomial random variable?</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-64" class="theorem"><strong>Theorem 11.1  </strong></span>Let <span class="math inline">\(X \sim \text{Bin}(n, p)\)</span>. Then</p>
 <ul>
-<li><a href="L11-binomial-geometric.html#L11-binomial-geometric"><strong>Lecture 11:</strong> Binomial and geometric distributions</a> (Monday 6 November)</li>
-<li><a href="L12-poisson.html#L12-poisson"><strong>Lecture 12:</strong> Poisson distribution</a> (Wednesday 8 November)</li>
-<li><strong>Tutorial</strong> on Problem Sheet 3</li>
-<li><a href="P3.html#P3"><strong>Problem Sheet 3:</strong></a> Work through in preparation for your tutorial. Deadline for assessed questions: Monday 13 November.</li>
-<li><a href="R.html#R"><strong>R Worksheet 5</strong></a></li>
-<li><strong>Office hours:</strong> Friday 10 November, 11–12 and 1–2, <a href="https://mpaldridge.github.io/office.html">Physics Research Deck 9.320</a></li>
-<li><a href="https://forms.office.com/e/8ETiji58Zi">Mid-semester check-in</a></li>
+<li><span class="math inline">\(\mathbb EX = np\)</span>,</li>
+<li><span class="math inline">\(\operatorname{Var}(X) =np(1-p)\)</span>.</li>
 </ul>
 </div>
-<div class="mysched">
-<p><strong>Week 5</strong> (30 October–3 November):</p>
+<p>One can prove this by working out the sums – for example, the expectation is the value of the sum
+<span class="math display">\[ \mathbb EX = \sum_{x=0}^n x \binom{n}{x} p^x (1-p)^{n-x} , \]</span>
+which is a bit tricky to calculate, but not fundamentally difficult mathematics.
+However, in next section we will see an easier way, so we’ll reserve the proof until then instead.</p>
+<p>For my 10 biased coins that are each Heads with probability <span class="math inline">\(0.7\)</span>, the expectation and variance are
+<span class="math display">\[\begin{align*}
+  \mathbb EX &amp;= 10 \times 0.7 = 7 \\
+  \operatorname{Var}(X) &amp;= 10 \times 0.7 \times 0.3 = 2.1
+\end{align*}\]</span></p>
+</div>
+<div id="geometric" class="section level2 hasAnchor" number="11.2">
+<h2><span class="header-section-number">11.2</span> Geometric distribution<a href="L11-binomial-geometric.html#geometric" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="example">
+<p><span id="exm:unlabeled-div-65" class="example"><strong>Example 11.3  </strong></span><em>I decide to roll a fair dice until I first roll a six, and then stop. What’s the probability I get the first six on my 5th roll of the dice?</em></p>
+<p>For the first six to be on the 5th attempt, the first 4 rolls have to be non-sixes, and then the fifth roll has to be a six. This has probability
+<span class="math display">\[ \left(\tfrac56\right)^4 \times  \tfrac16 = \tfrac{625}{7776} = 0.08.\]</span></p>
+</div>
+<p>This is a special case of the geometric distribution.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-66" class="definition"><strong>Definition 11.2  </strong></span>Let <span class="math inline">\(X\)</span> be a discrete random variable with range <span class="math inline">\(\{1,2,\dots\}\)</span> and PMF
+<span class="math display">\[ p(x) = (1-p)^{x-1}p . \]</span>
+Then we say that <span class="math inline">\(X\)</span> follows the <strong>geometric distribution</strong> with parameter <span class="math inline">\(p\)</span>, and write <span class="math inline">\(X \sim \text{Geom}(p)\)</span>.</p>
+</div>
+<p>So a geometric random variable represents the number of Bernoulli<span class="math inline">\((p)\)</span> trials until the first success. In our previous example, the number of dice rolls until a six was <span class="math inline">\(\text{Geom}(\frac16)\)</span>.</p>
+<p><img src="math1710_files/figure-html/geom-pic-1.png" width="672" /></p>
+<div class="example">
+<p><span id="exm:unlabeled-div-67" class="example"><strong>Example 11.4  </strong></span><em>Let <span class="math inline">\(X \sim \mathrm{Geom}(0.4)\)</span>. What is (a) <span class="math inline">\(\mathbb P(X = 3)\)</span>? (b) <span class="math inline">\(\mathbb P(X \geq 3)\)</span>.</em></p>
+<p>For part (a), we have
+<span class="math display">\[ \mathbb P(X = 3) = (1 - 0.4)^2 \times 0.4 = 0.144 . \]</span></p>
+<p>For part (b), we have
+<span class="math display">\[ \mathbb P(X \geq 3) = 1 - \mathbb P(X =1) - \mathbb P(X = 2) = 1 - 0.4 - (1-0.4)\times 0.4 = 1- 0.64 = 0.36 . \]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-68" class="theorem"><strong>Theorem 11.2  </strong></span>Let <span class="math inline">\(X \sim \text{Geom}(p)\)</span>. Then</p>
 <ul>
-<li><a href="L09-discrete-rv.html#L09-discrete-rv"><strong>Lecture 9:</strong> Discrete random variables</a> (Monday 30 October)</li>
-<li><a href="L10-expectation.html#L10-expectation"><strong>Lecture 10:</strong> Expectation and variance</a> (Wednesday 1 November)</li>
-<li><a href="P3.html#P3"><strong>Problem Sheet 3:</strong></a> Work through in preparation for your tutorial in Week 6. Deadline for assessed questions: Monday 13 November.</li>
-<li><a href="R.html#R"><strong>R Worksheet 4</strong></a> – deadline for assessed questions: Monday 6 November</li>
-<li><strong>Office hours:</strong> Friday 3 November, 11–1, <a href="https://mpaldridge.github.io/office.html">Physics Research Deck 9.320</a> (<em>note change of time</em>)</li>
+<li><span class="math inline">\(\mathbb EX = \displaystyle\frac1p\)</span>,</li>
+<li><span class="math inline">\(\operatorname{Var}(X) = \displaystyle\frac{1-p}{p^2}\)</span>.</li>
 </ul>
 </div>
-<div class="mysched">
-<p><strong>Week 4</strong> (23–27 October):</p>
-<ul>
-<li><a href="L07-conditional.html#L07-conditional"><strong>Lecture 7:</strong> Independence and conditional probabilty</a> (Monday 23 October)</li>
-<li><a href="L08-two-theorems.html#L08-two-theorems"><strong>Lecture 8:</strong> Two theorems on conditional probability</a> (Wednesday 25 October)</li>
-<li><strong>Tutorial</strong> on <a href="P2.html#P2">Problem Sheet 2</a></li>
-<li><a href="P2.html#P2"><strong>Problem Sheet 2:</strong></a> Work through in preparation for your tutorial. Deadline for assessed questions: Monday 30 October.</li>
-<li><a href="R.html#R"><strong>R Worksheet 3</strong></a></li>
-<li><strong>Office hours:</strong> Friday 27 October, 11–12 and 1–2, <a href="https://mpaldridge.github.io/office.html">Physics Research Deck 9.320</a> (<em>note change of venue</em>)</li>
-</ul>
+<p>So the expected number of rolls until rolling a six is
+<span class="math display">\[ \mathbb EX = \frac{1}{\frac16} = 6 , \]</span>
+with variance
+<span class="math display">\[ \operatorname{Var}(X) = \frac{1 - \frac16}{\big(\frac16\big)^2} = 30 . \]</span></p>
+<div class="proof">
+<p><span id="unlabeled-div-69" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em>
+For the expectation, we want to calculate
+<span class="math display">\[ \mathbb EX = \sum_{x=1}^\infty x (1-p)^{x-1} p = p \sum_{x=0}^\infty x (1-p)^{x-1}. \]</span>
+(We can include the <span class="math inline">\(x = 0\)</span> term in the sum since it is equal to 0.)</p>
+<p>At this point we will invoke the identity
+<span class="math display">\[ \sum_{x = 0}^\infty x a^{x-1} = \frac{1}{(1-a)^2} , \]</span>
+which can be proved by differentiating the standard sum of a geometric progression
+<span class="math display">\[ \sum_{x = 0}^\infty a^x = \frac{1}{1 - a} \]</span>
+with respect to <span class="math inline">\(a\)</span>.</p>
+<p>Using that identity with <span class="math inline">\(a = 1-p\)</span>, we get
+<span class="math display">\[ \mathbb EX = p \sum_{x=0}^\infty x (1-p)^{x-1} = p\, \frac{1}{\big(1 - (1-p)\big)^2} = \frac{1}{p} , \]</span>
+as required.</p>
+<p>For the variance, we will use a trick that sometimes comes in useful, which is to start by calculating <span class="math inline">\(\mathbb EX(X-1)\)</span>. Here we get
+<span class="math display">\[ \mathbb EX(X-1) = \sum_{x=1}^\infty x (x-1) (1-p)^{x-1} p = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} . \]</span>
+To calculate the sum, we note that differentiating the geometric progression formula twice gives
+<span class="math display">\[ \sum_{x = 0}^\infty x(x-1) a^{x-2} = \frac{2}{(1-a)^3} , \]</span>
+so we get
+<span class="math display">\[ \mathbb EX(X-1) = p(1-p) \sum_{x=0}^\infty x(x-1) (1-p)^{x-2} = p(1 -p) \, \frac{2}{p^3} = \frac{2(1-p)}{p^2} . \]</span></p>
+<p>We now want to use the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span> to get the variance. We know <span class="math inline">\(\mu = 1/p\)</span>, and from the calculation above, we have
+<span class="math display">\[ \mathbb EX(X-1) = \mathbb EX^2 - \mathbb EX = \mathbb EX^2 - \frac{1}{p} = \frac{2(1-p)}{p^2} . \]</span>
+So
+<span class="math display">\[\begin{align*}
+\operatorname{Var}(X) = \mathbb EX^2 - \mu^2
+&amp;= \left(\frac{2(1-p)}{p^2} + \frac{1}{p}\right) - \left(\frac{1}{p}\right)^2 \\
+&amp;= \frac{2(1-p) + p - 1}{p^2} \\
+&amp;= \frac{1-p}{p^2} .
+\end{align*}\]</span></p>
 </div>
-<div class="mysched">
-<p><strong>Week 3</strong> (16–20 October):</p>
-<ul>
-<li><a href="L05-classical-i.html#L05-classical-i"><strong>Lecture 5:</strong> Classical probability I</a> (Monday 16 October)</li>
-<li><a href="L06-classical-ii.html#L06-classical-ii"><strong>Lecture 6:</strong> Classical probability II</a> (Wednesday 18 October)</li>
-<li><strong>R Practical</strong></li>
-<li><a href="P2.html#P2"><strong>Problem Sheet 2:</strong></a> Work through in preparation for your tutorial in Week 4. Deadline for assessed questions: Monday 30 October.</li>
-<li><a href="R.html#R"><strong>R Worksheet 2:</strong></a> Deadline for assessed exercises: Monday 23 October</li>
-<li><strong>Office hours:</strong> Friday 20 October, 11–12 and 1–2, <a href="boardroom.png">Maths Boardroom</a></li>
-</ul>
+<p><em>Note:</em> Here, we defined a geometric random variable as being the number of trials up to <em>and including</em> the first success, which is a number in <span class="math inline">\(\{1, 2, \dots\}\)</span>. However, some authors define it as the number of failures <em>before</em> the first success, which is a number in <span class="math inline">\(\{0, 1, 2,\dots\}\)</span>. If <span class="math inline">\(X\)</span> is our definition and <span class="math inline">\(Y\)</span> is the second “number of failures” definition, then <span class="math inline">\(X\)</span> and <span class="math inline">\(Y+1\)</span> have the same distribution. Annoyingly, R uses the “number of failures before success” definition, as we will discuss in a later R worksheet.</p>
 </div>
-<div class="mysched">
-<p><strong>Week 2</strong> (9–13 October):</p>
+<div id="summary-L11" class="section level2 unnumbered hasAnchor">
+<h2>Summary<a href="L11-binomial-geometric.html#summary-L11" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<table>
+<colgroup>
+<col width="29%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+<col width="17%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Distribution</th>
+<th align="center">Range</th>
+<th align="center">PMF</th>
+<th align="center">Expectation</th>
+<th align="center">Variance</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Bernoulli:</strong> <span class="math inline">\(\text{Bern}(p)\)</span></td>
+<td align="center"><span class="math inline">\(\{0,1\}\)</span></td>
+<td align="center"><span class="math inline">\(p(0) = 1- p\)</span>, <span class="math inline">\(p(1) = p\)</span></td>
+<td align="center"><span class="math inline">\(p\)</span></td>
+<td align="center"><span class="math inline">\(p(1-p)\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>Binomial:</strong> <span class="math inline">\(\text{Bin}(n,p)\)</span></td>
+<td align="center"><span class="math inline">\(\{0,1,\dots,n\}\)</span></td>
+<td align="center"><span class="math inline">\(\displaystyle\binom{n}{x} p^x (1-p)^{n-x}\)</span></td>
+<td align="center"><span class="math inline">\(np\)</span></td>
+<td align="center"><span class="math inline">\(np(1-p)\)</span></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>Geometric:</strong> <span class="math inline">\(\text{Geom}(p)\)</span></td>
+<td align="center"><span class="math inline">\(\{1,2,\dots\}\)</span></td>
+<td align="center"><span class="math inline">\((1-p)^{x-1}p\)</span></td>
+<td align="center"><span class="math inline">\(\displaystyle\frac{1}{p}\)</span></td>
+<td align="center"><span class="math inline">\(\displaystyle\frac{1-p}{p^2}\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Recommended reading:</strong></p>
 <ul>
-<li><a href="L03-events.html#L03-events"><strong>Lecture 3:</strong> Sample spaces and events</a> (Monday 9 October)</li>
-<li><a href="L04-probability.html#L04-probability"><strong>Lecture 4:</strong> Probability</a> (Wednesday 11 October)</li>
-<li><strong>Tutorial</strong> on <a href="P1.html#P1">Problem Sheet 1</a></li>
-<li><a href="#practical"><strong>R Practical</strong></a></li>
-<li><a href="P1.html#P1"><strong>Problem Sheet 1:</strong></a> Work through in preparation for your tutorial. Deadline for assessed questions: Monday 16 October.</li>
-<li><a href="R.html#R"><strong>R Worksheet 1</strong></a></li>
-<li><strong>Office hours:</strong> Friday 13 October, 11–12 and 1–2, <a href="boardroom.png">Maths Boardroom</a></li>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181">Stirzaker, <em>Elementary Probability</em></a>, Sections 4.2 and 4.3.</li>
+<li><a href="https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181">Grimmett and Welsh, <em>Probability</em></a>, Section 2.2.</li>
 </ul>
+
 </div>
-<div class="mysched">
-<p><strong>Week 1</strong> (2–6 October):</p>
-<ul>
-<li><a href="L01-stats.html#L01-stats"><strong>Lecture 1:</strong> Summary statistics</a> (Monday 2 October)</li>
-<li><a href="L02-dataviz.html#L02-dataviz"><strong>Lecture 2:</strong> Data visualisation</a> (Wednesday 4 October)</li>
-<li><a href="P1.html#P1"><strong>Problem Sheet 1:</strong></a> Work through in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 16 October.</li>
-<li><strong>Office hours:</strong> Friday 6 October, 11–12 and 1–2, <a href="boardroom.png">Maths Boardroom</a></li>
-</ul>
-</div>
-<!--
-::: {.oldsched}
-**Week 10** (5-9 December):
-
-* [**Lecture 19:** The Bayesian idea](#L19-bayes-idea) (Monday 5 December)
-* [**Lecture 20:** More Bayesian models](#L20-bayes-models): (Wednesday 7 December)
-* [**Problem Sheet 5:**](#P5) Work through the short and long questions in preparation your tutorial. Deadline for assessed questions: *Monday 12 December*
-* [**R Worksheet 10:** Law of large numbers](#r-work) to be completed this week
-* [**R Worksheet 11:** Recap](#r-work) next week's sheet, available now due to the unusually early deadline: Thursday 15 December
-:::
-
-::: {.mysched}
-**Week 9** (28 November -- 2 December):
-
-* [**Lecture 17:** Exponential distribution and multiple continuous random variables](#L17-exponential-multi) (Monday 28 November)
-* [**Lecture 18:** Limit theorems](#L18-limit): *The lecture on Wednesday 30 November will be cancelled; instead you should learn this material from the online notes and embedded videos*
-* [**Problem Sheet 5:**](#P5) Work through the short and long questions in preparation your tutorial next week. Deadline for assessed questions: *Monday 12 December*
-* [**R Worksheet 9:** Normal distribution](#r-work) to be completed this week; assessed work due Monday 5 December
-:::
-
-::: {.mysched}
-**Week 8** (21--25 November):
-
-* **Tutorials:** *All in-person tutorials cancelled. Online tutorial: Wednesday 23 November at 1000; recording available on Minerva.*
-* [**Lecture 15:** Continuous random variables](#L15-continuous) (Monday 21 November)
-* [**Lecture 16:** Normal distribution](#L16-normal) (Wednesday 23 November)
-* [**Problem Sheet 4:**](#P4) Work through the short and long questions in preparation for *the online tutorial*. Deadline for assessed questions: *Tuesday 29 November*
-* [**R Worksheet 8:** Discrete random variables](#r-work) to be completed this week
-:::
-
-::: {.mysched}
-**Week 7** (14--18 November):
-
-* [**Lecture 13:** Multiple random variables](#L13-multi-rv) (Monday 14 November)
-* [**Lecture 14:** Expectation and covariance](#L14-covariance) (Wednesday 16 November)
-* [**Problem Sheet 4:**](#P4) Work through the short and long questions in preparation for your tutorial next week. Deadline for assessed questions: Monday 28 November.
-* [**R Worksheet 7:** Discrete distributions](#r-work) to be completed this week; assessed work due Monday 21 November.
-:::
-
-::: {.mysched}
-**Week 6** (7--11 November):
-
-* [**Lecture 11:** Binomial and geometric distributions](#L11-binomial-geometric) (Monday 7 November)
-* [**Lecture 12:** Poisson distribution](#L12-poisson) (Wednesday 9 November)
-* **Tutorial:** to discuss Problem Sheet 3; check your timetable for details.
-* [**Problem Sheet 3:**](#P3) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 14 November.
-* [**R Worksheet 6:** R Markdown](#r-work) *optional* worksheet for this week.
-:::
-
-::: {.mysched}
-**Week 5** (31 October -- 4 November):
-
-* [**Lecture 9:** Discrete random variables](#L09-discrete-rv) (Monday 31 October)
-* [**Lecture 10:** Expectation and variance](#L10-expectation) (Wednesday 2 November)
-* [**Problem Sheet 3:**](#P3) Work through the short and long questions in preparation for your tutorial in Week 6. Deadline for assessed questions: Monday 14 November.
-* [**R Worksheet 5:** Plots II](#r-work) to be completed this week. Deadline for assessed questions: Monday 7 November.
-:::
-
-::: {.mysched}
-**Week 4** (24--28 October):
-
-* [**Lecture 7:** Independence and conditional probability](#L07-conditional) (Monday 24 October)
-* [**Lecture 8:** Two theorems on conditional probability](#L08-two-theorems) (Wednesday 26 October)
-* **Tutorial:** to discuss Problem Sheet 2; check your timetable for details.
-* [**Problem Sheet 2:**](#P2) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 31 October.
-* [**R Worksheet 4:** Plots I](#r-work) to be completed this week.
-:::
-
-::: {.mysched}
-**Week 3** (17--21 October):
-
-* [**Lecture 5:** Classical probability I](#L05-classical-i) (Monday 17 October)
-* [**Lecture 6:** Classical probability II](#L05-classical-ii) (Wednesday 19 October)
-* [**Problem Sheet 2:**](#P2) Work through the short and long questions in preparation for your tutorial in Week 4. Deadline for assessed questions: Monday 31 October.
-* [**R Worksheet 3:** Data in R](#r-work) to be completed this week. Deadline for assessed questions: Monday 24 October.
-:::
-
-::: {.mysched}
-**Week 2** (10--14 October):
-
-* [**Lecture 3:** Sample spaces and events](#L03-events) (Monday 10 October)
-* [**Lecture 4:** Probability](#L04-probability) (Wednesday 12 October)
-* **Tutorial:** to discuss Problem Sheet 1; check your timetable for details.
-* [**Problem Sheet 1:**](#P1) Work through the short and long questions in preparation for your tutorial. Deadline for assessed questions: Monday 17 October.
-* [**R Worksheet 2:** Vectors](#r-work) to be completed this week.
-:::
-
-
-::: {.mysched}
-**Week 1** (3--7 October):
-
-* [**Lecture 1:** Summary statistics](#L01-stats) (Monday 3 October)
-* [**Lecture 2:** Data visualisation](#L02-dataviz) (Wednesday 5 October)
-* [**Problem Sheet 1:**](#P1) Work through the short and long questions in preparation for your tutorial in Week 2. Deadline for assessed questions: Monday 17 October.
-* [**R Worksheet 1:** R basics](#r-work) to be completed this week.
-:::
--->
-
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-<a href="about.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="P3.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L12-poisson.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
