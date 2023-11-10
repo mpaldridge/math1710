@@ -4594,12 +4594,72 @@ Variance
   \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Section 2.2.
 \end{itemize}
 
-\hypertarget{P4}{%
-\chapter*{Problem Sheet 4}\label{P4}}
-\addcontentsline{toc}{chapter}{Problem Sheet 4}
+\hypertarget{L13-multi-rv}{%
+\chapter{Multiple random variables}\label{L13-multi-rv}}
+
+\hypertarget{summary-L13}{%
+\section*{Summary}\label{summary-L13}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  For two random variables, the joint PMF \(p_{X,Y}\), marginal PMF \(p_X\), and conditional PMF \(p_{Y \mid X}\) are
+  \begin{align*}
+  p_{X,Y}(x,y) &= \mathbb P(X =x \text{ and } Y = y) \\
+  p_X(x) &= \mathbb P(X = x) = \sum_y p_{X,Y}(x,y) \\
+  p_{Y \mid X}(y \mid x) &= \mathbb P(Y = y \mid X = x) = \frac{p_{X,Y}(x,y)}{p_X(x)} 
+  \end{align*}
+\item
+  Two random variables are independent if \(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\).
+\item
+  Bayes' theorem:
+  \({\displaystyle p_{X \mid Y}(x \mid y) = \frac{ p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)}}\).
+\end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 5.1 and 5.2.
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Section 3.1 and 3.3.
+\end{itemize}
+
+\hypertarget{L14-covariance}{%
+\chapter{Expectation and covariance}\label{L14-covariance}}
 
 \newcommand{\Cov}{\operatorname{Cov}}
 \newcommand{\Corr}{\operatorname{Corr}}
+
+\hypertarget{summary-L14}{%
+\section*{Summary}\label{summary-L14}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)
+\item
+  The covariance is \(\operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y\).
+\item
+  \(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y)\); or if \(X\) and \(Y\) are independent, then \(\operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\).
+\end{itemize}
+
+\textbf{Recommended reading:}
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181}{Stirzaker, \emph{Elementary Probability}}, Sections 5.3.
+\item
+  \href{https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181}{Grimmett and Welsh, \emph{Probability}}, Section 3.2 and 3.4.
+\end{itemize}
+
+\hypertarget{P4}{%
+\chapter*{Problem Sheet 4}\label{P4}}
+\addcontentsline{toc}{chapter}{Problem Sheet 4}
 
 \commfalse
 

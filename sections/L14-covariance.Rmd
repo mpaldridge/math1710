@@ -1,5 +1,10 @@
 # Expectation and covariance  {#L14-covariance}
 
+\newcommand{\Cov}{\operatorname{Cov}}
+\newcommand{\Corr}{\operatorname{Corr}}
+
+
+<!--
 ## Expectation of sums and products {#sum-product}
 
 
@@ -56,14 +61,6 @@ It's still the case that $\mathbb E(X_1 + X_2 + X_3 + X_4 + X_5) = 5\mu$, becaus
 
 
 ## Covariance {#covariance}
-
-<!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/eXsUrJzcRCE"></iframe>
-:::
-::::
--->
 
 If we are interested at how two random variables vary together, we need to look at the covariance.
 
@@ -161,7 +158,7 @@ We could calculate the covariance in our coin-tossing example a different way, b
 \Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) =
 = \Var(X) + 0 = \Var(X) ,\]
 where  we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent.
-We already know that $\Var(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12$ because $X \sim \text{Bin}(2, \frac12)$.. So $\Cov(X,Y) = \frac12$,
+We already know that $\Var(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12$ because $X \sim \text{Bin}(2, \frac12)$. So $\Cov(X,Y) = \frac12$,
 matching our previous calculation. 
 
 Now that we know some facts about the covariance, we can calculate the variance of a sum.
@@ -211,7 +208,7 @@ Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it foll
 For the coin-tossing again, we have
 \[ \Corr(X,Y) = \frac{\Cov(X,Y)} {\sqrt{\Var(X)\,\Var(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]
 :::
-
+-->
 
 
 ## Summary  {#summary-L14 .unnumbered}
@@ -221,3 +218,8 @@ For the coin-tossing again, we have
 * The covariance is $\Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) = \mathbb EXY - \mu_X \,\mu_Y$.
 * $\Var(X + Y) = \Var(X) + 2\Cov(X,Y) + \Var(Y)$; or if $X$ and $Y$ are independent, then $\Var(X + Y) = \Var(X) + \Var(Y)$.
 :::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 5.3.
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Section 3.2 and 3.4.

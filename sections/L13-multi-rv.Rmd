@@ -1,5 +1,7 @@
 # Multiple random variables  {#L13-multi-rv}
 
+
+<!--
 ## Joint distributions  {#joint}
 
 
@@ -163,6 +165,7 @@ The left-hand side of Bayes' theorem is
 \[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]
 which is equal, as it should be, to the right-hand side.
 
+-->
 
 ## Summary  {#summary-L13 .unnumbered}
 
@@ -175,5 +178,10 @@ which is equal, as it should be, to the right-hand side.
 \end{align*}
 * Two random variables are independent if $p_{X,Y}(x,y) = p_X(x) \, p_Y(y)$.
 * Bayes' theorem:
-\[ p_{X \mid Y}(x \mid y) = \frac{ p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]
+${\displaystyle p_{X \mid Y}(x \mid y) = \frac{ p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)}}$.
 :::
+
+**Recommended reading:**
+
+* [Stirzaker, *Elementary Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991013131349705181), Sections 5.1 and 5.2.
+* [Grimmett and Welsh, *Probability*](https://leeds.primo.exlibrisgroup.com/permalink/44LEE_INST/13rlbcs/alma991002938669705181), Section 3.1 and 3.3.
