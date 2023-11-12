@@ -1,0 +1,183 @@
+---
+title:  "R Worksheet 6: Discrete distributions"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2023--25"
+output: html_document
+---
+
+*There* are *assessed questions associated with this worksheet, at the bottom of this worksheet. The deadline for submitting your solutions to these questions is **Monday 20 November at 1400**. If you have difficulty with this worksheet, you can get help at the office hours drop-on sessions.*
+
+------------------------------------------------------------------------
+
+## The 12 functions
+
+In this worksheet, we will look at working with three famous discrete distributions: the binomial, Poisson, and geometric distributions. (In the next worksheet we will look at arbitrary PMFs.)
+
+There are 12 functions we will be studying:
+
+|  Binomial  |  Poisson  | Geometric |
+|:----------:|:---------:|:---------:|
+| `dbinom()` | `dpois()` | `dgeom()` |
+| `pbinom()` | `ppois()` | `pgeom()` |
+| `qbinom()` | `qpois()` | `qgeom()` |
+| `rbinom()` | `rpois()` | `rgeom()` |
+
+You'll notice that each function has a one-letter prefix (`d`, `p`, `q`, or `r`) and a longer suffix (`binom`, `pois`, or `geom`). You've probably guessed that the suffixes refer to the **binom**ial, **Pois**son, and **geom**etric distributions. We will give more details about the prefixes later, but for now, let us briefly note:
+
+-   **`d`** denotes the **probability mass function** (PMF) $p_X(x) = \mathbb P(X = x)$. (The letter `d` is for "density" -- although, strictly speaking, the word "density" only actually applies to continuous random variables.)
+-   **`p`** denotes the **cumulative distribution function** (CDF) $F_X(s) = \mathbb P(X \leq x)$. (I'm not sure what the letter `p` stands for -- "probability", I guess?)
+-   **`q`** denotes the **quantile function**, which we will talk about later.
+-   **`r`** generates **random samples** from the distribution.
+
+## Binomial distribution
+
+Let's start by going through the functions for the binomial distribution.
+
+First **`dbinom()`** gives the **PMF** of a binomial random variable $$ p_X(x) = \binom{n}{x} p^x (1 - p)^{n - x} . $$ The function takes three arguments:
+
+1.  The first argument is $x$, the value at which the PMF should be evaluated.
+2.  The second argument is $n$, the number of trials.
+3.  The third argument is $p$, the probability of success for each trial.
+
+So for example, if $X \sim \text{Bin}(10, 0.4)$ and you want to calculate $p_X(5) = \mathbb P(X = 5)$, then you can find this as
+
+```{r}
+n <- 10
+p <- 0.4
+dbinom(5, n, p)
+```
+
+or just `dbinom(5, 10, 0.4)`, for short.
+
+You can also put give a vector as the argument for $x$, if you want multiple values of the PMF. For example, to find $p_X(6)$, $p_X(7)$ and $p_X(9)$ together, you can use
+
+```{r}
+dbinom(c(6, 7, 9), n, p)
+```
+
+> **Exercise 7.1.** Let $X \sim \text{Bin}(20, 0.6)$.\
+> **(a)** Calculate $\mathbb P(X = 13)$.\
+> **(b)** By using `dbinom()`, the `:` notation, and `sum()`, calculate $\mathbb P(13 \leq X \leq 17)$.
+
+Second, **`pbinom()`** gives the **CDF**
+$$ F_X(x) = \mathbb P(X \leq x)  = \sum_{y = 0}^x \binom{n}{y} p^y (1 - p)^{n - y} . $$
+The arguments go in the same order $x, n, p$, as before, and $x$ can be a vector.
+
+Suppose $X \sim \text{Bin}(10, 0.4)$ again. Then the probability $\mathbb P(X \leq 6)$ that $X$ is at most 6 is
+
+```{r}
+pbinom(6, n, p)
+```
+
+In addition, `pbinom()` also has an extra optional argument `lower.tail = ...` which can be set to
+
+-   `lower.tail = TRUE` to calculate the CDF as above. This is the default, which means the CDF is what is calculated if you don't use the `lower.tail` argument at all.
+-   `lower-tail = FALSE` to instead calculate the upper-tail probability $1 - F(x) = \mathbb P(X > x)$. Note that that is *strictly greater* than $x$, *not* greater-than-or-equal-to.
+
+> **Exercise 7.2.** Let $X \sim \text{Bin}(20, 0.6)$ again.\
+> **(a)** Calculate $\mathbb P(X \leq 12)$.\
+> **(b)** Calculate $\mathbb P(X \leq x)$ for all $x$ between 0 and 20, with all answers rounded to 2 decimal places.\
+> **(c)** Calculate $\mathbb P(X \geq 16)$. (Careful: that's a greater-than-*or-equal* sign.)
+
+Third, **`qbinom()`** gives the **quantile function**. That is, for $0 \leq f \leq 1$, the command `qbinom(q, n, p)` gives the value $x$ such that $F(x) = q$, where $F(x) = \mathbb P(X \leq x)$, if there is such an $x$. If $F(x) = q$ does not have an exact solution, then `qbinom(q, n, p)` gives the smallest $x$ such that $F(x) \geq q$. To put it another way, the quantile function is the inverse of the CDF, $F^{-1}(q) = x$. To put it yet another way, `qbinom()` answers the question "How large an $x$ do I need to be at least $100q\%$ sure that $X \leq x$.
+
+The quantile function is not as important as the other functions here, and we will not use it very often.
+
+As before, the first argument can be a vector, and the `lower.tail = ...` argument can be optionally used find the inverse of the upper-tail function $1 - F(x) = \mathbb P(X > x)$.
+
+> **Exercise 7.3.** Let $X \sim \text{Bin}(20, 0.6)$ again. What is the smallest number $x$ such that $X$ is 95% likely to be less than $x$.
+
+Finally, **`rbinom()`** can be used to simulate **random** outcomes of a binomial random variable. Here, the first argument is the number of samples one wants, then $n$ and $p$, as before. Here, for example, are 20 samples of a $\text{Bin}(10, 0.4)$ random variables:
+
+```{r}
+rbinom(20, n, p)
+```
+
+> **Exercise 7.4.** Let $X \sim \text{Bin}(20, 0.6)$ again.\
+> **(a)** Generate 1000 random samples from $X$, and store them in a variable called `samples`.\
+> **(b)** Draw a histogram of your `samples` data.\
+> **(c)** Calcultate the mean of your `samples` data.\
+> **(d)** You should find that your answer to part (d) is close to 12. Why do you think this is?
+
+## Poisson distribution
+
+The functions for the Poisson distribution look very similar to those for the binomial distribution, except that instead of $n$ and $p$, there is just a single rate parameter $\lambda$.
+
+> **Exercise 7.5.** Explain in mathematics what the following lines of R code have calculated:
+
+```{r}
+lambda <- 3.2
+dpois(2, lambda)
+ppois(4, lambda, lower.tail = FALSE)
+qpois(0.95, lambda)
+var(rpois(10000, lambda))
+```
+
+> **Exercise 7.6.** Let $X \sim \text{Bin}(500, 0.01)$. Calculate exactly:\
+> **(a)** $\mathbb P(X = 4)$;\
+> **(b)** $\mathbb P(X \geq 7)$.\
+> **(c)** Repeat the calculations in parts (a) and (b) using a Poisson approximation to the binomial. Comment on the accuracy of the approximation.
+
+## Geometric distribution
+
+The functions for the geometric distribution -- `dgeom()`, `pgeom()`, `qgeom()`, `rgeom()` -- work similarly again, but with one extra annoyance.
+
+You'll recall that in Lecture 11, we defined a geometric distribution with parameter $p$ to be the number of trials up to *and including* the first success. So if $X \sim \text{Geom}(p)$, then $$ p_X(x) = \mathbb{P}(X = x) = (1 - p)^{x - 1} p . $$ However, R uses an alternative definition, where a geometric distribution $Y$ is the number of failures *before* the first success, so $$ p_Y(y) = \mathbb{P}(Y = y) = (1 - p)^{y} p . $$
+
+So:
+
+-   To find the PMF $p_X(x)$ under our definition, you need `dgeom(x - 1, p)`.
+-   To find the CDF $F_X(x)$ under our definition, you need `pgeom(x - 1, p)`.
+-   To find the quantile function under our definition, you need `qgeom(q, p) + 1`.
+-   To sample random numbers under our definition, you need `rgeom(n, p) + 1`
+
+You may find it helpful to create new functions by running the following code block (that you don't need to understand).
+
+```{r}
+dgeomalt <- function(x, prob, log = FALSE) {
+  dgeom(x - 1, prob, log = log)
+}
+
+pgeomalt <- function(q, prob, lower.tail = TRUE, log.p = FALSE) {
+  pgeom(q - 1, prob, lower.tail = lower.tail, log.p = log.p)
+}
+
+qgeomalt <- function(p, prob, lower.tail = TRUE, log.p = FALSE) {
+  qgeom(p, prob, lower.tail = lower.tail, log.p = log.p) + 1
+}
+
+rgeomalt <- function(n, prob) {
+  rgeom(n, prob) + 1
+}
+```
+
+This will temporarily create new functions `dgeomalt()`, `pgeomalt()`, `qgeomalt()`, `rgeomalt()` that work the way we prefer.
+
+> **Exercise 7.6.** Let $X \sim \text{Geom}(0.2)$ under the "number of trials up to and including the first success" definition used in the MATH1710 lectures. Calculate:\
+> **(a)** $\mathbb P(X = 20)$, rounded to two significant figures;\
+> **(b)** $\mathbb P(X \geq 10)$.\
+> **(c)** How many trials are required to give us a 95% chance of seeing a success?
+
+------------------------------------------------------------------------
+
+## Assessed questions
+
+*The following five assessed questions should be submitted via [this Microsoft Form](XXXXXXXXXXXXX). I recommend you do this in Week 7, but the official deadline is **Monday 20 November at 1400**.*
+
+*This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
+
+*So that (most) students get different data to work with, the questions will use the number $i$, where $i$ is the final digit of your Student ID number -- that is, a number between 0 and 9. (Note that we are only using one digit this time, where on previous worksheets we used two digits.)*
+
+*Any rounding should be performed with the R `round()` or `signif()` functions.*
+
+(Note: It was a bit difficult to write questions that given "sensible" answers for all 10 values of $i$, so if you have checked your answer very carefully, you should not be discouraged if it is extremely close to 0 or 1.)
+
+> **Assessed Question 1.** *Let $X_1 \sim \text{Bin}(n ,p)$, where $n = 20 + i$ and $p = (1 + i)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X_1 = 3)$? Round your answer to three significant figures.*
+
+> **Assessed Question 2.** *Let $X_2 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (i+10)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X_2 > 3)$? Round your answer to three significant figures.*
+
+> **Assessed Question 3.** *Let $X_3 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (20 + i)/1000$, where $i$ is the final digit of your Student ID number. Let $Y_3$ be the Poisson approximation to $X_3$. What is $\mathbb P(Y_3 \leq 4)$? Round your answer to four significant figures.*
+
+> **Assessed Question 4.** *Suppose you roll a pair of dice until you get a double-six. What is the smallest number of times must you roll the pair of dice in order to give yourself at least a 95% chance of seeing a double six?*
+
+> **Assessed Question 5.** *Let X_5 \sim \text{Po}(\lambda)$, where $\lambda = (1 + i)/2$ What is $\mathbb P(X_5 \text{ is even})$? Round your answer to five decimal places.*

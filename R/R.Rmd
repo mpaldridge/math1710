@@ -37,6 +37,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
 |   4  | [**3: Data in R**](R3.html)  | [Solutions](R3-solutions.html) |  ---  |
 |   5  | [**4: Plots I** -- Making plots](R4.html) | | Monday 6 November       |
 |   6  | [**5: Plots II** -- Making plots better](R5.html) |           |  ---  |
+|   7  | [**6: Discrete distributions**](R6-2324.html) |  | Monday 20 November |
 
 <!--
 | Week | Worksheet                     | Deadline for assessed work |

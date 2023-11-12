@@ -1,0 +1,55 @@
+---
+title:  "R Worksheet 4: Plots I: Making plots"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2023--24"
+output: html_document
+---
+
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+
+> **Exercise 4.1.** Read the temperature data into R by copying the command above. Just to check you remember from R Worksheet 3: What was the median August temperature?
+
+We start by reading in the Met Office data using the `read.csv()` function.
+
+```{r}
+temperature <- read.csv("https://mpaldridge.github.io/math1710/data/met-office.csv")
+```
+
+The median August temperature is
+
+```{r}
+median(temperature$aug)
+```
+
+> **Exercise 4.2.** Draw a boxplot of the August temperature. Save your graph as an image.
+
+```{r}
+boxplot(temperature$aug)
+```
+
+I saved the graph as an image by clicking on "Export" in the "Plots" window in RStudio, then choosing "Save as Image...".
+
+> **Exercise 4.2.** Draw a boxplot comparing the April temperature for the first 68 years in the data set (rows 1 to 68) and the second 68 years in the data (rows 69 to 136). (You may need to look back at R Worksheet 3 to remind yourself how to extract limited rows from a column of a data frame.) Comment briefly on what you learn from the comparison.
+
+```{r}
+boxplot(temperature[1:68, "apr"], temperature[69:136, "apr"])
+```
+
+I found that XXXXXXXX YYYYYYY ZZZZZZZZZ WWWWWWWW.
+
+```{r}
+hist(temperature$dec, freq = FALSE)
+```
+
+> **Exercise 4.4.** Plot four histograms of the May temperature with density on the y-axis using (approximately) 3, 6, 10, and 20 bins. Which number of bins do you think is the most appropriate, and why?
+
+
+
+> **Exercise 4.5.** Plot a scatterplot for January and August temperature. Do you see a relationship here? Copy your scatterplot to the clipboard and paste it into some other program.
+
+
+
+> **Exercise 4.6.** Draw a scatterplot for the first 30 years of data, with year as the x-axis and February temperature as the y-axis, with points plotted that are also joined up with lines.
