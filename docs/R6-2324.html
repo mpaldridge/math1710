@@ -514,7 +514,7 @@ Here, the first argument is the number of samples one wants, then <span class="m
 samples of a <span class="math inline">\(\text{Bin}(10, 0.4)\)</span>
 random variables:</p>
 <pre class="r"><code>rbinom(20, n, p)</code></pre>
-<pre><code>##  [1] 1 2 2 2 4 4 3 3 5 0 3 6 1 5 4 7 3 5 3 3</code></pre>
+<pre><code>##  [1] 2 3 4 5 2 4 4 7 5 7 3 4 5 5 4 4 3 4 3 7</code></pre>
 <blockquote>
 <p><strong>Exercise 7.4.</strong> Let <span class="math inline">\(X \sim
 \text{Bin}(20, 0.6)\)</span> again.<br />
@@ -545,7 +545,7 @@ dpois(2, lambda)</code></pre>
 <pre class="r"><code>qpois(0.95, lambda)</code></pre>
 <pre><code>## [1] 6</code></pre>
 <pre class="r"><code>var(rpois(10000, lambda))</code></pre>
-<pre><code>## [1] 3.234361</code></pre>
+<pre><code>## [1] 3.218222</code></pre>
 <blockquote>
 <p><strong>Exercise 7.6.</strong> Let <span class="math inline">\(X \sim
 \text{Bin}(500, 0.01)\)</span>. Calculate exactly:<br />
@@ -642,8 +642,8 @@ Round your answer to three significant figures.</em></p>
 </blockquote>
 <blockquote>
 <p><strong>Assessed Question 2.</strong> <em>Let <span class="math inline">\(X_2 \sim \text{Bin}(n,p)\)</span>, where <span class="math inline">\(n = 200 + i\)</span> and <span class="math inline">\(p = (i+10)/20\)</span>, where <span class="math inline">\(i\)</span> is the final digit of your Student ID
-number. What is <span class="math inline">\(\mathbb P(X_2 &gt;
-3)\)</span>? Round your answer to three significant figures.</em></p>
+number. What is <span class="math inline">\(\mathbb P(X_2 \text{ is
+even})\)</span>? Round your answer to four significant figures.</em></p>
 </blockquote>
 <blockquote>
 <p><strong>Assessed Question 3.</strong> <em>Let <span class="math inline">\(X_3 \sim \text{Bin}(n,p)\)</span>, where <span class="math inline">\(n = 200 + i\)</span> and <span class="math inline">\(p = (20 + i)/1000\)</span>, where <span class="math inline">\(i\)</span> is the final digit of your Student ID
@@ -658,8 +658,8 @@ must you roll the pair of dice in order to give yourself at least a 95%
 chance of seeing a double six?</em></p>
 </blockquote>
 <blockquote>
-<p><strong>Assessed Question 5.</strong> <em>Let X_5 ()$, where <span class="math inline">\(\lambda = (1 + i)/2\)</span> What is <span class="math inline">\(\mathbb P(X_5 \text{ is even})\)</span>? Round
-your answer to five decimal places.</em></p>
+<p><strong>Assessed Question 5.</strong> <em>Let <span class="math inline">\(X_5 \sim \text{Po}(\lambda)\)</span>, where <span class="math inline">\(\lambda = (20 + i)/2\)</span> What is <span class="math inline">\(\mathbb P(20 \leq X_5 \leq 30)\)</span>? Round
+your answer to three significant figures.</em></p>
 </blockquote>
 </div>
 

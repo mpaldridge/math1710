@@ -174,10 +174,10 @@ This will temporarily create new functions `dgeomalt()`, `pgeomalt()`, `qgeomalt
 
 > **Assessed Question 1.** *Let $X_1 \sim \text{Bin}(n ,p)$, where $n = 20 + i$ and $p = (1 + i)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X_1 = 3)$? Round your answer to three significant figures.*
 
-> **Assessed Question 2.** *Let $X_2 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (i+10)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X_2 > 3)$? Round your answer to three significant figures.*
+> **Assessed Question 2.** *Let $X_2 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (i+10)/20$, where $i$ is the final digit of your Student ID number. What is $\mathbb P(X_2 \text{ is even})$? Round your answer to four significant figures.*
 
 > **Assessed Question 3.** *Let $X_3 \sim \text{Bin}(n,p)$, where $n = 200 + i$ and $p = (20 + i)/1000$, where $i$ is the final digit of your Student ID number. Let $Y_3$ be the Poisson approximation to $X_3$. What is $\mathbb P(Y_3 \leq 4)$? Round your answer to four significant figures.*
 
 > **Assessed Question 4.** *Suppose you roll a pair of dice until you get a double-six. What is the smallest number of times must you roll the pair of dice in order to give yourself at least a 95% chance of seeing a double six?*
 
-> **Assessed Question 5.** *Let X_5 \sim \text{Po}(\lambda)$, where $\lambda = (1 + i)/2$ What is $\mathbb P(X_5 \text{ is even})$? Round your answer to five decimal places.*
+> **Assessed Question 5.** *Let $X_5 \sim \text{Po}(\lambda)$, where $\lambda = (20 + i)/2$ What is $\mathbb P(20 \leq X_5 \leq 30)$? Round your answer to three significant figures.*
