@@ -305,6 +305,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -540,7 +545,7 @@ frequency densities.</p>
 </div>
 <div class="myq">
 <p><strong>A3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
-<p><img src="math1710_files/figure-html/unnamed-chunk-25-1.png" width="480" /></p>
+<p><img src="math1710_files/figure-html/unnamed-chunk-27-1.png" width="480" /></p>
 <div class="myanswers">
 <p><em>Solution.</em> Some answers could be:</p>
 <ul>
@@ -1013,6 +1018,494 @@ Since we've counted the number of presentation groups in two different ways, the
 ::::
 :::::
 -->
+</div>
+</div>
+<div id="P3-solutions" class="section level2 unnumbered hasAnchor">
+<h2>Problem Sheet 3<a href="solutions.html#P3-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="P3-short-solutions" class="section level3 unnumbered hasAnchor">
+<h3>A: Short questions<a href="solutions.html#P3-short-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="myq">
+<p><strong>A1.</strong> Consider dealing two cards (without replacement) from a pack of cards. Which of the following pairs of events are independent?</p>
+<div class="subq">
+<p><strong>(a)</strong> “The first card is a Heart” and “The first card is Red”.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have
+<span class="math display">\[\begin{align*}
+\mathbb P(\text{first Heart}) &amp;= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Red}) &amp;= \frac{26}{52} = \frac12 \\
+\mathbb P(\text{first Heart and first Red}) &amp;= \mathbb P(\text{first Heart}) = \frac14 .
+\end{align*}\]</span>
+So <span class="math inline">\(\mathbb P(\text{first Heart and first Red}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{first Red})\)</span>, and the events are not independent.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> “The first card is a Heart” and “The first card is a Spade”.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have
+<span class="math display">\[\begin{align*}
+\mathbb P(\text{first Heart}) &amp;= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Spade}) &amp;= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Heart and first Spade}) &amp;= 0 .
+\end{align*}\]</span>
+So <span class="math inline">\(\mathbb P(\text{first Heart and first Spade}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{first Spade})\)</span>, and the events are not independent.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> “The first card is a Heart” and “The first card is an Ace”.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have
+<span class="math display">\[\begin{align*}
+\mathbb P(\text{first Heart}) &amp;= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Ace}) &amp;= \frac{4}{52} = \frac1{13} \\
+\mathbb P(\text{first Heart and first Ace}) &amp;= \mathbb P(\text{first Ace of Hearts}) = \frac1{52} .
+\end{align*}\]</span>
+So <span class="math inline">\(\mathbb P(\text{first Heart and first Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{first Ace})\)</span>, and the events are independent.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> “The first card is a Heart” and “The second card is a Heart”.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have
+<span class="math display">\[\begin{align*}
+\mathbb P(\text{first Heart}) &amp;= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{second Heart}) &amp;= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{first Heart and second Heart}) &amp;= \frac{13\times 12}{52 \times 51} = \frac{1}{17}
+\end{align*}\]</span>
+So <span class="math inline">\(\mathbb P(\text{first Heart and second Heart}) \neq \mathbb P(\text{first Heart})\,\mathbb P(\text{second Heart})\)</span>, and the events are not independent.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(e)</strong> “The first card is a Heart” and “The second card is an Ace”.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have
+<span class="math display">\[\begin{align*}
+\mathbb P(\text{first Heart}) &amp;= \frac{13}{52} = \frac14 \\
+\mathbb P(\text{second Ace}) &amp;= \frac{4}{52} = \frac1{13} \\
+\mathbb P(\text{first Heart and second Ace}) &amp;= \frac{12\times4 + 1\times 3}{52\times 51} = \frac{51}{52\times 51} = \frac{1}{52}
+\end{align*}\]</span>
+Here, the <span class="math inline">\(12 \times 4\)</span> counted “a non-Ace Heart, followed by an Ace”, while the <span class="math inline">\(1 \times 3\)</span> counted “the Ace of Hearts, followed by a non-Heart Ace”. So <span class="math inline">\(\mathbb P(\text{first Heart and second Ace}) = \mathbb P(\text{first Heart})\,\mathbb P(\text{second Ace})\)</span>, and the events are independent.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A2.</strong> Consider rolling two dice. Let <span class="math inline">\(A\)</span> be the event that the first roll is even, let <span class="math inline">\(B\)</span> be the event that the second roll is even, and let <span class="math inline">\(C\)</span> be the event that the total score is even. You may assume the dice rolls are independent; so, in particular, events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.</p>
+<div class="subq">
+<p><strong>(a)</strong> Are <span class="math inline">\(A\)</span> and <span class="math inline">\(C\)</span> independent?</p>
+<div class="myanswers">
+<p><em>Solution.</em> Let us first note that <span class="math inline">\(\mathbb P(A) = \mathbb P(B) = \frac36 = \frac12\)</span>. It’s also the case that <span class="math inline">\(\mathbb P(C) = \frac{18}{36} = \frac12\)</span>, for example by counting the 18 even outcomes out of the 36 equally likely possibilities.</p>
+<p>We need to test is <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C) = \frac14\)</span> or not. By counting from the 36 possibilities, we see that indeed <span class="math inline">\(\mathbb P(A \cap C) = \frac{9}{36} = \frac{1}{4}\)</span>. Alternatively, we could note that <span class="math inline">\(\mathbb P(C \mid A) = \mathbb P(B) = \frac12\)</span>, since if the first dice is even, the second must be also even to get an even total. Then <span class="math inline">\(\mathbb P(A \cap C) = \mathbb P(A) \, \mathbb P(C \mid A) = \frac14\)</span>.</p>
+<p>So the events are independent.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Are <span class="math inline">\(B\)</span> and <span class="math inline">\(C\)</span> independent?</p>
+<div class="myanswers">
+<p><em>Solution.</em> Yes. The solution is essentially identical to part (a).</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Is it true that <span class="math inline">\(\mathbb P(A \cap B \cap C) = \mathbb P(A) \, \mathbb P(B) \, \mathbb P(C)\)</span>?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By checking the 36 possibilities, one sees that
+<span class="math display">\[ \mathbb P(A \cap B \cap C) = \frac{9}{36} = \frac{1}{4} \neq \frac{1}{8} = \frac12 \times \frac12 \times \frac12 = \mathbb P(A)\, \mathbb P(B) \, \mathbb P(C) . \]</span></p>
+<p>Alternatively, note that the total being even is certain if both dice rolls are even, so
+<span class="math display">\[ \mathbb P(A \cap B \cap C) = \mathbb P(A \cap B) \, \mathbb P(C \mid A \cap B) = \frac14 \times 1 = \frac14 , \]</span>
+to get the same result.</p>
+<p><strong>Group feedback:</strong> This shows that just because events are “pairwise independent”, it does not mean they are “mutually independent”.</p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>A3.</strong> Two events <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> have probabilities <span class="math inline">\(\mathbb P(A) = 0.6\)</span> and <span class="math inline">\(\mathbb P(B) = 0.5\)</span>, and the two events are independent. What is <span class="math inline">\(\mathbb P(A \cup B)\)</span>?</p>
+<div class="myanswers">
+<p>By the addition rule for unions, we have
+<span class="math display">\[ \mathbb P(A \cup B) = \mathbb P(A) + \mathbb P(B) - \mathbb P(A \cap B) . \]</span>
+The question tells us that <span class="math inline">\(\mathbb P(A) = 0.6\)</span> and <span class="math inline">\(\mathbb P(B) = 0.5\)</span>. Further, because <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent, we have <span class="math inline">\(\mathbb P(A \cap B) = \mathbb P(A)\mathbb P(B) = 0.6 \times 0.5 = 0.3\)</span>. Hence,
+<span class="math display">\[ \mathbb P(A \cup B) = 0.6 + 0.5 - 0.3 = 0.8 . \]</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A4.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(-1\)</span></th>
+<th align="center"><span class="math inline">\(0\)</span></th>
+<th align="center"><span class="math inline">\(0.5\)</span></th>
+<th align="center"><span class="math inline">\(2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.4\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.3\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Find <strong>(a)</strong> the CDF <span class="math inline">\(F_X\)</span>, <strong>(b)</strong> the expectation <span class="math inline">\(\mathbb EX\)</span>, and <strong>(c)</strong> the variance <span class="math inline">\(\operatorname{Var}(X)\)</span> of <span class="math inline">\(X\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em></p>
+<p><strong>(a)</strong> The CDF is</p>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+<col width="16%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x \in {}\)</span></th>
+<th align="center"><span class="math inline">\((-\infty, -1)\)</span></th>
+<th align="center"><span class="math inline">\([-1, 0)\)</span></th>
+<th align="center"><span class="math inline">\([0, 0.5)\)</span></th>
+<th align="center"><span class="math inline">\([0.5, 2)\)</span></th>
+<th align="center"><span class="math inline">\([2, \infty)\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(F(x)\)</span></td>
+<td align="center"><span class="math inline">\(0\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.5\)</span></td>
+<td align="center"><span class="math inline">\(0.7\)</span></td>
+<td align="center"><span class="math inline">\(1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>(b)</strong> The expectation is
+<span class="math display">\[ \mathbb EX = -1\times0.1 + 0\times0.4 + 0.5\times0.2+2\times0.3= 0.6. \]</span></p>
+<p><strong>(c)</strong> With the computational formula for the variance, we first have
+<span class="math display">\[ \mathbb EX^2 = (-1)^2\times0.1 + 0^2\times0.4 + 0.5^2\times0.2+2^2\times0.3 = 1.35 , \]</span>
+and so
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 = 1.35 - 0.6^2 = 0.99. \]</span></p>
+<p>Alternatively, using the definitional formula,
+<span class="math display">\[ \operatorname{Var}(X) = (-1-0.6)^2 \times 0.1 + (0 - 0.6)^2\times 0.4 + (0.5-0.6)^2\times 0.2 + (2-0.6)^2 \times0.3 = 0.99.\]</span></p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A5.</strong> Consider the random variable <span class="math inline">\(X\)</span> with the following PMF:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><span class="math inline">\(x\)</span></th>
+<th align="center"><span class="math inline">\(1\)</span></th>
+<th align="center"><span class="math inline">\(2\)</span></th>
+<th align="center"><span class="math inline">\(4\)</span></th>
+<th align="center"><span class="math inline">\(5\)</span></th>
+<th align="center"><span class="math inline">\(a\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(p(x)\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(0.2\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+<td align="center"><span class="math inline">\(b\)</span></td>
+<td align="center"><span class="math inline">\(0.1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>This random variable has <span class="math inline">\(\mathbb EX = 4.3\)</span>. Find the values of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+First, a PMF must sum to 1, so
+<span class="math display">\[ 1 = 0.1 + 0.2 + 0.1 + b + 0.1 , \]</span>
+so <span class="math inline">\(b = 0.5\)</span>.</p>
+<p>Second, the expectation is
+<span class="math display">\[
+\mathbb EX = 1\times0.1 + 2 \times 0.2 + 4 \times 0.1 + 5b + 0.1a
+           = 3.6 + 0.1a
+           = 4.3 .
+\]</span>
+So <span class="math inline">\(a = 7\)</span>.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>A6.</strong> A temperature <span class="math inline">\(T_C\)</span> measured in degrees Celsius can be converted to a temperature <span class="math inline">\(T_F\)</span> in degrees Fahrenheit using the formula <span class="math inline">\(T_F = \frac95 T_C + 32\)</span>.</p>
+<p>The average daily maximum temperature in Leeds in July is 19.0 °C. The variance of the daily maximum temperature measured in degrees Celsius is 10.4.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the average daily maximum temperature in degrees Fahrenheit?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+By linearity of expectation,
+<span class="math display">\[ \mathbb E T_F = \mathbb E\left(\tfrac95T_C + 32\right) = \tfrac95 \mathbb ET_C + 32 . \]</span>
+So the answer is <span class="math inline">\(\frac95 \times 19.0 + 32 = 66.2\)</span> °F.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> What is the variance of the daily maximum temperature when measured in degrees Fahrenheit?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+For the variance,
+<span class="math display">\[ \operatorname{Var}(T_F) = \operatorname{Var}\left(\tfrac95T_C + 32\right) = \left(\tfrac95\right)^2 \operatorname{Var}(T_C) = \tfrac{81}{25}\operatorname{Var}(T_C). \]</span>
+So the answer is <span class="math inline">\(\frac{81}{25} \times 10.4 = 33.7\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div id="P3-long-solutions" class="section level3 unnumbered hasAnchor">
+<h3>B: Long questions<a href="solutions.html#P3-long-solutions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="myq">
+<p><strong>B1.</strong> Suppose <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent events. Show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are also independent events.</p>
+<div class="myanswers">
+<p><em>Solution.</em> We know that
+<span class="math display">\[ \mathbb P(A \cap B) = \mathbb P(A) \, \mathbb P(B) , \]</span>
+because <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent.
+We need to show that <span class="math inline">\(A\)</span> and <span class="math inline">\(B^\mathsf{c}\)</span> are independent, which means showing that
+<span class="math display">\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]</span></p>
+<p>Note that
+<span class="math display">\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) , \]</span>
+and the union is disjoint, so by Axiom 3,
+<span class="math display">\[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) . \]</span>
+Hence, the left-hand side of <span class="math inline">\((*)\)</span> is
+<span class="math display">\[\begin{align*}
+\mathbb P(A \cap B^\mathsf{c})
+&amp;= \mathbb P(A) - \mathbb P(A \cap B) \\
+&amp;= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
+&amp;= \mathbb P(A) \big(1 - \mathbb P(B)\big) ,
+\end{align*}\]</span>
+where, in the second line, crucially we used the fact that <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are independent to replace <span class="math inline">\(\mathbb P(A \cap B)\)</span> by <span class="math inline">\(\mathbb P(A)\,\mathbb P(B)\)</span>.</p>
+<p>The right-hand side of <span class="math inline">\((*)\)</span> is
+<span class="math display">\[\mathbb P(A) \, \mathbb P(B^\mathsf{c}) = \mathbb P(A) \big(1 - \mathbb P(B)\big) , \]</span>
+where we’ve used the complement rule <span class="math inline">\(\mathbb P(B^\mathsf{c}) = 1- \mathbb P(B)\)</span>.</p>
+<p>Hence, we’ve shown the left- and right-hand sides of <span class="math inline">\((*)\)</span> are equal, and we are done.</p>
+</div>
+</div>
+<!--
+::::: {.myq}
+**B2.** Chloe cycles to work with probability $0.6$ and takes the bus with probability $0.4$. She has noticed that she is late 25% of the time when she takes the bus. Her boss notices that, on average, Chloe is late once per week (that is, one day in every five days).
+
+:::: {.subq}
+**(a)** What is the probability that Chloe will be late if she cycles to work?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+Let $C$ be the event that Chloe cycles to work and $B$ the event that Chloe takes the bus. Let $L$ be the event that Chloe is late.
+
+* We are told that $\mathbb P(C) = 0.6$ and $\mathbb P(B) = 0.4$. In particular, $B$ and $C$ make up a partition.
+* We are told that $\mathbb P(L \mid B) = 0.2$.
+* We are told that $\mathbb P(L) = \frac15 = 0.2$.
+* We want to find out $\mathbb P(L  \mid C)$.
+
+The law of total probability tells us that
+\[  \mathbb P(L) = \mathbb P(C)\,\mathbb P(L \mid C) + \mathbb P(B) \, \mathbb P(L \mid B) . \]
+Putting in everything we know, we get
+\[ 0.2 = 0.6 \,\mathbb P(L \mid C) + 0.4 \times 0.2 , \]
+which rearranges to $\mathbb P(L \mid C) = 0.2$.
+:::
+::::
+
+:::: {.subq}
+**(b)** Chloe is late today, and her boss suspects this is because she took the bus. What is the probability that this guess is correct?
+
+::: {.myanswers data-latex=""}
+*Solution.*
+This is asking for $\mathbb P(B \mid L)$. We know $\mathbb P(L \mid B) = 0.2$, and want to switch the order of conditioning, so this is a job for Bayes' theorem! We have
+\begin{align*}
+\mathbb P(B \mid L) &= \frac{\mathbb P(B) \, \mathbb (L \mid B)}{\mathbb P(L)} \\
+  &= \frac{0.4 \times 0.2}{0.2} \\
+  &= 0.4 .
+\end{align*}
+:::
+::::
+:::::
+-->
+<div class="myq">
+<p><strong>B2.</strong> You are dealt a hand of 13 cards from a 52-card deck. Let <span class="math inline">\(E_\mathrm{A}, E_\mathrm{K}, E_\mathrm{Q}, E_\mathrm{J}\)</span> respectively be the events that your hand contains the Ace, King, Queen and Jack of Spades.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is <span class="math inline">\(\mathbb P(E_\mathrm{A})\)</span>, the probability that your hand contains the Ace of Spades?</p>
+<div class="myanswers">
+<p><em>Solution.</em> There are 52 cards of which 13 will end up in my hand, so <span class="math inline">\(\mathbb P(E_\mathrm{A}) = \frac{13}{52}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Explain why <span class="math inline">\(\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> Given I have the Ace of Spades, there are <span class="math inline">\(52 - 1 = 51\)</span> cards left available, of which <span class="math inline">\(13 - 1 = 12\)</span> will end up in my hand, so <span class="math inline">\(\mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) = \frac{12}{51}\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Using the chain rule, calculate the probability that your hand contains all four of the Ace, King, Queen and Jack of Spades.</p>
+<div class="myanswers">
+<p><em>Solution.</em> Continuing the logic of part (b), we have
+<span class="math display">\[ \mathbb P(E_\mathrm{Q} \mid E_\mathrm{A} \cap E_\mathrm{K}) = \frac{11}{50} \qquad \mathbb P(E_\mathrm{J} \mid E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q}) = \frac{10}{49} . \]</span></p>
+<p>Using the chain rule,
+<span class="math display">\[\begin{align*}
+P( E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q} \cap E_\mathrm{J} )
+  &amp;= \mathbb P(E_\mathrm{A}) \, \mathbb P(E_\mathrm{K} \mid E_\mathrm{A}) \, \mathbb P(E_\mathrm{Q} \mid E_\mathrm{A} \cap E_\mathrm{K}) \, \mathbb P(E_\mathrm{J} \mid E_\mathrm{A} \cap E_\mathrm{K} \cap E_\mathrm{Q}) \\
+  &amp;= \frac{13}{52} \times \frac{12}{51} \times \frac{11}{50} \times \frac{10}{49} = \frac{13 \times 12 \times 11 \times 10}{52 \times 51 \times 50 \times 49} ,
+\end{align*}\]</span>
+which is the same as we got in lectures.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(d)</strong> Check that your answer agrees with the answer we found by classical probability methods in <a href="L06-classical-ii.html#exm:akqj">Example 6.4</a> in Lecture 6. Which method do you prefer?</p>
+<div class="myanswers">
+<p><em>Solution.</em> Personally, I slightly prefer this answer – it seems more obvious how the answer relates to the method, whereas in lectures a lot of terms in a ratio of binomial coefficients “magically” cancelled out. Your mileage may vary.</p>
+</div>
+</div>
+</div>
+<!--
+:::: {.myq}
+**B3.** Let $\Omega$ be a sample space, let $\mathbb P$ be a probability measure on $\Omega$, and fix an event $B \subset \Omega$ with $\mathbb P(B) > 0$. Show that the conditional probability $\mathbb P( {\cdot} \mid B)$ is also a probability measure on $\Omega$. That is, show that the conditional probability also satisfies the probability axioms:
+
+1. $\mathbb P(A \mid B) \geq 0$ for all events $A \subset \Omega$;
+1. $\mathbb P(\Omega \mid B) = 1$;
+1. For disjoint events $A_1, A_2, \dots$, we have
+\[ \mathbb P(A_1 \cup A_2 \cup \cdots \mid B) = \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots . \]
+
+::: {.myanswers data-latex=""}
+*Solution.*
+For Axiom 1, we have
+\[ \mathbb P(A \mid B) = \frac{\mathbb P(A \cap B)}{\mathbb P(B)} . \]
+The numerator is non-negative, by Axiom 1 for the probability measure $\mathbb P$, and the denominator is strictly positive, by assumption. Hence, the fraction is non-negative, as required.
+
+For Axiom 2, note that, since $B \subset \Omega$, we have $\Omega \cap B = B$. Hence
+\[ \mathbb P(\Omega \mid B) = \frac{\mathbb P(\Omega \cap B)}{\mathbb P(B)} = \frac{\mathbb P(B)}{\mathbb P(B)} = 1 , \]
+as required.
+
+For Axiom 3, note that the dsitributive law tells us that
+\[ (A1 \cup A_2 \cup \cdots) \cap B = (A_1 \cap B) \cup (A_2 \cap B) \cup \cdots , \]
+and the unions remain disjoint. Hence, we have
+\begin{align*}
+\mathbb P(A_1 &\cup A_2 \cup \cdots \mid B) \\
+&= \frac{\mathbb P\big((A_1 \cup A_2 \cup \cdots) \cap B\big)}{\mathbb P(B)} \\
+&= \frac{\mathbb P\big((A_1 \cap B) \cup (A_2 \cap B) \cup \dots\big)}{\mathbb P(B)} \\
+&= \frac{\mathbb P(A_1 \cap B) + \mathbb P(A_2 \cap B) + \cdots}{\mathbb P(B)} \\
+&= \frac{\mathbb P(A_1 \cap B)}{\mathbb P(B)} + \frac{\mathbb P(A_2 \cap B)}{\mathbb P(B)} + \cdots \\
+&= \mathbb P(A_1 \mid B) + \mathbb P(A_2 \mid B) + \cdots, 
+\end{align*}
+where, in the fourth line we used Axiom 3 for the probability measure $\mathbb P(B)$. This proves Axiom 3, and we are done.
+:::
+::::
+-->
+<div class="myq">
+<p><strong>B3.</strong> Soldiers are asked about their use of illegal drugs, using a so-called “randomised survey”. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:</p>
+<ol style="list-style-type: decimal">
+<li>“Say ‘Yes.’”</li>
+<li>“Say ‘No.’”</li>
+<li>“Truthfully answer the question ‘Have you taken any illegal drugs in the past 12 months?’”</li>
+</ol>
+<div class="subq">
+<p><strong>(a)</strong> What are some advantages or disadvantages of performing the experiment this way?</p>
+<div class="myanswers">
+<p><em>Solution.</em> The main advantage is that it seems likely that a soldier might want to lie in answer to a “straight question”, given that if their superiors discovered they had taken illegal drugs, there could be very serious consequences. This method allows a certain “plausible deniability”: just because the soldier answers “Yes”, we cannot know for sure whether they have taken illegal drugs or merely picked the “Yes” card. Thus we might hope to get more honest answers this way. Perhaps you can think of other advantages.</p>
+<p>There could be disadvantages. The complicated set-up of the experiment could lead to the subjects (or experimenters) making an error. The scientists could be “lulled into a false sense of security” of thinking they get fully honest answers, when soldiers picking card 3 might still choose to lie. Perhaps you can think of other disadvantages.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Suppose that 40% of soldiers respond “Yes”. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+Let <span class="math inline">\(C_1, C_2, C_3\)</span> be the events that a soldier picks cards 1, 2, or 3 respectively, which have probabilities <span class="math inline">\(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\)</span> and make up a partition. Let <span class="math inline">\(Y\)</span> be the event that the soldier answers yes. We know that <span class="math inline">\(\mathbb P(Y \mid C_1) = 1\)</span>, <span class="math inline">\(\mathbb P(Y \mid C_2) = 0\)</span> and <span class="math inline">\(\mathbb P(Y \mid C_3) = \mathbb P(D)\)</span>, where <span class="math inline">\(\mathbb P(D)\)</span>, which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months. We are also told that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>.</p>
+<p>The law of total probability tells us that
+<span class="math display">\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) +
+\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]</span>
+With the information we have, we get
+<span class="math display">\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D) . \]</span>
+Solving this gives <span class="math inline">\(\mathbb P(D) = \frac15 = 20\%\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> If a soldier responds “Yes”, what is the probability that the soldier has taken illegal drugs in the past 12 months.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+This is asking for <span class="math inline">\(\mathbb P(D \mid Y)\)</span>. Another one for Bayes theorem:
+<span class="math display">\[ \mathbb P(D \mid Y) = \frac{\mathbb P(D) \mathbb P(Y \mid D)}{\mathbb P(Y)} . \]</span>
+From the question we know that <span class="math inline">\(\mathbb P(Y) = 0.4\)</span>. From part (a) we know that <span class="math inline">\(\mathbb P(D) = 0.2\)</span>. We also know that <span class="math inline">\(\mathbb P(Y \mid D) = \frac23\)</span>, as the soldier will answer Yes is they pick either cards 1 or 3. Hence
+<span class="math display">\[ \mathbb P(D \mid Y) = \frac{0.2 \times \frac23}{0.4} = \frac13 . \]</span></p>
+</div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B4.</strong> A random variable <span class="math inline">\(X_n\)</span> is said to follow the <em>discrete uniform distribution</em> on <span class="math inline">\(\{1, 2, \dots, n\}\)</span> if each of the <span class="math inline">\(n\)</span> values in that set <span class="math inline">\(\{1,2,\dots,n\}\)</span> is equally likely.</p>
+<div class="subq">
+<p><strong>(a)</strong> Show that the expectation of <span class="math inline">\(X_n\)</span> is <span class="math inline">\(\mathbb EX_n = \displaystyle\frac{n+1}{2}\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+We have <span class="math inline">\(p(x) = \frac1n\)</span> for <span class="math inline">\(x = 1, 2, \dots, n\)</span>. So the expectation is
+<span class="math display">\[ \mathbb EX = \sum_{x=1}^n x\,\frac{1}{n} = \frac{1}{n} \sum_{x = 1}^n x = \frac{1}{n}\, \frac{n(n+1)}{2} = \frac{n+1}{2} . \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Find the variance of <span class="math inline">\(X_n\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+It turns out to be much easier to use the computational formual <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span>. First,
+<span class="math display">\[ \mathbb EX^2 = \sum_{x=1}^n x^2 \,\frac{1}{n}  = \frac{1}{n} \sum_{x = 1}^n x^2 = \frac{1}{n}\,\frac{n(n+1)(2n+1)}{6} = \frac{(n+1)(2n + 1)}{6} . \]</span>
+Then using <span class="math inline">\(\mu = (n+1)/2\)</span> from part (a), we have
+<span class="math display">\[ \operatorname{Var}(X) =  \frac{(n+1)(2n + 1)}{6} - \left(\frac{n+1}{2}\right)^2 = \frac{(n+1)(4n + 2 - 3n -3)}{12} = \frac{(n+1)(n-1)}{12} = \frac{n^2 - 1}{12}  \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> Let <span class="math inline">\(Y\)</span> be a discrete uniform distribution on <span class="math inline">\(b - a + 1\)</span> values <span class="math inline">\(\{a, a+1, a+2, \dots, b-1, b\}\)</span>, for integers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> with <span class="math inline">\(a&lt;b\)</span>. By finding a relationship between <span class="math inline">\(Y\)</span> and <span class="math inline">\(X_n\)</span>, for an appropriate value of <span class="math inline">\(n\)</span>, find the expectation and variance of <span class="math inline">\(Y\)</span>.</p>
+<div class="myanswers">
+<p><em>Solution.</em> If we take <span class="math inline">\(n = b - a + 1\)</span>, then <span class="math inline">\(Y\)</span> has the same distribution as <span class="math inline">\(X_n + (a-1)\)</span>. This is because <span class="math inline">\(x = 1\)</span> maps to <span class="math inline">\(y = 1 + (a-1) = a\)</span>; <span class="math inline">\(x = 2\)</span> maps to <span class="math inline">\(y = 2 + (a-1) = a+1\)</span>; and so on; up to <span class="math inline">\(x = n\)</span> mapping to <span class="math inline">\(y = n + (a-1) = (b - a + 1) + (a-1) = b\)</span>. So the ranges match up perfectly.</p>
+<p>Thus we have
+<span class="math display">\[ \mathbb EY = \mathbb E\big(X_{b-a+1} + (a-1)\big) = \mathbb EX_{b-a+1} + (a-1)= \frac{b - a + 1 +1}{2} + (a-1) = \frac{a + b}{2}  \]</span>
+and
+<span class="math display">\[ \operatorname{Var}(Y) = \operatorname{Var}\big(X_{b-a+1} + (a-1)\big) = \operatorname{Var}(X_{b-a+1}) = \frac{(b - a + 1)^2 - 1}{12} . \]</span>
+You can rearrange the variance a bit if you like, but it doesn’t really get any nicer.</p>
+</div>
+</div>
+<p>You may use without proof the standard results
+<span class="math display">\[ \sum_{x=1}^n x = \frac{n(n+1)}{2} \qquad  \sum_{x=1}^n x^2 = \frac{n(n+1)(2n+1)}{6} . \]</span></p>
+</div>
+<div class="myq">
+<p><strong>B5.</strong> A gambling game works as follows. You keep tossing a fair coin until you first get a Head. If the first Head comes up on the <span class="math inline">\(n\)</span>th coin toss, then you win <span class="math inline">\(2^n\)</span> pounds.</p>
+<div class="subq">
+<p><strong>(a)</strong> What is the probability that the first Head is seen on the <span class="math inline">\(n\)</span>th toss of the coin?</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+This happens if the first <span class="math inline">\(n-1\)</span> tosses are Tails, with probability <span class="math inline">\((\frac12)^{n-1}\)</span>, them the <span class="math inline">\(n\)</span>th toss is Heads, with probability <span class="math inline">\(\frac12\)</span>. Altogether, this is <span class="math inline">\((\frac12)^{n-1}\times \frac12 = (\frac12)^n\)</span>.</p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(b)</strong> Show that the expected winnings from playing this game are infinite.</p>
+<div class="myanswers">
+<p><em>Solution.</em>
+The expected winnings are
+<span class="math display">\[ \sum_{n=1}^\infty 2^n \times \mathbb P(\text{first Head on $n$th toss}) = \sum_{n=1}^\infty 2^n \times \big(\tfrac12\big)^n = \sum_{n=1}^\infty 1 = \infty \]</span></p>
+</div>
+</div>
+<div class="subq">
+<p><strong>(c)</strong> The “St Petersburg paradox” refers to the observation that, despite the expected winnings from this game being infinite, few people would be prepared to play this game for, say, £100, and almost no one for £1000. Discuss a few possible “resolutions” to this paradox which could explain why people are unwilling to play this game despite seemingly having infinite expected winnings.</p>
+<div class="myanswers">
+<p><em>Discussion.</em>
+One possibility is:</p>
+<ul>
+<li>The people are being irrational, and in fact <em>should</em> play the game for £1000.</li>
+</ul>
+<p>but I’m not sure anyone <em>really</em> thinks that.</p>
+<p>Some other possible explanations include:</p>
+<ul>
+<li><p>The expectation is only infinite if you really could win an extraordinarily large amount of money. Suppose that the person offering the game only has £<span class="math inline">\(2^{20}\)</span>, or just over £1 million. In that case, if the first 20 tosses are all Tails, the opponent gives you all £<span class="math inline">\(2^{20}\)</span> then declares bankruptcy and the game stops. In this more realistic case, your expected winnings are only
+<span class="math display">\[  \sum_{n=1}^{20} 2^n \times \big(\tfrac12\big)^n + 2^{20} \times \big(\tfrac12\big)^{20} = \sum_{n=1}^{20} 1 + 1 = 21 , \]</span>
+or £21; a more reasonable price to pay to play the game.</p></li>
+<li><p>The amount of benefit (or “utility”) one gets from winning a large amount of money might not be directly proportional to the amount. For example, £200 million might be very nice, but it’s not <em>twice</em> as nice as £100 million – after all, what else could you really do with the second £100 million? Perhaps the utility <span class="math inline">\(U(m)\)</span> of £<span class="math inline">\(m\)</span> scales more logarithmically than linearly, like <span class="math inline">\(U(m) = \log_2 m\)</span> in some appropriate “happiness units” In that case, the expected <em>utility</em> from the game is
+<span class="math display">\[ \sum_{n=1}^\infty U(2^n) \, \big(\tfrac12\big)^n = \sum_{n=1}^\infty \log_2(2^n) \, \big(\tfrac12\big)^n = \sum_{n=1}^\infty n \times \big(\tfrac12\big)^n = 2 , \]</span>
+happiness units, and you might be willing to pay 2 happiness-units-worth of money to play. Since <span class="math inline">\(U(4) = \log_2 4 = 2\)</span>, this would be £4.</p></li>
+<li><p>Normal advice to play games with positive expected winnings only really applies if you can play the game many times (or very similar games many times). For repeated games, the expected winnings can be interpreted as “the winnings you are likely to get in the long run”. For one-off highly unusual games, this doesn’t hold, so one needs a different criterion to decide whether to play. (If I was allowed to play this game a million times for £100 a round, but didn’t have to settle the money until all one million games had finished, then I would strongly consider playing.)</p></li>
+</ul>
+<p>You can probably come up with other explanations of your own too.</p>
+</div>
+</div>
+</div>
 
 </div>
 </div>
