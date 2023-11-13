@@ -31,7 +31,7 @@ rmd_files:
 #  - sections/L22-exam.Rmd
   - R/R.Rmd
 #  - R/practical.Rmd
-#  - writing.Rmd
+  - writing.Rmd
   - problems/solutions.Rmd
 book_filename: "math1710"
 output_dir: "docs"

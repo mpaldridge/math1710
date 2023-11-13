@@ -21,10 +21,10 @@ knitr::opts_chunk$set(comment = NA)
 **Week 7** (13--17 November):
 
 * [**Lecture 13:** Multiple random variables](#L13-multi-rv) (Monday 13 November)
-* [**Lecture 15:** Expectation and covariance](#L14-covariance) (Wednesday 15 November)
+* [**Lecture 14:** Expectation and covariance](#L14-covariance) (Wednesday 15 November)
 * [**Problem Sheet 4:**](#P4) Work through in preparation for your tutorial in Week 8. Deadline for assessed questions: Monday 27 November.
 * [**R Worksheet 6:**](#R) Assessed questions due Monday 20 November
-* **Office hours:** Friday 10 November, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html)
+* **Office hours:** Friday 17 November, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html)
 :::
 
 ::: {.mysched}

@@ -162,13 +162,13 @@
 \item
   \protect\hyperlink{L13-multi-rv}{\textbf{Lecture 13:} Multiple random variables} (Monday 13 November)
 \item
-  \protect\hyperlink{L14-covariance}{\textbf{Lecture 15:} Expectation and covariance} (Wednesday 15 November)
+  \protect\hyperlink{L14-covariance}{\textbf{Lecture 14:} Expectation and covariance} (Wednesday 15 November)
 \item
   \protect\hyperlink{P4}{\textbf{Problem Sheet 4:}} Work through in preparation for your tutorial in Week 8. Deadline for assessed questions: Monday 27 November.
 \item
   \protect\hyperlink{R}{\textbf{R Worksheet 6:}} Assessed questions due Monday 20 November
 \item
-  \textbf{Office hours:} Friday 10 November, 11--12 and 1--2, \href{https://mpaldridge.github.io/office.html}{Physics Research Deck 9.320}
+  \textbf{Office hours:} Friday 17 November, 11--12 and 1--2, \href{https://mpaldridge.github.io/office.html}{Physics Research Deck 9.320}
 \end{itemize}
 
 \textbf{Week 6} (6--10 November):
@@ -552,6 +552,16 @@ For the probability section, any book with a title like ``Introduction to Probab
 \end{itemize}
 
 I also found lecture notes by \href{https://people.maths.bris.ac.uk/~maotj/teaching.html}{Prof Oliver Johnson} (University of Bristol) and \href{http://www.statslab.cam.ac.uk/~rrw1/prob/index.html}{Prof Richard Weber} (University of Cambridge) to be useful.
+
+Some students have asked about getting more practice questions. In addition to the textbooks above, I also recommend the following ``exercise books'' full of questions. Both are available from the library.
+
+\begin{itemize}
+\tightlist
+\item
+  Gr Grimett and D Stirzaker, \emph{Probability and Random Processes: Problems and Solutions}, Oxford University Press, 1992.
+\item
+  YM Suhov and M Kelbert, \emph{Probability and Statistics by Example -- 1: Basic Probability and Statistics}, 2nd edition, Cambridge University Press, 2014.
+\end{itemize}
 
 On Bayesian statistics, we will only taste a brief introduction, but if you want a book, I recommend:
 
@@ -4613,6 +4623,69 @@ Variance
 \hypertarget{L13-multi-rv}{%
 \chapter{Multiple random variables}\label{L13-multi-rv}}
 
+\hypertarget{joint}{%
+\section{Joint distributions}\label{joint}}
+
+\begin{longtable}[]{@{}cccccc@{}}
+\toprule()
+\(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(p_X(x)\) \\
+\midrule()
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \(\frac14\) \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \(\frac12\) \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \(\frac14\) \\
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule()
+\end{longtable}
+
+In summary, we have learned the following:
+
+\begin{itemize}
+\tightlist
+\item
+  A joint PMF of two discrete random variables \(X\) and \(Y\) is
+  \[ p_{X,Y}(x, y) = \mathbb P(X = x \text{ and } Y = y) . \]
+\item
+  We can get the marginal distributions \(p_X(x) = \mathbb P(X = x)\) and \(p_Y(y) = \mathbb P(Y = y)\) by summing over the other variable:
+  \[ p_X(x) = \sum_y p_{X,Y}(x,y) \qquad p_Y(y) = \sum_x p_{X,Y}(x,y) . \]
+\end{itemize}
+
+Note that the joint PMF conforms to the same rules as a normal PMF:
+
+\begin{itemize}
+\item
+  It is non-negative: \(p_{X,Y}(x,y) \geq 0\).
+\item
+  It sums to 1: \(\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1\).
+\end{itemize}
+
+\hypertarget{independence-rv}{%
+\section{Independence of random variables}\label{independence-rv}}
+
+\begin{definition}
+We say two discrete random variables are \textbf{independent} if, for all \(x\) and \(y\), the events \(\{X = x\}\) and \(\{Y = y\}\) are independent; that is, if
+\[ \mathbb P(X = x \text{ and } Y = y) = \mathbb P(X = x) \, \mathbb P(Y = y) . \]
+In terms of the joint and marginal PMFs, this is the condition that
+\[ p_{X,Y}(x,y) = p_X(x) \, p_Y(y)  \]
+for all \(x\) and \(y\).
+
+More generally, a sequence of random variables \(\mathbf X = (X_1, X_2, \dots)\) are independent if
+\[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots = \prod_{i} p_X(x_i). \]
+\end{definition}
+
+\begin{example}
+\emph{Let \(X_1, X_2, \dots, X_{20}\) be IID random variables following a binomial distribution with parameters \(n = 10\) and \(p = 0.3\). What is the probability that all 20 of the the \(X_i\) are nonzero?}
+
+\end{example}
+
+\hypertarget{cond-rv}{%
+\section{Conditional distributions}\label{cond-rv}}
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables with joint PMF \(p_{X,Y}\) and marginal PMFs \(p_X\) and \(p_Y\) respectively. Then the \textbf{condition probability mass function} of \(Y\) \textbf{given} \(X\), \(p_{Y \mid X}\), is given by
+\[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]
+\end{definition}
+
 \hypertarget{summary-L13}{%
 \section*{Summary}\label{summary-L13}}
 \addcontentsline{toc}{section}{Summary}
@@ -5276,6 +5349,128 @@ When you install R and RStudio, it's important that you install the language R f
 Now, whenever you want to use R and RStudio, simply open program RStudio. (The language R will automatically be loaded on your computer.)
 
 For Chromebooks, we recommend using the \href{https://posit.cloud}{Posit Cloud}, as mentioned above. However, if you have an Intel-based Chromebook and are feeling brave, then we have had success installing R and RStudio using \href{https://levente.littvay.hu/chromebook/}{these instructions}, which are long and complicated.
+
+\hypertarget{writing}{%
+\chapter*{Tips on writing mathematics}\label{writing}}
+\addcontentsline{toc}{chapter}{Tips on writing mathematics}
+
+In the mid-semester survey, a few people suggested I could offer some clearer advice on writing mathematics well. This is a brief attempt at doing that. I may try to expand this a bit later.
+
+\hypertarget{advice}{%
+\section*{Advice}\label{advice}}
+\addcontentsline{toc}{section}{Advice}
+
+If a maths question asks you to ``State'', ``Write down'' or ``Calculate'' something, you don't need to do any more than give the answer. But if a question asks you to ``Prove'', ``Show that'' or ``Explain'', then the marker is looking for a clearly explained answer, and will base your mark on how well you explain your solution, not just on it's mathematical accuracy.
+
+Some things a marker might look for include:
+
+\begin{itemize}
+\tightlist
+\item
+  If you had to make your own notation, have you explained clearly what it means?
+\item
+  If it's a ``words question'', have you clearly translated the information into mathematical notation?
+\item
+  In your solution, do you clearly state how you know certain statements are true? (``From the question, we know that\ldots{}'' ``From the definition of \ldots{}'' ``Using the law of total probability\ldots{}'' ``From Axiom 2, we see that\ldots{}'')
+\item
+  When making non-obvious algebraic manipulations, do you explain what you're doing? (There's usually no need -- but no harm either! -- in stating obvious things like ``Dividing both sides by 2\ldots{}'', but for less obvious things like ``Recognising this as difference of two squares\ldots{}'' or ``By the linearity of expectation\ldots{}'', you should say so.)
+\item
+  Does your solution show clearly the ``direction'' of the proof. (``We start with the definition of\ldots{}'' ``We need to show that\ldots{}'' ``Assume, seeking a contradiction, that\ldots{}'' ``If we could show that \ldots{} then this would be sufficient to give the result.'' ``We will bound each term in this expression separately.'')
+\item
+  Do you write in full sentences? Even equations should (usually) include punctuation, such as ending with a full-stop if they end a sentence.
+\item
+  An extremely rough rule of thumb -- which is often, but not always, applicable -- is that a good solution should be at least 50\% writing and at most 50\% equations.
+\item
+  It's usually best to avoid abbreviations and shorthand, like ``LHS'' (``left-hand side''), ``WLOG'' (``without loss of generality''), ``iff'' (``if and only if''), etc, although specific technical abbreviations from the course, like ``PMF'' (``probability mass function'') are OK. Mathematical shorthand like \(\therefore\) or \(\Rightarrow\) should be avoided as ``word alternatives'' (``So'', ``Thus'', ``Therefore'', ``Hence'', etc, are better), but are OK in certain circumstances where they have specific technical meanings.
+\item
+  It's fine -- and often good! -- to use diagrams to aid your explanation. But a diagram is rarely sufficient by itself without some writing to explain what it shows.
+\end{itemize}
+
+\hypertarget{writing-ex}{%
+\section*{Examples}\label{writing-ex}}
+\addcontentsline{toc}{section}{Examples}
+
+Here are two solutions for \protect\hyperlink{P3-long}{Problem Sheet 3 Question B1}. This first solution is a typical sort of solution I might see from a student. The second solution has exactly the same mathematical content, but is more clearly explained. Which do you think is better?
+
+\textbf{Problem Sheet 3, Question B1.} \emph{Suppose \(A\) and \(B\) are independent events. Show that \(A\) and \(B^\mathsf{c}\) are also independent events.}
+
+\emph{Solution 1.}
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/writing-pic-0-1} \end{center}
+
+\[ \therefore \ \qquad \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c})  \]
+
+\begin{align*}
+\Rightarrow \qquad \mathbb P(A \cap B^\mathsf{c})
+&= \mathbb P(A) - \mathbb P(A \cap B) \\
+&= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
+&= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
+&= \mathbb P(A) \, \mathbb P(B^\mathsf{c}) 
+\end{align*}
+
+\emph{Solution 2.}
+We need to show that \(A\) and \(B^\mathsf{c}\) are independent, which means showing that
+\[ \mathbb P(A \cap B^\mathsf{c}) = \mathbb P(A) \, \mathbb P(B^\mathsf{c}) . \tag{$*$} \]
+
+By splitting the event \(A\) up into ``the bit in \(B\)'' and the ``the bit not in \(B\)'', as shown in the Venn diagram below, we have a disjoint union
+\[ A = (A \cap B) \cup (A \cap B^\mathsf{c}) . \]
+
+\begin{center}\includegraphics[width=320pt]{math1710_files/figure-latex/writing-pic-1-1} \end{center}
+
+Applying Axiom 3 to this disjoint union, we have
+\[ \mathbb P(A) = \mathbb P(A \cap B) + \mathbb P(A \cap B^\mathsf{c}) . \]
+
+Hence, the left-hand side of \((*)\) is
+\begin{align*}
+\mathbb P(A \cap B^\mathsf{c})
+&= \mathbb P(A) - \mathbb P(A \cap B) \\
+&= \mathbb P(A) - \mathbb P(A)\,\mathbb P(B) \\
+&= \mathbb P(A) \big(1 - \mathbb P(B)\big) \\
+&= \mathbb P(A) \, \mathbb P(B^\mathsf{c}) .
+\end{align*}
+In the second line, we used the fact that \(A\) and \(B\) are independent, as given in the question, to replace \(\mathbb P(A \cap B)\) by \(\mathbb P(A)\,\mathbb P(B)\). In the final line, we used the complement rule \(\mathbb P(B^\mathsf{c}) = 1 - \mathbb P(B)\). But this is exactly the right-hand side of \((*)\).
+Hence, we've shown the left- and right-hand sides of \((*)\) are equal, and we are done.
+
+Here's another example -- \protect\hyperlink{P3-long}{Problem Sheet 3, Question B3(b)}:
+
+\textbf{Problem Sheet 3, Question B3(b).} \emph{Soldiers are asked about their use of illegal drugs, using a so-called ``randomised survey''. Each soldier is handed a deck of three cards, picks one of the three cards at random, and responds according to what the card says. The three cards say:}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \emph{``Say `Yes.'\,''}
+\item
+  \emph{``Say `No.'\,''}
+\item
+  \emph{``Truthfully answer the question `Have you taken any illegal drugs in the past 12 months?'\,''}
+\end{enumerate}
+
+\emph{Suppose that 40\% of soldiers respond ``Yes''. What is the likely proportion of soldiers who have taken illegal drugs in the past 12 months?}
+
+\emph{Solution 1.}
+
+\begin{align*} \mathbb P(\text{Yes}) &= \mathbb P(C_1)\,\mathbb P(\text{Yes} \mid C_1) + \mathbb P(C_2)\,\mathbb P(\text{Yes} \mid C_2) + 
+\mathbb P(C_3)\,\mathbb P(\text{Yes} \mid C_3) \\
+\Rightarrow \qquad\qquad\  \  0.4 &= \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(\text{Drugs}) \\
+&=\tfrac13 + \tfrac13 \,\mathbb P(\text{Drugs})  \\
+\Rightarrow \qquad \mathbb P(\text{Drugs}) &= \frac{0.4 - \frac13}{\frac13} = 20\%
+\end{align*}
+
+\emph{Solution 2.}
+Let \(C_1, C_2, C_3\) be the events that a soldier picks cards 1, 2, or 3 respectively. These have each probability \(\mathbb P(C_1) = \mathbb P(C_2) = \mathbb P(C_3) = \frac13\), because the three cards are equally likely.
+
+Let \(Y\) be the event that the soldier answers ``Yes''. We are told that \(\mathbb P(Y) = 0.4\).
+
+We know that \(\mathbb P(Y \mid C_1) = 1\), because a soldier must answer ``Yes'' to Card 1, and \(\mathbb P(Y \mid C_2) = 0\), because a soldier must answer ``No'' to Card 2. For Card 3, a soldier answers ``Yes'' if they have taken drugs and ``No'' if they have not, so \(\mathbb P(Y \mid C_3) = \mathbb P(D)\), where \(\mathbb P(D)\), which we want to find, is the proportion of soldiers who have taken illegal drugs in the past 12 months.
+
+Since \(C_1, C_2, C_3\) make up a partition -- a soldier must pick exactly one card -- the law of total probability tells us that
+\[ \mathbb P(Y) = \mathbb P(C_1)\,\mathbb P(Y \mid C_1) + \mathbb P(C_2)\,\mathbb P(Y \mid C_2) + 
+\mathbb P(C_3)\,\mathbb P(Y \mid C_3) .\]
+With the information we have gathered above, we have
+\[ 0.4 = \tfrac13 \times 1 + \tfrac13 \times 0 + \tfrac13 \, \mathbb P(D) = \tfrac13 + \tfrac13 \,\mathbb P(D)  . \]
+Solving this gives
+\[ \mathbb P(D) = \frac{0.4 - \frac13}{\frac13} = \frac15 = 20\% . \]
 
 \commtrue
 

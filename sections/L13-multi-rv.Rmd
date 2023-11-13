@@ -1,12 +1,12 @@
 # Multiple random variables  {#L13-multi-rv}
 
 
-<!--
 ## Joint distributions  {#joint}
 
 
-
+<!--
 In previous lectures, we have looked at single discrete random variables in isolation. In this lecture and the next, we want to look at how multiple discrete random variables can interact.
+
 
 Consider tossing a fair coin 3 times. Let $X$ be the number of Heads in the first two tosses, and let $Y$ be the number of Heads over all three tosses.
 
@@ -27,6 +27,7 @@ However, we might also want to know how $X$ and $Y$ interact. To do this, we wil
 
 In our case of the coin tosses, we have
 
+
 | $p_{X,Y}(x,y)$ | $y = 0$ | $y = 1$ | $y = 2$ | $y = 3$ | $\phantom{p_X(x)}$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | $x=0$ | $\frac18$ | $\frac18$ | $0$ | $0$ | |
@@ -44,6 +45,8 @@ To phrase this in terms of joint and marginal PMFs, we have
 \[ p_Y(y) = \sum_x p_{X,Y}(x, y) . \]
 In other words, to get the marginal distribution of $Y$, we need to sum down the columns in the table of the joint distribution.
 
+
+
 | $p_{X,Y}(x,y)$ | $y = 0$ | $y = 1$ | $y = 2$ | $y = 3$ | $\phantom{p_X(x)}$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | $x=0$ | $\frac18$ | $\frac18$ | $0$ | $0$ | |
@@ -55,6 +58,8 @@ In exactly the same way, we have
 \[ p_X(x) = \sum_y p_{X,Y}(x, y) ; \]
  so to get the marginal distribution of $X$, we need to sum across the rows in the table of the joint distribution.
  
+-->
+
 | $p_{X,Y}(x,y)$ | $y = 0$ | $y = 1$ | $y = 2$ | $y = 3$ | $p_X(x)$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|
 | $x=0$ | $\frac18$ | $\frac18$ | $0$ | $0$ | $\frac14$ |
@@ -62,7 +67,11 @@ In exactly the same way, we have
 | $x=2$ | $0$ | $0$ | $\frac18$ | $\frac18$ | $\frac14$ |
 | $p_Y(y)$ | $\frac18$ | $\frac38$ | $\frac38$ | $\frac18$ | |
 
+<!--
+
 We can check that these marginal PMFs match those we started with. (The term "marginal" PMF or distribution is presumably because one ends up writing the values in the "margins" of the table.)
+
+-->
 
 ::: {.thpart}
 In summary, we have learned the following:
@@ -79,17 +88,19 @@ Note that the joint PMF conforms to the same rules as a normal PMF:
 
 * It sums to 1: $\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1$. 
 
+<!--
 We may want to look at more than two random variables, $\mathbf X = (X_1, X_2, \dots, X_n)$. In this case, the joint PMF is
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]
 In the same way, we can find the marginal distribution of one of the variables -- say $X_1$ -- by summing over all the other variables:
 \[ p_{X_1}(x) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x, x_2, \dots, x_n) . \]
 
+-->
+
 ## Independence of random variables {#independence-rv}
 
-
-
-
+<!--
 We said that two *events* are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb  P(B)$. We now can give a similar definition for what it means two *random variables* to be independent.
+-->
 
 ::: {.definition}
 We say two discrete random variables are **independent** if, for all $x$ and $y$, the events $\{X = x\}$ and $\{Y = y\}$ are independent; that is, if
@@ -101,39 +112,44 @@ for all $x$ and $y$.
 More generally, a sequence of random variables $\mathbf X = (X_1, X_2, \dots)$ are independent if
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots = \prod_{i} p_X(x_i). \]
 :::
+
+<!--
 (Here the Pi notation $\prod$ is to multiplication exactly what the Sigma notation $\sum$ is to addition.)
 
 Returning to our case of the dice from before, we see that $X$ and $Y$ are *not* independent, because, for just one counterexample, $p_{X,Y}(0,0) = \frac18$, while $p_X(0) = \frac14$ and $p_Y(0) = \frac18$, so $p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)$.
 
 An important scenario in probability theory and statistics is that of **independent and identically distributed** (or **IID**) random variables. IID random variables represent the same experiment being repeated many times, with each experiment independent of the others. So all the random variables have the same distribution and they are all independent of each other. So $\mathbf X = (X_1, X_2, \dots )$ are IID random variables with a common PMF $p_X$, say, if
 \[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]
+-->
 
 ::: {.example}
 *Let $X_1, X_2, \dots, X_{20}$ be IID random variables following a binomial distribution with parameters $n = 10$ and $p = 0.3$. What is the probability that all 20 of the the $X_i$ are nonzero?*
-
+<!--
 Because the $X_i$ are identically distributed, the probability that any one of them is nonzero is
 \[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]
 Then, because the $X_i$ independent, the probability that they are all nonzero is
-\[ \mathbb P(X_1 > 0)^{20} = 0.972^{20} = 0.564. \]
+\[ \mathbb P(X_1 > 0)^{20} = 0.972^{20} = 0.564. \]-->
 :::
 
 
 ## Conditional distributions  {#cond-rv}
 
-
+<!--
 
 For probabilities of events, we had the conditional probability
 \[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
 In the same way, for random variables, we have
 \[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]
 We call the distribution of this the **conditional distribution**.
+-->
 
 ::: {.definition}
 Let $X$ and $Y$ be two random variables with joint PMF $p_{X,Y}$ and marginal PMFs $p_X$ and $p_Y$ respectively. Then the **condition probability mass function** of $Y$ **given** $X$, $p_{Y \mid X}$, is given by
 \[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]
 :::
 
-Let's think again about our coin tossing example. To get the conditional distribution of $Y$ given $X = 1$, say, we have
+<!--
+Let's think again about our coin tossing example. To get the conditional distribution $p_{Y \mid X} (y \mid 1)$ of $Y$ given $X = 1$, say, we have
 \[ p_{Y \mid X}(y \mid 1) = \frac{p_{X,Y}(1,y)}{p_X(1)} ;   \]
 so we take the $x = 1$ row of the joint distribution table and "renormalise it" by dividing through by the total $p_X(1)$ of the row, so it adds up to 1. That is,
 \begin{align*}
@@ -143,7 +159,7 @@ so we take the $x = 1$ row of the joint distribution table and "renormalise it" 
   p_{Y \mid X} (3 \mid 1) &= \frac{p_{X,Y}(1, 3)}{p_X(1)} = \frac{0}{\frac12} = 0 .
 \end{align*}
 
-In just the same way, we could get the conditional distribution of $X$ given $Y = 2$, say, by taking the $y = 2$ column of the joint distribution table, and renormalising by $p_Y(2)$ so that the column sums to 1, That is,
+In just the same way, we could get the conditional distribution $p_{X \mid Y} (x \mid 2)$ of $X$ given $Y = 2$, say, by taking the $y = 2$ column of the joint distribution table, and renormalising by $p_Y(2)$ so that the column sums to 1, That is,
 \begin{align*}
   p_{X \mid Y} (0 \mid 2) &= \frac{p_{X,Y}(0,2)}{p_Y(2)} = \frac{0}{\frac38} = 0 , \\
   p_{X \mid Y} (1 \mid 2) &= \frac{p_{X,Y}(1,2)}{p_Y(2)} = \frac{\frac14}{\frac38} = \tfrac23 , \\

@@ -180,6 +180,11 @@ For the probability section, any book with a title like "Introduction to Probabi
 
 I also found lecture notes by [Prof Oliver Johnson](https://people.maths.bris.ac.uk/~maotj/teaching.html) (University of Bristol) and [Prof Richard Weber](http://www.statslab.cam.ac.uk/~rrw1/prob/index.html) (University of Cambridge) to be useful.
 
+Some students have asked about getting more practice questions. In addition to the textbooks above, I also recommend the following "exercise books" full of questions. Both are available from the library.
+
+* Gr Grimmett and D Stirzaker, *Probability and Random Processes: Problems and Solutions*, Oxford University Press, 1992.
+* YM Suhov and M Kelbert, *Probability and Statistics by Example -- 1: Basic Probability and Statistics*, 2nd edition, Cambridge University Press, 2014.
+
 On Bayesian statistics, we will only taste a brief introduction, but if you want a book, I recommend:
 
 * JV Stone, *Bayes' Rule: A Tutorial Introduction to Bayesian Analysis*, Sebtel Press, 2013.
