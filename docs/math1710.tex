@@ -453,7 +453,7 @@ That makes about 100 hours in total. (MATH1710 is a 10-credit module, so is supp
 \subsection*{Exam}\label{exam}}
 \addcontentsline{toc}{subsection}{Exam}
 
-There will be an exam in January, which makes up the remaining 70\% of your mark. The exam will consist of 20 short and 2 long questions, and will be time-limited to 2 hours. We'll talk more about the exam format near the end of the module.
+There will be an exam in January, between 15 and 26 January 2024, which makes up the remaining 70\% of your mark. The exam will consist of 20 short and 2 long questions, and will be time-limited to 2 hours. We'll talk more about the exam format near the end of the module.
 
 \hypertarget{ask}{%
 \subsection*{Who should I ask about\ldots?}\label{ask}}
@@ -558,7 +558,7 @@ Some students have asked about getting more practice questions. In addition to t
 \begin{itemize}
 \tightlist
 \item
-  Gr Grimett and D Stirzaker, \emph{Probability and Random Processes: Problems and Solutions}, Oxford University Press, 1992.
+  Gr Grimmett and D Stirzaker, \emph{Probability and Random Processes: Problems and Solutions}, Oxford University Press, 1992.
 \item
   YM Suhov and M Kelbert, \emph{Probability and Statistics by Example -- 1: Basic Probability and Statistics}, 2nd edition, Cambridge University Press, 2014.
 \end{itemize}
@@ -4626,6 +4626,111 @@ Variance
 \hypertarget{joint}{%
 \section{Joint distributions}\label{joint}}
 
+In previous lectures, we have looked at single discrete random variables in isolation. In this lecture and the next, we want to look at how multiple discrete random variables can interact.
+
+Consider tossing a fair coin 3 times. Let \(X\) be the number of Heads in the first two tosses, and let \(Y\) be the number of Heads over all three tosses.
+
+We know that \(X \sim \text{Bin}(2, \frac12)\) and \(Y \sim \text{Bin}(3, \frac12)\), so we can easily write down their probability mass functions:
+
+\begin{longtable}[]{@{}cccc@{}}
+\toprule()
+\(x\) & \(x = 0\) & \(x = 1\) & \(x = 2\) \\
+\midrule()
+\endhead
+\(p_X(x)\) & \(\frac14\) & \(\frac12\) & \(\frac14\) \\
+\bottomrule()
+\end{longtable}
+
+\begin{longtable}[]{@{}ccccc@{}}
+\toprule()
+\(y\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) \\
+\midrule()
+\endhead
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) \\
+\bottomrule()
+\end{longtable}
+
+When we have multiple random variables and we want to emphasise that a PMF refers to only one of them, we often use the phrase \textbf{marginal PMF} or \textbf{marginal distribution}. So the PMFs above are the \emph{marginal distributions} of \(X\) and \(Y\).
+
+However, we might also want to know how \(X\) and \(Y\) interact. To do this, we will need the \textbf{joint PMF}, given by
+\[ p_{X,Y}(x,y) = \mathbb P(X = x \text{ and } Y = y) . \]
+
+In our case of the coin tosses, we have
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(p_{X,Y}(x,y)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\phantom{p_X(x)}\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
+\(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule()
+\end{longtable}
+
+For just one worked example, we have \(p_{X,Y}(2,2) = \frac18\), because the only way to have \(X =2\) (two Heads in the first two coin tosses) and \(Y = 2\) (two Heads in the first \emph{three} coin tosses) is to toss Head, Head, Tail, with probability \((\frac12)^3 = \frac18\).
+
+For probabilities of events, we had that if some \(A_i\)s form a partition, then
+\[ \mathbb P(B) = \sum_i \mathbb P(B \cap A_i) . \]
+Here, the events \(\{X = x\}\), as \(x\) varies over the range of \(X\), also make up a partition. Therefore, we have
+\[ \mathbb P(Y = y) = \sum_x \mathbb P(X = x \text{ and } Y = y) . \]
+To phrase this in terms of joint and marginal PMFs, we have
+\[ p_Y(y) = \sum_x p_{X,Y}(x, y) . \]
+In other words, to get the marginal distribution of \(Y\), we need to sum down the columns in the table of the joint distribution.
+
+\begin{longtable}[]{@{}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\centering
+\(p_{X,Y}(x,y)\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 0\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 1\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 2\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(y = 3\)
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+\(\phantom{p_X(x)}\)
+\end{minipage} \\
+\midrule()
+\endhead
+\(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
+\(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
+\(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
+\(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule()
+\end{longtable}
+
+In exactly the same way, we have
+\[ p_X(x) = \sum_y p_{X,Y}(x, y) ; \]
+so to get the marginal distribution of \(X\), we need to sum across the rows in the table of the joint distribution.
+
 \begin{longtable}[]{@{}cccccc@{}}
 \toprule()
 \(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(p_X(x)\) \\
@@ -4637,6 +4742,8 @@ Variance
 \(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
 \bottomrule()
 \end{longtable}
+
+We can check that these marginal PMFs match those we started with. (The term ``marginal'' PMF or distribution is presumably because one ends up writing the values in the ``margins'' of the table.)
 
 In summary, we have learned the following:
 
@@ -4659,8 +4766,15 @@ Note that the joint PMF conforms to the same rules as a normal PMF:
   It sums to 1: \(\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1\).
 \end{itemize}
 
+We may want to look at more than two random variables, \(\mathbf X = (X_1, X_2, \dots, X_n)\). In this case, the joint PMF is
+\[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]
+In the same way, we can find the marginal distribution of one of the variables -- say \(X_1\) -- by summing over all the other variables:
+\[ p_{X_1}(x) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x, x_2, \dots, x_n) . \]
+
 \hypertarget{independence-rv}{%
 \section{Independence of random variables}\label{independence-rv}}
+
+We said that two \emph{events} are independent if \(\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb P(B)\). We now can give a similar definition for what it means two \emph{random variables} to be independent.
 
 \begin{definition}
 We say two discrete random variables are \textbf{independent} if, for all \(x\) and \(y\), the events \(\{X = x\}\) and \(\{Y = y\}\) are independent; that is, if
@@ -4673,18 +4787,67 @@ More generally, a sequence of random variables \(\mathbf X = (X_1, X_2, \dots)\)
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots = \prod_{i} p_X(x_i). \]
 \end{definition}
 
+(Here the Pi notation \(\prod\) is to multiplication exactly what the Sigma notation \(\sum\) is to addition.)
+
+Returning to our case of the dice from before, we see that \(X\) and \(Y\) are \emph{not} independent, because, for just one counterexample, \(p_{X,Y}(0,0) = \frac18\), while \(p_X(0) = \frac14\) and \(p_Y(0) = \frac18\), so \(p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)\).
+
+An important scenario in probability theory and statistics is that of \textbf{independent and identically distributed} (or \textbf{IID}) random variables. IID random variables represent the same experiment being repeated many times, with each experiment independent of the others. So all the random variables have the same distribution and they are all independent of each other. So \(\mathbf X = (X_1, X_2, \dots )\) are IID random variables with a common PMF \(p_X\), say, if
+\[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]
+
 \begin{example}
 \emph{Let \(X_1, X_2, \dots, X_{20}\) be IID random variables following a binomial distribution with parameters \(n = 10\) and \(p = 0.3\). What is the probability that all 20 of the the \(X_i\) are nonzero?}
 
+Because the \(X_i\) are identically distributed, the probability that any one of them is nonzero is
+\[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]
+Then, because the \(X_i\) independent, the probability that they are all nonzero is
+\[ \mathbb P(X_1 > 0)^{20} = 0.972^{20} = 0.564. \]
 \end{example}
 
 \hypertarget{cond-rv}{%
 \section{Conditional distributions}\label{cond-rv}}
 
+For probabilities of events, we had the conditional probability
+\[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
+In the same way, for random variables, we have
+\[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]
+We call the distribution of this the \textbf{conditional distribution}.
+
 \begin{definition}
 Let \(X\) and \(Y\) be two random variables with joint PMF \(p_{X,Y}\) and marginal PMFs \(p_X\) and \(p_Y\) respectively. Then the \textbf{condition probability mass function} of \(Y\) \textbf{given} \(X\), \(p_{Y \mid X}\), is given by
 \[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]
 \end{definition}
+
+Let's think again about our coin tossing example. To get the conditional distribution \(p_{Y \mid X} (y \mid 1)\) of \(Y\) given \(X = 1\), say, we have
+\[ p_{Y \mid X}(y \mid 1) = \frac{p_{X,Y}(1,y)}{p_X(1)} ;   \]
+so we take the \(x = 1\) row of the joint distribution table and ``renormalise it'' by dividing through by the total \(p_X(1)\) of the row, so it adds up to 1. That is,
+\begin{align*}
+  p_{Y \mid X} (0 \mid 1) &= \frac{p_{X,Y}(1, 0)}{p_X(1)} = \frac{0}{\frac12} = 0 , \\
+  p_{Y \mid X} (1 \mid 1) &= \frac{p_{X,Y}(1, 1)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (2 \mid 1) &= \frac{p_{X,Y}(1, 2)}{p_X(1)} = \frac{\frac14}{\frac12} = \tfrac12 , \\
+  p_{Y \mid X} (3 \mid 1) &= \frac{p_{X,Y}(1, 3)}{p_X(1)} = \frac{0}{\frac12} = 0 .
+\end{align*}
+
+In just the same way, we could get the conditional distribution \(p_{X \mid Y} (x \mid 2)\) of \(X\) given \(Y = 2\), say, by taking the \(y = 2\) column of the joint distribution table, and renormalising by \(p_Y(2)\) so that the column sums to 1, That is,
+\begin{align*}
+  p_{X \mid Y} (0 \mid 2) &= \frac{p_{X,Y}(0,2)}{p_Y(2)} = \frac{0}{\frac38} = 0 , \\
+  p_{X \mid Y} (1 \mid 2) &= \frac{p_{X,Y}(1,2)}{p_Y(2)} = \frac{\frac14}{\frac38} = \tfrac23 , \\
+  p_{X \mid Y} (2 \mid 2) &= \frac{p_{X,Y}(2,2)}{p_Y(2)} = \frac{\frac18}{\frac38} = \tfrac13 .
+\end{align*}
+
+Results that we used for conditional probability with events also carry over to random variables. For example, from Bayes' theorem we know that
+\[ \mathbb P(A \mid B) = \frac{ \mathbb P(A) \, \mathbb P(B \mid A)}{\mathbb P(B)} . \]
+In the same way, we have \textbf{Bayes' theorem} for random variables:
+\[ \mathbb P(X = x \mid Y = y) = \frac{ \mathbb P(X = x) \, \mathbb P(Y = y \mid X = x)}{\mathbb P(Y = y)} , \]
+which in terms of conditional and marginal PMFs is
+\[ p_{X \mid Y}(x \mid y) = \frac{p_X(x) \, p_{Y \mid X}(y \mid x)}{p_Y(y)} . \]
+This will be a particularly important formula when we study Bayesian statistics at the end of the module.
+
+We can check Bayes' theorem with \(x = 1\) and \(y = 2\), for example.
+The right-hand side of Bayes' theorem is
+\[ \frac{p_X(1) \, p_{Y \mid X}(2 \mid 1)}{p_Y(2)} = \frac{\frac12 \times \frac12}{\frac38} = \tfrac{2}{3} .   \]
+The left-hand side of Bayes' theorem is
+\[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]
+which is equal, as it should be, to the right-hand side.
 
 \hypertarget{summary-L13}{%
 \section*{Summary}\label{summary-L13}}

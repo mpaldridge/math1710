@@ -4,7 +4,7 @@
 ## Joint distributions  {#joint}
 
 
-<!--
+
 In previous lectures, we have looked at single discrete random variables in isolation. In this lecture and the next, we want to look at how multiple discrete random variables can interact.
 
 
@@ -58,7 +58,7 @@ In exactly the same way, we have
 \[ p_X(x) = \sum_y p_{X,Y}(x, y) ; \]
  so to get the marginal distribution of $X$, we need to sum across the rows in the table of the joint distribution.
  
--->
+
 
 | $p_{X,Y}(x,y)$ | $y = 0$ | $y = 1$ | $y = 2$ | $y = 3$ | $p_X(x)$ |
 |:-:|:-:|:-:|:-:|:-:|:-:|
@@ -67,11 +67,11 @@ In exactly the same way, we have
 | $x=2$ | $0$ | $0$ | $\frac18$ | $\frac18$ | $\frac14$ |
 | $p_Y(y)$ | $\frac18$ | $\frac38$ | $\frac38$ | $\frac18$ | |
 
-<!--
+
 
 We can check that these marginal PMFs match those we started with. (The term "marginal" PMF or distribution is presumably because one ends up writing the values in the "margins" of the table.)
 
--->
+
 
 ::: {.thpart}
 In summary, we have learned the following:
@@ -88,19 +88,19 @@ Note that the joint PMF conforms to the same rules as a normal PMF:
 
 * It sums to 1: $\displaystyle\sum_{x,y} p_{X,Y}(x,y) = 1$. 
 
-<!--
+
 We may want to look at more than two random variables, $\mathbf X = (X_1, X_2, \dots, X_n)$. In this case, the joint PMF is
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1, \dots, X_n}(x_1, \dots, x_n) = \mathbb P(X_1 = x_1 \text{ and } \cdots \text{ and } X_n = x_n) .   \]
 In the same way, we can find the marginal distribution of one of the variables -- say $X_1$ -- by summing over all the other variables:
 \[ p_{X_1}(x) = \sum_{x_2, \dots, x_n} p_{X_1, X_2, \dots, X_n}(x, x_2, \dots, x_n) . \]
 
--->
+
 
 ## Independence of random variables {#independence-rv}
 
-<!--
+
 We said that two *events* are independent if $\mathbb P(A \cap B) = \mathbb P(A)\, \mathbb  P(B)$. We now can give a similar definition for what it means two *random variables* to be independent.
--->
+
 
 ::: {.definition}
 We say two discrete random variables are **independent** if, for all $x$ and $y$, the events $\{X = x\}$ and $\{Y = y\}$ are independent; that is, if
@@ -113,42 +113,41 @@ More generally, a sequence of random variables $\mathbf X = (X_1, X_2, \dots)$ a
 \[ p_{\mathbf X}(\mathbf x) = p_{X_1}(x_1) \times p_{X_2}(x_2) \times \cdots = \prod_{i} p_X(x_i). \]
 :::
 
-<!--
+
 (Here the Pi notation $\prod$ is to multiplication exactly what the Sigma notation $\sum$ is to addition.)
 
 Returning to our case of the dice from before, we see that $X$ and $Y$ are *not* independent, because, for just one counterexample, $p_{X,Y}(0,0) = \frac18$, while $p_X(0) = \frac14$ and $p_Y(0) = \frac18$, so $p_{X,Y}(0,0) \neq p_X(0) \, p_Y(0)$.
 
 An important scenario in probability theory and statistics is that of **independent and identically distributed** (or **IID**) random variables. IID random variables represent the same experiment being repeated many times, with each experiment independent of the others. So all the random variables have the same distribution and they are all independent of each other. So $\mathbf X = (X_1, X_2, \dots )$ are IID random variables with a common PMF $p_X$, say, if
 \[ p_{\mathbf X}(\mathbf x) = p_X(x_1) \times p_X(x_2) \times \cdots = \prod_i p_X(x_i) . \]
--->
+
 
 ::: {.example}
 *Let $X_1, X_2, \dots, X_{20}$ be IID random variables following a binomial distribution with parameters $n = 10$ and $p = 0.3$. What is the probability that all 20 of the the $X_i$ are nonzero?*
-<!--
+
 Because the $X_i$ are identically distributed, the probability that any one of them is nonzero is
 \[ \mathbb P(X_1 > 0) = 1 - \mathbb P(X_1 = 0) = 1 - (1 - 0.3)^{10} = 0.972 . \]
 Then, because the $X_i$ independent, the probability that they are all nonzero is
-\[ \mathbb P(X_1 > 0)^{20} = 0.972^{20} = 0.564. \]-->
+\[ \mathbb P(X_1 > 0)^{20} = 0.972^{20} = 0.564. \]
 :::
 
 
 ## Conditional distributions  {#cond-rv}
 
-<!--
 
 For probabilities of events, we had the conditional probability
 \[ \mathbb P(B \mid A) = \frac{\mathbb P(A \cap B)}{\mathbb P(A)} . \]
 In the same way, for random variables, we have
 \[ \mathbb P(Y = y \mid X = x) = \frac{\mathbb P(X = x \text{ and } Y = y)}{\mathbb P(X = x)} . \]
 We call the distribution of this the **conditional distribution**.
--->
+
 
 ::: {.definition}
 Let $X$ and $Y$ be two random variables with joint PMF $p_{X,Y}$ and marginal PMFs $p_X$ and $p_Y$ respectively. Then the **condition probability mass function** of $Y$ **given** $X$, $p_{Y \mid X}$, is given by
 \[ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} .   \]
 :::
 
-<!--
+
 Let's think again about our coin tossing example. To get the conditional distribution $p_{Y \mid X} (y \mid 1)$ of $Y$ given $X = 1$, say, we have
 \[ p_{Y \mid X}(y \mid 1) = \frac{p_{X,Y}(1,y)}{p_X(1)} ;   \]
 so we take the $x = 1$ row of the joint distribution table and "renormalise it" by dividing through by the total $p_X(1)$ of the row, so it adds up to 1. That is,
@@ -181,7 +180,7 @@ The left-hand side of Bayes' theorem is
 \[ p_{X \mid Y}(1 \mid 2) = \tfrac23 , \]
 which is equal, as it should be, to the right-hand side.
 
--->
+
 
 ## Summary  {#summary-L13 .unnumbered}
 
