@@ -1,9 +1,5 @@
 # Problem Sheet 4  {#P4 .unnumbered}
 
-<!--
-\newcommand{\Cov}{\operatorname{Cov}}
-\newcommand{\Corr}{\operatorname{Corr}}
--->
 
 <style>
 .myanswers { 
@@ -17,7 +13,7 @@ display: none !important;
 
 
 ::: {.mysummary}
-This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for ~~your~~ **the online** tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by **2pm on**  ~~Monday 28~~ **Tuesday 29 November**.
+This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by **2pm on**   **Monday 27 November**.
 :::
 
 ## A: Short questions {#P4-short .unnumbered}

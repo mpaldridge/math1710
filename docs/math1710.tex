@@ -97,7 +97,6 @@
 \makeatletter
 \def\fps@figure{htbp}
 \makeatother
-\usepackage[normalem]{ulem}
 \setlength{\emergencystretch}{3em} % prevent overfull lines
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -4885,6 +4884,117 @@ which is equal, as it should be, to the right-hand side.
 \newcommand{\Cov}{\operatorname{Cov}}
 \newcommand{\Corr}{\operatorname{Corr}}
 
+\hypertarget{sum-product}{%
+\section{Expectation of sums and products}\label{sum-product}}
+
+\begin{theorem}
+\protect\hypertarget{thm:linearity2}{}\label{thm:linearity2}
+
+Let \(X\) and \(Y\) be two random variables with joint probability mass function \(p_{X,Y}\). Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb Eg(X,Y) = \displaystyle\sum_{x,y} g(x,y) p_{X,Y}(x,y)\).
+\item
+  \textbf{(Linearity of expectation, 2)} \(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\), regardless of whether \(X\) and \(Y\) are independent or not.
+\item
+  If \(X\) and \(Y\) are independent, then \(\mathbb EXY = \mathbb EX \times \mathbb EY\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{example}
+Let \(X_1, X_2, \dots, X_n\) be IID \(\text{Bern}(p)\) random variables. We know that \(\mathbb EX_1 = p\) and \(\operatorname{Var}(X_1) = p(1-p)\).
+
+Now let \(Y = X_1 + X_2 + \cdots + X_n\). Since each \(X_i\) indicates whether or not trial \(i\) was a success, this means \(Y\) counts the number of successes in \(n\) trials. This is a binomial random variable, \(Y \sim \text{Bin}(n,p)\).
+
+We can use this structure to calculate
+\[ \mathbb EY = \mathbb E(X_1 + \cdots + X_n) = n \mathbb EX_1 = np . \]
+
+This has proved the expectation of the binomial distribution from Lecture 11.
+\end{example}
+
+\hypertarget{covariance}{%
+\section{Covariance}\label{covariance}}
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables with expectations \(\mathbb EX =\mu_X\) and \(\mathbb EY = \mu_Y\) respectively. Then their \textbf{covariance} is
+\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]
+\end{definition}
+
+\begin{theorem}
+Let \(X\) and \(Y\) be two random variables with expectations \(\mu_X\) and \(\mu_Y\) respectively. Then their covariance can also be calculated as
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]
+\end{theorem}
+
+\begin{example}
+We continue with our coin-tossing example from the previous lecture, where \(X\) is the number of Heads in the first two coin tosses and \(Y\) the number of Heads in the first three coin tosses.
+
+We know that \(X \sim \text{Bin}(2, \frac12)\), so \(\mu_X = 1\), and \(Y \sim \text{Bin}(3, \frac12)\), so \(\mu_Y = 1.5\). To find the covariance using the computational formula, we also need \(\mathbb EXY\), which is
+\begin{align*}
+\mathbb EXY &= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
+  &= 0\times 0\times p_{X,Y}(0,0) + 0 \times 1 \times p_{X,Y}(0,1) + \cdots + 2\times 3 \times p_{X,Y}(2,3) \\
+  &= 0 \times \tfrac18 + 0 \times \tfrac18 + \cdots + 6 \times \tfrac18 \\
+  &= 2.
+\end{align*}
+Hence the covariance is
+\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]
+\end{example}
+
+\begin{theorem}
+If \(X\) and \(Y\) are independent, then \(\operatorname{Cov}(X,Y) = 0\).
+\end{theorem}
+
+\begin{theorem}
+
+Let \(X\), \(Y\) and \(Z\) be random variables. Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\);
+\item
+  \(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\);
+\item
+  \(\operatorname{Cov}(aX, Y) = a\,\operatorname{Cov}(X,Y)\);
+\item
+  \(\operatorname{Cov}(X + b, Y) = \operatorname{Cov}(X,Y)\);
+\item
+  \(\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y,Z)\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{theorem}
+Let \(X\) and \(Y\) be two random variables. Then
+\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]
+
+If \(X\) and \(Y\) are independent, then
+\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]
+\end{theorem}
+
+\begin{example}
+Returning to the ``binomial as a sum of Bernoullis'' example, we have
+\[ \operatorname{Var}(Y) = \operatorname{Var}(X_1 + \cdots X_n) = n\operatorname{Var}(X_1) = np(1-p) . \]
+Here we used that the \(X_i\) are independent (the first I in ``IID'').
+\end{example}
+
+\hypertarget{correlation}{%
+\section{Correlation}\label{correlation}}
+
+\begin{definition}
+Let \(X\) and \(Y\) be two random variables. Then the \textbf{correlation} between \(X\) and \(Y\) is
+\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]
+\end{definition}
+
+\begin{example}
+For the coin-tossing again, we have
+\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]
+\end{example}
+
 \hypertarget{summary-L14}{%
 \section*{Summary}\label{summary-L14}}
 \addcontentsline{toc}{section}{Summary}
@@ -4915,7 +5025,7 @@ which is equal, as it should be, to the right-hand side.
 
 \commfalse
 
-This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for \sout{your} \textbf{the online} tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on} \sout{Monday 28} \textbf{Tuesday 29 November}.
+This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 8. The problem sheet contains two assessed questions, which are due in by \textbf{2pm on} \textbf{Monday 27 November}.
 
 \hypertarget{P4-short}{%
 \section*{A: Short questions}\label{P4-short}}
