@@ -33,11 +33,12 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
 | Week | Worksheet                    | Solutions | Deadline for assessed work |
 |:----:|------------------------------|:---------:|:--------------------------:|
 |   2  | [**1: R basics**](R1.html)   | [Solutions](R1-solutions.html) |  ---  |
-|   3  | [**2: Vectors**](R2.html)    | [Solutions](R2-solutions.html) | Monday 23 October |
+|   3  | [**2: Vectors**](R2.html) | [Solutions](R2-solutions.html) | Monday 23 October |
 |   4  | [**3: Data in R**](R3.html)  | [Solutions](R3-solutions.html) |  ---  |
 |   5  | [**4: Plots I** -- Making plots](R4.html) | | Monday 6 November       |
 |   6  | [**5: Plots II** -- Making plots better](R5.html) |           |  ---  |
 |   7  | [**6: Discrete distributions**](R6-2324.html) |  | Monday 20 November |
+|   8  | [**7: Discrete random variables**](R7-2324.html) |            |  ---  |
 
 <!--
 | Week | Worksheet                     | Deadline for assessed work |

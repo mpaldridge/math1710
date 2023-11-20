@@ -7,9 +7,9 @@
 
 ## Expectation of sums and products {#sum-product}
 
-<!--
+
 When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. It's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but here we will just look at their expectations and, later, variances.
--->
+
 
 ::: {.theorem #linearity2}
 Let $X$ and $Y$ be two random variables with joint probability mass function $p_{X,Y}$. Then
@@ -19,7 +19,7 @@ Let $X$ and $Y$ be two random variables with joint probability mass function $p_
 3. If $X$ and $Y$ are independent, then $\mathbb EXY = \mathbb EX \times \mathbb EY$.
 :::
 
-<!--
+
 If we put the second point here together with the other result of linearity of expectation (Theorem \@ref(thm:linearity1)) then we get the general rule
 \[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]
 and this holds whether or not $X$ and $Y$ are independent.
@@ -48,7 +48,7 @@ For part 3, if $X$ and $Y$ are independent, then $p_{X,Y}(x,y) = p_X(x) \, p_Y(y
 \end{align*}
 as required.
 :::
--->
+
 
 ::: {.example}
 Let $X_1, X_2, \dots, X_n$ be IID $\text{Bern}(p)$ random variables. We know that $\mathbb EX_1 = p$ and $\Var(X_1) = p(1-p)$.
@@ -58,16 +58,16 @@ Now let $Y = X_1 + X_2 + \cdots + X_n$. Since each $X_i$ indicates whether or no
 We can use this structure to calculate
 \[ \mathbb EY = \mathbb E(X_1 + \cdots + X_n) = n \mathbb EX_1 = np . \]
 
-This has proved the expectation of the binomial distribution from Lecture 11.
+This has proved the expectation of the binomial distribution from Lecture 11. (Note that this would hold even if the trials weren't independent.)
 :::
 
 
 
 ## Covariance {#covariance}
 
-<!--
+
 If we are interested at how two random variables vary together, we need to look at the covariance.
--->
+
 
 
 
@@ -76,16 +76,16 @@ Let $X$ and $Y$ be two random variables with expectations $\mathbb EX =\mu_X$ an
 \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]
 :::
 
-<!--
+
 In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.
--->
+
 
 ::: {.theorem}
 Let $X$ and $Y$ be two random variables with expectations $\mu_X$ and $\mu_Y$ respectively. Then their covariance can also be calculated as
 \[ \Cov(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]
 :::
 
-<!--
+
 ::: {.proof}
 Exactly as we've done many times before, we have
 \begin{align*}
@@ -97,7 +97,7 @@ Exactly as we've done many times before, we have
 \end{align*}
 and we're done.
 :::
--->
+
 
 ::: {.example}
 We continue with our coin-tossing example from the previous lecture, where $X$ is the number of Heads in the first two coin tosses and $Y$ the number of Heads in the first three coin tosses.
@@ -113,15 +113,15 @@ Hence the covariance is
 \[ \Cov (X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]
 :::
 
-<!--
+
 A very important fact is the following.
--->
+
 
 ::: {.theorem}
 If $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
 :::
 
-<!--
+
 Be careful not to get this the wrong way around: if $\Cov(X,Y) = 0$ it doesn't necessarily mean that $X$ and $Y$ are independent.
 
 To use the ["contrapositive"](https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive) (which is allowed!), in our example, we have $\Cov(X,Y) \neq 0$, which means that $X$ and $Y$ are not independent -- confirming what we already knew.
@@ -133,7 +133,7 @@ and we are done.
 :::
 
 Here are some more important properties of the covariance.
--->
+
 
 ::: {.theorem}
 Let $X$, $Y$ and $Z$ be random variables. Then
@@ -145,7 +145,7 @@ Let $X$, $Y$ and $Z$ be random variables. Then
 5. $\Cov(X + Y, Z) = \Cov(X, Z) + \Cov(Y,Z)$.
 :::
 
-<!--
+
 ::: {.proof}
 Part 1 and 2 are immediate from the definition.
 
@@ -163,16 +163,18 @@ For part 5, note that $\mathbb E(X + Y) = \mu_X + \mu_Y$ by linearity of expecta
 as required.
 :::
 
+::: {.example}
 We could calculate the covariance in our coin-tossing example a different way, by noting that $Y = X + Z$, where $Z \sim \text{Bern}(\frac12)$ represents the third coin toss and is independent of $X$. Then we have
 \[
-\Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) =
+\Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z)
 = \Var(X) + 0 = \Var(X) ,\]
 where  we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent.
 We already know that $\Var(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12$ because $X \sim \text{Bin}(2, \frac12)$. So $\Cov(X,Y) = \frac12$,
-matching our previous calculation. 
+matching our previous calculation.
+:::
 
 Now that we know some facts about the covariance, we can calculate the variance of a sum.
--->
+
 
 ::: {.theorem}
 Let $X$ and $Y$ be two random variables. Then
@@ -182,7 +184,7 @@ If $X$ and $Y$ are independent, then
 \[ \Var(X + Y) = \Var(X) + \Var(Y) . \]
 :::
 
-<!--
+
 
 It's easy to forget the conditions for the following two facts:
 
@@ -202,7 +204,7 @@ where we used the linearity of expectation.
 
 For the second part, recall that is $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
 :::
--->
+
 
 ::: {.example}
 Returning to the "binomial as a sum of Bernoullis" example, we have
@@ -213,20 +215,20 @@ Here we used that the $X_i$ are independent (the first I in "IID").
 
 ## Correlation  {#correlation}
 
-<!--
+
 It can sometimes be useful to "normalise" the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.
--->
+
 
 ::: {.definition}
 Let $X$ and $Y$ be two random variables. Then the **correlation** between $X$ and $Y$ is
 \[ \Corr(X,Y) = \frac{\Cov(X,Y)} {\sqrt{\Var(X)\,\Var(Y)}} . \]
 :::
 
-<!--
+
 As with the sample correlation $r_{xy}$ from Section 1, the correlation is a number between $-1$ and $+1$, where values near $+1$ mean that large values of $X$ and large values of $Y$ are likely to occur together, while values near $-1$ mean that large values of $X$ and small values of $Y$ are likely to occur together.
 
 Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it follows that if $X$ and $Y$ are independent, then $\Corr(X,Y) = 0$ also.
--->
+
 
 ::: {.example}
 For the coin-tossing again, we have

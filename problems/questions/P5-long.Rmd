@@ -62,14 +62,12 @@ So
 ::::
 
 :::: {.subq}
-**(c)** It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 35.6 years ago. Estimate the mass of Caesium-137 that has still not decayed? 
+**(c)** It is estimated that roughly 24 kg of Caesium-137 was released during the Chernobyl disaster, which happened roughly 37.6 years ago. Estimate the mass of Caesium-137 that has still not decayed? 
 
 ::: {.myanswers data-latex=""}
 *Solution.* The proportion of Caesium-137 still remaining is
-\[ \mathbb P(X > 35.6) = \mathrm e^{-0.023 \times 35.6} = 0.441 , \]
-so roughly $24 \times 0.441 = 10.6$ kg of Caesium-137 has still not decayed.
-
-*(The Chernobyl disaster was actually* 36.6 *years ago -- I forgot to update the question this year. The amount of Caesium-137 will have gone down about another 250g in the last year.)*
+\[ \mathbb P(X > 35.6) = \mathrm e^{-0.023 \times 37.6} = 0.421 , \]
+so roughly $24 \times 0.441 = 10.1$ kg of Caesium-137 has still not decayed.
 :::
 ::::
 :::::
@@ -126,6 +124,7 @@ So $f_X(x)f_Y(y) = \tfrac12 \times \tfrac12 = \tfrac14 \neq 0$. So $X$ and $Y$ a
 ::::
 :::::
 
+<!--
 ::::: {.myq}
 **B4.** *(Optional)* Engineers and scientists often use the rule of thumb "Only 5% of data is more than two sample standard deviations away from the sample mean." Carefully justify this rule, using concepts from the module.
 
@@ -143,14 +142,14 @@ So only $1 - 0.9545 = 0.0455$, or approximately 5%, of data is more than two tru
 Finally, the law of large numbers also tells us that, provided a large number of datapoints $n$ are collected, the sample mean $\bar x$ and the sample standard deviation $s_x$ will be very close to the true expectation $\mu$ and the true standard deviation $\sigma$ respectively, so we can replace the latter with the former in our calculations.
 :::
 :::::
-
+-->
 
 
 
 
 
 ::::: {.myq}
-**B5.**  Let $X_1, X_2, \dots, X_n$ be IID random variable with common expectation $\mu$ and common variance $\sigma^2$, and let $\overline X = (X_1 + \cdots + X_n)/n$ be the mean of these random variables. We will be considering the random variable $S^2$ given by
+**B4.**  Let $X_1, X_2, \dots, X_n$ be IID random variable with common expectation $\mu$ and common variance $\sigma^2$, and let $\overline X = (X_1 + \cdots + X_n)/n$ be the mean of these random variables. We will be considering the random variable $S^2$ given by
 \[ S^2 = \sum_{i=1}^n (X_i - \overline X)^2 . \]
 
 :::: {.subq}
@@ -213,21 +212,23 @@ Note that we already know that the sample mean $\bar x$ is an unbiased estimator
 :::::
 
 ::::: {.myq}
-**B6.** *(New)* Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?
+**B5.** Roughly how many times should I toss a coin for there to be a 95% chance that between 49% and 51% of my coin tosses land Heads?
+
+(It may be useful to know that, for a standard normal distribution, we have $\Phi(1.96) = 0.975$.)
 
 ::: {.myanswers data-latex=""}
 *Solution.*
-The number of Heads in $n$ coin tosses is $X \sim \mathrm{Bin}(n, \frac12)$, which is approximately $Y \sim \mathrm{N}(\frac n2, \frac n4)$. We want to choose $n$ such that
+The number of Heads in $n$ coin tosses is $X \sim \mathrm{Bin}(n, \frac12)$, which, since $n$ will be large, and $p$ not near 0 or 1, is approximately $Y \sim \mathrm{N}(\frac n2, \frac n4)$. We want to choose $n$ such that
 \[ \mathbb P(0.49 n \leq Y \leq 0.51n) = 0.95 .\]
 
-Standardising, this is
+Standardising, we have
 \[ \mathbb P \left( \frac{0.49n - 0.5n}{0.5\sqrt{n}} \leq \frac{Y - 0.5n}{0.5\sqrt{n}} \leq \frac{0.51n - 0.5n}{0.5\sqrt{n}}\right) = \mathbb P(-0.02\sqrt{n} \leq Z \leq 0.02\sqrt{n}) \]
 Since the normal distribution is symmetric, we want
 \[\mathbb P(X \leq 0.02\sqrt{n}) = 0.975 .\]
-From Table 2 of the statistical tables, or by the R command `qnorm(0.975)`, this requires
-$0.01\sqrt{n} = 1.960$, which is $n \approx 9600$.
+From the hint in the question (or Table 2 of the statistical tables, or by the R command `qnorm(0.975)`), this requires
+$0.02\sqrt{n} = 1.96$, which is $n \approx 9600$.
 
-So if we toss 10,000 coins, there's about a 95% chance we get between 4900 and 5100 Heads.
+So if we toss about 10,000 coins, there's about a 95% chance we get between 4900 and 5100 Heads.
 :::
 :::::
 

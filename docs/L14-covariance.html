@@ -289,6 +289,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
+<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
+<li class="chapter" data-level="" data-path="L15-continuous.html"><a href="L15-continuous.html#summary-L15"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="L16-normal.html"><a href="L16-normal.html"><i class="fa fa-check"></i><b>16</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="L16-normal.html"><a href="L16-normal.html#normal-definition"><i class="fa fa-check"></i><b>16.1</b> Definition of the normal distribution</a></li>
+<li class="chapter" data-level="16.2" data-path="L16-normal.html"><a href="L16-normal.html#normal-properties"><i class="fa fa-check"></i><b>16.2</b> Properties of the normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="L16-normal.html"><a href="L16-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
+<li class="chapter" data-level="16.4" data-path="L16-normal.html"><a href="L16-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
+<li class="chapter" data-level="" data-path="L16-normal.html"><a href="L16-normal.html#summary-L16"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
 <li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
@@ -346,9 +368,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Lecture 14</span> Expectation and covariance<a href="L14-covariance.html#L14-covariance" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="sum-product" class="section level2 hasAnchor" number="14.1">
 <h2><span class="header-section-number">14.1</span> Expectation of sums and products<a href="L14-covariance.html#sum-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-When we have multiple random variables, we might be interested in functions of those multiple random variables -- for example their sum or their product. It's often possible to find out about the whole distribution of a sum, product, or function of the variables -- see MATH2715 Statistical Methods for more on this -- but here we will just look at their expectations and, later, variances.
--->
+<p>When we have multiple random variables, we might be interested in functions of those multiple random variables – for example their sum or their product. It’s often possible to find out about the whole distribution of a sum, product, or function of the variables – see MATH2715 Statistical Methods for more on this – but here we will just look at their expectations and, later, variances.</p>
 <div class="theorem">
 <p><span id="thm:linearity2" class="theorem"><strong>Theorem 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint probability mass function <span class="math inline">\(p_{X,Y}\)</span>. Then</p>
 <ol style="list-style-type: decimal">
@@ -357,75 +377,64 @@ When we have multiple random variables, we might be interested in functions of t
 <li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY\)</span>.</li>
 </ol>
 </div>
-<!--
-If we put the second point here together with the other result of linearity of expectation (Theorem \@ref(thm:linearity1)) then we get the general rule
-\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]
-and this holds whether or not $X$ and $Y$ are independent.
-
-::: {.proof}
-Part 1 is just the law of the unconscious statistician for the random variable $(X,Y)$, and the same proof holds.
-
-For part 2, we have
-\begin{align*}
-\mathbb E(X + Y) &= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
-  &= \sum_{x,y} x\,p_{X,Y}(x,y) + \sum_{x,y} y\,p_{X,Y}(x,y) \\
-  &= \sum_x x \sum_y p_{X,Y}(x,y) + \sum_y y \sum_x p_{X,Y}(x,y)
-\end{align*}
-But summing a joint PMF over one of the variables gives the marginal PMF; so $\sum_y p_{X,Y}(x,y) = p_X(x)$ and $\sum_x p_{X,Y}(x,y) = p_Y(y)$. So this gives
-\begin{align*}
-\mathbb E(X + Y) &= \sum_x x\, p_X(x) + \sum_y y\,p_Y(y) \\
-&= \mathbb EX + \mathbb EY .
-\end{align*}
-
-For part 3, if $X$ and $Y$ are independent, then $p_{X,Y}(x,y) = p_X(x) \, p_Y(y)$. Therefore,
-\begin{align*}
-\mathbb EXY &= \sum_{x,y} xy p_{X,Y}(x,y) \\
-  &= \sum_x \sum_y xy p_X(x) p_Y(y) \\
-  &= \sum_x x p_X(x) \sum_y y p_Y(y) \\
-  &= \mathbb EX \times \mathbb EY,
-\end{align*}
-as required.
-:::
--->
+<p>If we put the second point here together with the other result of linearity of expectation (Theorem <a href="L10-expectation.html#thm:linearity1">10.2</a>) then we get the general rule
+<span class="math display">\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]</span>
+and this holds whether or not <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<div class="proof">
+<p><span id="unlabeled-div-79" class="proof"><em>Proof</em>. </span>Part 1 is just the law of the unconscious statistician for the random variable <span class="math inline">\((X,Y)\)</span>, and the same proof holds.</p>
+<p>For part 2, we have
+<span class="math display">\[\begin{align*}
+\mathbb E(X + Y) &amp;= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
+  &amp;= \sum_{x,y} x\,p_{X,Y}(x,y) + \sum_{x,y} y\,p_{X,Y}(x,y) \\
+  &amp;= \sum_x x \sum_y p_{X,Y}(x,y) + \sum_y y \sum_x p_{X,Y}(x,y)
+\end{align*}\]</span>
+But summing a joint PMF over one of the variables gives the marginal PMF; so <span class="math inline">\(\sum_y p_{X,Y}(x,y) = p_X(x)\)</span> and <span class="math inline">\(\sum_x p_{X,Y}(x,y) = p_Y(y)\)</span>. So this gives
+<span class="math display">\[\begin{align*}
+\mathbb E(X + Y) &amp;= \sum_x x\, p_X(x) + \sum_y y\,p_Y(y) \\
+&amp;= \mathbb EX + \mathbb EY .
+\end{align*}\]</span></p>
+<p>For part 3, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(p_{X,Y}(x,y) = p_X(x) \, p_Y(y)\)</span>. Therefore,
+<span class="math display">\[\begin{align*}
+\mathbb EXY &amp;= \sum_{x,y} xy p_{X,Y}(x,y) \\
+  &amp;= \sum_x \sum_y xy p_X(x) p_Y(y) \\
+  &amp;= \sum_x x p_X(x) \sum_y y p_Y(y) \\
+  &amp;= \mathbb EX \times \mathbb EY,
+\end{align*}\]</span>
+as required.</p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-79" class="example"><strong>Example 14.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID <span class="math inline">\(\text{Bern}(p)\)</span> random variables. We know that <span class="math inline">\(\mathbb EX_1 = p\)</span> and <span class="math inline">\(\operatorname{Var}(X_1) = p(1-p)\)</span>.</p>
+<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 14.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID <span class="math inline">\(\text{Bern}(p)\)</span> random variables. We know that <span class="math inline">\(\mathbb EX_1 = p\)</span> and <span class="math inline">\(\operatorname{Var}(X_1) = p(1-p)\)</span>.</p>
 <p>Now let <span class="math inline">\(Y = X_1 + X_2 + \cdots + X_n\)</span>. Since each <span class="math inline">\(X_i\)</span> indicates whether or not trial <span class="math inline">\(i\)</span> was a success, this means <span class="math inline">\(Y\)</span> counts the number of successes in <span class="math inline">\(n\)</span> trials. This is a binomial random variable, <span class="math inline">\(Y \sim \text{Bin}(n,p)\)</span>.</p>
 <p>We can use this structure to calculate
 <span class="math display">\[ \mathbb EY = \mathbb E(X_1 + \cdots + X_n) = n \mathbb EX_1 = np . \]</span></p>
-<p>This has proved the expectation of the binomial distribution from Lecture 11.</p>
+<p>This has proved the expectation of the binomial distribution from Lecture 11. (Note that this would hold even if the trials weren’t independent.)</p>
 </div>
 </div>
 <div id="covariance" class="section level2 hasAnchor" number="14.2">
 <h2><span class="header-section-number">14.2</span> Covariance<a href="L14-covariance.html#covariance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-If we are interested at how two random variables vary together, we need to look at the covariance.
--->
+<p>If we are interested at how two random variables vary together, we need to look at the covariance.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-80" class="definition"><strong>Definition 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mathbb EX =\mu_X\)</span> and <span class="math inline">\(\mathbb EY = \mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mathbb EX =\mu_X\)</span> and <span class="math inline">\(\mathbb EY = \mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]</span></p>
 </div>
-<!--
-In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.
--->
+<p>In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-81" class="theorem"><strong>Theorem 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
+<p><span id="thm:unlabeled-div-82" class="theorem"><strong>Theorem 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]</span></p>
 </div>
-<!--
-::: {.proof}
-Exactly as we've done many times before, we have
-\begin{align*}
-\Cov(X,Y) &= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
-&= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
-&= \mathbb EXY  - \mu_Y \,\mathbb EX - \mu_X \,\mathbb EY + \mu_X \, \mu_Y \\
-&= \mathbb EXY - \mu_X \, \mu_Y - \mu_X \, \mu_Y + \mu_X \, \mu_Y \\
-&= \mathbb EXY - \mu_X \, \mu_Y ,
-\end{align*}
-and we're done.
-:::
--->
+<div class="proof">
+<p><span id="unlabeled-div-83" class="proof"><em>Proof</em>. </span>Exactly as we’ve done many times before, we have
+<span class="math display">\[\begin{align*}
+\operatorname{Cov}(X,Y) &amp;= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
+&amp;= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
+&amp;= \mathbb EXY  - \mu_Y \,\mathbb EX - \mu_X \,\mathbb EY + \mu_X \, \mu_Y \\
+&amp;= \mathbb EXY - \mu_X \, \mu_Y - \mu_X \, \mu_Y + \mu_X \, \mu_Y \\
+&amp;= \mathbb EXY - \mu_X \, \mu_Y ,
+\end{align*}\]</span>
+and we’re done.</p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-82" class="example"><strong>Example 14.2  </strong></span>We continue with our coin-tossing example from the previous lecture, where <span class="math inline">\(X\)</span> is the number of Heads in the first two coin tosses and <span class="math inline">\(Y\)</span> the number of Heads in the first three coin tosses.</p>
+<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 14.2  </strong></span>We continue with our coin-tossing example from the previous lecture, where <span class="math inline">\(X\)</span> is the number of Heads in the first two coin tosses and <span class="math inline">\(Y\)</span> the number of Heads in the first three coin tosses.</p>
 <p>We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>, so <span class="math inline">\(\mu_X = 1\)</span>, and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span>, so <span class="math inline">\(\mu_Y = 1.5\)</span>. To find the covariance using the computational formula, we also need <span class="math inline">\(\mathbb EXY\)</span>, which is
 <span class="math display">\[\begin{align*}
 \mathbb EXY &amp;= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
@@ -436,27 +445,20 @@ and we're done.
 Hence the covariance is
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\mu_Y = 2 - 1 \times 1.5 = 0.5 .\]</span></p>
 </div>
-<!--
-A very important fact is the following.
--->
+<p>A very important fact is the following.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-83" class="theorem"><strong>Theorem 14.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 14.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
 </div>
-<!--
-Be careful not to get this the wrong way around: if $\Cov(X,Y) = 0$ it doesn't necessarily mean that $X$ and $Y$ are independent.
-
-To use the ["contrapositive"](https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive) (which is allowed!), in our example, we have $\Cov(X,Y) \neq 0$, which means that $X$ and $Y$ are not independent -- confirming what we already knew.
-
-::: {.proof}
-Recall from Theorem \@ref(thm:linearity2) that if $X$ and $Y$ are independent, we have $\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y$. Then from the computational formula, we have
-\[ \Cov(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]
-and we are done.
-:::
-
-Here are some more important properties of the covariance.
--->
+<p>Be careful not to get this the wrong way around: if <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span> it doesn’t necessarily mean that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
+<p>To use the <a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive">“contrapositive”</a> (which is allowed!), in our example, we have <span class="math inline">\(\operatorname{Cov}(X,Y) \neq 0\)</span>, which means that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent – confirming what we already knew.</p>
+<div class="proof">
+<p><span id="unlabeled-div-86" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="L14-covariance.html#thm:linearity2">14.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
+<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]</span>
+and we are done.</p>
+</div>
+<p>Here are some more important properties of the covariance.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-84" class="theorem"><strong>Theorem 14.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
+<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 14.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\)</span>;</li>
 <li><span class="math inline">\(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\)</span>;</li>
@@ -465,83 +467,70 @@ Here are some more important properties of the covariance.
 <li><span class="math inline">\(\operatorname{Cov}(X + Y, Z) = \operatorname{Cov}(X, Z) + \operatorname{Cov}(Y,Z)\)</span>.</li>
 </ol>
 </div>
-<!--
-::: {.proof}
-Part 1 and 2 are immediate from the definition.
-
-Parts 3, 4 and 5 are quite similar. We'll do part 5 here, and you can do parts 3 and 4 on [Problem Sheet 4](#P4).
-
-For part 5, note that $\mathbb E(X + Y) = \mu_X + \mu_Y$ by linearity of expectation. Hence
-\begin{align*}
-\Cov(X + Y, Z)
-  &= \mathbb E \big((X + Y) - (\mu_X + \mu_Y)\big)(Z - \mu_Z) \\
-  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
-  &= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
-  &= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
-  &= \Cov(X,Z) + \Cov(Y,Z) ,
-\end{align*}
-as required.
-:::
-
-We could calculate the covariance in our coin-tossing example a different way, by noting that $Y = X + Z$, where $Z \sim \text{Bern}(\frac12)$ represents the third coin toss and is independent of $X$. Then we have
-\[
-\Cov(X,Y) = \Cov(X, X + Z) = \Cov(X, X) + \Cov(X, Z) =
-= \Var(X) + 0 = \Var(X) ,\]
-where  we used $\Cov(X, Z) = 0$ since $X$ and $Z$ are independent.
-We already know that $\Var(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12$ because $X \sim \text{Bin}(2, \frac12)$. So $\Cov(X,Y) = \frac12$,
-matching our previous calculation. 
-
-Now that we know some facts about the covariance, we can calculate the variance of a sum.
--->
+<div class="proof">
+<p><span id="unlabeled-div-88" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
+<p>Parts 3, 4 and 5 are quite similar. We’ll do part 5 here, and you can do parts 3 and 4 on <a href="P4.html#P4">Problem Sheet 4</a>.</p>
+<p>For part 5, note that <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span> by linearity of expectation. Hence
+<span class="math display">\[\begin{align*}
+\operatorname{Cov}(X + Y, Z)
+  &amp;= \mathbb E \big((X + Y) - (\mu_X + \mu_Y)\big)(Z - \mu_Z) \\
+  &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y)\big)(Z - \mu_Z) \\
+  &amp;= \mathbb E \big((X - \mu_X)(Z - \mu_Z) + (Y - \mu_Y) (Z - \mu_Z) \big) \\
+  &amp;= \mathbb E (X - \mu_X)(Z - \mu_Z) + \mathbb E  (Y - \mu_Y) (Z - \mu_Z) \\
+  &amp;= \operatorname{Cov}(X,Z) + \operatorname{Cov}(Y,Z) ,
+\end{align*}\]</span>
+as required.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 14.3  </strong></span>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
+<span class="math display">\[
+\operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z)
+= \operatorname{Var}(X) + 0 = \operatorname{Var}(X) ,\]</span>
+where we used <span class="math inline">\(\operatorname{Cov}(X, Z) = 0\)</span> since <span class="math inline">\(X\)</span> and <span class="math inline">\(Z\)</span> are independent.
+We already know that <span class="math inline">\(\operatorname{Var}(X) = 2 \times \tfrac12 \times (1 - \tfrac12) = \tfrac12\)</span> because <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>. So <span class="math inline">\(\operatorname{Cov}(X,Y) = \frac12\)</span>,
+matching our previous calculation.</p>
+</div>
+<p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 14.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
+<p><span id="thm:unlabeled-div-90" class="theorem"><strong>Theorem 14.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]</span></p>
 <p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]</span></p>
 </div>
-<!--
-
-It's easy to forget the conditions for the following two facts:
-
-* $\mathbb E(X + Y) = \mathbb EX + \mathbb EY$ regardless of whether $X$ and $Y$ are independent or not.
-* $\Var(X+Y) = \Var(X) + \Var(Y)$ if $X$ and $Y$ are independent.
-
-::: {.proof}
-For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have $\mathbb E(X + Y) = \mu_X + \mu_Y$. So
-\begin{align*}
-\Var(X + Y) &= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
-  &= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
-  &= \mathbb E \big( (X - \mu_X)^2 + 2(X - \mu_X)(Y - \mu_Y) + (Y - \mu_Y)^2\big) \\
-  &= \mathbb E(X - \mu_X)^2 + 2 \mathbb E(X - \mu_X)(Y - \mu_Y) + \mathbb E (Y - \mu_Y)^2 \\
-  &= \Var(X) + 2\Cov(X,Y) + \Var(Y) ,
-\end{align*}
-where we used the linearity of expectation.
-
-For the second part, recall that is $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$.
-:::
--->
+<p>It’s easy to forget the conditions for the following two facts:</p>
+<ul>
+<li><span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span> regardless of whether <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent or not.</li>
+<li><span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</li>
+</ul>
+<div class="proof">
+<p><span id="unlabeled-div-91" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
+<span class="math display">\[\begin{align*}
+\operatorname{Var}(X + Y) &amp;= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
+  &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
+  &amp;= \mathbb E \big( (X - \mu_X)^2 + 2(X - \mu_X)(Y - \mu_Y) + (Y - \mu_Y)^2\big) \\
+  &amp;= \mathbb E(X - \mu_X)^2 + 2 \mathbb E(X - \mu_X)(Y - \mu_Y) + \mathbb E (Y - \mu_Y)^2 \\
+  &amp;= \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) ,
+\end{align*}\]</span>
+where we used the linearity of expectation.</p>
+<p>For the second part, recall that is <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
+</div>
 <div class="example">
-<p><span id="exm:unlabeled-div-86" class="example"><strong>Example 14.3  </strong></span>Returning to the “binomial as a sum of Bernoullis” example, we have
+<p><span id="exm:unlabeled-div-92" class="example"><strong>Example 14.4  </strong></span>Returning to the “binomial as a sum of Bernoullis” example, we have
 <span class="math display">\[ \operatorname{Var}(Y) = \operatorname{Var}(X_1 + \cdots X_n) = n\operatorname{Var}(X_1) = np(1-p) . \]</span>
 Here we used that the <span class="math inline">\(X_i\)</span> are independent (the first I in “IID”).</p>
 </div>
 </div>
 <div id="correlation" class="section level2 hasAnchor" number="14.3">
 <h2><span class="header-section-number">14.3</span> Correlation<a href="L14-covariance.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-It can sometimes be useful to "normalise" the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.
--->
+<p>It can sometimes be useful to “normalise” the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-87" class="definition"><strong>Definition 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
+<p><span id="def:unlabeled-div-93" class="definition"><strong>Definition 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
 <span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]</span></p>
 </div>
-<!--
-As with the sample correlation $r_{xy}$ from Section 1, the correlation is a number between $-1$ and $+1$, where values near $+1$ mean that large values of $X$ and large values of $Y$ are likely to occur together, while values near $-1$ mean that large values of $X$ and small values of $Y$ are likely to occur together.
-
-Recall that, if $X$ and $Y$ are independent, then $\Cov(X,Y) = 0$. Hence it follows that if $X$ and $Y$ are independent, then $\Corr(X,Y) = 0$ also.
--->
+<p>As with the sample correlation <span class="math inline">\(r_{xy}\)</span> from Section 1, the correlation is a number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>, where values near <span class="math inline">\(+1\)</span> mean that large values of <span class="math inline">\(X\)</span> and large values of <span class="math inline">\(Y\)</span> are likely to occur together, while values near <span class="math inline">\(-1\)</span> mean that large values of <span class="math inline">\(X\)</span> and small values of <span class="math inline">\(Y\)</span> are likely to occur together.</p>
+<p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-88" class="example"><strong>Example 14.4  </strong></span>For the coin-tossing again, we have
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 14.5  </strong></span>For the coin-tossing again, we have
 <span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]</span></p>
 </div>
 </div>

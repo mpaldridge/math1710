@@ -1,19 +1,7 @@
 # Limit theorems {#L18-limit}
 
-::: {.mysummary}
-There will be no lecture on Wednesday 30 November, as [the UCU are on strike](https://www.leedsucu.org.uk/information-for-students-2/). Instead, you should learn the material that would have been given in the lecture from these notes. This material is fully examinable, as much as any other lecture.
-
-I have provided some old pandemic-era videos embedded in these notes, which may help you -- the section numbering has changed since these videos were made, but the material is mostly the same. Drop-in sessions are available on Thursday (2pm in [PRD 9.320](https://mpaldridge.github.io/office.html) and 4pm in Roger Stevens LT17) if you struggle with anything in this lecture.
-:::
-
 ## Law of large numbers  {#lln}
 
-
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/u4hJv2sDUoc"></iframe>
-:::
-::::
 
 In this lecture we will look at some "limit" results; that is, results about a large number of $n$ of random variables, as $n$ tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.
 
@@ -25,7 +13,7 @@ that is, what we get if we add them up and divide by $n$. In the same way, we co
 \[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]
 (The subscript $n$ on "$\overline X_n$" is just to remind us this is a mean of $n$ random variables.)
 
-Here, each of the $X_i$s is a random variable, so their mean $\overline X_n$ is another random variable too. This mean random variable $\overline X_n$ will be out main object in this lecture. We can ask questions about the random variable $\overline X_n$ just the same as we would ask about any other random variable. For example: What is its expectation and variance?
+Here, each of the $X_i$s is a random variable, so their mean $\overline X_n$ is another random variable too. This mean random variable $\overline X_n$ will be our main object of study in this lecture. We can ask questions about the random variable $\overline X_n$, just the same as we would ask about any other random variable. For example: What are its expectation and variance?
 
 The expectation of $\bar X_n$ is
 \begin{align*}
@@ -77,11 +65,6 @@ So the long-run proportion of times an event happens converges to its probabilit
 ## Central limit theorem  {#clt}
 
 
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/yygv7L5hcOg"></iframe>
-:::
-::::
 
 
 
@@ -109,6 +92,8 @@ by which we mean that, if $Y \sim \mathrm N(0, \sigma^2)$, then, for all $a < b$
 
 Another alternative way to write this is to divide both sides by $\sigma$ and write it as
 \[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
+Yet another way is
+\[ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
 
 The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
 
@@ -116,18 +101,15 @@ The result we have stated, for IID random variables, is the most important case 
 ## Approximations with the normal distribution  {#normal-approx}
 
 
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/OYv464S0fDI"></iframe>
-:::
-::::
-
 
 There are many other distributions $X$ that can be well approximated by a normal distribution where $\mu$ is set to $\mathbb EX$ and $\sigma^2$ is set to $\Var(X)$. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
 
-* A binomial distribution $X \sim \mathrm{Bin}(n, p)$ is well approximated by a normal distribution $\mathrm{N}(np, np(1-p))$ when $n$ is large and $p$ is not too close to 0 or 1. (When $p$ is small, we already know that the Poisson distribution is a good approximation.)
+* A binomial distribution $X \sim \mathrm{Bin}(n, p)$ is well approximated by a normal distribution $\mathrm{N}(np, np(1-p))$ when $n$ is large and $p$ is not too close to 0 or 1. (When $p$ is small, we already know that the Poisson distribution is a good approximation instead.)
+
 * A Poisson distribution $X \sim \mathrm{Po}(\lambda)$ is well approximated by a normal distribution $\mathrm{N}(\lambda, \lambda)$ when $\lambda$ is large.
+
 * A sum $Y = X_1 + \cdots + X_n$ of $n$ IID geometric distributions $X_1, \dots, X_n \sim \mathrm{Geom}(p)$ (sometimes known as a "negative binomial" distribution) is well approximated by a normal distribution $\mathrm{N}(n/p, np/(1-p)^2)$ when $n$ is large and $p$ is not to close to 1.
+
 * A sum $Y = X_1 + \cdots + X_n$ of $n$ IID exponential distributions $X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)$ (sometimes known as a "Gamma" distribution) is well approximated by a normal distribution $\mathrm{N}(n/\lambda, n/\lambda^2)$ when $n$ is large and the expectation $1/\lambda$ is not too small.
 
 We already know, of course, that a sum of independent normal distributions is *exactly* normal, with no approximations needed.

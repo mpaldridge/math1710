@@ -1,0 +1,173 @@
+---
+title:  "R Worksheet 7: Discrete random variables"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2023--24"
+output: html_document
+---
+
+*This R worksheet does not include assessed questions.You should complete this worksheet in Week 8. If you have difficulty with this worksheet, you can get help at the office hours drop-in sessions.*
+
+------------------------------------------------------------------------
+
+```{r include=FALSE}
+knitr::opts_chunk$set(comment = NA)
+```
+
+On the last worksheet, we looked at dealing with famous discrete random variables: the binomial, geometric, and Poisson distributions. In this worksheet, we will look at dealing with arbitrary discrete random variables, as defined by a probability mass function (PMF)
+
+## Probability mass function
+
+The key to dealing with a discrete random variable is to set up two things: the range of values the random variable can take, and the PMF itself.
+
+Consider, for example, the following PMF for a random variable $X$:
+
+|   $x$    |  $0$  | $0.5$ |  $1$  |  $2$  | $2.5$ |  $4$  |
+|:--------:|:-----:|:-----:|:-----:|:-----:|:-----:|:-----:|
+| $p_X(x)$ | $0.1$ | $0.2$ | $0.2$ | $0.3$ | $0.1$ | $0.1$ |
+
+We want to store the $x$ values in one vector, and the $p_X(x)$ values in another vector. We can do that like this:
+
+```{r}
+x   <- c(0,   0.5, 1,   2,   2.5, 4  )
+pmf <- c(0.1, 0.2, 0.2, 0.3, 0.1, 0.1)
+```
+
+(I find this easier to read if I add spaces to make the columns line up, but this is completely optional.)
+
+It's good practice to check that the PMF does indeed sum to 1:
+
+```{r}
+sum(pmf)
+```
+
+We can find the probability of a given value of $x$ by pulling out the relevant value of the PMF. We are used to using square brackets to pull out the elements of a vector. But more complicate expressions can be put inside the brackets, like this:
+
+* `pmf[x == 0.5]` pulls out the value of the PMF that corresponds to $x = 0.5$; that is, of $p_X(0.5)$. (Note the double-equals `==`. Roughly speaking, in R, a single-equals `=` means "is *set to be* equal to", while a double-equals `==` means "*is* equal to".)
+
+* `pmf[x > 1.5]` pulls out all the values of the PMF that corresponding to $x > 1.5$. It's often helpful to use this together with the `sum()` function, because `sum(pmf[x > 1.5])` will give $\mathbb P(X > 1.5)$. (Do you see why?)
+
+* Relations that can be used this way are
+   * `==`: equals $=$
+   * `>`: greater than $>$
+   * `<`: less than $>$
+   * `>=`: greater than or equal to $\geq$
+   * `<=`: less than or equal to $\leq$
+   * Keen R users may wish to research use of `!=`, `in`, `&`, `|`.
+   
+> **Exercise 8.1.** Let $Y$ be the sum of fair dice rolls. So $Y$ takes the values $(2, 3, \dots, 12)$ with probabilities $\frac{1}{36}(1,2,3,4,5,6,5,4,3,2,1)$.\
+**(a)** Enter this random variable into `y` and `pmf_y`. Do so as efficiently as possible, by taking advantage of the colon notation.\
+**(b)** What is $\mathbb P(Y = 9)$?\
+**(c)** What is $\mathbb P(Y \leq 6)$?
+
+## Plotting a PMF
+
+If we want to plot a picture of a PMF (like those in the Lecture 11 of the notes) we can use `plot()` together with the optional argument `type = "h"`. Here, `"h"` stands for "**h**istogram-like vertical lines", which are most appropriate for displaying PMFs. I also like to make the lines somewhat thicker, with the `lwd = ...` argument, and make sure that the y-axis starts from 0.
+
+So I would draw a graph for our previous PMF like this:
+
+```{r}
+plot(x, pmf, type = "h", lwd = 4, ylim = c(0, max(pmf)))
+```
+
+> **Exercise 8.2.** Draw a plot of the PMF for the dice random variable $Y$ from Exercise 8.1. Draw the lines in blue. Make sure to label the axes appropriately. 
+
+## Cumulative distribution function
+
+We know that a CDF $F(x) = \mathbb P(X = x)$ can be calculated by summing up the PDF; that is,
+\[ F(x) = \sum_{y \leq x} p(x) . \]
+To calculate this in R, it is helpful to use the cumulative sum function **`cumsum()`**. The cumulative sum of a vector
+\[ (a, \quad b, \quad c, \quad d, \quad e) \]
+is the vector of partial sums
+\[ (a, \quad a+b, \quad a+b+c, \quad a+b+c+d, \quad a+b+c+d+e) . \]
+
+So taking the cumulative sum of the PMF,
+
+```{r}
+cumsum(pmf)
+```
+
+gives a vector of the values of the CDF at the values of $x$.
+
+However, the CDF also should be defined in between the values of $x$ in the range of $X$, where it should behave like a "step function". We can create such a function using the **`stepfun()`** function. This `stepfun` requires two arguments:
+
+* $n$ places where the step function jumps. In our case, this is the set of values $x$ the random variable can take
+* $n+1$ values of the step function between those jumps, including below the first jump and after the last jump. In our case, this is 0 below the first value of $x$, then the values of the cumulative sum we have just discussed.
+
+So we form the CDF function with
+
+```{r}
+cdf <- stepfun(x, c(0, cumsum(pmf)))
+```
+
+We can test that this CDF works between the values in the range of $X$ by testing it:
+
+```{r}
+cdf(1.62)
+```
+
+We can also plot the CDF with the `plot()` function:
+
+```{r}
+plot(cdf)
+```
+
+with other extra graphical commands, as required. The "blobs" are to let the reader know that *at* the jumps, the function takes the higher value.
+
+> **Exercise 8.3.** Form the CDF for the dice random variable from Exercise 8.1.\
+**(a)** What is $F_Y(4.6)$?\
+**(b)** What is $\mathbb P(Y > 8.2)$?\
+**(c)** Plot the CDF. Make sure to label your axes appropriately.
+
+## Expectation and variance
+
+Recall that the definition of the expectation of a discrete random variable is
+\[ \mathbb EX = \sum_x x\, p(x) . \]
+
+So to calculate this, we can simply use R's `sum()` function. We just want
+
+```{r}
+sum(x * pmf)
+```
+
+That's all there is to it!
+
+> **Exercise 8.4.** With the dice random variable again:\
+**(a)** Calculate the expectation $\mathbb EY$.\
+**(b)** Calculate $\mathbb EY^2$.
+
+We can find a variance using either the definitional formula
+
+$$ \text{Var}(X) = \mathbb E(X - \mu)^2 $$
+
+or the computational formula
+
+$$ \text{Var}(X) = \mathbb EX^2 - \mu^2 .$$
+
+Using R in the same way, these are
+
+```{r}
+mu <- sum(x * pmf)
+sum((x - mu)^2 * pmf)
+sum(x^2 * pmf) - mu^2
+```
+
+Note that we saved the expectation as an R object -- here, called `mu`. This makes sure we keep maximum accuracy, and is much better practice than simply re-typing in the value of the expectation by hand.
+
+> **Exercise 8.5.** With the dice random variable again, calculate the variance of $Y$.
+
+## Sampling from a distribution
+
+Finally, we may wish to sample from a discrete random variable. To do this, we will use the **`sample()`** function, like this:
+
+```{r}
+sample(x, 20, replace = TRUE, prob = pmf)
+```
+
+Here, the arguments are:
+
+1. The first argument is the set of values to be sampled, which for us is the range of the random variable.
+2. The second argument is the number of samples we wish to take. In the above example, we took 20 samples.
+3. `replace = TRUE` tells us we want to be allowed "repeats" in our sample. If we want IID samples of a random variable, we always want sampling with replacement. (For some sampling-without-replacement probability problems, it might be appropriate to take `replace = FALSE`, which is R's default for the `sample()` function.)
+4. `prob = ...` tells R with what probabilities each value of `x` should be sampled. If this argument is omitted, R takes each value to be equally likely.
+
+> **Exercise 8.6.** Sample 10,000 simulated dice rolls from the random variable $Y$. Calculate the mean of these simulations. Compare your answer with that from Exercise 8.4(a).

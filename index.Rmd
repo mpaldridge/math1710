@@ -18,6 +18,17 @@ knitr::opts_chunk$set(comment = NA)
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
+**Week 8** (20--24 November):
+
+* [**Lecture 15:** Continuous random variables](#L15-continuous) (Monday 20 November)
+* [**Lecture 16:** Normal distribution](#L16-normal) (Wednesday 23 November)
+* **Tutorial** on [Problem Sheet 4](#P4)
+* [**Problem Sheet 4:**](#P4) Work through in preparation for your tutorial. Deadline for assessed questions: Monday 27 November.
+* [**R Worksheet 7**](#R)
+* **Office hours:** Friday 24 November, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html)
+:::
+
+::: {.mysched}
 **Week 7** (13--17 November):
 
 * [**Lecture 13:** Multiple random variables](#L13-multi-rv) (Monday 13 November)
