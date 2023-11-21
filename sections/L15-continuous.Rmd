@@ -2,7 +2,7 @@
 
 ## What is a continuous random variable?  {#continuous-rv}
 
-<!--
+
 
 
 
@@ -23,15 +23,15 @@ Imagine firing an arrow at a large target. We could ask "What's the probability 
 Similarly, imagine picking a random real number between 0 and 1. We could ask "What is the probability that the random number is *exactly* $1/\sqrt{2} = 0.7071068\dots$?" But that probability, if we mean exactly hitting an infinite decimal, surely must be 0. It makes more sense to take an interval of numbers -- say, $[0.7, 0.8]$, the interval from $0.7$ to $0.8$ -- and ask what the probability is of the random number being in that interval.
 
 This is how continuous random variables work. The probability a continuous random variable $X$ *exactly* hits some value $x$ is $\mathbb P(X = x) = 0$. But we *can* find the probability $\mathbb P(a \leq X \leq b)$ that $X$ lies in a certain interval and work with that. 
--->
+
 
 ## Probability density functions  {#pdf}
 
-<!--
+
 With a continuous random variable, the probability of *exactly* getting any particular outcome $X = x$ is 0. However, we can express the "intensity" of probability *around* $x$ by $f_X(x)$, where $f_X$ is called the "probability density function".
 
 The mass/density metaphor here is that, for a discrete random variable, we have probability "mass" *at* the point $x$; whereas for continuous random variables, we have a "density" of probability *around* $x$.
--->
+
 
 ::: {.definition}
 A random variable $X$ is called a **continuous random variable** if the probability of landing in any interval between $a$ and $b$, for $a \leq b$, can be written as
@@ -39,11 +39,11 @@ A random variable $X$ is called a **continuous random variable** if the probabil
 for some non-negative function $f_X$. The function $f_X$ is called the **probability density function** (or **PDF**).
 :::
 
-<!--
+
 In other words, the probability that $X$ is between $a$ and $b$ is the area under the curve of the PDF $f_X(x)$ between $x = a$ and $x = b$.
 
 As with PMFs, when it's obvious what random variable we're dealing with, we omit the subscript $X$ on the PDF $f_X$.
--->
+
 
 ::: {.example #unifex}
 Let $X$ be a continuous random variable with PDF
@@ -113,9 +113,9 @@ But this time we have to be careful, because $f(y)$ has different expressions be
 ## Properties of continuous random variables {#prop-cont}
 
 
-<!--
+
 The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution -- except you swap the PMF for the PDF and swap sums for integrals.
--->
+
 
 |   Discrete random variables   |   Continuous random variables   |
 |-----|-----|

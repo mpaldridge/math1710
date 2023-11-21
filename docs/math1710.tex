@@ -5646,14 +5646,43 @@ Now let \(X, Y, Z\) be \emph{independent} random variables with common variance 
 \hypertarget{continuous-rv}{%
 \section{What is a continuous random variable?}\label{continuous-rv}}
 
+In the previous six lectures, we have looked at discrete random variables, whose range is a finite or countably infinite set of separate discrete values. Discrete random variables can be used as a model for ``count data''.
+
+In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for ``measurement data''.
+
+For example:
+
+\begin{itemize}
+\item
+  The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers \(\mathbb R\), where positive numbers represent credit and negative numbers represent debt.
+\item
+  The amount of time a machine in a factory works for before breaking down could be modelled as a continuous random variable with range the positive real numbers \(\mathbb R_+ = \{x \in \mathbb R : x \geq 0\}\).
+\item
+  The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval \([0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}\).
+\end{itemize}
+
+Imagine firing an arrow at a large target. We could ask ``What's the probability that the arrow exactly hits a certain point?'' -- but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we'd have to say that the probability of hitting it \emph{exactly} is 0. What makes more sense is to take a section of the target -- perhaps a small circle in the middle, called the ``bulls-eye'' -- and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question -- a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.
+
+Similarly, imagine picking a random real number between 0 and 1. We could ask ``What is the probability that the random number is \emph{exactly} \(1/\sqrt{2} = 0.7071068\dots\)?'' But that probability, if we mean exactly hitting an infinite decimal, surely must be 0. It makes more sense to take an interval of numbers -- say, \([0.7, 0.8]\), the interval from \(0.7\) to \(0.8\) -- and ask what the probability is of the random number being in that interval.
+
+This is how continuous random variables work. The probability a continuous random variable \(X\) \emph{exactly} hits some value \(x\) is \(\mathbb P(X = x) = 0\). But we \emph{can} find the probability \(\mathbb P(a \leq X \leq b)\) that \(X\) lies in a certain interval and work with that.
+
 \hypertarget{pdf}{%
 \section{Probability density functions}\label{pdf}}
+
+With a continuous random variable, the probability of \emph{exactly} getting any particular outcome \(X = x\) is 0. However, we can express the ``intensity'' of probability \emph{around} \(x\) by \(f_X(x)\), where \(f_X\) is called the ``probability density function''.
+
+The mass/density metaphor here is that, for a discrete random variable, we have probability ``mass'' \emph{at} the point \(x\); whereas for continuous random variables, we have a ``density'' of probability \emph{around} \(x\).
 
 \begin{definition}
 A random variable \(X\) is called a \textbf{continuous random variable} if the probability of landing in any interval between \(a\) and \(b\), for \(a \leq b\), can be written as
 \[ \mathbb P(a \leq X \leq b) = \int_a^b f_X(x) \, \mathrm{d}x , \]
 for some non-negative function \(f_X\). The function \(f_X\) is called the \textbf{probability density function} (or \textbf{PDF}).
 \end{definition}
+
+In other words, the probability that \(X\) is between \(a\) and \(b\) is the area under the curve of the PDF \(f_X(x)\) between \(x = a\) and \(x = b\).
+
+As with PMFs, when it's obvious what random variable we're dealing with, we omit the subscript \(X\) on the PDF \(f_X\).
 
 \begin{example}
 \protect\hypertarget{exm:unifex}{}\label{exm:unifex}Let \(X\) be a continuous random variable with PDF
@@ -5699,6 +5728,8 @@ But this time we have to be careful, because \(f(y)\) has different expressions 
 
 \hypertarget{prop-cont}{%
 \section{Properties of continuous random variables}\label{prop-cont}}
+
+The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution -- except you swap the PMF for the PDF and swap sums for integrals.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
@@ -6461,8 +6492,6 @@ From the hint in the question (or Table 2 of the statistical tables, or by the R
 So if we toss about 10,000 coins, there's about a 95\% chance we get between 4900 and 5100 Heads.
 
 \end{myanswers}
-
-\emph{(I meant to delete Question B4 from this problem sheet, to make it shorter, but I accidentally deleted Question B6 instead. I've now added B6 and marked B4 as ``optional''.)}
 
 \hypertarget{P5-assessed}{%
 \section*{C: Assessed questions}\label{P5-assessed}}

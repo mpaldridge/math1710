@@ -231,5 +231,3 @@ $0.02\sqrt{n} = 1.96$, which is $n \approx 9600$.
 So if we toss about 10,000 coins, there's about a 95% chance we get between 4900 and 5100 Heads.
 :::
 :::::
-
-*(I meant to delete Question B4 from this problem sheet, to make it shorter, but I accidentally deleted Question B6 instead. I've now added B6 and marked B4 as "optional".)*

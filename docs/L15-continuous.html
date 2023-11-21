@@ -368,46 +368,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Lecture 15</span> Continuous random variables<a href="L15-continuous.html#L15-continuous" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="continuous-rv" class="section level2 hasAnchor" number="15.1">
 <h2><span class="header-section-number">15.1</span> What is a continuous random variable?<a href="L15-continuous.html#continuous-rv" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-
-
-
-In the previous six lectures, we have looked at discrete random variables, whose range is a finite or countably infinite set of separate discrete values. Discrete random variables can be used as a model for "count data".
-
-In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for "measurement data".
-
-For example:
-
-* The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers $\mathbb R$, where positive numbers represent credit and negative numbers represent debt.
-
-* The amount of time a machine in a factory works for before breaking down could be modelled as a continuous random variable with range the positive real numbers $\mathbb R_+ = \{x \in \mathbb R : x \geq 0\}$.
-
-* The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval $[0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}$.
-
-Imagine firing an arrow at a large target. We could ask "What's the probability that the arrow exactly hits a certain point?" -- but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we'd have to say that the probability of hitting it *exactly* is 0.  What makes more sense is to take a section of the target -- perhaps a small circle in the middle, called the "bulls-eye" -- and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question -- a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.
-
-Similarly, imagine picking a random real number between 0 and 1. We could ask "What is the probability that the random number is *exactly* $1/\sqrt{2} = 0.7071068\dots$?" But that probability, if we mean exactly hitting an infinite decimal, surely must be 0. It makes more sense to take an interval of numbers -- say, $[0.7, 0.8]$, the interval from $0.7$ to $0.8$ -- and ask what the probability is of the random number being in that interval.
-
-This is how continuous random variables work. The probability a continuous random variable $X$ *exactly* hits some value $x$ is $\mathbb P(X = x) = 0$. But we *can* find the probability $\mathbb P(a \leq X \leq b)$ that $X$ lies in a certain interval and work with that. 
--->
+<p>In the previous six lectures, we have looked at discrete random variables, whose range is a finite or countably infinite set of separate discrete values. Discrete random variables can be used as a model for “count data”.</p>
+<p>In this section and the next, we will instead look at continuous random variables, whose range is an uncountable set, a continuum of gradually varying values. Continuous random variables can be used as a model for “measurement data”.</p>
+<p>For example:</p>
+<ul>
+<li><p>The assets of a bank at the end of this year could be modelled as a continuous random variable with range the real numbers <span class="math inline">\(\mathbb R\)</span>, where positive numbers represent credit and negative numbers represent debt.</p></li>
+<li><p>The amount of time a machine in a factory works for before breaking down could be modelled as a continuous random variable with range the positive real numbers <span class="math inline">\(\mathbb R_+ = \{x \in \mathbb R : x \geq 0\}\)</span>.</p></li>
+<li><p>The unemployment rate in the UK next January, as a proportion of the population, could be measured as a continuous random variable with range the interval <span class="math inline">\([0, 1] = \{x \in \mathbb R : 0 \leq x \leq 1\}\)</span>.</p></li>
+</ul>
+<p>Imagine firing an arrow at a large target. We could ask “What’s the probability that the arrow exactly hits a certain point?” – but this question is difficult to answer. What do we mean by a point? If we mean a mathematically-idealised infinitesimally small point, then I think we’d have to say that the probability of hitting it <em>exactly</em> is 0. What makes more sense is to take a section of the target – perhaps a small circle in the middle, called the “bulls-eye” – and ask what is the probability that the arrow lands in the area of the bulls-eye. Then we could (at least in theory) answer that question – a good archer would have quite a high probability of landing the arrow in the bulls-eye, while a poor archer would have a smaller chance.</p>
+<p>Similarly, imagine picking a random real number between 0 and 1. We could ask “What is the probability that the random number is <em>exactly</em> <span class="math inline">\(1/\sqrt{2} = 0.7071068\dots\)</span>?” But that probability, if we mean exactly hitting an infinite decimal, surely must be 0. It makes more sense to take an interval of numbers – say, <span class="math inline">\([0.7, 0.8]\)</span>, the interval from <span class="math inline">\(0.7\)</span> to <span class="math inline">\(0.8\)</span> – and ask what the probability is of the random number being in that interval.</p>
+<p>This is how continuous random variables work. The probability a continuous random variable <span class="math inline">\(X\)</span> <em>exactly</em> hits some value <span class="math inline">\(x\)</span> is <span class="math inline">\(\mathbb P(X = x) = 0\)</span>. But we <em>can</em> find the probability <span class="math inline">\(\mathbb P(a \leq X \leq b)\)</span> that <span class="math inline">\(X\)</span> lies in a certain interval and work with that.</p>
 </div>
 <div id="pdf" class="section level2 hasAnchor" number="15.2">
 <h2><span class="header-section-number">15.2</span> Probability density functions<a href="L15-continuous.html#pdf" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-With a continuous random variable, the probability of *exactly* getting any particular outcome $X = x$ is 0. However, we can express the "intensity" of probability *around* $x$ by $f_X(x)$, where $f_X$ is called the "probability density function".
-
-The mass/density metaphor here is that, for a discrete random variable, we have probability "mass" *at* the point $x$; whereas for continuous random variables, we have a "density" of probability *around* $x$.
--->
+<p>With a continuous random variable, the probability of <em>exactly</em> getting any particular outcome <span class="math inline">\(X = x\)</span> is 0. However, we can express the “intensity” of probability <em>around</em> <span class="math inline">\(x\)</span> by <span class="math inline">\(f_X(x)\)</span>, where <span class="math inline">\(f_X\)</span> is called the “probability density function”.</p>
+<p>The mass/density metaphor here is that, for a discrete random variable, we have probability “mass” <em>at</em> the point <span class="math inline">\(x\)</span>; whereas for continuous random variables, we have a “density” of probability <em>around</em> <span class="math inline">\(x\)</span>.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-95" class="definition"><strong>Definition 15.1  </strong></span>A random variable <span class="math inline">\(X\)</span> is called a <strong>continuous random variable</strong> if the probability of landing in any interval between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, for <span class="math inline">\(a \leq b\)</span>, can be written as
 <span class="math display">\[ \mathbb P(a \leq X \leq b) = \int_a^b f_X(x) \, \mathrm{d}x , \]</span>
 for some non-negative function <span class="math inline">\(f_X\)</span>. The function <span class="math inline">\(f_X\)</span> is called the <strong>probability density function</strong> (or <strong>PDF</strong>).</p>
 </div>
-<!--
-In other words, the probability that $X$ is between $a$ and $b$ is the area under the curve of the PDF $f_X(x)$ between $x = a$ and $x = b$.
-
-As with PMFs, when it's obvious what random variable we're dealing with, we omit the subscript $X$ on the PDF $f_X$.
--->
+<p>In other words, the probability that <span class="math inline">\(X\)</span> is between <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> is the area under the curve of the PDF <span class="math inline">\(f_X(x)\)</span> between <span class="math inline">\(x = a\)</span> and <span class="math inline">\(x = b\)</span>.</p>
+<p>As with PMFs, when it’s obvious what random variable we’re dealing with, we omit the subscript <span class="math inline">\(X\)</span> on the PDF <span class="math inline">\(f_X\)</span>.</p>
 <div class="example">
 <p><span id="exm:unifex" class="example"><strong>Example 15.1  </strong></span>Let <span class="math inline">\(X\)</span> be a continuous random variable with PDF
 <span class="math display">\[  f(x) = 1 \qquad \text{for $0 \leq x \leq 1$} \]</span>
@@ -445,9 +428,7 @@ But this time we have to be careful, because <span class="math inline">\(f(y)\)<
 </div>
 <div id="prop-cont" class="section level2 hasAnchor" number="15.3">
 <h2><span class="header-section-number">15.3</span> Properties of continuous random variables<a href="L15-continuous.html#prop-cont" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution -- except you swap the PMF for the PDF and swap sums for integrals.
--->
+<p>The good news is that almost all of the properties we know and love about discrete distributions also follow through for continuous distribution – except you swap the PMF for the PDF and swap sums for integrals.</p>
 <table>
 <colgroup>
 <col width="50%" />
