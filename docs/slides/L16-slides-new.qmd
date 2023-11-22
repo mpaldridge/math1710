@@ -444,7 +444,7 @@ $$ \mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25) . $$
 
 ---
 
-$$ \mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25) . $$
+$$ \mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25)  $$
 
 ```{r phiz-exm, echo = FALSE, cache = TRUE}
 curve(dnorm, from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(Phi(z)))
