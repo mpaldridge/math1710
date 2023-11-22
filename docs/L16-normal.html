@@ -366,8 +366,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L16-normal" class="section level1 hasAnchor" number="16">
 <h1><span class="header-section-number">Lecture 16</span> Normal distribution<a href="L16-normal.html#L16-normal" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!--
-When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we'll look at an extremely important distribution: the "normal" (or "Gaussian") distribution.-->
+<p>When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we’ll look at an extremely important distribution: the “normal” (or “Gaussian”) distribution.</p>
 <div id="normal-definition" class="section level2 hasAnchor" number="16.1">
 <h2><span class="header-section-number">16.1</span> Definition of the normal distribution<a href="L16-normal.html#normal-definition" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
@@ -375,33 +374,23 @@ When we studied discrete random variables, we studied a number of important fami
 <span class="math display">\[ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right) , \]</span>
 then we say that <span class="math inline">\(X\)</span> has the <strong>normal distribution</strong> with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2 &gt; 0\)</span>, and write <span class="math inline">\(X \sim \mathrm N(\mu,\sigma^2)\)</span>.</p>
 </div>
-<!--
-(Many people call $\mu$ the "mean", which is a slight misnomer.)
-
-This PDF is the famous "bell curve", where the centre of the bell is at $x = \mu$ and the width of the bell is controlled by the value of $\sigma^2$. Note also that the PDF is symmetric about $\mu$.
-
-<img src="math1710_files/figure-html/norm-pic-1-1.png" width="672" />
-
-<img src="math1710_files/figure-html/norm-pic-2-1.png" width="672" />
-
-One important special case is $\mu = 0$ and $\sigma^2 = 1$, in which case we say that $Z \sim \mathrm N(0,1)$ has the **standard normal distribution**. We typically write $\phi$ (lower-case "phi"), where 
-\[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]
-for the PDF of a standard normal distribution, and write $\Phi$ (upper-case "Phi"), where
-\[ \Phi(z) = \mathbb P(Z \leq z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]
-for the CDF of a standard normal distribution.
-
-The normal distribution is a very widely used distribution for modelling many things in real life.
-
-* Measurement error with scientific instruments is typically modelled as a normal distribution with expectation $\mu = 0$. The more precise the instrument, the lower the value of the variance $\sigma^2$.
-
-* According to [a poll a few years ago](http://www1.maths.leeds.ac.uk/~voss/2019/MATH1712/index.html), the height of MATH1712 students in centimetres can be modelled well by a normal distribution with expectation $\mu = 172$ and variance $\sigma^2 = 86$.
-
-* In financial models, it is often assumed that the logarithm of the daily change in a stock price follows a normal distribution. In this context, the expectation $\mu$ is known as the "drift" and the standard deviation $\sigma$ as the "volatility". This "log-normal" model is the basis of the famous Black--Scholes model of financial markets.
-
-More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.
-
-It's generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.
--->
+<p>(Many people call <span class="math inline">\(\mu\)</span> the “mean”, which is a slight misnomer.)</p>
+<p>This PDF is the famous “bell curve”, where the centre of the bell is at <span class="math inline">\(x = \mu\)</span> and the width of the bell is controlled by the value of <span class="math inline">\(\sigma^2\)</span>. Note also that the PDF is symmetric about <span class="math inline">\(\mu\)</span>.</p>
+<p><img src="math1710_files/figure-html/norm-pic-1-1.png" width="672" /></p>
+<p><img src="math1710_files/figure-html/norm-pic-2-1.png" width="672" /></p>
+<p>One important special case is <span class="math inline">\(\mu = 0\)</span> and <span class="math inline">\(\sigma^2 = 1\)</span>, in which case we say that <span class="math inline">\(Z \sim \mathrm N(0,1)\)</span> has the <strong>standard normal distribution</strong>. We typically write <span class="math inline">\(\phi\)</span> (lower-case “phi”), where
+<span class="math display">\[ \phi(z) = \frac{1}{\sqrt{2\pi}} \mathrm e^{-z^2/2} \]</span>
+for the PDF of a standard normal distribution, and write <span class="math inline">\(\Phi\)</span> (upper-case “Phi”), where
+<span class="math display">\[ \Phi(z) = \mathbb P(Z \leq z) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^z \mathrm e^{-y^2/2}\, \mathrm dy \]</span>
+for the CDF of a standard normal distribution.</p>
+<p>The normal distribution is a very widely used distribution for modelling many things in real life.</p>
+<ul>
+<li><p>Measurement error with scientific instruments is typically modelled as a normal distribution with expectation <span class="math inline">\(\mu = 0\)</span>. The more precise the instrument, the lower the value of the variance <span class="math inline">\(\sigma^2\)</span>.</p></li>
+<li><p>According to <a href="http://www1.maths.leeds.ac.uk/~voss/2019/MATH1712/index.html">a poll a few years ago</a>, the height of MATH1712 students in centimetres can be modelled well by a normal distribution with expectation <span class="math inline">\(\mu = 172\)</span> and variance <span class="math inline">\(\sigma^2 = 86\)</span>.</p></li>
+<li><p>In financial models, it is often assumed that the logarithm of the daily change in a stock price follows a normal distribution. In this context, the expectation <span class="math inline">\(\mu\)</span> is known as the “drift” and the standard deviation <span class="math inline">\(\sigma\)</span> as the “volatility”. This “log-normal” model is the basis of the famous Black–Scholes model of financial markets.</p></li>
+</ul>
+<p>More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.</p>
+<p>It’s generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.</p>
 </div>
 <div id="normal-properties" class="section level2 hasAnchor" number="16.2">
 <h2><span class="header-section-number">16.2</span> Properties of the normal distribution<a href="L16-normal.html#normal-properties" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -414,66 +403,56 @@ It's generally difficult, or even impossible, to directly calculate probabilitie
 </ol>
 <p>In particular, if <span class="math inline">\(Z \sim \mathrm{N}(0, 1)\)</span> is a standard normal distribution, then <span class="math inline">\(\mathbb EZ = 0\)</span> and <span class="math inline">\(\operatorname{Var}(Z) = 1\)</span>.</p>
 </div>
-<!--
-We'll give (non-examinable) proofs of these soon. But first we'll note one other thing.
-
-Let $X \sim \mathrm{N}(\mu, \sigma^2)$, and consider the random variable $Y = aX + b$. Then we know that
-\begin{align*}
-\mathbb E(aX + b) &= a\mu + b , \\
-\Var(aX + b) &= a^2 \sigma^2 .
-\end{align*}
-In fact, it can be shown that $aX + b$ is normally distributed too; that is, $aX + b \sim \mathrm{N}(a\mu + b, a^2 \sigma^2)$. Importantly, if we take $a = 1/\sigma$ and $b = -\mu/\sigma$, then we see that
-\[ Z = \frac{X - \mu}{\sigma} \sim \text{N} (0, 1) . \]
-In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as "standardisation" and will be useful later.
-
-We can also use standardisation to help us prove Theorem \@ref(thm:norm-prop).
-
-::: {.proof}
-*(Non-examinable)* By using standardisation, it suffices to prove the theorem for a standard normal random variable $X \sim \mathrm{N}(0,1)$.
-
-For part 1, we need to show that
-\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]
-To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself $I$, we can instead calculate the square of the integral $I^2$, which we also need to show is equal to 1. This is
-\begin{align*}
-  I^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx \times \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-y^2/2}\, \mathrm dy\\
-    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-x^2/2}\,\mathrm e^{-y^2/2} \, \mathrm dx\, \mathrm dy \\
-    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-(x^2+y^2)/2}\,\mathrm dx\, \mathrm dy .
-\end{align*}
-The second part of the outrageous trick is notice that the appearance of $x^2 + y^2$ suggests it might be useful to transfer from cartesian coordinates $(x,y)$ to polar coordinates $(r, \theta)$. Recalling that $x^2 + y^2 = r^2$ and $\mathrm dx\, \mathrm dy = r\, \mathrm dr \,\mathrm d\theta$, we have
-\begin{align*}
-  I^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \int_{0}^\infty  \mathrm e^{-r^2/2}\,r\,\mathrm dr\, \mathrm d\theta \\
-    &= \frac{1}{2\pi} \, 2\pi\int_{0}^\infty  r\, \mathrm e^{-r^2/2}\,\mathrm dr \\
-    &= \left[ -\mathrm e^{-r^2/2} \right]_0^\infty \\
-    &= - 0 -(-1) \\
-    &= 1 ,
-\end{align*}
-and we're done.
-
-For part 2, we need to show that $\mathbb EX = 0$. We have
-\begin{align*}
-\mathbb EX &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
-  &= \frac{1}{\sqrt{2\pi}} \left[-\mathrm e^{-x^2/2}\right]_{-\infty}^\infty \\
-  &= -0 - (-0) \\
-  &= 0 ,
-\end{align*}
-as required.
-
-For part 3, we need to show that $\mathbb EX^2 = 1$. Using integration by parts with $u = x$, $v' = x\,\mathrm e^{-x^2/2}$, we have
-\begin{align*}
-\mathbb EX^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x^2\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
-  &= \frac{1}{\sqrt{2\pi}} \left[-x \mathrm e^{-x^2/2}\right]_{-\infty}^\infty + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx \\
-  &= 0 + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx .
-\end{align*}
-But this integral on the right is just the integral $I$ of the PDF as above, which we know equals 1, as required.
-:::
-
-There is one last property of the normal distribution that we won't use directly in this module, but is perhaps worth knowing anyway.
-
-::: {.theorem}
-If $X \sim \mathrm{N}(\mu_X, \sigma^2_X)$ and $Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)$ are independent, then
-\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]
-:::
--->
+<p>We’ll give (non-examinable) proofs of these soon. But first we’ll note one other thing.</p>
+<p>Let <span class="math inline">\(X \sim \mathrm{N}(\mu, \sigma^2)\)</span>, and consider the random variable <span class="math inline">\(Y = aX + b\)</span>. Then we know that
+<span class="math display">\[\begin{align*}
+\mathbb E(aX + b) &amp;= a\mu + b , \\
+\operatorname{Var}(aX + b) &amp;= a^2 \sigma^2 .
+\end{align*}\]</span>
+In fact, it can be shown that <span class="math inline">\(aX + b\)</span> is normally distributed too; that is, <span class="math inline">\(aX + b \sim \mathrm{N}(a\mu + b, a^2 \sigma^2)\)</span>. Importantly, if we take <span class="math inline">\(a = 1/\sigma\)</span> and <span class="math inline">\(b = -\mu/\sigma\)</span>, then we see that
+<span class="math display">\[ Z = \frac{X - \mu}{\sigma} \sim \text{N} (0, 1) . \]</span>
+In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as “standardisation” and will be useful later.</p>
+<p>We can also use standardisation to help us prove Theorem <a href="L16-normal.html#thm:norm-prop">16.1</a>.</p>
+<div class="proof">
+<p><span id="unlabeled-div-99" class="proof"><em>Proof</em>. </span><em>(Non-examinable)</em> By using standardisation, it suffices to prove the theorem for a standard normal random variable <span class="math inline">\(X \sim \mathrm{N}(0,1)\)</span>.</p>
+<p>For part 1, we need to show that
+<span class="math display">\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]</span>
+To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself <span class="math inline">\(I\)</span>, we can instead calculate the square of the integral <span class="math inline">\(I^2\)</span>, which we also need to show is equal to 1. This is
+<span class="math display">\[\begin{align*}
+  I^2 &amp;= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx \times \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-y^2/2}\, \mathrm dy\\
+    &amp;= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-x^2/2}\,\mathrm e^{-y^2/2} \, \mathrm dx\, \mathrm dy \\
+    &amp;= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-(x^2+y^2)/2}\,\mathrm dx\, \mathrm dy .
+\end{align*}\]</span>
+The second part of the outrageous trick is notice that the appearance of <span class="math inline">\(x^2 + y^2\)</span> suggests it might be useful to transfer from cartesian coordinates <span class="math inline">\((x,y)\)</span> to polar coordinates <span class="math inline">\((r, \theta)\)</span>. Recalling that <span class="math inline">\(x^2 + y^2 = r^2\)</span> and <span class="math inline">\(\mathrm dx\, \mathrm dy = r\, \mathrm dr \,\mathrm d\theta\)</span>, we have
+<span class="math display">\[\begin{align*}
+  I^2 &amp;= \frac{1}{2\pi} \int_{0}^{2\pi} \int_{0}^\infty  \mathrm e^{-r^2/2}\,r\,\mathrm dr\, \mathrm d\theta \\
+    &amp;= \frac{1}{2\pi} \, 2\pi\int_{0}^\infty  r\, \mathrm e^{-r^2/2}\,\mathrm dr \\
+    &amp;= \left[ -\mathrm e^{-r^2/2} \right]_0^\infty \\
+    &amp;= - 0 -(-1) \\
+    &amp;= 1 ,
+\end{align*}\]</span>
+and we’re done.</p>
+<p>For part 2, we need to show that <span class="math inline">\(\mathbb EX = 0\)</span>. We have
+<span class="math display">\[\begin{align*}
+\mathbb EX &amp;= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &amp;= \frac{1}{\sqrt{2\pi}} \left[-\mathrm e^{-x^2/2}\right]_{-\infty}^\infty \\
+  &amp;= -0 - (-0) \\
+  &amp;= 0 ,
+\end{align*}\]</span>
+as required.</p>
+<p>For part 3, we need to show that <span class="math inline">\(\mathbb EX^2 = 1\)</span>. Using integration by parts with <span class="math inline">\(u = x\)</span>, <span class="math inline">\(v&#39; = x\,\mathrm e^{-x^2/2}\)</span>, we have
+<span class="math display">\[\begin{align*}
+\mathbb EX^2 &amp;= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x^2\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &amp;= \frac{1}{\sqrt{2\pi}} \left[-x \mathrm e^{-x^2/2}\right]_{-\infty}^\infty + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx \\
+  &amp;= 0 + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx .
+\end{align*}\]</span>
+But this integral on the right is just the integral <span class="math inline">\(I\)</span> of the PDF as above, which we know equals 1, as required.</p>
+</div>
+<p>There is one last property of the normal distribution that we won’t use directly in this module, but is perhaps worth knowing anyway.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-100" class="theorem"><strong>Theorem 16.2  </strong></span>If <span class="math inline">\(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\)</span> and <span class="math inline">\(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\)</span> are independent, then
+<span class="math display">\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]</span></p>
+</div>
 </div>
 <div id="normal-r" class="section level2 hasAnchor" number="16.3">
 <h2><span class="header-section-number">16.3</span> Calculations using R<a href="L16-normal.html#normal-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -504,7 +483,7 @@ If $X \sim \mathrm{N}(\mu_X, \sigma^2_X)$ and $Y\sim \mathrm{N}(\mu_Y, \sigma^2_
 </div>
 <div class="thpart">
 <p><strong>Question 3.</strong> <em>Let <span class="math inline">\(Z \sim \mathrm{N}(0,1)\)</span>. What is <span class="math inline">\(\mathbb P(Z &gt; 0.33)\)</span>?</em></p>
-<p>This is asking for the upper-tail probability. The direct way to get R to solve this is to use the <code>lower.tail = FALSE</code> option that we discussed in <a href="#r-work">R Worksheet 7</a>. That is, we use:</p>
+<p>This is asking for the upper-tail probability. The direct way to get R to solve this is to use the <code>lower.tail = FALSE</code> option that we discussed in <a href="#r">R Worksheet 6</a>. That is, we use:</p>
 <div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="L16-normal.html#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pnorm</span>(<span class="fl">0.33</span>, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span></code></pre></div>
 <pre><code>[1] 0.3707</code></pre>
 <p>Alternatively, we could use the fact that <span class="math inline">\(\mathbb P(Z &gt; z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\)</span>. Then we could equally well calculate this as</p>
@@ -595,16 +574,14 @@ This the upper quantile we are after is <span class="math inline">\(8.1316\)</sp
 <span class="math display">\[0.04\times (-3.2905) + 8 = 7.8684. \]</span>
 These match the answers we got with R.</p>
 </div>
-<!--
-I feel I shouldn't finish with this subsection before addressing the following question some students may be asking themselves: *Now that we have R (and other computing methods), what's the point learning to answer questions using statistical tables?* I might suggest a few possible answers to this question:
-
-1. Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.
-1. Someone has to write the computer program, and these people need to be able to do the sorts of conversions we learn about here. So these are useful skills for mathematician--programmers to learn.
-1. Being able to standardise normal distributions, manipulate normal distributions, approximate other distributions by normal distributions (see Lecture 18), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
-1. Yes, you are right, this is a pointless skill for us to teach you.
-
-I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
--->
+<p>I feel I shouldn’t finish with this subsection before addressing the following question some students may be asking themselves: <em>Now that we have R (and other computing methods), what’s the point learning to answer questions using statistical tables?</em> I might suggest a few possible answers to this question:</p>
+<ol style="list-style-type: decimal">
+<li>Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.</li>
+<li>Someone has to write the computer program, and these people need to be able to do the sorts of conversions we learn about here. So these are useful skills for mathematician–programmers to learn.</li>
+<li>Being able to standardise normal distributions, manipulate normal distributions, approximate other distributions by normal distributions (see Lecture 18), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.</li>
+<li>Yes, you are right, this is a pointless skill for us to teach you.</li>
+</ol>
+<p>I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn’t totally without merit.</p>
 </div>
 <div id="summary-L16" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L16-normal.html#summary-L16" class="anchor-section" aria-label="Anchor link to header"></a></h2>

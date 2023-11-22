@@ -36,7 +36,7 @@ $$ F(8.1) = \mathbb P(X \leq 8.1) = \frac{1}{\sqrt{2\pi\times 0.04^2}} \int_{-\i
 $$ F(8.1) = \mathbb P(X \leq 8.1) = \frac{1}{\sqrt{2\pi\times 0.04^2}} \int_{-\infty}^{8.1} \exp \left(-\frac{(x - 8)^2}{2\times 0.04^2} \right) \, \mathrm dx . $$
 
 ```{r q1pic, echo = FALSE, cache = TRUE}
-curve(dnorm(x, 8, 0.04), from = 7.7, to = 8.3, n = 1001, xlim = c(7.8, 8.2), lwd = 2, col = "blue", xlab = "z", ylab = expression(F(z)))
+curve(dnorm(x, 8, 0.04), from = 7.7, to = 8.3, n = 1001, xlim = c(7.8, 8.2), lwd = 2, col = "blue", xlab = "x", ylab = expression(f(x)))
 
 rng <- seq(7.7, 8.1, length.out=100)
 xpol <- c(7.7, rng, 8.1)
@@ -92,7 +92,7 @@ pnorm(8.1, 8, 0.04)
 **Question 2.**  *Let $Z \sim \mathrm{N}(0,1)$. What is $\mathbb P(Z \leq 1.45)$?*
 
 ```{r q2pic, echo = FALSE, cache = TRUE}
-curve(dnorm(x), from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(F(z)))
+curve(dnorm(x), from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(phi(z)))
 
 rng <- seq(-4, 1.45, length.out=200)
 xpol <- c(-4, rng, 1.45)
@@ -137,7 +137,7 @@ pnorm(1.45)
 **Question 3.**  *Let $Z \sim \mathrm{N}(0,1)$. What is $\mathbb P(Z > 0.33)$?*
 
 ```{r q3pic, echo = FALSE, cache = TRUE}
-curve(dnorm(x), from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(F(z)))
+curve(dnorm(x), from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(phi(z)))
 
 rng <- seq(0.33, 4, length.out=200)
 xpol <- c(0.33, rng, 4)
@@ -184,7 +184,7 @@ Alternatively, we could use the fact that $\mathbb P(Z > z) = 1 - \mathbb P(Z \l
 **Question 4.** *We return to the fiberoptic model $X \sim \mathrm{N}(8, 0.04^2)$ from Question 1. Fibres can be awarded a special "high quality" stamp if their width is between 7.95 and 8.05 nm. What proportion of these fibres qualify?*
 
 ```{r q4pic, echo = FALSE, cache = TRUE}
-curve(dnorm(x, 8, 0.04), from = 7.7, to = 8.3, n = 1001, xlim = c(7.8, 8.2), lwd = 2, col = "blue", xlab = "z", ylab = expression(F(z)))
+curve(dnorm(x, 8, 0.04), from = 7.7, to = 8.3, n = 1001, xlim = c(7.8, 8.2), lwd = 2, col = "blue", xlab = "x", ylab = expression(f(x)))
 
 rng <- seq(7.95, 8.05, length.out=100)
 xpol <- c(7.95, rng, 8.05)
@@ -236,7 +236,7 @@ pnorm(8.05, mu, sigma) - pnorm(7.95, mu, sigma)
 
 
 ```{r q5pic, echo = FALSE, cache = TRUE}
-curve(dnorm(x, 8, 0.04), from = 7.7, to = 8.3, n = 1001, xlim = c(7.8, 8.2), lwd = 2, col = "blue", xlab = "z", ylab = expression(F(z)))
+curve(dnorm(x, 8, 0.04), from = 7.7, to = 8.3, n = 1001, xlim = c(7.8, 8.2), lwd = 2, col = "blue", xlab = "x", ylab = expression(f(x)))
 
 x <- 7.9
 y <- 8.1
@@ -353,7 +353,7 @@ But $\mathbb P(Z > 0.33) = 1 - \Phi(0.33)$.
 $$\mathbb P(Z > 0.33) = 1 - \Phi(0.33)$$
 
 ```{r q3pic2, echo = FALSE, cache = TRUE}
-curve(dnorm(x), from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(F(z)))
+curve(dnorm(x), from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(phi(z)))
 
 rng <- seq(0.33, 4, length.out=200)
 xpol <- c(0.33, rng, 4)
@@ -447,7 +447,7 @@ $$ \mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25) . $$
 $$ \mathbb P(Z \leq -1.25) = \mathbb P(Z > 1.25)  $$
 
 ```{r phiz-exm, echo = FALSE, cache = TRUE}
-curve(dnorm, from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(Phi(z)))
+curve(dnorm, from = -4, to = 4, n = 1001, xlim = c(-3, 3), lwd = 2, col = "blue", xlab = "z", ylab = expression(phi(z)))
 
 rng <- seq(-3.5, -1.25, by = 0.05)
 xpol <- c(-3.5, rng, -1.25)

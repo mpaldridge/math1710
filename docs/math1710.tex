@@ -5839,6 +5839,8 @@ For the expectation, we have
 \hypertarget{L16-normal}{%
 \chapter{Normal distribution}\label{L16-normal}}
 
+When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we'll look at an extremely important distribution: the ``normal'' (or ``Gaussian'') distribution.
+
 \hypertarget{normal-definition}{%
 \section{Definition of the normal distribution}\label{normal-definition}}
 
@@ -5847,6 +5849,12 @@ If \(X\) is a continuous random variable with PDF
 \[ f_X(x) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right) , \]
 then we say that \(X\) has the \textbf{normal distribution} with expectation \(\mu\) and variance \(\sigma^2 > 0\), and write \(X \sim \mathrm N(\mu,\sigma^2)\).
 \end{definition}
+
+(Many people call \(\mu\) the ``mean'', which is a slight misnomer.)
+
+This PDF is the famous ``bell curve'', where the centre of the bell is at \(x = \mu\) and the width of the bell is controlled by the value of \(\sigma^2\). Note also that the PDF is symmetric about \(\mu\).
+
+\includegraphics{math1710_files/figure-latex/norm-pic-1-1.pdf}
 
 \includegraphics{math1710_files/figure-latex/norm-pic-2-1.pdf}
 
@@ -5870,7 +5878,6 @@ The normal distribution is a very widely used distribution for modelling many th
 More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.
 
 It's generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.
---\textgreater{}
 
 \hypertarget{normal-properties}{%
 \section{Properties of the normal distribution}\label{normal-properties}}
@@ -5890,6 +5897,65 @@ It's generally difficult, or even impossible, to directly calculate probabilitie
 \end{enumerate}
 
 In particular, if \(Z \sim \mathrm{N}(0, 1)\) is a standard normal distribution, then \(\mathbb EZ = 0\) and \(\operatorname{Var}(Z) = 1\).
+\end{theorem}
+
+We'll give (non-examinable) proofs of these soon. But first we'll note one other thing.
+
+Let \(X \sim \mathrm{N}(\mu, \sigma^2)\), and consider the random variable \(Y = aX + b\). Then we know that
+\begin{align*}
+\mathbb E(aX + b) &= a\mu + b , \\
+\operatorname{Var}(aX + b) &= a^2 \sigma^2 .
+\end{align*}
+In fact, it can be shown that \(aX + b\) is normally distributed too; that is, \(aX + b \sim \mathrm{N}(a\mu + b, a^2 \sigma^2)\). Importantly, if we take \(a = 1/\sigma\) and \(b = -\mu/\sigma\), then we see that
+\[ Z = \frac{X - \mu}{\sigma} \sim \text{N} (0, 1) . \]
+In other words, we can stretch and scale any normal random variable to turn it into a standard normal random variable. This is known as ``standardisation'' and will be useful later.
+
+We can also use standardisation to help us prove Theorem \ref{thm:norm-prop}.
+
+\begin{proof}
+\emph{(Non-examinable)} By using standardisation, it suffices to prove the theorem for a standard normal random variable \(X \sim \mathrm{N}(0,1)\).
+
+For part 1, we need to show that
+\[ I = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx = 1 . \]
+To prove this we use one of the most outrageous tricks in mathematics! The first part of the trick is that, instead of calculating the integral itself \(I\), we can instead calculate the square of the integral \(I^2\), which we also need to show is equal to 1. This is
+\begin{align*}
+  I^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2}\, \mathrm dx \times \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-y^2/2}\, \mathrm dy\\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-x^2/2}\,\mathrm e^{-y^2/2} \, \mathrm dx\, \mathrm dy \\
+    &= \frac{1}{2\pi} \int_{-\infty}^\infty \int_{-\infty}^\infty  \mathrm e^{-(x^2+y^2)/2}\,\mathrm dx\, \mathrm dy .
+\end{align*}
+The second part of the outrageous trick is notice that the appearance of \(x^2 + y^2\) suggests it might be useful to transfer from cartesian coordinates \((x,y)\) to polar coordinates \((r, \theta)\). Recalling that \(x^2 + y^2 = r^2\) and \(\mathrm dx\, \mathrm dy = r\, \mathrm dr \,\mathrm d\theta\), we have
+\begin{align*}
+  I^2 &= \frac{1}{2\pi} \int_{0}^{2\pi} \int_{0}^\infty  \mathrm e^{-r^2/2}\,r\,\mathrm dr\, \mathrm d\theta \\
+    &= \frac{1}{2\pi} \, 2\pi\int_{0}^\infty  r\, \mathrm e^{-r^2/2}\,\mathrm dr \\
+    &= \left[ -\mathrm e^{-r^2/2} \right]_0^\infty \\
+    &= - 0 -(-1) \\
+    &= 1 ,
+\end{align*}
+and we're done.
+
+For part 2, we need to show that \(\mathbb EX = 0\). We have
+\begin{align*}
+\mathbb EX &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-\mathrm e^{-x^2/2}\right]_{-\infty}^\infty \\
+  &= -0 - (-0) \\
+  &= 0 ,
+\end{align*}
+as required.
+
+For part 3, we need to show that \(\mathbb EX^2 = 1\). Using integration by parts with \(u = x\), \(v' = x\,\mathrm e^{-x^2/2}\), we have
+\begin{align*}
+\mathbb EX^2 &= \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} x^2\,  \mathrm e^{-x^2/2}\, \mathrm dx \\
+  &= \frac{1}{\sqrt{2\pi}} \left[-x \mathrm e^{-x^2/2}\right]_{-\infty}^\infty + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx \\
+  &= 0 + \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty \mathrm e^{-x^2/2} \, \mathrm dx .
+\end{align*}
+But this integral on the right is just the integral \(I\) of the PDF as above, which we know equals 1, as required.
+\end{proof}
+
+There is one last property of the normal distribution that we won't use directly in this module, but is perhaps worth knowing anyway.
+
+\begin{theorem}
+If \(X \sim \mathrm{N}(\mu_X, \sigma^2_X)\) and \(Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)\) are independent, then
+\[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]
 \end{theorem}
 
 \hypertarget{normal-r}{%
@@ -5957,7 +6023,7 @@ But in fact, the standard normal distribution CDF \(\Phi\) is so common that R a
 
 \textbf{Question 3.} \emph{Let \(Z \sim \mathrm{N}(0,1)\). What is \(\mathbb P(Z > 0.33)\)?}
 
-This is asking for the upper-tail probability. The direct way to get R to solve this is to use the \texttt{lower.tail\ =\ FALSE} option that we discussed in \protect\hyperlink{r-work}{R Worksheet 7}. That is, we use:
+This is asking for the upper-tail probability. The direct way to get R to solve this is to use the \texttt{lower.tail\ =\ FALSE} option that we discussed in \protect\hyperlink{r}{R Worksheet 6}. That is, we use:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -6096,6 +6162,23 @@ This the upper quantile we are after is \(8.1316\).
 For the lower quantile, we can use symmetry again. Thus the \(0.0005 = 1 - 0.9995\) quantile for \(Z\) is minus the previous quantile; that is, \(-3.2905\). Hence the lower quantile we want is
 \[0.04\times (-3.2905) + 8 = 7.8684. \]
 These match the answers we got with R.
+
+I feel I shouldn't finish with this subsection before addressing the following question some students may be asking themselves: \emph{Now that we have R (and other computing methods), what's the point learning to answer questions using statistical tables?} I might suggest a few possible answers to this question:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.
+\item
+  Someone has to write the computer program, and these people need to be able to do the sorts of conversions we learn about here. So these are useful skills for mathematician--programmers to learn.
+\item
+  Being able to standardise normal distributions, manipulate normal distributions, approximate other distributions by normal distributions (see Lecture 18), and so on, are actually important to be able to solve purely mathematical problems, quite outside of merely performing calculations.
+\item
+  Yes, you are right, this is a pointless skill for us to teach you.
+\end{enumerate}
+
+I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
 
 \hypertarget{summary-L16}{%
 \section*{Summary}\label{summary-L16}}
