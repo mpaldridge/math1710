@@ -39,6 +39,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
 |   6  | [**5: Plots II** -- Making plots better](R5.html) |           |  ---  |
 |   7  | [**6: Discrete distributions**](R6-2324.html) |  | Monday 20 November |
 |   8  | [**7: Discrete random variables**](R7-2324.html) |            |  ---  |
+|   9  | [**8: Normal distribution**](R8-2324.html) | Monday 4 December |  ---  |
 
 <!--
 | Week | Worksheet                     | Deadline for assessed work |

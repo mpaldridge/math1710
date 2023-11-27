@@ -1,0 +1,92 @@
+---
+title: "Multiple continuous random variables"
+author: "MATH1710 Probability and Statistics I"
+format:
+  revealjs:
+    smaller: true
+---
+
+
+\newcommand{\Cov}{\operatorname{Cov}}
+
+
+| Discrete random variables | Continuous random variables |
+|-|-|
+| We can get the **marginal PMF** $p_X$ of $X$ by summing over $y$, so $$ p_X(x) = \sum_y p_{X,Y}(x,y) $$ |  |
+
+---
+
+| Discrete random variables | Continuous random variables |
+|-|-|
+| We can get the **marginal PMF** $p_X$ of $X$ by summing over $y$, so $$ p_X(x) = \sum_y p_{X,Y}(x,y)  $$ | We can get the **marginal PDF** $f_X$ of $X$ by integrating over $y$, so $$ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy$$ |
+
+---
+
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| We can get the **marginal PMF** $p_X$ of $X$ by summing over $y$, so $$ p_X(x) = \sum_y p_{X,Y}(x,y) $$ | We can get the **marginal PDF** $f_X$ of $X$ by integrating over $y$, so $$ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy $$ |
+| Two discrete random variables $X$ and $Y$ are **independent** if their PMFs satisfy $$p_{X,Y}(x,y) = p_X(x)\,p_Y(y)$$ for all $x$, $y$ |  |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| We can get the **marginal PMF** $p_X$ of $X$ by summing over $y$, so $$ p_X(x) = \sum_y p_{X,Y}(x,y) $$ | We can get the **marginal PDF** $f_X$ of $X$ by integrating over $y$, so $$ f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy $$ |
+| Two discrete random variables $X$ and $Y$ are **independent** if their PMFs satisfy $$p_{X,Y}(x,y) = p_X(x)\,p_Y(y)$$ for all $x$, $y$ | Two continuous random variables $X$ and $Y$ are **independent** if their PDFs satisfy $$f_{X,Y}(x,y) = f_X(x)\,f_Y(y)$$ for all $x$, $y$ |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| Two discrete random variables $X$ and $Y$ are **independent** if their PMFs satisfy $$p_{X,Y}(x,y) = p_X(x)\,p_Y(y)$$ for all $x$, $y$ | Two continuous random variables $X$ and $Y$ are **independent** if their PDFs satisfy $$f_{X,Y}(x,y) = f_X(x)\,f_Y(y)$$ for all $x$, $y$ |
+| The **conditional PMF** of $Y$ given $X$ is defined by $$ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)}$$ |  |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| Two discrete random variables $X$ and $Y$ are **independent** if their PMFs satisfy $$p_{X,Y}(x,y) = p_X(x)\,p_Y(y)$$ for all $x$, $y$ | Two continuous random variables $X$ and $Y$ are **independent** if their PDFs satisfy $$f_{X,Y}(x,y) = f_X(x)\,f_Y(y)$$ for all $x$, $y$ |
+| The **conditional PMF** of $Y$ given $X$ is defined by $$ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)}$$ | The **conditional PDF** of $Y$ given $X$ is defined by $$ f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)}$$ |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| The **conditional PMF** of $Y$ given $X$ is defined by $$ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)}$$ | The **conditional PDF** of $Y$ given $X$ is defined by $$ f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)}$$ |
+| **Bayes' theorem** states that $$ p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)}$$ |  |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| The **conditional PMF** of $Y$ given $X$ is defined by $$ p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)}$$ | The **conditional PDF** of $Y$ given $X$ is defined by $$ f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)}$$ |
+| **Bayes' theorem** states that $$ p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)}$$ | **Bayes' theorem** states that $$ f_{X \mid Y}(x \mid y) = \frac{f_X(x)\,f_{Y\mid X}(y\mid x)}{f_Y(y)}$$ |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| **Bayes' theorem** states that $$ p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)}$$ | **Bayes' theorem** states that $$ f_{X \mid Y}(x \mid y) = \frac{f_X(x)\,f_{Y\mid X}(y\mid x)}{f_Y(y)}$$ |
+| The expectation of a function of $X$ and $Y$ is given by the sum $$ \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y)$$ |  |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| **Bayes' theorem** states that $$ p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)}$$ | **Bayes' theorem** states that $$ f_{X \mid Y}(x \mid y) = \frac{f_X(x)\,f_{Y\mid X}(y\mid x)}{f_Y(y)}$$ |
+| The expectation of a function of $X$ and $Y$ is given by the sum $$ \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y)$$ | The expectation of a function of $X$ and $Y$ is given by the integral $$ \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy$$ |
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| The expectation of a function of $X$ and $Y$ is given by the sum $$ \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y)$$ | The expectation of a function of $X$ and $Y$ is given by the integral $$ \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy$$ |
+| The **covariance** of $X$ and $Y$ is given by $$ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , $$ and has a computational formula $$ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y$$ | 
+
+---
+
+|   Discrete random  variables   |   Continuous random variables   |
+|-----|-----|
+| The expectation of a function of $X$ and $Y$ is given by the sum $$ \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y)$$ | The expectation of a function of $X$ and $Y$ is given by the integral $$ \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy$$ |
+| The **covariance** of $X$ and $Y$ is given by $$ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , $$ and has a computational formula $$ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y$$ | The **covariance** of $X$ and $Y$ is given by $$ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , $$ and has a computational formula $$ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y$$ |

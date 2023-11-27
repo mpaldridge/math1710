@@ -154,6 +154,22 @@
 
 \newcommand{\Var}{\operatorname{Var}}
 
+\textbf{Week 9} (27 November -- 1 December):
+
+\begin{itemize}
+\tightlist
+\item
+  \protect\hyperlink{L17-exponential-multi}{\textbf{Lecture 17:} Exponential distribution and multiple continuous random variables} (Monday 27 November)
+\item
+  \protect\hyperlink{L18-limit}{\textbf{Lecture 18:} Limit theorems} (Wednesday 29 November)
+\item
+  \protect\hyperlink{P5}{\textbf{Problem Sheet 5:}} Work through in preparation for your tutorial in Week 10. Deadline for assessed questions: Monday 27 November.
+\item
+  \protect\hyperlink{R}{\textbf{R Worksheet 8}} -- deadline for assessed questions: Monday 4 December
+\item
+  \textbf{Office hours:} Friday 1 December, 11--12 and 1--2, \href{https://mpaldridge.github.io/office.html}{Physics Research Deck 9.320}
+\end{itemize}
+
 \textbf{Week 8} (20--24 November):
 
 \begin{itemize}
@@ -161,7 +177,7 @@
 \item
   \protect\hyperlink{L15-continuous}{\textbf{Lecture 15:} Continuous random variables} (Monday 20 November)
 \item
-  \protect\hyperlink{L16-normal}{\textbf{Lecture 16:} Normal distribution} (Wednesday 23 November)
+  \protect\hyperlink{L16-normal}{\textbf{Lecture 16:} Normal distribution} (Wednesday 22 November)
 \item
   \textbf{Tutorial} on \protect\hyperlink{P4}{Problem Sheet 4}
 \item
@@ -183,7 +199,7 @@
 \item
   \protect\hyperlink{P4}{\textbf{Problem Sheet 4:}} Work through in preparation for your tutorial in Week 8. Deadline for assessed questions: Monday 27 November.
 \item
-  \protect\hyperlink{R}{\textbf{R Worksheet 6:}} Assessed questions due Monday 20 November
+  \protect\hyperlink{R}{\textbf{R Worksheet 6:}} -- deadline for assessed questions: Monday 20 November
 \item
   \textbf{Office hours:} Friday 17 November, 11--12 and 1--2, \href{https://mpaldridge.github.io/office.html}{Physics Research Deck 9.320}
 \end{itemize}
@@ -1219,7 +1235,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-38-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-41-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -6196,6 +6212,282 @@ I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn
   The CDF of a normal distribution can be calculated in R with the \texttt{pnorm()} function. It can also be calculated using \href{https://mpaldridge.github.io/math1710/stat-tab.pdf}{statistical tables} and by ``standardising''.
 \end{itemize}
 
+\hypertarget{L17-exp-multiple}{%
+\chapter{Exponential distribution and multiple continuous random variables}\label{L17-exp-multiple}}
+
+\hypertarget{exponential}{%
+\section{Exponential distribution}\label{exponential}}
+
+\begin{definition}
+A continuous random variable \(X\) is said to have the \textbf{exponential distribution with rate \(\lambda > 0\)} if it has the PDF
+\[ f(x) = \lambda \mathrm{e}^{-\lambda x} \qquad \text{for $x \geq 0$}, \]
+and 0 otherwise. We write \(X \sim \text{Exp}(\lambda)\).
+\end{definition}
+
+\includegraphics{math1710_files/figure-latex/exp-pic-1.pdf}
+
+\begin{example}
+\emph{The length of time in years that a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate \(\lambda = 2\). What is the probability the lightbulb lasts more than a year but less than three years?}
+
+If \(X \sim \text{Exp}(2)\) is the lifetime of the lightbulb, we seek \(\mathbb P(1 \leq X \leq 3)\). This is
+\[ \int_{1}^3 f(x)\, \mathrm{d}x = \int_1^3 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_1^3 = -\mathrm e^{-6} -(-\mathrm e^{-2}) = 0.132.  \]
+\end{example}
+
+\begin{theorem}
+\protect\hypertarget{thm:exp-prop}{}\label{thm:exp-prop}
+
+Suppose \(X \sim \text{Exp}(\lambda)\). Then:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(f\) is indeed a PDF, in that \(\displaystyle\int_0^\infty f(x)\,\mathrm{d}x = 1\);
+\item
+  the CDF of \(X\) is \(F(x) = 1 - \mathrm{e}^{-\lambda x}\);
+\item
+  the expectation of \(X\) is \(\mathbb EX = \displaystyle\frac{1}{\lambda}\);
+\item
+  the variance of \(X\) is \(\operatorname{Var}(X) = \displaystyle\frac{1}{\lambda^2}\).
+\end{enumerate}
+
+\end{theorem}
+
+\begin{example}
+Returning to the lightbulb example, where \(X \sim \text{Exp}(2)\), we see that the average lifetime of a lightbulb is \(\mathbb EX = \frac12\) a year with variance \(\operatorname{Var}(X) = \frac14\).
+
+We could alternatively calculate \(\mathbb P(1 \leq X \leq 3)\), using the the CDF:
+\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm{e}^{-2\times 3}) - (1 - \mathrm{e}^{-2\times 1}) = \mathrm{e}^{-2} - \mathrm{e}^{-6} = 0.132 , \]
+which is the same answer as before.
+\end{example}
+
+\hypertarget{continuous-multiple}{%
+\section{Multiple continuous random variables}\label{continuous-multiple}}
+
+The theory we set up for two or more discrete random variables also works for two or more continuous random variables.
+
+Now, the intensity of probability for \((X,Y)\) being around \((x,y)\) is given by the \textbf{joint probability density function} \(f_{X,Y}\). In particular for \(a \leq b\) and \(c \leq d\), we have
+\[ \mathbb P(a \leq X \leq b \text{ and } c \leq Y \leq d ) = \int_{x = a}^b \int_{y = c}^d f_{X,Y}(x,y)\, \mathrm dx \,\mathrm dy .\]
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Discrete random variables
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Continuous random variables
+\end{minipage} \\
+\midrule()
+\endhead
+We can get the \textbf{marginal PMF} \(p_X\) of \(X\) by summing over \(y\), so \( p_X(x) = \sum_y p_{X,Y}(x,y) . \) & We can get the \textbf{marginal PDF} \(f_X\) of \(X\) by integrating over \(y\), so \( f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy. \) \\
+Two discrete random variables \(X\) and \(Y\) are \textbf{independent} if their PMFs satisfy \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y) \qquad \text{for all $x, y$}.\) & Two continuous random variables \(X\) and \(Y\) are \textbf{independent} if they have PDFs which satisfy \(f_{X,Y}(x,y) = f_X(x)\,f_Y(y) \qquad \text{for all $x, y$}.\) \\
+The \textbf{conditional PMF} of \(Y\) given \(X\) is defined by \( p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} . \) & The \textbf{conditional PDF} of \(Y\) given \(X\) is defined by \( f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)} . \) \\
+\textbf{Bayes' theorem} states that \( p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)} . \) & \textbf{Bayes' theorem} states that \( f_{X \mid Y}(x \mid y) = \frac{f_X(x)\,f_{Y\mid X}(y\mid x)}{f_Y(y)} . \) \\
+The expectation of a function of \(X\) and \(Y\) is given by the sum \( \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y) . \) & The expectation of a function of \(X\) and \(Y\) is given by the integral \( \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy . \) \\
+The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) & The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{summary-L17}{%
+\section*{Summary}\label{summary-L17}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  The exponential distribution has PDF \(f(x) = \lambda \mathrm e^{-\lambda x}\), expectation \(1/\lambda\), and variance \(1/\lambda^2\).
+\item
+  Most properties of multiple discrete random variables carry of to multiple continuous random variables. To get a marginal PDF from a joint PDF, we integrate (rather than sum) over the other variable.
+\end{itemize}
+
+\hypertarget{L18-limit}{%
+\chapter{Limit theorems}\label{L18-limit}}
+
+\hypertarget{lln}{%
+\section{Law of large numbers}\label{lln}}
+
+In this lecture we will look at some ``limit'' results; that is, results about a large number of \(n\) of random variables, as \(n\) tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.
+
+So let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables. Let us write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance.
+
+At the beginning of the course, we saw the mean of some values \(x_1, x_2, \dots, x_n\) was
+\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]
+that is, what we get if we add them up and divide by \(n\). In the same way, we could calculate the ``mean'' of some random variables \(X_1, X_2, \dots, X_n\) by adding them up and dividing by \(n\); that is:
+\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]
+(The subscript \(n\) on ``\(\overline X_n\)'' is just to remind us this is a mean of \(n\) random variables.)
+
+Here, each of the \(X_i\)s is a random variable, so their mean \(\overline X_n\) is another random variable too. This mean random variable \(\overline X_n\) will be our main object of study in this lecture. We can ask questions about the random variable \(\overline X_n\), just the same as we would ask about any other random variable. For example: What are its expectation and variance?
+
+The expectation of \(\bar X_n\) is
+\begin{align*}
+\mathbb E \overline X_n &= \mathbb E \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&=   \frac{1}{n} (\mathbb EX_1 + \mathbb EX_2 + \cdots + \mathbb EX_n)\\
+&= \frac{1}{n} (\mu + \mu + \cdots + \mu)\\
+&= \frac{1}{n} n \mu \\
+&= \mu .
+\end{align*}
+Here we used linearity of expectation to take the \(1/n\) out of the brackets and to add up the individual expectations.
+
+In the same way, the variance of \(\overline X_n\) is
+\begin{align*}
+\operatorname{Var}( \overline X_n) &= \operatorname{Var}\left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&= \left(\frac{1}{n}\right)^2 \operatorname{Var}(X_1 + X_2 + \cdots + X_n) \\
+&=   \frac{1}{n^2} \big(\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \operatorname{Var}(X_n)\big)\\
+&= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
+&= \frac{1}{n^2} n \sigma^2 \\
+&= \frac{\sigma^2}{n} .
+\end{align*}
+Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.
+
+In conclusion we have this:
+
+\begin{theorem}
+Let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables, and write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance. Further, write
+\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of these random variables. Then
+\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]
+\end{theorem}
+
+Now think about what happens to this mean \(\overline X_n\) when \(n\) gets very large. We see that the expectation \(\mathbb E\overline X_n = \mu\) stays the same, but the variance \(\operatorname{Var}(\overline X_n) = \sigma^2/n\) gets smaller and smaller as \(n\) gets bigger. So the range of probable values for \(\overline X_n\) will be squeezing tighter and tighter around \(\mu\). Given that, it seems as if (and it can be rigorously proven that) we have the ``law of large numbers''.
+
+\begin{theorem}[Law of large numbers]
+\protect\hypertarget{thm:thLLN}{}\label{thm:thLLN}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
+\[ \overline X_n \to \mu \quad \text{in probability as $n \to \infty$}; \]
+by which we mean that, for any \(\epsilon > 0\),
+\[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
+\end{theorem}
+
+The precise mathematical definition of the convergence is not important here. What is important is the general principle that the mean \(\overline X_n\) is overwhelmingly likely to get closer and closer to the expectation \(\mathbb EX = \mu\). In other words, the expectation \(\mathbb EX = \mu\) represents the ``long-run average'' of independent experiments -- this justifies referring to the expectation as a kind of average.
+
+One special case is if we have repeated experiments that succeed with probability \(p\); that is, \(X_n \sim \text{Bern}(p)\). Then the law of large numbers says that the long-run proportion of successes is
+\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
+So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about ``frequentist probability'' \protect\hyperlink{what-is-prob}{right at the beginning of Lecture 3}: that one way to understand the probability of an event is as the long-run frequency of its occurrence.
+
+\hypertarget{clt}{%
+\section{Central limit theorem}\label{clt}}
+
+We have seen that if the \(X_i\) are IID random variables with expectation \(\mu\) and variance \(\sigma^2\), then
+\[ \mathbb E\overline X_n = \mu \qquad \operatorname{Var}\big(\overline X_n\big) = \frac{\sigma^2}{n} \]
+and the law of large numbers tells us that \(\overline X_n \to \mu\) as \(n \to \infty\). Alternatively, we could say that \(\overline X_n - \mu \to 0\).
+
+We might also want to know what the variation of \(\overline X_n - \mu\) is around 0. Obviously, the law of large numbers tells us this variation shrinks away to 0, but we might be interested in the ``shape'' of that variation as it shrinks away. To study this variation, we need to ``re-inflate'' it, to stop it disappearing. It turns out that the correct way to do this is by multiplying by \(\sqrt{n}\) and looking at \(\sqrt{n}(\overline X_n - \mu)\).
+
+It's fairly easy to check that the expectation and variance of the ``re-inflated variation'' is
+\begin{align*}
+\mathbb E\sqrt{n} (\overline X_n - \mu) &= \sqrt{n}(\mu - \mu) = 0 \\
+\operatorname{Var}\big(\sqrt{n} (\overline X_n - \mu)\big) &= (\sqrt n)^2 \, \frac{\sigma^2}{n} = \sigma^2 . 
+\end{align*}
+So whatever distribution \(\sqrt{n}(\overline X_n - \mu)\) has, that distribution must have expectation \(0\) and variance \(\sigma^2\). But in fact, \emph{no matter what distribution the \(X_i\) have} and regardless of whether they are discrete or continuous, this ``variation around 0'' \(\sqrt{n}(\overline X_n - \mu)\) always gets closer and closer to the normal distribution!
+
+\begin{theorem}[Central limit theorem]
+\protect\hypertarget{thm:thCLT}{}\label{thm:thCLT}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation, \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance, and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
+\[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]
+by which we mean that, if \(Y \sim \mathrm N(0, \sigma^2)\), then, for all \(a < b\),
+\[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
+\end{theorem}
+
+(A full proof of the central limit theorem is too complicated to include here.)
+
+Another alternative way to write this is to divide both sides by \(\sigma\) and write it as
+\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
+Yet another way is
+\[ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
+
+The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
+
+\hypertarget{normal-approx}{%
+\section{Approximations with the normal distribution}\label{normal-approx}}
+
+There are many other distributions \(X\) that can be well approximated by a normal distribution where \(\mu\) is set to \(\mathbb EX\) and \(\sigma^2\) is set to \(\operatorname{Var}(X)\). Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
+
+\begin{itemize}
+\item
+  A binomial distribution \(X \sim \mathrm{Bin}(n, p)\) is well approximated by a normal distribution \(\mathrm{N}(np, np(1-p))\) when \(n\) is large and \(p\) is not too close to 0 or 1. (When \(p\) is small, we already know that the Poisson distribution is a good approximation instead.)
+\item
+  A Poisson distribution \(X \sim \mathrm{Po}(\lambda)\) is well approximated by a normal distribution \(\mathrm{N}(\lambda, \lambda)\) when \(\lambda\) is large.
+\item
+  A sum \(Y = X_1 + \cdots + X_n\) of \(n\) IID geometric distributions \(X_1, \dots, X_n \sim \mathrm{Geom}(p)\) (sometimes known as a ``negative binomial'' distribution) is well approximated by a normal distribution \(\mathrm{N}(n/p, np/(1-p)^2)\) when \(n\) is large and \(p\) is not to close to 1.
+\item
+  A sum \(Y = X_1 + \cdots + X_n\) of \(n\) IID exponential distributions \(X_1, \dots, X_n \sim \mathrm{Exp}(\lambda)\) (sometimes known as a ``Gamma'' distribution) is well approximated by a normal distribution \(\mathrm{N}(n/\lambda, n/\lambda^2)\) when \(n\) is large and the expectation \(1/\lambda\) is not too small.
+\end{itemize}
+
+We already know, of course, that a sum of independent normal distributions is \emph{exactly} normal, with no approximations needed.
+
+\begin{example}
+\emph{Suppose I toss 1000 coins. What's the probability I get between 495 and 505 Heads?}
+
+The true distribution of Heads is \(X \sim \mathrm{Bin}(1000, \frac12)\), and the question wants
+\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]
+We can calculate the exact answer using R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(}\FunctionTok{dbinom}\NormalTok{(}\DecValTok{495}\SpecialCharTok{:}\DecValTok{505}\NormalTok{, }\DecValTok{1000}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.2720284
+\end{verbatim}
+
+However, we could instead use a normal approximation (which, again, would be useful in Victorian times or in an exam). Since \(\mathbb EX = 1000 \times \frac12 = 500\) and \(\operatorname{Var}(X) = 1000 \times \frac12 \times \frac12 = 250\), we have the normal approximation \(Y \sim \mathrm N(500, 250)\). The figure below shows the PMF of the discrete distribution \(X \sim \mathrm{Bin}(1000, \frac12)\) (blue bars) and the PDF of the continuous approximation \(Y\sim \mathrm N(500, 250)\) (red line) between 450 and 550 -- it is an extremely close match!
+
+\includegraphics{math1710_files/figure-latex/norm-bin-1.pdf}
+
+We could then calculate
+\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(495 \leq Y \leq 505) . \]
+We could standardise and use the statistical tables, or just use R:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\DecValTok{505}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{)) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\DecValTok{495}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.2481704
+\end{verbatim}
+
+This is not too far off the correct answer \(0.272\) we calculated exactly, but it does miss by about 9\%.
+
+Note, though, that we approximated the discrete random variable \(X\) by a continuous random variable \(Y\). So the next possibility for \(X\) above 505 was 506 and below 495 was 494, whereas \(Y\) could smoothly vary between the two. So we usually get a more accurate approximation if we use a \textbf{continuity correction} and round outwards halfway to the next discrete point. So we should get a better approximation from
+\[ \mathbb P(495 \leq X \leq 505) \approx \mathbb P(494.5 \leq Y \leq 505.5) . \]
+
+Calculating this in R (or with statistical tables) we get
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pnorm}\NormalTok{(}\FloatTok{505.5}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{)) }\SpecialCharTok{{-}} \FunctionTok{pnorm}\NormalTok{(}\FloatTok{494.5}\NormalTok{, }\DecValTok{500}\NormalTok{, }\FunctionTok{sqrt}\NormalTok{(}\DecValTok{250}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 0.2720476
+\end{verbatim}
+
+Using the continuity correction, we now have an incredibly accurate approximation -- it only misses by 0.006\%.
+\end{example}
+
+Whenever we approximate a discrete random variable by a continuous random variable (such as a normal distribution), using a continuity correction -- that is, rounding halfway to the next discrete point -- typically makes the approximation more accurate. If \(X\) is a discrete random variable that takes integer values and \(Y\) is a continuous approximation, then the appropriate continuity corrections are
+\begin{align*}
+\mathbb P(X \leq n) &\approx \mathbb P(Y \leq n + \tfrac12) & \mathbb P(X \geq n) &\approx \mathbb P(Y \geq n - \tfrac12) \\
+\mathbb P(X < n) &\approx \mathbb P(Y < n - \tfrac12) & \mathbb P(X > n) &\approx \mathbb P(Y > n + \tfrac12) 
+\end{align*}
+
+\hypertarget{summary-09}{%
+\section*{Summary}\label{summary-09}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  If \(\overline X_n\) is the mean of \(n\) IID random variables with expectation \(\mu\) and variance \(\sigma^2\), then \(\mathbb E\overline X_n = \mu\) and \(\operatorname{Var}(\overline X_n) = \sigma^2/n\).
+\item
+  The law of large numbers says that \(\overline X_n \to \mu\).
+\item
+  The central limit theorem says that \(\sqrt{n}(\overline X_n - \mu) \to \text{N}(0, \sigma^2)\).
+\end{itemize}
+
 \hypertarget{P5}{%
 \chapter*{Problem Sheet 5}\label{P5}}
 \addcontentsline{toc}{chapter}{Problem Sheet 5}
@@ -6689,6 +6981,7 @@ Deadline for assessed work
 6 & \href{R5.html}{\textbf{5: Plots II} -- Making plots better} & & --- \\
 7 & \href{R6-2324.html}{\textbf{6: Discrete distributions}} & & Monday 20 November \\
 8 & \href{R7-2324.html}{\textbf{7: Discrete random variables}} & & --- \\
+9 & \href{R8-2324.html}{\textbf{8: Normal distribution}} & Monday 4 December & --- \\
 \bottomrule()
 \end{longtable}
 
@@ -7072,7 +7365,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-39-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-42-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:

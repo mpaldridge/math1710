@@ -550,6 +550,11 @@ hand.</p>
 <p><strong>Exercise 8.5.</strong> With the dice random variable again,
 calculate the variance of <span class="math inline">\(Y\)</span>.</p>
 </blockquote>
+<p>Note that the function <code>var()</code>, which we saw on R
+Worksheet 2, is used to calculate the <em>sample variance</em> of a
+dataset, where the dataset is represented a single vector. This is of no
+use for finding the variance of a random variable represented by a pair
+of vectors for the range and the PMF.</p>
 </div>
 <div id="sampling-from-a-distribution" class="section level2">
 <h2>Sampling from a distribution</h2>
@@ -557,7 +562,7 @@ calculate the variance of <span class="math inline">\(Y\)</span>.</p>
 this, we will use the <strong><code>sample()</code></strong> function,
 like this:</p>
 <pre class="r"><code>sample(x, 20, replace = TRUE, prob = pmf)</code></pre>
-<pre><code> [1] 0.5 2.0 1.0 2.0 1.0 2.0 2.0 0.0 2.0 2.0 0.5 0.5 2.0 0.5 4.0 2.0 1.0 0.5 0.5 2.5</code></pre>
+<pre><code> [1] 0.0 4.0 0.5 2.0 2.5 2.0 1.0 0.5 0.5 4.0 0.0 2.0 4.0 2.0 0.5 4.0 1.0 2.0 4.0 2.5</code></pre>
 <p>Here, the arguments are:</p>
 <ol style="list-style-type: decimal">
 <li>The first argument is the set of values to be sampled, which for us

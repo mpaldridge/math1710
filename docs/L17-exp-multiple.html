@@ -5,19 +5,19 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Lecture 17 Exponential distribution and multiple continuous random variables | MATH1710 Probability and Statistics I</title>
-  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
-  <meta name="generator" content="bookdown 0.29 and GitBook 2.6.7" />
+  <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
+  <meta name="generator" content="bookdown 0.36 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Lecture 17 Exponential distribution and multiple continuous random variables | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
-  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
   
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Lecture 17 Exponential distribution and multiple continuous random variables | MATH1710 Probability and Statistics I" />
   
-  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2022–2023" />
+  <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
   
 
 <meta name="author" content="Matthew Aldridge" />
@@ -118,6 +118,10 @@ code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -141,10 +145,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
 <ul>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem Sheets</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>Optional “office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R Worksheets and Practicals</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>“Office hours” drop-in sessions</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
 <li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
@@ -251,18 +255,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
+<li class="chapter" data-level="11" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
 <ul>
-<li class="chapter" data-level="11.1" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="11.2" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
-<li class="chapter" data-level="11.3" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#models"><i class="fa fa-check"></i><b>11.3</b> Distributions as models for data</a></li>
-<li class="chapter" data-level="" data-path="L11-binomial-poisson.html"><a href="L11-binomial-poisson.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
+<li class="chapter" data-level="11.1" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="11.2" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
+<li class="chapter" data-level="" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
 <ul>
 <li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
 <li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
-<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-process"><i class="fa fa-check"></i><b>12.3</b> Poisson process</a></li>
+<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#models"><i class="fa fa-check"></i><b>12.3</b> Distributions as models for data</a></li>
 <li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
@@ -321,65 +324,43 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
 <li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
 </ul></li>
-<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
-<li class="chapter" data-level="19" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html"><i class="fa fa-check"></i><b>19</b> The Bayesian idea</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
-<li class="chapter" data-level="19.2" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
-<li class="chapter" data-level="19.3" data-path="L19-bayes-idea.html"><a href="L19-bayes-idea.html#normal-normal"><i class="fa fa-check"></i><b>19.3</b> Normal–normal model</a></li>
-</ul></li>
-<li class="chapter" data-level="20" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html"><i class="fa fa-check"></i><b>20</b> More Bayesian models</a>
-<ul>
-<li class="chapter" data-level="20.1" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta"><i class="fa fa-check"></i><b>20.1</b> Beta distribution</a></li>
-<li class="chapter" data-level="20.2" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#beta-bern"><i class="fa fa-check"></i><b>20.2</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="20.3" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
-<li class="chapter" data-level="" data-path="L20-bayes-models.html"><a href="L20-bayes-models.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
-<li class="chapter" data-level="21" data-path="L21-questions.html"><a href="L21-questions.html"><i class="fa fa-check"></i><b>21</b> All questions answered</a>
-<ul>
-<li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
-<li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
-<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#joint-distributions"><i class="fa fa-check"></i><b>21.3</b> Joint distributions</a></li>
-<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#law-of-the-unconscious-statistician"><i class="fa fa-check"></i><b>21.4</b> Law of the unconscious statistician</a></li>
-<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.5</b> Statistical tables</a></li>
-<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.6</b> End-of semester survey</a></li>
-<li class="chapter" data-level="21.7" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.7</b> Other modules</a></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#about-the-exam"><i class="fa fa-check"></i><b>22.1</b> About the exam</a></li>
-<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.2</b> Past papers</a></li>
-<li class="chapter" data-level="22.3" data-path="L22-exam.html"><a href="L22-exam.html#exam-faqs"><i class="fa fa-check"></i><b>22.3</b> Exam FAQs</a>
-<ul>
-<li class="chapter" data-level="22.3.1" data-path="L22-exam.html"><a href="L22-exam.html#calculators"><i class="fa fa-check"></i><b>22.3.1</b> Calculators</a></li>
-<li class="chapter" data-level="22.3.2" data-path="L22-exam.html"><a href="L22-exam.html#revision"><i class="fa fa-check"></i><b>22.3.2</b> Revision</a></li>
-<li class="chapter" data-level="22.3.3" data-path="L22-exam.html"><a href="L22-exam.html#r-questions-on-the-exam"><i class="fa fa-check"></i><b>22.3.3</b> R questions on the exam</a></li>
-<li class="chapter" data-level="22.3.4" data-path="L22-exam.html"><a href="L22-exam.html#statistical-tables-1"><i class="fa fa-check"></i><b>22.3.4</b> Statistical tables</a></li>
-<li class="chapter" data-level="22.3.5" data-path="L22-exam.html"><a href="L22-exam.html#how-much-should-i-write"><i class="fa fa-check"></i><b>22.3.5</b> How much should I write?</a></li>
-</ul></li>
-</ul></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-work"><i class="fa fa-check"></i>R worksheets</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#about-r"><i class="fa fa-check"></i>About R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-access"><i class="fa fa-check"></i>How to access R and RStudio</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#troubleshooting"><i class="fa fa-check"></i>R troubleshooting drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#how-to-use-r-and-rstudio"><i class="fa fa-check"></i>How to use R and RStudio</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-uni"><i class="fa fa-check"></i>Accessing R and RStudio on University computers</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
 <ul>
 <li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
 <li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions</a>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions and group feedback</a>
 <ul>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P6-solutions"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-solutions"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-solutions"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P3-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -403,27 +384,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L17-exp-multiple" class="section level1 hasAnchor" number="17">
 <h1><span class="header-section-number">Lecture 17</span> Exponential distribution and multiple continuous random variables<a href="L17-exp-multiple.html#L17-exp-multiple" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it’s very similar to what we already know about multiple discrete random variables.</p>
+<!--
+This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it's very similar to what we already know about multiple discrete random variables.
+-->
 <div id="exponential" class="section level2 hasAnchor" number="17.1">
 <h2><span class="header-section-number">17.1</span> Exponential distribution<a href="L17-exp-multiple.html#exponential" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <!--
-:::: {.videowrap}
-::: {.videowrapper}
-<iframe src="https://www.youtube.com/embed/t11Rsll3jVI"></iframe>
-:::
-::::
+An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
 -->
-<p>An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-99" class="definition"><strong>Definition 17.1  </strong></span>A continuous random variable <span class="math inline">\(X\)</span> is said to have the <strong>exponential distribution with rate <span class="math inline">\(\lambda &gt; 0\)</span></strong> if it has the PDF
+<p><span id="def:unlabeled-div-101" class="definition"><strong>Definition 17.1  </strong></span>A continuous random variable <span class="math inline">\(X\)</span> is said to have the <strong>exponential distribution with rate <span class="math inline">\(\lambda &gt; 0\)</span></strong> if it has the PDF
 <span class="math display">\[ f(x) = \lambda \mathrm{e}^{-\lambda x} \qquad \text{for $x \geq 0$}, \]</span>
 and 0 otherwise. We write <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>.</p>
 </div>
 <p><img src="math1710_files/figure-html/exp-pic-1.png" width="672" /></p>
 <div class="example">
-<p><span id="exm:unlabeled-div-100" class="example"><strong>Example 17.1  </strong></span><em>The length of time in years that a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate <span class="math inline">\(\lambda = 2\)</span>. What is the probability the lightbulb needs replacing within a year?</em></p>
-<p>If <span class="math inline">\(X \sim \text{Exp}(2)\)</span> is the lifetime of the lightbulb, we seek <span class="math inline">\(\mathbb P(X \leq 1)\)</span>. This is
-<span class="math display">\[ \int_{-\infty}^1 f(x)\, \mathrm{d}x = \int_0^1 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_0^1 = -\mathrm e^{-2} -(-1) = 1 - \mathrm e^{-2} = 0.864.  \]</span></p>
+<p><span id="exm:unlabeled-div-102" class="example"><strong>Example 17.1  </strong></span><em>The length of time in years that a lightbulb works before needing to be replaced is modelled as an exponential distribution with rate <span class="math inline">\(\lambda = 2\)</span>. What is the probability the lightbulb lasts more than a year but less than three years?</em></p>
+<p>If <span class="math inline">\(X \sim \text{Exp}(2)\)</span> is the lifetime of the lightbulb, we seek <span class="math inline">\(\mathbb P(1 \leq X \leq 3)\)</span>. This is
+<span class="math display">\[ \int_{1}^3 f(x)\, \mathrm{d}x = \int_1^3 2 \mathrm e^{-2x} \, \mathrm dx = \big[ -\mathrm e^{-2x} \big]_1^3 = -\mathrm e^{-6} -(-\mathrm e^{-2}) = 0.132.  \]</span></p>
 </div>
 <div class="theorem">
 <p><span id="thm:exp-prop" class="theorem"><strong>Theorem 17.1  </strong></span>Suppose <span class="math inline">\(X \sim \text{Exp}(\lambda)\)</span>. Then:</p>
@@ -435,38 +413,44 @@ and 0 otherwise. We write <span class="math inline">\(X \sim \text{Exp}(\lambda)
 </ol>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-101" class="example"><strong>Example 17.2  </strong></span>Returning to the lightbulb example, where <span class="math inline">\(X \sim \text{Exp}(2)\)</span>, we see that the average lifetime of a lightbulb is <span class="math inline">\(\mathbb EX = \frac12\)</span> a year with variance <span class="math inline">\(\operatorname{Var}(X) = \frac14\)</span>.</p>
-<p>If we wanted to calculate <span class="math inline">\(\mathbb P(1 \leq X \leq 3)\)</span>, we could do this by integrating the PDF between 1 and 3. Alternatively, we could use the CDF:
-<span class="math display">\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm{e}^{-2\times 3}) - (1 - \mathrm{e}^{-2\times 1}) = \mathrm{e}^{-2} - \mathrm{e}^{-6} = 0.132 . \]</span></p>
+<p><span id="exm:unlabeled-div-103" class="example"><strong>Example 17.2  </strong></span>Returning to the lightbulb example, where <span class="math inline">\(X \sim \text{Exp}(2)\)</span>, we see that the average lifetime of a lightbulb is <span class="math inline">\(\mathbb EX = \frac12\)</span> a year with variance <span class="math inline">\(\operatorname{Var}(X) = \frac14\)</span>.</p>
+<p>We could alternatively calculate <span class="math inline">\(\mathbb P(1 \leq X \leq 3)\)</span>, using the the CDF:
+<span class="math display">\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm{e}^{-2\times 3}) - (1 - \mathrm{e}^{-2\times 1}) = \mathrm{e}^{-2} - \mathrm{e}^{-6} = 0.132 , \]</span>
+which is the same answer as before.</p>
 </div>
-<div class="proof">
-<p><span id="unlabeled-div-102" class="proof"><em>Proof</em>. </span><em>of Theorem <a href="L17-exp-multiple.html#thm:exp-prop">17.1</a>.</em>
+<!--
+::: {.proof}
+*of Theorem \@ref(thm:exp-prop).*
 For part 1,
-<span class="math display">\[ \int_0^\infty \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x
-     = \big[-\mathrm{e}^{-\lambda x} \big]_0^\infty = -0 -(-1) = 1 . \]</span></p>
-<p>Similarly for part 2,
-<span class="math display">\[ F(x) = \int_0^x \lambda \mathrm{e}^{-\lambda y}\,\mathrm{d}y
-     = \big[-\mathrm{e}^{-\lambda y} \big]_0^x = -\mathrm{e}^{-\lambda x} -(-1) = 1 - \mathrm{e}^{-\lambda x}. \]</span></p>
-<p>For part 3, we use integration by parts with <span class="math inline">\(u = x\)</span> and <span class="math inline">\(v&#39; = \lambda \mathrm{e}^{-\lambda x}\)</span>, so <span class="math inline">\(u&#39; = 1\)</span> and <span class="math inline">\(v = -\mathrm{e}^{-\lambda x}\)</span>. We get
-<span class="math display">\[\begin{align*}
-\mathbb EX &amp;= \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &amp;= \big[-x \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &amp;= -0 - (-0) + \left[ -\frac{1}{\lambda} \mathrm{e}^{-\lambda x} \right]_0^\infty \\
-  &amp;= -0 - \left(- \frac{1}{\lambda}\right) \\
-  &amp;= \frac{1}{\lambda}
-\end{align*}\]</span></p>
-<p>For part 4, we use integration by parts with <span class="math inline">\(u = x^2\)</span> and <span class="math inline">\(v&#39; = \lambda \mathrm{e}^{-\lambda x}\)</span>, so <span class="math inline">\(u&#39; = 2x\)</span> and <span class="math inline">\(v = -\mathrm{e}^{-\lambda x}\)</span> again. We get
-<span class="math display">\[\begin{align*}
-\mathbb EX^2 &amp;= \int_0^\infty x^2  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &amp;= \big[-x^2 \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty 2x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &amp;= -0 - (-0) + \frac{2}{\lambda} \int_0^\infty x  \lambda x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &amp;= \frac{2}{\lambda} \mathbb EX \\
-  &amp;= \frac{2}{\lambda^2} ,
-\end{align*}\]</span>
-where we used a cunning trick on the integral on the right – spotting that we could turn it into the expectation, which is <span class="math inline">\(1/\lambda\)</span>, by part 3 – to save us the effort of calculating it again.
+\[ \int_0^\infty \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x
+     = \big[-\mathrm{e}^{-\lambda x} \big]_0^\infty = -0 -(-1) = 1 . \]
+
+Similarly for part 2,
+\[ F(x) = \int_0^x \lambda \mathrm{e}^{-\lambda y}\,\mathrm{d}y
+     = \big[-\mathrm{e}^{-\lambda y} \big]_0^x = -\mathrm{e}^{-\lambda x} -(-1) = 1 - \mathrm{e}^{-\lambda x}. \]
+     
+For part 3, we use integration by parts with $u = x$ and $v' = \lambda \mathrm{e}^{-\lambda x}$, so $u' = 1$ and $v = -\mathrm{e}^{-\lambda x}$. We get
+\begin{align*}
+\mathbb EX &= \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \big[-x \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= -0 - (-0) + \left[ -\frac{1}{\lambda} \mathrm{e}^{-\lambda x} \right]_0^\infty \\
+  &= -0 - \left(- \frac{1}{\lambda}\right) \\
+  &= \frac{1}{\lambda}
+\end{align*}
+
+For part 4, we use integration by parts with $u = x^2$ and $v' = \lambda \mathrm{e}^{-\lambda x}$, so $u' = 2x$ and $v = -\mathrm{e}^{-\lambda x}$ again. We get
+\begin{align*}
+\mathbb EX^2 &= \int_0^\infty x^2  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \big[-x^2 \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty 2x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= -0 - (-0) + \frac{2}{\lambda} \int_0^\infty x  \lambda x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= \frac{2}{\lambda} \mathbb EX \\
+  &= \frac{2}{\lambda^2} ,
+\end{align*}
+where we used a cunning trick on the integral on the right -- spotting that we could turn it into the expectation, which is $1/\lambda$, by part 3 -- to save us the effort of calculating it again.
 Hence
-<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]</span></p>
-</div>
+\[ \Var(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]
+:::
+-->
 </div>
 <div id="continuous-multiple" class="section level2 hasAnchor" number="17.2">
 <h2><span class="header-section-number">17.2</span> Multiple continuous random variables<a href="L17-exp-multiple.html#continuous-multiple" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -511,30 +495,35 @@ Hence
 </tr>
 </tbody>
 </table>
-<div class="example">
-<p><span id="exm:unlabeled-div-103" class="example"><strong>Example 17.3  </strong></span>Consider the pair of continuous random variable <span class="math inline">\((X,Y)\)</span> with joint PDF
-<span class="math display">\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]</span>
-and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise.</p>
-<p>We get the marginal distribution for <span class="math inline">\(X\)</span> by integrating over <span class="math inline">\(y\)</span>, so
-<span class="math display">\[ f_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]</span></p>
-<p>We can find the the conditional PDF for <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = \tfrac14\)</span>. It is
-<span class="math display">\[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
-    = \frac{\tfrac12\big(1 + \tfrac14 + y\big)}{\tfrac34 + \tfrac12\times\tfrac14 } = \tfrac{5}{7} + \tfrac47 y . \]</span></p>
-<p>We can calculate the covariance. First, the expectations are
-<span class="math display">\[ \mathbb EX = \int_{-\infty}^\infty x\, f_X(x) \,\mathrm dx = \int_0^1 x\big(\tfrac34 + \tfrac12x\big)\, \mathrm dx = \left[\tfrac38 x^2 + \tfrac16 x^3 \right] = \tfrac{13}{24} \]</span>
-and <span class="math inline">\(\mathbb EY = \frac{13}{24}\)</span> also, by symmetry. Second, we have
-<span class="math display">\[\begin{align*}
+<!--
+::: {.example}
+Consider the pair of continuous random variable $(X,Y)$ with joint PDF
+\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]
+and $f_{X,Y}(x,y) = 0$ otherwise.
+
+We get the marginal distribution for $X$ by integrating over $y$, so
+\[ f_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]
+
+We can find the the conditional PDF for $Y$ given $X = \tfrac14$. It is
+\[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
+    = \frac{\tfrac12\big(1 + \tfrac14 + y\big)}{\tfrac34 + \tfrac12\times\tfrac14 } = \tfrac{5}{7} + \tfrac47 y . \]
+    
+We can calculate the covariance. First, the expectations are
+\[ \mathbb EX = \int_{-\infty}^\infty x\, f_X(x) \,\mathrm dx = \int_0^1 x\big(\tfrac34 + \tfrac12x\big)\, \mathrm dx = \left[\tfrac38 x^2 + \tfrac16 x^3 \right] = \tfrac{13}{24} \]
+and $\mathbb EY = \frac{13}{24}$ also, by symmetry. Second, we have
+\begin{align*}
 \mathbb EXY
-&amp;= \int_{-\infty}^\infty \int_{-\infty}^\infty xy\, f_{X,Y}(x,y) \, \mathrm dx\, \mathrm dy \\
-&amp;= \int_0^1 \int_0^1 xy \, \tfrac12(1 + x + y)\, \mathrm dx\, \mathrm dy \\
-&amp;= \int_0^1 \left[ \tfrac14 x^2y + \tfrac16 x^3y + \tfrac14 x^2y^2  \right]_{x=0}^1 \, \mathrm dy\\
-&amp;= \int_0^1 \big( \tfrac14 y + \tfrac16 y + \tfrac14 y^2 \big) \, \mathrm dy\\
-&amp;= \left[ \tfrac18 y^2 + \tfrac{1}{12}y^2 + \tfrac{1}{12}y^3  \right]_0^1 \\
-&amp;= \tfrac{7}{24} .
-\end{align*}\]</span>
+&= \int_{-\infty}^\infty \int_{-\infty}^\infty xy\, f_{X,Y}(x,y) \, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \int_0^1 xy \, \tfrac12(1 + x + y)\, \mathrm dx\, \mathrm dy \\
+&= \int_0^1 \left[ \tfrac14 x^2y + \tfrac16 x^3y + \tfrac14 x^2y^2  \right]_{x=0}^1 \, \mathrm dy\\
+&= \int_0^1 \big( \tfrac14 y + \tfrac16 y + \tfrac14 y^2 \big) \, \mathrm dy\\
+&= \left[ \tfrac18 y^2 + \tfrac{1}{12}y^2 + \tfrac{1}{12}y^3  \right]_0^1 \\
+&= \tfrac{7}{24} .
+\end{align*}
 So therefore,
-<span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]</span></p>
-</div>
+\[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
+::::
+-->
 </div>
 <div id="summary-L17" class="section level2 unnumbered hasAnchor">
 <h2>Summary<a href="L17-exp-multiple.html#summary-L17" class="anchor-section" aria-label="Anchor link to header"></a></h2>

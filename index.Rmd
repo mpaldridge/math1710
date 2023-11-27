@@ -4,7 +4,7 @@ author: "[Matthew Aldridge](https://mpaldridge.github.io/)"
 date: "University of Leeds, 2023--24"
 site: bookdown::bookdown_site
 documentclass: book
-description: "Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023--2025"
+description: "Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023--2024"
 favicon: favicon.ico
 url:    'https://mpaldridge.github.io/math1710/'
 ---
@@ -18,10 +18,20 @@ knitr::opts_chunk$set(comment = NA)
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
+**Week 9** (27 November -- 1 December):
+
+* [**Lecture 17:** Exponential distribution and multiple continuous random variables](#L17-exponential-multi) (Monday 27 November)
+* [**Lecture 18:** Limit theorems](#L18-limit) (Wednesday 29 November)
+* [**Problem Sheet 5:**](#P5) Work through in preparation for your tutorial in Week 10. Deadline for assessed questions: Monday 27 November.
+* [**R Worksheet 8**](#R) -- deadline for assessed questions: Monday 4 December
+* **Office hours:** Friday 1 December, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html)
+:::
+
+::: {.mysched}
 **Week 8** (20--24 November):
 
 * [**Lecture 15:** Continuous random variables](#L15-continuous) (Monday 20 November)
-* [**Lecture 16:** Normal distribution](#L16-normal) (Wednesday 23 November)
+* [**Lecture 16:** Normal distribution](#L16-normal) (Wednesday 22 November)
 * **Tutorial** on [Problem Sheet 4](#P4)
 * [**Problem Sheet 4:**](#P4) Work through in preparation for your tutorial. Deadline for assessed questions: Monday 27 November.
 * [**R Worksheet 7**](#R)
@@ -34,7 +44,7 @@ knitr::opts_chunk$set(comment = NA)
 * [**Lecture 13:** Multiple random variables](#L13-multi-rv) (Monday 13 November)
 * [**Lecture 14:** Expectation and covariance](#L14-covariance) (Wednesday 15 November)
 * [**Problem Sheet 4:**](#P4) Work through in preparation for your tutorial in Week 8. Deadline for assessed questions: Monday 27 November.
-* [**R Worksheet 6:**](#R) Assessed questions due Monday 20 November
+* [**R Worksheet 6:**](#R) -- deadline for assessed questions: Monday 20 November
 * **Office hours:** Friday 17 November, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html)
 :::
 

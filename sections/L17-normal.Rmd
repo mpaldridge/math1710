@@ -1,7 +1,7 @@
 # Normal distribution  {#L16-normal}
 
-<!--
-When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we'll look at an extremely important distribution: the "normal" (or "Gaussian") distribution.-->
+
+When we studied discrete random variables, we studied a number of important families of distributions: the Bernoulli, binomial, geometric, and Poisson distributions. In this lecture, we'll look at an extremely important distribution: the "normal" (or "Gaussian") distribution.
 
 ## Definition of the normal distribution  {#normal-definition}
 
@@ -12,7 +12,7 @@ If $X$ is a continuous random variable with PDF
 then we say that $X$ has the **normal distribution** with expectation $\mu$ and variance $\sigma^2 > 0$, and write $X \sim \mathrm N(\mu,\sigma^2)$.
 :::
 
-<!--
+
 (Many people call $\mu$ the "mean", which is a slight misnomer.)
 
 This PDF is the famous "bell curve", where the centre of the bell is at $x = \mu$ and the width of the bell is controlled by the value of $\sigma^2$. Note also that the PDF is symmetric about $\mu$.
@@ -51,7 +51,7 @@ The normal distribution is a very widely used distribution for modelling many th
 More generally, and for reasons we will come back to later, the normal distribution is good for modelling things where lots of little effects add together to make a bigger effect. We will also see later that many other distributions can be approximated by a normal distribution.
 
 It's generally difficult, or even impossible, to directly calculate probabilities of events concerning the normal distribution. Instead, one must use numerical approximations. We will discuss these further later in this section.
--->
+
 
 
 
@@ -69,7 +69,7 @@ Let $X \sim \mathrm{N}(\mu, \sigma^2)$ be a normally distributed random variable
 In particular, if $Z \sim \mathrm{N}(0, 1)$ is a standard normal distribution, then $\mathbb EZ = 0$ and $\Var(Z) = 1$.
 :::
 
-<!--
+
 We'll give (non-examinable) proofs of these soon. But first we'll note one other thing.
 
 Let $X \sim \mathrm{N}(\mu, \sigma^2)$, and consider the random variable $Y = aX + b$. Then we know that
@@ -128,7 +128,7 @@ There is one last property of the normal distribution that we won't use directly
 If $X \sim \mathrm{N}(\mu_X, \sigma^2_X)$ and $Y\sim \mathrm{N}(\mu_Y, \sigma^2_Y)$ are independent, then
 \[ X+Y \sim \mathrm{N}(\mu_X + \mu_Y, \sigma^2_X+\sigma^2_Y) . \]
 :::
--->
+
 
 ## Calculations using R  {#normal-r}
 
@@ -174,7 +174,7 @@ pnorm(1.45)
 ::: {.thpart}
 **Question 3.**  *Let $Z \sim \mathrm{N}(0,1)$. What is $\mathbb P(Z > 0.33)$?*
 
-This is asking for the upper-tail probability. The direct way to get R to solve this is to use the `lower.tail = FALSE` option that we discussed in [R Worksheet 7](#r-work). That is, we use:
+This is asking for the upper-tail probability. The direct way to get R to solve this is to use the `lower.tail = FALSE` option that we discussed in [R Worksheet 6](#r). That is, we use:
 
 ```{r}
 pnorm(0.33, lower.tail = FALSE)
@@ -319,7 +319,7 @@ For the lower quantile, we can use symmetry again. Thus the $0.0005 = 1 - 0.9995
 These match the answers we got with R.
 :::
 
-<!--
+
 I feel I shouldn't finish with this subsection before addressing the following question some students may be asking themselves: *Now that we have R (and other computing methods), what's the point learning to answer questions using statistical tables?* I might suggest a few possible answers to this question:
 
 1. Although using statistical tables is an archaic skill, in order to use the statistical tables, you will need to know and be able to apply many facts about probability distributions in general and the normal distribution in particular. So this is a good way to learn those facts and practice their application.
@@ -328,7 +328,7 @@ I feel I shouldn't finish with this subsection before addressing the following q
 1. Yes, you are right, this is a pointless skill for us to teach you.
 
 I am mostly convinced by answers 1 to 3, although I must admit that answer 4 isn't totally without merit.
--->
+
 
 ## Summary  {#summary-L16 .unnumbered}
 

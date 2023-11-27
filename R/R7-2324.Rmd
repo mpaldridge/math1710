@@ -155,6 +155,8 @@ Note that we saved the expectation as an R object -- here, called `mu`. This mak
 
 > **Exercise 8.5.** With the dice random variable again, calculate the variance of $Y$.
 
+Note that the function `var()`, which we saw on R Worksheet 2, is used to calculate the *sample variance* of a dataset, where the dataset is represented a single vector. This is of no use for finding the variance of a random variable represented by a pair of vectors for the range and the PMF.
+
 ## Sampling from a distribution
 
 Finally, we may wish to sample from a discrete random variable. To do this, we will use the **`sample()`** function, like this:
