@@ -48,7 +48,7 @@ The `pbeta()` variation takes the format `pbeta(x, alpha, beta)`, which will mak
 
 ## Assessed questions
 
-*The following five assessed questions should be submitted [via this Microsoft Form](). I recommend you do this in Week 9, but the official deadline is **Monday 5 December at 1400**.*
+*The following five assessed questions should be submitted [via this Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNUxPUFVNMVc2NjlCNzMyRTVSSFlCVzE2NC4u). I recommend you do this in Week 9, but the official deadline is **Monday 4 December at 1400**.*
 
 *This work will be marked automatically by computer, so make sure your answers are accurate -- the computer does not "know what you meant"; only what you actually enter into the form.*
 
@@ -76,4 +76,4 @@ The final three questions are based on the continuous normal distribution $Y \si
 
 > **Assessed Question 5.** What is the value of the PDF $f_Y(y)$ evaluated at the 95th percentile $y$ of $Y$; that is, evaluated at $y$, where $y$ is the point below which 95% of the probability lies? Round your answer to three significant figures.
 
-*Remember to submit your answers [via the Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUQzFRVERNNVpXWTdQT0gzOTdHNE9RWlIwRy4u).*
+*Remember to submit your answers [via the Microsoft Form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUNUxPUFVNMVc2NjlCNzMyRTVSSFlCVzE2NC4u).*
