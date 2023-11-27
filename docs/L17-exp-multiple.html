@@ -384,14 +384,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="L17-exp-multiple" class="section level1 hasAnchor" number="17">
 <h1><span class="header-section-number">Lecture 17</span> Exponential distribution and multiple continuous random variables<a href="L17-exp-multiple.html#L17-exp-multiple" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<!--
-This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it's very similar to what we already know about multiple discrete random variables.
--->
+<p>This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it’s very similar to what we already know about multiple discrete random variables.</p>
 <div id="exponential" class="section level2 hasAnchor" number="17.1">
 <h2><span class="header-section-number">17.1</span> Exponential distribution<a href="L17-exp-multiple.html#exponential" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<!--
-An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
--->
+<p>An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time until a radioactive particle decays, the time between eruptions of a volcano, or the time you have to wait for a bus to arrive at a bus stop.</p>
 <div class="definition">
 <p><span id="def:unlabeled-div-101" class="definition"><strong>Definition 17.1  </strong></span>A continuous random variable <span class="math inline">\(X\)</span> is said to have the <strong>exponential distribution with rate <span class="math inline">\(\lambda &gt; 0\)</span></strong> if it has the PDF
 <span class="math display">\[ f(x) = \lambda \mathrm{e}^{-\lambda x} \qquad \text{for $x \geq 0$}, \]</span>
@@ -418,45 +414,47 @@ and 0 otherwise. We write <span class="math inline">\(X \sim \text{Exp}(\lambda)
 <span class="math display">\[ \mathbb P(1 \leq X \leq 3) = F(3) - F(1) = (1 - \mathrm{e}^{-2\times 3}) - (1 - \mathrm{e}^{-2\times 1}) = \mathrm{e}^{-2} - \mathrm{e}^{-6} = 0.132 , \]</span>
 which is the same answer as before.</p>
 </div>
-<!--
-::: {.proof}
-*of Theorem \@ref(thm:exp-prop).*
+<div class="proof">
+<p><span id="unlabeled-div-104" class="proof"><em>Proof</em>. </span><em>of Theorem <a href="L17-exp-multiple.html#thm:exp-prop">17.1</a>.</em>
 For part 1,
-\[ \int_0^\infty \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x
-     = \big[-\mathrm{e}^{-\lambda x} \big]_0^\infty = -0 -(-1) = 1 . \]
-
-Similarly for part 2,
-\[ F(x) = \int_0^x \lambda \mathrm{e}^{-\lambda y}\,\mathrm{d}y
-     = \big[-\mathrm{e}^{-\lambda y} \big]_0^x = -\mathrm{e}^{-\lambda x} -(-1) = 1 - \mathrm{e}^{-\lambda x}. \]
-     
-For part 3, we use integration by parts with $u = x$ and $v' = \lambda \mathrm{e}^{-\lambda x}$, so $u' = 1$ and $v = -\mathrm{e}^{-\lambda x}$. We get
-\begin{align*}
-\mathbb EX &= \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &= \big[-x \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &= -0 - (-0) + \left[ -\frac{1}{\lambda} \mathrm{e}^{-\lambda x} \right]_0^\infty \\
-  &= -0 - \left(- \frac{1}{\lambda}\right) \\
-  &= \frac{1}{\lambda}
-\end{align*}
-
-For part 4, we use integration by parts with $u = x^2$ and $v' = \lambda \mathrm{e}^{-\lambda x}$, so $u' = 2x$ and $v = -\mathrm{e}^{-\lambda x}$ again. We get
-\begin{align*}
-\mathbb EX^2 &= \int_0^\infty x^2  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &= \big[-x^2 \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty 2x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &= -0 - (-0) + \frac{2}{\lambda} \int_0^\infty x  \lambda x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &= \frac{2}{\lambda} \mathbb EX \\
-  &= \frac{2}{\lambda^2} ,
-\end{align*}
-where we used a cunning trick on the integral on the right -- spotting that we could turn it into the expectation, which is $1/\lambda$, by part 3 -- to save us the effort of calculating it again.
+<span class="math display">\[ \int_0^\infty \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x
+     = \big[-\mathrm{e}^{-\lambda x} \big]_0^\infty = -0 -(-1) = 1 . \]</span></p>
+<p>Similarly for part 2,
+<span class="math display">\[ F(x) = \int_0^x \lambda \mathrm{e}^{-\lambda y}\,\mathrm{d}y
+     = \big[-\mathrm{e}^{-\lambda y} \big]_0^x = -\mathrm{e}^{-\lambda x} -(-1) = 1 - \mathrm{e}^{-\lambda x}. \]</span></p>
+<p>For parts 3 and 4, we will use integration by parts, in the form
+<span class="math display">\[ \int_a^b uv&#39; \, \mathrm dx = \big[uv\big]_a^b - \int_a^b u&#39;v \, \mathrm dx , \]</span>
+where the dash <span class="math inline">\(&#39;\)</span> denotes the derivative.</p>
+<p>For part 3, we use integration by parts with <span class="math inline">\(u = x\)</span> and <span class="math inline">\(v&#39; = \lambda \mathrm{e}^{-\lambda x}\)</span>, so <span class="math inline">\(u&#39; = 1\)</span> and <span class="math inline">\(v = -\mathrm{e}^{-\lambda x}\)</span>. We get
+<span class="math display">\[\begin{align*}
+\mathbb EX &amp;= \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &amp;= \big[-x \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &amp;= -0 - (-0) + \left[ -\frac{1}{\lambda} \mathrm{e}^{-\lambda x} \right]_0^\infty \\
+  &amp;= -0 - \left(- \frac{1}{\lambda}\right) \\
+  &amp;= \frac{1}{\lambda}
+\end{align*}\]</span></p>
+<p>For part 4, we will use the computational formula
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]</span>
+We already know that <span class="math inline">\(\mu = \mathbb EX = 1/\lambda\)</span>, so we need <span class="math inline">\(\mathbb EX^2\)</span>. We
+use integration by parts with <span class="math inline">\(u = x^2\)</span> and <span class="math inline">\(v&#39; = \lambda \mathrm{e}^{-\lambda x}\)</span>, so <span class="math inline">\(u&#39; = 2x\)</span> and <span class="math inline">\(v = -\mathrm{e}^{-\lambda x}\)</span> again. We get
+<span class="math display">\[\begin{align*}
+\mathbb EX^2 &amp;= \int_0^\infty x^2  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &amp;= \big[-x^2 \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty 2x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &amp;= -0 - (-0) + \frac{2}{\lambda} \int_0^\infty \lambda x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &amp;= \frac{2}{\lambda} \mathbb EX \\
+  &amp;= \frac{2}{\lambda^2} ,
+\end{align*}\]</span>
+where we used a cunning trick on the integral on the right – spotting that we could turn it into the expectation, which is <span class="math inline">\(1/\lambda\)</span>, by part 3 – to save us the effort of doing another integration by parts (which would also be a perfectly legitimate way of continuing the proof).
 Hence
-\[ \Var(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]
-:::
--->
+<span class="math display">\[ \operatorname{Var}(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]</span></p>
+</div>
 </div>
 <div id="continuous-multiple" class="section level2 hasAnchor" number="17.2">
 <h2><span class="header-section-number">17.2</span> Multiple continuous random variables<a href="L17-exp-multiple.html#continuous-multiple" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The theory we set up for two or more discrete random variables also works for two or more continuous random variables.</p>
-<p>Now, the intensity of probability for <span class="math inline">\((X,Y)\)</span> being around <span class="math inline">\((x,y)\)</span> is given by the <strong>joint probability density function</strong> <span class="math inline">\(f_{X,Y}\)</span>. In particular for <span class="math inline">\(a \leq b\)</span> and <span class="math inline">\(c \leq d\)</span>, we have
-<span class="math display">\[ \mathbb P(a \leq X \leq b \text{ and } c \leq Y \leq d ) = \int_{x = a}^b \int_{y = c}^d f_{X,Y}(x,y)\, \mathrm dx \,\mathrm dy .\]</span></p>
+<p>Now, the intensity of probability for <span class="math inline">\((X,Y)\)</span> being around <span class="math inline">\((x,y)\)</span> is given by the <strong>joint probability density function</strong> <span class="math inline">\(f_{X,Y}\)</span>. In particular for <span class="math inline">\(a \leq b\)</span> and <span class="math inline">\(c \leq d\)</span>, we have that
+<span class="math display">\[ \mathbb P(a \leq X \leq b \text{ and } c \leq Y \leq d ) = \int_{x = a}^b \int_{y = c}^d f_{X,Y}(x,y)\, \mathrm dy \,\mathrm dx  \]</span>
+is given by a double integral.</p>
 <table>
 <colgroup>
 <col width="50%" />
@@ -495,6 +493,64 @@ Hence
 </tr>
 </tbody>
 </table>
+<div class="example">
+<p><span id="exm:unlabeled-div-105" class="example"><strong>Example 17.3  </strong></span>Consider the pair of continuous random variables <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> with joint PDF
+<span class="math display">\[ f_{X,Y}(x,y) = \tfrac45(1 + xy) \qquad \text{for $0 \leq x,y\leq 1$} \]</span>
+and <span class="math inline">\(f_{X,Y}(x,y) = 0\)</span> otherwise.</p>
+<p>First, let’s find the <strong>marginal PDF</strong> for <span class="math inline">\(X\)</span>. We find this by integrating over <span class="math inline">\(y\)</span>, so
+<span class="math display">\[\begin{align*}
+f_X(x) &amp;= \int_{y=-\infty}^\infty f_{X,Y}(x,y) \, \mathrm{d}y \\
+  &amp;= \int_{y = 0}^1 \tfrac45 (1 + xy) \, \mathrm dy \\
+  &amp;= \tfrac45 \left[y + \tfrac12 xy^2 \right]_{y=0}^1 \\
+  &amp;= \tfrac45 \left(1 + \tfrac12x - 0 - 0 \right) \\
+  &amp;= \tfrac45 \left(1 + \tfrac12x \right) .
+\end{align*}\]</span>
+In the second line we, substituted in the joint PDF, and since that is 0 for <span class="math inline">\(y&lt;0\)</span> and <span class="math inline">\(y&gt;1\)</span>, we only needed to consider the integral from 0 to 1; in the third line, we integrated with respect to <span class="math inline">\(y\)</span>, treating <span class="math inline">\(x\)</span> as a constant; the fourth evaluated the integral, and the fifth line tidied up the answer.</p>
+<p>Second, let’s find the <strong>conditional PDF</strong> for <span class="math inline">\(Y\)</span> given <span class="math inline">\(X = \frac14\)</span>. We know that
+<span class="math display">\[ f_{Y\mid X} \big(y \mid \tfrac14\big) = \frac{f_{X, Y} (\tfrac14, y)}{f_X(\frac14)} .  \]</span>
+The numerator is
+<span class="math display">\[ f_{X, Y} \big(\tfrac14, y\big) = \tfrac45 \big(1 + \tfrac14y\big) , \]</span>
+and the denominator is
+<span class="math display">\[ f_X\big(\tfrac14\big) = \tfrac 45 \big(1 + \tfrac12\times \tfrac 14\big) = \tfrac45 \times \tfrac 98 , \]</span>
+using the marginal PMF <span class="math inline">\(f_X\)</span> calculated earlier. Hence
+<span class="math display">\[ f_{Y\mid X} \big(y \mid \tfrac14\big) =  \frac{\tfrac45 (1 + \tfrac14y)}{\tfrac45 \times \tfrac 98} = \tfrac89 \big(1 + \tfrac14y\big) . \]</span></p>
+<p>Third, let’s find the <strong>covariance</strong>. We will use the computational formula
+<span class="math display">\[ \operatorname{Cov}(X, Y) = \mathbb EXY - \mu_X \mu_Y . \]</span></p>
+<p>To find <span class="math inline">\(\mu_X = \mathbb EX\)</span>, using the marginal PMF <span class="math inline">\(f_x\)</span>, we have
+<span class="math display">\[\begin{align*}
+\mu_X = \mathbb EX &amp;= \int_{-\infty}^{\infty} x\,f(x)\, \mathrm dx \\
+  &amp;= \int_0^1 x \, \tfrac45 \big(1 + \tfrac12 x\big)\,\mathrm dx \\
+  &amp;= \tfrac45 \int_0^1 \big(x + \tfrac12 x^2 \big) \, \mathrm dx \\
+  &amp;= \tfrac45 \left[ \tfrac12x^2 + \tfrac16 x^3 \right]_0^1 \\
+  &amp;= \tfrac45 \big(\tfrac12 + \tfrac16 - 0 - 0 \big) \\
+  &amp;= \tfrac{8}{15}.
+\end{align*}\]</span>
+(Again, because the PMF is 0 outside the interval from 0 to 1, we can restrict our integral to that.)</p>
+<p>To find <span class="math inline">\(\mu_Y = \mathbb EY\)</span>, we could go through the process of finding the marginal PDF by integrating over <span class="math inline">\(x\)</span>, then calculating <span class="math inline">\(\mu_Y\)</span> as another integral. Alternatively, we could recognise that the joint PMF <span class="math inline">\(f_{X,Y}(x,y) = \frac45 (1+xy)\)</span> is symmetric in <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, so we must have <span class="math inline">\(\mu_Y = \mu_X = \frac{8}{15}\)</span>.</p>
+<p>We also need <span class="math inline">\(\mathbb EXY\)</span>. Using the law of the unconscious statistician, we have
+<span class="math display">\[\begin{align*}
+\mathbb EXY &amp;= \int_{x = -\infty}^{\infty} \int_{y = -\infty}^{\infty} xy\, f_{X,Y}(x,y)\, \mathrm dy\, \mathrm dx \\
+  &amp;= \int_{x = 0}^{1} \int_{y = 0}^{1} xy \, \tfrac45 (1+xy) \, \mathrm dy\, \mathrm dx \\
+  &amp;= \tfrac45 \int_{x = 0}^{1} \int_{y = 0}^{1} (xy + x^2y^2)\, \mathrm dy\, \mathrm dx .
+\end{align*}\]</span>
+We’ll do the integral over <span class="math inline">\(y\)</span> first (although either order is fine). This means we integrate treating <span class="math inline">\(x\)</span> as a constant, so we get
+<span class="math display">\[\begin{align*}
+\mathbb EXY &amp;= \tfrac45 \int_{x = 0}^{1} \int_{y = 0}^{1} (xy + x^2y^2)\, \mathrm dy\, \mathrm dx \\
+  &amp;= \tfrac45 \int_{x = 0}^{1} \left[ \tfrac12 xy^2 + \tfrac13 x^2y^3 \right]_{y=0}^1 \, \mathrm dx \\
+  &amp;= \tfrac45 \int_{x = 0}^{1} \big( \tfrac12x + \tfrac13 x^2 - 0 - 0\big) \, \mathrm dx \\
+  &amp;= \tfrac45 \int_{x = 0}^{1} \big( \tfrac12x + \tfrac13 x^2\big) \, \mathrm dx .
+\end{align*}\]</span>
+We then integrate that over <span class="math inline">\(x\)</span>, to get
+<span class="math display">\[\begin{align*}
+\mathbb EXY &amp;= \tfrac45 \int_{x = 0}^{1} \big( \tfrac12x + \tfrac13 x^2\big) \, \mathrm dx \\
+  &amp;= \tfrac45 \left[ \tfrac14 x^2 + \tfrac19 x^3 \right]_{x=0}^1 \\
+  &amp;= \tfrac45 \big(\tfrac14 + \tfrac19 - 0 - 0 \big) \\
+  &amp;= \tfrac{13}{45}
+\end{align*}\]</span></p>
+<p>Hence, the covariance is
+<span class="math display">\[ \operatorname{Cov}(X, Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{13}{45} - \tfrac{8}{15} \times \tfrac{8}{15} = \frac{1}{255} = 0.0044 , \]</span>
+which is a slightly positive covariance.</p>
+</div>
 <!--
 ::: {.example}
 Consider the pair of continuous random variable $(X,Y)$ with joint PDF
