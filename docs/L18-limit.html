@@ -386,79 +386,102 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Lecture 18</span> Limit theorems<a href="L18-limit.html#L18-limit" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="lln" class="section level2 hasAnchor" number="18.1">
 <h2><span class="header-section-number">18.1</span> Law of large numbers<a href="L18-limit.html#lln" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In this lecture we will look at some “limit” results; that is, results about a large number of <span class="math inline">\(n\)</span> of random variables, as <span class="math inline">\(n\)</span> tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.</p>
-<p>So let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables. Let us write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance.</p>
-<p>At the beginning of the course, we saw the mean of some values <span class="math inline">\(x_1, x_2, \dots, x_n\)</span> was
-<span class="math display">\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]</span>
-that is, what we get if we add them up and divide by <span class="math inline">\(n\)</span>. In the same way, we could calculate the “mean” of some random variables <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> by adding them up and dividing by <span class="math inline">\(n\)</span>; that is:
-<span class="math display">\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]</span>
-(The subscript <span class="math inline">\(n\)</span> on “<span class="math inline">\(\overline X_n\)</span>” is just to remind us this is a mean of <span class="math inline">\(n\)</span> random variables.)</p>
-<p>Here, each of the <span class="math inline">\(X_i\)</span>s is a random variable, so their mean <span class="math inline">\(\overline X_n\)</span> is another random variable too. This mean random variable <span class="math inline">\(\overline X_n\)</span> will be our main object of study in this lecture. We can ask questions about the random variable <span class="math inline">\(\overline X_n\)</span>, just the same as we would ask about any other random variable. For example: What are its expectation and variance?</p>
-<p>The expectation of <span class="math inline">\(\bar X_n\)</span> is
-<span class="math display">\[\begin{align*}
-\mathbb E \overline X_n &amp;= \mathbb E \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
-&amp;=   \frac{1}{n} (\mathbb EX_1 + \mathbb EX_2 + \cdots + \mathbb EX_n)\\
-&amp;= \frac{1}{n} (\mu + \mu + \cdots + \mu)\\
-&amp;= \frac{1}{n} n \mu \\
-&amp;= \mu .
-\end{align*}\]</span>
-Here we used linearity of expectation to take the <span class="math inline">\(1/n\)</span> out of the brackets and to add up the individual expectations.</p>
-<p>In the same way, the variance of <span class="math inline">\(\overline X_n\)</span> is
-<span class="math display">\[\begin{align*}
-\operatorname{Var}( \overline X_n) &amp;= \operatorname{Var}\left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
-&amp;= \left(\frac{1}{n}\right)^2 \operatorname{Var}(X_1 + X_2 + \cdots + X_n) \\
-&amp;=   \frac{1}{n^2} \big(\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \operatorname{Var}(X_n)\big)\\
-&amp;= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
-&amp;= \frac{1}{n^2} n \sigma^2 \\
-&amp;= \frac{\sigma^2}{n} .
-\end{align*}\]</span>
-Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.</p>
-<p>In conclusion we have this:</p>
+<!--
+In this lecture we will look at some "limit" results; that is, results about a large number of $n$ of random variables, as $n$ tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.
+
+So let $X_1, X_2, \dots, X_n$ be a sequence of IID random variables. Let us write $\mu = \mathbb EX_1$ for the common expectation and $\sigma^2 = \Var(X_1)$ for the common variance.
+
+At the beginning of the course, we saw the mean of some values $x_1, x_2, \dots, x_n$ was
+\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]
+that is, what we get if we add them up and divide by $n$. In the same way, we could calculate the "mean" of some random variables $X_1, X_2, \dots, X_n$ by adding them up and dividing by $n$; that is:
+\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]
+(The subscript $n$ on "$\overline X_n$" is just to remind us this is a mean of $n$ random variables.)
+
+Here, each of the $X_i$s is a random variable, so their mean $\overline X_n$ is another random variable too. This mean random variable $\overline X_n$ will be our main object of study in this lecture. We can ask questions about the random variable $\overline X_n$, just the same as we would ask about any other random variable. For example: What are its expectation and variance?
+
+The expectation of $\bar X_n$ is
+\begin{align*}
+\mathbb E \overline X_n &= \mathbb E \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&=   \frac{1}{n} (\mathbb EX_1 + \mathbb EX_2 + \cdots + \mathbb EX_n)\\
+&= \frac{1}{n} (\mu + \mu + \cdots + \mu)\\
+&= \frac{1}{n} n \mu \\
+&= \mu .
+\end{align*}
+Here we used linearity of expectation to take the $1/n$ out of the brackets and to add up the individual expectations.
+
+In the same way, the variance of $\overline X_n$ is
+\begin{align*}
+\Var( \overline X_n) &= \Var \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
+&= \left(\frac{1}{n}\right)^2 \Var(X_1 + X_2 + \cdots + X_n) \\
+&=   \frac{1}{n^2} \big(\Var(X_1) + \Var(X_2) + \cdots + \Var (X_n)\big)\\
+&= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
+&= \frac{1}{n^2} n \sigma^2 \\
+&= \frac{\sigma^2}{n} .
+\end{align*}
+Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.
+
+In conclusion we have this:
+-->
 <div class="theorem">
 <p><span id="thm:unlabeled-div-106" class="theorem"><strong>Theorem 18.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables, and write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance. Further, write
 <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean of these random variables. Then
 <span class="math display">\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]</span></p>
 </div>
-<p>Now think about what happens to this mean <span class="math inline">\(\overline X_n\)</span> when <span class="math inline">\(n\)</span> gets very large. We see that the expectation <span class="math inline">\(\mathbb E\overline X_n = \mu\)</span> stays the same, but the variance <span class="math inline">\(\operatorname{Var}(\overline X_n) = \sigma^2/n\)</span> gets smaller and smaller as <span class="math inline">\(n\)</span> gets bigger. So the range of probable values for <span class="math inline">\(\overline X_n\)</span> will be squeezing tighter and tighter around <span class="math inline">\(\mu\)</span>. Given that, it seems as if (and it can be rigorously proven that) we have the “law of large numbers”.</p>
+<!--
+Now think about what happens to this mean $\overline X_n$ when $n$ gets very large. We see that the expectation $\mathbb E\overline X_n = \mu$ stays the same, but the variance $\Var(\overline X_n) = \sigma^2/n$ gets smaller and smaller as $n$ gets bigger. So the range of probable values for $\overline X_n$ will be squeezing tighter and tighter around $\mu$. Given that, it seems as if (and it can be rigorously proven that) we have the "law of large numbers".
+-->
 <div class="theorem">
 <p><span id="thm:thLLN" class="theorem"><strong>Theorem 18.2  (Law of large numbers) </strong></span>Let <span class="math inline">\(X_1, X_2, \dots\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean of the first <span class="math inline">\(n\)</span> random variables. Then
 <span class="math display">\[ \overline X_n \to \mu \quad \text{in probability as $n \to \infty$}; \]</span>
 by which we mean that, for any <span class="math inline">\(\epsilon &gt; 0\)</span>,
 <span class="math display">\[ \mathbb P\big(|\overline X_n - \mu| &gt; \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]</span></p>
 </div>
-<p>The precise mathematical definition of the convergence is not important here. What is important is the general principle that the mean <span class="math inline">\(\overline X_n\)</span> is overwhelmingly likely to get closer and closer to the expectation <span class="math inline">\(\mathbb EX = \mu\)</span>. In other words, the expectation <span class="math inline">\(\mathbb EX = \mu\)</span> represents the “long-run average” of independent experiments – this justifies referring to the expectation as a kind of average.</p>
-<p>One special case is if we have repeated experiments that succeed with probability <span class="math inline">\(p\)</span>; that is, <span class="math inline">\(X_n \sim \text{Bern}(p)\)</span>. Then the law of large numbers says that the long-run proportion of successes is
-<span class="math display">\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]</span>
-So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about “frequentist probability” <a href="L03-events.html#what-is-prob">right at the beginning of Lecture 3</a>: that one way to understand the probability of an event is as the long-run frequency of its occurrence.</p>
+<!--
+The precise mathematical definition of the convergence is not important here. What is important is the general principle that the mean $\overline X_n$ is overwhelmingly likely to get closer and closer to the expectation $\mathbb EX = \mu$. In other words, the expectation $\mathbb EX = \mu$ represents the "long-run average" of independent experiments -- this justifies referring to the expectation as a kind of average.
+
+One special case is if we have repeated experiments that succeed with probability $p$; that is, $X_n \sim \text{Bern}(p)$. Then the law of large numbers says that the long-run proportion of successes is
+\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
+So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about "frequentist probability" [right at the beginning of Lecture 3](#what-is-prob): that one way to understand the probability of an event is as the long-run frequency of its occurrence. 
+-->
 </div>
 <div id="clt" class="section level2 hasAnchor" number="18.2">
 <h2><span class="header-section-number">18.2</span> Central limit theorem<a href="L18-limit.html#clt" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We have seen that if the <span class="math inline">\(X_i\)</span> are IID random variables with expectation <span class="math inline">\(\mu\)</span> and variance <span class="math inline">\(\sigma^2\)</span>, then
-<span class="math display">\[ \mathbb E\overline X_n = \mu \qquad \operatorname{Var}\big(\overline X_n\big) = \frac{\sigma^2}{n} \]</span>
-and the law of large numbers tells us that <span class="math inline">\(\overline X_n \to \mu\)</span> as <span class="math inline">\(n \to \infty\)</span>. Alternatively, we could say that <span class="math inline">\(\overline X_n - \mu \to 0\)</span>.</p>
-<p>We might also want to know what the variation of <span class="math inline">\(\overline X_n - \mu\)</span> is around 0. Obviously, the law of large numbers tells us this variation shrinks away to 0, but we might be interested in the “shape” of that variation as it shrinks away. To study this variation, we need to “re-inflate” it, to stop it disappearing. It turns out that the correct way to do this is by multiplying by <span class="math inline">\(\sqrt{n}\)</span> and looking at <span class="math inline">\(\sqrt{n}(\overline X_n - \mu)\)</span>.</p>
-<p>It’s fairly easy to check that the expectation and variance of the “re-inflated variation” is
-<span class="math display">\[\begin{align*}
-\mathbb E\sqrt{n} (\overline X_n - \mu) &amp;= \sqrt{n}(\mu - \mu) = 0 \\
-\operatorname{Var}\big(\sqrt{n} (\overline X_n - \mu)\big) &amp;= (\sqrt n)^2 \, \frac{\sigma^2}{n} = \sigma^2 .
-\end{align*}\]</span>
-So whatever distribution <span class="math inline">\(\sqrt{n}(\overline X_n - \mu)\)</span> has, that distribution must have expectation <span class="math inline">\(0\)</span> and variance <span class="math inline">\(\sigma^2\)</span>. But in fact, <em>no matter what distribution the <span class="math inline">\(X_i\)</span> have</em> and regardless of whether they are discrete or continuous, this “variation around 0” <span class="math inline">\(\sqrt{n}(\overline X_n - \mu)\)</span> always gets closer and closer to the normal distribution!</p>
+<!--
+We have seen that if the $X_i$ are IID random variables with expectation $\mu$ and variance $\sigma^2$, then
+\[ \mathbb E\overline X_n = \mu \qquad \Var \big(\overline X_n\big) = \frac{\sigma^2}{n} \]
+and the law of large numbers tells us that $\overline X_n \to \mu$ as $n \to \infty$. Alternatively, we could say that $\overline X_n - \mu \to 0$.
+
+We might also want to know what the variation of $\overline X_n - \mu$ is around 0. Obviously, the law of large numbers tells us this variation shrinks away to 0, but we might be interested in the "shape" of that variation as it shrinks away. To study this variation, we need to "re-inflate" it, to stop it disappearing. It turns out that the correct way to do this is by multiplying by $\sqrt{n}$ and looking at $\sqrt{n}(\overline X_n - \mu)$.
+
+It's fairly easy to check that the expectation and variance of the "re-inflated variation" is
+\begin{align*}
+\mathbb E\sqrt{n} (\overline X_n - \mu) &= \sqrt{n}(\mu - \mu) = 0 \\
+\Var\big(\sqrt{n} (\overline X_n - \mu)\big) &= (\sqrt n)^2 \, \frac{\sigma^2}{n} = \sigma^2 . 
+\end{align*}
+So whatever distribution $\sqrt{n}(\overline X_n - \mu)$ has, that distribution must have expectation $0$ and variance $\sigma^2$. But in fact, *no matter what distribution the $X_i$ have* and regardless of whether they are discrete or continuous, this "variation around 0" $\sqrt{n}(\overline X_n - \mu)$ always gets closer and closer to the normal distribution!
+-->
 <div class="theorem">
 <p><span id="thm:thCLT" class="theorem"><strong>Theorem 18.3  (Central limit theorem) </strong></span>Let <span class="math inline">\(X_1, X_2, \dots\)</span> be a sequence of IID random variables. Write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation, <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance, and <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean of the first <span class="math inline">\(n\)</span> random variables. Then
 <span class="math display">\[ \sqrt{n}\big(\overline X_n - \mu\big) \to \mathrm N(0, \sigma^2) \quad \text{in distribution as $n \to \infty$}; \]</span>
 by which we mean that, if <span class="math inline">\(Y \sim \mathrm N(0, \sigma^2)\)</span>, then, for all <span class="math inline">\(a &lt; b\)</span>,
 <span class="math display">\[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]</span></p>
 </div>
-<p>(A full proof of the central limit theorem is too complicated to include here.)</p>
-<p>Another alternative way to write this is to divide both sides by <span class="math inline">\(\sigma\)</span> and write it as
-<span class="math display">\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]</span>
+<!--
+(A full proof of the central limit theorem is too complicated to include here.)
+
+Another alternative way to write this is to divide both sides by $\sigma$ and write it as
+\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
 Yet another way is
-<span class="math display">\[ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]</span></p>
-<p>The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too – the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.</p>
+\[ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
+
+The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
+-->
 </div>
 <div id="normal-approx" class="section level2 hasAnchor" number="18.3">
 <h2><span class="header-section-number">18.3</span> Approximations with the normal distribution<a href="L18-limit.html#normal-approx" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>There are many other distributions <span class="math inline">\(X\)</span> that can be well approximated by a normal distribution where <span class="math inline">\(\mu\)</span> is set to <span class="math inline">\(\mathbb EX\)</span> and <span class="math inline">\(\sigma^2\)</span> is set to <span class="math inline">\(\operatorname{Var}(X)\)</span>. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.</p>
+<!--
+There are many other distributions $X$ that can be well approximated by a normal distribution where $\mu$ is set to $\mathbb EX$ and $\sigma^2$ is set to $\Var(X)$. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
+-->
 <ul>
 <li><p>A binomial distribution <span class="math inline">\(X \sim \mathrm{Bin}(n, p)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(np, np(1-p))\)</span> when <span class="math inline">\(n\)</span> is large and <span class="math inline">\(p\)</span> is not too close to 0 or 1. (When <span class="math inline">\(p\)</span> is small, we already know that the Poisson distribution is a good approximation instead.)</p></li>
 <li><p>A Poisson distribution <span class="math inline">\(X \sim \mathrm{Po}(\lambda)\)</span> is well approximated by a normal distribution <span class="math inline">\(\mathrm{N}(\lambda, \lambda)\)</span> when <span class="math inline">\(\lambda\)</span> is large.</p></li>

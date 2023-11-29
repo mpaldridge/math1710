@@ -106,6 +106,12 @@ is given by a double integral.
 | The expectation of a function of $X$ and $Y$ is given by the sum \[ \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y) . \] | The expectation of a function of $X$ and $Y$ is given by the integral \[ \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy . \] |
 | The **covariance** of $X$ and $Y$ is given by \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \] and has a computational formula \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y . \] | The **covariance** of $X$ and $Y$ is given by \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \] and has a computational formula \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y . \]
 
+:::: {.videowrap}
+::: {.videowrapper}
+<iframe src="https://www.youtube.com/embed/Rx6KXw1z5Lk"></iframe>
+:::
+::::
+
 ::: {.example}
 Consider the pair of continuous random variables $X$ and $Y$ with joint PDF
 \[ f_{X,Y}(x,y) = \tfrac45(1 + xy) \qquad \text{for $0 \leq x,y\leq 1$} \]
@@ -168,7 +174,7 @@ We then integrate that over $x$, to get
 \end{align*}
 
 Hence, the covariance is
-\[ \Cov(X, Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{13}{45} - \tfrac{8}{15} \times \tfrac{8}{15} = \frac{1}{255} = 0.0044 , \]
+\[ \Cov(X, Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{13}{45} - \tfrac{8}{15} \times \tfrac{8}{15} = \tfrac{1}{255} = 0.0044 , \]
 which is a slightly positive covariance.
 :::
 
