@@ -73,7 +73,7 @@ plot(x, pmf, type = "h", lwd = 4, ylim = c(0, max(pmf)))
 
 ## Cumulative distribution function
 
-We know that a CDF $F(x) = \mathbb P(X = x)$ can be calculated by summing up the PDF; that is,
+We know that a CDF $F(x) = \mathbb P(X \leq x)$ can be calculated by summing up the PDF; that is,
 \[ F(x) = \sum_{y \leq x} p(x) . \]
 To calculate this in R, it is helpful to use the cumulative sum function **`cumsum()`**. The cumulative sum of a vector
 \[ (a, \quad b, \quad c, \quad d, \quad e) \]

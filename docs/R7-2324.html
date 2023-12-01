@@ -466,8 +466,8 @@ appropriately.</p>
 </div>
 <div id="cumulative-distribution-function" class="section level2">
 <h2>Cumulative distribution function</h2>
-<p>We know that a CDF <span class="math inline">\(F(x) = \mathbb P(X =
-x)\)</span> can be calculated by summing up the PDF; that is, <span class="math display">\[ F(x) = \sum_{y \leq x} p(x) . \]</span> To
+<p>We know that a CDF <span class="math inline">\(F(x) = \mathbb P(X
+\leq x)\)</span> can be calculated by summing up the PDF; that is, <span class="math display">\[ F(x) = \sum_{y \leq x} p(x) . \]</span> To
 calculate this in R, it is helpful to use the cumulative sum function
 <strong><code>cumsum()</code></strong>. The cumulative sum of a vector
 <span class="math display">\[ (a, \quad b, \quad c, \quad d, \quad e)
@@ -562,7 +562,7 @@ of vectors for the range and the PMF.</p>
 this, we will use the <strong><code>sample()</code></strong> function,
 like this:</p>
 <pre class="r"><code>sample(x, 20, replace = TRUE, prob = pmf)</code></pre>
-<pre><code> [1] 2.0 0.0 0.5 0.5 2.5 2.0 1.0 0.5 0.5 0.0 0.5 0.0 2.0 0.5 2.5 0.0 2.0 0.5 4.0 0.5</code></pre>
+<pre><code> [1] 0.5 1.0 2.5 1.0 0.5 2.0 4.0 0.0 0.0 1.0 2.0 1.0 1.0 0.5 2.0 2.0 1.0 4.0 0.0 2.5</code></pre>
 <p>Here, the arguments are:</p>
 <ol style="list-style-type: decimal">
 <li>The first argument is the set of values to be sampled, which for us

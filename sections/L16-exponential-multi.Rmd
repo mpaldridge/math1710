@@ -1,14 +1,14 @@
 # Exponential distribution and multiple continuous random variables  {#L17-exp-multiple}
 
-<!--
+
 This lecture is really two mini-lectures stuck together. In the first mini-lecture, we look at another important continuous distribution, the exponential distribution. In the second mini-lecture, we look at the theory of multiple continuous random variables, and find it's very similar to what we already know about multiple discrete random variables.
--->
+
 
 ## Exponential distribution  {#exponential}
 
-<!--
+
 An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
--->
+
 
 ::: {.definition}
 A continuous random variable $X$ is said to have the **exponential distribution with rate $\lambda > 0$** if it has the PDF
@@ -46,7 +46,7 @@ We could alternatively calculate $\mathbb P(1 \leq X \leq 3)$, using the the CDF
 which is the same answer as before.
 :::
 
-<!--
+
 ::: {.proof}
 *of Theorem \@ref(thm:exp-prop).*
 For part 1,
@@ -78,7 +78,7 @@ where we used a cunning trick on the integral on the right -- spotting that we c
 Hence
 \[ \Var(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]
 :::
--->
+
 
 
 
@@ -98,7 +98,7 @@ Now, the intensity of probability for $(X,Y)$ being around $(x,y)$ is given by t
 | The expectation of a function of $X$ and $Y$ is given by the sum \[ \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y) . \] | The expectation of a function of $X$ and $Y$ is given by the integral \[ \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy . \] |
 | The **covariance** of $X$ and $Y$ is given by \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \] and has a computational formula \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y . \] | The **covariance** of $X$ and $Y$ is given by \[ \Cov(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \] and has a computational formula \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y . \]
 
-<!--
+
 ::: {.example}
 Consider the pair of continuous random variable $(X,Y)$ with joint PDF
 \[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]
@@ -126,7 +126,7 @@ and $\mathbb EY = \frac{13}{24}$ also, by symmetry. Second, we have
 So therefore,
 \[ \Cov(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
 ::::
--->
+
 
 ## Summary  {#summary-L17 .unnumbered}
 

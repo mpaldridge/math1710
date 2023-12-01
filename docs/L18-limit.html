@@ -415,7 +415,7 @@ Here we used linearity of expectation to take the <span class="math inline">\(1/
 Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.</p>
 <p>In conclusion we have this:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-104" class="theorem"><strong>Theorem 18.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables, and write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance. Further, write
+<p><span id="thm:unlabeled-div-106" class="theorem"><strong>Theorem 18.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be a sequence of IID random variables, and write <span class="math inline">\(\mu = \mathbb EX_1\)</span> for the common expectation and <span class="math inline">\(\sigma^2 = \operatorname{Var}(X_1)\)</span> for the common variance. Further, write
 <span class="math inline">\(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\)</span> for the mean of these random variables. Then
 <span class="math display">\[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]</span></p>
 </div>
@@ -467,7 +467,7 @@ Yet another way is
 </ul>
 <p>We already know, of course, that a sum of independent normal distributions is <em>exactly</em> normal, with no approximations needed.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-105" class="example"><strong>Example 18.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
+<p><span id="exm:unlabeled-div-107" class="example"><strong>Example 18.1  </strong></span><em>Suppose I toss 1000 coins. What’s the probability I get between 495 and 505 Heads?</em></p>
 <p>The true distribution of Heads is <span class="math inline">\(X \sim \mathrm{Bin}(1000, \frac12)\)</span>, and the question wants
 <span class="math display">\[ \mathbb P(495 \leq X \leq 505) = \sum_{x = 495}^{505} p_X(x) . \]</span>
 We can calculate the exact answer using R:</p>
