@@ -6220,7 +6220,7 @@ This lecture is really two mini-lectures stuck together. In the first mini-lectu
 \hypertarget{exponential}{%
 \section{Exponential distribution}\label{exponential}}
 
-An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time between radioactive particles decaying, the time between eruptions of a volcano, or the time between buses arriving at a bus stop.
+An important continuous distribution is the exponential distribution. The exponential distribution is often used to represent lengths of time: for example, the time until a radioactive particle decays, the time between eruptions of a volcano, or the time you have to wait for a bus to arrive at a bus stop.
 
 \begin{definition}
 A continuous random variable \(X\) is said to have the \textbf{exponential distribution with rate \(\lambda > 0\)} if it has the PDF
@@ -6275,6 +6275,10 @@ Similarly for part 2,
 \[ F(x) = \int_0^x \lambda \mathrm{e}^{-\lambda y}\,\mathrm{d}y
      = \big[-\mathrm{e}^{-\lambda y} \big]_0^x = -\mathrm{e}^{-\lambda x} -(-1) = 1 - \mathrm{e}^{-\lambda x}. \]
 
+For parts 3 and 4, we will use integration by parts, in the form
+\[ \int_a^b uv' \, \mathrm dx = \big[uv\big]_a^b - \int_a^b u'v \, \mathrm dx , \]
+where the dash \('\) denotes the derivative.
+
 For part 3, we use integration by parts with \(u = x\) and \(v' = \lambda \mathrm{e}^{-\lambda x}\), so \(u' = 1\) and \(v = -\mathrm{e}^{-\lambda x}\). We get
 \begin{align*}
 \mathbb EX &= \int_0^\infty x  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
@@ -6284,15 +6288,18 @@ For part 3, we use integration by parts with \(u = x\) and \(v' = \lambda \mathr
   &= \frac{1}{\lambda}
 \end{align*}
 
-For part 4, we use integration by parts with \(u = x^2\) and \(v' = \lambda \mathrm{e}^{-\lambda x}\), so \(u' = 2x\) and \(v = -\mathrm{e}^{-\lambda x}\) again. We get
+For part 4, we will use the computational formula
+\[ \operatorname{Var}(X) = \mathbb EX^2 - \mu^2 . \]
+We already know that \(\mu = \mathbb EX = 1/\lambda\), so we need \(\mathbb EX^2\). We
+use integration by parts with \(u = x^2\) and \(v' = \lambda \mathrm{e}^{-\lambda x}\), so \(u' = 2x\) and \(v = -\mathrm{e}^{-\lambda x}\) again. We get
 \begin{align*}
 \mathbb EX^2 &= \int_0^\infty x^2  \lambda \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
   &= \big[-x^2 \mathrm{e}^{-\lambda x}\big]_0^\infty + \int_0^\infty 2x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
-  &= -0 - (-0) + \frac{2}{\lambda} \int_0^\infty x  \lambda x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
+  &= -0 - (-0) + \frac{2}{\lambda} \int_0^\infty \lambda x \mathrm{e}^{-\lambda x}\,\mathrm{d}x \\
   &= \frac{2}{\lambda} \mathbb EX \\
   &= \frac{2}{\lambda^2} ,
 \end{align*}
-where we used a cunning trick on the integral on the right -- spotting that we could turn it into the expectation, which is \(1/\lambda\), by part 3 -- to save us the effort of calculating it again.
+where we used a cunning trick on the integral on the right -- spotting that we could turn it into the expectation, which is \(1/\lambda\), by part 3 -- to save us the effort of doing another integration by parts (which would also be a perfectly legitimate way of continuing the proof).
 Hence
 \[ \operatorname{Var}(X) = \mathbb EX^2 - \left(\frac{1}{\lambda}\right)^2 =  \frac{2}{\lambda^2} - \frac{1}{\lambda^2} = \frac{1}{\lambda^2} .  \]
 \end{proof}
@@ -6302,8 +6309,9 @@ Hence
 
 The theory we set up for two or more discrete random variables also works for two or more continuous random variables.
 
-Now, the intensity of probability for \((X,Y)\) being around \((x,y)\) is given by the \textbf{joint probability density function} \(f_{X,Y}\). In particular for \(a \leq b\) and \(c \leq d\), we have
-\[ \mathbb P(a \leq X \leq b \text{ and } c \leq Y \leq d ) = \int_{x = a}^b \int_{y = c}^d f_{X,Y}(x,y)\, \mathrm dx \,\mathrm dy .\]
+Now, the intensity of probability for \((X,Y)\) being around \((x,y)\) is given by the \textbf{joint probability density function} \(f_{X,Y}\). In particular for \(a \leq b\) and \(c \leq d\), we have that
+\[ \mathbb P(a \leq X \leq b \text{ and } c \leq Y \leq d ) = \int_{x = a}^b \int_{y = c}^d f_{X,Y}(x,y)\, \mathrm dy \,\mathrm dx  \]
+is given by a double integral.
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
@@ -6326,31 +6334,69 @@ The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y
 \end{longtable}
 
 \begin{example}
-Consider the pair of continuous random variable \((X,Y)\) with joint PDF
-\[ f_{X,Y}(x,y) = \tfrac12(1 + x + y) \qquad \text{for $0 \leq x,y\leq 1$} \]
+Consider the pair of continuous random variables \(X\) and \(Y\) with joint PDF
+\[ f_{X,Y}(x,y) = \tfrac45(1 + xy) \qquad \text{for $0 \leq x,y\leq 1$} \]
 and \(f_{X,Y}(x,y) = 0\) otherwise.
 
-We get the marginal distribution for \(X\) by integrating over \(y\), so
-\[ f_X(x) = \int_0^1 \tfrac12(1 + x + y) \, \mathrm dy = \tfrac12 \left[(1 + x)y + \tfrac12y^2\right]_0^1 = \tfrac34 + \tfrac12x . \]
-
-We can find the the conditional PDF for \(Y\) given \(X = \tfrac14\). It is
-\[ f_{Y\mid X}\big(y \mid \tfrac14\big) = \frac{f_{X,Y}\big(\tfrac14,y\big)}{f_X\big(\tfrac14\big)}
-    = \frac{\tfrac12\big(1 + \tfrac14 + y\big)}{\tfrac34 + \tfrac12\times\tfrac14 } = \tfrac{5}{7} + \tfrac47 y . \]
-
-We can calculate the covariance. First, the expectations are
-\[ \mathbb EX = \int_{-\infty}^\infty x\, f_X(x) \,\mathrm dx = \int_0^1 x\big(\tfrac34 + \tfrac12x\big)\, \mathrm dx = \left[\tfrac38 x^2 + \tfrac16 x^3 \right] = \tfrac{13}{24} \]
-and \(\mathbb EY = \frac{13}{24}\) also, by symmetry. Second, we have
+First, let's find the \textbf{marginal PDF} for \(X\). We find this by integrating over \(y\), so
 \begin{align*}
-\mathbb EXY
-&= \int_{-\infty}^\infty \int_{-\infty}^\infty xy\, f_{X,Y}(x,y) \, \mathrm dx\, \mathrm dy \\
-&= \int_0^1 \int_0^1 xy \, \tfrac12(1 + x + y)\, \mathrm dx\, \mathrm dy \\
-&= \int_0^1 \left[ \tfrac14 x^2y + \tfrac16 x^3y + \tfrac14 x^2y^2  \right]_{x=0}^1 \, \mathrm dy\\
-&= \int_0^1 \big( \tfrac14 y + \tfrac16 y + \tfrac14 y^2 \big) \, \mathrm dy\\
-&= \left[ \tfrac18 y^2 + \tfrac{1}{12}y^2 + \tfrac{1}{12}y^3  \right]_0^1 \\
-&= \tfrac{7}{24} .
+f_X(x) &= \int_{y=-\infty}^\infty f_{X,Y}(x,y) \, \mathrm{d}y \\
+  &= \int_{y = 0}^1 \tfrac45 (1 + xy) \, \mathrm dy \\
+  &= \tfrac45 \left[y + \tfrac12 xy^2 \right]_{y=0}^1 \\
+  &= \tfrac45 \left(1 + \tfrac12x - 0 - 0 \right) \\
+  &= \tfrac45 \left(1 + \tfrac12x \right) . 
 \end{align*}
-So therefore,
-\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{7}{24} - \tfrac{13}{24} \times \tfrac{13}{24} = -\tfrac{1}{576} . \]
+In the second line we, substituted in the joint PDF, and since that is 0 for \(y<0\) and \(y>1\), we only needed to consider the integral from 0 to 1; in the third line, we integrated with respect to \(y\), treating \(x\) as a constant; the fourth evaluated the integral, and the fifth line tidied up the answer.
+
+Second, let's find the \textbf{conditional PDF} for \(Y\) given \(X = \frac14\). We know that
+\[ f_{Y\mid X} \big(y \mid \tfrac14\big) = \frac{f_{X, Y} (\tfrac14, y)}{f_X(\frac14)} .  \]
+The numerator is
+\[ f_{X, Y} \big(\tfrac14, y\big) = \tfrac45 \big(1 + \tfrac14y\big) , \]
+and the denominator is
+\[ f_X\big(\tfrac14\big) = \tfrac 45 \big(1 + \tfrac12\times \tfrac 14\big) = \tfrac45 \times \tfrac 98 , \]
+using the marginal PMF \(f_X\) calculated earlier. Hence
+\[ f_{Y\mid X} \big(y \mid \tfrac14\big) =  \frac{\tfrac45 (1 + \tfrac14y)}{\tfrac45 \times \tfrac 98} = \tfrac89 \big(1 + \tfrac14y\big) . \]
+
+Third, let's find the \textbf{covariance}. We will use the computational formula
+\[ \operatorname{Cov}(X, Y) = \mathbb EXY - \mu_X \mu_Y . \]
+
+To find \(\mu_X = \mathbb EX\), using the marginal PMF \(f_x\), we have
+\begin{align*}
+\mu_X = \mathbb EX &= \int_{-\infty}^{\infty} x\,f(x)\, \mathrm dx \\
+  &= \int_0^1 x \, \tfrac45 \big(1 + \tfrac12 x\big)\,\mathrm dx \\
+  &= \tfrac45 \int_0^1 \big(x + \tfrac12 x^2 \big) \, \mathrm dx \\
+  &= \tfrac45 \left[ \tfrac12x^2 + \tfrac16 x^3 \right]_0^1 \\
+  &= \tfrac45 \big(\tfrac12 + \tfrac16 - 0 - 0 \big) \\
+  &= \tfrac{8}{15}.
+\end{align*}
+(Again, because the PMF is 0 outside the interval from 0 to 1, we can restrict our integral to that.)
+
+To find \(\mu_Y = \mathbb EY\), we could go through the process of finding the marginal PDF by integrating over \(x\), then calculating \(\mu_Y\) as another integral. Alternatively, we could recognise that the joint PMF \(f_{X,Y}(x,y) = \frac45 (1+xy)\) is symmetric in \(x\) and \(y\), so we must have \(\mu_Y = \mu_X = \frac{8}{15}\).
+
+We also need \(\mathbb EXY\). Using the law of the unconscious statistician, we have
+\begin{align*}
+\mathbb EXY &= \int_{x = -\infty}^{\infty} \int_{y = -\infty}^{\infty} xy\, f_{X,Y}(x,y)\, \mathrm dy\, \mathrm dx \\
+  &= \int_{x = 0}^{1} \int_{y = 0}^{1} xy \, \tfrac45 (1+xy) \, \mathrm dy\, \mathrm dx \\
+  &= \tfrac45 \int_{x = 0}^{1} \int_{y = 0}^{1} (xy + x^2y^2)\, \mathrm dy\, \mathrm dx .
+\end{align*}
+We'll do the integral over \(y\) first (although either order is fine). This means we integrate treating \(x\) as a constant, so we get
+\begin{align*}
+\mathbb EXY &= \tfrac45 \int_{x = 0}^{1} \int_{y = 0}^{1} (xy + x^2y^2)\, \mathrm dy\, \mathrm dx \\
+  &= \tfrac45 \int_{x = 0}^{1} \left[ \tfrac12 xy^2 + \tfrac13 x^2y^3 \right]_{y=0}^1 \, \mathrm dx \\
+  &= \tfrac45 \int_{x = 0}^{1} \big( \tfrac12x + \tfrac13 x^2 - 0 - 0\big) \, \mathrm dx \\
+  &= \tfrac45 \int_{x = 0}^{1} \big( \tfrac12x + \tfrac13 x^2\big) \, \mathrm dx .
+\end{align*}
+We then integrate that over \(x\), to get
+\begin{align*}
+\mathbb EXY &= \tfrac45 \int_{x = 0}^{1} \big( \tfrac12x + \tfrac13 x^2\big) \, \mathrm dx \\
+  &= \tfrac45 \left[ \tfrac14 x^2 + \tfrac19 x^3 \right]_{x=0}^1 \\
+  &= \tfrac45 \big(\tfrac14 + \tfrac19 - 0 - 0 \big) \\
+  &= \tfrac{13}{45}
+\end{align*}
+
+Hence, the covariance is
+\[ \operatorname{Cov}(X, Y) = \mathbb EXY - \mu_X \mu_Y = \tfrac{13}{45} - \tfrac{8}{15} \times \tfrac{8}{15} = \tfrac{1}{255} = 0.0044 , \]
+which is a slightly positive covariance.
 \end{example}
 
 \hypertarget{summary-L17}{%
@@ -6371,48 +6417,11 @@ So therefore,
 \hypertarget{lln}{%
 \section{Law of large numbers}\label{lln}}
 
-In this lecture we will look at some ``limit'' results; that is, results about a large number of \(n\) of random variables, as \(n\) tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.
-
-So let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables. Let us write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance.
-
-At the beginning of the course, we saw the mean of some values \(x_1, x_2, \dots, x_n\) was
-\[ \bar x = \frac{1}{n} (x_1 + x_2 + \cdots + x_n) = \frac{1}{n} \sum_{i=1}^n x_i ; \]
-that is, what we get if we add them up and divide by \(n\). In the same way, we could calculate the ``mean'' of some random variables \(X_1, X_2, \dots, X_n\) by adding them up and dividing by \(n\); that is:
-\[ \overline X_n = \frac{1}{n} (X_1 + X_2 + \cdots + X_n) = \frac{1}{n} \sum_{i=1}^n X_i . \]
-(The subscript \(n\) on ``\(\overline X_n\)'' is just to remind us this is a mean of \(n\) random variables.)
-
-Here, each of the \(X_i\)s is a random variable, so their mean \(\overline X_n\) is another random variable too. This mean random variable \(\overline X_n\) will be our main object of study in this lecture. We can ask questions about the random variable \(\overline X_n\), just the same as we would ask about any other random variable. For example: What are its expectation and variance?
-
-The expectation of \(\bar X_n\) is
-\begin{align*}
-\mathbb E \overline X_n &= \mathbb E \left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
-&=   \frac{1}{n} (\mathbb EX_1 + \mathbb EX_2 + \cdots + \mathbb EX_n)\\
-&= \frac{1}{n} (\mu + \mu + \cdots + \mu)\\
-&= \frac{1}{n} n \mu \\
-&= \mu .
-\end{align*}
-Here we used linearity of expectation to take the \(1/n\) out of the brackets and to add up the individual expectations.
-
-In the same way, the variance of \(\overline X_n\) is
-\begin{align*}
-\operatorname{Var}( \overline X_n) &= \operatorname{Var}\left( \frac{1}{n} (X_1 + X_2 + \cdots + X_n)\right) \\
-&= \left(\frac{1}{n}\right)^2 \operatorname{Var}(X_1 + X_2 + \cdots + X_n) \\
-&=   \frac{1}{n^2} \big(\operatorname{Var}(X_1) + \operatorname{Var}(X_2) + \cdots + \operatorname{Var}(X_n)\big)\\
-&= \frac{1}{n^2} (\sigma^2 + \sigma^2+ \cdots + \sigma^2)\\
-&= \frac{1}{n^2} n \sigma^2 \\
-&= \frac{\sigma^2}{n} .
-\end{align*}
-Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.
-
-In conclusion we have this:
-
 \begin{theorem}
 Let \(X_1, X_2, \dots, X_n\) be a sequence of IID random variables, and write \(\mu = \mathbb EX_1\) for the common expectation and \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance. Further, write
 \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of these random variables. Then
 \[ \mathbb E \overline X_n = \mu \qquad \operatorname{Var}(\overline X_n) = \frac{\sigma^2}{n} . \]
 \end{theorem}
-
-Now think about what happens to this mean \(\overline X_n\) when \(n\) gets very large. We see that the expectation \(\mathbb E\overline X_n = \mu\) stays the same, but the variance \(\operatorname{Var}(\overline X_n) = \sigma^2/n\) gets smaller and smaller as \(n\) gets bigger. So the range of probable values for \(\overline X_n\) will be squeezing tighter and tighter around \(\mu\). Given that, it seems as if (and it can be rigorously proven that) we have the ``law of large numbers''.
 
 \begin{theorem}[Law of large numbers]
 \protect\hypertarget{thm:thLLN}{}\label{thm:thLLN}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
@@ -6421,27 +6430,8 @@ by which we mean that, for any \(\epsilon > 0\),
 \[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
 \end{theorem}
 
-The precise mathematical definition of the convergence is not important here. What is important is the general principle that the mean \(\overline X_n\) is overwhelmingly likely to get closer and closer to the expectation \(\mathbb EX = \mu\). In other words, the expectation \(\mathbb EX = \mu\) represents the ``long-run average'' of independent experiments -- this justifies referring to the expectation as a kind of average.
-
-One special case is if we have repeated experiments that succeed with probability \(p\); that is, \(X_n \sim \text{Bern}(p)\). Then the law of large numbers says that the long-run proportion of successes is
-\[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
-So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about ``frequentist probability'' \protect\hyperlink{what-is-prob}{right at the beginning of Lecture 3}: that one way to understand the probability of an event is as the long-run frequency of its occurrence.
-
 \hypertarget{clt}{%
 \section{Central limit theorem}\label{clt}}
-
-We have seen that if the \(X_i\) are IID random variables with expectation \(\mu\) and variance \(\sigma^2\), then
-\[ \mathbb E\overline X_n = \mu \qquad \operatorname{Var}\big(\overline X_n\big) = \frac{\sigma^2}{n} \]
-and the law of large numbers tells us that \(\overline X_n \to \mu\) as \(n \to \infty\). Alternatively, we could say that \(\overline X_n - \mu \to 0\).
-
-We might also want to know what the variation of \(\overline X_n - \mu\) is around 0. Obviously, the law of large numbers tells us this variation shrinks away to 0, but we might be interested in the ``shape'' of that variation as it shrinks away. To study this variation, we need to ``re-inflate'' it, to stop it disappearing. It turns out that the correct way to do this is by multiplying by \(\sqrt{n}\) and looking at \(\sqrt{n}(\overline X_n - \mu)\).
-
-It's fairly easy to check that the expectation and variance of the ``re-inflated variation'' is
-\begin{align*}
-\mathbb E\sqrt{n} (\overline X_n - \mu) &= \sqrt{n}(\mu - \mu) = 0 \\
-\operatorname{Var}\big(\sqrt{n} (\overline X_n - \mu)\big) &= (\sqrt n)^2 \, \frac{\sigma^2}{n} = \sigma^2 . 
-\end{align*}
-So whatever distribution \(\sqrt{n}(\overline X_n - \mu)\) has, that distribution must have expectation \(0\) and variance \(\sigma^2\). But in fact, \emph{no matter what distribution the \(X_i\) have} and regardless of whether they are discrete or continuous, this ``variation around 0'' \(\sqrt{n}(\overline X_n - \mu)\) always gets closer and closer to the normal distribution!
 
 \begin{theorem}[Central limit theorem]
 \protect\hypertarget{thm:thCLT}{}\label{thm:thCLT}Let \(X_1, X_2, \dots\) be a sequence of IID random variables. Write \(\mu = \mathbb EX_1\) for the common expectation, \(\sigma^2 = \operatorname{Var}(X_1)\) for the common variance, and \(\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i\) for the mean of the first \(n\) random variables. Then
@@ -6450,19 +6440,8 @@ by which we mean that, if \(Y \sim \mathrm N(0, \sigma^2)\), then, for all \(a <
 \[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
 \end{theorem}
 
-(A full proof of the central limit theorem is too complicated to include here.)
-
-Another alternative way to write this is to divide both sides by \(\sigma\) and write it as
-\[ \frac{\overline X_n - \mu}{\sqrt{\sigma^2/n}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
-Yet another way is
-\[ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
-
-The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
-
 \hypertarget{normal-approx}{%
 \section{Approximations with the normal distribution}\label{normal-approx}}
-
-There are many other distributions \(X\) that can be well approximated by a normal distribution where \(\mu\) is set to \(\mathbb EX\) and \(\sigma^2\) is set to \(\operatorname{Var}(X)\). Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
 
 \begin{itemize}
 \item
@@ -6558,7 +6537,7 @@ Whenever we approximate a discrete random variable by a continuous random variab
 
 \commfalse
 
-This is Problem Sheet 5. This problem sheet covers Lectures 15 to 18. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 10. The problem sheet contains two assessed questions, which are due in by 2pm on Monday 12 December.
+This is Problem Sheet 5. This problem sheet covers Lectures 15 to 18. You should work through all the questions on this problem sheet in preparation for your tutorial in Week 10. The problem sheet contains two assessed questions, which are due in by 2pm on Monday 11 December.
 
 \hypertarget{P5-short}{%
 \section*{A: Short questions}\label{P5-short}}
@@ -6938,7 +6917,7 @@ So if we toss about 10,000 coins, there's about a 95\% chance we get between 490
 
 The last two questions are \textbf{assessed questions}. hese two questions count for 3\% of your final mark for this module.
 
-The deadline for submitting your solutions is \textbf{2pm on Monday 12 December} at the beginning of Week 11. Submission will be via Gradescope; submission will open on Monday 5 November.
+The deadline for submitting your solutions is \textbf{2pm on Monday 11 December} at the beginning of Week 11. Submission will be via Gradescope; submission will open on Monday 5 November.
 Your work will be marked by your tutor and returned later, when solutions will also be made available.
 
 Both questions are ``long questions'', where the marks are not only for mathematical accuracy but also for the clarity and completeness of your explanations.
