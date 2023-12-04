@@ -2,7 +2,7 @@
 
 ## Law of large numbers  {#lln}
 
-<!--
+
 In this lecture we will look at some "limit" results; that is, results about a large number of $n$ of random variables, as $n$ tends to infinity. We will be looking at the case when the random variables are independent and identically distributed (IID), which represents the case of multiple repeated experiments.
 
 So let $X_1, X_2, \dots, X_n$ be a sequence of IID random variables. Let us write $\mu = \mathbb EX_1$ for the common expectation and $\sigma^2 = \Var(X_1)$ for the common variance.
@@ -37,7 +37,7 @@ In the same way, the variance of $\overline X_n$ is
 Here, we crucially used the fact that the random variables are independent to write the variance of the sum as a sum of the variances.
 
 In conclusion we have this:
--->
+
 
 ::: {.theorem}
 Let $X_1, X_2, \dots, X_n$ be a sequence of IID random variables, and write $\mu = \mathbb EX_1$ for the common expectation and $\sigma^2 = \Var(X_1)$ for the common variance. Further, write
@@ -45,9 +45,9 @@ $\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i$ for the mean of these random varia
 \[ \mathbb E \overline X_n = \mu \qquad \Var(\overline X_n) = \frac{\sigma^2}{n} . \]
 :::
 
-<!--
+
 Now think about what happens to this mean $\overline X_n$ when $n$ gets very large. We see that the expectation $\mathbb E\overline X_n = \mu$ stays the same, but the variance $\Var(\overline X_n) = \sigma^2/n$ gets smaller and smaller as $n$ gets bigger. So the range of probable values for $\overline X_n$ will be squeezing tighter and tighter around $\mu$. Given that, it seems as if (and it can be rigorously proven that) we have the "law of large numbers".
--->
+
 
 ::: {.theorem #thLLN name="Law of large numbers"}
 Let $X_1, X_2, \dots$ be a sequence of IID random variables. Write $\mu = \mathbb EX_1$ for the common expectation and $\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i$ for the mean of the first $n$ random variables. Then 
@@ -56,21 +56,19 @@ by which we mean that, for any $\epsilon > 0$,
 \[ \mathbb P\big(|\overline X_n - \mu| > \epsilon\big) \to 0 \quad \text{as $n\to\infty$.} \]
 :::
 
-<!--
+
 The precise mathematical definition of the convergence is not important here. What is important is the general principle that the mean $\overline X_n$ is overwhelmingly likely to get closer and closer to the expectation $\mathbb EX = \mu$. In other words, the expectation $\mathbb EX = \mu$ represents the "long-run average" of independent experiments -- this justifies referring to the expectation as a kind of average.
 
 One special case is if we have repeated experiments that succeed with probability $p$; that is, $X_n \sim \text{Bern}(p)$. Then the law of large numbers says that the long-run proportion of successes is
 \[ \frac{1}{n} \sum_{i = 1}^n X_n = \overline X_n \to \mathbb EX_1 = p . \]
 So the long-run proportion of times an event happens converges to its probability. This goes back to what we said about "frequentist probability" [right at the beginning of Lecture 3](#what-is-prob): that one way to understand the probability of an event is as the long-run frequency of its occurrence. 
--->
+
 
 
 ## Central limit theorem  {#clt}
 
 
 
-
-<!--
 We have seen that if the $X_i$ are IID random variables with expectation $\mu$ and variance $\sigma^2$, then
 \[ \mathbb E\overline X_n = \mu \qquad \Var \big(\overline X_n\big) = \frac{\sigma^2}{n} \]
 and the law of large numbers tells us that $\overline X_n \to \mu$ as $n \to \infty$. Alternatively, we could say that $\overline X_n - \mu \to 0$.
@@ -83,7 +81,7 @@ It's fairly easy to check that the expectation and variance of the "re-inflated 
 \Var\big(\sqrt{n} (\overline X_n - \mu)\big) &= (\sqrt n)^2 \, \frac{\sigma^2}{n} = \sigma^2 . 
 \end{align*}
 So whatever distribution $\sqrt{n}(\overline X_n - \mu)$ has, that distribution must have expectation $0$ and variance $\sigma^2$. But in fact, *no matter what distribution the $X_i$ have* and regardless of whether they are discrete or continuous, this "variation around 0" $\sqrt{n}(\overline X_n - \mu)$ always gets closer and closer to the normal distribution!
--->
+
 
 ::: {.theorem #thCLT name="Central limit theorem"}
 Let $X_1, X_2, \dots$ be a sequence of IID random variables. Write $\mu = \mathbb EX_1$ for the common expectation, $\sigma^2 = \Var(X_1)$ for the common variance, and $\overline X_n =\frac{1}{n} \sum_{i=1}^n X_i$ for the mean of the first $n$ random variables. Then 
@@ -92,7 +90,7 @@ by which we mean that, if $Y \sim \mathrm N(0, \sigma^2)$, then, for all $a < b$
 \[ \mathbb P\left(a \leq \sqrt{n}\big(\overline X_n - \mu\big) \leq b \right) \to \mathbb P(a \leq Y \leq b) \quad \text{as $n\to\infty$.} \]
 :::
 
-<!--
+
 (A full proof of the central limit theorem is too complicated to include here.)
 
 Another alternative way to write this is to divide both sides by $\sigma$ and write it as
@@ -101,15 +99,15 @@ Yet another way is
 \[ \frac{\sum_{i=1}^n X_i - n\mu}{\sqrt{n\sigma^2}} \to \mathrm N(0, 1) \quad \text{in distribution as $n \to \infty$}. \]
 
 The result we have stated, for IID random variables, is the most important case of the central limit theorem. But central limit theorems can be proved for other cases too -- the rough principle is that if you have lots of random variables most of which are independent (or only weakly dependent) and none of which are individually too big, then the mean or sum will be approximately normally distributed.
--->
+
 
 
 ## Approximations with the normal distribution  {#normal-approx}
 
 
-<!--
+
 There are many other distributions $X$ that can be well approximated by a normal distribution where $\mu$ is set to $\mathbb EX$ and $\sigma^2$ is set to $\Var(X)$. Using intuition from the central limit theorem, this is roughly when the distribution can be expressed as the accumulation of many small effects.
--->
+
 
 * A binomial distribution $X \sim \mathrm{Bin}(n, p)$ is well approximated by a normal distribution $\mathrm{N}(np, np(1-p))$ when $n$ is large and $p$ is not too close to 0 or 1. (When $p$ is small, we already know that the Poisson distribution is a good approximation instead.)
 
