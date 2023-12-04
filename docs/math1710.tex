@@ -6994,8 +6994,8 @@ What is \(\mathbb P(X > 1)\)?
 \part*{Part III: Bayesian statistics}\label{part-part-iii-bayesian-statistics}}
 \addcontentsline{toc}{part}{Part III: Bayesian statistics}
 
-\hypertarget{L19-bayes-idea}{%
-\chapter{The Bayesian idea}\label{L19-bayes-idea}}
+\hypertarget{L19-bayes-i}{%
+\chapter{Bayesian statistics I}\label{L19-bayes-i}}
 
 In this final section of the module, we return to statistics, where we will look at an approach to data analysis known as ``Bayesian statistics''.
 
@@ -7081,7 +7081,7 @@ This is the framework of how Bayesian statistics works: model, prior, data, post
 \hypertarget{beta}{%
 \section{Beta distribution}\label{beta}}
 
-In our fake-coin example in the last lecture, we had a prior PMF for the parameter \(\theta = p\) that could only take one of three possible values. But when doing Bayesian statistics with a parameter that represents a probability, it makes more sense to have a prior PDF that covers the whole interval \([0,1]\). After all, any parameter value that is given a probability of 0 in the prior always has a probability 0 in the posterior as well, no matter how strong the evidence in its favour; it's considered good practice to only put 0 prior probability on parameter values that are \emph{literally impossible}, such as probabilities below 0 or above 1. (This is sometimes called \href{https://en.wikipedia.org/wiki/Cromwell\%27s_rule}{``Cromwell's rule''}.)
+In our fake-coin example, we had a prior PMF for the parameter \(\theta = p\) that could only take one of three possible values. But when doing Bayesian statistics with a parameter that represents a probability, it makes more sense to have a prior PDF that covers the whole interval \([0,1]\). After all, any parameter value that is given a probability of 0 in the prior always has a probability 0 in the posterior as well, no matter how strong the evidence in its favour; it's considered good practice to only put 0 prior probability on parameter values that are \emph{literally impossible}, such as probabilities below 0 or above 1. (This is sometimes called \href{https://en.wikipedia.org/wiki/Cromwell\%27s_rule}{``Cromwell's rule''}.)
 
 One useful family of distributions to use as a prior distribution for a probability parameter is the Beta distribution, whose range is the whole interval \([0,1]\).
 
@@ -7126,8 +7126,8 @@ To get \(\mathbb E\theta = 0.5\), we need \(\alpha = \beta\). Then the variance,
 This requires \(\alpha = \beta = 1250\). (Well, actually \(1249.5\).)
 \end{example}
 
-\hypertarget{L20-bayes-models}{%
-\chapter{More Bayesian models}\label{L20-bayes-models}}
+\hypertarget{L20-bayes-ii}{%
+\chapter{Bayesian statistics II}\label{L20-bayes-ii}}
 
 \hypertarget{beta-bern}{%
 \section{Beta--Bernoulli model}\label{beta-bern}}
