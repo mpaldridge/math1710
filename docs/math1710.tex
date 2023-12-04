@@ -1235,7 +1235,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-53-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-54-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -6990,6 +6990,378 @@ What is \(\mathbb P(X > 1)\)?
 \textbf{A4.} (i) 0.1150 (ii) 0.6731 (or 0.6730 with tables) (iii) 0.6064\\
 \textbf{A5.} (a) (i) 0.7002 (ii) 0.809 (b) (i) 0.6914 (ii) 0.807
 
+\hypertarget{part-part-iii-bayesian-statistics}{%
+\part*{Part III: Bayesian statistics}\label{part-part-iii-bayesian-statistics}}
+\addcontentsline{toc}{part}{Part III: Bayesian statistics}
+
+\hypertarget{L19-bayes-idea}{%
+\chapter{The Bayesian idea}\label{L19-bayes-idea}}
+
+In this final section of the module, we return to statistics, where we will look at an approach to data analysis known as ``Bayesian statistics''.
+
+\textbf{Statistics} concerns how to draw conclusions from data; and \textbf{Bayesian statistics} is one particular framework for doing this. The idea of Bayesian statistics is that we start with ``prior'' (``before'') beliefs about the underlying model, then use the data (together with Bayes' theorem) to update our to our ``posterior'' (``after'') beliefs about the model \emph{given} the data we have observed.
+
+\hypertarget{fake-coin}{%
+\section{Example: fake coin?}\label{fake-coin}}
+
+We will start by illustrating the main idea with an example.
+
+\begin{example}
+\emph{A joke shop sells three types of coins: normal fair coins; Heads-biased coins, which land Heads with probability 0.8; and Tails-biased coins, which land Heads with probability 0.2. I pick up a coin and examine it; since it looks mostly like a normal coin, I believe there's 60\% chance it's s fair coin, and a 20\% chance it's biased either way. I decide to toss the coin three times, to gather some more evidence. The result is that all three are Heads. How should I update my beliefs?}
+
+So, we start with the ``prior'' (before) belief
+\[ \mathbb P(\text{fair}) = 0.6 \qquad \mathbb P(\text{H-bias}) = 0.2 \qquad \mathbb P(\text{T-bias}) = 0.2 \]
+
+We know how to update our beliefs after seeing the data: we use Bayes' theorem. We have
+\begin{align*}
+\mathbb P(\text{fair} \mid \text{HHH}) &= \frac{\mathbb P(\text{fair})\, \mathbb P(\text{HHH}\mid \text{fair})}{\mathbb P(\text{HHH})} = \frac{0.6 \times 0.5^3}{\mathbb P(\text{HHH})} = \frac{0.075}{\mathbb P(\text{HHH})} \\
+\mathbb P(\text{H-bias} \mid \text{HHH}) &= \frac{\mathbb P(\text{H-bias})\, \mathbb P(\text{HHH}\mid \text{H-bias})}{\mathbb P(\text{HHH})} = \frac{0.2 \times 0.8^3}{\mathbb P(\text{HHH})} = \frac{0.1024}{\mathbb P(\text{HHH})} \\
+\mathbb P(\text{T-bias} \mid \text{HHH}) &= \frac{\mathbb P(\text{H-bias})\, \mathbb P(\text{HHH}\mid \text{T-bias})}{\mathbb P(\text{HHH})} = \frac{0.2 \times 0.2^3}{\mathbb P(\text{HHH})} = \frac{0.0016}{\mathbb P(\text{HHH})}  .
+\end{align*}
+We also need to find common denominator \(\mathbb P(\text{HHH})\). We could do that using the law of total probability. But a convenient short-cut is to notice that the above three probabilities have to add up to 1, and so that common denominator must be \$0.075 + 0.1024 + 0.0016 = 0.179, so we have
+\begin{align*}
+  \mathbb P(\text{fair} \mid \text{data}) &= \frac{0.075}{0.179} = 0.419 \\
+  \mathbb P(\text{H-bias}\mid \text{data}) &= \frac{0.1024}{0.179} = 0.572 \\
+  \mathbb P(\text{T-bias}\mid \text{data}) &= \frac{0.0016}{0.179} = 0.009 .
+\end{align*}
+
+So, after tossing the coin three times, our belief has been updated from the ``prior'' (before) belief
+\[ \mathbb P(\text{fair}) = 0.6 \qquad \mathbb P(\text{H-bias}) = 0.2 \qquad \mathbb P(\text{T-bias}) = 0.2 \]
+to the ``posterior'' (after) belief
+\[ \mathbb P(\text{fair} \mid \text{data}) = 0.419 \qquad \mathbb P(\text{H-bias}\mid \text{data}) = 0.572 \qquad \mathbb P(\text{T-bias}\mid \text{data}) = 0.009 . \]
+Compared to our prior beliefs, our belief that the coin is fair has decreased a little bit; our belief the coin is biased towards Heads has shot up, and is now our most likely belief; while our belief the coin is biased towards Tails has plummeted to just 1\%.
+\end{example}
+
+\hypertarget{bayesian-framework}{%
+\section{Bayesian framework}\label{bayesian-framework}}
+
+Let's think more systematically about what we did in the previous example.
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Model:} The three coin tosses were modelled as three IID Bernoulli trials \(X_1, X_2, X_3 \sim \text{Bern}(\theta)\) (if we let \(X_i = 1\) denote that the \(i\)th coin was Heads). Here, the probability of Heads is some unknown parameter \(\theta\). (Recall we talked about parametric models for data in Subsection \ref{models}.) This model gives a distribution that depends on the parameter. Here we had a conditional PMF for one trial
+  \[ p(x \mid \theta) = \theta^{x} (1 - \theta)^{1- x}  \]
+  (this is a convenient way of writing the PMF for a Bernoulli trial). So the joint PMF for the IID trials is
+  \[ p(\mathbf x \mid \theta) = \prod_{i=1}^3 \theta^{x_i} (1 - \theta)^{1- x_i} = \theta^{\sum_i x_i} (1 - \theta)^{3- \sum_i x_i} . \]
+  (Here and throughout, \(\prod\), the Greek capital Pi, means a product -- it's the multiplication equivalent of the summation Sigma, \(\Sigma\).)
+\item
+  \textbf{Prior:} We started with a prior belief \(\pi(\theta)\) on the value of the unknown parameter. In our case, we had the PMF
+  \[ \pi(0.2) = 0.2 \qquad \pi(0.5) = 0.6 \qquad \pi(0.8) = 0.2 . \]
+\item
+  \textbf{Data:} We collected the data \(\mathbf x\), which here had \(x_1 = 1\), \(x_2 = 1\), \(x_3 = 1\) (with 1 denoting Heads and 0 denoting Tails).
+\item
+  \textbf{Posterior:} We calculated the posterior distribution \(\pi(\theta \mid \mathbf x)\) for the parameter \emph{given} the data. We did this using Bayes' theorem:
+  \[ \pi(\theta \mid \mathbf x) = \frac{\pi(\theta) \, p(\mathbf x \mid \theta)}{p(\mathbf x)} \propto \pi(\theta) \, p(\mathbf x \mid \theta) .\]
+  We recovered the constant of proportionality -- that is, the denominator of Bayes' theorem -- because we knew \(\pi(\theta \mid \mathbf x)\) was a conditional PMF so must add up to 1. We ended up with
+  \[ \pi(0.2 \mid \mathbf x) = 0.009 \qquad \pi(0.5 \mid \mathbf x) = 0.419 \qquad \pi(0.8 \mid \mathbf x) = 0.572 . \]
+\end{itemize}
+
+This is the framework of how Bayesian statistics works: model, prior, data, posterior. To lay it out more generally, the procedure goes like this:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Model:} We start with a model for the data \(\mathbf x\) that depends on one or more parameters \(\theta\), as expressed by a conditional PMF (for discrete data) or PDF (for continuous data) \(p(\mathbf x \mid \theta)\). This normally represents \(n\) IID experiments, so
+  \[ p(\mathbf x \mid \theta) = \prod_{i=1}^n p(x_i \mid \theta) . \]
+  This conditional distribution is often called the \textbf{likelihood}.
+\item
+  \textbf{Prior:} We have a prior distribution \(\pi(\theta)\) for the parameter \(\theta\), which can be either a PMF or PDF. The prior distribution represents our beliefs about the parameter before we collect the data; this can be based on previous evidence, expert opinion, personal intuition, etc.
+\item
+  \textbf{Data:} We collect the data \(\mathbf x\).
+\item
+  \textbf{Posterior:} We then form the posterior distribution \(\pi(\theta \mid \mathbf x)\) for the parameter given the data, using Bayes' theorem:
+  \begin{align*}
+  \pi(\theta \mid \mathbf x) &\propto \pi(\theta)\, p(\mathbf x \mid \theta) \\
+  \text{posterior} &\propto \text{prior} \times \text{likelihood} .
+  \end{align*}
+  This can either be a conditional PMF or PDF, but will be the same type as the prior \(\pi(\theta)\).
+\end{itemize}
+
+\hypertarget{beta}{%
+\section{Beta distribution}\label{beta}}
+
+In our fake-coin example in the last lecture, we had a prior PMF for the parameter \(\theta = p\) that could only take one of three possible values. But when doing Bayesian statistics with a parameter that represents a probability, it makes more sense to have a prior PDF that covers the whole interval \([0,1]\). After all, any parameter value that is given a probability of 0 in the prior always has a probability 0 in the posterior as well, no matter how strong the evidence in its favour; it's considered good practice to only put 0 prior probability on parameter values that are \emph{literally impossible}, such as probabilities below 0 or above 1. (This is sometimes called \href{https://en.wikipedia.org/wiki/Cromwell\%27s_rule}{``Cromwell's rule''}.)
+
+One useful family of distributions to use as a prior distribution for a probability parameter is the Beta distribution, whose range is the whole interval \([0,1]\).
+
+\begin{definition}
+A continuous random variable \(X\) is said to have the \textbf{Beta distribution} with parameters \(\alpha\) and \(\beta\) if it has the PDF
+\[ f(x) = \frac{1}{B(\alpha, \beta)} x^{\alpha-1} (1-x)^{\beta - 1} \qquad \text{for $0 \leq x \leq 1$}  \]
+and 0 otherwise. Here, the constant
+\[ B(\alpha, \beta) = \int_0^1 x^{\alpha-1} (1-x)^{\beta - 1} \, \mathrm dx , \]
+known as the ``Beta function'', ensures that the PDF integrates to 1. We write \(X \sim \text{Beta}(\alpha, \beta)\).
+\end{definition}
+
+\begin{theorem}
+
+Let \(X \sim \text{Beta}(\alpha,\beta)\). Then
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \(\mathbb EX = \displaystyle\frac{\alpha}{\alpha + \beta}\)
+\item
+  \(\operatorname{Var}(X) = \displaystyle\frac{\alpha\beta}{(\alpha+\beta)^2(\alpha+\beta+1)} = \displaystyle\frac{\mu(1-\mu)}{\alpha+\beta + 1}\), where \(\mu = \mathbb EX\).
+\end{enumerate}
+
+\end{theorem}
+
+(Proving this requires some awkward messing around with Gamma functions, which we won't bother with here.)
+
+So the idea is that the expectation of \(X\) is decided on by the \emph{relative} values of \(\alpha\) and \(\beta\), while the variance is decided by the \emph{total} value of \(\alpha\) and \(\beta\). The following two pictures illustrate this:
+
+\includegraphics{math1710_files/figure-latex/beta-pic-1-1.pdf}
+
+\includegraphics{math1710_files/figure-latex/beta-pic-2-1.pdf}
+
+Note also that \(\text{Beta}(1,1)\) is the continuous uniform distribution from Example \ref{exm:unifex}.
+
+\begin{example}
+\emph{A statistician is studying the probability \(\theta\) that ordinary coins land Heads. She would like to use a prior distribution for \(\theta\) with prior expectation \(0.5\) and prior standard deviation \(0.01\). What Beta distribution would be appropriate to use?}
+
+To get \(\mathbb E\theta = 0.5\), we need \(\alpha = \beta\). Then the variance, which needs to be \(0.01^2 = 0.0001\), is
+\[ \operatorname{Var}(\theta) = \frac{\mu(1-\mu)}{\alpha+\beta+1} = \frac{0.25}{\alpha + \beta + 1} . \]
+This requires \(\alpha = \beta = 1250\). (Well, actually \(1249.5\).)
+\end{example}
+
+\hypertarget{L20-bayes-models}{%
+\chapter{More Bayesian models}\label{L20-bayes-models}}
+
+\hypertarget{beta-bern}{%
+\section{Beta--Bernoulli model}\label{beta-bern}}
+
+Consider a Bernoulli likelihood, where \(X_1, X_2, \dots, X_n\) are IID \(\text{Bern}(\theta)\), so have joint PMF
+\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n \theta^{x_i} (1-\theta)^{1 - x_i} = \theta^{\sum_i x_i} (1 - \theta)^{n-\sum_i x_i} = \theta^y (1 - \theta)^{n-y}, \]
+where we have written \(y = \sum_i x_i\) for the total number of successes.
+Consider further using a \(\text{Beta}(\alpha, \beta)\) prior for \(\theta\), so that
+\[ \pi(\theta) = \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta - 1} \propto \theta^{\alpha-1} (1-\theta)^{\beta - 1} \]
+(Because we're going to use the ``posterior has to add up to 1'' trick at the end, we're free to drop constants whenever we want.) This is known as the \textbf{Beta--Bernoulli model}.
+
+Suppose we collect data \(\mathbf x = (x_1, x_2, \dots, x_i)\), with \(y = \sum_i x_i\) successes. What now is the posterior distribution for \(\theta\) given this data?
+
+Using Bayes' theorem, we have
+\begin{align*}
+\pi(\mathbf x \mid \theta)
+  &\propto \pi(\theta) p(\mathbf x \mid \theta) \\
+  &= \theta^{\alpha-1} (1-\theta)^{\beta - 1} \times \theta^y (1 - \theta)^{n-y} \\
+  &= \theta^{\alpha + y - 1} (1 - \theta)^{\beta + n - y - 1} .
+\end{align*}
+We can recognise immediately that this is proportional to the PDF for a \(\text{Beta}(\alpha + y, \beta + n - y)\) distribution, so in particular, the constant of proportionality must be \(1/B(\alpha + y, \beta + n - y)\).
+
+So we see that, like the prior, the posterior is also a Beta distribution, where the first parameter has gone from \(\alpha\) to \(\alpha + y\) and the second parameter has gone from \(\beta\) to \(\beta + (n-y)\). In other words, \(\alpha\) has increased by the number of successes, and \(\beta\) has increased by the number of failures.
+The expectation has gone from the prior expectation
+\[ \frac{\alpha}{\alpha + \beta} \]
+to the posterior expectation
+\[ \frac{\alpha + y}{\alpha + \beta + n} .\]
+This can be thought of as a sort of average between the prior expectation \(\alpha/(\alpha + \beta)\) and the mean of the data \(y/n\).
+
+\hypertarget{normal-normal}{%
+\section{Normal--normal model}\label{normal-normal}}
+
+In our first example, the ``joke coins'' was a bit artificial, giving us a prior with only three points in its range. Its often more appropriate to have a prior distribution for a parameter that is continuous over a wide range of possibilities (although concentrated towards the more parameters values we believe are more probable.).
+
+Consider a normal likelihood, where \(X_1, X_2, \dots, X_n\) are IID \(\text{N}(\theta, \sigma^2)\), and where the expectation \(\theta\) is the unknown parameter but the variance \(\sigma^2\) is known. This could model trying to measure some quantity \(\theta\) with an instrument which is known to have a \(\text{N}(0,\sigma^2)\) error.
+So the model has joint PDF
+\begin{align*}
+p(\mathbf x \mid \theta)
+  &\propto \prod_{i=1}^n \exp \left(- \frac{(x_i - \theta)^2}{2\sigma^2}\right)
+  &= \exp \left( - \frac{1}{2} \sum_{i=1}^n \frac{(x_i - \theta)^2}{\sigma^2} \right) \\
+  &= \exp \left( - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \theta)^2 \right).
+\end{align*}
+(Again, we only worry about distributions up to proportionality, because we work out the multiplicative constant at the end.)
+
+In fact, when doing Bayesian statistics, it's often convenient to write \(\tau = 1/\sigma^2\) for the inverse of the known variance; this \(\tau\) is called the \textbf{precision} and is also known. So with this notation, the model is that \(X_1, X_2, \dots, X_n\) are IID \(\text{N}(\theta, 1 / \tau^2)\), with joint PDF
+\[ p(\mathbf x \mid \theta) \propto \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) . \]
+
+What about a prior for the unknown expectation \(\theta\). Often an appropriate choice is a normal \(\text{N}(\mu_0, 1/\tau_0)\) prior for the unknown expectation parameter \(\theta\). This represents that we expect the quantity we are trying to mention to be around \(\mu_0\), with an amount of uncertainty captured by the precision \(\tau_0\) on the prior. So the prior PDF is
+\[ \pi(\theta) \propto \exp \left( - \frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \]
+
+Because both the prior distribution and the model for the data are normal, this is known as the \textbf{normal--normal model}.
+
+Suppose we collect data \(\mathbf x = (x_1, x_2, \dots, x_n)\), and recall that we write \(\bar x = (\sum_i x_i)/n\) for the sample mean.
+
+To get the posterior distribution requires a bit of an algebra slog (see below), but the outcome is that the posterior distribution is
+\[ \pi(\theta \mid \mathbf x) \propto \exp \left( - \frac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) , \]
+which is (proportional to) the PDF for yet another normal distribution
+\[ \theta \mid \mathbf x \sim \mathrm{N} \left( \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x, \ \frac{1}{\tau_0 + n\tau} \right)  . \]
+In other words, the posterior expectation
+\[ \mathbb E(\theta \mid \mathbf x) = \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x \]
+is a weighted average of the prior expectation \(\mu_0\) and the mean of the data \(\bar x\), and the more datapoints \(n\) you get, the heavier the weighting on the data compared to the prior. Further, the precision has increased from the prior precision \(\tau_0\) to the posterior precision \(\tau_0 + n\tau\); so the more data we get, the larger the precision gets, so the smaller the variance gets, and the more sure we get about the true value of \(\theta\).
+
+\emph{The algebra slog (non-examinable).}
+Recall that we can ignore multiplicative terms that don't contain \(\theta\), thanks to our proportionality trick. But note also that a multiplicative term becomes an additive term inside an exponential. So, within an exponential, we can always ignore any ``plus constants'' that don't involve \(\theta\).
+
+So the prior can be written as
+\begin{align*}
+\pi(\theta) &\propto \exp\left(-\frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \\
+  &= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta -  \frac{\tau_0}{2}\mu_0^2 \right) \\
+  &\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) ,
+\end{align*}
+where we ignored the final constant term.
+
+Similarly, the likelihood can be written as
+\begin{align*}
+p(\mathbf x \mid \theta) &= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) \\
+  &= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n x_i^2 + \tau \theta \sum_{i=1}^n x_i - \frac{\tau}{2} n\theta^2 \right) \\
+  &\propto \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) ,
+\end{align*}
+where we ignored the first constant term in the second line, and recognised \(\sum_i x_i\) as \(n\bar x\), as we have done before.
+
+Then Bayes' theorem gives us
+\begin{align*}
+\pi(\mathbf x \mid \theta)
+  &\propto \pi(\theta) \, p(\mathbf x \mid \theta) \\
+  &\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) \times \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
+  &= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta + n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
+  &= \exp \left( -\frac{\tau_0 + n\tau}{2} \theta^2 + (\tau_0\mu_0 + n\tau\bar x)\theta \right) \\
+  &= \exp \left( -\left(\frac{\tau_0 + n\tau}{2}\right) \left(\theta^2 - 2 \frac{\tau_0\mu_0 + n\tau\bar x}{\tau_0 + n\tau}\theta \right) \right) \\
+  &\propto \exp \left( - \tfrac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) .
+\end{align*}
+In the final line, the squared term differs from the line above only by some additive constant. But this is exactly (proportional to) the PDF of a normal distribution with expectation
+\[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]
+and precision \(\tau_0 + n\tau\).
+
+\hypertarget{modern-bayes}{%
+\section{Modern Bayesian statistics}\label{modern-bayes}}
+
+In this section, we've given just a brief taster of Bayesian statistics. Bayesian statistics is a deep and complicated subject, and you may have the opportunity to find out a lot more about it later in your university career.
+
+We have seen that in Bayesian statistics, one brings in a subjective ``prior'' based on previous beliefs and evidence, then updates this prior based on the data. This contrasts with the more traditional \textbf{frequentist statistics}. In frequentist one uses only the data -- no prior beliefs! -- and judges to what extent the data is consistent or inconsistent with a hypothesis, without weighing in on how likely such a hypothesis is. (Frequentist statistics is the main subject studied in MATH1712 Probability and Statistics II.)
+
+In the two main examples of Bayesian statistics we have looked at -- the Bernoulli likelihood and the normal likelihood -- we ended up with a posterior in the same parametric family as prior, just with different parameters. Such a prior is called a ``conjugate prior''. Of course, these are very convenient and easy to work with. However, with more complicated likelihoods and more complicated priors -- especially those not with a single parameter but with many parameters -- calculating the posterior distribution can be very difficult. In particular, working out the constant of proportionality (even just approximately) and/or sampling from the posterior distribution are very hard problems.
+
+For this reason, Bayesian statistics was for a long time a minor area of statistics. However, increases in computer power in the 1980s made some of these problems more tractable, and Bayesian statistics has increased in importance and popularity since then.
+
+For a while, there was an occasionally fierce debate between ``Bayesians'' and ``frequentists''. Frequentists thought that bringing subjective personal beliefs into things was unmathematical, while Bayesians thought that ignoring how plausible a hypothesis is before testing it is unscientific. The debate has now largely dissipated, and it is largely accepted that modern statisticians need to know about both frequentist and Bayesian methods.
+
+There are still plenty of open problems in Bayesian statistics, and lots of these involve the computational side: finding algorithms that can efficiently calculate the normalising constants in posterior distributions or sample from those posterior distributions, especially when the parameter(s) have very high dimension.
+
+\hypertarget{summary-10}{%
+\section*{Summary}\label{summary-10}}
+\addcontentsline{toc}{section}{Summary}
+
+\begin{itemize}
+\tightlist
+\item
+  In Bayesian statistics, we start with a prior distribution for a parameter \(\theta\), and update to a posterior distribution given the data \(\mathbf x\), through \(\pi(\theta \mid \mathbf x) \propto \pi(\theta)p(\mathbf x \mid \theta)\), or \(\text{posterior} \propto \text{prior} \times \text{likelihood}\).
+\item
+  The Beta distribution is a useful family of distributions to use as priors for probability parameters.
+\item
+  A Beta prior for a Bernoulli likelihood leads to a Beta posterior with different parameters.
+\item
+  A normal prior for the expectation of a normal likelihood wioth known variance leads to a normal posterior with different parameters.
+\end{itemize}
+
+\hypertarget{P6}{%
+\chapter*{Problem Sheet 6}\label{P6}}
+\addcontentsline{toc}{chapter}{Problem Sheet 6}
+
+\commfalse
+
+This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of \protect\hyperlink{S10-bayesian}{Section 10}. There is no assessed work on this sheet.
+
+\textbf{1.} I want to use a prior distribution for a parameter \(\theta\) whose range is the interval \([0,1]\), whose expectation is \(0.4\) and whose standard deviation is \(0.2\). Suggest an appropriate distribution.
+
+\begin{myanswers}
+\emph{Solution.}
+A \(\text{Beta}(\alpha, \beta)\) would be appropriate if we can choose \(\alpha\) and \(\beta\) to give us the correct expectation and standard deviation.
+
+Thus, we need to find \(\alpha\) and \(\beta\) that solve
+\begin{align*}
+\frac{\alpha}{\alpha + \beta} &= 0.4 \\
+\frac{0.4 \times (1 - 0.4)}{\alpha + \beta + 1} = 0.2^2 .
+\end{align*}
+From the second equation, we get \(\alpha + \beta = 5\). Substituting this into the first equation, we get \(\alpha = 2\), which then means we need \(\beta = 3\).
+
+Therefore, a \(\text{Beta}(2,3)\) distribution would be appropriate.
+
+\end{myanswers}
+
+\textbf{2.} My data is modelled as having a \(\text{Bern}(\theta)\) likelihood, and I plan to record 10 IID observations. I choose to use a \(\text{Beta}(1,4)\) prior.
+
+\textbf{(a)} What is the prior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.} The prior expectation is
+\[ \frac{\alpha}{\alpha + \beta} = \frac{1}{1+4} = 0.2 , \]
+and the prior variance is
+\[ \frac{\mu(1-\mu)}{\alpha + \beta + 1} = \frac{0.2 \times 0.8}{1 + 4 + 1} = 0.027 . \]
+
+\end{myanswers}
+
+\textbf{(b)} Suppose my data records 2 successes and 8 failures. What is the posterior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.}
+We know that the posterior distribution is \(\text{Beta}(1 + 2, 4 + 8) = \text{Beta}(3, 12)\). This has posterior expectation
+\[ \frac{3}{3 + 12} = 0.2 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.01 .\]
+
+\end{myanswers}
+
+\textbf{(c)} Suppose my data records 5 successes and 5 failures. What is the posterior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.}
+We know that the posterior distribution is \(\text{Beta}(1 + 5, 4 + 5) = \text{Beta}(6, 9)\). This has posterior expectation
+\[ \frac{6}{6 + 9} = 0.4 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.015 .\]
+
+\end{myanswers}
+
+\textbf{(d)} Briefly comment on these results.
+
+\begin{myanswers}
+\emph{Solution.}
+In the first example, the data was what we would have expected from the model. Thus the posterior expectation has remained the same as the prior expectation, while the variance has decreased, as we have become more confident about the correctness of our model.
+
+In the second example, the data had more successes that we would have expected from the model. The posterior expectation has moved from the prior expectation \(0.2\) towards the mean of the data \(0.5\), but not all the way. The variance is bigger the the first example, as we are more unsure, although collecting data has still managed to decrease the variance -- and thus increase the certainty -- of the prior alone.
+
+\end{myanswers}
+
+\textbf{3.} \textbf{(a)} My data is modelled as a single data point with a \(\text{Geom}(\theta)\) likelihood, so
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+
+I use a \(\text{Beta}(\alpha,\beta)\) prior for \(\theta\). Show that the posterior distribution is \(\text{Beta}(\alpha + 1, \beta + x - 1)\).
+
+\begin{myanswers}
+\emph{Solution.}
+The geometric likelihood is
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+The Beta prior is
+\[ \pi(\theta) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} . \]
+Therefore the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{x-1} \theta
+= \theta^{\alpha} (1 - \theta)^{\beta + x - 1 - 1} , \]
+which is the \(\text{Beta}(\alpha + 1, \beta + x - 1)\) distribution.
+
+\end{myanswers}
+
+\textbf{(b)} I instead choose to collect \(n\) IID data points, using the same geometric likelihood and Beta prior. Show that the posterior distribution is a Beta distribution, and state the parameters.
+
+\begin{myanswers}
+\emph{Solution.}
+We have the same prior, but not have a product likelihood
+\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n (1 - \theta)^{x_i - 1} \theta = (1 - \theta)^{y - n} \theta^n , \]
+where \(y = \sum_{i=1}^n x_i\). Then the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{y-n} \theta^n
+= \theta^{\alpha + n - 1} (1 - \theta)^{\beta + y - n - 1} , \]
+which is the \(\text{Beta}(\alpha + n, \beta + y - n)\) distribution.
+
+\end{myanswers}
+
+\textbf{(c)} Compare your results to that of the Beta--Bernoulli model, and briefly comment.
+
+\begin{myanswers}
+\emph{Solution.}
+Each geometric experiment has \(x_i - 1\) failures (the first \(x_i - 1\) trials) and 1 success (the final trial). So in total, over \(n\) experiments, we have \(\sum_i (x_i - 1) = y - n\) failures and \(n\) successes. Thus to get from the prior Beta distribution to the posterior distribution, we have increased \(\alpha\) by the number of suvvesses and increased \(\beta\) by the number of failures. This is exactly the same way we got from the Beta prior to the Beta posterior when using a Bernoulli likelihood.
+
+\end{myanswers}
+
 \hypertarget{part-other-stuff}{%
 \part*{Other stuff}\label{part-other-stuff}}
 \addcontentsline{toc}{part}{Other stuff}
@@ -7408,7 +7780,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-126-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-131-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
