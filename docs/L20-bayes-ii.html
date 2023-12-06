@@ -334,7 +334,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="20" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html"><i class="fa fa-check"></i><b>20</b> Bayesian statistics II</a>
 <ul>
 <li class="chapter" data-level="20.1" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#beta-bern"><i class="fa fa-check"></i><b>20.1</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="20.2" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#normal-normal"><i class="fa fa-check"></i><b>20.2</b> Normal–normal model</a></li>
+<li class="chapter" data-level="20.2" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#betageometric-model"><i class="fa fa-check"></i><b>20.2</b> Beta–geometric model</a></li>
 <li class="chapter" data-level="20.3" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
 <li class="chapter" data-level="" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
@@ -401,12 +401,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Lecture 20</span> Bayesian statistics II<a href="L20-bayes-ii.html#L20-bayes-ii" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <div id="beta-bern" class="section level2 hasAnchor" number="20.1">
 <h2><span class="header-section-number">20.1</span> Beta–Bernoulli model<a href="L20-bayes-ii.html#beta-bern" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Consider a Bernoulli likelihood, where <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are IID <span class="math inline">\(\text{Bern}(\theta)\)</span>, so have joint PMF
+<p>Recall that the Beta distribution <span class="math inline">\(\pi(\theta) \propto \theta^{\alpha - 1}(1-\theta)^{\beta - 1}\)</span> makes a useful prior for a probability parameter <span class="math inline">\(\theta \in [0,1]\)</span>. Let’s look at our joke-shop coin again.</p>
+<div class="example">
+<p><span id="exm:unlabeled-div-112" class="example"><strong>Example 20.1  </strong></span><em>After examining the coin, we decide to use a <span class="math inline">\(\text{Beta}(3,3)\)</span> prior. This is symmetric with expectation <span class="math inline">\(\frac12\)</span>, with (almost) the same variance <span class="math inline">\(0.036\)</span> as our previous three-point prior. Again, we examine toss the coin three times, and get three heads. How should we update our beliefs?</em></p>
+<p>The prior is the Beta prior <span class="math inline">\(\pi(\theta) \propto \theta^2(1-\theta)^2\)</span>.</p>
+<p>The likelihood of getting 3 heads out of 3 is <span class="math inline">\(p(\text{HHH} \mid \theta) = \theta^3\)</span>.</p>
+<p>Using the formula
+<span class="math display">\[ \text{posterior} \propto \text{prior} \times \text{likelihood} , \]</span>
+we have
+<span class="math display">\[ \pi(\theta \mid \text{HHH}) \propto \theta^2(1-\theta)^2 \times \theta^3 = \theta^5(1-\theta)^2 .\]</span>
+But we recognise that this is (proportional to) the PDF for a Beta distribution again! This time, it’s
+<span class="math display">\[ \theta \mid \text{HHH} \sim \Beta(6, 3) . \]</span></p>
+<p>The “posterior expectation” and “posterior variance” are
+<span class="math display">\[ \mathbb E(X \mid \text{HHH}) = \frac{6}{6+3} = \frac{2}{3} = 0.67 \qquad \text{Var}(X \mid HHH) = \frac{\frac23\big(1-\frac23\big)}{6+3+1} = \frac{1}{45} = 0.022 \]</span></p>
+<p>Compared to our expectation has increased quite a lost from our prior expectation <span class="math inline">\(\frac12\)</span> to our posterior expectation <span class="math inline">\(\frac23\)</span>. Our variance has decreased slightly, from <span class="math inline">\(0.036\)</span> to <span class="math inline">\(0.022\)</span>, because collecting data has allowed us to become more confident about our beliefs.</p>
+</div>
+<p>Let’s try to generalise what we did here.</p>
+<p>Consider a situation modelled by a Bernoulli likelihood, where <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are IID <span class="math inline">\(\text{Bern}(\theta)\)</span>. The joint PMF is
 <span class="math display">\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n \theta^{x_i} (1-\theta)^{1 - x_i} = \theta^{\sum_i x_i} (1 - \theta)^{n-\sum_i x_i} = \theta^y (1 - \theta)^{n-y}, \]</span>
-where we have written <span class="math inline">\(y = \sum_i x_i\)</span> for the total number of successes.
-Consider further using a <span class="math inline">\(\text{Beta}(\alpha, \beta)\)</span> prior for <span class="math inline">\(\theta\)</span>, so that
+where we have written <span class="math inline">\(y = \sum_i x_i\)</span> for the total number of successes.</p>
+<p>Consider further using a <span class="math inline">\(\text{Beta}(\alpha, \beta)\)</span> prior for <span class="math inline">\(\theta\)</span>, so that
 <span class="math display">\[ \pi(\theta) = \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta - 1} \propto \theta^{\alpha-1} (1-\theta)^{\beta - 1} \]</span>
-(Because we’re going to use the “posterior has to add up to 1” trick at the end, we’re free to drop constants whenever we want.) This is known as the <strong>Beta–Bernoulli model</strong>.</p>
+(Because we’re going to use the “posterior has to add up to 1” trick at the end, we’re free to drop constants whenever we want.)</p>
+<p>This combination of a Beta prior and a Bernoulli likelihood is known as the <strong>Beta–Bernoulli model</strong>.</p>
 <p>Suppose we collect data <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_i)\)</span>, with <span class="math inline">\(y = \sum_i x_i\)</span> successes. What now is the posterior distribution for <span class="math inline">\(\theta\)</span> given this data?</p>
 <p>Using Bayes’ theorem, we have
 <span class="math display">\[\begin{align*}
@@ -415,99 +432,84 @@ Consider further using a <span class="math inline">\(\text{Beta}(\alpha, \beta)\
   &amp;= \theta^{\alpha-1} (1-\theta)^{\beta - 1} \times \theta^y (1 - \theta)^{n-y} \\
   &amp;= \theta^{\alpha + y - 1} (1 - \theta)^{\beta + n - y - 1} .
 \end{align*}\]</span>
-We can recognise immediately that this is proportional to the PDF for a <span class="math inline">\(\text{Beta}(\alpha + y, \beta + n - y)\)</span> distribution, so in particular, the constant of proportionality must be <span class="math inline">\(1/B(\alpha + y, \beta + n - y)\)</span>.</p>
+This is (proportional to) the PDF for a <span class="math inline">\(\text{Beta}(\alpha + y, \beta + n - y)\)</span> distribution.</p>
 <p>So we see that, like the prior, the posterior is also a Beta distribution, where the first parameter has gone from <span class="math inline">\(\alpha\)</span> to <span class="math inline">\(\alpha + y\)</span> and the second parameter has gone from <span class="math inline">\(\beta\)</span> to <span class="math inline">\(\beta + (n-y)\)</span>. In other words, <span class="math inline">\(\alpha\)</span> has increased by the number of successes, and <span class="math inline">\(\beta\)</span> has increased by the number of failures.
 The expectation has gone from the prior expectation
 <span class="math display">\[ \frac{\alpha}{\alpha + \beta} \]</span>
 to the posterior expectation
-<span class="math display">\[ \frac{\alpha + y}{\alpha + \beta + n} .\]</span>
-This can be thought of as a sort of average between the prior expectation <span class="math inline">\(\alpha/(\alpha + \beta)\)</span> and the mean of the data <span class="math inline">\(y/n\)</span>.</p>
-</div>
-<div id="normal-normal" class="section level2 hasAnchor" number="20.2">
-<h2><span class="header-section-number">20.2</span> Normal–normal model<a href="L20-bayes-ii.html#normal-normal" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In our first example, the “joke coins” was a bit artificial, giving us a prior with only three points in its range. Its often more appropriate to have a prior distribution for a parameter that is continuous over a wide range of possibilities (although concentrated towards the more parameters values we believe are more probable.).</p>
-<p>Consider a normal likelihood, where <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are IID <span class="math inline">\(\text{N}(\theta, \sigma^2)\)</span>, and where the expectation <span class="math inline">\(\theta\)</span> is the unknown parameter but the variance <span class="math inline">\(\sigma^2\)</span> is known. This could model trying to measure some quantity <span class="math inline">\(\theta\)</span> with an instrument which is known to have a <span class="math inline">\(\text{N}(0,\sigma^2)\)</span> error.
+<span class="math display">\[ \frac{\alpha + y}{\alpha + \beta + n} .\]</span></p>
+<p>This is somewhere between the prior expectation <span class="math inline">\(\alpha/(\alpha + \beta)\)</span> and the mean of the data <span class="math inline">\(y/n\)</span>. So the data slowly drags our expectation from the prior expectation towards the mean of the data. The more data we get, the more the prior drops away and the more the data itself matters.</p>
+<!--## Normal--normal model  {#normal-normal}
+
+In our first example, the "joke coins" was a bit artificial, giving us a prior with only three points in its range. Its often more appropriate to have a prior distribution for a parameter that is continuous over a wide range of possibilities (although concentrated towards the more parameters values we believe are more probable.).
+
+Consider a normal likelihood, where $X_1, X_2, \dots, X_n$ are IID $\text{N}(\theta, \sigma^2)$, and where the expectation $\theta$ is the unknown parameter but the variance $\sigma^2$ is known. This could model trying to measure some quantity $\theta$ with an instrument which is known to have a $\text{N}(0,\sigma^2)$ error. 
 So the model has joint PDF
-<span class="math display">\[\begin{align*}
-p(\mathbf x \mid \theta)
-  &amp;\propto \prod_{i=1}^n \exp \left(- \frac{(x_i - \theta)^2}{2\sigma^2}\right)
-  &amp;= \exp \left( - \frac{1}{2} \sum_{i=1}^n \frac{(x_i - \theta)^2}{\sigma^2} \right) \\
-  &amp;= \exp \left( - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \theta)^2 \right).
-\end{align*}\]</span>
-(Again, we only worry about distributions up to proportionality, because we work out the multiplicative constant at the end.)</p>
-<p>In fact, when doing Bayesian statistics, it’s often convenient to write <span class="math inline">\(\tau = 1/\sigma^2\)</span> for the inverse of the known variance; this <span class="math inline">\(\tau\)</span> is called the <strong>precision</strong> and is also known. So with this notation, the model is that <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> are IID <span class="math inline">\(\text{N}(\theta, 1 / \tau^2)\)</span>, with joint PDF
-<span class="math display">\[ p(\mathbf x \mid \theta) \propto \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) . \]</span></p>
-<p>What about a prior for the unknown expectation <span class="math inline">\(\theta\)</span>. Often an appropriate choice is a normal <span class="math inline">\(\text{N}(\mu_0, 1/\tau_0)\)</span> prior for the unknown expectation parameter <span class="math inline">\(\theta\)</span>. This represents that we expect the quantity we are trying to mention to be around <span class="math inline">\(\mu_0\)</span>, with an amount of uncertainty captured by the precision <span class="math inline">\(\tau_0\)</span> on the prior. So the prior PDF is
-<span class="math display">\[ \pi(\theta) \propto \exp \left( - \frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \]</span></p>
-<p>Because both the prior distribution and the model for the data are normal, this is known as the <strong>normal–normal model</strong>.</p>
-<p>Suppose we collect data <span class="math inline">\(\mathbf x = (x_1, x_2, \dots, x_n)\)</span>, and recall that we write <span class="math inline">\(\bar x = (\sum_i x_i)/n\)</span> for the sample mean.</p>
-<p>To get the posterior distribution requires a bit of an algebra slog (see below), but the outcome is that the posterior distribution is
-<span class="math display">\[ \pi(\theta \mid \mathbf x) \propto \exp \left( - \frac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) , \]</span>
-which is (proportional to) the PDF for yet another normal distribution
-<span class="math display">\[ \theta \mid \mathbf x \sim \mathrm{N} \left( \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x, \ \frac{1}{\tau_0 + n\tau} \right)  . \]</span>
-In other words, the posterior expectation
-<span class="math display">\[ \mathbb E(\theta \mid \mathbf x) = \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x \]</span>
-is a weighted average of the prior expectation <span class="math inline">\(\mu_0\)</span> and the mean of the data <span class="math inline">\(\bar x\)</span>, and the more datapoints <span class="math inline">\(n\)</span> you get, the heavier the weighting on the data compared to the prior. Further, the precision has increased from the prior precision <span class="math inline">\(\tau_0\)</span> to the posterior precision <span class="math inline">\(\tau_0 + n\tau\)</span>; so the more data we get, the larger the precision gets, so the smaller the variance gets, and the more sure we get about the true value of <span class="math inline">\(\theta\)</span>.</p>
-<div class="thpart">
-<p><em>The algebra slog (non-examinable).</em>
-Recall that we can ignore multiplicative terms that don’t contain <span class="math inline">\(\theta\)</span>, thanks to our proportionality trick. But note also that a multiplicative term becomes an additive term inside an exponential. So, within an exponential, we can always ignore any “plus constants” that don’t involve <span class="math inline">\(\theta\)</span>.</p>
-<p>So the prior can be written as
-<span class="math display">\[\begin{align*}
-\pi(\theta) &amp;\propto \exp\left(-\frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \\
-  &amp;= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta -  \frac{\tau_0}{2}\mu_0^2 \right) \\
-  &amp;\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) ,
-\end{align*}\]</span>
-where we ignored the final constant term.</p>
-<p>Similarly, the likelihood can be written as
-<span class="math display">\[\begin{align*}
-p(\mathbf x \mid \theta) &amp;= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) \\
-  &amp;= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n x_i^2 + \tau \theta \sum_{i=1}^n x_i - \frac{\tau}{2} n\theta^2 \right) \\
-  &amp;\propto \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) ,
-\end{align*}\]</span>
-where we ignored the first constant term in the second line, and recognised <span class="math inline">\(\sum_i x_i\)</span> as <span class="math inline">\(n\bar x\)</span>, as we have done before.</p>
-<p>Then Bayes’ theorem gives us
-<span class="math display">\[\begin{align*}
-\pi(\mathbf x \mid \theta)
-  &amp;\propto \pi(\theta) \, p(\mathbf x \mid \theta) \\
-  &amp;\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) \times \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
-  &amp;= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta + n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
-  &amp;= \exp \left( -\frac{\tau_0 + n\tau}{2} \theta^2 + (\tau_0\mu_0 + n\tau\bar x)\theta \right) \\
-  &amp;= \exp \left( -\left(\frac{\tau_0 + n\tau}{2}\right) \left(\theta^2 - 2 \frac{\tau_0\mu_0 + n\tau\bar x}{\tau_0 + n\tau}\theta \right) \right) \\
-  &amp;\propto \exp \left( - \tfrac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) .
-\end{align*}\]</span>
-In the final line, the squared term differs from the line above only by some additive constant. But this is exactly (proportional to) the PDF of a normal distribution with expectation
-<span class="math display">\[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]</span>
-and precision <span class="math inline">\(\tau_0 + n\tau\)</span>.
-<!--
-
-Before even getting to Bayes, let's remind ourselves from [Problem Sheet 4 Question B5](#P4-long) that
-\[ \sum_{i=1}^n (x_i - \theta)^2 = \sum_{i=1}^n (x_i - \bar x)^2 + n(\theta - \bar x)^2 . \]
- Thus we get
 \begin{align*}
- \exp \left( - \frac{\tau}{2} \sum_{i=1}^n  (x_i - \theta)^2 \right)
- &=  \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \bar x)^2 - n\tau(\theta - \bar x)^2 \right)\\
- &\propto \exp \left( -\frac{\tau}{2} n(\theta - \bar x)^2 \right) \\
- &= \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta + n\tau \bar{x}^2 ) \right) \\
- &\propto \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta) \right),
+p(\mathbf x \mid \theta)
+  &\propto \prod_{i=1}^n \exp \left(- \frac{(x_i - \theta)^2}{2\sigma^2}\right)
+  &= \exp \left( - \frac{1}{2} \sum_{i=1}^n \frac{(x_i - \theta)^2}{\sigma^2} \right) \\
+  &= \exp \left( - \frac{1}{2\sigma^2} \sum_{i=1}^n (x_i - \theta)^2 \right).
 \end{align*}
-where we indeed ignored the first constant terms in the first line and the last constant term in the third line.
+(Again, we only worry about distributions up to proportionality, because we work out the multiplicative constant at the end.)
 
-Now we can invoke Bayes' theorem, and continue to ignore "plus constants", to get
+In fact, when doing Bayesian statistics, it's often convenient to write $\tau = 1/\sigma^2$ for the inverse of the known variance; this $\tau$ is called the **precision** and is also known. So with this notation, the model is that $X_1, X_2, \dots, X_n$ are IID $\text{N}(\theta, 1 / \tau^2)$, with joint PDF
+\[ p(\mathbf x \mid \theta) \propto \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) . \]
+
+What about a prior for the unknown expectation $\theta$. Often an appropriate choice is a normal $\text{N}(\mu_0, 1/\tau_0)$ prior for the unknown expectation parameter $\theta$. This represents that we expect the quantity we are trying to mention to be around $\mu_0$, with an amount of uncertainty captured by the precision $\tau_0$ on the prior. So the prior PDF is 
+\[ \pi(\theta) \propto \exp \left( - \frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \]
+
+Because both the prior distribution and the model for the data are normal, this is known as the **normal--normal model**.
+
+Suppose we collect data $\mathbf x = (x_1, x_2, \dots, x_n)$, and recall that we write $\bar x = (\sum_i x_i)/n$ for the sample mean. 
+
+To get the posterior distribution requires a bit of an algebra slog (see below), but the outcome is that the posterior distribution is 
+\[ \pi(\theta \mid \mathbf x) \propto \exp \left( - \frac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) , \]
+which is (proportional to) the PDF for yet another normal distribution
+\[ \theta \mid \mathbf x \sim \mathrm{N} \left( \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x, \ \frac{1}{\tau_0 + n\tau} \right)  . \]
+In other words, the posterior expectation 
+\[ \mathbb E(\theta \mid \mathbf x) = \frac{\tau_0}{\tau_0 + n\tau} \mu_0 + \frac{n\tau}{\tau_0 + n\tau} \bar x \]
+is a weighted average of the prior expectation $\mu_0$ and the mean of the data $\bar x$, and the more datapoints $n$ you get, the heavier the weighting on the data compared to the prior. Further, the precision has increased from the prior precision $\tau_0$ to the posterior precision $\tau_0 + n\tau$; so the more data we get, the larger the precision gets, so the smaller the variance gets, and the more sure we get about the true value of $\theta$. 
+
+
+::: {.thpart}
+*The algebra slog (non-examinable).* 
+Recall that we can ignore multiplicative terms that don't contain $\theta$, thanks to our proportionality trick. But note also that a multiplicative term becomes an additive term inside an exponential. So, within an exponential, we can always ignore any "plus constants" that don't involve $\theta$.
+
+So the prior can be written as
+\begin{align*}
+\pi(\theta) &\propto \exp\left(-\frac{\tau_0}{2} (\theta - \mu_0)^2 \right) \\
+  &= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta -  \frac{\tau_0}{2}\mu_0^2 \right) \\
+  &\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) ,
+\end{align*}
+where we ignored the final constant term.
+
+Similarly, the likelihood can be written as
+\begin{align*}
+p(\mathbf x \mid \theta) &= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \theta)^2 \right) \\
+  &= \exp \left( - \frac{\tau}{2} \sum_{i=1}^n x_i^2 + \tau \theta \sum_{i=1}^n x_i - \frac{\tau}{2} n\theta^2 \right) \\
+  &\propto \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) ,
+\end{align*}
+where we ignored the first constant term in the second line, and recognised $\sum_i x_i$ as $n\bar x$, as we have done before.
+
+Then Bayes' theorem gives us
 \begin{align*}
 \pi(\mathbf x \mid \theta)
   &\propto \pi(\theta) \, p(\mathbf x \mid \theta) \\
-  &\propto \exp \left( -\tfrac{1}{2} \tau_0(\theta - \mu_0)^2  \right) \times \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
-  &= \exp \left( -\tfrac{1}{2} (\tau_0(\theta - \mu_0)^2 + n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
-  &=\exp \left( - \tfrac{1}{2} (\tau_0\theta^2 - 2\tau_0\mu_0\theta + \tau_0 \mu_0^2 + n\tau\theta^2 - 2n\tau\bar x\theta)\right) \\
-  &\propto \exp \left( - \tfrac{1}{2} \big( (\tau_0 + n\tau)\theta^2 - 2 (\tau_0 \mu_0 +n\tau \bar x )\theta \big)\right) \\
-  &= \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta^2 - 2 \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \theta \right)\right)  \\
-  &\propto \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) . 
+  &\propto \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta \right) \times \exp \left(n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
+  &= \exp\left(-\frac{\tau_0}{2}\theta^2 + \tau_0\mu_0\theta + n \tau \theta \bar x - \frac{\tau}{2} n\theta^2 \right) \\
+  &= \exp \left( -\frac{\tau_0 + n\tau}{2} \theta^2 + (\tau_0\mu_0 + n\tau\bar x)\theta \right) \\
+  &= \exp \left( -\left(\frac{\tau_0 + n\tau}{2}\right) \left(\theta^2 - 2 \frac{\tau_0\mu_0 + n\tau\bar x}{\tau_0 + n\tau}\theta \right) \right) \\
+  &\propto \exp \left( - \tfrac{\tau_0 + n\tau}{2} \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) .
 \end{align*}
-This is (proportional to) the PDF for a normal distribution with expectation
+In the final line, the squared term differs from the line above only by some additive constant. But this is exactly (proportional to) the PDF of a normal distribution with expectation
 \[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]
 and precision $\tau_0 + n\tau$.
---></p>
+:::
+-->
 </div>
+<div id="betageometric-model" class="section level2 hasAnchor" number="20.2">
+<h2><span class="header-section-number">20.2</span> Beta–geometric model<a href="L20-bayes-ii.html#betageometric-model" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
 <div id="modern-bayes" class="section level2 hasAnchor" number="20.3">
 <h2><span class="header-section-number">20.3</span> Modern Bayesian statistics<a href="L20-bayes-ii.html#modern-bayes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
