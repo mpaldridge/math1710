@@ -18,11 +18,23 @@ knitr::opts_chunk$set(comment = NA)
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}
+**Week 10** (4--8 December):
+
+* [**Lecture 19:** Bayesian statistics I](#L19-bayes-i) (Monday 4 December)
+* [**Lecture 20:** Bayesian statistics II](#L20-bayes-ii) (Wednesday 8 December)
+* **Tutorial** on Problem Sheet 5
+* [**Problem Sheet 5:**](#P5) Work through in preparation for your tutorial. Deadline for assessed questions: Monday 11 December.
+* [**R Worksheet 9**](#R) -- no assessed questions
+* [**R Worksheet 10**](#R) is available early -- deadline for assessed questions: Thursday 14 December
+* **Office hours:** Friday 1 December, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html)
+:::
+
+::: {.mysched}
 **Week 9** (27 November -- 1 December):
 
 * [**Lecture 17:** Exponential distribution and multiple continuous random variables](#L17-exponential-multi) (Monday 27 November)
 * [**Lecture 18:** Limit theorems](#L18-limit) (Wednesday 29 November)
-* [**Problem Sheet 5:**](#P5) Work through in preparation for your tutorial in Week 10. Deadline for assessed questions: Monday 27 November.
+* [**Problem Sheet 5:**](#P5) Work through in preparation for your tutorial in Week 10. Deadline for assessed questions: Monday 11 December.
 * [**R Worksheet 8**](#R) -- deadline for assessed questions: Monday 4 December
 * **Office hours:** Friday 1 December, 11--12 and 1--2, [Physics Research Deck 9.320](https://mpaldridge.github.io/office.html)
 :::

@@ -1,0 +1,79 @@
+---
+title:  "R Worksheet 9: Law of large numbers"
+author: "MATH1710 Probability and Statistcs I"
+date:   "University of Leeds, 2023--24"
+output: html_document
+---
+
+*This R worksheet does* not *include assessed questions. However, R Worksheet 10* does *include assessed questions, and has an unusually tight deadline of Thursday 14 December (so you can get your work returned before the end of the semester). So you may wish to progress straight to [R Worksheet 10](https://mpaldridge.github.io/math1710/R10-2324.html) after completing this one.*
+
+------------------------------------------------------------------------
+
+## Calculations
+
+Recall from [Lecture 18](https://mpaldridge.github.io/math1710/L18-limit.html) that the law of large numbers states that, as $n \to \infty$, the mean of $n$ IID random variables tends to the expectation of that random variable. Let's test this theorem using R.
+
+The following code calculates the mean of $n = 100$ from an $\text{Exp}(\lambda)$ distribution with $\lambda = 1/10$.
+
+```{r}
+n <- 100
+lambda <- 0.1
+samples <- rexp(n, lambda)
+mean(samples)
+```
+
+The law of large numbers tells us this mean should get close to $\mathbb EX = 1/\lambda = 10$ as $n$ gets big. When I ran this code, I got `r mean(samples)` -- but because the code involves sampling a random variable, you will get a slightly different answer to me (and get a different answer each time you run it).
+
+> **Exercise 10.1.** Run the above code yourself a number of times. What values do you get? Is the mean always close to the expectation 10?
+
+I find I tend to get a range of values, sometimes close to 10, but usually somewhere between about 8.5 and 11. The point is that the law of large numbers sometimes requires $n$ very large to be accurate, so we should try bigger numbers than just $n = 100$. But this is easy in R!
+
+> **Exercise 10.2.** Repeat the code above with a much, much larger value of R. (Pick something big, but not so huge that the code runs very slowly -- I find something like $n$ equals one million works well. How close to 10 are the values you get now?
+
+> **Exercise 10.3.** Repeat this experiment with a different distribution, rather than the $\text{Exp}(0.1)$ distribution we tried here. You might like to try a binomial or normal distribution, for example, or make up your own discrete distribution and use the ideas we saw on [R Worksheet 8](https://mpaldridge.github.io/math1710/R8.html) to sample from your discrete distribution.
+
+> **Exercise 10.4.** We return to the $X \sim \text{Exp}(0.1)$ case again. Suppose I wanted to calculate $\mathbb E \log{\sqrt{X}}$. Doing this by calculating the integral $\int_0^\infty \log{\sqrt{x}}\times 0.1\mathrm{e}^{-0.1x}\,\mathrm{d}x$ looks rather hard. Estimate $\mathbb E \log{\sqrt{X}}$ from a large sample of values from $X$ instead.
+
+(I estimate the answer is somewhere around 0.862-ish.)
+
+## Plots
+
+It can help to picture the convergence of $\overline X_n$ to the expectation by drawing a plot of the means
+$$ \left( \frac{x_1}{1}, \frac{x_1 + x_2}{2}, \frac{x_1+x_2+x_3}{3}, \frac{x_1+x_2+x_3+x_4}{4} \dots \right) . $$
+A useful function here is the **cumulative sum** function **`cumsum()`**. The cumulative sum of a vector $\mathbf x$ gives a vector of partial sums
+$$(x_1, x_1 + x_2, x_1 + x_2 + x_3, x_1 + x_2 + x_3 + x_4, \dots) .$$
+If we combine this with the colon `1:n` notation for the numbers 1 to n, we can calculated the vector of partial means.
+
+In this example, we take up a normal distribution.
+
+```{r}
+n <- 500
+mu <- 12
+sigma <- 5
+samples <- rnorm(n, mu, sigma)
+partmeans <- cumsum(samples) / (1:n)
+plot(partmeans, type = "l", ylim = c(10, 14))
+abline(h = mu)
+```
+
+Run this code. Here the command `abline(h = ...)` draws a **h**orizontal line at the expectation $\mu$, to help us judge if the the partial means are getting close to the expectation or not. You will probably find the partial means do get closer to the $\mu = 12$ line -- although because these are random samples, you can never be certain!
+
+> **Exercise 10.5.** Draw this plot again, but now (a) make sure the x and y axes are labelled appropriate, (b) draw the wiggly partial means line in the colour blue, and (c) give your plot a title.
+
+(You may need to remind yourself of how to do these from [R Worksheet 5](https://mpaldridge.github.io/math1710/R5.html), if you have forgotten.)
+
+It may be helpful to draw a few instances of this process on the graph, to show them all (probably!) converging towards $\mu$. We can do this with the **`points()`** function. The `points()` function operates the same as `plot()`, except that the points -- or lines, in spite of the name! -- are plotted on the existing axes, without erasing and starting again. So
+
+```{r, eval = FALSE}
+samples <- rnorm(n, mu, sigma)
+partmeans <- cumsum(samples) / (1:n)
+points(partmeans, type = "l", col = "red")
+```
+
+will add a new set of partial means to an already-existing plot.
+
+> **Exercise 10.6.** Return to the distribution you chose to use in Exercise 10.3. Draw a plot showing four lines (in four different colours) of partial means converging to the expectation. Choose a value of $n$ and a y-axis range that illustrates the law of large numbers clearly. Make sure your axes are labelled.
+
+---
+
+*You can now progress to [R Worksheet 10](https://mpaldridge.github.io/math1710/R10-2324.html).*
