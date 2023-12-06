@@ -3,12 +3,39 @@
 
 ## Beta--Bernoulli model  {#beta-bern}
 
-Consider a Bernoulli likelihood, where $X_1, X_2, \dots, X_n$ are IID $\text{Bern}(\theta)$, so have joint PMF
+Recall that the Beta distribution $\pi(\theta) \propto \theta^{\alpha - 1}(1-\theta)^{\beta - 1}$ makes a useful prior for a probability parameter $\theta \in [0,1]$. Let's look at our joke-shop coin again.
+
+::: {.example}
+*After examining the coin, we decide to use a $\text{Beta}(3,3)$ prior. This is symmetric with expectation $\frac12$, with (almost) the same variance $0.036$ as our previous three-point prior. Again, we examine toss the coin three times, and get three heads. How should we update our beliefs?*
+
+The prior is the Beta prior $\pi(\theta) \propto \theta^2(1-\theta)^2$.
+
+The likelihood of getting 3 heads out of 3 is $p(\text{HHH} \mid \theta) = \theta^3$.
+
+Using the formula
+\[ \text{posterior} \propto \text{prior} \times \text{likelihood} , \]
+we have
+\[ \pi(\theta \mid \text{HHH}) \propto \theta^2(1-\theta)^2 \times \theta^3 = \theta^5(1-\theta)^2 .\]
+But we recognise that this is (proportional to) the PDF for a Beta distribution again! This time, it's
+\[ \theta \mid \text{HHH} \sim \Beta(6, 3) . \]
+
+The "posterior expectation" and "posterior variance" are
+\[ \mathbb E(X \mid \text{HHH}) = \frac{6}{6+3} = \frac{2}{3} = 0.67 \qquad \text{Var}(X \mid HHH) = \frac{\frac23\big(1-\frac23\big)}{6+3+1} = \frac{1}{45} = 0.022 \]
+
+Compared to our expectation has increased quite a lost from our prior expectation $\frac12$ to our posterior expectation $\frac23$. Our variance has decreased slightly, from $0.036$ to $0.022$, because collecting data has allowed us to become more confident about our beliefs.
+:::
+
+Let's try to generalise what we did here.
+
+Consider a situation modelled by a Bernoulli likelihood, where $X_1, X_2, \dots, X_n$ are IID $\text{Bern}(\theta)$. The joint PMF is
 \[ p(\mathbf x \mid \theta) = \prod_{i=1}^n \theta^{x_i} (1-\theta)^{1 - x_i} = \theta^{\sum_i x_i} (1 - \theta)^{n-\sum_i x_i} = \theta^y (1 - \theta)^{n-y}, \]
 where we have written $y = \sum_i x_i$ for the total number of successes.
+
 Consider further using a $\text{Beta}(\alpha, \beta)$ prior for $\theta$, so that
 \[ \pi(\theta) = \frac{1}{B(\alpha, \beta)} \theta^{\alpha-1} (1-\theta)^{\beta - 1} \propto \theta^{\alpha-1} (1-\theta)^{\beta - 1} \]
-(Because we're going to use the "posterior has to add up to 1" trick at the end, we're free to drop constants whenever we want.) This is known as the **Beta--Bernoulli model**.
+(Because we're going to use the "posterior has to add up to 1" trick at the end, we're free to drop constants whenever we want.)
+
+This combination of a Beta prior and a Bernoulli likelihood is known as the **Beta--Bernoulli model**.
 
 Suppose we collect data $\mathbf x = (x_1, x_2, \dots, x_i)$, with $y = \sum_i x_i$ successes. What now is the posterior distribution for $\theta$ given this data?
 
@@ -19,16 +46,17 @@ Using Bayes' theorem, we have
   &= \theta^{\alpha-1} (1-\theta)^{\beta - 1} \times \theta^y (1 - \theta)^{n-y} \\
   &= \theta^{\alpha + y - 1} (1 - \theta)^{\beta + n - y - 1} .
 \end{align*}
-We can recognise immediately that this is proportional to the PDF for a $\text{Beta}(\alpha + y, \beta + n - y)$ distribution, so in particular, the constant of proportionality must be $1/B(\alpha + y, \beta + n - y)$.
+This is (proportional to) the PDF for a $\text{Beta}(\alpha + y, \beta + n - y)$ distribution.
 
 So we see that, like the prior, the posterior is also a Beta distribution, where the first parameter has gone from $\alpha$ to $\alpha + y$ and the second parameter has gone from $\beta$ to $\beta + (n-y)$. In other words, $\alpha$ has increased by the number of successes, and $\beta$ has increased by the number of failures.
 The expectation has gone from the prior expectation
 \[ \frac{\alpha}{\alpha + \beta} \]
 to the posterior expectation
 \[ \frac{\alpha + y}{\alpha + \beta + n} .\]
-This can be thought of as a sort of average between the prior expectation $\alpha/(\alpha + \beta)$ and the mean of the data $y/n$.
 
-## Normal--normal model  {#normal-normal}
+This is somewhere between the prior expectation $\alpha/(\alpha + \beta)$ and the mean of the data $y/n$. So the data slowly drags our expectation from the prior expectation towards the mean of the data. The more data we get, the more the prior drops away and the more the data itself matters.
+
+<!--## Normal--normal model  {#normal-normal}
 
 In our first example, the "joke coins" was a bit artificial, giving us a prior with only three points in its range. Its often more appropriate to have a prior distribution for a parameter that is continuous over a wide range of possibilities (although concentrated towards the more parameters values we believe are more probable.).
 
@@ -94,36 +122,10 @@ Then Bayes' theorem gives us
 In the final line, the squared term differs from the line above only by some additive constant. But this is exactly (proportional to) the PDF of a normal distribution with expectation
 \[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]
 and precision $\tau_0 + n\tau$.
-<!--
-
-Before even getting to Bayes, let's remind ourselves from [Problem Sheet 4 Question B5](#P4-long) that
-\[ \sum_{i=1}^n (x_i - \theta)^2 = \sum_{i=1}^n (x_i - \bar x)^2 + n(\theta - \bar x)^2 . \]
- Thus we get
-\begin{align*}
- \exp \left( - \frac{\tau}{2} \sum_{i=1}^n  (x_i - \theta)^2 \right)
- &=  \exp \left( - \frac{\tau}{2} \sum_{i=1}^n (x_i - \bar x)^2 - n\tau(\theta - \bar x)^2 \right)\\
- &\propto \exp \left( -\frac{\tau}{2} n(\theta - \bar x)^2 \right) \\
- &= \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta + n\tau \bar{x}^2 ) \right) \\
- &\propto \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta) \right),
-\end{align*}
-where we indeed ignored the first constant terms in the first line and the last constant term in the third line.
-
-Now we can invoke Bayes' theorem, and continue to ignore "plus constants", to get
-\begin{align*}
-\pi(\mathbf x \mid \theta)
-  &\propto \pi(\theta) \, p(\mathbf x \mid \theta) \\
-  &\propto \exp \left( -\tfrac{1}{2} \tau_0(\theta - \mu_0)^2  \right) \times \exp \left( -\tfrac{1}{2} (n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
-  &= \exp \left( -\tfrac{1}{2} (\tau_0(\theta - \mu_0)^2 + n\tau\theta^2 - 2n\tau\bar x\theta ) \right) \\
-  &=\exp \left( - \tfrac{1}{2} (\tau_0\theta^2 - 2\tau_0\mu_0\theta + \tau_0 \mu_0^2 + n\tau\theta^2 - 2n\tau\bar x\theta)\right) \\
-  &\propto \exp \left( - \tfrac{1}{2} \big( (\tau_0 + n\tau)\theta^2 - 2 (\tau_0 \mu_0 +n\tau \bar x )\theta \big)\right) \\
-  &= \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta^2 - 2 \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \theta \right)\right)  \\
-  &\propto \exp \left( - \tfrac{1}{2}(\tau_0 + n\tau) \left( \theta - \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \right)^{\!2} \right) . 
-\end{align*}
-This is (proportional to) the PDF for a normal distribution with expectation
-\[ \frac{\tau_0 \mu_0 +n\tau \bar x }{\tau_0 + n\tau} \]
-and precision $\tau_0 + n\tau$.
--->
 :::
+-->
+
+## Beta--geometric model
 
 ## Modern Bayesian statistics  {#modern-bayes}
 
