@@ -127,8 +127,11 @@ and precision $\tau_0 + n\tau$.
 
 ## Beta--geometric model
 
+Jokeshop example
+
 ## Modern Bayesian statistics  {#modern-bayes}
 
+<!--
 In this section, we've given just a brief taster of Bayesian statistics. Bayesian statistics is a deep and complicated subject, and you may have the opportunity to find out a lot more about it later in your university career.
 
 We have seen that in Bayesian statistics, one brings in a subjective "prior" based on previous beliefs and evidence, then updates this prior based on the data. This contrasts with the more traditional **frequentist statistics**. In frequentist one uses only the data -- no prior beliefs! -- and judges to what extent the data is consistent or inconsistent with a hypothesis, without weighing in on how likely such a hypothesis is. (Frequentist statistics is the main subject studied in MATH1712 Probability and Statistics II.)
@@ -140,7 +143,7 @@ For this reason, Bayesian statistics was for a long time a minor area of statist
 For a while, there was an occasionally fierce debate between "Bayesians" and "frequentists". Frequentists thought that bringing subjective personal beliefs into things was unmathematical, while Bayesians thought that ignoring how plausible a hypothesis is before testing it is unscientific. The debate has now largely dissipated, and it is largely accepted that modern statisticians need to know about both frequentist and Bayesian methods.
 
 There are still plenty of open problems in Bayesian statistics, and lots of these involve the computational side: finding algorithms that can efficiently calculate the normalising constants in posterior distributions or sample from those posterior distributions, especially when the parameter(s) have very high dimension.
-
+-->
 
 ## Summary  {#summary-10 .unnumbered}
 
