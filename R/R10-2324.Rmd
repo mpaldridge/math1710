@@ -5,7 +5,7 @@ date:   "University of Leeds, 2023--25"
 output: html_document
 ---
 
-*This R worksheet consists solely of assessed questions. The material for these questions recaps all of the R Worksheets on the course so far. The deadline for submitting your solutions to these questions is **Thursday 15 December at 1700** -- note that this is an earlier deadline than usual.*
+*This R worksheet consists solely of assessed questions. The material for these questions recaps all of the R Worksheets on the course so far. The deadline for submitting your solutions to these questions is **Thursday 14 December at 1700** -- note that this is an earlier deadline than usual.*
 
 *Answers to the following five assessed questions should be submitted via [this Microsoft form](https://forms.office.com/Pages/ResponsePage.aspx?id=qO3qvR3IzkWGPlIypTW3ywARQdZlKXRHsLcXi_ngX8NUOEs5T0dXMDU3T1dEOE82QVZCMUdFNEZRNy4u).*
 
