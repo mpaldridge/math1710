@@ -127,6 +127,8 @@ For the second term, we can use rules 2 and 3 to get
 where we found $\Phi(0.5) = 0.6815$ in the table. To put this all together, we get
 \[ \mathbb P(8 \leq X \leq 13) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) = 0.7734 - 0.3085 = 0.4649 . \]
 
+## "Edge cases"
+
 ## End-of semester survey
 
 ## Other modules
