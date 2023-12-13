@@ -6,19 +6,16 @@
   a4paper,
 ]{book}
 \usepackage{amsmath,amssymb}
+\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math} % this also loads fontspec
+  \usepackage{unicode-math}
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
-\fi
-\usepackage{lmodern}
-\ifPDFTeX\else
-  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -48,13 +45,13 @@
 \newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
 \newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
 \newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
 \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
 \newcommand{\BuiltInTok}[1]{#1}
 \newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
-\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
 \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
 \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
@@ -62,7 +59,7 @@
 \newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
 \newcommand{\ExtensionTok}[1]{#1}
 \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
-\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\ImportTok}[1]{#1}
 \newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
@@ -71,7 +68,7 @@
 \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
 \newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
 \newcommand{\RegionMarkerTok}[1]{#1}
-\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
 \newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
 \newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
@@ -116,7 +113,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same}
+\urlstyle{same} % disable monospaced font for URLs
 \hypersetup{
   pdftitle={MATH1710 Probability and Statistics I},
   pdfauthor={Matthew Aldridge},
@@ -376,17 +373,16 @@ You are probably reading the web version of the notes. If you want a PDF copy (t
 There will be 5 problem sheets. Each problem sheet has a number of short and long questions, for you to work on in your own time to help you learn the material, and two assessed questions, which you should submit for marking. The assessed questions on each problem sheet make up 3\% of your mark on this module, for a total of 15\%. Deadlines are 2pm on Mondays, although I'd recommend completing and submitting the work in the previous week.
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Problem Sheet & Lectures covered & Deadline for assessed work \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 1 & 1 and 2 & Monday 16 October (Week 3) \\
 2 & 3--6 & Monday 30 October (Week 5) \\
 3 & 7--10 & Monday 13 November (Week 7) \\
 4 & 11--14 & Monday 27 November (Week 9) \\
 5 & 15--18 & Monday 11 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
 An informal Problem Sheet 6 covering material from Lectures 19 and 20 will be available. Lectures 21 and 22 are revision lectures with no new material.
@@ -431,7 +427,7 @@ You will learn R by working through one R worksheet each week in your own time, 
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.0923}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4769}}
   >{\centering\arraybackslash}p{(\columnwidth - 4\tabcolsep) * \real{0.4308}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -439,10 +435,8 @@ Worksheet
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & 1: R basics & --- \\
 3 & 2: Vectors & Monday 23 October (Week 4) \\
 4 & 3: Data in R & --- \\
@@ -453,6 +447,7 @@ Deadline for assessed work
 9 & 8: Normal distribution & Monday 4 December (Week 10) \\
 10 & 9: Law of large numbers & --- \\
 11 & 10: Recap & Thursday 14 December (Week 11) \\
+\bottomrule()
 \end{longtable}
 
 ~
@@ -935,12 +930,10 @@ Often when collecting data, we don't collect exact data, but rather collect data
 Consider the following binned data, from \(n = 100\) students:
 
 \begin{longtable}[]{@{}ccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 \\
 5--10 minutes & 8 & 0.08 \\
 10--15 minutes & 21 & 0.21 \\
@@ -949,6 +942,7 @@ Time & Frequency & Relative frequency \\
 45--60 minutes & 8 & 0.08 \\
 60--120 minutes & 2 & 0.02 \\
 \textbf{Total} & 100 & 1 \\
+\bottomrule()
 \end{longtable}
 
 Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observations in that bin; so, for example, 42 students had journey lengths of between 15 and 30 minutes. The \textbf{relative frequency} of bin \(j\) is \(f_j/n\); that is, the proportion of the observations in that bin.
@@ -956,12 +950,10 @@ Here the \textbf{frequency} \(f_j\) of bin \(j\) is simply the number of observa
 Which bin would you say is the most popular -- that is, the ``modal'' bin? The bin with the most observations in it is the ``15--30 minute'' bin. But this bin covers 15 minutes, while some of the other bins only cover 5 minutes. It would be a fairer comparison to look at the \textbf{frequency density}: the relative frequency divided by the size of the bin.
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 Time & Frequency & Relative frequency & Frequency density \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 0--5 minutes & 4 & 0.04 & 0.008 \\
 5--10 minutes & 8 & 0.08 & 0.016 \\
 10--15 minutes & 21 & 0.21 & 0.042 \\
@@ -970,6 +962,7 @@ Time & Frequency & Relative frequency & Frequency density \\
 45--60 minutes & 8 & 0.08 & 0.005 \\
 60--120 minutes & 2 & 0.02 & 0.0003 \\
 \textbf{Total} & 100 & 1 & \\
+\bottomrule()
 \end{longtable}
 
 In the first row, for example, the relative frequency is 0.04 and the size of the bin is 5 minutes, so the frequency density is \(0.04/5 = 0.008\). We now see that the modal bin -- the bin with the highest frequency \emph{density} -- is in fact the ``10--15 minutes'' bin. This bin has somewhat fewer datapoints that the ``15--30 minutes'' bin, but they're squashed into a much smaller bin.
@@ -1178,7 +1171,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1188,10 +1181,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -1199,6 +1190,7 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -1213,7 +1205,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1223,10 +1215,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & 0.05 & 0.0042 \\
 30--40 & 2 & 0.1 & 0.01 \\
 40--45 & 4 & 0.2 & 0.04 \\
@@ -1234,6 +1224,7 @@ Frequency density
 50--60 & 6 & 0.3 & 0.03 \\
 60--80 & 2 & 0.1 & 0.005 \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -1264,7 +1255,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-56-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-61-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -1301,7 +1292,7 @@ The next four questions are \textbf{long questions}, which are intended to be ha
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -1315,11 +1306,10 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -1337,13 +1327,12 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 \textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -2050,7 +2039,7 @@ Here, an important principle is the \textbf{multiplication principle}. The multi
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2500}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Beefburger
@@ -2059,12 +2048,11 @@ Chicken burger
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Veggie burger
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Fries} & 1: Beefburger with fries & 2: Chicken burger with fries & 3: Veggie burger with fries \\
 \textbf{Salad} & 4: Beefburger with salad & 5: Chicken burger with salad & 6: Veggie burger with salad \\
+\bottomrule()
 \end{longtable}
 
 More generally, if you have \(m\) stages of choosing, with \(n_1\) choices in the first stage, then \(n_2\) choices in the second stage, all the way to \(n_m\) choices in the final stage, you have \(n_1 \times n_2 \times \cdots \times n_m\) total choices altogether.
@@ -2785,15 +2773,14 @@ Finally, because the events are disjoint, we have
 Let us to return to the example of blond hair and blue eyes. Suppose the population statistics are like this:
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 & \textbf{Brown hair} & \textbf{Blond hair} & \textbf{Total} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Brown eyes} & 50\% & 30\% & \textbf{80\%} \\
 \textbf{Blue eyes} & 10\% & 10\% & \textbf{20\%} \\
 \textbf{Total} & \textbf{60\%} & \textbf{40\%} & \textbf{100\%} \\
+\bottomrule()
 \end{longtable}
 
 It turns out that \(\mathbb P(\text{blond hair and blue eyes}) = 0.1 \neq 0.08\), so having blond hair and having blue eyes are not in fact independent.
@@ -3204,7 +3191,7 @@ The PMF \(p\) of \(X\) is given by
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3220,11 +3207,10 @@ The PMF \(p\) of \(X\) is given by
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(7\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(\frac{1}{36}\) & \(\frac{2}{36}\) & \(\frac{3}{36}\) & \(\frac{4}{36}\) & \(\frac{5}{36}\) & \(\frac{6}{36}\) \\
+\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -3235,7 +3221,7 @@ The PMF \(p\) of \(X\) is given by
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3251,11 +3237,10 @@ The PMF \(p\) of \(X\) is given by
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(12\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(\cdots\) & \(\frac{5}{36}\) & \(\frac{4}{36}\) & \(\frac{3}{36}\) & \(\frac{2}{36}\) & \(\frac{1}{36}\) \\
+\bottomrule()
 \end{longtable}
 
 \includegraphics{math1710_files/figure-latex/dice-pmf-1.pdf}
@@ -3344,7 +3329,7 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1429}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3360,11 +3345,10 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([6,7)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(F(x)\) & \(0\) & \(\frac{1}{36}\) & \(\frac{3}{36}\) & \(\frac{6}{36}\) & \(\frac{10}{36}\) & \(\frac{15}{36}\) \\
+\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}
@@ -3376,7 +3360,7 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}
   >{\centering\arraybackslash}p{(\columnwidth - 14\tabcolsep) * \real{0.1250}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3394,11 +3378,10 @@ Hence, the CDF \(F\) of \(X\) is given by the following step function:
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([12,\infty)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(F(x)\) & \(\cdots\) & \(\frac{21}{36}\) & \(\frac{26}{36}\) & \(\frac{30}{36}\) & \(\frac{33}{36}\) & \(\frac{35}{36}\) & \(1\) \\
+\bottomrule()
 \end{longtable}
 
 \includegraphics{math1710_files/figure-latex/dice-cdf-1.pdf}
@@ -3802,13 +3785,12 @@ The question tells us that \(\mathbb P(A) = 0.6\) and \(\mathbb P(B) = 0.5\). Fu
 \textbf{A4.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}ccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(-1\) & \(0\) & \(0.5\) & \(2\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(0.1\) & \(0.4\) & \(0.2\) & \(0.3\) \\
+\bottomrule()
 \end{longtable}
 
 Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), and \textbf{(c)} the variance \(\operatorname{Var}(X)\) of \(X\).
@@ -3825,7 +3807,7 @@ Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), 
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -3839,11 +3821,10 @@ Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), 
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([2, \infty)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(F(x)\) & \(0\) & \(0.1\) & \(0.5\) & \(0.7\) & \(1\) \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(b)} The expectation is
@@ -3862,13 +3843,12 @@ Alternatively, using the definitional formula,
 \textbf{A5.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(1\) & \(2\) & \(4\) & \(5\) & \(a\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(0.1\) & \(0.2\) & \(0.1\) & \(b\) & \(0.1\) \\
+\bottomrule()
 \end{longtable}
 
 This random variable has \(\mathbb EX = 4.3\). Find the values of \(a\) and \(b\).
@@ -4424,7 +4404,7 @@ So
   >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
   >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
   >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Distribution
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4436,13 +4416,12 @@ Expectation
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Variance
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Bernoulli:} \(\text{Bern}(p)\) & \(\{0,1\}\) & \(p(0) = 1- p\), \(p(1) = p\) & \(p\) & \(p(1-p)\) \\
 \textbf{Binomial:} \(\text{Bin}(n,p)\) & \(\{0,1,\dots,n\}\) & \(\displaystyle\binom{n}{x} p^x (1-p)^{n-x}\) & \(np\) & \(np(1-p)\) \\
 \textbf{Geometric:} \(\text{Geom}(p)\) & \(\{1,2,\dots\}\) & \((1-p)^{x-1}p\) & \(\displaystyle\frac{1}{p}\) & \(\displaystyle\frac{1-p}{p^2}\) \\
+\bottomrule()
 \end{longtable}
 
 \textbf{Recommended reading:}
@@ -4665,7 +4644,7 @@ The frequentist approach will pursued in detail throughout MATH1712.
   >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
   >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
   >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Distribution
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4677,14 +4656,13 @@ Expectation
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Variance
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Bernoulli:} \(\text{Bern}(p)\) & \(\{0,1\}\) & \(p(0) = 1- p\), \(p(1) = p\) & \(p\) & \(p(1-p)\) \\
 \textbf{Binomial:} \(\text{Bin}(n,p)\) & \(\{0,1,\dots,n\}\) & \(\displaystyle\binom{n}{x} p^x (1-p)^{n-x}\) & \(np\) & \(np(1-p)\) \\
 \textbf{Geometric:} \(\text{Geom}(p)\) & \(\{1,2,\dots\}\) & \((1-p)^{x-1}p\) & \(\displaystyle\frac{1}{p}\) & \(\displaystyle\frac{1-p}{p^2}\) \\
 \textbf{Poisson:} \(\text{Po}(\lambda)\) & \(\{0,1,\dots\}\) & \(\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}\) & \(\lambda\) & \(\lambda\) \\
+\bottomrule()
 \end{longtable}
 
 \begin{itemize}
@@ -4708,23 +4686,21 @@ Consider tossing a fair coin 3 times. Let \(X\) be the number of Heads in the fi
 We know that \(X \sim \text{Bin}(2, \frac12)\) and \(Y \sim \text{Bin}(3, \frac12)\), so we can easily write down their probability mass functions:
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(x = 0\) & \(x = 1\) & \(x = 2\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p_X(x)\) & \(\frac14\) & \(\frac12\) & \(\frac14\) \\
+\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}ccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(y\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) \\
+\bottomrule()
 \end{longtable}
 
 When we have multiple random variables and we want to emphasise that a PMF refers to only one of them, we often use the phrase \textbf{marginal PMF} or \textbf{marginal distribution}. So the PMFs above are the \emph{marginal distributions} of \(X\) and \(Y\).
@@ -4741,7 +4717,7 @@ In our case of the coin tosses, we have
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(p_{X,Y}(x,y)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4755,14 +4731,13 @@ In our case of the coin tosses, we have
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(\phantom{p_X(x)}\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
 \(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
 \(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
 \(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule()
 \end{longtable}
 
 For just one worked example, we have \(p_{X,Y}(2,2) = \frac18\), because the only way to have \(X =2\) (two Heads in the first two coin tosses) and \(Y = 2\) (two Heads in the first \emph{three} coin tosses) is to toss Head, Head, Tail, with probability \((\frac12)^3 = \frac18\).
@@ -4782,7 +4757,7 @@ In other words, to get the marginal distribution of \(Y\), we need to sum down t
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(p_{X,Y}(x,y)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -4796,14 +4771,13 @@ In other words, to get the marginal distribution of \(Y\), we need to sum down t
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(\phantom{p_X(x)}\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \\
 \(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \\
 \(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \\
 \(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule()
 \end{longtable}
 
 In exactly the same way, we have
@@ -4811,16 +4785,15 @@ In exactly the same way, we have
 so to get the marginal distribution of \(X\), we need to sum across the rows in the table of the joint distribution.
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(y = 0\) & \(y = 1\) & \(y = 2\) & \(y = 3\) & \(p_X(x)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(x=0\) & \(\frac18\) & \(\frac18\) & \(0\) & \(0\) & \(\frac14\) \\
 \(x=1\) & \(0\) & \(\frac14\) & \(\frac14\) & \(0\) & \(\frac12\) \\
 \(x=2\) & \(0\) & \(0\) & \(\frac18\) & \(\frac18\) & \(\frac14\) \\
 \(p_Y(y)\) & \(\frac18\) & \(\frac38\) & \(\frac38\) & \(\frac18\) & \\
+\bottomrule()
 \end{longtable}
 
 We can check that these marginal PMFs match those we started with. (The term ``marginal'' PMF or distribution is presumably because one ends up writing the values in the ``margins'' of the table.)
@@ -5318,7 +5291,7 @@ This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(p_{X,Y}(x,y)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -5332,14 +5305,13 @@ This is Problem Sheet 4. This problem sheet covers Lectures 11 to 14. You should
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(\phantom{p_X(x)}\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(x=0\) & \(2k\) & \(2k\) & \(k\) & \(0\) & \\
 \(x=1\) & \(k\) & \(3k\) & \(k\) & \(k\) & \\
 \(x=2\) & \(0\) & \(k\) & \(k\) & \(2k\) & \\
 \(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Find the value of \(k\) that makes this a joint PMF.
@@ -5366,7 +5338,7 @@ By summing across the rows and down the columns, respectively, we get this:
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(p_{X,Y}(x,y)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -5380,14 +5352,13 @@ By summing across the rows and down the columns, respectively, we get this:
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(p_X(x)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(x=0\) & \(\frac{2}{15}\) & \(\frac{2}{15}\) & \(\frac{1}{15}\) & \(0\) & \(\frac{5}{15}\) \\
 \(x=1\) & \(\frac{1}{15}\) & \(\frac{3}{15}\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{6}{15}\) \\
 \(x=2\) & \(0\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{2}{15}\) & \(\frac{4}{15}\) \\
 \(p_Y(y)\) & \(\frac{3}{15}\) & \(\frac{6}{15}\) & \(\frac{3}{15}\) & \(\frac{3}{15}\) & \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -5536,29 +5507,27 @@ The probability there are multiple winners is
 For all these questions, we need to fill in a table for the joint PMF, where the columns sum to \(p_X(0) = p_X(1) = \frac12\) and the rows sum to \(p_Y(0) = p_Y(1) = \frac12\).
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & & & \(\frac12\) \\
 \(y = 1\) & & & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 If \(X\) and \(Y\) are independent, we have \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y)\); so, for example, \(p_{X,Y}(0,0) = p_X(0)\,p_Y(0) = \frac12 \times \frac12 = \frac14\). In fact, all the entries in the joint PMF table are \(\frac14\).
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(\frac14\) & \(\frac14\) & \(\frac12\) \\
 \(y = 1\) & \(\frac14\) & \(\frac14\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -5570,29 +5539,27 @@ If \(X\) and \(Y\) are independent, we have \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y)\); s
 We still need the rows and columns to add up to \(\frac12\), but we want low values of \(X\) (that is, 0) to be more likely to occur alongside low values of \(Y\) (that is, 0), and high values of \(X\) (that is, 1) alongside high values of \(Y\) (that is, 1). One was to do this is
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(\frac12\) & \(0\) & \(\frac12\) \\
 \(y = 1\) & \(0\) & \(\frac12\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 A single table like that is a perfectly sufficient answer. But, in fact, any table of the form
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(a\) & \(\frac12 - a\) & \(\frac12\) \\
 \(y = 1\) & \(\frac12 - a\) & \(a\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 for \(\frac14 < a \leq \frac12\) will do. This has
@@ -5609,29 +5576,27 @@ So the covariance is positive for \(a > \frac14\), so the correlation is too.
 \emph{Solution.} For example
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(0\) & \(\frac12\) & \(\frac12\) \\
 \(y = 1\) & \(\frac12\) & \(0\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 Alternatively, any table of the form
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(a\) & \(\frac12 - a\) & \(\frac12\) \\
 \(y = 1\) & \(\frac12 - a\) & \(a\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 for \(0 \leq a < \frac14\) will have negative covariance \(a - \frac14\), so negative correlation.
@@ -5805,16 +5770,14 @@ The good news is that almost all of the properties we know and love about discre
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Discrete random variables
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Continuous random variables
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 A discrete random variable \(X\) is defined by a \textbf{probability mass function} (PMF) \(p(x)\), which represents the probability of getting exactly \(x\). & A continuous random variable \(X\) is defined by a \textbf{probability density function} (PDF) \(f(x)\), which represents the intensity of probability around \(x\). \\
 The PMF is positive, in that \(p(x) \geq 0\) for all \(x\). & The PDF is positive, in that \(f(x) \geq 0\) for all \(x\). \\
 The PMF sums to 1, in that \( \sum_{x} p(x) = 1. \) & The PDF integrates to 1 in that \( \int_{-\infty}^{\infty} f(x) \, \mathrm{d}x = 1.\) \\
@@ -5823,6 +5786,7 @@ The \textbf{expectation} is the sum \( \mathbb EX = \sum_{x} x\,p(x) . \) & The 
 The expectation of a function \(g(X)\) of \(X\) is the sum \( \mathbb Eg(X) = \sum_{x} g(x)\,p(x) . \) & The expectation of a function \(g(X)\) of \(X\) is the integral \( \mathbb Eg(X) = \int_{-\infty}^{\infty} g(x)\,f(x)\,\mathrm dx . \) \\
 Linearity of expectation says that \( \mathbb E(aX+b) = a\mathbb EX + b .\) & Linearity of expectation says that \( \mathbb E(aX+b) = a\mathbb EX + b .\) \\
 The \textbf{variance} is \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\), which also has the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\). & The \textbf{variance} is \(\operatorname{Var}(X) = \mathbb E(X - \mu)^2\), which also has the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\). \\
+\bottomrule()
 \end{longtable}
 
 Note, however, one property that doesn't follow through: Because, for a PMF, \(p(x) = \mathbb P(X = x)\) represented a probability, we had \(p(x) \leq 1\) for all \(x\). However, because, for a PDF, \(f(x)\) only represents intensity of probability, there's no contradiction to having \(f(x) > 1\) (although keeping the integral to 1 means that we can't have \(f(x) > 1\) too much). So \(f(x) = 10\) for \(0 <x < 0.1\) and \(f(x) = 0\) otherwise is a perfectly legitimate PDF, for example.
@@ -6372,22 +6336,21 @@ is given by a double integral.
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Discrete random variables
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Continuous random variables
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 We can get the \textbf{marginal PMF} \(p_X\) of \(X\) by summing over \(y\), so \( p_X(x) = \sum_y p_{X,Y}(x,y) . \) & We can get the \textbf{marginal PDF} \(f_X\) of \(X\) by integrating over \(y\), so \( f_X(x) = \int_{-\infty}^\infty f_{X,Y}(x,y) \, \mathrm dy. \) \\
 Two discrete random variables \(X\) and \(Y\) are \textbf{independent} if their PMFs satisfy \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y) \qquad \text{for all $x, y$}.\) & Two continuous random variables \(X\) and \(Y\) are \textbf{independent} if they have PDFs which satisfy \(f_{X,Y}(x,y) = f_X(x)\,f_Y(y) \qquad \text{for all $x, y$}.\) \\
 The \textbf{conditional PMF} of \(Y\) given \(X\) is defined by \( p_{Y \mid X}(y \mid x) = \frac{p_{X,Y}(x,y)}{p_X(x)} . \) & The \textbf{conditional PDF} of \(Y\) given \(X\) is defined by \( f_{Y \mid X}(y \mid x) = \frac{f_{X,Y}(x,y)}{f_X(x)} . \) \\
 \textbf{Bayes' theorem} states that \( p_{X \mid Y}(x \mid y) = \frac{p_X(x)\,p_{Y\mid X}(y\mid x)}{p_Y(y)} . \) & \textbf{Bayes' theorem} states that \( f_{X \mid Y}(x \mid y) = \frac{f_X(x)\,f_{Y\mid X}(y\mid x)}{f_Y(y)} . \) \\
 The expectation of a function of \(X\) and \(Y\) is given by the sum \( \mathbb Eg(X,Y) = \sum_{x,y} g(x,y)\, p_{X,Y}(x,y) . \) & The expectation of a function of \(X\) and \(Y\) is given by the integral \( \mathbb Eg(X,Y) = \int_{-\infty}^\infty \int_{-\infty}^\infty g(x,y)\, f_{X,Y}(x,y) \, \mathrm dx \, \mathrm dy . \) \\
 The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) & The \textbf{covariance} of \(X\) and \(Y\) is given by \( \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) , \) and has a computational formula \( \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X \mu_Y . \) \\
+\bottomrule()
 \end{longtable}
 
 \begin{example}
@@ -7445,6 +7408,223 @@ Each geometric experiment has \(x_i - 1\) failures (the first \(x_i - 1\) trials
 \part*{Other stuff}\label{part-other-stuff}}
 \addcontentsline{toc}{part}{Other stuff}
 
+\hypertarget{L21-questions}{%
+\chapter{All questions answered}\label{L21-questions}}
+
+\hypertarget{faq-R-RV}{%
+\section{Distributions}\label{faq-R-RV}}
+
+\emph{Can you summarise the distributions we need to know?}
+
+The main random variables we have covered in the module are the following. First, the discrete random variables:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2941}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1765}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Distribution
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+PMF
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Expectation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Variance
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Bernoulli:} \(\text{Bern}(p)\) & \(\{0,1\}\) & \(p(0) = 1- p\), \(p(1) = p\) & \(p\) & \(p(1-p)\) \\
+\textbf{Binomial:} \(\text{Bin}(n,p)\) & \(\{0,1,\dots,n\}\) & \(\displaystyle\binom{n}{x} p^x (1-p)^{n-x}\) & \(np\) & \(np(1-p)\) \\
+\textbf{Geometric:} \(\text{Geom}(p)\) & \(\{1,2,\dots\}\) & \((1-p)^{x-1}p\) & \(\displaystyle\frac{1}{p}\) & \(\displaystyle\frac{1-p}{p^2}\) \\
+\textbf{Poisson:} \(\text{Po}(\lambda)\) & \(\{0,1,\dots\}\) & \(\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}\) & \(\lambda\) & \(\lambda\) \\
+\bottomrule()
+\end{longtable}
+
+Then the continuous random variables:
+
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.3333}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}
+  >{\centering\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.1667}}@{}}
+\toprule()
+\begin{minipage}[b]{\linewidth}\raggedright
+Distribution
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Range
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+PDF
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Expectation
+\end{minipage} & \begin{minipage}[b]{\linewidth}\centering
+Variance
+\end{minipage} \\
+\midrule()
+\endhead
+\textbf{Exponential:} \(\text{Exp}(\lambda)\) & \(\mathbb R_+\) & \(\lambda \mathrm e^{-\lambda x}\) & \(\displaystyle\frac{1}{\lambda}\) & \(\displaystyle\frac{1}{\lambda^2}\) \\
+\textbf{Normal:} \(\mathrm N(\mu,\sigma^2)\) & \(\mathbb R\) & \({\displaystyle{\small \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right)}}\) & \(\mu\) & \(\sigma^2\) \\
+\textbf{Beta:} \(\text{Beta}(\alpha, \beta)\) & \([0,1]\) & \(\propto x^{\alpha - 1}(1-x)^{\beta - 1}\) & \(\displaystyle\frac{\alpha}{\alpha + \beta}\) & \({\displaystyle{\small \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}}\) \\
+\bottomrule()
+\end{longtable}
+
+\hypertarget{discrete-random-variables-in-r}{%
+\section{Discrete random variables in R}\label{discrete-random-variables-in-r}}
+
+\emph{How do you work with discrete random variables in R?}
+
+(This was actually lectured at the end of Lecture 20.)
+
+If we are dealing with a famous distribution like the binomial, geometric or Poisson distributions, we can use the functions like \texttt{pbinom()}, \texttt{pgeom()}, \texttt{ppois()} and their relatives, as on \protect\hyperlink{R}{R Worksheet 7}. However, for arbitrary random variables, we need to do more of the work ourselves. This was discussed on \protect\hyperlink{R}{R Worksheet 8}, but when questions came up on this on \protect\hyperlink{R}{R Worksheet 9}, lots of people got them wrong, so perhaps I didn't explain it well.
+
+Let's do an example with a simple discrete random variable. Its PMF is as follows:
+
+\begin{longtable}[]{@{}ccccccc@{}}
+\toprule()
+\(x\) & 1 & 2 & 3 & 5.5 & 7 & 8 \\
+\midrule()
+\endhead
+\(p(x)\) & 0.1 & 0.2 & 0.1 & 0.2 & 0.3 & 0.1 \\
+\bottomrule()
+\end{longtable}
+
+If we want to work with this in R, we need two vectors. One, which I'll call \texttt{x}, to hold the values that the random variable can take, and one, which I'll call \texttt{pmf\_x}, to hold the values of the PMF \(p(x) = \mathbb P(X = x)\).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x     }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(  }\DecValTok{1}\NormalTok{,   }\DecValTok{2}\NormalTok{,   }\DecValTok{3}\NormalTok{, }\FloatTok{5.5}\NormalTok{,   }\DecValTok{7}\NormalTok{,   }\DecValTok{8}\NormalTok{)}
+\NormalTok{pmf\_x }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.1}\NormalTok{, }\FloatTok{0.2}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.2}\NormalTok{, }\FloatTok{0.3}\NormalTok{, }\FloatTok{0.1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+I can check that the PMF sums to 1, as it must.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(pmf\_x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 1
+\end{verbatim}
+
+Suppose I wanted to calculate the expectation of this random variable. When doing this ``by hand'', we know that this is
+\[ \mathbb EX = \sum_x x \,p(x) . \]
+So in R, this is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{mu }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(x }\SpecialCharTok{*}\NormalTok{ pmf\_x)}
+\NormalTok{mu}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 4.8
+\end{verbatim}
+
+Suppose I wanted to find the variance. Using the definitional formula, we know this is
+\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 = \sum_x (x-\mu)^2\,p(x) . \]
+In R, I've already saved the expectation as the R object \texttt{mu}. So now I can use
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{((x }\SpecialCharTok{{-}}\NormalTok{ mu)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pmf\_x)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 5.91
+\end{verbatim}
+
+Alternatively, we have the computational formula \(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\), where
+\[ \mathbb EX^2 = \sum_x x^2 \, p(x) .\]
+In R, this is
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{EX2 }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(x}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ pmf\_x)}
+\NormalTok{EX2 }\SpecialCharTok{{-}}\NormalTok{ mu}\SpecialCharTok{\^{}}\DecValTok{2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+[1] 5.91
+\end{verbatim}
+
+which gives the same answer.
+
+When calculating a variance, especially with the computational formula and especially when dealing with a discrete random variable with a large range, it's important to keep plenty of accuracy in \(\mu = \mathbb EX\). In the above, I did this by saving this as an R object \texttt{mu}. This is much better and more accurate than just writing down a few decimal places and writing it out by hand again.
+
+Remember that the function \texttt{var()} is used for calculating the \emph{sample variance} of some \emph{data} -- that's no use for us here when we want to find the variance of a random variable.
+
+See \protect\hyperlink{R}{R Worksheet 8} for more on this, including how to use the ``step function'' function \texttt{stepfun()} to work with the CDF \(F(x) = \mathbb P(X \leq x)\).
+
+\hypertarget{joint-distributions}{%
+\section{Joint distributions}\label{joint-distributions}}
+
+\hypertarget{law-of-the-unconscious-statistician}{%
+\section{Law of the unconscious statistician}\label{law-of-the-unconscious-statistician}}
+
+\hypertarget{statistical-tables}{%
+\section{Statistical tables}\label{statistical-tables}}
+
+\emph{Can you go over the rules for how to use statistical tables?}
+
+In \protect\hyperlink{L17-normal}{Lecture 17}, we discussed how to do calculations with the normal distribution using R and using statistical tables.
+
+We need to be able to do this when working with a normal distribution \(X \sim \mathrm{N}(\mu, \sigma^2)\). We also need to be able to do this when approximating another distribution by the normal distribution -- for example, \(\mathrm{Bin}(n,p) \approx \mathrm{N}(np, np(1-p))\) where \(n\) is large and \(p\) is neither close to 0 nor to 1, or a \(\mathrm{Po}(\lambda) \approx \mathrm{N}(\lambda,\lambda)\) when \(\lambda\) is large. (Remember to use a continuity correction when approximating a discrete distribution by the normal).
+
+The first thing we need to do to use statistical tables is to standardise. That is, we can convert \(X \sim \mathrm{N}(\mu, \sigma^2)\) to \(Z = (X - \mu)/\sigma \sim \mathrm{N}(0,1)\) by subtracting the mean and dividing by the standard deviation. So, for example if \(X \sim \mathrm{N}(10, 4^2)\) and we want to calculate
+\(\mathbb P(8 \leq X \leq 13)\), then standardising gives
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P \left( \frac{8 - 10}{4} \leq \frac{X - 10}{4} \leq \frac{13 - 10}{4} \right) = \mathbb P(-0.5 \leq Z \leq 0.75) . \]
+
+Statistical tables give values of \(\Phi(z) = \mathbb P(Z \leq z)\) for \(z \geq 0\). We can use these values in a few different ways. In what follows, we always assume \(z \geq 0\). (Remember, too, that for continuous distributions it's irrelevant whether an inequality is \(<\) or \(\leq\).)
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  If we have a standard ``less than'' problem, so want to know \(\mathbb P(Z \leq z) = \Phi(z)\), we can just look this up in the table.
+\item
+  If we have a ``greater than'', so want to know \(\mathbb P(Z > z)\), we can use the complement rule to write \(\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\). We then look up \(\Phi(z)\) in the table, and our answer is \(1 - \Phi(z)\).
+\item
+  If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
+  \begin{align*}
+  \mathbb P(Z \geq -z) &= \mathbb P(Z \leq z) = \Phi(z) \\
+  \mathbb P(Z \leq -z) &= \mathbb P(Z \geq z) = 1 - \mathbb P(Z < z) = 1 - \Phi(z) .
+  \end{align*}
+  In the second of these, we used rule 2 again in the second equality.
+\end{enumerate}
+
+So to go back to our example, we've already standardised to get
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(-0.5 \leq Z \leq 0.75) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) . \]
+The first term can be looked up directly in the table (rule 1):
+\[ \mathbb P(Z \leq 0.75) = \Phi(0.75) = 0.7734 . \]
+For the second term, we can use rules 2 and 3 to get
+\[ \mathbb P(Z \leq -0.5) = \mathbb P(Z \geq 0.5) = 1 - \mathbb P(Z < 0.5) = 1 - \Phi(0.5) = 1 - 0.6915 = 0.3085 , \]
+where we found \(\Phi(0.5) = 0.6815\) in the table. To put this all together, we get
+\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) = 0.7734 - 0.3085 = 0.4649 . \]
+
+\hypertarget{edge-cases}{%
+\section{``Edge cases''}\label{edge-cases}}
+
+\hypertarget{end-of-semester-survey}{%
+\section{End-of semester survey}\label{end-of-semester-survey}}
+
+\hypertarget{other-modules}{%
+\section{Other modules}\label{other-modules}}
+
+\hypertarget{part-other-stuff-1}{%
+\part*{Other stuff}\label{part-other-stuff-1}}
+\addcontentsline{toc}{part}{Other stuff}
+
 \hypertarget{R}{%
 \chapter*{R Worksheets}\label{R}}
 \addcontentsline{toc}{chapter}{R Worksheets}
@@ -7456,7 +7636,7 @@ Each week (starting in Week 2) there will be an R worksheet to work through in y
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.4000}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1467}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.3733}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Week
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -7466,10 +7646,8 @@ Solutions
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Deadline for assessed work
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 2 & \href{R1.html}{\textbf{1: R basics}} & \href{R1-solutions.html}{Solutions} & --- \\
 3 & \href{R2.html}{\textbf{2: Vectors}} & \href{R2-solutions.html}{Solutions} & Monday 23 October \\
 4 & \href{R3.html}{\textbf{3: Data in R}} & \href{R3-solutions.html}{Solutions} & --- \\
@@ -7480,6 +7658,7 @@ Deadline for assessed work
 9 & \href{R8-2324.html}{\textbf{8: Normal distribution}} & & Monday 4 December \\
 10 & \href{R9-2324.html}{\textbf{9: Law of large numbers}} & & --- \\
 10/11 & \href{R10-2324.html}{\textbf{10: Recap}} & & \textbf{Thursday 14 December} \\
+\bottomrule()
 \end{longtable}
 
 \hypertarget{what-is-r}{%
@@ -7778,7 +7957,7 @@ On the other hand, the expression inside the brackets of the computational formu
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -7788,10 +7967,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & & \\
 30--40 & 2 & & \\
 40--45 & 4 & & \\
@@ -7799,6 +7976,7 @@ Frequency density
 50--60 & 6 & & \\
 60--80 & 2 & & \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Complete the table by filling in the relative frequency and
@@ -7813,7 +7991,7 @@ frequency densities.
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1642}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2985}}
   >{\centering\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.2836}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 Age (years)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -7823,10 +8001,8 @@ Relative frequency
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Frequency density
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 18--30 & 1 & 0.05 & 0.0042 \\
 30--40 & 2 & 0.1 & 0.01 \\
 40--45 & 4 & 0.2 & 0.04 \\
@@ -7834,6 +8010,7 @@ Frequency density
 50--60 & 6 & 0.3 & 0.03 \\
 60--80 & 2 & 0.1 & 0.005 \\
 \textbf{Total} & 20 & 1 & --- \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -7864,7 +8041,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-133-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-143-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -7899,7 +8076,7 @@ You can probably think of other answers.
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1111}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \textbf{Colour}
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -7913,11 +8090,10 @@ Large
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 Xtra Large
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of shirts} & 0 & 1 & 6 & 4 & 5 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -7935,13 +8111,12 @@ Again, because the data is not numerical, we can't add it up, so can't calculate
 \textbf{(b)} Six packets of Skittles are opened together, a total of \(n = 361\) sweets. The colours of these sweets is recorded as follows:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \textbf{Colour} & Red & Orange & Yellow & Green & Purple \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \textbf{Number of Skittles} & 67 & 71 & 87 & 74 & 62 \\
+\bottomrule()
 \end{longtable}
 
 \begin{myanswers}
@@ -8501,13 +8676,12 @@ The question tells us that \(\mathbb P(A) = 0.6\) and \(\mathbb P(B) = 0.5\). Fu
 \textbf{A4.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}ccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(-1\) & \(0\) & \(0.5\) & \(2\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(0.1\) & \(0.4\) & \(0.2\) & \(0.3\) \\
+\bottomrule()
 \end{longtable}
 
 Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), and \textbf{(c)} the variance \(\operatorname{Var}(X)\) of \(X\).
@@ -8524,7 +8698,7 @@ Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), 
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(x \in {}\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -8538,11 +8712,10 @@ Find \textbf{(a)} the CDF \(F_X\), \textbf{(b)} the expectation \(\mathbb EX\), 
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \([2, \infty)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(F(x)\) & \(0\) & \(0.1\) & \(0.5\) & \(0.7\) & \(1\) \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(b)} The expectation is
@@ -8561,13 +8734,12 @@ Alternatively, using the definitional formula,
 \textbf{A5.} Consider the random variable \(X\) with the following PMF:
 
 \begin{longtable}[]{@{}cccccc@{}}
-\toprule\noalign{}
+\toprule()
 \(x\) & \(1\) & \(2\) & \(4\) & \(5\) & \(a\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(p(x)\) & \(0.1\) & \(0.2\) & \(0.1\) & \(b\) & \(0.1\) \\
+\bottomrule()
 \end{longtable}
 
 This random variable has \(\mathbb EX = 4.3\). Find the values of \(a\) and \(b\).
@@ -8917,7 +9089,7 @@ You can probably come up with other explanations of your own too.
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(p_{X,Y}(x,y)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -8931,14 +9103,13 @@ You can probably come up with other explanations of your own too.
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(\phantom{p_X(x)}\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(x=0\) & \(2k\) & \(2k\) & \(k\) & \(0\) & \\
 \(x=1\) & \(k\) & \(3k\) & \(k\) & \(k\) & \\
 \(x=2\) & \(0\) & \(k\) & \(k\) & \(2k\) & \\
 \(\vphantom{p_Y(y)}\) & & & & & \\
+\bottomrule()
 \end{longtable}
 
 \textbf{(a)} Find the value of \(k\) that makes this a joint PMF.
@@ -8965,7 +9136,7 @@ By summing across the rows and down the columns, respectively, we get this:
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}
   >{\centering\arraybackslash}p{(\columnwidth - 10\tabcolsep) * \real{0.1667}}@{}}
-\toprule\noalign{}
+\toprule()
 \begin{minipage}[b]{\linewidth}\centering
 \(p_{X,Y}(x,y)\)
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -8979,14 +9150,13 @@ By summing across the rows and down the columns, respectively, we get this:
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 \(p_X(x)\)
 \end{minipage} \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(x=0\) & \(\frac{2}{15}\) & \(\frac{2}{15}\) & \(\frac{1}{15}\) & \(0\) & \(\frac{5}{15}\) \\
 \(x=1\) & \(\frac{1}{15}\) & \(\frac{3}{15}\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{6}{15}\) \\
 \(x=2\) & \(0\) & \(\frac{1}{15}\) & \(\frac{1}{15}\) & \(\frac{2}{15}\) & \(\frac{4}{15}\) \\
 \(p_Y(y)\) & \(\frac{3}{15}\) & \(\frac{6}{15}\) & \(\frac{3}{15}\) & \(\frac{3}{15}\) & \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -9135,29 +9305,27 @@ The probability there are multiple winners is
 For all these questions, we need to fill in a table for the joint PMF, where the columns sum to \(p_X(0) = p_X(1) = \frac12\) and the rows sum to \(p_Y(0) = p_Y(1) = \frac12\).
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & & & \(\frac12\) \\
 \(y = 1\) & & & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 If \(X\) and \(Y\) are independent, we have \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y)\); so, for example, \(p_{X,Y}(0,0) = p_X(0)\,p_Y(0) = \frac12 \times \frac12 = \frac14\). In fact, all the entries in the joint PMF table are \(\frac14\).
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(\frac14\) & \(\frac14\) & \(\frac12\) \\
 \(y = 1\) & \(\frac14\) & \(\frac14\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 \end{myanswers}
@@ -9169,29 +9337,27 @@ If \(X\) and \(Y\) are independent, we have \(p_{X,Y}(x,y) = p_X(x)\,p_Y(y)\); s
 We still need the rows and columns to add up to \(\frac12\), but we want low values of \(X\) (that is, 0) to be more likely to occur alongside low values of \(Y\) (that is, 0), and high values of \(X\) (that is, 1) alongside high values of \(Y\) (that is, 1). One was to do this is
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(\frac12\) & \(0\) & \(\frac12\) \\
 \(y = 1\) & \(0\) & \(\frac12\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 A single table like that is a perfectly sufficient answer. But, in fact, any table of the form
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(a\) & \(\frac12 - a\) & \(\frac12\) \\
 \(y = 1\) & \(\frac12 - a\) & \(a\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 for \(\frac14 < a \leq \frac12\) will do. This has
@@ -9208,29 +9374,27 @@ So the covariance is positive for \(a > \frac14\), so the correlation is too.
 \emph{Solution.} For example
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(0\) & \(\frac12\) & \(\frac12\) \\
 \(y = 1\) & \(\frac12\) & \(0\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 Alternatively, any table of the form
 
 \begin{longtable}[]{@{}cccc@{}}
-\toprule\noalign{}
+\toprule()
 \(p_{X,Y}(x,y)\) & \(x = 0\) & \(x = 1\) & \(p_Y(y)\) \\
-\midrule\noalign{}
+\midrule()
 \endhead
-\bottomrule\noalign{}
-\endlastfoot
 \(y = 0\) & \(a\) & \(\frac12 - a\) & \(\frac12\) \\
 \(y = 1\) & \(\frac12 - a\) & \(a\) & \(\frac12\) \\
 \(p_Y(y)\) & \(\frac12\) & \(\frac12\) & \\
+\bottomrule()
 \end{longtable}
 
 for \(0 \leq a < \frac14\) will have negative covariance \(a - \frac14\), so negative correlation.

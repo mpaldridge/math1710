@@ -340,6 +340,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 <li class="part"><span><b>Other stuff</b></span></li>
+<li class="chapter" data-level="21" data-path="L21-questions.html"><a href="L21-questions.html"><i class="fa fa-check"></i><b>21</b> All questions answered</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
+<li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
+<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#joint-distributions"><i class="fa fa-check"></i><b>21.3</b> Joint distributions</a></li>
+<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#law-of-the-unconscious-statistician"><i class="fa fa-check"></i><b>21.4</b> Law of the unconscious statistician</a></li>
+<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.5</b> Statistical tables</a></li>
+<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#edge-cases"><i class="fa fa-check"></i><b>21.6</b> “Edge cases”</a></li>
+<li class="chapter" data-level="21.7" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.7</b> End-of semester survey</a></li>
+<li class="chapter" data-level="21.8" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.8</b> Other modules</a></li>
+</ul></li>
+<li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
@@ -494,8 +506,8 @@ or about 1 in every 380 hands.</p>
 <p>Hence, the probability at least two students share a birthday is
 <span class="math display">\[ \mathbb P(A) = 1 - \mathbb P(A^\mathsf{c}) = 1 - \frac{365^{\underline{k}}}{365^k} = 1 - \frac{365}{365} \cdot \frac{364}{365} \cdots \frac{365-k+1}{365} . \]</span></p>
 <p>Setting <span class="math inline">\(k = 23\)</span>, we can calculate the required answer in R:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="L06-classical-ii.html#cb17-1" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">23</span></span>
-<span id="cb17-2"><a href="L06-classical-ii.html#cb17-2" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>((<span class="dv">365</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">-</span> k <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">365</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="L06-classical-ii.html#cb17-1" aria-hidden="true" tabindex="-1"></a>k <span class="ot">&lt;-</span> <span class="dv">23</span></span>
+<span id="cb17-2"><a href="L06-classical-ii.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">-</span> <span class="fu">prod</span>((<span class="dv">365</span><span class="sc">:</span>(<span class="dv">365</span> <span class="sc">-</span> k <span class="sc">+</span> <span class="dv">1</span>)) <span class="sc">/</span> <span class="dv">365</span>)</span></code></pre></div>
 <pre><code>[1] 0.5072972</code></pre>
 <p>The probability is 50.7%. So it’s more likely than not that at least two students share a birthday.</p>
 </div>
