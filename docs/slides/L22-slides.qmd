@@ -1,0 +1,229 @@
+---
+title: "Lecture 22: Exam"
+author: "MATH1710 Probability & Statistics I"
+format: revealjs
+---
+
+# About the exam
+
+## Exam arrangements
+
+* Check your exam timetable for the date and time of the exam.
+  * For most people (without unusual clashes or special arrangements), the exam will happen on **Monday 15 January at 1400**.
+* The exam will happen in person on campus.
+  * Location to be announced at the end of this week.
+* The exam will last for 2 hours (except for some students with special arrangements).
+
+## Exam arrangements (2)
+
+* You are allowed to use a basic non-programmable calculator for the exam.
+  * More later...
+* The exam will be **"closed-book"** style: you are not permitted to bring notes into the exam hall.
+* A page of [statistical tables for the normal distribution](https://mpaldridge.github.io/math1710/stat-tab.pdf) will be on the final page of the exam paper.
+* There will not be a formula book.
+
+## Passing the module
+
+* The exam makes up 70% of your mark for this module. The pass mark for this module is 40%. You must pass the exam to pass the module. The pass mark for the exam is also 40%, or 32 marks out of 80.
+
+# Structure of the Exam
+
+## Exam structure
+
+The exam will be in three sections:
+
+* **Section A:** 10 short multiple-choice questions (25% of marks)
+* **Section B:** 10 short questions (25% of marks)
+* **Section C:** 2 multi-part long questions (50% of marks)
+
+## Section A
+
+* 10 multiple-choice questions
+* 2 marks each
+* Total of 20 marks
+
+These each require a single letter answer. No rough work will be read or marked.
+
+You will enter these letter answers on a multiple-choice "bubble sheet".
+
+*Recommended time: 3 minutes per question; 30 minutes total*
+
+## Section B
+
+* 10 single-part "short answer" questions
+* 2 marks each
+* Total of 20 marks
+
+These require a clear answer and brief working or explanation. Typically, a correct answer with clear working will get 2 marks; partial progress or a correct answer with totally inadequate working will get 1 mark.
+
+You will answer these in an answer booklet.
+
+*Recommended time: 3 minutes per question; 30 minutes total*
+
+## Section C
+
+* 2 multi-part "long answer" questions
+* 20 marks each
+* Total of 40 marks
+
+Parts of these questions require full detailed answers, as in assessed work from problem sheets, and will have marks set aside for quality of explanations.
+
+You will answer these in the same answer booklet as Section B.
+
+*Recommended time: 30 minutes per question; 1 hour total.*
+
+# Past papers
+
+## Past papers
+
+School of Maths policy is that for Level 1 modules, the three most recent past papers (with the same format) are available.
+
+* The **2022--23** paper (from January 2023)
+* The **2021--22** paper (from January 2022)
+* *Not the 2020--21 paper, as this was held in pandemic times, and had a different format.*
+* The **2019--20** paper (from January 2020)
+
+These are all available from Minerva.
+
+## Checksheets
+
+* University policy is that we are not permitted to give out complete worked solutions to past exam papers.
+
+* Instead, I have provided a "checksheet" for the three past papers 2021-22, 2019--20 and 2018--19.
+  *This should give enough information for you to check your own answers, if you use the papers for your revision, but is rather bare-bones and doesn't give a lot of detail.
+
+* I am happy to discuus exam questions at office hours
+
+## Checksheets (2)
+
+I strongly recommend using all these past papers as part of your revision, and resisting the temptation to peek at the checksheet before trying the questions yourself, perhaps multiple times.
+
+You may wish to test yourself by trying one of the papers sight-unseen under exam-like conditions.
+
+## Notes on past papers
+
+Some notes on the past papers:
+
+* 2021-22 paper:
+  * Written by me, reflecting the module as taught this year
+  * Excellent revision paper!
+* 2021-22 paper:
+  * Written by me, reflecting the module as taught this year
+  * A bit too hard! You should be able to score about 10% higher on your exam than this paper
+  
+## Notes on past papers (2)
+
+* 2019--20 paper:
+  * Not written by me, reflecting the module as someone else taught it
+  * The material is almost identical, but some notation is different:
+    * Eg. $\Pr(A)$ and $\mathrm{E}[X]$; not $\mathbb P(A)$ and $\mathbb EX$.
+  * You are not expected to be able to answer Question B9
+  * In Question A8, all the multi-choice options are wrong!
+
+
+# Exam FAQs
+
+## Calculators
+
+**Q.** *Can I use a calculator in the exam?*
+
+Yes! You may use a *basic, non-programmable* calculator in the MATH1710 exam.
+
+## Calculators (2) {.smaller}
+
+*"**Note that Calculators are only allowed in certain exams.** The module leader will be able to tell you whether a calculator can be used on the exam for their module. *
+
+*"Where calculators can be used in MATH coded exams:*
+
+* *Any basic (i.e., non-programmable) calculator is allowed.*
+* *Calculators that can solve calculus problems or do matrix calculations are allowed if they are non-programmable. Examples of commonly used calculators that are allowed include the Casio FX-85 series and the Casio FX991 series.*
+* *If you are not sure whether your calculator is non-programmable then check the manufacturer's website. Any calculator that is marketed as 'programmable' or 'graphic' is unlikely to be allowed in an exam. *
+
+*"**Please note:** the school does not provide a definitive list of approved and non-approved calculators. The school do not verify / pre-approve calculators (some other schools may provide verification stickers but these are not needed for MATH exams). The exam invigilators will check calculators during the examination."*
+
+## Revision
+
+**Q.** *What tips do you have for revising for a University maths exam?*
+
+---
+
+![](https://people.maths.bris.ac.uk/~maotj/notes/revise.png)
+
+## R questions on the exam
+
+**Q.** *Can there be R questions on the exam?*
+:::
+
+Yes!
+
+* *"What would the output from R be if you entered the code..."*
+* *""Write down some R code that would calculate..."*
+
+Your exam has two short questions on R, totalling 4 marks (5% of the exam).
+
+---
+
+
+
+**A1.** What would the output from the following R code be?
+
+```{r, echo = TRUE, eval = FALSE}
+data <- 1:10
+round(sd(data), digits = 2)
+```
+
+**A:** 3.03  
+**B:** 5.5  
+**C:** 6.36  
+**D:** 9.17  
+**E** 40.5
+
+. . .
+
+**Answer.** This is asking for the standard deviation of $(1,2,3,...,9,10)$, which is **A:** 3.03.
+
+---
+
+
+**B4.** In RStudio, a vector `x` contains the values in the range of a discrete random variable $X$ and a vector `p` contains the corresponding probabilities. Write down an R command to evaluate $\mathbb EX(X-1)$ from `x` and `p`.
+
+. . .
+
+By the law of the unconscious statistician, this is calculated by
+$$ \mathbb EX(X-1) = \sum_x x(x-1)\,p(x) . $$
+
+This can be calculated with the R code
+```{r, echo = TRUE, eval = FALSE}
+sum(x * (x - 1) * p)
+```
+
+## Passing
+
+**Q.** *What is the pass mark for this module?*
+
+* Your coursework (Problem Sheets and R Worksheets) will be converted to a mark out of 100.
+* Your exam mark will be converted to a mark out of 100.
+
+$$ \text{Final} = 0.70 \times \text{Exam} + 0.30 \times \text{CW} $$
+
+* You must have a final mark of at least 40 *and an exam mark of at least 40* to pass the module.
+
+- - -
+
+$$ \text{Final} = 0.70 \times \text{Exam} + 0.30 \times \text{CW} $$
+
+* If $\text{Final} \geq 40$ and $\text{Exam} \geq 40$: You **pass**, with mark $\text{Final}$.
+  
+* If $\text{Final} \geq 40$ but $\text{Exam} < 40$: You fail, with mark "**40V**"
+  
+* If $\text{Final} < 40$: You **fail**, with mark $\text{Final}$.
+
+
+
+
+## Statistical tables
+
+## How much should I write?
+
+## Notices and arrangements
+
