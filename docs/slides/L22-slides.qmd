@@ -1,7 +1,9 @@
 ---
 title: "Lecture 22: Exam"
 author: "MATH1710 Probability & Statistics I"
-format: revealjs
+format:
+  revealjs:
+    html-math-method: mathjax
 ---
 
 # About the exam
@@ -21,10 +23,6 @@ format: revealjs
 * The exam will be **"closed-book"** style: you are not permitted to bring notes into the exam hall.
 * A page of [statistical tables for the normal distribution](https://mpaldridge.github.io/math1710/stat-tab.pdf) will be on the final page of the exam paper.
 * There will not be a formula book.
-
-## Passing the module
-
-* The exam makes up 70% of your mark for this module. The pass mark for this module is 40%. You must pass the exam to pass the module. The pass mark for the exam is also 40%, or 32 marks out of 80.
 
 # Structure of the Exam
 
@@ -48,13 +46,16 @@ You will enter these letter answers on a multiple-choice "bubble sheet".
 
 *Recommended time: 3 minutes per question; 30 minutes total*
 
-## Section B
+## Section B {.smaller}
 
 * 10 single-part "short answer" questions
 * 2 marks each
 * Total of 20 marks
 
-These require a clear answer and brief working or explanation. Typically, a correct answer with clear working will get 2 marks; partial progress or a correct answer with totally inadequate working will get 1 mark.
+These require a clear answer and brief working or explanation.
+
+* A correct answer with some working will get 2 marks
+* Partial progress (or a correct answer with totally inadequate working) will get 1 mark.
 
 You will answer these in an answer booklet.
 
@@ -90,9 +91,9 @@ These are all available from Minerva.
 * University policy is that we are not permitted to give out complete worked solutions to past exam papers.
 
 * Instead, I have provided a "checksheet" for the three past papers 2021-22, 2019--20 and 2018--19.
-  *This should give enough information for you to check your own answers, if you use the papers for your revision, but is rather bare-bones and doesn't give a lot of detail.
+  * This should give enough information for you to check your own answers, if you use the papers for your revision, but is rather bare-bones and doesn't give a lot of detail.
 
-* I am happy to discuus exam questions at office hours
+* I am happy to discuss exam questions in detail at office hours
 
 ## Checksheets (2)
 
@@ -104,10 +105,10 @@ You may wish to test yourself by trying one of the papers sight-unseen under exa
 
 Some notes on the past papers:
 
-* 2021-22 paper:
+* **2021-22 paper:**
   * Written by me, reflecting the module as taught this year
   * Excellent revision paper!
-* 2021-22 paper:
+* **2021-22 paper:**
   * Written by me, reflecting the module as taught this year
   * A bit too hard! You should be able to score about 10% higher on your exam than this paper
   
@@ -116,12 +117,25 @@ Some notes on the past papers:
 * 2019--20 paper:
   * Not written by me, reflecting the module as someone else taught it
   * The material is almost identical, but some notation is different:
-    * Eg. $\Pr(A)$ and $\mathrm{E}[X]$; not $\mathbb P(A)$ and $\mathbb EX$.
-  * You are not expected to be able to answer Question B9
+    * Eg. $\Pr(A)$ and $\mathrm{E}[X]$; not $\mathbb P(A)$ and $\mathbb EX$
+  * You are not expected to be able to answer Question B9 (numerical integration in R)
   * In Question A8, all the multi-choice options are wrong!
 
 
 # Exam FAQs
+
+## Questions
+
+**Q.** *I have a question about the exam. Who should I ask?*
+
+For questions about **the mathematical content of the MATH1710 exam**, you should ask me.
+
+For questions about the **organisation and administration of exams**, start with the SIS:
+
+* <studentinfo@leeds.ac.uk>
+* in person (Beech Grove House, Chem & Proc Eng, Maurice Keyworth, Parkinson, Worsley)
+
+For **welfare** issues, contact your personal tutor.
 
 ## Calculators
 
@@ -147,23 +161,22 @@ Yes! You may use a *basic, non-programmable* calculator in the MATH1710 exam.
 
 ---
 
-![](https://people.maths.bris.ac.uk/~maotj/notes/revise.png)
+![](revise.png)
 
 ## R questions on the exam
 
 **Q.** *Can there be R questions on the exam?*
-:::
 
 Yes!
 
+. . .
+
 * *"What would the output from R be if you entered the code..."*
-* *""Write down some R code that would calculate..."*
+* *"Write down some R code that would calculate..."*
 
-Your exam has two short questions on R, totalling 4 marks (5% of the exam).
+Your exam has one multi-choice and one short question on R, totalling 4 marks (5% of the exam).
 
----
-
-
+## R question: example 1
 
 **A1.** What would the output from the following R code be?
 
@@ -182,8 +195,7 @@ round(sd(data), digits = 2)
 
 **Answer.** This is asking for the standard deviation of $(1,2,3,...,9,10)$, which is **A:** 3.03.
 
----
-
+## R question: example 2
 
 **B4.** In RStudio, a vector `x` contains the values in the range of a discrete random variable $X$ and a vector `p` contains the corresponding probabilities. Write down an R command to evaluate $\mathbb EX(X-1)$ from `x` and `p`.
 
@@ -208,7 +220,7 @@ $$ \text{Final} = 0.70 \times \text{Exam} + 0.30 \times \text{CW} $$
 
 * You must have a final mark of at least 40 *and an exam mark of at least 40* to pass the module.
 
-- - -
+## Passing (2)
 
 $$ \text{Final} = 0.70 \times \text{Exam} + 0.30 \times \text{CW} $$
 
@@ -219,11 +231,271 @@ $$ \text{Final} = 0.70 \times \text{Exam} + 0.30 \times \text{CW} $$
 * If $\text{Final} < 40$: You **fail**, with mark $\text{Final}$.
 
 
+## Failing
 
+**Q.** *What happens if I fail the module?*
+
+Students who fail the module will typically take a "second attempt" or "capped" resit in the summer (13--23 August 2024).
+
+The maximum mark you can then get is 40.
+
+## Missing the exam
+
+**Q.** *What happens if I miss the exam?*
+
+If you miss the exam because you forgot the date, or went to the wrong place, you score **"AB"** (absent) and fail the module.
+
+## Missing the exam (2)
+
+**Q.** *What happens if I miss the exam?*
+
+If it is impossible for you to make the exam -- say, because of illness or completely unavoidable and unpredictable transport issues -- you can make a mitigating circumstances application in the usual way. This will require evidence, and should be done as soon as possible.
+
+A typical outcome is you can take a "first attempt" or "uncapped" resit in the summer (13--23 August 2024).
+
+
+## How much should I write? {.smaller}
+
+**Q.** *How much should I write in the exam?*
+
+* **Section A:**
+  * Just a single multi-choice letter
+  * Rough work will not be marked
+
+* **Section B:**
+  * Usually: a clear answer, and very brief working/justification
+  * but use context clues...
+
+* **Section C:**
+  * Use context clues...
+  
+## How much should I write: Section C {.smaller}
+
+**Q.** *How much should I write in the exam?*
+
+* Look in the right margin for numbers of marks:
+  * **[1]** usually means no working required
+  * **[2]** usually needs brief working/justification
+  * **[3] or more** usually requires detailed explanations, full sentences, etc. Usually some marks are not just for mathematical accuracy but for quality and clarity of explanatory writing
+  
+* Look for the "instruction verb":
+  * **"State", "Write down"** usually means no working required
+  * **"Calculate", "What is...", "Work out"** usually needs brief working justification
+  * **"Explain", "Justify", "Prove", "Show that"** usually requires detailed explanations, full sentences, etc. 
+    * especially **"Explain carefully..."**
+  
+## Random variables
+
+**Q.** *Do I need to remember facts about the distributions (binomial, exponential...)? Which facts?*
+
+Yes!
+
+* "What is the expectation of a Beta$(1,4)$ random variable?
+* State the PMF of Binomial$(10, 0.4)$ distribution.
+
+...are fair questions!
+
+But for lengthy Section C questions, I'll usually remind you of important things.
+
+## Discrete distributions {.smaller}
+
+| Distribution | Range | PMF | Expectation | Variance |
+|:----|:-:|:-:|:-:|:-:|
+| **Bernoulli:** $\text{Bern}(p)$ | $\{0,1\}$ | $p(0) = 1- p$, $p(1) = p$ | $p$ | $p(1-p)$ |
+| **Binomial:** $\text{Bin}(n,p)$ | $\{0,1,\dots,n\}$ | $\displaystyle\binom{n}{x} p^x (1-p)^{n-x}$ | $np$ | $np(1-p)$ |
+| **Geometric:** $\text{Geom}(p)$ | $\{1,2,\dots\}$ | $(1-p)^{x-1}p$ | $\displaystyle\frac{1}{p}$ | $\displaystyle\frac{1-p}{p^2}$ |
+| **Poisson:** $\text{Po}(\lambda)$ | $\{0,1,\dots\}$ | $\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}$ | $\lambda$ | $\lambda$ |
+
+## Continuous distributions {.smaller}
+
+| Distribution | Range | PDF | Expectation | Variance |
+|:-----|:-:|:-:|:-:|:-:|
+| **Exponential:** $\text{Exp}(\lambda)$ | $\mathbb R_+$ | $\lambda \mathrm e^{-\lambda x}$ | $\displaystyle\frac{1}{\lambda}$ | $\displaystyle\frac{1}{\lambda^2}$ |
+| **Normal:** $\mathrm N(\mu,\sigma^2)$ | $\mathbb R$ | ${\displaystyle{\small \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right)}}$ | $\mu$ | $\sigma^2$ |
+| **Beta:** $\text{Beta}(\alpha, \beta)$ | $[0,1]$ | $\propto x^{\alpha - 1}(1-x)^{\beta - 1}$ | $\displaystyle\frac{\alpha}{\alpha + \beta}$ | ${\displaystyle{\small \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}}$ |
+
+  
+## Interpolation {.smaller}
+
+**Q.** *When using statistical tables, do I need to use interpolation, or can I just take the nearest value in the table?*
+
+You do not need to use interpolation.
+
+. . .
+
+I *think* I have written the exam so all values are ones in the table. If your value is not in the table, either:
+
+* You have made a mistake. Check your working.
+  * (Maybe you have forgotten to use a continuity correction in an approximation question?)
+* I have made a mistake in writing the question.
+  * Sorry! Pick the nearest value in the table.
 
 ## Statistical tables
 
-## How much should I write?
+**Q.** *I have a normal distribution button on my calculator. Do I have to bother with the tables?*
 
-## Notices and arrangements
+. . .
+
+If a question says *"Let $X \sim \text{N}(12, 4^2)$. What is $\mathbb P(X \geq 11)$?"* any method is fine!
+
+If a question says *"Let $X \sim \text{N}(12, 4^2)$. Using the statistical tables on p9, find $\mathbb P(X \geq 11)$?"*, we are looking for evidence of using statistical tables:
+
+* Standardising, to convert to $\mathbb P(Z \leq -0.25) = \Phi(-0.25)$
+* Converting to $\Phi(z)$ for $z \geq$, to get $\Phi(-0.25) = 1 - \Phi(+0.25)$
+* I don't care if you get $\Phi(0.25)$ from tables or calculator
+
+Not showing the standardising/conversion steps would lose you amrks.
+  
+## Bookwork and rider
+
+* **"Bookwork"** are questions about facts from the module or totally standard exercises.
+* A **"rider"** is a question following on from bookwork that *uses* the bookwork to answer a harder question.
+
+## Bookwork and rider: example {.smaller}
+
+**2022--23 paper, Question C1**
+
+**(a)** Define what it means for $A_1, A_2, \dots, A_n$ to be a *partition*.
+
+**(b)** Prove the law of total probability.
+
+. . .
+
+An airline has three levels of membership in their reward scheme: Bronze (representing 40% of members), Silver (40% of members), and Gold (20% of members).
+
+The airline estimates that each year 30% of Bronze members, 50% of Silver members, and 80% of Gold members will book a flight with the airline. (In this simplified model, no members book multiple flights.)
+
+**(c)** What proportion of all members will take a flight with the airline in the next year?
+
+
+
+# Notices and arrangements
+
+## This week
+
+* **Problem Sheet 5** was due on Monday, but late work (with a penalty) is still accepted
+* **R Worksheet 10** is due *tomorrow (Thursday) by 5pm*
+* **Office hours:** Friday, 11--12 and 1--2 in PRD 9.320
+
+## After this week
+
+* You can email me over the Christmas break
+  * I will not read or respond to email between 22 December and 1 January, but will work through any backlog as quickly as possibly from 2 January.
+  
+* Office hours in the new year
+  * Monday 8 January (online)
+  * Friday 12 January (in person)
+  * ...probably. Details to follow.
+
+# Your questions...
+
+# A past exam question
+
+## 2022--23, Question C2
+
+Recall that we say a random variable $X$ has an *exponential distribution* with rate $\lambda > 0$, and write $X \sim \text{Exp}(\lambda)$, if its range is the non-negative real numbers $\mathbb R_+$ and its probability density function is $f(x) = \lambda \mathrm{e}^{-\lambda x}$.
+
+**(a)** Let $X \sim \text{Exp}(\lambda)$. Show that its cumulative distribution function is given by $F(x) = 1-\mathrm{e}^{-\lambda x}$ for $x \geq 0$. [[2]]{style="float: right"}
+
+---
+
+## {.smaller}
+
+**(a)** Let $X \sim \text{Exp}(\lambda)$. Show that its cumulative distribution function is given by $F(x) = 1-\mathrm{e}^{-\lambda x}$ for $x \geq 0$. [[2]]{style="float: right"}
+
+::: {style="color: blue;"}
+The CDF is
+\begin{align*}
+F(x) &= \int_{-\infty}^{x} f(y) \, \mathrm{d}y \\
+  &= \int_0^x \lambda \mathrm{e}^{-\lambda y} \, \mathrm{d}y \\
+  &= \big[ -\mathrm{e}^{-\lambda y} \big]_0^x \\
+  &= -\mathrm{e}^{-\lambda x} - (-1) \\
+  &= 1-\mathrm{e}^{-\lambda x} .
+\end{align*}
+In the second line, the integral is 0 for all $y < 0$.
+:::
+
+---  
+
+**(b)** It is known that a certain type of lightbulb has a lifetime until breaking that, measured in years, is well modelled by an exponential distribution with rate $\lambda = \frac12$. What is the probability such a lightbulb lasts for more than 4 years? [[2]]{style="float: right"}
+
+::: {style="color: blue;"}
+$$ \mathbb P(X \geq 4) = 1 - F(4) = 1 - \big(1 - \mathrm{e}^{-\frac12 \times 4}\big) = \mathrm{e}^{-2} = 0.135. $$
+where we used the expression for $F(x)$ from part (a), with $\lambda = \tfrac12$.
+:::
+
+---
+
+**(c)** Write down some R code using the \texttt{pexp()} function that would calculate the answer to part (b) and would round that answer to 3 significant figures. [[1]]{style="float: right"}
+
+
+. . .
+
+```{r, eval = FALSE, echo = TRUE}
+answer <- pexp(4, 1 / 2, lower.tail = FALSE)
+signif(answer, digits = 3)
+```
+
+## {.smaller}
+
+**(d)** A room is lit by 5 of these lightbulbs. What is the probability that at least one of the lightbulb breaks within the first year? (You may assume the lifetimes of the lightbulbs are independent.) [[4]]{style="float: right"}
+
+. . .
+
+::: {style="color: blue;"}
+The probability at least one lightbulb breaks with the year is
+$$ \mathbb P(\geq 1 \text{ lightbulb breaks}) = 1 - \mathbb P(\text{no lightbulb breaks}) . $$
+
+The probability a single lightbulb outlasts the year is
+$$
+\mathbb P(\text{lighbulb doesn't break}) = \mathbb P(X > 1) = 1 - F(1) 
+= 1 - \big(1 - \mathrm{e}^{-\frac12 \times 1}\big) = \mathrm{e}^{-\frac12} .
+$$
+
+Since the lifetimes are independent, the probability no lightbulbs break is
+$$ \mathbb P(\text{no lightbulb breaks}) = \mathbb P(\text{lightbulb doesn't break})^5 = \mathrm{e}^{-\frac12 \times 5} = 0.082 $$
+
+So 
+$$ \mathbb P(\geq 1 \text{ lightbulb breaks}) = 1 - 0.082 = 0.918 . $$
+:::
+
+---
+
+## {.smaller}
+
+**(e)** Suppose that one of these lightbulbs has so far been operating for two years. By calculating the conditional probability $\mathbb P(X \geq 2 + x \mid X \geq 2)$, or otherwise, show that the remaining lifetime of the bulb is still exponentially distributed with rate $\lambda = \frac12$. [[4]]{style="float: right"}
+
+. . .
+
+::: {style="color: blue;"}
+As suggested, we have
+\begin{align*}
+\mathbb P(X \geq 2 + x \mid X \geq 2)
+  &= \frac{\mathbb P(X \geq 2 + x \text{ and } X \geq 2)}{\mathbb P(X \geq 2)} \\
+  &= \frac{\mathbb P(X \geq 2)}{\mathbb P(X \geq 2)} \\
+  &= \frac{\mathrm{e}^{-\frac12(2+x)}}{\mathrm{e}^{-\frac12 \times 2}} \\
+  &= \mathrm{e}^{-\tfrac12x}
+\end{align*}
+where the condition $X \geq 2$ in the numerator was already satisfied if $X \geq 2+x$.
+
+But this is exactly $\mathbb P(X > x) = 1 - F(x)$ for an $\text{Exp}(\tfrac12)$ random variable. Hence the remaining lifetime after $X = 2$ is still exponential with rate 2.
+:::
+
+## {.smaller}
+
+**(f)** In this question, we modelled the lifetimes of the lightbulbs as being IID $\text{Exp}(\frac12)$ distributions. Explain two ways in which the model could be improved. [[4]]{style="float: right"}
+
+. . .
+
+Lots of possible answers. Eg:
+
+::: {style="color: blue;"}
+* Different distribution: eg not memoryless exponential, but one that "degrades over time"
+* Not independent: eg to allow for "faulty batches" of lightbulbs
+* Different parameter $\lambda$:  eg based on testing or on historical data.
+* Not identically distributed: eg living room light is used a lot and may break sooner than attic light, which is only used rarely
+:::
+
+
+
 
