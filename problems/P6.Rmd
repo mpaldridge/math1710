@@ -15,7 +15,7 @@ display: none !important;
 
 
 ::: {.mysummary}
-This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of [Section 10](#S10-bayesian). There is no assessed work on this sheet.
+This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of Lecture 19 and 20. There is no assessed work on this sheet.
 :::
 
 ```{r, child = "problems/questions/P6-qs.Rmd"}

@@ -344,14 +344,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
 <li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
-<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#joint-distributions"><i class="fa fa-check"></i><b>21.3</b> Joint distributions</a></li>
-<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#law-of-the-unconscious-statistician"><i class="fa fa-check"></i><b>21.4</b> Law of the unconscious statistician</a></li>
-<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.5</b> Statistical tables</a></li>
-<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#edge-cases"><i class="fa fa-check"></i><b>21.6</b> “Edge cases”</a></li>
-<li class="chapter" data-level="21.7" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.7</b> End-of semester survey</a></li>
-<li class="chapter" data-level="21.8" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.8</b> Other modules</a></li>
+<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.3</b> Statistical tables</a></li>
+<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#edge-cases"><i class="fa fa-check"></i><b>21.4</b> “Edge cases”</a></li>
+<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.5</b> End-of semester survey</a></li>
+<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.6</b> Other modules</a></li>
 </ul></li>
-<li class="part"><span><b>Other stuff</b></span></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
@@ -388,11 +385,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P4-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-solutions"><i class="fa fa-check"></i>Problem Sheet 5</a>
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P5-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P6-solutions"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
 </ul></li>
 <li class="divider"></li>
 <li></li>
@@ -421,7 +419,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="thpart">
 <p><em>Can you summarise the distributions we need to know?</em></p>
 </div>
-<p>The main random variables we have covered in the module are the following. First, the discrete random variables:</p>
+<p>The main random variables we have covered in the module are the following.</p>
+<p>First, the discrete random variables:</p>
 <table>
 <colgroup>
 <col width="29%" />
@@ -518,7 +517,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="thpart">
 <p><em>How do you work with discrete random variables in R?</em></p>
 </div>
-<p>(This was actually lectured at the end of Lecture 20.)</p>
 <p>If we are dealing with a famous distribution like the binomial, geometric or Poisson distributions, we can use the functions like <code>pbinom()</code>, <code>pgeom()</code>, <code>ppois()</code> and their relatives, as on <a href="R.html#R">R Worksheet 7</a>. However, for arbitrary random variables, we need to do more of the work ourselves. This was discussed on <a href="R.html#R">R Worksheet 8</a>, but when questions came up on this on <a href="R.html#R">R Worksheet 9</a>, lots of people got them wrong, so perhaps I didn’t explain it well.</p>
 <p>Let’s do an example with a simple discrete random variable. Its PMF is as follows:</p>
 <table>
@@ -572,15 +570,14 @@ In R, this is</p>
 <p>When calculating a variance, especially with the computational formula and especially when dealing with a discrete random variable with a large range, it’s important to keep plenty of accuracy in <span class="math inline">\(\mu = \mathbb EX\)</span>. In the above, I did this by saving this as an R object <code>mu</code>. This is much better and more accurate than just writing down a few decimal places and writing it out by hand again.</p>
 <p>Remember that the function <code>var()</code> is used for calculating the <em>sample variance</em> of some <em>data</em> – that’s no use for us here when we want to find the variance of a random variable.</p>
 <p>See <a href="R.html#R">R Worksheet 8</a> for more on this, including how to use the “step function” function <code>stepfun()</code> to work with the CDF <span class="math inline">\(F(x) = \mathbb P(X \leq x)\)</span>.</p>
+<!--
+## Joint distributions
+
+## Law of the unconscious statistician
+-->
 </div>
-<div id="joint-distributions" class="section level2 hasAnchor" number="21.3">
-<h2><span class="header-section-number">21.3</span> Joint distributions<a href="L21-questions.html#joint-distributions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="law-of-the-unconscious-statistician" class="section level2 hasAnchor" number="21.4">
-<h2><span class="header-section-number">21.4</span> Law of the unconscious statistician<a href="L21-questions.html#law-of-the-unconscious-statistician" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-</div>
-<div id="statistical-tables" class="section level2 hasAnchor" number="21.5">
-<h2><span class="header-section-number">21.5</span> Statistical tables<a href="L21-questions.html#statistical-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="statistical-tables" class="section level2 hasAnchor" number="21.3">
+<h2><span class="header-section-number">21.3</span> Statistical tables<a href="L21-questions.html#statistical-tables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="thpart">
 <p><em>Can you go over the rules for how to use statistical tables?</em></p>
 </div>
@@ -590,15 +587,20 @@ In R, this is</p>
 <span class="math inline">\(\mathbb P(8 \leq X \leq 13)\)</span>, then standardising gives
 <span class="math display">\[ \mathbb P(8 \leq X \leq 13) = \mathbb P \left( \frac{8 - 10}{4} \leq \frac{X - 10}{4} \leq \frac{13 - 10}{4} \right) = \mathbb P(-0.5 \leq Z \leq 0.75) . \]</span></p>
 <p>Statistical tables give values of <span class="math inline">\(\Phi(z) = \mathbb P(Z \leq z)\)</span> for <span class="math inline">\(z \geq 0\)</span>. We can use these values in a few different ways. In what follows, we always assume <span class="math inline">\(z \geq 0\)</span>. (Remember, too, that for continuous distributions it’s irrelevant whether an inequality is <span class="math inline">\(&lt;\)</span> or <span class="math inline">\(\leq\)</span>.)</p>
-<ol style="list-style-type: decimal">
-<li>If we have a standard “less than” problem, so want to know <span class="math inline">\(\mathbb P(Z \leq z) = \Phi(z)\)</span>, we can just look this up in the table.</li>
-<li>If we have a “greater than”, so want to know <span class="math inline">\(\mathbb P(Z &gt; z)\)</span>, we can use the complement rule to write <span class="math inline">\(\mathbb P(Z &gt; z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\)</span>. We then look up <span class="math inline">\(\Phi(z)\)</span> in the table, and our answer is <span class="math inline">\(1 - \Phi(z)\)</span>.</li>
-<li>If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
+<p>First, if we have a standard “less than” problem, so want to know <span class="math inline">\(\mathbb P(Z \leq z) = \Phi(z)\)</span>, we can just look this up in the table.</p>
+<p>Second, If we have a “greater than”, so want to know <span class="math inline">\(\mathbb P(Z &gt; z)\)</span>, we can use the complement rule to write <span class="math inline">\(\mathbb P(Z &gt; z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\)</span>. We then look up <span class="math inline">\(\Phi(z)\)</span> in the table, and our answer is <span class="math inline">\(1 - \Phi(z)\)</span>.</p>
+<p>Third, If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
 <span class="math display">\[\begin{align*}
 \mathbb P(Z \geq -z) &amp;= \mathbb P(Z \leq z) = \Phi(z) \\
 \mathbb P(Z \leq -z) &amp;= \mathbb P(Z \geq z) = 1 - \mathbb P(Z &lt; z) = 1 - \Phi(z) .
 \end{align*}\]</span>
-In the second of these, we used rule 2 again in the second equality.</li>
+In the second of these, we used rule 2 again in the second equality.</p>
+<p>To summarize: for <span class="math inline">\(z \geq 0\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mathbb P(Z \leq z) = \Phi(z)\)</span></li>
+<li><span class="math inline">\(\mathbb P(Z &gt; z) = 1 - \Phi(z)\)</span></li>
+<li><span class="math inline">\(\mathbb P(Z \geq -z) = \Phi(z)\)</span></li>
+<li><span class="math inline">\(\mathbb P(Z &lt; -z) = 1 - \Phi(z)\)</span></li>
 </ol>
 <p>So to go back to our example, we’ve already standardised to get
 <span class="math display">\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(-0.5 \leq Z \leq 0.75) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) . \]</span>
@@ -609,20 +611,17 @@ For the second term, we can use rules 2 and 3 to get
 where we found <span class="math inline">\(\Phi(0.5) = 0.6815\)</span> in the table. To put this all together, we get
 <span class="math display">\[ \mathbb P(8 \leq X \leq 13) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) = 0.7734 - 0.3085 = 0.4649 . \]</span></p>
 </div>
-<div id="edge-cases" class="section level2 hasAnchor" number="21.6">
-<h2><span class="header-section-number">21.6</span> “Edge cases”<a href="L21-questions.html#edge-cases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="edge-cases" class="section level2 hasAnchor" number="21.4">
+<h2><span class="header-section-number">21.4</span> “Edge cases”<a href="L21-questions.html#edge-cases" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="end-of-semester-survey" class="section level2 hasAnchor" number="21.7">
-<h2><span class="header-section-number">21.7</span> End-of semester survey<a href="L21-questions.html#end-of-semester-survey" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="end-of-semester-survey" class="section level2 hasAnchor" number="21.5">
+<h2><span class="header-section-number">21.5</span> End-of semester survey<a href="L21-questions.html#end-of-semester-survey" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 </div>
-<div id="other-modules" class="section level2 hasAnchor" number="21.8">
-<h2><span class="header-section-number">21.8</span> Other modules<a href="L21-questions.html#other-modules" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="other-modules" class="section level2 hasAnchor" number="21.6">
+<h2><span class="header-section-number">21.6</span> Other modules<a href="L21-questions.html#other-modules" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 
 </div>
 </div>
-
-
-
             </section>
 
           </div>

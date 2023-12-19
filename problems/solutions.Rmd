@@ -68,7 +68,7 @@ There are many ways you get feedback on this module, both group feedback (feedba
 ```{r, child = "problems/questions/P4-long.Rmd"}
 ```
 
-## Problem Sheet 5 {#P4-solutions .unnumbered}
+## Problem Sheet 5 {#P5-solutions .unnumbered}
 
 ### A: Short questions {#P5-short-solutions .unnumbered}
 
@@ -78,4 +78,9 @@ There are many ways you get feedback on this module, both group feedback (feedba
 ### B: Long questions {#P5-long-solutions .unnumbered}
 
 ```{r, child = "problems/questions/P5-long.Rmd"}
+```
+
+## Problem Sheet 6 {#P6-solutions .unnumbered}
+
+```{r, child = "problems/questions/P6-qs.Rmd"}
 ```

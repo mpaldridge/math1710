@@ -1255,7 +1255,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-61-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-62-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -7280,6 +7280,18 @@ Jokeshop example
 \hypertarget{modern-bayes}{%
 \section{Modern Bayesian statistics}\label{modern-bayes}}
 
+In these two lectures, we've given just a brief taster of Bayesian statistics. Bayesian statistics is a deep and complicated subject, and you may have the opportunity to find out a lot more about it later in your university career.
+
+We have seen that in Bayesian statistics, one brings in a subjective ``prior'' based on previous beliefs and evidence, then updates this prior based on the data. This contrasts with the more traditional \textbf{frequentist statistics}. In frequentist one uses only the data -- no prior beliefs! -- and judges to what extent the data is consistent or inconsistent with a hypothesis, without weighing in on how likely such a hypothesis is. (Frequentist statistics is the main subject studied in MATH1712 Probability and Statistics II.)
+
+For a while, there was an occasionally fierce debate between ``Bayesians'' and ``frequentists''. Frequentists thought that bringing subjective personal beliefs into things was unmathematical, while Bayesians thought that ignoring how plausible a hypothesis is before testing it is unscientific. The debate has now largely dissipated, and it is largely accepted that modern statisticians need to know about both frequentist and Bayesian methods.
+
+In the two main examples of Bayesian statistics we have looked at -- the Bernoulli likelihood and the normal likelihood -- we ended up with a posterior in the same parametric family as prior, just with different parameters. Such a prior is called a ``conjugate prior''. Of course, these are very convenient and easy to work with. However, with more complicated likelihoods and more complicated priors -- especially those not with a single parameter but with many parameters -- calculating the posterior distribution can be very difficult. In particular, working out the constant of proportionality (even just approximately) and/or sampling from the posterior distribution are very hard problems.
+
+For this reason, Bayesian statistics was for a long time a minor area of statistics. However, increases in computer power in the 1980s made some of these problems more tractable, and Bayesian statistics has increased in importance and popularity since then.
+
+There are still plenty of open problems in Bayesian statistics, and lots of these involve the computational side: finding algorithms that can efficiently calculate the normalising constants in posterior distributions or sample from those posterior distributions, especially when the parameter(s) have very high dimension.
+
 \hypertarget{summary-10}{%
 \section*{Summary}\label{summary-10}}
 \addcontentsline{toc}{section}{Summary}
@@ -7302,7 +7314,7 @@ Jokeshop example
 
 \commfalse
 
-This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of \protect\hyperlink{S10-bayesian}{Section 10}. There is no assessed work on this sheet.
+This is not a proper problem sheet, but is a few questions on Bayesian statistics to test your knowledge of Lecture 19 and 20. There is no assessed work on this sheet.
 
 \textbf{1.} I want to use a prior distribution for a parameter \(\theta\) whose range is the interval \([0,1]\), whose expectation is \(0.4\) and whose standard deviation is \(0.2\). Suggest an appropriate distribution.
 
@@ -7416,7 +7428,9 @@ Each geometric experiment has \(x_i - 1\) failures (the first \(x_i - 1\) trials
 
 \emph{Can you summarise the distributions we need to know?}
 
-The main random variables we have covered in the module are the following. First, the discrete random variables:
+The main random variables we have covered in the module are the following.
+
+First, the discrete random variables:
 
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 8\tabcolsep) * \real{0.2941}}
@@ -7477,8 +7491,6 @@ Variance
 \section{Discrete random variables in R}\label{discrete-random-variables-in-r}}
 
 \emph{How do you work with discrete random variables in R?}
-
-(This was actually lectured at the end of Lecture 20.)
 
 If we are dealing with a famous distribution like the binomial, geometric or Poisson distributions, we can use the functions like \texttt{pbinom()}, \texttt{pgeom()}, \texttt{ppois()} and their relatives, as on \protect\hyperlink{R}{R Worksheet 7}. However, for arbitrary random variables, we need to do more of the work ourselves. This was discussed on \protect\hyperlink{R}{R Worksheet 8}, but when questions came up on this on \protect\hyperlink{R}{R Worksheet 9}, lots of people got them wrong, so perhaps I didn't explain it well.
 
@@ -7566,12 +7578,6 @@ Remember that the function \texttt{var()} is used for calculating the \emph{samp
 
 See \protect\hyperlink{R}{R Worksheet 8} for more on this, including how to use the ``step function'' function \texttt{stepfun()} to work with the CDF \(F(x) = \mathbb P(X \leq x)\).
 
-\hypertarget{joint-distributions}{%
-\section{Joint distributions}\label{joint-distributions}}
-
-\hypertarget{law-of-the-unconscious-statistician}{%
-\section{Law of the unconscious statistician}\label{law-of-the-unconscious-statistician}}
-
 \hypertarget{statistical-tables}{%
 \section{Statistical tables}\label{statistical-tables}}
 
@@ -7587,20 +7593,30 @@ The first thing we need to do to use statistical tables is to standardise. That 
 
 Statistical tables give values of \(\Phi(z) = \mathbb P(Z \leq z)\) for \(z \geq 0\). We can use these values in a few different ways. In what follows, we always assume \(z \geq 0\). (Remember, too, that for continuous distributions it's irrelevant whether an inequality is \(<\) or \(\leq\).)
 
+First, if we have a standard ``less than'' problem, so want to know \(\mathbb P(Z \leq z) = \Phi(z)\), we can just look this up in the table.
+
+Second, If we have a ``greater than'', so want to know \(\mathbb P(Z > z)\), we can use the complement rule to write \(\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\). We then look up \(\Phi(z)\) in the table, and our answer is \(1 - \Phi(z)\).
+
+Third, If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
+\begin{align*}
+\mathbb P(Z \geq -z) &= \mathbb P(Z \leq z) = \Phi(z) \\
+\mathbb P(Z \leq -z) &= \mathbb P(Z \geq z) = 1 - \mathbb P(Z < z) = 1 - \Phi(z) .
+\end{align*}
+In the second of these, we used rule 2 again in the second equality.
+
+To summarize: for \(z \geq 0\):
+
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  If we have a standard ``less than'' problem, so want to know \(\mathbb P(Z \leq z) = \Phi(z)\), we can just look this up in the table.
+  \(\mathbb P(Z \leq z) = \Phi(z)\)
 \item
-  If we have a ``greater than'', so want to know \(\mathbb P(Z > z)\), we can use the complement rule to write \(\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)\). We then look up \(\Phi(z)\) in the table, and our answer is \(1 - \Phi(z)\).
+  \(\mathbb P(Z > z) = 1 - \Phi(z)\)
 \item
-  If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
-  \begin{align*}
-  \mathbb P(Z \geq -z) &= \mathbb P(Z \leq z) = \Phi(z) \\
-  \mathbb P(Z \leq -z) &= \mathbb P(Z \geq z) = 1 - \mathbb P(Z < z) = 1 - \Phi(z) .
-  \end{align*}
-  In the second of these, we used rule 2 again in the second equality.
+  \(\mathbb P(Z \geq -z) = \Phi(z)\)
+\item
+  \(\mathbb P(Z < -z) = 1 - \Phi(z)\)
 \end{enumerate}
 
 So to go back to our example, we've already standardised to get
@@ -7620,10 +7636,6 @@ where we found \(\Phi(0.5) = 0.6815\) in the table. To put this all together, we
 
 \hypertarget{other-modules}{%
 \section{Other modules}\label{other-modules}}
-
-\hypertarget{part-other-stuff-1}{%
-\part*{Other stuff}\label{part-other-stuff-1}}
-\addcontentsline{toc}{part}{Other stuff}
 
 \hypertarget{R}{%
 \chapter*{R Worksheets}\label{R}}
@@ -8041,7 +8053,7 @@ Frequency density
 
 \textbf{A3.} Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-\includegraphics{math1710_files/figure-latex/unnamed-chunk-143-1.pdf}
+\includegraphics{math1710_files/figure-latex/unnamed-chunk-144-1.pdf}
 
 \begin{myanswers}
 \emph{Solution.} Some answers could be:
@@ -9401,8 +9413,8 @@ for \(0 \leq a < \frac14\) will have negative covariance \(a - \frac14\), so neg
 
 \end{myanswers}
 
-\hypertarget{P4-solutions}{%
-\section*{Problem Sheet 5}\label{P4-solutions}}
+\hypertarget{P5-solutions}{%
+\section*{Problem Sheet 5}\label{P5-solutions}}
 \addcontentsline{toc}{section}{Problem Sheet 5}
 
 \hypertarget{P5-short-solutions}{%
@@ -9774,6 +9786,110 @@ From the hint in the question (or Table 2 of the statistical tables, or by the R
 \(0.02\sqrt{n} = 1.96\), which is \(n \approx 9600\).
 
 So if we toss about 10,000 coins, there's about a 95\% chance we get between 4900 and 5100 Heads.
+
+\end{myanswers}
+
+\hypertarget{P6-solutions}{%
+\section*{Problem Sheet 6}\label{P6-solutions}}
+\addcontentsline{toc}{section}{Problem Sheet 6}
+
+\textbf{1.} I want to use a prior distribution for a parameter \(\theta\) whose range is the interval \([0,1]\), whose expectation is \(0.4\) and whose standard deviation is \(0.2\). Suggest an appropriate distribution.
+
+\begin{myanswers}
+\emph{Solution.}
+A \(\text{Beta}(\alpha, \beta)\) would be appropriate if we can choose \(\alpha\) and \(\beta\) to give us the correct expectation and standard deviation.
+
+Thus, we need to find \(\alpha\) and \(\beta\) that solve
+\begin{align*}
+\frac{\alpha}{\alpha + \beta} &= 0.4 \\
+\frac{0.4 \times (1 - 0.4)}{\alpha + \beta + 1} = 0.2^2 .
+\end{align*}
+From the second equation, we get \(\alpha + \beta = 5\). Substituting this into the first equation, we get \(\alpha = 2\), which then means we need \(\beta = 3\).
+
+Therefore, a \(\text{Beta}(2,3)\) distribution would be appropriate.
+
+\end{myanswers}
+
+\textbf{2.} My data is modelled as having a \(\text{Bern}(\theta)\) likelihood, and I plan to record 10 IID observations. I choose to use a \(\text{Beta}(1,4)\) prior.
+
+\textbf{(a)} What is the prior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.} The prior expectation is
+\[ \frac{\alpha}{\alpha + \beta} = \frac{1}{1+4} = 0.2 , \]
+and the prior variance is
+\[ \frac{\mu(1-\mu)}{\alpha + \beta + 1} = \frac{0.2 \times 0.8}{1 + 4 + 1} = 0.027 . \]
+
+\end{myanswers}
+
+\textbf{(b)} Suppose my data records 2 successes and 8 failures. What is the posterior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.}
+We know that the posterior distribution is \(\text{Beta}(1 + 2, 4 + 8) = \text{Beta}(3, 12)\). This has posterior expectation
+\[ \frac{3}{3 + 12} = 0.2 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.01 .\]
+
+\end{myanswers}
+
+\textbf{(c)} Suppose my data records 5 successes and 5 failures. What is the posterior expectation and variance?
+
+\begin{myanswers}
+\emph{Solution.}
+We know that the posterior distribution is \(\text{Beta}(1 + 5, 4 + 5) = \text{Beta}(6, 9)\). This has posterior expectation
+\[ \frac{6}{6 + 9} = 0.4 \]
+and posterior variance
+\[ \frac{0.2 \times (1 - 0.2)}{3 + 12 + 1} = 0.015 .\]
+
+\end{myanswers}
+
+\textbf{(d)} Briefly comment on these results.
+
+\begin{myanswers}
+\emph{Solution.}
+In the first example, the data was what we would have expected from the model. Thus the posterior expectation has remained the same as the prior expectation, while the variance has decreased, as we have become more confident about the correctness of our model.
+
+In the second example, the data had more successes that we would have expected from the model. The posterior expectation has moved from the prior expectation \(0.2\) towards the mean of the data \(0.5\), but not all the way. The variance is bigger the the first example, as we are more unsure, although collecting data has still managed to decrease the variance -- and thus increase the certainty -- of the prior alone.
+
+\end{myanswers}
+
+\textbf{3.} \textbf{(a)} My data is modelled as a single data point with a \(\text{Geom}(\theta)\) likelihood, so
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+
+I use a \(\text{Beta}(\alpha,\beta)\) prior for \(\theta\). Show that the posterior distribution is \(\text{Beta}(\alpha + 1, \beta + x - 1)\).
+
+\begin{myanswers}
+\emph{Solution.}
+The geometric likelihood is
+\[ p(x \mid \theta) = (1 - \theta)^{x-1} \theta . \]
+The Beta prior is
+\[ \pi(\theta) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} . \]
+Therefore the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{x-1} \theta
+= \theta^{\alpha} (1 - \theta)^{\beta + x - 1 - 1} , \]
+which is the \(\text{Beta}(\alpha + 1, \beta + x - 1)\) distribution.
+
+\end{myanswers}
+
+\textbf{(b)} I instead choose to collect \(n\) IID data points, using the same geometric likelihood and Beta prior. Show that the posterior distribution is a Beta distribution, and state the parameters.
+
+\begin{myanswers}
+\emph{Solution.}
+We have the same prior, but not have a product likelihood
+\[ p(\mathbf x \mid \theta) = \prod_{i=1}^n (1 - \theta)^{x_i - 1} \theta = (1 - \theta)^{y - n} \theta^n , \]
+where \(y = \sum_{i=1}^n x_i\). Then the posterior is
+\[ \pi(\theta \mid x) \propto \theta^{\alpha - 1}(1 - \theta)^{\beta - 1} (1 - \theta)^{y-n} \theta^n
+= \theta^{\alpha + n - 1} (1 - \theta)^{\beta + y - n - 1} , \]
+which is the \(\text{Beta}(\alpha + n, \beta + y - n)\) distribution.
+
+\end{myanswers}
+
+\textbf{(c)} Compare your results to that of the Beta--Bernoulli model, and briefly comment.
+
+\begin{myanswers}
+\emph{Solution.}
+Each geometric experiment has \(x_i - 1\) failures (the first \(x_i - 1\) trials) and 1 success (the final trial). So in total, over \(n\) experiments, we have \(\sum_i (x_i - 1) = y - n\) failures and \(n\) successes. Thus to get from the prior Beta distribution to the posterior distribution, we have increased \(\alpha\) by the number of suvvesses and increased \(\beta\) by the number of failures. This is exactly the same way we got from the Beta prior to the Beta posterior when using a Bernoulli likelihood.
 
 \end{myanswers}
 

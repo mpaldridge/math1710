@@ -8,7 +8,9 @@
 *Can you summarise the distributions we need to know?*
 :::
 
-The main random variables we have covered in the module are the following. First, the discrete random variables:
+The main random variables we have covered in the module are the following.
+
+First, the discrete random variables:
 
 | Distribution | Range | PMF | Expectation | Variance |
 |:----|:-:|:-:|:-:|:-:|
@@ -30,8 +32,6 @@ Then the continuous random variables:
 ::: {.thpart}
 *How do you work with discrete random variables in R?*
 :::
-
-(This was actually lectured at the end of Lecture 20.)
 
 If we are dealing with a famous distribution like the binomial, geometric or Poisson distributions, we can use the functions like `pbinom()`, `pgeom()`, `ppois()` and their relatives, as on [R Worksheet 7](#R). However, for arbitrary random variables, we need to do more of the work ourselves. This was discussed on [R Worksheet 8](#R), but when questions came up on this on [R Worksheet 9](#R), lots of people got them wrong, so perhaps I didn't explain it well.
 
@@ -88,10 +88,11 @@ Remember that the function `var()` is used for calculating the *sample variance*
 
 See [R Worksheet 8](#R) for more on this, including how to use the "step function" function `stepfun()` to work with the CDF $F(x) = \mathbb P(X \leq x)$.
 
-
+<!--
 ## Joint distributions
 
 ## Law of the unconscious statistician
+-->
 
 ## Statistical tables
 
@@ -109,14 +110,23 @@ $\mathbb P(8 \leq X \leq 13)$, then standardising gives
 
 Statistical tables give values of $\Phi(z) = \mathbb P(Z \leq z)$ for $z \geq 0$. We can use these values in a few different ways. In what follows, we always assume $z \geq 0$. (Remember, too, that for continuous distributions it's irrelevant whether an inequality is $<$ or $\leq$.) 
 
-1. If we have a standard "less than" problem, so want to know $\mathbb P(Z \leq z) = \Phi(z)$, we can just look this up in the table.
-2. If we have a "greater than", so want to know $\mathbb P(Z > z)$, we can use the complement rule to write $\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)$. We then look up $\Phi(z)$ in the table, and our answer is $1 - \Phi(z)$.
-3. If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
+First, if we have a standard "less than" problem, so want to know $\mathbb P(Z \leq z) = \Phi(z)$, we can just look this up in the table.
+
+Second, If we have a "greater than", so want to know $\mathbb P(Z > z)$, we can use the complement rule to write $\mathbb P(Z > z) = 1 - \mathbb P(Z \leq z) = 1 - \Phi(z)$. We then look up $\Phi(z)$ in the table, and our answer is $1 - \Phi(z)$.
+
+Third, If we have a negative number, we can use the fact that the normal distribution is symmetric about 0. So we swap to the positive value of the number, and switch the inequality. So
 \begin{align*}
 \mathbb P(Z \geq -z) &= \mathbb P(Z \leq z) = \Phi(z) \\
 \mathbb P(Z \leq -z) &= \mathbb P(Z \geq z) = 1 - \mathbb P(Z < z) = 1 - \Phi(z) .
 \end{align*}
 In the second of these, we used rule 2 again in the second equality.
+
+To summarize: for $z \geq 0$:
+
+1. $\mathbb P(Z \leq z) = \Phi(z)$
+2. $\mathbb P(Z > z) = 1 - \Phi(z)$
+3. $\mathbb P(Z \geq -z) = \Phi(z)$
+4. $\mathbb P(Z < -z) = 1 - \Phi(z)$
 
 So to go back to our example, we've already standardised to get 
 \[ \mathbb P(8 \leq X \leq 13) = \mathbb P(-0.5 \leq Z \leq 0.75) = \mathbb P(Z \leq 0.75) - \mathbb P(Z \leq -0.5) . \]
