@@ -80,7 +80,7 @@ Here, we have introduced the notation
 for the number of ways to choose $k$ objects out of $n$ without replacement *and where the order they were chosen in doesn't matter*. This is called the **binomial coefficient**, although when we say it out loud we normally just say "$n$ choose $k$". (Another notation for the binomial coefficient is ${}^n C_k$.)
 
 It can sometimes be useful to remember that $\ff nk = n!/(n-k)!$ allows us to write the binomial coefficient in terms of the factorial function as
-\[ \binom nk = \frac{\ff nk}{(n-k)!} = \frac{n!}{k!(n-k)!} . \]
+\[ \binom nk = \frac{\ff nk}{k!} = \frac{n!}{k!(n-k)!} . \]
 
 
 ::: {.example #akqj}
