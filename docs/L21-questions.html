@@ -30,7 +30,7 @@
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 <link rel="prev" href="P6.html"/>
-<link rel="next" href="R.html"/>
+<link rel="next" href="L22-exam.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -349,6 +349,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.5</b> End-of semester survey</a></li>
 <li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.6</b> Other modules</a></li>
 </ul></li>
+<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#exam-arrangements"><i class="fa fa-check"></i><b>22.1</b> Exam arrangements</a></li>
+<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#exam-structure"><i class="fa fa-check"></i><b>22.2</b> Exam structure</a></li>
+<li class="chapter" data-level="22.3" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.3</b> Past papers</a></li>
+<li class="chapter" data-level="22.4" data-path="L22-exam.html"><a href="L22-exam.html#exam-faqs"><i class="fa fa-check"></i><b>22.4</b> Exam FAQs</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="L22-exam.html"><a href="L22-exam.html#questions"><i class="fa fa-check"></i><b>22.4.1</b> Questions</a></li>
+<li class="chapter" data-level="22.4.2" data-path="L22-exam.html"><a href="L22-exam.html#calculators"><i class="fa fa-check"></i><b>22.4.2</b> Calculators</a></li>
+<li class="chapter" data-level="22.4.3" data-path="L22-exam.html"><a href="L22-exam.html#revision"><i class="fa fa-check"></i><b>22.4.3</b> Revision</a></li>
+<li class="chapter" data-level="22.4.4" data-path="L22-exam.html"><a href="L22-exam.html#r-in-the-exam"><i class="fa fa-check"></i><b>22.4.4</b> R in the exam</a></li>
+<li class="chapter" data-level="22.4.5" data-path="L22-exam.html"><a href="L22-exam.html#passing-and-failing"><i class="fa fa-check"></i><b>22.4.5</b> Passing and failing</a></li>
+<li class="chapter" data-level="22.4.6" data-path="L22-exam.html"><a href="L22-exam.html#missing-the-exam"><i class="fa fa-check"></i><b>22.4.6</b> Missing the exam</a></li>
+<li class="chapter" data-level="22.4.7" data-path="L22-exam.html"><a href="L22-exam.html#how-much-should-i-write"><i class="fa fa-check"></i><b>22.4.7</b> How much should I write?</a></li>
+<li class="chapter" data-level="22.4.8" data-path="L22-exam.html"><a href="L22-exam.html#random-variables"><i class="fa fa-check"></i><b>22.4.8</b> Random variables</a></li>
+<li class="chapter" data-level="22.4.9" data-path="L22-exam.html"><a href="L22-exam.html#statistical-tables-1"><i class="fa fa-check"></i><b>22.4.9</b> Statistical tables</a></li>
+<li class="chapter" data-level="22.4.10" data-path="L22-exam.html"><a href="L22-exam.html#bookwork-and-rider"><i class="fa fa-check"></i><b>22.4.10</b> Bookwork and rider</a></li>
+<li class="chapter" data-level="22.4.11" data-path="L22-exam.html"><a href="L22-exam.html#decimal-places"><i class="fa fa-check"></i><b>22.4.11</b> Decimal places</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="L22-exam.html"><a href="L22-exam.html#a-past-exam-question"><i class="fa fa-check"></i><b>22.5</b> A past exam question</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
 <ul>
 <li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
@@ -544,27 +565,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>If we want to work with this in R, we need two vectors. One, which I’ll call <code>x</code>, to hold the values that the random variable can take, and one, which I’ll call <code>pmf_x</code>, to hold the values of the PMF <span class="math inline">\(p(x) = \mathbb P(X = x)\)</span>.</p>
-<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="L21-questions.html#cb39-1" aria-hidden="true" tabindex="-1"></a>x     <span class="ot">&lt;-</span> <span class="fu">c</span>(  <span class="dv">1</span>,   <span class="dv">2</span>,   <span class="dv">3</span>, <span class="fl">5.5</span>,   <span class="dv">7</span>,   <span class="dv">8</span>)</span>
-<span id="cb39-2"><a href="L21-questions.html#cb39-2" aria-hidden="true" tabindex="-1"></a>pmf_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.1</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb39-1"><a href="L21-questions.html#cb39-1" tabindex="-1"></a>x     <span class="ot">&lt;-</span> <span class="fu">c</span>(  <span class="dv">1</span>,   <span class="dv">2</span>,   <span class="dv">3</span>, <span class="fl">5.5</span>,   <span class="dv">7</span>,   <span class="dv">8</span>)</span>
+<span id="cb39-2"><a href="L21-questions.html#cb39-2" tabindex="-1"></a>pmf_x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">0.2</span>, <span class="fl">0.3</span>, <span class="fl">0.1</span>)</span></code></pre></div>
 <p>I can check that the PMF sums to 1, as it must.</p>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="L21-questions.html#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(pmf_x)</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="L21-questions.html#cb40-1" tabindex="-1"></a><span class="fu">sum</span>(pmf_x)</span></code></pre></div>
 <pre><code>[1] 1</code></pre>
 <p>Suppose I wanted to calculate the expectation of this random variable. When doing this “by hand”, we know that this is
 <span class="math display">\[ \mathbb EX = \sum_x x \,p(x) . \]</span>
 So in R, this is</p>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="L21-questions.html#cb42-1" aria-hidden="true" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> pmf_x)</span>
-<span id="cb42-2"><a href="L21-questions.html#cb42-2" aria-hidden="true" tabindex="-1"></a>mu</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="L21-questions.html#cb42-1" tabindex="-1"></a>mu <span class="ot">&lt;-</span> <span class="fu">sum</span>(x <span class="sc">*</span> pmf_x)</span>
+<span id="cb42-2"><a href="L21-questions.html#cb42-2" tabindex="-1"></a>mu</span></code></pre></div>
 <pre><code>[1] 4.8</code></pre>
 <p>Suppose I wanted to find the variance. Using the definitional formula, we know this is
 <span class="math display">\[ \operatorname{Var}(X) = \mathbb E(X - \mu)^2 = \sum_x (x-\mu)^2\,p(x) . \]</span>
 In R, I’ve already saved the expectation as the R object <code>mu</code>. So now I can use</p>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="L21-questions.html#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>((x <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> pmf_x)</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="L21-questions.html#cb44-1" tabindex="-1"></a><span class="fu">sum</span>((x <span class="sc">-</span> mu)<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> pmf_x)</span></code></pre></div>
 <pre><code>[1] 5.91</code></pre>
 <p>Alternatively, we have the computational formula <span class="math inline">\(\operatorname{Var}(X) = \mathbb EX^2 - \mu^2\)</span>, where
 <span class="math display">\[ \mathbb EX^2 = \sum_x x^2 \, p(x) .\]</span>
 In R, this is</p>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="L21-questions.html#cb46-1" aria-hidden="true" tabindex="-1"></a>EX2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> pmf_x)</span>
-<span id="cb46-2"><a href="L21-questions.html#cb46-2" aria-hidden="true" tabindex="-1"></a>EX2 <span class="sc">-</span> mu<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="L21-questions.html#cb46-1" tabindex="-1"></a>EX2 <span class="ot">&lt;-</span> <span class="fu">sum</span>(x<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> pmf_x)</span>
+<span id="cb46-2"><a href="L21-questions.html#cb46-2" tabindex="-1"></a>EX2 <span class="sc">-</span> mu<span class="sc">^</span><span class="dv">2</span></span></code></pre></div>
 <pre><code>[1] 5.91</code></pre>
 <p>which gives the same answer.</p>
 <p>When calculating a variance, especially with the computational formula and especially when dealing with a discrete random variable with a large range, it’s important to keep plenty of accuracy in <span class="math inline">\(\mu = \mathbb EX\)</span>. In the above, I did this by saving this as an R object <code>mu</code>. This is much better and more accurate than just writing down a few decimal places and writing it out by hand again.</p>
@@ -628,7 +649,7 @@ where we found <span class="math inline">\(\Phi(0.5) = 0.6815\)</span> in the ta
         </div>
       </div>
 <a href="P6.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="R.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L22-exam.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,5 +1,437 @@
 # Exam  {#L22-exam}
 
+## Exam arrangements
+
+Here are the essential details about the MATH1710 (including MATH2700) exam:
+
+* While you should of course check your own exam timetable, for most people (without unusual clashes or special arrangements). the exam will happen on **Monday 15 January at 1400** in The Edge (Sports Hall 2).
+* The exam will last for 2 hours (except for some students with special arrangements).
+* You are allowed to use a basic non-programmable calculator for the exam. (More on this later.)
+* The exam will be "closed-book" style: you are not permitted to bring notes into the exam hall.
+* A page of [statistical tables for the normal distribution](https://mpaldridge.github.io/math1710/stat-tab.pdf) will be on the final page of the exam paper.
+* There will not be a formula book.
+
+## Exam structure
+
+The exam will be in three sections:
+
+* **Section A:** 10 short multiple-choice questions (25% of marks)
+* **Section B:** 10 short questions (25% of marks)
+* **Section C:** 2 multi-part long questions (50% of marks)
+
+**Section A:**
+
+* 10 multiple-choice questions
+* 2 marks each
+* Total of 20 marks
+
+Section A questions each require a single letter answer. No rough work will be read or marked. You will enter these letter answers on a multiple-choice "bubble sheet". There is an example of an incomplete and a completed bubble sheet on Minerva. *Recommended time: 3 minutes per question; 30 minutes total*
+
+**Section B:**
+
+* 10 single-part "short answer" questions
+* 2 marks each
+* Total of 20 marks
+
+Section B questions require a clear answer and brief working or explanation. A correct answer with some working will get 2 marks, while partial progress (or a correct answer with totally inadequate working) will get 1 mark. You will answer these in an answer booklet. *Recommended time: 3 minutes per question; 30 minutes total*
+
+**Section C:**
+
+* 2 multi-part "long answer" questions
+* 20 marks each
+* Total of 40 marks
+
+Some parts of Section C questions require full detailed answers, as in assessed work from problem sheets, and will have marks set aside for quality of explanations. You will answer these in the same answer booklet as Section B. 
+*Recommended time: 30 minutes per question; 1 hour total.*
+
+## Past papers
+
+School of Maths policy is that for Level 1 modules, the three most recent past papers (with the same format) are available.
+
+* The **2022--23** paper (from January 2023)
+* The **2021--22** paper (from January 2022)
+* *Not the 2020--21 paper, as this was held in pandemic times, and had a different format.*
+* The **2019--20** paper (from January 2020)
+
+These are all available from Minerva.
+
+University policy is that we are not permitted to give out complete worked solutions to past exam papers. Instead, I have provided a "checksheet" for the three past papers 2021-22, 2019--20 and 2018--19. This should give enough information for you to check your own answers, if you use the papers for your revision, but is rather bare-bones and doesn't give a lot of detail. I am, however, very happy to discuss exam questions in detail at office hours.
+
+I strongly recommend using all these past papers as part of your revision, and resisting the temptation to peek at the checksheet before trying the questions yourself, perhaps multiple times. You may wish to test yourself by trying one of the papers sight-unseen under exam-like conditions.
+
+Some notes on the past papers:
+
+* **2022-23 paper:**
+  * Written by me, reflecting the module as taught this year
+  * Excellent revision paper!
+* **2021-22 paper:**
+  * Written by me, reflecting the module as taught this year
+  * A bit too hard! You should be able to score about 10% higher on your exam than this paper
+* **2019--20 paper:**
+  * Not written by me, reflecting the module as someone else taught it
+  * The material is almost identical, but some notation is different (eg. $\Pr(A)$ and $\mathrm{E}[X]$; not $\mathbb P(A)$ and $\mathbb EX$)
+  * You are not expected to be able to answer Question B9 (numerical integration in R)
+  * In Question A8, all the multi-choice options are wrong!
+
+## Exam FAQs
+
+### Questions
+
+::: {.thpart}
+**Q.** *I have a question about the exam. Who should I ask?*
+:::
+
+For questions about **the mathematical content of the MATH1710 exam**, you should ask me.
+
+For questions about the **organisation and administration of exams**, start with the [Student Information Service](https://students.leeds.ac.uk/askingforhelp).
+
+For **welfare** issues, contact your personal tutor.
+
+### Calculators
+
+::: {.thpart}
+**Q.** *Can I use a calculator in the exam?*
+:::
+
+Yes! You may use a *basic, non-programmable* calculator in the MATH1710 exam.
+
+The School of Mathematics have written some more detailed information about their rules for calculators. (Note that I did not write the calculator rules, and am not able to change them!) The School of Mathematics information is this:
+
+*"Note that Calculators are only allowed in certain exams. The module leader will be able to tell you whether a calculator can be used on the exam for their module.*
+
+*"Where calculators can be used in MATH coded exams:*
+
+* *Any basic (i.e., non-programmable) calculator is allowed.*
+* *Calculators that can solve calculus problems or do matrix calculations are allowed if they are non-programmable. Examples of commonly used calculators that are allowed include the Casio FX-85 series and the Casio FX991 series.*
+* *If you are not sure whether your calculator is non-programmable then check the manufacturer's website. Any calculator that is marketed as 'programmable' or 'graphic' is unlikely to be allowed in an exam. *
+
+*"**Please note:** the school does not provide a definitive list of approved and non-approved calculators. The school do not verify / pre-approve calculators (some other schools may provide verification stickers but these are not needed for MATH exams). The exam invigilators will check calculators during the examination."*
+
+### Revision
+
+::: {.thpart}
+**Q.** *What tips do you have for revising for a University maths exam?*
+:::
+
+I always feel a bit self-conscious answering this question -- I last did a maths exam more than 15 years ago, while many of you last did a maths exam six or seven months ago. Surely it's *you* who should be giving *me* revision advice!
+
+That said, I like [these exam revision tips from my former colleague Prof Oliver Johnson](https://people.maths.bris.ac.uk/~maotj/notes/revise.png), who teaches the equivalent module to MATH1710 at the University of Bristol.
+
+I particular endorse Prof Johnson's second point: Maths is a doing subject, and revising maths should be an active process. In my opinion, time spent merely reading (and perhaps highlighting) lecture notes is unlikely to be revision time well spent. Instead, work on past paper questions or questions from problem sheets (without peaking at the answers!), or write new summaries of sections of notes.
+
+Read the rest of Prof Johnson's revision tips [here](https://people.maths.bris.ac.uk/~maotj/notes/revise.png).
+
+### R in the exam
+
+::: {.thm}
+**Q.** *Can there be R questions on the exam?*
+:::
+
+Yes!
+
+If I've counted correctly, there are two questions about R on your exam, worth 2 marks each. Therefore R material makes up 5% of the exam (a fact to bear in mind when deciding how much time to spend revising R material).
+
+Obviously, when you're sitting in the Sports Hall with your biro and answer booklet, I can't ask you to read a 700-line CSV file into RStudio. Instead, there are two styles of question you might see:
+
+1. *"What would the output from R be if you entered the code..."*
+2. *"Write down some R code that would calculate..."*
+
+In both cases, the R code in question would probably be one or two lines long.
+
+Here's an example question of the first kind. (It was the very first question on the most recent past paper.)
+
+:::: {.thpart}
+**A1.** *What would the output from the following R code be?*
+
+```{r, echo = TRUE, eval = FALSE}
+data <- 1:10
+round(sd(data), digits = 2)
+```
+
+**A:** 3.03   **B:** 5.5   **C:** 6.36   **D:** 9.17   **E** 40.5
+::::
+
+Here, the question is asking for the standard deviation of $(1,2,3,...,9,10)$, which is **A:** 3.03.
+
+Here's an example question of the second kind. (I think was an older past paper.)
+
+::: {.thpart}
+**B4.** *In RStudio, a vector `x` contains the values in the range of a discrete random variable $X$ and a vector `p` contains the corresponding probabilities. Write down an R command to evaluate $\mathbb EX(X-1)$ from `x` and `p`.*
+:::
+
+By the law of the unconscious statistician, this is calculated by
+$$ \mathbb EX(X-1) = \sum_x x(x-1)\,p(x) . $$
+This can be calculated with the R code
+```{r, echo = TRUE, eval = FALSE}
+sum(x * (x - 1) * p)
+```
+
+### Passing and failing
+
+::: {.thpart}
+**Q.** *What is the pass mark for this module?*
+:::
+
+Your coursework (Problem Sheets and R Worksheets) will be converted to a mark out of 100. Your exam mark will be converted to a mark out of 100. Then your final mark will be calculated as
+$$ \text{Final} = 0.70 \times \text{Exam} + 0.30 \times \text{CW} $$
+You must have a final mark of at least 40 *and an exam mark of at least 40* to pass the module.
+
+* If $\text{Final} \geq 40$ and $\text{Exam} \geq 40$: You **pass**, with mark $\text{Final}$.
+* If $\text{Final} \geq 40$ but $\text{Exam} < 40$: You **fail**, with mark "**40V**"
+* If $\text{Final} < 40$: You **fail**, with mark $\text{Final}$.
+
+::: {.thpart}
+**Q.** *What happens if I fail the module?*
+:::
+
+Students who fail the module will typically take a "second attempt" or "capped" resit in the summer (13--23 August 2024). The maximum mark you can then get is 40.
+
+### Missing the exam
+
+::: {.thpart{
+**Q.** *What happens if I miss the exam?*
+:::
+
+If you miss the exam because you forgot the date, or went to the wrong place, you score **"AB"** (absent) and fail the module. DOn't do this!
+
+If it is impossible for you to make the exam -- say, because of illness or completely unavoidable and wholly unpredictable transport issues -- you can [make a mitigating circumstances application in the usual way](https://students.leeds.ac.uk/info/1000021/preparing-for-your-assessments/860/mitigating-circumstances). This will require evidence, and should be done as soon as possible after the exam. A typical outcome is you can take a "first attempt" or "uncapped" resit in the summer (13--23 August 2024).
+
+### How much should I write?
+
+::: {.thpart}
+**Q.** *How much should I write in the exam?*
+:::
+
+* **Section A:** Just a single multi-choice letter is needed; rough work will not be marked.
+* **Section B:** Usually, just a clear answer with very brief working/justification is required, but use context clues.
+* **Section C:** Use context clues...
+  
+When I say "context clues" I mean to pick up clues from the way the question is written to tell how much writing is required. There are two main context clues in the MATH1710 exam (and other mathematics exams).
+
+First, look at the number of marks available. For Section B questions, this is two marks; for parts of Section C questions, this appears in square brackets in the right-hand margin.
+
+* **1 mark** usually means no working required
+* **2 marks** usually needs brief working/justification
+* **3 or more marks** usually requires detailed explanations, full sentences, etc. Usually some marks are not just for mathematical accuracy but for quality and clarity of explanatory writing
+  
+Second, look for the "instruction verb":
+
+* *"State", "Write down"* usually means no working required
+* *"Calculate", "What is...", "Work out"* usually needs brief working justification
+* *"Explain", "Justify", "Prove", "Show that"* (and especially *"Explain carefully"*) usually requires detailed explanations, full sentences, etc. 
+  
+### Random variables
+
+::: {.thpart}
+**Q.** *Do I need to remember facts about the distributions (binomial, exponential...)? Which facts?*
+:::
+
+Yes!
+
+In my opinion, for example, "What is the expectation of a Beta$(1,4)$ random variable?" or "State the PMF of Binomial$(10, 0.4)$ distribution" are fair questions. But for multi-part Section C questions, I'll usually remind you of important things -- I don't want people "locked out" of questions due to forgetting some PDF.
+
+As a handy summary, I would remember all these discrete distributions...
+
+| Distribution | Range | PMF | Expectation | Variance |
+|:----|:-:|:-:|:-:|:-:|
+| **Bernoulli:** $\text{Bern}(p)$ | $\{0,1\}$ | $p(0) = 1- p$, $p(1) = p$ | $p$ | $p(1-p)$ |
+| **Binomial:** $\text{Bin}(n,p)$ | $\{0,1,\dots,n\}$ | $\displaystyle\binom{n}{x} p^x (1-p)^{n-x}$ | $np$ | $np(1-p)$ |
+| **Geometric:** $\text{Geom}(p)$ | $\{1,2,\dots\}$ | $(1-p)^{x-1}p$ | $\displaystyle\frac{1}{p}$ | $\displaystyle\frac{1-p}{p^2}$ |
+| **Poisson:** $\text{Po}(\lambda)$ | $\{0,1,\dots\}$ | $\mathrm{e}^{-\lambda} \displaystyle\frac{\lambda^x}{x!}$ | $\lambda$ | $\lambda$ |
+
+...and these continuous distributions...
+
+| Distribution | Range | PDF | Expectation | Variance |
+|:-----|:-:|:-:|:-:|:-:|
+| **Exponential:** $\text{Exp}(\lambda)$ | $\mathbb R_+$ | $\lambda \mathrm e^{-\lambda x}$ | $\displaystyle\frac{1}{\lambda}$ | $\displaystyle\frac{1}{\lambda^2}$ |
+| **Normal:** $\mathrm N(\mu,\sigma^2)$ | $\mathbb R$ | ${\displaystyle{\small \frac{1}{\sqrt{2\pi\sigma^2}} \exp \left( - \frac{(x - \mu)^2}{2\sigma^2} \right)}}$ | $\mu$ | $\sigma^2$ |
+| **Beta:** $\text{Beta}(\alpha, \beta)$ | $[0,1]$ | $\propto x^{\alpha - 1}(1-x)^{\beta - 1}$ | $\displaystyle\frac{\alpha}{\alpha + \beta}$ | ${\displaystyle{\small \frac{\alpha\beta}{(\alpha + \beta)^2(\alpha + \beta + 1)}}}$ |
+
+  
+### Statistical tables
+
+::: {.thpart}
+**Q.** *When using statistical tables in the exam, do I need to use interpolation, or can I just take the nearest value in the table?*
+:::
+
+No, you do not need to use interpolation in the exam.
+
+I *think* I have written the exam so all values are ones in the table. If your value is not in the table, either:
+
+* You have made a mistake. Check your working. (Maybe you have forgotten to use a continuity correction in an approximation question?)
+* I have made a mistake in writing the question. Sorry! Just pick the nearest value in the table.
+
+::: {.thpart}
+**Q.** *I have a normal distribution button on my calculator. Do I have to bother with the tables?*
+:::
+
+If a question says *"Let $X \sim \text{N}(12, 4^2)$. What is $\mathbb P(X \geq 11)$?"* any method is fine!
+
+If a question says *"Let $X \sim \text{N}(12, 4^2)$.* Using the statistical tables *on p9, find $\mathbb P(X \geq 11)$?"*, your marker will be looking for evidence of using statistical tables:
+
+* Standardising, to convert to $\mathbb P(Z \leq -0.25) = \Phi(-0.25)$.
+* Converting to $\Phi(z)$ for $z \geq 0$, to get $\Phi(-0.25) = 1 - \Phi(+0.25).$
+* If you've shown this working, then your marker won't actually know (or care) if you get $\Phi(0.25)$ from the tables or your calculator.
+
+Not showing the standardising and conversion steps would lose you marks.
+  
+### Bookwork and rider
+
+You don't need to know these words, but when exam-writers talk among themselves, they often talk about "bookwork" and "riders". **"Bookwork"** refers to questions about facts from the module or totally standard exercises. A **"rider"** is a question following on from bookwork that *uses* the bookwork to answer a harder question.
+
+If you're stuck on a part of a multi-part Section C question, it might be worth checking if it is a "rider" on some earlier "bookwork" -- that might give a hint about what technique to use. Here an example from the 2022--23 paper
+
+::: {.thpart}
+**Question C1**
+
+**(a)** *Define what it means for $A_1, A_2, \dots, A_n$ to be a* partition.
+
+**(b)** *Prove the law of total probability.*
+:::
+
+These are standard "bookwork" questions, asking about plain facts from the lectures. But then the question continues...
+
+::: {.thpart}
+*An airline has three levels of membership in their reward scheme: Bronze (representing 40% of members), Silver (40% of members), and Gold (20% of members).*
+
+*The airline estimates that each year 30% of Bronze members, 50% of Silver members, and 80% of Gold members will book a flight with the airline. (In this simplified model, no members book multiple flights.)*
+
+**(c)** *What proportion of all members will take a flight with the airline in the next year?*
+:::
+
+Now, it might not be clear how to answer this question. But if you know about the "bookwork--rider" structure, then it seems likely that this is likely to use the concept of a partition and the law of total probability. You might then notice that "bronze", "silver" and "gold" make up a partition, and so probability a random member takes a flight in the next year can be calculated using the law of total probability. You're now at least halfway towards answering the question!
+
+### Decimal places
+
+::: {.thpart}
+**Q.** *How many decimal places should I give my answers to?
+:::
+
+Anything sensible is fine. We're not looking to subtract
+
+## A past exam question
+
+Let's work through a past exam question. This is the **2022--23 paper, Question C2**.
+
+::: {.thpart}
+*Recall that we say a random variable $X$ has an* exponential distribution *with rate $\lambda > 0$, and write $X \sim \text{Exp}(\lambda)$, if its range is the non-negative real numbers $\mathbb R_+$ and its probability density function is $f(x) = \lambda \mathrm{e}^{-\lambda x}$.*
+
+**(a)** *Let $X \sim \text{Exp}(\lambda)$. Show that its cumulative distribution function is given by $F(x) = 1-\mathrm{e}^{-\lambda x}$ for $x \geq 0$.* [[2]]{style="float: right"}
+:::
+
+Note how, because this is a multi-part question, the question-setter has told us the formulas for PDF and CDF, just in case we had forgotten.
+
+Now, this is a "Show that..." question worth 2 marks, so I'll want to show my working, but no need to write a monster essay or anything.
+
+::: {.myanswers}
+The CDF is
+\begin{align*}
+F(x) &= \int_{-\infty}^{x} f(y) \, \mathrm{d}y \\
+  &= \int_0^x \lambda \mathrm{e}^{-\lambda y} \, \mathrm{d}y \\
+  &= \big[ -\mathrm{e}^{-\lambda y} \big]_0^x \\
+  &= -\mathrm{e}^{-\lambda x} - (-1) \\
+  &= 1-\mathrm{e}^{-\lambda x} .
+\end{align*}
+In the second line, the integral is 0 for all $y < 0$.
+:::
+
+I think I'd have probably got both marks even without that last sentence of explanation, but I just wanted to make certain of it.
+
+::: {.thpart}
+**(b)** *It is known that a certain type of lightbulb has a lifetime until breaking that, measured in years, is well modelled by an exponential distribution with rate $\lambda = \frac12$. What is the probability such a lightbulb lasts for more than 4 years?* [[2]]{style="float: right"}
+:::
+
+This appears to be a "rider" on part (a)'s "bookwork", so it will probably use the formula for the CDF from part (a). It's a "What is..." for 2 marks, so again, I'll show my working with maybe a half-sentence of explanation.
+
+::: {.myanswers}
+$$ \mathbb P(X \geq 4) = 1 - F(4) = 1 - \big(1 - \mathrm{e}^{-\frac12 \times 4}\big) = \mathrm{e}^{-2} = 0.135 , $$
+where we used the expression for $F(x)$ from part (a), with $\lambda = \tfrac12$.
+:::
+
+::: {.thpart}
+**(c)** *Write down some R code using the \texttt{pexp()} function that would calculate the answer to part (b) and would round that answer to 3 significant figures.* [[1]]{style="float: right"}
+:::
+
+An R question! It's a "Write down..." for 1 mark, so I'll just give the R code; nothing else needed.
+
+```{r, eval = FALSE, echo = TRUE}
+answer <- pexp(4, 1 / 2, lower.tail = FALSE)
+signif(answer, digits = 3)
+```
+
+::: {.thpart}
+**(d)** *A room is lit by 5 of these lightbulbs. What is the probability that at least one of the lightbulb breaks within the first year? (You may assume the lifetimes of the lightbulbs are independent.)* [[4]]{style="float: right"}
+:::
+
+A lot of marks going for this one, so I want to make sure I explain myself fully using full sentences.
+
+::: {.myanswers}
+The probability at least one lightbulb breaks with the year is
+$$ \mathbb P(\geq 1 \text{ lightbulb breaks}) = 1 - \mathbb P(\text{no lightbulb breaks}) . $$
+
+The probability a single lightbulb outlasts the year is
+$$
+\mathbb P(\text{lighbulb doesn't break}) = \mathbb P(X > 1) = 1 - F(1) 
+= 1 - \big(1 - \mathrm{e}^{-\frac12 \times 1}\big) = \mathrm{e}^{-\frac12} .
+$$
+
+Since the lifetimes are independent, the probability no lightbulbs break is
+$$ \mathbb P(\text{no lightbulb breaks}) = \mathbb P(\text{lightbulb doesn't break})^5 = \mathrm{e}^{-\frac12 \times 5} = 0.082 $$
+
+So 
+$$ \mathbb P(\geq 1 \text{ lightbulb breaks}) = 1 - 0.082 = 0.918 . $$
+:::
+
+::: {.thpart}
+**(e)** *Suppose that one of these lightbulbs has so far been operating for two years. By calculating the conditional probability $\mathbb P(X \geq 2 + x \mid X \geq 2)$, or otherwise, show that the remaining lifetime of the bulb is still exponentially distributed with rate $\lambda = \frac12$.* [[4]]{style="float: right"}
+:::
+
+Lots of marks, and a "Show that..." instruction, so plenty of full-sentence writing is in order.
+
+::: {.myanswers}
+As suggested, we have, for $x > 0$,
+\begin{align*}
+\mathbb P(X \geq 2 + x \mid X \geq 2)
+  &= \frac{\mathbb P(X \geq 2 + x \text{ and } X \geq 2)}{\mathbb P(X \geq 2)} \\
+  &= \frac{\mathbb P(X \geq 2+x)}{\mathbb P(X \geq 2)} \\
+  &= \frac{\mathrm{e}^{-\frac12(2+x)}}{\mathrm{e}^{-\frac12 \times 2}} \\
+  &= \mathrm{e}^{-\tfrac12x} .
+\end{align*}
+Here, the condition $X \geq 2$ in the numerator was already satisfied if $X \geq 2+x$, since $x > 0$, so could be deleted.
+
+But this expression is exactly $\mathbb P(X > x) = 1 - F(x)$ for an $\text{Exp}(\tfrac12)$ random variable. Hence the remaining lifetime after $X = 2$ is still exponential with rate 2.
+:::
+
+::: {.thpart}
+**(f)** *In this question, we modelled the lifetimes of the lightbulbs as being IID $\text{Exp}(\frac12)$ distributions. Explain two ways in which the model could be improved.* [[4]]{style="float: right"}
+:::
+
+A discussion question. Since it asks for "two ways" for 4 marks, it presumably 2 marks per suggestion, so I probably need one or two full sentences for each.
+
+There are lots of possible answers for this, so I should make sure my two suggestions aren't super-close to each other. I can think of four facets the the model: (1) the exponential distribution family, (2) the parameter $\lambda = \frac12$, (3) lifetimes being independent, and (4) lifetimes being identically distributed. So I'd pick two of those four things for my answers.
+
+::: {.myanswers}
+Two of the following (for example):
+
+* Choose a different distribution. Perhaps the memoryless exponential family might not be appropriate, and it might be better to pick a non-memoryless family where the lightbulbs "degrade over time".
+* Choose different parameter $\lambda$. The value $\lambda = \frac12$ seems suspiciously convenient; it would be better to chose $\lambda$ based on testing or on historical data.
+* Consider lifetimes not being independent. This could allow us to model "faulty batches" of lightbulbs.
+* Consider lifetimes not being identically distributed. For example, an often-used living room light may break sooner than rarely-used attic light, so could be modelled with a larger parameter $\lambda$.
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
 ## About the exam
 
 First, the details of the exam:
@@ -51,14 +483,7 @@ Some notes on the past papers:
   * Question B9: You are not expected to be able to answer this question.
   * Question C2(b): Some of the notation here is a bit different to ours; for example, writing $l(x|p)$ for the likelihood.
   
-<!---
-* 2020--21 paper:
-  * Because this was a "take-home" paper, there was no multiple-choice section, which it was thought would be too easy for nefarious students to cheat on. Instead, there were twice as many short questions.
-  * Because this was an "open-book" paper, there were fewer "fact" questions than usual, such as stating definitions or giving standard proofs from the notes.
-  * Question A11(ii): You are not expected to be able to answer this question.
-  * Question A12: An event $A$ is said to be "preferable" for an event $B$ is $\mathbb P(B \mid A) > \mathbb P(A)$. You are not expected to know this definition (although, once told the definition, you should be able to work with it).
-  * Question A18: You are not expected to be able to answer this question.
---->
+
 
 
 ## Exam FAQs
@@ -151,6 +576,7 @@ I can reveal that your exam will have two questions (or part-questions) on R, to
 
 ### How much should I write?
 
+-->
 
 
 
