@@ -439,7 +439,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">22.1</span> Exam arrangements<a href="L22-exam.html#exam-arrangements" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Here are the essential details about the MATH1710 (including MATH2700) exam:</p>
 <ul>
-<li>While you should of course check your own exam timetable, for most people (without unusual clashes or special arrangements). the exam will happen on <strong>Monday 15 January at 1400</strong> in The Edge (Sports Hall 2).</li>
+<li>While you should of course check your own exam timetable, for most people (without unusual clashes or special arrangements). the exam will happen on <strong>Monday 15 January at 1400</strong> in The Edge (Sports Hall 1).</li>
 <li>The exam will last for 2 hours (except for some students with special arrangements).</li>
 <li>You are allowed to use a basic non-programmable calculator for the exam. (More on this later.)</li>
 <li>The exam will be “closed-book” style: you are not permitted to bring notes into the exam hall.</li>
@@ -550,7 +550,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="r-in-the-exam" class="section level3 hasAnchor" number="22.4.4">
 <h3><span class="header-section-number">22.4.4</span> R in the exam<a href="L22-exam.html#r-in-the-exam" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="thm">
+<div class="thpart">
 <p><strong>Q.</strong> <em>Can there be R questions on the exam?</em></p>
 </div>
 <p>Yes!</p>
@@ -598,10 +598,10 @@ You must have a final mark of at least 40 <em>and an exam mark of at least 40</e
 </div>
 <div id="missing-the-exam" class="section level3 hasAnchor" number="22.4.6">
 <h3><span class="header-section-number">22.4.6</span> Missing the exam<a href="L22-exam.html#missing-the-exam" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="{.thpart{">
+<div class="thpart">
 <p><strong>Q.</strong> <em>What happens if I miss the exam?</em></p>
 </div>
-<p>If you miss the exam because you forgot the date, or went to the wrong place, you score <strong>“AB”</strong> (absent) and fail the module. DOn’t do this!</p>
+<p>If you miss the exam because you forgot the date, or went to the wrong place, you score <strong>“AB”</strong> (absent) and fail the module. Don’t do this!</p>
 <p>If it is impossible for you to make the exam – say, because of illness or completely unavoidable and wholly unpredictable transport issues – you can <a href="https://students.leeds.ac.uk/info/1000021/preparing-for-your-assessments/860/mitigating-circumstances">make a mitigating circumstances application in the usual way</a>. This will require evidence, and should be done as soon as possible after the exam. A typical outcome is you can take a “first attempt” or “uncapped” resit in the summer (13–23 August 2024).</p>
 </div>
 <div id="how-much-should-i-write" class="section level3 hasAnchor" number="22.4.7">
@@ -770,9 +770,20 @@ You must have a final mark of at least 40 <em>and an exam mark of at least 40</e
 <div id="decimal-places" class="section level3 hasAnchor" number="22.4.11">
 <h3><span class="header-section-number">22.4.11</span> Decimal places<a href="L22-exam.html#decimal-places" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="thpart">
-<p><strong>Q.</strong> *How many decimal places should I give my answers to?</p>
+<p><strong>Q.</strong> *How many decimal places should I give my answers to in the exam?</p>
 </div>
-<p>Anything sensible is fine. We’re not looking to subtract</p>
+<p>Anything broadly sensible is fine! We’re not looking to penalise people marks for breaking some arbitrary made-up rules about rounding.</p>
+<p>That said, if you give a truly ridiculous number of decimal places (say, giving <span class="math inline">\(2\mathrm{e}^{-2}\)</span> as “<span class="math inline">\(0.270670566473\)</span> to 12 decimal places”) or round so severely we’re not sure if the answer is correct (say, giving <span class="math inline">\(147.2\)</span> as “<span class="math inline">\(100\)</span> to 1 significant figure”) we might dock you one mark.</p>
+<p>Putting that MATH1710 exam aside for the moment: For some rough guidance of what might often be sensible (<em>Not rules!</em>), I can offer this:</p>
+<ul>
+<li>If a question has data given to <span class="math inline">\(n\)</span> decimal places, it’s often sensible to give an answer to <span class="math inline">\(n-1\)</span>, <span class="math inline">\(n\)</span> or <span class="math inline">\(n+1\)</span> decimal places.</li>
+<li>For probabilities not very close to 0 or 1, I often like to give 3 decimal places.</li>
+<li>For an answer that is very close to 0 but <em>not</em> 0, it’s often a bad idea to round it so that it appears it <em>is</em> 0.</li>
+<li>For modest amounts of money, 2 decimal places corresponds to “pounds and pence”, and can often be a sensible choice.</li>
+<li>The less confident you are about the accuracy of a number, the more it makes sense to round it. (In this module, this is relevant to questions involving approximating distributions by other distributions.)</li>
+<li>Statistical tables give values to 4 decimal places. If your answer uses values from the tables, it’s often sensible to use 3 or 4 decimal places. (4, because it’s the same as the tables, so more than that would be silly; or 3 because calculations made with that number after retrieving from the table might lose accuracy from the 4th decimal places.)</li>
+</ul>
+<p>I again emphasise that, for your exam, anything non-ridiculous is OK, and there’s no need to sweat about this.</p>
 </div>
 </div>
 <div id="a-past-exam-question" class="section level2 hasAnchor" number="22.5">
