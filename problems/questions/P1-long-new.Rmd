@@ -1,0 +1,172 @@
+
+
+
+::::: {.myq}
+**B1.**  In a survey of 100 people, 40 liked tea, 35 liked coffee, and 15 liked both tea and coffee. By drawing a Venn diagram, or otherwise, find the probability that a person chosen at random:
+
+:::: {.subq}
+**(a)** Likes only tea.
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+Using the notation $| \cdot |$ to denote the number of people, we have
+\[
+|\text{Likes only tea}| = |\text{Likes tea}| - |\text{Likes tea and coffee}| = 40-15 = 25.
+\]
+Therefore
+        \[
+       \mathbb P(\text{Likes only tea}) = \frac{25}{100} = 0.25
+       \]
+:::
+::::
+
+:::: {.subq}
+**(b)** Likes neither tea nor coffee.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+\[
+|\text{Likes tea or coffee}| = |\text{Likes only tea}| + |\text{Likes coffee}| = 25+35 = 60.
+\]
+Therefore $100-60=40$ people like neither tea nor coffee, so
+       \begin{align*}
+       \mathbb P(\text{Likes neither}) = \frac{40}{100} = 0.4
+       \end{align*}
+:::
+::::
+
+:::: {.subq}
+**(c)** Likes tea given that they like coffee.
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+       \[
+       \mathbb P(\text{Likes Tea | Likes Coffee}) = \frac{\mathbb P(\text{Likes Tea and Coffee})}{\mathbb P(\text{Likes Coffee})} = \frac{15}{35} = 0.4286
+       \]
+
+ 
+:::
+::::
+:::::
+
+
+
+
+
+::::: {.myq}
+**B2.** A factory produces 80% of its goods in Factory A and 20% in Factory B. The probability of a defective item from Factory A is 0.05, and from Factory B, it is 0.1.
+
+:::: {.subq}
+**(a)**     Draw a tree diagram representing this situation.
+
+
+::: {.myanswers data-latex=""}
+*Solution.*
+
+
+
+
+
+
+
+
+
+:::
+::::
+
+:::: {.subq}
+**(b)**     Calculate the probability that a randomly selected item is defective.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+By multiplying the probabilities along the branches of the tree and adding the probabilities:
+ \begin{align*}
+   \mathbb P(\text{Defective}) &= 0.8 \times 0.05 + 0.2 \times 0.1 \\
+   &= 0.04 + 0.02 = 0.06
+   \end{align*}
+:::
+::::
+:::::
+
+::::: {.myq}
+**B3.** A magician has prepared two piles of cards taken from a standard deck of cards. In the first pile he has put the 3, 4 and 5 of hearts; in the second pile he has the 2 of spades and a second numbered spade, which we denote as $x$. A member of the audience is invited to pick one card at random from each pack and multiply the two numbers together.
+
+:::: {.subq}
+**(a)**     Draw a sample space diagram giving all possible products (in terms of $x$).
+
+
+::: {.myanswers data-latex=""}
+*Solution.*
+
+| $\spadesuit \setminus \heartsuit$ | $\mathbf 3$ | $\mathbf 6$ | $\mathbf 7$ |
+|---:|:---:|:---:|:---:|
+|  $\mathbf 2$  | $6$ | $12$| $14$|
+|  $x$  | $3x$| $6x$| $7x$|
+
+:::
+::::
+
+:::: {.subq}
+**(b)**     Calculate the probability that the product is even in the two cases that (i) $x$ is odd and (ii) $x$ is even.
+
+::: {.myanswers data-latex=""}
+*Solution.*
+(i) If $x$ is odd, then 4 of the 6 products in the sample space are even, namely 6, 12, 14 and $6x$. Therefore 
+\[
+\mathbb P (\text {Even product}) = \frac{4}{6} = \frac{2}{3}. 
+\]
+(ii) If $x$ is even, then all 6 products in the sample space are even. Therefore 
+\[
+\mathbb P (\text {Even product}) = \frac{6}{6} = 1. 
+\]
+:::
+::::
+
+:::: {.subq}
+**(c)**     The magician knows that the probability that the product is even is equal to the probability that the product is greater than 10. Find the value of $x$.
+
+
+::: {.myanswers data-latex=""}
+*Solution.*
+Since 6 is a possible product, 
+\[
+\mathbb P (\text{Product} > 10) \neq 1.
+\]
+Therefore, using the results from (b), $x$ must be an odd number and
+\[
+\mathbb P (\text{Product} > 10) = \frac{2}{3}.
+\]
+This means that exactly two out of $3x,$ $6x$ and $7x$ must be greater than 10. If $x \geq 4$, then all three values would be greater than 10, and if $x \leq 1$ then only one would be. Therefore the only possible values of $x$ are 2 and 3. The two spade cards must be different to each other, so $x=3$.
+:::
+::::
+
+
+:::::
+
+
+
+<!--
+
+:::: {.myq}
+**B3.**  A company has three machines: Machine A, Machine B, and Machine C. Machine A produces 40% of the total output, Machine B produces 35%, and Machine C produces the remaining 25%. The defect rates for the machines are 1%, 2%, and 3%, respectively. If a product is chosen at random and is found to be defective, what is the probability it was produced by Machine B?
+
+::: {.myanswers data-latex=""}
+*Solution.* 
+Recall that
+ \begin{align*}
+   \mathbb P(B | \text{Defective}) &= \frac{\mathbb P(B \cap \text{Defective})}{\mathbb P(\text{Defective})}\\
+   &= \frac{\mathbb P(B) \mathbb P(\text{Defective | B})}{\mathbb P(\text{Defective})}. \\
+ \end{align*}
+Using a probability tree (draw it!),
+ \begin{align*}
+ \mathbb P(\text{Defective}) &= \mathbb P(A) \mathbb P(\text{Defective | A}) + \mathbb P(B) \mathbb P(\text{Defective | B}) + \mathbb P(C) \mathbb P(\text{Defective | C}) \\
+ &= 0.40 \times 0.01 + 0.35 \times 0.02 + 0.25 \times 0.03 \\
+ &= 0.0185.
+ \end{align*}
+ Therefore
+ \[
+   \mathbb P(B | \text{Defective}) =\frac{0.35 \times 0.02}{0.0185} =  0.3784
+ \]
+:::
+::::
+-->

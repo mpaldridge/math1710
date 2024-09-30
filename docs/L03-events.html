@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 3 Sample spaces and events | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 1 Sample spaces and events | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
-  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 3 Sample spaces and events | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 1 Sample spaces and events | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 3 Sample spaces and events | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 1 Sample spaces and events | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="P1.html"/>
-<link rel="next" href="L04-probability.html"/>
+<link rel="prev" href="index.html"/>
+<link rel="next" href="L14-covariance.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -140,249 +140,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
-<ul>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
-<ul>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem Sheets</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R Worksheets and Practicals</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>“Office hours” drop-in sessions</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
-<ul>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
-</ul></li>
-<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
-<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
-<ul>
-<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
-<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
-<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
-<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
-<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
-<ul>
-<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
-<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
-<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
-<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
-<ul>
-<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
 <li class="part"><span><b>Part II: Probability</b></span></li>
-<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<li class="chapter" data-level="1" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>1</b> Sample spaces and events</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
-<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
-<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Set theory</a></li>
+<li class="chapter" data-level="1.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>1.1</b> What is probability?</a></li>
+<li class="chapter" data-level="1.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>1.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="1.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>1.3</b> Set theory</a></li>
 <li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
+<li class="chapter" data-level="2" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>2</b> Expectation and covariance</a>
 <ul>
-<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
-<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
-<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
-<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="L05-classical-i.html"><a href="L05-classical-i.html"><i class="fa fa-check"></i><b>5</b> Classical probability I</a>
-<ul>
-<li class="chapter" data-level="5.1" data-path="L05-classical-i.html"><a href="L05-classical-i.html#classical-intro"><i class="fa fa-check"></i><b>5.1</b> Probability with equally likely outcomes</a></li>
-<li class="chapter" data-level="5.2" data-path="L05-classical-i.html"><a href="L05-classical-i.html#multiplication"><i class="fa fa-check"></i><b>5.2</b> Multiplication principle</a></li>
-<li class="chapter" data-level="5.3" data-path="L05-classical-i.html"><a href="L05-classical-i.html#sampling"><i class="fa fa-check"></i><b>5.3</b> Sampling with and without replacement</a></li>
-<li class="chapter" data-level="" data-path="L05-classical-i.html"><a href="L05-classical-i.html#summary-L05"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
-<ul>
-<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
-<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
-<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
-<li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-L06"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
-<ul>
-<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
-<ul>
-<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
-<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
-<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
-<li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
-<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
-<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
-<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
-<ul>
-<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
-<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
-<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
-<li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
-<ul>
-<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
-<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
-<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
-<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-L10"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
-<ul>
-<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
-<ul>
-<li class="chapter" data-level="11.1" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
-<li class="chapter" data-level="11.2" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
-<li class="chapter" data-level="" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
-<ul>
-<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
-<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
-<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#models"><i class="fa fa-check"></i><b>12.3</b> Distributions as models for data</a></li>
-<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
-<ul>
-<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
-<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
-<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
-<li class="chapter" data-level="" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#summary-L13"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
-<ul>
-<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
-<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
-<li class="chapter" data-level="14.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>14.3</b> Correlation</a></li>
+<li class="chapter" data-level="2.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>2.1</b> Expectation of sums and products</a></li>
+<li class="chapter" data-level="2.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>2.2</b> Covariance</a></li>
+<li class="chapter" data-level="2.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>2.3</b> Correlation</a></li>
 <li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-L14"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
-<ul>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
-<ul>
-<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
-<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
-<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L15-continuous.html"><a href="L15-continuous.html#summary-L15"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="16" data-path="L16-normal.html"><a href="L16-normal.html"><i class="fa fa-check"></i><b>16</b> Normal distribution</a>
-<ul>
-<li class="chapter" data-level="16.1" data-path="L16-normal.html"><a href="L16-normal.html#normal-definition"><i class="fa fa-check"></i><b>16.1</b> Definition of the normal distribution</a></li>
-<li class="chapter" data-level="16.2" data-path="L16-normal.html"><a href="L16-normal.html#normal-properties"><i class="fa fa-check"></i><b>16.2</b> Properties of the normal distribution</a></li>
-<li class="chapter" data-level="16.3" data-path="L16-normal.html"><a href="L16-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
-<li class="chapter" data-level="16.4" data-path="L16-normal.html"><a href="L16-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
-<li class="chapter" data-level="" data-path="L16-normal.html"><a href="L16-normal.html#summary-L16"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="17" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html"><i class="fa fa-check"></i><b>17</b> Exponential distribution and multiple continuous random variables</a>
-<ul>
-<li class="chapter" data-level="17.1" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#exponential"><i class="fa fa-check"></i><b>17.1</b> Exponential distribution</a></li>
-<li class="chapter" data-level="17.2" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#continuous-multiple"><i class="fa fa-check"></i><b>17.2</b> Multiple continuous random variables</a></li>
-<li class="chapter" data-level="" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#summary-L17"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
-<ul>
-<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.1</b> Law of large numbers</a></li>
-<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.2</b> Central limit theorem</a></li>
-<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.3</b> Approximations with the normal distribution</a></li>
-<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
-<ul>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
-<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
-</ul></li>
-<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
-<li class="chapter" data-level="19" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html"><i class="fa fa-check"></i><b>19</b> Bayesian statistics I</a>
-<ul>
-<li class="chapter" data-level="19.1" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
-<li class="chapter" data-level="19.2" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
-<li class="chapter" data-level="19.3" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html#beta"><i class="fa fa-check"></i><b>19.3</b> Beta distribution</a></li>
-</ul></li>
-<li class="chapter" data-level="20" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html"><i class="fa fa-check"></i><b>20</b> Bayesian statistics II</a>
-<ul>
-<li class="chapter" data-level="20.1" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#beta-bern"><i class="fa fa-check"></i><b>20.1</b> Beta–Bernoulli model</a></li>
-<li class="chapter" data-level="20.2" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#betageometric-model"><i class="fa fa-check"></i><b>20.2</b> Beta–geometric model</a></li>
-<li class="chapter" data-level="20.3" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
-<li class="chapter" data-level="" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
-<li class="part"><span><b>Other stuff</b></span></li>
-<li class="chapter" data-level="21" data-path="L21-questions.html"><a href="L21-questions.html"><i class="fa fa-check"></i><b>21</b> All questions answered</a>
-<ul>
-<li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
-<li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
-<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.3</b> Statistical tables</a></li>
-<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#edge-cases"><i class="fa fa-check"></i><b>21.4</b> “Edge cases”</a></li>
-<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.5</b> End-of semester survey</a></li>
-<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.6</b> Other modules</a></li>
-</ul></li>
-<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
-<ul>
-<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#exam-arrangements"><i class="fa fa-check"></i><b>22.1</b> Exam arrangements</a></li>
-<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#exam-structure"><i class="fa fa-check"></i><b>22.2</b> Exam structure</a></li>
-<li class="chapter" data-level="22.3" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.3</b> Past papers</a></li>
-<li class="chapter" data-level="22.4" data-path="L22-exam.html"><a href="L22-exam.html#exam-faqs"><i class="fa fa-check"></i><b>22.4</b> Exam FAQs</a>
-<ul>
-<li class="chapter" data-level="22.4.1" data-path="L22-exam.html"><a href="L22-exam.html#questions"><i class="fa fa-check"></i><b>22.4.1</b> Questions</a></li>
-<li class="chapter" data-level="22.4.2" data-path="L22-exam.html"><a href="L22-exam.html#calculators"><i class="fa fa-check"></i><b>22.4.2</b> Calculators</a></li>
-<li class="chapter" data-level="22.4.3" data-path="L22-exam.html"><a href="L22-exam.html#revision"><i class="fa fa-check"></i><b>22.4.3</b> Revision</a></li>
-<li class="chapter" data-level="22.4.4" data-path="L22-exam.html"><a href="L22-exam.html#r-in-the-exam"><i class="fa fa-check"></i><b>22.4.4</b> R in the exam</a></li>
-<li class="chapter" data-level="22.4.5" data-path="L22-exam.html"><a href="L22-exam.html#passing-and-failing"><i class="fa fa-check"></i><b>22.4.5</b> Passing and failing</a></li>
-<li class="chapter" data-level="22.4.6" data-path="L22-exam.html"><a href="L22-exam.html#missing-the-exam"><i class="fa fa-check"></i><b>22.4.6</b> Missing the exam</a></li>
-<li class="chapter" data-level="22.4.7" data-path="L22-exam.html"><a href="L22-exam.html#how-much-should-i-write"><i class="fa fa-check"></i><b>22.4.7</b> How much should I write?</a></li>
-<li class="chapter" data-level="22.4.8" data-path="L22-exam.html"><a href="L22-exam.html#random-variables"><i class="fa fa-check"></i><b>22.4.8</b> Random variables</a></li>
-<li class="chapter" data-level="22.4.9" data-path="L22-exam.html"><a href="L22-exam.html#statistical-tables-1"><i class="fa fa-check"></i><b>22.4.9</b> Statistical tables</a></li>
-<li class="chapter" data-level="22.4.10" data-path="L22-exam.html"><a href="L22-exam.html#bookwork-and-rider"><i class="fa fa-check"></i><b>22.4.10</b> Bookwork and rider</a></li>
-<li class="chapter" data-level="22.4.11" data-path="L22-exam.html"><a href="L22-exam.html#decimal-places"><i class="fa fa-check"></i><b>22.4.11</b> Decimal places</a></li>
-</ul></li>
-<li class="chapter" data-level="22.5" data-path="L22-exam.html"><a href="L22-exam.html#a-past-exam-question"><i class="fa fa-check"></i><b>22.5</b> A past exam question</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
-<ul>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#how-to-use-r-and-rstudio"><i class="fa fa-check"></i>How to use R and RStudio</a>
-<ul>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-uni"><i class="fa fa-check"></i>Accessing R and RStudio on University computers</a></li>
-<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
-<ul>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
-<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions and group feedback</a>
 <ul>
@@ -390,9 +161,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
-</ul></li>
-<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a>
-<ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
@@ -433,10 +201,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="L03-events" class="section level1 hasAnchor" number="3">
-<h1><span class="header-section-number">Lecture 3</span> Sample spaces and events<a href="L03-events.html#L03-events" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="what-is-prob" class="section level2 hasAnchor" number="3.1">
-<h2><span class="header-section-number">3.1</span> What is probability?<a href="L03-events.html#what-is-prob" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="L03-events" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Lecture 1</span> Sample spaces and events<a href="L03-events.html#L03-events" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="what-is-prob" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> What is probability?<a href="L03-events.html#what-is-prob" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We now begin the big central block of this module, on probability theory.</p>
 <p>Probability theory is the study of randomness. Probability, as an area of mathematics, is a fascinating subject in its own right. However, probability is particularly important due to its usefulness in applications – especially in statistics (the study of data), in finance, and in actuarial science (the study of insurance).</p>
 <p>Probability is well suited to modelling situations that involve randomness, uncertainty, or unpredictability. If you want to predict the time of the next solar eclipse, a deterministic (that is, non-random) model based on physical laws will tell you when the sun, the moon, and the earth will be in the correct positions; but if you want to predict the weather tomorrow, or the price of a share of Apple stock next month, or the results of an election next year, you will need a probabilistic model that takes into account the uncertainty in the outcome. A probabilistic model could tell you the most likely outcome, or a range of the most probable outcomes.</p>
@@ -459,8 +227,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>It will not surprise you to learn that, in this mathematics course, we will take the “mathematical probability” approach. However, we will also learn useful things about the other approaches: we will see that classical probability is one special case of mathematical probability; we will see a result called the “law of large numbers” that says that the long-run frequency does indeed get closer and closer to the mathematical probability; and a result called “Bayes’ theorem” will advise a subjectivist on how to update her subjective beliefs when she sees new evidence.</p>
 </div>
-<div id="sample-events" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Sample spaces and events<a href="L03-events.html#sample-events" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="sample-events" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> Sample spaces and events<a href="L03-events.html#sample-events" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Taking the “mathematical probability” approach, we will want to give a formal mathematical definition of the <em>probability</em> of an event. But even before that, we need to give a formal mathematical definition of an <em>event</em> itself. Our setup will be this:</p>
 <ul>
 <li>There is a set called the <strong>sample space</strong>, normally given the letter <span class="math inline">\(\Omega\)</span> (upper-case Omega), which is the set of all possible outcomes.</li>
@@ -469,26 +237,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <p>This will be easier to understand with some concrete examples. We write a set (such as a sample space or an event) by writing all the elements of that set inside curly brackets <span class="math inline">\(\{\ \}\)</span>, separated by commas.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-5" class="example"><strong>Example 3.1  </strong></span>Suppose we toss a (possibly biased) coin, and record whether it lands heads or tails. Then our sample space is <span class="math inline">\(\Omega = \{\mathrm H, \mathrm T\}\)</span>, where the sample outcome H denotes heads and the sample outcome T denotes tails.</p>
+<p><span id="exm:unlabeled-div-1" class="example"><strong>Example 1.1  </strong></span>Suppose we toss a (possibly biased) coin, and record whether it lands heads or tails. Then our sample space is <span class="math inline">\(\Omega = \{\mathrm H, \mathrm T\}\)</span>, where the sample outcome H denotes heads and the sample outcome T denotes tails.</p>
 <p>The event that the coin lands heads is <span class="math inline">\(\{\mathrm H\}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 3.2  </strong></span>Suppose we roll a dice, and record the number rolled. Then our sample space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>, where the sample outcome <span class="math inline">\(1\)</span> corresponds to rolling a one, and so on.</p>
+<p><span id="exm:unlabeled-div-2" class="example"><strong>Example 1.2  </strong></span>Suppose we roll a dice, and record the number rolled. Then our sample space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>, where the sample outcome <span class="math inline">\(1\)</span> corresponds to rolling a one, and so on.</p>
 <p>The event “we roll an even number” is <span class="math inline">\(\{2,4,6\}\)</span>. The event “we roll at least a five” is <span class="math inline">\(\{5,6\}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-7" class="example"><strong>Example 3.3  </strong></span>Suppose we wish to count how many claims are made to an insurance company in a year. We could model this by taking the sample space <span class="math inline">\(\Omega\)</span> to be <span class="math inline">\(\mathbb Z_+ = \{0, 1, 2, \dots\}\)</span>, the set of all non-negative integers.</p>
+<p><span id="exm:unlabeled-div-3" class="example"><strong>Example 1.3  </strong></span>Suppose we wish to count how many claims are made to an insurance company in a year. We could model this by taking the sample space <span class="math inline">\(\Omega\)</span> to be <span class="math inline">\(\mathbb Z_+ = \{0, 1, 2, \dots\}\)</span>, the set of all non-negative integers.</p>
 <p>The event “the company receives less than 1000 claims” is <span class="math inline">\(\{0, 1, 2, \dots, 998, 999\}\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 3.4  </strong></span>Suppose we want a computer to pick a random number between 0 and 1. We could model this by taking the sample space <span class="math inline">\(\Omega\)</span> to be the interval <span class="math inline">\([0, 1]\)</span> of all real numbers between 0 and 1.</p>
+<p><span id="exm:unlabeled-div-4" class="example"><strong>Example 1.4  </strong></span>Suppose we want a computer to pick a random number between 0 and 1. We could model this by taking the sample space <span class="math inline">\(\Omega\)</span> to be the interval <span class="math inline">\([0, 1]\)</span> of all real numbers between 0 and 1.</p>
 <p>The event “the number is bigger than <span class="math inline">\(\frac12\)</span>” is the sub-interval <span class="math inline">\((\frac12, 1]\)</span> of all real numbers greater than <span class="math inline">\(\frac12\)</span> but no bigger than 1. The event “the first digit is a 7” is the sub-interval <span class="math inline">\([0.7, 0.8)\)</span>. The event “the random number is exactly <span class="math inline">\(1/\sqrt{2}\)</span>” is <span class="math inline">\(\{1/\sqrt{2}\}\)</span>.</p>
 </div>
 <p>In the first two examples, the sample space <span class="math inline">\(\Omega\)</span> was finite. In third example, the sample space was infinite but “countably infinite”, in that it could be counted using the discrete values of the positive integers. Both of these were for <em>counting</em> discrete observations. In the fourth example, the sample space was infinite but “uncountably infinite”, in that it had a sliding scale or “continuum” of gradually varying measurements. This was for <em>measuring</em> continuous observations. This distinction will be important later in the course.</p>
 <p>For any sample space <span class="math inline">\(\Omega\)</span>, there are two special events that always exist. There’s <span class="math inline">\(\Omega\)</span> itself, the event containing all of the sample outcomes, which represents “something happens”. There’s also the empty set <span class="math inline">\(\varnothing\)</span>, which contains none of the sample outcomes, which represents “nothing happens”. Common sense suggests that <span class="math inline">\(\Omega\)</span> should have probability 1, because <em>something</em> is bound to happen – this will later be one of our probability “axioms”. Common sense also suggests that <span class="math inline">\(\varnothing\)</span> should have probability 0, because it can’t be that <em>nothing</em> happens – this will not be one probability axioms, but we’ll show that it follows logically from the axioms we do choose.</p>
 </div>
-<div id="set-theory" class="section level2 hasAnchor" number="3.3">
-<h2><span class="header-section-number">3.3</span> Set theory<a href="L03-events.html#set-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="set-theory" class="section level2 hasAnchor" number="1.3">
+<h2><span class="header-section-number">1.3</span> Set theory<a href="L03-events.html#set-theory" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Since we’ve now defined events as being sets – specifically, subsets of the sample space <span class="math inline">\(\Omega\)</span> – it will be useful to mention a little set basic theory here.</p>
 <p>First, there are ways we can build new sets (or events) out of old. It’s fine to just read the words and look at the pictures for these definitions, but those who want to read the equations too will need to know this:</p>
 <ul>
@@ -497,7 +265,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li>so <span class="math inline">\(\{\omega \in \Omega : \text{fact about $\omega$}\}\)</span> should be read as “the set of sample outcomes <span class="math inline">\(\omega\)</span> in the sample space <span class="math inline">\(\Omega\)</span> such that the fact is true”.</li>
 </ul>
 <div class="definition">
-<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 3.1  </strong></span>Consider a sample space <span class="math inline">\(\Omega\)</span>, and let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events in that sample space.</p>
+<p><span id="def:unlabeled-div-5" class="definition"><strong>Definition 1.1  </strong></span>Consider a sample space <span class="math inline">\(\Omega\)</span>, and let <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> be events in that sample space.</p>
 <div style="display: flex;">
 <div>
 <ul>
@@ -523,7 +291,7 @@ This represents the event that <span class="math inline">\(A\)</span> occurs or 
 </div>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-10" class="example"><strong>Example 3.5  </strong></span>Suppose we are rolling a dice, so our sample space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>. Let <span class="math inline">\(A = \{2,4,6\}\)</span> be the event that we roll and even number, and let <span class="math inline">\(B = \{5,6\}\)</span> be the event that we roll at least a 5. Then
+<p><span id="exm:unlabeled-div-6" class="example"><strong>Example 1.5  </strong></span>Suppose we are rolling a dice, so our sample space is <span class="math inline">\(\Omega = \{1,2,3,4,5,6\}\)</span>. Let <span class="math inline">\(A = \{2,4,6\}\)</span> be the event that we roll and even number, and let <span class="math inline">\(B = \{5,6\}\)</span> be the event that we roll at least a 5. Then
 <span class="math display">\[\begin{align*}
 A^\mathsf{c}&amp;= \{1,3,5\} = \{\text{roll an odd number}\} ,\\
 A \cap B &amp;= \{6\} = \{\text{roll a 6}\} ,\\
@@ -653,8 +421,8 @@ Since the $(A \cap B)^\comp$ column and the $A^\comp \cup B^\comp$ column are th
           </div>
         </div>
       </div>
-<a href="P1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="L04-probability.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="L14-covariance.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

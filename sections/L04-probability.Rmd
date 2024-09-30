@@ -80,16 +80,6 @@ The key with most of these "prove from the axioms" problems is to think of a way
 
 Here, since $B$ is a subset of $A$, meaning that $B$ is entirely inside $A$. 
 
-```{tikz subs0, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
-\begin{tikzpicture}[line width=0.25pt, scale=0.8]
-
-\draw[thick] (0,0) rectangle (6,4);
-\draw (6.3,3.8) node {$\Omega$};
-
-\draw (3.5,1.5) circle (0.5); \draw (3.5,1.5) node {$B$};
-\draw (3,2) circle (1.5); \draw (2.7,2.5) node {$A$};
-\end{tikzpicture}
-```
 
 It would be useful to write $A$ as a *disjoint* union of $\color{orange}B$ and <span style="color: purple;">"the bit of $A$ that isn't in $B$"</span>. That is, we have the disjoint union
 \[ A = \color{orange}B \cup (\color{purple}{A \cap B^\comp}) .\]
@@ -98,7 +88,7 @@ It would be useful to write $A$ as a *disjoint* union of $\color{orange}B$ and <
 \begin{tikzpicture}[line width=0.25pt, scale=0.8]
 
 \draw[thick] (0,0) rectangle (6,4);
-\draw (6.3,3.8) node {$\Omega$};
+\draw (6.3,3.8) node {$\Omega 7$};
 
 \fill  [purple!25] (3,2) circle (1.5); 
 \fill  [orange!25] (3.5,1.5) circle (0.5); 

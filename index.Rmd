@@ -15,6 +15,10 @@ url:    'https://mpaldridge.github.io/math1710/'
 knitr::opts_chunk$set(comment = NA)
 ```
 
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = '~/Documents/Github/math1710')
+```
+
 \newcommand{\Var}{\operatorname{Var}}
 
 ::: {.oldsched}

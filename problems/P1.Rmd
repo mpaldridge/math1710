@@ -8,6 +8,17 @@ display: none !important;
 </style>
 
 
+```{tikz subs999, echo=FALSE, fig.align="center", out.width="320pt", cache = TRUE}
+\begin{tikzpicture}[line width=0.25pt, scale=0.8]
+
+\draw[thick] (0,0) rectangle (6,4);
+\draw (6.3,3.8) node {$\Omega 9912$};
+
+\draw (3.5,1.5) circle (0.5); \draw (3.5,1.5) node {$B$};
+\draw (3,2) circle (1.5); \draw (2.7,2.5) node {$A$};
+\end{tikzpicture}
+```
+
 
 \commfalse
 
@@ -38,7 +49,7 @@ The first three questions are **short questions**, which are intended to be most
 The next four questions are **long questions**, which are intended to be harder. Long questions often require you to think originally for yourself, not just directly follow procedures from the notes. You may not be able to solve all of these questions, although you should make multiple attempts to do so. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions -- not only their mathematical content, but also how to write good, clear solutions -- are likely to be the main topic for discussion in your tutorial. Solutions will be available after Friday 13 October.
 :::
 
-```{r, child = "problems/questions/P1-long.Rmd"}
+```{r, child = "problems/questions/P1-long-new.Rmd"}
 ```
 
 ## C: Assessed questions {#P1-assessed .unnumbered}

@@ -1,37 +1,37 @@
 rmd_files:
   - index.Rmd
-  - about.Rmd
-  - sections/L01-stats.Rmd
-  - sections/L02-dataviz.Rmd
-  - problems/P1.Rmd
+#  - about.Rmd
+#  - sections/L01-stats.Rmd
+#  - sections/L02-dataviz.Rmd
+#  - problems/P1.Rmd
   - sections/L03-events.Rmd
-  - sections/L04-probability.Rmd
-  - sections/L05-classical-i.Rmd
-  - sections/L06-classical-ii.Rmd
-  - problems/P2.Rmd
-  - sections/L07-conditional.Rmd
-  - sections/L08-two-theorems.Rmd
-  - sections/L09-discrete-rv.Rmd
-  - sections/L10-expectation.Rmd
-  - problems/P3.Rmd
-  - sections/L11-binomial-geometric.Rmd
-  - sections/L12-poisson.Rmd
-  - sections/L13-multi-rv.Rmd
+#  - sections/L04-probability.Rmd
+#  - sections/L05-classical-i.Rmd
+#  - problems/P2.Rmd
+#  - sections/L06-classical-ii.Rmd
+#  - sections/L07-conditional.Rmd
+#  - sections/L08-two-theorems.Rmd
+#  - sections/L09-discrete-rv.Rmd
+#  - sections/L10-expectation.Rmd
+#  - problems/P3.Rmd
+#  - sections/L11-binomial-geometric.Rmd
+#  - sections/L12-poisson.Rmd
+#  - sections/L13-multi-rv.Rmd
   - sections/L14-covariance.Rmd
-  - problems/P4.Rmd
-  - sections/L15-continuous.Rmd
-  - sections/L17-normal.Rmd  # Decided to move this forward one
-  - sections/L16-exponential-multi.Rmd
-  - sections/L18-limit.Rmd
-  - problems/P5.Rmd
-  - sections/L19-bayes-idea.Rmd
-  - sections/L20-bayes-models.Rmd
-  - problems/P6.Rmd
-  - sections/L21-summary.Rmd
-  - sections/L22-exam.Rmd
-  - R/R.Rmd
+#  - problems/P4.Rmd
+#  - sections/L15-continuous.Rmd
+#  - sections/L17-normal.Rmd  # Decided to move this forward one
+#  - sections/L16-exponential-multi.Rmd
+#  - sections/L18-limit.Rmd
+#  - problems/P5.Rmd
+#  - sections/L19-bayes-idea.Rmd
+#  - sections/L20-bayes-models.Rmd
+#  - problems/P6.Rmd
+#  - sections/L21-summary.Rmd
+#  - sections/L22-exam.Rmd
+#  - R/R.Rmd
 #  - R/practical.Rmd
-  - writing.Rmd
+#  - writing.Rmd
   - problems/solutions.Rmd
 book_filename: "math1710"
 output_dir: "docs"

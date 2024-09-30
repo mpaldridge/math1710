@@ -145,7 +145,7 @@ This represents the event that $A$ occurs or $B$ occurs. (In mathematics, "or" i
 
 \draw[thick] (0,0) rectangle (6,4);
 \draw (6.3,3.8) node {$\Omega$};
-\draw (2,2) circle (1.5); \draw (1.6,2.0) node {$A$};
+\draw (2,2) circle (1.5); \draw (1.6,2.0) node {$Aaa$};
 \draw (4,2) circle (1.5); \draw (4.4,2.0) node {$B$};
 
 \end{tikzpicture}
