@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Problem Sheet 1 | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Problem Sheet 1 | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -390,6 +390,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
@@ -437,7 +440,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 display: none !important;
 }
 </style>
-<p><img src="math1710_files/figure-html/subs999-1.png" width="320pt" style="display: block; margin: auto;" /></p>
 <div class="mysummary">
 <p><a href="solutions.html#P1-solutions"><strong>Solutions</strong> are now available</a> to all non-assessed questions.</p>
 </div>
@@ -649,6 +651,7 @@ frequency densities.</p>
 </div>
 <div class="myq">
 <p><strong>A3.</strong> Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.</p>
+<p><img src="math1710_files/figure-html/unnamed-chunk-67-1.png" width="480" /></p>
 <div class="myanswers">
 <p><em>Solution.</em> Some answers could be:</p>
 <ul>
@@ -667,157 +670,149 @@ You can probably think of other answers.</p>
 <p>The next four questions are <strong>long questions</strong>, which are intended to be harder. Long questions often require you to think originally for yourself, not just directly follow procedures from the notes. You may not be able to solve all of these questions, although you should make multiple attempts to do so. Here, your answers should be written in complete sentences, and you should carefully explain in words each step of your working. Your answers to these questions – not only their mathematical content, but also how to write good, clear solutions – are likely to be the main topic for discussion in your tutorial. Solutions will be available after Friday 13 October.</p>
 </div>
 <div class="myq">
-<p><strong>B1.</strong> In a survey of 100 people, 40 liked tea, 35 liked coffee, and 15 liked both tea and coffee. By drawing a Venn diagram, or otherwise, find the probability that a person chosen at random:</p>
+<p><strong>B1.</strong> For each of the two datasets below, calculate the following summary statistics, or explain why it is not possible to do so: mode; median; mean; number of distinct outcomes; inter-quartile range; and sample variance.</p>
 <div class="subq">
-<p><strong>(a)</strong> Likes only tea.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-Using the notation <span class="math inline">\(| \cdot |\)</span> to denote the number of people, we have
-<span class="math display">\[
-|\text{Likes only tea}| = |\text{Likes tea}| - |\text{Likes tea and coffee}| = 40-15 = 25.
-\]</span>
-Therefore
-<span class="math display">\[
-       \mathbb P(\text{Likes only tea}) = \frac{25}{100} = 0.25
-       \]</span></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> Likes neither tea nor coffee.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-<span class="math display">\[
-|\text{Likes tea or coffee}| = |\text{Likes only tea}| + |\text{Likes coffee}| = 25+35 = 60.
-\]</span>
-Therefore <span class="math inline">\(100-60=40\)</span> people like neither tea nor coffee, so
-<span class="math display">\[\begin{align*}
-       \mathbb P(\text{Likes neither}) = \frac{40}{100} = 0.4
-       \end{align*}\]</span></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(c)</strong> Likes tea given that they like coffee.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-<span class="math display">\[
-       \mathbb P(\text{Likes Tea | Likes Coffee}) = \frac{\mathbb P(\text{Likes Tea and Coffee})}{\mathbb P(\text{Likes Coffee})} = \frac{15}{35} = 0.4286
-       \]</span></p>
-</div>
-</div>
-</div>
-<div class="myq">
-<p><strong>B2.</strong> A factory produces 80% of its goods in Factory A and 20% in Factory B. The probability of a defective item from Factory A is 0.05, and from Factory B, it is 0.1.</p>
-<div class="subq">
-<p><strong>(a)</strong> Draw a tree diagram representing this situation.</p>
-<div class="myanswers">
-<p><em>Solution.</em></p>
-</div>
-</div>
-<div class="subq">
-<p><strong>(b)</strong> Calculate the probability that a randomly selected item is defective.</p>
-<div class="myanswers">
-<p><em>Solution.</em>
-By multiplying the probabilities along the branches of the tree and adding the probabilities:
-<span class="math display">\[\begin{align*}
-   \mathbb P(\text{Defective}) &amp;= 0.8 \times 0.05 + 0.2 \times 0.1 \\
-   &amp;= 0.04 + 0.02 = 0.06
-   \end{align*}\]</span></p>
-</div>
-</div>
-</div>
-<div class="myq">
-<p><strong>B3.</strong> A magician has prepared two piles of cards taken from a standard deck of cards. In the first pile he has put the 3, 4 and 5 of hearts; in the second pile he has the 2 of spades and a second numbered spade, which we denote as <span class="math inline">\(x\)</span>. A member of the audience is invited to pick one card at random from each pack and multiply the two numbers together.</p>
-<div class="subq">
-<p><strong>(a)</strong> Draw a sample space diagram giving all possible products (in terms of <span class="math inline">\(x\)</span>).</p>
-<div class="myanswers">
-<p><em>Solution.</em></p>
-<table>
+<p><strong>(a)</strong> Shirt sizes for the <span class="math inline">\(n = 16\)</span> members of a university football squad:</p>
+<table style="width:100%;">
 <colgroup>
-<col width="21%" />
-<col width="26%" />
-<col width="26%" />
-<col width="26%" />
+<col width="33%" />
+<col width="16%" />
+<col width="11%" />
+<col width="11%" />
+<col width="11%" />
+<col width="16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th align="right"><span class="math inline">\(\spadesuit \setminus \heartsuit\)</span></th>
-<th align="center"><span class="math inline">\(\mathbf 3\)</span></th>
-<th align="center"><span class="math inline">\(\mathbf 6\)</span></th>
-<th align="center"><span class="math inline">\(\mathbf 7\)</span></th>
+<th align="center"><strong>Colour</strong></th>
+<th align="center">Xtra Small</th>
+<th align="center">Small</th>
+<th align="center">Medium</th>
+<th align="center">Large</th>
+<th align="center">Xtra Large</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="right"><span class="math inline">\(\mathbf 2\)</span></td>
-<td align="center"><span class="math inline">\(6\)</span></td>
-<td align="center"><span class="math inline">\(12\)</span></td>
-<td align="center"><span class="math inline">\(14\)</span></td>
-</tr>
-<tr class="even">
-<td align="right"><span class="math inline">\(x\)</span></td>
-<td align="center"><span class="math inline">\(3x\)</span></td>
-<td align="center"><span class="math inline">\(6x\)</span></td>
-<td align="center"><span class="math inline">\(7x\)</span></td>
+<td align="center"><strong>Number of shirts</strong></td>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">6</td>
+<td align="center">4</td>
+<td align="center">5</td>
 </tr>
 </tbody>
 </table>
+<div class="myanswers">
+<p><em>Solution.</em>
+The modal shirt size is medium. The number of distinct outcomes is 4 (we don’t quite “Xtra Small”, which was not observed in the data).</p>
+<p>This time, we can order the data from smallest to largest, even though the data is not numerical. Since <span class="math inline">\((16 + 1)/2 - 8.5\)</span>, the median datapoint is the 8th or 9th datapoints, which are Large.</p>
+<p>Since <span class="math inline">\(1 + 0.25(16 - 1) = 4.75\)</span> the lower quartile is the 4th or 5th datapoints, which are Medium. Since <span class="math inline">\(1 + 0.75(16-1) = 12.25\)</span>, the upper quartile is the 12th or 13th datapoints, which are Xtra Large. So we can certainly say that the inner quartiles range from Medium to Xtra Large. We could probably also say that the interquartile range is 3 shirt sizes (Medium, Large, Xtra Large).</p>
+<p>Again, because the data is not numerical, we can’t add it up, so can’t calculate a mean or sample variance.</p>
 </div>
 </div>
 <div class="subq">
-<p><strong>(b)</strong> Calculate the probability that the product is even in the two cases that (i) <span class="math inline">\(x\)</span> is odd and (ii) <span class="math inline">\(x\)</span> is even.</p>
+<p><strong>(b)</strong> Six packets of Skittles are opened together, a total of <span class="math inline">\(n = 361\)</span> sweets. The colours of these sweets is recorded as follows:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="center"><strong>Colour</strong></th>
+<th align="center">Red</th>
+<th align="center">Orange</th>
+<th align="center">Yellow</th>
+<th align="center">Green</th>
+<th align="center">Purple</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><strong>Number of Skittles</strong></td>
+<td align="center">67</td>
+<td align="center">71</td>
+<td align="center">87</td>
+<td align="center">74</td>
+<td align="center">62</td>
+</tr>
+</tbody>
+</table>
 <div class="myanswers">
 <p><em>Solution.</em>
-(i) If <span class="math inline">\(x\)</span> is odd, then 4 of the 6 products in the sample space are even, namely 6, 12, 14 and <span class="math inline">\(6x\)</span>. Therefore
-<span class="math display">\[
-\mathbb P (\text {Even product}) = \frac{4}{6} = \frac{2}{3}.
-\]</span>
-(ii) If <span class="math inline">\(x\)</span> is even, then all 6 products in the sample space are even. Therefore
-<span class="math display">\[
-\mathbb P (\text {Even product}) = \frac{6}{6} = 1.
-\]</span></p>
+The modal colour is Yellow. The number of distinct outcomes is 5.</p>
+<p>It’s not possible to calculate the median or the quartiles, because, unlike numerical data, the colours can’t be put “in order” from smallest to largest.</p>
+<p>It’s not possible to calculate the mean or sample variance, as these require us to have numerical data that can be “added up”, but this can’t be done with colours.</p>
+<p><strong>Group feedback:</strong> Make sure your explanation is clear for why we can’t calculate a median for the Skittles data but can for the shirts: the key is whether or not the data can be <em>ordered</em>.</p>
 </div>
+</div>
+</div>
+<div class="myq">
+<p><strong>B2.</strong> A summary statistic is informally said to be “robust” if it typically doesn’t change much if a small number of outliers are introduced to a large dataset, or “sensitive” if it often changes a lot when a small number of outliers are introduced. Briefly discuss the robustness or sensitivity of the following summary statistics: <strong>(a)</strong> mode; <strong>(b)</strong> median; <strong>(c)</strong> mean; <strong>(d)</strong> number of distinct outcomes; <strong>(e)</strong> inter-quartile range; and <strong>(f)</strong> sample variance.</p>
+<div class="myanswers">
+<p><em>Solutions.</em></p>
+<p><strong>(a)</strong> An outlier will typically be the only data point with its value, or certainly rare. Therefore, the mode will typically not change at all if a small number of outliers are introduced, so is robust. (The exception is for data where every observation is likely to be different, so any outliers become “joint modes” along with everything else; but in this case the mode is not a useful statistic in the first place.)</p>
+<p><strong>(b)</strong> The introduction of outliers will typically only change the median a little bit, by shifting it between different nearby values in the “central mass” of the data. In particular, the <em>size</em> of the outliers won’t make any difference at all (only whether they are “high outliers” above the median or “low outliers” below the median). So the median is robust.</p>
+<p><strong>(c)</strong> The mean can change a lot if outliers are introduced, especially if the outlier is enormously far our from the data. So the mean is sensitive.</p>
+<p><strong>(d)</strong> The number of distinct outcomes will only increase by (at most) 1 for each outlier introduced. This is not typically a relevant increase, so the number of distinct outcomes is robust.</p>
+<p><strong>(e)</strong> The interquartile range is robust, for the same reason as the median.</p>
+<p><strong>(f)</strong> The sample variance is sensitive, for the same reason as the mean.</p>
+<p>(You might like to think about situations where it’s better to use a robust statistic or better to use a sensitive statistic.)</p>
+<p><strong>Group feedback:</strong> I find it helpful to suppose I was studying the net worth of people in my tutorial group, and calculating summary statistics. How would those statistics changed change if Elon Musk (owner of Tesla and Twitter, net worth roughly $200 billion) joined my tutorial group? The mean and sample variance would change an enormous amount, while the median and interquartile range would barely change at all in comparison.</p>
+<p>Remember that “robust” and “sensitive” are general descriptions rather than precise mathematical definitions. So it doesn’t matter if you disagree with my opinions provided that you give clear and detailed explanations to back up your opinion.</p>
+</div>
+</div>
+<div class="myq">
+<p><strong>B3.</strong> Let <span class="math inline">\(\mathbf a = (a_1, a_2, \dots a_n)\)</span> and <span class="math inline">\(\mathbf b = (b_1, b_2, \dots, b_n)\)</span> be two real-valued vectors of the same length. Then the <em>Cauchy–Schwarz inequality</em> says that
+<span class="math display">\[ \left( \sum_{i=1}^n a_i b_i \right)^2 \leq \left( \sum_{i=1}^n a_i^2 \right) \left(\sum_{i=1}^n b_i^2 \right) . \]</span></p>
+<div class="subq">
+<p><strong>(a)</strong> By making a clever choice of <span class="math inline">\((a_i)\)</span> and <span class="math inline">\((b_i)\)</span> in the Cauchy–Schwarz inequality, show that <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>.</p>
+</div>
+<div class="myanswers">
+<p><em>Solutions.</em>
+Recalling the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>,
+<span class="math display">\[\begin{align*}
+s_{xy} &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) ,\\
+s_{x}^2 &amp;= \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar x)^2 ,\\
+s_{y}^2 &amp;= \frac{1}{n-1} \sum_{i=1}^n (y_i - \bar y)^2 ,
+\end{align*}\]</span>
+and comparing them with the Cauchy–Schwarz inequality, it looks like taking <span class="math inline">\(a_i = x_i - \bar x\)</span> and <span class="math inline">\(b_i = y_i - \bar y\)</span> might be useful.</p>
+<p>Making that substitution, we get
+<span class="math display">\[ \left( \sum_{i=1}^n (x_i - \bar x)(y_i - \bar y) \right)^2 \leq \left( \sum_{i=1}^n (x_i - \bar x)^2 \right) \left(\sum_{i=1}^n (y_i - \bar y)^2 \right) . \]</span></p>
+<p>These are very close to the formulas for <span class="math inline">\(s_{xy}\)</span>, <span class="math inline">\(s_x^2\)</span>, and <span class="math inline">\(s_y^2\)</span>, but are just missing the “<span class="math inline">\(1/(n-1)\)</span>”s; what we in fact have is
+<span class="math display">\[ \left( (n-1) s_{xy} \right)^2 \leq (n-1)s_x^2 \cdot (n-1) s_y^2 .\]</span>
+Cancelling <span class="math inline">\((n-1)^2\)</span> from each side, we have <span class="math inline">\(s_{xy}^2 \leq s_x^2 s_y^2\)</span>, as required.</p>
+<p><strong>Group feedback:</strong> Keep trying different choices for <span class="math inline">\((a_i)\)</span> and <span class="math inline">\((b_i)\)</span>; maybe your first attempt won’t work, but it pays to be persistent!</p>
+<p>A fancier choice is <span class="math inline">\(a_i = (x_i - \bar x)/\sqrt{n-1}\)</span> and <span class="math inline">\(b_i = (y_i - \bar y)/\sqrt{n-1}\)</span>, to get the exact result without needing a second cancellation step, but I would find that harder to spot.</p>
 </div>
 <div class="subq">
-<p><strong>(c)</strong> The magician knows that the probability that the product is even is equal to the probability that the product is greater than 10. Find the value of <span class="math inline">\(x\)</span>.</p>
+<p><strong>(b)</strong>
+Hence, show that the correlation <span class="math inline">\(r_{xy}\)</span> satisfies <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>.</p>
+</div>
 <div class="myanswers">
-<p><em>Solution.</em>
-Since 6 is a possible product,
-<span class="math display">\[
-\mathbb P (\text{Product} &gt; 10) \neq 1.
-\]</span>
-Therefore, using the results from (b), <span class="math inline">\(x\)</span> must be an odd number and
-<span class="math display">\[
-\mathbb P (\text{Product} &gt; 10) = \frac{2}{3}.
-\]</span>
-This means that exactly two out of <span class="math inline">\(3x,\)</span> <span class="math inline">\(6x\)</span> and <span class="math inline">\(7x\)</span> must be greater than 10. If <span class="math inline">\(x \geq 4\)</span>, then all three values would be greater than 10, and if <span class="math inline">\(x \leq 1\)</span> then only one would be. Therefore the only possible values of <span class="math inline">\(x\)</span> are 2 and 3. The two spade cards must be different to each other, so <span class="math inline">\(x=3\)</span>.</p>
+<p><em>Solutions.</em>
+Recall the formula for the correlation is
+<span class="math display">\[ r_{xy} = \frac{s_{xy}}{s_xs_y} . \]</span>
+We can make part (a) look a bit like this dividing both sides by <span class="math inline">\(s_x^2 s_y^2\)</span>, to get
+<span class="math display">\[\frac{s_{xy}^2}{s_x^2 s_y^2} \leq 1.   \]</span>
+In fact that’s the square of the correlation on the left-hand side, so we’ve shown that <span class="math inline">\(r_{xy}^2 \leq 1\)</span>.</p>
+<p>Finally, we note that if a number squared is less than or equal to 1, then the number must be between -1 and +1 inclusive. (Numbers bigger than 1 get bigger still when squared; numbers smaller than -1 become bigger than +1 when squared; numbers between -1 and +1 get closer to 0.) Hence we have shown that <span class="math inline">\(-1 \leq r_{xy} \leq 1\)</span>, as required.</p>
+<p><strong>Group feedback:</strong> In part (b) there’s a temptation to “square-root both sides of the inequality”. But you have to be extremely careful if you do this – make sure you are properly accounting for the positive and negative square roots on both sides (if necessary), and where that does or doesn’t require reversing the direction of the inequality. I recommend leaving the square-root operation until the last possible moment of the proof or, perhaps even better, reasoning through words as I did above.</p>
+<p>Remember that you can still attempt part (b) even if you got stuck on part (a).</p>
 </div>
 </div>
+<div class="myq">
+<p><strong>B4.</strong> A researcher wishes to study the effect of mental health on academic achievement. The researcher will collect data on the mental health of a cohort of students by asking them to fill in a questionnaire, and will measure academic achievement via the students’ scores on their university exams. Discuss some of the ethical issues associated with the collection, storage, and analysis of this data, and with the publication of the results of the analysis. Are there ways to mitigate these issues?</p>
+<p>(It’s not necessary to write an essay for this question – a few short bulletpoints will suffice. There may be an opportunity to discuss these issues in more detail in your tutorial.)</p>
+<div class="myanswers">
+<p><strong>Group feedback:</strong> There are no “correct” or “incorrect” answers here, but here are a few things that students in my own tutorials brought up, which may act as a prompt for your own discussions.</p>
+<ul>
+<li><p>It’s important the students/subjects have given their consent for their data to be used this way. It must be “informed consent”, where they understand for what purpose the data will be used, how it will be stored, and so on. It must be easy and painless for students to decline to take part.</p></li>
+<li><p>Consideration should be given on how to anonymise the data as much as possible – it’s not necessary for those analysing the data to know which questionnaire or which exam result belongs to which student, only that the questionnaire and results can be paired up.</p></li>
+<li><p>Even if after data is anonymised, care should be taken about whether the students could be worked out from the data. For example, if only one student did a certain combination of modules, their identity could “leak” that way. Perhaps imprecise data, such as classes rather than exact marks, might help maintain privacy while only slightly reducing the usefulness of the data?</p></li>
+<li><p>On one hand, it seems like this data should perhaps be deleted once analysis has been carried out, for the privacy of the students. On the other hand, principles of “open science” suggest that the data should be kept – and even publicly made available – for other researchers to check the work. There are competing ethical considerations here.</p></li>
+<li><p>If correlations are found in the data, care should be taken when publishing the analysis not to wrongly suggest a causation. (Just because X and Y are positively correlated, it doesn’t mean that X <em>causes</em> Y – or that Y causes X.)</p></li>
+</ul>
+<p>You can probably think of many other things.</p>
 </div>
-<!--
-
-:::: {.myq}
-**B3.**  A company has three machines: Machine A, Machine B, and Machine C. Machine A produces 40% of the total output, Machine B produces 35%, and Machine C produces the remaining 25%. The defect rates for the machines are 1%, 2%, and 3%, respectively. If a product is chosen at random and is found to be defective, what is the probability it was produced by Machine B?
-
-::: {.myanswers data-latex=""}
-*Solution.* 
-Recall that
- \begin{align*}
-   \mathbb P(B | \text{Defective}) &= \frac{\mathbb P(B \cap \text{Defective})}{\mathbb P(\text{Defective})}\\
-   &= \frac{\mathbb P(B) \mathbb P(\text{Defective | B})}{\mathbb P(\text{Defective})}. \\
- \end{align*}
-Using a probability tree (draw it!),
- \begin{align*}
- \mathbb P(\text{Defective}) &= \mathbb P(A) \mathbb P(\text{Defective | A}) + \mathbb P(B) \mathbb P(\text{Defective | B}) + \mathbb P(C) \mathbb P(\text{Defective | C}) \\
- &= 0.40 \times 0.01 + 0.35 \times 0.02 + 0.25 \times 0.03 \\
- &= 0.0185.
- \end{align*}
- Therefore
- \[
-   \mathbb P(B | \text{Defective}) =\frac{0.35 \times 0.02}{0.0185} =  0.3784
- \]
-:::
-::::
--->
+</div>
 </div>
 <div id="P1-assessed" class="section level2 unnumbered hasAnchor">
 <h2>C: Assessed questions<a href="P1.html#P1-assessed" class="anchor-section" aria-label="Anchor link to header"></a></h2>

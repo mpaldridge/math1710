@@ -28,7 +28,7 @@ The law of large numbers tells us this mean should get close to $\mathbb EX = 1/
 
 I find I tend to get a range of values, sometimes close to 10, but usually somewhere between about 8.5 and 11. The point is that the law of large numbers sometimes requires $n$ very large to be accurate, so we should try bigger numbers than just $n = 100$. But this is easy in R!
 
-> **Exercise 10.2.** Repeat the code above with a much, much larger value of R. (Pick something big, but not so huge that the code runs very slowly -- I find something like $n$ equals one million works well.) How close to 10 are the values you get now?
+> **Exercise 10.2.** Repeat the code above with a much, much larger value of R. (Pick something big, but not so huge that the code runs very slowly -- I find something like $n$ equals one million works well. How close to 10 are the values you get now?
 
 > **Exercise 10.3.** Repeat this experiment with a different distribution, rather than the $\text{Exp}(0.1)$ distribution we tried here. You might like to try a binomial or normal distribution, for example, or make up your own discrete distribution and use the ideas we saw on [R Worksheet 8](https://mpaldridge.github.io/math1710/R8.html) to sample from your discrete distribution.
 
@@ -38,7 +38,11 @@ I find I tend to get a range of values, sometimes close to 10, but usually somew
 
 ## Plots
 
-It can help to picture the convergence of $\overline X_n$ to the expectation by drawing a plot of the means $$ \left( \frac{x_1}{1}, \frac{x_1 + x_2}{2}, \frac{x_1+x_2+x_3}{3}, \frac{x_1+x_2+x_3+x_4}{4} \dots \right) . $$ A useful function here is the **cumulative sum** function **`cumsum()`**. The cumulative sum of a vector $\mathbf x$ gives a vector of partial sums $$(x_1, x_1 + x_2, x_1 + x_2 + x_3, x_1 + x_2 + x_3 + x_4, \dots) .$$ If we combine this with the colon `1:n` notation for the numbers 1 to n, we can calculated the vector of partial means.
+It can help to picture the convergence of $\overline X_n$ to the expectation by drawing a plot of the means
+$$ \left( \frac{x_1}{1}, \frac{x_1 + x_2}{2}, \frac{x_1+x_2+x_3}{3}, \frac{x_1+x_2+x_3+x_4}{4} \dots \right) . $$
+A useful function here is the **cumulative sum** function **`cumsum()`**. The cumulative sum of a vector $\mathbf x$ gives a vector of partial sums
+$$(x_1, x_1 + x_2, x_1 + x_2 + x_3, x_1 + x_2 + x_3 + x_4, \dots) .$$
+If we combine this with the colon `1:n` notation for the numbers 1 to n, we can calculated the vector of partial means.
 
 In this example, we take up a normal distribution.
 
@@ -70,6 +74,6 @@ will add a new set of partial means to an already-existing plot.
 
 > **Exercise 10.6.** Return to the distribution you chose to use in Exercise 10.3. Draw a plot showing four lines (in four different colours) of partial means converging to the expectation. Choose a value of $n$ and a y-axis range that illustrates the law of large numbers clearly. Make sure your axes are labelled.
 
-------------------------------------------------------------------------
+---
 
 *You can now progress to [R Worksheet 10](https://mpaldridge.github.io/math1710/R10-2324.html).*

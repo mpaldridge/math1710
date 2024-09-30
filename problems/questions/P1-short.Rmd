@@ -1,21 +1,3 @@
-
-
-```{r amandatest44, engine = "tikz"}
-\begin{tikzpicture}[line width=0.25pt, scale=0.8]
-
-\begin{scope} 
-	\fill  [red!25] (2,2) circle (1.5); 
-	\fill  [red!25] (4,2) circle (1.5); 
-\end{scope}
-
-\draw[thick] (0,0) rectangle (6,4);
-\draw (6.3,3.8) node {$\Omega$};
-\draw (2,2) circle (1.5); \draw (1.6,2.0) node {$Abcd$};
-\draw (4,2) circle (1.5); \draw (4.4,2.0) node {$Bxyz$};
-
-\end{tikzpicture}
-```
-
 ::::: {.myq}
 **A1.** Consider again the "number of Skittles in each packet" data from Example 1.1.
 \[ 59, \ 59, \ 59, \ 59, \ 60, \ 60, \ 60, \ 61, \ 62, \ 62, \ 62, \ 63, \ 63 .\]
@@ -134,14 +116,15 @@ frequency densities.
 ::::
 :::::
 
-
-
 :::: {.myq}
 **A3.** Consider the two datasets illustrated by the boxplots below. Write down some differences between the two datasets.
 
-
-
-
+```{r, echo = FALSE, fig.width=5}
+set.seed(6)
+x <- rnorm(80, 10, 2)
+y <- 8 + rexp(80,0.4)
+boxplot(x, y, names = c("Dataset 1", "Dataset 2"))
+```
 
 ::: {.myanswers data-latex=""}
 *Solution.* Some answers could be:

@@ -4,8 +4,6 @@
 
 # Solutions and group feedback {#solutions .unnumbered}
 
-
-
 ::: {.mysummary}
 This page has the solutions to all the non-assessed questions on Problem Sheet 1. Solutions are added after all tutorials on a Problem Sheet have finished.
 
@@ -24,19 +22,16 @@ There are many ways you get feedback on this module, both group feedback (feedba
 
 ## Problem Sheet 1 {#P1-solutions .unnumbered}
 
-
 ### A: Short questions {#P1-short-solutions .unnumbered}
 
 ```{r, child = "problems/questions/P1-short.Rmd"}
 ```
 
-
 ### B: Long questions {#P1-long-solutions .unnumbered}
 
-<!--
-```{r, child = "problems/questions/P1-long-new.Rmd"}
+```{r, child = "problems/questions/P1-long.Rmd"}
 ```
--->
+
 ## Problem Sheet 2 {#P2-solutions .unnumbered}
 
 ### A: Short questions {#P2-short-solutions .unnumbered}

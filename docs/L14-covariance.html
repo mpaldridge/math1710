@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Lecture 2 Expectation and covariance | MATH1710 Probability and Statistics I</title>
+  <title>Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I</title>
   <meta name="description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
-  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.37 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Lecture 2 Expectation and covariance | MATH1710 Probability and Statistics I" />
+  <meta property="og:title" content="Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Lecture 2 Expectation and covariance | MATH1710 Probability and Statistics I" />
+  <meta name="twitter:title" content="Lecture 14 Expectation and covariance | MATH1710 Probability and Statistics I" />
   
   <meta name="twitter:description" content="Lecture notes for the course MATH1710 Probability and Statistics I at the University of Leeds, 2023–2024" />
   
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-<link rel="prev" href="L03-events.html"/>
-<link rel="next" href="solutions.html"/>
+<link rel="prev" href="L13-multi-rv.html"/>
+<link rel="next" href="P4.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 
 <style type="text/css">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -140,20 +140,249 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Schedule</a></li>
-<li class="part"><span><b>Part II: Probability</b></span></li>
-<li class="chapter" data-level="1" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>1</b> Sample spaces and events</a>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html"><i class="fa fa-check"></i>About MATH1710</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>1.1</b> What is probability?</a></li>
-<li class="chapter" data-level="1.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>1.2</b> Sample spaces and events</a></li>
-<li class="chapter" data-level="1.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>1.3</b> Set theory</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#organisation"><i class="fa fa-check"></i>Organisation of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#lectures"><i class="fa fa-check"></i>Lectures</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#problem-sheets"><i class="fa fa-check"></i>Problem Sheets</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#tutorials"><i class="fa fa-check"></i>Tutorials</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#r-worksheets"><i class="fa fa-check"></i>R Worksheets and Practicals</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#dropin"><i class="fa fa-check"></i>“Office hours” drop-in sessions</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#time"><i class="fa fa-check"></i>Time management</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#exam"><i class="fa fa-check"></i>Exam</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#ask"><i class="fa fa-check"></i>Who should I ask about…?</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-content"><i class="fa fa-check"></i>Content of MATH1710</a>
+<ul>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#prereqs"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#syllabus"><i class="fa fa-check"></i>Syllabus</a></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#books"><i class="fa fa-check"></i>Books</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="about.html"><a href="about.html#about-notes"><i class="fa fa-check"></i>About these notes</a></li>
+</ul></li>
+<li class="part"><span><b>Part I: Exploratory data analysis</b></span></li>
+<li class="chapter" data-level="1" data-path="L01-stats.html"><a href="L01-stats.html"><i class="fa fa-check"></i><b>1</b> Summary statistics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="L01-stats.html"><a href="L01-stats.html#what-is-eda"><i class="fa fa-check"></i><b>1.1</b> What is EDA?</a></li>
+<li class="chapter" data-level="1.2" data-path="L01-stats.html"><a href="L01-stats.html#what-is-R"><i class="fa fa-check"></i><b>1.2</b> What is R?</a></li>
+<li class="chapter" data-level="1.3" data-path="L01-stats.html"><a href="L01-stats.html#stat-central"><i class="fa fa-check"></i><b>1.3</b> Statistics of centrality</a></li>
+<li class="chapter" data-level="1.4" data-path="L01-stats.html"><a href="L01-stats.html#stat-spread"><i class="fa fa-check"></i><b>1.4</b> Statistics of spread</a></li>
+<li class="chapter" data-level="" data-path="L01-stats.html"><a href="L01-stats.html#summary-01"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="L02-dataviz.html"><a href="L02-dataviz.html"><i class="fa fa-check"></i><b>2</b> Data visualisations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="L02-dataviz.html"><a href="L02-dataviz.html#boxplots"><i class="fa fa-check"></i><b>2.1</b> Boxplots</a></li>
+<li class="chapter" data-level="2.2" data-path="L02-dataviz.html"><a href="L02-dataviz.html#histograms"><i class="fa fa-check"></i><b>2.2</b> Histograms</a></li>
+<li class="chapter" data-level="2.3" data-path="L02-dataviz.html"><a href="L02-dataviz.html#scatterplots"><i class="fa fa-check"></i><b>2.3</b> Scatterplots</a></li>
+<li class="chapter" data-level="" data-path="L02-dataviz.html"><a href="L02-dataviz.html#summary-02"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html"><i class="fa fa-check"></i>Problem Sheet 1</a>
+<ul>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P1.html"><a href="P1.html#P1-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part II: Probability</b></span></li>
+<li class="chapter" data-level="3" data-path="L03-events.html"><a href="L03-events.html"><i class="fa fa-check"></i><b>3</b> Sample spaces and events</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="L03-events.html"><a href="L03-events.html#what-is-prob"><i class="fa fa-check"></i><b>3.1</b> What is probability?</a></li>
+<li class="chapter" data-level="3.2" data-path="L03-events.html"><a href="L03-events.html#sample-events"><i class="fa fa-check"></i><b>3.2</b> Sample spaces and events</a></li>
+<li class="chapter" data-level="3.3" data-path="L03-events.html"><a href="L03-events.html#set-theory"><i class="fa fa-check"></i><b>3.3</b> Set theory</a></li>
 <li class="chapter" data-level="" data-path="L03-events.html"><a href="L03-events.html#summary-L03"><i class="fa fa-check"></i>Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>2</b> Expectation and covariance</a>
+<li class="chapter" data-level="4" data-path="L04-probability.html"><a href="L04-probability.html"><i class="fa fa-check"></i><b>4</b> Probability</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>2.1</b> Expectation of sums and products</a></li>
-<li class="chapter" data-level="2.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>2.2</b> Covariance</a></li>
-<li class="chapter" data-level="2.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>2.3</b> Correlation</a></li>
+<li class="chapter" data-level="4.1" data-path="L04-probability.html"><a href="L04-probability.html#axioms"><i class="fa fa-check"></i><b>4.1</b> Probability axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="L04-probability.html"><a href="L04-probability.html#prob-properties"><i class="fa fa-check"></i><b>4.2</b> Properties of probability</a></li>
+<li class="chapter" data-level="4.3" data-path="L04-probability.html"><a href="L04-probability.html#addition"><i class="fa fa-check"></i><b>4.3</b> Addition rules for unions</a></li>
+<li class="chapter" data-level="" data-path="L04-probability.html"><a href="L04-probability.html#summary-L04"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="L05-classical-i.html"><a href="L05-classical-i.html"><i class="fa fa-check"></i><b>5</b> Classical probability I</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="L05-classical-i.html"><a href="L05-classical-i.html#classical-intro"><i class="fa fa-check"></i><b>5.1</b> Probability with equally likely outcomes</a></li>
+<li class="chapter" data-level="5.2" data-path="L05-classical-i.html"><a href="L05-classical-i.html#multiplication"><i class="fa fa-check"></i><b>5.2</b> Multiplication principle</a></li>
+<li class="chapter" data-level="5.3" data-path="L05-classical-i.html"><a href="L05-classical-i.html#sampling"><i class="fa fa-check"></i><b>5.3</b> Sampling with and without replacement</a></li>
+<li class="chapter" data-level="" data-path="L05-classical-i.html"><a href="L05-classical-i.html#summary-L05"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html"><i class="fa fa-check"></i><b>6</b> Classical probability II</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#ordering"><i class="fa fa-check"></i><b>6.1</b> Ordering</a></li>
+<li class="chapter" data-level="6.2" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#combinations"><i class="fa fa-check"></i><b>6.2</b> Sampling without replacement in any order</a></li>
+<li class="chapter" data-level="6.3" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#birthday"><i class="fa fa-check"></i><b>6.3</b> Birthday problem</a></li>
+<li class="chapter" data-level="" data-path="L06-classical-ii.html"><a href="L06-classical-ii.html#summary-L06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P2.html"><a href="P2.html#P2-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="L07-conditional.html"><a href="L07-conditional.html"><i class="fa fa-check"></i><b>7</b> Independence and conditional probability</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="L07-conditional.html"><a href="L07-conditional.html#independent-events"><i class="fa fa-check"></i><b>7.1</b> Independent events</a></li>
+<li class="chapter" data-level="7.2" data-path="L07-conditional.html"><a href="L07-conditional.html#conditional"><i class="fa fa-check"></i><b>7.2</b> Conditional probability</a></li>
+<li class="chapter" data-level="7.3" data-path="L07-conditional.html"><a href="L07-conditional.html#chain-rule"><i class="fa fa-check"></i><b>7.3</b> Chain rule</a></li>
+<li class="chapter" data-level="" data-path="L07-conditional.html"><a href="L07-conditional.html#summary-L07"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html"><i class="fa fa-check"></i><b>8</b> Two theorems on conditional probability</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#total-prob"><i class="fa fa-check"></i><b>8.1</b> Law of total probability</a></li>
+<li class="chapter" data-level="8.2" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#bayes"><i class="fa fa-check"></i><b>8.2</b> Bayes’ theorem</a></li>
+<li class="chapter" data-level="8.3" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#screening"><i class="fa fa-check"></i><b>8.3</b> Diagnostic testing</a></li>
+<li class="chapter" data-level="" data-path="L08-two-theorems.html"><a href="L08-two-theorems.html#summary-L08"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html"><i class="fa fa-check"></i><b>9</b> Discrete random variables</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#rv"><i class="fa fa-check"></i><b>9.1</b> What is a random variable?</a></li>
+<li class="chapter" data-level="9.2" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#pmf"><i class="fa fa-check"></i><b>9.2</b> Probability mass function</a></li>
+<li class="chapter" data-level="9.3" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#cdf"><i class="fa fa-check"></i><b>9.3</b> Cumulative distribution function</a></li>
+<li class="chapter" data-level="" data-path="L09-discrete-rv.html"><a href="L09-discrete-rv.html#summary-L09"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="L10-expectation.html"><a href="L10-expectation.html"><i class="fa fa-check"></i><b>10</b> Expectation and variance</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="L10-expectation.html"><a href="L10-expectation.html#expectation"><i class="fa fa-check"></i><b>10.1</b> Expectation</a></li>
+<li class="chapter" data-level="10.2" data-path="L10-expectation.html"><a href="L10-expectation.html#functions"><i class="fa fa-check"></i><b>10.2</b> Functions of random variables</a></li>
+<li class="chapter" data-level="10.3" data-path="L10-expectation.html"><a href="L10-expectation.html#variance"><i class="fa fa-check"></i><b>10.3</b> Variance</a></li>
+<li class="chapter" data-level="" data-path="L10-expectation.html"><a href="L10-expectation.html#summary-L10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html"><i class="fa fa-check"></i>Problem Sheet 3</a>
+<ul>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P3.html"><a href="P3.html#P3-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html"><i class="fa fa-check"></i><b>11</b> Binomial and geometric distributions</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#binomial"><i class="fa fa-check"></i><b>11.1</b> Binomial distribution</a></li>
+<li class="chapter" data-level="11.2" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#geometric"><i class="fa fa-check"></i><b>11.2</b> Geometric distribution</a></li>
+<li class="chapter" data-level="" data-path="L11-binomial-geometric.html"><a href="L11-binomial-geometric.html#summary-L11"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="L12-poisson.html"><a href="L12-poisson.html"><i class="fa fa-check"></i><b>12</b> Poisson distribution</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson"><i class="fa fa-check"></i><b>12.1</b> Definition and properties</a></li>
+<li class="chapter" data-level="12.2" data-path="L12-poisson.html"><a href="L12-poisson.html#poisson-approx"><i class="fa fa-check"></i><b>12.2</b> Poisson approximation to the binomial</a></li>
+<li class="chapter" data-level="12.3" data-path="L12-poisson.html"><a href="L12-poisson.html#models"><i class="fa fa-check"></i><b>12.3</b> Distributions as models for data</a></li>
+<li class="chapter" data-level="" data-path="L12-poisson.html"><a href="L12-poisson.html#summary-06"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html"><i class="fa fa-check"></i><b>13</b> Multiple random variables</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#joint"><i class="fa fa-check"></i><b>13.1</b> Joint distributions</a></li>
+<li class="chapter" data-level="13.2" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#independence-rv"><i class="fa fa-check"></i><b>13.2</b> Independence of random variables</a></li>
+<li class="chapter" data-level="13.3" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#cond-rv"><i class="fa fa-check"></i><b>13.3</b> Conditional distributions</a></li>
+<li class="chapter" data-level="" data-path="L13-multi-rv.html"><a href="L13-multi-rv.html#summary-L13"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="L14-covariance.html"><a href="L14-covariance.html"><i class="fa fa-check"></i><b>14</b> Expectation and covariance</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="L14-covariance.html"><a href="L14-covariance.html#sum-product"><i class="fa fa-check"></i><b>14.1</b> Expectation of sums and products</a></li>
+<li class="chapter" data-level="14.2" data-path="L14-covariance.html"><a href="L14-covariance.html#covariance"><i class="fa fa-check"></i><b>14.2</b> Covariance</a></li>
+<li class="chapter" data-level="14.3" data-path="L14-covariance.html"><a href="L14-covariance.html#correlation"><i class="fa fa-check"></i><b>14.3</b> Correlation</a></li>
 <li class="chapter" data-level="" data-path="L14-covariance.html"><a href="L14-covariance.html#summary-L14"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html"><i class="fa fa-check"></i>Problem Sheet 4</a>
+<ul>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P4.html"><a href="P4.html#P4-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="L15-continuous.html"><a href="L15-continuous.html"><i class="fa fa-check"></i><b>15</b> Continuous random variables</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="L15-continuous.html"><a href="L15-continuous.html#continuous-rv"><i class="fa fa-check"></i><b>15.1</b> What is a continuous random variable?</a></li>
+<li class="chapter" data-level="15.2" data-path="L15-continuous.html"><a href="L15-continuous.html#pdf"><i class="fa fa-check"></i><b>15.2</b> Probability density functions</a></li>
+<li class="chapter" data-level="15.3" data-path="L15-continuous.html"><a href="L15-continuous.html#prop-cont"><i class="fa fa-check"></i><b>15.3</b> Properties of continuous random variables</a></li>
+<li class="chapter" data-level="" data-path="L15-continuous.html"><a href="L15-continuous.html#summary-L15"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="L16-normal.html"><a href="L16-normal.html"><i class="fa fa-check"></i><b>16</b> Normal distribution</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="L16-normal.html"><a href="L16-normal.html#normal-definition"><i class="fa fa-check"></i><b>16.1</b> Definition of the normal distribution</a></li>
+<li class="chapter" data-level="16.2" data-path="L16-normal.html"><a href="L16-normal.html#normal-properties"><i class="fa fa-check"></i><b>16.2</b> Properties of the normal distribution</a></li>
+<li class="chapter" data-level="16.3" data-path="L16-normal.html"><a href="L16-normal.html#normal-r"><i class="fa fa-check"></i><b>16.3</b> Calculations using R</a></li>
+<li class="chapter" data-level="16.4" data-path="L16-normal.html"><a href="L16-normal.html#normal-tables"><i class="fa fa-check"></i><b>16.4</b> Calculations using statistical tables</a></li>
+<li class="chapter" data-level="" data-path="L16-normal.html"><a href="L16-normal.html#summary-L16"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html"><i class="fa fa-check"></i><b>17</b> Exponential distribution and multiple continuous random variables</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#exponential"><i class="fa fa-check"></i><b>17.1</b> Exponential distribution</a></li>
+<li class="chapter" data-level="17.2" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#continuous-multiple"><i class="fa fa-check"></i><b>17.2</b> Multiple continuous random variables</a></li>
+<li class="chapter" data-level="" data-path="L17-exp-multiple.html"><a href="L17-exp-multiple.html#summary-L17"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="L18-limit.html"><a href="L18-limit.html"><i class="fa fa-check"></i><b>18</b> Limit theorems</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="L18-limit.html"><a href="L18-limit.html#lln"><i class="fa fa-check"></i><b>18.1</b> Law of large numbers</a></li>
+<li class="chapter" data-level="18.2" data-path="L18-limit.html"><a href="L18-limit.html#clt"><i class="fa fa-check"></i><b>18.2</b> Central limit theorem</a></li>
+<li class="chapter" data-level="18.3" data-path="L18-limit.html"><a href="L18-limit.html#normal-approx"><i class="fa fa-check"></i><b>18.3</b> Approximations with the normal distribution</a></li>
+<li class="chapter" data-level="" data-path="L18-limit.html"><a href="L18-limit.html#summary-09"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html"><i class="fa fa-check"></i>Problem Sheet 5</a>
+<ul>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short"><i class="fa fa-check"></i>A: Short questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-long"><i class="fa fa-check"></i>B: Long questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-assessed"><i class="fa fa-check"></i>C: Assessed questions</a></li>
+<li class="chapter" data-level="" data-path="P5.html"><a href="P5.html#P5-short-sols"><i class="fa fa-check"></i>Solutions to short questions</a></li>
+</ul></li>
+<li class="part"><span><b>Part III: Bayesian statistics</b></span></li>
+<li class="chapter" data-level="19" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html"><i class="fa fa-check"></i><b>19</b> Bayesian statistics I</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html#fake-coin"><i class="fa fa-check"></i><b>19.1</b> Example: fake coin?</a></li>
+<li class="chapter" data-level="19.2" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html#bayesian-framework"><i class="fa fa-check"></i><b>19.2</b> Bayesian framework</a></li>
+<li class="chapter" data-level="19.3" data-path="L19-bayes-i.html"><a href="L19-bayes-i.html#beta"><i class="fa fa-check"></i><b>19.3</b> Beta distribution</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html"><i class="fa fa-check"></i><b>20</b> Bayesian statistics II</a>
+<ul>
+<li class="chapter" data-level="20.1" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#beta-bern"><i class="fa fa-check"></i><b>20.1</b> Beta–Bernoulli model</a></li>
+<li class="chapter" data-level="20.2" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#betageometric-model"><i class="fa fa-check"></i><b>20.2</b> Beta–geometric model</a></li>
+<li class="chapter" data-level="20.3" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#modern-bayes"><i class="fa fa-check"></i><b>20.3</b> Modern Bayesian statistics</a></li>
+<li class="chapter" data-level="" data-path="L20-bayes-ii.html"><a href="L20-bayes-ii.html#summary-10"><i class="fa fa-check"></i>Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="P6.html"><a href="P6.html"><i class="fa fa-check"></i>Problem Sheet 6</a></li>
+<li class="part"><span><b>Other stuff</b></span></li>
+<li class="chapter" data-level="21" data-path="L21-questions.html"><a href="L21-questions.html"><i class="fa fa-check"></i><b>21</b> All questions answered</a>
+<ul>
+<li class="chapter" data-level="21.1" data-path="L21-questions.html"><a href="L21-questions.html#faq-R-RV"><i class="fa fa-check"></i><b>21.1</b> Distributions</a></li>
+<li class="chapter" data-level="21.2" data-path="L21-questions.html"><a href="L21-questions.html#discrete-random-variables-in-r"><i class="fa fa-check"></i><b>21.2</b> Discrete random variables in R</a></li>
+<li class="chapter" data-level="21.3" data-path="L21-questions.html"><a href="L21-questions.html#statistical-tables"><i class="fa fa-check"></i><b>21.3</b> Statistical tables</a></li>
+<li class="chapter" data-level="21.4" data-path="L21-questions.html"><a href="L21-questions.html#edge-cases"><i class="fa fa-check"></i><b>21.4</b> “Edge cases”</a></li>
+<li class="chapter" data-level="21.5" data-path="L21-questions.html"><a href="L21-questions.html#end-of-semester-survey"><i class="fa fa-check"></i><b>21.5</b> End-of semester survey</a></li>
+<li class="chapter" data-level="21.6" data-path="L21-questions.html"><a href="L21-questions.html#other-modules"><i class="fa fa-check"></i><b>21.6</b> Other modules</a></li>
+</ul></li>
+<li class="chapter" data-level="22" data-path="L22-exam.html"><a href="L22-exam.html"><i class="fa fa-check"></i><b>22</b> Exam</a>
+<ul>
+<li class="chapter" data-level="22.1" data-path="L22-exam.html"><a href="L22-exam.html#exam-arrangements"><i class="fa fa-check"></i><b>22.1</b> Exam arrangements</a></li>
+<li class="chapter" data-level="22.2" data-path="L22-exam.html"><a href="L22-exam.html#exam-structure"><i class="fa fa-check"></i><b>22.2</b> Exam structure</a></li>
+<li class="chapter" data-level="22.3" data-path="L22-exam.html"><a href="L22-exam.html#past-papers"><i class="fa fa-check"></i><b>22.3</b> Past papers</a></li>
+<li class="chapter" data-level="22.4" data-path="L22-exam.html"><a href="L22-exam.html#exam-faqs"><i class="fa fa-check"></i><b>22.4</b> Exam FAQs</a>
+<ul>
+<li class="chapter" data-level="22.4.1" data-path="L22-exam.html"><a href="L22-exam.html#questions"><i class="fa fa-check"></i><b>22.4.1</b> Questions</a></li>
+<li class="chapter" data-level="22.4.2" data-path="L22-exam.html"><a href="L22-exam.html#calculators"><i class="fa fa-check"></i><b>22.4.2</b> Calculators</a></li>
+<li class="chapter" data-level="22.4.3" data-path="L22-exam.html"><a href="L22-exam.html#revision"><i class="fa fa-check"></i><b>22.4.3</b> Revision</a></li>
+<li class="chapter" data-level="22.4.4" data-path="L22-exam.html"><a href="L22-exam.html#r-in-the-exam"><i class="fa fa-check"></i><b>22.4.4</b> R in the exam</a></li>
+<li class="chapter" data-level="22.4.5" data-path="L22-exam.html"><a href="L22-exam.html#passing-and-failing"><i class="fa fa-check"></i><b>22.4.5</b> Passing and failing</a></li>
+<li class="chapter" data-level="22.4.6" data-path="L22-exam.html"><a href="L22-exam.html#missing-the-exam"><i class="fa fa-check"></i><b>22.4.6</b> Missing the exam</a></li>
+<li class="chapter" data-level="22.4.7" data-path="L22-exam.html"><a href="L22-exam.html#how-much-should-i-write"><i class="fa fa-check"></i><b>22.4.7</b> How much should I write?</a></li>
+<li class="chapter" data-level="22.4.8" data-path="L22-exam.html"><a href="L22-exam.html#random-variables"><i class="fa fa-check"></i><b>22.4.8</b> Random variables</a></li>
+<li class="chapter" data-level="22.4.9" data-path="L22-exam.html"><a href="L22-exam.html#statistical-tables-1"><i class="fa fa-check"></i><b>22.4.9</b> Statistical tables</a></li>
+<li class="chapter" data-level="22.4.10" data-path="L22-exam.html"><a href="L22-exam.html#bookwork-and-rider"><i class="fa fa-check"></i><b>22.4.10</b> Bookwork and rider</a></li>
+<li class="chapter" data-level="22.4.11" data-path="L22-exam.html"><a href="L22-exam.html#decimal-places"><i class="fa fa-check"></i><b>22.4.11</b> Decimal places</a></li>
+</ul></li>
+<li class="chapter" data-level="22.5" data-path="L22-exam.html"><a href="L22-exam.html#a-past-exam-question"><i class="fa fa-check"></i><b>22.5</b> A past exam question</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html"><i class="fa fa-check"></i>R Worksheets</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#what-is-r"><i class="fa fa-check"></i>What are R and RStudio?</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#how-to-use-r-and-rstudio"><i class="fa fa-check"></i>How to use R and RStudio</a>
+<ul>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-uni"><i class="fa fa-check"></i>Accessing R and RStudio on University computers</a></li>
+<li class="chapter" data-level="" data-path="R.html"><a href="R.html#r-install"><i class="fa fa-check"></i>Installing R and RStudio</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html"><i class="fa fa-check"></i>Tips on writing mathematics</a>
+<ul>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#advice"><i class="fa fa-check"></i>Advice</a></li>
+<li class="chapter" data-level="" data-path="writing.html"><a href="writing.html#writing-ex"><i class="fa fa-check"></i>Examples</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html"><i class="fa fa-check"></i>Solutions and group feedback</a>
 <ul>
@@ -161,6 +390,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P1-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-solutions"><i class="fa fa-check"></i>Problem Sheet 2</a>
+<ul>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-short-solutions"><i class="fa fa-check"></i>A: Short questions</a></li>
 <li class="chapter" data-level="" data-path="solutions.html"><a href="solutions.html#P2-long-solutions"><i class="fa fa-check"></i>B: Long questions</a></li>
 </ul></li>
@@ -201,24 +433,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="L14-covariance" class="section level1 hasAnchor" number="2">
-<h1><span class="header-section-number">Lecture 2</span> Expectation and covariance<a href="L14-covariance.html#L14-covariance" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div id="sum-product" class="section level2 hasAnchor" number="2.1">
-<h2><span class="header-section-number">2.1</span> Expectation of sums and products<a href="L14-covariance.html#sum-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="L14-covariance" class="section level1 hasAnchor" number="14">
+<h1><span class="header-section-number">Lecture 14</span> Expectation and covariance<a href="L14-covariance.html#L14-covariance" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="sum-product" class="section level2 hasAnchor" number="14.1">
+<h2><span class="header-section-number">14.1</span> Expectation of sums and products<a href="L14-covariance.html#sum-product" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When we have multiple random variables, we might be interested in functions of those multiple random variables – for example their sum or their product. It’s often possible to find out about the whole distribution of a sum, product, or function of the variables – see MATH2715 Statistical Methods for more on this – but here we will just look at their expectations and, later, variances.</p>
 <div class="theorem">
-<p><span id="thm:linearity2" class="theorem"><strong>Theorem 2.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint probability mass function <span class="math inline">\(p_{X,Y}\)</span>. Then</p>
+<p><span id="thm:linearity2" class="theorem"><strong>Theorem 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with joint probability mass function <span class="math inline">\(p_{X,Y}\)</span>. Then</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\mathbb Eg(X,Y) = \displaystyle\sum_{x,y} g(x,y) p_{X,Y}(x,y)\)</span>.</li>
 <li><strong>(Linearity of expectation, 2)</strong> <span class="math inline">\(\mathbb E(X + Y) = \mathbb EX + \mathbb EY\)</span>, regardless of whether <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent or not.</li>
 <li>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY\)</span>.</li>
 </ol>
 </div>
-<p>If we put the second point here together with the other result of linearity of expectation (Theorem <a href="#thm:linearity1"><strong>??</strong></a>) then we get the general rule
+<p>If we put the second point here together with the other result of linearity of expectation (Theorem <a href="L10-expectation.html#thm:linearity1">10.2</a>) then we get the general rule
 <span class="math display">\[ \mathbb E(aX + bY + c) = a\,\mathbb EX + b \,\mathbb EY + c , \]</span>
 and this holds whether or not <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
 <div class="proof">
-<p><span id="unlabeled-div-7" class="proof"><em>Proof</em>. </span>Part 1 is just the law of the unconscious statistician for the random variable <span class="math inline">\((X,Y)\)</span>, and the same proof holds.</p>
+<p><span id="unlabeled-div-79" class="proof"><em>Proof</em>. </span>Part 1 is just the law of the unconscious statistician for the random variable <span class="math inline">\((X,Y)\)</span>, and the same proof holds.</p>
 <p>For part 2, we have
 <span class="math display">\[\begin{align*}
 \mathbb E(X + Y) &amp;= \sum_{x,y} (x + y)p_{X,Y}(x,y) \\
@@ -240,27 +472,27 @@ But summing a joint PMF over one of the variables gives the marginal PMF; so <sp
 as required.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-8" class="example"><strong>Example 2.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID <span class="math inline">\(\text{Bern}(p)\)</span> random variables. We know that <span class="math inline">\(\mathbb EX_1 = p\)</span> and <span class="math inline">\(\operatorname{Var}(X_1) = p(1-p)\)</span>.</p>
+<p><span id="exm:unlabeled-div-80" class="example"><strong>Example 14.1  </strong></span>Let <span class="math inline">\(X_1, X_2, \dots, X_n\)</span> be IID <span class="math inline">\(\text{Bern}(p)\)</span> random variables. We know that <span class="math inline">\(\mathbb EX_1 = p\)</span> and <span class="math inline">\(\operatorname{Var}(X_1) = p(1-p)\)</span>.</p>
 <p>Now let <span class="math inline">\(Y = X_1 + X_2 + \cdots + X_n\)</span>. Since each <span class="math inline">\(X_i\)</span> indicates whether or not trial <span class="math inline">\(i\)</span> was a success, this means <span class="math inline">\(Y\)</span> counts the number of successes in <span class="math inline">\(n\)</span> trials. This is a binomial random variable, <span class="math inline">\(Y \sim \text{Bin}(n,p)\)</span>.</p>
 <p>We can use this structure to calculate
 <span class="math display">\[ \mathbb EY = \mathbb E(X_1 + \cdots + X_n) = n \mathbb EX_1 = np . \]</span></p>
 <p>This has proved the expectation of the binomial distribution from Lecture 11. (Note that this would hold even if the trials weren’t independent.)</p>
 </div>
 </div>
-<div id="covariance" class="section level2 hasAnchor" number="2.2">
-<h2><span class="header-section-number">2.2</span> Covariance<a href="L14-covariance.html#covariance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="covariance" class="section level2 hasAnchor" number="14.2">
+<h2><span class="header-section-number">14.2</span> Covariance<a href="L14-covariance.html#covariance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>If we are interested at how two random variables vary together, we need to look at the covariance.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 2.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mathbb EX =\mu_X\)</span> and <span class="math inline">\(\mathbb EY = \mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 14.1  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mathbb EX =\mu_X\)</span> and <span class="math inline">\(\mathbb EY = \mu_Y\)</span> respectively. Then their <strong>covariance</strong> is
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb E(X - \mu_X)(Y - \mu_Y) . \]</span></p>
 </div>
 <p>In the least surprising result of this whole module, we also have a computational formula to go along with this definitional formula.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-10" class="theorem"><strong>Theorem 2.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
+<p><span id="thm:unlabeled-div-82" class="theorem"><strong>Theorem 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables with expectations <span class="math inline">\(\mu_X\)</span> and <span class="math inline">\(\mu_Y\)</span> respectively. Then their covariance can also be calculated as
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\, \mu_Y . \]</span></p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-11" class="proof"><em>Proof</em>. </span>Exactly as we’ve done many times before, we have
+<p><span id="unlabeled-div-83" class="proof"><em>Proof</em>. </span>Exactly as we’ve done many times before, we have
 <span class="math display">\[\begin{align*}
 \operatorname{Cov}(X,Y) &amp;= \mathbb E(X - \mu_X)(Y - \mu_Y) \\
 &amp;= \mathbb E(XY - X\,\mu_Y - \mu_X\, Y + \mu_X\,\mu_Y) \\
@@ -271,7 +503,7 @@ as required.</p>
 and we’re done.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-12" class="example"><strong>Example 2.2  </strong></span>We continue with our coin-tossing example from the previous lecture, where <span class="math inline">\(X\)</span> is the number of Heads in the first two coin tosses and <span class="math inline">\(Y\)</span> the number of Heads in the first three coin tosses.</p>
+<p><span id="exm:unlabeled-div-84" class="example"><strong>Example 14.2  </strong></span>We continue with our coin-tossing example from the previous lecture, where <span class="math inline">\(X\)</span> is the number of Heads in the first two coin tosses and <span class="math inline">\(Y\)</span> the number of Heads in the first three coin tosses.</p>
 <p>We know that <span class="math inline">\(X \sim \text{Bin}(2, \frac12)\)</span>, so <span class="math inline">\(\mu_X = 1\)</span>, and <span class="math inline">\(Y \sim \text{Bin}(3, \frac12)\)</span>, so <span class="math inline">\(\mu_Y = 1.5\)</span>. To find the covariance using the computational formula, we also need <span class="math inline">\(\mathbb EXY\)</span>, which is
 <span class="math display">\[\begin{align*}
 \mathbb EXY &amp;= \sum_{x,y} xy\, p_{X,Y}(x,y) \\
@@ -284,18 +516,18 @@ Hence the covariance is
 </div>
 <p>A very important fact is the following.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-13" class="theorem"><strong>Theorem 2.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
+<p><span id="thm:unlabeled-div-85" class="theorem"><strong>Theorem 14.3  </strong></span>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
 </div>
 <p>Be careful not to get this the wrong way around: if <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span> it doesn’t necessarily mean that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</p>
 <p>To use the <a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/converse-inverse-contrapositive">“contrapositive”</a> (which is allowed!), in our example, we have <span class="math inline">\(\operatorname{Cov}(X,Y) \neq 0\)</span>, which means that <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are not independent – confirming what we already knew.</p>
 <div class="proof">
-<p><span id="unlabeled-div-14" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="L14-covariance.html#thm:linearity2">2.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
+<p><span id="unlabeled-div-86" class="proof"><em>Proof</em>. </span>Recall from Theorem <a href="L14-covariance.html#thm:linearity2">14.1</a> that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, we have <span class="math inline">\(\mathbb EXY = \mathbb EX \times \mathbb EY = \mu_X \, \mu_Y\)</span>. Then from the computational formula, we have
 <span class="math display">\[ \operatorname{Cov}(X,Y) = \mathbb EXY - \mu_X\,\mu_Y = \mu_X\,\mu_Y - \mu_X\,\mu_Y = 0, \]</span>
 and we are done.</p>
 </div>
 <p>Here are some more important properties of the covariance.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-15" class="theorem"><strong>Theorem 2.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
+<p><span id="thm:unlabeled-div-87" class="theorem"><strong>Theorem 14.4  </strong></span>Let <span class="math inline">\(X\)</span>, <span class="math inline">\(Y\)</span> and <span class="math inline">\(Z\)</span> be random variables. Then</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\operatorname{Cov}(X,Y) = \operatorname{Cov}(Y,X)\)</span>;</li>
 <li><span class="math inline">\(\operatorname{Cov}(X,X) = \operatorname{Var}(X)\)</span>;</li>
@@ -305,8 +537,8 @@ and we are done.</p>
 </ol>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-16" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
-<p>Parts 3, 4 and 5 are quite similar. We’ll do part 5 here, and you can do parts 3 and 4 on <a href="#P4">Problem Sheet 4</a>.</p>
+<p><span id="unlabeled-div-88" class="proof"><em>Proof</em>. </span>Part 1 and 2 are immediate from the definition.</p>
+<p>Parts 3, 4 and 5 are quite similar. We’ll do part 5 here, and you can do parts 3 and 4 on <a href="P4.html#P4">Problem Sheet 4</a>.</p>
 <p>For part 5, note that <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span> by linearity of expectation. Hence
 <span class="math display">\[\begin{align*}
 \operatorname{Cov}(X + Y, Z)
@@ -319,7 +551,7 @@ and we are done.</p>
 as required.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-17" class="example"><strong>Example 2.3  </strong></span>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
+<p><span id="exm:unlabeled-div-89" class="example"><strong>Example 14.3  </strong></span>We could calculate the covariance in our coin-tossing example a different way, by noting that <span class="math inline">\(Y = X + Z\)</span>, where <span class="math inline">\(Z \sim \text{Bern}(\frac12)\)</span> represents the third coin toss and is independent of <span class="math inline">\(X\)</span>. Then we have
 <span class="math display">\[
 \operatorname{Cov}(X,Y) = \operatorname{Cov}(X, X + Z) = \operatorname{Cov}(X, X) + \operatorname{Cov}(X, Z)
 = \operatorname{Var}(X) + 0 = \operatorname{Var}(X) ,\]</span>
@@ -329,7 +561,7 @@ matching our previous calculation.</p>
 </div>
 <p>Now that we know some facts about the covariance, we can calculate the variance of a sum.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-18" class="theorem"><strong>Theorem 2.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
+<p><span id="thm:unlabeled-div-90" class="theorem"><strong>Theorem 14.5  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + 2\operatorname{Cov}(X,Y) + \operatorname{Var}(Y) . \]</span></p>
 <p>If <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then
 <span class="math display">\[ \operatorname{Var}(X + Y) = \operatorname{Var}(X) + \operatorname{Var}(Y) . \]</span></p>
@@ -340,7 +572,7 @@ matching our previous calculation.</p>
 <li><span class="math inline">\(\operatorname{Var}(X+Y) = \operatorname{Var}(X) + \operatorname{Var}(Y)\)</span> if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent.</li>
 </ul>
 <div class="proof">
-<p><span id="unlabeled-div-19" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
+<p><span id="unlabeled-div-91" class="proof"><em>Proof</em>. </span>For the main part of the proof, we start with the definition of variance. By linearity of expectation, we have <span class="math inline">\(\mathbb E(X + Y) = \mu_X + \mu_Y\)</span>. So
 <span class="math display">\[\begin{align*}
 \operatorname{Var}(X + Y) &amp;= \mathbb E\big((X + Y) - (\mu_X + \mu_Y)\big)^2 \\
   &amp;= \mathbb E \big((X - \mu_X) + (Y - \mu_Y) \big)^2 \\
@@ -352,22 +584,22 @@ where we used the linearity of expectation.</p>
 <p>For the second part, recall that is <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-20" class="example"><strong>Example 2.4  </strong></span>Returning to the “binomial as a sum of Bernoullis” example, we have
+<p><span id="exm:unlabeled-div-92" class="example"><strong>Example 14.4  </strong></span>Returning to the “binomial as a sum of Bernoullis” example, we have
 <span class="math display">\[ \operatorname{Var}(Y) = \operatorname{Var}(X_1 + \cdots X_n) = n\operatorname{Var}(X_1) = np(1-p) . \]</span>
 Here we used that the <span class="math inline">\(X_i\)</span> are independent (the first I in “IID”).</p>
 </div>
 </div>
-<div id="correlation" class="section level2 hasAnchor" number="2.3">
-<h2><span class="header-section-number">2.3</span> Correlation<a href="L14-covariance.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="correlation" class="section level2 hasAnchor" number="14.3">
+<h2><span class="header-section-number">14.3</span> Correlation<a href="L14-covariance.html#correlation" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It can sometimes be useful to “normalise” the covariance, by dividing through by the individual standard deviations. This gives a measurement of the linear relationship between two random variables.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 2.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
+<p><span id="def:unlabeled-div-93" class="definition"><strong>Definition 14.2  </strong></span>Let <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> be two random variables. Then the <strong>correlation</strong> between <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is
 <span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} . \]</span></p>
 </div>
 <p>As with the sample correlation <span class="math inline">\(r_{xy}\)</span> from Section 1, the correlation is a number between <span class="math inline">\(-1\)</span> and <span class="math inline">\(+1\)</span>, where values near <span class="math inline">\(+1\)</span> mean that large values of <span class="math inline">\(X\)</span> and large values of <span class="math inline">\(Y\)</span> are likely to occur together, while values near <span class="math inline">\(-1\)</span> mean that large values of <span class="math inline">\(X\)</span> and small values of <span class="math inline">\(Y\)</span> are likely to occur together.</p>
 <p>Recall that, if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Cov}(X,Y) = 0\)</span>. Hence it follows that if <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> are independent, then <span class="math inline">\(\operatorname{Corr}(X,Y) = 0\)</span> also.</p>
 <div class="example">
-<p><span id="exm:unlabeled-div-22" class="example"><strong>Example 2.5  </strong></span>For the coin-tossing again, we have
+<p><span id="exm:unlabeled-div-94" class="example"><strong>Example 14.5  </strong></span>For the coin-tossing again, we have
 <span class="math display">\[ \operatorname{Corr}(X,Y) = \frac{\operatorname{Cov}(X,Y)} {\sqrt{\operatorname{Var}(X)\,\operatorname{Var}(Y)}} = \frac{\frac12}{\sqrt{\frac12 \times \frac34}} = \sqrt{\tfrac23} = 0.816 .    \]</span></p>
 </div>
 </div>
@@ -393,8 +625,8 @@ Here we used that the <span class="math inline">\(X_i\)</span> are independent (
           </div>
         </div>
       </div>
-<a href="L03-events.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="solutions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="L13-multi-rv.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="P4.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
